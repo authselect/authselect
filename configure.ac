@@ -15,6 +15,11 @@ AC_LANG([C])
 
 AC_HEADER_STDC
 
+m4_include(src/conf_macros.m4)
+WITH_PROFILE_DIR
+WITH_VENDOR_DIR
+WITH_CUSTOM_DIR
+
 AC_CONFIG_FILES([Makefile
                  src/cli/Makefile
                  src/lib/Makefile])

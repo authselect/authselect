@@ -8,7 +8,7 @@ AC_DEFUN([WITH_PROFILE_DIR], [
         )]
     )
     
-    profile_dir="${abs_srcdir}/sssd"
+    profile_dir="/home/pbrezina/profiles/default"
     if test x"$with_profile_dir" != x; then
         profile_dir=$with_profile_dir
     fi
@@ -28,8 +28,7 @@ AC_DEFUN([WITH_VENDOR_DIR], [
         )]
     )
     
-    AC_MSG_ERROR(Abs dir ${abs_srcdir} src)
-    vendor_dir="${abs_srcdir}/sssd"
+    vendor_dir="/home/pbrezina/profiles/vendor"
     if test x"$with_vendor_dir" != x; then
         vendor_dir=$with_vendor_dir
     fi
@@ -37,4 +36,24 @@ AC_DEFUN([WITH_VENDOR_DIR], [
     AC_DEFINE_UNQUOTED(AUTHSELECT_VENDOR_DIR,
                        "$vendor_dir",
                        [Path to the vendor profiles directory])
+])
+
+AC_DEFUN([WITH_CUSTOM_DIR], [
+    AC_ARG_WITH(
+        [custom-dir],
+        [AC_HELP_STRING(
+            [--with-custom-dir=DIR],
+            [Path to the profile directory for custom 
+             profiles created by administrator [/usr/lib/sssd]]
+        )]
+    )
+    
+    custom_dir="/home/pbrezina/profiles/custom"
+    if test x"$with_custom_dir" != x; then
+        vendor_dir=$with_custom_dir
+    fi
+    AC_SUBST(custom_dir)
+    AC_DEFINE_UNQUOTED(AUTHSELECT_CUSTOM_DIR,
+                       "$custom_dir",
+                       [Path to the custom profiles directory])
 ])
