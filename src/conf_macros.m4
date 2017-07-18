@@ -1,59 +1,47 @@
-AC_DEFUN([WITH_PROFILE_DIR], [
-    AC_ARG_WITH(
-        [profile-dir],
-        [AC_HELP_STRING(
-            [--with-profile-dir=DIR],
-            [Path to the read-only profile directory for 
-             profiles shipped with the tool [/usr/lib/sssd]]
-        )]
-    )
+dnl Add new --with option.
+dnl
+dnl Arg 1: option-name
+dnl Arg 2: variable_name
+dnl Arg 3: output variable name
+dnl Arg 4: value-type
+dnl Arg 5: help string
+dnl Arg 6: default value
+dnl
+AC_DEFUN([CONFIGURABLE_VALUE], [
+    AC_ARG_WITH([$1], [AC_HELP_STRING([--with-$1=$4], [$5 [$6]])])
     
-    profile_dir="/home/pbrezina/profiles/default"
-    if test x"$with_profile_dir" != x; then
-        profile_dir=$with_profile_dir
+    $3="$6"
+    if test x"$with_$2" != x; then
+        $3=$with_$2
     fi
-    AC_SUBST(profile_dir)
-    AC_DEFINE_UNQUOTED(AUTHSELECT_PROFILE_DIR,
-                       "$profile_dir",
-                       [Path to the default profiles directory])
+    
+    AC_SUBST($3)
 ])
 
-AC_DEFUN([WITH_VENDOR_DIR], [
-    AC_ARG_WITH(
-        [vendor-dir],
-        [AC_HELP_STRING(
-            [--with-vendor-dir=DIR],
-            [Path to the read-only profile directory for 
-             profiles shipped by system vendor [/usr/lib/sssd]]
-        )]
-    )
-    
-    vendor_dir="/home/pbrezina/profiles/vendor"
-    if test x"$with_vendor_dir" != x; then
-        vendor_dir=$with_vendor_dir
-    fi
-    AC_SUBST(vendor_dir)
-    AC_DEFINE_UNQUOTED(AUTHSELECT_VENDOR_DIR,
-                       "$vendor_dir",
-                       [Path to the vendor profiles directory])
-])
+CONFIGURABLE_VALUE(config-dir, config_dir, AUTHSELECT_CONFIG_DIR, DIR,
+                   [Path to the directory where authselect stores its configuration],
+                   /home/pbrezina/workspace/authselect/test/config)
 
-AC_DEFUN([WITH_CUSTOM_DIR], [
-    AC_ARG_WITH(
-        [custom-dir],
-        [AC_HELP_STRING(
-            [--with-custom-dir=DIR],
-            [Path to the profile directory for custom 
-             profiles created by administrator [/usr/lib/sssd]]
-        )]
-    )
-    
-    custom_dir="/home/pbrezina/profiles/custom"
-    if test x"$with_custom_dir" != x; then
-        vendor_dir=$with_custom_dir
-    fi
-    AC_SUBST(custom_dir)
-    AC_DEFINE_UNQUOTED(AUTHSELECT_CUSTOM_DIR,
-                       "$custom_dir",
-                       [Path to the custom profiles directory])
-])
+CONFIGURABLE_VALUE(profile-dir, profile_dir, AUTHSELECT_PROFILE_DIR, DIR,
+                   [Path to the read-only profile directory for profiles shipped with the tool],
+                   /home/pbrezina/workspace/authselect/test/profiles/default)
+                   
+CONFIGURABLE_VALUE(vendor-dir, vendor_dir, AUTHSELECT_VENDOR_DIR, DIR,
+                   [Path to the read-only profile directory for profiles shipped by system vendor],
+                   /home/pbrezina/workspace/authselect/test/profiles/vendor)
+                   
+CONFIGURABLE_VALUE(custom-dir, custom_dir, AUTHSELECT_CUSTOM_DIR, DIR,
+                   [Path to the profile directory for custom profiles created by administrator],
+                   /home/pbrezina/workspace/authselect/test/profiles/custom)
+                   
+CONFIGURABLE_VALUE(pam-dir, pam_dir, AUTHSELECT_PAM_DIR, DIR,
+                   [Path to the pam.d directory where generated pam stacks will be stored],
+                   /home/pbrezina/workspace/authselect/test/pam)
+
+CONFIGURABLE_VALUE(nsswitch-conf, nsswitch_conf, AUTHSELECT_NSSWITCH_CONF, PATH,
+                   [Path to the nsswitch.conf file],
+                   /home/pbrezina/workspace/authselect/test/pam/nsswitch.conf)
+                   
+CONFIGURABLE_VALUE(dconf-file, dconf_file, AUTHSELECT_DCONF_FILE, PATH,
+                   [Path to the authselect dconf file],
+                   /home/pbrezina/workspace/authselect/test/pam/20-authselect)

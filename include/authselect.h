@@ -24,8 +24,17 @@
 #include <errno.h>
 #include <stdbool.h>
 
+/**
+ * Holds information about profile. See authselect_profile_* functions to
+ * manipulate this structure.
+ */
 struct authselect_profile;
-struct authselect_cat;
+
+/**
+ * Holds information about managed files. See authselect_files_* functions to
+ * manipulate this structure.
+ */
+struct authselect_files;
 
 /**
  * Activate a profile.
@@ -52,17 +61,52 @@ authselect_activate(const char *profile_id,
                     bool force_override);
 
 /**
- * Return profile identifier of currently selected profile
- * or NULL if the system is not configured by authselect.
+ * Check if current configuration is valid.
+ *
+ * This will detect any manual changes to current authselect
+ * configuration and return its result in @_is_valid.
+ *
+ * @param _is_valid True if no manual changes were detected, false otherwise.
+ *
+ * @return EOK on success, errno code on error.
  */
-const char *
-authselect_current();
+int
+authselect_check_conf(bool *_is_valid);
+
+/**
+ * Return profile identifier and parameters of currently selected profile.
+ *
+ * @param[out] _profile_id     Profile identifier.
+ * @param[out] _optional       NULL-terminated array of enabled
+ *                             optional modules.
+ * @param[out] _is_valid       True if the current configuration is valid
+ *                             and created by authselect, false if some
+ *                             manual changes were detected.
+ *
+ * @return 0 on success, ENOENT if there is no current configuration present,
+ * other errno code on error.
+ */
+int
+authselect_current(char **_profile_id,
+                   char ***_optional);
+
+/**
+ * Free string array of optional profile paramenters
+ * returned by @authselect_current. */
+void
+authselect_optional_free(char **optional);
 
 /**
  * Return NULL-terminated array of all available profile identifiers.
  */
-const char **
+char **
 authselect_list();
+
+/**
+ * Free string array returned by @authselect_list.
+ */
+void
+authselect_list_free(char **profile_ids);
 
 /**
  * Return information about a profile.
@@ -105,24 +149,14 @@ const char *
 authselect_profile_path(const struct authselect_profile *profile);
 
 /**
- * Get profile short description.
+ * Get profile description.
  *
  * @param profile    Pointer to structure obtained by @authselect_profile.
  *
- * @return Profile short description or NULL if none is available.
+ * @return Profile description or NULL if none is available.
  */
 const char *
-authselect_profile_short_description(const struct authselect_profile *profile);
-
-/**
- * Get profile full description.
- *
- * @param profile    Pointer to structure obtained by @authselect_profile.
- *
- * @return Profile full description or NULL if none is available.
- */
-const char *
-authselect_profile_full_description(const struct authselect_profile *profile);
+authselect_profile_description(const struct authselect_profile *profile);
 
 /**
  * Free authconfig_profile structure obtained by @authselect_profile.
@@ -140,73 +174,102 @@ authselect_profile_free(struct authselect_profile *profile);
  * @param profile_id    Profile identifier.
  * @param optional      NULL-terminated array of optional modules to enable.
  *
- * @return Resulting content or NULL on error.
+ * @return Resulting content in authselect_files structure or NULL on error.
  */
-struct authselect_cat *
+struct authselect_files *
 authselect_cat(const char *profile,
                const char **optional);
 
 /**
  * Get nsswitch.conf content.
  *
- * @param cat    Pointer to structure obtained by @authselect_cat.
+ * @param files    Pointer to structure obtained by @authselect_cat.
  *
  * @return Generated nsswitch.conf content or NULL if the profile does
  * not touch nsswitch.conf.
  */
 const char *
-authselect_cat_nsswitch(const struct authselect_cat *cat);
+authselect_files_nsswitch(const struct authselect_files *files);
 
 /**
  * Get system-auth pam stack content.
  *
- * @param cat    Pointer to structure obtained by @authselect_cat.
+ * @param files    Pointer to structure obtained by @authselect_cat.
  *
  * @return Generated system-auth pam stack content or NULL if the profile does
  * not touch this stack.
  */
 const char *
-authselect_cat_systemauth(const struct authselect_cat *cat);
+authselect_files_systemauth(const struct authselect_files *files);
 
 /**
  * Get password-auth pam stack content.
  *
- * @param cat    Pointer to structure obtained by @authselect_cat.
+ * @param files    Pointer to structure obtained by @authselect_cat.
  *
  * @return Generated password-auth pam stack content or NULL if the profile does
  * not touch this stack.
  */
 const char *
-authselect_cat_passwordauth(const struct authselect_cat *cat);
+authselect_files_passwordauth(const struct authselect_files *files);
 
 /**
  * Get smartcard-auth pam stack content.
  *
- * @param cat    Pointer to structure obtained by @authselect_cat.
+ * @param files    Pointer to structure obtained by @authselect_cat.
  *
  * @return Generated smartcard-auth pam stack content or NULL if the profile
  * does not touch this stack.
  */
 const char *
-authselect_cat_smartcardauth(const struct authselect_cat *cat);
+authselect_files_smartcardauth(const struct authselect_files *files);
 
 /**
  * Get fingerprint-auth pam stack content.
  *
- * @param cat    Pointer to structure obtained by @authselect_cat.
+ * @param files    Pointer to structure obtained by @authselect_cat.
  *
  * @return Generated fingerprint-auth pam stack content or NULL if the profile
  * does not touch this stack.
  */
 const char *
-authselect_cat_fingerprintauth(const struct authselect_cat *cat);
+authselect_files_fingerprintauth(const struct authselect_files *files);
 
 /**
- * Free authconfig_cat structure obtained by @authselect_cat.
+ * Free authconfig_files structure obtained by @authselect_cat.
  *
- * @param cat    Pointer to structure obtained by @authselect_cat.
+ * @param files    Pointer to structure obtained by @authselect_cat.
  */
 void
-authselect_cat_free(struct authselect_cat *cat);
+authselect_files_free(struct authselect_files *files);
+
+enum authselect_debug {
+    AUTHSELECT_INFO,
+    AUTHSELECT_WARNING,
+    AUTHSELECT_ERROR
+};
+
+/* Function to log authselect events.
+ *
+ * @param pvt      Private data passed to the function.
+ * @param level    Debug level.
+ * @param function Internal library function name.
+ * @param msg      Debug message
+ *
+ * @see authselect_set_debug_fn
+ */
+typedef void (*authselect_debug_fn)(void *pvt,
+                                    enum authselect_debug level,
+                                    const char *function,
+                                    const char *msg);
+
+/* Set authselect debug function.
+ *
+ * Only one function can be set at a time. Use NULL to disable debug messages.
+ *
+ * @param fn Function to be called on internal events.
+ * @param pvt Caller private data passed to the function.
+ */
+void authselect_set_debug_fn(authselect_debug_fn fn, void *pvt);
 
 #endif /* _AUTHSELECT_H_ */
