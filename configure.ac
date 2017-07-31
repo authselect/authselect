@@ -25,7 +25,7 @@ AM_GNU_GETTEXT_VERSION(0.19)
 AC_CONFIG_MACRO_DIRS([m4])
 m4_include(src/build_macros.m4)
 m4_include(src/conf_macros.m4)
-m4_include([external/a2x.m4])
+m4_include(external/a2x.m4)
 
 dnl Reqired libraries
 REQUIRE_POPT
@@ -36,6 +36,7 @@ AM_CONDITIONAL([HAVE_MANPAGES], [test "x$A2X" != "x"])
 
 AC_CONFIG_FILES([Makefile
                  po/Makefile.in
+                 profiles/Makefile
                  src/cli/Makefile
                  src/lib/Makefile
                  src/man/Makefile

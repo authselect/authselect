@@ -1,5 +1,6 @@
 SUBDIRS= \
     po \
+    profiles \
     src/lib \
     src/cli \
     $(NULL)
@@ -10,10 +11,11 @@ endif
 
 # Documentation - for now just the license
 dist_doc_DATA = \
-	COPYING \
-	$(NULL)
+    COPYING \
+    $(NULL)
 
 ACLOCAL_AMFLAGS = -I m4
-EXTRA_DIST = build/config.rpath \
-	     rpm/authselect.spec \
-	     $(NULL)
+EXTRA_DIST = \
+    build/config.rpath \
+    rpm/authselect.spec \
+    $(NULL)
