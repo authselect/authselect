@@ -10,3 +10,8 @@ endif
 
 ACLOCAL_AMFLAGS = -I m4
 EXTRA_DIST = build/config.rpath
+
+# Documentation
+dist_doc_DATA = \
+    COPYING \
+    $(NULL)
