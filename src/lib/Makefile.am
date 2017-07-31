@@ -1,3 +1,5 @@
+MKDIR_P = @MKDIR_P@
+
 AM_CFLAGS = \
     -I$(top_srcdir)/include \
     -I$(top_srcdir)/src/lib \
@@ -19,6 +21,14 @@ lib_LTLIBRARIES = \
     libauthselect.la \
     $(NULL)
 
+authselect_config_dir=@AUTHSELECT_CONFIG_DIR@
+authselect_profile_dir=@AUTHSELECT_PROFILE_DIR@
+authselect_vendor_dir=$(authselect_profile_dir)/vendor
+authselect_custom_dir=$(authselect_profile_dir)/custom
+authselect_pam_dir=@AUTHSELECT_PAM_DIR@
+authselect_nsswitch_conf=@AUTHSELECT_NSSWITCH_CONF@
+authselect_dconf_file=@AUTHSELECT_DCONF_FILE@
+
 libauthselect_la_SOURCES = \
 	../common/malloc.c \
 	../common/debug.c \
@@ -33,9 +43,19 @@ libauthselect_la_SOURCES = \
     $(NULL)
 libauthselect_la_CFLAGS = \
     $(AM_CFLAGS) \
-    -DAUTHSELECT_CONFIG_DIR=\"@AUTHSELECT_CONFIG_DIR@\" \
-    -DAUTHSELECT_PROFILE_DIR=\"@AUTHSELECT_PROFILE_DIR@\" \
-    -DAUTHSELECT_PAM_DIR=\"@AUTHSELECT_PAM_DIR@\" \
-    -DAUTHSELECT_NSSWITCH_CONF=\"@AUTHSELECT_NSSWITCH_CONF@\" \
-    -DAUTHSELECT_DCONF_FILE=\"@AUTHSELECT_DCONF_FILE@\" \
+    -DAUTHSELECT_CONFIG_DIR=\"$(authselect_config_dir)\" \
+    -DAUTHSELECT_PROFILE_DIR=\"$(authselect_profile_dir)\" \
+    -DAUTHSELECT_PAM_DIR=\"$(authselect_pam_dir)\" \
+    -DAUTHSELECT_NSSWITCH_CONF=\"$(authselect_nsswitch_conf)\" \
+    -DAUTHSELECT_DCONF_FILE=\"$(authselect_dconf_file)\" \
     $(NULL)
+
+install-exec-hook:
+	$(MKDIR_P)  $(DESTDIR)$/$(authselect_config_dir)
+	$(MKDIR_P)  $(DESTDIR)$/$(authselect_profile_dir)
+	$(MKDIR_P)  $(DESTDIR)$/$(authselect_vendor_dir)
+	$(MKDIR_P)  $(DESTDIR)$/$(authselect_custom_dir)
+	$(MKDIR_P)  $(DESTDIR)$/$(authselect_pam_dir)
+	$(MKDIR_P)  $(DESTDIR)$/$(authselect_nsswitch_conf)
+	$(MKDIR_P)  $(DESTDIR)$/$(authselect_dconf_file)
+	$(NULL)
