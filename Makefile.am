@@ -14,4 +14,6 @@ dist_doc_DATA = \
 	$(NULL)
 
 ACLOCAL_AMFLAGS = -I m4
-EXTRA_DIST = build/config.rpath
+EXTRA_DIST = build/config.rpath \
+	     rpm/authselect.spec \
+	     $(NULL)
