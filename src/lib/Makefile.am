@@ -12,6 +12,7 @@ include_HEADERS = \
     
 noinst_HEADERS = \
     ../common/common.h \
+    ../common/gettext.h \
     authselect_private.h \
     authselect_util.h \
     authselect_files.h \
