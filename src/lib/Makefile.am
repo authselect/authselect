@@ -11,8 +11,6 @@ include_HEADERS = \
     $(NULL)
     
 noinst_HEADERS = \
-    ../common/common.h \
-    ../common/gettext.h \
     authselect_private.h \
     authselect_util.h \
     authselect_files.h \
@@ -25,15 +23,13 @@ lib_LTLIBRARIES = \
 authselect_config_dir=@AUTHSELECT_CONFIG_DIR@
 authselect_profile_dir=@AUTHSELECT_PROFILE_DIR@
 authselect_default_dir=$(authselect_profile_dir)/default
-authselect_vendor_dir=$(authselect_profile_dir)/vendor
-authselect_custom_dir=$(authselect_profile_dir)/custom
 authselect_pam_dir=@AUTHSELECT_PAM_DIR@
 authselect_nsswitch_conf=@AUTHSELECT_NSSWITCH_CONF@
 authselect_dconf_file=@AUTHSELECT_DCONF_FILE@
 
 libauthselect_la_SOURCES = \
-	../common/malloc.c \
-	../common/debug.c \
+    ../common/malloc.c \
+    ../common/debug.c \
     authselect.c \
     authselect_dir.c \
     authselect_profile.c \
@@ -51,8 +47,3 @@ libauthselect_la_CFLAGS = \
     -DAUTHSELECT_NSSWITCH_CONF=\"$(authselect_nsswitch_conf)\" \
     -DAUTHSELECT_DCONF_FILE=\"$(authselect_dconf_file)\" \
     $(NULL)
-
-install-exec-hook:
-	$(MKDIR_P)  $(DESTDIR)$/$(authselect_config_dir)
-	$(MKDIR_P)  $(DESTDIR)$/$(authselect_vendor_dir)
-	$(MKDIR_P)  $(DESTDIR)$/$(authselect_custom_dir)

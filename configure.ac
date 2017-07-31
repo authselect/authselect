@@ -37,6 +37,7 @@ AM_CONDITIONAL([HAVE_MANPAGES], [test "x$A2X" != "x"])
 AC_CONFIG_FILES([Makefile
                  po/Makefile.in
                  profiles/Makefile
+                 src/common/Makefile
                  src/cli/Makefile
                  src/lib/Makefile
                  src/man/Makefile
