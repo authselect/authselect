@@ -5,7 +5,7 @@ SUBDIRS= \
     $(NULL)
 
 if HAVE_MANPAGES
-	SUBDIRS += src/man
+SUBDIRS += src/man
 endif
 
 ACLOCAL_AMFLAGS = -I m4
