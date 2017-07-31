@@ -9,6 +9,10 @@ bin_PROGRAMS = \
     authselect \
     $(NULL)
 
+dist_noinst_HEADERS = \
+    cli_tool.h \
+    $(NULL)
+
 authselect_SOURCES = \
     ../common/malloc.c \
     ../common/debug.c \

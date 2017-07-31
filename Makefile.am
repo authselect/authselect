@@ -9,4 +9,4 @@ if HAVE_MANPAGES
 endif
 
 ACLOCAL_AMFLAGS = -I m4
-EXTRA_DIST = build/config.rpath m4/ChangeLog
+EXTRA_DIST = build/config.rpath
