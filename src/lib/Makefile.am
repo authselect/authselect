@@ -59,5 +59,5 @@ install-exec-hook:
 	$(MKDIR_P)  $(DESTDIR)$/$(authselect_vendor_dir)
 	$(MKDIR_P)  $(DESTDIR)$/$(authselect_custom_dir)
 	$(MKDIR_P)  $(DESTDIR)$/$(authselect_pam_dir)
-	mv $(top_srcdir)/* $(DESTDIR)$/$(authselect_default_dir)
+	mv $(top_srcdir)/profiles/* $(DESTDIR)$/$(authselect_default_dir)
 	$(NULL)
