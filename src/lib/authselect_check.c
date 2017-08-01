@@ -286,7 +286,7 @@ check_files(struct authselect_files *files,
         {NULL, NULL}
     };
     bool is_valid_result = true;
-    bool is_valid;
+    bool is_valid = false;
     errno_t ret;
     int i;
 

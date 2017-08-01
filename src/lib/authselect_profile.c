@@ -265,7 +265,7 @@ _PUBLIC_ struct authselect_profile *
 authselect_profile(const char *profile_id)
 {
     struct authselect_dir *dir = NULL;
-    struct authselect_profile *profile;
+    struct authselect_profile *profile = NULL;
     const char *profile_dirname;
     errno_t ret;
 
