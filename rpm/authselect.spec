@@ -1,3 +1,7 @@
+# We don't package the -devel subpackage by default because the development API
+# is not yet stable. Change to 1 to enable packaging the development
+# header and libraries
+%global package_devel 0
 
 Name:           authselect
 Version:        0.1
@@ -36,6 +40,7 @@ License: GPLv3+
 Common library files for authselect. This package is used by the authselect
 command line tool and any other potential front-ends.
 
+%if (0%{?package_devel} == 1)
 %package devel
 Summary: Development libraries and headers for authselect
 Group: Applications/System
@@ -45,6 +50,7 @@ Requires: authselect-libs = %{version}-%{release}
 %description devel
 System header files and development libraries for authselect. Useful if
 you develop a front-end for the authselect library.
+%endif
 
 
 %prep
@@ -64,6 +70,11 @@ make install DESTDIR=$RPM_BUILD_ROOT
 # Remove .la and .a files created by libtool
 find $RPM_BUILD_ROOT -name "*.la" -exec rm -f {} \;
 find $RPM_BUILD_ROOT -name "*.a" -exec rm -f {} \;
+
+%if (0%{?package_devel} == 0)
+rm -f $RPM_BUILD_ROOT/%{_includedir}/authselect.h
+rm -f $RPM_BUILD_ROOT/%{_libdir}/libauthselect.so
+%endif
 
 %files libs
 %defattr(-,root,root,-)
@@ -95,10 +106,12 @@ find $RPM_BUILD_ROOT -name "*.a" -exec rm -f {} \;
 %{_datadir}/doc/authselect/COPYING
 %license COPYING
 
+%if (0%{?package_devel} == 1)
 %files devel
 %defattr(-,root,root,-)
 %{_includedir}/authselect.h
 %{_libdir}/libauthselect.so
+%endif
 
 %files
 %defattr(-,root,root,-)
