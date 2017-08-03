@@ -21,7 +21,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <ctype.h>
 #include <fcntl.h>
 #include <limits.h>
 #include <sys/stat.h>
@@ -33,38 +32,6 @@
 #include "authselect_private.h"
 
 static errno_t
-trim(const char *str, char **_trimmed)
-{
-    char *dup;
-    const char *end;
-
-    /* Trim beginning. */
-    while (isspace(*str)) {
-        str++;
-    }
-
-    if (str[0] == '\0') {
-        *_trimmed = NULL;
-        return EOK;
-    }
-
-    /* Trim end. */
-    end = str + strlen(str) - 1;
-    while (end > str && isspace(*end)) {
-        end--;
-    }
-
-    dup = strndup(str, end - str + 1);
-    if (dup == NULL) {
-        return ENOMEM;
-    }
-
-    *_trimmed = dup;
-
-    return EOK;
-}
-
-static errno_t
 read_line(FILE *file, char **_line)
 {
     char *line = NULL;
@@ -74,7 +41,7 @@ read_line(FILE *file, char **_line)
 
     errno = 0;
     while (getline(&line, &len, file) != -1) {
-        ret = trim(line, &trimmed);
+        ret = trimline(line, &trimmed);
 
         /* Reset valus for next getline call. */
         free(line);
