@@ -31,6 +31,10 @@
 
 void free_string_array(char **array);
 
+/* Remove whitespace characters from front and back of a string. */
+errno_t
+trimline(const char *str, char **_trimmed);
+
 /* Read file contents. */
 errno_t
 read_textfile(const char *filepath, char **_content);

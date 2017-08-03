@@ -21,6 +21,7 @@
 #include <errno.h>
 #include <stdio.h>
 #include <fcntl.h>
+#include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -40,6 +41,38 @@ void free_string_array(char **array)
     }
 
     free(array);
+}
+
+errno_t
+trimline(const char *str, char **_trimmed)
+{
+    char *dup;
+    const char *end;
+
+    /* Trim beginning. */
+    while (isspace(*str)) {
+        str++;
+    }
+
+    if (str[0] == '\0') {
+        *_trimmed = NULL;
+        return EOK;
+    }
+
+    /* Trim end. */
+    end = str + strlen(str) - 1;
+    while (end > str && isspace(*end)) {
+        end--;
+    }
+
+    dup = strndup(str, end - str + 1);
+    if (dup == NULL) {
+        return ENOMEM;
+    }
+
+    *_trimmed = dup;
+
+    return EOK;
 }
 
 static errno_t
