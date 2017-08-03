@@ -36,6 +36,8 @@ bool enable_debug;
 void
 print_debug(void *pvt,
             enum authselect_debug level,
+            const char *file,
+            unsigned long line,
             const char *function,
             const char *msg)
 {
@@ -52,13 +54,16 @@ print_debug(void *pvt,
         if (!enable_warning) {
             return;
         }
-        category = "warning";
+        category = "warn";
+        break;
     case AUTHSELECT_ERROR:
-        if (!enable_debug) {
-            return;
-        }
         category = "error";
         break;
+    }
+
+    if (!enable_debug) {
+        fprintf(stderr, "[%s] %s\n", category, msg);
+        return;
     }
 
     fprintf(stderr, "[%s] [%s] %s\n", category, function, msg);
@@ -101,7 +106,7 @@ static void cli_tool_common_opts(int *argc, const char **argv)
     int opt;
 
     struct poptOption options[] = {
-        {"debug", '\0', POPT_ARG_NONE | POPT_ARGFLAG_STRIP, NULL, 'd', "Print error messages", NULL },
+        {"debug", '\0', POPT_ARG_NONE | POPT_ARGFLAG_STRIP, NULL, 'd', "Print more verbose debugging information", NULL },
         {"trace", '\0', POPT_ARG_NONE | POPT_ARGFLAG_STRIP, NULL, 't', "Print trace messages", NULL },
         {"warn", '\0', POPT_ARG_NONE | POPT_ARGFLAG_STRIP, NULL, 'w', "Print warning messages", NULL },
         POPT_TABLEEND
@@ -196,7 +201,6 @@ errno_t cli_tool_route(int argc, const char **argv,
 {
     struct cli_cmdline cmdline;
     const char *cmd;
-    errno_t ret;
     int i;
 
     if (commands == NULL) {
@@ -221,13 +225,7 @@ errno_t cli_tool_route(int argc, const char **argv,
             cmdline.argc = argc - 2;
             cmdline.argv = argv + 2;
 
-            ret = commands[i].fn(&cmdline);
-            if (ret != EOK) {
-                fprintf(stderr, _("An error occurred. "
-                        "Please run with --debug to see more information.\n"));
-            }
-
-            return ret;
+            return commands[i].fn(&cmdline);
         }
     }
 

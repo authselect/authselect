@@ -18,9 +18,12 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <stddef.h>
+#include "config.h"
+
 #include <stdarg.h>
+#include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 
 #include "authselect.h"
 
@@ -34,33 +37,26 @@ void set_debug_fn(authselect_debug_fn fn, void *pvt)
 }
 
 void debug(enum authselect_debug level,
+           const char *file,
+           unsigned long line,
            const char *function,
            const char *fmt,
            ...)
 {
-    char msg[255];
+    char *msg = NULL;
     va_list va;
     int ret;
 
-    if (debug_fn == NULL) {
-        return;
-    }
-
     va_start(va, fmt);
-    ret = vsnprintf(msg, sizeof(msg) / sizeof(char), fmt, va);
+    ret = vasprintf(&msg, fmt, va);
     va_end(va);
 
-    if (ret >= sizeof(msg) / sizeof(char)) {
-        debug_fn(debug_fn_pvt, AUTHSELECT_ERROR, function,
-                 "Internal error: Message too long!");
+    if (ret == -1) {
+        debug_fn(debug_fn_pvt, AUTHSELECT_ERROR, file, line, function,
+                 "debug: Unable to construct message!");
         return;
     }
 
-    if (ret < 0) {
-        debug_fn(debug_fn_pvt, AUTHSELECT_ERROR, function,
-                 "Unable to construct message!");
-        return;
-    }
-
-    debug_fn(debug_fn_pvt, level, function, msg);
+    debug_fn(debug_fn_pvt, level, file, line, function, msg);
+    free(msg);
 }
