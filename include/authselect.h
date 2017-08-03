@@ -260,6 +260,8 @@ enum authselect_debug {
  */
 typedef void (*authselect_debug_fn)(void *pvt,
                                     enum authselect_debug level,
+                                    const char *file,
+                                    unsigned long line,
                                     const char *function,
                                     const char *msg);
 
