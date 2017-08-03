@@ -98,7 +98,7 @@ done:
     fclose(file);
 
     if (ret != EOK) {
-        ERROR("Unable to read file '%s' [%d]: %s",
+        ERROR("Unable to read file [%s] [%d]: %s",
                filename, ret, strerror(ret));
     }
 
@@ -110,7 +110,7 @@ read_textfile(const char *filepath, char **_content)
 {
     FILE *file;
 
-    INFO("Reading file '%s'", filepath);
+    INFO("Reading file [%s]", filepath);
 
     file = fopen(filepath, "r");
     if (file == NULL) {
@@ -121,13 +121,16 @@ read_textfile(const char *filepath, char **_content)
 }
 
 errno_t
-read_textfile_dirfd(int dirfd, const char *filename, char **_content)
+read_textfile_dirfd(int dirfd,
+                    const char *dirpath,
+                    const char *filename,
+                    char **_content)
 {
     errno_t ret;
     FILE *file;
     int fd;
 
-    INFO("Reading file '%s'", filename);
+    INFO("Reading file [%s/%s]", dirpath, filename);
 
     fd = openat(dirfd, filename, O_RDONLY);
     if (fd == -1) {

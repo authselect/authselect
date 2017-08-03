@@ -40,6 +40,9 @@ errno_t
 read_textfile(const char *filepath, char **_content);
 
 errno_t
-read_textfile_dirfd(int dirfd, const char *filename, char **_content);
+read_textfile_dirfd(int dirfd,
+                    const char *dirpath,
+                    const char *filename,
+                    char **_content);
 
 #endif /* _AUTHSELECT_UTIL_H_ */
