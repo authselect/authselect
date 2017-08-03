@@ -56,17 +56,19 @@ void *_realloc_array(void *ptr, size_t elsize, size_t num);
 void set_debug_fn(authselect_debug_fn fn, void *pvt);
 
 void debug(enum authselect_debug level,
+           const char *file,
+           unsigned long line,
            const char *function,
            const char *fmt,
            ...);
 
 #define INFO(fmt, ...) \
-    debug(AUTHSELECT_INFO, __FUNCTION__, fmt, ## __VA_ARGS__)
+    debug(AUTHSELECT_INFO, __FILE__, __LINE__, __FUNCTION__, fmt, ## __VA_ARGS__)
 
 #define WARN(fmt, ...) \
-    debug(AUTHSELECT_WARNING, __FUNCTION__, fmt, ## __VA_ARGS__)
+    debug(AUTHSELECT_WARNING, __FILE__, __LINE__, __FUNCTION__, fmt, ## __VA_ARGS__)
 
 #define ERROR(fmt, ...) \
-    debug(AUTHSELECT_ERROR, __FUNCTION__, fmt, ## __VA_ARGS__)
+    debug(AUTHSELECT_ERROR, __FILE__, __LINE__, __FUNCTION__, fmt, ## __VA_ARGS__)
 
 #endif /* _COMMON_H_ */
