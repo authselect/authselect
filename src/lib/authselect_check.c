@@ -84,141 +84,9 @@ check_file_mode(struct stat *statbuf,
 }
 
 static errno_t
-check_symlink(const char *name,
-              const char *dest,
-              bool *_is_valid)
-{
-    char linkbuf[PATH_MAX + 1];
-    struct stat statbuf;
-    ssize_t len;
-    errno_t ret;
-
-    ret = lstat(name, &statbuf);
-    if (ret == -1) {
-        ret = errno;
-        ERROR("Unable to stat [%s] [%d]: %s", name, ret, strerror(ret));
-        return ret;
-    }
-
-    if (!S_ISLNK(statbuf.st_mode)) {
-        ERROR("File [%s] is not a symbolic link to [%s]", name, dest);
-        *_is_valid = false;
-        return EOK;
-    }
-
-    len = readlink(name, linkbuf, PATH_MAX + 1);
-    if (len == -1) {
-        ret = errno;
-        ERROR("Unable to readlink [%s] [%d]: %s", name, ret, strerror(ret));
-        return ret;
-    }
-
-    if (strncmp(linkbuf, dest, len) != 0) {
-        ERROR("Symbolic link [%s] does not point to [%s]", name, dest);
-        *_is_valid = false;
-        return EOK;
-    }
-
-    *_is_valid = true;
-
-    return EOK;
-}
-
-static errno_t
-check_missing_symlink(const char *name,
-                      const char *dest,
-                      bool *_is_valid)
-{
-    char linkbuf[PATH_MAX + 1];
-    struct stat statbuf;
-    ssize_t len;
-    errno_t ret;
-
-    ret = lstat(name, &statbuf);
-    if (ret == -1) {
-        ret = errno;
-        ERROR("Unable to stat [%s] [%d]: %s", name, ret, strerror(ret));
-        return ret;
-    }
-
-    if (!S_ISLNK(statbuf.st_mode)) {
-        *_is_valid = true;
-        return EOK;
-    }
-
-    len = readlink(name, linkbuf, PATH_MAX + 1);
-    if (len == -1) {
-        ret = errno;
-        ERROR("Unable to readlink [%s] [%d]: %s", name, ret, strerror(ret));
-        return ret;
-    }
-
-    if (strncmp(linkbuf, dest, len) != 0) {
-        *_is_valid = true;
-        return EOK;
-    }
-
-    *_is_valid = false;
-
-    return EOK;
-}
-
-static errno_t
-check_missing_conf(bool *_is_valid)
-{
-    const char *generated[] = GENERATED_FILES;
-    struct authselect_symlink symlinks[] = SYMLINK_FILES;
-    bool is_valid_result = true;
-    bool is_valid_symlink;
-    errno_t ret;
-    int i;
-
-    /* Check that generated files are missing. */
-    for (i = 0; generated[i] != NULL; i++) {
-        ret = file_exists(generated[i]);
-        if (ret == EOK) {
-            ERROR("File [%s] is still present", generated[i]);
-            is_valid_result = false;
-            continue;
-        } else if (ret != ENOENT) {
-            ERROR("Error while trying to access file [%s] [%d]: %s",
-                  generated[i], ret, strerror(ret));
-            return ret;
-        }
-    }
-
-    /* Check that pam.d symlink does not exist or it is not a symlink or
-     * it does not point to generated files. */
-    for (i = 0; symlinks[i].name != NULL; i++) {
-        ret = file_exists(symlinks[i].name);
-        if (ret == EOK) {
-            ret = check_missing_symlink(symlinks[i].name, symlinks[i].dest,
-                                        &is_valid_symlink);
-            if (ret != EOK) {
-                return ret;
-            }
-
-            if (!is_valid_symlink) {
-                ERROR("Symbolic link [%s] to [%s] still exists!",
-                      symlinks[i].name, symlinks[i].dest);
-                is_valid_result = false;
-            }
-        } else if (ret != ENOENT) {
-            ERROR("Error while trying to access file [%s] [%d]: %s",
-                  symlinks[i].name, ret, strerror(ret));
-            return ret;
-        }
-    }
-
-    *_is_valid = is_valid_result;
-
-    return EOK;
-}
-
-static errno_t
-check_file(const char *path,
-           const char *expected_content,
-           bool *_is_valid)
+check_generated_file(const char *path,
+                     const char *expected_content,
+                     bool *_is_valid)
 {
     struct stat statbuf;
     char *content;
@@ -271,8 +139,8 @@ check_file(const char *path,
 }
 
 static errno_t
-check_files(struct authselect_files *files,
-            bool *_is_valid)
+check_generated_files(struct authselect_files *files,
+                      bool *_is_valid)
 {
     struct {
         const char *path;
@@ -291,7 +159,7 @@ check_files(struct authselect_files *files,
     int i;
 
     for (i = 0; generated[i].path != NULL; i++) {
-        ret = check_file(generated[i].path, generated[i].expected, &is_valid);
+        ret = check_generated_file(generated[i].path, generated[i].expected, &is_valid);
         if (ret != EOK) {
             return ret;
         }
@@ -309,6 +177,86 @@ check_files(struct authselect_files *files,
 }
 
 static errno_t
+check_symlink_exist(const char *name,
+                    const char *dest,
+                    bool *_is_valid)
+{
+    char linkbuf[PATH_MAX + 1];
+    struct stat statbuf;
+    ssize_t len;
+    errno_t ret;
+
+    ret = lstat(name, &statbuf);
+    if (ret == -1) {
+        ret = errno;
+        ERROR("Unable to stat [%s] [%d]: %s", name, ret, strerror(ret));
+        return ret;
+    }
+
+    if (!S_ISLNK(statbuf.st_mode)) {
+        ERROR("File [%s] is not a symbolic link to [%s]", name, dest);
+        *_is_valid = false;
+        return EOK;
+    }
+
+    len = readlink(name, linkbuf, PATH_MAX + 1);
+    if (len == -1) {
+        ret = errno;
+        ERROR("Unable to readlink [%s] [%d]: %s", name, ret, strerror(ret));
+        return ret;
+    }
+
+    if (strncmp(linkbuf, dest, len) != 0) {
+        ERROR("Symbolic link [%s] does not point to [%s]", name, dest);
+        *_is_valid = false;
+        return EOK;
+    }
+
+    *_is_valid = true;
+
+    return EOK;
+}
+
+static errno_t
+check_symlink_missing(const char *name,
+                      const char *dest,
+                      bool *_is_valid)
+{
+    char linkbuf[PATH_MAX + 1];
+    struct stat statbuf;
+    ssize_t len;
+    errno_t ret;
+
+    ret = lstat(name, &statbuf);
+    if (ret == -1) {
+        ret = errno;
+        ERROR("Unable to stat [%s] [%d]: %s", name, ret, strerror(ret));
+        return ret;
+    }
+
+    if (!S_ISLNK(statbuf.st_mode)) {
+        *_is_valid = true;
+        return EOK;
+    }
+
+    len = readlink(name, linkbuf, PATH_MAX + 1);
+    if (len == -1) {
+        ret = errno;
+        ERROR("Unable to readlink [%s] [%d]: %s", name, ret, strerror(ret));
+        return ret;
+    }
+
+    if (strncmp(linkbuf, dest, len) != 0) {
+        *_is_valid = true;
+        return EOK;
+    }
+
+    *_is_valid = false;
+
+    return EOK;
+}
+
+static errno_t
 check_symlinks(bool *_is_valid)
 {
     struct authselect_symlink symlinks[] = SYMLINK_FILES;
@@ -318,7 +266,7 @@ check_symlinks(bool *_is_valid)
     int i;
 
     for (i = 0; symlinks[i].name != NULL; i++) {
-        ret = check_symlink(symlinks[i].name, symlinks[i].dest, &is_valid);
+        ret = check_symlink_exist(symlinks[i].name, symlinks[i].dest, &is_valid);
         if (ret != EOK) {
             return ret;
         }
@@ -327,6 +275,58 @@ check_symlinks(bool *_is_valid)
             WARN("Symbolic link [%s] was not created by authselect!",
                  symlinks[i].name);
             is_valid_result &= is_valid;
+        }
+    }
+
+    *_is_valid = is_valid_result;
+
+    return EOK;
+}
+
+static errno_t
+check_missing_conf(bool *_is_valid)
+{
+    const char *generated[] = GENERATED_FILES;
+    struct authselect_symlink symlinks[] = SYMLINK_FILES;
+    bool is_valid_result = true;
+    bool is_valid_symlink;
+    errno_t ret;
+    int i;
+
+    /* Check that generated files are missing. */
+    for (i = 0; generated[i] != NULL; i++) {
+        ret = file_exists(generated[i]);
+        if (ret == EOK) {
+            ERROR("File [%s] is still present", generated[i]);
+            is_valid_result = false;
+            continue;
+        } else if (ret != ENOENT) {
+            ERROR("Error while trying to access file [%s] [%d]: %s",
+                  generated[i], ret, strerror(ret));
+            return ret;
+        }
+    }
+
+    /* Check that pam.d symlink does not exist or it is not a symlink or
+     * it does not point to generated files. */
+    for (i = 0; symlinks[i].name != NULL; i++) {
+        ret = file_exists(symlinks[i].name);
+        if (ret == EOK) {
+            ret = check_symlink_missing(symlinks[i].name, symlinks[i].dest,
+                                        &is_valid_symlink);
+            if (ret != EOK) {
+                return ret;
+            }
+
+            if (!is_valid_symlink) {
+                ERROR("Symbolic link [%s] to [%s] still exists!",
+                      symlinks[i].name, symlinks[i].dest);
+                is_valid_result = false;
+            }
+        } else if (ret != ENOENT) {
+            ERROR("Error while trying to access file [%s] [%d]: %s",
+                  symlinks[i].name, ret, strerror(ret));
+            return ret;
         }
     }
 
@@ -359,7 +359,7 @@ check_existing_conf(const char *profile_id,
     }
 
     /* Check that generated files exist and have proper content. */
-    ret = check_files(files, &is_valid);
+    ret = check_generated_files(files, &is_valid);
     if (ret != EOK) {
         return ret;
     }
@@ -400,7 +400,7 @@ authselect_check_conf(bool *_is_valid)
         return ret;
     }
 
-    /* Some configuration is present. Check that everythink is valid. */
+    /* Some configuration is present. Check that everything is valid. */
     ret = check_existing_conf(profile_id, (const char **)optional, _is_valid);
 
     free(profile_id);
