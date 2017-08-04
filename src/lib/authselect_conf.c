@@ -43,7 +43,7 @@ read_line(FILE *file, char **_line)
     while (getline(&line, &len, file) != -1) {
         ret = trimline(line, &trimmed);
 
-        /* Reset valus for next getline call. */
+        /* Reset values for next getline call. */
         free(line);
         line = NULL;
         len = 0;
@@ -121,9 +121,10 @@ authselect_read_conf(char **_profile_id,
         ret = errno;
 
         if (ret == ENOENT) {
-            WARN("Configuration file %s is missing", PATH_CONFIG_FILE);
+            WARN("Configuration file [%s] is missing", PATH_CONFIG_FILE);
         } else {
-            ERROR("Unable to read configuration file %s", PATH_CONFIG_FILE);
+            ERROR("Unable to read configuration file [%s] [%d]: %s",
+                  PATH_CONFIG_FILE, ret, strerror(ret));
         }
 
         return ret;
@@ -154,6 +155,8 @@ authselect_read_conf(char **_profile_id,
         *_optional = optional;
         optional = NULL;
     }
+
+    ret = EOK;
 
 done:
     fclose(file);
