@@ -71,4 +71,7 @@ void debug(enum authselect_debug level,
 #define ERROR(fmt, ...) \
     debug(AUTHSELECT_ERROR, __FILE__, __LINE__, __FUNCTION__, fmt, ## __VA_ARGS__)
 
+/* Wrapper around aprintf to simplify error handling. */
+char *format(const char *fmt, ...);
+
 #endif /* _COMMON_H_ */

@@ -30,6 +30,7 @@ authselect_dconf_file=@AUTHSELECT_DCONF_FILE@
 libauthselect_la_SOURCES = \
     ../common/malloc.c \
     ../common/debug.c \
+    ../common/utils.c \
     authselect.c \
     authselect_dir.c \
     authselect_profile.c \
