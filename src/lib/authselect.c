@@ -18,10 +18,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "config.h"
-
-#include <string.h>
-#include <stdlib.h>
+#include <stddef.h>
 
 #include "authselect_private.h"
 #include "authselect_files.h"
