@@ -19,6 +19,7 @@
 */
 
 #include <errno.h>
+#include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -26,8 +27,53 @@
 #include "authselect.h"
 #include "authselect_private.h"
 
+enum authselect_line {
+    AUTHSELECT_INCLUDE,
+    AUTHSELECT_SKIP,
+    AUTHSELECT_END
+};
+
+static enum authselect_line
+process_condition_endfile(const char *line, const char **optional)
+{
+    size_t option_len;
+    int i;
+
+    if (line[0] != '?' || line[1] != '?') {
+        /* Not a conditional line. */
+        return AUTHSELECT_INCLUDE;
+    }
+
+    if (optional == NULL) {
+        /* No options where specified, condition was not met. */
+        return AUTHSELECT_END;
+    }
+
+    line += 2;
+
+    for (i = 0; optional[i] != NULL; i++) {
+        option_len = strlen(optional[i]);
+        if (strncmp(line, optional[i], option_len) != 0) {
+            continue;
+        }
+
+        /* We have a match, now we must check that the character behind
+         * option name is a whitespace or tab so we can avoid
+         * overlapping names. */
+        if (!isspace(line[option_len])) {
+            continue;
+        }
+
+        /* Condition was met, continue file processing. */
+        return AUTHSELECT_SKIP;
+    }
+
+    /* No options where specified, condition was not met. */
+    return AUTHSELECT_END;
+}
+
 static const char *
-process_condition(const char *line, const char **optional)
+process_condition_line(const char *line, const char **optional)
 {
     size_t option_len;
     int i;
@@ -84,6 +130,7 @@ generate_file(const char *template,
               const char **optional,
               char **_generated)
 {
+    enum authselect_line op;
     const char *chunk;
     const char *line;
     char *lineend;
@@ -104,8 +151,25 @@ generate_file(const char *template,
      * unless it is a conditional line which is not allowed in @optional. */
     chunk = template;
     do {
-        line = process_condition(chunk, optional);
         lineend = strchr(chunk, '\n');
+
+        op = process_condition_endfile(chunk, optional);
+        if (op == AUTHSELECT_SKIP) {
+            /* Skip this line. */
+            chunk = lineend + 1;
+            continue;
+        } else if (op == AUTHSELECT_END) {
+            /* Do not process additional lines. If the conditional was
+             * at the beginning of file, we consider it as the file
+             * does not exist. */
+            if (output[0] == '\0') {
+                free(output);
+                output = NULL;
+            }
+            break;
+        }
+
+        line = process_condition_line(chunk, optional);
         len = lineend == NULL ? -1 : lineend - line + 1;
 
         append_line(output, line, len);
