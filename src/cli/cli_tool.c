@@ -18,8 +18,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "config.h"
-
 #include <stdlib.h>
 #include <string.h>
 #include <popt.h>
@@ -275,14 +273,14 @@ errno_t cli_tool_popt_ex(struct cli_cmdline *cmdline,
     /* Create help option string. We always need to append command name since
      * we use POPT_CONTEXT_KEEP_FIRST. */
     if (fopt_name == NULL) {
-        ret = asprintf(&help, "%s %s %s", cmdline->exec,
-                       cmdline->command, _("[OPTIONS...]"));
+        help = format("%s %s %s", cmdline->exec,
+                      cmdline->command, _("[OPTIONS...]"));
     } else {
-        ret = asprintf(&help, "%s %s %s %s", cmdline->exec,
-                       cmdline->command, fopt_name, _("[OPTIONS...]"));
+        help = format("%s %s %s %s", cmdline->exec,
+                      cmdline->command, fopt_name, _("[OPTIONS...]"));
     }
-    if (ret == 1) {
-        ERROR("asprintf() failed\n");
+    if (help == NULL) {
+        ERROR("Out of memory!");
         return ENOMEM;
     }
 

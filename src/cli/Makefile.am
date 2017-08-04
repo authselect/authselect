@@ -16,6 +16,7 @@ dist_noinst_HEADERS = \
 authselect_SOURCES = \
     ../common/malloc.c \
     ../common/debug.c \
+    ../common/utils.c \
     cli_tool.c \
     main.c \
     $(NULL)

@@ -21,41 +21,22 @@
 #include "config.h"
 
 #include <stdarg.h>
-#include <stdlib.h>
 #include <stdio.h>
 
-#include "authselect.h"
-
-authselect_debug_fn debug_fn;
-void *debug_fn_pvt;
-
-void set_debug_fn(authselect_debug_fn fn, void *pvt)
+char *
+format(const char *fmt, ...)
 {
-    debug_fn = fn;
-    debug_fn_pvt = pvt;
-}
-
-void debug(enum authselect_debug level,
-           const char *file,
-           unsigned long line,
-           const char *function,
-           const char *fmt,
-           ...)
-{
-    char *msg = NULL;
+    char *str = NULL;
     va_list va;
     int ret;
 
     va_start(va, fmt);
-    ret = vasprintf(&msg, fmt, va);
+    ret = vasprintf(&str, fmt, va);
     va_end(va);
 
     if (ret == -1) {
-        debug_fn(debug_fn_pvt, AUTHSELECT_ERROR, file, line, function,
-                 "debug: Unable to construct message!");
-        return;
+       return NULL;
     }
 
-    debug_fn(debug_fn_pvt, level, file, line, function, msg);
-    free(msg);
+    return str;
 }
