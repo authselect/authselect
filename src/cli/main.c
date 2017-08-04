@@ -107,9 +107,15 @@ static errno_t activate(struct cli_cmdline *cmdline)
 
     ret = authselect_activate(profile_id, optional, enforce);
     free(optional);
-    if (ret != EOK) {
+    if (ret == AUTHSELECT_ERR_FORCE_REQUIRED) {
+        fprintf(stderr, _("\nSome unexpected changes to the configuration were "
+                "detected.\nUse --force parameter if you want to overwrite "
+                "these changes.\n"));
+        return EINVAL;
+    } else if (ret != EOK) {
         fprintf(stderr, _("Unable to activate profile [%d]: %s\n"),
                 ret, strerror(ret));
+        return ret;
     }
 
     return EOK;

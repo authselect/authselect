@@ -360,7 +360,7 @@ authselect_activate(const char *profile_id,
         ERROR("Unexpected changes to the configuration were detected.");
         ERROR("Refusing to activate profile unless those changes are removed "
               "or overwrite is requested.");
-        ret = EINVAL;
+        ret = AUTHSELECT_ERR_FORCE_REQUIRED;
         goto done;
     }
 
@@ -377,7 +377,7 @@ authselect_activate(const char *profile_id,
             ERROR("File that needs to be overwritten was found");
             ERROR("Refusing to activate profile unless this file is removed "
                   "or overwrite is requested.");
-            ret = EINVAL;
+            ret = AUTHSELECT_ERR_FORCE_REQUIRED;
             goto done;
         }
     }
@@ -385,7 +385,7 @@ authselect_activate(const char *profile_id,
     ret = authselect_activate_profile(profile, optional);
 
 done:
-    if (ret != EOK) {
+    if (ret != EOK && ret != AUTHSELECT_ERR_FORCE_REQUIRED) {
         ERROR("Unable to activate profile [%s] [%d]: %s",
               profile_id, ret, strerror(ret));
     }

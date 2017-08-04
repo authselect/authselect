@@ -24,6 +24,8 @@
 #include <errno.h>
 #include <stdbool.h>
 
+#define AUTHSELECT_ERR_FORCE_REQUIRED -1
+
 /**
  * Holds information about profile. See authselect_profile_* functions to
  * manipulate this structure.
@@ -53,7 +55,8 @@ struct authselect_files;
  * @param optional       NULL-terminated array of optional modules to enable.
  * @param force_override If true, authselect will override local changes.
  *
- * @return 0 on success, errno code on error.
+ * @return 0 on success, AUTHSELECT_ERR_FORCE_REQUIRED if actication
+ * wer errno code on error.
  */
 int
 authselect_activate(const char *profile_id,
