@@ -18,13 +18,10 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "config.h"
-
 #include <errno.h>
 #include <stdbool.h>
 #include <string.h>
 #include <stdlib.h>
-#include <stdarg.h>
 #include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -34,24 +31,6 @@
 #include "authselect_private.h"
 
 #define CUSTOM_PROFILE_PREFIX "custom/"
-
-static char *
-concatenate(const char *fmt, ...)
-{
-    char *str = NULL;
-    va_list va;
-    int ret;
-
-    va_start(va, fmt);
-    ret = vasprintf(&str, fmt, va);
-    va_end(va);
-
-    if (ret == -1) {
-       return NULL;
-    }
-
-    return str;
-}
 
 static bool
 is_custom_profile(const char *profile_id,
@@ -208,7 +187,7 @@ authselect_profile_open(const char *profile_id,
     char *path;
     int fd;
 
-    path = concatenate("%s/%s", dirpath, dirname);
+    path = format("%s/%s", dirpath, dirname);
     if (path == NULL) {
         ERROR("Out of memory!");
         return ENOMEM;
@@ -288,7 +267,7 @@ authselect_profile_find(const char *profile_id,
 char *
 authselect_profile_custom_id(const char *profile_dirname)
 {
-    return concatenate(CUSTOM_PROFILE_PREFIX, profile_dirname, false);
+    return format(CUSTOM_PROFILE_PREFIX, profile_dirname, false);
 }
 
 _PUBLIC_ struct authselect_profile *
