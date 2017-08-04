@@ -27,7 +27,7 @@
 #include "authselect_private.h"
 
 static const char *
-line_to_include(const char *line, const char **optional)
+process_condition(const char *line, const char **optional)
 {
     size_t option_len;
     int i;
@@ -50,9 +50,10 @@ line_to_include(const char *line, const char **optional)
             continue;
         }
 
-        /* We have a much, now we must check that the character behind
-         * option name is a space or tab so we avoid overlapping names. */
-        if (line[option_len] != ' ' && line[option_len] != '\t') {
+        /* We have a match, now we must check that the character behind
+         * option name is a whitespace or tab so we can avoid
+         * overlapping names. */
+        if (!isspace(line[option_len])) {
             continue;
         }
 
@@ -103,7 +104,7 @@ generate_file(const char *template,
      * unless it is a conditional line which is not allowed in @optional. */
     chunk = template;
     do {
-        line = line_to_include(chunk, optional);
+        line = process_condition(chunk, optional);
         lineend = strchr(chunk, '\n');
         len = lineend == NULL ? -1 : lineend - line + 1;
 
@@ -146,6 +147,7 @@ authselect_files_generate(struct authselect_profile *profile,
         {NULL, NULL},
     };
 
+    /* Template may be NULL so we must compare against destination. */
     for (i = 0; tpls[i]._storage != NULL; i++) {
         ret = generate_file(tpls[i].template, optional, tpls[i]._storage);
         if (ret != EOK) {
