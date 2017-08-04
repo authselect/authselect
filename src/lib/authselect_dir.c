@@ -30,6 +30,14 @@
 
 #include "authselect_private.h"
 
+struct authselect_dir {
+    int fd;
+    DIR *dirstream;
+    char *path;
+    char **profiles;
+    size_t num_profiles;
+};
+
 void
 authselect_dir_free(struct authselect_dir *dir)
 {

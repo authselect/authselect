@@ -27,13 +27,7 @@
 
 #include "authselect_util.h"
 
-struct authselect_dir {
-    int fd;
-    DIR *dirstream;
-    char *path;
-    char **profiles;
-    size_t num_profiles;
-};
+struct authselect_dir;
 
 struct authselect_files {
     char *systemauth;
