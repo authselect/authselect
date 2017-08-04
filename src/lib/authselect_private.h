@@ -21,8 +21,6 @@
 #ifndef _AUTHSELECT_PRIVATE_H_
 #define _AUTHSELECT_PRIVATE_H_
 
-#include "config.h"
-
 #include <dirent.h>
 
 #include "authselect_util.h"
