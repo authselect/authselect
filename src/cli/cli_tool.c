@@ -41,7 +41,7 @@ print_debug(void *pvt,
             const char *function,
             const char *msg)
 {
-    const char *category;
+    const char *category = "unknown";
 
     switch (level) {
     case AUTHSELECT_INFO:
