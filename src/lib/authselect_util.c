@@ -26,7 +26,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#include "authselect_util.h"
+#include "lib/authselect_util.h"
 
 void free_string_array(char **array)
 {
