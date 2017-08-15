@@ -22,7 +22,6 @@
 #include <string.h>
 #include <popt.h>
 
-#include "../common/gettext.h"
 #include "../common/common.h"
 #include "cli_tool.h"
 #include "authselect.h"

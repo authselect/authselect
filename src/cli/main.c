@@ -27,7 +27,6 @@
 #include <locale.h>
 #include <unistd.h>
 
-#include "../common/gettext.h"
 #include "../common/common.h"
 #include "authselect.h"
 #include "cli_tool.h"
