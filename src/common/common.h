@@ -23,6 +23,8 @@
 
 #include "config.h"
 
+#include <stdarg.h>
+
 #include "gettext.h"
 #include "authselect.h"
 
@@ -79,5 +81,6 @@ void debug(enum authselect_debug level,
 
 /* Wrapper around aprintf to simplify error handling. */
 char *format(const char *fmt, ...);
+char *vaformat(const char *fmt, va_list va);
 
 #endif /* _COMMON_H_ */

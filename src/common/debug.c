@@ -18,12 +18,11 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "config.h"
-
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
 
+#include "../common/common.h"
 #include "authselect.h"
 
 authselect_debug_fn debug_fn;
@@ -42,15 +41,14 @@ void debug(enum authselect_debug level,
            const char *fmt,
            ...)
 {
-    char *msg = NULL;
     va_list va;
-    int ret;
+    char *msg;
 
     va_start(va, fmt);
-    ret = vasprintf(&msg, fmt, va);
+    msg = vaformat(fmt, va);
     va_end(va);
 
-    if (ret == -1) {
+    if (msg == NULL) {
         debug_fn(debug_fn_pvt, AUTHSELECT_ERROR, file, line, function,
                  "debug: Unable to construct message!");
         return;

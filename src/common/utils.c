@@ -24,19 +24,32 @@
 #include <stdio.h>
 
 char *
-format(const char *fmt, ...)
+vaformat(const char *fmt, va_list in_va)
 {
     char *str = NULL;
     va_list va;
     int ret;
 
-    va_start(va, fmt);
+    va_copy(va, in_va);
     ret = vasprintf(&str, fmt, va);
     va_end(va);
 
     if (ret == -1) {
        return NULL;
     }
+
+    return str;
+}
+
+char *
+format(const char *fmt, ...)
+{
+    char *str;
+    va_list va;
+
+    va_start(va, fmt);
+    str = vaformat(fmt, va);
+    va_end(va);
 
     return str;
 }
