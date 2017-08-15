@@ -14,13 +14,11 @@ dist_noinst_HEADERS = \
     $(NULL)
 
 authselect_SOURCES = \
-    ../common/malloc.c \
-    ../common/debug.c \
-    ../common/utils.c \
     cli_tool.c \
     main.c \
     $(NULL)
 authselect_LDADD = \
+    $(top_builddir)/src/common/libcommon.la \
     $(top_builddir)/src/lib/libauthselect.la \
     $(POPT_LIBS) \
     $(NULL)

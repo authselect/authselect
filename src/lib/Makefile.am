@@ -28,9 +28,6 @@ authselect_nsswitch_conf=@AUTHSELECT_NSSWITCH_CONF@
 authselect_dconf_file=@AUTHSELECT_DCONF_FILE@
 
 libauthselect_la_SOURCES = \
-    ../common/malloc.c \
-    ../common/debug.c \
-    ../common/utils.c \
     authselect.c \
     authselect_dir.c \
     authselect_profile.c \
@@ -39,6 +36,9 @@ libauthselect_la_SOURCES = \
     authselect_check.c \
     authselect_activate.c \
     authselect_util.c \
+    $(NULL)
+libauthselect_la_LIBADD = \
+    $(top_builddir)/src/common/libcommon.la \
     $(NULL)
 libauthselect_la_CFLAGS = \
     $(AM_CFLAGS) \
