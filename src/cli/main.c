@@ -25,9 +25,9 @@
 #include <locale.h>
 #include <unistd.h>
 
-#include "../common/common.h"
 #include "authselect.h"
-#include "cli_tool.h"
+#include "common/common.h"
+#include "cli/cli_tool.h"
 
 static size_t
 list_max_length(char **list)

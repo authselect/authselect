@@ -23,7 +23,7 @@
 
 #include <dirent.h>
 
-#include "authselect_util.h"
+#include "lib/authselect_util.h"
 
 struct authselect_dir;
 

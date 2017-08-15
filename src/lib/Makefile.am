@@ -2,7 +2,7 @@ MKDIR_P = @MKDIR_P@
 
 AM_CFLAGS = \
     -I$(top_srcdir)/include \
-    -I$(top_srcdir)/src/lib \
+    -I$(top_srcdir)/src \
     -ggdb3 \
     $(NULL)
 
