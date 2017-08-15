@@ -51,10 +51,10 @@ void *_realloc_array(void *ptr, size_t elsize, size_t num);
     (type *)_malloc_zero(sizeof(type))
 
 #define malloc_zero_array(type, num) \
-    (type *)_malloc_zero(sizeof(type) * num)
+    (type *)_malloc_zero(sizeof(type) * (num))
 
 #define realloc_array(ptr, type, num) \
-    (type *)_realloc_array(ptr, sizeof(type), num)
+    (type *)_realloc_array((ptr), sizeof(type), (num))
 
 /* Debugging facility. */
 
