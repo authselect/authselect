@@ -21,6 +21,9 @@
 #ifndef _COMMON_H_
 #define _COMMON_H_
 
+#include "config.h"
+
+#include "gettext.h"
 #include "authselect.h"
 
 #define _(s) gettext(s)
@@ -62,14 +65,17 @@ void debug(enum authselect_debug level,
            const char *fmt,
            ...);
 
-#define INFO(fmt, ...) \
-    debug(AUTHSELECT_INFO, __FILE__, __LINE__, __FUNCTION__, fmt, ## __VA_ARGS__)
+#define INFO(fmt, ...)                                                        \
+    debug(AUTHSELECT_INFO, __FILE__, __LINE__, __FUNCTION__,                  \
+          gettext(fmt), ## __VA_ARGS__)
 
-#define WARN(fmt, ...) \
-    debug(AUTHSELECT_WARNING, __FILE__, __LINE__, __FUNCTION__, fmt, ## __VA_ARGS__)
+#define WARN(fmt, ...)                                                        \
+    debug(AUTHSELECT_WARNING, __FILE__, __LINE__, __FUNCTION__,               \
+          gettext(fmt), ## __VA_ARGS__)
 
-#define ERROR(fmt, ...) \
-    debug(AUTHSELECT_ERROR, __FILE__, __LINE__, __FUNCTION__, fmt, ## __VA_ARGS__)
+#define ERROR(fmt, ...)                                                       \
+    debug(AUTHSELECT_ERROR, __FILE__, __LINE__, __FUNCTION__,                 \
+          gettext(fmt), ## __VA_ARGS__)
 
 /* Wrapper around aprintf to simplify error handling. */
 char *format(const char *fmt, ...);
