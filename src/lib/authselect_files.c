@@ -25,7 +25,7 @@
 #include <stdbool.h>
 
 #include "authselect.h"
-#include "authselect_private.h"
+#include "lib/authselect_private.h"
 
 enum authselect_line {
     AUTHSELECT_INCLUDE,

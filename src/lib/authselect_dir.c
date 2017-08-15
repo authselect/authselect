@@ -27,7 +27,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-#include "authselect_private.h"
+#include "lib/authselect_private.h"
 
 struct authselect_dir {
     int fd;

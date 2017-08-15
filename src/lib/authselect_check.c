@@ -25,9 +25,9 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#include "authselect_util.h"
-#include "authselect_files.h"
-#include "authselect_private.h"
+#include "lib/authselect_util.h"
+#include "lib/authselect_files.h"
+#include "lib/authselect_private.h"
 
 static errno_t
 file_exists(const char *filename)

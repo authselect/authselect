@@ -1,6 +1,6 @@
 AM_CFLAGS = \
    -I$(top_srcdir)/include \
-   -I$(top_srcdir)/src/cli \
+   -I$(top_srcdir)/src \
    -DLOCALEDIR='"$(localedir)"' \
    -ggdb3 \
     $(NULL)

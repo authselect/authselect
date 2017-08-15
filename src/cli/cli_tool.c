@@ -22,8 +22,8 @@
 #include <string.h>
 #include <popt.h>
 
-#include "../common/common.h"
-#include "cli_tool.h"
+#include "common/common.h"
+#include "cli/cli_tool.h"
 #include "authselect.h"
 
 bool enable_trace;

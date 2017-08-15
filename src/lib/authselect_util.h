@@ -23,8 +23,8 @@
 
 #include <stddef.h>
 
-#include "../common/common.h"
 #include "authselect.h"
+#include "common/common.h"
 
 /* Functions marked with this macro are exported to the library consumer. */
 #define _PUBLIC_

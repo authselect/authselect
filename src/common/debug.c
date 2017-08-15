@@ -22,7 +22,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "../common/common.h"
+#include "common/common.h"
 #include "authselect.h"
 
 authselect_debug_fn debug_fn;

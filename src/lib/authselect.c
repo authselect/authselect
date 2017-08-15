@@ -20,10 +20,10 @@
 
 #include <stddef.h>
 
-#include "authselect_private.h"
-#include "authselect_files.h"
-#include "authselect_util.h"
 #include "authselect.h"
+#include "lib/authselect_private.h"
+#include "lib/authselect_files.h"
+#include "lib/authselect_util.h"
 
 _PUBLIC_ void
 authselect_set_debug_fn(authselect_debug_fn fn, void *pvt)
