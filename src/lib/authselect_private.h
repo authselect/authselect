@@ -83,6 +83,18 @@ authselect_merge_profiles(struct authselect_dir *profile,
 char *authselect_profile_custom_id(const char *profile_dirname);
 
 /**
+ * Check if the provided profile id match a custom profile id.
+ *
+ * @param profile_id Profile id to test.
+ * @param _profile_dirname Optional, location to store profile directory name.
+ *
+ * @return True if it is a custom profile, false otherwise.
+ */
+bool
+authselect_is_custom_profile(const char *profile_id,
+                             const char **_profile_dirname);
+
+/**
  * Free authselect_files structure content but not the structure itself.
  */
 void

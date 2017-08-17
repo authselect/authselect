@@ -32,26 +32,6 @@
 
 #define CUSTOM_PROFILE_PREFIX "custom/"
 
-static bool
-is_custom_profile(const char *profile_id,
-                  const char **_profile_dirname)
-{
-    size_t len;
-
-    if (profile_id == NULL) {
-        return false;
-    }
-
-    len = strlen(CUSTOM_PROFILE_PREFIX);
-
-    if (strncmp(CUSTOM_PROFILE_PREFIX, profile_id, len) != 0) {
-        return false;
-    }
-
-    *_profile_dirname = profile_id + len;
-    return true;
-}
-
 static errno_t
 read_profile_files(struct authselect_profile *profile,
                    int dirfd)
@@ -245,7 +225,7 @@ authselect_profile_find(const char *profile_id,
     dirname = profile_id;
 
     /* If it is a custom profile, we want to probe only custom directory. */
-    is_custom = is_custom_profile(profile_id, &dirname);
+    is_custom = authselect_is_custom_profile(profile_id, &dirname);
     if (is_custom) {
         dirs[0] = DIR_CUSTOM_PROFILES;
         dirs[1] = NULL;
@@ -267,7 +247,30 @@ authselect_profile_find(const char *profile_id,
 char *
 authselect_profile_custom_id(const char *profile_dirname)
 {
-    return format(CUSTOM_PROFILE_PREFIX, profile_dirname, false);
+    return format(CUSTOM_PROFILE_PREFIX "%s", profile_dirname, false);
+}
+
+bool
+authselect_is_custom_profile(const char *profile_id,
+                             const char **_profile_dirname)
+{
+    size_t len;
+
+    if (profile_id == NULL) {
+        return false;
+    }
+
+    len = strlen(CUSTOM_PROFILE_PREFIX);
+
+    if (strncmp(CUSTOM_PROFILE_PREFIX, profile_id, len) != 0) {
+        return false;
+    }
+
+    if (_profile_dirname != NULL) {
+        *_profile_dirname = profile_id + len;
+    }
+
+    return true;
 }
 
 _PUBLIC_ struct authselect_profile *
