@@ -251,13 +251,109 @@ done:
     return ret;
 }
 
+static int
+sort_profile_ids(const void *a, const void *b)
+{
+    const char *str_a = *(const char **)a;
+    const char *str_b = *(const char **)b;
+
+    if (str_a == NULL) {
+        return 1;
+    }
+
+    if (str_b == NULL) {
+        return -1;
+    }
+
+    bool is_custom_a = authselect_is_custom_profile(str_a, NULL);
+    bool is_custom_b = authselect_is_custom_profile(str_b, NULL);
+
+    /* Custom profiles go last, otherwise we sort alphabetically. */
+    if (is_custom_a && !is_custom_b) {
+        return 1;
+    }
+
+    if (!is_custom_a && is_custom_b) {
+        return -1;
+    }
+
+    return strcmp(str_a, str_b);
+}
+
+static errno_t
+merge_default(char **ids, size_t *index, struct authselect_dir *dir)
+{
+    size_t i;
+
+    /* Add all profiles from the default profile directory. */
+    for (i = 0; i < dir->num_profiles; i++) {
+        ids[*index] = strdup(dir->profiles[i]);
+        if (ids[*index] == NULL) {
+            return ENOMEM;
+        }
+
+        (*index)++;
+    }
+
+    return EOK;
+}
+
+static errno_t
+merge_vendor(char **ids, size_t *index, struct authselect_dir *dir)
+{
+    size_t input_index = *index;
+    size_t i, j;
+
+    /* Add only new profiles from the vendor profile directory. */
+    for (i = 0; i < dir->num_profiles; i++) {
+        for (j = 0; j < input_index; j++) {
+            if (strcmp(dir->profiles[i], ids[j]) == 0) {
+                break;
+            }
+        }
+
+        if (j != input_index) {
+            continue;
+        }
+
+        ids[*index] = strdup(dir->profiles[i]);
+        if (ids[*index] == NULL) {
+            return ENOMEM;
+        }
+
+        (*index)++;
+    }
+
+    return EOK;
+}
+
+static errno_t
+merge_custom(char **ids, size_t *index, struct authselect_dir *dir)
+{
+    size_t i;
+
+    /* Add all profiles from the custom profile directory,
+     * prefix them with custom/. */
+    for (i = 0; i < dir->num_profiles; i++) {
+        ids[*index] = authselect_profile_custom_id(dir->profiles[i]);
+        if (ids[*index] == NULL) {
+            return ENOMEM;
+        }
+
+        (*index)++;
+    }
+
+    return EOK;
+}
+
 char **
 authselect_merge_profiles(struct authselect_dir *profile,
                           struct authselect_dir *vendor,
                           struct authselect_dir *custom)
 {
     size_t num_profiles = 0;
-    size_t i, j, id_index;
+    size_t index;
+    errno_t ret;
     char **ids;
 
     num_profiles += profile->num_profiles;
@@ -269,48 +365,25 @@ authselect_merge_profiles(struct authselect_dir *profile,
         return NULL;
     }
 
-    id_index = 0;
+    index = 0;
 
-    /* Add all profiles from the default profile directory. */
-    for (i = 0; i < profile->num_profiles; i++) {
-        ids[id_index] = strdup(profile->profiles[i]);
-        if (ids[id_index] == NULL) {
-            goto fail;
-        }
-
-        id_index++;
+    ret = merge_default(ids, &index, profile);
+    if (ret != EOK) {
+        goto fail;
     }
 
-    /* Add only new profiles from the vendor profile directory. */
-    for (i = 0; i < vendor->num_profiles; i++) {
-        for (j = 0; j < profile->num_profiles; j++) {
-            if (strcmp(vendor->profiles[i], profile->profiles[j]) == 0) {
-                break;
-            }
-        }
-
-        if (j != profile->num_profiles) {
-            continue;
-        }
-
-        ids[id_index] = strdup(vendor->profiles[i]);
-        if (ids[id_index] == NULL) {
-            goto fail;
-        }
-
-        id_index++;
+    ret = merge_vendor(ids, &index, vendor);
+    if (ret != EOK) {
+        goto fail;
     }
 
-    /* Add all profiles from the custom profile directory,
-     * prefix them with custom/. */
-    for (i = 0; i < custom->num_profiles; i++) {
-        ids[id_index] = authselect_profile_custom_id(custom->profiles[i]);
-        if (ids[id_index] == NULL) {
-            goto fail;
-        }
-
-        id_index++;
+    ret = merge_custom(ids, &index, custom);
+    if (ret != EOK) {
+        goto fail;
     }
+
+    /* Sort the output list. */
+    qsort(ids, index + 1, sizeof(char *), sort_profile_ids);
 
     return ids;
 
