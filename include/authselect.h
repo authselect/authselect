@@ -101,6 +101,9 @@ authselect_optional_free(char **optional);
 
 /**
  * Return NULL-terminated array of all available profile identifiers.
+ *
+ * The array is sorted alphabetically having custom profiles pushed after
+ * default and vendor specific profiles.
  */
 char **
 authselect_list();
