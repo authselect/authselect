@@ -36,6 +36,34 @@ void free_string_array(char **array);
 errno_t
 trimline(const char *str, char **_trimmed);
 
+/**
+ * Append new line to @buffer.
+ *
+ * Add end of line character to line and concatenate it with buffer. The
+ * original @buffer is freed inside this function and a new buffer with
+ * desired content is returned.
+ *
+ * @param buffer Existing buffer or NULL.
+ * @param line   Line to append without the end of line character.
+ *
+ * @return New buffer or NULL on error.
+ */
+char *
+buffer_append_line(char *buffer,
+                   const char *line);
+
+/**
+ * Create file at @path and write @content to the file with mode 0644.
+ *
+ * @param path    Path to the file.
+ * @param content New content.
+ *
+ * @return EOK on success, errno code on error.
+ */
+errno_t
+create_textfile(const char *path,
+                const char *content);
+
 /* Read file contents. */
 errno_t
 read_textfile(const char *filepath, char **_content);
