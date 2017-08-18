@@ -22,6 +22,7 @@
 #define _AUTHSELECT_UTIL_H_
 
 #include <stddef.h>
+#include <sys/types.h>
 
 #include "authselect.h"
 #include "common/common.h"
@@ -44,5 +45,74 @@ read_textfile_dirfd(int dirfd,
                     const char *dirpath,
                     const char *filename,
                     char **_content);
+
+/**
+ * Check regular file mode.
+ *
+ * @param filepath    Path to the file.
+ * @param uid         Expected owner uid (-1 means do not check).
+ * @param gid         Expected group gid (-1 means do not check).
+ * @param permissions Expected permissions.
+ * @param _result     True if the check pass, false otherwise.
+ *
+ * @return EOK on success, other errno code on error.
+ */
+errno_t
+check_file(const char *filepath,
+           uid_t uid,
+           gid_t gid,
+           mode_t permissions,
+           bool *_result);
+
+/**
+ * Check link.
+ *
+ * @param linkpath    Path to the link name.
+ * @param destpath    Path to the link destination.
+ * @param _result     True if the check pass, false otherwise.
+ *
+ * @return EOK on success, other errno code on error.
+ */
+errno_t
+check_link(const char *linkpath,
+           const char *destpath,
+           bool *_result);
+
+/**
+ * Check that file is not a link or it does not point to @destpath.
+ *
+ * @param linkpath    Path to the file name.
+ * @param destpath    Path to the unwanted link destination.
+ * @param _result     True if the check pass, false otherwise.
+ *
+ * @return EOK on success, other errno code on error.
+ */
+errno_t
+check_notalink(const char *linkpath,
+               const char *destpath,
+               bool *_result);
+
+/**
+ * Check access mode.
+ *
+ * @param path    Path to test.
+ * @param mode    Desirect access mode, see @access.
+ *
+ * @return EOK on success, ENOENT if the path does not exist,
+ * other errno code on error.
+ */
+errno_t
+check_access(const char *path, int mode);
+
+/**
+ * Check that a path exist.
+ *
+ * @param path    Path to test.
+ *
+ * @return EOK if it does exist, ENOENT if it does not,
+ * other errno code on error.
+ */
+errno_t
+check_exists(const char *path);
 
 #endif /* _AUTHSELECT_UTIL_H_ */
