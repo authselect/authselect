@@ -25,6 +25,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <limits.h>
+#include <sys/stat.h>
 
 #include "lib/authselect_util.h"
 
@@ -145,4 +147,224 @@ read_textfile_dirfd(int dirfd,
     }
 
     return read_textfile_internal(file, filename, _content);
+}
+
+static bool
+check_type(struct stat *statbuf,
+           const char *name,
+           mode_t mode)
+{
+    mode_t exp_type = mode & S_IFMT;
+
+    if (statbuf == NULL) {
+        ERROR("Internal error: stat cannot be NULL!");
+        return false;
+    }
+
+    if (exp_type != (statbuf->st_mode & S_IFMT)) {
+        switch (exp_type) {
+        case S_IFDIR:
+            ERROR("[%s] is not a directory!", name);
+            break;
+        case S_IFREG:
+            ERROR("[%s] is not a regular file!", name);
+            break;
+        case S_IFLNK:
+            ERROR("[%s] is not a symbolic link!", name);
+            break;
+        default:
+            ERROR("[%s] has wrong type [%.7o], expected [%.7o]!",
+                  name, exp_type, exp_type);
+            break;
+        }
+
+        return false;
+    }
+
+    return true;
+}
+
+static bool
+check_mode(struct stat *statbuf,
+           const char *name,
+           uid_t uid,
+           gid_t gid,
+           mode_t mode)
+{
+    mode_t exp_perm = mode & ALLPERMS;
+    bool bret;
+
+    if (statbuf == NULL) {
+        ERROR("Internal error: stat cannot be NULL!");
+        return false;
+    }
+
+    bret = check_type(statbuf, name, mode);
+    if (!bret) {
+        return false;
+    }
+
+    if (exp_perm != (statbuf->st_mode & ALLPERMS)) {
+        ERROR("[%s] has wrong mode [%.4o], expected [%.4o]!",
+              name, statbuf->st_mode & ALLPERMS, exp_perm);
+        return false;
+    }
+
+    if (uid != (uid_t)(-1) && statbuf->st_uid != uid) {
+        ERROR("[%s] has wrong owner [%u], expected [%u]!",
+              name, statbuf->st_uid, uid);
+        return false;
+    }
+
+    if (gid != (gid_t)(-1) && statbuf->st_gid != gid) {
+        ERROR("[%s] has wrong group [%u], expected [%u]!",
+              name, statbuf->st_gid, gid);
+        return false;
+    }
+
+    return true;
+}
+
+static errno_t
+check_internal(const char *filepath,
+               uid_t uid,
+               gid_t gid,
+               mode_t mode,
+               bool *_result)
+{
+    struct stat statbuf;
+    errno_t ret;
+
+    ret = lstat(filepath, &statbuf);
+    if (ret == -1) {
+        ret = errno;
+
+        if (ret == ENOENT) {
+            ERROR("[%s] does not exist!", filepath);
+            *_result = false;
+            return EOK;
+        }
+
+        ERROR("Unable to stat [%s] [%d]: %s", filepath, ret, strerror(ret));
+        return ret;
+    }
+
+    *_result = check_mode(&statbuf, filepath, uid, gid, mode);
+
+    return EOK;
+}
+
+errno_t
+check_file(const char *filepath,
+           uid_t uid,
+           gid_t gid,
+           mode_t permissions,
+           bool *_result)
+{
+    INFO("Checking mode of file [%s]", filepath);
+
+    return check_internal(filepath, uid, gid, S_IFREG | permissions, _result);
+}
+
+errno_t
+check_link(const char *linkpath,
+           const char *destpath,
+           bool *_result)
+{
+    char linkbuf[PATH_MAX + 1];
+    ssize_t len;
+    errno_t ret;
+
+    INFO("Checking link [%s]", linkpath);
+
+    ret = check_internal(linkpath, (uid_t)-1, (gid_t)-1,
+                         S_IFLNK | ACCESSPERMS, _result);
+    if (ret != EOK || *_result == false) {
+        return ret;
+    }
+
+    len = readlink(linkpath, linkbuf, PATH_MAX + 1);
+    if (len == -1) {
+        ret = errno;
+        ERROR("Unable to read link destination [%s] [%d]: %s",
+              linkpath, ret, strerror(ret));
+        return ret;
+    }
+
+    if (strncmp(linkbuf, destpath, len) != 0) {
+        ERROR("Link [%s] does not point to [%s]", linkpath, destpath);
+        *_result = false;
+        return EOK;
+    }
+
+    *_result = true;
+    return EOK;
+}
+
+errno_t
+check_notalink(const char *linkpath,
+               const char *destpath,
+               bool *_result)
+{
+    char linkbuf[PATH_MAX + 1];
+    struct stat statbuf;
+    ssize_t len;
+    errno_t ret;
+
+    INFO("Checking that file [%s] is not an authselect symbolic link [%s]",
+          linkpath);
+
+    ret = lstat(linkpath, &statbuf);
+    if (ret == -1) {
+        ret = errno;
+
+        if (ret == ENOENT) {
+            *_result = true;
+            return EOK;
+        }
+
+        ERROR("Unable to stat [%s] [%d]: %s", linkpath, ret, strerror(ret));
+        return ret;
+    }
+
+    if (!S_ISLNK(statbuf.st_mode)) {
+        *_result = true;
+        return EOK;
+    }
+
+    len = readlink(linkpath, linkbuf, PATH_MAX + 1);
+    if (len == -1) {
+        ret = errno;
+        ERROR("Unable to read link destination [%s] [%d]: %s",
+              linkpath, ret, strerror(ret));
+        return ret;
+    }
+
+    if (strncmp(linkbuf, destpath, len) == 0) {
+        ERROR("Link [%s] points to [%s], it is an authselect symbolic link",
+              linkpath, destpath);
+        *_result = false;
+        return EOK;
+    }
+
+    *_result = true;
+    return EOK;
+}
+
+errno_t
+check_access(const char *path, int mode)
+{
+    errno = 0;
+    if (access(path, mode) == 0) {
+        return EOK;
+    }
+
+    /* ENOENT is returned if a file is missing. */
+    return errno;
+}
+
+errno_t
+check_exists(const char *path)
+{
+    return check_access(path, F_OK);
 }
