@@ -201,16 +201,18 @@ check_existing_conf(const char *profile_id,
     bool is_valid;
     errno_t ret;
 
-    profile = authselect_profile(profile_id);
-    if (profile == NULL) {
-        ERROR("Unable to load profile [%s]!", profile_id);
-        return ENOMEM;
+    ret = authselect_profile(profile_id, &profile);
+    if (ret != EOK) {
+        ERROR("Unable to load profile [%s] [%d]: %s",
+              profile_id, ret, strerror(ret));
+        return ret;
     }
 
-    files = authselect_cat(profile_id, optional);
-    if (files == NULL) {
-        ERROR("Unable to generate profile files [%s]!", profile_id);
-        return ENOMEM;
+    ret = authselect_cat(profile_id, optional, &files);
+    if (ret != EOK) {
+        ERROR("Unable to generate profile files [%s] [%d]: %s",
+              profile_id, ret, strerror(ret));
+        return ret;
     }
 
     /* Check that generated files exist and have proper content. */

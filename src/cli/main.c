@@ -194,10 +194,10 @@ static errno_t list(struct cli_cmdline *cmdline)
     maxlen = list_max_length(profiles);
 
     for (i = 0; profiles[i] != NULL; i++) {
-        profile = authselect_profile(profiles[i]);
-        if (profile == NULL) {
-            ERROR("Unable to get profile information!");
-            ret = ENOMEM;
+        ret = authselect_profile(profiles[i], &profile);
+        if (ret != EOK) {
+            ERROR("Unable to get profile information [%d]: %s",
+                  ret, strerror(ret));
             goto done;
         }
 
@@ -228,9 +228,10 @@ static errno_t show(struct cli_cmdline *cmdline)
         return ret;
     }
 
-    profile = authselect_profile(profile_id);
-    if (profile == NULL) {
-        ERROR("Unable to get profile information!");
+    ret = authselect_profile(profile_id, &profile);
+    if (ret != EOK) {
+        ERROR("Unable to get profile information [%d]: %s",
+              ret, strerror(ret));
         return ENOMEM;
     }
 
@@ -254,10 +255,10 @@ static errno_t test(struct cli_cmdline *cmdline)
         return ret;
     }
 
-    files = authselect_cat(profile_id, optional);
-    if (files == NULL) {
-        ERROR("Unable to get generated content!");
-        return ENOMEM;
+    ret = authselect_cat(profile_id, optional, &files);
+    if (ret != EOK) {
+        ERROR("Unable to get generated content [%d]: %s", ret, strerror(ret));
+        return ret;
     }
 
     content = authselect_files_nsswitch(files);

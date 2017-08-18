@@ -118,11 +118,14 @@ authselect_list_free(char **profile_ids);
  * Return information about a profile.
  *
  * @param profile_id    Profile identifier.
+ * @param _profile      Authselect profile information.
  *
- * @return Authselect profile information or NULL on error.
+ * @return 0 on succes, ENOENT if the profile was not found,
+ * other errno code on error.
  */
-struct authselect_profile *
-authselect_profile(const char *profile_id);
+int
+authselect_profile(const char *profile_id,
+                   struct authselect_profile **_profile);
 
 /**
  * Get profile identifier.
@@ -179,12 +182,15 @@ authselect_profile_free(struct authselect_profile *profile);
  *
  * @param profile_id    Profile identifier.
  * @param optional      NULL-terminated array of optional modules to enable.
+ * @param _files        Generated files content.
  *
- * @return Resulting content in authselect_files structure or NULL on error.
+ * @return 0 on success, ENOENT if the profile was not found,
+ * other errno code on error.
  */
-struct authselect_files *
-authselect_cat(const char *profile,
-               const char **optional);
+int
+authselect_cat(const char *profile_id,
+               const char **optional,
+               struct authselect_files **_files);
 
 /**
  * Get nsswitch.conf content.
