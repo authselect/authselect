@@ -77,6 +77,82 @@ trimline(const char *str, char **_trimmed)
     return EOK;
 }
 
+char *
+buffer_append_line(char *buffer,
+                   const char *line)
+{
+    char *newbuffer;
+
+    if (buffer == NULL) {
+        return format("%s\n", line);
+    }
+
+    newbuffer = format("%s%s\n", buffer, line);
+    free(buffer);
+
+    return newbuffer;
+}
+
+errno_t
+create_textfile(const char *path,
+                const char *content)
+{
+    FILE *file;
+    mode_t oldmask;
+    size_t written;
+    size_t len;
+    errno_t ret;
+
+    if (path == NULL || path[0] == '\0') {
+        return EINVAL;
+    }
+
+    INFO("Creating file [%s]", path);
+
+    /* Create an empty file if no content is given. */
+    if (content == NULL) {
+        content = "";
+    }
+
+    oldmask = umask(0644);
+
+    file = fopen(path, "w");
+    if (file == NULL) {
+        ret = errno;
+        ERROR("Unable to open file [%s] [%d]: %s", path, ret, strerror(ret));
+        goto done;
+    }
+
+    len = strlen(content);
+    written = fwrite(content, sizeof(char), len, file);
+    if (written != len) {
+        ret = errno;
+        ERROR("Unable to write file [%s] [%d]: %s", path, ret, strerror(ret));
+        goto done;
+    }
+
+    ret = chmod(path, 0644);
+    if (ret != 0) {
+        ret = errno;
+        ERROR("Unable to chmod file [%s] [%d]: %s", path, ret, strerror(ret));
+        goto done;
+    }
+
+    ret = EOK;
+
+done:
+    umask(oldmask);
+    if (file != NULL) {
+        fclose(file);
+    }
+
+    if (ret != EOK) {
+        unlink(path);
+    }
+
+    return ret;
+}
+
 static errno_t
 read_textfile_internal(FILE *file, const char *filename, char **_content)
 {
