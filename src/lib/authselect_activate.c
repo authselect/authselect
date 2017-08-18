@@ -94,7 +94,7 @@ write_file(const char *path,
         goto done;
     }
 
-    len = strlen(content) + 1;
+    len = strlen(content);
     written = fwrite(content, sizeof(char), len, file);
     if (written != len) {
         ret = errno;

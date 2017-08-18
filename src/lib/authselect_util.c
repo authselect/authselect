@@ -80,19 +80,40 @@ trimline(const char *str, char **_trimmed)
 static errno_t
 read_textfile_internal(FILE *file, const char *filename, char **_content)
 {
-    ssize_t bytes_read;
+    size_t read_bytes;
     char *buffer;
-    size_t len;
+    long filelen;
     errno_t ret;
 
-    buffer = NULL;
-    bytes_read = getdelim(&buffer, &len, '\0', file);
-    if (bytes_read == -1) {
+    ret = fseek(file, 0, SEEK_END);
+    if (ret != 0) {
         ret = errno;
         goto done;
     }
 
+    filelen = ftell(file);
+    if (filelen == -1) {
+        ret = errno;
+        goto done;
+    }
+
+    rewind(file);
+
+    buffer = malloc_zero_array(char, filelen + 1);
+    if (buffer == NULL) {
+        ret = ENOMEM;
+        goto done;
+    }
+
+    read_bytes = fread(buffer, sizeof(char), filelen, file);
+    if (read_bytes != filelen) {
+        free(buffer);
+        ret = EIO;
+        goto done;
+    }
+
     *_content = buffer;
+
     ret = EOK;
 
 done:
@@ -101,7 +122,7 @@ done:
 
     if (ret != EOK) {
         ERROR("Unable to read file [%s] [%d]: %s",
-               filename, ret, strerror(ret));
+              filename, ret, strerror(ret));
     }
 
     return ret;
