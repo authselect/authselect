@@ -337,10 +337,11 @@ authselect_activate(const char *profile_id,
 
     INFO("Trying to activate profile [%s]", profile_id);
 
-    profile = authselect_profile(profile_id);
-    if (profile == NULL) {
-        ERROR("Unable to find profile [%s]", profile_id);
-        return ENOENT;
+    ret = authselect_profile(profile_id, &profile);
+    if (ret != EOK) {
+        ERROR("Unable to find profile [%s] [%d]: %s",
+              profile_id, ret, strerror(ret));
+        return ret;
     }
 
     if (force_override) {

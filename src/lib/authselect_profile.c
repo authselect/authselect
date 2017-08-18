@@ -273,8 +273,9 @@ authselect_is_custom_profile(const char *profile_id,
     return true;
 }
 
-_PUBLIC_ struct authselect_profile *
-authselect_profile(const char *profile_id)
+_PUBLIC_ int
+authselect_profile(const char *profile_id,
+                   struct authselect_profile **_profile)
 {
     struct authselect_profile *profile = NULL;
     char *profile_path = NULL;
@@ -302,6 +303,8 @@ authselect_profile(const char *profile_id)
         goto done;
     }
 
+    *_profile = profile;
+
     ret = EOK;
 
 done:
@@ -313,7 +316,7 @@ done:
         free(profile_path);
     }
 
-    return profile;
+    return ret;
 }
 
 _PUBLIC_ const char *
