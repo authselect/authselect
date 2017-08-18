@@ -25,6 +25,7 @@ authselect_profile_dir=@AUTHSELECT_PROFILE_DIR@
 authselect_default_dir=$(authselect_profile_dir)/default
 authselect_pam_dir=@AUTHSELECT_PAM_DIR@
 authselect_nsswitch_conf=@AUTHSELECT_NSSWITCH_CONF@
+authselect_dconf_dir=@AUTHSELECT_DCONF_DIR@
 authselect_dconf_file=@AUTHSELECT_DCONF_FILE@
 
 libauthselect_la_SOURCES = \
@@ -46,5 +47,6 @@ libauthselect_la_CFLAGS = \
     -DAUTHSELECT_PROFILE_DIR=\"$(authselect_profile_dir)\" \
     -DAUTHSELECT_PAM_DIR=\"$(authselect_pam_dir)\" \
     -DAUTHSELECT_NSSWITCH_CONF=\"$(authselect_nsswitch_conf)\" \
+    -DAUTHSELECT_DCONF_DIR=\"$(authselect_dconf_dir)\" \
     -DAUTHSELECT_DCONF_FILE=\"$(authselect_dconf_file)\" \
     $(NULL)

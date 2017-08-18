@@ -33,7 +33,11 @@ CONFIGURABLE_VALUE(pam-dir, pam_dir, AUTHSELECT_PAM_DIR, DIR,
 CONFIGURABLE_VALUE(nsswitch-conf, nsswitch_conf, AUTHSELECT_NSSWITCH_CONF, PATH,
                    [Path to the nsswitch.conf file],
                    $sysconfdir/nsswitch.conf)
-                   
-CONFIGURABLE_VALUE(dconf-file, dconf_file, AUTHSELECT_DCONF_FILE, PATH,
-                   [Path to the authselect dconf file],
-                   $sysconfdir/dconf/db/distro.d/20-authselect)
+
+CONFIGURABLE_VALUE(dconf-dir, dconf_dir, AUTHSELECT_DCONF_DIR, DIR,
+                   [Path to the dconf database directory to store gdm options],
+                   $sysconfdir/dconf/db/distro.d)
+
+CONFIGURABLE_VALUE(dconf-file, dconf_file, AUTHSELECT_DCONF_FILE, NAME,
+                   [Name of authselect dconf file to be stored in dconf-db],
+                   20-authselect)
