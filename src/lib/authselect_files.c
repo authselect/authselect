@@ -181,6 +181,100 @@ generate_file(const char *template,
     return EOK;
 }
 
+static char *
+generate_dconf_option(char *content,
+                      const char *option,
+                      const char *option_file)
+{
+    const char *value;
+    char *line;
+
+    value = option_file == NULL || option_file[0] == '\0' ? "false" : "true";
+
+    line = format("%s=%s", option, value);
+    if (line == NULL) {
+        free(content);
+        return NULL;
+    }
+
+    content = buffer_append_line(content, line);
+    free(line);
+
+    return content;
+}
+
+static errno_t
+generate_dconf_db(struct authselect_files *files)
+{
+    char *content = NULL;
+
+    content = buffer_append_line(NULL, "[org/gnome/login-screen]");
+    if (content == NULL) {
+        return ENOMEM;
+    }
+
+    content = generate_dconf_option(content,
+                                    "enable-smartcard-authentication",
+                                    files->smartcardauth);
+    if (content == NULL) {
+        return ENOMEM;
+    }
+
+    content = generate_dconf_option(content,
+                                    "enable-fingerprint-authentication",
+                                    files->smartcardauth);
+    if (content == NULL) {
+        return ENOMEM;
+    }
+
+    files->dconfdb = content;
+
+    return EOK;
+}
+
+static errno_t
+generate_dconf_lock(struct authselect_files *files)
+{
+    char *dup;
+    static const char *lock = \
+        "/org/gnome/login-screen/enable-smartcard-authentication\n"
+        "/org/gnome/login-screen/enable-fingerprint-authentication\n";
+
+
+    /* We strdup the content here so we do not special case it from
+     * other files content. */
+
+    dup = strdup(lock);
+    if (dup == NULL) {
+        return ENOMEM;
+    }
+
+    files->dconflock = dup;
+
+    return EOK;
+
+}
+
+static errno_t
+generate_dconf(struct authselect_files *files)
+{
+    errno_t ret;
+
+    ret = generate_dconf_db(files);
+    if (ret != EOK) {
+        ERROR("Unable to generate dconf db file [%d]: %s", ret, strerror(ret));
+        return ret;
+    }
+
+    ret = generate_dconf_lock(files);
+    if (ret != EOK) {
+        ERROR("Unable to generate dconf lock file [%d]: %s", ret, strerror(ret));
+        return ret;
+    }
+
+    return EOK;
+}
+
 errno_t
 authselect_files_generate(struct authselect_profile *profile,
                           const char **optional,
@@ -217,6 +311,12 @@ authselect_files_generate(struct authselect_profile *profile,
         if (ret != EOK) {
             goto done;
         }
+    }
+
+    /* Generate dconf db and lock content. */
+    ret = generate_dconf(files);
+    if (ret != EOK) {
+        goto done;
     }
 
     *_files = files;
@@ -282,6 +382,26 @@ authselect_files_fingerprintauth(const struct authselect_files *files)
     return files->fingerprintauth;
 }
 
+_PUBLIC_ const char *
+authselect_files_dconf_db(const struct authselect_files *files)
+{
+    if (files == NULL) {
+        return NULL;
+    }
+
+    return files->dconfdb;
+}
+
+_PUBLIC_ const char *
+authselect_files_dconf_lock(const struct authselect_files *files)
+{
+    if (files == NULL) {
+        return NULL;
+    }
+
+    return files->dconflock;
+}
+
 void
 authselect_files_free_content(struct authselect_files *files)
 {
@@ -307,6 +427,14 @@ authselect_files_free_content(struct authselect_files *files)
 
     if (files->nsswitch != NULL) {
         free(files->nsswitch);
+    }
+
+    if (files->dconfdb != NULL) {
+        free(files->dconfdb);
+    }
+
+    if (files->dconflock != NULL) {
+        free(files->dconflock);
     }
 }
 

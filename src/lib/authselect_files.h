@@ -72,6 +72,8 @@
     PATH_FINGERPRINT,   \
     PATH_SMARTCARD,     \
     PATH_NSSWITCH,      \
+    PATH_DCONF,         \
+    PATH_DCONF_LOCK,    \
     NULL                \
 }
 

@@ -296,6 +296,20 @@ static errno_t test(struct cli_cmdline *cmdline)
         printf("- fingerprint-auth:\n%s\n\n", content);
     }
 
+    content = authselect_files_dconf_db(files);
+    if (content == NULL) {
+        printf("- dconf db: None\n\n");
+    } else {
+        printf("- dconf db:\n%s\n\n", content);
+    }
+
+    content = authselect_files_dconf_lock(files);
+    if (content == NULL) {
+        printf("- dconf lock: None\n\n");
+    } else {
+        printf("- dconf lock:\n%s\n\n", content);
+    }
+
     return EOK;
 }
 

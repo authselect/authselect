@@ -124,6 +124,8 @@ check_generated_files(struct authselect_files *files,
         {PATH_FINGERPRINT, files->fingerprintauth},
         {PATH_SMARTCARD,   files->smartcardauth},
         {PATH_NSSWITCH,    files->nsswitch},
+        {PATH_DCONF,       files->dconfdb},
+        {PATH_DCONF_LOCK,  files->dconflock},
         {NULL, NULL}
     };
     bool is_valid_result = true;
