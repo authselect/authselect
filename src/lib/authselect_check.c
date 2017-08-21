@@ -120,26 +120,15 @@ static errno_t
 check_generated_files(struct authselect_files *files,
                       bool *_is_valid)
 {
-    struct {
-        const char *path;
-        const char *expected;
-    } generated[] = {
-        {PATH_SYSTEM,      files->systemauth},
-        {PATH_PASSWORD,    files->passwordauth},
-        {PATH_FINGERPRINT, files->fingerprintauth},
-        {PATH_SMARTCARD,   files->smartcardauth},
-        {PATH_NSSWITCH,    files->nsswitch},
-        {PATH_DCONF,       files->dconfdb},
-        {PATH_DCONF_LOCK,  files->dconflock},
-        {NULL, NULL}
-    };
+    struct authselect_generated generated[] = GENERATED_FILES(files);
     bool is_valid_result = true;
     bool is_valid = false;
     errno_t ret;
     int i;
 
     for (i = 0; generated[i].path != NULL; i++) {
-        ret = check_generated_file(generated[i].path, generated[i].expected, &is_valid);
+        ret = check_generated_file(generated[i].path, generated[i].content,
+                                   &is_valid);
         if (ret != EOK) {
             return ret;
         }
@@ -185,7 +174,7 @@ check_symlinks(bool *_is_valid)
 static errno_t
 check_missing_conf(bool *_is_valid)
 {
-    const char *generated[] = GENERATED_FILES;
+    struct authselect_generated generated[] = GENERATED_FILES_PATHS;
     struct authselect_symlink symlinks[] = SYMLINK_FILES;
     bool is_valid_result = true;
     bool is_valid_symlink;
@@ -193,15 +182,15 @@ check_missing_conf(bool *_is_valid)
     int i;
 
     /* Check that generated files are missing. */
-    for (i = 0; generated[i] != NULL; i++) {
-        ret = check_exists(generated[i]);
+    for (i = 0; generated[i].path != NULL; i++) {
+        ret = check_exists(generated[i].path);
         if (ret == EOK) {
-            ERROR("File [%s] is still present", generated[i]);
+            ERROR("File [%s] is still present", generated[i].path);
             is_valid_result = false;
             continue;
         } else if (ret != ENOENT) {
             ERROR("Error while trying to access file [%s] [%d]: %s",
-                  generated[i], ret, strerror(ret));
+                  generated[i].path, ret, strerror(ret));
             return ret;
         }
     }

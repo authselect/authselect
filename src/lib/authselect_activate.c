@@ -36,6 +36,7 @@ write_generated_files(struct authselect_profile *profile,
 {
     struct authselect_files *files;
     errno_t ret;
+    int i;
 
     ret = authselect_files_generate(profile, optional, &files);
     if (ret != EOK) {
@@ -43,39 +44,13 @@ write_generated_files(struct authselect_profile *profile,
         return ret;
     }
 
-    ret = create_textfile(PATH_SYSTEM, files->systemauth);
-    if (ret != EOK) {
-        goto done;
-    }
+    struct authselect_generated generated[] = GENERATED_FILES(files);
 
-    ret = create_textfile(PATH_PASSWORD, files->passwordauth);
-    if (ret != EOK) {
-        goto done;
-    }
-
-    ret = create_textfile(PATH_FINGERPRINT, files->fingerprintauth);
-    if (ret != EOK) {
-        goto done;
-    }
-
-    ret = create_textfile(PATH_SMARTCARD, files->smartcardauth);
-    if (ret != EOK) {
-        goto done;
-    }
-
-    ret = create_textfile(PATH_NSSWITCH, files->nsswitch);
-    if (ret != EOK) {
-        goto done;
-    }
-
-    ret = create_textfile(PATH_DCONF, files->dconfdb);
-    if (ret != EOK) {
-        goto done;
-    }
-
-    ret = create_textfile(PATH_DCONF_LOCK, files->dconflock);
-    if (ret != EOK) {
-        goto done;
+    for (i = 0; generated[i].path != NULL; i++) {
+        ret = create_textfile(generated[i].path, generated[i].content);
+        if (ret != EOK) {
+            goto done;
+        }
     }
 
 done:
