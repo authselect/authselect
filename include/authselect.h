@@ -275,6 +275,48 @@ authselect_files_dconf_lock(const struct authselect_files *files);
 void
 authselect_files_free(struct authselect_files *files);
 
+/**
+ * @return Path to system nsswitch.conf file.
+ */
+const char *
+authselect_path_nsswitch();
+
+/**
+ * @return Path to system system-auth pam stack.
+ */
+const char *
+authselect_path_systemauth();
+
+/**
+ * @return Path to system password-auth pam stack.
+ */
+const char *
+authselect_path_passwordauth();
+
+/**
+ * @return Path to system smartcard-auth pam stack.
+ */
+const char *
+authselect_path_smartcardauth();
+
+/**
+ * @return Path to system fingerprint-auth pam stack.
+ */
+const char *
+authselect_path_fingerprintauth();
+
+/**
+ * @return Path to system dconf database directory.
+ */
+const char *
+authselect_path_dconf_db();
+
+/**
+ * @return Path to system dconf locks directory.
+ */
+const char *
+authselect_path_dconf_lock();
+
 enum authselect_debug {
     AUTHSELECT_INFO,
     AUTHSELECT_WARNING,
