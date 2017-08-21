@@ -142,10 +142,9 @@ static errno_t current(struct cli_cmdline *cmdline)
         printf(" None\n");
     } else {
         printf("\n");
-    }
-
-    for (i = 0; optional[i] != NULL; i++) {
-        printf("--%s\n", optional[i]);
+        for (i = 0; optional[i] != NULL; i++) {
+            printf("--%s\n", optional[i]);
+        }
     }
 
     free(profile_id);
