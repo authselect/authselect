@@ -235,6 +235,7 @@ check_existing_conf(const char *profile_id,
               profile_id, ret, strerror(ret));
         return ret;
     }
+    authselect_profile_free(profile);
 
     ret = authselect_cat(profile_id, optional, &files);
     if (ret != EOK) {
