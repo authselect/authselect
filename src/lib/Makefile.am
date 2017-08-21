@@ -37,6 +37,7 @@ libauthselect_la_SOURCES = \
     authselect_check.c \
     authselect_activate.c \
     authselect_util.c \
+    authselect_paths.c \
     $(NULL)
 libauthselect_la_LIBADD = \
     $(top_builddir)/src/common/libcommon.la \
