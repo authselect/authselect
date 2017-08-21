@@ -21,8 +21,9 @@
 #include <stddef.h>
 
 #include "authselect.h"
+
 #include "lib/authselect_private.h"
-#include "lib/authselect_files.h"
+#include "lib/authselect_paths.h"
 #include "lib/authselect_util.h"
 
 _PUBLIC_ void

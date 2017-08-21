@@ -13,7 +13,7 @@ include_HEADERS = \
 noinst_HEADERS = \
     authselect_private.h \
     authselect_util.h \
-    authselect_files.h \
+    authselect_paths.h \
     $(NULL)
 
 lib_LTLIBRARIES = \

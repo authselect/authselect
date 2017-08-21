@@ -18,8 +18,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _AUTHSELECT_FILES_H_
-#define _AUTHSELECT_FILES_H_
+#ifndef _AUTHSELECT_PATHS_H_
+#define _AUTHSELECT_PATHS_H_
 
 /* Authselect configuration file. */
 #define PATH_CONFIG_FILE AUTHSELECT_CONFIG_DIR "/authselect.conf"
@@ -105,4 +105,4 @@ struct authselect_symlink {
     {NULL, NULL}                                                        \
 }
 
-#endif /* _AUTHSELECT_FILES_H_ */
+#endif /* _AUTHSELECT_PATHS_H_ */
