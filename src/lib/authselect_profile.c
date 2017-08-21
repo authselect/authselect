@@ -27,7 +27,7 @@
 #include <unistd.h>
 
 #include "authselect.h"
-#include "lib/authselect_files.h"
+#include "lib/authselect_paths.h"
 #include "lib/authselect_private.h"
 
 #define CUSTOM_PROFILE_PREFIX "custom/"

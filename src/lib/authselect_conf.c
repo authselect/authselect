@@ -27,9 +27,9 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#include "lib/authselect_util.h"
-#include "lib/authselect_files.h"
 #include "lib/authselect_private.h"
+#include "lib/authselect_paths.h"
+#include "lib/authselect_util.h"
 
 static errno_t
 read_line(FILE *file, char **_line)

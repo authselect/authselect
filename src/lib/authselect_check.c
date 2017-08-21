@@ -22,9 +22,9 @@
 #include <stdlib.h>
 #include <fcntl.h>
 
-#include "lib/authselect_util.h"
-#include "lib/authselect_files.h"
 #include "lib/authselect_private.h"
+#include "lib/authselect_paths.h"
+#include "lib/authselect_util.h"
 
 static bool
 check_content(const char *content, const char *expected)
