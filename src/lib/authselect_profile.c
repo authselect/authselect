@@ -176,15 +176,13 @@ authselect_profile_open(const char *profile_id,
     fd = open(path, O_DIRECTORY | O_RDONLY);
     if (fd == -1) {
         ret = errno;
-        free(path);
-
         if (ret != ENOENT) {
             ERROR("Unable to open directory [%s] [%d]: %s",
                    path, ret, strerror(ret));
             return ret;
         }
-
-        return ENOENT;
+        free(path);
+        return ret;
     }
 
     if (strcmp(dirpath, DIR_CUSTOM_PROFILES) == 0) {
