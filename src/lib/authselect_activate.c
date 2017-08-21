@@ -30,70 +30,6 @@
 #include "lib/authselect_files.h"
 #include "lib/authselect_util.h"
 
-static char *
-dconf_set_bool(char *dconf,
-               const char *option,
-               const char *content)
-{
-    const char *value;
-    char *line;
-
-    value = content == NULL || content[0] == '\0' ? "false" : "true";
-
-    line = format("%s=%s", option, value);
-    if (line == NULL) {
-        free(dconf);
-        return NULL;
-    }
-
-    dconf = buffer_append_line(dconf, line);
-    free(line);
-
-    return dconf;
-}
-
-static errno_t
-write_dconf(struct authselect_files *files)
-{
-    char *dconf;
-    errno_t ret;
-    const char *locks = \
-        "/org/gnome/login-screen/enable-smartcard-authentication\n"
-        "/org/gnome/login-screen/enable-fingerprint-authentication\n";
-
-    dconf = buffer_append_line(NULL, "[org/gnome/login-screen]");
-    if (dconf == NULL) {
-        return ENOMEM;
-    }
-
-    dconf = dconf_set_bool(dconf, "enable-smartcard-authentication",
-                           files->smartcardauth);
-    if (dconf == NULL) {
-        return ENOMEM;
-    }
-
-    dconf = dconf_set_bool(dconf, "enable-fingerprint-authentication",
-                           files->smartcardauth);
-    if (dconf == NULL) {
-        return ENOMEM;
-    }
-
-    ret = create_textfile(PATH_DCONF, dconf);
-    free(dconf);
-    if (ret != EOK) {
-        ERROR("Unable to write dconf file [%d]: %s", ret, strerror(ret));
-        return ret;
-    }
-
-    ret = create_textfile(PATH_DCONF_LOCK, locks);
-    if (ret != EOK) {
-        ERROR("Unable to write dconf locks [%d]: %s", ret, strerror(ret));
-        return ret;
-    }
-
-    return EOK;
-}
-
 static errno_t
 write_generated_files(struct authselect_profile *profile,
                       const char **optional)
@@ -132,7 +68,12 @@ write_generated_files(struct authselect_profile *profile,
         goto done;
     }
 
-    ret = write_dconf(files);
+    ret = create_textfile(PATH_DCONF, files->dconfdb);
+    if (ret != EOK) {
+        goto done;
+    }
+
+    ret = create_textfile(PATH_DCONF_LOCK, files->dconflock);
     if (ret != EOK) {
         goto done;
     }
