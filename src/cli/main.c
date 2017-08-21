@@ -248,9 +248,46 @@ static errno_t test(struct cli_cmdline *cmdline)
     const char *profile_id;
     const char **optional;
     const char *content;
+    const char *path;
+    int print_all = 0;
+    int print_nsswitch = 0;
+    int print_systemauth = 0;
+    int print_passwordauth = 0;
+    int print_smartcardauth = 0;
+    int print_fingerprintauth = 0;
+    int print_dconfdb = 0;
+    int print_dconflock = 0;
     errno_t ret;
+    int i;
 
-    ret = parse_profile_options(cmdline, NULL, &profile_id, &optional);
+    struct poptOption options[] = {
+        {"all", 'a', POPT_ARG_VAL, &print_all, 1, _("Print content of all files"), NULL },
+        {"nsswitch", 'n', POPT_ARG_VAL, &print_nsswitch, 1, _("Print nsswitch.conf content"), NULL },
+        {"system-auth", 's', POPT_ARG_VAL, &print_systemauth, 1, _("Print system-auth content"), NULL },
+        {"password-auth", 'p', POPT_ARG_VAL, &print_passwordauth, 1, _("Print password-auth content"), NULL },
+        {"smartcard-auth", 'c', POPT_ARG_VAL, &print_smartcardauth, 1, _("Print smartcard-auth content"), NULL },
+        {"fingerprint-auth", 'f', POPT_ARG_VAL, &print_fingerprintauth, 1, _("Print fingerprint-auth content"), NULL },
+        {"dconf-db", 'd', POPT_ARG_VAL, &print_dconfdb, 1, _("Print dconf database content"), NULL },
+        {"dconf-lock", 'l', POPT_ARG_VAL, &print_dconflock, 1, _("Print dconf lock content"), NULL },
+        POPT_TABLEEND
+        };
+
+    struct {
+        const char * (*content_fn)(const struct authselect_files *);
+        const char * (*path_fn)(void);
+        int *enabled;
+    } generated[] = {
+        {authselect_files_nsswitch, authselect_path_nsswitch, &print_nsswitch},
+        {authselect_files_systemauth, authselect_path_systemauth, &print_systemauth},
+        {authselect_files_passwordauth, authselect_path_passwordauth, &print_passwordauth},
+        {authselect_files_smartcardauth, authselect_path_smartcardauth, &print_smartcardauth},
+        {authselect_files_fingerprintauth, authselect_path_fingerprintauth, &print_fingerprintauth},
+        {authselect_files_dconf_db, authselect_path_dconf_db, &print_dconfdb},
+        {authselect_files_dconf_lock, authselect_path_dconf_lock, &print_dconflock},
+        {NULL, NULL, NULL}
+    };
+
+    ret = parse_profile_options(cmdline, options, &profile_id, &optional);
     if (ret != EOK) {
         return ret;
     }
@@ -261,53 +298,19 @@ static errno_t test(struct cli_cmdline *cmdline)
         return ret;
     }
 
-    content = authselect_files_nsswitch(files);
-    if (content == NULL) {
-        printf("- nsswitch.conf: None\n\n");
-    } else {
-        printf("- nsswitch.conf:\n%s\n\n", content);
-    }
+    for (i = 0; generated[i].content_fn != NULL; i++) {
+        if (!print_all && *generated[i].enabled == false) {
+            continue;
+        }
 
-    content = authselect_files_systemauth(files);
-    if (content == NULL) {
-        printf("- system-auth: None\n\n");
-    } else {
-        printf("- system-auth:\n%s\n\n", content);
-    }
+        path = generated[i].path_fn();
+        content = generated[i].content_fn(files);
 
-    content = authselect_files_passwordauth(files);
-    if (content == NULL) {
-        printf("- password-auth: None\n\n");
-    } else {
-        printf("- password-auth:\n%s\n\n", content);
-    }
-
-    content = authselect_files_smartcardauth(files);
-    if (content == NULL) {
-        printf("- smartcard-auth: None\n\n");
-    } else {
-        printf("- smartcard-auth:\n%s\n\n", content);
-    }
-
-    content = authselect_files_fingerprintauth(files);
-    if (content == NULL) {
-        printf("- fingerprint-auth: None\n\n");
-    } else {
-        printf("- fingerprint-auth:\n%s\n\n", content);
-    }
-
-    content = authselect_files_dconf_db(files);
-    if (content == NULL) {
-        printf("- dconf db: None\n\n");
-    } else {
-        printf("- dconf db:\n%s\n\n", content);
-    }
-
-    content = authselect_files_dconf_lock(files);
-    if (content == NULL) {
-        printf("- dconf lock: None\n\n");
-    } else {
-        printf("- dconf lock:\n%s\n\n", content);
+        if (content == NULL) {
+            printf("File %s: Empty\n\n", path);
+        } else {
+            printf("File %s:\n%s\n\n", path, content);
+        }
     }
 
     return EOK;
