@@ -248,6 +248,26 @@ const char *
 authselect_files_fingerprintauth(const struct authselect_files *files);
 
 /**
+ * Get dconf database content.
+ *
+ * @param files    Pointer to structure obtained by @authselect_cat.
+ *
+ * @return Generated dconf database content.
+ */
+const char *
+authselect_files_dconf_db(const struct authselect_files *files);
+
+/**
+ * Get dconf lock content.
+ *
+ * @param files    Pointer to structure obtained by @authselect_cat.
+ *
+ * @return Generated dconf lockcontent.
+ */
+const char *
+authselect_files_dconf_lock(const struct authselect_files *files);
+
+/**
  * Free authconfig_files structure obtained by @authselect_cat.
  *
  * @param files    Pointer to structure obtained by @authselect_cat.

@@ -33,6 +33,8 @@ struct authselect_files {
     char *smartcardauth;
     char *fingerprintauth;
     char *nsswitch;
+    char *dconfdb;
+    char *dconflock;
 };
 
 struct authselect_profile {
