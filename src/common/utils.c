@@ -18,42 +18,38 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "config.h"
+
 #include <stdarg.h>
-#include <stdlib.h>
 #include <stdio.h>
 
-#include "common/common.h"
-#include "authselect.h"
-
-authselect_debug_fn debug_fn;
-void *debug_fn_pvt;
-
-void set_debug_fn(authselect_debug_fn fn, void *pvt)
+char *
+vaformat(const char *fmt, va_list in_va)
 {
-    debug_fn = fn;
-    debug_fn_pvt = pvt;
-}
-
-void debug(enum authselect_debug level,
-           const char *file,
-           unsigned long line,
-           const char *function,
-           const char *fmt,
-           ...)
-{
+    char *str = NULL;
     va_list va;
-    char *msg;
+    int ret;
 
-    va_start(va, fmt);
-    msg = vaformat(fmt, va);
+    va_copy(va, in_va);
+    ret = vasprintf(&str, fmt, va);
     va_end(va);
 
-    if (msg == NULL) {
-        debug_fn(debug_fn_pvt, AUTHSELECT_ERROR, file, line, function,
-                 "debug: Unable to construct message!");
-        return;
+    if (ret == -1) {
+       return NULL;
     }
 
-    debug_fn(debug_fn_pvt, level, file, line, function, msg);
-    free(msg);
+    return str;
+}
+
+char *
+format(const char *fmt, ...)
+{
+    char *str;
+    va_list va;
+
+    va_start(va, fmt);
+    str = vaformat(fmt, va);
+    va_end(va);
+
+    return str;
 }

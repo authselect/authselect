@@ -21,19 +21,11 @@
 #ifndef _AUTHSELECT_PRIVATE_H_
 #define _AUTHSELECT_PRIVATE_H_
 
-#include "config.h"
-
 #include <dirent.h>
 
-#include "authselect_util.h"
+#include "lib/authselect_util.h"
 
-struct authselect_dir {
-    int fd;
-    DIR *dirstream;
-    char *path;
-    char **profiles;
-    size_t num_profiles;
-};
+struct authselect_dir;
 
 struct authselect_files {
     char *systemauth;
@@ -41,6 +33,8 @@ struct authselect_files {
     char *smartcardauth;
     char *fingerprintauth;
     char *nsswitch;
+    char *dconfdb;
+    char *dconflock;
 };
 
 struct authselect_profile {
@@ -89,6 +83,18 @@ authselect_merge_profiles(struct authselect_dir *profile,
  * @return CUSTOM_PROFILE_PREFIX concatenated with @name or NULL on error.
  */
 char *authselect_profile_custom_id(const char *profile_dirname);
+
+/**
+ * Check if the provided profile id match a custom profile id.
+ *
+ * @param profile_id Profile id to test.
+ * @param _profile_dirname Optional, location to store profile directory name.
+ *
+ * @return True if it is a custom profile, false otherwise.
+ */
+bool
+authselect_is_custom_profile(const char *profile_id,
+                             const char **_profile_dirname);
 
 /**
  * Free authselect_files structure content but not the structure itself.

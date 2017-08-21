@@ -24,6 +24,8 @@
 #include <errno.h>
 #include <stdbool.h>
 
+#define AUTHSELECT_ERR_FORCE_REQUIRED -1
+
 /**
  * Holds information about profile. See authselect_profile_* functions to
  * manipulate this structure.
@@ -53,7 +55,8 @@ struct authselect_files;
  * @param optional       NULL-terminated array of optional modules to enable.
  * @param force_override If true, authselect will override local changes.
  *
- * @return 0 on success, errno code on error.
+ * @return 0 on success, AUTHSELECT_ERR_FORCE_REQUIRED if actication
+ * wer errno code on error.
  */
 int
 authselect_activate(const char *profile_id,
@@ -98,6 +101,9 @@ authselect_optional_free(char **optional);
 
 /**
  * Return NULL-terminated array of all available profile identifiers.
+ *
+ * The array is sorted alphabetically having custom profiles pushed after
+ * default and vendor specific profiles.
  */
 char **
 authselect_list();
@@ -112,11 +118,14 @@ authselect_list_free(char **profile_ids);
  * Return information about a profile.
  *
  * @param profile_id    Profile identifier.
+ * @param _profile      Authselect profile information.
  *
- * @return Authselect profile information or NULL on error.
+ * @return 0 on succes, ENOENT if the profile was not found,
+ * other errno code on error.
  */
-struct authselect_profile *
-authselect_profile(const char *profile_id);
+int
+authselect_profile(const char *profile_id,
+                   struct authselect_profile **_profile);
 
 /**
  * Get profile identifier.
@@ -173,12 +182,15 @@ authselect_profile_free(struct authselect_profile *profile);
  *
  * @param profile_id    Profile identifier.
  * @param optional      NULL-terminated array of optional modules to enable.
+ * @param _files        Generated files content.
  *
- * @return Resulting content in authselect_files structure or NULL on error.
+ * @return 0 on success, ENOENT if the profile was not found,
+ * other errno code on error.
  */
-struct authselect_files *
-authselect_cat(const char *profile,
-               const char **optional);
+int
+authselect_cat(const char *profile_id,
+               const char **optional,
+               struct authselect_files **_files);
 
 /**
  * Get nsswitch.conf content.
@@ -236,12 +248,74 @@ const char *
 authselect_files_fingerprintauth(const struct authselect_files *files);
 
 /**
+ * Get dconf database content.
+ *
+ * @param files    Pointer to structure obtained by @authselect_cat.
+ *
+ * @return Generated dconf database content.
+ */
+const char *
+authselect_files_dconf_db(const struct authselect_files *files);
+
+/**
+ * Get dconf lock content.
+ *
+ * @param files    Pointer to structure obtained by @authselect_cat.
+ *
+ * @return Generated dconf lockcontent.
+ */
+const char *
+authselect_files_dconf_lock(const struct authselect_files *files);
+
+/**
  * Free authconfig_files structure obtained by @authselect_cat.
  *
  * @param files    Pointer to structure obtained by @authselect_cat.
  */
 void
 authselect_files_free(struct authselect_files *files);
+
+/**
+ * @return Path to system nsswitch.conf file.
+ */
+const char *
+authselect_path_nsswitch();
+
+/**
+ * @return Path to system system-auth pam stack.
+ */
+const char *
+authselect_path_systemauth();
+
+/**
+ * @return Path to system password-auth pam stack.
+ */
+const char *
+authselect_path_passwordauth();
+
+/**
+ * @return Path to system smartcard-auth pam stack.
+ */
+const char *
+authselect_path_smartcardauth();
+
+/**
+ * @return Path to system fingerprint-auth pam stack.
+ */
+const char *
+authselect_path_fingerprintauth();
+
+/**
+ * @return Path to system dconf database directory.
+ */
+const char *
+authselect_path_dconf_db();
+
+/**
+ * @return Path to system dconf locks directory.
+ */
+const char *
+authselect_path_dconf_lock();
 
 enum authselect_debug {
     AUTHSELECT_INFO,
@@ -260,6 +334,8 @@ enum authselect_debug {
  */
 typedef void (*authselect_debug_fn)(void *pvt,
                                     enum authselect_debug level,
+                                    const char *file,
+                                    unsigned long line,
                                     const char *function,
                                     const char *msg);
 

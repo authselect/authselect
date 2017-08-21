@@ -21,6 +21,11 @@
 #ifndef _COMMON_H_
 #define _COMMON_H_
 
+#include "config.h"
+
+#include <stdarg.h>
+
+#include "gettext.h"
 #include "authselect.h"
 
 #define _(s) gettext(s)
@@ -46,27 +51,36 @@ void *_realloc_array(void *ptr, size_t elsize, size_t num);
     (type *)_malloc_zero(sizeof(type))
 
 #define malloc_zero_array(type, num) \
-    (type *)_malloc_zero(sizeof(type) * num)
+    (type *)_malloc_zero(sizeof(type) * (num))
 
 #define realloc_array(ptr, type, num) \
-    (type *)_realloc_array(ptr, sizeof(type), num)
+    (type *)_realloc_array((ptr), sizeof(type), (num))
 
 /* Debugging facility. */
 
 void set_debug_fn(authselect_debug_fn fn, void *pvt);
 
 void debug(enum authselect_debug level,
+           const char *file,
+           unsigned long line,
            const char *function,
            const char *fmt,
            ...);
 
-#define INFO(fmt, ...) \
-    debug(AUTHSELECT_INFO, __FUNCTION__, fmt, ## __VA_ARGS__)
+#define INFO(fmt, ...)                                                        \
+    debug(AUTHSELECT_INFO, __FILE__, __LINE__, __FUNCTION__,                  \
+          gettext(fmt), ## __VA_ARGS__)
 
-#define WARN(fmt, ...) \
-    debug(AUTHSELECT_WARNING, __FUNCTION__, fmt, ## __VA_ARGS__)
+#define WARN(fmt, ...)                                                        \
+    debug(AUTHSELECT_WARNING, __FILE__, __LINE__, __FUNCTION__,               \
+          gettext(fmt), ## __VA_ARGS__)
 
-#define ERROR(fmt, ...) \
-    debug(AUTHSELECT_ERROR, __FUNCTION__, fmt, ## __VA_ARGS__)
+#define ERROR(fmt, ...)                                                       \
+    debug(AUTHSELECT_ERROR, __FILE__, __LINE__, __FUNCTION__,                 \
+          gettext(fmt), ## __VA_ARGS__)
+
+/* Wrapper around aprintf to simplify error handling. */
+char *format(const char *fmt, ...);
+char *vaformat(const char *fmt, va_list va);
 
 #endif /* _COMMON_H_ */

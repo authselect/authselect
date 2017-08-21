@@ -18,15 +18,13 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "config.h"
+#include <stddef.h>
 
-#include <string.h>
-#include <stdlib.h>
-
-#include "authselect_private.h"
-#include "authselect_files.h"
-#include "authselect_util.h"
 #include "authselect.h"
+
+#include "lib/authselect_private.h"
+#include "lib/authselect_paths.h"
+#include "lib/authselect_util.h"
 
 _PUBLIC_ void
 authselect_set_debug_fn(authselect_debug_fn fn, void *pvt)
@@ -87,24 +85,27 @@ authselect_list_free(char **profile_ids)
     free_string_array(profile_ids);
 }
 
-_PUBLIC_ struct authselect_files *
+_PUBLIC_ int
 authselect_cat(const char *profile_id,
-               const char **optional)
+               const char **optional,
+               struct authselect_files **_files)
 {
     struct authselect_profile *profile;
     struct authselect_files *files;
     errno_t ret;
 
-    profile = authselect_profile(profile_id);
-    if (profile == NULL) {
-        return NULL;
+    ret = authselect_profile(profile_id, &profile);
+    if (ret != EOK) {
+        return ret;
     }
 
     ret = authselect_files_generate(profile, optional, &files);
     authselect_profile_free(profile);
     if (ret != EOK) {
-        return NULL;
+        return ret;
     }
 
-    return files;
+    *_files = files;
+
+    return EOK;
 }

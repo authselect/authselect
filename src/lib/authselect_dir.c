@@ -24,11 +24,18 @@
 #include <dirent.h>
 #include <stddef.h>
 #include <stdlib.h>
-#include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 
-#include "authselect_private.h"
+#include "lib/authselect_private.h"
+
+struct authselect_dir {
+    int fd;
+    DIR *dirstream;
+    char *path;
+    char **profiles;
+    size_t num_profiles;
+};
 
 void
 authselect_dir_free(struct authselect_dir *dir)
@@ -57,57 +64,6 @@ authselect_dir_free(struct authselect_dir *dir)
     }
 
     free(dir);
-}
-
-static errno_t
-authselect_dir_init(const char *path, struct authselect_dir **_dir)
-{
-    struct authselect_dir *dir;
-    errno_t ret;
-
-    if (path == NULL) {
-        return EINVAL;
-    }
-
-    dir = malloc_zero(struct authselect_dir);
-    if (dir == NULL) {
-        return ENOMEM;
-    }
-
-    dir->dirstream = opendir(path);
-    if (dir->dirstream == NULL) {
-        ret = errno;
-        goto done;
-    }
-
-    dir->fd = dirfd(dir->dirstream);
-    if (dir->fd == -1) {
-        ret = errno;
-        goto done;
-    }
-
-    dir->path = strdup(path);
-    if (dir->path == NULL) {
-        ret = ENOMEM;
-        goto done;
-    }
-
-    dir->profiles = malloc_zero_array(char *, 1);
-    if (dir->profiles == NULL) {
-        ret = ENOMEM;
-        goto done;
-    }
-
-    *_dir = dir;
-
-    ret = EOK;
-
-done:
-    if (ret != EOK) {
-        authselect_dir_free(dir);
-    }
-
-    return ret;
 }
 
 static errno_t
@@ -142,6 +98,89 @@ authselect_dir_add_profile(struct authselect_dir *dir,
 
 }
 
+static errno_t
+authselect_dir_init(const char *path,
+                    struct authselect_dir **_dir)
+{
+    struct authselect_dir *dir;
+    errno_t ret;
+
+    if (path == NULL) {
+        return EINVAL;
+    }
+
+    dir = malloc_zero(struct authselect_dir);
+    if (dir == NULL) {
+        return ENOMEM;
+    }
+
+    dir->dirstream = NULL;
+    dir->fd = -1;
+
+    dir->path = strdup(path);
+    if (dir->path == NULL) {
+        ret = ENOMEM;
+        goto done;
+    }
+
+    dir->profiles = malloc_zero_array(char *, 1);
+    if (dir->profiles == NULL) {
+        ret = ENOMEM;
+        goto done;
+    }
+
+    *_dir = dir;
+
+    ret = EOK;
+
+done:
+    if (ret != EOK) {
+        authselect_dir_free(dir);
+    }
+
+    return ret;
+}
+
+static errno_t
+authselect_dir_open(const char *path,
+                    struct authselect_dir **_dir)
+{
+    struct authselect_dir *dir;
+    errno_t ret;
+
+    ret = authselect_dir_init(path, &dir);
+    if (ret != EOK) {
+        return ret;
+    }
+
+    dir->dirstream = opendir(path);
+    if (dir->dirstream == NULL) {
+        ret = errno;
+        /* If not found, return empty directory. */
+        if (ret == ENOENT) {
+            *_dir = dir;
+        }
+        goto done;
+    }
+
+    dir->fd = dirfd(dir->dirstream);
+    if (dir->fd == -1) {
+        ret = errno;
+        goto done;
+    }
+
+    *_dir = dir;
+
+    ret = EOK;
+
+done:
+    if (ret != EOK && ret != ENOENT) {
+        authselect_dir_free(dir);
+    }
+
+    return ret;
+}
+
 errno_t
 authselect_dir_read(const char *dirpath,
                     struct authselect_dir **_dir)
@@ -151,13 +190,21 @@ authselect_dir_read(const char *dirpath,
     struct stat statres;
     errno_t ret;
 
-    INFO("Reading profile directory '%s'", dirpath);
+    INFO("Reading profile directory [%s]", dirpath);
 
-    ret = authselect_dir_init(dirpath, &dir);
-    if (ret != EOK) {
+    ret = authselect_dir_open(dirpath, &dir);
+    if (ret == ENOENT) {
+        /* If not found, return empty directory. */
+        WARN("Directory [%s] is missing!", dirpath);
+        *_dir = dir;
+        return EOK;
+    } else if (ret != EOK) {
+        ERROR("Unable to open directory [%s] [%d]: %s",
+              dirpath, ret, strerror(ret));
         goto done;
     }
 
+    /* Read profiles from directory. */
     errno = 0;
     while ((entry = readdir(dir->dirstream)) != NULL) {
         if (strcmp(entry->d_name, ".") == 0 ||
@@ -178,7 +225,7 @@ authselect_dir_read(const char *dirpath,
         }
 
         /* Otherwise take this as a profile and remember. */
-        INFO("Found profile '%s'", entry->d_name);
+        INFO("Found profile [%s]", entry->d_name);
         ret = authselect_dir_add_profile(dir, entry->d_name);
         if (ret != EOK) {
             goto done;
@@ -196,12 +243,107 @@ authselect_dir_read(const char *dirpath,
 
 done:
     if (ret != EOK) {
-        ERROR("Unable to read directory '%s' [%d]: %s",
+        ERROR("Unable to read directory [%s] [%d]: %s",
               dirpath, ret, strerror(ret));
         authselect_dir_free(dir);
     }
 
     return ret;
+}
+
+static int
+sort_profile_ids(const void *a, const void *b)
+{
+    const char *str_a = *(const char **)a;
+    const char *str_b = *(const char **)b;
+
+    if (str_a == NULL) {
+        return 1;
+    }
+
+    if (str_b == NULL) {
+        return -1;
+    }
+
+    bool is_custom_a = authselect_is_custom_profile(str_a, NULL);
+    bool is_custom_b = authselect_is_custom_profile(str_b, NULL);
+
+    /* Custom profiles go last, otherwise we sort alphabetically. */
+    if (is_custom_a && !is_custom_b) {
+        return 1;
+    }
+
+    if (!is_custom_a && is_custom_b) {
+        return -1;
+    }
+
+    return strcmp(str_a, str_b);
+}
+
+static errno_t
+merge_default(char **ids, size_t *index, struct authselect_dir *dir)
+{
+    size_t i;
+
+    /* Add all profiles from the default profile directory. */
+    for (i = 0; i < dir->num_profiles; i++) {
+        ids[*index] = strdup(dir->profiles[i]);
+        if (ids[*index] == NULL) {
+            return ENOMEM;
+        }
+
+        (*index)++;
+    }
+
+    return EOK;
+}
+
+static errno_t
+merge_vendor(char **ids, size_t *index, struct authselect_dir *dir)
+{
+    size_t input_index = *index;
+    size_t i, j;
+
+    /* Add only new profiles from the vendor profile directory. */
+    for (i = 0; i < dir->num_profiles; i++) {
+        for (j = 0; j < input_index; j++) {
+            if (strcmp(dir->profiles[i], ids[j]) == 0) {
+                break;
+            }
+        }
+
+        if (j != input_index) {
+            continue;
+        }
+
+        ids[*index] = strdup(dir->profiles[i]);
+        if (ids[*index] == NULL) {
+            return ENOMEM;
+        }
+
+        (*index)++;
+    }
+
+    return EOK;
+}
+
+static errno_t
+merge_custom(char **ids, size_t *index, struct authselect_dir *dir)
+{
+    size_t i;
+
+    /* Add all profiles from the custom profile directory,
+     * prefix them with custom/. */
+    for (i = 0; i < dir->num_profiles; i++) {
+        ids[*index] = authselect_profile_custom_id(dir->profiles[i]);
+        if (ids[*index] == NULL) {
+            return ENOMEM;
+        }
+
+        (*index)++;
+    }
+
+    return EOK;
 }
 
 char **
@@ -210,7 +352,8 @@ authselect_merge_profiles(struct authselect_dir *profile,
                           struct authselect_dir *custom)
 {
     size_t num_profiles = 0;
-    size_t i, j, id_index;
+    size_t index;
+    errno_t ret;
     char **ids;
 
     num_profiles += profile->num_profiles;
@@ -222,48 +365,25 @@ authselect_merge_profiles(struct authselect_dir *profile,
         return NULL;
     }
 
-    id_index = 0;
+    index = 0;
 
-    /* Add all profiles from the default profile directory. */
-    for (i = 0; i < profile->num_profiles; i++) {
-        ids[id_index] = strdup(profile->profiles[i]);
-        if (ids[id_index] == NULL) {
-            goto fail;
-        }
-
-        id_index++;
+    ret = merge_default(ids, &index, profile);
+    if (ret != EOK) {
+        goto fail;
     }
 
-    /* Add only new profiles from the vendor profile directory. */
-    for (i = 0; i < vendor->num_profiles; i++) {
-        for (j = 0; j < profile->num_profiles; j++) {
-            if (strcmp(vendor->profiles[i], profile->profiles[j]) == 0) {
-                break;
-            }
-        }
-
-        if (j != profile->num_profiles) {
-            continue;
-        }
-
-        ids[id_index] = strdup(vendor->profiles[i]);
-        if (ids[id_index] == NULL) {
-            goto fail;
-        }
-
-        id_index++;
+    ret = merge_vendor(ids, &index, vendor);
+    if (ret != EOK) {
+        goto fail;
     }
 
-    /* Add all profiles from the custom profile directory,
-     * prefix them with custom/. */
-    for (i = 0; i < custom->num_profiles; i++) {
-        ids[id_index] = authselect_profile_custom_id(custom->profiles[i]);
-        if (ids[id_index] == NULL) {
-            goto fail;
-        }
-
-        id_index++;
+    ret = merge_custom(ids, &index, custom);
+    if (ret != EOK) {
+        goto fail;
     }
+
+    /* Sort the output list. */
+    qsort(ids, index + 1, sizeof(char *), sort_profile_ids);
 
     return ids;
 

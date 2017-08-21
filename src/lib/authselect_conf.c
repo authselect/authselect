@@ -21,48 +21,15 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <ctype.h>
 #include <fcntl.h>
 #include <limits.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
 
-#include "authselect_util.h"
-#include "authselect_files.h"
-#include "authselect_private.h"
-
-static errno_t
-trim(const char *str, char **_trimmed)
-{
-    char *dup;
-    const char *end;
-
-    /* Trim beginning. */
-    while (isspace(*str)) {
-        str++;
-    }
-
-    if (str[0] == '\0') {
-        *_trimmed = NULL;
-        return EOK;
-    }
-
-    /* Trim end. */
-    end = str + strlen(str) - 1;
-    while (end > str && isspace(*end)) {
-        end--;
-    }
-
-    dup = strndup(str, end - str + 1);
-    if (dup == NULL) {
-        return ENOMEM;
-    }
-
-    *_trimmed = dup;
-
-    return EOK;
-}
+#include "lib/authselect_private.h"
+#include "lib/authselect_paths.h"
+#include "lib/authselect_util.h"
 
 static errno_t
 read_line(FILE *file, char **_line)
@@ -74,9 +41,9 @@ read_line(FILE *file, char **_line)
 
     errno = 0;
     while (getline(&line, &len, file) != -1) {
-        ret = trim(line, &trimmed);
+        ret = trimline(line, &trimmed);
 
-        /* Reset valus for next getline call. */
+        /* Reset values for next getline call. */
         free(line);
         line = NULL;
         len = 0;
@@ -154,9 +121,10 @@ authselect_read_conf(char **_profile_id,
         ret = errno;
 
         if (ret == ENOENT) {
-            WARN("Configuration file %s is missing", PATH_CONFIG_FILE);
+            WARN("Configuration file [%s] is missing", PATH_CONFIG_FILE);
         } else {
-            ERROR("Unable to read configuration file %s", PATH_CONFIG_FILE);
+            ERROR("Unable to read configuration file [%s] [%d]: %s",
+                  PATH_CONFIG_FILE, ret, strerror(ret));
         }
 
         return ret;
@@ -187,6 +155,8 @@ authselect_read_conf(char **_profile_id,
         *_optional = optional;
         optional = NULL;
     }
+
+    ret = EOK;
 
 done:
     fclose(file);

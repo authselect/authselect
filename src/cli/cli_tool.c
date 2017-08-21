@@ -18,15 +18,12 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "config.h"
-
 #include <stdlib.h>
 #include <string.h>
 #include <popt.h>
 
-#include "../common/gettext.h"
-#include "../common/common.h"
-#include "cli_tool.h"
+#include "common/common.h"
+#include "cli/cli_tool.h"
 #include "authselect.h"
 
 bool enable_trace;
@@ -36,10 +33,12 @@ bool enable_debug;
 void
 print_debug(void *pvt,
             enum authselect_debug level,
+            const char *file,
+            unsigned long line,
             const char *function,
             const char *msg)
 {
-    const char *category;
+    const char *category = "unknown";
 
     switch (level) {
     case AUTHSELECT_INFO:
@@ -52,13 +51,16 @@ print_debug(void *pvt,
         if (!enable_warning) {
             return;
         }
-        category = "warning";
+        category = "warn";
+        break;
     case AUTHSELECT_ERROR:
-        if (!enable_debug) {
-            return;
-        }
         category = "error";
         break;
+    }
+
+    if (!enable_debug) {
+        fprintf(stderr, "[%s] %s\n", category, msg);
+        return;
     }
 
     fprintf(stderr, "[%s] [%s] %s\n", category, function, msg);
@@ -101,7 +103,7 @@ static void cli_tool_common_opts(int *argc, const char **argv)
     int opt;
 
     struct poptOption options[] = {
-        {"debug", '\0', POPT_ARG_NONE | POPT_ARGFLAG_STRIP, NULL, 'd', "Print error messages", NULL },
+        {"debug", '\0', POPT_ARG_NONE | POPT_ARGFLAG_STRIP, NULL, 'd', "Print more verbose debugging information", NULL },
         {"trace", '\0', POPT_ARG_NONE | POPT_ARGFLAG_STRIP, NULL, 't', "Print trace messages", NULL },
         {"warn", '\0', POPT_ARG_NONE | POPT_ARGFLAG_STRIP, NULL, 'w', "Print warning messages", NULL },
         POPT_TABLEEND
@@ -196,7 +198,6 @@ errno_t cli_tool_route(int argc, const char **argv,
 {
     struct cli_cmdline cmdline;
     const char *cmd;
-    errno_t ret;
     int i;
 
     if (commands == NULL) {
@@ -221,13 +222,7 @@ errno_t cli_tool_route(int argc, const char **argv,
             cmdline.argc = argc - 2;
             cmdline.argv = argv + 2;
 
-            ret = commands[i].fn(&cmdline);
-            if (ret != EOK) {
-                fprintf(stderr, _("An error occurred. "
-                        "Please run with --debug to see more information.\n"));
-            }
-
-            return ret;
+            return commands[i].fn(&cmdline);
         }
     }
 
@@ -277,14 +272,14 @@ errno_t cli_tool_popt_ex(struct cli_cmdline *cmdline,
     /* Create help option string. We always need to append command name since
      * we use POPT_CONTEXT_KEEP_FIRST. */
     if (fopt_name == NULL) {
-        ret = asprintf(&help, "%s %s %s", cmdline->exec,
-                       cmdline->command, _("[OPTIONS...]"));
+        help = format("%s %s %s", cmdline->exec,
+                      cmdline->command, _("[OPTIONS...]"));
     } else {
-        ret = asprintf(&help, "%s %s %s %s", cmdline->exec,
-                       cmdline->command, fopt_name, _("[OPTIONS...]"));
+        help = format("%s %s %s %s", cmdline->exec,
+                      cmdline->command, fopt_name, _("[OPTIONS...]"));
     }
-    if (ret == 1) {
-        ERROR("asprintf() failed\n");
+    if (help == NULL) {
+        ERROR("Out of memory!");
         return ENOMEM;
     }
 
