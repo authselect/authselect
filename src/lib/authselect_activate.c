@@ -30,6 +30,49 @@
 #include "lib/authselect_paths.h"
 #include "lib/authselect_util.h"
 
+static bool
+check_directories()
+{
+    const char *dirs[] = {
+        AUTHSELECT_CONFIG_DIR,
+        AUTHSELECT_PAM_DIR,
+        AUTHSELECT_DCONF_DIR,
+        AUTHSELECT_DCONF_DIR "/locks",
+        NULL, /* place for nsswitch.conf parent directory */
+        NULL
+    };
+    errno_t ret;
+    bool bret;
+    int i;
+
+    /* We need to special case since nsswitch.conf is a file not a
+     * directory. But we want to make sure that its parent directory
+     * exists and we can write to it.*/
+    dirs[4] = get_dirname(AUTHSELECT_NSSWITCH_CONF);
+    if (dirs[4] == NULL) {
+        ERROR("Unable to get path to nsswitch.conf parent directory!");
+        return false;
+    }
+
+    bret = true;
+    for (i = 0; dirs[i] != NULL; i++) {
+        ret = check_access(dirs[i], W_OK | X_OK);
+        if (ret == EOK) {
+            continue;
+        } else if (ret == ENOENT) {
+            ERROR("Directory [%s] does not exist, please create it!", dirs[i]);
+        } else if (ret != EOK) {
+            ERROR("Unable to access directory [%s] in [wx] mode!", dirs[i]);
+        }
+
+        bret = false;
+    }
+
+    free((char *)dirs[4]);
+
+    return bret;
+}
+
 static errno_t
 write_generated_files(struct authselect_profile *profile,
                       const char **optional)
@@ -169,6 +212,14 @@ authselect_activate(const char *profile_id,
         ERROR("Unable to find profile [%s] [%d]: %s",
               profile_id, ret, strerror(ret));
         return ret;
+    }
+
+    /* Check that all directories are writable. */
+    is_valid = check_directories();
+    if (is_valid == false) {
+        ERROR("Some directories are not accessible by authselect!");
+        ret = EPERM;
+        goto done;
     }
 
     if (force_override) {

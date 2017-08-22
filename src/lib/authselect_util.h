@@ -146,4 +146,9 @@ check_access(const char *path, int mode);
 errno_t
 check_exists(const char *path);
 
+/**
+ * Return path to the parent directory of @filepath.
+ */
+char *get_dirname(const char *filepath);
+
 #endif /* _AUTHSELECT_UTIL_H_ */
