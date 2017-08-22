@@ -228,22 +228,14 @@ check_existing_conf(const char *profile_id,
                     const char **optional,
                     bool *_is_valid)
 {
-    struct authselect_profile *profile;
     struct authselect_files *files;
     bool is_valid_result = true;
     bool is_valid;
     errno_t ret;
 
-    ret = authselect_profile(profile_id, &profile);
-    if (ret != EOK) {
-        ERROR("Unable to load profile [%s] [%d]: %s",
-              profile_id, ret, strerror(ret));
-        return ret;
-    }
-
     ret = authselect_cat(profile_id, optional, &files);
     if (ret != EOK) {
-        ERROR("Unable to generate profile files [%s] [%d]: %s",
+        ERROR("Unable to load profile [%s] [%d]: %s",
               profile_id, ret, strerror(ret));
         return ret;
     }
