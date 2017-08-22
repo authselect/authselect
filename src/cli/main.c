@@ -127,7 +127,7 @@ static errno_t current(struct cli_cmdline *cmdline)
 
     ret = authselect_current(&profile_id, &optional);
     if (ret == ENOENT) {
-        printf("No existing configuration detected.\n");
+        printf(_("No existing configuration detected.\n"));
         return EOK;
     } else if (ret != EOK) {
         ERROR("Unable to get current configuration [%d]: %s",
@@ -135,15 +135,15 @@ static errno_t current(struct cli_cmdline *cmdline)
         return ret;
     }
 
-    printf("Profile ID: %s\n", profile_id);
-    printf("Enabled optional modules:");
+    printf(_("Profile ID: %s\n"), profile_id);
+    printf(_("Enabled optional modules:"));
 
     if (optional == NULL || optional[0] == NULL) {
-        printf(" None\n");
+        printf(_(" None\n"));
     } else {
         printf("\n");
         for (i = 0; optional[i] != NULL; i++) {
-            printf("--%s\n", optional[i]);
+            printf("- %s\n", optional[i]);
         }
     }
 
@@ -306,9 +306,9 @@ static errno_t test(struct cli_cmdline *cmdline)
         content = generated[i].content_fn(files);
 
         if (content == NULL) {
-            printf("File %s: Empty\n\n", path);
+            printf(_("File %s: Empty\n\n"), path);
         } else {
-            printf("File %s:\n%s\n\n", path, content);
+            printf(_("File %s:\n%s\n\n"), path, content);
         }
     }
 
@@ -356,7 +356,7 @@ int main(int argc, const char **argv)
 
     ret = setup_gettext();
     if (ret != EOK) {
-        fprintf(stderr, "Unable to setup gettext!\n");
+        fprintf(stderr, _("Unable to setup gettext!\n"));
         return EXIT_FAILURE;
     }
 
