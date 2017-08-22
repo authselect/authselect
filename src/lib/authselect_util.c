@@ -229,6 +229,16 @@ read_textfile_internal(FILE *file, const char *filename, char **_content)
         goto done;
     }
 
+    /* All files that we are working with are supposed to be very small.
+     * Lets provide 4MiB hard limit which is more than enough for our
+     * use case so we don't process large files. */
+    if (filelen > 4 * 1024 * 1024) {
+        ERROR("File [%s] is bigger than 4MiB, that is too large "
+              "for a system configuration file!", filename);
+        ret = ERANGE;
+        goto done;
+    }
+
     rewind(file);
 
     buffer = malloc_zero_array(char, filelen + 1);
