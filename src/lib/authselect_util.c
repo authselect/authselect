@@ -27,6 +27,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <limits.h>
+#include <libgen.h>
 #include <sys/stat.h>
 
 #include "lib/authselect_util.h"
@@ -530,4 +531,49 @@ errno_t
 check_exists(const char *path)
 {
     return check_access(path, F_OK);
+}
+
+char *get_dirname(const char *filepath)
+{
+    char *copy = NULL;
+    char *out = NULL;
+    char *dir;
+    errno_t ret;
+
+    if (filepath == NULL) {
+        ret = EINVAL;
+        goto done;
+    }
+
+    copy = strdup(filepath);
+    if (copy == NULL) {
+        ret = ENOMEM;
+        goto done;
+    }
+
+    dir = dirname(copy);
+    if (dir == NULL) {
+        ret = ENOTDIR;
+        goto done;
+    }
+
+    out = strdup(dir);
+    if (out == NULL) {
+        ret = ENOMEM;
+        goto done;
+    }
+
+    ret = EOK;
+
+done:
+    if (copy != NULL) {
+        free(copy);
+    }
+
+    if (ret != EOK) {
+        ERROR("Unable to get directory path from [%s] [%d]: %s",
+              filepath, ret, strerror(ret));
+    }
+
+    return out;
 }
