@@ -13,6 +13,7 @@ endif
 # Documentation - for now just the license
 dist_doc_DATA = \
     COPYING \
+    README.md \
     $(NULL)
 
 ACLOCAL_AMFLAGS = -I m4
