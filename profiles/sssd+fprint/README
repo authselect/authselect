@@ -1,5 +1,60 @@
 Enable SSSD and fprintd for system authentication
+=================================================
 
-This profile will enable SSSD as a source of identity and authentication
-providers. It also enables pam_fprintd module to allow fingerprint
-authentication.
+Selecting this profile will enable SSSD as the source of identity
+and authentication providers. It will also allow authentication through
+fingerprint reader via *pam_fprintd*.
+
+SSSD provides a set of daemons to manage access to remote directories
+and authentication mechanisms such as LDAP, Kerberos or FreeIPA. It provides
+an NSS and PAM interface toward the system and a pluggable backend system
+to connect to multiple different account sources.
+
+More information about SSSD can be found on its project page:
+https://pagure.io/SSSD/sssd
+
+SSSD CONFIGURATION
+------------------
+
+Authselect does not touch SSSD's configuration. Please, read SSSD's
+documentation to see how to configure it manually. Only local users
+will be available on the system if there is no existing SSSD configuration.
+
+AVAILABLE PROFILE ARGUMENTS
+---------------------------
+
+with-faillock::
+    Enable account locking in case of too many consecutive
+    authentication failures.
+    
+with-mkhomedir::
+    Enable automatic creation of home directories for users on their
+    first login.
+
+with-ecryptfs::
+    Enable automatic per-user ecryptfs.
+
+with-sudo::
+    Use SSSD as a source of sudo rules.
+
+with-smartcard::
+    Enable authentication with smartcards through SSSD. Please note that
+    smartcard support must be also explicitly enabled within
+    SSSD's configuration.
+
+EXAMPLES
+--------
+
+* Enable SSSD with sudo and smartcard support
+
+  authselect select sssd+fprint with-sudo with-smartcard
+
+* Enable SSSD with sudo support and create home directories for users on their 
+  first login
+
+  authselect select sssd+fprint with-mkhomedir with-sudo
+
+SEE ALSO
+--------
+* man sssd.conf(8)
+* man fprintd(1)
