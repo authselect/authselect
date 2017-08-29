@@ -27,102 +27,151 @@
 #include "authselect.h"
 #include "lib/authselect_private.h"
 
-enum authselect_line {
-    AUTHSELECT_INCLUDE,
-    AUTHSELECT_SKIP,
-    AUTHSELECT_END
-};
+static const char *
+next_line(const char *chunk)
+{
+    const char *lineend;
 
-static enum authselect_line
-process_condition_endfile(const char *line, const char **optional)
+    if (chunk == NULL) {
+        return NULL;
+    }
+
+    lineend = strchr(chunk, '\n');
+
+    return lineend == NULL ? NULL : lineend + 1;
+}
+
+/**
+ * Condition format:
+ * ??condition
+ * file content
+ *
+ * If the condition is not met, stop file processing.
+ */
+static const char *
+process_condition_endfile(const char *chunk, const char **optional)
 {
     size_t option_len;
     int i;
 
-    if (line[0] != '?' || line[1] != '?') {
-        /* Not a conditional line. */
-        return AUTHSELECT_INCLUDE;
+    if (chunk[0] != '?' || chunk[1] != '?') {
+        /* Not a conditional line. Return what we have. */
+        return chunk;
+    }
+
+    if (optional == NULL) {
+        /* No options were specified, condition was not met. */
+        return NULL;
+    }
+
+    /* The line contains at least "??" at the beginning, skip it. */
+    chunk += 2;
+
+    for (i = 0; optional[i] != NULL; i++) {
+        option_len = strlen(optional[i]);
+        if (strncmp(chunk, optional[i], option_len) != 0) {
+            continue;
+        }
+
+        /* We have a match, now we must check that the character behind
+         * option name is a whitespace or tab so we can avoid
+         * overlapping names. */
+        if (!isspace(chunk[option_len])) {
+            continue;
+        }
+
+        /* Condition was met, continue file processing on next line. */
+        return next_line(chunk);
+    }
+
+    /* Condition was not met, stop file processing. */
+    return NULL;
+}
+
+/**
+ * Condition format:
+ * ?condition:
+ * line content
+ *
+ * If the condition is met, include next line.
+ */
+static const char *
+process_condition_nextline(const char *chunk, const char **optional)
+{
+    size_t option_len;
+    int i;
+
+    if (chunk[0] != '?') {
+        /* Not a conditional line. Return what we have. */
+        return chunk;
     }
 
     if (optional == NULL) {
         /* No options where specified, condition was not met. */
-        return AUTHSELECT_END;
-    }
-
-    /* The line contains at least "??" at the beginning, skip it. */
-    line += 2;
-
-    for (i = 0; optional[i] != NULL; i++) {
-        option_len = strlen(optional[i]);
-        if (strncmp(line, optional[i], option_len) != 0) {
-            continue;
-        }
-
-        /* We have a match, now we must check that the character behind
-         * option name is a whitespace or tab so we can avoid
-         * overlapping names. */
-        if (!isspace(line[option_len])) {
-            continue;
-        }
-
-        /* Condition was met, continue file processing. */
-        return AUTHSELECT_SKIP;
-    }
-
-    /* No options where specified, condition was not met. */
-    return AUTHSELECT_END;
-}
-
-static const char *
-process_condition_line(const char *line, const char **optional)
-{
-    size_t option_len;
-    int i;
-
-    if (line[0] != '?') {
-        /* Not a conditional line. */
-        return line;
-    }
-
-    if (optional == NULL) {
-        /* No options where specified, do not include this line. */
-        return NULL;
+        goto skip;
     }
 
     /* The line contains at least "?" at the beginning, skip it. */
-    line++;
+    chunk++;
 
     for (i = 0; optional[i] != NULL; i++) {
         option_len = strlen(optional[i]);
-        if (strncmp(line, optional[i], option_len) != 0) {
+        if (strncmp(chunk, optional[i], option_len) != 0) {
             continue;
         }
 
         /* We have a match, now we must check that the character behind
-         * option name is a whitespace or tab so we can avoid
-         * overlapping names. */
-        if (!isspace(line[option_len])) {
+         * option name is a colon so we can avoid overlapping names. */
+        if (chunk[option_len] != ':') {
             continue;
         }
 
-        /* Include this line without the option part. */
-        return line + option_len + 1;
+        /* Condition was met, continue file processing on next line. */
+        return next_line(chunk);
     }
 
-    /* This option was not specified, do not include this line. */
-    return NULL;
+skip:
+    /* Condition was not met, skip this and the next line
+     * and continue file processing. */
+    return next_line(next_line(chunk));
 }
 
 static void
-append_line(char *destination, const char *line, int len)
+process_chunk(const char *chunk,
+              const char **optional,
+              const char **_line,
+              const char **_remainder)
 {
+    chunk = process_condition_endfile(chunk, optional);
+    if (chunk == NULL) {
+        goto done;
+    }
+
+    chunk = process_condition_nextline(chunk, optional);
+    if (chunk == NULL) {
+        goto done;
+    }
+
+done:
+    *_line = chunk;
+    *_remainder = next_line(chunk);
+
+    return;
+}
+
+static void
+append_line(char *destination, const char *line)
+{
+    const char *lineend;
+    size_t len;
+
     if (line == NULL) {
         return;
     }
 
-    if (len < 0) {
-        len = strlen(line);
-    }
+    lineend = strchr(line, '\n');
+
+    len = lineend == NULL ? strlen(line) : lineend + 1 - line;
 
     strncat(destination, line, len);
 }
@@ -132,12 +181,9 @@ generate_file(const char *template,
               const char **optional,
               char **_generated)
 {
-    enum authselect_line op;
-    const char *chunk;
+    const char *remainder;
     const char *line;
-    char *lineend;
     char *output;
-    int len;
 
     if (template == NULL) {
         *_generated = NULL;
@@ -151,32 +197,18 @@ generate_file(const char *template,
 
     /* Iterate over lines and add each line into the generated output
      * unless it is a conditional line which is not allowed in @optional. */
-    chunk = template;
+    remainder = template;
     do {
-        lineend = strchr(chunk, '\n');
+        process_chunk(remainder, optional, &line, &remainder);
+        append_line(output, line);
+    } while (remainder != NULL);
 
-        op = process_condition_endfile(chunk, optional);
-        if (op == AUTHSELECT_SKIP) {
-            /* Skip this line. */
-            chunk = lineend + 1;
-            continue;
-        } else if (op == AUTHSELECT_END) {
-            /* Do not process additional lines. If the conditional was
-             * at the beginning of file, we consider it as the file
-             * does not exist. */
-            if (output[0] == '\0') {
-                free(output);
-                output = NULL;
-            }
-            break;
-        }
-
-        line = process_condition_line(chunk, optional);
-        len = lineend == NULL ? -1 : lineend - line + 1;
-
-        append_line(output, line, len);
-        chunk = lineend + 1;
-    } while (lineend != NULL);
+    /* If the generated output is empty we consider it as
+     * the file does not exist so we return NULL. */
+    if (output[0] == '\0') {
+        free(output);
+        output = NULL;
+    }
 
     *_generated = output;
 
