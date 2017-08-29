@@ -303,6 +303,7 @@ authselect_files_generate(struct authselect_profile *profile,
         {profile->files.passwordauth,    &files->passwordauth},
         {profile->files.smartcardauth,   &files->smartcardauth},
         {profile->files.fingerprintauth, &files->fingerprintauth},
+        {profile->files.postlogin,       &files->postlogin},
         {profile->files.nsswitch,        &files->nsswitch},
         {NULL, NULL},
     };
@@ -385,6 +386,16 @@ authselect_files_fingerprintauth(const struct authselect_files *files)
 }
 
 _PUBLIC_ const char *
+authselect_files_postlogin(const struct authselect_files *files)
+{
+    if (files == NULL) {
+        return NULL;
+    }
+
+    return files->postlogin;
+}
+
+_PUBLIC_ const char *
 authselect_files_dconf_db(const struct authselect_files *files)
 {
     if (files == NULL) {
@@ -425,6 +436,10 @@ authselect_files_free_content(struct authselect_files *files)
 
     if (files->fingerprintauth != NULL) {
         free(files->fingerprintauth);
+    }
+
+    if (files->postlogin != NULL) {
+        free(files->postlogin);
     }
 
     if (files->nsswitch != NULL) {

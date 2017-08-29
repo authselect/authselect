@@ -52,6 +52,12 @@ authselect_path_fingerprintauth()
 }
 
 _PUBLIC_ const char *
+authselect_path_postlogin()
+{
+    return PATH_SYMLINK_POSTLOGIN;
+}
+
+_PUBLIC_ const char *
 authselect_path_dconf_db()
 {
     return PATH_SYMLINK_DCONF_DB;

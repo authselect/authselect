@@ -32,6 +32,7 @@ struct authselect_files {
     char *passwordauth;
     char *smartcardauth;
     char *fingerprintauth;
+    char *postlogin;
     char *nsswitch;
     char *dconfdb;
     char *dconflock;

@@ -34,6 +34,7 @@
 #define FILE_PASSWORD    "password-auth"
 #define FILE_FINGERPRINT "fingerprint-auth"
 #define FILE_SMARTCARD   "smartcard-auth"
+#define FILE_POSTLOGIN   "postlogin"
 #define FILE_NSSWITCH    "nsswitch.conf"
 #define FILE_DCONF_DB    "dconf-db"
 #define FILE_DCONF_LOCK  "dconf-lock"
@@ -43,6 +44,7 @@
 #define PATH_PASSWORD    AUTHSELECT_CONFIG_DIR "/" FILE_PASSWORD
 #define PATH_FINGERPRINT AUTHSELECT_CONFIG_DIR "/" FILE_FINGERPRINT
 #define PATH_SMARTCARD   AUTHSELECT_CONFIG_DIR "/" FILE_SMARTCARD
+#define PATH_POSTLOGIN   AUTHSELECT_CONFIG_DIR "/" FILE_POSTLOGIN
 #define PATH_NSSWITCH    AUTHSELECT_CONFIG_DIR "/" FILE_NSSWITCH
 #define PATH_DCONF_DB    AUTHSELECT_CONFIG_DIR "/" FILE_DCONF_DB
 #define PATH_DCONF_LOCK  AUTHSELECT_CONFIG_DIR "/" FILE_DCONF_LOCK
@@ -52,6 +54,7 @@
 #define PATH_SYMLINK_PASSWORD    AUTHSELECT_PAM_DIR "/" FILE_PASSWORD
 #define PATH_SYMLINK_FINGERPRINT AUTHSELECT_PAM_DIR "/" FILE_FINGERPRINT
 #define PATH_SYMLINK_SMARTCARD   AUTHSELECT_PAM_DIR "/" FILE_SMARTCARD
+#define PATH_SYMLINK_POSTLOGIN   AUTHSELECT_PAM_DIR "/" FILE_POSTLOGIN
 #define PATH_SYMLINK_NSSWITCH    AUTHSELECT_NSSWITCH_CONF
 #define PATH_SYMLINK_DCONF_DB    AUTHSELECT_DCONF_DIR  "/" AUTHSELECT_DCONF_FILE
 #define PATH_SYMLINK_DCONF_LOCK  AUTHSELECT_DCONF_DIR  "/locks/" AUTHSELECT_DCONF_FILE
@@ -74,6 +77,7 @@ struct authselect_generated {
     {PATH_PASSWORD,    (files)->passwordauth},                          \
     {PATH_FINGERPRINT, (files)->fingerprintauth},                       \
     {PATH_SMARTCARD,   (files)->smartcardauth},                         \
+    {PATH_POSTLOGIN,   (files)->postlogin},                             \
     {PATH_NSSWITCH,    (files)->nsswitch},                              \
     {PATH_DCONF_DB,    (files)->dconfdb},                               \
     {PATH_DCONF_LOCK,  (files)->dconflock},                             \
@@ -86,6 +90,7 @@ struct authselect_generated {
     {PATH_PASSWORD,    NULL},                                           \
     {PATH_FINGERPRINT, NULL},                                           \
     {PATH_SMARTCARD,   NULL},                                           \
+    {PATH_POSTLOGIN,   NULL},                                           \
     {PATH_NSSWITCH,    NULL},                                           \
     {PATH_DCONF_DB,    NULL},                                           \
     {PATH_DCONF_LOCK,  NULL},                                           \
@@ -105,6 +110,7 @@ struct authselect_symlink {
     {PATH_SYMLINK_PASSWORD,    PATH_PASSWORD},                          \
     {PATH_SYMLINK_FINGERPRINT, PATH_FINGERPRINT},                       \
     {PATH_SYMLINK_SMARTCARD,   PATH_SMARTCARD},                         \
+    {PATH_SYMLINK_POSTLOGIN,   PATH_POSTLOGIN},                         \
     {PATH_SYMLINK_NSSWITCH,    PATH_NSSWITCH},                          \
     {PATH_SYMLINK_DCONF_DB,    PATH_DCONF_DB},                          \
     {PATH_SYMLINK_DCONF_LOCK,  PATH_DCONF_LOCK},                        \
