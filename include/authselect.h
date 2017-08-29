@@ -248,6 +248,17 @@ const char *
 authselect_files_fingerprintauth(const struct authselect_files *files);
 
 /**
+ * Get postlogin pam stack content.
+ *
+ * @param files    Pointer to structure obtained by @authselect_cat.
+ *
+ * @return Generated postlogin pam stack content or NULL if the profile
+ * does not touch this stack.
+ */
+const char *
+authselect_files_postlogin(const struct authselect_files *files);
+
+/**
  * Get dconf database content.
  *
  * @param files    Pointer to structure obtained by @authselect_cat.
@@ -304,6 +315,12 @@ authselect_path_smartcardauth();
  */
 const char *
 authselect_path_fingerprintauth();
+
+/**
+ * @return Path to system postlogin pam stack.
+ */
+const char *
+authselect_path_postlogin();
 
 /**
  * @return Path to system dconf database directory.

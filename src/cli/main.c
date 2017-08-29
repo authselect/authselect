@@ -248,12 +248,13 @@ static errno_t test(struct cli_cmdline *cmdline)
     const char **optional;
     const char *content;
     const char *path;
-    int print_all = 0;
+    int print_all = 1;
     int print_nsswitch = 0;
     int print_systemauth = 0;
     int print_passwordauth = 0;
     int print_smartcardauth = 0;
     int print_fingerprintauth = 0;
+    int print_postlogin = 0;
     int print_dconfdb = 0;
     int print_dconflock = 0;
     errno_t ret;
@@ -266,6 +267,7 @@ static errno_t test(struct cli_cmdline *cmdline)
         {"password-auth", 'p', POPT_ARG_VAL, &print_passwordauth, 1, _("Print password-auth content"), NULL },
         {"smartcard-auth", 'c', POPT_ARG_VAL, &print_smartcardauth, 1, _("Print smartcard-auth content"), NULL },
         {"fingerprint-auth", 'f', POPT_ARG_VAL, &print_fingerprintauth, 1, _("Print fingerprint-auth content"), NULL },
+        {"postlogin", 'o', POPT_ARG_VAL, &print_postlogin, 1, _("Print postlogin content"), NULL },
         {"dconf-db", 'd', POPT_ARG_VAL, &print_dconfdb, 1, _("Print dconf database content"), NULL },
         {"dconf-lock", 'l', POPT_ARG_VAL, &print_dconflock, 1, _("Print dconf lock content"), NULL },
         POPT_TABLEEND
@@ -281,6 +283,7 @@ static errno_t test(struct cli_cmdline *cmdline)
         {authselect_files_passwordauth, authselect_path_passwordauth, &print_passwordauth},
         {authselect_files_smartcardauth, authselect_path_smartcardauth, &print_smartcardauth},
         {authselect_files_fingerprintauth, authselect_path_fingerprintauth, &print_fingerprintauth},
+        {authselect_files_postlogin, authselect_path_postlogin, &print_postlogin},
         {authselect_files_dconf_db, authselect_path_dconf_db, &print_dconfdb},
         {authselect_files_dconf_lock, authselect_path_dconf_lock, &print_dconflock},
         {NULL, NULL, NULL}
@@ -298,7 +301,13 @@ static errno_t test(struct cli_cmdline *cmdline)
     }
 
     for (i = 0; generated[i].content_fn != NULL; i++) {
-        if (!print_all && *generated[i].enabled == false) {
+        if (*generated[i].enabled == 1) {
+            print_all = 0;
+        }
+    }
+
+    for (i = 0; generated[i].content_fn != NULL; i++) {
+        if (!print_all && *generated[i].enabled == 0) {
             continue;
         }
 

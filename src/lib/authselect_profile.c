@@ -46,6 +46,7 @@ read_profile_files(struct authselect_profile *profile,
         {FILE_PASSWORD,    &profile->files.passwordauth},
         {FILE_SMARTCARD,   &profile->files.smartcardauth},
         {FILE_FINGERPRINT, &profile->files.fingerprintauth},
+        {FILE_POSTLOGIN,   &profile->files.postlogin},
         {FILE_NSSWITCH,    &profile->files.nsswitch},
         {NULL, NULL},
     };
