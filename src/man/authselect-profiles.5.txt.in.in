@@ -1,0 +1,110 @@
+authselect-profiles(5)
+======================
+:revdate: 2016-08-31
+
+NAME
+----
+authselect-profiles - how to extend authselect profiles.
+
+DESCRIPTION
+-----------
+This manual page explains how are authselect profiles organized and
+how to create new profiles.
+
+PROFILE DIRECTORIES
+-------------------
+Profiles can be found in one of three directories.
+
+*@AUTHSELECT_PROFILE_DIR@/default*::
+    Read-only directory containing profiles shipped together with authselect.
+
+*@AUTHSELECT_PROFILE_DIR@/vendor*::
+    Read-only directory for vendor-specific profiles that can override the
+    ones in _default_ directory.
+
+*@AUTHSELECT_PROFILE_DIR@/custom*::
+    Place for administrator-defined profiles.
+
+PROFILE FILES
+-------------
+Each profile consist of one or more of these files which provide
+a mandatory profile description and describe the changes that are
+done to the system. 
+
+*README*::
+    Description of the profile. The first line must be a name of the profile.
+
+*system-auth*::
+    PAM stack that is included from nearly all individual service configuration
+    files.
+
+*password-auth*, *smartcard-auth*, *fingerprint-auth*::
+    These PAM stacks are for applications which handle authentication from
+    different types of devices via simultaneously running individual
+    conversations instead of one aggregate conversation.
+
+*postlogin*::
+     The  purpose  of  this  PAM stack is to provide a common place for all
+     PAM modules which should be called after the stack configured in
+     system-auth or the other common PAM configuration files. It is included
+     from all individual service configuration files that provide login service
+     with shell or file access. _NOTE: the modules in the postlogin
+     configuration file are executed regardless of the success or failure of
+     the modules in the system-auth configuration file._
+
+*nsswitch.conf*::
+    Name Service Switch configuration file.
+
+CONDITIONAL LINES
+~~~~~~~~~~~~~~~~~
+Each of these files serves as a template which can contain two types of
+conditions that can modify resulting content.
+
+*?argument:*::
+    If the argument is provided to the profile, the next line following
+    the condition is included to the file.
+    
+*??argument*::
+    If the argument is not given, the whole rest of the file *is not* included
+    to the result.
+    
+EXAMPLE
+~~~~~~~
+Here is an example of the first condition type. If with-sudo is provided
+as an argument to the profile, _sudoers_ line is included in the resulting
+nsswitch configuration. Otherwise is is left out.
+
+  passwd:     sss files
+  group:      sss files
+  netgroup:   sss files
+  automount:  sss files
+  services:   sss files
+  ?with-sudo:
+  sudoers:    files sss
+  
+Here is an example of the second condition type. Unless with-smartcard is
+given as an argument to the profile, the whole file will be empty.
+
+  ??with-smartcard
+  auth        required                                     pam_env.so
+  auth        required                                     pam_faildelay.so delay=2000000
+  auth        required                                     pam_faillock.so preauth silent deny=4 unlock_time=1200
+  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so uid >= 1000 quiet
+  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so
+  auth        sufficient                                   pam_unix.so nullok try_first_pass
+  auth        requisite                                    pam_succeed_if.so uid >= 1000 quiet_success
+  auth        sufficient                                   pam_sss.so forward_pass
+  auth        required                                     pam_faillock.so authfail deny=4 unlock_time=1200
+  auth        required                                     pam_deny.so
+  ...
+
+CREATING A NEW PROFILE
+----------------------
+To register a new profile within authselect, create a directory in one of the
+authselect profile locations with the files listed above. Not all of the files
+must be present, only *README* is mandatory. Other files can be created on
+per-need basis.
+
+SEE ALSO
+--------
+authselect(8), nsswitch.conf(5), PAM(8)
