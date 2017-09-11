@@ -41,6 +41,7 @@ AC_CONFIG_FILES([Makefile
                  src/cli/Makefile
                  src/lib/Makefile
                  src/man/Makefile
-                 src/man/authselect.8.txt])
+                 src/man/authselect.8.txt.in
+                 src/man/authselect-profiles.5.txt.in])
 
 AC_OUTPUT
