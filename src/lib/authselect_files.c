@@ -142,15 +142,19 @@ process_chunk(const char *chunk,
               const char **_line,
               const char **_remainder)
 {
+    const char *prev_chunk;
+
     chunk = process_condition_endfile(chunk, optional);
     if (chunk == NULL) {
         goto done;
     }
 
-    chunk = process_condition_nextline(chunk, optional);
-    if (chunk == NULL) {
-        goto done;
-    }
+    do {
+        /* The obtained chunk may be a conditional line as well so we need
+         * to process it in a loop. */
+        prev_chunk = chunk;
+        chunk = process_condition_nextline(chunk, optional);
+    } while (chunk != NULL && prev_chunk != chunk);
 
 done:
     *_line = chunk;
