@@ -5,11 +5,11 @@
 
 Name:           authselect
 Version:        0.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Configures authentication and identity sources from supported profiles
 
 License:        GPLv3+
-Source0:        https://github.com/pbrezina/authselect/archive/0.1-alpha.tar.gz
+Source0:        https://github.com/pbrezina/authselect/archive/0.1.tar.gz
 
 BuildRequires:  autoconf
 BuildRequires:  automake
