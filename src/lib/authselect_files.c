@@ -89,30 +89,20 @@ process_condition_endfile(const char *chunk, const char **optional)
 }
 
 /**
- * Condition format:
- * ?condition:
- * line content
+ * Condition: ?condition:
  *
- * If the condition is met, include next line.
+ * Include the next line only if condition is present in @optional array.
  */
 static const char *
-process_condition_nextline(const char *chunk, const char **optional)
+process_condition_if_true(const char *chunk, const char **optional)
 {
     size_t option_len;
     int i;
-
-    if (chunk[0] != '?') {
-        /* Not a conditional line. Return what we have. */
-        return chunk;
-    }
 
     if (optional == NULL) {
         /* No options where specified, condition was not met. */
         goto skip;
     }
-
-    /* The line contains at least "?" at the beginning, skip it. */
-    chunk++;
 
     for (i = 0; optional[i] != NULL; i++) {
         option_len = strlen(optional[i]);
@@ -134,6 +124,71 @@ skip:
     /* Condition was not met, skip this and the next line
      * and continue file processing. */
     return next_line(next_line(chunk));
+}
+
+/**
+ * Condition: ?!condition:
+ *
+ * Include the next line only if condition is not present in @optional array.
+ */
+static const char *
+process_condition_if_false(const char *chunk, const char **optional)
+{
+    size_t option_len;
+    int i;
+
+    if (optional == NULL) {
+        /* No options where specified, include next line. */
+        return next_line(chunk);
+    }
+
+    for (i = 0; optional[i] != NULL; i++) {
+        option_len = strlen(optional[i]);
+        if (strncmp(chunk, optional[i], option_len) != 0) {
+            continue;
+        }
+
+        /* We have a match, now we must check that the character behind
+         * option name is a colon so we can avoid overlapping names. */
+        if (chunk[option_len] != ':') {
+            continue;
+        }
+
+        /* Option is present. Exclude this and next line. */
+        return next_line(next_line(chunk));
+    }
+
+    /* Option is not present. Include next line. */
+    return next_line(chunk);
+}
+
+/**
+ * Condition format:
+ * ?condition:
+ * line content if condition is met
+ *
+ * ?!condition:
+ * line content if condition is not ment
+ */
+static const char *
+process_condition_nextline(const char *chunk, const char **optional)
+{
+    if (chunk[0] != '?') {
+        /* Not a conditional line. */
+        goto done;
+    }
+
+    switch (chunk[1]) {
+    case '!':
+        /* The line contains at least "?!" at the beginning, skip it. */
+        return process_condition_if_false(chunk + 2, optional);
+    default:
+        /* The line contains at least "?!" at the beginning, skip it. */
+        return process_condition_if_true(chunk + 1, optional);
+    }
+
+done:
+    return chunk;
 }
 
 static void

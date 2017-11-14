@@ -64,6 +64,10 @@ conditions that can modify resulting content.
     If the argument is provided to the profile, the next line following
     the condition is included to the file.
     
+*?!argument:*::
+    If the argument is provided to the profile, the next line following
+    the condition is *not* included to the file.
+    
 *??argument*::
     If the argument is not given, the whole rest of the file *is not* included
     to the result.
@@ -72,7 +76,8 @@ EXAMPLE
 ~~~~~~~
 Here is an example of the first condition type. If with-sudo is provided
 as an argument to the profile, _sudoers_ line is included in the resulting
-nsswitch configuration. Otherwise it is left out.
+nsswitch configuration together wish _sss_ source. Otherwise it is included
+only with _files_ source.
 
   passwd:     sss files
   group:      sss files
@@ -81,6 +86,8 @@ nsswitch configuration. Otherwise it is left out.
   services:   sss files
   ?with-sudo:
   sudoers:    files sss
+  ?!with-sudo:
+  sudoers:    files
   
 Here is an example of the second condition type. Unless with-smartcard is
 given as an argument to the profile, the whole file will be empty.
