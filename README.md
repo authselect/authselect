@@ -36,7 +36,7 @@ After you checkout the code, you can build, install and run **authselect** on yo
 
 ```bash
 $ cd authselect
-$ autoreconv -iv
+$ autoreconf -iv
 $ ./configure --enable-silent-rules
 $ make
 $ sudo make install
