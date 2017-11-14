@@ -46,7 +46,7 @@ This will make **authselect** available on your system and running this tool wil
 
 ```bash
 $ cd authselect
-$ autoreconv -iv
+$ autoreconf -iv
 $ ./configure --enable-silent-rules --prefix="/path/to/install/directory"
 $ make
 $ make install
