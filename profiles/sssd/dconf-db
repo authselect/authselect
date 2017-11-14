@@ -7,3 +7,7 @@ enable-smartcard-authentication=false
 enable-fingerprint-authentication=true
 ?!with-fingerprint:
 enable-fingerprint-authentication=false
+??with-smartcard-lock-on-removal
+
+[org/gnome/settings-daemon/peripherals/smartcard]
+removal-action='lock-screen'
