@@ -11,6 +11,8 @@ dist_profile_sssd_DATA = \
     $(top_srcdir)/profiles/sssd/smartcard-auth \
     $(top_srcdir)/profiles/sssd/system-auth \
     $(top_srcdir)/profiles/sssd/fingerprint-auth \
+    $(top_srcdir)/profiles/sssd/dconf-db \
+    $(top_srcdir)/profiles/sssd/dconf-locks \
     $(NULL)
 
 profile_winbinddir = $(authselect_default_dir)/winbind
@@ -21,4 +23,6 @@ dist_profile_winbind_DATA = \
     $(top_srcdir)/profiles/winbind/README \
     $(top_srcdir)/profiles/winbind/system-auth \
     $(top_srcdir)/profiles/winbind/fingerprint-auth \
+    $(top_srcdir)/profiles/winbind/dconf-db \
+    $(top_srcdir)/profiles/winbind/dconf-locks \
     $(NULL)

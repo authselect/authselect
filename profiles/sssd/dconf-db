@@ -1,0 +1,9 @@
+[org/gnome/login-screen]
+?with-smartcard:
+enable-smartcard-authentication=true
+?!with-smartcard:
+enable-smartcard-authentication=false
+?with-fingerprint:
+enable-fingerprint-authentication=true
+?!with-fingerprint:
+enable-fingerprint-authentication=false
