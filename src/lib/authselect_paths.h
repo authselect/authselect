@@ -37,7 +37,7 @@
 #define FILE_POSTLOGIN   "postlogin"
 #define FILE_NSSWITCH    "nsswitch.conf"
 #define FILE_DCONF_DB    "dconf-db"
-#define FILE_DCONF_LOCK  "dconf-lock"
+#define FILE_DCONF_LOCK  "dconf-locks"
 
 /* Paths to generated system files. */
 #define PATH_SYSTEM      AUTHSELECT_CONFIG_DIR "/" FILE_SYSTEM

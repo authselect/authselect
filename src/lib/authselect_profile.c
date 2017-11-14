@@ -48,6 +48,8 @@ read_profile_files(struct authselect_profile *profile,
         {FILE_FINGERPRINT, &profile->files.fingerprintauth},
         {FILE_POSTLOGIN,   &profile->files.postlogin},
         {FILE_NSSWITCH,    &profile->files.nsswitch},
+        {FILE_DCONF_DB,    &profile->files.dconfdb},
+        {FILE_DCONF_LOCK,  &profile->files.dconflock},
         {NULL, NULL},
     };
 
