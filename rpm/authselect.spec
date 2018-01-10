@@ -5,7 +5,7 @@
 
 Name:           authselect
 Version:        0.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Configures authentication and identity sources from supported profiles
 
 License:        GPLv3+
@@ -22,12 +22,13 @@ BuildRequires:  asciidoc
 
 
 %description
-Authselect is designed to be a replacement for authconfig but it takes a different
-approach to configure the system. Instead of letting the administrator
-build the pam stack with a tool (which may potentially end up with a
-broken configuration), it would ship several tested stacks (profiles)
-that solve a use-case and are well tested and supported. At the same time,
-some obsolete features of authconfig are not supported by authselect.
+Authselect is designed to be a replacement for authconfig but it takes
+a different approach to configure the system. Instead of letting
+the administrator build the pam stack with a tool (which may potentially
+end up with a broken configuration), it would ship several tested stacks
+(profiles) that solve a use-case and are well tested and supported.
+At the same time, some obsolete features of authconfig are not
+supported by authselect.
 
 %package libs
 Summary: Utility library used by the authselect tool
@@ -120,8 +121,11 @@ rm -f $RPM_BUILD_ROOT/%{_libdir}/libauthselect.so
 %{_mandir}/man8/authselect.8*
 
 %post libs -p /sbin/ldconfig
+%postun libs -p /sbin/ldconfig
 
 %changelog
+* Wed Jan 10 2018 Pavel Březina <pbrezina@redhat.com> - 0.2-2
+- fix rpmlint errors
 * Wed Jan 10 2018 Pavel Březina <pbrezina@redhat.com> - 0.2-1
 - rebasing to 0.2
 * Mon Jul 31 2017 Jakub Hrozek <jakub.hrozek@posteo.se> - 0.1-1
