@@ -4,12 +4,12 @@
 %global package_devel 0
 
 Name:           authselect
-Version:        0.1
-Release:        2%{?dist}
+Version:        0.2
+Release:        1%{?dist}
 Summary:        Configures authentication and identity sources from supported profiles
 
 License:        GPLv3+
-Source0:        https://github.com/pbrezina/authselect/archive/0.1.tar.gz
+Source0:        https://github.com/pbrezina/authselect/archive/authselect-0.2.tar.gz
 
 BuildRequires:  autoconf
 BuildRequires:  automake
@@ -22,7 +22,7 @@ BuildRequires:  asciidoc
 
 
 %description
-Authconfig is designed to be a replacement for authconfig but it takes a different
+Authselect is designed to be a replacement for authconfig but it takes a different
 approach to configure the system. Instead of letting the administrator
 build the pam stack with a tool (which may potentially end up with a
 broken configuration), it would ship several tested stacks (profiles)
@@ -82,30 +82,30 @@ rm -f $RPM_BUILD_ROOT/%{_libdir}/libauthselect.so
 %dir %{_datadir}/authselect/vendor
 %dir %{_datadir}/authselect/default
 %dir %{_datadir}/authselect/default/sssd/
-%dir %{_datadir}/authselect/default/sssd+fprint/
 %dir %{_datadir}/authselect/default/winbind/
-%dir %{_datadir}/authselect/default/winbind+fprint/
-%{_datadir}/authselect/default/sssd/README
+%{_datadir}/authselect/default/sssd/dconf-db
+%{_datadir}/authselect/default/sssd/dconf-locks
+%{_datadir}/authselect/default/sssd/fingerprint-auth
 %{_datadir}/authselect/default/sssd/nsswitch.conf
 %{_datadir}/authselect/default/sssd/password-auth
+%{_datadir}/authselect/default/sssd/postlogin
+%{_datadir}/authselect/default/sssd/README
+%{_datadir}/authselect/default/sssd/smartcard-auth
 %{_datadir}/authselect/default/sssd/system-auth
-%{_datadir}/authselect/default/winbind/README
+%{_datadir}/authselect/default/winbind/dconf-db
+%{_datadir}/authselect/default/winbind/dconf-locks
+%{_datadir}/authselect/default/winbind/fingerprint-auth
 %{_datadir}/authselect/default/winbind/nsswitch.conf
 %{_datadir}/authselect/default/winbind/password-auth
+%{_datadir}/authselect/default/winbind/postlogin
+%{_datadir}/authselect/default/winbind/README
 %{_datadir}/authselect/default/winbind/system-auth
-%{_datadir}/authselect/default/sssd+fprint/README
-%{_datadir}/authselect/default/sssd+fprint/nsswitch.conf
-%{_datadir}/authselect/default/sssd+fprint/password-auth
-%{_datadir}/authselect/default/sssd+fprint/system-auth
-%{_datadir}/authselect/default/sssd+fprint/fingerprint-auth
-%{_datadir}/authselect/default/winbind+fprint/README
-%{_datadir}/authselect/default/winbind+fprint/nsswitch.conf
-%{_datadir}/authselect/default/winbind+fprint/password-auth
-%{_datadir}/authselect/default/winbind+fprint/system-auth
-%{_datadir}/authselect/default/winbind+fprint/fingerprint-auth
 %{_libdir}/libauthselect.so.*
+%{_mandir}/man5/authselect-profiles.5*
 %{_datadir}/doc/authselect/COPYING
+%{_datadir}/doc/authselect/README.md
 %license COPYING
+%doc README.md
 
 %if (0%{?package_devel} == 1)
 %files devel
@@ -122,5 +122,7 @@ rm -f $RPM_BUILD_ROOT/%{_libdir}/libauthselect.so
 %post libs -p /sbin/ldconfig
 
 %changelog
+* Wed Jan 10 2018 Pavel Březina <pbrezina@redhat.com> - 0.2-1
+- rebasing to 0.2
 * Mon Jul 31 2017 Jakub Hrozek <jakub.hrozek@posteo.se> - 0.1-1
 - initial packaging
