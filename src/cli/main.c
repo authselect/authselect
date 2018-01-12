@@ -125,6 +125,12 @@ static errno_t current(struct cli_cmdline *cmdline)
     errno_t ret;
     int i;
 
+    ret = cli_tool_popt(cmdline, NULL, CLI_TOOL_OPT_OPTIONAL, NULL, NULL);
+    if (ret != EOK) {
+        ERROR("Unable to parse command arguments");
+        return ret;
+    }
+
     ret = authselect_current(&profile_id, &optional);
     if (ret == ENOENT) {
         printf(_("No existing configuration detected.\n"));
@@ -158,6 +164,12 @@ static errno_t check(struct cli_cmdline *cmdline)
     bool is_valid;
     errno_t ret;
 
+    ret = cli_tool_popt(cmdline, NULL, CLI_TOOL_OPT_OPTIONAL, NULL, NULL);
+    if (ret != EOK) {
+        ERROR("Unable to parse command arguments");
+        return ret;
+    }
+
     ret = authselect_check_conf(&is_valid);
     if (ret != EOK && ret != ENOENT) {
         ERROR("Unable to test current configuration [%d]: %s",
@@ -183,6 +195,12 @@ static errno_t list(struct cli_cmdline *cmdline)
     errno_t ret;
     int maxlen;
     int i;
+
+    ret = cli_tool_popt(cmdline, NULL, CLI_TOOL_OPT_OPTIONAL, NULL, NULL);
+    if (ret != EOK) {
+        ERROR("Unable to parse command arguments");
+        return ret;
+    }
 
     profiles = authselect_list();
     if (profiles == NULL) {

@@ -85,29 +85,24 @@ static void cli_tool_print_common_opts(int min_len)
 
 static struct poptOption *cli_tool_common_opts_table(void)
 {
-    static struct poptOption common_opts[] = {
-        {"debug", '\0', POPT_ARG_INT, NULL,
-            0, NULL, NULL },
-        POPT_TABLEEND
-    };
-
-    common_opts[0].descrip = _("The debug level to run with");
-
-    return common_opts;
-}
-
-static void cli_tool_common_opts(int *argc, const char **argv)
-{
-    poptContext pc;
-    int orig_argc = *argc;
-    int opt;
-
-    struct poptOption options[] = {
+    static struct poptOption options[] = {
         {"debug", '\0', POPT_ARG_NONE | POPT_ARGFLAG_STRIP, NULL, 'd', "Print more verbose debugging information", NULL },
         {"trace", '\0', POPT_ARG_NONE | POPT_ARGFLAG_STRIP, NULL, 't', "Print trace messages", NULL },
         {"warn", '\0', POPT_ARG_NONE | POPT_ARGFLAG_STRIP, NULL, 'w', "Print warning messages", NULL },
         POPT_TABLEEND
     };
+
+    return options;
+}
+
+static void cli_tool_common_opts(int *argc, const char **argv)
+{
+    poptContext pc;
+    struct poptOption *options;
+    int orig_argc = *argc;
+    int opt;
+
+    options = cli_tool_common_opts_table();
 
     pc = poptGetContext(argv[0], orig_argc, argv, options, 0);
     while ((opt = poptGetNextOpt(pc)) != -1) {
