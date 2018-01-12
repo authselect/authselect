@@ -475,8 +475,8 @@ check_notalink(const char *linkpath,
     ssize_t len;
     errno_t ret;
 
-    INFO("Checking that file [%s] is not an authselect symbolic link [%s]",
-          linkpath);
+    INFO("Checking that file [%s] is not an authselect symbolic link to [%s]",
+          linkpath, destpath);
 
     ret = lstat(linkpath, &statbuf);
     if (ret == -1) {
