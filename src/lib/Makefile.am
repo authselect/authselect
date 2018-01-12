@@ -54,3 +54,5 @@ libauthselect_la_CFLAGS = \
     -DAUTHSELECT_DCONF_DIR=\"$(authselect_dconf_dir)\" \
     -DAUTHSELECT_DCONF_FILE=\"$(authselect_dconf_file)\" \
     $(NULL)
+libauthselect_la_LDFLAGS = \
+    -version-info 0:1:0
