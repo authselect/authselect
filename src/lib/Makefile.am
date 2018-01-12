@@ -22,7 +22,8 @@ lib_LTLIBRARIES = \
 
 authselect_config_dir=@AUTHSELECT_CONFIG_DIR@
 authselect_profile_dir=@AUTHSELECT_PROFILE_DIR@
-authselect_default_dir=$(authselect_profile_dir)/default
+authselect_vendor_dir=@AUTHSELECT_VENDOR_DIR@
+authselect_custom_dir=@AUTHSELECT_CUSTOM_DIR@
 authselect_pam_dir=@AUTHSELECT_PAM_DIR@
 authselect_nsswitch_conf=@AUTHSELECT_NSSWITCH_CONF@
 authselect_dconf_dir=@AUTHSELECT_DCONF_DIR@
@@ -46,6 +47,8 @@ libauthselect_la_CFLAGS = \
     $(AM_CFLAGS) \
     -DAUTHSELECT_CONFIG_DIR=\"$(authselect_config_dir)\" \
     -DAUTHSELECT_PROFILE_DIR=\"$(authselect_profile_dir)\" \
+    -DAUTHSELECT_VENDOR_DIR=\"$(authselect_vendor_dir)\" \
+    -DAUTHSELECT_CUSTOM_DIR=\"$(authselect_custom_dir)\" \
     -DAUTHSELECT_PAM_DIR=\"$(authselect_pam_dir)\" \
     -DAUTHSELECT_NSSWITCH_CONF=\"$(authselect_nsswitch_conf)\" \
     -DAUTHSELECT_DCONF_DIR=\"$(authselect_dconf_dir)\" \

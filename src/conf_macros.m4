@@ -23,9 +23,17 @@ CONFIGURABLE_VALUE(config-dir, config_dir, AUTHSELECT_CONFIG_DIR, DIR,
                    $sysconfdir/authselect)
 
 CONFIGURABLE_VALUE(profile-dir, profile_dir, AUTHSELECT_PROFILE_DIR, DIR,
-                   [Path to the directory where are stored authselect profiles],
-                   $datarootdir/authselect)
+                   [Path to the directory where are stored authselect default profiles],
+                   $datarootdir/authselect/default)
                    
+CONFIGURABLE_VALUE(vendor-dir, vendor_dir, AUTHSELECT_VENDOR_DIR, DIR,
+                   [Path to the directory where are stored profiles created by 3rd-party vendors],
+                   $datarootdir/authselect/vendor)
+
+CONFIGURABLE_VALUE(custom-dir, custom_dir, AUTHSELECT_CUSTOM_DIR, DIR,
+                   [Path to the directory where are stored profiles created by administrator],
+                   $sysconfdir/authselect/custom)
+
 CONFIGURABLE_VALUE(pam-dir, pam_dir, AUTHSELECT_PAM_DIR, DIR,
                    [Path to the pam.d directory where generated pam stacks will be stored],
                    $sysconfdir/pam.d)

@@ -78,8 +78,8 @@ rm -f $RPM_BUILD_ROOT/%{_libdir}/libauthselect.so
 %files libs
 %defattr(-,root,root,-)
 %dir %{_sysconfdir}/authselect
+%dir %{_sysconfdir}/authselect/custom
 %dir %{_datadir}/authselect
-%dir %{_datadir}/authselect/custom
 %dir %{_datadir}/authselect/vendor
 %dir %{_datadir}/authselect/default
 %dir %{_datadir}/authselect/default/sssd/
