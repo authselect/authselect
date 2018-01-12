@@ -120,7 +120,14 @@ rm -f $RPM_BUILD_ROOT/%{_libdir}/libauthselect.so
 %{_bindir}/authselect
 %{_mandir}/man8/authselect.8*
 
-%post libs -p /sbin/ldconfig
+%post libs
+/sbin/ldconfig
+# This directory is already created on systems with gdm, but it is not
+# specifically owned by any package. However, it may be missing for example
+# in docker environments thus we need make sure it exists but we should
+# not own it.
+/bin/mkdir -p /etc/dconf/db/distro.d/locks
+
 %postun libs -p /sbin/ldconfig
 
 %changelog
