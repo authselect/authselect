@@ -20,6 +20,7 @@ ACLOCAL_AMFLAGS = -I m4
 EXTRA_DIST = \
     build/config.rpath \
     rpm/authselect.spec \
+    release-version.sh \
     $(NULL)
 
 # Create authselect directories
@@ -36,3 +37,25 @@ install-exec-hook:
 	$(MKDIR_P) --mode=a=rx,u=rwx $(DESTDIR)$/$(authselect_dconf_dir)
 	$(MKDIR_P) --mode=a=rx,u=rwx $(DESTDIR)$/$(authselect_dconf_dir)/locks
 	$(MKDIR_P) --mode=a=rx,u=rwx $(DESTDIR)$/$(authselect_pam_dir)
+
+# Build RPMs
+RPMBUILD ?= $(PWD)/rpmbuild
+
+rpmroot:
+	$(MKDIR_P) $(RPMBUILD)/BUILD
+	$(MKDIR_P) $(RPMBUILD)/RPMS
+	$(MKDIR_P) $(RPMBUILD)/SOURCES
+	$(MKDIR_P) $(RPMBUILD)/SPECS
+	$(MKDIR_P) $(RPMBUILD)/SRPMS
+
+rpmprep: dist-gzip rpmroot
+	cp $(builddir)/rpm/authselect.spec $(RPMBUILD)/SPECS
+	cp $(distdir).tar.gz $(RPMBUILD)/SOURCES
+
+rpms: rpmprep
+	cd $(RPMBUILD); \
+	rpmbuild --define "_topdir $(RPMBUILD)" -ba SPECS/authselect.spec
+
+srpm: rpmprep
+	cd $(RPMBUILD); \
+	rpmbuild --define "_topdir $(RPMBUILD)" -bs SPECS/authselect.spec
