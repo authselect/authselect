@@ -1,0 +1,447 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+#
+#    Authors:
+#        Pavel Březina <pbrezina@redhat.com>
+#
+#    Copyright (C) 2018 Red Hat
+#
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+import os
+import sys
+import locale
+import gettext
+import subprocess
+
+from authcompat_Options import *
+from authcompat_EnvironmentFile import *
+from authcompat_ConfigSnippet import *
+
+_ = gettext.gettext
+
+def eprint(*args, **kwargs):
+    print(*args, file=sys.stderr, **kwargs)
+
+class Command:
+    TEST = False
+
+    def __init__(self, command, args, input = None):
+        self.args = [command] + args
+        self.input = input.encode() if input is not None else None
+
+    def run(self):
+        print("Executing: %s" % ' '.join(self.args))
+
+        if self.TEST:
+            return
+
+        subprocess.run(self.args, check = True,
+                       input = self.input,
+                       stdout = subprocess.PIPE,
+                       stderr = subprocess.PIPE)
+
+class Service:
+    def __init__(self, name):
+        self.name = name + '.service'
+
+    def enable(self):
+        cmd = Command(Path.System("cmd-systemctl"), ["enable", self.name])
+        cmd.run()
+
+    def disable(self):
+        cmd = Command(Path.System("cmd-systemctl"), ["disable", self.name])
+        cmd.run()
+
+    def start(self):
+        self.stop()
+        Command(Path.System("cmd-systemctl"), ["start", self.name]).run()
+
+    def stop(self):
+        Command(Path.System("cmd-systemctl"), ["stop",  self.name]).run()
+
+class Path:
+    LocalDir = os.path.dirname(os.path.realpath(__file__))
+    Config  = EnvironmentFile(LocalDir + "/authcompat_paths")
+
+    Files = {
+        'ldap.conf'      : '@sysconfdir@/openldap/ldap.conf',
+        'krb5.conf'      : '@sysconfdir@/krb5.conf.d/authconfig-krb.conf',
+        'sssd.conf'      : '@sysconfdir@/sssd/conf.d/authconfig-sssd.conf',
+        'authconfig'     : '@sysconfdir@/sysconfig/authconfig',
+        'network'        : '@sysconfdir@/sysconfig/network',
+        'cmd-systemctl'  : '@bindir@/systemctl',
+        'cmd-authselect' : '@bindir@/authselect',
+        'cmd-realm'      : '@sbindir@/realm'
+    }
+
+    @staticmethod
+    def Local(relpath):
+        return "%s/%s" % (Path.LocalDir, relpath)
+
+    @staticmethod
+    def System(name):
+        return Path.Files[name]
+
+class Configuration:
+    class Base(object):
+        def __init__(self, options, service = None):
+            self.options = options
+            self.service = service
+
+        def mustGenerate(self):
+            """ Make sure this method method is implemented by children. """
+            raise NotImplementedError("Method mustGenerate() is not implemented!")
+
+        def shouldDisable(self):
+            return True
+
+        def write(self):
+            """ Make sure this method method is implemented by children. """
+            raise NotImplementedError("Method write() is not implemented!")
+
+        def cleanup(self):
+            """ Make sure this method method is implemented by children. """
+            raise NotImplementedError("Method cleanup() is not implemented!")
+
+        def get(self, name):
+            return self.options.get(name)
+
+        def isset(self, name):
+            return self.options.isset(name)
+
+        def getTrueOrNone(self, name):
+            return self.options.getTrueOrNone(name)
+
+        def getBool(self, name):
+            return self.options.getBool(name)
+
+        def removeFile(self, filename):
+            print("Removing file: %s" % filename)
+            if self.options.getBool("test-call"):
+                return
+
+            os.remove(filename)
+
+    class LDAP(Base):
+        def __init__(self, options):
+            super(Configuration.LDAP, self).__init__(options)
+
+        def mustGenerate(self):
+            return True
+
+        def cleanup(self):
+            # Nothing to do
+            return
+
+        def write(self):
+            config = EnvironmentFile(Path.System('ldap.conf'), " ",
+                                     delimiter_re = "\s\t", quotes = False)
+            if self.isset("ldapserver"):
+                config.set("URI", self.get("ldapserver"))
+
+            if self.isset("ldapbasedn"):
+                config.set("BASE", self.get("ldapbasedn"))
+
+            config.write()
+
+    class Kerberos(Base):
+        def __init__(self, options):
+            super(Configuration.Kerberos, self).__init__(options)
+
+        def mustGenerate(self):
+            return self.isset("krb5realm") or self.isset("krb5realmdns")
+
+        def cleanup(self):
+            self.removeFile(Path.System('krb5.conf'))
+
+        def write(self):
+            path = Path.Local("snippets/authconfig-krb.conf")
+            config = ConfigSnippet(path, Path.System('krb5.conf'))
+            realm = self.get("krb5realm")
+
+            keys = {
+                'realm'       : self.get("krb5realm"),
+                'kdc-srv'     : self.get("krb5kdcdns"),
+                'realm-srv'   : self.get("krb5realmdns"),
+                'kdc'         : self.get("krb5kdc") if realm else None,
+                'adminserver' : self.get("krb5adminserver") if realm else None,
+                'domain'      : realm.lower() if realm else None
+            }
+
+            config.write(keys)
+
+    class Network(Base):
+        def __init__(self, options):
+            super(Configuration.Network, self).__init__(options)
+
+        def mustGenerate(self):
+            return True
+
+        def write(self):
+            nisdomain = self.get("nisdomain")
+            config = EnvironmentFile(Path.System('network'))
+
+            if nisdomain is None and config.get("NISDOMAIN") is None:
+                return
+
+            config.set("NISDOMAIN", nisdomain)
+            config.write()
+
+    class SSSD(Base):
+        def __init__(self, options):
+            super(Configuration.SSSD, self).__init__(options, service = "sssd")
+
+        def mustGenerate(self):
+            # Authconfig would not generate sssd in this case so we should not
+            # either. Even if --enablesssd[auth] was provided the configuration
+            # would not be generated.
+            return self.getBool("ldap")
+
+        def shouldDisable(self):
+            if not self.getBool("ldap") and not self.getBool("sssd"):
+                return True
+
+            return False
+
+        def cleanup(self):
+            self.removeFile(Path.System('sssd.conf'))
+
+        def write(self):
+            path = Path.Local("snippets/authconfig-sssd.conf")
+            config = ConfigSnippet(path, Path.System('sssd.conf'))
+
+            schema = "rfc2307bis" if self.getBool("rfc2307bis") else None
+
+            keys = {
+                'ldap-uri': self.get("ldapserver"),
+                'ldap-basedn': self.get("ldapbasedn"),
+                'ldap-tls': self.getTrueOrNone("ldaptls"),
+                'ldap-schema': schema,
+                'krb5' : self.getTrueOrNone("krb5"),
+                'kdc-uri': self.get("krb5kdc"),
+                'kpasswd-uri': self.get("krb5adminserver"),
+                'realm': self.get("krb5realm"),
+                'cache-creds': self.getTrueOrNone("cachecreds"),
+                'cert-auth' : self.getTrueOrNone("smartcard")
+            }
+
+            config.write(keys)
+
+    class Winbind(Base):
+        def __init__(self, options):
+            super(Configuration.Winbind, self).__init__(options, service = "winbind")
+
+        def mustGenerate(self):
+            return self.isset("winbindjoin")
+
+        def shouldDisable(self):
+            if self.getBool("winbind") and self.getBool("winbindauth"):
+                return False
+
+            return True
+
+        def cleanup(self):
+            return
+
+        def write(self):
+            creds = self.options.get("winbindjoin").split("%", 1)
+
+            user = creds[0]
+            password = None
+            if len(creds) > 1:
+                password = creds[1] + '\n'
+
+            args = [
+                "join",
+                '-U "%s"' % user,
+                "--client-software=winbind"
+            ]
+
+            if self.isset("smbworkgroup"):
+                args.append(self.get("smbworkgroup"))
+
+            cmd = Command(Path.System('cmd-realm'), args, input = password)
+            cmd.run()
+
+class AuthCompat:
+    def __init__(self):
+        self.sysconfig = EnvironmentFile(Path.System('authconfig'))
+        self.options = Options()
+
+        self.options.parse()
+        self.options.applysysconfig(self.sysconfig)
+        self.options.updatesysconfig(self.sysconfig)
+
+    def printWarning(self):
+        print(_("Running authconfig compatibility tool.\n"))
+        print(_("IMPORTANT: authconfig is replaced by authselect, "
+                "please update your scripts."))
+        print(_("See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/AuthselectAsDefault"))
+        print(_("See man authselect-migration(7) to help you with migration to authselect"))
+
+        options = self.options.getSetButUnsupported()
+        if options:
+            print(_("Warning: These options are not supported anymore "
+                    "and have no effect:"))
+            for name in options:
+                print("  --%s" % name)
+
+        print("")
+
+    def printOptions(self):
+        for option in Options.List:
+            print("%s=%s" % (option.name, option.value))
+
+    def printSysconfig(self):
+        for line in self.sysconfig.getall():
+            print("%s=%s" % (line.name, line.value))
+
+    def canContinue(self):
+        disallowed = ["test", "probe", "restorebackup", "restorelastbackup"]
+        required   = ["update", "updateall", "kickstart"]
+
+        if not self.options.getBool("test") and os.getuid() != 0:
+            print(_("authconfig can only be run as root"))
+            return False
+
+        for option in disallowed:
+            if self.options.getBool(option):
+                print(_("Error: option --%s is no longer supported and we "
+                        "cannot continue if it is set." % option))
+                return False
+
+        if self.options.getBool("winbind") != self.options.getBool("winbindauth"):
+            print(_("Error: Both --enablewinbind and --enablewinbindauth must be set."))
+            return False
+
+
+        # We require one of these options to perform changes
+        # We encourage to use --updateall since we no longer support just pure
+        # --update or --kickstart, they will act as --updateall.
+        for option in required:
+            if self.options.getBool(option):
+                return True
+
+        print(_("Error: Please, provide --updateall option."))
+        return False
+
+    def runAuthselect(self):
+        map = {
+            'smartcard'   : 'with-smartcard',
+            'fingerprint' : 'with-fingerprint',
+            'ecryptfs'    : 'with-ecryptfs',
+            'mkhomedir'   : 'with-mkhomedir',
+            'faillock'    : 'with-faillock',
+            'pamaccess'   : 'with-pamaccess',
+            'winbindkrb5' : 'with-krb5'
+        }
+
+        profile = "sssd" if not self.options.getBool("winbind") else "winbind"
+
+        # Always run with --force. This is either first call of authconfig
+        # in installation script or it is run on already configured system.
+        # We want to use authselect in both cases anyway, since authconfig
+        # would change the configuration either way.
+        args = ["select", profile, "--force"]
+        for option, feature in map.items():
+            if self.options.getBool(option):
+                args.append(feature)
+
+        cmd = Command(Path.System('cmd-authselect'), args)
+        cmd.run()
+
+    def enableService(self, name):
+        if name is None:
+            return
+
+        try:
+            svc = Service(name)
+            svc.enable()
+
+            if not self.options.getBool("nostart"):
+                svc.start()
+        except subprocess.CalledProcessError as result:
+            # This is not fatal error.
+            eprint("Command [%s] failed with %d, stderr:"
+                   % (' '.join(result.cmd), result.returncode))
+            eprint(result.stderr.decode())
+
+    def disableService(self, name):
+        if name is None:
+            return
+
+        try:
+            svc = Service(name)
+            svc.disable()
+
+            if not self.options.getBool("nostart"):
+                svc.stop()
+        except subprocess.CalledProcessError as result:
+            # This is not fatal error.
+            eprint("Command [%s] failed with %d, stderr:"
+                   % (' '.join(result.cmd), result.returncode))
+            eprint(result.stderr.decode())
+
+    def writeConfiguration(self):
+        configs = [
+            Configuration.LDAP(self.options),
+            Configuration.Network(self.options),
+            Configuration.Kerberos(self.options),
+            Configuration.SSSD(self.options),
+            Configuration.Winbind(self.options)
+        ]
+
+        for config in configs:
+            if config.mustGenerate():
+                config.write()
+                self.enableService(config.service)
+            elif config.shouldDisable():
+                config.cleanup()
+                self.disableService(config.service)
+
+        if self.options.getBool("mkhomedir"):
+            self.enableService("oddjobd")
+        else:
+            self.disableService("oddjobd")
+
+def main():
+    try:
+        locale.setlocale(locale.LC_ALL, '')
+    except locale.Error:
+        sys.stderr.write('Warning: Unsupported locale setting.\n')
+
+    authcompat = AuthCompat()
+    authcompat.printWarning()
+
+    Command.TEST         = authcompat.options.getBool("test-call")
+    EnvironmentFile.TEST = authcompat.options.getBool("test-call")
+    ConfigSnippet.TEST   = authcompat.options.getBool("test-call")
+
+    if not authcompat.canContinue():
+        sys.exit(1)
+
+    try:
+        authcompat.runAuthselect()
+        authcompat.writeConfiguration()
+    except subprocess.CalledProcessError as result:
+        eprint("Command [%s] failed with %d, stderr:"
+               % (' '.join(result.cmd), result.returncode))
+        eprint(result.stderr.decode())
+
+    sys.exit(0)
+
+if __name__ == "__main__":
+    main()
