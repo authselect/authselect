@@ -1,27 +1,12 @@
-EXTRA_DIST = \
-    authselect.8.txt.in \
-    authselect-profiles.5.txt.in \
-    $(NULL)
-
-expand_prefix = $(SED) -e 's,$${prefix},$(prefix),g'
+expand_prefix =                                                               \
+    (                                                                         \
+     $(SED) -e 's,$${exec_prefix},$(exec_prefix),g' |                         \
+     $(SED) -e 's,$${prefix},$(prefix),g'                                     \
+    )
 
 if HAVE_MANPAGES
-CLEANFILES = \
-    authselect.8.txt \
-    authselect.8.xml \
-    authselect-profiles.5.txt \
-    authselect-profiles.5.xml \
-    $(NULL)
-
-### Man pages
-SUFFIXES = \
-    .5.txt .5 \
-    .8.txt .8 \
-    $(NULL)
-
-EXTRA_DIST += \
-    authselect.8 \
-    authselect-profiles.5 \
+BUILT_SOURCES = \
+    expand_files \
     $(NULL)
 
 man_MANS = \
@@ -29,19 +14,16 @@ man_MANS = \
     authselect-profiles.5 \
     $(NULL)
 
-authselect.8.txt:
-	$(expand_prefix) < authselect.8.txt.in > authselect.8.txt
+expand_files:
+	for FILE in $(man_MANS) ; do \
+		$(expand_prefix) < $$FILE.txt.in > $$FILE.txt ; \
+		$(A2X) -D . --doctype manpage --format manpage $$FILE.txt ; \
+	done
 
-authselect-profiles.5.txt:
-	$(expand_prefix) < authselect-profiles.5.txt.in > authselect-profiles.5.txt
-
-.8.txt.8: authselect.8.txt
-	$(A2X) -D . --doctype manpage --format manpage $<
-
-.5.txt.5: authselect-profiles.5.txt
-	$(A2X) -D . --doctype manpage --format manpage $<
+.PHONY: expand_files
 
 clean-local:
-	rm -f $(man_MANS)
-
+	for FILE in $(man_MANS) ; do \
+		$(RM) $$FILE $$FILE.txt ; \
+	done
 endif

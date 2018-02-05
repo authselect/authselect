@@ -19,7 +19,6 @@ dist_doc_DATA = \
 ACLOCAL_AMFLAGS = -I m4
 EXTRA_DIST = \
     build/config.rpath \
-    rpm/authselect.spec \
     release-version.sh \
     $(NULL)
 
