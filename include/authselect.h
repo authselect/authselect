@@ -48,11 +48,11 @@ struct authselect_files;
  * If @force_override option is set to true, authselect will override the
  * changes with its own content.
  *
- * If the selected profile supports optional modules, these modules
- * may be enabled by putting them into @optional array.
+ * If the selected profile supports optional features, these features
+ * may be enabled by putting them into @features array.
  *
  * @param profile_id     Profile identifier.
- * @param optional       NULL-terminated array of optional modules to enable.
+ * @param features       NULL-terminated array of optional features to enable.
  * @param force_override If true, authselect will override local changes.
  *
  * @return 0 on success, AUTHSELECT_ERR_FORCE_REQUIRED if activation was
@@ -61,7 +61,7 @@ struct authselect_files;
  */
 int
 authselect_activate(const char *profile_id,
-                    const char **optional,
+                    const char **features,
                     bool force_override);
 
 /**
@@ -81,8 +81,8 @@ authselect_check_conf(bool *_is_valid);
  * Return profile identifier and parameters of currently selected profile.
  *
  * @param[out] _profile_id     Profile identifier.
- * @param[out] _optional       NULL-terminated array of enabled
- *                             optional modules.
+ * @param[out] _features       NULL-terminated array of enabled
+ *                             optional features.
  * @param[out] _is_valid       True if the current configuration is valid
  *                             and created by authselect, false if some
  *                             manual changes were detected.
@@ -92,13 +92,13 @@ authselect_check_conf(bool *_is_valid);
  */
 int
 authselect_current(char **_profile_id,
-                   char ***_optional);
+                   char ***_features);
 
 /**
- * Free string array of optional profile paramenters
+ * Free string array of optional profile features
  * returned by @authselect_current. */
 void
-authselect_optional_free(char **optional);
+authselect_features_free(char **features);
 
 /**
  * Return NULL-terminated array of all available profile identifiers.
@@ -182,7 +182,7 @@ authselect_profile_free(struct authselect_profile *profile);
  * changes to the system configuration.
  *
  * @param profile_id    Profile identifier.
- * @param optional      NULL-terminated array of optional modules to enable.
+ * @param features      NULL-terminated array of optional features to enable.
  * @param _files        Generated files content.
  *
  * @return 0 on success, ENOENT if the profile was not found,
@@ -190,7 +190,7 @@ authselect_profile_free(struct authselect_profile *profile);
  */
 int
 authselect_cat(const char *profile_id,
-               const char **optional,
+               const char **features,
                struct authselect_files **_files);
 
 /**
