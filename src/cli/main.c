@@ -50,10 +50,10 @@ static errno_t
 parse_profile_options(struct cli_cmdline *cmdline,
                       struct poptOption *options,
                       const char **_profile_id,
-                      const char ***_optional)
+                      const char ***_features)
 {
     const char *profile_id;
-    const char **optional;
+    const char **features;
     errno_t ret;
     int i;
 
@@ -65,8 +65,8 @@ parse_profile_options(struct cli_cmdline *cmdline,
         return ret;
     }
 
-    optional = malloc_zero_array(const char *, cmdline->argc);
-    if (optional == NULL) {
+    features = malloc_zero_array(const char *, cmdline->argc);
+    if (features == NULL) {
         return ENOMEM;
     }
 
@@ -76,11 +76,11 @@ parse_profile_options(struct cli_cmdline *cmdline,
             continue;
         }
 
-        optional[i - 1] = cmdline->argv[i];
+        features[i - 1] = cmdline->argv[i];
     }
 
     *_profile_id = profile_id;
-    *_optional = optional;
+    *_features = features;
 
     return EOK;
 }
@@ -88,7 +88,7 @@ parse_profile_options(struct cli_cmdline *cmdline,
 static errno_t activate(struct cli_cmdline *cmdline)
 {
     const char *profile_id;
-    const char **optional;
+    const char **features;
     int enforce = 0;
     errno_t ret;
 
@@ -97,13 +97,13 @@ static errno_t activate(struct cli_cmdline *cmdline)
         POPT_TABLEEND
     };
 
-    ret = parse_profile_options(cmdline, options, &profile_id, &optional);
+    ret = parse_profile_options(cmdline, options, &profile_id, &features);
     if (ret != EOK) {
         return ret;
     }
 
-    ret = authselect_activate(profile_id, optional, enforce);
-    free(optional);
+    ret = authselect_activate(profile_id, features, enforce);
+    free(features);
     if (ret == AUTHSELECT_ERR_FORCE_REQUIRED) {
         fprintf(stderr, _("\nSome unexpected changes to the configuration were "
                 "detected.\nUse --force parameter if you want to overwrite "
@@ -121,7 +121,7 @@ static errno_t activate(struct cli_cmdline *cmdline)
 static errno_t current(struct cli_cmdline *cmdline)
 {
     char *profile_id;
-    char **optional;
+    char **features;
     errno_t ret;
     int i;
 
@@ -131,7 +131,7 @@ static errno_t current(struct cli_cmdline *cmdline)
         return ret;
     }
 
-    ret = authselect_current(&profile_id, &optional);
+    ret = authselect_current(&profile_id, &features);
     if (ret == ENOENT) {
         printf(_("No existing configuration detected.\n"));
         return EOK;
@@ -142,19 +142,19 @@ static errno_t current(struct cli_cmdline *cmdline)
     }
 
     printf(_("Profile ID: %s\n"), profile_id);
-    printf(_("Enabled optional modules:"));
+    printf(_("Enabled features:"));
 
-    if (optional == NULL || optional[0] == NULL) {
+    if (features == NULL || features[0] == NULL) {
         printf(_(" None\n"));
     } else {
         printf("\n");
-        for (i = 0; optional[i] != NULL; i++) {
-            printf("- %s\n", optional[i]);
+        for (i = 0; features[i] != NULL; i++) {
+            printf("- %s\n", features[i]);
         }
     }
 
     free(profile_id);
-    authselect_optional_free(optional);
+    authselect_features_free(features);
 
     return ret;
 }
@@ -263,7 +263,7 @@ static errno_t test(struct cli_cmdline *cmdline)
 {
     struct authselect_files *files;
     const char *profile_id;
-    const char **optional;
+    const char **features;
     const char *content;
     const char *path;
     int print_all = 1;
@@ -307,12 +307,12 @@ static errno_t test(struct cli_cmdline *cmdline)
         {NULL, NULL, NULL}
     };
 
-    ret = parse_profile_options(cmdline, options, &profile_id, &optional);
+    ret = parse_profile_options(cmdline, options, &profile_id, &features);
     if (ret != EOK) {
         return ret;
     }
 
-    ret = authselect_cat(profile_id, optional, &files);
+    ret = authselect_cat(profile_id, features, &files);
     if (ret != EOK) {
         ERROR("Unable to get generated content [%d]: %s", ret, strerror(ret));
         return ret;

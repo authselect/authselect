@@ -225,7 +225,7 @@ check_missing_conf(bool *_is_valid)
 
 static errno_t
 check_existing_conf(const char *profile_id,
-                    const char **optional,
+                    const char **features,
                     bool *_is_valid)
 {
     struct authselect_files *files;
@@ -233,7 +233,7 @@ check_existing_conf(const char *profile_id,
     bool is_valid;
     errno_t ret;
 
-    ret = authselect_cat(profile_id, optional, &files);
+    ret = authselect_cat(profile_id, features, &files);
     if (ret != EOK) {
         ERROR("Unable to load profile [%s] [%d]: %s",
               profile_id, ret, strerror(ret));
@@ -265,10 +265,10 @@ _PUBLIC_ int
 authselect_check_conf(bool *_is_valid)
 {
     char *profile_id;
-    char **optional;
+    char **features;
     errno_t ret;
 
-    ret = authselect_read_conf(&profile_id, &optional);
+    ret = authselect_read_conf(&profile_id, &features);
     if (ret == ENOENT) {
         /* No existing configuration was detected.
          * Check that there are no leftovers. */
@@ -283,10 +283,10 @@ authselect_check_conf(bool *_is_valid)
     }
 
     /* Some configuration is present. Check that everything is valid. */
-    ret = check_existing_conf(profile_id, (const char **)optional, _is_valid);
+    ret = check_existing_conf(profile_id, (const char **)features, _is_valid);
 
     free(profile_id);
-    free_string_array(optional);
+    free_string_array(features);
 
     return ret;
 }
