@@ -55,8 +55,9 @@ struct authselect_files;
  * @param optional       NULL-terminated array of optional modules to enable.
  * @param force_override If true, authselect will override local changes.
  *
- * @return 0 on success, AUTHSELECT_ERR_FORCE_REQUIRED if actication
- * wer errno code on error.
+ * @return 0 on success, AUTHSELECT_ERR_FORCE_REQUIRED if activation was
+ * prohibited because unexpected configuration was detected and it must
+ * be overridden, other errno code on error.
  */
 int
 authselect_activate(const char *profile_id,
