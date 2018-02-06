@@ -75,13 +75,13 @@ check_directories()
 
 static errno_t
 write_generated_files(struct authselect_profile *profile,
-                      const char **optional)
+                      const char **features)
 {
     struct authselect_files *files;
     errno_t ret;
     int i;
 
-    ret = authselect_files_generate(profile, optional, &files);
+    ret = authselect_files_generate(profile, features, &files);
     if (ret != EOK) {
         ERROR("Unable to generate content [%d]: %s", ret, strerror(ret));
         return ret;
@@ -143,7 +143,7 @@ done:
 
 static errno_t
 write_config(const char *profile_id,
-             const char **optional)
+             const char **features)
 {
     char *buf;
     errno_t ret;
@@ -154,8 +154,8 @@ write_config(const char *profile_id,
         return ENOMEM;
     }
 
-    for (i = 0; optional[i] != NULL; i++) {
-        buf = buffer_append_line(buf, optional[i]);
+    for (i = 0; features[i] != NULL; i++) {
+        buf = buffer_append_line(buf, features[i]);
         if (buf == NULL) {
             return ENOMEM;
         }
@@ -169,17 +169,17 @@ write_config(const char *profile_id,
 
 static errno_t
 authselect_activate_profile(struct authselect_profile *profile,
-                            const char **optional)
+                            const char **features)
 {
     errno_t ret;
 
-    ret = write_generated_files(profile, optional);
+    ret = write_generated_files(profile, features);
     if (ret != EOK) {
         ERROR("Unable to write generated files [%d]: %s", ret, strerror(ret));
         goto done;
     }
 
-    ret = write_config(profile->id, optional);
+    ret = write_config(profile->id, features);
     if (ret != EOK) {
         ERROR("Unable to write configuration [%d]: %s", ret, strerror(ret));
         goto done;
@@ -197,7 +197,7 @@ done:
 
 _PUBLIC_ int
 authselect_activate(const char *profile_id,
-                    const char **optional,
+                    const char **features,
                     bool force_override)
 {
     struct authselect_profile *profile;
@@ -224,7 +224,7 @@ authselect_activate(const char *profile_id,
 
     if (force_override) {
         INFO("Enforcing activation!");
-        ret = authselect_activate_profile(profile, optional);
+        ret = authselect_activate_profile(profile, features);
         goto done;
     }
 
@@ -261,7 +261,7 @@ authselect_activate(const char *profile_id,
         }
     }
 
-    ret = authselect_activate_profile(profile, optional);
+    ret = authselect_activate_profile(profile, features);
 
 done:
     if (ret != EOK && ret != AUTHSELECT_ERR_FORCE_REQUIRED) {
@@ -270,6 +270,60 @@ done:
     }
 
     authselect_profile_free(profile);
+
+    return ret;
+}
+
+_PUBLIC_ int
+authselect_feature_enable(const char *feature)
+{
+    char *profile_id;
+    char **features;
+    errno_t ret;
+
+    ret = authselect_current(&profile_id, &features);
+    if (ret != EOK) {
+        return ret;
+    }
+
+    features = string_array_add_value(features, feature);
+    if (features == NULL) {
+        ret = ENOMEM;
+        goto done;
+    }
+
+    ret = authselect_activate(profile_id, (const char **)features, false);
+
+done:
+    authselect_features_free(features);
+    free(profile_id);
+
+    return ret;
+}
+
+_PUBLIC_ int
+authselect_feature_disable(const char *feature)
+{
+    char *profile_id;
+    char **features;
+    errno_t ret;
+
+    ret = authselect_current(&profile_id, &features);
+    if (ret != EOK) {
+        return ret;
+    }
+
+    features = string_array_del_value(features, feature);
+    if (features == NULL) {
+        ret = ENOMEM;
+        goto done;
+    }
+
+    ret = authselect_activate(profile_id, (const char **)features, false);
+
+done:
+    authselect_features_free(features);
+    free(profile_id);
 
     return ret;
 }

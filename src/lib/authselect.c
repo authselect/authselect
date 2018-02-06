@@ -34,15 +34,15 @@ authselect_set_debug_fn(authselect_debug_fn fn, void *pvt)
 
 _PUBLIC_ int
 authselect_current(char **_profile_id,
-                   char ***_optional)
+                   char ***_features)
 {
-    return authselect_read_conf(_profile_id, _optional);
+    return authselect_read_conf(_profile_id, _features);
 }
 
 _PUBLIC_ void
-authselect_optional_free(char **optional)
+authselect_features_free(char **features)
 {
-    free_string_array(optional);
+    free_string_array(features);
 }
 
 _PUBLIC_ char **
@@ -87,7 +87,7 @@ authselect_list_free(char **profile_ids)
 
 _PUBLIC_ int
 authselect_cat(const char *profile_id,
-               const char **optional,
+               const char **features,
                struct authselect_files **_files)
 {
     struct authselect_profile *profile;
@@ -99,7 +99,7 @@ authselect_cat(const char *profile_id,
         return ret;
     }
 
-    ret = authselect_files_generate(profile, optional, &files);
+    ret = authselect_files_generate(profile, features, &files);
     authselect_profile_free(profile);
     if (ret != EOK) {
         return ret;

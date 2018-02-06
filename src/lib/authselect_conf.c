@@ -76,44 +76,44 @@ read_line(FILE *file, char **_line)
 }
 
 static errno_t
-authselect_read_conf_optional(FILE *file, char ***_optional)
+authselect_read_conf_features(FILE *file, char ***_features)
 {
-    char **optional = NULL;
+    char **features = NULL;
     char **reallocated;
     size_t count = 0;
     errno_t ret;
 
     do {
         count++;
-        reallocated = realloc_array(optional, char *, count + 1);
+        reallocated = realloc_array(features, char *, count + 1);
         if (reallocated == NULL) {
-            free_string_array(optional);
+            free_string_array(features);
             return ENOMEM;
         }
 
-        optional = reallocated;
-        optional[count - 1] = NULL;
-        optional[count] = NULL;
+        features = reallocated;
+        features[count - 1] = NULL;
+        features[count] = NULL;
 
-        ret = read_line(file, &optional[count - 1]);
+        ret = read_line(file, &features[count - 1]);
     } while (ret == EOK);
 
     if (ret == ENOENT) {
-        *_optional = optional;
+        *_features = features;
         return EOK;
     }
 
-    free_string_array(optional);
+    free_string_array(features);
     return ret;
 }
 
 errno_t
 authselect_read_conf(char **_profile_id,
-                     char ***_optional)
+                     char ***_features)
 {
     FILE *file;
     char *profile_id = NULL;
-    char **optional = NULL;
+    char **features = NULL;
     errno_t ret;
 
     file = fopen(PATH_CONFIG_FILE, "r");
@@ -139,7 +139,7 @@ authselect_read_conf(char **_profile_id,
     }
 
     /* Following lines are options that were used. */
-    ret = authselect_read_conf_optional(file, &optional);
+    ret = authselect_read_conf_features(file, &features);
     if (ret != EOK) {
         ERROR("Unable to read profile parameters from configuration [%d]: %s",
               ret, strerror(ret));
@@ -151,9 +151,9 @@ authselect_read_conf(char **_profile_id,
         profile_id = NULL;
     }
 
-    if (_optional != NULL) {
-        *_optional = optional;
-        optional = NULL;
+    if (_features != NULL) {
+        *_features = features;
+        features = NULL;
     }
 
     ret = EOK;
@@ -165,7 +165,7 @@ done:
         free(profile_id);
     }
 
-    free_string_array(optional);
+    free_string_array(features);
 
     return ret;
 }

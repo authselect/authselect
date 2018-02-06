@@ -49,7 +49,7 @@ next_line(const char *chunk)
  * If the condition is not met, stop file processing.
  */
 static const char *
-process_condition_endfile(const char *chunk, const char **optional)
+process_condition_endfile(const char *chunk, const char **features)
 {
     size_t option_len;
     int i;
@@ -59,7 +59,7 @@ process_condition_endfile(const char *chunk, const char **optional)
         return chunk;
     }
 
-    if (optional == NULL) {
+    if (features == NULL) {
         /* No options were specified, condition was not met. */
         return NULL;
     }
@@ -67,9 +67,9 @@ process_condition_endfile(const char *chunk, const char **optional)
     /* The line contains at least "??" at the beginning, skip it. */
     chunk += 2;
 
-    for (i = 0; optional[i] != NULL; i++) {
-        option_len = strlen(optional[i]);
-        if (strncmp(chunk, optional[i], option_len) != 0) {
+    for (i = 0; features[i] != NULL; i++) {
+        option_len = strlen(features[i]);
+        if (strncmp(chunk, features[i], option_len) != 0) {
             continue;
         }
 
@@ -91,22 +91,22 @@ process_condition_endfile(const char *chunk, const char **optional)
 /**
  * Condition: ?condition:
  *
- * Include the next line only if condition is present in @optional array.
+ * Include the next line only if condition is present in @features array.
  */
 static const char *
-process_condition_if_true(const char *chunk, const char **optional)
+process_condition_if_true(const char *chunk, const char **features)
 {
     size_t option_len;
     int i;
 
-    if (optional == NULL) {
+    if (features == NULL) {
         /* No options where specified, condition was not met. */
         goto skip;
     }
 
-    for (i = 0; optional[i] != NULL; i++) {
-        option_len = strlen(optional[i]);
-        if (strncmp(chunk, optional[i], option_len) != 0) {
+    for (i = 0; features[i] != NULL; i++) {
+        option_len = strlen(features[i]);
+        if (strncmp(chunk, features[i], option_len) != 0) {
             continue;
         }
 
@@ -129,22 +129,22 @@ skip:
 /**
  * Condition: ?!condition:
  *
- * Include the next line only if condition is not present in @optional array.
+ * Include the next line only if condition is not present in @features array.
  */
 static const char *
-process_condition_if_false(const char *chunk, const char **optional)
+process_condition_if_false(const char *chunk, const char **features)
 {
     size_t option_len;
     int i;
 
-    if (optional == NULL) {
+    if (features == NULL) {
         /* No options where specified, include next line. */
         return next_line(chunk);
     }
 
-    for (i = 0; optional[i] != NULL; i++) {
-        option_len = strlen(optional[i]);
-        if (strncmp(chunk, optional[i], option_len) != 0) {
+    for (i = 0; features[i] != NULL; i++) {
+        option_len = strlen(features[i]);
+        if (strncmp(chunk, features[i], option_len) != 0) {
             continue;
         }
 
@@ -171,7 +171,7 @@ process_condition_if_false(const char *chunk, const char **optional)
  * line content if condition is not ment
  */
 static const char *
-process_condition_nextline(const char *chunk, const char **optional)
+process_condition_nextline(const char *chunk, const char **features)
 {
     if (chunk[0] != '?') {
         /* Not a conditional line. */
@@ -181,10 +181,10 @@ process_condition_nextline(const char *chunk, const char **optional)
     switch (chunk[1]) {
     case '!':
         /* The line contains at least "?!" at the beginning, skip it. */
-        return process_condition_if_false(chunk + 2, optional);
+        return process_condition_if_false(chunk + 2, features);
     default:
         /* The line contains at least "?!" at the beginning, skip it. */
-        return process_condition_if_true(chunk + 1, optional);
+        return process_condition_if_true(chunk + 1, features);
     }
 
 done:
@@ -193,13 +193,13 @@ done:
 
 static void
 process_chunk(const char *chunk,
-              const char **optional,
+              const char **features,
               const char **_line,
               const char **_remainder)
 {
     const char *prev_chunk;
 
-    chunk = process_condition_endfile(chunk, optional);
+    chunk = process_condition_endfile(chunk, features);
     if (chunk == NULL) {
         goto done;
     }
@@ -208,7 +208,7 @@ process_chunk(const char *chunk,
         /* The obtained chunk may be a conditional line as well so we need
          * to process it in a loop. */
         prev_chunk = chunk;
-        chunk = process_condition_nextline(chunk, optional);
+        chunk = process_condition_nextline(chunk, features);
     } while (chunk != NULL && prev_chunk != chunk);
 
 done:
@@ -237,7 +237,7 @@ append_line(char *destination, const char *line)
 
 static errno_t
 generate_file(const char *template,
-              const char **optional,
+              const char **features,
               char **_generated)
 {
     const char *remainder;
@@ -255,10 +255,10 @@ generate_file(const char *template,
     }
 
     /* Iterate over lines and add each line into the generated output
-     * unless it is a conditional line which is not allowed in @optional. */
+     * unless it is a conditional line which is not allowed in @features. */
     remainder = template;
     do {
-        process_chunk(remainder, optional, &line, &remainder);
+        process_chunk(remainder, features, &line, &remainder);
         append_line(output, line);
     } while (remainder != NULL);
 
@@ -276,7 +276,7 @@ generate_file(const char *template,
 
 errno_t
 authselect_files_generate(struct authselect_profile *profile,
-                          const char **optional,
+                          const char **features,
                           struct authselect_files **_files)
 {
     struct authselect_files *files;
@@ -309,7 +309,7 @@ authselect_files_generate(struct authselect_profile *profile,
 
     /* Template may be NULL so we must compare against destination. */
     for (i = 0; tpls[i]._storage != NULL; i++) {
-        ret = generate_file(tpls[i].template, optional, tpls[i]._storage);
+        ret = generate_file(tpls[i].template, features, tpls[i]._storage);
         if (ret != EOK) {
             goto done;
         }

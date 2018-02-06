@@ -107,14 +107,14 @@ authselect_files_free_content(struct authselect_files *files);
  * Generate output files for given profile.
  *
  * @param profile  An authselect profile.
- * @param optional Profile optional modules to enable.
+ * @param features Profile optional features to enable.
  * @param _file    Generated files.
  *
  * @return EOK on success, errno code on failure.
  */
 errno_t
 authselect_files_generate(struct authselect_profile *profile,
-                          const char **optional,
+                          const char **features,
                           struct authselect_files **_files);
 
 /**
@@ -122,13 +122,13 @@ authselect_files_generate(struct authselect_profile *profile,
  *
  * @param confpath Path to the configuration file.
  * @param _profile_id     Profile identifier.
- * @param _optional       NULL-terminated array of enabled
- *                             optional modules.
+ * @param _features       NULL-terminated array of enabled
+ *                             optional features.
  * @return EOK on success, errno code on error.
  */
 errno_t
 authselect_read_conf(char **_profile_id,
-                     char ***_optional);
+                     char ***_features);
 
 /**
  * Check if authselect symbolic links exist or not and save the result
