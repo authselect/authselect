@@ -14,6 +14,8 @@ auth        sufficient                                   pam_winbind.so krb5_aut
 auth        required                                     pam_faillock.so authfail deny=4 unlock_time=1200
 auth        required                                     pam_deny.so
 
+?with-pamaccess:
+account     required                                     pam_access.so
 ?with-faillock:
 account     required                                     pam_faillock.so
 account     required                                     pam_unix.so broken_shadow
