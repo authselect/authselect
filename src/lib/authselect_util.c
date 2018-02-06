@@ -577,3 +577,79 @@ done:
 
     return out;
 }
+
+static size_t
+string_array_count(char **array)
+{
+    size_t count;
+
+    for (count = 0; array[count] != NULL; count++) {
+        /* no op */
+    }
+
+    return count;
+}
+
+static bool
+string_array_has_value(char **array, const char *value)
+{
+    int i;
+
+    for (i = 0; array[i] != NULL; i++) {
+        if (strcmp(value, array[i]) == 0) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+char **
+string_array_add_value(char **array, const char *value)
+{
+    char **resized;
+    size_t count;
+
+    if (string_array_has_value(array, value)) {
+        return array;
+    }
+
+    count = string_array_count(array);
+
+    resized = realloc_array(array, char *, count + 2);
+    if (resized == NULL) {
+        free_string_array(array);
+        return NULL;
+    }
+
+    resized[count] = strdup(value);
+    if (resized[count] == NULL) {
+        free_string_array(array);
+        return NULL;
+    }
+
+    return resized;
+}
+
+char **
+string_array_del_value(char **array, const char *value)
+{
+    bool found;
+    int i;
+
+    if (!string_array_has_value(array, value)) {
+        return array;
+    }
+
+    for (i = 0; array[i] != NULL; i++) {
+        if (strcmp(value, array[i]) == 0) {
+            found = true;
+        }
+
+        if (found) {
+            array[i] = array[i + 1];
+        }
+    }
+
+    return array;
+}

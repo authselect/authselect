@@ -65,6 +65,26 @@ authselect_activate(const char *profile_id,
                     bool force_override);
 
 /**
+ * Enable a feature with currently activated profile.
+ *
+ * @param feature       Feature name to activate.
+ *
+ * @return 0 on success, errno code on error.
+ */
+int
+authselect_feature_enable(const char *feature);
+
+/**
+ * Disable a feature with currently activated profile.
+ *
+ * @param feature       Feature name to activate.
+ *
+ * @return 0 on success, errno code on error.
+ */
+int
+authselect_feature_disable(const char *feature);
+
+/**
  * Check if current configuration is valid.
  *
  * This will detect any manual changes to current authselect

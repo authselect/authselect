@@ -273,3 +273,57 @@ done:
 
     return ret;
 }
+
+_PUBLIC_ int
+authselect_feature_enable(const char *feature)
+{
+    char *profile_id;
+    char **features;
+    errno_t ret;
+
+    ret = authselect_current(&profile_id, &features);
+    if (ret != EOK) {
+        return ret;
+    }
+
+    features = string_array_add_value(features, feature);
+    if (features == NULL) {
+        ret = ENOMEM;
+        goto done;
+    }
+
+    ret = authselect_activate(profile_id, (const char **)features, false);
+
+done:
+    authselect_features_free(features);
+    free(profile_id);
+
+    return ret;
+}
+
+_PUBLIC_ int
+authselect_feature_disable(const char *feature)
+{
+    char *profile_id;
+    char **features;
+    errno_t ret;
+
+    ret = authselect_current(&profile_id, &features);
+    if (ret != EOK) {
+        return ret;
+    }
+
+    features = string_array_del_value(features, feature);
+    if (features == NULL) {
+        ret = ENOMEM;
+        goto done;
+    }
+
+    ret = authselect_activate(profile_id, (const char **)features, false);
+
+done:
+    authselect_features_free(features);
+    free(profile_id);
+
+    return ret;
+}
