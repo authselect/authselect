@@ -342,6 +342,52 @@ static errno_t test(struct cli_cmdline *cmdline)
     return EOK;
 }
 
+static errno_t enable(struct cli_cmdline *cmdline)
+{
+    const char *feature;
+    errno_t ret;
+
+    ret = cli_tool_popt_ex(cmdline, NULL, CLI_TOOL_OPT_OPTIONAL,
+                           NULL, NULL, "FEATURE", _("Feature to enable."),
+                           &feature, false, NULL);
+    if (ret != EOK) {
+        ERROR("Unable to parse command arguments");
+        return ret;
+    }
+
+    ret = authselect_feature_enable(feature);
+    if (ret != EOK) {
+        fprintf(stderr, _("Unable to enable feature [%d]: %s\n"),
+                ret, strerror(ret));
+        return ret;
+    }
+
+    return EOK;
+}
+
+static errno_t disable(struct cli_cmdline *cmdline)
+{
+    const char *feature;
+    errno_t ret;
+
+    ret = cli_tool_popt_ex(cmdline, NULL, CLI_TOOL_OPT_OPTIONAL,
+                           NULL, NULL, "FEATURE", _("Feature to disable."),
+                           &feature, false, NULL);
+    if (ret != EOK) {
+        ERROR("Unable to parse command arguments");
+        return ret;
+    }
+
+    ret = authselect_feature_disable(feature);
+    if (ret != EOK) {
+        fprintf(stderr, _("Unable to disable feature [%d]: %s\n"),
+                ret, strerror(ret));
+        return ret;
+    }
+
+    return EOK;
+}
+
 static errno_t
 setup_gettext()
 {
@@ -378,6 +424,8 @@ int main(int argc, const char **argv)
         CLI_TOOL_COMMAND("current", "Get identificator of currently selected profile", current),
         CLI_TOOL_COMMAND("check", "Check if the current configration is valid", check),
         CLI_TOOL_COMMAND("test", "Print changes that would be otherwise written", test),
+        CLI_TOOL_COMMAND("enable-feature", "Enable feature in currently activated profile", enable),
+        CLI_TOOL_COMMAND("disable-feature", "Disable feature in currently activated profile", disable),
         CLI_TOOL_LAST
     };
 

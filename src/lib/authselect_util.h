@@ -151,4 +151,23 @@ check_exists(const char *path);
  */
 char *get_dirname(const char *filepath);
 
+/**
+ * Return true if @value is present in @array.
+ */
+bool
+string_array_has_value(char **array, const char *value);
+
+/**
+ * Add @value to @array and return reallocated array. If reallocation fails,
+ * the array is freed.
+ */
+char **
+string_array_add_value(char **array, const char *value);
+
+/**
+ * Remove @value from @array and return the array.
+ */
+char **
+string_array_del_value(char **array, const char *value);
+
 #endif /* _AUTHSELECT_UTIL_H_ */
