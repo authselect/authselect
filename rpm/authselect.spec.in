@@ -119,6 +119,7 @@ rm -f $RPM_BUILD_ROOT/%{_libdir}/libauthselect.so
 %defattr(-,root,root,-)
 %{_bindir}/authselect
 %{_mandir}/man8/authselect.8*
+%{_mandir}/man7/authselect-migration.7*
 
 %post libs -p /sbin/ldconfig
 %postun libs -p /sbin/ldconfig
