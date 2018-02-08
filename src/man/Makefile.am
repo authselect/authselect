@@ -12,6 +12,7 @@ BUILT_SOURCES = \
 man_MANS = \
     authselect.8 \
     authselect-profiles.5 \
+    authselect-migration.7 \
     $(NULL)
 
 expand_files:
