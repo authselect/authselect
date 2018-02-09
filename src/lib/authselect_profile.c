@@ -29,6 +29,8 @@
 #include "authselect.h"
 #include "lib/authselect_paths.h"
 #include "lib/authselect_private.h"
+#include "lib/util/string.h"
+#include "lib/util/textfile.h"
 
 #define CUSTOM_PROFILE_PREFIX "custom/"
 
@@ -54,8 +56,10 @@ read_profile_files(struct authselect_profile *profile,
     };
 
     for (i = 0; files[i].filename != NULL; i++) {
-        ret = read_textfile_dirfd(dirfd, profile->path,
-                                  files[i].filename, files[i]._storage);
+        INFO("Reading file [%s/%s]", profile->path, files[i].filename);
+
+        ret = textfile_read_dirfd(dirfd, profile->path, files[i].filename,
+                                  AUTHSELECT_FILE_SIZE_LIMIT, files[i]._storage);
         if (ret == ENOENT) {
             *files[i]._storage = NULL;
         } else if (ret != EOK) {
@@ -75,7 +79,10 @@ read_profile_meta(struct authselect_profile *profile,
     size_t lineend;
     errno_t ret;
 
-    ret = read_textfile_dirfd(dirfd, profile->path, FILE_README, &readme);
+    INFO("Reading file [%s/%s]", profile->path, FILE_README);
+
+    ret = textfile_read_dirfd(dirfd, profile->path, FILE_README,
+                              AUTHSELECT_FILE_SIZE_LIMIT, &readme);
     if (ret != EOK) {
         return ret;
     }
@@ -94,10 +101,10 @@ read_profile_meta(struct authselect_profile *profile,
         return ENOMEM;
     }
 
-    ret = trimline(name, &profile->name);
+    profile->name = string_trim_noempty(name);
     free(name);
-    if (ret != EOK) {
-        return ret;
+    if (profile->name == NULL) {
+        return EINVAL;
     }
 
     /* An empty line? */

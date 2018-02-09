@@ -11,8 +11,12 @@ include_HEADERS = \
     
 noinst_HEADERS = \
     authselect_private.h \
-    authselect_util.h \
     authselect_paths.h \
+    util/file.h \
+    util/string_array.h \
+    util/string.h \
+    util/template.h \
+    util/textfile.h \
     $(NULL)
 
 lib_LTLIBRARIES = \
@@ -36,8 +40,12 @@ libauthselect_la_SOURCES = \
     authselect_conf.c \
     authselect_check.c \
     authselect_activate.c \
-    authselect_util.c \
     authselect_paths.c \
+    util/file.c \
+    util/string_array.c \
+    util/string.c \
+    util/template.c \
+    util/textfile.c \
     $(NULL)
 libauthselect_la_LIBADD = \
     $(top_builddir)/src/common/libcommon.la \

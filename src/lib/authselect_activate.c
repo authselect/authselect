@@ -28,7 +28,9 @@
 #include "authselect.h"
 #include "lib/authselect_private.h"
 #include "lib/authselect_paths.h"
-#include "lib/authselect_util.h"
+#include "lib/util/string_array.h"
+#include "lib/util/template.h"
+#include "lib/util/file.h"
 
 static bool
 check_directories()
@@ -48,7 +50,7 @@ check_directories()
     /* We need to special case since nsswitch.conf is a file not a
      * directory. But we want to make sure that its parent directory
      * exists and we can write to it.*/
-    dirs[4] = get_dirname(AUTHSELECT_NSSWITCH_CONF);
+    dirs[4] = file_get_parent_directory(AUTHSELECT_NSSWITCH_CONF);
     if (dirs[4] == NULL) {
         ERROR("Unable to get path to nsswitch.conf parent directory!");
         return false;
@@ -56,7 +58,7 @@ check_directories()
 
     bret = true;
     for (i = 0; dirs[i] != NULL; i++) {
-        ret = check_access(dirs[i], W_OK | X_OK);
+        ret = file_check_access(dirs[i], W_OK | X_OK);
         if (ret == EOK) {
             continue;
         } else if (ret == ENOENT) {
@@ -90,7 +92,8 @@ write_generated_files(struct authselect_profile *profile,
     struct authselect_generated generated[] = GENERATED_FILES(files);
 
     for (i = 0; generated[i].path != NULL; i++) {
-        ret = create_textfile(generated[i].path, generated[i].content);
+        ret = template_write(generated[i].path, generated[i].content,
+                             AUTHSELECT_FILE_MODE);
         if (ret != EOK) {
             goto done;
         }
@@ -141,6 +144,22 @@ done:
     return ret;
 }
 
+static char *
+buffer_append_line(char *buffer,
+                   const char *line)
+{
+    char *newbuffer;
+
+    if (buffer == NULL) {
+        return format("%s\n", line);
+    }
+
+    newbuffer = format("%s%s\n", buffer, line);
+    free(buffer);
+
+    return newbuffer;
+}
+
 static errno_t
 write_config(const char *profile_id,
              const char **features)
@@ -161,7 +180,7 @@ write_config(const char *profile_id,
         }
     }
 
-    ret = create_textfile(PATH_CONFIG_FILE, buf);
+    ret = template_write(PATH_CONFIG_FILE, buf, AUTHSELECT_FILE_MODE);
     free(buf);
 
     return ret;

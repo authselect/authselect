@@ -24,7 +24,7 @@
 
 #include "lib/authselect_private.h"
 #include "lib/authselect_paths.h"
-#include "lib/authselect_util.h"
+#include "lib/util/string_array.h"
 
 _PUBLIC_ void
 authselect_set_debug_fn(authselect_debug_fn fn, void *pvt)
@@ -42,7 +42,7 @@ authselect_current(char **_profile_id,
 _PUBLIC_ void
 authselect_features_free(char **features)
 {
-    free_string_array(features);
+    string_array_free(features);
 }
 
 _PUBLIC_ char **
@@ -82,7 +82,7 @@ done:
 _PUBLIC_ void
 authselect_list_free(char **profile_ids)
 {
-    free_string_array(profile_ids);
+    string_array_free(profile_ids);
 }
 
 _PUBLIC_ int

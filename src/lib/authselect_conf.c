@@ -29,7 +29,8 @@
 
 #include "lib/authselect_private.h"
 #include "lib/authselect_paths.h"
-#include "lib/authselect_util.h"
+#include "lib/util/string_array.h"
+#include "lib/util/string.h"
 
 static errno_t
 read_line(FILE *file, char **_line)
@@ -37,20 +38,15 @@ read_line(FILE *file, char **_line)
     char *line = NULL;
     size_t len = 0;
     char *trimmed;
-    errno_t ret;
 
     errno = 0;
     while (getline(&line, &len, file) != -1) {
-        ret = trimline(line, &trimmed);
+        trimmed = string_trim_noempty(line);
 
         /* Reset values for next getline call. */
         free(line);
         line = NULL;
         len = 0;
-
-        if (ret != EOK) {
-            return ret;
-        }
 
         /* Skip empty line. */
         if (trimmed == NULL) {
@@ -87,7 +83,7 @@ authselect_read_conf_features(FILE *file, char ***_features)
         count++;
         reallocated = realloc_array(features, char *, count + 1);
         if (reallocated == NULL) {
-            free_string_array(features);
+            string_array_free(features);
             return ENOMEM;
         }
 
@@ -103,7 +99,7 @@ authselect_read_conf_features(FILE *file, char ***_features)
         return EOK;
     }
 
-    free_string_array(features);
+    string_array_free(features);
     return ret;
 }
 
@@ -165,7 +161,7 @@ done:
         free(profile_id);
     }
 
-    free_string_array(features);
+    string_array_free(features);
 
     return ret;
 }

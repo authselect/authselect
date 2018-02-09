@@ -23,7 +23,13 @@
 
 #include <dirent.h>
 
-#include "lib/authselect_util.h"
+#include "common/common.h"
+
+/* Functions marked with this macro are exported to the library consumer. */
+#define _PUBLIC_
+
+#define AUTHSELECT_FILE_MODE       0644
+#define AUTHSELECT_FILE_SIZE_LIMIT 4096
 
 struct authselect_dir;
 

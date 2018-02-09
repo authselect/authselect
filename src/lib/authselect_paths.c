@@ -19,7 +19,7 @@
 */
 
 #include "lib/authselect_paths.h"
-#include "lib/authselect_util.h"
+#include "lib/authselect_private.h"
 
 _PUBLIC_ const char *
 authselect_path_nsswitch()
