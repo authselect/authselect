@@ -28,66 +28,6 @@
 #include "lib/authselect_private.h"
 #include "lib/util/template.h"
 
-errno_t
-authselect_files_generate(struct authselect_profile *profile,
-                          const char **features,
-                          struct authselect_files **_files)
-{
-    struct authselect_files *files;
-    errno_t ret;
-    int i;
-
-    if (profile == NULL) {
-        return EINVAL;
-    }
-
-    files = malloc_zero(struct authselect_files);
-    if (files == NULL) {
-        return ENOMEM;
-    }
-
-    struct {
-        const char *template;
-        char **_storage;
-    } tpls[] = {
-        {profile->files.systemauth,      &files->systemauth},
-        {profile->files.passwordauth,    &files->passwordauth},
-        {profile->files.smartcardauth,   &files->smartcardauth},
-        {profile->files.fingerprintauth, &files->fingerprintauth},
-        {profile->files.postlogin,       &files->postlogin},
-        {profile->files.nsswitch,        &files->nsswitch},
-        {profile->files.dconfdb,         &files->dconfdb},
-        {profile->files.dconflock,       &files->dconflock},
-        {NULL, NULL},
-    };
-
-    /* Template may be NULL so we must compare against destination. */
-    for (i = 0; tpls[i]._storage != NULL; i++) {
-        if (tpls[i].template == NULL) {
-            *tpls[i]._storage = NULL;
-            continue;
-        }
-
-        *tpls[i]._storage = template_generate(tpls[i].template, features);
-        if (tpls[i]._storage == NULL) {
-            ret = ENOMEM;
-            goto done;
-        }
-    }
-
-    *_files = files;
-
-    ret = EOK;
-
-done:
-    if (ret != EOK) {
-        ERROR("Unable to generate files [%d]: %s", ret, strerror(ret));
-        authselect_files_free(files);
-    }
-
-    return ret;
-}
-
 _PUBLIC_ const char *
 authselect_files_nsswitch(const struct authselect_files *files)
 {

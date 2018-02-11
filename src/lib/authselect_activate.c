@@ -31,160 +31,7 @@
 #include "lib/util/string_array.h"
 #include "lib/util/template.h"
 #include "lib/util/file.h"
-
-static bool
-check_directories()
-{
-    const char *dirs[] = {
-        AUTHSELECT_CONFIG_DIR,
-        AUTHSELECT_PAM_DIR,
-        AUTHSELECT_DCONF_DIR,
-        AUTHSELECT_DCONF_DIR "/locks",
-        NULL, /* place for nsswitch.conf parent directory */
-        NULL
-    };
-    errno_t ret;
-    bool bret;
-    int i;
-
-    /* We need to special case since nsswitch.conf is a file not a
-     * directory. But we want to make sure that its parent directory
-     * exists and we can write to it.*/
-    dirs[4] = file_get_parent_directory(AUTHSELECT_NSSWITCH_CONF);
-    if (dirs[4] == NULL) {
-        ERROR("Unable to get path to nsswitch.conf parent directory!");
-        return false;
-    }
-
-    bret = true;
-    for (i = 0; dirs[i] != NULL; i++) {
-        ret = file_check_access(dirs[i], W_OK | X_OK);
-        if (ret == EOK) {
-            continue;
-        } else if (ret == ENOENT) {
-            ERROR("Directory [%s] does not exist, please create it!", dirs[i]);
-        } else if (ret != EOK) {
-            ERROR("Unable to access directory [%s] in [wx] mode!", dirs[i]);
-        }
-
-        bret = false;
-    }
-
-    free((char *)dirs[4]);
-
-    return bret;
-}
-
-static errno_t
-write_generated_files(struct authselect_profile *profile,
-                      const char **features)
-{
-    struct authselect_files *files;
-    errno_t ret;
-    int i;
-
-    ret = authselect_files_generate(profile, features, &files);
-    if (ret != EOK) {
-        ERROR("Unable to generate content [%d]: %s", ret, strerror(ret));
-        return ret;
-    }
-
-    struct authselect_generated generated[] = GENERATED_FILES(files);
-
-    for (i = 0; generated[i].path != NULL; i++) {
-        ret = template_write(generated[i].path, generated[i].content,
-                             AUTHSELECT_FILE_MODE);
-        if (ret != EOK) {
-            goto done;
-        }
-    }
-
-done:
-    authselect_files_free(files);
-
-    return ret;
-}
-
-static errno_t
-write_symbolic_links()
-{
-    struct authselect_symlink symlinks[] = SYMLINK_FILES;
-    mode_t oldmask;
-    errno_t ret;
-    int i;
-
-    oldmask = umask(0644);
-
-    for (i = 0; symlinks[i].name != NULL; i++) {
-        INFO("Creating symbolic link [%s] to [%s]",
-             symlinks[i].name, symlinks[i].dest);
-
-        ret = unlink(symlinks[i].name);
-        if (ret != 0 && errno != ENOENT) {
-            ret = errno;
-            ERROR("Unable to overwrite file [%s] [%d]: %s",
-                  symlinks[i].name, ret, strerror(ret));
-            goto done;
-        }
-
-        ret = symlink(symlinks[i].dest, symlinks[i].name);
-        if (ret != 0) {
-            ret = errno;
-            ERROR("Unable to create symbolic link [%s] [%d]: %s",
-                  symlinks[i].name, ret, strerror(ret));
-            goto done;
-        }
-    }
-
-    ret = EOK;
-
-done:
-    umask(oldmask);
-
-    return ret;
-}
-
-static char *
-buffer_append_line(char *buffer,
-                   const char *line)
-{
-    char *newbuffer;
-
-    if (buffer == NULL) {
-        return format("%s\n", line);
-    }
-
-    newbuffer = format("%s%s\n", buffer, line);
-    free(buffer);
-
-    return newbuffer;
-}
-
-static errno_t
-write_config(const char *profile_id,
-             const char **features)
-{
-    char *buf;
-    errno_t ret;
-    int i;
-
-    buf = buffer_append_line(NULL, profile_id);
-    if (buf == NULL) {
-        return ENOMEM;
-    }
-
-    for (i = 0; features[i] != NULL; i++) {
-        buf = buffer_append_line(buf, features[i]);
-        if (buf == NULL) {
-            return ENOMEM;
-        }
-    }
-
-    ret = template_write(PATH_CONFIG_FILE, buf, AUTHSELECT_FILE_MODE);
-    free(buf);
-
-    return ret;
-}
+#include "lib/files/files.h"
 
 static errno_t
 authselect_activate_profile(struct authselect_profile *profile,
@@ -192,19 +39,20 @@ authselect_activate_profile(struct authselect_profile *profile,
 {
     errno_t ret;
 
-    ret = write_generated_files(profile, features);
+    ret = authselect_system_write(features, &profile->files);
     if (ret != EOK) {
-        ERROR("Unable to write generated files [%d]: %s", ret, strerror(ret));
+        ERROR("Unable to write generated system files [%d]: %s",
+              ret, strerror(ret));
         goto done;
     }
 
-    ret = write_config(profile->id, features);
+    ret = authselect_config_write(profile->id, features);
     if (ret != EOK) {
         ERROR("Unable to write configuration [%d]: %s", ret, strerror(ret));
         goto done;
     }
 
-    ret = write_symbolic_links();
+    ret = authselect_symlinks_write();
     if (ret != EOK) {
         ERROR("Unable to create symbolic links [%d]: %s", ret, strerror(ret));
         goto done;
@@ -220,7 +68,6 @@ authselect_activate(const char *profile_id,
                     bool force_override)
 {
     struct authselect_profile *profile;
-    bool symlink_exist;
     bool is_valid;
     errno_t ret;
 
@@ -234,7 +81,7 @@ authselect_activate(const char *profile_id,
     }
 
     /* Check that all directories are writable. */
-    is_valid = check_directories();
+    is_valid = authselect_config_locations_writable();
     if (is_valid == false) {
         ERROR("Some directories are not accessible by authselect!");
         ret = EPERM;
@@ -264,14 +111,7 @@ authselect_activate(const char *profile_id,
 
     /* If no configuration is present, check for existing files. */
     if (ret == ENOENT) {
-        ret = authselect_check_symlinks_presence(&symlink_exist);
-        if (ret != EOK) {
-            ERROR("Unable to check for presence of symbolic links [%d]: %s",
-                  ret, strerror(ret));
-            goto done;
-        }
-
-        if (symlink_exist) {
+        if (!authselect_symlinks_location_available()) {
             ERROR("File that needs to be overwritten was found");
             ERROR("Refusing to activate profile unless this file is removed "
                   "or overwrite is requested.");

@@ -24,6 +24,21 @@
 #include <stddef.h>
 #include <stdbool.h>
 
+#define STRING_EXPLODE_TRIM            0x0001
+#define STRING_EXPLODE_SKIP_EMPTY      0x0002
+#define STRING_EXPLODE_SKIP_COMMENT    0x0004
+#define STRING_EXPLODE_ALL             0xFFFF
+
+/**
+ * CHeck if the string is empty.
+ *
+ * @param str String to test.
+ *
+ * @return True if @str is NULL or empty, false otherwise.
+ */
+bool
+string_is_empty(const char *str);
+
 /**
  * Remove whitespaces from left side of the string and return new location
  * within the same string.
@@ -77,5 +92,29 @@ string_trim(const char *str);
  */
 char *
 string_trim_noempty(const char *str);
+
+/**
+ * Split the string on each delimiter and convert it into NULL-terminated
+ * string array.
+ *
+ * @param str       String to split.
+ * @param delimiter Delimiter.
+ * @param flags     Bit mask of flags. See STRING_EXPLODE_* macros.
+ *
+ * @return String array or NULL if allocation fails.
+ */
+char **
+string_explode(const char *str, char delimiter, unsigned int flags);
+
+/**
+ * Concatenates items of NULL-terminated string array with delimiter.
+ *
+ * @param array     Array to concatenate.
+ * @param delimiter Delimiter.
+ *
+ * @return String or NULL if allocation fails.
+ */
+char *
+string_implode(const char **array, char delimiter);
 
 #endif /* _STRING_H_ */

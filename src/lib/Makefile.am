@@ -12,6 +12,7 @@ include_HEADERS = \
 noinst_HEADERS = \
     authselect_private.h \
     authselect_paths.h \
+    files/files.h \
     util/file.h \
     util/string_array.h \
     util/string.h \
@@ -37,10 +38,11 @@ libauthselect_la_SOURCES = \
     authselect_dir.c \
     authselect_profile.c \
     authselect_files.c \
-    authselect_conf.c \
-    authselect_check.c \
     authselect_activate.c \
     authselect_paths.c \
+    files/config.c \
+    files/symlinks.c \
+    files/system.c \
     util/file.c \
     util/string_array.c \
     util/string.c \

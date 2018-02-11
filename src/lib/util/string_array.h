@@ -82,6 +82,20 @@ string_array_has_value(char **array, const char *value);
  *
  * @param array NULL-terminated array.
  * @param value Value to append to the array.
+ * @param len   Length of the string.
+ *
+ * @return Array or NULL if reallocation fails.
+ */
+char **
+string_array_add_value_safe(char **array, const char *value, size_t len);
+
+/**
+ * Add value to NULL-terminated string array to its end.
+ *
+ * If reallocation fails, NULL is returned and the original array is freed.
+ *
+ * @param array NULL-terminated array.
+ * @param value Value to append to the array.
  *
  * @return Array or NULL if reallocation fails.
  */

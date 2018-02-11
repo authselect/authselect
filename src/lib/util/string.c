@@ -21,8 +21,17 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
+#include <errno.h>
 
+#include "common/common.h"
+#include "util/string_array.h"
 #include "util/string.h"
+
+bool
+string_is_empty(const char *str)
+{
+    return str == NULL || str[0] == '\0';
+}
 
 const char *
 string_trim_left_const(const char *str)
@@ -83,4 +92,133 @@ string_trim_noempty(const char *str)
     }
 
     return trimmed;
+}
+
+static errno_t
+string_explode_get_token(const char *str,
+                         size_t len,
+                         unsigned int flags,
+                         char **_token)
+{
+    char *token;
+    char *tmp;
+
+    token = strndup(str, len);
+    if (token == NULL) {
+        return ENOMEM;
+    }
+
+    if (flags & STRING_EXPLODE_TRIM) {
+        tmp = string_trim(token);
+        if (tmp == NULL) {
+            free(token);
+            return ENOMEM;
+        }
+
+        token = tmp;
+    }
+
+    if (flags & STRING_EXPLODE_SKIP_EMPTY && string_is_empty(token)) {
+        *_token = NULL;
+        free(token);
+        return EOK;
+    }
+
+    if (flags & STRING_EXPLODE_SKIP_COMMENT && token[0] == '\0') {
+        *_token = NULL;
+        free(token);
+        return EOK;
+    }
+
+    *_token = token;
+
+    return EOK;
+}
+
+static char **
+string_explode_add_value(char **array,
+                         const char *value,
+                         size_t len,
+                         unsigned int flags)
+{
+    char *token;
+    errno_t ret;
+
+    ret = string_explode_get_token(value, len, flags, &token);
+    if (ret != EOK) {
+        string_array_free(array);
+        return NULL;
+    }
+
+    if (token == NULL) {
+        return array;
+    }
+
+    array = string_array_add_value(array, token);
+    free(token);
+
+    return array;
+}
+
+char **
+string_explode(const char *str, char delimiter, unsigned int flags)
+{
+    const char *remainder;
+    const char *pos;
+    char **array;
+    size_t len;
+
+    array = string_array_create(1);
+    if (array == NULL) {
+        return NULL;
+    }
+
+    remainder = str;
+    while ((pos = strchr(remainder, delimiter)) != NULL) {
+        len = pos - remainder;
+        array = string_explode_add_value(array, remainder, len, flags);
+        if (array == NULL) {
+            return NULL;
+        }
+
+        remainder = pos + 1;
+    }
+
+    if (string_is_empty(remainder)) {
+        return array;
+    }
+
+    return string_explode_add_value(array, remainder, strlen(remainder), flags);
+}
+
+char *
+string_implode(const char **array, char delimiter)
+{
+    const char delimiter_str[] = {delimiter, '\0'};
+    size_t len;
+    char *tmp;
+    char *str;
+    int i;
+
+    for (i = 0; array[i] != NULL; i++) {
+        len += strlen(array[i]) + 1;
+    }
+
+    if (len == 0) {
+        return strdup("");
+    }
+
+    str = malloc_zero_array(char, len);
+    if (str == NULL) {
+        return NULL;
+    }
+
+    tmp = str;
+    for (i = 0; array[i] != NULL; i++) {
+        strcat(tmp, array[i]);
+        strcat(tmp, delimiter_str);
+        tmp += strlen(array[i]) + 1;
+    }
+
+    return str;
 }

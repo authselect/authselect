@@ -31,44 +31,9 @@
 #include "lib/authselect_private.h"
 #include "lib/util/string.h"
 #include "lib/util/textfile.h"
+#include "lib/files/files.h"
 
 #define CUSTOM_PROFILE_PREFIX "custom/"
-
-static errno_t
-read_profile_files(struct authselect_profile *profile,
-                   int dirfd)
-{
-    errno_t ret;
-    int i;
-    struct {
-        const char *filename;
-        char **_storage;
-    } files[] = {
-        {FILE_SYSTEM,      &profile->files.systemauth},
-        {FILE_PASSWORD,    &profile->files.passwordauth},
-        {FILE_SMARTCARD,   &profile->files.smartcardauth},
-        {FILE_FINGERPRINT, &profile->files.fingerprintauth},
-        {FILE_POSTLOGIN,   &profile->files.postlogin},
-        {FILE_NSSWITCH,    &profile->files.nsswitch},
-        {FILE_DCONF_DB,    &profile->files.dconfdb},
-        {FILE_DCONF_LOCK,  &profile->files.dconflock},
-        {NULL, NULL},
-    };
-
-    for (i = 0; files[i].filename != NULL; i++) {
-        INFO("Reading file [%s/%s]", profile->path, files[i].filename);
-
-        ret = textfile_read_dirfd(dirfd, profile->path, files[i].filename,
-                                  AUTHSELECT_FILE_SIZE_LIMIT, files[i]._storage);
-        if (ret == ENOENT) {
-            *files[i]._storage = NULL;
-        } else if (ret != EOK) {
-            return ret;
-        }
-    }
-
-    return EOK;
-}
 
 static errno_t
 read_profile_meta(struct authselect_profile *profile,
@@ -149,7 +114,8 @@ authselect_profile_init(int profile_fd,
         goto done;
     }
 
-    ret = read_profile_files(profile, profile_fd);
+    ret = authselect_system_read_templates(profile->path, profile_fd,
+                                           &profile->files);
     if (ret != EOK) {
         goto done;
     }

@@ -104,7 +104,7 @@ string_array_has_value(char **array, const char *value)
 }
 
 char **
-string_array_add_value(char **array, const char *value)
+string_array_add_value_safe(char **array, const char *value, size_t len)
 {
     size_t count;
 
@@ -118,13 +118,19 @@ string_array_add_value(char **array, const char *value)
         return NULL;
     }
 
-    array[count] = strdup(value);
+    array[count] = strndup(value, len);
     if (array[count] == NULL) {
         string_array_free(array);
         return NULL;
     }
 
     return array;
+}
+
+char **
+string_array_add_value(char **array, const char *value)
+{
+    return string_array_add_value_safe(array, value, strlen(value));
 }
 
 char **

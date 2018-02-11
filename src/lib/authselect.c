@@ -19,12 +19,14 @@
 */
 
 #include <stddef.h>
+#include <stdlib.h>
 
 #include "authselect.h"
 
 #include "lib/authselect_private.h"
 #include "lib/authselect_paths.h"
 #include "lib/util/string_array.h"
+#include "lib/files/files.h"
 
 _PUBLIC_ void
 authselect_set_debug_fn(authselect_debug_fn fn, void *pvt)
@@ -33,10 +35,34 @@ authselect_set_debug_fn(authselect_debug_fn fn, void *pvt)
 }
 
 _PUBLIC_ int
+authselect_check_conf(bool *_is_valid)
+{
+    char *profile_id;
+    char **features;
+    errno_t ret;
+
+    ret = authselect_config_read(&profile_id, &features);
+    if (ret == ENOENT) {
+        *_is_valid = authselect_config_validate_non_existing();
+        return ENOENT;
+    } if (ret != EOK) {
+        return ret;
+    }
+
+    *_is_valid = authselect_config_validate_existing(profile_id,
+                                                     (const char **)features);
+
+    free(profile_id);
+    string_array_free(features);
+
+    return EOK;
+}
+
+_PUBLIC_ int
 authselect_current(char **_profile_id,
                    char ***_features)
 {
-    return authselect_read_conf(_profile_id, _features);
+    return authselect_config_read(_profile_id, _features);
 }
 
 _PUBLIC_ void
@@ -99,7 +125,7 @@ authselect_cat(const char *profile_id,
         return ret;
     }
 
-    ret = authselect_files_generate(profile, features, &files);
+    ret = authselect_system_generate(features, &profile->files, &files);
     authselect_profile_free(profile);
     if (ret != EOK) {
         return ret;

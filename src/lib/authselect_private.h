@@ -109,42 +109,4 @@ authselect_is_custom_profile(const char *profile_id,
 void
 authselect_files_free_content(struct authselect_files *files);
 
-/**
- * Generate output files for given profile.
- *
- * @param profile  An authselect profile.
- * @param features Profile optional features to enable.
- * @param _file    Generated files.
- *
- * @return EOK on success, errno code on failure.
- */
-errno_t
-authselect_files_generate(struct authselect_profile *profile,
-                          const char **features,
-                          struct authselect_files **_files);
-
-/**
- * Read information from configuration file.
- *
- * @param confpath Path to the configuration file.
- * @param _profile_id     Profile identifier.
- * @param _features       NULL-terminated array of enabled
- *                             optional features.
- * @return EOK on success, errno code on error.
- */
-errno_t
-authselect_read_conf(char **_profile_id,
-                     char ***_features);
-
-/**
- * Check if authselect symbolic links exist or not and save the result
- * in @_exist.
- *
- * @param _exist True if any symbolic link was foud, false otherwise.
- *
- * @return EOK on success, errno code on error.
- */
-errno_t
-authselect_check_symlinks_presence(bool *_exist);
-
 #endif /* _AUTHSELECT_PRIVATE_H_ */
