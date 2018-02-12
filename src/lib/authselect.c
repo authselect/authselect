@@ -26,12 +26,130 @@
 #include "lib/authselect_private.h"
 #include "lib/authselect_paths.h"
 #include "lib/util/string_array.h"
+#include "lib/profiles/profiles.h"
 #include "lib/files/files.h"
 
 _PUBLIC_ void
 authselect_set_debug_fn(authselect_debug_fn fn, void *pvt)
 {
     set_debug_fn(fn, pvt);
+}
+
+_PUBLIC_ int
+authselect_activate(const char *profile_id,
+                    const char **features,
+                    bool force_override)
+{
+    struct authselect_profile *profile;
+    bool is_valid;
+    errno_t ret;
+
+    INFO("Trying to activate profile [%s]", profile_id);
+
+    ret = authselect_profile(profile_id, &profile);
+    if (ret != EOK) {
+        ERROR("Unable to find profile [%s] [%d]: %s",
+              profile_id, ret, strerror(ret));
+        return ret;
+    }
+
+    if (force_override) {
+        INFO("Enforcing activation!");
+        ret = authselect_profile_activate(profile, features);
+        goto done;
+    }
+
+    /* First, check that current configuration is valid. */
+    ret = authselect_check_conf(&is_valid);
+    if (ret != EOK && ret != ENOENT) {
+        ERROR("Unable to check configuration [%d]: %s", ret, strerror(ret));
+        goto done;
+    }
+
+    if (!is_valid) {
+        ERROR("Unexpected changes to the configuration were detected.");
+        ERROR("Refusing to activate profile unless those changes are removed "
+              "or overwrite is requested.");
+        ret = AUTHSELECT_ERR_FORCE_REQUIRED;
+        goto done;
+    }
+
+    /* If no configuration is present, check for existing files. */
+    if (ret == ENOENT) {
+        if (!authselect_symlinks_location_available()) {
+            ERROR("File that needs to be overwritten was found");
+            ERROR("Refusing to activate profile unless this file is removed "
+                  "or overwrite is requested.");
+            ret = AUTHSELECT_ERR_FORCE_REQUIRED;
+            goto done;
+        }
+    }
+
+    ret = authselect_profile_activate(profile, features);
+
+done:
+    if (ret != EOK && ret != AUTHSELECT_ERR_FORCE_REQUIRED) {
+        ERROR("Unable to activate profile [%s] [%d]: %s",
+              profile_id, ret, strerror(ret));
+    }
+
+    authselect_profile_free(profile);
+
+    return ret;
+}
+
+_PUBLIC_ int
+authselect_feature_enable(const char *feature)
+{
+    char *profile_id;
+    char **features;
+    errno_t ret;
+
+    ret = authselect_current(&profile_id, &features);
+    if (ret != EOK) {
+        return ret;
+    }
+
+    features = string_array_add_value(features, feature);
+    if (features == NULL) {
+        ret = ENOMEM;
+        goto done;
+    }
+
+    ret = authselect_activate(profile_id, (const char **)features, false);
+
+done:
+    authselect_features_free(features);
+    free(profile_id);
+
+    return ret;
+}
+
+_PUBLIC_ int
+authselect_feature_disable(const char *feature)
+{
+    char *profile_id;
+    char **features;
+    errno_t ret;
+
+    ret = authselect_current(&profile_id, &features);
+    if (ret != EOK) {
+        return ret;
+    }
+
+    features = string_array_del_value(features, feature);
+    if (features == NULL) {
+        ret = ENOMEM;
+        goto done;
+    }
+
+    ret = authselect_activate(profile_id, (const char **)features, false);
+
+done:
+    authselect_features_free(features);
+    free(profile_id);
+
+    return ret;
 }
 
 _PUBLIC_ int
@@ -74,33 +192,13 @@ authselect_features_free(char **features)
 _PUBLIC_ char **
 authselect_list()
 {
-    struct authselect_dir *profile = NULL;
-    struct authselect_dir *vendor = NULL;
-    struct authselect_dir *custom = NULL;
-    char **profiles = NULL;
+    char **profiles;
     errno_t ret;
 
-    ret = authselect_dir_read(DIR_DEFAULT_PROFILES, &profile);
+    ret = authselect_profile_list(&profiles);
     if (ret != EOK) {
-        goto done;
+        return NULL;
     }
-
-    ret = authselect_dir_read(DIR_VENDOR_PROFILES, &vendor);
-    if (ret != EOK) {
-        goto done;
-    }
-
-    ret = authselect_dir_read(DIR_CUSTOM_PROFILES, &custom);
-    if (ret != EOK) {
-        goto done;
-    }
-
-    profiles = authselect_merge_profiles(profile, vendor, custom);
-
-done:
-    authselect_dir_free(profile);
-    authselect_dir_free(vendor);
-    authselect_dir_free(custom);
 
     return profiles;
 }

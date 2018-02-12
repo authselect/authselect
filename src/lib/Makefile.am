@@ -13,6 +13,7 @@ noinst_HEADERS = \
     authselect_private.h \
     authselect_paths.h \
     files/files.h \
+    profiles/profiles.h \
     util/file.h \
     util/string_array.h \
     util/string.h \
@@ -35,14 +36,16 @@ authselect_dconf_file=@AUTHSELECT_DCONF_FILE@
 
 libauthselect_la_SOURCES = \
     authselect.c \
-    authselect_dir.c \
     authselect_profile.c \
     authselect_files.c \
-    authselect_activate.c \
     authselect_paths.c \
     files/config.c \
     files/symlinks.c \
     files/system.c \
+    profiles/activate.c \
+    profiles/custom.c \
+    profiles/list.c \
+    profiles/read.c \
     util/file.c \
     util/string_array.c \
     util/string.c \

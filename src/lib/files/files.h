@@ -182,4 +182,17 @@ authselect_symlinks_validate_missing(void);
 bool
 authselect_symlinks_location_available(void);
 
+/**
+ * List all profile directories in a sorted NULL-terminated string array.
+ *
+ * This will find all profiles within default, vendor and custom profile
+ * directories.
+ *
+ * @param _profiles NULL-terminated sorted string array.
+ *
+ * @return EOK on success, other errno code on failure.
+ */
+errno_t
+authselect_profile_list(char ***_profiles);
+
 #endif /* _FILES_H_ */

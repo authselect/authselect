@@ -30,8 +30,7 @@
 
 #define AUTHSELECT_FILE_MODE       0644
 #define AUTHSELECT_FILE_SIZE_LIMIT 4096
-
-struct authselect_dir;
+#define AUTHSELECT_CUSTOM_PREFIX   "custom/"
 
 struct authselect_files {
     char *systemauth;
@@ -53,55 +52,6 @@ struct authselect_profile {
 
     struct authselect_files files;
 };
-
-/**
- * Free authselect_dir structure.
- */
-void authselect_dir_free(struct authselect_dir *dir);
-
-/**
- * Read profile identifiers from directory.
- *
- * @param dirpath Path to the profile directory.
- * @param _dir    Output authselect_dir object.
- *
- * @return EOK on success, errno code on failure.
- */
-errno_t authselect_dir_read(const char *dirpath, struct authselect_dir **_dir);
-
-/**
- * Merge profile identifiers from three authselect directories.
- *
- * - All profiles from @profile will be included.
- * - Only profile from @vendor that are not present in @profile will be added.
- * - All profiles from @custom will be added having their name prefixed with
- *   CUSTOM_PROFILE_PREFIX
- *
- * @return NULL-terminated array of profile identifiers or NULL on error.
- */
-char **
-authselect_merge_profiles(struct authselect_dir *profile,
-                          struct authselect_dir *vendor,
-                          struct authselect_dir *custom);
-
-/**
- * Build custom profile identifier from @name.
- *
- * @return CUSTOM_PROFILE_PREFIX concatenated with @name or NULL on error.
- */
-char *authselect_profile_custom_id(const char *profile_dirname);
-
-/**
- * Check if the provided profile id match a custom profile id.
- *
- * @param profile_id Profile id to test.
- * @param _profile_dirname Optional, location to store profile directory name.
- *
- * @return True if it is a custom profile, false otherwise.
- */
-bool
-authselect_is_custom_profile(const char *profile_id,
-                             const char **_profile_dirname);
 
 /**
  * Free authselect_files structure content but not the structure itself.
