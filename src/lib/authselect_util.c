@@ -242,7 +242,7 @@ read_textfile_internal(FILE *file, const char *filename, char **_content)
 
     rewind(file);
 
-    buffer = malloc_zero_array(char, filelen + 1);
+    buffer = calloc(filelen + 1, sizeof(char));
     if (buffer == NULL) {
         ret = ENOMEM;
         goto done;
@@ -616,7 +616,7 @@ string_array_add_value(char **array, const char *value)
 
     count = string_array_count(array);
 
-    resized = realloc_array(array, char *, count + 2);
+    resized = reallocarray(array, count + 2, sizeof(char *));
     if (resized == NULL) {
         free_string_array(array);
         return NULL;

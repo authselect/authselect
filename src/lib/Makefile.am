@@ -1,6 +1,7 @@
 MKDIR_P = @MKDIR_P@
 
 AM_CFLAGS = \
+    -D_GNU_SOURCE \
     -I$(top_srcdir)/include \
     -I$(top_srcdir)/src \
     $(NULL)

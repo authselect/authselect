@@ -13,7 +13,6 @@ noinst_LTLIBRARIES = \
     $(NULL)
 
 libcommon_la_SOURCES = \
-    malloc.c \
     debug.c \
     utils.c \
     $(NULL)

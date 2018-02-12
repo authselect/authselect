@@ -82,7 +82,7 @@ authselect_dir_add_profile(struct authselect_dir *dir,
         return ENOMEM;
     }
 
-    resized = realloc_array(dir->profiles, char *, dir->num_profiles + 2);
+    resized = reallocarray(dir->profiles, dir->num_profiles + 2, sizeof(char *));
     if (resized == NULL) {
         free(profile);
         return ENOMEM;
@@ -109,7 +109,7 @@ authselect_dir_init(const char *path,
         return EINVAL;
     }
 
-    dir = malloc_zero(struct authselect_dir);
+    dir = calloc(1, sizeof(struct authselect_dir));
     if (dir == NULL) {
         return ENOMEM;
     }
@@ -123,7 +123,7 @@ authselect_dir_init(const char *path,
         goto done;
     }
 
-    dir->profiles = malloc_zero_array(char *, 1);
+    dir->profiles = calloc(1, sizeof(char *));
     if (dir->profiles == NULL) {
         ret = ENOMEM;
         goto done;
@@ -360,7 +360,7 @@ authselect_merge_profiles(struct authselect_dir *profile,
     num_profiles += vendor->num_profiles;
     num_profiles += custom->num_profiles;
 
-    ids = malloc_zero_array(char *, num_profiles + 1);
+    ids = calloc(num_profiles + 1, sizeof(char *));
     if (ids == NULL) {
         return NULL;
     }
