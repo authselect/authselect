@@ -45,7 +45,9 @@ void debug(enum authselect_debug level,
     char *msg;
 
     va_start(va, fmt);
-    msg = vaformat(fmt, va);
+    if (vasprintf(&msg, fmt, va) == -1) {
+        return;
+    }
     va_end(va);
 
     if (msg == NULL) {
