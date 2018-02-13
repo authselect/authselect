@@ -18,6 +18,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <string.h>
 #include <stdlib.h>
 
 #include "authselect.h"
@@ -91,6 +92,8 @@ authselect_profile_free(struct authselect_profile *profile)
     }
 
     authselect_files_free(profile->files);
+
+    memset(profile, 0, sizeof(struct authselect_profile));
 
     free(profile);
 

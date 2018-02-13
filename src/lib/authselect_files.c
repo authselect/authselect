@@ -18,6 +18,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <string.h>
 #include <stdlib.h>
 
 #include "lib/constants.h"
@@ -141,6 +142,8 @@ authselect_files_free(struct authselect_files *files)
     if (files->dconflock != NULL) {
         free(files->dconflock);
     }
+
+    memset(files, 0, sizeof(struct authselect_files));
 
     free(files);
 }
