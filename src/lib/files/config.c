@@ -24,13 +24,9 @@
 #include <stdlib.h>
 
 #include "common/common.h"
-#include "lib/authselect_private.h"
-#include "lib/authselect_paths.h"
-#include "files/files.h"
-#include "util/string_array.h"
-#include "util/textfile.h"
-#include "util/string.h"
-#include "util/file.h"
+#include "lib/constants.h"
+#include "lib/util/util.h"
+#include "lib/files/files.h"
 
 static char *
 authselect_config_read_profile_id(char **config)

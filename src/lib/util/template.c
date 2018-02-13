@@ -24,6 +24,7 @@
 #include <sys/stat.h>
 
 #include "common/common.h"
+#include "util/template.h"
 #include "util/textfile.h"
 #include "util/string.h"
 

@@ -18,8 +18,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "lib/authselect_paths.h"
-#include "lib/authselect_private.h"
+#include "lib/constants.h"
 
 _PUBLIC_ const char *
 authselect_path_nsswitch()

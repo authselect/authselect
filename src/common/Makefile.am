@@ -5,6 +5,7 @@ AM_CFLAGS = \
 
 dist_noinst_HEADERS = \
     common.h \
+    errno_t.h \
     gettext.h \
     $(NULL)
 
@@ -15,7 +16,7 @@ noinst_LTLIBRARIES = \
 libcommon_la_SOURCES = \
     malloc.c \
     debug.c \
-    utils.c \
+    format.c \
     $(NULL)
 libcommon_la_CFLAGS = \
     $(AM_CFLAGS) \

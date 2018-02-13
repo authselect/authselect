@@ -23,10 +23,9 @@
 #include <sys/stat.h>
 
 #include "common/common.h"
-#include "lib/authselect_private.h"
-#include "lib/authselect_paths.h"
+#include "lib/constants.h"
+#include "lib/util/util.h"
 #include "lib/files/files.h"
-#include "lib/util/file.h"
 
 errno_t
 authselect_symlinks_write()

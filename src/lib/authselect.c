@@ -23,11 +23,10 @@
 
 #include "authselect.h"
 
-#include "lib/authselect_private.h"
-#include "lib/authselect_paths.h"
-#include "lib/util/string_array.h"
-#include "lib/profiles/profiles.h"
+#include "lib/constants.h"
+#include "lib/util/util.h"
 #include "lib/files/files.h"
+#include "lib/profiles/profiles.h"
 
 _PUBLIC_ void
 authselect_set_debug_fn(authselect_debug_fn fn, void *pvt)

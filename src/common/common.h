@@ -25,21 +25,11 @@
 
 #include <stdarg.h>
 
+#include "errno_t.h"
 #include "gettext.h"
 #include "authselect.h"
 
 #define _(s) gettext(s)
-
-/* Define error type and success errno value. */
-
-#ifndef HAVE_ERRNO_T
-#define HAVE_ERRNO_T
-typedef int errno_t;
-#endif
-
-#ifndef EOK
-#define EOK 0
-#endif
 
 /* Wrappers around malloc and realloc to allocate zero-filled
  * memory and provide type safety. */

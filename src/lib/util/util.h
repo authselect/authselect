@@ -18,35 +18,20 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <string.h>
+#ifndef _UTIL_H_
+#define _UTIL_H_
+
+/**
+ * Many of the utility functions are not as effective as they can be but
+ * this is ok since authselect works only with small configuration files
+ * therefore we can prefer clean and simple code over performance.
+ */
 
 #include "common/common.h"
-#include "lib/constants.h"
+#include "lib/util/file.h"
+#include "lib/util/string.h"
+#include "lib/util/string_array.h"
+#include "lib/util/template.h"
+#include "lib/util/textfile.h"
 
-char *
-authselect_profile_custom_id(const char *name)
-{
-    return format("%s%s", AUTHSELECT_CUSTOM_PREFIX, name);
-}
-
-const char *
-authselect_profile_parse_custom(const char *profile_id)
-{
-    static size_t len = strlen(AUTHSELECT_CUSTOM_PREFIX);
-
-    if (profile_id == NULL) {
-        return NULL;
-    }
-
-    if (strncmp(AUTHSELECT_CUSTOM_PREFIX, profile_id, len) != 0) {
-        return NULL;
-    }
-
-    return profile_id + len;
-}
-
-bool
-authselect_profile_is_custom(const char *profile_id)
-{
-    return authselect_profile_parse_custom(profile_id) != NULL;
-}
+#endif /* _UTIL_H_ */

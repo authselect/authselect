@@ -25,12 +25,10 @@
 #include <unistd.h>
 
 #include "common/common.h"
-#include "lib/authselect_private.h"
-#include "lib/authselect_paths.h"
+#include "lib/constants.h"
 #include "lib/profiles/profiles.h"
 #include "lib/files/files.h"
-#include "lib/util/textfile.h"
-#include "lib/util/string.h"
+#include "lib/util/util.h"
 
 static const char **
 authselect_profile_locations(const char *id)

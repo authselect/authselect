@@ -22,9 +22,9 @@
 #include <string.h>
 
 #include "common/common.h"
-#include "lib/authselect_private.h"
-#include "lib/profiles/profiles.h"
+#include "lib/constants.h"
 #include "lib/files/files.h"
+#include "lib/profiles/profiles.h"
 
 errno_t
 authselect_profile_activate(struct authselect_profile *profile,

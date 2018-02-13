@@ -22,11 +22,8 @@
 #include <stdlib.h>
 
 #include "common/common.h"
-#include "lib/authselect_private.h"
-#include "lib/authselect_paths.h"
-#include "lib/util/textfile.h"
-#include "lib/util/template.h"
-#include "lib/util/file.h"
+#include "lib/constants.h"
+#include "lib/util/util.h"
 #include "lib/files/files.h"
 
 struct authselect_system_paths {

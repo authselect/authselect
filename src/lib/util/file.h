@@ -25,7 +25,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
-#include "common/common.h"
+#include "common/errno_t.h"
 
 /**
  * Check that a file @filepath is a regular file.

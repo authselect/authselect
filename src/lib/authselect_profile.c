@@ -18,20 +18,10 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <errno.h>
-#include <stdbool.h>
-#include <string.h>
 #include <stdlib.h>
-#include <stdio.h>
-#include <fcntl.h>
-#include <unistd.h>
 
 #include "authselect.h"
-#include "lib/authselect_paths.h"
-#include "lib/authselect_private.h"
-#include "lib/util/string.h"
-#include "lib/util/textfile.h"
-#include "lib/files/files.h"
+#include "lib/constants.h"
 #include "lib/profiles/profiles.h"
 
 _PUBLIC_ int

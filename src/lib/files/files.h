@@ -21,8 +21,20 @@
 #ifndef _FILES_H_
 #define _FILES_H_
 
-#include "common/common.h"
-#include "lib/authselect_private.h"
+#include <stdbool.h>
+
+#include "common/errno_t.h"
+
+struct authselect_files {
+    char *systemauth;
+    char *passwordauth;
+    char *smartcardauth;
+    char *fingerprintauth;
+    char *postlogin;
+    char *nsswitch;
+    char *dconfdb;
+    char *dconflock;
+};
 
 /**
  * Read information from configuration file.

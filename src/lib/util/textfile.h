@@ -23,7 +23,7 @@
 
 #include <sys/stat.h>
 
-#include "common/common.h"
+#include "common/errno_t.h"
 
 /**
  * Read file contents.

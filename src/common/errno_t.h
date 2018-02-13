@@ -18,35 +18,20 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <string.h>
+#ifndef _ERRNO_T_H_
+#define _ERRNO_T_H_
 
-#include "common/common.h"
-#include "lib/constants.h"
+#include <errno.h>
 
-char *
-authselect_profile_custom_id(const char *name)
-{
-    return format("%s%s", AUTHSELECT_CUSTOM_PREFIX, name);
-}
+/* Define error type and success errno value. */
 
-const char *
-authselect_profile_parse_custom(const char *profile_id)
-{
-    static size_t len = strlen(AUTHSELECT_CUSTOM_PREFIX);
+#ifndef HAVE_ERRNO_T
+#define HAVE_ERRNO_T
+typedef int errno_t;
+#endif
 
-    if (profile_id == NULL) {
-        return NULL;
-    }
+#ifndef EOK
+#define EOK 0
+#endif
 
-    if (strncmp(AUTHSELECT_CUSTOM_PREFIX, profile_id, len) != 0) {
-        return NULL;
-    }
-
-    return profile_id + len;
-}
-
-bool
-authselect_profile_is_custom(const char *profile_id)
-{
-    return authselect_profile_parse_custom(profile_id) != NULL;
-}
+#endif /* _ERRNO_T_H_ */

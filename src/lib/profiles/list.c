@@ -25,10 +25,9 @@
 #include <sys/stat.h>
 
 #include "common/common.h"
-#include "lib/authselect_paths.h"
-#include "lib/authselect_private.h"
+#include "lib/constants.h"
 #include "lib/profiles/profiles.h"
-#include "lib/util/string_array.h"
+#include "lib/util/util.h"
 
 static bool
 is_dot_dir(const char *name)

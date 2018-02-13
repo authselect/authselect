@@ -24,8 +24,8 @@
 #include <errno.h>
 
 #include "common/common.h"
-#include "util/string_array.h"
 #include "util/string.h"
+#include "util/string_array.h"
 
 bool
 string_is_empty(const char *str)

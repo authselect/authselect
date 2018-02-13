@@ -20,7 +20,7 @@
 
 #include <stdlib.h>
 
-#include "lib/authselect_private.h"
+#include "lib/constants.h"
 #include "lib/files/files.h"
 
 _PUBLIC_ const char *

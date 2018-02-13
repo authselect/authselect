@@ -25,8 +25,8 @@
 #include <unistd.h>
 #include <sys/stat.h>
 
-#include "util/textfile.h"
 #include "common/common.h"
+#include "util/textfile.h"
 
 static errno_t
 textfile_read_content(FILE *file,

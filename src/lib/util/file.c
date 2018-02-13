@@ -27,8 +27,8 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
-#include "util/file.h"
 #include "common/common.h"
+#include "util/file.h"
 
 static bool
 file_check_type(struct stat *statbuf,

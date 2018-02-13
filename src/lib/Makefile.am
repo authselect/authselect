@@ -10,8 +10,7 @@ include_HEADERS = \
     $(NULL)
     
 noinst_HEADERS = \
-    authselect_private.h \
-    authselect_paths.h \
+    constants.h \
     files/files.h \
     profiles/profiles.h \
     util/file.h \
@@ -19,6 +18,7 @@ noinst_HEADERS = \
     util/string.h \
     util/template.h \
     util/textfile.h \
+    util/util.h \
     $(NULL)
 
 lib_LTLIBRARIES = \

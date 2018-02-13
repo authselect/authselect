@@ -21,9 +21,7 @@
 #ifndef _AUTHSELECT_PRIVATE_H_
 #define _AUTHSELECT_PRIVATE_H_
 
-#include <dirent.h>
-
-#include "common/common.h"
+#include "lib/paths.h"
 
 /* Functions marked with this macro are exported to the library consumer. */
 #define _PUBLIC_
