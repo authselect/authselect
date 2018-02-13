@@ -38,7 +38,7 @@ authselect_profile_activate(struct authselect_profile *profile,
         return EACCES;
     }
 
-    ret = authselect_system_write(features, &profile->files);
+    ret = authselect_system_write(features, profile->files);
     if (ret != EOK) {
         ERROR("Unable to write generated system files [%d]: %s",
               ret, strerror(ret));

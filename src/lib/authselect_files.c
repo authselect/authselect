@@ -18,15 +18,10 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <errno.h>
-#include <ctype.h>
-#include <string.h>
 #include <stdlib.h>
-#include <stdbool.h>
 
-#include "authselect.h"
 #include "lib/authselect_private.h"
-#include "lib/util/template.h"
+#include "lib/files/files.h"
 
 _PUBLIC_ const char *
 authselect_files_nsswitch(const struct authselect_files *files)
@@ -108,8 +103,8 @@ authselect_files_dconf_lock(const struct authselect_files *files)
     return files->dconflock;
 }
 
-void
-authselect_files_free_content(struct authselect_files *files)
+_PUBLIC_ void
+authselect_files_free(struct authselect_files *files)
 {
     if (files == NULL) {
         return;
@@ -146,16 +141,6 @@ authselect_files_free_content(struct authselect_files *files)
     if (files->dconflock != NULL) {
         free(files->dconflock);
     }
-}
-
-_PUBLIC_ void
-authselect_files_free(struct authselect_files *files)
-{
-    if (files == NULL) {
-        return;
-    }
-
-    authselect_files_free_content(files);
 
     free(files);
 }

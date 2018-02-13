@@ -100,7 +100,7 @@ authselect_profile_free(struct authselect_profile *profile)
         free(profile->description);
     }
 
-    authselect_files_free_content(&profile->files);
+    authselect_files_free(profile->files);
 
     free(profile);
 

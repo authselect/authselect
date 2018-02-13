@@ -21,7 +21,37 @@
 #ifndef _PROFILES_H_
 #define _PROFILES_H_
 
-#include "common/common.h"
+#include <stdbool.h>
+
+#include "common/errno_t.h"
+#include "lib/files/files.h"
+
+/**
+ * Profile information.
+ */
+struct authselect_profile {
+    /**
+     * Profile identifier.
+     *
+     * This may not be the same as name of the directory where the profile
+     * is stored. Custom profiles have the directory name prefixed with
+     * "custom" which differentiate them from default and vendor profiles.
+     */
+    char *id;
+
+    /**
+     * Filesystem path to the directory where the profile is located.
+     */
+    char *path;
+
+    char *name;
+    char *description;
+
+    /**
+     * System file templates.
+     */
+    struct authselect_files *files;
+};
 
 /**
  * Activate given profile.

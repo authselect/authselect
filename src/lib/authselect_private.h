@@ -32,31 +32,4 @@
 #define AUTHSELECT_FILE_SIZE_LIMIT 4096
 #define AUTHSELECT_CUSTOM_PREFIX   "custom/"
 
-struct authselect_files {
-    char *systemauth;
-    char *passwordauth;
-    char *smartcardauth;
-    char *fingerprintauth;
-    char *postlogin;
-    char *nsswitch;
-    char *dconfdb;
-    char *dconflock;
-};
-
-struct authselect_profile {
-    char *id;
-    char *path;
-
-    char *name;
-    char *description;
-
-    struct authselect_files files;
-};
-
-/**
- * Free authselect_files structure content but not the structure itself.
- */
-void
-authselect_files_free_content(struct authselect_files *files);
-
 #endif /* _AUTHSELECT_PRIVATE_H_ */

@@ -223,7 +223,7 @@ authselect_cat(const char *profile_id,
         return ret;
     }
 
-    ret = authselect_system_generate(features, &profile->files, &files);
+    ret = authselect_system_generate(features, profile->files, &files);
     authselect_profile_free(profile);
     if (ret != EOK) {
         return ret;

@@ -83,18 +83,18 @@ bool
 authselect_config_validate_non_existing();
 
 /**
- * Read system files templates into @templates.
+ * Read system files templates and return them in files structure.
  *
  * @param dirname    Name of the directory that contains the files.
  * @param dirfd      File descriptor of the opened directory.
- * @param templates  Pointer to structure where the templates should be stored.
+ * @param _templates Output templates.
  *
  * @return EOK on success, other errno code on error.
  */
 errno_t
 authselect_system_read_templates(const char *dirname,
                                  int dirfd,
-                                 struct authselect_files *templates);
+                                 struct authselect_files **_templates);
 
 /**
  * Generate content of system files based on provided templates.

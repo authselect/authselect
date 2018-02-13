@@ -42,10 +42,16 @@ struct authselect_system_templates {
 errno_t
 authselect_system_read_templates(const char *dirname,
                                  int dirfd,
-                                 struct authselect_files *templates)
+                                 struct authselect_files **_templates)
 {
+    struct authselect_files *templates;
     errno_t ret;
     int i;
+
+    templates = malloc_zero(struct authselect_files);
+    if (templates == NULL) {
+        return ENOMEM;
+    }
 
     struct authselect_system_paths paths[] = {
         {FILE_SYSTEM,      &templates->systemauth},
@@ -68,9 +74,12 @@ authselect_system_read_templates(const char *dirname,
         if (ret == ENOENT) {
             *paths[i].content = NULL;
         } else if (ret != EOK) {
+            authselect_files_free(templates);
             return ret;
         }
     }
+
+    *_templates = templates;
 
     return EOK;
 }
