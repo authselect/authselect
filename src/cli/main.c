@@ -427,8 +427,8 @@ int main(int argc, const char **argv)
         CLI_TOOL_COMMAND("current", "Get identificator of currently selected profile", current),
         CLI_TOOL_COMMAND("check", "Check if the current configration is valid", check),
         CLI_TOOL_COMMAND("test", "Print changes that would be otherwise written", test),
-        CLI_TOOL_COMMAND("enable-feature", "Enable feature in currently activated profile", enable),
-        CLI_TOOL_COMMAND("disable-feature", "Disable feature in currently activated profile", disable),
+        CLI_TOOL_COMMAND("enable-feature", "Enable feature in currently selected profile", enable),
+        CLI_TOOL_COMMAND("disable-feature", "Disable feature in currently selected profile", disable),
         CLI_TOOL_LAST
     };
 
