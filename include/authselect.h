@@ -24,8 +24,6 @@
 #include <errno.h>
 #include <stdbool.h>
 
-#define AUTHSELECT_ERR_FORCE_REQUIRED -1
-
 /**
  * Holds information about profile. See authselect_profile_* functions to
  * manipulate this structure.
@@ -55,21 +53,28 @@ struct authselect_files;
  * @param features       NULL-terminated array of optional features to enable.
  * @param force_override If true, authselect will override local changes.
  *
- * @return 0 on success, AUTHSELECT_ERR_FORCE_REQUIRED if activation was
- * prohibited because unexpected configuration was detected and it must
- * be overridden, other errno code on error.
+ * @return
+ * - 0 if the profile is successfully activated.
+ * - EEXIST if the system is already configured by other means than
+ *   authselect and @force_overwrite must be set to true to force
+ *   overwrite the existing files.
+ * - ENOENT if the profile was not found.
+ * - Other errno code on generic error.
  */
 int
 authselect_activate(const char *profile_id,
                     const char **features,
-                    bool force_override);
+                    bool force_overwrite);
 
 /**
  * Enable a feature with currently activated profile.
  *
  * @param feature       Feature name to activate.
  *
- * @return 0 on success, errno code on error.
+ * @return
+ * - 0 if the feature is successfully enabled.
+ * - ENOENT if there is no existing authselect configuration.
+ * - Other errno code on generic error.
  */
 int
 authselect_feature_enable(const char *feature);
@@ -79,7 +84,10 @@ authselect_feature_enable(const char *feature);
  *
  * @param feature       Feature name to activate.
  *
- * @return 0 on success, errno code on error.
+ * @return
+ * - 0 if the feature is successfully disabled.
+ * - ENOENT if there is no existing authselect configuration.
+ * - Other errno code on generic error.
  */
 int
 authselect_feature_disable(const char *feature);
@@ -92,7 +100,12 @@ authselect_feature_disable(const char *feature);
  *
  * @param _is_valid True if no manual changes were detected, false otherwise.
  *
- * @return EOK on success, errno code on error.
+ * @return
+ * - 0 if there is an existing authselect configuration, the result of
+ *   validation is returned in @_is_valid output variable.
+ * - ENOENT if there is no existing authselect configuration, the result of
+ *   validation is returned in @_is_valid output variable.
+ * - Other errno code on generic error.
  */
 int
 authselect_validate_configuration(bool *_is_valid);
@@ -109,8 +122,11 @@ authselect_validate_configuration(bool *_is_valid);
  *                             and created by authselect, false if some
  *                             manual changes were detected.
  *
- * @return 0 on success, ENOENT if there is no current configuration present,
- * other errno code on error.
+ * @return
+ * - 0 if an configuration was read, current configuration is returned
+ *   in @_profile_id and @_features output variables.
+ * - ENOENT if there is no existing configuration.
+ * - Other errno code on generic error.
  */
 int
 authselect_current_configuration(char **_profile_id,
@@ -133,11 +149,16 @@ authselect_list();
 /**
  * Return information about a profile.
  *
+ * Free the structure with @authselect_profile_free().
+ *
  * @param profile_id    Profile identifier.
  * @param _profile      Authselect profile information.
  *
- * @return 0 on succes, ENOENT if the profile was not found,
- * other errno code on error.
+ * @return
+ * - 0 if the profile was found and read, profile information
+ *   is returned in @_profile output variable.
+ * - ENOENT if the profile was not found.
+ * - Other errno code on generic error.
  */
 int
 authselect_profile(const char *profile_id,
@@ -196,12 +217,16 @@ authselect_profile_free(struct authselect_profile *profile);
  * would be enabled by @authselect_activate() without performing any
  * changes to the system configuration.
  *
+ * Free the files structure with @authselect_files_free().
+ *
  * @param profile_id    Profile identifier.
  * @param features      NULL-terminated array of optional features to enable.
  * @param _files        Generated files content.
  *
- * @return 0 on success, ENOENT if the profile was not found,
- * other errno code on error.
+ * @return
+ * - 0 on success, the generated content is returned in @_files output variable.
+ * - ENOENT if the profile was not found.
+ * - Other errno code on generic error.
  */
 int
 authselect_files(const char *profile_id,

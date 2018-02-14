@@ -37,7 +37,7 @@ authselect_set_debug_fn(authselect_debug_fn fn, void *pvt)
 _PUBLIC_ int
 authselect_activate(const char *profile_id,
                     const char **features,
-                    bool force_override)
+                    bool force_overwrite)
 {
     struct authselect_profile *profile;
     bool is_valid;
@@ -52,7 +52,7 @@ authselect_activate(const char *profile_id,
         return ret;
     }
 
-    if (force_override) {
+    if (force_overwrite) {
         INFO("Enforcing activation!");
         ret = authselect_profile_activate(profile, features);
         goto done;
@@ -69,7 +69,7 @@ authselect_activate(const char *profile_id,
         ERROR("Unexpected changes to the configuration were detected.");
         ERROR("Refusing to activate profile unless those changes are removed "
               "or overwrite is requested.");
-        ret = AUTHSELECT_ERR_FORCE_REQUIRED;
+        ret = EEXIST;
         goto done;
     }
 
@@ -79,7 +79,7 @@ authselect_activate(const char *profile_id,
             ERROR("File that needs to be overwritten was found");
             ERROR("Refusing to activate profile unless this file is removed "
                   "or overwrite is requested.");
-            ret = AUTHSELECT_ERR_FORCE_REQUIRED;
+            ret = EEXIST;
             goto done;
         }
     }
@@ -87,7 +87,7 @@ authselect_activate(const char *profile_id,
     ret = authselect_profile_activate(profile, features);
 
 done:
-    if (ret != EOK && ret != AUTHSELECT_ERR_FORCE_REQUIRED) {
+    if (ret != EOK && ret != EEXIST) {
         ERROR("Unable to activate profile [%s] [%d]: %s",
               profile_id, ret, strerror(ret));
     }
