@@ -378,9 +378,18 @@ int cli_tool_main(int argc, const char **argv,
     cli_tool_common_opts(&argc, argv);
 
     ret = cli_tool_route(argc, argv, commands);
-    if (ret != EOK) {
-        return EXIT_FAILURE;
+
+    switch (ret) {
+    case EOK:
+        return 0;
+    case ENOENT:
+        return 2;
+    case EBADF:
+        return 3;
+    case EEXIST:
+        return 4;
     }
 
-    return EXIT_SUCCESS;
+    /* Generic error. */
+    return 1;
 }

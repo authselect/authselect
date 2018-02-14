@@ -104,11 +104,11 @@ static errno_t activate(struct cli_cmdline *cmdline)
 
     ret = authselect_activate(profile_id, features, enforce);
     free(features);
-    if (ret == AUTHSELECT_ERR_FORCE_REQUIRED) {
+    if (ret == EEXIST) {
         fprintf(stderr, _("\nSome unexpected changes to the configuration were "
                 "detected.\nUse --force parameter if you want to overwrite "
                 "these changes.\n"));
-        return EINVAL;
+        return ret;
     } else if (ret != EOK) {
         fprintf(stderr, _("Unable to activate profile [%d]: %s\n"),
                 ret, strerror(ret));
@@ -134,7 +134,7 @@ static errno_t current(struct cli_cmdline *cmdline)
     ret = authselect_current_configuration(&profile_id, &features);
     if (ret == ENOENT) {
         printf(_("No existing configuration detected.\n"));
-        return EOK;
+        return ret;
     } else if (ret != EOK) {
         ERROR("Unable to get current configuration [%d]: %s",
               ret, strerror(ret));
@@ -156,7 +156,7 @@ static errno_t current(struct cli_cmdline *cmdline)
     free(profile_id);
     authselect_array_free(features);
 
-    return ret;
+    return EOK;
 }
 
 static errno_t check(struct cli_cmdline *cmdline)
@@ -178,14 +178,17 @@ static errno_t check(struct cli_cmdline *cmdline)
         return ret;
     }
 
-    if (is_valid) {
-        puts(_("Current configuration is valid."));
-    } else {
+    if (!is_valid) {
         puts(_("Current configuration is not valid. "
                "It was probably modified outside authselect."));
+        return EBADF;
     }
 
-    return EOK;
+    puts(_("Current configuration is valid."));
+
+    /* EOK = existing configuration is valid,
+     * ENOENT = non-existing configuration is valid */
+    return ret;
 }
 
 static errno_t list(struct cli_cmdline *cmdline)
@@ -432,13 +435,13 @@ int main(int argc, const char **argv)
     ret = setup_gettext();
     if (ret != EOK) {
         fprintf(stderr, _("Unable to setup gettext!\n"));
-        return EXIT_FAILURE;
+        return 1;
     }
 
     uid = getuid();
     if (uid != 0) {
         fprintf(stderr, _("Authselect can only be run as root!\n"));
-        return EXIT_FAILURE;
+        return 1;
     }
 
     return cli_tool_main(argc, argv, commands, NULL);

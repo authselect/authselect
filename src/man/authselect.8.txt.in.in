@@ -69,6 +69,16 @@ These options are available with all commands.
     the program execution but may indicate some undesired situations
     (e.g. unexpected file in a profile directory).
 
+RETURN CODES
+------------
+The *authselect* can return these exit codes:
+
+* 0: Success.
+* 1: Generic error.
+* 2: Profile or configuration was not found.
+* 3: Current configuration is not valid, it was edited without authselect.
+* 4: System configuration must be overwritten to activate an authselect profile, --force parameter is needed.
+
 GENERATED FILES
 ---------------
 Authselect creates and maintains the following files to configure system
