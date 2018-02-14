@@ -21,8 +21,35 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include "authselect.h"
 #include "lib/constants.h"
 #include "lib/files/files.h"
+#include "lib/profiles/profiles.h"
+
+_PUBLIC_ int
+authselect_files(const char *profile_id,
+                 const char **features,
+                 struct authselect_files **_files)
+{
+    struct authselect_profile *profile;
+    struct authselect_files *files;
+    errno_t ret;
+
+    ret = authselect_profile(profile_id, &profile);
+    if (ret != EOK) {
+        return ret;
+    }
+
+    ret = authselect_system_generate(features, profile->files, &files);
+    authselect_profile_free(profile);
+    if (ret != EOK) {
+        return ret;
+    }
+
+    *_files = files;
+
+    return EOK;
+}
 
 _PUBLIC_ const char *
 authselect_files_nsswitch(const struct authselect_files *files)

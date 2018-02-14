@@ -186,7 +186,7 @@ authselect_config_validate_existing(const char *profile_id,
     bool result = true;
     errno_t ret;
 
-    ret = authselect_cat(profile_id, features, &files);
+    ret = authselect_files(profile_id, features, &files);
     if (ret != EOK) {
         ERROR("Unable to load profile [%s] [%d]: %s",
               profile_id, ret, strerror(ret));

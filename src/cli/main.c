@@ -131,7 +131,7 @@ static errno_t current(struct cli_cmdline *cmdline)
         return ret;
     }
 
-    ret = authselect_current(&profile_id, &features);
+    ret = authselect_current_configuration(&profile_id, &features);
     if (ret == ENOENT) {
         printf(_("No existing configuration detected.\n"));
         return EOK;
@@ -154,7 +154,7 @@ static errno_t current(struct cli_cmdline *cmdline)
     }
 
     free(profile_id);
-    authselect_features_free(features);
+    authselect_array_free(features);
 
     return ret;
 }
@@ -170,7 +170,7 @@ static errno_t check(struct cli_cmdline *cmdline)
         return ret;
     }
 
-    ret = authselect_check_conf(&is_valid);
+    ret = authselect_validate_configuration(&is_valid);
     if (ret != EOK && ret != ENOENT) {
         ERROR("Unable to test current configuration [%d]: %s",
               ret, strerror(ret));
@@ -227,7 +227,7 @@ static errno_t list(struct cli_cmdline *cmdline)
     ret = EOK;
 
 done:
-    authselect_list_free(profiles);
+    authselect_array_free(profiles);
     return ret;
 }
 
@@ -312,7 +312,7 @@ static errno_t test(struct cli_cmdline *cmdline)
         return ret;
     }
 
-    ret = authselect_cat(profile_id, features, &files);
+    ret = authselect_files(profile_id, features, &files);
     if (ret != EOK) {
         ERROR("Unable to get generated content [%d]: %s", ret, strerror(ret));
         return ret;

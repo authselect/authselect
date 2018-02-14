@@ -95,10 +95,12 @@ authselect_feature_disable(const char *feature);
  * @return EOK on success, errno code on error.
  */
 int
-authselect_check_conf(bool *_is_valid);
+authselect_validate_configuration(bool *_is_valid);
 
 /**
  * Return profile identifier and parameters of currently selected profile.
+ *
+ * Free the returned @_features array with authselect_array_free()
  *
  * @param[out] _profile_id     Profile identifier.
  * @param[out] _features       NULL-terminated array of enabled
@@ -111,29 +113,22 @@ authselect_check_conf(bool *_is_valid);
  * other errno code on error.
  */
 int
-authselect_current(char **_profile_id,
-                   char ***_features);
-
-/**
- * Free string array of optional profile features
- * returned by @authselect_current. */
-void
-authselect_features_free(char **features);
+authselect_current_configuration(char **_profile_id,
+                                 char ***_features);
 
 /**
  * Return NULL-terminated array of all available profile identifiers.
  *
  * The array is sorted alphabetically having custom profiles pushed after
  * default and vendor specific profiles.
+ *
+ * Free the returned array with authselect_array_free()
+ *
+ * @return NULL-terminated array containing all available profiles or NULL
+ * on error.
  */
 char **
 authselect_list();
-
-/**
- * Free string array returned by @authselect_list.
- */
-void
-authselect_list_free(char **profile_ids);
 
 /**
  * Return information about a profile.
@@ -209,9 +204,9 @@ authselect_profile_free(struct authselect_profile *profile);
  * other errno code on error.
  */
 int
-authselect_cat(const char *profile_id,
-               const char **features,
-               struct authselect_files **_files);
+authselect_files(const char *profile_id,
+                 const char **features,
+                 struct authselect_files **_files);
 
 /**
  * Get nsswitch.conf content.
@@ -354,6 +349,12 @@ authselect_path_dconf_db();
  */
 const char *
 authselect_path_dconf_lock();
+
+/**
+ * Free NULL-terminated string array.
+ */
+void
+authselect_array_free(char **array);
 
 enum authselect_debug {
     AUTHSELECT_INFO,

@@ -59,7 +59,7 @@ authselect_activate(const char *profile_id,
     }
 
     /* First, check that current configuration is valid. */
-    ret = authselect_check_conf(&is_valid);
+    ret = authselect_validate_configuration(&is_valid);
     if (ret != EOK && ret != ENOENT) {
         ERROR("Unable to check configuration [%d]: %s", ret, strerror(ret));
         goto done;
@@ -104,7 +104,7 @@ authselect_feature_enable(const char *feature)
     char **features;
     errno_t ret;
 
-    ret = authselect_current(&profile_id, &features);
+    ret = authselect_current_configuration(&profile_id, &features);
     if (ret != EOK) {
         return ret;
     }
@@ -118,7 +118,7 @@ authselect_feature_enable(const char *feature)
     ret = authselect_activate(profile_id, (const char **)features, false);
 
 done:
-    authselect_features_free(features);
+    string_array_free(features);
     free(profile_id);
 
     return ret;
@@ -131,7 +131,7 @@ authselect_feature_disable(const char *feature)
     char **features;
     errno_t ret;
 
-    ret = authselect_current(&profile_id, &features);
+    ret = authselect_config_read(&profile_id, &features);
     if (ret != EOK) {
         return ret;
     }
@@ -145,14 +145,14 @@ authselect_feature_disable(const char *feature)
     ret = authselect_activate(profile_id, (const char **)features, false);
 
 done:
-    authselect_features_free(features);
+    string_array_free(features);
     free(profile_id);
 
     return ret;
 }
 
 _PUBLIC_ int
-authselect_check_conf(bool *_is_valid)
+authselect_validate_configuration(bool *_is_valid)
 {
     char *profile_id;
     char **features;
@@ -176,16 +176,10 @@ authselect_check_conf(bool *_is_valid)
 }
 
 _PUBLIC_ int
-authselect_current(char **_profile_id,
-                   char ***_features)
+authselect_current_configuration(char **_profile_id,
+                                 char ***_features)
 {
     return authselect_config_read(_profile_id, _features);
-}
-
-_PUBLIC_ void
-authselect_features_free(char **features)
-{
-    string_array_free(features);
 }
 
 _PUBLIC_ char **
@@ -203,32 +197,7 @@ authselect_list()
 }
 
 _PUBLIC_ void
-authselect_list_free(char **profile_ids)
+authselect_array_free(char **array)
 {
-    string_array_free(profile_ids);
-}
-
-_PUBLIC_ int
-authselect_cat(const char *profile_id,
-               const char **features,
-               struct authselect_files **_files)
-{
-    struct authselect_profile *profile;
-    struct authselect_files *files;
-    errno_t ret;
-
-    ret = authselect_profile(profile_id, &profile);
-    if (ret != EOK) {
-        return ret;
-    }
-
-    ret = authselect_system_generate(features, profile->files, &files);
-    authselect_profile_free(profile);
-    if (ret != EOK) {
-        return ret;
-    }
-
-    *_files = files;
-
-    return EOK;
+    string_array_free(array);
 }
