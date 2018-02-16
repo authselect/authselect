@@ -85,7 +85,7 @@ authselect_read_conf_features(FILE *file, char ***_features)
 
     do {
         count++;
-        reallocated = reallocarray(features, count + 1, sizeof(char *));
+        reallocated = realloc_array(features, char *, count + 1);
         if (reallocated == NULL) {
             free_string_array(features);
             return ENOMEM;

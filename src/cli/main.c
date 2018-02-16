@@ -65,7 +65,7 @@ parse_profile_options(struct cli_cmdline *cmdline,
         return ret;
     }
 
-    features = calloc(cmdline->argc, sizeof(const char *));
+    features = malloc_zero_array(const char *, cmdline->argc);
     if (features == NULL) {
         return ENOMEM;
     }

@@ -249,7 +249,7 @@ generate_file(const char *template,
         return EOK;
     }
 
-    output = calloc(strlen(template) + 1, sizeof(char));
+    output = malloc_zero_array(char, strlen(template) + 1);
     if (output == NULL) {
         return ENOMEM;
     }
@@ -287,7 +287,7 @@ authselect_files_generate(struct authselect_profile *profile,
         return EINVAL;
     }
 
-    files = calloc(1, sizeof(struct authselect_files));
+    files = malloc_zero(struct authselect_files);
     if (files == NULL) {
         return ENOMEM;
     }

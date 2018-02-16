@@ -119,7 +119,7 @@ authselect_profile_init(int profile_fd,
     struct authselect_profile *profile;
     errno_t ret;
 
-    profile = calloc(1, sizeof(struct authselect_profile));
+    profile = malloc_zero(struct authselect_profile);
     if (profile == NULL) {
         ret = ENOMEM;
         goto done;
