@@ -31,7 +31,7 @@ dist_pkgpython_DATA = \
     $(NULL)
 
 snippetsdir = $(pkgpythondir)/snippets
-snippets_DATA = \
+dist_snippets_DATA = \
     snippets/authconfig-krb.conf \
     snippets/authconfig-sssd.conf \
     $(NULL)
