@@ -129,6 +129,8 @@ rm -f $RPM_BUILD_ROOT/%{_libdir}/libauthselect.so
 %{python3_sitelib}/authselect/authcompat_ConfigSnippet.py
 %{python3_sitelib}/authselect/authcompat_EnvironmentFile.py
 %{python3_sitelib}/authselect/authcompat_Options.py
+%{python3_sitelib}/authselect/snippets/authconfig-krb.conf
+%{python3_sitelib}/authselect/snippets/authconfig-sssd.conf
 %{python3_sitelib}/authselect/__pycache__/*
 
 %if (0%{?package_devel} == 1)
