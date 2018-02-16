@@ -22,20 +22,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-void *_malloc_zero(size_t size)
-{
-    void *ptr;
-
-    ptr = malloc(size);
-    if (ptr == NULL) {
-        return NULL;
-    }
-
-    memset(ptr, 0, size);
-
-    return ptr;
-}
-
 void *_realloc_array(void *ptr, size_t elsize, size_t num)
 {
     return realloc(ptr, elsize * num);

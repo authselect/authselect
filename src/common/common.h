@@ -34,14 +34,13 @@
 /* Wrappers around malloc and realloc to allocate zero-filled
  * memory and provide type safety. */
 
-void *_malloc_zero(size_t size);
 void *_realloc_array(void *ptr, size_t elsize, size_t num);
 
 #define malloc_zero(type) \
-    (type *)_malloc_zero(sizeof(type))
+    (type *) calloc(1, sizeof(type))
 
 #define malloc_zero_array(type, num) \
-    (type *)_malloc_zero(sizeof(type) * (num))
+    (type *) calloc((num), sizeof(type))
 
 #define realloc_array(ptr, type, num) \
     (type *)_realloc_array((ptr), sizeof(type), (num))
