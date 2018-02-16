@@ -170,7 +170,8 @@ authselect_profile_open(const char *profile_id,
     char *path;
     int fd;
 
-    if (asprintf(&path, "%s/%s", dirpath, dirname) == -1) {
+    path = format("%s/%s", dirpath, dirname);
+    if (path == NULL) {
         ERROR("Out of memory!");
         return ENOMEM;
     }
@@ -247,13 +248,7 @@ authselect_profile_find(const char *profile_id,
 char *
 authselect_profile_custom_id(const char *profile_dirname)
 {
-    char *ret = NULL;
-
-    if (asprintf(&ret, CUSTOM_PROFILE_PREFIX "%s", profile_dirname, false) == -1) {
-        return NULL;
-    } else {
-        return ret;
-    }
+    return format(CUSTOM_PROFILE_PREFIX "%s", profile_dirname, false);
 }
 
 bool

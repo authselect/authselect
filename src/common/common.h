@@ -64,4 +64,8 @@ void debug(enum authselect_debug level,
     debug(AUTHSELECT_ERROR, __FILE__, __LINE__, __FUNCTION__,                 \
           gettext(fmt), ## __VA_ARGS__)
 
+/* Wrapper around aprintf to simplify error handling. */
+char *format(const char *fmt, ...);
+char *vaformat(const char *fmt, va_list va);
+
 #endif /* _COMMON_H_ */
