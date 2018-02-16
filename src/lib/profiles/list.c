@@ -110,11 +110,7 @@ authselect_profile_dir_add(char *name,
         return ENOMEM;
     }
 
-    if (string_array_has_value(*array, id)) {
-        return EOK;
-    }
-
-    *array = string_array_add_value(*array, id);
+    *array = string_array_add_value(*array, id, true);
 
     if (is_custom) {
         free(id);

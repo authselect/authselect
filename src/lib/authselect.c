@@ -109,7 +109,7 @@ authselect_feature_enable(const char *feature)
         return ret;
     }
 
-    features = string_array_add_value(features, feature);
+    features = string_array_add_value(features, feature, true);
     if (features == NULL) {
         ret = ENOMEM;
         goto done;

@@ -80,14 +80,18 @@ string_array_has_value(char **array, const char *value);
  *
  * If reallocation fails, NULL is returned and the original array is freed.
  *
- * @param array NULL-terminated array.
- * @param value Value to append to the array.
- * @param len   Length of the string.
+ * @param array  NULL-terminated array.
+ * @param value  Value to append to the array.
+ * @param len    Length of the string.
+ * @param unique If true, value will not be added if it is already present.
  *
  * @return Array or NULL if reallocation fails.
  */
 char **
-string_array_add_value_safe(char **array, const char *value, size_t len);
+string_array_add_value_safe(char **array,
+                            const char *value,
+                            size_t len,
+                            bool unique);
 
 /**
  * Add value to NULL-terminated string array to its end.
@@ -96,11 +100,12 @@ string_array_add_value_safe(char **array, const char *value, size_t len);
  *
  * @param array NULL-terminated array.
  * @param value Value to append to the array.
+ * @param unique If true, value will not be added if it is already present.
  *
  * @return Array or NULL if reallocation fails.
  */
 char **
-string_array_add_value(char **array, const char *value);
+string_array_add_value(char **array, const char *value, bool unique);
 
 /**
  * Remove value from NULL-terminated string array.

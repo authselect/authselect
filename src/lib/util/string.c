@@ -154,7 +154,7 @@ string_explode_add_value(char **array,
         return array;
     }
 
-    array = string_array_add_value(array, token);
+    array = string_array_add_value(array, token, false);
     free(token);
 
     return array;
@@ -184,7 +184,17 @@ string_explode(const char *str, char delimiter, unsigned int flags)
         remainder = pos + 1;
     }
 
+    if (remainder != str && *(remainder - 1) == delimiter) {
+
+    }
+
     if (string_is_empty(remainder)) {
+        /* Add empty line if string end with delimiter. */
+        if (remainder != str && *(remainder - 1) == delimiter
+                && !(flags & STRING_EXPLODE_SKIP_EMPTY)) {
+            return string_array_add_value(array, "", false);
+        }
+
         return array;
     }
 
@@ -195,7 +205,7 @@ char *
 string_implode(const char **array, char delimiter)
 {
     const char delimiter_str[] = {delimiter, '\0'};
-    size_t len;
+    size_t len = 0;
     char *tmp;
     char *str;
     int i;
@@ -208,17 +218,19 @@ string_implode(const char **array, char delimiter)
         return strdup("");
     }
 
-    str = malloc_zero_array(char, len);
+    str = malloc_zero_array(char, len + 1);
     if (str == NULL) {
         return NULL;
     }
 
     tmp = str;
-    for (i = 0; array[i] != NULL; i++) {
+    for (i = 0; array[i + 1] != NULL; i++) {
         strcat(tmp, array[i]);
         strcat(tmp, delimiter_str);
         tmp += strlen(array[i]) + 1;
     }
+
+    strcat(tmp, array[i]);
 
     return str;
 }

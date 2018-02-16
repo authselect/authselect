@@ -48,7 +48,7 @@ authselect_config_read_features(char **config)
 
     /* Skip profile name. */
     for (i = 1; config[i] != NULL; i++) {
-        features = string_array_add_value(features, config[i]);
+        features = string_array_add_value(features, config[i], true);
         if (features == NULL) {
             return NULL;
         }

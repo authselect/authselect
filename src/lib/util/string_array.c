@@ -104,11 +104,14 @@ string_array_has_value(char **array, const char *value)
 }
 
 char **
-string_array_add_value_safe(char **array, const char *value, size_t len)
+string_array_add_value_safe(char **array,
+                            const char *value,
+                            size_t len,
+                            bool unique)
 {
     size_t count;
 
-    if (string_array_has_value(array, value)) {
+    if (unique && string_array_has_value(array, value)) {
         return array;
     }
 
@@ -128,9 +131,9 @@ string_array_add_value_safe(char **array, const char *value, size_t len)
 }
 
 char **
-string_array_add_value(char **array, const char *value)
+string_array_add_value(char **array, const char *value, bool unique)
 {
-    return string_array_add_value_safe(array, value, strlen(value));
+    return string_array_add_value_safe(array, value, strlen(value), unique);
 }
 
 char **
