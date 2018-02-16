@@ -16,12 +16,15 @@ AM_INIT_AUTOMAKE([foreign subdir-objects])
 LT_INIT
 
 AC_PROG_CC_C99
-AC_PROG_CPP
+AC_PROG_MKDIR_P
+AC_PROG_LN_S
+AC_PROG_SED
 AC_LANG([C])
 
 AC_HEADER_STDC
 AM_GNU_GETTEXT([external])
 AM_GNU_GETTEXT_VERSION(0.19)
+AM_PATH_PYTHON([3])
 
 AC_SUBST([RELEASE_NUMBER], m4_esyscmd(./release-version.sh RELEASE_VERSION))
 
@@ -42,10 +45,13 @@ AC_CONFIG_FILES([Makefile
                  profiles/Makefile
                  rpm/authselect.spec
                  src/common/Makefile
+                 src/compat/authcompat_paths.in
+                 src/compat/Makefile
                  src/cli/Makefile
                  src/lib/Makefile
                  src/man/Makefile
                  src/man/authselect.8.txt.in
+                 src/man/authselect-migration.7.txt.in
                  src/man/authselect-profiles.5.txt.in])
 
 AC_OUTPUT

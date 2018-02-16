@@ -39,6 +39,21 @@ License: GPLv3+
 Common library files for authselect. This package is used by the authselect
 command line tool and any other potential front-ends.
 
+%package compat
+Summary: Tool to provide minimum backwards compatibility with authconfig.
+Group: Applications/System
+License: GPLv3+
+Obsoletes: authconfig
+BuildRequires: python3-devel
+Requires: python3
+Requires: authselect
+
+%description compat
+This package will replace %{_sbindir}/authconfig with a tool that will
+translate some of the authconfig calls into authselect calls. It provides
+only minimum backward compatibility and users are encouraged to migrate
+to authselect completely.
+
 %if (0%{?package_devel} == 1)
 %package devel
 Summary: Development libraries and headers for authselect
@@ -61,7 +76,6 @@ autoreconf -if
 %configure
 
 make %{?_smp_mflags}
-
 
 %install
 make install DESTDIR=$RPM_BUILD_ROOT
@@ -107,6 +121,16 @@ rm -f $RPM_BUILD_ROOT/%{_libdir}/libauthselect.so
 %{_datadir}/doc/authselect/README.md
 %license COPYING
 %doc README.md
+
+%files compat
+%defattr(-,root,root,-)
+%{_sbindir}/authconfig
+%{python3_sitelib}/authselect/authcompat.py
+%{python3_sitelib}/authselect/authcompat_ConfigSnippet.py
+%{python3_sitelib}/authselect/authcompat_EnvironmentFile.py
+%{python3_sitelib}/authselect/authcompat_Options.py
+%{python3_sitelib}/authselect/authcompat_paths
+%{python3_sitelib}/authselect/__pycache__/*
 
 %if (0%{?package_devel} == 1)
 %files devel
