@@ -24,6 +24,7 @@
 #include "config.h"
 
 #include <stdarg.h>
+#include <malloc.h>
 
 #include "errno_t.h"
 #include "gettext.h"
@@ -34,8 +35,6 @@
 /* Wrappers around malloc and realloc to allocate zero-filled
  * memory and provide type safety. */
 
-void *_realloc_array(void *ptr, size_t elsize, size_t num);
-
 #define malloc_zero(type) \
     (type *) calloc(1, sizeof(type))
 
@@ -43,7 +42,7 @@ void *_realloc_array(void *ptr, size_t elsize, size_t num);
     (type *) calloc((num), sizeof(type))
 
 #define realloc_array(ptr, type, num) \
-    (type *)_realloc_array((ptr), sizeof(type), (num))
+    (type *) reallocarray((ptr), (num), sizeof(type))
 
 /* Debugging facility. */
 
