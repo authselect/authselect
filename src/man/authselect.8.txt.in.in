@@ -1,6 +1,6 @@
 authselect(8)
 =============
-:revdate: 2017-08-31
+:revdate: 2018-02-17
 
 NAME
 ----
@@ -112,10 +112,12 @@ identity and authentication providers properly.
      the modules in the system-auth configuration file._
 
 *@AUTHSELECT_DCONF_DIR@/@AUTHSELECT_DCONF_FILE@*::
-    This file contains current configuration of gnome's _enable-smartcard-authentication_ and _enable-fingerprint-authentication_ dconf options to enable/disable these authentication types on gnome's login screen.
+    Changes to dconf database. The main uses case of this file is to set
+    changes for gnome login screen in order to enable or disable smartcard
+    and fingerprint authentication.
 
 *@AUTHSELECT_DCONF_DIR@/locks/@AUTHSELECT_DCONF_FILE@*::
-    This file creates lock on  gnome's _enable-smartcard-authentication_ and _enable-fingerprint-authentication_ dconf options.
+    This file define locks on values set in dconf database.
 
 SEE ALSO
 --------

@@ -1,11 +1,8 @@
-?with-ecryptfs:
-auth        optional                   pam_ecryptfs.so unwrap
+auth        optional                   pam_ecryptfs.so unwrap                                 {include if "with-ecryptfs"}
 
-?with-ecryptfs:
-password    optional                   pam_ecryptfs.so unwrap
+password    optional                   pam_ecryptfs.so unwrap                                 {include if "with-ecryptfs"}
 
-?with-ecryptfs:
-session     optional                   pam_ecryptfs.so unwrap
+session     optional                   pam_ecryptfs.so unwrap                                 {include if "with-ecryptfs"}
 session     [success=1 default=ignore] pam_succeed_if.so service !~ gdm* service !~ su* quiet
 session     [default=1]                pam_lastlog.so nowtmp showfailed
 session     optional                   pam_lastlog.so silent noupdate showfailed

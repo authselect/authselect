@@ -1,13 +1,6 @@
 [org/gnome/login-screen]
-?with-smartcard:
-enable-smartcard-authentication=true
-?!with-smartcard:
-enable-smartcard-authentication=false
-?with-fingerprint:
-enable-fingerprint-authentication=true
-?!with-fingerprint:
-enable-fingerprint-authentication=false
-??with-smartcard-lock-on-removal
+enable-smartcard-authentication={if "with-smartcard":true|false}
+enable-fingerprint-authentication={if "with-fingerprint":true|false}
 
-[org/gnome/settings-daemon/peripherals/smartcard]
-removal-action='lock-screen'
+[org/gnome/settings-daemon/peripherals/smartcard] {include if "with-smartcard-lock-on-removal"}
+removal-action='lock-screen'                      {include if "with-smartcard-lock-on-removal"}

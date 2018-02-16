@@ -22,6 +22,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <errno.h>
+#include <regex.h>
 
 #include "common/common.h"
 #include "util/string.h"
@@ -108,8 +109,24 @@ string_explode_get_token(const char *str,
         return ENOMEM;
     }
 
-    if (flags & STRING_EXPLODE_TRIM) {
+    if (flags & STRING_EXPLODE_TRIM_LEFT && flags & STRING_EXPLODE_TRIM_RIGHT) {
         tmp = string_trim(token);
+        if (tmp == NULL) {
+            free(token);
+            return ENOMEM;
+        }
+
+        token = tmp;
+    } else if (flags & STRING_EXPLODE_TRIM_LEFT) {
+        tmp = string_trim_left(token);
+        if (tmp == NULL) {
+            free(token);
+            return ENOMEM;
+        }
+
+        token = tmp;
+    } else if (flags & STRING_EXPLODE_TRIM_RIGHT) {
+        tmp = string_trim_right(token);
         if (tmp == NULL) {
             free(token);
             return ENOMEM;
@@ -233,4 +250,82 @@ string_implode(const char **array, char delimiter)
     strcat(tmp, array[i]);
 
     return str;
+}
+
+void
+string_replace_position(char *str, size_t start, size_t end, const char *with)
+{
+    size_t len;
+    size_t i;
+
+    len = strlen(with);
+
+    if (len > end - start) {
+        return;
+    }
+
+    memcpy(str + start, with, len);
+
+    for (i = start + len; i < end; i++) {
+        str[i] = '\0';
+    }
+}
+
+void
+string_remove_line(char *str, size_t inner_position)
+{
+    char *left;
+
+    for (left = str + inner_position; left != str; left--) {
+        if (*(left - 1) == '\n') {
+            break;
+        }
+    }
+
+    for (; *left != '\0'; left++) {
+        if (*left == '\n') {
+            *left = '\0';
+            break;
+        }
+
+        *left = '\0';
+    }
+}
+
+void
+string_remove_range(char *str, size_t from, size_t to)
+{
+    char *pos;
+
+    for (pos = str + from; *pos != '\0' && pos - str != to; pos++) {
+        *pos = '\0';
+    }
+}
+
+void
+string_remove_remainder(char *str, size_t from)
+{
+    char *pos;
+
+    for (pos = str + from; *pos != '\0'; pos++) {
+        *pos = '\0';
+    }
+}
+
+void
+string_replace_shake(char *str, size_t original_length)
+{
+    size_t pos;
+    size_t i;
+
+    for (i = 0, pos = 0; i < original_length; i++) {
+        if (str[i] != '\0') {
+            str[pos] = str[i];
+            pos++;
+        }
+    }
+
+    for (; pos < original_length; pos++) {
+        str[pos] = '\0';
+    }
 }

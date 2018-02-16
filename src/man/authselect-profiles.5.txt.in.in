@@ -1,6 +1,6 @@
 authselect-profiles(5)
 ======================
-:revdate: 2016-08-31
+:revdate: 2018-02-17
 
 NAME
 ----
@@ -55,53 +55,83 @@ done to the system.
 *nsswitch.conf*::
     Name Service Switch configuration file.
 
+*dconf-db*::
+    Changes to dconf database. The main uses case of this file is to set
+    changes for gnome login screen in order to enable or disable smartcard
+    and fingerprint authentication.
+
+*dconf-locks*::
+    This file define locks on values set in dconf database.
+
 CONDITIONAL LINES
 ~~~~~~~~~~~~~~~~~
-Each of these files serves as a template which can contain two types of
-conditions that can modify resulting content.
+Each of these files serves as a template. A template is a plain text file with
+optional usage of several operators that can be used to provide some optional
+profile features.
 
-*?argument:*::
-    If the argument is provided to the profile, the next line following
-    the condition is included to the file.
+*{continue if "feature"}*::
+    Immediately stop processing of the file unless "feature" is defined (the
+    rest of the file content will be removed). If "feature" is defined, the
+    whole line with this operator will be removed and the rest of the template
+    will be processed.
+
+*{stop if "feature"}*::
+    Opposite of "continue if". Immediately stop processing of the file if
+    "feature" is defined (the rest of the file content will be removed).
+    If "feature" is not defined, the whole line with this operator will be
+    removed and the rest of the template will be processed.
+
+*{include if "feature"}*::
+    Include the line where this operator is placed only if "feature" is
+    defined.
+
+*{exclude if "feature"}*::
+    Opposite to "include-if". Include the line where this operator is placed
+    only if "feature" is not defined.
     
-*?!argument:*::
-    If the argument is provided to the profile, the next line following
-    the condition is *not* included to the file.
+*{if "feature":true|false}*::
+    If "feature" is defined, replace this operator with string "true", otherwise
+    with string "false".
+
+*{if "feature":true}*::
+    If "feature" is defined, replace this operator with string "true", otherwise
+    with an empty string.
+
+*{if not "feature":true|false}*::
+    If "feature" is not defined, replace this operator with string "true",
+    otherwise with string "false".
     
-*??argument*::
-    If the argument is not given, the whole rest of the file *is not* included
-    to the result.
+*{if not "feature":true}*::
+    If "feature" is not defined, replace this operator with string "true",
+    otherwise with an empty string.
     
 EXAMPLE
 ~~~~~~~
-Here is an example of the first condition type. If with-sudo is provided
-as an argument to the profile, _sudoers_ line is included in the resulting
-nsswitch configuration together wish _sss_ source. Otherwise it is included
-only with _files_ source.
+Here is an example of using "if" operator. If "with-sudo" feature is enabled,
+it will add "sss" to sudoers line.
 
   passwd:     sss files
   group:      sss files
   netgroup:   sss files
   automount:  sss files
   services:   sss files
-  ?with-sudo:
-  sudoers:    files sss
-  ?!with-sudo:
-  sudoers:    files
+  sudoers:    files {if "with-sudo":sss}
   
-Here is an example of the second condition type. Unless with-smartcard is
-given as an argument to the profile, the whole file will be empty.
+Here is an example of "continue-if" and "include-if" operators. The resulting
+file will be empty unless "with-smartcard" feature is enabled. If it is enabled
+and also "with-faillock" feature is enabled, it will also enable support
+for pam_faillock.
 
-  ??with-smartcard
+  {continue if "with-smartcard"}
   auth        required                                     pam_env.so
   auth        required                                     pam_faildelay.so delay=2000000
-  auth        required                                     pam_faillock.so preauth silent deny=4 unlock_time=1200
+  auth        required                                     pam_faillock.so preauth silent deny=4 unlock_time=1200 {include if "with-faillock"}
   auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so uid >= 1000 quiet
   auth        [default=1 ignore=ignore success=ok]         pam_localuser.so
   auth        sufficient                                   pam_unix.so nullok try_first_pass
   auth        requisite                                    pam_succeed_if.so uid >= 1000 quiet_success
   auth        sufficient                                   pam_sss.so forward_pass
-  auth        required                                     pam_faillock.so authfail deny=4 unlock_time=1200
+  auth        required                                     pam_faillock.so authfail deny=4 unlock_time=1200       {include if "with-faillock"}
   auth        required                                     pam_deny.so
   ...
 
