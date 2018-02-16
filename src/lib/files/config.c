@@ -121,7 +121,7 @@ authselect_config_write(const char *profile_id,
         return ENOMEM;
     }
 
-    output = format("%s\n%s", profile_id, implode);
+    output = format("%s\n%s\n", profile_id, implode);
     free(implode);
     if (output == NULL) {
         return ENOMEM;
