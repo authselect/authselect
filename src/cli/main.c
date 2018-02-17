@@ -55,7 +55,7 @@ parse_profile_options(struct cli_cmdline *cmdline,
     const char *profile_id;
     const char **features;
     errno_t ret;
-    int i;
+    int i, j;
 
     ret = cli_tool_popt_ex(cmdline, options, CLI_TOOL_OPT_OPTIONAL,
                            NULL, NULL, "PROFILE-ID", _("Profile identifier."),
@@ -70,17 +70,25 @@ parse_profile_options(struct cli_cmdline *cmdline,
         return ENOMEM;
     }
 
-    for (i = 1; i < cmdline->argc; i++) {
+    for (i = 1, j = 0; i < cmdline->argc; i++) {
         /* Skip options. */
         if (cmdline->argv[i][0] == '-') {
             continue;
         }
 
-        features[i - 1] = cmdline->argv[i];
+        features[j] = cmdline->argv[i];
+        j++;
     }
 
     *_profile_id = profile_id;
     *_features = features;
+
+    printf("Profile ID: %s\n", profile_id);
+    for (i = 0; features[i] != NULL; i++) {
+        printf("Feature: %s\n", features[i]);
+    }
+
+    exit(0);
 
     return EOK;
 }
