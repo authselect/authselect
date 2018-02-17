@@ -11,6 +11,7 @@ include_HEADERS = \
     
 noinst_HEADERS = \
     constants.h \
+    paths.h \
     files/files.h \
     profiles/profiles.h \
     util/file.h \
