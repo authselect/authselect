@@ -30,7 +30,7 @@ m4_include(src/build_macros.m4)
 m4_include(src/conf_macros.m4)
 m4_include(external/a2x.m4)
 
-dnl Reqired libraries
+dnl Required libraries
 REQUIRE_POPT
 
 dnl Optional build dependencies - man pages generation
