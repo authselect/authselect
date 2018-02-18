@@ -20,6 +20,7 @@
 
 #include <errno.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include "common/common.h"
 #include "lib/constants.h"
@@ -31,6 +32,7 @@ authselect_profile_activate(struct authselect_profile *profile,
                             const char **features)
 {
     errno_t ret;
+    int sysret;
 
     /* Check that all directories are writable. */
     if (!authselect_config_locations_writable()) {
@@ -42,21 +44,26 @@ authselect_profile_activate(struct authselect_profile *profile,
     if (ret != EOK) {
         ERROR("Unable to write generated system files [%d]: %s",
               ret, strerror(ret));
-        goto done;
+        return ret;
     }
 
     ret = authselect_config_write(profile->id, features);
     if (ret != EOK) {
         ERROR("Unable to write configuration [%d]: %s", ret, strerror(ret));
-        goto done;
+        return ret;
     }
 
     ret = authselect_symlinks_write();
     if (ret != EOK) {
         ERROR("Unable to create symbolic links [%d]: %s", ret, strerror(ret));
-        goto done;
+        return ret;
     }
 
-done:
-    return ret;
+    sysret = system(AUTHSELECT_DCONF_BIN " update");
+    if (ret != 0) {
+        ERROR("Unable to run dconf update: %d", sysret);
+        return EIO;
+    }
+
+    return EOK;
 }

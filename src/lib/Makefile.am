@@ -34,6 +34,7 @@ authselect_pam_dir=@AUTHSELECT_PAM_DIR@
 authselect_nsswitch_conf=@AUTHSELECT_NSSWITCH_CONF@
 authselect_dconf_dir=@AUTHSELECT_DCONF_DIR@
 authselect_dconf_file=@AUTHSELECT_DCONF_FILE@
+authselect_dconf_bin=@AUTHSELECT_DCONF_BIN@
 
 libauthselect_la_SOURCES = \
     authselect.c \
@@ -66,6 +67,7 @@ libauthselect_la_CFLAGS = \
     -DAUTHSELECT_NSSWITCH_CONF=\"$(authselect_nsswitch_conf)\" \
     -DAUTHSELECT_DCONF_DIR=\"$(authselect_dconf_dir)\" \
     -DAUTHSELECT_DCONF_FILE=\"$(authselect_dconf_file)\" \
+    -DAUTHSELECT_DCONF_BIN=\"$(authselect_dconf_bin)\" \
     $(NULL)
 libauthselect_la_LDFLAGS = \
     -version-info 0:1:0
