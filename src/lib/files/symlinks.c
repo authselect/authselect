@@ -30,7 +30,7 @@
 errno_t
 authselect_symlinks_write()
 {
-    struct authselect_symlink symlinks[] = SYMLINK_FILES;
+    struct authselect_symlink symlinks[] = {SYMLINK_FILES};
     mode_t oldmask;
     errno_t ret;
     int i;
@@ -69,7 +69,7 @@ done:
 bool
 authselect_symlinks_validate()
 {
-    struct authselect_symlink symlinks[] = SYMLINK_FILES;
+    struct authselect_symlink symlinks[] = {SYMLINK_FILES};
     bool result = true;
     bool is_valid;
     errno_t ret;
@@ -98,7 +98,7 @@ authselect_symlinks_validate()
 bool
 authselect_symlinks_validate_missing()
 {
-    struct authselect_symlink symlinks[] = SYMLINK_FILES;
+    struct authselect_symlink symlinks[] = {SYMLINK_FILES};
     bool result = true;
     bool valid;
     errno_t ret;
@@ -137,7 +137,7 @@ authselect_symlinks_validate_missing()
 bool
 authselect_symlinks_location_available()
 {
-    struct authselect_symlink symlinks[] = SYMLINK_FILES;
+    struct authselect_symlink symlinks[] = {SYMLINK_FILES};
     bool result = true;
     errno_t ret;
     int i;

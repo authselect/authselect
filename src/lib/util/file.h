@@ -119,4 +119,15 @@ file_exists(const char *path);
 char *
 file_get_parent_directory(const char *filepath);
 
+/**
+ * Create all directories in a path. Path must end with a directory not a file.
+ *
+ * @param filename       Path to the file whose directories should be created.
+ * @param mode           Directory mode.
+ *
+ * @return EOK on success, other errno code on error.
+ */
+errno_t
+file_make_path(const char *path, mode_t mode);
+
 #endif /* _FILE_H_ */

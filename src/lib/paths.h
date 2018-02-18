@@ -21,6 +21,8 @@
 #ifndef _AUTHSELECT_PATHS_H_
 #define _AUTHSELECT_PATHS_H_
 
+#include <stdbool.h>
+
 /* Authselect configuration file. */
 #define PATH_CONFIG_FILE AUTHSELECT_CONFIG_DIR "/authselect.conf"
 
@@ -100,21 +102,25 @@ struct authselect_generated {
 /* Structure to hold information about symbolic link names and destinations.
  * @see GENERATED_FILES, GENERATED_FILES_PATHS */
 struct authselect_symlink {
+    /* Name of the symbolic link. */
     const char *name;
+    /* Its destination. */
     const char *dest;
+
+    /* If false, only a warning is yield if its parent directory does not
+     * exist. Otherwise it is considered as error. */
+    bool create_path;
 };
 
 #define SYMLINK_FILES                                                   \
-{                                                                       \
-    {PATH_SYMLINK_SYSTEM,      PATH_SYSTEM},                            \
-    {PATH_SYMLINK_PASSWORD,    PATH_PASSWORD},                          \
-    {PATH_SYMLINK_FINGERPRINT, PATH_FINGERPRINT},                       \
-    {PATH_SYMLINK_SMARTCARD,   PATH_SMARTCARD},                         \
-    {PATH_SYMLINK_POSTLOGIN,   PATH_POSTLOGIN},                         \
-    {PATH_SYMLINK_NSSWITCH,    PATH_NSSWITCH},                          \
-    {PATH_SYMLINK_DCONF_DB,    PATH_DCONF_DB},                          \
-    {PATH_SYMLINK_DCONF_LOCK,  PATH_DCONF_LOCK},                        \
-    {NULL, NULL}                                                        \
-}
+    {PATH_SYMLINK_SYSTEM,      PATH_SYSTEM,      false},                \
+    {PATH_SYMLINK_PASSWORD,    PATH_PASSWORD,    false},                \
+    {PATH_SYMLINK_FINGERPRINT, PATH_FINGERPRINT, false},                \
+    {PATH_SYMLINK_SMARTCARD,   PATH_SMARTCARD,   false},                \
+    {PATH_SYMLINK_POSTLOGIN,   PATH_POSTLOGIN,   false},                \
+    {PATH_SYMLINK_NSSWITCH,    PATH_NSSWITCH,    false},                \
+    {PATH_SYMLINK_DCONF_DB,    PATH_DCONF_DB,    true},                 \
+    {PATH_SYMLINK_DCONF_LOCK,  PATH_DCONF_LOCK,  true},                 \
+    {NULL, NULL, false}                                                 \
 
 #endif /* _AUTHSELECT_PATHS_H_ */

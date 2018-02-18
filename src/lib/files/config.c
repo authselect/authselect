@@ -136,44 +136,44 @@ authselect_config_write(const char *profile_id,
 bool
 authselect_config_locations_writable()
 {
-    const char *dirs[] = {
-        AUTHSELECT_CONFIG_DIR,
-        AUTHSELECT_PAM_DIR,
-        AUTHSELECT_DCONF_DIR,
-        AUTHSELECT_DCONF_DIR "/locks",
-        NULL, /* place for nsswitch.conf parent directory */
-        NULL
+    struct authselect_symlink files[] = {
+        {PATH_CONFIG_FILE, NULL, false},
+        SYMLINK_FILES
     };
+    bool result = true;
+    char *dirpath;
     errno_t ret;
-    bool result;
     int i;
-
-    /* We need to special case since nsswitch.conf is a file not a
-     * directory. But we want to make sure that its parent directory
-     * exists and we can write to it.*/
-    dirs[4] = file_get_parent_directory(AUTHSELECT_NSSWITCH_CONF);
-    if (dirs[4] == NULL) {
-        ERROR("Unable to get path to nsswitch.conf parent directory!");
-        return false;
-    }
 
     INFO("Checking if all required directories are writable.");
 
-    result = true;
-    for (i = 0; dirs[i] != NULL; i++) {
-        ret = file_check_access(dirs[i], W_OK | X_OK);
-        if (ret == EOK) {
+    for (i = 0; files[i].name != NULL; i++) {
+        dirpath = file_get_parent_directory(files[i].name);
+        if (dirpath == NULL) {
+            ERROR("Unable to get path to %s parent directory!", files[i].name);
+            result = false;
             continue;
-        } else if (ret == ENOENT) {
-            ERROR("Directory [%s] does not exist, please create it!", dirs[i]);
-        } else if (ret != EOK) {
-            ERROR("Unable to access directory [%s] in [WX] mode!", dirs[i]);
         }
 
-        result = false;
-    }
+        ret = file_check_access(dirpath, W_OK | X_OK);
+        if (ret == ENOENT && files[i].create_path) {
+            INFO("Creating path [%s]", dirpath);
+            ret = file_make_path(dirpath, AUTHSELECT_DIR_MODE);
+            if (ret != EOK) {
+                result = false;
+                ERROR("Unable to create path [%s] [%d]: %s",
+                      dirpath, ret, strerror(ret));
+            }
+        } else if (ret == ENOENT) {
+            result = false;
+            ERROR("Directory [%s] does not exist, please create it!", dirpath);
+        } else if (ret != EOK) {
+            result = false;
+            ERROR("Unable to access directory [%s] in [WX] mode!", dirpath);
+        }
 
-    free((char *)dirs[4]);
+        free(dirpath);
+    }
 
     return result;
 }

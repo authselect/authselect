@@ -26,6 +26,7 @@
 /* Functions marked with this macro are exported to the library consumer. */
 #define _PUBLIC_
 
+#define AUTHSELECT_DIR_MODE        0755
 #define AUTHSELECT_FILE_MODE       0644
 #define AUTHSELECT_FILE_SIZE_LIMIT 4096
 #define AUTHSELECT_CUSTOM_PREFIX   "custom/"

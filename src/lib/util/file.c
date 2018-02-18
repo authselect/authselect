@@ -284,3 +284,32 @@ done:
 
     return out;
 }
+
+errno_t
+file_make_path(const char *path, mode_t mode)
+{
+    char *parent;
+    errno_t ret;
+
+    ret = file_exists(path);
+    if (ret != ENOENT) {
+        return ret;
+    }
+
+    parent = file_get_parent_directory(path);
+    if (parent != NULL) {
+        ret = file_make_path(parent, mode);
+        free(parent);
+        if (ret != EOK) {
+            return ret;
+        }
+    }
+
+    ret = mkdir(path, mode);
+    if (ret != 0) {
+        return errno;
+    }
+
+    return EOK;
+
+}
