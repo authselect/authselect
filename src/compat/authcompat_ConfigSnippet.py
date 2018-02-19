@@ -19,8 +19,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+import os
 import re
-
 
 class ConfigSnippet:
     TEST = False
@@ -75,6 +75,17 @@ class ConfigSnippet:
             print(output)
             print("========== END   Content of [%s] ==========\n" % self.destination)
             return
+
+
+        dirname = os.path.dirname(self.destination)
+        if not os.path.exists(dirname):
+            try:
+                os.makedirs(dirname)
+            except OSError as exception:
+                if exception.errno == errno.EEXIST and os.path.isdir(dirname):
+                    pass
+                else:
+                    raise
 
         with open(self.destination, "w") as f:
             f.write(output)
