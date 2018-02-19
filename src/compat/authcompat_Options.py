@@ -24,6 +24,7 @@ import gettext
 
 _ = gettext.gettext
 
+
 class Option:
     def __init__(self, name, metavar, help, feature, supported):
         self.name = name
@@ -46,27 +47,28 @@ class Option:
 
     @staticmethod
     def Valued(name, metavar, help):
-        return Option(name, metavar, help, feature = False, supported = True)
+        return Option(name, metavar, help, feature=False, supported=True)
 
     @staticmethod
     def Switch(name, help):
-        return Option(name, None, help, feature = False, supported = True)
+        return Option(name, None, help, feature=False, supported=True)
 
     @staticmethod
     def Feature(name, help):
-        return Option(name, None, help, feature = True, supported = True)
+        return Option(name, None, help, feature=True, supported=True)
 
     @staticmethod
     def UnsupportedValued(name, metavar):
-        return Option(name, metavar, None, feature = False, supported = False)
+        return Option(name, metavar, None, feature=False, supported=False)
 
     @staticmethod
     def UnsupportedFeature(name):
-        return Option(name, None, None, feature = True, supported = False)
+        return Option(name, None, None, feature=True, supported=False)
 
     @staticmethod
     def UnsupportedSwitch(name):
-        return Option(name, None, None, feature = False, supported = False)
+        return Option(name, None, None, feature=False, supported=False)
+
 
 class Options:
     List = [
@@ -290,18 +292,18 @@ class Options:
             self.add_switch(parser, option)
 
     def add_valued(self, parser, option):
-        parser.add_argument("--" + option.name,
-                            action = 'store',
-                            help = option.help,
-                            dest = option.name,
-                            metavar = option.metavar)
+        parser.add_argument("--"+option.name,
+                            action='store',
+                            help=option.help,
+                            dest=option.name,
+                            metavar=option.metavar)
 
     def add_switch(self, parser, option):
-        parser.add_argument("--" + option.name,
-                            action = 'store_const',
-                            const = True,
-                            help = option.help,
-                            dest = option.name)
+        parser.add_argument("--"+option.name,
+                            action='store_const',
+                            const=True,
+                            help=option.help,
+                            dest=option.name)
 
     def add_feature(self, parser, option):
         help_enable = None
@@ -312,13 +314,13 @@ class Options:
             help_disable = _("disable") + " " + option.help
 
         parser.add_argument("--enable" + option.name,
-                            action = 'store_const',
-                            const = True,
-                            help = help_enable,
-                            dest = option.name)
+                            action='store_const',
+                            const=True,
+                            help=help_enable,
+                            dest=option.name)
 
         parser.add_argument("--disable" + option.name,
-                            action = 'store_const',
-                            const = False,
-                            help = help_disable,
-                            dest = option.name)
+                            action='store_const',
+                            const=False,
+                            help=help_disable,
+                            dest=option.name)
