@@ -85,7 +85,7 @@ class Options:
         Option.Valued ("ldapserver",      _("<server>"), _("default LDAP server hostname or URI")),
         Option.Valued ("ldapbasedn",      _("<dn>"), _("default LDAP base DN")),
         Option.Feature("ldaptls",         _("use of TLS with LDAP (RFC-2830)")),
-        Option.Feature("ldapstarttls",    _("use of TLS with LDAP (RFC-2830)")),
+        Option.Feature("ldapstarttls",    _("use of TLS for identity lookups with LDAP (RFC-2830)")),
         Option.Feature("rfc2307bis",      _("use of RFC-2307bis schema for LDAP user information lookups")),
         Option.Feature("smartcard",       _("authentication with smart card by default")),
         Option.Valued ("smartcardaction", _("<0=Lock|1=Ignore>"), _("action to be taken on smart card removal")),
