@@ -76,5 +76,16 @@ class ConfigSnippet:
             print("========== END   Content of [%s] ==========\n" % self.destination)
             return
 
+
+        dirname = os.path.dirname(self.filename)
+        if not os.path.exists(dirname):
+            try:
+                os.makedirs(dirname)
+            except OSError as exception:
+                if exception.errno == errno.EEXIST and os.path.isdir(dirname):
+                    pass
+                else:
+                    raise
+
         with open(self.destination, "w") as f:
             f.write(output)

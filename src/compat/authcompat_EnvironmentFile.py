@@ -64,6 +64,16 @@ class EnvironmentFile:
             print("========== END   Content of [%s] ==========\n" % self.filename)
             return
 
+        dirname = os.path.dirname(self.filename)
+        if not os.path.exists(dirname):
+            try:
+                os.makedirs(dirname)
+            except OSError as exception:
+                if exception.errno == errno.EEXIST and os.path.isdir(dirname):
+                    pass
+                else:
+                    raise
+
         with open(self.filename, "w") as f:
             f.write(output)
 
