@@ -32,13 +32,15 @@ from authcompat_ConfigSnippet import *
 
 _ = gettext.gettext
 
+
 def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
+
 
 class Command:
     TEST = False
 
-    def __init__(self, command, args, input = None):
+    def __init__(self, command, args, input=None):
         self.args = [command] + args
         self.input = input.encode() if input is not None else None
 
@@ -48,10 +50,11 @@ class Command:
         if self.TEST:
             return
 
-        subprocess.run(self.args, check = True,
-                       input = self.input,
-                       stdout = subprocess.PIPE,
-                       stderr = subprocess.PIPE)
+        subprocess.run(self.args, check=True,
+                       input=self.input,
+                       stdout=subprocess.PIPE,
+                       stderr=subprocess.PIPE)
+
 
 class Service:
     def __init__(self, name):
@@ -72,9 +75,10 @@ class Service:
     def stop(self):
         Command(Path.System("cmd-systemctl"), ["stop",  self.name]).run()
 
+
 class Path:
     LocalDir = os.path.dirname(os.path.realpath(__file__))
-    Config  = EnvironmentFile(LocalDir + "/authcompat_paths")
+    Config = EnvironmentFile(LocalDir + "/authcompat_paths")
 
     Files = {
         'ldap.conf'      : '@sysconfdir@/openldap/ldap.conf',
@@ -95,9 +99,10 @@ class Path:
     def System(name):
         return Path.Files[name]
 
+
 class Configuration:
     class Base(object):
-        def __init__(self, options, service = None):
+        def __init__(self, options, service=None):
             self.options = options
             self.service = service
 
@@ -148,7 +153,7 @@ class Configuration:
 
         def write(self):
             config = EnvironmentFile(Path.System('ldap.conf'), " ",
-                                     delimiter_re = "\s\t", quotes = False)
+                                     delimiter_re="\s\t", quotes=False)
             if self.isset("ldapserver"):
                 config.set("URI", self.get("ldapserver"))
 
@@ -202,7 +207,7 @@ class Configuration:
 
     class SSSD(Base):
         def __init__(self, options):
-            super(Configuration.SSSD, self).__init__(options, service = "sssd")
+            super(Configuration.SSSD, self).__init__(options, service="sssd")
 
         def mustGenerate(self):
             # Authconfig would not generate sssd in this case so we should not
@@ -242,7 +247,7 @@ class Configuration:
 
     class Winbind(Base):
         def __init__(self, options):
-            super(Configuration.Winbind, self).__init__(options, service = "winbind")
+            super(Configuration.Winbind, self).__init__(options, service="winbind")
 
         def mustGenerate(self):
             return self.isset("winbindjoin")
@@ -273,8 +278,9 @@ class Configuration:
             if self.isset("smbworkgroup"):
                 args.append(self.get("smbworkgroup"))
 
-            cmd = Command(Path.System('cmd-realm'), args, input = password)
+            cmd = Command(Path.System('cmd-realm'), args, input=password)
             cmd.run()
+
 
 class AuthCompat:
     def __init__(self):
@@ -416,6 +422,7 @@ class AuthCompat:
             self.enableService("oddjobd")
         else:
             self.disableService("oddjobd")
+
 
 def main():
     try:

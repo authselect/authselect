@@ -21,6 +21,7 @@
 
 import re
 
+
 class ConfigSnippet:
     TEST = False
 
@@ -45,7 +46,7 @@ class ConfigSnippet:
                     remove.append(idx)
                     break
 
-        for idx in sorted(remove, reverse = True):
+        for idx in sorted(remove, reverse=True):
             del lines[idx]
 
         # Build output string
@@ -66,7 +67,7 @@ class ConfigSnippet:
 
         return output
 
-    def write(self, values, to_stdout = False):
+    def write(self, values, to_stdout=False):
         output = self.generate(values)
 
         if self.TEST:
