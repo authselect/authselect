@@ -22,17 +22,22 @@
 
 import re
 
+
 class EnvironmentFile:
     TEST = False
 
-    def __init__(self, filename, delimiter = '=', delimiter_re = None, quotes = True):
+    def __init__(self, filename,
+                 delimiter='=', delimiter_re=None,
+                 quotes=True):
         self.filename = filename
         self.delimiter = delimiter
         self.quotes = quotes
         self.environment = []
 
         delimiter_re = delimiter_re if delimiter_re is not None else delimiter
-        self.pattern = re.compile('^(\s*)(\S*)([^\n\w]*)(' + delimiter_re + ')([^\n\w]*)(.*)$',
+        self.pattern = re.compile('^(\s*)(\S*)([^\n\w]*)(' +
+                                  delimiter_re +
+                                  ')([^\n\w]*)(.*)$',
                                   re.MULTILINE)
 
         self.read()
@@ -45,7 +50,8 @@ class EnvironmentFile:
             return
 
         for line in lines:
-            parsed = self.Line.Parse(line, self.pattern, self.delimiter, self.quotes)
+            parsed = self.Line.Parse(line, self.pattern,
+                                     self.delimiter, self.quotes)
             self.environment.append(parsed)
 
     def write(self):
@@ -62,7 +68,7 @@ class EnvironmentFile:
         with open(self.filename, "w") as f:
             f.write(output)
 
-    def get(self, name, default = None):
+    def get(self, name, default=None):
         value = None
         for line in self.environment:
             if line.isVariable() and line.name == name:
@@ -100,7 +106,8 @@ class EnvironmentFile:
         self.environment.append(line)
 
     class Line:
-        def __init__(self, delimiter, quotes, name = None, value = None, original = None, fmt = None):
+        def __init__(self, delimiter, quotes,
+                     name=None, value=None, original=None, fmt=None):
             self.delimiter = delimiter
             self.quotes = quotes
             self.name = name
@@ -126,8 +133,8 @@ class EnvironmentFile:
 
             value = self.value if not self.value is None else ""
             replacement = {
-                'name' : self.name,
-                'value' : self.Escape(value, self.quotes)
+                'name': self.name,
+                'value': self.Escape(value, self.quotes)
             }
 
             line = self.fmt
@@ -140,7 +147,7 @@ class EnvironmentFile:
         def Parse(line, pattern, delimiter, quotes):
             match = pattern.match(line)
             if line.startswith('#') or not line.strip() or not match:
-                return EnvironmentFile.Line(delimiter, quotes, original = line)
+                return EnvironmentFile.Line(delimiter, quotes, original=line)
 
             name = match.group(2)
             value = EnvironmentFile.Line.Unescape(match.group(6), quotes)
@@ -149,8 +156,8 @@ class EnvironmentFile:
                                                  match.group(4),
                                                  match.group(5))
 
-            return EnvironmentFile.Line(delimiter, quotes, name = name,
-                                        value = value, fmt = fmt)
+            return EnvironmentFile.Line(delimiter, quotes, name=name,
+                                        value=value, fmt=fmt)
 
         @staticmethod
         def Escape(value, quotes):
