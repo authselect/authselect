@@ -49,6 +49,9 @@ Provides: %{_sbindir}/authconfig
 BuildRequires: python3-devel
 Requires: python3
 Requires: authselect
+Requires: sssd
+Recommends: realmd
+Recommends: samba-winbind
 
 %description compat
 This package will replace %{_sbindir}/authconfig with a tool that will
