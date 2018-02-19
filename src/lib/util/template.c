@@ -107,7 +107,7 @@ template_match_get_feature(const char *match_string,
                            regmatch_t *matches,
                            char **_feature)
 {
-    regmatch_t *match;
+    regmatch_t *match = NULL;
     char *feature;
 
     switch (op) {

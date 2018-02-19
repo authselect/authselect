@@ -60,7 +60,8 @@ authselect_profile_open_location(const char *path,
 
     dirfd = open(path, O_DIRECTORY | O_RDONLY);
     if (dirfd == -1) {
-        ret = errno;
+        /* To silence static analyzers that expect errno == 0. */
+        ret = errno == EOK ? EINVAL : errno;
         if (ret == ENOENT) {
             return ENOENT;
         }
@@ -188,9 +189,7 @@ done:
     }
 
     if (ret != EOK) {
-        if (readme != NULL) {
-            free(readme);
-        }
+        free(readme);
 
         if (trimmed != NULL) {
             free(trimmed);
@@ -223,7 +222,7 @@ errno_t
 authselect_profile_read(const char *profile_id,
                         struct authselect_profile **_profile)
 {
-    struct authselect_profile *profile;
+    struct authselect_profile *profile = NULL;
     char *location;
     int dirfd;
     errno_t ret;
@@ -235,7 +234,8 @@ authselect_profile_read(const char *profile_id,
 
     profile = authselect_profile_init(profile_id);
     if (profile == NULL) {
-        return ENOMEM;
+        ret = ENOMEM;
+        goto done;
     }
 
     profile->path = location;

@@ -75,6 +75,7 @@ authselect_config_read(char **_profile_id,
     }
 
     lines = string_explode(content, '\n', STRING_EXPLODE_ALL);
+    free(content);
     if (lines == NULL) {
         return ENOMEM;
     }

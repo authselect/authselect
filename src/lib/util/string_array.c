@@ -139,7 +139,7 @@ string_array_add_value(char **array, const char *value, bool unique)
 char **
 string_array_del_value(char **array, const char *value)
 {
-    bool found;
+    bool found = false;
     int i;
 
     if (!string_array_has_value(array, value)) {

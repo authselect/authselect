@@ -81,7 +81,8 @@ authselect_profile_dir_open(const char *path,
 
     dirstream = opendir(path);
     if (dirstream == NULL) {
-        return errno;
+        /* To silence static analyzers that expect errno == 0. */
+        return errno == EOK ? EINVAL : errno;
     }
 
     /* Descriptor is closed when closedir() is called. */

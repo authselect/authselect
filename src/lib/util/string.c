@@ -111,24 +111,24 @@ string_explode_get_token(const char *str,
 
     if (flags & STRING_EXPLODE_TRIM_LEFT && flags & STRING_EXPLODE_TRIM_RIGHT) {
         tmp = string_trim(token);
+        free(token);
         if (tmp == NULL) {
-            free(token);
             return ENOMEM;
         }
 
         token = tmp;
     } else if (flags & STRING_EXPLODE_TRIM_LEFT) {
         tmp = string_trim_left(token);
+        free(token);
         if (tmp == NULL) {
-            free(token);
             return ENOMEM;
         }
 
         token = tmp;
     } else if (flags & STRING_EXPLODE_TRIM_RIGHT) {
         tmp = string_trim_right(token);
+        free(token);
         if (tmp == NULL) {
-            free(token);
             return ENOMEM;
         }
 
