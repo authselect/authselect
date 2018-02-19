@@ -55,25 +55,34 @@ class Command:
                        stdout=subprocess.PIPE,
                        stderr=subprocess.PIPE)
 
-
 class Service:
     def __init__(self, name):
         self.name = name + '.service'
 
+    def runsystemd(self, command):
+        try:
+            command.run()
+        except subprocess.CalledProcessError as result:
+            eprint("Command [%s] failed with %d, stderr:"
+                   % (' '.join(result.cmd), result.returncode))
+            eprint(result.stderr.decode())
+
     def enable(self):
         cmd = Command(Path.System("cmd-systemctl"), ["enable", self.name])
-        cmd.run()
+        self.runsystemd(cmd)
 
     def disable(self):
         cmd = Command(Path.System("cmd-systemctl"), ["disable", self.name])
-        cmd.run()
+        self.runsystemd(cmd)
 
     def start(self):
         self.stop()
-        Command(Path.System("cmd-systemctl"), ["start", self.name]).run()
+        cmd = Command(Path.System("cmd-systemctl"), ["start", self.name])
+        self.runsystemd(cmd)
 
     def stop(self):
-        Command(Path.System("cmd-systemctl"), ["stop",  self.name]).run()
+        cmd = Command(Path.System("cmd-systemctl"), ["stop",  self.name])
+        self.runsystemd(cmd)
 
 
 class Path:
