@@ -106,7 +106,6 @@ class Options:
         Option.Feature("sssd",            _("SSSD for user information by default with manually managed configuration")),
         Option.Feature("sssdauth",        _("SSSD for authentication by default with manually managed configuration")),
         Option.Feature("cachecreds",      _("caching of user credentials in SSSD by default")),
-        Option.Feature("cache",           _("caching of user information by default (automatically disabled when SSSD is used)")),
         Option.Feature("pamaccess",       _("check of access.conf during account authorization")),
         Option.Feature("mkhomedir",       _("creation of home directories for users on their first login")),
         Option.Feature("faillock",        _("account locking in case of too many consecutive authentication failures")),
@@ -131,6 +130,7 @@ class Options:
         # These options are no longer supported in authconfig compatibility
         # layers and will produce warning when used. They will not affect
         # the system.
+        Option.UnsupportedFeature("cache"),
         Option.UnsupportedFeature("shadow"),
         Option.UnsupportedSwitch ("useshadow"),
         Option.UnsupportedFeature("md5"),
