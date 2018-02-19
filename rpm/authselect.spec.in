@@ -20,7 +20,11 @@ BuildRequires:  pkgconfig
 BuildRequires:  popt-devel
 BuildRequires:  gettext-devel
 BuildRequires:  asciidoc
-
+Requires: authselect-libs = %{version}-%{release}
+Suggests: sssd
+Suggests: samba-winbind
+Suggests: fprintd-pam
+Suggests: oddjob-mkhomedir
 
 %description
 Authselect is designed to be a replacement for authconfig but it takes
@@ -45,10 +49,14 @@ Summary: Tool to provide minimum backwards compatibility with authconfig
 Group: Applications/System
 License: GPLv3+
 Obsoletes: authconfig
-Provides: %{_sbindir}/authconfig
+Provides: authconfig
 BuildRequires: python3-devel
 Requires: python3
-Requires: authselect
+Requires: authselect = %{version}-%{release}
+Recommends: sssd
+Recommends: realmd
+Recommends: samba-winbind
+Recommends: oddjob-mkhomedir
 
 %description compat
 This package will replace %{_sbindir}/authconfig with a tool that will
