@@ -7,9 +7,10 @@ Name:           authselect
 Version:        @PACKAGE_VERSION@
 Release:        @RELEASE_NUMBER@%{?dist}
 Summary:        Configures authentication and identity sources from supported profiles
+URL:            https://github.com/pbrezina/authselect
 
 License:        GPLv3+
-Source0:        https://github.com/pbrezina/authselect/archive/authselect-0.2.tar.gz
+Source0:        https://github.com/pbrezina/authselect/archive/authselect-@PACKAGE_VERSION@.tar.gz
 
 BuildRequires:  autoconf
 BuildRequires:  automake
@@ -40,10 +41,11 @@ Common library files for authselect. This package is used by the authselect
 command line tool and any other potential front-ends.
 
 %package compat
-Summary: Tool to provide minimum backwards compatibility with authconfig.
+Summary: Tool to provide minimum backwards compatibility with authconfig
 Group: Applications/System
 License: GPLv3+
 Obsoletes: authconfig
+Provides: %{_sbindir}/authconfig
 BuildRequires: python3-devel
 Requires: python3
 Requires: authselect

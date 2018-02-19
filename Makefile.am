@@ -31,12 +31,12 @@ authselect_dconf_dir=@AUTHSELECT_DCONF_DIR@
 authselect_pam_dir=@AUTHSELECT_PAM_DIR@
 
 install-exec-hook:
-	$(MKDIR_P) --mode=a=x,u=rwx $(DESTDIR)$/$(authselect_config_dir)
-	$(MKDIR_P) --mode=a=,u=rwx $(DESTDIR)$/$(authselect_vendor_dir)
-	$(MKDIR_P) --mode=a=,u=rwx $(DESTDIR)$/$(authselect_custom_dir)
-	$(MKDIR_P) --mode=a=rx,u=rwx $(DESTDIR)$/$(authselect_dconf_dir)
-	$(MKDIR_P) --mode=a=rx,u=rwx $(DESTDIR)$/$(authselect_dconf_dir)/locks
-	$(MKDIR_P) --mode=a=rx,u=rwx $(DESTDIR)$/$(authselect_pam_dir)
+	$(MKDIR_P) $(DESTDIR)$/$(authselect_config_dir)
+	$(MKDIR_P) $(DESTDIR)$/$(authselect_vendor_dir)
+	$(MKDIR_P) $(DESTDIR)$/$(authselect_custom_dir)
+	$(MKDIR_P) $(DESTDIR)$/$(authselect_dconf_dir)
+	$(MKDIR_P) $(DESTDIR)$/$(authselect_dconf_dir)/locks
+	$(MKDIR_P) $(DESTDIR)$/$(authselect_pam_dir)
 
 # Build RPMs
 RPMBUILD ?= $(PWD)/rpmbuild
