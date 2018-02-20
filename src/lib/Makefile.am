@@ -70,4 +70,4 @@ libauthselect_la_CFLAGS = \
     -DAUTHSELECT_DCONF_BIN=\"$(authselect_dconf_bin)\" \
     $(NULL)
 libauthselect_la_LDFLAGS = \
-    -version-info 0:1:0
+    -version-info 1:0:0
