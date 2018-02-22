@@ -25,8 +25,8 @@
 #include <regex.h>
 
 #include "common/common.h"
-#include "util/string.h"
-#include "util/string_array.h"
+#include "lib/util/string.h"
+#include "lib/util/string_array.h"
 
 bool
 string_is_empty(const char *str)

@@ -24,10 +24,10 @@
 #include <sys/stat.h>
 
 #include "common/common.h"
-#include "util/template.h"
-#include "util/textfile.h"
-#include "util/string.h"
-#include "util/string_array.h"
+#include "lib/util/template.h"
+#include "lib/util/textfile.h"
+#include "lib/util/string.h"
+#include "lib/util/string_array.h"
 
 #define RE_MATCHES   9
 #define RE_VALUE     "([^{}|]{0,})"

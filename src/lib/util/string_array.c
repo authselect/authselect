@@ -24,7 +24,7 @@
 #include <stdbool.h>
 
 #include "common/common.h"
-#include "util/string_array.h"
+#include "lib/util/string_array.h"
 
 char **
 string_array_create(size_t num_items)
