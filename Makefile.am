@@ -5,6 +5,7 @@ SUBDIRS= \
     src/compat \
     src/lib \
     src/cli \
+    src/tests \
     $(NULL)
 
 if HAVE_MANPAGES

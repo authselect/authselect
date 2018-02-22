@@ -35,6 +35,7 @@ m4_include(external/a2x.m4)
 
 dnl Required libraries
 REQUIRE_POPT
+REQUIRE_CMOCKA
 
 dnl Optional build dependencies - man pages generation
 CHECK_ASCIIDOC_TOOLS
@@ -52,6 +53,7 @@ AC_CONFIG_FILES([Makefile
                  src/man/Makefile
                  src/man/authselect.8.txt.in
                  src/man/authselect-migration.7.txt.in
-                 src/man/authselect-profiles.5.txt.in])
+                 src/man/authselect-profiles.5.txt.in
+                 src/tests/Makefile])
 
 AC_OUTPUT
