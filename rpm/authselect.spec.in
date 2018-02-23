@@ -5,17 +5,18 @@ Summary:        Configures authentication and identity sources from supported pr
 URL:            https://github.com/pbrezina/authselect
 
 License:        GPLv3+
-Source0:        https://github.com/pbrezina/authselect/archive/authselect-@PACKAGE_VERSION@.tar.gz
+Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  libtool
 BuildRequires:  m4
+BuildRequires:  gcc
 BuildRequires:  pkgconfig
-BuildRequires:  popt-devel
+BuildRequires:  pkgconfig(popt)
 BuildRequires:  gettext-devel
-BuildRequires:  asciidoc
-Requires: authselect-libs = %{version}-%{release}
+BuildRequires:  %{_bindir}/a2x
+Requires: authselect-libs%{?_isa} = %{version}-%{release}
 Suggests: sssd
 Suggests: samba-winbind
 Suggests: fprintd-pam
@@ -32,8 +33,6 @@ supported by authselect.
 
 %package libs
 Summary: Utility library used by the authselect tool
-Group: Applications/System
-License: GPLv3+
 
 %description libs
 Common library files for authselect. This package is used by the authselect
@@ -41,13 +40,10 @@ command line tool and any other potential front-ends.
 
 %package compat
 Summary: Tool to provide minimum backwards compatibility with authconfig
-Group: Applications/System
-License: GPLv3+
-Obsoletes: authconfig
+Obsoletes: authconfig < 7.0.1-6
 Provides: authconfig
 BuildRequires: python3-devel
-Requires: python3
-Requires: authselect = %{version}-%{release}
+Requires: authselect%{?_isa} = %{version}-%{release}
 Recommends: sssd
 Recommends: realmd
 Recommends: samba-winbind
@@ -61,9 +57,7 @@ to authselect completely.
 
 %package devel
 Summary: Development libraries and headers for authselect
-Group: Applications/System
-License: GPLv3+
-Requires: authselect-libs = %{version}-%{release}
+Requires: authselect-libs%{?_isa} = %{version}-%{release}
 
 %description devel
 System header files and development libraries for authselect. Useful if
@@ -77,18 +71,16 @@ you develop a front-end for the authselect library.
 %build
 autoreconf -if
 %configure
-
-make %{?_smp_mflags}
+%make_build
 
 %install
-make install DESTDIR=$RPM_BUILD_ROOT
+%make_install
 
 # Remove .la and .a files created by libtool
 find $RPM_BUILD_ROOT -name "*.la" -exec rm -f {} \;
 find $RPM_BUILD_ROOT -name "*.a" -exec rm -f {} \;
 
 %files libs
-%defattr(-,root,root,-)
 %dir %{_sysconfdir}/authselect
 %dir %{_sysconfdir}/authselect/custom
 %dir %{_datadir}/authselect
@@ -121,36 +113,18 @@ find $RPM_BUILD_ROOT -name "*.a" -exec rm -f {} \;
 %doc README.md
 
 %files compat
-%defattr(-,root,root,-)
 %{_sbindir}/authconfig
-%{python3_sitelib}/authselect/authcompat.py
-%{python3_sitelib}/authselect/authcompat_ConfigSnippet.py
-%{python3_sitelib}/authselect/authcompat_EnvironmentFile.py
-%{python3_sitelib}/authselect/authcompat_Options.py
-%{python3_sitelib}/authselect/snippets/authconfig-krb.conf
-%{python3_sitelib}/authselect/snippets/authconfig-sssd.conf
-%{python3_sitelib}/authselect/__pycache__/*
+%{python3_sitelib}/authselect/
 
 %files devel
-%defattr(-,root,root,-)
 %{_includedir}/authselect.h
 %{_libdir}/libauthselect.so
 
 %files
-%defattr(-,root,root,-)
 %{_bindir}/authselect
 %{_mandir}/man8/authselect.8*
 %{_mandir}/man7/authselect-migration.7*
 
-%post libs -p /sbin/ldconfig
-%postun libs -p /sbin/ldconfig
-
 %changelog
-* Wed Feb 20 2018 Pavel Březina <pbrezina@redhat.com> - 0.3-1
-- rebase to 0.3
-* Wed Jan 10 2018 Pavel Březina <pbrezina@redhat.com> - 0.2-2
-- fix rpmlint errors
-* Wed Jan 10 2018 Pavel Březina <pbrezina@redhat.com> - 0.2-1
-- rebasing to 0.2
-* Mon Jul 31 2017 Jakub Hrozek <jakub.hrozek@posteo.se> - 0.1-1
-- initial packaging
+* Thu Feb 22 2018 Pavel Březina <pbrezina@redhat.com> - 0.3
+- Do not use change log for rpm generated from source
