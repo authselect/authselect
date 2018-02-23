@@ -26,13 +26,33 @@
 #include "lib/constants.h"
 #include "lib/files/files.h"
 #include "lib/profiles/profiles.h"
+#include "lib/util/util.h"
+
+static errno_t
+authselect_profile_dconf_update()
+{
+    errno_t ret;
+    int sysret;
+
+    ret = file_check_access(AUTHSELECT_DCONF_BIN, X_OK);
+    if (ret != EOK) {
+        return ret;
+    }
+
+    sysret = system(AUTHSELECT_DCONF_BIN " update &> /dev/null");
+    if (sysret != 0) {
+        ERROR("%s update failed: %d", AUTHSELECT_DCONF_BIN, sysret);
+        return EIO;
+    }
+
+    return EOK;
+}
 
 errno_t
 authselect_profile_activate(struct authselect_profile *profile,
                             const char **features)
 {
     errno_t ret;
-    int sysret;
 
     /* Check that all directories are writable. */
     if (!authselect_config_locations_writable()) {
@@ -59,10 +79,12 @@ authselect_profile_activate(struct authselect_profile *profile,
         return ret;
     }
 
-    sysret = system(AUTHSELECT_DCONF_BIN " update");
-    if (ret != 0) {
-        ERROR("Unable to run dconf update: %d", sysret);
-        return EIO;
+    ret = authselect_profile_dconf_update();
+    if (ret == ENOENT) {
+        INFO("Dconf is not installed on your system");
+    } else if (ret != EOK) {
+        ERROR("Unable to update dconf database [%d]: %s", ret, strerror(ret));
+        return ret;
     }
 
     return EOK;

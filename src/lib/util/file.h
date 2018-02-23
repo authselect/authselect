@@ -24,6 +24,7 @@
 #include <stdbool.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <fcntl.h>
 
 #include "common/errno_t.h"
 
