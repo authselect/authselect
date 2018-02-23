@@ -16,6 +16,7 @@ BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(popt)
 BuildRequires:  gettext-devel
 BuildRequires:  %{_bindir}/a2x
+BuildRequires:  libcmocka-devel >= 1.0.0
 Requires: authselect-libs%{?_isa} = %{version}-%{release}
 Suggests: sssd
 Suggests: samba-winbind
@@ -72,6 +73,9 @@ you develop a front-end for the authselect library.
 autoreconf -if
 %configure
 %make_build
+
+%check
+%make_build check
 
 %install
 %make_install
