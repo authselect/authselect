@@ -55,7 +55,7 @@ rpmprep: dist-gzip rpmroot
 
 rpms: rpmprep
 	cd $(RPMBUILD); \
-	rpmbuild --define "_topdir $(RPMBUILD)" -ba SPECS/authselect.spec
+	CFLAGS="$(CFLAGS) -fPIC" rpmbuild --define "_topdir $(RPMBUILD)" -ba SPECS/authselect.spec
 
 srpm: rpmprep
 	cd $(RPMBUILD); \
