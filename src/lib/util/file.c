@@ -36,13 +36,15 @@ file_check_type(struct stat *statbuf,
                 mode_t mode)
 {
     mode_t exp_type = mode & S_IFMT;
+    mode_t real_type;
 
     if (statbuf == NULL) {
         ERROR("Internal error: stat cannot be NULL!");
         return false;
     }
 
-    if (exp_type != (statbuf->st_mode & S_IFMT)) {
+    real_type = statbuf->st_mode & S_IFMT;
+    if (exp_type != (real_type)) {
         switch (exp_type) {
         case S_IFDIR:
             ERROR("[%s] is not a directory!", name);
@@ -55,7 +57,7 @@ file_check_type(struct stat *statbuf,
             break;
         default:
             ERROR("[%s] has wrong type [%.7o], expected [%.7o]!",
-                  name, exp_type, exp_type);
+                  name, real_type, exp_type);
             break;
         }
 
