@@ -1,0 +1,42 @@
+AUTHSELECT_1.0.1 {
+
+    # public functions
+    global:
+
+        authselect_activate;
+        authselect_feature_enable;
+        authselect_feature_disable;
+        authselect_validate_configuration;
+        authselect_current_configuration;
+        authselect_list;
+        authselect_profile;
+        authselect_profile_id;
+        authselect_profile_name;
+        authselect_profile_path;
+        authselect_profile_description;
+        authselect_profile_free;
+        authselect_files;
+        authselect_files_nsswitch;
+        authselect_files_systemauth;
+        authselect_files_passwordauth;
+        authselect_files_smartcardauth;
+        authselect_files_fingerprintauth;
+        authselect_files_postlogin;
+        authselect_files_dconf_db;
+        authselect_files_dconf_lock;
+        authselect_files_free;
+        authselect_path_nsswitch;
+        authselect_path_systemauth;
+        authselect_path_passwordauth;
+        authselect_path_smartcardauth;
+        authselect_path_fingerprintauth;
+        authselect_path_postlogin;
+        authselect_path_dconf_db;
+        authselect_path_dconf_lock;
+        authselect_array_free;
+        authselect_set_debug_fn;
+
+    # everything else is local
+    local:
+        *;
+};

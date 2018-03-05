@@ -22,6 +22,10 @@ noinst_HEADERS = \
     util/util.h \
     $(NULL)
 
+dist_noinst_DATA = \
+    authselect.exports \
+    $(NULL)
+
 lib_LTLIBRARIES = \
     libauthselect.la \
     $(NULL)
@@ -70,6 +74,7 @@ libauthselect_la_CFLAGS = \
     -DAUTHSELECT_DCONF_BIN=\"$(authselect_dconf_bin)\" \
     $(NULL)
 libauthselect_la_LDFLAGS = \
+    -Wl,--version-script=$(srcdir)/authselect.exports \
     -version-info 1:0:0
 
 pkgconfigdir = $(libdir)/pkgconfig
