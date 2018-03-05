@@ -71,3 +71,8 @@ libauthselect_la_CFLAGS = \
     $(NULL)
 libauthselect_la_LDFLAGS = \
     -version-info 1:0:0
+
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = \
+    authselect.pc \
+    $(NULL)

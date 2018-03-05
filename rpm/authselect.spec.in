@@ -129,6 +129,7 @@ find $RPM_BUILD_ROOT -name "*.a" -exec rm -f {} \;
 %files devel
 %{_includedir}/authselect.h
 %{_libdir}/libauthselect.so
+%{_libdir}/pkgconfig/authselect.pc
 
 %files
 %{_bindir}/authselect

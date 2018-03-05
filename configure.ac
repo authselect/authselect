@@ -50,6 +50,7 @@ AC_CONFIG_FILES([Makefile
                  src/compat/Makefile
                  src/cli/Makefile
                  src/lib/Makefile
+                 src/lib/authselect.pc
                  src/man/Makefile
                  src/man/authselect.8.txt.in
                  src/man/authselect-migration.7.txt.in
