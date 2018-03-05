@@ -41,7 +41,11 @@ command line tool and any other potential front-ends.
 
 %package compat
 Summary: Tool to provide minimum backwards compatibility with authconfig
+%if 0%{?fedora} <= 27
+Conflicts: authconfig
+%else
 Obsoletes: authconfig < 7.0.1-6
+%endif
 Provides: authconfig
 BuildRequires: python3-devel
 Requires: authselect%{?_isa} = %{version}-%{release}
