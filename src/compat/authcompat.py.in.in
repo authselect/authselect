@@ -44,7 +44,7 @@ class Command:
         self.input = input.encode() if input is not None else None
 
     def run(self):
-        print("Executing: %s" % ' '.join(self.args))
+        print(_("Executing: %s") % ' '.join(self.args))
 
         if self.TEST:
             return
@@ -58,30 +58,34 @@ class Service:
     def __init__(self, name):
         self.name = name + '.service'
 
-    def runsystemd(self, command):
+    def runsystemd(self, command, required, enoent_code):
         try:
             command.run()
         except subprocess.CalledProcessError as result:
-            eprint("Command [%s] failed with %d, stderr:"
-                   % (' '.join(result.cmd), result.returncode))
-            eprint(result.stderr.decode())
+            if required and result.returncode == enoent_code:
+                eprint(_("Service %s was not found. Please install the service.")
+                       % self.name)
+            elif result.returncode != enoent_code:
+                eprint(_("Command [%s] failed with %d, stderr:")
+                       % (' '.join(result.cmd), result.returncode))
+                eprint(result.stderr.decode())
 
     def enable(self):
         cmd = Command(Path.System("cmd-systemctl"), ["enable", self.name])
-        self.runsystemd(cmd)
+        self.runsystemd(cmd, True, 1)
 
     def disable(self):
         cmd = Command(Path.System("cmd-systemctl"), ["disable", self.name])
-        self.runsystemd(cmd)
+        self.runsystemd(cmd, False, 1)
 
     def start(self):
         self.stop()
         cmd = Command(Path.System("cmd-systemctl"), ["start", self.name])
-        self.runsystemd(cmd)
+        self.runsystemd(cmd, True, 5)
 
     def stop(self):
         cmd = Command(Path.System("cmd-systemctl"), ["stop",  self.name])
-        self.runsystemd(cmd)
+        self.runsystemd(cmd, False, 5)
 
 
 class Path:
@@ -142,7 +146,7 @@ class Configuration:
             return self.options.getBool(name)
 
         def removeFile(self, filename):
-            print("Removing file: %s" % filename)
+            print(_("Removing file: %s") % filename)
             if self.options.getBool("test-call"):
                 return
 
@@ -290,7 +294,11 @@ class Configuration:
                 args.append(self.get("smbworkgroup"))
 
             cmd = Command(Path.System('cmd-realm'), args, input=password)
-            cmd.run()
+            try:
+                cmd.run()
+            except FileNotFoundError as result:
+                eprint(_("%s was not found. Please, install realmd.")
+                       % Path.System('cmd-realm'))
 
 
 class AuthCompat:
@@ -392,7 +400,7 @@ class AuthCompat:
                 svc.start()
         except subprocess.CalledProcessError as result:
             # This is not fatal error.
-            eprint("Command [%s] failed with %d, stderr:"
+            eprint(_("Command [%s] failed with %d, stderr:")
                    % (' '.join(result.cmd), result.returncode))
             eprint(result.stderr.decode())
 
@@ -408,7 +416,7 @@ class AuthCompat:
                 svc.stop()
         except subprocess.CalledProcessError as result:
             # This is not fatal error.
-            eprint("Command [%s] failed with %d, stderr:"
+            eprint(_("Command [%s] failed with %d, stderr:")
                    % (' '.join(result.cmd), result.returncode))
             eprint(result.stderr.decode())
 
@@ -455,7 +463,7 @@ def main():
         authcompat.runAuthselect()
         authcompat.writeConfiguration()
     except subprocess.CalledProcessError as result:
-        eprint("Command [%s] failed with %d, stderr:"
+        eprint(_("Command [%s] failed with %d, stderr:")
                % (' '.join(result.cmd), result.returncode))
         eprint(result.stderr.decode())
 
