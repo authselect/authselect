@@ -33,7 +33,7 @@
 #define STRING_EXPLODE_ALL             0xFFFF
 
 /**
- * CHeck if the string is empty.
+ * Check if the string is empty.
  *
  * @param str String to test.
  *

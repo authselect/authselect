@@ -1,6 +1,6 @@
-authselect migration(7)
+authselect-migration(7)
 =======================
-:revdate: 2018-02-08
+:revdate: 2018-03-18
 
 NAME
 ----
@@ -28,20 +28,20 @@ beside PAM and nsswitch.conf and it strictly prohibits any manual changes to
 generated configuration. It provides set of files called profiles. Each profile
 describes how the resulting configuration should look like and it can be
 slightly modified by enabling or disabling certain optional features. If a need
-arises for a different profile than what authselect ships the administrator has
-an option to create a whole new profile and than use it with authselect.
+arises for a different profile than what authselect ships, the administrator has
+an option to create a whole new profile and use it with authselect.
 See authselect-profiles(5) to learn more about profiles.
 
 This may seem like a big disadvantage but the truth is the
 opposite. Authconfig is a very old tool and the applications providing
 required services have changed rapidly over the years. Typically, there is no
-longer need to have multiple authentication modules in PAM and nsswitch.conf,
+longer a need to have multiple authentication modules in PAM and nsswitch.conf,
 because the vast majority of use-cases is covered by SSSD. Therefore there
 is no need to add or remove them specifically. There are also better tools
 to generate configuration for system daemons that can help you automate
 the process of joining to a remote domain such as `realm`. In addition,
 the shipped profiles give us comprehensive and deterministic system
-configuration that can be fully tested aand is much less error prone. It
+configuration that can be fully tested and is much less error prone. It
 is also much easier to distribute such configuration across many systems.
 
 Probably the most controversial change is that authselect only ships profiles
@@ -133,9 +133,9 @@ This sections contains snippets for minimal configuration of various services.
 
 LDAP
 ~~~~
-Even if LDAP is not directly used through `pam_ldap` and `nss_ldap` it
+Even if LDAP is not directly used through `pam_ldap` and `nss_ldap`, it
 is still useful to configure ldap.conf to configure openldap-libs and
-indirectly e.g. LDAP tools suchs as `ldapsearch`.
+indirectly, e.g. LDAP tools such as `ldapsearch`.
 
 .@sysconfdir@/openldap/ldap.conf
 ----
@@ -204,7 +204,7 @@ krb5_realm = MYREALM
 dns_discovery_domain = myrealm
 ----
 
-If you want to configure SSSD for an IPA or Active Directory domain use the
+If you want to configure SSSD for an IPA or Active Directory domain, use the
 `realm` tool. This will perform an initial setup which involves creating
 a Kerberos keytab and generating basic SSSD configuration. You can then
 tune it up by modifying @sysconfdir@/sssd/sssd.conf.
@@ -246,7 +246,7 @@ with systemd.
 
 AUTHCONFIG TOOLS
 ----------------
-Authconfig shipped a tool called _cacertdir_rehash_. If you depend on this tool
+Authconfig shipped a tool called _cacertdir_rehash_. If you depend on this tool,
 please switch to native _openssl_ command: *openssl rehash <directory>* that
 serves the same purpose.
 

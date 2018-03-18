@@ -26,7 +26,7 @@
 /* Authselect configuration file. */
 #define PATH_CONFIG_FILE AUTHSELECT_CONFIG_DIR "/authselect.conf"
 
-/* Uid and gid of files owned by authselect. -1 means do not check. */
+/* UID and GID of files owned by authselect. -1 means do not check. */
 #define AUTHSELECT_UID -1
 #define AUTHSELECT_GID -1
 

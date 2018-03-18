@@ -21,7 +21,7 @@ authselect_LDADD = \
     $(top_builddir)/src/lib/libauthselect.la \
     $(POPT_LIBS) \
     $(NULL)
-authsekect_CFLAGS = \
+authselect_CFLAGS = \
     $(AM_CFLAGS) \
     $(POPT_CFLAGS) \
     $(NULL)
