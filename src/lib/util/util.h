@@ -23,7 +23,7 @@
 
 /**
  * Many of the utility functions are not as effective as they can be but
- * this is ok since authselect works only with small configuration files
+ * this is OK since authselect works only with small configuration files
  * therefore we can prefer clean and simple code over performance.
  */
 
