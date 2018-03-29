@@ -397,10 +397,8 @@ setup_gettext()
 {
     char *c;
 
-    c = setlocale(LC_ALL, "");
-    if (c == NULL) {
-        ERROR("Unable to set locale!");
-    }
+    /* Setup gettext even if we were unable to setup locale. */
+    setlocale(LC_ALL, "");
 
     errno = 0;
     c = bindtextdomain(PACKAGE, LOCALEDIR);
@@ -435,7 +433,8 @@ int main(int argc, const char **argv)
 
     ret = setup_gettext();
     if (ret != EOK) {
-        fprintf(stderr, _("Unable to setup gettext!\n"));
+        /* We can't use gettext here since it would crash. */
+        fprintf(stderr, "Unable to setup gettext!\n");
         return 1;
     }
 
