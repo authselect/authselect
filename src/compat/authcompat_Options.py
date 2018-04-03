@@ -122,8 +122,8 @@ class Options:
         # Unsupported program options but we have to react somehow when set
         Option.UnsupportedSwitch("test"),
         Option.UnsupportedSwitch("probe"),
-        Option.UnsupportedSwitch("savebackup"),
-        Option.UnsupportedSwitch("restorebackup"),
+        Option.UnsupportedValued("savebackup", _("<name>")),
+        Option.UnsupportedValued("restorebackup", _("<name>")),
         Option.UnsupportedSwitch("restorelastbackup"),
 
         # These options are no longer supported in authconfig compatibility
