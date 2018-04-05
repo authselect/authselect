@@ -136,6 +136,41 @@ find $RPM_BUILD_ROOT -name "*.a" -exec rm -f {} \;
 %{_mandir}/man8/authselect.8*
 %{_mandir}/man7/authselect-migration.7*
 
+%global updatefile %{_localstatedir}/lib/rpm-state/%{name}.update-profile
+
+%pre libs
+rm -f "%{updatefile}"
+if [ $1 -gt 1 ] ; then
+    # Check that authselect cli is installed, otherwise there is nothing to do.
+    rpm -q %{name} &> /dev/null
+    if [ $? -ne 0 ] ; then
+      exit 0
+    fi
+
+    # This is an upgrade. Check that the current configuration is valid
+    # and store the information for later use in posttrans. The check must
+    # be done here (before profiles are updated), otherwise it would return
+    # an error if the new profile is different from the old one but selected.
+    %{_bindir}/authselect check &> /dev/null
+    if [ $? -eq 0 ]; then
+      touch "%{updatefile}"
+    fi
+fi
+
+exit 0
+
+%posttrans libs
+if [ -f "%{updatefile}" ]; then
+    # This is an upgrade. Update current profile if possible.
+    PROFILE=`%{_bindir}/authselect current --raw`
+    if [ $? -eq 0 ]; then
+        %{_bindir}/authselect select $PROFILE --force &> /dev/null
+    fi
+    rm -f "%{updatefile}"
+fi
+
+exit 0
+
 %changelog
 * Thu Feb 22 2018 Pavel Březina <pbrezina@redhat.com> - @PACKAGE_VERSION@-@RELEASE_NUMBER@
 - Do not use change log for rpm generated from source
