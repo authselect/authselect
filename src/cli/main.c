@@ -121,12 +121,19 @@ static errno_t activate(struct cli_cmdline *cmdline)
 
 static errno_t current(struct cli_cmdline *cmdline)
 {
+    int raw_output = 0;
     char *profile_id;
     char **features;
     errno_t ret;
     int i;
 
-    ret = cli_tool_popt(cmdline, NULL, CLI_TOOL_OPT_OPTIONAL, NULL, NULL);
+    struct poptOption options[] = {
+        {"raw", 'r', POPT_ARG_VAL, &raw_output, 1,
+         _("Print command parameters instead of formatted output"), NULL },
+        POPT_TABLEEND
+    };
+
+    ret = cli_tool_popt(cmdline, options, CLI_TOOL_OPT_OPTIONAL, NULL, NULL);
     if (ret != EOK) {
         ERROR("Unable to parse command arguments");
         return ret;
@@ -142,15 +149,25 @@ static errno_t current(struct cli_cmdline *cmdline)
         return ret;
     }
 
-    printf(_("Profile ID: %s\n"), profile_id);
-    printf(_("Enabled features:"));
-
-    if (features == NULL || features[0] == NULL) {
-        printf(_(" None\n"));
-    } else {
+    if (raw_output) {
+        printf("%s", profile_id);
+        if (features != NULL) {
+            for (i = 0; features[i] != NULL; i++) {
+                printf(" %s", features[i]);
+            }
+        }
         printf("\n");
-        for (i = 0; features[i] != NULL; i++) {
-            printf("- %s\n", features[i]);
+    } else {
+        printf(_("Profile ID: %s\n"), profile_id);
+        printf(_("Enabled features:"));
+
+        if (features == NULL || features[0] == NULL) {
+            printf(_(" None\n"));
+        } else {
+            printf("\n");
+            for (i = 0; features[i] != NULL; i++) {
+                printf("- %s\n", features[i]);
+            }
         }
     }
 

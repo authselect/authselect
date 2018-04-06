@@ -42,8 +42,10 @@ To print help for selected command run *authselect COMMAND --help*.
 *show* profile_id::
     Print information about the profile.
 
-*current*::
-    Print information about currently selected profiles.
+*current* [-r, --raw]::
+    Print information about currently selected profiles. If *--raw* option
+    is specified, the command will print raw parameters as they were passed
+    to *select* command instead of formatted output.
 
 *check*::
     Check if the current configuration is valid (it was either created by
