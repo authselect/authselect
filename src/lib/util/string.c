@@ -141,7 +141,7 @@ string_explode_get_token(const char *str,
         return EOK;
     }
 
-    if (flags & STRING_EXPLODE_SKIP_COMMENT && token[0] == '\0') {
+    if (flags & STRING_EXPLODE_SKIP_COMMENT && token[0] == '#') {
         *_token = NULL;
         free(token);
         return EOK;
