@@ -137,7 +137,7 @@ Even if LDAP is not directly used through `pam_ldap` and `nss_ldap`, it
 is still useful to configure ldap.conf to configure openldap-libs and
 indirectly, e.g. LDAP tools such as `ldapsearch`.
 
-.@sysconfdir@/openldap/ldap.conf
+.{sysconfdir}/openldap/ldap.conf
 ----
 # Set the default base dn
 BASE   dc=example,dc=com
@@ -151,7 +151,7 @@ KERBEROS
 If you use Kerberos, the default Kerberos realm should be configured in order
 for krb5-libs and therefore tools such as `kinit` to work out of the box.
 
-.@sysconfdir@/krb5.conf
+.{sysconfdir}/krb5.conf
 ----
 [libdefaults]
  default_realm = MYREALM
@@ -173,7 +173,7 @@ configuration options, see sssd.conf(5). This is a minimal configuration
 that creates one LDAP domain called `default`. The LDAP server is
 auto-discovered through DNS lookups.
 
-.@sysconfdir@/sssd/sssd.conf
+.{sysconfdir}/sssd/sssd.conf
 ----
 [sssd]
 config_file_version = 2
@@ -189,7 +189,7 @@ And here is a configuration snippet for the same domain but now the
 authentication is done over Kerberos. The KDC server is auto-discovered through
 DNS lookups.
 
-.@sysconfdir@/sssd/sssd.conf
+.{sysconfdir}/sssd/sssd.conf
 ----
 [sssd]
 config_file_version = 2
@@ -207,14 +207,14 @@ dns_discovery_domain = myrealm
 If you want to configure SSSD for an IPA or Active Directory domain, use the
 `realm` tool. This will perform an initial setup which involves creating
 a Kerberos keytab and generating basic SSSD configuration. You can then
-tune it up by modifying @sysconfdir@/sssd/sssd.conf.
+tune it up by modifying {sysconfdir}/sssd/sssd.conf.
 
 WINBIND
 ~~~~~~~
 If you want to configure the machine to use Winbind, use `realm`. This
 will perform an initial setup which involves creating a Kerberos keytab and
 running `adcli` to join the domain. It also makes changes to `smb.conf`. You
-can then tune it up by modifying @sysconfdir@/samba/smb.conf.
+can then tune it up by modifying {sysconfdir}/samba/smb.conf.
 
 PASSWORD QUALITY
 ~~~~~~~~~~~~~~~~
@@ -224,7 +224,7 @@ should use the password policy that is enforced by the respective remote
 server.
 
 The `pam_pwquality` module can be configured in
-@sysconfdir@/security/pwquality.conf. See pam_pwquality(8) to see its
+{sysconfdir}/security/pwquality.conf. See pam_pwquality(8) to see its
 configuration options and defaults.
 
 STARTING SERVICES

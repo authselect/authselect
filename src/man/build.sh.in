@@ -1,0 +1,213 @@
+#!/bin/bash
+
+prefix=$1
+exec_prefix=$2
+STAMPFILE="@abs_top_builddir@/src/man/build.stamp"
+SCRIPTFILE="@abs_top_builddir@/src/man/build.sh"
+
+# Get last modification time of a file.
+# Usage: last-modification-time FILE
+last-modification-time() {
+    local MOD=`stat -c %Y "$1" 2> /dev/null`
+    
+    if [ $? -ne 0 ] || [ -z $MOD ]; then
+        echo 0
+        return 0
+    fi
+    
+    echo $MOD
+    return 0
+}
+
+# Print current configuration.
+# Usage: print-configuration
+print-configuration() {
+    echo $prefix
+    echo $exec_prefix
+}
+
+# Test if configuration changed.
+# Return: 0 if yes, 1 otherwise.
+# Usage: configuration-changed
+configuration-changed() {
+    local TIME_STAMP=`last-modification-time "$STAMPFILE"`
+    local TIME_BUILD=`last-modification-time "$SCRIPTFILE"`
+
+    if [ ! -f "$STAMPFILE" ]; then
+        return 0
+    fi
+
+    if [ $TIME_STAMP -lt $TIME_BUILD ]; then
+        return 0
+    fi
+
+    if [ "x`cat "$STAMPFILE"`" != "x`print-configuration`" ]; then
+        return 0
+    fi
+
+    return 1
+}
+
+# Check if manual page needs new translation.
+# Return: 0 if yes, 1 otherwise.
+# Usage: need-translation PATH_SOURCE PATH_PO PATH_TRANSLATION
+need-translation() {
+    local PATH_SOURCE="$1"
+    local PATH_PO="$2"
+    local PATH_TRANSLATION="$3"
+    
+    local TIME_SOURCE=`last-modification-time "$PATH_SOURCE"`
+    local TIME_PO=`last-modification-time "$PATH_PO"`
+    local TIME_TRANSLATION=`last-modification-time "$PATH_TRANSLATION"`
+    
+    if configuration-changed; then
+        return 0
+    fi
+    
+    # Translation does not yet exist.
+    if [ ! -f "$PATH_TRANSLATION" ] &&  [ -f "$PATH_PO" ]; then
+        return 0
+    fi
+    
+    # Translation is outdated.
+    if [ $TIME_TRANSLATION -lt $TIME_PO ]; then
+        return 0
+    fi
+    
+    # Source file is updated.
+    if [ $TIME_TRANSLATION -lt $TIME_SOURCE ]; then
+        return 0
+    fi
+    
+    return 1
+}
+
+# Check if manual page needs new compilation.
+# Return: 0 if yes, 1 otherwise.
+# Usage: need-compilation PATH_SOURCE PATH_DEST
+need-compilation() {
+    local PATH_SOURCE="$1"
+    local PATH_DEST="$2"
+    
+    local TIME_SOURCE=`last-modification-time "$PATH_SOURCE"`
+    local TIME_DEST=`last-modification-time "$PATH_DEST"`
+    
+    if configuration-changed; then
+        return 0
+    fi
+    
+    # Build does not yet exist.
+    if [ ! -f "$PATH_DEST" ] &&  [ -f "$PATH_SOURCE" ]; then
+        return 0
+    fi
+    
+    # Build is outdated.
+    if [ $TIME_DEST -lt $TIME_SOURCE ]; then
+        return 0
+    fi
+    
+    return 1
+}
+
+# Find files in directories.
+# Usage: search-dirs PATTERN DIRECTORIES 
+search-dirs() {
+    local PATTERN=$1
+    shift 1
+    
+    find $@ -type f -name "$PATTERN" -printf '%d\t%p\n' 2> /dev/null \
+        | sort -nk1 | cut -f2-
+}
+
+# Find asciidoc sources for manual pages.
+# Usage: manpages-find
+manpages-find() {
+    search-dirs "*.adoc" "@abs_top_srcdir@/src/man" "@abs_top_builddir@/src/man"
+}
+
+# Find asciidoc translation sources for manual pages.
+# Usage: manpages-find-translations
+manpages-find-translations() {
+    search-dirs "*.po" "@abs_top_srcdir@/src/man/po"
+}
+
+# Translate ascii doc files with po table
+# - source man pages are found in: src/man, name: name.section.adoc 
+# - translations are found in: src/man/po,  name: manpage.language.po
+# - result is stored in: src/man/translation/$language/name.section.adoc 
+#
+# Usage: manpages-translate
+manpages-translate() {
+    local DIR_MANS="@abs_top_srcdir@/src/man"
+    local DIR_TRANS="@abs_top_builddir@/src/man/translations"
+
+    for pofilepath in `manpages-find-translations`; do
+        local pofilename=`basename $pofilepath`
+        local adoc=`echo $pofilename | sed -E 's/(.*)\.adoc\.[^.]+\.po/\1.adoc/'`
+        local lang=`echo $pofilename | sed -E 's/.*\.adoc\.([^.]+)\.po/\1/'`
+        local source="$DIR_MANS/$adoc"
+        local dest="$DIR_TRANS/$lang/$adoc"
+        
+        if ! need-translation "$source" "$pofilepath" "$dest"
+        then
+            continue
+        fi
+
+        echo "Translating $source to $lang"
+        @PO4A_TRANSLATE@ -f asciidoc \
+            --master "$source" \
+            --po "$pofilepath" \
+            --localized "$dest" \
+            --keep 80 > /dev/null
+
+        if [ $? -ne 0 ]; then
+            echo "Unable to translate manual page: $adoc, $pofilename"
+            return 1
+        fi
+    done
+    
+    return 0
+}
+
+# Compile ascii doc into manual page format.
+# Usage: manpages-compile SOURCE [additional a2x parameters]
+manpages-compile() {
+    local FILE=$1
+    local DIR=$(dirname `echo $FILE | sed 's|@abs_top_srcdir@|@abs_top_builddir@|'`)
+    local MAN=`basename $FILE | sed -E 's/(.*)\.adoc/\1/'`
+    
+    if ! need-compilation "$FILE" "$DIR/$MAN"
+    then
+        return 0
+    fi
+    
+    shift 1
+    
+    echo "Building manpage: $FILE"
+    
+    mkdir -p "$DIR"
+    @A2X@ -D "$DIR" --doctype manpage --format manpage "$FILE" $*
+}
+
+ATTR=""
+ATTR+=" -a sysconfdir=\"@sysconfdir@\""
+ATTR+=" -a AUTHSELECT_CONFIG_DIR=\"@AUTHSELECT_CONFIG_DIR@\""
+ATTR+=" -a AUTHSELECT_CUSTOM_DIR=\"@AUTHSELECT_CUSTOM_DIR@\""
+ATTR+=" -a AUTHSELECT_DCONF_BIN=\"@AUTHSELECT_DCONF_BIN@\""
+ATTR+=" -a AUTHSELECT_DCONF_DIR=\"@AUTHSELECT_DCONF_DIR@\""
+ATTR+=" -a AUTHSELECT_DCONF_FILE=\"@AUTHSELECT_DCONF_FILE@\""
+ATTR+=" -a AUTHSELECT_NSSWITCH_CONF=\"@AUTHSELECT_NSSWITCH_CONF@\""
+ATTR+=" -a AUTHSELECT_PAM_DIR=\"@AUTHSELECT_PAM_DIR@\""
+ATTR+=" -a AUTHSELECT_PROFILE_DIR=\"@AUTHSELECT_PROFILE_DIR@\""
+ATTR+=" -a AUTHSELECT_VENDOR_DIR=\"@AUTHSELECT_VENDOR_DIR@\""
+ATTR+=" -a AUTHSELECT_BACKUP_DIR=\"@AUTHSELECT_BACKUP_DIR@\""
+
+manpages-translate
+
+for ADOC in `manpages-find` ; do \
+    manpages-compile $ADOC $ATTR
+done
+
+# Create a timestamp file and remember prefix variables so we can use it next
+# time to determine whether the manual pages require rebuild or no.
+print-configuration > $STAMPFILE
