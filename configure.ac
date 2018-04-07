@@ -32,6 +32,7 @@ AC_CONFIG_MACRO_DIRS([m4])
 m4_include(src/build_macros.m4)
 m4_include(src/conf_macros.m4)
 m4_include(external/a2x.m4)
+m4_include(external/po4a.m4)
 
 dnl Required libraries
 REQUIRE_POPT
@@ -39,7 +40,8 @@ REQUIRE_CMOCKA
 
 dnl Optional build dependencies - man pages generation
 CHECK_ASCIIDOC_TOOLS
-AM_CONDITIONAL([HAVE_MANPAGES], [test "x$A2X" != "x"])
+CHECK_PO4A
+AM_CONDITIONAL([HAVE_MANPAGES], [test ! -z "$A2X" -a ! -z "$PO4A_TRANSLATE"])
 
 AC_CONFIG_FILES([Makefile
                  po/Makefile.in
@@ -52,9 +54,10 @@ AC_CONFIG_FILES([Makefile
                  src/lib/Makefile
                  src/lib/authselect.pc
                  src/man/Makefile
-                 src/man/authselect.8.txt.in
-                 src/man/authselect-migration.7.txt.in
-                 src/man/authselect-profiles.5.txt.in
                  src/tests/Makefile])
+
+AC_CONFIG_FILES([src/man/build.sh], [chmod +x src/man/build.sh])
+AC_CONFIG_FILES([src/man/install.sh], [chmod +x src/man/install.sh])
+AC_CONFIG_FILES([src/man/uninstall.sh], [chmod +x src/man/uninstall.sh])
 
 AC_OUTPUT

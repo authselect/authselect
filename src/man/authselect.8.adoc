@@ -21,7 +21,7 @@ identity and authentication sources defined by the profile.
 
 If the provided profile set is not sufficient, the administrator may create
 a custom profile by putting it in a special profile directory
-(@AUTHSELECT_CUSTOM_DIR@). By doing so, the profile is immediately
+({AUTHSELECT_CUSTOM_DIR}). By doing so, the profile is immediately
 usable by *authselect*. See _authselect-profiles(5)_ for more information
 on extending existing profiles.
 
@@ -153,19 +153,19 @@ GENERATED FILES
 Authselect creates and maintains the following files to configure system
 identity and authentication providers properly.
 
-*@AUTHSELECT_NSSWITCH_CONF@*::
+*{AUTHSELECT_NSSWITCH_CONF}*::
     Name Service Switch configuration file.
 
-*@AUTHSELECT_PAM_DIR@/system-auth*::
+*{AUTHSELECT_PAM_DIR}/system-auth*::
     PAM stack that is included from nearly all individual service configuration
     files.
 
-*@AUTHSELECT_PAM_DIR@/password-auth, smartcard-auth, fingerprint-auth*::
+*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*::
     These PAM stacks are for applications which handle authentication from
     different types of devices via simultaneously running individual
     conversations instead of one aggregate conversation.
 
-*@AUTHSELECT_PAM_DIR@/postlogin*::
+*{AUTHSELECT_PAM_DIR}/postlogin*::
      The  purpose  of  this  PAM stack is to provide a common place for all
      PAM modules which should be called after the stack configured in
      system-auth or the other common PAM configuration files. It is included
@@ -174,12 +174,12 @@ identity and authentication providers properly.
      configuration file are executed regardless of the success or failure of
      the modules in the system-auth configuration file._
 
-*@AUTHSELECT_DCONF_DIR@/@AUTHSELECT_DCONF_FILE@*::
+*{AUTHSELECT_DCONF_DIR}/{AUTHSELECT_DCONF_FILE}*::
     Changes to dconf database. The main uses case of this file is to set
     changes for gnome login screen in order to enable or disable smartcard
     and fingerprint authentication.
 
-*@AUTHSELECT_DCONF_DIR@/locks/@AUTHSELECT_DCONF_FILE@*::
+*{AUTHSELECT_DCONF_DIR}/locks/{AUTHSELECT_DCONF_FILE}*::
     This file define locks on values set in dconf database.
 
 SEE ALSO
