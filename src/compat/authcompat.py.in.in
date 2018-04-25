@@ -437,10 +437,10 @@ class AuthCompat:
                 config.cleanup()
                 self.disableService(config.service)
 
+        # Enable oddjobd for mkhomedir, but don't disable the service in
+        # case it's already running.
         if self.options.getBool("mkhomedir"):
             self.enableService("oddjobd")
-        else:
-            self.disableService("oddjobd")
 
 
 def main():
