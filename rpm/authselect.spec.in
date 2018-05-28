@@ -162,9 +162,20 @@ exit 0
 %posttrans libs
 if [ -f "%{updatefile}" ]; then
     # This is an upgrade. Update current profile if possible.
-    PROFILE=`%{_bindir}/authselect current --raw`
+    CURRENT=`%{_bindir}/authselect current --raw`
     if [ $? -eq 0 ]; then
-        %{_bindir}/authselect select $PROFILE --force &> /dev/null
+        PROFILE=`echo $CURRENT | awk '{print $1;}'`
+        FEATURES=`echo $CURRENT | awk '{$1=""; print $0;}'`
+
+        if [[ $PROFILE  == "sssd" && $FEATURES != *with-sudo* ]] ; then
+            if grep -E "services[[:blank:]]*=[[:blank:]]*.*sudo" /etc/sssd/sssd.conf &> /dev/null ; then
+                FEATURES+=" with-sudo"
+            elif systemctl is-active sssd-sudo.service sssd-sudo.socket --quiet || systemctl is-enabled sssd-sudo.socket --quiet ; then
+                FEATURES+=" with-sudo"
+            fi
+        fi
+    
+        %{_bindir}/authselect select $PROFILE $FEATURES --force &> /dev/null
     fi
     rm -f "%{updatefile}"
 fi
