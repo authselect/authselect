@@ -32,6 +32,7 @@
 
 /* Profile file names. */
 #define FILE_README      "README"
+#define FILE_REQUIREMENT "REQUIREMENTS"
 #define FILE_SYSTEM      "system-auth"
 #define FILE_PASSWORD    "password-auth"
 #define FILE_FINGERPRINT "fingerprint-auth"
