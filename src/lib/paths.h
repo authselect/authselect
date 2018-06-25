@@ -73,30 +73,30 @@ struct authselect_generated {
     const char *content;
 };
 
-#define GENERATED_FILES(files)                                          \
-{                                                                       \
-    {PATH_SYSTEM,      (files)->systemauth},                            \
-    {PATH_PASSWORD,    (files)->passwordauth},                          \
-    {PATH_FINGERPRINT, (files)->fingerprintauth},                       \
-    {PATH_SMARTCARD,   (files)->smartcardauth},                         \
-    {PATH_POSTLOGIN,   (files)->postlogin},                             \
-    {PATH_NSSWITCH,    (files)->nsswitch},                              \
-    {PATH_DCONF_DB,    (files)->dconfdb},                               \
-    {PATH_DCONF_LOCK,  (files)->dconflock},                             \
-    {NULL, NULL}                                                        \
+#define GENERATED_FILES(files)                                             \
+{                                                                          \
+    {PATH_SYSTEM,      (files)->systemauth},                               \
+    {PATH_PASSWORD,    (files)->passwordauth},                             \
+    {PATH_FINGERPRINT, (files)->fingerprintauth},                          \
+    {PATH_SMARTCARD,   (files)->smartcardauth},                            \
+    {PATH_POSTLOGIN,   (files)->postlogin},                                \
+    {PATH_NSSWITCH,    (files)->nsswitch},                                 \
+    {PATH_DCONF_DB,    (files)->dconfdb},                                  \
+    {PATH_DCONF_LOCK,  (files)->dconflock},                                \
+    {NULL, NULL}                                                           \
 }
 
-#define GENERATED_FILES_PATHS                                           \
-{                                                                       \
-    {PATH_SYSTEM,      NULL},                                           \
-    {PATH_PASSWORD,    NULL},                                           \
-    {PATH_FINGERPRINT, NULL},                                           \
-    {PATH_SMARTCARD,   NULL},                                           \
-    {PATH_POSTLOGIN,   NULL},                                           \
-    {PATH_NSSWITCH,    NULL},                                           \
-    {PATH_DCONF_DB,    NULL},                                           \
-    {PATH_DCONF_LOCK,  NULL},                                           \
-    {NULL, NULL}                                                        \
+#define GENERATED_FILES_PATHS                                              \
+{                                                                          \
+    {PATH_SYSTEM,      NULL},                                              \
+    {PATH_PASSWORD,    NULL},                                              \
+    {PATH_FINGERPRINT, NULL},                                              \
+    {PATH_SMARTCARD,   NULL},                                              \
+    {PATH_POSTLOGIN,   NULL},                                              \
+    {PATH_NSSWITCH,    NULL},                                              \
+    {PATH_DCONF_DB,    NULL},                                              \
+    {PATH_DCONF_LOCK,  NULL},                                              \
+    {NULL, NULL}                                                           \
 }
 
 /* Structure to hold information about symbolic link names and destinations.

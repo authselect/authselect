@@ -21,6 +21,7 @@
 #include <time.h>
 #include <regex.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <sys/stat.h>
 
 #include "common/common.h"
@@ -517,6 +518,51 @@ template_write(const char *filepath,
 
     ret = textfile_write(filepath, output, mode);
     free(output);
+
+    return ret;
+}
+
+errno_t
+template_write_temporary(const char *filepath,
+                         const char *content,
+                         mode_t mode,
+                         char **_tmpfile)
+{
+    mode_t oldmask;
+    char *tmpfile;
+    errno_t ret;
+    int fd;
+
+    tmpfile = format("%s.XXXXXX", filepath);
+    if (tmpfile == NULL) {
+        return ENOMEM;
+    }
+
+    oldmask = umask(mode);
+
+    fd = mkstemp(tmpfile);;
+    if (fd == -1) {
+        ret = errno;
+        goto done;
+    }
+
+    close(fd);
+
+    ret = template_write(tmpfile, content, mode);
+    if (ret != EOK) {
+        goto done;
+    }
+
+    *_tmpfile = tmpfile;
+
+    ret = EOK;
+
+done:
+    umask(oldmask);
+
+    if (ret != EOK) {
+        free(tmpfile);
+    }
 
     return ret;
 }
