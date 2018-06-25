@@ -205,6 +205,19 @@ const char *
 authselect_profile_description(const struct authselect_profile *profile);
 
 /**
+ * Get profile requirements for selected features.
+ *
+ * @param profile    Pointer to structure obtained by @authselect_profile.
+ * @param features       NULL-terminated array of optional features to enable.
+ *
+ * @return Profile requirements, empty string if there are none requirements
+ * or NULL in case of an error.
+ */
+const char *
+authselect_profile_requirements(const struct authselect_profile *profile,
+                                const char **features);
+
+/**
  * Free authconfig_profile structure obtained by @authselect_profile.
  *
  * @param profile    Pointer to structure obtained by @authselect_profile.
