@@ -30,17 +30,24 @@ AVAILABLE COMMANDS
 To list all available commands run *authselect* without any parameters.
 To print help for selected command run *authselect COMMAND --help*.
 
-*select* profile_id [features] [-f, --force]::
+*select* profile_id [features] [-f, --force] [-q, --quiet]::
     Activate desired profile. If *--force* option is specified, *authselect*
     will try to write changes even if the previous configuration was not
     created by authconfig but by other tool or by manual changes. See profile
     description with *show* command, to list profile specific optional features.
+
+    *--quiet, -q*:::
+        The command will not print any informational message such as additional
+        profile requirements or backup location. Errors are still being print.
 
 *list*::
     List available profiles.
 
 *show* profile_id::
     Print information about the profile.
+
+*requirements* profile_id [features]::
+    Print information about profile requirements.
 
 *current* [-r, --raw]::
     Print information about currently selected profiles. If *--raw* option
