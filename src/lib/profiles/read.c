@@ -134,8 +134,38 @@ authselect_profile_open(const char *id,
 static errno_t
 authselect_profile_read_meta(const char *location,
                              int dirfd,
-                             char **_name,
-                             char **_description)
+                             const char *filename,
+                             bool mandatory,
+                             char **_content)
+{
+    errno_t ret;
+
+    INFO("Reading file [%s/%s]", location, filename);
+
+    ret = textfile_read_dirfd(dirfd, location, filename,
+                              AUTHSELECT_FILE_SIZE_LIMIT, _content);
+    if (ret != EOK) {
+        if (mandatory) {
+            ERROR("Unable to read file [%s/%s] [%d]: %s",
+                  location, filename, ret, strerror(ret));
+            return ret;
+        }
+
+        WARN("Unable to read file [%s/%s] [%d]: %s",
+             location, filename, ret, strerror(ret));
+
+        *_content = NULL;
+        return EOK;
+    }
+
+    return EOK;
+}
+
+static errno_t
+authselect_profile_read_readme(const char *location,
+                               int dirfd,
+                               char **_name,
+                               char **_description)
 {
     size_t lineend;
     char *trimmed = NULL;
@@ -143,10 +173,8 @@ authselect_profile_read_meta(const char *location,
     char *name = NULL;
     errno_t ret;
 
-    INFO("Reading file [%s/%s]", location, FILE_README);
-
-    ret = textfile_read_dirfd(dirfd, location, FILE_README,
-                              AUTHSELECT_FILE_SIZE_LIMIT, &readme);
+    ret = authselect_profile_read_meta(location, dirfd, FILE_README, true,
+                                       &readme);
     if (ret != EOK) {
         return ret;
     }
@@ -240,8 +268,14 @@ authselect_profile_read(const char *profile_id,
 
     profile->path = location;
 
-    ret = authselect_profile_read_meta(location, dirfd, &profile->name,
-                                       &profile->description);
+    ret = authselect_profile_read_readme(location, dirfd, &profile->name,
+                                         &profile->description);
+    if (ret != EOK) {
+        goto done;
+    }
+
+    ret = authselect_profile_read_meta(location, dirfd, FILE_REQUIREMENT,
+                                       false, &profile->requirements);
     if (ret != EOK) {
         goto done;
     }

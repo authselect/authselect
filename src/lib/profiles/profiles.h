@@ -46,6 +46,7 @@ struct authselect_profile {
 
     char *name;
     char *description;
+    char *requirements;
 
     /**
      * System file templates.

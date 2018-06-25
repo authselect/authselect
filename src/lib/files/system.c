@@ -73,6 +73,8 @@ authselect_system_read_templates(const char *dirname,
         if (ret == ENOENT) {
             *paths[i].content = NULL;
         } else if (ret != EOK) {
+            ERROR("Unable to read file [%s/%s] [%d]: %s",
+                  dirname, paths[i].path, ret, strerror(ret));
             authselect_files_free(templates);
             return ret;
         }

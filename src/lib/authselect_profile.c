@@ -23,6 +23,7 @@
 
 #include "authselect.h"
 #include "lib/constants.h"
+#include "lib/util/template.h"
 #include "lib/profiles/profiles.h"
 
 _PUBLIC_ int
@@ -72,6 +73,17 @@ authselect_profile_description(const struct authselect_profile *profile)
     return profile->description;
 }
 
+_PUBLIC_ const char *
+authselect_profile_requirements(const struct authselect_profile *profile,
+                                const char **features)
+{
+    if (profile == NULL) {
+        return NULL;
+    }
+
+    return template_generate(profile->requirements, features);
+}
+
 _PUBLIC_ void
 authselect_profile_free(struct authselect_profile *profile)
 {
@@ -89,6 +101,10 @@ authselect_profile_free(struct authselect_profile *profile)
 
     if (profile->description != NULL) {
         free(profile->description);
+    }
+
+    if (profile->requirements != NULL) {
+        free(profile->requirements);
     }
 
     authselect_files_free(profile->files);
