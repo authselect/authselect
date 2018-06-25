@@ -19,7 +19,9 @@
 */
 
 #include <errno.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 #include "common/common.h"
 #include "lib/constants.h"
@@ -152,18 +154,51 @@ authselect_system_write(const char **features,
     }
 
     struct authselect_generated generated[] = GENERATED_FILES(files);
+    char *tmpfiles[sizeof(generated)/sizeof(struct authselect_generated)];
 
+    /* First, write content into temporary files, so we can safely fail
+     * on error. */
     for (i = 0; generated[i].path != NULL; i++) {
-        ret = template_write(generated[i].path, generated[i].content,
-                             AUTHSELECT_FILE_MODE);
+        INFO("Writing temporary file for [%s]", generated[i].path);
+        ret = template_write_temporary(generated[i].path, generated[i].content,
+                             AUTHSELECT_FILE_MODE, &tmpfiles[i]);
         if (ret != EOK) {
             goto done;
         }
+        INFO("Temporary file is named [%s]", tmpfiles[i]);
+    }
+
+    /* Now rename the files. */
+    for (i = 0; generated[i].path != NULL; i++) {
+        INFO("Renaming [%s] to [%s]", tmpfiles[i], generated[i].path);
+        /* We now know that the system is writable, so rename call shall not
+         * fail and it will overwrite any existing file. The only reason it
+         * can fail is EIO which we can not do anything about and we can not
+         * even recover from it. */
+        ret = rename(tmpfiles[i], generated[i].path);
+        if (ret != 0) {
+            ret = errno;
+            ERROR("Unable to rename [%s] to [%s] [%d]: %s",
+                  tmpfiles[i], generated[i].path, ret, strerror(ret));
+            goto done;
+        }
+
+        free(tmpfiles[i]);
+        tmpfiles[i] = NULL;
     }
 
     ret = EOK;
 
 done:
+    if (ret != EOK) {
+        for (i = 0; generated[i].path != NULL; i++) {
+            if (tmpfiles[i] != NULL) {
+                unlink(tmpfiles[i]);
+                free(tmpfiles[i]);
+                tmpfiles[i] = NULL;
+            }
+        }
+    }
     authselect_files_free(files);
 
     return ret;

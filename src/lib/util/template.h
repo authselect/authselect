@@ -54,6 +54,24 @@ template_write(const char *filepath,
                mode_t mode);
 
 /**
+ * Write generated file preamble together with its content to a temporary file.
+ * The temporary file name is returned in @_tmpfile.
+ * The file mode is set to @mode.
+ *
+ * @param filepath     Path to the file.
+ * @param content      Content to write.
+ * @param mode         Mode to create the file with.
+ * @param _tmpfile     Name of created temporary file.
+ *
+ * @return EOK on success, other errno code on error.
+ */
+errno_t
+template_write_temporary(const char *filepath,
+                         const char *content,
+                         mode_t mode,
+                         char **_tmpfile);
+
+/**
  * Validate previously generated and written file content.
  *
  * @return True if the content was not modified, false otherwise.
