@@ -88,35 +88,69 @@ parse_profile_options(struct cli_cmdline *cmdline,
 
 static errno_t activate(struct cli_cmdline *cmdline)
 {
+    struct authselect_profile *profile = NULL;
+    const char **features = NULL;
     const char *profile_id;
-    const char **features;
+    const char *requirements;
     int enforce = 0;
+    int quiet = 0;
     errno_t ret;
 
     struct poptOption options[] = {
         {"force", 'f', POPT_ARG_VAL, &enforce, 1, _("Enforce changes"), NULL },
+        {"quiet", 'q', POPT_ARG_VAL, &quiet, 1, _("Do not print profile requirements"), NULL },
         POPT_TABLEEND
     };
 
     ret = parse_profile_options(cmdline, options, &profile_id, &features);
     if (ret != EOK) {
-        return ret;
+        goto done;
+    }
+
+    ret = authselect_profile(profile_id, &profile);
+    if (ret != EOK) {
+        ERROR("Unable to get profile information [%d]: %s",
+              ret, strerror(ret));
+        ret = ENOMEM;
+        goto done;
+    }
+
+    requirements = authselect_profile_requirements(profile, features);
+    if (requirements == NULL) {
+        ERROR("Unable to read profile requirements!");
+        ret = EFAULT;
+        goto done;
     }
 
     ret = authselect_activate(profile_id, features, enforce);
-    free(features);
     if (ret == EEXIST) {
         fprintf(stderr, _("\nSome unexpected changes to the configuration were "
                 "detected.\nUse --force parameter if you want to overwrite "
                 "these changes.\n"));
-        return ret;
+        goto done;
     } else if (ret != EOK) {
         fprintf(stderr, _("Unable to activate profile [%d]: %s\n"),
                 ret, strerror(ret));
-        return ret;
+        goto done;
     }
 
-    return EOK;
+    if (!quiet) {
+        printf(_("Profile \"%s\" was selected.\n"), profile_id);
+
+        if (requirements[0] != '\0') {
+            printf("\n%s\n", requirements);
+        }
+    }
+
+    ret = EOK;
+
+done:
+    authselect_profile_free(profile);
+    if (features != NULL) {
+        free(features);
+    }
+
+    return ret;
 }
 
 static errno_t current(struct cli_cmdline *cmdline)
@@ -274,6 +308,41 @@ static errno_t show(struct cli_cmdline *cmdline)
     }
 
     puts(authselect_profile_description(profile));
+
+    authselect_profile_free(profile);
+
+    return EOK;
+}
+
+static errno_t requirements(struct cli_cmdline *cmdline)
+{
+    struct authselect_profile *profile;
+    const char *profile_id;
+    const char **features;
+    const char *requirements;
+    errno_t ret;
+
+    ret = parse_profile_options(cmdline, NULL, &profile_id, &features);
+    if (ret != EOK) {
+        return ret;
+    }
+
+    ret = authselect_profile(profile_id, &profile);
+    if (ret != EOK) {
+        ERROR("Unable to get profile information [%d]: %s",
+              ret, strerror(ret));
+        return ENOMEM;
+    }
+
+    requirements = authselect_profile_requirements(profile, features);
+    if (requirements == NULL) {
+        ERROR("Unable to read profile requirements!");
+        return EFAULT;
+    } else if (requirements[0] == '\0') {
+        puts("No requirements are specified.");
+    } else {
+        puts(requirements);
+    }
 
     authselect_profile_free(profile);
 
@@ -440,6 +509,7 @@ int main(int argc, const char **argv)
         CLI_TOOL_COMMAND("select", "Select profile", activate),
         CLI_TOOL_COMMAND("list", "List available profiles", list),
         CLI_TOOL_COMMAND("show", "Show profile information", show),
+        CLI_TOOL_COMMAND("requirements", "Print profile requirements", requirements),
         CLI_TOOL_COMMAND("current", "Get identificator of currently selected profile", current),
         CLI_TOOL_COMMAND("check", "Check if the current configuration is valid", check),
         CLI_TOOL_COMMAND("test", "Print changes that would be otherwise written", test),
