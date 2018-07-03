@@ -18,8 +18,10 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <time.h>
 #include <errno.h>
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -293,4 +295,125 @@ authselect_system_validate_missing()
     }
 
     return result;
+}
+
+static errno_t
+authselect_system_backup_create_dir_name(const char *name, char **_path)
+{
+    char *path;
+    errno_t ret;
+
+    path = format("%s/%s", AUTHSELECT_BACKUP_DIR, name);
+    if (path == NULL) {
+        return ENOMEM;
+    }
+
+    ret = file_make_path(path, AUTHSELECT_DIR_MODE);
+    if (ret != EOK) {
+        free(path);
+        ERROR("Unable to create backup directory [%s/%s] [%d]: %s",
+              AUTHSELECT_BACKUP_DIR, name, ret, strerror(ret));
+        return ret;
+    }
+
+    *_path = path;
+
+    return EOK;
+}
+
+static errno_t
+authselect_system_backup_create_dir(const char *name, char **_path)
+{
+    struct tm *tm;
+    char date[255];
+    char *path;
+    time_t now;
+    size_t n;
+    errno_t ret;
+
+    if (name != NULL && name[0] != '\0') {
+        return authselect_system_backup_create_dir_name(name, _path);
+    }
+
+    ret = file_make_path(AUTHSELECT_BACKUP_DIR, AUTHSELECT_DIR_MODE);
+    if (ret != EOK) {
+        ERROR("Unable to create backup directory [%s] [%d]: %s",
+              AUTHSELECT_BACKUP_DIR, ret, strerror(ret));
+        return ret;
+    }
+
+    now = time(NULL);
+    tm = gmtime(&now);
+    if (tm == NULL) {
+        return EINVAL;
+    }
+
+    n = strftime(date, sizeof(date), "%Y-%m-%d-%H-%M-%S", tm);
+    if (n == 0) {
+        return EINVAL;
+    }
+
+    path = format("%s/%s.XXXXXX", AUTHSELECT_BACKUP_DIR, date);
+    if (path == NULL) {
+        return ENOMEM;
+    }
+
+    INFO("Creating temporary directory at [%s]", path);
+    if (mkdtemp(path) == NULL) {
+        ret = errno;
+        free(path);
+        return ret;
+    }
+
+    *_path = path;
+
+    return EOK;
+}
+
+errno_t
+authselect_system_backup(const char *backup_name, char **_path)
+{
+    struct authselect_symlink files[] = {SYMLINK_FILES};
+    char *backup_path = NULL;
+    char *filename;
+    errno_t ret;
+    int i;
+
+    ret = authselect_system_backup_create_dir(backup_name, &backup_path);
+    if (ret != EOK) {
+        ERROR("Unable to create backup directory [%d]: %s", ret, strerror(ret));
+        return ret;
+    }
+
+    for (i = 0; files[i].name != NULL; i++) {
+        filename = strrchr(files[i].name, '/');
+        if (filename == NULL || filename[0] == '\0' || filename[1] == '\0') {
+            ERROR("There is no filename in [%s]", files[i].name);
+            ret = EINVAL;
+            goto done;
+        }
+        filename++;
+
+        INFO("Copying [%s] to [%s/%s]", files[i].name, backup_path, filename);
+        ret = textfile_copy(files[i].name, backup_path, filename,
+                            AUTHSELECT_DIR_MODE);
+        if (ret == ENOENT) {
+            WARN("File [%s] does not exist", files[i].name);
+        } else if (ret != EOK) {
+            ERROR("Unable to copy [%s] to [%s/%s] [%d]: %s", files[i].name,
+                  backup_path, filename, ret, strerror(ret));
+            goto done;
+        }
+    }
+
+    *_path = backup_path;
+
+    ret = EOK;
+
+done:
+    if (ret != EOK) {
+        free(backup_path);
+    }
+
+    return ret;
 }

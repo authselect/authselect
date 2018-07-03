@@ -156,6 +156,18 @@ bool
 authselect_system_validate_missing(void);
 
 /**
+ * Backup all system configuration files.
+ *
+ * @param name  Backup name. If not specified, current time with random
+ *              suffix will be used.
+ * @param _path Path to the backup directory.
+ *
+ * @return EOK on success, other errno code on failure.
+ */
+errno_t
+authselect_system_backup(const char *backup_name, char **_path);
+
+/**
  * Write symbolic links to system configuration files.
  *
  * @return EOK on success, other errno code on failure.
