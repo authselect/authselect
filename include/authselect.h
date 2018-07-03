@@ -67,6 +67,18 @@ authselect_activate(const char *profile_id,
                     bool force_overwrite);
 
 /**
+ * Backup all system configuration files.
+ *
+ * @param name          Backup name. If not specified, current time with random
+ *                      suffix will be used.
+ * @param _path         Path to the backup directory.
+ *
+ * @return EOK on success, other errno code on failure.
+ */
+int
+authselect_backup(const char *name, char **_path);
+
+/**
  * Enable a feature with currently activated profile.
  *
  * @param feature       Feature name to activate.

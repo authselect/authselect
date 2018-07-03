@@ -26,6 +26,7 @@
 #include <sys/stat.h>
 
 #include "common/common.h"
+#include "lib/util/file.h"
 #include "lib/util/textfile.h"
 
 static errno_t
@@ -186,6 +187,104 @@ done:
 
     if (ret != EOK) {
         unlink(filepath);
+    }
+
+    return ret;
+}
+
+errno_t
+textfile_copy(const char *source,
+              const char *destdir,
+              const char *destname,
+              mode_t dir_mode)
+{
+    struct stat statbuf;
+    FILE *fsource = NULL;
+    FILE *fdest = NULL;
+    size_t bytes_written;
+    size_t bytes_read;
+    mode_t oldmask;
+    char *destpath;
+    char buf[32];
+    errno_t ret;
+
+    ret = file_make_path(destdir, dir_mode);
+    if (ret != EOK) {
+        return ret;
+    }
+
+    destpath = format("%s/%s", destdir, destname);
+    if (destpath == NULL) {
+        return ENOMEM;
+    }
+
+    /* Temporary umask before we change the owner and permissions. */
+    oldmask = umask(0600);
+
+    fsource = fopen(source, "r");
+    if (fsource == NULL) {
+        ret = errno;
+        goto done;
+    }
+
+    ret = fstat(fileno(fsource), &statbuf);
+    if (ret == -1) {
+        ret = errno;
+        return ret;
+    }
+
+    fdest = fopen(destpath, "w");
+    if (fdest == NULL) {
+        ret = errno;
+        goto done;
+    }
+
+    do {
+        bytes_read = fread(buf, sizeof(char), sizeof(buf), fsource);
+        if (bytes_read != sizeof(buf)) {
+            if (ferror(fsource) != 0) {
+                ret = EIO;
+                goto done;
+            }
+            /* eof not error */
+        }
+
+        bytes_written = fwrite(buf, sizeof(char), sizeof(buf), fdest);
+        if (bytes_written != bytes_read) {
+            if (ferror(fdest) != 0) {
+                ret = EIO;
+                goto done;
+            }
+        }
+    } while (!feof(fsource));
+
+    /* Restore original owner and mode.  Errors here are not fatal, since we
+     * have the original content already stored and owned by root. */
+    ret = chmod(destpath, statbuf.st_mode);
+    if (ret != 0) {
+        ret = errno;
+        WARN("Unable to chmod file [%s] [%d]: %s",
+             destpath, ret, strerror(ret));
+    }
+
+    ret = chown(destpath, statbuf.st_uid, statbuf.st_gid);
+    if (ret != 0) {
+        ret = errno;
+        WARN("Unable to chown file [%s] [%d]: %s",
+             destpath, ret, strerror(ret));
+    }
+
+    ret = EOK;
+
+done:
+    free(destpath);
+    umask(oldmask);
+    if (fsource != NULL) {
+        fclose(fsource);
+    }
+
+    if (fdest != NULL) {
+        fclose(fdest);
     }
 
     return ret;
