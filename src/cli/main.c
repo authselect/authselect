@@ -92,12 +92,17 @@ static errno_t activate(struct cli_cmdline *cmdline)
     const char **features = NULL;
     const char *profile_id;
     const char *requirements;
+    char *backup_name = NULL;
+    char *backup_path;
+    int nobackup = 0;
     int enforce = 0;
     int quiet = 0;
     errno_t ret;
 
     struct poptOption options[] = {
         {"force", 'f', POPT_ARG_VAL, &enforce, 1, _("Enforce changes"), NULL },
+        {"backup", '\0', POPT_ARG_STRING, &backup_name, 0, _("Backup system files before activating profile"), _("NAME") },
+        {"nobackup", '\0', POPT_ARG_VAL, &nobackup, 1, _("Do not backup system files when --force is set"), NULL },
         {"quiet", 'q', POPT_ARG_VAL, &quiet, 1, _("Do not print profile requirements"), NULL },
         POPT_TABLEEND
     };
@@ -120,6 +125,19 @@ static errno_t activate(struct cli_cmdline *cmdline)
         ERROR("Unable to read profile requirements!");
         ret = EFAULT;
         goto done;
+    }
+
+    if (backup_name != NULL || (enforce && !nobackup)) {
+        ret = authselect_backup(backup_name, &backup_path);
+        if (ret != EOK) {
+            fprintf(stderr, _("Unable to backup system files!\n"));
+            return ret;
+        }
+
+        if (!quiet) {
+            printf(_("Backup stored at %s\n"), backup_path);
+        }
+        free(backup_path);
     }
 
     ret = authselect_activate(profile_id, features, enforce);
