@@ -81,6 +81,48 @@ To print help for selected command run *authselect COMMAND --help*.
 *disable-feature* feature::
     Disable feature in currently selected profile.
 
+*create-profile* NAME [--custom,-c|--vendor,-v] [options]::
+    Create a new custom profile named _NAME_. The profile can be based on an
+    existing profile in which case the new profile templates are either copied
+    from the base profile or a symbolic links to these files are created if
+    such option is selected.
+
+    *--vendor,-v*:::
+        The new profile is a vendor profile instead of a custom profile. See
+        _authselect-profiles(5)_ for more information on profile types.
+
+    *--base-on=BASE-ID, -b=BASE-ID*:::
+        The new profile will be based on a profile named _BASE-ID_. The base
+        profile location is determined with these steps:
+        . If _BASE-ID_ starts with prefix _custom/_ it is a custom profile.
+        . Try if _BASE-ID_ is found in vendor profiles.
+        . Try if _BASE-ID_ is found in default profiles.
+        . Return an error.
+
+    *--base-on-default*:::
+        The base profile is a default profile even if it is found also within
+        vendor profiles.
+
+    *--symlink-meta*:::
+        Meta files, such as _README_ and _REQUIREMENTS_ will be symbolic links
+        to the origin profile files instead of their copy.
+
+    *--symlink-nsswitch*:::
+        _nsswitch.conf_ template will be symbolic link to the origin profile
+        file instead of its copy.
+
+    *--symlink-pam*:::
+        _PAM_ templates will be symbolic links to the origin profile files
+        instead of their copy.
+
+    *--symlink-dconf*:::
+        _dconf_ templates will be symbolic links to the origin profile files
+        instead of their copy.
+
+    *--symlink=FILE,-s=FILE*:::
+        Create a symbolic link for a template file _FILE_ instead of creating
+        its copy. This option can be passed multiple times.
+
 COMMON OPTIONS
 --------------
 These options are available with all commands.
