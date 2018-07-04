@@ -503,6 +503,50 @@ static errno_t disable(struct cli_cmdline *cmdline)
     return EOK;
 }
 
+static errno_t create(struct cli_cmdline *cmdline)
+{
+    const char *name;
+    const char *base_id = NULL;
+    enum authselect_profile_type type = AUTHSELECT_PROFILE_CUSTOM;
+    enum authselect_profile_type base_type = AUTHSELECT_PROFILE_ANY;
+    int symlink_flags = AUTHSELECT_SYMLINK_NONE;
+    const char **symlinks = NULL;
+    char *path;
+    errno_t ret;
+
+    struct poptOption options[] = {
+        {"vendor", 'v', POPT_ARG_VAL, &type, AUTHSELECT_PROFILE_VENDOR, _("Create new profile as a vendor profile instead of a custom profile"), NULL },
+        {"base-on", 'b', POPT_ARG_STRING, &base_id, 0, _("ID of a profile that should be used as a base for the new profile"), NULL },
+        {"base-on-default", '\0', POPT_ARG_VAL, &base_type, AUTHSELECT_PROFILE_DEFAULT, _("Base new profile on a default profile even if vendor profile with the same name exists"), NULL },
+        {"symlink-meta", '\0', POPT_ARG_VAL | POPT_ARGFLAG_OR, &symlink_flags, AUTHSELECT_SYMLINK_META, _("Symlink meta files from the base profile instead of copying them"), NULL },
+        {"symlink-nsswitch", '\0', POPT_ARG_VAL | POPT_ARGFLAG_OR, &symlink_flags, AUTHSELECT_SYMLINK_NSSWITCH, _("Symlink nsswitch files from the base profile instead of copying them"), NULL },
+        {"symlink-pam", '\0', POPT_ARG_VAL | POPT_ARGFLAG_OR, &symlink_flags, AUTHSELECT_SYMLINK_PAM, _("Symlink pam files from the base profile instead of copying them"), NULL },
+        {"symlink-dconf", '\0', POPT_ARG_VAL | POPT_ARGFLAG_OR, &symlink_flags, AUTHSELECT_SYMLINK_DCONF, _("Symlink dconf files from the base profile instead of copying them"), NULL },
+        {"symlink", 's', POPT_ARG_ARGV, &symlinks, 0, _("Symlink specific file (can be set multiple times)"), NULL },
+        POPT_TABLEEND
+    };
+
+    ret = cli_tool_popt_ex(cmdline, options, CLI_TOOL_OPT_OPTIONAL,
+                           NULL, NULL, "NAME", _("New profile name."),
+                           &name, false, NULL);
+    if (ret != EOK) {
+        ERROR("Unable to parse command arguments");
+        return ret;
+    }
+
+    ret = authselect_profile_create(name, type, base_id, base_type,
+                                    symlink_flags, symlinks, &path);
+    if (ret != EOK) {
+        CLI_ERROR("Unable to create new profile [%d]: %s\n", ret, strerror(ret));
+        return ret;
+    }
+
+    CLI_PRINT("New profile was created at %s\n", path);
+    free(path);
+
+    return EOK;
+}
+
 static errno_t
 setup_gettext()
 {
@@ -540,6 +584,7 @@ int main(int argc, const char **argv)
         CLI_TOOL_COMMAND("test", "Print changes that would be otherwise written", test),
         CLI_TOOL_COMMAND("enable-feature", "Enable feature in currently selected profile", enable),
         CLI_TOOL_COMMAND("disable-feature", "Disable feature in currently selected profile", disable),
+        CLI_TOOL_COMMAND("create-profile", "Create new authselect profile", create),
         CLI_TOOL_LAST
     };
 
