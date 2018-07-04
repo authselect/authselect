@@ -29,6 +29,15 @@
 #include "common/common.h"
 #include "cli/cli_tool.h"
 
+#define CLI_ERROR(msg, ...) fprintf(stderr, gettext(msg), ## __VA_ARGS__)
+
+#define CLI_PRINT(msg, ...) printf(gettext(msg), ## __VA_ARGS__)
+#define CLI_MSG(quiet, msg, ...) do {         \
+    if (!quiet) {                             \
+        CLI_PRINT((msg), ## __VA_ARGS__);     \
+    }                                         \
+} while (0)
+
 static size_t
 list_max_length(char **list)
 {
@@ -130,34 +139,30 @@ static errno_t activate(struct cli_cmdline *cmdline)
     if (backup_name != NULL || (enforce && !nobackup)) {
         ret = authselect_backup(backup_name, &backup_path);
         if (ret != EOK) {
-            fprintf(stderr, _("Unable to backup system files!\n"));
-            return ret;
+            CLI_ERROR("Unable to backup system files!\n");
+            goto done;
         }
 
-        if (!quiet) {
-            printf(_("Backup stored at %s\n"), backup_path);
-        }
+        CLI_MSG(quiet, "Backup stored at %s\n", backup_path);
         free(backup_path);
     }
 
     ret = authselect_activate(profile_id, features, enforce);
     if (ret == EEXIST) {
-        fprintf(stderr, _("\nSome unexpected changes to the configuration were "
-                "detected.\nUse --force parameter if you want to overwrite "
-                "these changes.\n"));
+        CLI_ERROR("\nSome unexpected changes to the configuration were "
+                  "detected.\nUse --force parameter if you want to overwrite "
+                  "these changes.\n");
         goto done;
     } else if (ret != EOK) {
-        fprintf(stderr, _("Unable to activate profile [%d]: %s\n"),
-                ret, strerror(ret));
+        CLI_ERROR("Unable to activate profile [%d]: %s\n",
+                  ret, strerror(ret));
         goto done;
     }
 
-    if (!quiet) {
-        printf(_("Profile \"%s\" was selected.\n"), profile_id);
+    CLI_MSG(quiet, "Profile \"%s\" was selected.\n", profile_id);
 
-        if (requirements[0] != '\0') {
-            printf("\n%s\n", requirements);
-        }
+    if (requirements[0] != '\0') {
+        CLI_MSG(quiet, "\n%s\n", requirements);
     }
 
     ret = EOK;
@@ -193,7 +198,7 @@ static errno_t current(struct cli_cmdline *cmdline)
 
     ret = authselect_current_configuration(&profile_id, &features);
     if (ret == ENOENT) {
-        printf(_("No existing configuration detected.\n"));
+        CLI_PRINT("No existing configuration detected.\n");
         return ret;
     } else if (ret != EOK) {
         ERROR("Unable to get current configuration [%d]: %s",
@@ -210,11 +215,11 @@ static errno_t current(struct cli_cmdline *cmdline)
         }
         printf("\n");
     } else {
-        printf(_("Profile ID: %s\n"), profile_id);
-        printf(_("Enabled features:"));
+        CLI_PRINT("Profile ID: %s\n", profile_id);
+        CLI_PRINT("Enabled features:");
 
         if (features == NULL || features[0] == NULL) {
-            printf(_(" None\n"));
+            CLI_PRINT(" None\n");
         } else {
             printf("\n");
             for (i = 0; features[i] != NULL; i++) {
@@ -355,16 +360,20 @@ static errno_t requirements(struct cli_cmdline *cmdline)
     requirements = authselect_profile_requirements(profile, features);
     if (requirements == NULL) {
         ERROR("Unable to read profile requirements!");
-        return EFAULT;
+        ret = EFAULT;
+        goto done;
     } else if (requirements[0] == '\0') {
         puts("No requirements are specified.");
     } else {
         puts(requirements);
     }
 
+    ret = EOK;
+
+done:
     authselect_profile_free(profile);
 
-    return EOK;
+    return ret;
 }
 
 static errno_t test(struct cli_cmdline *cmdline)
@@ -441,9 +450,9 @@ static errno_t test(struct cli_cmdline *cmdline)
         content = generated[i].content_fn(files);
 
         if (content == NULL) {
-            printf(_("File %s: Empty\n\n"), path);
+            CLI_PRINT("File %s: Empty\n\n", path);
         } else {
-            printf(_("File %s:\n%s\n\n"), path, content);
+            CLI_PRINT("File %s:\n%s\n\n", path, content);
         }
     }
 
@@ -465,8 +474,7 @@ static errno_t enable(struct cli_cmdline *cmdline)
 
     ret = authselect_feature_enable(feature);
     if (ret != EOK) {
-        fprintf(stderr, _("Unable to enable feature [%d]: %s\n"),
-                ret, strerror(ret));
+        CLI_ERROR("Unable to enable feature [%d]: %s\n", ret, strerror(ret));
         return ret;
     }
 
@@ -488,8 +496,7 @@ static errno_t disable(struct cli_cmdline *cmdline)
 
     ret = authselect_feature_disable(feature);
     if (ret != EOK) {
-        fprintf(stderr, _("Unable to disable feature [%d]: %s\n"),
-                ret, strerror(ret));
+        CLI_ERROR("Unable to disable feature [%d]: %s\n", ret, strerror(ret));
         return ret;
     }
 
@@ -545,7 +552,7 @@ int main(int argc, const char **argv)
 
     uid = getuid();
     if (uid != 0) {
-        fprintf(stderr, _("Authselect can only be run as root!\n"));
+        CLI_ERROR("Authselect can only be run as root!\n");
         return 1;
     }
 
