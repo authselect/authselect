@@ -31,24 +31,34 @@
 #include "lib/util/util.h"
 
 static const char **
-authselect_profile_locations(const char *id)
+authselect_profile_locations(const char *id,
+                             enum authselect_profile_type type)
 {
-    static const char *packaged[] = {
+    static const char *type_default[] = {DIR_DEFAULT_PROFILES, NULL};
+    static const char *type_vendor[] = {DIR_VENDOR_PROFILES, NULL};
+    static const char *type_custom[] = {DIR_CUSTOM_PROFILES, NULL};
+    static const char *type_any[] = {
         DIR_VENDOR_PROFILES,
         DIR_DEFAULT_PROFILES,
         NULL
     };
 
-    static const char *custom[] = {
-        DIR_CUSTOM_PROFILES,
-        NULL
-    };
+    switch (type) {
+    case AUTHSELECT_PROFILE_DEFAULT:
+        return type_default;
+    case AUTHSELECT_PROFILE_VENDOR:
+        return type_vendor;
+    case AUTHSELECT_PROFILE_CUSTOM:
+        return type_custom;
+    case AUTHSELECT_PROFILE_ANY:
+        if (authselect_profile_is_custom(id)) {
+            return type_custom;
+        }
 
-    if (authselect_profile_is_custom(id)) {
-        return custom;
+        return type_any;
     }
 
-    return packaged;
+    return NULL;
 }
 
 static errno_t
@@ -78,6 +88,7 @@ authselect_profile_open_location(const char *path,
 
 static errno_t
 authselect_profile_open(const char *id,
+                        enum authselect_profile_type type,
                         char **_location,
                         int *_dirfd)
 {
@@ -90,7 +101,11 @@ authselect_profile_open(const char *id,
 
     INFO("Looking up profile [%s]", id);
 
-    locations = authselect_profile_locations(id);
+    locations = authselect_profile_locations(id, type);
+    if (locations == NULL) {
+        ERROR("Locations array is NULL");
+        return EINVAL;
+    }
 
     name = authselect_profile_parse_custom(id);
     name = name == NULL ? id : name;
@@ -248,6 +263,7 @@ authselect_profile_init(const char *id)
 
 errno_t
 authselect_profile_read(const char *profile_id,
+                        enum authselect_profile_type type,
                         struct authselect_profile **_profile)
 {
     struct authselect_profile *profile = NULL;
@@ -255,7 +271,7 @@ authselect_profile_read(const char *profile_id,
     int dirfd;
     errno_t ret;
 
-    ret = authselect_profile_open(profile_id, &location, &dirfd);
+    ret = authselect_profile_open(profile_id, type, &location, &dirfd);
     if (ret != EOK) {
         return ret;
     }

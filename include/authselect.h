@@ -22,6 +22,7 @@
 #define _AUTHSELECT_H_
 
 #include <errno.h>
+#include <stdint.h>
 #include <stdbool.h>
 
 /**
@@ -35,6 +36,16 @@ struct authselect_profile;
  * manipulate this structure.
  */
 struct authselect_files;
+
+/**
+ * Authselect profile types.
+ */
+enum authselect_profile_type {
+    AUTHSELECT_PROFILE_DEFAULT,
+    AUTHSELECT_PROFILE_VENDOR,
+    AUTHSELECT_PROFILE_CUSTOM,
+    AUTHSELECT_PROFILE_ANY
+};
 
 /**
  * Activate a profile.
@@ -399,6 +410,79 @@ authselect_path_dconf_db();
  */
 const char *
 authselect_path_dconf_lock();
+
+/**
+ * Empty value for initialization.
+ */
+#define AUTHSELECT_SYMLINK_NONE     0x0000
+
+/**
+ * Create symbolic links for meta files.
+ */
+#define AUTHSELECT_SYMLINK_META     0x0001
+
+/**
+ * Create symbolic links for nsswitch.conf.
+ */
+#define AUTHSELECT_SYMLINK_NSSWITCH 0x0002
+
+/**
+ * Create symbolic links for PAM files.
+ */
+#define AUTHSELECT_SYMLINK_PAM      0x0004
+
+/**
+ * Create symbolic links for dconf files.
+ */
+#define AUTHSELECT_SYMLINK_DCONF    0x0008
+
+/**
+ * Create new profile.
+ *
+ * Create new profle named @name. Argument @type determines the type of
+ * newly created profile and can be either AUTHSELECT_PROFILE_VENDOR or
+ * AUTHSELECT_PROFILE_CUSTOM. Default profiles cannot be created as they
+ * are only shipped with installation.
+ *
+ * New profile can be based on an existing profile @base_id. Argument
+ * @base_type determines where the base profile is located. If it is
+ * AUTHSELECT_PROFILE_ANY, standard algorithm is used, that means if
+ * custom/ prefix is is @base_id it is a custom profile, otherwise
+ * it is search in vendor and then in default profiles.
+ *
+ * When the profile is based on @base_id, files from @base_id are copied
+ * in the new profile location. Symbolic links can be created instead of
+ * creating a copy of a file by providing a bit mask consisting of:
+ * - AUTHSELECT_SYMLINK_META
+ * - AUTHSELECT_SYMLINK_NSSWITCH
+ * - AUTHSELECT_SYMLINK_PAM
+ * - AUTHSELECT_SYMLINK_DCONF
+ *
+ * Alternatively, specific files that should be symlinked can be specified
+ * with @symlinks array.
+ *
+ * @param name           New profile name.
+ * @param type           New profile type.
+ * @param base_id        Base profile ID.
+ * @param base_type      Base profile type.
+ * @param symlink_flags  Symbolic links bit mask.
+ * @param symlinks       Array of files that should be symlinked.
+ * @param _path          Path to the new profile directory.
+ *
+ * @return
+ * - 0 if the profile is successfully created.
+ * - EEXIST if the profile already exists.
+ * - ENOENT if the base profile is not found.
+ * - Other errno code on generic error.
+ */
+int
+authselect_profile_create(const char *name,
+                          enum authselect_profile_type type,
+                          const char *base_id,
+                          enum authselect_profile_type base_type,
+                          uint32_t symlink_flags,
+                          const char **symlinks,
+                          char **_path);
 
 /**
  * Free NULL-terminated string array.

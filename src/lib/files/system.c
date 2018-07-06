@@ -375,7 +375,7 @@ authselect_system_backup(const char *backup_name, char **_path)
 {
     struct authselect_symlink files[] = {SYMLINK_FILES};
     char *backup_path = NULL;
-    char *filename;
+    const char *filename;
     errno_t ret;
     int i;
 
@@ -386,13 +386,12 @@ authselect_system_backup(const char *backup_name, char **_path)
     }
 
     for (i = 0; files[i].name != NULL; i++) {
-        filename = strrchr(files[i].name, '/');
-        if (filename == NULL || filename[0] == '\0' || filename[1] == '\0') {
+        filename = file_get_basename(files[i].name);
+        if (filename == NULL) {
             ERROR("There is no filename in [%s]", files[i].name);
             ret = EINVAL;
             goto done;
         }
-        filename++;
 
         INFO("Copying [%s] to [%s/%s]", files[i].name, backup_path, filename);
         ret = textfile_copy(files[i].name, backup_path, filename,

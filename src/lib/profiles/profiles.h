@@ -83,6 +83,7 @@ authselect_profile_list(char ***_profiles);
  * Read profile information.
  *
  * @param profile_id    Profile ID to search for.
+ * @param type          Profile type.
  * @param _profile      Profile information.
  *
  * @return EOK on success, ENOENT if the profile was not found, other errno
@@ -90,6 +91,7 @@ authselect_profile_list(char ***_profiles);
  */
 errno_t
 authselect_profile_read(const char *profile_id,
+                        enum authselect_profile_type type,
                         struct authselect_profile **_profile);
 
 /**
