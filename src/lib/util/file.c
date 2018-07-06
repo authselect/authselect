@@ -239,6 +239,20 @@ file_exists(const char *path)
     return file_check_access(path, F_OK);
 }
 
+const char *
+file_get_basename(const char *filepath)
+{
+    const char *filename;
+
+    filename = strrchr(filepath, '/');
+    if (filename == NULL || filename[0] == '\0' || filename[1] == '\0') {
+        return NULL;
+    }
+
+    return filename + 1;
+
+}
+
 char *
 file_get_parent_directory(const char *filepath)
 {

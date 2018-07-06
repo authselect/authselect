@@ -111,6 +111,16 @@ errno_t
 file_exists(const char *path);
 
 /**
+ * Return file basename from path.
+ *
+ * @param filepath Path to the file.
+ *
+ * @return Basename or NULL if none is present in @filepath.
+ */
+const char *
+file_get_basename(const char *filepath);
+
+/**
  * Return parent directory of a file.
  *
  * @param path           Path to the file.
