@@ -75,7 +75,7 @@ you develop a front-end for the authselect library.
 
 %build
 autoreconf -if
-%configure
+%configure --with-pythonbin="%{__python3}"
 %make_build
 
 %check
