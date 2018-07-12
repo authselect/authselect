@@ -108,6 +108,14 @@ class Options:
         Option.Feature("pamaccess",       _("check of access.conf during account authorization")),
         Option.Feature("mkhomedir",       _("creation of home directories for users on their first login")),
         Option.Feature("faillock",        _("account locking in case of too many consecutive authentication failures")),
+        Option.Valued ("passminlen",      _("<number>"), _("minimum length of a password")),
+        Option.Valued ("passminclass",    _("<number>"), _("minimum number of character classes in a password")),
+        Option.Valued ("passmaxrepeat",   _("<number>"), _("maximum number of same consecutive characters in a password")),
+        Option.Valued ("passmaxclassrepeat", _("<number>"), _("maximum number of consecutive characters of same class in a password")),
+        Option.Feature("reqlower",        _("require at least one lowercase character in a password")),
+        Option.Feature("requpper",        _("require at least one uppercase character in a password")),
+        Option.Feature("reqdigit",        _("require at least one digit in a password")),
+        Option.Feature("reqother",        _("require at least one other character in a password")),
 
         # Program options
         Option.Switch ("nostart",         _("do not start/stop services")),
@@ -155,14 +163,6 @@ class Options:
         Option.UnsupportedFeature("forcelegacy"),
         Option.UnsupportedFeature("locauthorize"),
         Option.UnsupportedFeature("sysnetauth"),
-        Option.UnsupportedValued ("passminlen", _("<number>")),
-        Option.UnsupportedValued ("passminclass", _("<number>")),
-        Option.UnsupportedValued ("passmaxrepeat", _("<number>")),
-        Option.UnsupportedValued ("passmaxclassrepeat", _("<number>")),
-        Option.UnsupportedFeature("reqlower"),
-        Option.UnsupportedFeature("requpper"),
-        Option.UnsupportedFeature("reqdigit"),
-        Option.UnsupportedFeature("reqother"),
         Option.UnsupportedValued ("faillockargs", _("<options>")),
     ]
 
