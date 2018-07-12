@@ -339,7 +339,10 @@ class AuthCompat:
         self.options.updatesysconfig(self.sysconfig)
 
     def printWarning(self):
-        print(_("Running authconfig compatibility tool.\n"))
+        print(_("Running authconfig compatibility tool."))
+        print(_("The purpose of this tool is to enable authentication against "
+                "chosen services with authselect and minimum configuration. "
+                "It does not provide all capabilities of authconfig.\n"))
         print(_("IMPORTANT: authconfig is replaced by authselect, "
                 "please update your scripts."))
         print(_("See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/AuthselectAsDefault"))
