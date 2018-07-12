@@ -53,3 +53,7 @@ CONFIGURABLE_VALUE(dconf-file, dconf_file, AUTHSELECT_DCONF_FILE, NAME,
 CONFIGURABLE_VALUE(dconf, dconf, AUTHSELECT_DCONF_BIN, PATH,
                    [Path to the dconf utility],
                    $bindir/dconf)
+
+CONFIGURABLE_VALUE(pythonbin, pythonbin, PYTHON_BIN, PATH,
+                   [Path to the python interpreter],
+                   $bindir/python3)
