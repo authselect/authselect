@@ -98,6 +98,7 @@ class Path:
         'sssd.conf'      : '@sysconfdir@/sssd/conf.d/authconfig-sssd.conf',
         'authconfig'     : '@sysconfdir@/sysconfig/authconfig',
         'network'        : '@sysconfdir@/sysconfig/network',
+        'pwquality.conf' : '@sysconfdir@/security/pwquality.conf.d/10-authconfig-pwquality.conf',
         'cmd-systemctl'  : '@bindir@/systemctl',
         'cmd-authselect' : '@bindir@/authselect',
         'cmd-realm'      : '@sbindir@/realm'
@@ -144,6 +145,13 @@ class Configuration:
 
         def getBool(self, name):
             return self.options.getBool(name)
+        
+        def getBoolAsValue(self, name, if_true, if_false):
+            value = self.getBool(name)
+            if value:
+                return if_true
+            
+            return if_false
 
         def removeFile(self, filename):
             print(_("Removing file: %s") % filename)
@@ -300,6 +308,26 @@ class Configuration:
                 eprint(_("%s was not found. Please, install realmd.")
                        % Path.System('cmd-realm'))
 
+    class PWQuality(Base):
+        def __init__(self, options):
+            super(Configuration.PWQuality, self).__init__(options)
+
+        def mustGenerate(self):
+            return True
+
+        def write(self):
+            config = EnvironmentFile(Path.System('pwquality.conf'))
+
+            config.set("minlen", self.get("passminlen"))
+            config.set("minclass", self.get("passminclass"))
+            config.set("maxrepeat", self.get("passmaxrepeat"))
+            config.set("maxclassrepeat", self.get("passmaxclassrepeat"))
+            config.set("lcredit", self.getBoolAsValue("reqlower", -1, 0))
+            config.set("ucredit", self.getBoolAsValue("requpper", -1, 0))
+            config.set("dcredit", self.getBoolAsValue("reqdigit", -1, 0))
+            config.set("ocredit", self.getBoolAsValue("reqother", -1, 0))
+            config.write()
+
 
 class AuthCompat:
     def __init__(self):
@@ -426,7 +454,8 @@ class AuthCompat:
             Configuration.Network(self.options),
             Configuration.Kerberos(self.options),
             Configuration.SSSD(self.options),
-            Configuration.Winbind(self.options)
+            Configuration.Winbind(self.options),
+            Configuration.PWQuality(self.options)
         ]
 
         for config in configs:
