@@ -32,6 +32,7 @@
 
 /* Profile file names. */
 #define FILE_README      "README"
+#define FILE_REQUIREMENT "REQUIREMENTS"
 #define FILE_SYSTEM      "system-auth"
 #define FILE_PASSWORD    "password-auth"
 #define FILE_FINGERPRINT "fingerprint-auth"
@@ -99,6 +100,19 @@ struct authselect_generated {
     {NULL, NULL}                                                           \
 }
 
+#define PROFILE_FILES(files)                                            \
+{                                                                       \
+    {FILE_SYSTEM,      (files)->systemauth},                            \
+    {FILE_PASSWORD,    (files)->passwordauth},                          \
+    {FILE_FINGERPRINT, (files)->fingerprintauth},                       \
+    {FILE_SMARTCARD,   (files)->smartcardauth},                         \
+    {FILE_POSTLOGIN,   (files)->postlogin},                             \
+    {FILE_NSSWITCH,    (files)->nsswitch},                              \
+    {FILE_DCONF_DB,    (files)->dconfdb},                               \
+    {FILE_DCONF_LOCK,  (files)->dconflock},                             \
+    {NULL, NULL}                                                        \
+}
+
 /* Structure to hold information about symbolic link names and destinations.
  * @see GENERATED_FILES, GENERATED_FILES_PATHS */
 struct authselect_symlink {
@@ -122,5 +136,16 @@ struct authselect_symlink {
     {PATH_SYMLINK_DCONF_DB,    PATH_DCONF_DB,    true},                 \
     {PATH_SYMLINK_DCONF_LOCK,  PATH_DCONF_LOCK,  true},                 \
     {NULL, NULL, false}                                                 \
+
+/**
+ * Profile files grouped by their purpose.
+ */
+#define FILES_META      FILE_README, FILE_REQUIREMENT
+#define FILES_NSSWITCH  FILE_NSSWITCH
+#define FILES_PAM       FILE_SYSTEM, FILE_PASSWORD, FILE_FINGERPRINT,   \
+                        FILE_SMARTCARD, FILE_POSTLOGIN
+#define FILES_DCONF     FILE_DCONF_DB, FILE_DCONF_LOCK
+
+#define FILES_ALL       FILES_META, FILES_NSSWITCH, FILES_PAM, FILES_DCONF
 
 #endif /* _AUTHSELECT_PATHS_H_ */

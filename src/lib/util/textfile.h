@@ -83,4 +83,21 @@ textfile_write(const char *filepath,
                const char *content,
                mode_t mode);
 
+/**
+ * Copy file to destination. Directory is created if it does not exist.
+ * The original owner and permissions of the source file are kept.
+ *
+ * @param source       Source file name.
+ * @param destdir      Destination directory.
+ * @param destname     Destination file name.
+ * @param dir_mode     Access mode of destination directory if it is created.
+ *
+ * @return EOK on success, other errno code on error.
+ */
+errno_t
+textfile_copy(const char *source,
+              const char *destdir,
+              const char *destname,
+              mode_t dir_mode);
+
 #endif /* _TEXTFILE_H_ */

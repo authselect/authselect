@@ -30,17 +30,36 @@ AVAILABLE COMMANDS
 To list all available commands run *authselect* without any parameters.
 To print help for selected command run *authselect COMMAND --help*.
 
-*select* profile_id [features] [-f, --force]::
-    Activate desired profile. If *--force* option is specified, *authselect*
-    will try to write changes even if the previous configuration was not
-    created by authconfig but by other tool or by manual changes. See profile
-    description with *show* command, to list profile specific optional features.
+*select* profile_id [features] [-f, --force] [-q, --quiet]::
+    Activate desired profile. See profile description with *show* command,
+    to list profile specific optional features.
+
+    *--force, -f*:::
+        Write changes even if the previous configuration was not created by
+        authselect but by other tool or by manual changes. This option will
+        automatically backup system files before writing any change unless
+        *--nobackup* option is set.
+
+    *--backup=NAME*:::
+        Backup system files before activating selected profile. The backup will
+        be stored at @AUTHSELECT_BACKUP_DIR@/NAME. Current time is used as
+        a name if no value is provided.
+
+    *--nobackup*:::
+        Do not backup system configuration even if *--force* is set.
+
+    *--quiet, -q*:::
+        The command will not print any informational message such as additional
+        profile requirements or backup location. Errors are still being print.
 
 *list*::
     List available profiles.
 
 *show* profile_id::
     Print information about the profile.
+
+*requirements* profile_id [features]::
+    Print information about profile requirements.
 
 *current* [-r, --raw]::
     Print information about currently selected profiles. If *--raw* option
@@ -61,6 +80,48 @@ To print help for selected command run *authselect COMMAND --help*.
 
 *disable-feature* feature::
     Disable feature in currently selected profile.
+
+*create-profile* NAME [--custom,-c|--vendor,-v] [options]::
+    Create a new custom profile named _NAME_. The profile can be based on an 
+    existing profile in which case the new profile templates are either copied
+    from the base profile or a symbolic links to these files are created if
+    such option is selected.
+    
+    *--vendor,-v*:::
+        The new profile is a vendor profile instead of a custom profile. See
+        _authselect-profiles(5)_ for more information on profile types.
+    
+    *--base-on=BASE-ID, -b=BASE-ID*:::
+        The new profile will be based on a profile named _BASE-ID_. The base
+        profile location is determined with these steps:
+        . If _BASE-ID_ starts with prefix _custom/_ it is a custom profile.
+        . Try if _BASE-ID_ is found in vendor profiles.
+        . Try if _BASE-ID_ is found in default profiles.
+        . Return an error.
+    
+    *--base-on-default*:::
+        The base profile is a default profile even if it is found also within
+        vendor profiles.
+        
+    *--symlink-meta*:::
+        Meta files, such as _README_ and _REQUIREMENTS_ will be symbolic links
+        to the origin profile files instead of their copy.
+
+    *--symlink-nsswitch*:::
+        _nsswitch.conf_ template will be symbolic link to the origin profile
+        file instead of its copy.
+        
+    *--symlink-pam*:::
+        _PAM_ templates will be symbolic links to the origin profile files
+        instead of their copy.
+
+    *--symlink-dconf*:::
+        _dconf_ templates will be symbolic links to the origin profile files
+        instead of their copy.
+        
+    *--symlink=FILE,-s=FILE*:::
+        Create a symbolic link for a template file _FILE_ instead of creating
+        its copy. This option can be passed multiple times.
 
 COMMON OPTIONS
 --------------
