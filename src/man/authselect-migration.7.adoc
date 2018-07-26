@@ -66,51 +66,25 @@ to select a correct profile with desired features. Then you also need to write
 configuration file for required services.
 
 .Relation of authconfig options to authselect profiles
-|===
-|*Authconfig options* |*Authselect profile*
-
-|--enableldap --enableldapauth
-|sssd
-
-|--enablesssd --enablesssdauth
-|sssd
-
-
-|--enablekrb5
-|sssd
-
-|--enablewinbind --enablewinbindauth
-|winbind
-
-|===
+|=========================================================
+|*Authconfig options*                |*Authselect profile*
+|--enableldap --enableldapauth       |sssd
+|--enablesssd --enablesssdauth       |sssd
+|--enablekrb5                        |sssd
+|--enablewinbind --enablewinbindauth |winbind
+|=========================================================
 
 .Relation of authconfig options to authselect profile features
-|===
+|==================================================
 |*Authconfig options* |*Authselect profile feature*
-
-|--enablesmartcard
-|with-smartcard
-
-|--enablefingerprint
-|with-fingerprint
-
-
-|--enableecryptfs
-|with-ecryptfs
-
-|--enablemkhomedir
-|with-mkhomedir
-
-|--enablefaillock
-|with-faillock
-
-|--enablepamaccess
-|with-pamaccess
-
-|--enablewinbindkrb5
-|with-krb5
-
-|===
+|--enablesmartcard    |with-smartcard
+|--enablefingerprint  |with-fingerprint
+|--enableecryptfs     |with-ecryptfs
+|--enablemkhomedir    |with-mkhomedir
+|--enablefaillock     |with-faillock
+|--enablepamaccess    |with-pamaccess
+|--enablewinbindkrb5  |with-krb5
+|==================================================
 
 .Examples
 ----
