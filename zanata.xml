@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<config xmlns="http://zanata.org/namespace/config/">
+  <url>https://fedora.zanata.org/</url>
+  <project>authselect</project>
+  <project-version>master</project-version>
+  <project-type>gettext</project-type>
+  <src-dir>.</src-dir>
+  <trans-dir>.</trans-dir>
+  <includes>po/*.pot,src/man/po/*.pot</includes>
+  <rules>
+    <rule pattern="*/src/man/po/*.pot">{path}/{filename}.{locale_with_underscore}.po</rule>
+    <rule pattern="*/po/*.pot">{path}/{locale_with_underscore}.po</rule>
+  </rules>
+  <hooks>
+    <hook command="push">
+        <before>./zanata-hooks.sh push-before</before>
+        <after>./zanata-hooks.sh push-after</after>
+    </hook>
+    <hook command="pull">
+        <before>./zanata-hooks.sh pull-before</before>
+        <after>./zanata-hooks.sh pull-after</after>
+    </hook>
+  </hooks>
+</config>

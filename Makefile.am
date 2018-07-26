@@ -22,6 +22,8 @@ ACLOCAL_AMFLAGS = -I m4
 EXTRA_DIST = \
     build/config.rpath \
     release-version.sh \
+    linguas.sh \
+    zanata-hooks.sh \
     $(NULL)
 
 # Create authselect directories
