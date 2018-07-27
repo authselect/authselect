@@ -103,6 +103,7 @@ find $RPM_BUILD_ROOT -name "*.a" -exec rm -f {} \;
 %files libs -f %{name}.lang -f %{name}-profiles.5.lang
 %dir %{_sysconfdir}/authselect
 %dir %{_sysconfdir}/authselect/custom
+%dir %{_localstatedir}/lib/authselect
 %dir %{_datadir}/authselect
 %dir %{_datadir}/authselect/vendor
 %dir %{_datadir}/authselect/default
