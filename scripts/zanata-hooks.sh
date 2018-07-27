@@ -24,7 +24,7 @@ zanata_push_before()
 zanata_pull_after()
 {
     # Update LINGUAS file
-    $PWD/linguas.sh $PWD
+    $PWD/scripts/po-linguas.sh $PWD
 }
 
 case $1 in

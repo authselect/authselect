@@ -13,12 +13,12 @@
   </rules>
   <hooks>
     <hook command="push">
-        <before>./zanata-hooks.sh push-before</before>
-        <after>./zanata-hooks.sh push-after</after>
+        <before>./scripts/zanata-hooks.sh push-before</before>
+        <after>./scripts/zanata-hooks.sh push-after</after>
     </hook>
     <hook command="pull">
-        <before>./zanata-hooks.sh pull-before</before>
-        <after>./zanata-hooks.sh pull-after</after>
+        <before>./scripts/zanata-hooks.sh pull-before</before>
+        <after>./scripts/zanata-hooks.sh pull-after</after>
     </hook>
   </hooks>
 </config>

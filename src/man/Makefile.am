@@ -10,7 +10,7 @@ man_MANS = \
     $(NULL)
 
 build_manpages:
-	./build.sh "$(prefix)" "$(exec_prefix)"
+	$(abs_top_builddir)/scripts/manpages-build.sh "$(prefix)" "$(exec_prefix)"
 
 .PHONY: expand_files
 
@@ -23,10 +23,10 @@ EXTRA_DIST = \
     $(NULL)
 
 install-data-local:
-	./install.sh "$(prefix)" "$(DESTDIR)" $(man_MANS)
+	$(abs_top_builddir)/scripts/manpages-install.sh "$(prefix)" "$(DESTDIR)" $(man_MANS)
 	
 uninstall-local:
-	./uninstall.sh "$(prefix)" $(man_MANS)
+	$(abs_top_builddir)/scripts/manpages-uninstall.sh "$(prefix)" $(man_MANS)
 
 clean-local:
 	$(RM) $(man_MANS) ; \

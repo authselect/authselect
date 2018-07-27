@@ -26,7 +26,7 @@ AM_GNU_GETTEXT([external])
 AM_GNU_GETTEXT_VERSION(0.19)
 AM_PATH_PYTHON([3])
 
-AC_SUBST([RELEASE_NUMBER], m4_esyscmd(./release-version.sh RELEASE_VERSION))
+AC_SUBST([RELEASE_NUMBER], m4_esyscmd(./scripts/release-version.sh RELEASE_VERSION))
 
 AC_CONFIG_MACRO_DIRS([m4])
 m4_include(src/build_macros.m4)
@@ -56,8 +56,11 @@ AC_CONFIG_FILES([Makefile
                  src/man/Makefile
                  src/tests/Makefile])
 
-AC_CONFIG_FILES([src/man/build.sh], [chmod +x src/man/build.sh])
-AC_CONFIG_FILES([src/man/install.sh], [chmod +x src/man/install.sh])
-AC_CONFIG_FILES([src/man/uninstall.sh], [chmod +x src/man/uninstall.sh])
+AC_CONFIG_FILES([scripts/manpages-build.sh],
+                [chmod +x scripts/manpages-build.sh])
+AC_CONFIG_FILES([scripts/manpages-install.sh],
+                [chmod +x scripts/manpages-install.sh])
+AC_CONFIG_FILES([scripts/manpages-uninstall.sh],
+                [chmod +x scripts/manpages-uninstall.sh])
 
 AC_OUTPUT
