@@ -56,7 +56,11 @@ CONFIGURABLE_VALUE(dconf, dconf, AUTHSELECT_DCONF_BIN, PATH,
 
 CONFIGURABLE_VALUE(backup-dir, backup_dir, AUTHSELECT_BACKUP_DIR, DIR,
                    [Directory where configuration backups should be stored],
-                   ${localstatedir}/lib/authselect/backups)
+                   $localstatedir/lib/authselect/backups)
+
+CONFIGURABLE_VALUE(state-dir, state_dir, AUTHSELECT_STATE_DIR, DIR,
+                   [Directory where authselect state should be stored],
+                   $localstatedir/lib/authselect)
 
 CONFIGURABLE_VALUE(pythonbin, pythonbin, PYTHON_BIN, PATH,
                    [Path to the python interpreter],
