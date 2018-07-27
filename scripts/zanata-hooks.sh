@@ -1,4 +1,11 @@
 #!/bin/bash
+#
+# Zanata hooks to automate push and pull into and from Zanata.
+# - push hooks make sure that manual pages are translated into pot files
+# - pull hooks populates po/LINGUAS with available languages
+#
+# Usage: zanata-hooks.sh [push-before|push-after|pull-before|pull-after]
+#
 
 zanata_push_before()
 {
