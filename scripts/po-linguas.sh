@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# Search for available translations under po directory and create
+# po/LINGUAS file.
+#
+# Usage: po-linguas.sh SOURCE_DIRECTORY
+#
 
 # Create po/LINGUAS
 
