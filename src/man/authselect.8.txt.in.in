@@ -28,7 +28,7 @@ on extending existing profiles.
 AVAILABLE COMMANDS
 ------------------
 To list all available commands run *authselect* without any parameters.
-To print help for selected command run *authselect COMMAND --help*.
+To print help for the selected command run *authselect COMMAND --help*.
 
 *select* profile_id [features] [-f, --force] [-q, --quiet]::
     Activate desired profile. See profile description with *show* command,
@@ -41,7 +41,7 @@ To print help for selected command run *authselect COMMAND --help*.
         *--nobackup* option is set.
 
     *--backup=NAME*:::
-        Backup system files before activating selected profile. The backup will
+        Backup system files before activating the selected profile. The backup will
         be stored at @AUTHSELECT_BACKUP_DIR@/NAME. Current time is used as
         a name if no value is provided.
 
@@ -76,15 +76,15 @@ To print help for selected command run *authselect COMMAND --help*.
     anything to system configuration.
 
 *enable-feature* feature::
-    Enable feature in currently selected profile.
+    Enable feature in the currently selected profile.
 
 *disable-feature* feature::
-    Disable feature in currently selected profile.
+    Disable feature in the currently selected profile.
 
 *create-profile* NAME [--custom,-c|--vendor,-v] [options]::
     Create a new custom profile named _NAME_. The profile can be based on an
     existing profile in which case the new profile templates are either copied
-    from the base profile or a symbolic links to these files are created if
+    from the base profile or symbolic links to these files are created if
     such option is selected.
 
     *--vendor,-v*:::
