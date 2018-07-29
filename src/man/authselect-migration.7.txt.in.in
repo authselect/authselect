@@ -25,7 +25,7 @@ simple configuration files for several services such as LDAP and Kerberos.
 
 Authselect does no such things. It does not generate any configuration files
 beside PAM and nsswitch.conf and it strictly prohibits any manual changes to
-generated configuration. It provides set of files called profiles. Each profile
+generated configuration. It provides a set of files called profiles. Each profile
 describes how the resulting configuration should look like and it can be
 slightly modified by enabling or disabling certain optional features. If a need
 arises for a different profile than what authselect ships, the administrator has
@@ -129,7 +129,7 @@ realm join -U Administrator --client-software=winbind WINBINDDOMAIN
 
 CONFIGURATION FILES
 -------------------
-This sections contains snippets for minimal configuration of various services.
+This section contains snippets for minimal configuration of various services.
 
 LDAP
 ~~~~
