@@ -144,6 +144,48 @@ done:
     return ret;
 }
 
+static errno_t
+authselect_system_write_temp(const char *path,
+                             const char *content,
+                             char **_tmp_file)
+{
+    errno_t ret;
+
+    INFO("Writing temporary file for [%s]", path);
+    ret = template_write_temporary(path, content, AUTHSELECT_FILE_MODE,
+                                   _tmp_file);
+    if (ret != EOK) {
+        ERROR("Unable to write temporary file [%s] [%d]: %s",
+              path, ret, strerror(ret));
+        return ret;
+    }
+
+    INFO("Temporary file is named [%s]", *_tmp_file);
+
+    return EOK;
+}
+
+static errno_t
+authselect_system_rename_temp(char **tmp_path,
+                              const char *final_path)
+{
+    errno_t ret;
+
+    INFO("Renaming [%s] to [%s]", *tmp_path, final_path);
+
+    ret = rename(*tmp_path, final_path);
+    if (ret != 0) {
+        ret = errno;
+        ERROR("Unable to rename [%s] to [%s] [%d]: %s",
+              *tmp_path, final_path, ret, strerror(ret));
+    }
+
+    free(*tmp_path);
+    *tmp_path = NULL;
+
+    return ret;
+}
+
 errno_t
 authselect_system_write(const char **features,
                         struct authselect_files *templates)
@@ -158,37 +200,47 @@ authselect_system_write(const char **features,
     }
 
     struct authselect_generated generated[] = GENERATED_FILES(files);
-    char *tmpfiles[sizeof(generated)/sizeof(struct authselect_generated)];
+    char *tmp_files[sizeof(generated)/sizeof(struct authselect_generated)] = {NULL};
+    char *tmp_copies[sizeof(generated)/sizeof(struct authselect_generated)] = {NULL};
 
     /* First, write content into temporary files, so we can safely fail
      * on error. */
     for (i = 0; generated[i].path != NULL; i++) {
-        INFO("Writing temporary file for [%s]", generated[i].path);
-        ret = template_write_temporary(generated[i].path, generated[i].content,
-                             AUTHSELECT_FILE_MODE, &tmpfiles[i]);
+        ret = authselect_system_write_temp(generated[i].copy_path,
+                                           generated[i].content,
+                                           &tmp_copies[i]);
         if (ret != EOK) {
             goto done;
         }
-        INFO("Temporary file is named [%s]", tmpfiles[i]);
-    }
 
-    /* Now rename the files. */
-    for (i = 0; generated[i].path != NULL; i++) {
-        INFO("Renaming [%s] to [%s]", tmpfiles[i], generated[i].path);
-        /* We now know that the system is writable, so rename call shall not
-         * fail and it will overwrite any existing file. The only reason it
-         * can fail is EIO which we can not do anything about and we can not
-         * even recover from it. */
-        ret = rename(tmpfiles[i], generated[i].path);
-        if (ret != 0) {
-            ret = errno;
-            ERROR("Unable to rename [%s] to [%s] [%d]: %s",
-                  tmpfiles[i], generated[i].path, ret, strerror(ret));
+        ret = authselect_system_write_temp(generated[i].path,
+                                           generated[i].content,
+                                           &tmp_files[i]);
+        if (ret != EOK) {
             goto done;
         }
+    }
 
-        free(tmpfiles[i]);
-        tmpfiles[i] = NULL;
+    /* Now rename the files.
+     *
+     * We now know that the system is writable, so rename call shall not
+     * fail and it will overwrite any existing file. The only reason it
+     * can fail is EIO which we can not do anything about and we can not
+     * even recover from it.
+     */
+    for (i = 0; generated[i].copy_path != NULL; i++) {
+        ret = authselect_system_rename_temp(&tmp_copies[i],
+                                            generated[i].copy_path);
+        if (ret != EOK) {
+            goto done;
+        }
+    }
+
+    for (i = 0; generated[i].path != NULL; i++) {
+        ret = authselect_system_rename_temp(&tmp_files[i], generated[i].path);
+        if (ret != EOK) {
+            goto done;
+        }
     }
 
     ret = EOK;
@@ -196,10 +248,16 @@ authselect_system_write(const char **features,
 done:
     if (ret != EOK) {
         for (i = 0; generated[i].path != NULL; i++) {
-            if (tmpfiles[i] != NULL) {
-                unlink(tmpfiles[i]);
-                free(tmpfiles[i]);
-                tmpfiles[i] = NULL;
+            if (tmp_copies[i] != NULL) {
+                unlink(tmp_copies[i]);
+                free(tmp_copies[i]);
+                tmp_copies[i] = NULL;
+            }
+
+            if (tmp_files[i] != NULL) {
+                unlink(tmp_files[i]);
+                free(tmp_files[i]);
+                tmp_files[i] = NULL;
             }
         }
     }
@@ -210,13 +268,16 @@ done:
 
 static bool
 authselect_system_validate_file(const char *path,
+                                const char *copy_path,
                                 const char *expected)
 {
     char *content;
+    char *copy_content;
     errno_t ret;
     bool bret;
 
     INFO("Validating file [%s]", path);
+    expected = expected == NULL ? "" : expected;
 
     ret = textfile_read(path, AUTHSELECT_FILE_SIZE_LIMIT, &content);
     if (ret == ENOENT) {
@@ -230,11 +291,17 @@ authselect_system_validate_file(const char *path,
         return false;
     }
 
-    if (expected == NULL) {
-        expected = "";
+    ret = textfile_read(copy_path, AUTHSELECT_FILE_SIZE_LIMIT, &copy_content);
+    if (ret == EOK) {
+        /* Compare against copy of the originally generated files. */
+        INFO("Comparing content against [%s]", copy_path);
+        bret = strcmp(content, copy_content) == 0;
+        free(copy_content);
+    } else {
+        INFO("Comparing content against current profile");
+        bret = template_validate_written_content(content, expected);
     }
 
-    bret = template_validate_written_content(content, expected);
     free(content);
     if (!bret) {
         ERROR("[%s] has unexpected content!", path);
@@ -262,6 +329,7 @@ authselect_system_validate(struct authselect_files *files)
 
     for (i = 0; generated[i].path != NULL; i++) {
         bret = authselect_system_validate_file(generated[i].path,
+                                               generated[i].copy_path,
                                                generated[i].content);
         result &= bret;
         if (!bret) {
