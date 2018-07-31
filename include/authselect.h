@@ -78,6 +78,23 @@ authselect_activate(const char *profile_id,
                     bool force_overwrite);
 
 /**
+ * Apply any changes to currently selected profile.
+ *
+ * Read currently selected profile together with its enabled features
+ * and regenerate existing configuration. This can be used to apply
+ * any changes to the profile templates.
+ *
+ * @return
+ * - 0 if the profile is successfully updated.
+ * - EEXIST if the system is already configured by other means than
+ *   authselect.
+ * - ENOENT if there is no existing authselect configuration.
+ * - Other errno code on generic error.
+ */
+int
+authselect_apply_changes(void);
+
+/**
  * Backup all system configuration files.
  *
  * @param name          Backup name. If not specified, current time with random

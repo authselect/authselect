@@ -99,6 +99,26 @@ done:
 }
 
 _PUBLIC_ int
+authselect_apply_changes(void)
+{
+    char *profile_id;
+    char **features;
+    errno_t ret;
+
+    ret = authselect_current_configuration(&profile_id, &features);
+    if (ret != EOK) {
+        return ret;
+    }
+
+    ret = authselect_activate(profile_id, (const char **)features, false);
+
+    string_array_free(features);
+    free(profile_id);
+
+    return ret;
+}
+
+_PUBLIC_ int
 authselect_backup(const char *name, char **_path)
 {
     errno_t ret;
