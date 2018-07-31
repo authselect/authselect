@@ -52,6 +52,9 @@
 #define PATH_DCONF_DB    AUTHSELECT_CONFIG_DIR "/" FILE_DCONF_DB
 #define PATH_DCONF_LOCK  AUTHSELECT_CONFIG_DIR "/" FILE_DCONF_LOCK
 
+/* Path to files that can be modified by user. */
+#define PATH_USER_NSSWITCH  AUTHSELECT_CONFIG_DIR "/user-nsswitch.conf"
+
 /* Paths to copy generated system files. Used to check changes
  * in configuration. */
 #define PATH_COPY_SYSTEM      AUTHSELECT_STATE_DIR "/" FILE_SYSTEM
