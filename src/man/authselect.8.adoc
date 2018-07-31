@@ -52,6 +52,13 @@ To print help for the selected command run *authselect COMMAND --help*.
         The command will not print any informational message such as additional
         profile requirements or backup location. Errors are still being print.
 
+*apply-changes*::
+    Re-apply currently selected profile. If the profile templates were updated
+    this command can be used to regenerate current system configuration in
+    order to apply these changes on the system. This command will only re-apply
+    the changes if the existing configuration is a valid authselect
+    configuration, otherwise an error is returned.
+
 *list*::
     List available profiles.
 
