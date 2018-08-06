@@ -100,7 +100,7 @@ static errno_t activate(struct cli_cmdline *cmdline)
     struct authselect_profile *profile = NULL;
     const char **features = NULL;
     const char *profile_id;
-    const char *requirements;
+    char *requirements = NULL;
     char *backup_name = NULL;
     char *backup_path;
     int nobackup = 0;
@@ -168,6 +168,7 @@ static errno_t activate(struct cli_cmdline *cmdline)
     ret = EOK;
 
 done:
+    free(requirements);
     authselect_profile_free(profile);
     if (features != NULL) {
         free(features);
@@ -366,7 +367,7 @@ static errno_t requirements(struct cli_cmdline *cmdline)
     struct authselect_profile *profile;
     const char *profile_id;
     const char **features;
-    const char *requirements;
+    char *requirements;
     errno_t ret;
 
     ret = parse_profile_options(cmdline, NULL, &profile_id, &features);
@@ -395,6 +396,7 @@ static errno_t requirements(struct cli_cmdline *cmdline)
     ret = EOK;
 
 done:
+    free(requirements);
     authselect_profile_free(profile);
 
     return ret;
