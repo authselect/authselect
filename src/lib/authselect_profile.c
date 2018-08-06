@@ -76,7 +76,7 @@ authselect_profile_description(const struct authselect_profile *profile)
     return profile->description;
 }
 
-_PUBLIC_ const char *
+_PUBLIC_ char *
 authselect_profile_requirements(const struct authselect_profile *profile,
                                 const char **features)
 {
