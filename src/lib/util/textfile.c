@@ -230,7 +230,7 @@ textfile_copy(const char *source,
     ret = fstat(fileno(fsource), &statbuf);
     if (ret == -1) {
         ret = errno;
-        return ret;
+        goto done;
     }
 
     fdest = fopen(destpath, "w");
