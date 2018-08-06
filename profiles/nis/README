@@ -1,0 +1,41 @@
+Enable NIS for system authentication
+====================================
+
+Selecting this profile will enable Network Information Services as the source
+of identity and authentication providers.
+
+NIS CONFIGURATION
+-----------------
+
+Authselect does not touch NIS configuration. Please, read NIS' documentation
+to see how to configure it manually.
+
+AVAILABLE OPTIONAL FEATURES
+---------------------------
+
+with-faillock::
+    Enable account locking in case of too many consecutive
+    authentication failures.
+
+with-mkhomedir::
+    Enable automatic creation of home directories for users on their
+    first login.
+
+with-ecryptfs::
+    Enable automatic per-user ecryptfs.
+
+with-fingerprint::
+    Enable authentication with fingerprint reader through *pam_fprintd*.
+
+with-silent-lastlog::
+    Do not produce pam_lastlog message during login.
+
+EXAMPLES
+--------
+* Enable NIS with no additional modules
+
+  authselect select nis
+
+* Enable NIS and create home directories for users on their first login
+
+  authselect select nis with-mkhomedir
