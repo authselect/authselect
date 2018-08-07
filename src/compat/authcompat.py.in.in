@@ -99,9 +99,12 @@ class Path:
         'authconfig'     : '@sysconfdir@/sysconfig/authconfig',
         'network'        : '@sysconfdir@/sysconfig/network',
         'pwquality.conf' : '@sysconfdir@/security/pwquality.conf.d/10-authconfig-pwquality.conf',
+        'yp.conf'        : '@sysconfdir@/yp.conf',
         'cmd-systemctl'  : '@bindir@/systemctl',
         'cmd-authselect' : '@bindir@/authselect',
-        'cmd-realm'      : '@sbindir@/realm'
+        'cmd-realm'      : '@sbindir@/realm',
+        'cmd-domainname' : '@bindir@/domainname',
+        'cmd-setsebool'  : '@sbindir@/setsebool'
     }
 
     @staticmethod
@@ -338,6 +341,80 @@ class Configuration:
             # other applications may depend on it.
             return
 
+    class NIS(Base):
+        def __init__(self, options):
+            super(Configuration.NIS, self).__init__(options)
+            self.rpcbind = Service("rpcbind")
+            self.ypbind = Service("ypbind")
+
+        def isEnabled(self):
+            return self.getBool("nis")
+
+        def enableService(self, nostart):
+            if not self.isset("nisdomain"):
+                return
+
+            nisdom = self.get("nisdomain")
+
+            if not nostart:
+                cmd = Command(Path.System('cmd-domainname'), [nisdom])
+                cmd.run()
+
+            cmd = Command(Path.System('cmd-setsebool'),
+                          ['-P', 'allow_ypbind', '1'])
+            cmd.run()
+
+            self.rpcbind.enable()
+            self.ypbind.enable()
+
+            if not nostart:
+                self.rpcbind.start()
+                self.ypbind.start()
+
+        def disableService(self, nostop):
+            if not nostop:
+                cmd = Command(Path.System('cmd-domainname'), ["(none)"])
+                cmd.run()
+
+            cmd = Command(Path.System('cmd-setsebool'),
+                          ['-P', 'allow_ypbind', '0'])
+            cmd.run()
+
+            self.rpcbind.disable()
+            self.ypbind.disable()
+
+            if not nostop:
+                self.rpcbind.stop()
+                self.ypbind.stop()
+
+        def write(self):
+            if not self.isset("nisdomain"):
+                return
+
+            output = "domain " + self.get("nisdomain")
+
+            additional_servers = []
+            if self.isset("nisserver"):
+                servers = self.get("nisserver").split(",")
+                additional_servers = servers[1:]
+                output += " server " + servers[0] + "\n"
+            else:
+                output += " broadcast\n"
+
+            for server in additional_servers:
+                output += "ypserver " + server + "\n"
+
+            filename = Path.System('yp.conf')
+            if self.getBool("test-call"):
+                print("========== BEGIN Content of [%s] ==========" % filename)
+                print(output)
+                print("========== END   Content of [%s] ==========\n" % filename)
+                return
+
+            with open(filename, "w") as f:
+                f.write(output)
+
+
 class AuthCompat:
     def __init__(self):
         self.sysconfig = EnvironmentFile(Path.System('authconfig'))
@@ -392,7 +469,6 @@ class AuthCompat:
             print(_("Error: Both --enablewinbind and --enablewinbindauth must be set."))
             return False
 
-
         # We require one of these options to perform changes
         # We encourage to use --updateall since we no longer support just pure
         # --update or --kickstart, they will act as --updateall.
@@ -414,7 +490,11 @@ class AuthCompat:
             'winbindkrb5' : 'with-krb5'
         }
 
-        profile = "sssd" if not self.options.getBool("winbind") else "winbind"
+        profile = "sssd"
+        if self.options.getBool("nis"):
+            profile = "nis"
+        elif self.options.getBool("winbind"):
+            profile = "winbind"
 
         # Always run with --force. This is either first call of authconfig
         # in installation script or it is run on already configured system.
@@ -436,7 +516,8 @@ class AuthCompat:
             Configuration.SSSD(self.options),
             Configuration.Winbind(self.options),
             Configuration.PWQuality(self.options),
-            Configuration.MakeHomedir(self.options)
+            Configuration.MakeHomedir(self.options),
+            Configuration.NIS(self.options)
         ]
 
         for config in configs:
