@@ -78,6 +78,23 @@ authselect_activate(const char *profile_id,
                     bool force_overwrite);
 
 /**
+ * Apply any changes to currently selected profile.
+ *
+ * Read currently selected profile together with its enabled features
+ * and regenerate existing configuration. This can be used to apply
+ * any changes to the profile templates.
+ *
+ * @return
+ * - 0 if the profile is successfully updated.
+ * - EEXIST if the system is already configured by other means than
+ *   authselect.
+ * - ENOENT if there is no existing authselect configuration.
+ * - Other errno code on generic error.
+ */
+int
+authselect_apply_changes(void);
+
+/**
  * Backup all system configuration files.
  *
  * @param name          Backup name. If not specified, current time with random
@@ -230,13 +247,15 @@ authselect_profile_description(const struct authselect_profile *profile);
 /**
  * Get profile requirements for selected features.
  *
+ * It is necessary to free the returned pointer manually.
+ *
  * @param profile    Pointer to structure obtained by @authselect_profile.
  * @param features       NULL-terminated array of optional features to enable.
  *
  * @return Profile requirements, empty string if there are none requirements
  * or NULL in case of an error.
  */
-const char *
+char *
 authselect_profile_requirements(const struct authselect_profile *profile,
                                 const char **features);
 

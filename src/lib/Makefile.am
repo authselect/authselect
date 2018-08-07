@@ -40,6 +40,7 @@ authselect_dconf_dir=@AUTHSELECT_DCONF_DIR@
 authselect_dconf_file=@AUTHSELECT_DCONF_FILE@
 authselect_dconf_bin=@AUTHSELECT_DCONF_BIN@
 authselect_backup_dir=@AUTHSELECT_BACKUP_DIR@
+authselect_state_dir=@AUTHSELECT_STATE_DIR@
 
 libauthselect_la_SOURCES = \
     authselect.c \
@@ -74,10 +75,11 @@ libauthselect_la_CFLAGS = \
     -DAUTHSELECT_DCONF_FILE=\"$(authselect_dconf_file)\" \
     -DAUTHSELECT_DCONF_BIN=\"$(authselect_dconf_bin)\" \
     -DAUTHSELECT_BACKUP_DIR=\"$(authselect_backup_dir)\" \
+    -DAUTHSELECT_STATE_DIR=\"$(authselect_state_dir)\" \
     $(NULL)
 libauthselect_la_LDFLAGS = \
     -Wl,--version-script=$(srcdir)/authselect.exports \
-    -version-info 1:0:0
+    -version-info 2:0:1
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = \

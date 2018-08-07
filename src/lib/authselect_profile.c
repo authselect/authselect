@@ -76,7 +76,7 @@ authselect_profile_description(const struct authselect_profile *profile)
     return profile->description;
 }
 
-_PUBLIC_ const char *
+_PUBLIC_ char *
 authselect_profile_requirements(const struct authselect_profile *profile,
                                 const char **features)
 {
@@ -196,11 +196,10 @@ authselect_profile_symlinks_get(const char *profile_path,
     const char *sym_nsswitch[] = {FILES_NSSWITCH, NULL};
     const char *sym_pam[]      = {FILES_PAM, NULL};
     const char *sym_dconf[]    = {FILES_DCONF, NULL};
-    const char *sym_all[]      = {FILES_ALL, NULL};
     char **targets;
     errno_t ret;
 
-    targets = string_array_create(sizeof(sym_all) / sizeof(const char *));
+    targets = string_array_create(10);
     if (targets == NULL) {
         ret = ENOMEM;
         goto done;
