@@ -115,24 +115,41 @@ class Path:
 
 class Configuration:
     class Base(object):
-        def __init__(self, options, service=None):
+        def __init__(self, options, ServiceName=None):
             self.options = options
-            self.service = service
+            self.service = None
+            if ServiceName is not None:
+                self.service = Service(ServiceName)
 
-        def mustGenerate(self):
-            """ Make sure this method method is implemented by children. """
-            raise NotImplementedError("Method mustGenerate() is not implemented!")
-
-        def shouldDisable(self):
+        def isEnabled(self):
             return True
+        
+        def isDisabled(self):
+            return not self.isEnabled()
+            
+        def enableService(self, nostart):
+            if self.service is None:
+                return
+            
+            self.service.enable()
 
-        def write(self):
-            """ Make sure this method method is implemented by children. """
-            raise NotImplementedError("Method write() is not implemented!")
+            if not nostart:
+                self.service.start()
+                
+        def disableService(self, nostop):
+            if self.service is None:
+                return
+
+            self.service.disable()
+
+            if not nostop:
+                self.service.stop()
 
         def cleanup(self):
-            """ Make sure this method method is implemented by children. """
-            raise NotImplementedError("Method cleanup() is not implemented!")
+            return
+        
+        def write(self):
+            return
 
         def get(self, name):
             return self.options.get(name)
@@ -167,13 +184,6 @@ class Configuration:
         def __init__(self, options):
             super(Configuration.LDAP, self).__init__(options)
 
-        def mustGenerate(self):
-            return True
-
-        def cleanup(self):
-            # Nothing to do
-            return
-
         def write(self):
             config = EnvironmentFile(Path.System('ldap.conf'), " ",
                                      delimiter_re="\s\t", quotes=False)
@@ -189,13 +199,16 @@ class Configuration:
         def __init__(self, options):
             super(Configuration.Kerberos, self).__init__(options)
 
-        def mustGenerate(self):
+        def isEnabled(self):
             return self.isset("krb5realm") or self.isset("krb5realmdns")
-
+        
         def cleanup(self):
             self.removeFile(Path.System('krb5.conf'))
 
         def write(self):
+            if self.isDisabled():
+                return
+            
             path = Path.Local("snippets/authconfig-krb.conf")
             config = ConfigSnippet(path, Path.System('krb5.conf'))
             realm = self.get("krb5realm")
@@ -215,9 +228,6 @@ class Configuration:
         def __init__(self, options):
             super(Configuration.Network, self).__init__(options)
 
-        def mustGenerate(self):
-            return True
-
         def write(self):
             nisdomain = self.get("nisdomain")
             config = EnvironmentFile(Path.System('network'))
@@ -230,24 +240,21 @@ class Configuration:
 
     class SSSD(Base):
         def __init__(self, options):
-            super(Configuration.SSSD, self).__init__(options, service="sssd")
+            super(Configuration.SSSD, self).__init__(options, ServiceName="sssd")
 
-        def mustGenerate(self):
-            # Authconfig would not generate sssd in this case so we should not
-            # either. Even if --enablesssd[auth] was provided the configuration
-            # would not be generated.
-            return self.getBool("ldap")
-
-        def shouldDisable(self):
-            if not self.getBool("ldap") and not self.getBool("sssd"):
-                return True
-
-            return False
-
+        def isEnabled(self):
+            return self.getBool("ldap") or self.getBool("sssd")
+        
         def cleanup(self):
             self.removeFile(Path.System('sssd.conf'))
 
         def write(self):
+            # Authconfig would not generate sssd in this case so we should not
+            # either. Even if --enablesssd[auth] was provided the configuration
+            # would not be generated.
+            if not self.getBool("ldap"):
+                return
+            
             path = Path.Local("snippets/authconfig-sssd.conf")
             config = ConfigSnippet(path, Path.System('sssd.conf'))
 
@@ -270,21 +277,15 @@ class Configuration:
 
     class Winbind(Base):
         def __init__(self, options):
-            super(Configuration.Winbind, self).__init__(options, service="winbind")
+            super(Configuration.Winbind, self).__init__(options, ServiceName="winbind")
 
-        def mustGenerate(self):
-            return self.isset("winbindjoin")
-
-        def shouldDisable(self):
-            if self.getBool("winbind") and self.getBool("winbindauth"):
-                return False
-
-            return True
-
-        def cleanup(self):
-            return
+        def isEnabled(self):
+            return self.getBool("winbind") or self.getBool("winbindauth")
 
         def write(self):
+            if not self.isset("winbindjoin"):
+                return
+            
             creds = self.options.get("winbindjoin").split("%", 1)
 
             user = creds[0]
@@ -312,9 +313,6 @@ class Configuration:
         def __init__(self, options):
             super(Configuration.PWQuality, self).__init__(options)
 
-        def mustGenerate(self):
-            return True
-
         def write(self):
             config = EnvironmentFile(Path.System('pwquality.conf'))
 
@@ -328,6 +326,17 @@ class Configuration:
             config.set("ocredit", self.getBoolAsValue("reqother", -1, 0))
             config.write()
 
+    class MakeHomedir(Base):
+        def __init__(self, options):
+            super(Configuration.MakeHomedir, self).__init__(options, ServiceName="oddjobd")
+
+        def isEnabled(self):
+            return self.getBool("mkhomedir")
+        
+        def disableService(self, nostop):
+            # Never disable the service in case it is already running as
+            # other applications may depend on it.
+            return
 
 class AuthCompat:
     def __init__(self):
@@ -419,38 +428,6 @@ class AuthCompat:
         cmd = Command(Path.System('cmd-authselect'), args)
         cmd.run()
 
-    def enableService(self, name):
-        if name is None:
-            return
-
-        try:
-            svc = Service(name)
-            svc.enable()
-
-            if not self.options.getBool("nostart"):
-                svc.start()
-        except subprocess.CalledProcessError as result:
-            # This is not fatal error.
-            eprint(_("Command [%s] failed with %d, stderr:")
-                   % (' '.join(result.cmd), result.returncode))
-            eprint(result.stderr.decode())
-
-    def disableService(self, name):
-        if name is None:
-            return
-
-        try:
-            svc = Service(name)
-            svc.disable()
-
-            if not self.options.getBool("nostart"):
-                svc.stop()
-        except subprocess.CalledProcessError as result:
-            # This is not fatal error.
-            eprint(_("Command [%s] failed with %d, stderr:")
-                   % (' '.join(result.cmd), result.returncode))
-            eprint(result.stderr.decode())
-
     def writeConfiguration(self):
         configs = [
             Configuration.LDAP(self.options),
@@ -458,21 +435,27 @@ class AuthCompat:
             Configuration.Kerberos(self.options),
             Configuration.SSSD(self.options),
             Configuration.Winbind(self.options),
-            Configuration.PWQuality(self.options)
+            Configuration.PWQuality(self.options),
+            Configuration.MakeHomedir(self.options)
         ]
 
         for config in configs:
-            if config.mustGenerate():
-                config.write()
-                self.enableService(config.service)
-            elif config.shouldDisable():
-                config.cleanup()
-                self.disableService(config.service)
-
-        # Enable oddjobd for mkhomedir, but don't disable the service in
-        # case it's already running.
-        if self.options.getBool("mkhomedir"):
-            self.enableService("oddjobd")
+            # Configuration decides if it needs to write something or not
+            config.write()
+            
+            # Enable or disable service if needed
+            nostart = self.options.getBool("nostart")
+            try:
+                if config.isEnabled():
+                    config.enableService(nostart)
+                else:
+                    config.disableService(nostart)
+                    config.cleanup()
+            except subprocess.CalledProcessError as result:
+                # This is not fatal error.
+                eprint(_("Command [%s] failed with %d, stderr:")
+                       % (' '.join(result.cmd), result.returncode))
+                eprint(result.stderr.decode())
 
 
 def main():
