@@ -48,7 +48,7 @@ Probably the most controversial change is that authselect only ships profiles
 for sssd and winbind providers. Those two providers cover all modern use cases
 from providing local users and legacy LDAP domain to complex configurations
 with IPA or Active Directory servers. The profiles no longer contain support
-for old nss-pam-ldapd and NIS and users are encouraged to switch to sssd.
+for old nss-pam-ldapd and users are encouraged to switch to sssd.
 
 JOINING REMOTE DOMAINS
 ----------------------
@@ -72,6 +72,7 @@ configuration file for required services.
 |--enablesssd --enablesssdauth       |sssd
 |--enablekrb5                        |sssd
 |--enablewinbind --enablewinbindauth |winbind
+|--enablenis                         |nis
 |=========================================================
 
 .Relation of authconfig options to authselect profile features
@@ -190,6 +191,34 @@ will perform an initial setup which involves creating a Kerberos keytab and
 running `adcli` to join the domain. It also makes changes to `smb.conf`. You
 can then tune it up by modifying {sysconfdir}/samba/smb.conf.
 
+NIS
+~~~
+There are several places that needs to be configured in order to make
+NIS authentication work. First, you need to set NIS domain and optionally
+also NIS server in {sysconfdir}/yp.conf.
+
+.{sysconfdir}/yp.conf
+----
+domain mydomain broadcast
+# or
+# domain mydomain server myserver
+----
+
+NIS domain must be also set in system network configuration.
+
+.{sysconfdir}/sysconfig/network
+----
+NISDOMAIN=mydomain
+----
+
+Now, you can set the domain name with command line so there is no need to
+reboot your system. Additionaly, it may be necessary to enable NIS in selinux.
+
+----
+$ domainname mydomain
+$ setsebool -P allow_ypbind 1
+----
+
 PASSWORD QUALITY
 ~~~~~~~~~~~~~~~~
 Authselect enables `pam_pwquality` module to enforce password quality
@@ -213,6 +242,11 @@ with systemd.
 * Winbind
 
   systemctl enable winbind.service ; systemctl start winbind.service
+
+* NIS
+
+  systemctl enable rpcbind.service ; systemctl start rpcbind.service
+  systemctl enable ypbind.service ; systemctl start ypbind.service
 
 * If mkhomedir feature is enabled
 
