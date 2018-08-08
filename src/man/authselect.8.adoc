@@ -145,6 +145,65 @@ These options are available with all commands.
     the program execution but may indicate some undesired situations
     (e.g. unexpected file in a profile directory).
 
+NSSWITCH.CONF MANAGEMENT
+------------------------
+Authselect generates {AUTHSELECT_NSSWITCH_CONF} and does not allow any user
+changes to this file. Such changes are detected and authselect will refuse to
+write any system configuration unless a *--force* option is provided to
+the *select* command. This mechanism prevents authselect from overwriting
+anything that does not match any available profile.
+
+Any user changes to nsswitch maps must be done in file
+{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf. When authselect generates
+new _nsswitch.conf_ it reads this file and combines it with configuration
+from selected profile. The profile configuration takes always precedence.
+In other words, profiles do not have to set all nsswitch maps but can set only
+those that are relevant to the profile. If a map is set within a profile,
+it always overwrites the same map from _user-nsswitch.conf_.
+
+.Example 1
+[subs="attributes"]
+----
+# "sssd" profile
+$ cat {AUTHSELECT_PROFILE_DIR}/sssd/nsswitch.conf
+passwd:     sss files systemd
+group:      sss files systemd
+netgroup:   sss files
+automount:  sss files
+services:   sss files
+sudoers:    files sss {include if "with-sudo"}
+
+$ cat {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf
+passwd: files sss
+group: files sss
+hosts: files dns myhostname
+sudoers: files
+
+$ authselect select sssd
+
+# passwd and group maps from user-nsswitch.conf are ignored
+$ cat {AUTHSELECT_NSSWITCH_CONF}
+passwd:     sss files systemd
+group:      sss files systemd
+netgroup:   sss files
+automount:  sss files
+services:   sss files
+hosts:      files dns myhostname
+sudoers:    files
+
+$ authselect select sssd with-sudo
+
+# passwd, group and sudoers maps from user-nsswitch.conf are ignored
+$ cat {AUTHSELECT_NSSWITCH_CONF}
+passwd:     sss files systemd
+group:      sss files systemd
+netgroup:   sss files
+automount:  sss files
+services:   sss files
+sudoers:    files sss
+hosts:      files dns myhostname
+----
+
 RETURN CODES
 ------------
 The *authselect* can return these exit codes:
