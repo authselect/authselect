@@ -33,12 +33,12 @@ SCRIPTFILE="@abs_top_builddir@/src/man/build.sh"
 # Usage: last-modification-time FILE
 last-modification-time() {
     local MOD=`stat -c %Y "$1" 2> /dev/null`
-    
+
     if [ $? -ne 0 ] || [ -z $MOD ]; then
         echo 0
         return 0
     fi
-    
+
     echo $MOD
     return 0
 }
@@ -79,30 +79,30 @@ need-translation() {
     local PATH_SOURCE="$1"
     local PATH_PO="$2"
     local PATH_TRANSLATION="$3"
-    
+
     local TIME_SOURCE=`last-modification-time "$PATH_SOURCE"`
     local TIME_PO=`last-modification-time "$PATH_PO"`
     local TIME_TRANSLATION=`last-modification-time "$PATH_TRANSLATION"`
-    
+
     if configuration-changed; then
         return 0
     fi
-    
+
     # Translation does not yet exist.
     if [ ! -f "$PATH_TRANSLATION" ] &&  [ -f "$PATH_PO" ]; then
         return 0
     fi
-    
+
     # Translation is outdated.
     if [ $TIME_TRANSLATION -lt $TIME_PO ]; then
         return 0
     fi
-    
+
     # Source file is updated.
     if [ $TIME_TRANSLATION -lt $TIME_SOURCE ]; then
         return 0
     fi
-    
+
     return 1
 }
 
@@ -112,33 +112,33 @@ need-translation() {
 need-compilation() {
     local PATH_SOURCE="$1"
     local PATH_DEST="$2"
-    
+
     local TIME_SOURCE=`last-modification-time "$PATH_SOURCE"`
     local TIME_DEST=`last-modification-time "$PATH_DEST"`
-    
+
     if configuration-changed; then
         return 0
     fi
-    
+
     # Build does not yet exist.
     if [ ! -f "$PATH_DEST" ] &&  [ -f "$PATH_SOURCE" ]; then
         return 0
     fi
-    
+
     # Build is outdated.
     if [ $TIME_DEST -lt $TIME_SOURCE ]; then
         return 0
     fi
-    
+
     return 1
 }
 
 # Find files in directories.
-# Usage: search-dirs PATTERN DIRECTORIES 
+# Usage: search-dirs PATTERN DIRECTORIES
 search-dirs() {
     local PATTERN=$1
     shift 1
-    
+
     find $@ -type f -name "$PATTERN" -printf '%d\t%p\n' 2> /dev/null \
         | sort -nk1 | cut -f2-
 }
@@ -156,9 +156,9 @@ manpages-find-translations() {
 }
 
 # Translate ascii doc files with po table
-# - source man pages are found in: src/man, name: name.section.adoc 
+# - source man pages are found in: src/man, name: name.section.adoc
 # - translations are found in: src/man/po,  name: manpage.language.po
-# - result is stored in: src/man/translation/$language/name.section.adoc 
+# - result is stored in: src/man/translation/$language/name.section.adoc
 #
 # Usage: manpages-translate
 manpages-translate() {
@@ -171,7 +171,7 @@ manpages-translate() {
         local lang=`echo $pofilename | sed -E 's/.*\.adoc\.([^.]+)\.po/\1/'`
         local source="$DIR_MANS/$adoc"
         local dest="$DIR_TRANS/$lang/$adoc"
-        
+
         if ! need-translation "$source" "$pofilepath" "$dest"
         then
             continue
@@ -189,7 +189,7 @@ manpages-translate() {
             return 1
         fi
     done
-    
+
     return 0
 }
 
@@ -199,16 +199,16 @@ manpages-compile() {
     local FILE=$1
     local DIR=$(dirname `echo $FILE | sed 's|@abs_top_srcdir@|@abs_top_builddir@|'`)
     local MAN=`basename $FILE | sed -E 's/(.*)\.adoc/\1/'`
-    
+
     if ! need-compilation "$FILE" "$DIR/$MAN"
     then
         return 0
     fi
-    
+
     shift 1
-    
+
     echo "Building manpage: $FILE"
-    
+
     mkdir -p "$DIR"
     @A2X@ -D "$DIR" --doctype manpage --format manpage "$FILE" $*
 }

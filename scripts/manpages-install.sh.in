@@ -47,7 +47,7 @@ manpages-install() {
     local LANG=`echo $PATH | /usr/bin/sed -E 's|.*/([^./]+)/[^/]+|\1|'`
     local SECTION=`echo $PATH | /usr/bin/sed -E 's|.*\.(.)|\1|'`
     local DEST="$DESTDIR/$MANDIR/$LANG/man$SECTION"
-    
+
     echo "Installing $PATH to $DEST/$NAME"
     /usr/bin/mkdir -p $DEST
     /usr/bin/install -c -m 644 $PATH "$DEST/$NAME"

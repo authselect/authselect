@@ -9,12 +9,12 @@ dnl Arg 6: default value
 dnl
 AC_DEFUN([CONFIGURABLE_VALUE], [
     AC_ARG_WITH([$1], [AC_HELP_STRING([--with-$1=$4], [$5 [$6]])])
-    
+
     $3="$6"
     if test x"$with_$2" != x; then
         $3=$with_$2
     fi
-    
+
     AC_SUBST($3)
 ])
 
@@ -25,7 +25,7 @@ CONFIGURABLE_VALUE(config-dir, config_dir, AUTHSELECT_CONFIG_DIR, DIR,
 CONFIGURABLE_VALUE(profile-dir, profile_dir, AUTHSELECT_PROFILE_DIR, DIR,
                    [Path to the directory where are stored authselect default profiles],
                    $datarootdir/authselect/default)
-                   
+
 CONFIGURABLE_VALUE(vendor-dir, vendor_dir, AUTHSELECT_VENDOR_DIR, DIR,
                    [Path to the directory where are stored profiles created by 3rd-party vendors],
                    $datarootdir/authselect/vendor)

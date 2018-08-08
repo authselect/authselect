@@ -8,7 +8,7 @@ AM_CFLAGS = \
 include_HEADERS = \
     $(top_srcdir)/include/authselect.h \
     $(NULL)
-    
+
 noinst_HEADERS = \
     constants.h \
     paths.h \

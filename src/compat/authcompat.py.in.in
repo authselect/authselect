@@ -165,12 +165,12 @@ class Configuration:
 
         def getBool(self, name):
             return self.options.getBool(name)
-        
+
         def getBoolAsValue(self, name, if_true, if_false):
             value = self.getBool(name)
             if value:
                 return if_true
-            
+
             return if_false
 
         def removeFile(self, filename):

@@ -35,7 +35,7 @@ zanata_push_before()
         echo "Make sure that ./configure was run and the project is configured"
         exit 1
     fi
-    
+
     # Update man pages pot files
     DIR="$PWD/src/man"
     for file in $DIR/*.adoc; do
