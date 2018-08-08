@@ -243,6 +243,11 @@ with systemd.
 * Winbind
 
   systemctl enable winbind.service ; systemctl start winbind.service
+  
+* NIS
+
+  systemctl enable rpcbind.service ; systemctl start rpcbind.service
+  systemctl enable ypbind.service ; systemctl start ypbind.service
 
 * NIS
 
