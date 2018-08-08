@@ -103,10 +103,12 @@ static errno_t activate(struct cli_cmdline *cmdline)
     char *requirements = NULL;
     char *backup_name = NULL;
     char *backup_path;
+    char **maps = NULL;
     int nobackup = 0;
     int enforce = 0;
     int quiet = 0;
     errno_t ret;
+    int i;
 
     struct poptOption options[] = {
         {"force", 'f', POPT_ARG_VAL, &enforce, 1, _("Enforce changes"), NULL },
@@ -136,6 +138,13 @@ static errno_t activate(struct cli_cmdline *cmdline)
         goto done;
     }
 
+    maps = authselect_profile_nsswitch_maps(profile, features);
+    if (maps == NULL) {
+        ERROR("Unable to obtain nsswitch maps!");
+        ret = EFAULT;
+        goto done;
+    }
+
     if (backup_name != NULL || (enforce && !nobackup)) {
         ret = authselect_backup(backup_name, &backup_path);
         if (ret != EOK) {
@@ -160,6 +169,14 @@ static errno_t activate(struct cli_cmdline *cmdline)
     }
 
     CLI_MSG(quiet, "Profile \"%s\" was selected.\n", profile_id);
+
+    if (maps != NULL && maps[0] != NULL) {
+        CLI_MSG(quiet, "The following nsswitch maps are overwritten "
+                       "by the profile:\n");
+        for (i = 0; maps[i] != NULL; i++) {
+            CLI_MSG(quiet, "- %s\n", maps[i]);
+        }
+    }
 
     if (requirements[0] != '\0') {
         CLI_MSG(quiet, "\n%s\n", requirements);
