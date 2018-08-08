@@ -250,7 +250,7 @@ authselect_profile_description(const struct authselect_profile *profile);
  * It is necessary to free the returned pointer manually.
  *
  * @param profile    Pointer to structure obtained by @authselect_profile.
- * @param features       NULL-terminated array of optional features to enable.
+ * @param features   NULL-terminated array of optional features to enable.
  *
  * @return Profile requirements, empty string if there are none requirements
  * or NULL in case of an error.
@@ -258,6 +258,20 @@ authselect_profile_description(const struct authselect_profile *profile);
 char *
 authselect_profile_requirements(const struct authselect_profile *profile,
                                 const char **features);
+
+/**
+ * Return nsswitch maps set by the profile.
+ *
+ * It is necessary to free the returned pointer with @authselect_array_free.
+ *
+ * @param profile    Pointer to structure obtained by @authselect_profile.
+ * @param features   NULL-terminated array of optional features to enable.
+ *
+ * @return Map names, NULL on error.
+ */
+char **
+authselect_profile_nsswitch_maps(const struct authselect_profile *profile,
+                                 const char **features);
 
 /**
  * Free authconfig_profile structure obtained by @authselect_profile.

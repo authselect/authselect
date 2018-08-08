@@ -91,7 +91,7 @@ authselect_system_read_templates(const char *dirname,
     return EOK;
 }
 
-static errno_t
+errno_t
 authselect_system_nsswitch_find_maps(char *content,
                                      char ***_maps)
 {

@@ -87,6 +87,34 @@ authselect_profile_requirements(const struct authselect_profile *profile,
     return template_generate(profile->requirements, features);
 }
 
+_PUBLIC_ char **
+authselect_profile_nsswitch_maps(const struct authselect_profile *profile,
+                                 const char **features)
+{
+    char *template;
+    char **maps;
+    errno_t ret;
+
+    if (profile == NULL) {
+        return NULL;
+    }
+
+    template = template_generate(profile->files->nsswitch, features);
+    if (template == NULL) {
+        ERROR("Unable to generate nsswitch.conf");
+        return NULL;
+    }
+
+    ret = authselect_system_nsswitch_find_maps(template, &maps);
+    free(template);
+    if (ret != EOK) {
+        ERROR("Unable to find nsswitch maps [%d]: %s", ret, strerror(ret));
+        return NULL;
+    }
+
+    return maps;
+}
+
 _PUBLIC_ void
 authselect_profile_free(struct authselect_profile *profile)
 {
