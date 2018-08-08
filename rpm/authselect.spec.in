@@ -86,13 +86,13 @@ autoreconf -if
 %make_install
 
 # Find translations
-%find_lang %{name}
-%find_lang %{name} %{name}.8.lang --with-man
-%find_lang %{name}-migration %{name}-migration.7.lang --with-man
-%find_lang %{name}-profiles %{name}-profiles.5.lang --with-man
+#%find_lang %{name}
+#%find_lang %{name} %{name}.8.lang --with-man
+#%find_lang %{name}-migration %{name}-migration.7.lang --with-man
+#%find_lang %{name}-profiles %{name}-profiles.5.lang --with-man
 
 # We want this file to contain only manual page translations
-sed -i '/LC_MESSAGES/d' %{name}.8.lang
+#sed -i '/LC_MESSAGES/d' %{name}.8.lang
 
 # Remove .la and .a files created by libtool
 find $RPM_BUILD_ROOT -name "*.la" -exec rm -f {} \;
@@ -100,14 +100,25 @@ find $RPM_BUILD_ROOT -name "*.a" -exec rm -f {} \;
 
 %ldconfig_scriptlets libs
 
-%files libs -f %{name}.lang -f %{name}-profiles.5.lang
+#%files libs -f %{name}.lang -f %{name}-profiles.5.lang
+%files libs
 %dir %{_sysconfdir}/authselect
 %dir %{_sysconfdir}/authselect/custom
 %dir %{_datadir}/authselect
 %dir %{_datadir}/authselect/vendor
 %dir %{_datadir}/authselect/default
+%dir %{_datadir}/authselect/default/nis/
 %dir %{_datadir}/authselect/default/sssd/
 %dir %{_datadir}/authselect/default/winbind/
+%{_datadir}/authselect/default/nis/dconf-db
+%{_datadir}/authselect/default/nis/dconf-locks
+%{_datadir}/authselect/default/nis/fingerprint-auth
+%{_datadir}/authselect/default/nis/nsswitch.conf
+%{_datadir}/authselect/default/nis/password-auth
+%{_datadir}/authselect/default/nis/postlogin
+%{_datadir}/authselect/default/nis/README
+%{_datadir}/authselect/default/nis/REQUIREMENTS
+%{_datadir}/authselect/default/nis/system-auth
 %{_datadir}/authselect/default/sssd/dconf-db
 %{_datadir}/authselect/default/sssd/dconf-locks
 %{_datadir}/authselect/default/sssd/fingerprint-auth
@@ -143,7 +154,8 @@ find $RPM_BUILD_ROOT -name "*.a" -exec rm -f {} \;
 %{_libdir}/libauthselect.so
 %{_libdir}/pkgconfig/authselect.pc
 
-%files  -f %{name}.8.lang  -f %{name}-migration.7.lang
+#%files  -f %{name}.8.lang  -f %{name}-migration.7.lang
+%files
 %{_bindir}/authselect
 %{_mandir}/man8/authselect.8*
 %{_mandir}/man7/authselect-migration.7*

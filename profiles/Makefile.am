@@ -1,6 +1,19 @@
 authselect_profile_dir=@AUTHSELECT_PROFILE_DIR@
 
 # The shipped profiles
+profile_nisdir = $(authselect_profile_dir)/nis
+dist_profile_nis_DATA = \
+    $(top_srcdir)/profiles/nis/nsswitch.conf \
+    $(top_srcdir)/profiles/nis/password-auth \
+    $(top_srcdir)/profiles/nis/postlogin \
+    $(top_srcdir)/profiles/nis/README \
+    $(top_srcdir)/profiles/nis/REQUIREMENTS \
+    $(top_srcdir)/profiles/nis/system-auth \
+    $(top_srcdir)/profiles/nis/fingerprint-auth \
+    $(top_srcdir)/profiles/nis/dconf-db \
+    $(top_srcdir)/profiles/nis/dconf-locks \
+    $(NULL)
+
 profile_sssddir = $(authselect_profile_dir)/sssd
 dist_profile_sssd_DATA = \
     $(top_srcdir)/profiles/sssd/nsswitch.conf \
