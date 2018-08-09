@@ -20,7 +20,7 @@ CLEANFILES = \
     $(generated_files) \
     $(NULL)
 
-dist_pkgpython_SCRIPTS = \
+pkgpython_SCRIPTS = \
     authcompat.py \
     $(NULL)
 
