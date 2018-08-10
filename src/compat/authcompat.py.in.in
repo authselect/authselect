@@ -423,6 +423,7 @@ class AuthCompat:
         self.options.parse()
         self.options.applysysconfig(self.sysconfig)
         self.options.updatesysconfig(self.sysconfig)
+        self.sysconfig.write()
 
     def printWarning(self):
         print(_("Running authconfig compatibility tool."))
