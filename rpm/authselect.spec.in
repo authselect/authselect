@@ -85,13 +85,22 @@ autoreconf -if
 %install
 %make_install
 
+# Find translations
+%find_lang %{name}
+%find_lang %{name} %{name}.8.lang --with-man
+%find_lang %{name}-migration %{name}-migration.7.lang --with-man
+%find_lang %{name}-profiles %{name}-profiles.5.lang --with-man
+
+# We want this file to contain only manual page translations
+sed -i '/LC_MESSAGES/d' %{name}.8.lang
+
 # Remove .la and .a files created by libtool
 find $RPM_BUILD_ROOT -name "*.la" -exec rm -f {} \;
 find $RPM_BUILD_ROOT -name "*.a" -exec rm -f {} \;
 
 %ldconfig_scriptlets libs
 
-%files libs
+%files libs -f %{name}.lang -f %{name}-profiles.5.lang
 %dir %{_sysconfdir}/authselect
 %dir %{_sysconfdir}/authselect/custom
 %dir %{_localstatedir}/lib/authselect
@@ -145,7 +154,7 @@ find $RPM_BUILD_ROOT -name "*.a" -exec rm -f {} \;
 %{_libdir}/libauthselect.so
 %{_libdir}/pkgconfig/authselect.pc
 
-%files
+%files  -f %{name}.8.lang  -f %{name}-migration.7.lang
 %{_bindir}/authselect
 %{_mandir}/man8/authselect.8*
 %{_mandir}/man7/authselect-migration.7*
