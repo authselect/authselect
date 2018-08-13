@@ -26,7 +26,7 @@ install-data-local:
 	$(abs_top_builddir)/scripts/manpages-install.sh "$(prefix)" "$(DESTDIR)" $(man_MANS)
 
 uninstall-local:
-	$(abs_top_builddir)/scripts/manpages-uninstall.sh "$(prefix)" $(man_MANS)
+	$(abs_top_builddir)/scripts/manpages-uninstall.sh "$(prefix)" "$(DESTDIR)" $(man_MANS)
 
 clean-local:
 	$(RM) $(man_MANS) ; \

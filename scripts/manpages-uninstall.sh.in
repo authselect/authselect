@@ -25,9 +25,10 @@
 #
 
 prefix=$1
-shift 1
+DESTDIR=$2
+shift 2
 MANPAGES=$@
-MANDIR="@mandir@"
+MANDIR="$DESTDIR/@mandir@"
 
 # Find translated and compiled manual pages.
 # Usage: manpages-find PAGE
