@@ -319,10 +319,13 @@ class Configuration:
         def write(self):
             config = EnvironmentFile(Path.System('pwquality.conf'))
 
-            config.set("minlen", self.get("passminlen"))
-            config.set("minclass", self.get("passminclass"))
-            config.set("maxrepeat", self.get("passmaxrepeat"))
-            config.set("maxclassrepeat", self.get("passmaxclassrepeat"))
+            # for each if these options, we want to write a line to the config
+            # *only if* it is set to an actual value, see
+            # https://bugzilla.redhat.com/show_bug.cgi?id=1618865
+            for pwval in ["minlen", "minclass", "maxrepeat", "maxclassrepeat"]:
+                if self.isset("pass{0}".format(pwval)):
+                    config.set(pwval, self.get("pass{0}".format(pwval)))
+
             config.set("lcredit", self.getBoolAsValue("reqlower", -1, 0))
             config.set("ucredit", self.getBoolAsValue("requpper", -1, 0))
             config.set("dcredit", self.getBoolAsValue("reqdigit", -1, 0))
