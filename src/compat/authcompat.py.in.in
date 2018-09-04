@@ -166,7 +166,10 @@ class Configuration:
         def getBool(self, name):
             return self.options.getBool(name)
 
-        def getBoolAsValue(self, name, if_true, if_false):
+        def getBoolAsValue(self, name, if_true, if_false, AllowNone=False):
+            if AllowNone and not self.isset(name):
+                return None
+
             value = self.getBool(name)
             if value:
                 return if_true
@@ -318,19 +321,28 @@ class Configuration:
 
         def write(self):
             config = EnvironmentFile(Path.System('pwquality.conf'))
+            value_set = False
 
-            # for each if these options, we want to write a line to the config
-            # *only if* it is set to an actual value, see
-            # https://bugzilla.redhat.com/show_bug.cgi?id=1618865
-            for pwval in ["minlen", "minclass", "maxrepeat", "maxclassrepeat"]:
-                if self.isset("pass{0}".format(pwval)):
-                    config.set(pwval, self.get("pass{0}".format(pwval)))
+            pwopts = {
+                "minlen" : self.get("passminlen"),
+                "minclass" : self.get("passminclass"),
+                "maxrepeat" : self.get("passmaxrepeat"),
+                "maxclassrepeat" : self.get("passmaxclassrepeat"),
+                "lcredit" : self.getBoolAsValue("reqlower", -1, 0, AllowNone=True),
+                "ucredit" : self.getBoolAsValue("requpper", -1, 0, AllowNone=True),
+                "dcredit" : self.getBoolAsValue("reqdigit", -1, 0, AllowNone=True),
+                "ocredit" : self.getBoolAsValue("reqother", -1, 0, AllowNone=True)
+            }
+            
+            # Write options only if their are actually set
+            for opt, value in pwopts.items():
+                if value is not None:
+                    print(opt + "=" + str(value))
+                    config.set(opt, value)
+                    value_set = True
 
-            config.set("lcredit", self.getBoolAsValue("reqlower", -1, 0))
-            config.set("ucredit", self.getBoolAsValue("requpper", -1, 0))
-            config.set("dcredit", self.getBoolAsValue("reqdigit", -1, 0))
-            config.set("ocredit", self.getBoolAsValue("reqother", -1, 0))
-            config.write()
+            if value_set:
+                config.write()
 
     class MakeHomedir(Base):
         def __init__(self, options):
