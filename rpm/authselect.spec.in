@@ -210,9 +210,9 @@ if [ $? -eq 0 ]; then
 
     if [ $PROFILE == "sssd" ] ; then
         if grep -E "services[[:blank:]]*=[[:blank:]]*.*sudo" /etc/sssd/sssd.conf &> /dev/null ; then
-            %{_bindir}/authselect enable-feature with-sudo
+            %{_bindir}/authselect enable-feature with-sudo &> /dev/null
         elif systemctl is-active sssd-sudo.service sssd-sudo.socket --quiet || systemctl is-enabled sssd-sudo.socket --quiet ; then
-            %{_bindir}/authselect enable-feature with-sudo
+            %{_bindir}/authselect enable-feature with-sudo &> /dev/null
         fi
     fi
 fi
