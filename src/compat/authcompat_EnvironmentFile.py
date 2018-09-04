@@ -34,9 +34,9 @@ class EnvironmentFile:
         self.environment = []
 
         delimiter_re = delimiter_re if delimiter_re is not None else delimiter
-        self.pattern = re.compile('^(\s*)(\S*)([^\n\w]*)(' +
+        self.pattern = re.compile('^(\s*)(\S*)([^\n\S]*)(' +
                                   delimiter_re +
-                                  ')([^\n\w]*)(.*)$',
+                                  ')([^\n\S]*)(.*)$',
                                   re.MULTILINE)
 
         self.read()
