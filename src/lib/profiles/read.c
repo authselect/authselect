@@ -125,9 +125,9 @@ authselect_profile_open(const char *id,
             return ret;
         }
 
-        if (strcmp(location, DIR_CUSTOM_PROFILES) == 0) {
+        if (strcmp(locations[i], DIR_CUSTOM_PROFILES) == 0) {
             INFO("Profile [%s] is a custom profile", id);
-        } else if (strcmp(location, DIR_VENDOR_PROFILES) == 0) {
+        } else if (strcmp(locations[i], DIR_VENDOR_PROFILES) == 0) {
             INFO("Profile [%s] is a vendor profile", id);
         } else {
             INFO("Profile [%s] is a default profile", id);
