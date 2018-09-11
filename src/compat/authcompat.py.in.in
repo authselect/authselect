@@ -39,9 +39,11 @@ def eprint(*args, **kwargs):
 class Command:
     TEST = False
 
-    def __init__(self, command, args, input=None):
+    def __init__(self, command, args, input=None, check=True):
         self.args = [command] + args
         self.input = input.encode() if input is not None else None
+        self.check = check
+        self.result = None
 
     def run(self):
         print(_("Executing: %s") % ' '.join(self.args))
@@ -49,10 +51,10 @@ class Command:
         if self.TEST:
             return
 
-        subprocess.run(self.args, check=True,
-                       input=self.input,
-                       stdout=subprocess.PIPE,
-                       stderr=subprocess.PIPE)
+        self.result = subprocess.run(self.args, check=self.check,
+                                     input=self.input,
+                                     stdout=subprocess.PIPE,
+                                     stderr=subprocess.PIPE)
 
 class Service:
     def __init__(self, name):
@@ -506,23 +508,60 @@ class AuthCompat:
             'winbindkrb5' : 'with-krb5'
         }
 
-        profile = "sssd"
-        if self.options.getBool("nis"):
+        # Read current configuration first.
+        (profile, features) = self.getCurrentAuthselectConfig()
+
+        # Change profile if requested.
+        if (self.options.getBool("ldap") or self.options.getBool("ldapauth") or
+                self.options.getBool("sssd") or self.options.getBool("sssdauth")):
+            profile = "sssd"
+        elif self.options.getBool("nis"):
             profile = "nis"
         elif self.options.getBool("winbind"):
             profile = "winbind"
+
+        # Default to sssd
+        if profile is None:
+            profile = "sssd"
+
+        # Add enabled and remove disabled features.
+        for option, feature in map.items():
+            if not self.options.isset(option):
+                continue
+
+            enabled = self.options.getBool(option)
+            if enabled:
+                features.append(feature)
+            else:
+                while feature in features:
+                    features.remove(feature)
+
+        # Remove duplicates. The order is not kept but that does not matter.
+        features = list(set(features))
 
         # Always run with --force. This is either first call of authconfig
         # in installation script or it is run on already configured system.
         # We want to use authselect in both cases anyway, since authconfig
         # would change the configuration either way.
-        args = ["select", profile, "--force"]
-        for option, feature in map.items():
-            if self.options.getBool(option):
-                args.append(feature)
+        args = ["select", profile]
+        args.extend(features)
+        args.append("--force")
 
         cmd = Command(Path.System('cmd-authselect'), args)
         cmd.run()
+
+    def getCurrentAuthselectConfig(self):
+        cmd = Command(Path.System('cmd-authselect'), ['check'], check=False)
+        cmd.run()
+
+        if cmd.result.returncode != 0:
+            return (None, [])
+
+        cmd = Command(Path.System('cmd-authselect'), ['current', '--raw'])
+        cmd.run()
+
+        current = cmd.result.stdout.decode("utf-8").split()
+        return (current[0], current[1:])
 
     def writeConfiguration(self):
         configs = [
