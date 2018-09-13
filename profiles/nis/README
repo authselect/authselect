@@ -33,6 +33,11 @@ with-silent-lastlog::
 with-pamaccess::
     Check access.conf during account authorization.
 
+with-nispwquality::
+    If this option is set pam_pwquality module will check password quality
+    for NIS users as well as local users during password change. Without this
+    option only local users passwords are checked.
+
 EXAMPLES
 --------
 * Enable NIS with no additional modules
