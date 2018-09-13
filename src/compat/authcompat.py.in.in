@@ -208,9 +208,16 @@ class Configuration:
             super(Configuration.Kerberos, self).__init__(options)
 
         def isEnabled(self):
-            return self.isset("krb5realm") or self.isset("krb5realmdns")
+            if not self.isset("krb5realm") and not self.isset("krb5realmdns"):
+                return None
+            
+            return self.get("krb5realm") != "" or self.getBool("krb5realmdns")
 
         def cleanup(self):
+            # Do not remove the file if these options are not set
+            if not self.isset("krb5realm") and not self.isset("krb5realmdns"):
+                return
+
             self.removeFile(Path.System('krb5.conf'))
 
         def write(self):
@@ -240,7 +247,7 @@ class Configuration:
             nisdomain = self.get("nisdomain")
             config = EnvironmentFile(Path.System('network'))
 
-            if nisdomain is None and config.get("NISDOMAIN") is None:
+            if nisdomain is None:
                 return
 
             config.set("NISDOMAIN", nisdomain)
@@ -251,6 +258,9 @@ class Configuration:
             super(Configuration.SSSD, self).__init__(options, ServiceName="sssd")
 
         def isEnabled(self):
+            if not self.isset("ldap") and not self.isset("sssd"):
+                return None
+
             return self.getBool("ldap") or self.getBool("sssd")
 
         def cleanup(self):
@@ -288,6 +298,9 @@ class Configuration:
             super(Configuration.Winbind, self).__init__(options, ServiceName="winbind")
 
         def isEnabled(self):
+            if not self.isset("winbind") and not self.isset("winbindauth"):
+                return None
+
             return self.getBool("winbind") or self.getBool("winbindauth")
 
         def write(self):
@@ -351,6 +364,9 @@ class Configuration:
             super(Configuration.MakeHomedir, self).__init__(options, ServiceName="oddjobd")
 
         def isEnabled(self):
+            if not self.isset("mkhomedir"):
+                return None
+
             return self.getBool("mkhomedir")
 
         def disableService(self, nostop):
@@ -365,6 +381,9 @@ class Configuration:
             self.ypbind = Service("ypbind")
 
         def isEnabled(self):
+            if not self.isset("nis"):
+                return None
+
             return self.getBool("nis")
 
         def enableService(self, nostart):
@@ -554,7 +573,7 @@ class AuthCompat:
         cmd = Command(Path.System('cmd-authselect'), ['check'], check=False)
         cmd.run()
 
-        if cmd.result.returncode != 0:
+        if cmd.result is None or cmd.result.returncode != 0:
             return (None, [])
 
         cmd = Command(Path.System('cmd-authselect'), ['current', '--raw'])
@@ -582,7 +601,13 @@ class AuthCompat:
             # Enable or disable service if needed
             nostart = self.options.getBool("nostart")
             try:
-                if config.isEnabled():
+                enabled = config.isEnabled()
+
+                # Skip service management if it can not be decided
+                if enabled is None:
+                    continue
+
+                if enabled:
                     config.enableService(nostart)
                 else:
                     config.disableService(nostart)
