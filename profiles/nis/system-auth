@@ -2,7 +2,7 @@ auth        required                                     pam_env.so
 auth        required                                     pam_faildelay.so delay=2000000
 auth        required                                     pam_faillock.so preauth silent deny=4 unlock_time=1200 {include if "with-faillock"}
 auth        sufficient                                   pam_fprintd.so                                         {include if "with-fingerprint"}
-auth        sufficient                                   pam_unix.so nullok try_first_pass
+auth        sufficient                                   pam_unix.so {if not "without-nullok":nullok} try_first_pass
 auth        requisite                                    pam_succeed_if.so uid >= 1000 quiet_success
 auth        required                                     pam_faillock.so authfail deny=4 unlock_time=1200       {include if "with-faillock"}
 auth        required                                     pam_deny.so
@@ -15,7 +15,7 @@ account     sufficient                                   pam_succeed_if.so uid <
 account     required                                     pam_permit.so
 
 password    requisite                                    pam_pwquality.so try_first_pass {if not "with-nispwquality":local_users_only}
-password    sufficient                                   pam_unix.so sha512 shadow nullok try_first_pass use_authtok nis
+password    sufficient                                   pam_unix.so sha512 shadow {if not "without-nullok":nullok} try_first_pass use_authtok nis
 password    required                                     pam_deny.so
 
 session     optional                                     pam_keyinit.so revoke
