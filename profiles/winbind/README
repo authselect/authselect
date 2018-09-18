@@ -51,6 +51,20 @@ with-pamaccess::
 without-nullok::
     Do not add nullok parameter to pam_unix.
 
+DISABLE SPECIFIC NSSWITCH DATABASES
+-----------------------------------
+
+Normally, nsswitch databases set by the profile overwrites values set in
+user-nsswitch.conf. The following options can force authselect to
+ignore value set by the profile and use the one set in user-nsswitch.conf
+instead.
+
+with-custom-passwd::
+Ignore "passwd" database set by the profile.
+
+with-custom-group::
+Ignore "group" database set by the profile.
+
 EXAMPLES
 --------
 * Enable winbind with no additional modules
