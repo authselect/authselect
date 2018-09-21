@@ -213,7 +213,7 @@ fi
 %{_bindir}/authselect apply-changes &> /dev/null
 
 # Enable with-sudo feature if sssd-sudo responder is enabled. RHBZ#1582111
-CURRENT=`%{_bindir}/authselect current --raw`
+CURRENT=`%{_bindir}/authselect current --raw 2> /dev/null`
 if [ $? -eq 0 ]; then
     PROFILE=`echo $CURRENT | awk '{print $1;}'`
 
