@@ -35,6 +35,13 @@ supported by authselect.
 
 %package libs
 Summary: Utility library used by the authselect tool
+# Required by scriptlets
+Requires: coreutils
+Requires: findutils
+Requires: gawk
+Requires: grep
+Requires: sed
+Requires: systemctl
 
 %description libs
 Common library files for authselect. This package is used by the authselect
@@ -54,6 +61,8 @@ Suggests: sssd
 Suggests: realmd
 Suggests: samba-winbind
 Suggests: oddjob-mkhomedir
+# Required by scriptlets
+Requires: sed
 
 %description compat
 This package will replace %{_sbindir}/authconfig with a tool that will
