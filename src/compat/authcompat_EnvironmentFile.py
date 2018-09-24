@@ -204,7 +204,7 @@ class EnvironmentFile:
                 i = value.find("\\", i)
                 if i < 0:
                     break
-                if i + 1 >= length(value):
+                if i + 1 >= len(value):
                     value = value[0:i]
                     break
 
