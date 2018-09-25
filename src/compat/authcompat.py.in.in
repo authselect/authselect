@@ -80,8 +80,9 @@ class Service:
         cmd = Command(Path.System("cmd-systemctl"), ["disable", self.name])
         self.runsystemd(cmd, False, 1)
 
-    def start(self):
-        self.stop()
+    def start(self, Restart=True):
+        if Restart:
+            self.stop()
         cmd = Command(Path.System("cmd-systemctl"), ["start", self.name])
         self.runsystemd(cmd, True, 5)
 
@@ -404,7 +405,7 @@ class Configuration:
             self.ypbind.enable()
 
             if not nostart:
-                self.rpcbind.start()
+                self.rpcbind.start(Restart=False)
                 self.ypbind.start()
 
         def disableService(self, nostop):
