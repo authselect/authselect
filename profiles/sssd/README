@@ -1,5 +1,5 @@
-Enable SSSD for system authentication
-=====================================
+Enable SSSD for system authentication (also for local users only)
+=================================================================
 
 Selecting this profile will enable SSSD as the source of identity
 and authentication providers.
@@ -11,6 +11,16 @@ to connect to multiple different account sources.
 
 More information about SSSD can be found on its project page:
 https://pagure.io/SSSD/sssd
+
+By default, local users are served from SSSD rather then local files if SSSD
+is enabled (however they authenticate via pam_unix). This have a performance
+benefit since SSSD caches the files content in fast in-memory cache and thus
+reduces number of disk operations.
+
+However, if you do not want to keep SSSD running on your machine, you can
+keep this profile selected and just disable SSSD service. The resulting
+configuration will still work correctly even with SSSD disabled and local users
+and groups will be read from local files directly.
 
 SSSD CONFIGURATION
 ------------------
