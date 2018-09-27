@@ -2,17 +2,17 @@
 # Máximo Castañeda Riloba <mcrcctm@gmail.com>, 2018. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: authselect 0.4\n"
+"Project-Id-Version: authselect 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2018-08-08 13:47+0200\n"
+"POT-Creation-Date: 2018-09-27 14:04+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-03-01 03:45+0000\n"
+"PO-Revision-Date: 2018-08-22 11:43+0000\n"
 "Last-Translator: Máximo Castañeda Riloba <mcrcctm@gmail.com>\n"
 "Language-Team: Spanish\n"
 "Language: es\n"
-"X-Generator: Zanata 4.6.0\n"
+"X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: src/lib/authselect.c:47
@@ -65,12 +65,13 @@ msgstr "No se pudo activar el perfil [%s] [%d]: %s"
 
 #: src/lib/authselect.c:126
 msgid "Trying to backup system files"
-msgstr ""
+msgstr "Intentando hacer copia de seguridad de los archivos de sistema"
 
 #: src/lib/authselect.c:129
 #, c-format
 msgid "Unable to backup system files [%d]: %s"
 msgstr ""
+"No se pudo hacer copia de seguridad de los archivos de sistema [%d]: %s"
 
 #: src/lib/util/file.c:42
 msgid "Internal error: stat cannot be NULL!"
@@ -213,107 +214,107 @@ msgstr "No se pudieron cambiar los permisos del archivo [%s] [%d]: %s"
 #: src/lib/util/textfile.c:273
 #, c-format
 msgid "Unable to chown file [%s] [%d]: %s"
-msgstr ""
+msgstr "No se pudo cambiar el propietario del archivo [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:104
 msgid "Unable to generate nsswitch.conf"
-msgstr ""
+msgstr "No se pudo generar nsswitch.conf"
 
 #: src/lib/authselect_profile.c:111
 #, c-format
 msgid "Unable to find nsswitch maps [%d]: %s"
-msgstr ""
+msgstr "No se encontraron los mapas nsswitch [%d]: %s"
 
 #: src/lib/authselect_profile.c:289
 #, c-format
 msgid "Creating empty profile at [%s]"
-msgstr ""
+msgstr "Generando un perfil vacío en [%s]"
 
 #: src/lib/authselect_profile.c:293 src/lib/authselect_profile.c:383
 #, c-format
 msgid "Unable to make path [%s] [%d]: %s"
-msgstr ""
+msgstr "No se pudo crear la ruta [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:300 src/lib/authselect_profile.c:342
 #, c-format
 msgid "Unable to write to [%s] [%d]: %s"
-msgstr ""
+msgstr "No se pudo escribir en [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:322 src/lib/authselect_profile.c:391
 #: src/lib/files/system.c:673
 #, c-format
 msgid "There is no filename in [%s]"
-msgstr ""
+msgstr "No hay ningún nombre de archivo en [%s]"
 
 #: src/lib/authselect_profile.c:331
 #, c-format
 msgid "Unable to create symbolic link [%s] to [%s] [%d]: %s"
-msgstr ""
+msgstr "No se pudo crear el enlace simbólico [%s] a [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:364
 #, c-format
 msgid "Creating new profile from \"%s\" at [%s]"
-msgstr ""
+msgstr "Creando nuevo perfil de \"%s\" en [%s]"
 
 #: src/lib/authselect_profile.c:368
 #, c-format
 msgid "Unable to read base profile [%s] [%d]: %s"
-msgstr ""
+msgstr "No se pudo leer el perfil base [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:376
 msgid "Unable to resolve symbolic links names"
-msgstr ""
+msgstr "No se pudieron resolver los nombres de los enlaces simbólicos"
 
 #: src/lib/authselect_profile.c:401 src/lib/authselect_profile.c:414
 #: src/lib/authselect_profile.c:428
 #, c-format
 msgid "Unable to create [%s] [%d]: %s"
-msgstr ""
+msgstr "No se pudo crear [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:436
 #, c-format
 msgid "Unknown file name [%s]"
-msgstr ""
+msgstr "Nombre de archivo desconocido [%s]"
 
 #: src/lib/authselect_profile.c:463
 msgid "Name can not be empty"
-msgstr ""
+msgstr "El nombre no puede estar vacío"
 
 #: src/lib/authselect_profile.c:475
 msgid "Default profile can not be created"
-msgstr ""
+msgstr "No se puede crear el perfil predeterminado"
 
 #: src/lib/authselect_profile.c:478
 msgid "Value AUTHSELECT_PROFILE_ANY is invalid in this context"
-msgstr ""
+msgstr "El valor AUTHSELECT_PROFILE_ANY no es válido en este contexto"
 
 #: src/lib/authselect_profile.c:483
 msgid "Unable to create profile path: out of memory"
-msgstr ""
+msgstr "No se pudo crear la ruta del perfil. Memoria insuficiente."
 
 #: src/lib/authselect_profile.c:489
 #, c-format
 msgid "Profile \"%s\" already exist at [%s]"
-msgstr ""
+msgstr "El perfil \"%s\" ya existe en [%s]"
 
 #: src/lib/authselect_profile.c:493
 #, c-format
 msgid "Unable to access [%s] [%d]: %s"
-msgstr ""
+msgstr "No se pudo acceder a [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:499
 msgid "Unable to create file name: out of memory"
-msgstr ""
+msgstr "No se pudo crear el archivo. Memoria insuficiente."
 
 #: src/lib/authselect_profile.c:507
 #, c-format
 msgid "Unable to create empty profile [%d]: %s"
-msgstr ""
+msgstr "No se pudo crear un perfil vacío [%d]: %s"
 
 #: src/lib/authselect_profile.c:516
 #, c-format
 msgid "Unable to create profile [%d]: %s"
-msgstr ""
+msgstr "No se pudo crear perfil [%d]: %s"
 
 #: src/lib/profiles/activate.c:44
 #, c-format
@@ -390,7 +391,7 @@ msgstr "Buscando perfil [%s]"
 
 #: src/lib/profiles/read.c:106
 msgid "Locations array is NULL"
-msgstr ""
+msgstr "La lista de localizaciones está vacía"
 
 #: src/lib/profiles/read.c:129
 #, c-format
@@ -426,7 +427,7 @@ msgstr "Leyendo archivo [%s/%s]"
 #: src/lib/files/system.c:82
 #, c-format
 msgid "Unable to read file [%s/%s] [%d]: %s"
-msgstr ""
+msgstr "No se pudo leer el archivo [%s/%s] [%d]: %s"
 
 #: src/lib/profiles/read.c:199 src/lib/profiles/read.c:218
 #, c-format
@@ -477,7 +478,7 @@ msgstr "No se pudo leer [%s] [%d]: %s"
 #: src/lib/files/system.c:288
 #, c-format
 msgid "Unable to generate nsswitch.conf [%d]: %s"
-msgstr ""
+msgstr "No se pudo generar nsswitch.conf [%d]: %s"
 
 #: src/lib/files/system.c:354
 #, c-format
@@ -487,27 +488,27 @@ msgstr "No fue posible generar los archivos [%d]: %s"
 #: src/lib/files/system.c:368
 #, c-format
 msgid "Writing temporary file for [%s]"
-msgstr ""
+msgstr "Escribiendo archivo temporal para [%s]"
 
 #: src/lib/files/system.c:372
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
-msgstr ""
+msgstr "No se pudo escribir archivo temporal [%s] [%d]: %s"
 
 #: src/lib/files/system.c:377
 #, c-format
 msgid "Temporary file is named [%s]"
-msgstr ""
+msgstr "El archivo temporal se llama [%s]"
 
 #: src/lib/files/system.c:388
 #, c-format
 msgid "Renaming [%s] to [%s]"
-msgstr ""
+msgstr "Cambiando el nombre de [%s] a [%s]"
 
 #: src/lib/files/system.c:393
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
-msgstr ""
+msgstr "No se pudo cambiar el nombre de [%s] a [%s] [%d]: %s"
 
 #: src/lib/files/system.c:493
 #, c-format
@@ -522,11 +523,11 @@ msgstr "No se pudo validar el archivo [%s] [%d]: %s"
 #: src/lib/files/system.c:511
 #, c-format
 msgid "Comparing content against [%s]"
-msgstr ""
+msgstr "Comparando el contenido con [%s]"
 
 #: src/lib/files/system.c:515
 msgid "Comparing content against current profile"
-msgstr ""
+msgstr "Comparando el contenido con el perfil actual"
 
 #: src/lib/files/system.c:521
 #, c-format
@@ -556,37 +557,37 @@ msgstr "Error al intentar acceder al archivo [%s] [%d]: %s"
 #: src/lib/files/system.c:596
 #, c-format
 msgid "Unable to create backup directory [%s/%s] [%d]: %s"
-msgstr ""
+msgstr "No se pudo crear el directorio de copia de seguridad [%s/%s] [%d]: %s"
 
 #: src/lib/files/system.c:622
 #, c-format
 msgid "Unable to create backup directory [%s] [%d]: %s"
-msgstr ""
+msgstr "No se pudo crear el directorio de copia de seguridad [%s] [%d]: %s"
 
 #: src/lib/files/system.c:643
 #, c-format
 msgid "Creating temporary directory at [%s]"
-msgstr ""
+msgstr "Creando directorio de copia de seguridad en [%s]"
 
 #: src/lib/files/system.c:666
 #, c-format
 msgid "Unable to create backup directory [%d]: %s"
-msgstr ""
+msgstr "No se pudo crear el directorio de copia de seguridad [%d]: %s"
 
 #: src/lib/files/system.c:678
 #, c-format
 msgid "Copying [%s] to [%s/%s]"
-msgstr ""
+msgstr "Copiando [%s] en [%s/%s]"
 
 #: src/lib/files/system.c:682
 #, c-format
 msgid "File [%s] does not exist"
-msgstr ""
+msgstr "El archivo [%s] no existe"
 
 #: src/lib/files/system.c:684
 #, c-format
 msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
-msgstr ""
+msgstr "No se pudo copiar [%s] en [%s/%s] [%d]: %s"
 
 #: src/cli/cli_tool.c:71
 #, c-format
@@ -708,18 +709,21 @@ msgstr "Forzar cambios"
 #: src/cli/main.c:115
 msgid "Backup system files before activating profile"
 msgstr ""
+"Hacer una copia de seguridad de los archivos del sistema antes de activar el "
+"perfil"
 
 #: src/cli/main.c:115
 msgid "NAME"
-msgstr ""
+msgstr "NOMBRE"
 
 #: src/cli/main.c:116
 msgid "Do not backup system files when --force is set"
 msgstr ""
+"No hacer copia de seguridad de los archivos de sistema cuando se usa --force"
 
 #: src/cli/main.c:117
 msgid "Do not print profile requirements"
-msgstr ""
+msgstr "No mostrar los requisitos del perfil"
 
 #: src/cli/main.c:128 src/cli/main.c:336 src/cli/main.c:370 src/cli/main.c:397
 #, c-format
@@ -728,15 +732,15 @@ msgstr "No se pudo obtener la información del perfil [%d]: %s"
 
 #: src/cli/main.c:136 src/cli/main.c:404
 msgid "Unable to read profile requirements!"
-msgstr ""
+msgstr "No fue posible leer los requisitos del perfil"
 
 #: src/cli/main.c:143
 msgid "Unable to obtain nsswitch maps!"
-msgstr ""
+msgstr "No fue posible obtener los mapeos de nsswitch"
 
 #: src/cli/main.c:151
 msgid "Unable to backup system files!\n"
-msgstr ""
+msgstr "No se pudo hacer la copia de seguridad de los archivos de sistema\n"
 
 #: src/cli/main.c:161
 msgid ""
@@ -755,7 +759,7 @@ msgstr "No se pudo activar el perfil [%d]: %s\n"
 
 #: src/cli/main.c:204
 msgid "Changes were successfully applied.\n"
-msgstr ""
+msgstr "Se han aplicado los cambios.\n"
 
 #: src/cli/main.c:207 src/cli/main.c:243
 msgid "No existing configuration detected.\n"
@@ -766,15 +770,18 @@ msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
 msgstr ""
+"Se han detectado cambios inesperados en la configuración. Use la orden "
+"'select'.\n"
 
 #: src/cli/main.c:214
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
-msgstr ""
+msgstr "No se pudieron aplicar los cambios [%d]: %s\n"
 
 #: src/cli/main.c:231
 msgid "Print command parameters instead of formatted output"
 msgstr ""
+"Mostrar los parámetros de las órdenes en lugar de una salida formateada"
 
 #: src/cli/main.c:246
 #, c-format
@@ -891,51 +898,54 @@ msgstr "No se pudo desactivar la característica [%d]: %s\n"
 
 #: src/cli/main.c:561
 msgid "Create new profile as a vendor profile instead of a custom profile"
-msgstr ""
+msgstr "Crear el nuevo perfil como de proveedor en lugar de personalizado"
 
 #: src/cli/main.c:562
 msgid "ID of a profile that should be used as a base for the new profile"
-msgstr ""
+msgstr "ID del perfil a usar como base para el nuevo"
 
 #: src/cli/main.c:563
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
 msgstr ""
+"Basar el nuevo perfil en uno predeterminado, incluso si existe alguno del "
+"proveedor con el mismo nombre"
 
 #: src/cli/main.c:564
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr ""
+"Enlazar a los archivos de metadatos del perfil base en lugar de copiarlos"
 
 #: src/cli/main.c:565
 msgid "Symlink nsswitch files from the base profile instead of copying them"
-msgstr ""
+msgstr "Enlazar a los archivos nsswitch del perfil base en lugar de copiarlos"
 
 #: src/cli/main.c:566
 msgid "Symlink pam files from the base profile instead of copying them"
-msgstr ""
+msgstr "Enlazar a los archivos pam del perfil base en lugar de copiarlos"
 
 #: src/cli/main.c:567
 msgid "Symlink dconf files from the base profile instead of copying them"
-msgstr ""
+msgstr "Enlazar a los archivos dconf del perfil base en lugar de copiarlos"
 
 #: src/cli/main.c:568
 msgid "Symlink specific file (can be set multiple times)"
-msgstr ""
+msgstr "Enlazar a un archivo específico (se puede usar varias veces)"
 
 #: src/cli/main.c:573
 msgid "New profile name."
-msgstr ""
+msgstr "Nombre del nuevo perfil."
 
 #: src/cli/main.c:583
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
-msgstr ""
+msgstr "No se pudo crear un nuevo perfil [%d]: %s\n"
 
 #: src/cli/main.c:587
 #, c-format
 msgid "New profile was created at %s\n"
-msgstr ""
+msgstr "Se creó el nuevo perfil en %s\n"
 
 #: src/cli/main.c:644
 msgid "Authselect can only be run as root!\n"
@@ -943,7 +953,7 @@ msgstr "¡Sólo se puede ejecutar authselect como root!\n"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
-msgstr ""
+msgstr "de modo predeterminado NIS para obtener la información del usuario"
 
 #: src/compat/authcompat_Options.py:83
 msgid "<domain>"
@@ -960,7 +970,7 @@ msgstr "<servidor>"
 
 #: src/compat/authcompat_Options.py:84
 msgid "default NIS server"
-msgstr ""
+msgstr "servidor NIS predeterminado"
 
 #: src/compat/authcompat_Options.py:85
 msgid "LDAP for user information by default"
@@ -1018,15 +1028,15 @@ msgstr "ecryptfs automático para cada usuario"
 
 #: src/compat/authcompat_Options.py:96
 msgid "Kerberos authentication by default"
-msgstr ""
+msgstr "de modo predeterminado Kerberos para la autenticación"
 
 #: src/compat/authcompat_Options.py:97
 msgid "default Kerberos KDC"
-msgstr ""
+msgstr "KDC Kerberos predeterminado"
 
 #: src/compat/authcompat_Options.py:98
 msgid "default Kerberos admin server"
-msgstr ""
+msgstr "servidor de administración Kerberos predeterminado"
 
 #: src/compat/authcompat_Options.py:99 src/compat/authcompat_Options.py:152
 msgid "<realm>"
@@ -1034,15 +1044,15 @@ msgstr "<entorno>"
 
 #: src/compat/authcompat_Options.py:99
 msgid "default Kerberos realm"
-msgstr ""
+msgstr "entorno Kerberos predeterminado"
 
 #: src/compat/authcompat_Options.py:100
 msgid "use of DNS to find Kerberos KDCs"
-msgstr ""
+msgstr "el uso de DNS para encontrar los KDC de Kerberos"
 
 #: src/compat/authcompat_Options.py:101
 msgid "use of DNS to find Kerberos realms"
-msgstr ""
+msgstr "el uso de DNS para encontrar los entornos Kerberos"
 
 #: src/compat/authcompat_Options.py:102
 msgid "winbind for user information by default"
@@ -1114,35 +1124,35 @@ msgstr "<número>"
 
 #: src/compat/authcompat_Options.py:113
 msgid "minimum length of a password"
-msgstr ""
+msgstr "longitud mínima de clave"
 
 #: src/compat/authcompat_Options.py:114
 msgid "minimum number of character classes in a password"
-msgstr ""
+msgstr "cantidad mínima de clases de caracteres en claves"
 
 #: src/compat/authcompat_Options.py:115
 msgid "maximum number of same consecutive characters in a password"
-msgstr ""
+msgstr "cantidad máxima de caracteres iguales seguidos en claves"
 
 #: src/compat/authcompat_Options.py:116
 msgid "maximum number of consecutive characters of same class in a password"
-msgstr ""
+msgstr "cantidad máxima de caracteres seguidos de la misma clase en claves"
 
 #: src/compat/authcompat_Options.py:117
 msgid "require at least one lowercase character in a password"
-msgstr ""
+msgstr "exige al menos una minúscula en las claves"
 
 #: src/compat/authcompat_Options.py:118
 msgid "require at least one uppercase character in a password"
-msgstr ""
+msgstr "exige al menos una mayúscula en las claves"
 
 #: src/compat/authcompat_Options.py:119
 msgid "require at least one digit in a password"
-msgstr ""
+msgstr "exige al menos un dígito en las claves"
 
 #: src/compat/authcompat_Options.py:120
 msgid "require at least one other character in a password"
-msgstr ""
+msgstr "exige al menos un carácter de otra clase en las claves"
 
 #: src/compat/authcompat_Options.py:123
 msgid "do not start/stop services"
@@ -1150,7 +1160,7 @@ msgstr "No iniciar/parar servicios"
 
 #: src/compat/authcompat_Options.py:124
 msgid "update all configuration files"
-msgstr "Actualizar todos los ficheros de configuración"
+msgstr "Actualizar todos los archivos de configuración"
 
 #: src/compat/authcompat_Options.py:125 src/compat/authcompat_Options.py:126
 msgid "the same as --updateall"
@@ -1158,7 +1168,7 @@ msgstr "igual que --updateall"
 
 #: src/compat/authcompat_Options.py:135 src/compat/authcompat_Options.py:136
 msgid "<name>"
-msgstr ""
+msgstr "<nombre>"
 
 #: src/compat/authcompat_Options.py:147
 msgid "<descrypt|bigcrypt|md5|sha256|sha512>"
@@ -1217,51 +1227,54 @@ msgstr "Activar"
 msgid "disable"
 msgstr "Desactivar"
 
-#: src/compat/authcompat.py.in.in:47
+#: src/compat/authcompat.py.in.in:49
 #, python-format
 msgid "Executing: %s"
-msgstr ""
+msgstr "Ejecutando: %s"
 
-#: src/compat/authcompat.py.in.in:66
+#: src/compat/authcompat.py.in.in:68
 #, python-format
 msgid "Service %s was not found. Please install the service."
-msgstr ""
+msgstr "No se encontró el servicio %s. Instale el servicio."
 
-#: src/compat/authcompat.py.in.in:69 src/compat/authcompat.py.in.in:537
-#: src/compat/authcompat.py.in.in:562
+#: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:618
+#: src/compat/authcompat.py.in.in:643
 #, python-format
 msgid "Command [%s] failed with %d, stderr:"
-msgstr ""
+msgstr "La orden [%s] falló con error %d, stderr:"
 
-#: src/compat/authcompat.py.in.in:177
+#: src/compat/authcompat.py.in.in:183
 #, python-format
 msgid "Removing file: %s"
-msgstr ""
+msgstr "Eliminando archivo: %s"
 
-#: src/compat/authcompat.py.in.in:312
+#: src/compat/authcompat.py.in.in:331
 #, python-format
 msgid "%s was not found. Please, install realmd."
-msgstr ""
+msgstr "No se encontró %s. Instale realmd."
 
-#: src/compat/authcompat.py.in.in:428
+#: src/compat/authcompat.py.in.in:466
 msgid "Running authconfig compatibility tool."
-msgstr ""
+msgstr "Ejecutando la herramienta de compatibilidad con authconfig."
 
-#: src/compat/authcompat.py.in.in:429
+#: src/compat/authcompat.py.in.in:467
 msgid ""
 "The purpose of this tool is to enable authentication against chosen services "
 "with authselect and minimum configuration. It does not provide all "
 "capabilities of authconfig.\n"
 msgstr ""
+"El propósito de esta herramienta es permitir la autenticación contra los "
+"servicios seleccionado con authselect y una configuración mínima. No "
+"proporciona todas las posibilidades de authconfig.\n"
 
-#: src/compat/authcompat.py.in.in:432
+#: src/compat/authcompat.py.in.in:470
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
 msgstr ""
 "IMPORTANTE: authconfig ha sido reemplazado por authselect, por favor "
 "actualice sus scripts."
 
-#: src/compat/authcompat.py.in.in:434
+#: src/compat/authcompat.py.in.in:472
 msgid ""
 "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
@@ -1269,23 +1282,23 @@ msgstr ""
 "Mire la página de cambios de Fedora 28: https://fedoraproject.org/wiki/"
 "Changes/AuthselectAsDefault"
 
-#: src/compat/authcompat.py.in.in:435
+#: src/compat/authcompat.py.in.in:473
 msgid ""
 "See man authselect-migration(7) to help you with migration to authselect"
 msgstr ""
 "Consulte man authselect-migration(7) para obtener ayuda con la migración a "
 "authselect"
 
-#: src/compat/authcompat.py.in.in:439
+#: src/compat/authcompat.py.in.in:477
 msgid "Warning: These options are not supported anymore and have no effect:"
 msgstr ""
 "Advertencia: estas opciones ya no están soportadas y no tienen efecto:"
 
-#: src/compat/authcompat.py.in.in:459
+#: src/compat/authcompat.py.in.in:497
 msgid "authconfig can only be run as root"
 msgstr "sólo se puede ejecutar authconfig como root"
 
-#: src/compat/authcompat.py.in.in:464
+#: src/compat/authcompat.py.in.in:502
 #, python-format
 msgid ""
 "Error: option --%s is no longer supported and we cannot continue if it is "
@@ -1294,11 +1307,11 @@ msgstr ""
 "Error: la opción --%s ya no está soportada y no se puede continuar si se "
 "establece."
 
-#: src/compat/authcompat.py.in.in:469
+#: src/compat/authcompat.py.in.in:507
 msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
 msgstr ""
 "Error: Deben indicarse a la vez --enablewinbind y --enablewinbindauth."
 
-#: src/compat/authcompat.py.in.in:479
+#: src/compat/authcompat.py.in.in:517
 msgid "Error: Please, provide --updateall option."
 msgstr "Error: Por favor, indique la opción --updateall"

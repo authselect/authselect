@@ -1,17 +1,17 @@
 # Meskó Balázs <meskobalazs@gmail.com>, 2018. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: authselect 0.4\n"
+"Project-Id-Version: authselect 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2018-08-08 13:47+0200\n"
+"POT-Creation-Date: 2018-09-27 14:04+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-08-12 04:36+0000\n"
+"PO-Revision-Date: 2018-08-23 09:37+0000\n"
 "Last-Translator: Meskó Balázs <meskobalazs@gmail.com>\n"
 "Language-Team: Hungarian\n"
 "Language: hu\n"
-"X-Generator: Zanata 4.6.0\n"
+"X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: src/lib/authselect.c:47
@@ -212,7 +212,7 @@ msgstr "[%s] fájlon nem hajtható végre a chmod [%d]: %s"
 #: src/lib/util/textfile.c:273
 #, c-format
 msgid "Unable to chown file [%s] [%d]: %s"
-msgstr ""
+msgstr "[%s] tulajdonosa nem módosítható [%d]: %s"
 
 #: src/lib/authselect_profile.c:104
 msgid "Unable to generate nsswitch.conf"
@@ -221,7 +221,7 @@ msgstr "Az nsswitch.conf nem állítható elő"
 #: src/lib/authselect_profile.c:111
 #, c-format
 msgid "Unable to find nsswitch maps [%d]: %s"
-msgstr ""
+msgstr "Az nsswitch leképezések nem találhatóak [%d]: %s"
 
 #: src/lib/authselect_profile.c:289
 #, c-format
@@ -231,12 +231,12 @@ msgstr "Üres profil létrehozása itt: [%s]"
 #: src/lib/authselect_profile.c:293 src/lib/authselect_profile.c:383
 #, c-format
 msgid "Unable to make path [%s] [%d]: %s"
-msgstr ""
+msgstr "[%s] útvonal nem hozható létre [%d]: %s"
 
 #: src/lib/authselect_profile.c:300 src/lib/authselect_profile.c:342
 #, c-format
 msgid "Unable to write to [%s] [%d]: %s"
-msgstr ""
+msgstr "[%s] nem írható [%d]: %s"
 
 #: src/lib/authselect_profile.c:322 src/lib/authselect_profile.c:391
 #: src/lib/files/system.c:673
@@ -247,72 +247,72 @@ msgstr "Nincs itt fájlnév: [%s]"
 #: src/lib/authselect_profile.c:331
 #, c-format
 msgid "Unable to create symbolic link [%s] to [%s] [%d]: %s"
-msgstr ""
+msgstr "[%s] → [%s] szimbolikus link nem hozható létre [%d]: %s"
 
 #: src/lib/authselect_profile.c:364
 #, c-format
 msgid "Creating new profile from \"%s\" at [%s]"
-msgstr ""
+msgstr "Új profil létrehozása ebből: „%s”, itt: [%s]"
 
 #: src/lib/authselect_profile.c:368
 #, c-format
 msgid "Unable to read base profile [%s] [%d]: %s"
-msgstr ""
+msgstr "[%s] alapprofil nem olvasható [%d]: %s"
 
 #: src/lib/authselect_profile.c:376
 msgid "Unable to resolve symbolic links names"
-msgstr ""
+msgstr "A szimbolikus link nevek nem oldhatóak fel"
 
 #: src/lib/authselect_profile.c:401 src/lib/authselect_profile.c:414
 #: src/lib/authselect_profile.c:428
 #, c-format
 msgid "Unable to create [%s] [%d]: %s"
-msgstr ""
+msgstr "[%s] nem hozható létre [%d]: %s"
 
 #: src/lib/authselect_profile.c:436
 #, c-format
 msgid "Unknown file name [%s]"
-msgstr ""
+msgstr "Érvénytelen fájlnév [%s]"
 
 #: src/lib/authselect_profile.c:463
 msgid "Name can not be empty"
-msgstr ""
+msgstr "A név nem lehet üres"
 
 #: src/lib/authselect_profile.c:475
 msgid "Default profile can not be created"
-msgstr ""
+msgstr "Az alapértelmezett profil nem hozható létre"
 
 #: src/lib/authselect_profile.c:478
 msgid "Value AUTHSELECT_PROFILE_ANY is invalid in this context"
-msgstr ""
+msgstr "Az AUTHSELECT_PROFILE_ANY érték érvénytelen ebben a környezetben"
 
 #: src/lib/authselect_profile.c:483
 msgid "Unable to create profile path: out of memory"
-msgstr ""
+msgstr "A profilútvonal nem hozható létre: nincs elég memória"
 
 #: src/lib/authselect_profile.c:489
 #, c-format
 msgid "Profile \"%s\" already exist at [%s]"
-msgstr ""
+msgstr "A(z) „%s” profil már létezik itt: [%s]"
 
 #: src/lib/authselect_profile.c:493
 #, c-format
 msgid "Unable to access [%s] [%d]: %s"
-msgstr ""
+msgstr "[%s] nem érhető el [%d]: %s"
 
 #: src/lib/authselect_profile.c:499
 msgid "Unable to create file name: out of memory"
-msgstr ""
+msgstr "A fájlnév nem hozható létre: nincs elég memória"
 
 #: src/lib/authselect_profile.c:507
 #, c-format
 msgid "Unable to create empty profile [%d]: %s"
-msgstr ""
+msgstr "Nem hozható létre üres profil [%d]: %s"
 
 #: src/lib/authselect_profile.c:516
 #, c-format
 msgid "Unable to create profile [%d]: %s"
-msgstr ""
+msgstr "Nem hozható létre profil [%d]: %s"
 
 #: src/lib/profiles/activate.c:44
 #, c-format
@@ -389,7 +389,7 @@ msgstr "[%s] profil keresése"
 
 #: src/lib/profiles/read.c:106
 msgid "Locations array is NULL"
-msgstr ""
+msgstr "A helyek tömbje NULL"
 
 #: src/lib/profiles/read.c:129
 #, c-format
@@ -425,7 +425,7 @@ msgstr "Fájl olvasása [%s/%s]"
 #: src/lib/files/system.c:82
 #, c-format
 msgid "Unable to read file [%s/%s] [%d]: %s"
-msgstr ""
+msgstr "[%s/%s] fájl nem olvasható [%d]: %s"
 
 #: src/lib/profiles/read.c:199 src/lib/profiles/read.c:218
 #, c-format
@@ -474,7 +474,7 @@ msgstr "[%s] nem olvasható [%d]: %s"
 #: src/lib/files/system.c:288
 #, c-format
 msgid "Unable to generate nsswitch.conf [%d]: %s"
-msgstr ""
+msgstr "Nem állítható elő az nsswitch.conf [%d]: %s"
 
 #: src/lib/files/system.c:354
 #, c-format
@@ -484,27 +484,27 @@ msgstr "A fájlok nem állíthatóak elő [%d]: %s"
 #: src/lib/files/system.c:368
 #, c-format
 msgid "Writing temporary file for [%s]"
-msgstr ""
+msgstr "Ideiglenes fájl írása ehhez: [%s]"
 
 #: src/lib/files/system.c:372
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
-msgstr ""
+msgstr "[%s] ideiglenes fájl nem írható [%d]: %s"
 
 #: src/lib/files/system.c:377
 #, c-format
 msgid "Temporary file is named [%s]"
-msgstr ""
+msgstr "Az ideiglenes fájl neve: [%s]"
 
 #: src/lib/files/system.c:388
 #, c-format
 msgid "Renaming [%s] to [%s]"
-msgstr ""
+msgstr "[%s] átnevezése erre: [%s]"
 
 #: src/lib/files/system.c:393
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
-msgstr ""
+msgstr "[%s] nem nevezhető át erre: [%s] [%d]: %s"
 
 #: src/lib/files/system.c:493
 #, c-format
@@ -519,11 +519,11 @@ msgstr "[%s] nem érvényesíthető [%d]: %s"
 #: src/lib/files/system.c:511
 #, c-format
 msgid "Comparing content against [%s]"
-msgstr ""
+msgstr "Tartalom összehasonlítása ezzel: [%s]"
 
 #: src/lib/files/system.c:515
 msgid "Comparing content against current profile"
-msgstr ""
+msgstr "Tartalom összehasonlítása a jelenlegi profillal"
 
 #: src/lib/files/system.c:521
 #, c-format
@@ -553,37 +553,37 @@ msgstr "Hiba a(z) [%s] fájl elérésekor [%d]: %s"
 #: src/lib/files/system.c:596
 #, c-format
 msgid "Unable to create backup directory [%s/%s] [%d]: %s"
-msgstr ""
+msgstr "A biztonsági mentés könyvtár nem hozható létre: [%s/%s] [%d]: %s"
 
 #: src/lib/files/system.c:622
 #, c-format
 msgid "Unable to create backup directory [%s] [%d]: %s"
-msgstr ""
+msgstr "A biztonsági mentés könyvtár nem hozható létre: [%s] [%d]: %s"
 
 #: src/lib/files/system.c:643
 #, c-format
 msgid "Creating temporary directory at [%s]"
-msgstr ""
+msgstr "Ideiglenes könyvtár létrehozása itt: [%s]"
 
 #: src/lib/files/system.c:666
 #, c-format
 msgid "Unable to create backup directory [%d]: %s"
-msgstr ""
+msgstr "A biztonsági mentés könyvtár nem hozható létre [%d]: %s"
 
 #: src/lib/files/system.c:678
 #, c-format
 msgid "Copying [%s] to [%s/%s]"
-msgstr ""
+msgstr "[%s] másolása ide: [%s/%s]"
 
 #: src/lib/files/system.c:682
 #, c-format
 msgid "File [%s] does not exist"
-msgstr ""
+msgstr "A(z) [%s] fájl nem létezik"
 
 #: src/lib/files/system.c:684
 #, c-format
 msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
-msgstr ""
+msgstr "[%s] nem másolható ide: [%s/%s] [%d]: %s"
 
 #: src/cli/cli_tool.c:71
 #, c-format
@@ -704,19 +704,19 @@ msgstr "Változások kényszerítése"
 
 #: src/cli/main.c:115
 msgid "Backup system files before activating profile"
-msgstr ""
+msgstr "Rendszerfájlok biztonsági mentése a profil aktiválása előtt"
 
 #: src/cli/main.c:115
 msgid "NAME"
-msgstr ""
+msgstr "NÉV"
 
 #: src/cli/main.c:116
 msgid "Do not backup system files when --force is set"
-msgstr ""
+msgstr "Ne mentse a rendszerfájlokat ha a --force kapcsoló meg van adva"
 
 #: src/cli/main.c:117
 msgid "Do not print profile requirements"
-msgstr ""
+msgstr "Ne írja ki a profilkövetelményeket"
 
 #: src/cli/main.c:128 src/cli/main.c:336 src/cli/main.c:370 src/cli/main.c:397
 #, c-format
@@ -725,15 +725,15 @@ msgstr "A profilinformációk nem kérhetőek le [%d]: %s"
 
 #: src/cli/main.c:136 src/cli/main.c:404
 msgid "Unable to read profile requirements!"
-msgstr ""
+msgstr "A profilkövetelmények nem olvashatóak."
 
 #: src/cli/main.c:143
 msgid "Unable to obtain nsswitch maps!"
-msgstr ""
+msgstr "Az nsswitch leképezések nem szerezhetőek meg."
 
 #: src/cli/main.c:151
 msgid "Unable to backup system files!\n"
-msgstr ""
+msgstr "A rendszerfájlokról nem készíthető biztonsági mentés.\n"
 
 #: src/cli/main.c:161
 msgid ""
@@ -752,7 +752,7 @@ msgstr "Profil nem aktiválható [%d]: %s\n"
 
 #: src/cli/main.c:204
 msgid "Changes were successfully applied.\n"
-msgstr ""
+msgstr "A változások sikeresen alkalmazva.\n"
 
 #: src/cli/main.c:207 src/cli/main.c:243
 msgid "No existing configuration detected.\n"
@@ -763,15 +763,17 @@ msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
 msgstr ""
+"Néhány váratlan változás észlelve a konfigurációban. Használja inkább a "
+"„select” parancsot.\n"
 
 #: src/cli/main.c:214
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
-msgstr ""
+msgstr "A változtatások nem alkalmazhatóak [%d]: %s\n"
 
 #: src/cli/main.c:231
 msgid "Print command parameters instead of formatted output"
-msgstr ""
+msgstr "A parancsok paramétereinek kiírása a formázott kimenet helyett"
 
 #: src/cli/main.c:246
 #, c-format
@@ -888,51 +890,58 @@ msgstr "A funkció nem tiltható le [%d]: %s\n"
 
 #: src/cli/main.c:561
 msgid "Create new profile as a vendor profile instead of a custom profile"
-msgstr ""
+msgstr "Új profil létrehozása gyártói profilként, és nem egyéni profilként"
 
 #: src/cli/main.c:562
 msgid "ID of a profile that should be used as a base for the new profile"
-msgstr ""
+msgstr "Azon profil azonosítója, amely az új profil alapja lesz"
 
 #: src/cli/main.c:563
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
 msgstr ""
+"Az új profil alapja az alapértelmezett profil legyen, még akkor is ha már "
+"létezik azonos nevű gyártói profil"
 
 #: src/cli/main.c:564
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr ""
+"A metafájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
 
 #: src/cli/main.c:565
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr ""
+"Az nsswitch fájlok szimbolikus linkelése az alapprofilból a másolásuk "
+"helyett"
 
 #: src/cli/main.c:566
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr ""
+"A pam fájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
 
 #: src/cli/main.c:567
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
+"A dconf fájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
 
 #: src/cli/main.c:568
 msgid "Symlink specific file (can be set multiple times)"
-msgstr ""
+msgstr "Konkrét fájl szimbolikus linkelése (többször is megadható)"
 
 #: src/cli/main.c:573
 msgid "New profile name."
-msgstr ""
+msgstr "Új profilnév."
 
 #: src/cli/main.c:583
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
-msgstr ""
+msgstr "Nem hozható létre új profil [%d]: %s\n"
 
 #: src/cli/main.c:587
 #, c-format
 msgid "New profile was created at %s\n"
-msgstr ""
+msgstr "Új profil létrehozva itt: %s\n"
 
 #: src/cli/main.c:644
 msgid "Authselect can only be run as root!\n"
@@ -941,6 +950,8 @@ msgstr "Az authselect csak root jogokkal futtatható!\n"
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
 msgstr ""
+"a NIS felhasználói információkhoz való használatának engedélyezése "
+"alapértelmezetten"
 
 #: src/compat/authcompat_Options.py:83
 msgid "<domain>"
@@ -957,7 +968,7 @@ msgstr "<kiszolgáló>"
 
 #: src/compat/authcompat_Options.py:84
 msgid "default NIS server"
-msgstr ""
+msgstr "alapértelmezett NIS kiszolgáló"
 
 #: src/compat/authcompat_Options.py:85
 msgid "LDAP for user information by default"
@@ -1014,15 +1025,15 @@ msgstr "automatikus felhasználónkénti ecryptfs"
 
 #: src/compat/authcompat_Options.py:96
 msgid "Kerberos authentication by default"
-msgstr ""
+msgstr "Kerberos hitelesítés alapértelmezetten"
 
 #: src/compat/authcompat_Options.py:97
 msgid "default Kerberos KDC"
-msgstr ""
+msgstr "alapértelmezett Kerberos KDC"
 
 #: src/compat/authcompat_Options.py:98
 msgid "default Kerberos admin server"
-msgstr ""
+msgstr "alapértelmezett Kerberos adminisztrációs kiszolgáló"
 
 #: src/compat/authcompat_Options.py:99 src/compat/authcompat_Options.py:152
 msgid "<realm>"
@@ -1030,15 +1041,15 @@ msgstr "<tartomány>"
 
 #: src/compat/authcompat_Options.py:99
 msgid "default Kerberos realm"
-msgstr ""
+msgstr "alapértelmezett Kerberos tartomány"
 
 #: src/compat/authcompat_Options.py:100
 msgid "use of DNS to find Kerberos KDCs"
-msgstr ""
+msgstr "DNS használata a Kerberos KDC-k keresésére"
 
 #: src/compat/authcompat_Options.py:101
 msgid "use of DNS to find Kerberos realms"
-msgstr ""
+msgstr "DNS használata a Kerberos tartományok keresésére"
 
 #: src/compat/authcompat_Options.py:102
 msgid "winbind for user information by default"
@@ -1107,35 +1118,36 @@ msgstr "<szám>"
 
 #: src/compat/authcompat_Options.py:113
 msgid "minimum length of a password"
-msgstr ""
+msgstr "jelszó minimális hossza"
 
 #: src/compat/authcompat_Options.py:114
 msgid "minimum number of character classes in a password"
-msgstr ""
+msgstr "karakterosztályok minimális száma a jelszóban"
 
 #: src/compat/authcompat_Options.py:115
 msgid "maximum number of same consecutive characters in a password"
-msgstr ""
+msgstr "egymást követő karakterek maximális száma a jelszóban"
 
 #: src/compat/authcompat_Options.py:116
 msgid "maximum number of consecutive characters of same class in a password"
 msgstr ""
+"egymást követő, azonos osztályú karakterek maximális száma a jelszóban"
 
 #: src/compat/authcompat_Options.py:117
 msgid "require at least one lowercase character in a password"
-msgstr ""
+msgstr "legalább egy kisbetű szükséges a jelszóban"
 
 #: src/compat/authcompat_Options.py:118
 msgid "require at least one uppercase character in a password"
-msgstr ""
+msgstr "legalább egy nagybetű szükséges a jelszóban"
 
 #: src/compat/authcompat_Options.py:119
 msgid "require at least one digit in a password"
-msgstr ""
+msgstr "legalább egy szám szükséges a jelszóban"
 
 #: src/compat/authcompat_Options.py:120
 msgid "require at least one other character in a password"
-msgstr ""
+msgstr "legalább egy egyéb karakter szükséges a jelszóban"
 
 #: src/compat/authcompat_Options.py:123
 msgid "do not start/stop services"
@@ -1151,7 +1163,7 @@ msgstr "ugyanaz, mint az --updateall"
 
 #: src/compat/authcompat_Options.py:135 src/compat/authcompat_Options.py:136
 msgid "<name>"
-msgstr ""
+msgstr "<név>"
 
 #: src/compat/authcompat_Options.py:147
 msgid "<descrypt|bigcrypt|md5|sha256|sha512>"
@@ -1210,51 +1222,54 @@ msgstr "engedélyezés"
 msgid "disable"
 msgstr "letiltás"
 
-#: src/compat/authcompat.py.in.in:47
+#: src/compat/authcompat.py.in.in:49
 #, python-format
 msgid "Executing: %s"
-msgstr ""
+msgstr "Végrehajtás: %s"
 
-#: src/compat/authcompat.py.in.in:66
+#: src/compat/authcompat.py.in.in:68
 #, python-format
 msgid "Service %s was not found. Please install the service."
-msgstr ""
+msgstr "A(z) %s szolgáltatás nem található. Telepítse a szolgáltatást."
 
-#: src/compat/authcompat.py.in.in:69 src/compat/authcompat.py.in.in:537
-#: src/compat/authcompat.py.in.in:562
+#: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:618
+#: src/compat/authcompat.py.in.in:643
 #, python-format
 msgid "Command [%s] failed with %d, stderr:"
-msgstr ""
+msgstr "A(z) [%s] parancs meghiúsult ezzel: %d, stderr:"
 
-#: src/compat/authcompat.py.in.in:177
+#: src/compat/authcompat.py.in.in:183
 #, python-format
 msgid "Removing file: %s"
-msgstr ""
+msgstr "Fájl eltávolítása: %s"
 
-#: src/compat/authcompat.py.in.in:312
+#: src/compat/authcompat.py.in.in:331
 #, python-format
 msgid "%s was not found. Please, install realmd."
-msgstr ""
+msgstr "%s nem található. Telepítse a realmd szolgáltatást."
 
-#: src/compat/authcompat.py.in.in:428
+#: src/compat/authcompat.py.in.in:466
 msgid "Running authconfig compatibility tool."
-msgstr ""
+msgstr "Az authconfig kompatibilitási eszköz futtatása."
 
-#: src/compat/authcompat.py.in.in:429
+#: src/compat/authcompat.py.in.in:467
 msgid ""
 "The purpose of this tool is to enable authentication against chosen services "
 "with authselect and minimum configuration. It does not provide all "
 "capabilities of authconfig.\n"
 msgstr ""
+"Az eszköz célja a hitelesítés lehetővé tétele az authconfig használatával, "
+"kiválasztott szolgáltatásokkal, és minimális konfigurációval. Az eszköz nem "
+"biztosítja az authconfig összes képességét.\n"
 
-#: src/compat/authcompat.py.in.in:432
+#: src/compat/authcompat.py.in.in:470
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
 msgstr ""
 "FONTOS: az authconfigot leváltotta az authselect, frissítse a "
 "parancsfájljait."
 
-#: src/compat/authcompat.py.in.in:434
+#: src/compat/authcompat.py.in.in:472
 msgid ""
 "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
@@ -1262,22 +1277,22 @@ msgstr ""
 "Lásd a Fedora 28 változások oldalt:  https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
 
-#: src/compat/authcompat.py.in.in:435
+#: src/compat/authcompat.py.in.in:473
 msgid ""
 "See man authselect-migration(7) to help you with migration to authselect"
 msgstr ""
 "Lásd az authselect-migration(7) man oldalt az authselectre történő "
 "migrációval kapcsolatban"
 
-#: src/compat/authcompat.py.in.in:439
+#: src/compat/authcompat.py.in.in:477
 msgid "Warning: These options are not supported anymore and have no effect:"
 msgstr "Figyelmeztetés: Ezen kapcsolók nem támogatottak, és nincs hatásuk:"
 
-#: src/compat/authcompat.py.in.in:459
+#: src/compat/authcompat.py.in.in:497
 msgid "authconfig can only be run as root"
 msgstr "az authconfig csak root jogokkal futtatható"
 
-#: src/compat/authcompat.py.in.in:464
+#: src/compat/authcompat.py.in.in:502
 #, python-format
 msgid ""
 "Error: option --%s is no longer supported and we cannot continue if it is "
@@ -1286,11 +1301,11 @@ msgstr ""
 "Hiba: a(z) --%s kapcsoló már nem támogatott, és nem megyünk tovább, ha be "
 "van állítva."
 
-#: src/compat/authcompat.py.in.in:469
+#: src/compat/authcompat.py.in.in:507
 msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
 msgstr ""
 "Hiba: Az --enablewinbind és az --enablewinbindauth megadása is szükséges."
 
-#: src/compat/authcompat.py.in.in:479
+#: src/compat/authcompat.py.in.in:517
 msgid "Error: Please, provide --updateall option."
 msgstr "Hiba: adja meg az --updateall kapcsolót."

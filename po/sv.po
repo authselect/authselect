@@ -1,17 +1,17 @@
 # Göran Uddeborg <goeran@uddeborg.se>, 2018. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: authselect 0.4\n"
+"Project-Id-Version: authselect 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2018-08-08 13:47+0200\n"
+"POT-Creation-Date: 2018-09-27 14:04+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-08-06 10:10+0000\n"
+"PO-Revision-Date: 2018-08-18 05:11+0000\n"
 "Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
 "Language-Team: Swedish\n"
 "Language: sv\n"
-"X-Generator: Zanata 4.6.0\n"
+"X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: src/lib/authselect.c:47
@@ -216,12 +216,12 @@ msgstr "Kan inte ändra ägare på filen [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:104
 msgid "Unable to generate nsswitch.conf"
-msgstr ""
+msgstr "Kan inte generera nsswitch.conf"
 
 #: src/lib/authselect_profile.c:111
 #, c-format
 msgid "Unable to find nsswitch maps [%d]: %s"
-msgstr ""
+msgstr "Kan inte hitta nsswitch-mappar [%d]: %s"
 
 #: src/lib/authselect_profile.c:289
 #, c-format
@@ -474,7 +474,7 @@ msgstr "Kan inte läsa [%s] [%d]: %s"
 #: src/lib/files/system.c:288
 #, c-format
 msgid "Unable to generate nsswitch.conf [%d]: %s"
-msgstr ""
+msgstr "Kan inte generera nsswitch.conf [%d]: %s"
 
 #: src/lib/files/system.c:354
 #, c-format
@@ -489,7 +489,7 @@ msgstr "Skriver temporär fil för [%s]"
 #: src/lib/files/system.c:372
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
-msgstr ""
+msgstr "Kan inte skriva temporärfilen [%s] [%d]: %s"
 
 #: src/lib/files/system.c:377
 #, c-format
@@ -519,11 +519,11 @@ msgstr "Kan inte validera filen [%s] [%d]: %s"
 #: src/lib/files/system.c:511
 #, c-format
 msgid "Comparing content against [%s]"
-msgstr ""
+msgstr "Jämför innehållet mot [%s]"
 
 #: src/lib/files/system.c:515
 msgid "Comparing content against current profile"
-msgstr ""
+msgstr "Jämför innehållet mot den aktuella profilen"
 
 #: src/lib/files/system.c:521
 #, c-format
@@ -729,7 +729,7 @@ msgstr "Kan inte läsa profilkrav!"
 
 #: src/cli/main.c:143
 msgid "Unable to obtain nsswitch maps!"
-msgstr ""
+msgstr "Kan inte ta fram nsswitch-mappar!"
 
 #: src/cli/main.c:151
 msgid "Unable to backup system files!\n"
@@ -752,7 +752,7 @@ msgstr "Kan inte aktivera profilen [%d]: %s\n"
 
 #: src/cli/main.c:204
 msgid "Changes were successfully applied.\n"
-msgstr ""
+msgstr "Ändringar verkställdes.\n"
 
 #: src/cli/main.c:207 src/cli/main.c:243
 msgid "No existing configuration detected.\n"
@@ -763,11 +763,13 @@ msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
 msgstr ""
+"Några oväntade ändringar av konfigurationen upptäcktes.  Använd kommandot "
+"”select” istället.\n"
 
 #: src/cli/main.c:214
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
-msgstr ""
+msgstr "Kan inte verkställa ändringar [%d]: %s\n"
 
 #: src/cli/main.c:231
 msgid "Print command parameters instead of formatted output"
@@ -944,7 +946,7 @@ msgstr "Authselect kan bara köras som root!\n"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
-msgstr ""
+msgstr "NIS för användarinformation som standard"
 
 #: src/compat/authcompat_Options.py:83
 msgid "<domain>"
@@ -961,7 +963,7 @@ msgstr "<server>"
 
 #: src/compat/authcompat_Options.py:84
 msgid "default NIS server"
-msgstr ""
+msgstr "standard-NIS-server"
 
 #: src/compat/authcompat_Options.py:85
 msgid "LDAP for user information by default"
@@ -1112,31 +1114,32 @@ msgstr "minsta längd på ett lösenord"
 
 #: src/compat/authcompat_Options.py:114
 msgid "minimum number of character classes in a password"
-msgstr ""
+msgstr "minsta antal teckenklasser i ett lösenord"
 
 #: src/compat/authcompat_Options.py:115
 msgid "maximum number of same consecutive characters in a password"
-msgstr ""
+msgstr "högsta antalet av likadana på varandra följande tecken i ett lösenord"
 
 #: src/compat/authcompat_Options.py:116
 msgid "maximum number of consecutive characters of same class in a password"
 msgstr ""
+"högsta antalet på varandra följande tecken av samma klass i ett lösenord"
 
 #: src/compat/authcompat_Options.py:117
 msgid "require at least one lowercase character in a password"
-msgstr ""
+msgstr "kräv åtminstone en gemen bokstav i ett lösenord"
 
 #: src/compat/authcompat_Options.py:118
 msgid "require at least one uppercase character in a password"
-msgstr ""
+msgstr "kräv åtminstone en versal bokstav i ett lösenord"
 
 #: src/compat/authcompat_Options.py:119
 msgid "require at least one digit in a password"
-msgstr ""
+msgstr "kräv åtminstone en siffra i ett lösenord"
 
 #: src/compat/authcompat_Options.py:120
 msgid "require at least one other character in a password"
-msgstr ""
+msgstr "kräv åtminstone ett annat tecken i ett lösenord"
 
 #: src/compat/authcompat_Options.py:123
 msgid "do not start/stop services"
@@ -1152,7 +1155,7 @@ msgstr "samma som --updateall"
 
 #: src/compat/authcompat_Options.py:135 src/compat/authcompat_Options.py:136
 msgid "<name>"
-msgstr ""
+msgstr "<namn>"
 
 #: src/compat/authcompat_Options.py:147
 msgid "<descrypt|bigcrypt|md5|sha256|sha512>"
@@ -1211,49 +1214,52 @@ msgstr "aktivera"
 msgid "disable"
 msgstr "avaktivera"
 
-#: src/compat/authcompat.py.in.in:47
+#: src/compat/authcompat.py.in.in:49
 #, python-format
 msgid "Executing: %s"
-msgstr ""
+msgstr "Kör: %s"
 
-#: src/compat/authcompat.py.in.in:66
+#: src/compat/authcompat.py.in.in:68
 #, python-format
 msgid "Service %s was not found. Please install the service."
-msgstr ""
+msgstr "Tjänsten %s finns inte.  Installera tjänsten."
 
-#: src/compat/authcompat.py.in.in:69 src/compat/authcompat.py.in.in:537
-#: src/compat/authcompat.py.in.in:562
+#: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:618
+#: src/compat/authcompat.py.in.in:643
 #, python-format
 msgid "Command [%s] failed with %d, stderr:"
-msgstr ""
+msgstr "Kommandot [%s] misslyckades med %d, standard fel:"
 
-#: src/compat/authcompat.py.in.in:177
+#: src/compat/authcompat.py.in.in:183
 #, python-format
 msgid "Removing file: %s"
-msgstr ""
+msgstr "Tar bort filen: %s"
 
-#: src/compat/authcompat.py.in.in:312
+#: src/compat/authcompat.py.in.in:331
 #, python-format
 msgid "%s was not found. Please, install realmd."
-msgstr ""
+msgstr "%s finns inte.  Installera realmd."
 
-#: src/compat/authcompat.py.in.in:428
+#: src/compat/authcompat.py.in.in:466
 msgid "Running authconfig compatibility tool."
-msgstr ""
+msgstr "Kör kompatibilitetsverktyget authconfig."
 
-#: src/compat/authcompat.py.in.in:429
+#: src/compat/authcompat.py.in.in:467
 msgid ""
 "The purpose of this tool is to enable authentication against chosen services "
 "with authselect and minimum configuration. It does not provide all "
 "capabilities of authconfig.\n"
 msgstr ""
+"Syftet med detta verktyg är att möjliggöra autentisering mot valda tjänster "
+"med authselect och minimal konfiguration.  Det erbjuder inte alla egenskaper "
+"hos authconfig.\n"
 
-#: src/compat/authcompat.py.in.in:432
+#: src/compat/authcompat.py.in.in:470
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
 msgstr "VIKTIGT: authconfig är ersatt av authselect, uppdatera dina skript."
 
-#: src/compat/authcompat.py.in.in:434
+#: src/compat/authcompat.py.in.in:472
 msgid ""
 "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
@@ -1261,21 +1267,21 @@ msgstr ""
 "Se Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
 
-#: src/compat/authcompat.py.in.in:435
+#: src/compat/authcompat.py.in.in:473
 msgid ""
 "See man authselect-migration(7) to help you with migration to authselect"
 msgstr ""
 "Se man authselect-migration(7) för hjälp med migrering till authselect"
 
-#: src/compat/authcompat.py.in.in:439
+#: src/compat/authcompat.py.in.in:477
 msgid "Warning: These options are not supported anymore and have no effect:"
 msgstr "Varning: dessa flaggor stödjs inte längre och har ingen effekt:"
 
-#: src/compat/authcompat.py.in.in:459
+#: src/compat/authcompat.py.in.in:497
 msgid "authconfig can only be run as root"
 msgstr "authconfig kan endast köras som root"
 
-#: src/compat/authcompat.py.in.in:464
+#: src/compat/authcompat.py.in.in:502
 #, python-format
 msgid ""
 "Error: option --%s is no longer supported and we cannot continue if it is "
@@ -1284,10 +1290,10 @@ msgstr ""
 "Fel: flaggan --%s stödjs inte längre och vi kan inte fortsätta om den är "
 "satt."
 
-#: src/compat/authcompat.py.in.in:469
+#: src/compat/authcompat.py.in.in:507
 msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
 msgstr "Fel: både --enablewinbind och --enablewinbindauth måste vara satta."
 
-#: src/compat/authcompat.py.in.in:479
+#: src/compat/authcompat.py.in.in:517
 msgid "Error: Please, provide --updateall option."
 msgstr "Fel: var god ange flaggan --updateall."

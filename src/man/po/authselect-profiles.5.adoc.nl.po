@@ -1,6 +1,4 @@
-# Yuri Chornoivan <yurchor@ukr.net>, 2018.
-# Pavel Brezina <pbrezina@redhat.com>, 2018. #zanata
-# Yuri Chornoivan <yurchor@ukr.net>, 2018. #zanata
+# Geert Warrink <geert.warrink@onsnet.nu>, 2018. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -8,13 +6,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-08-12 03:07+0000\n"
-"Last-Translator: Pavel Brezina <pbrezina@redhat.com>\n"
-"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
-"Language: uk\n"
+"PO-Revision-Date: 2018-09-05 06:39+0000\n"
+"Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
 "X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #. type: Title =
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:2
@@ -26,19 +23,18 @@ msgstr "authselect-profiles(5)"
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:6
 #, no-wrap
 msgid "NAME"
-msgstr "НАЗВА"
+msgstr "NAAM"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:8
 msgid "authselect-profiles - how to extend authselect profiles."
-msgstr ""
-"authselect-profiles - опис можливостей розширення профілів authselect."
+msgstr "authselect-profiles - hoe breid je authselect profielen uit."
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:10
 #, no-wrap
 msgid "DESCRIPTION"
-msgstr "ОПИС"
+msgstr "BESCHRIJVING"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:13
@@ -46,19 +42,19 @@ msgid ""
 "This manual page explains how are authselect profiles organized and how to "
 "create new profiles."
 msgstr ""
-"На цій сторінці підручника наведено пояснення щодо того, як організовано "
-"профілі authselect, та того, як створювати профілі."
+"Deze handboekpagina legt uit hoe authselect profielen opgebouwd zijn en hoe "
+"je nieuwe profielen aanmaakt."
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:15
 #, no-wrap
 msgid "PROFILE DIRECTORIES"
-msgstr "КАТАЛОГИ ПРОФІЛІВ"
+msgstr "PROFIELMAPPEN"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:17
 msgid "Profiles can be found in one of three directories."
-msgstr "Профілі зберігаються у одному з трьох каталогів."
+msgstr "Profielen in één van drie mappen gevonden worden."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:18
@@ -71,8 +67,8 @@ msgstr "*{AUTHSELECT_PROFILE_DIR}*"
 msgid ""
 "Read-only directory containing profiles shipped together with authselect."
 msgstr ""
-"Призначений лише для читання даних каталог, у якому містяться профілі, які "
-"постачаються разом із authselect."
+"Alleen-lezen map welke profielen bevat die tezamen met authselect geleverd "
+"worden."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:21
@@ -86,9 +82,8 @@ msgid ""
 "Read-only directory for vendor-specific profiles that can override the ones "
 "in _default_ directory."
 msgstr ""
-"Призначений лише для читання каталог для специфічних для постачальників "
-"операційної системи профілів, які можуть перевизначати профілі у _типовому_ "
-"каталозі."
+"Alleen-lezen map welke leverancier specifieke profielen bevat die de "
+"profielen in de _standaard_ map kun overschrijven."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:25
@@ -99,13 +94,13 @@ msgstr "*{AUTHSELECT_CUSTOM_DIR}*"
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:27
 msgid "Place for administrator-defined profiles."
-msgstr "Місце для визначених адміністратором профілів."
+msgstr "Map voor profielen gedefinieerd door de beheerder."
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:29
 #, no-wrap
 msgid "PROFILE FILES"
-msgstr "ФАЙЛИ ПРОФІЛІВ"
+msgstr "PROFIELBESTANDEN"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:33
@@ -114,8 +109,9 @@ msgid ""
 "mandatory profile description and describe the changes that are done to the "
 "system."
 msgstr ""
-"Кожен профіль складається з одного або декількох таких файлів, які містять "
-"обов'язковий опис профілю та описує зміни, які вносяться до системи."
+"Elk profiel bestaat uit één of meer van deze bestanden die een verplichte "
+"profielbeschrijving bieden en de veranderingen beschrijven die in het "
+"systeem zijn aangebracht."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:34
@@ -127,7 +123,9 @@ msgstr "*README*"
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:36
 msgid ""
 "Description of the profile. The first line must be a name of the profile."
-msgstr "Опис профілю. Перший рядок має містити назву профілю."
+msgstr ""
+"Beschrijving van het profiel. De eerste regel meot de naam van het profiel "
+"zijn."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:37
@@ -141,7 +139,8 @@ msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
 msgstr ""
-"Стос PAM, який включається з майже усіх окремих файлів налаштувань служб."
+"PAM stack die ingesloten wordt van bijna alle individuele service "
+"configuratiebestanden."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:41
@@ -156,9 +155,9 @@ msgid ""
 "different types of devices via simultaneously running individual "
 "conversations instead of one aggregate conversation."
 msgstr ""
-"Ці стоси PAM призначено для програм, які обробляють розпізнавання з "
-"пристроїв різних типів за допомогою одночасного виконання окремих потоків "
-"обміну даних, а не одного сукупного потоку обміну даними."
+"Deze PAM stacks zijn voor toepassingen die authenticatie afhandelen voor "
+"verschillende types apparaten via gelijktijdig draaiende individuele "
+"conversaties in plaats van een samengevoegde conversatie."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:46
@@ -177,13 +176,13 @@ msgid ""
 "regardless of the success or failure of the modules in the system-auth "
 "configuration file._"
 msgstr ""
-"Призначенням цього стосу PAM є надання загального місця для усіх модулів "
-"PAM, які має бути викликано після налаштовування стосу у system-auth або "
-"інших загальних файлах налаштувань PAM. Він включається з усіх окремих "
-"файлів налаштувань служб, які надають можливості служби входу до системи за "
-"допомогою командної оболонки або доступу до файлів. _ЗАУВАЖЕННЯ: модулі у "
-"файлі налаштувань postlogin виконуються незалежно від успіху або неуспіху "
-"під час обробки модулів у файлі налаштувань system-auth._"
+"Het doel van deze PAM stack is het bieden van een algemene plaats voor alle "
+"PAM modules die aangeroepen moeten worden na de stack geconfigureerd in "
+"system-auth of de andere algemene PAM configuratiebestanden. Het wordt "
+"ingevoegd vanuit alle individuele service configuratiebestanden die "
+"inlogservice bieden met shell of bestand toegang. _MERK OP: de modules in de "
+"postlogin configuratiebestand worden uitgevoerd onafhankelijk van het succes "
+"of mislukken van de modules in het system-auth configuratiebestand._"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:55
@@ -198,9 +197,10 @@ msgid ""
 "must be set. Maps that are not specified by the profile are included from "
 "{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf."
 msgstr ""
-"Файл налаштувань Name Service Switch. Має бути встановлено лише карти, "
-"пов'язані із профілем. Карти, які не задаються профілем, включатимуться з "
-"{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf."
+"Naam Service Switch configuratiebestand. Alleen mappen relevant voor het "
+"profiel moeten ingesteld zijn. Mappen die niet door het profiel "
+"gespecificeerd worden worden ingevoegd uit {AUTHSELECT_CONFIG_DIR}/user-"
+"nsswitch.conf."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:60
@@ -215,9 +215,9 @@ msgid ""
 "for gnome login screen in order to enable or disable smartcard and "
 "fingerprint authentication."
 msgstr ""
-"Зміни до бази даних dconf. Основним призначенням цього файла є зберігання "
-"набору змін для вікна входу до gnome з метою вмикання або вимикання "
-"розпізнавання за смарт-карткою або відбитком."
+"Veranderingen in de dconf database. Het hoofdgebruik van dit bestand is het "
+"instellen van veranderingen voor het gnome inlogscherm voor het aan of "
+"uitzetten smartcard en and vingerafdruk authenticatie."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:65
@@ -229,14 +229,13 @@ msgstr "*dconf-locks*"
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:67
 msgid "This file define locks on values set in dconf database."
 msgstr ""
-"У цьому файлі визначаються блокування значень, встановлених у базі даних "
-"dconf."
+"Dit bestand definieert sloten voor waardes ingesteld in de dconf database."
 
 #. type: Title ~
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:69
 #, no-wrap
 msgid "CONDITIONAL LINES"
-msgstr "РЯДКИ З УМОВАМИ"
+msgstr "CONDITIONELE REGELS"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:73
@@ -245,15 +244,15 @@ msgid ""
 "with optional usage of several operators that can be used to provide some "
 "optional profile features."
 msgstr ""
-"Кожен з цих файлів слугує як шаблон. Шаблон є простим текстовим файлом із "
-"необов'язковим використанням декількох операторів, якими можна скористатися "
-"для забезпечення роботи декількох додаткових можливостей профілів."
+"Elk van dezr bestanden dient als een sjabloon. Een sjabloon is een gewoon "
+"tekstbestand met optioneel gebruik van verschillende operatoren die gebruikt "
+"kunnen worden voor het bieden van optionele profieleigenschappen."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:74
 #, no-wrap
 msgid "*{continue if \"feature\"}*"
-msgstr "*{continue if \"можливість\"}*"
+msgstr "*{continue if \"feature\"}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:79
@@ -263,15 +262,16 @@ msgid ""
 "whole line with this operator will be removed and the rest of the template "
 "will be processed."
 msgstr ""
-"Негайно припинити обробку файла, якщо \"можливість\" не визначено (решту "
-"вмісту файла буде вилучено). Якщо \"можливість\" визначено, увесь рядок із "
-"цим оператором буде вилучено, а решту шаблону буде оброблено."
+"Stop onmiddellijk met het verwerken van het bestand behalve als \"feature\" "
+"gedefinieerd is (de rest van de bestandsinhoud zal verwijderd worden). Als "
+"\"feature\" gedefinieerd is, zal de gehele regel met deze operator "
+"verwijderd worden em de rest van de sjabloon zal verwerkt worden."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:80
 #, no-wrap
 msgid "*{stop if \"feature\"}*"
-msgstr "*{stop if \"можливість\"}*"
+msgstr "*{stop if \"feature\"}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:85
@@ -281,16 +281,17 @@ msgid ""
 "\"feature\" is not defined, the whole line with this operator will be "
 "removed and the rest of the template will be processed."
 msgstr ""
-"Протилежне до \"continue if\". Негайно припинити обробку файла, якщо "
-"визначено \"можливість\" (решту вмісту файла буде вилучено). Якщо "
-"\"можливість\" не визначено, увесь рядок із цим оператором буде вилучено, а "
-"решту шаблону буде оброблено."
+"Tegenovergestelde van \"continue if\". Stop onmiddellijk met het verwerken "
+"van het bestand als \"feature\" gedefinieerd is (de rest van de "
+"bestandsinhoud zal verwijderd worden). Als \"feature\" niet gedefinieerd is, "
+"zal de gehele regel met deze operator verwijderd worden em de rest van de "
+"sjabloon zal verwerkt worden."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:86
 #, no-wrap
 msgid "*{include if \"feature\"}*"
-msgstr "*{include if \"можливість\"}*"
+msgstr "*{include if \"feature\"}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:89
@@ -298,14 +299,14 @@ msgid ""
 "Include the line where this operator is placed only if \"feature\" is "
 "defined."
 msgstr ""
-"Включити рядок, де розташовано цей оператор, лише якщо \"можливість\" "
-"визначено."
+"Voeg de regel waarin deze operator geplaatst alleen in als \"feature\" "
+"gedefinieerd is."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:90
 #, no-wrap
 msgid "*{exclude if \"feature\"}*"
-msgstr "*{exclude if \"можливість\"}*"
+msgstr "*{exclude if \"feature\"}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:93
@@ -313,14 +314,14 @@ msgid ""
 "Opposite to \"include-if\". Include the line where this operator is placed "
 "only if \"feature\" is not defined."
 msgstr ""
-"Протилежне до \"include-if\". Включити рядок, де розташовано цей оператор, "
-"лише якщо \"можливість\" не визначено."
+"Tegenovergestelde van \"include-if\". Voeg de regel waarin deze operator "
+"geplaatst alleen in als \"feature\" niet gedefinieerd is."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:94
 #, no-wrap
 msgid "*{if \"feature\":true|false}*"
-msgstr "*{if \"можливість\":true|false}*"
+msgstr "*{if \"feature\":true|false}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:97
@@ -328,14 +329,14 @@ msgid ""
 "If \"feature\" is defined, replace this operator with string \"true\", "
 "otherwise with string \"false\"."
 msgstr ""
-"Якщо \"можливість\" визначено, замінити цей оператор рядком \"true\", інакше "
-"замінити рядком \"false\"."
+"Als \"feature\" gedefinieerd is, wordt deze operator vervangen met de string "
+"\"true\", anders- met de string \"false\"."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:98
 #, no-wrap
 msgid "*{if \"feature\":true}*"
-msgstr "*{if \"можливість\":true}*"
+msgstr "*{if \"feature\":true}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:101
@@ -343,14 +344,14 @@ msgid ""
 "If \"feature\" is defined, replace this operator with string \"true\", "
 "otherwise with an empty string."
 msgstr ""
-"Якщо \"можливість\" визначено, замінити цей оператор рядком \"true\", інакше "
-"замінити порожнім рядком."
+"Als \"feature\" gedefinieerd is, wordt deze operator vervangen met de string "
+"\"true\", anders- met een lege string."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:102
 #, no-wrap
 msgid "*{if not \"feature\":true|false}*"
-msgstr "*{if not \"можливість\":true|false}*"
+msgstr "*{if not \"feature\":true|false}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:105
@@ -358,14 +359,14 @@ msgid ""
 "If \"feature\" is not defined, replace this operator with string \"true\", "
 "otherwise with string \"false\"."
 msgstr ""
-"Якщо \"можливість\" не визначено, замінити цей оператор рядком \"true\", "
-"інакше замінити рядком \"false\"."
+"Als \"feature\" niet gedefinieerd is, wordt deze operator vervangen met de "
+"string \"true\", anders- met de string \"false\"."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:106
 #, no-wrap
 msgid "*{if not \"feature\":true}*"
-msgstr "*{if not \"можливість\":true}*"
+msgstr "*{if not \"feature\":true}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:109
@@ -373,14 +374,14 @@ msgid ""
 "If \"feature\" is not defined, replace this operator with string \"true\", "
 "otherwise with an empty string."
 msgstr ""
-"Якщо \"можливість\" не визначено, замінити цей оператор рядком \"true\", "
-"інакше замінити порожнім рядком."
+"Als \"feature\" niet gedefinieerd is, wordt deze operator vervangen met de "
+"string \"true\", anders- met een lege string."
 
 #. type: Title ~
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:111
 #, no-wrap
 msgid "EXAMPLE"
-msgstr "ПРИКЛАД"
+msgstr "VOORBEELD"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:114
@@ -388,8 +389,9 @@ msgid ""
 "Here is an example of using \"if\" operator. If \"with-sudo\" feature is "
 "enabled, it will add \"sss\" to sudoers line."
 msgstr ""
-"Тут наведено приклад використання оператора \"if\". Якщо можливість \"with-"
-"sudo\" увімкнено, буде додано \"sss\" до рядка sudoers."
+"Hier is een voorbeeld van het gebruik van de \"if\" operator. Als de \"with-"
+"sudo\" eigenschap aangezet is, zal het \"sss\" torvoegen aan de sudoers "
+"regel."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:121
@@ -402,12 +404,12 @@ msgid ""
 "  services:   sss files\n"
 "  sudoers:    files {if \"with-sudo\":sss}\n"
 msgstr ""
-"  passwd:     sss files\n"
-"  group:      sss files\n"
-"  netgroup:   sss files\n"
-"  automount:  sss files\n"
-"  services:   sss files\n"
-"  sudoers:    files {if \"with-sudo\":sss}\n"
+"  passwd:     sss bestanden\n"
+"  group:      sss bestanden\n"
+"  netgroup:   sss bestanden\n"
+"  automount:  sss bestanden\n"
+"  services:   sss bestanden\n"
+"  sudoers:    bestanden {if \"with-sudo\":sss}\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:126
@@ -417,10 +419,11 @@ msgid ""
 "If it is enabled and also \"with-faillock\" feature is enabled, it will also "
 "enable support for pam_faillock."
 msgstr ""
-"Далі наведено приклад операторів \"continue-if\" і \"include-if\". Файл-"
-"результат буде порожнім, якщо не увімкнено можливість \"with-smartcard\". "
-"Якщо можливість увімкнено і також увімкнено можливість \"with-faillock\", "
-"також буде увімкнено підтримку pam_faillock."
+"Hier is een voorbeeld van \"continue-if\" en \"include-if\" operatoren. Het "
+"resulterende bestand zal leeg zijn behalve als de \"with-smartcard\" "
+"eigenschap aangezet is. Als het aangezet is en ook de \"with-faillock\" "
+"eigenschap aangezet is, zal het ook ondersteuning voor pam_faillock "
+"aanzetten."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:139
@@ -470,7 +473,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:141
 #, no-wrap
 msgid "CREATING A NEW PROFILE"
-msgstr "СТВОРЕННЯ ПРОФІЛЮ"
+msgstr "EEN NIEUW PROFIEL AANMAKEN"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:146
@@ -480,16 +483,16 @@ msgid ""
 "files must be present, only *README* is mandatory. Other files can be "
 "created on per-need basis."
 msgstr ""
-"Щоб зареєструвати новий профіль у authselect, створіть каталог у одному із "
-"місць для профілів authselect із файлами з наведеного вище списку. Наявними "
-"мають бути не обов'язково усі файли, лише файл *README* є обов'язковим. Інші "
-"файли може бути створено за потреби."
+"Om binnen authselect een nieuw profiel te registreren, maak je een map aan "
+"in een van hierboven aangegeven authselect profiel locaties. Niet alle "
+"bestanden hoeven aanwezig te zijn,  alleen *README* is verplicht. Andere "
+"bestanden kunnen waar nodig aangemaakt worden."
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:148
 #, no-wrap
 msgid "SEE ALSO"
-msgstr "ТАКОЖ ПЕРЕГЛЯНЬТЕ"
+msgstr "ZIE OOK"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:149
