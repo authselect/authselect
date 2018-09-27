@@ -82,6 +82,9 @@ you develop a front-end for the authselect library.
 %prep
 %setup -q
 
+for p in %patches ; do
+    %__patch -p1 -i $p
+done
 
 %build
 autoreconf -if
