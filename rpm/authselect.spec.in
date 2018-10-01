@@ -6,9 +6,15 @@ URL:            https://github.com/pbrezina/authselect
 
 License:        GPLv3+
 Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
+%if 0%{?rhel}
+Source1:        translations.tar.gz
+%endif
+
+%global makedir %{_builddir}/%{name}-%{version}
 
 BuildRequires:  autoconf
 BuildRequires:  automake
+BuildRequires:  findutils
 BuildRequires:  libtool
 BuildRequires:  m4
 BuildRequires:  gcc
@@ -81,6 +87,14 @@ you develop a front-end for the authselect library.
 for p in %patches ; do
     %__patch -p1 -i $p
 done
+
+# Install RHEL translations
+# It is not possible to use wildcards here so we need to use 'find'
+%if 0%{?rhel}
+find "%{makedir}/po" "%{makedir}/src/man/po" -name "*.po" -delete
+rm "%{makedir}/po/LINGUAS"
+%setup -T -D -a 1
+%endif
 
 %build
 autoreconf -if
