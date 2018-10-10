@@ -186,6 +186,7 @@ static errno_t activate(struct cli_cmdline *cmdline)
 
 done:
     free(requirements);
+    authselect_array_free(maps);
     authselect_profile_free(profile);
     if (features != NULL) {
         free(features);
