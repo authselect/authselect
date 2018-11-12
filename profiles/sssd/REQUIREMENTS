@@ -11,6 +11,7 @@ Make sure that SSSD service is configured and enabled. See SSSD documentation fo
 - with-pam-u2f-2fa is selected, make sure that the pam u2f module is installed            {include if "with-pam-u2f-2fa"}
   - users can then configure keys using the pamu2fcfg tool                                {include if "with-pam-u2f-2fa"}
                                                                                           {include if "with-mkhomedir"}
-- with-mkhomedir is selected, make sure oddjobd service is enabled                        {include if "with-mkhomedir"}
+- with-mkhomedir is selected, make sure pam_oddjob_mkhomedir module                       {include if "with-mkhomedir"}
+  is present and oddjobd service is enabled                                               {include if "with-mkhomedir"}
   - systemctl enable oddjobd.service                                                      {include if "with-mkhomedir"}
   - systemctl start oddjobd.service                                                       {include if "with-mkhomedir"}
