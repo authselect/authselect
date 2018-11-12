@@ -13,7 +13,7 @@
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
+#    GNU General Public License for morerequi details.
 #
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
@@ -91,6 +91,7 @@ class Options:
         Option.Feature("rfc2307bis",      _("use of RFC-2307bis schema for LDAP user information lookups")),
         Option.Feature("smartcard",       _("authentication with smart card by default")),
         Option.Valued ("smartcardaction", _("<0=Lock|1=Ignore>"), _("action to be taken on smart card removal")),
+        Option.Feature("requiresmartcard",_("require smart card for authentication by default")),
         Option.Feature("fingerprint",     _("authentication with fingerprint readers by default")),
         Option.Feature("ecryptfs",        _("automatic per-user ecryptfs")),
         Option.Feature("krb5",            _("Kerberos authentication by default")),
@@ -146,7 +147,6 @@ class Options:
         Option.UnsupportedSwitch ("usemd5"),
         Option.UnsupportedValued ("passalgo", _("<descrypt|bigcrypt|md5|sha256|sha512>")),
         Option.UnsupportedValued ("ldaploadcacert", _("<URL>")),
-        Option.UnsupportedFeature("requiresmartcard"),
         Option.UnsupportedValued ("smartcardmodule", _("<module>")),
         Option.UnsupportedValued ("smbsecurity", _("<user|server|domain|ads>")),
         Option.UnsupportedValued ("smbrealm", _("<realm>")),

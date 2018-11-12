@@ -519,13 +519,14 @@ class AuthCompat:
 
     def runAuthselect(self):
         map = {
-            'smartcard'   : 'with-smartcard',
-            'fingerprint' : 'with-fingerprint',
-            'ecryptfs'    : 'with-ecryptfs',
-            'mkhomedir'   : 'with-mkhomedir',
-            'faillock'    : 'with-faillock',
-            'pamaccess'   : 'with-pamaccess',
-            'winbindkrb5' : 'with-krb5'
+            'smartcard'        : 'with-smartcard',
+            'requiresmartcard' : 'with-smartcard-required',
+            'fingerprint'      : 'with-fingerprint',
+            'ecryptfs'         : 'with-ecryptfs',
+            'mkhomedir'        : 'with-mkhomedir',
+            'faillock'         : 'with-faillock',
+            'pamaccess'        : 'with-pamaccess',
+            'winbindkrb5'      : 'with-krb5'
         }
 
         # Read current configuration first.
