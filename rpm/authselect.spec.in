@@ -59,10 +59,10 @@ Obsoletes: authconfig < 7.0.1-6
 Provides: authconfig
 BuildRequires: python3-devel
 Requires: authselect%{?_isa} = %{version}-%{release}
+Recommends: oddjob-mkhomedir
 Suggests: sssd
 Suggests: realmd
 Suggests: samba-winbind
-Suggests: oddjob-mkhomedir
 # Required by scriptlets
 Requires: sed
 
