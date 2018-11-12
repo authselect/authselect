@@ -557,6 +557,13 @@ class AuthCompat:
                 while feature in features:
                     features.remove(feature)
 
+        # Add lock-on-smartcard-removal if requested
+        if self.options.isset("smartcardaction"):
+            if int(self.options.get("smartcardaction")) == 0:
+                features.append("with-smartcard-lock-on-removal")
+            else:
+                features.remove("with-smartcard-lock-on-removal")
+
         # Remove duplicates. The order is not kept but that does not matter.
         features = list(set(features))
 
