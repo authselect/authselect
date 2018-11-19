@@ -118,4 +118,24 @@ string_array_add_value(char **array, const char *value, bool unique);
 char **
 string_array_del_value(char **array, const char *value);
 
+/**
+ * Concatenate two array. Array @items values will be appended to arra @to.
+ *
+ * @param to    NULL-terminated destination array.
+ * @param items NULL-terminated array to be appended into @to.
+ * @param unique If true, value will not be added if it is already present.
+ *
+ * @return Array or NULL if reallocation fails.
+ */
+char **
+string_array_concat(char **to, char **items, bool unique);
+
+/**
+ * Alphabetically sort a NULL-terminated string array.
+ *
+ * @param array NULL-terminated string array.
+ */
+void
+string_array_sort(char **array);
+
 #endif /* _STRING_ARRAY_H_ */

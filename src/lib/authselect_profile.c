@@ -115,6 +115,57 @@ authselect_profile_nsswitch_maps(const struct authselect_profile *profile,
     return maps;
 }
 
+_PUBLIC_ char **
+authselect_profile_features(const struct authselect_profile *profile)
+{
+    char **features;
+    char **array;
+    errno_t ret;
+    int i;
+
+    if (profile == NULL) {
+        return NULL;
+    }
+
+    features = string_array_create(10);
+    if (features == NULL) {
+        ERROR("Unable to create array (out of memory)");
+        return NULL;
+    }
+
+    struct authselect_generated files[] = PROFILE_FILES(profile->files);
+
+    for (i = 0; files[i].path != NULL; i++) {
+        array = template_list_features(files[i].content);
+        if (array == NULL) {
+            ERROR("Unable to obtain feature list (out of memory)");
+            ret = ENOMEM;
+            goto done;
+        }
+
+        features = string_array_concat(features, array, true);
+        string_array_free(array);
+
+        if (features == NULL) {
+            ERROR("Unable to obtain feature list (out of memory)");
+            ret = ENOMEM;
+            goto done;
+        }
+    }
+
+    string_array_sort(features);
+
+    ret = EOK;
+
+done:
+    if (ret != EOK) {
+        string_array_free(features);
+        return NULL;
+    }
+
+    return features;
+}
+
 _PUBLIC_ void
 authselect_profile_free(struct authselect_profile *profile)
 {
