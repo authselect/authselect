@@ -325,10 +325,27 @@ template_process_matches(const char *match_string,
         return ret;
     }
 
-    *_op = op;
-    *_feature = feature;
-    *_if_true = if_true;
-    *_if_false = if_false;
+    if (_op != NULL) {
+        *_op = op;
+    }
+
+    if (_feature != NULL) {
+        *_feature = feature;
+    } else {
+        free(feature);
+    }
+
+    if (_if_true != NULL) {
+        *_if_true = if_true;
+    } else {
+        free(if_true);
+    }
+
+    if (_if_false != NULL) {
+        *_if_false = if_false;
+    } else {
+        free(if_false);
+    }
 
     return EOK;
 }
@@ -476,6 +493,66 @@ template_generate_preamble()
     }
 
     return preamble;
+}
+
+char **
+template_list_features(const char *template)
+{
+    regmatch_t m[RE_MATCHES];
+    const char *match_string;
+    char **features;
+    char *feature;
+    regex_t regex;
+    errno_t ret;
+    int reret;
+
+    features = string_array_create(10);
+    if (features == NULL) {
+        return NULL;
+    }
+
+    if (template == NULL) {
+        return features;
+    }
+
+    reret = regcomp(&regex, OP_RE, REG_EXTENDED | REG_NEWLINE);
+    if (reret != REG_NOERROR) {
+        ERROR("Unable to compile regular expression: regex error %d", reret);
+        ret = EFAULT;
+        goto done;
+    }
+
+    match_string = template;
+    while ((reret = regexec(&regex, match_string, RE_MATCHES, m, 0)) == REG_NOERROR) {
+        ret = template_process_matches(match_string, m, NULL, &feature,
+                                       NULL, NULL);
+        if (ret != EOK) {
+            ERROR("Unable to process match [%d]: %s", ret, strerror(ret));
+            goto done;
+        }
+
+        features = string_array_add_value(features, feature, true);
+        free(feature);
+
+        match_string += m[0].rm_eo;
+    }
+
+    if (reret != REG_NOMATCH) {
+        ERROR("Unable to search string: regex error %d", reret);
+        ret = EFAULT;
+        goto done;
+    }
+
+    ret = EOK;
+
+done:
+    if (ret != EOK) {
+        string_array_free(features);
+        return NULL;
+    }
+
+    regfree(&regex);
+    return features;
 }
 
 errno_t
