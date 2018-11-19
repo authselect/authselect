@@ -274,6 +274,18 @@ authselect_profile_nsswitch_maps(const struct authselect_profile *profile,
                                  const char **features);
 
 /**
+ * List features supported by the profile.
+ *
+ * It is necessary to free the returned pointer with @authselect_array_free.
+ *
+ * @param profile    Pointer to structure obtained by @authselect_profile.
+ *
+ * @return NULL-terminated array of supported features, NULL on error.
+ */
+char **
+authselect_profile_features(const struct authselect_profile *profile);
+
+/**
  * Free authconfig_profile structure obtained by @authselect_profile.
  *
  * @param profile    Pointer to structure obtained by @authselect_profile.
