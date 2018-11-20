@@ -130,6 +130,10 @@ authselect_profile_free(struct authselect_profile *profile)
         free(profile->path);
     }
 
+    if (profile->name != NULL) {
+        free(profile->name);
+    }
+
     if (profile->description != NULL) {
         free(profile->description);
     }
