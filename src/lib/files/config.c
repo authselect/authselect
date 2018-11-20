@@ -201,6 +201,8 @@ authselect_config_validate_existing(const char *profile_id,
     /* Check that symlinks exist and point to generated files. */
     result &= authselect_symlinks_validate();
 
+    authselect_files_free(files);
+
     return result;
 }
 
