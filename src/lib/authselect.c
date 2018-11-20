@@ -145,17 +145,49 @@ done:
 _PUBLIC_ int
 authselect_apply_changes(void)
 {
+    struct authselect_profile *profile;
     char *profile_id;
     char **features;
+    char **supported;
     errno_t ret;
+    int i;
 
     ret = authselect_current_configuration(&profile_id, &features);
     if (ret != EOK) {
         return ret;
     }
 
+    ret = authselect_profile(profile_id, &profile);
+    if (ret != EOK) {
+        ERROR("Unable to find profile [%s] [%d]: %s",
+              profile_id, ret, strerror(ret));
+        goto done;
+    }
+
+    supported = authselect_profile_features(profile);
+    if (supported == NULL) {
+        ERROR("Unable to obtain supported features");
+        ret = ENOMEM;
+        goto done;
+    }
+
+    for (i = 0; features[i] != NULL; i++) {
+        if (string_array_has_value(supported, features[i])) {
+            continue;
+        }
+
+        WARN("Profile feature [%s] is no longer supported, removing it...",
+             features[i]);
+
+        features = string_array_del_value(features, features[i]);
+        i--;
+    }
+
     ret = authselect_activate(profile_id, (const char **)features, false);
 
+done:
+    authselect_profile_free(profile);
+    string_array_free(supported);
     string_array_free(features);
     free(profile_id);
 
