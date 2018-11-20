@@ -70,6 +70,7 @@ enum authselect_profile_type {
  *   authselect and @force_overwrite must be set to true to force
  *   overwrite the existing files.
  * - ENOENT if the profile was not found.
+ * - EINVAL if unsupported feature was provided.
  * - Other errno code on generic error.
  */
 int

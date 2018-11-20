@@ -29,6 +29,45 @@
 #include "lib/files/files.h"
 #include "lib/profiles/profiles.h"
 
+static bool
+authselect_check_features(const struct authselect_profile *profile,
+                          const char **features)
+{
+    const char *similar;
+    bool result = true;
+    char **supported;
+    int i;
+
+    if (features == NULL) {
+        return true;
+    }
+
+    supported = authselect_profile_features(profile);
+    if (supported == NULL) {
+        ERROR("Unable to obtain supported features");
+        return false;
+    }
+
+    for (i = 0; features[i] != NULL; i++) {
+        if (string_array_has_value(supported, features[i])) {
+            continue;
+        }
+
+        result = false;
+        similar = string_array_find_similar(features[i], supported, 5);
+        if (similar != NULL) {
+            ERROR("Unknown profile feature [%s], did you mean [%s]?",
+                  features[i], similar);
+        } else {
+            ERROR("Unknown profile feature [%s]", features[i]);
+        }
+    }
+
+    string_array_free(supported);
+
+    return result;
+}
+
 _PUBLIC_ void
 authselect_set_debug_fn(authselect_debug_fn fn, void *pvt)
 {
@@ -51,6 +90,11 @@ authselect_activate(const char *profile_id,
         ERROR("Unable to find profile [%s] [%d]: %s",
               profile_id, ret, strerror(ret));
         return ret;
+    }
+
+    if (!authselect_check_features(profile, features)) {
+        ret = EINVAL;
+        goto done;
     }
 
     if (force_overwrite) {
