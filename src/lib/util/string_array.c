@@ -25,6 +25,7 @@
 
 #include "common/common.h"
 #include "lib/util/string_array.h"
+#include "lib/util/string.h"
 
 char **
 string_array_create(size_t num_items)
@@ -194,4 +195,33 @@ string_array_sort(char **array)
 
     qsort(array, string_array_count(array), sizeof(char *),
           string_array_sort_callback);
+}
+
+const char *
+string_array_find_similar(const char *value, char **array, int max_distance)
+{
+    const char *word = NULL;
+    int current;
+    int best;
+    int i;
+
+    for (i = 0; array[i] != NULL; i++) {
+        current = string_levenshtein(value, array[i]);
+        if (word == NULL) {
+            best = current;
+            word = array[i];
+            continue;
+        }
+
+        if (current < best) {
+            best = current;
+            word = array[i];
+        }
+    }
+
+    if (best > max_distance) {
+        return NULL;
+    }
+
+    return word;
 }

@@ -179,4 +179,10 @@ string_remove_remainder(char *str, size_t from);
 void
 string_replace_shake(char *str, size_t original_length);
 
+/**
+ * Compute Levenshtein distance of two strings.
+ */
+int
+string_levenshtein(const char *a, const char *b);
+
 #endif /* _STRING_H_ */

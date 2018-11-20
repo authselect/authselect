@@ -23,6 +23,7 @@ check_PROGRAMS = $(TESTS)
 test_util_string_array_SOURCES = \
     test_util_string_array.c \
     ../lib/util/string_array.c \
+    ../lib/util/string.c \
     $(NULL)
 test_util_string_array_CFLAGS = \
     $(AM_CFLAGS)
