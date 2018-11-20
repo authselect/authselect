@@ -138,4 +138,19 @@ string_array_concat(char **to, char **items, bool unique);
 void
 string_array_sort(char **array);
 
+/**
+ * Find similar word inside a NULL-terminated array, based on Levenshtein
+ * distance algorithm.
+ *
+ * @param value        Value to search in @array.
+ * @param array        NULL-terminated string array.
+ * @param max_distance Maximum distance between two strings. If the real
+ *                     distance is greater then this value, those string
+ *                     are not considered as similar.
+ *
+ * @return Most similar word that was found or NULL if non was found.
+ */
+const char *
+string_array_find_similar(const char *value, char **array, int max_distance);
+
 #endif /* _STRING_ARRAY_H_ */
