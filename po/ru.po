@@ -1,44 +1,59 @@
 # Igor Gorbounov <igor.gorbounov@gmail.com>, 2018. #zanata
+# Ludek Janda <ljanda@redhat.com>, 2018. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: authselect 1.0\n"
+"Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2018-09-27 14:04+0200\n"
+"POT-Creation-Date: 2018-11-20 14:02+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-03-03 04:24+0000\n"
-"Last-Translator: Igor Gorbounov <igor.gorbounov@gmail.com>\n"
+"PO-Revision-Date: 2018-11-23 10:49+0000\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: src/lib/authselect.c:47
+#: src/lib/authselect.c:47 src/lib/authselect.c:169
+msgid "Unable to obtain supported features"
+msgstr "Не удалось получить поддерживаемые функции"
+
+#: src/lib/authselect.c:59
+#, c-format
+msgid "Unknown profile feature [%s], did you mean [%s]?"
+msgstr "Неизвестная функция профиля [%s], ты имел ввиду [%s]?"
+
+#: src/lib/authselect.c:62
+#, c-format
+msgid "Unknown profile feature [%s]"
+msgstr "Неизвестная функция профиля [%s]"
+
+#: src/lib/authselect.c:86
 #, c-format
 msgid "Trying to activate profile [%s]"
 msgstr "Попытка активировать профиль [%s]"
 
-#: src/lib/authselect.c:51 src/lib/profiles/read.c:312
+#: src/lib/authselect.c:90 src/lib/authselect.c:162 src/lib/profiles/read.c:312
 #, c-format
 msgid "Unable to find profile [%s] [%d]: %s"
 msgstr "Не удается найти профиль [%s] [%d]: %s"
 
-#: src/lib/authselect.c:57
+#: src/lib/authselect.c:101
 msgid "Enforcing activation!"
 msgstr "Принудительная активация!"
 
-#: src/lib/authselect.c:65
+#: src/lib/authselect.c:109
 #, c-format
 msgid "Unable to check configuration [%d]: %s"
 msgstr "Не удается проверить конфигурацию [%d]: %s"
 
-#: src/lib/authselect.c:70
+#: src/lib/authselect.c:114
 msgid "Unexpected changes to the configuration were detected."
 msgstr "Обнаружены неожиданные изменения конфигурации."
 
-#: src/lib/authselect.c:71
+#: src/lib/authselect.c:115
 msgid ""
 "Refusing to activate profile unless those changes are removed or overwrite "
 "is requested."
@@ -46,11 +61,11 @@ msgstr ""
 "Отказ активировать профиль, если эти изменения не будут удалены, или не "
 "будет запрошена перезапись."
 
-#: src/lib/authselect.c:80
+#: src/lib/authselect.c:124
 msgid "File that needs to be overwritten was found"
 msgstr "Обнаружен файл, который требуется перезаписать"
 
-#: src/lib/authselect.c:81
+#: src/lib/authselect.c:125
 msgid ""
 "Refusing to activate profile unless this file is removed or overwrite is "
 "requested."
@@ -58,19 +73,24 @@ msgstr ""
 "Отказ активировать профиль, если этот файл не будет удален, или не будет "
 "запрошена перезапись."
 
-#: src/lib/authselect.c:92
+#: src/lib/authselect.c:136
 #, c-format
 msgid "Unable to activate profile [%s] [%d]: %s"
 msgstr "Не удается активировать профиль [%s] [%d]: %s"
 
-#: src/lib/authselect.c:126
-msgid "Trying to backup system files"
-msgstr ""
+#: src/lib/authselect.c:179
+#, c-format
+msgid "Profile feature [%s] is no longer supported, removing it..."
+msgstr "Функция профиля [%s] больше не поддерживается, удаляя его ..."
 
-#: src/lib/authselect.c:129
+#: src/lib/authselect.c:202
+msgid "Trying to backup system files"
+msgstr "Попытка резервного копирования системных файлов"
+
+#: src/lib/authselect.c:205
 #, c-format
 msgid "Unable to backup system files [%d]: %s"
-msgstr ""
+msgstr "Не удалось выполнить резервное копирование системных файлов [%d]: %s"
 
 #: src/lib/util/file.c:42
 msgid "Internal error: stat cannot be NULL!"
@@ -150,39 +170,39 @@ msgstr "Не удается получить родительский катал
 msgid "Invalid operator!"
 msgstr "Недопустимый оператор!"
 
-#: src/lib/util/template.c:356 src/lib/files/system.c:112
-#: src/lib/files/system.c:170
+#: src/lib/util/template.c:373 src/lib/util/template.c:520
+#: src/lib/files/system.c:112 src/lib/files/system.c:170
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr ""
 "Не удается выполнить компиляцию регулярного выражения: ошибка regex %d"
 
-#: src/lib/util/template.c:365
+#: src/lib/util/template.c:382 src/lib/util/template.c:530
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "Не удается обработать соответствие [%d]: %s"
 
-#: src/lib/util/template.c:385
+#: src/lib/util/template.c:402
 #, c-format
 msgid "Unable to process operator [%d]: %s"
 msgstr "Не удается обработать оператор [%d]: %s"
 
-#: src/lib/util/template.c:400 src/lib/files/system.c:130
-#: src/lib/files/system.c:195
+#: src/lib/util/template.c:417 src/lib/util/template.c:541
+#: src/lib/files/system.c:130 src/lib/files/system.c:195
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "Не удается выполнить поиск строки: ошибка regex %d"
 
-#: src/lib/util/template.c:431
+#: src/lib/util/template.c:448
 #, c-format
 msgid "Unable to generate template [%d]: %s"
 msgstr "Не удается сформировать шаблон [%d]: %s"
 
-#: src/lib/util/template.c:460
+#: src/lib/util/template.c:477
 msgid "Unable to get current time!"
 msgstr "Не удается получить текущее время!"
 
-#: src/lib/util/template.c:474
+#: src/lib/util/template.c:491
 msgid "Unable to create message!"
 msgstr "Не удается создать сообщение!"
 
@@ -214,107 +234,115 @@ msgstr "Не удается выполнить chmod для файла [%s] [%d]
 #: src/lib/util/textfile.c:273
 #, c-format
 msgid "Unable to chown file [%s] [%d]: %s"
-msgstr ""
+msgstr "Не удалось выполнить файл [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:104
 msgid "Unable to generate nsswitch.conf"
-msgstr ""
+msgstr "Не удалось создать nsswitch.conf"
 
 #: src/lib/authselect_profile.c:111
 #, c-format
 msgid "Unable to find nsswitch maps [%d]: %s"
-msgstr ""
+msgstr "Не удалось найти nsswitch-карты [%d]: %s"
 
-#: src/lib/authselect_profile.c:289
+#: src/lib/authselect_profile.c:132
+msgid "Unable to create array (out of memory)"
+msgstr "Не удалось создать массив (из памяти)"
+
+#: src/lib/authselect_profile.c:141 src/lib/authselect_profile.c:150
+msgid "Unable to obtain feature list (out of memory)"
+msgstr "Не удалось получить список функций (из памяти)"
+
+#: src/lib/authselect_profile.c:344
 #, c-format
 msgid "Creating empty profile at [%s]"
-msgstr ""
+msgstr "Создание пустого профиля в [%s]"
 
-#: src/lib/authselect_profile.c:293 src/lib/authselect_profile.c:383
+#: src/lib/authselect_profile.c:348 src/lib/authselect_profile.c:438
 #, c-format
 msgid "Unable to make path [%s] [%d]: %s"
-msgstr ""
+msgstr "Не удалось создать путь [%s] [%d]: %s"
 
-#: src/lib/authselect_profile.c:300 src/lib/authselect_profile.c:342
+#: src/lib/authselect_profile.c:355 src/lib/authselect_profile.c:397
 #, c-format
 msgid "Unable to write to [%s] [%d]: %s"
-msgstr ""
+msgstr "Не в состоянии написать [%s] [%d]: %s"
 
-#: src/lib/authselect_profile.c:322 src/lib/authselect_profile.c:391
+#: src/lib/authselect_profile.c:377 src/lib/authselect_profile.c:446
 #: src/lib/files/system.c:673
 #, c-format
 msgid "There is no filename in [%s]"
-msgstr ""
+msgstr "Нет имени файла в [%s]"
 
-#: src/lib/authselect_profile.c:331
+#: src/lib/authselect_profile.c:386
 #, c-format
 msgid "Unable to create symbolic link [%s] to [%s] [%d]: %s"
-msgstr ""
+msgstr "Не удалось создать символическую ссылку [%s] до [%s] [%d]: %s"
 
-#: src/lib/authselect_profile.c:364
+#: src/lib/authselect_profile.c:419
 #, c-format
 msgid "Creating new profile from \"%s\" at [%s]"
-msgstr ""
+msgstr "Создание нового профиля из \"%s\" в [%s]"
 
-#: src/lib/authselect_profile.c:368
+#: src/lib/authselect_profile.c:423
 #, c-format
 msgid "Unable to read base profile [%s] [%d]: %s"
-msgstr ""
+msgstr "Не удалось прочитать базовый профиль [%s] [%d]: %s"
 
-#: src/lib/authselect_profile.c:376
+#: src/lib/authselect_profile.c:431
 msgid "Unable to resolve symbolic links names"
-msgstr ""
+msgstr "Невозможно разрешить имена символических ссылок"
 
-#: src/lib/authselect_profile.c:401 src/lib/authselect_profile.c:414
-#: src/lib/authselect_profile.c:428
+#: src/lib/authselect_profile.c:456 src/lib/authselect_profile.c:469
+#: src/lib/authselect_profile.c:483
 #, c-format
 msgid "Unable to create [%s] [%d]: %s"
-msgstr ""
+msgstr "Не удалось создать [%s] [%d]: %s"
 
-#: src/lib/authselect_profile.c:436
+#: src/lib/authselect_profile.c:491
 #, c-format
 msgid "Unknown file name [%s]"
-msgstr ""
+msgstr "Неизвестное имя файла [%s]"
 
-#: src/lib/authselect_profile.c:463
+#: src/lib/authselect_profile.c:518
 msgid "Name can not be empty"
-msgstr ""
+msgstr "Имя не может быть пустым"
 
-#: src/lib/authselect_profile.c:475
+#: src/lib/authselect_profile.c:530
 msgid "Default profile can not be created"
-msgstr ""
+msgstr "Профиль по умолчанию не может быть создан"
 
-#: src/lib/authselect_profile.c:478
+#: src/lib/authselect_profile.c:533
 msgid "Value AUTHSELECT_PROFILE_ANY is invalid in this context"
-msgstr ""
+msgstr "Значение AUTHSELECT_PROFILE_ANY недействительно в этом контексте"
 
-#: src/lib/authselect_profile.c:483
+#: src/lib/authselect_profile.c:538
 msgid "Unable to create profile path: out of memory"
-msgstr ""
+msgstr "Не удалось создать путь к профилю: из памяти"
 
-#: src/lib/authselect_profile.c:489
+#: src/lib/authselect_profile.c:544
 #, c-format
 msgid "Profile \"%s\" already exist at [%s]"
-msgstr ""
+msgstr "Профиль \"%s«уже существуют в [%s]"
 
-#: src/lib/authselect_profile.c:493
+#: src/lib/authselect_profile.c:548
 #, c-format
 msgid "Unable to access [%s] [%d]: %s"
-msgstr ""
+msgstr "Не удалось получить доступ к [%s] [%d]: %s"
 
-#: src/lib/authselect_profile.c:499
+#: src/lib/authselect_profile.c:554
 msgid "Unable to create file name: out of memory"
-msgstr ""
+msgstr "Не удалось создать имя файла: из памяти"
 
-#: src/lib/authselect_profile.c:507
+#: src/lib/authselect_profile.c:562
 #, c-format
 msgid "Unable to create empty profile [%d]: %s"
-msgstr ""
+msgstr "Не удалось создать пустой профиль [%d]: %s"
 
-#: src/lib/authselect_profile.c:516
+#: src/lib/authselect_profile.c:571
 #, c-format
 msgid "Unable to create profile [%d]: %s"
-msgstr ""
+msgstr "Не удалось создать профиль [%d]: %s"
 
 #: src/lib/profiles/activate.c:44
 #, c-format
@@ -391,7 +419,7 @@ msgstr "Поиск профиля [%s]"
 
 #: src/lib/profiles/read.c:106
 msgid "Locations array is NULL"
-msgstr ""
+msgstr "Массив местоположений NULL"
 
 #: src/lib/profiles/read.c:129
 #, c-format
@@ -427,7 +455,7 @@ msgstr "Чтение файла [%s/%s]"
 #: src/lib/files/system.c:82
 #, c-format
 msgid "Unable to read file [%s/%s] [%d]: %s"
-msgstr ""
+msgstr "Не удалось прочитать файл [%s/%s] [%d]: %s"
 
 #: src/lib/profiles/read.c:199 src/lib/profiles/read.c:218
 #, c-format
@@ -476,7 +504,7 @@ msgstr "Не удается прочитать [%s] [%d]: %s"
 #: src/lib/files/system.c:288
 #, c-format
 msgid "Unable to generate nsswitch.conf [%d]: %s"
-msgstr ""
+msgstr "Не удалось создать nsswitch.conf [%d]: %s"
 
 #: src/lib/files/system.c:354
 #, c-format
@@ -486,27 +514,27 @@ msgstr "Не удается сформировать файлы [%d]: %s"
 #: src/lib/files/system.c:368
 #, c-format
 msgid "Writing temporary file for [%s]"
-msgstr ""
+msgstr "Написание временного файла для [%s]"
 
 #: src/lib/files/system.c:372
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
-msgstr ""
+msgstr "Не удалось записать временный файл [%s] [%d]: %s"
 
 #: src/lib/files/system.c:377
 #, c-format
 msgid "Temporary file is named [%s]"
-msgstr ""
+msgstr "Временный файл называется [%s]"
 
 #: src/lib/files/system.c:388
 #, c-format
 msgid "Renaming [%s] to [%s]"
-msgstr ""
+msgstr "Переименование [%s] до [%s]"
 
 #: src/lib/files/system.c:393
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
-msgstr ""
+msgstr "Не удалось переименовать [%s] до [%s] [%d]: %s"
 
 #: src/lib/files/system.c:493
 #, c-format
@@ -521,11 +549,11 @@ msgstr "Не удается проверить файл [%s] [%d]: %s"
 #: src/lib/files/system.c:511
 #, c-format
 msgid "Comparing content against [%s]"
-msgstr ""
+msgstr "Сравнение содержимого с [%s]"
 
 #: src/lib/files/system.c:515
 msgid "Comparing content against current profile"
-msgstr ""
+msgstr "Сравнение содержимого с текущим профилем"
 
 #: src/lib/files/system.c:521
 #, c-format
@@ -555,37 +583,37 @@ msgstr "Ошибка при попытке доступа к файлу [%s] [%d
 #: src/lib/files/system.c:596
 #, c-format
 msgid "Unable to create backup directory [%s/%s] [%d]: %s"
-msgstr ""
+msgstr "Не удалось создать каталог резервного копирования [%s/%s] [%d]: %s"
 
 #: src/lib/files/system.c:622
 #, c-format
 msgid "Unable to create backup directory [%s] [%d]: %s"
-msgstr ""
+msgstr "Не удалось создать каталог резервного копирования [%s] [%d]: %s"
 
 #: src/lib/files/system.c:643
 #, c-format
 msgid "Creating temporary directory at [%s]"
-msgstr ""
+msgstr "Создание временного каталога в [%s]"
 
 #: src/lib/files/system.c:666
 #, c-format
 msgid "Unable to create backup directory [%d]: %s"
-msgstr ""
+msgstr "Не удалось создать каталог резервного копирования [%d]: %s"
 
 #: src/lib/files/system.c:678
 #, c-format
 msgid "Copying [%s] to [%s/%s]"
-msgstr ""
+msgstr "Копирование [%s] до [%s/%s]"
 
 #: src/lib/files/system.c:682
 #, c-format
 msgid "File [%s] does not exist"
-msgstr ""
+msgstr "Файл [%s] не существует"
 
 #: src/lib/files/system.c:684
 #, c-format
 msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
-msgstr ""
+msgstr "Не удалось скопировать [%s] до [%s/%s] [%d]: %s"
 
 #: src/cli/cli_tool.c:71
 #, c-format
@@ -691,12 +719,12 @@ msgid "At least one option is required!\n"
 msgstr "Требуется хотя бы один параметр!\n"
 "\n"
 
-#: src/cli/main.c:70 src/cli/main.c:361
+#: src/cli/main.c:70 src/cli/main.c:362
 msgid "Profile identifier."
 msgstr "Идентификатор профиля."
 
-#: src/cli/main.c:73 src/cli/main.c:237 src/cli/main.c:286 src/cli/main.c:321
-#: src/cli/main.c:364 src/cli/main.c:514 src/cli/main.c:536 src/cli/main.c:576
+#: src/cli/main.c:73 src/cli/main.c:238 src/cli/main.c:287 src/cli/main.c:322
+#: src/cli/main.c:365 src/cli/main.c:515 src/cli/main.c:537 src/cli/main.c:577
 msgid "Unable to parse command arguments"
 msgstr "Не удалось разобрать аргументы команды"
 
@@ -706,36 +734,36 @@ msgstr "Принудительные изменения"
 
 #: src/cli/main.c:115
 msgid "Backup system files before activating profile"
-msgstr ""
+msgstr "Архивировать файлы системы перед активацией профиля"
 
 #: src/cli/main.c:115
 msgid "NAME"
-msgstr ""
+msgstr "ИМЯ"
 
 #: src/cli/main.c:116
 msgid "Do not backup system files when --force is set"
-msgstr ""
+msgstr "Не копируйте системные файлы, когда параметр --force установлен"
 
 #: src/cli/main.c:117
 msgid "Do not print profile requirements"
-msgstr ""
+msgstr "Не печатать требования к профилю"
 
-#: src/cli/main.c:128 src/cli/main.c:336 src/cli/main.c:370 src/cli/main.c:397
+#: src/cli/main.c:128 src/cli/main.c:337 src/cli/main.c:371 src/cli/main.c:398
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "Не удается получить информацию о профиле [%d]: %s"
 
-#: src/cli/main.c:136 src/cli/main.c:404
+#: src/cli/main.c:136 src/cli/main.c:405
 msgid "Unable to read profile requirements!"
-msgstr ""
+msgstr "Не удалось прочитать требования к профилю!"
 
 #: src/cli/main.c:143
 msgid "Unable to obtain nsswitch maps!"
-msgstr ""
+msgstr "Не удалось получить карты nsswitch!"
 
 #: src/cli/main.c:151
 msgid "Unable to backup system files!\n"
-msgstr ""
+msgstr "Не удалось выполнить резервное копирование системных файлов!\n"
 
 #: src/cli/main.c:161
 msgid ""
@@ -752,116 +780,118 @@ msgstr ""
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "Не удается активировать профиль [%d]: %s\n"
 
-#: src/cli/main.c:204
+#: src/cli/main.c:205
 msgid "Changes were successfully applied.\n"
-msgstr ""
+msgstr "Изменения были успешно применены.\n"
 
-#: src/cli/main.c:207 src/cli/main.c:243
+#: src/cli/main.c:208 src/cli/main.c:244
 msgid "No existing configuration detected.\n"
 msgstr "Конфигурация не обнаружена.\n"
 
-#: src/cli/main.c:210
+#: src/cli/main.c:211
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
 msgstr ""
+"Были обнаружены некоторые неожиданные изменения конфигурации. Вместо этого "
+"используйте команду «выбрать».\n"
 
-#: src/cli/main.c:214
+#: src/cli/main.c:215
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
-msgstr ""
+msgstr "Не удалось применить изменения [%d]: %s\n"
 
-#: src/cli/main.c:231
+#: src/cli/main.c:232
 msgid "Print command parameters instead of formatted output"
-msgstr ""
+msgstr "Параметры команды печати вместо форматированного вывода"
 
-#: src/cli/main.c:246
+#: src/cli/main.c:247
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "Не удается получить текущую конфигурацию [%d]: %s"
 
-#: src/cli/main.c:260
+#: src/cli/main.c:261
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "Идентификатор профиля: %s\n"
 
-#: src/cli/main.c:261
+#: src/cli/main.c:262
 msgid "Enabled features:"
 msgstr "Включенные функции:"
 
-#: src/cli/main.c:264
+#: src/cli/main.c:265
 msgid " None\n"
 msgstr " Нет\n"
 
-#: src/cli/main.c:292
+#: src/cli/main.c:293
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "Не удается протестировать текущую конфигурацию [%d]: %s"
 
-#: src/cli/main.c:299
+#: src/cli/main.c:300
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
 msgstr ""
 "Текущая конфигурация недействительна. Вероятно, она изменена вне authselect."
 
-#: src/cli/main.c:304
+#: src/cli/main.c:305
 msgid "Current configuration is valid."
 msgstr "Текущая конфигурация действительна."
 
-#: src/cli/main.c:327
+#: src/cli/main.c:328
 msgid "Unable to get profile list!"
 msgstr "Не удается получить список профилей!"
 
-#: src/cli/main.c:442
+#: src/cli/main.c:443
 msgid "Print content of all files"
 msgstr "Печать содержимого всех файлов"
 
-#: src/cli/main.c:443
+#: src/cli/main.c:444
 msgid "Print nsswitch.conf content"
 msgstr "Печать содержимого nsswitch.conf"
 
-#: src/cli/main.c:444
+#: src/cli/main.c:445
 msgid "Print system-auth content"
 msgstr "Печать содержимого system-auth"
 
-#: src/cli/main.c:445
+#: src/cli/main.c:446
 msgid "Print password-auth content"
 msgstr "Печать содержимого password-auth"
 
-#: src/cli/main.c:446
+#: src/cli/main.c:447
 msgid "Print smartcard-auth content"
 msgstr "Печать содержимого smartcard-auth"
 
-#: src/cli/main.c:447
+#: src/cli/main.c:448
 msgid "Print fingerprint-auth content"
 msgstr "Печать содержимого fingerprint-auth"
 
-#: src/cli/main.c:448
+#: src/cli/main.c:449
 msgid "Print postlogin content"
 msgstr "Печать содержимого postlogin"
 
-#: src/cli/main.c:449
+#: src/cli/main.c:450
 msgid "Print dconf database content"
 msgstr "Печать содержимого базы данных dconf"
 
-#: src/cli/main.c:450
+#: src/cli/main.c:451
 msgid "Print dconf lock content"
 msgstr "Печать содержимого dconf lock"
 
-#: src/cli/main.c:477
+#: src/cli/main.c:478
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "Не удается получить сформированное содержимое [%d]: %s"
 
-#: src/cli/main.c:496
+#: src/cli/main.c:497
 #, c-format
 msgid "File %s: Empty\n"
 "\n"
 msgstr "Файл %s: пустой\n"
 "\n"
 
-#: src/cli/main.c:498
+#: src/cli/main.c:499
 #, c-format
 msgid "File %s:\n"
 "%s\n"
@@ -870,79 +900,84 @@ msgstr "Файл %s:\n"
 "%s\n"
 "\n"
 
-#: src/cli/main.c:511
+#: src/cli/main.c:512
 msgid "Feature to enable."
 msgstr "Включаемая функция."
 
-#: src/cli/main.c:520
+#: src/cli/main.c:521
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "Не удается включить функцию [%d]: %s\n"
 
-#: src/cli/main.c:533
+#: src/cli/main.c:534
 msgid "Feature to disable."
 msgstr "Отключаемая функция."
 
-#: src/cli/main.c:542
+#: src/cli/main.c:543
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "Не удается отключить функцию [%d]: %s\n"
 
-#: src/cli/main.c:561
+#: src/cli/main.c:562
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr ""
-
-#: src/cli/main.c:562
-msgid "ID of a profile that should be used as a base for the new profile"
-msgstr ""
+"Создать новый профиль в качестве профиля поставщика вместо настраиваемого "
+"профиля"
 
 #: src/cli/main.c:563
+msgid "ID of a profile that should be used as a base for the new profile"
+msgstr ""
+"ID профиля, который должен использоваться в качестве базы для нового профиля"
+
+#: src/cli/main.c:564
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
 msgstr ""
-
-#: src/cli/main.c:564
-msgid "Symlink meta files from the base profile instead of copying them"
-msgstr ""
+"Создайте новый профиль в профиле по умолчанию, даже если существует профиль "
+"продавца с тем же именем"
 
 #: src/cli/main.c:565
-msgid "Symlink nsswitch files from the base profile instead of copying them"
-msgstr ""
+msgid "Symlink meta files from the base profile instead of copying them"
+msgstr "Мета-файлы Symlink из базового профиля вместо их копирования"
 
 #: src/cli/main.c:566
-msgid "Symlink pam files from the base profile instead of copying them"
-msgstr ""
+msgid "Symlink nsswitch files from the base profile instead of copying them"
+msgstr "Symlink nsswitch файлы из базового профиля вместо их копирования"
 
 #: src/cli/main.c:567
-msgid "Symlink dconf files from the base profile instead of copying them"
-msgstr ""
+msgid "Symlink pam files from the base profile instead of copying them"
+msgstr "Файлы папок Symlink из базового профиля вместо их копирования"
 
 #: src/cli/main.c:568
+msgid "Symlink dconf files from the base profile instead of copying them"
+msgstr "Файлы dconf Symlink из базового профиля вместо их копирования"
+
+#: src/cli/main.c:569
 msgid "Symlink specific file (can be set multiple times)"
-msgstr ""
+msgstr "Специальный файл для Symlink (может быть установлен несколько раз)"
 
-#: src/cli/main.c:573
+#: src/cli/main.c:574
 msgid "New profile name."
-msgstr ""
+msgstr "Новое имя профиля."
 
-#: src/cli/main.c:583
+#: src/cli/main.c:584
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
-msgstr ""
+msgstr "Не удалось создать новый профиль [%d]: %s\n"
 
-#: src/cli/main.c:587
+#: src/cli/main.c:588
 #, c-format
 msgid "New profile was created at %s\n"
-msgstr ""
+msgstr "Новый профиль был создан в %s\n"
 
-#: src/cli/main.c:644
+#: src/cli/main.c:645
 msgid "Authselect can only be run as root!\n"
 msgstr "Authselect может выполняться только пользователем root!\n"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
-msgstr ""
+msgstr "NIS для информации пользователя по умолчанию"
 
 #: src/compat/authcompat_Options.py:83
 msgid "<domain>"
@@ -953,13 +988,13 @@ msgid "default NIS domain"
 msgstr "домен NIS по умолчанию"
 
 #: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
-#: src/compat/authcompat_Options.py:97 src/compat/authcompat_Options.py:98
+#: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
 msgid "<server>"
 msgstr "<server>"
 
 #: src/compat/authcompat_Options.py:84
 msgid "default NIS server"
-msgstr ""
+msgstr "сервер NIS по умолчанию"
 
 #: src/compat/authcompat_Options.py:85
 msgid "LDAP for user information by default"
@@ -1007,159 +1042,165 @@ msgid "action to be taken on smart card removal"
 msgstr "действие при извлечении смарт-карты"
 
 #: src/compat/authcompat_Options.py:94
+msgid "require smart card for authentication by default"
+msgstr "по умолчанию требуется смарт-карта для аутентификации"
+
+#: src/compat/authcompat_Options.py:95
 msgid "authentication with fingerprint readers by default"
 msgstr ""
 "проверка подлинности с помощью считывателей отпечатков пальцев по умолчанию"
 
-#: src/compat/authcompat_Options.py:95
+#: src/compat/authcompat_Options.py:96
 msgid "automatic per-user ecryptfs"
 msgstr "автоматическое использование ecryptfs для каждого пользователя"
 
-#: src/compat/authcompat_Options.py:96
-msgid "Kerberos authentication by default"
-msgstr ""
-
 #: src/compat/authcompat_Options.py:97
-msgid "default Kerberos KDC"
-msgstr ""
+msgid "Kerberos authentication by default"
+msgstr "Проверка подлинности Kerberos по умолчанию"
 
 #: src/compat/authcompat_Options.py:98
-msgid "default Kerberos admin server"
-msgstr ""
+msgid "default Kerberos KDC"
+msgstr "по умолчанию Kerberos KDC"
 
-#: src/compat/authcompat_Options.py:99 src/compat/authcompat_Options.py:152
+#: src/compat/authcompat_Options.py:99
+msgid "default Kerberos admin server"
+msgstr "сервер администратора Kerberos по умолчанию"
+
+#: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
 msgid "<realm>"
 msgstr "<realm>"
 
-#: src/compat/authcompat_Options.py:99
-msgid "default Kerberos realm"
-msgstr ""
-
 #: src/compat/authcompat_Options.py:100
-msgid "use of DNS to find Kerberos KDCs"
-msgstr ""
+msgid "default Kerberos realm"
+msgstr "область по умолчанию Kerberos"
 
 #: src/compat/authcompat_Options.py:101
-msgid "use of DNS to find Kerberos realms"
-msgstr ""
+msgid "use of DNS to find Kerberos KDCs"
+msgstr "использование DNS для поиска KDC Kerberos"
 
 #: src/compat/authcompat_Options.py:102
+msgid "use of DNS to find Kerberos realms"
+msgstr "использование DNS для поиска областей Kerberos"
+
+#: src/compat/authcompat_Options.py:103
 msgid "winbind for user information by default"
 msgstr "winbind для информации пользователей по умолчанию"
 
-#: src/compat/authcompat_Options.py:103
+#: src/compat/authcompat_Options.py:104
 msgid "winbind for authentication by default"
 msgstr "winbind для идентификации по умолчанию"
 
-#: src/compat/authcompat_Options.py:104
+#: src/compat/authcompat_Options.py:105
 msgid "<Administrator>"
 msgstr "<Administrator>"
 
-#: src/compat/authcompat_Options.py:104
+#: src/compat/authcompat_Options.py:105
 msgid "join the winbind domain or ads realm now as this administrator"
 msgstr "войти в домен winbind или область ads как этот администратор"
 
-#: src/compat/authcompat_Options.py:105
+#: src/compat/authcompat_Options.py:106
 msgid "Kerberos 5 for authenticate with winbind"
 msgstr "Kerberos 5 для идентификации с помощью winbind"
 
-#: src/compat/authcompat_Options.py:106
+#: src/compat/authcompat_Options.py:107
 msgid "<workgroup>"
 msgstr "<workgroup>"
 
-#: src/compat/authcompat_Options.py:106
+#: src/compat/authcompat_Options.py:107
 msgid "workgroup authentication servers are in"
 msgstr "рабочая группа, в которую входят серверы идентификации"
 
-#: src/compat/authcompat_Options.py:107
+#: src/compat/authcompat_Options.py:108
 msgid ""
 "SSSD for user information by default with manually managed configuration"
 msgstr ""
 "SSSD для информации о пользователях по умолчанию с конфигурацией, ведущейся "
 "вручную"
 
-#: src/compat/authcompat_Options.py:108
+#: src/compat/authcompat_Options.py:109
 msgid "SSSD for authentication by default with manually managed configuration"
 msgstr ""
 "SSSD для идентификации по умолчанию с конфигурацией, ведущейся вручную"
 
-#: src/compat/authcompat_Options.py:109
+#: src/compat/authcompat_Options.py:110
 msgid "caching of user credentials in SSSD by default"
 msgstr "кэширование информации пользователей в SSSD по умолчанию"
 
-#: src/compat/authcompat_Options.py:110
+#: src/compat/authcompat_Options.py:111
 msgid "check of access.conf during account authorization"
 msgstr "проверка access.conf при авторизации учётной записи"
 
-#: src/compat/authcompat_Options.py:111
+#: src/compat/authcompat_Options.py:112
 msgid "creation of home directories for users on their first login"
 msgstr "создание домашних каталогов пользователей при первом входе"
 
-#: src/compat/authcompat_Options.py:112
+#: src/compat/authcompat_Options.py:113
 msgid ""
 "account locking in case of too many consecutive authentication failures"
 msgstr ""
 "блокирование учетной записи в случае слишком большого числа последовательных "
 "ошибок идентификации"
 
-#: src/compat/authcompat_Options.py:113 src/compat/authcompat_Options.py:114
-#: src/compat/authcompat_Options.py:115 src/compat/authcompat_Options.py:116
+#: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
+#: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
 msgid "<number>"
 msgstr "<number>"
 
-#: src/compat/authcompat_Options.py:113
-msgid "minimum length of a password"
-msgstr ""
-
 #: src/compat/authcompat_Options.py:114
-msgid "minimum number of character classes in a password"
-msgstr ""
+msgid "minimum length of a password"
+msgstr "минимальная длина пароля"
 
 #: src/compat/authcompat_Options.py:115
-msgid "maximum number of same consecutive characters in a password"
-msgstr ""
+msgid "minimum number of character classes in a password"
+msgstr "минимальное количество классов символов в пароле"
 
 #: src/compat/authcompat_Options.py:116
-msgid "maximum number of consecutive characters of same class in a password"
-msgstr ""
+msgid "maximum number of same consecutive characters in a password"
+msgstr "максимальное количество одинаковых символов в пароле"
 
 #: src/compat/authcompat_Options.py:117
-msgid "require at least one lowercase character in a password"
+msgid "maximum number of consecutive characters of same class in a password"
 msgstr ""
+"максимальное количество последовательных символов одного и того же класса в "
+"пароле"
 
 #: src/compat/authcompat_Options.py:118
-msgid "require at least one uppercase character in a password"
-msgstr ""
+msgid "require at least one lowercase character in a password"
+msgstr "требуется хотя бы один строчный символ в пароле"
 
 #: src/compat/authcompat_Options.py:119
-msgid "require at least one digit in a password"
-msgstr ""
+msgid "require at least one uppercase character in a password"
+msgstr "требуется хотя бы один символ верхнего регистра в пароле"
 
 #: src/compat/authcompat_Options.py:120
-msgid "require at least one other character in a password"
-msgstr ""
+msgid "require at least one digit in a password"
+msgstr "требуется хотя бы одна цифра в пароле"
 
-#: src/compat/authcompat_Options.py:123
+#: src/compat/authcompat_Options.py:121
+msgid "require at least one other character in a password"
+msgstr "требуется хотя бы один другой символ в пароле"
+
+#: src/compat/authcompat_Options.py:124
 msgid "do not start/stop services"
 msgstr "не запускать/останавливать службы"
 
-#: src/compat/authcompat_Options.py:124
+#: src/compat/authcompat_Options.py:125
 msgid "update all configuration files"
 msgstr "обновить все файлы конфигурации"
 
-#: src/compat/authcompat_Options.py:125 src/compat/authcompat_Options.py:126
+#: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
 msgid "the same as --updateall"
 msgstr "так же, как и --updateall"
 
-#: src/compat/authcompat_Options.py:135 src/compat/authcompat_Options.py:136
+#: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
 msgid "<name>"
-msgstr ""
+msgstr "<name>"
 
-#: src/compat/authcompat_Options.py:147
+#: src/compat/authcompat_Options.py:148
 msgid "<descrypt|bigcrypt|md5|sha256|sha512>"
 msgstr "<descrypt|bigcrypt|md5|sha256|sha512>"
 
-#: src/compat/authcompat_Options.py:148
+#: src/compat/authcompat_Options.py:149
 msgid "<URL>"
 msgstr "<URL>"
 
@@ -1215,32 +1256,32 @@ msgstr "отключить"
 #: src/compat/authcompat.py.in.in:49
 #, python-format
 msgid "Executing: %s"
-msgstr ""
+msgstr "Выполнение: %s"
 
 #: src/compat/authcompat.py.in.in:68
 #, python-format
 msgid "Service %s was not found. Please install the service."
-msgstr ""
+msgstr "обслуживание %s не был найден. Пожалуйста, установите сервис."
 
-#: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:618
-#: src/compat/authcompat.py.in.in:643
+#: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:626
+#: src/compat/authcompat.py.in.in:651
 #, python-format
 msgid "Command [%s] failed with %d, stderr:"
-msgstr ""
+msgstr "Команда [%s] не удалось %d, stderr:"
 
 #: src/compat/authcompat.py.in.in:183
 #, python-format
 msgid "Removing file: %s"
-msgstr ""
+msgstr "Удаление файла: %s"
 
 #: src/compat/authcompat.py.in.in:331
 #, python-format
 msgid "%s was not found. Please, install realmd."
-msgstr ""
+msgstr "%s не был найден. Пожалуйста, установите realmd."
 
 #: src/compat/authcompat.py.in.in:466
 msgid "Running authconfig compatibility tool."
-msgstr ""
+msgstr "Запуск средства совместимости с authconfig."
 
 #: src/compat/authcompat.py.in.in:467
 msgid ""
@@ -1248,6 +1289,9 @@ msgid ""
 "with authselect and minimum configuration. It does not provide all "
 "capabilities of authconfig.\n"
 msgstr ""
+"Цель этого инструмента - включить аутентификацию с выбранными службами с "
+"помощью authselect и минимальной конфигурации. Он не предоставляет всех "
+"возможностей authconfig.\n"
 
 #: src/compat/authcompat.py.in.in:470
 msgid ""

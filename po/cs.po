@@ -2,9 +2,9 @@
 # Zdenek <chmelarz@gmail.com>, 2018. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: authselect 1.0\n"
+"Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2018-09-27 14:04+0200\n"
+"POT-Creation-Date: 2018-11-20 14:02+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,30 +15,44 @@ msgstr ""
 "X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 
-#: src/lib/authselect.c:47
+#: src/lib/authselect.c:47 src/lib/authselect.c:169
+msgid "Unable to obtain supported features"
+msgstr ""
+
+#: src/lib/authselect.c:59
+#, c-format
+msgid "Unknown profile feature [%s], did you mean [%s]?"
+msgstr ""
+
+#: src/lib/authselect.c:62
+#, c-format
+msgid "Unknown profile feature [%s]"
+msgstr ""
+
+#: src/lib/authselect.c:86
 #, c-format
 msgid "Trying to activate profile [%s]"
 msgstr "Pokus o aktivaci profilu [%s]"
 
-#: src/lib/authselect.c:51 src/lib/profiles/read.c:312
+#: src/lib/authselect.c:90 src/lib/authselect.c:162 src/lib/profiles/read.c:312
 #, c-format
 msgid "Unable to find profile [%s] [%d]: %s"
 msgstr "Nelze nalézt profil [%s] [%d]: %s"
 
-#: src/lib/authselect.c:57
+#: src/lib/authselect.c:101
 msgid "Enforcing activation!"
 msgstr "Vynucuji aktivaci!"
 
-#: src/lib/authselect.c:65
+#: src/lib/authselect.c:109
 #, c-format
 msgid "Unable to check configuration [%d]: %s"
 msgstr "Nelze zkontrolovat konfiguraci [%d]: %s"
 
-#: src/lib/authselect.c:70
+#: src/lib/authselect.c:114
 msgid "Unexpected changes to the configuration were detected."
 msgstr "Nalezeny neočekávané změny konfigurace."
 
-#: src/lib/authselect.c:71
+#: src/lib/authselect.c:115
 msgid ""
 "Refusing to activate profile unless those changes are removed or overwrite "
 "is requested."
@@ -46,11 +60,11 @@ msgstr ""
 "Aktivace profilu odmítnuta dokud tyto změny nebudou odstraněny nebo patřičně "
 "upraveny."
 
-#: src/lib/authselect.c:80
+#: src/lib/authselect.c:124
 msgid "File that needs to be overwritten was found"
 msgstr "Nalezen soubor, který je nutné přepsat"
 
-#: src/lib/authselect.c:81
+#: src/lib/authselect.c:125
 msgid ""
 "Refusing to activate profile unless this file is removed or overwrite is "
 "requested."
@@ -58,16 +72,21 @@ msgstr ""
 "Aktivace profilu odmítnuta dokud nebude tento soubor odstraněn nebo patřičně "
 "upraven."
 
-#: src/lib/authselect.c:92
+#: src/lib/authselect.c:136
 #, c-format
 msgid "Unable to activate profile [%s] [%d]: %s"
 msgstr "Nelze aktivovat profil [%s] [%d]: %s"
 
-#: src/lib/authselect.c:126
+#: src/lib/authselect.c:179
+#, c-format
+msgid "Profile feature [%s] is no longer supported, removing it..."
+msgstr ""
+
+#: src/lib/authselect.c:202
 msgid "Trying to backup system files"
 msgstr ""
 
-#: src/lib/authselect.c:129
+#: src/lib/authselect.c:205
 #, c-format
 msgid "Unable to backup system files [%d]: %s"
 msgstr ""
@@ -151,38 +170,38 @@ msgstr "Nelze získat rodičovský adresář souboru [%s] [%d]: %s"
 msgid "Invalid operator!"
 msgstr "Neplatný operátor!"
 
-#: src/lib/util/template.c:356 src/lib/files/system.c:112
-#: src/lib/files/system.c:170
+#: src/lib/util/template.c:373 src/lib/util/template.c:520
+#: src/lib/files/system.c:112 src/lib/files/system.c:170
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr "Nelze přeložit regulární výraz: chyba regex %d"
 
-#: src/lib/util/template.c:365
+#: src/lib/util/template.c:382 src/lib/util/template.c:530
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "Nelze zpracovat shodu [%d]: %s"
 
-#: src/lib/util/template.c:385
+#: src/lib/util/template.c:402
 #, c-format
 msgid "Unable to process operator [%d]: %s"
 msgstr "Nelze zpracovat operátor [%d]: %s"
 
-#: src/lib/util/template.c:400 src/lib/files/system.c:130
-#: src/lib/files/system.c:195
+#: src/lib/util/template.c:417 src/lib/util/template.c:541
+#: src/lib/files/system.c:130 src/lib/files/system.c:195
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "Nelze vyhledat řetězec: chyba regex %d"
 
-#: src/lib/util/template.c:431
+#: src/lib/util/template.c:448
 #, c-format
 msgid "Unable to generate template [%d]: %s"
 msgstr "Nelze generovat šablonu [%d]: %s"
 
-#: src/lib/util/template.c:460
+#: src/lib/util/template.c:477
 msgid "Unable to get current time!"
 msgstr "Nelze získat aktuální čas!"
 
-#: src/lib/util/template.c:474
+#: src/lib/util/template.c:491
 msgid "Unable to create message!"
 msgstr "Nelze vytvořit zprávu!"
 
@@ -225,93 +244,101 @@ msgstr ""
 msgid "Unable to find nsswitch maps [%d]: %s"
 msgstr ""
 
-#: src/lib/authselect_profile.c:289
+#: src/lib/authselect_profile.c:132
+msgid "Unable to create array (out of memory)"
+msgstr ""
+
+#: src/lib/authselect_profile.c:141 src/lib/authselect_profile.c:150
+msgid "Unable to obtain feature list (out of memory)"
+msgstr ""
+
+#: src/lib/authselect_profile.c:344
 #, c-format
 msgid "Creating empty profile at [%s]"
 msgstr ""
 
-#: src/lib/authselect_profile.c:293 src/lib/authselect_profile.c:383
+#: src/lib/authselect_profile.c:348 src/lib/authselect_profile.c:438
 #, c-format
 msgid "Unable to make path [%s] [%d]: %s"
 msgstr ""
 
-#: src/lib/authselect_profile.c:300 src/lib/authselect_profile.c:342
+#: src/lib/authselect_profile.c:355 src/lib/authselect_profile.c:397
 #, c-format
 msgid "Unable to write to [%s] [%d]: %s"
 msgstr ""
 
-#: src/lib/authselect_profile.c:322 src/lib/authselect_profile.c:391
+#: src/lib/authselect_profile.c:377 src/lib/authselect_profile.c:446
 #: src/lib/files/system.c:673
 #, c-format
 msgid "There is no filename in [%s]"
 msgstr ""
 
-#: src/lib/authselect_profile.c:331
+#: src/lib/authselect_profile.c:386
 #, c-format
 msgid "Unable to create symbolic link [%s] to [%s] [%d]: %s"
 msgstr ""
 
-#: src/lib/authselect_profile.c:364
+#: src/lib/authselect_profile.c:419
 #, c-format
 msgid "Creating new profile from \"%s\" at [%s]"
 msgstr ""
 
-#: src/lib/authselect_profile.c:368
+#: src/lib/authselect_profile.c:423
 #, c-format
 msgid "Unable to read base profile [%s] [%d]: %s"
 msgstr ""
 
-#: src/lib/authselect_profile.c:376
+#: src/lib/authselect_profile.c:431
 msgid "Unable to resolve symbolic links names"
 msgstr ""
 
-#: src/lib/authselect_profile.c:401 src/lib/authselect_profile.c:414
-#: src/lib/authselect_profile.c:428
+#: src/lib/authselect_profile.c:456 src/lib/authselect_profile.c:469
+#: src/lib/authselect_profile.c:483
 #, c-format
 msgid "Unable to create [%s] [%d]: %s"
 msgstr ""
 
-#: src/lib/authselect_profile.c:436
+#: src/lib/authselect_profile.c:491
 #, c-format
 msgid "Unknown file name [%s]"
 msgstr ""
 
-#: src/lib/authselect_profile.c:463
+#: src/lib/authselect_profile.c:518
 msgid "Name can not be empty"
 msgstr ""
 
-#: src/lib/authselect_profile.c:475
+#: src/lib/authselect_profile.c:530
 msgid "Default profile can not be created"
 msgstr ""
 
-#: src/lib/authselect_profile.c:478
+#: src/lib/authselect_profile.c:533
 msgid "Value AUTHSELECT_PROFILE_ANY is invalid in this context"
 msgstr ""
 
-#: src/lib/authselect_profile.c:483
+#: src/lib/authselect_profile.c:538
 msgid "Unable to create profile path: out of memory"
 msgstr ""
 
-#: src/lib/authselect_profile.c:489
+#: src/lib/authselect_profile.c:544
 #, c-format
 msgid "Profile \"%s\" already exist at [%s]"
 msgstr ""
 
-#: src/lib/authselect_profile.c:493
+#: src/lib/authselect_profile.c:548
 #, c-format
 msgid "Unable to access [%s] [%d]: %s"
 msgstr ""
 
-#: src/lib/authselect_profile.c:499
+#: src/lib/authselect_profile.c:554
 msgid "Unable to create file name: out of memory"
 msgstr ""
 
-#: src/lib/authselect_profile.c:507
+#: src/lib/authselect_profile.c:562
 #, c-format
 msgid "Unable to create empty profile [%d]: %s"
 msgstr ""
 
-#: src/lib/authselect_profile.c:516
+#: src/lib/authselect_profile.c:571
 #, c-format
 msgid "Unable to create profile [%d]: %s"
 msgstr ""
@@ -691,12 +718,12 @@ msgid "At least one option is required!\n"
 msgstr "Je vyžadována alespoň jedna volba!\n"
 "\n"
 
-#: src/cli/main.c:70 src/cli/main.c:361
+#: src/cli/main.c:70 src/cli/main.c:362
 msgid "Profile identifier."
 msgstr "Identifikátor profilu."
 
-#: src/cli/main.c:73 src/cli/main.c:237 src/cli/main.c:286 src/cli/main.c:321
-#: src/cli/main.c:364 src/cli/main.c:514 src/cli/main.c:536 src/cli/main.c:576
+#: src/cli/main.c:73 src/cli/main.c:238 src/cli/main.c:287 src/cli/main.c:322
+#: src/cli/main.c:365 src/cli/main.c:515 src/cli/main.c:537 src/cli/main.c:577
 msgid "Unable to parse command arguments"
 msgstr "Nelze analyzovat parametry příkazu"
 
@@ -720,12 +747,12 @@ msgstr ""
 msgid "Do not print profile requirements"
 msgstr ""
 
-#: src/cli/main.c:128 src/cli/main.c:336 src/cli/main.c:370 src/cli/main.c:397
+#: src/cli/main.c:128 src/cli/main.c:337 src/cli/main.c:371 src/cli/main.c:398
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "Nelze získat informace o profilu [%d]: %s"
 
-#: src/cli/main.c:136 src/cli/main.c:404
+#: src/cli/main.c:136 src/cli/main.c:405
 msgid "Unable to read profile requirements!"
 msgstr ""
 
@@ -752,53 +779,53 @@ msgstr ""
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "Nelze aktivovat profil [%d]: %s\n"
 
-#: src/cli/main.c:204
+#: src/cli/main.c:205
 msgid "Changes were successfully applied.\n"
 msgstr ""
 
-#: src/cli/main.c:207 src/cli/main.c:243
+#: src/cli/main.c:208 src/cli/main.c:244
 msgid "No existing configuration detected.\n"
 msgstr "Nebyla zjištěna žádná existující konfigurace.\n"
 
-#: src/cli/main.c:210
+#: src/cli/main.c:211
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
 msgstr ""
 
-#: src/cli/main.c:214
+#: src/cli/main.c:215
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr ""
 
-#: src/cli/main.c:231
+#: src/cli/main.c:232
 msgid "Print command parameters instead of formatted output"
 msgstr ""
 
-#: src/cli/main.c:246
+#: src/cli/main.c:247
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "Nelze získat aktuální konfiguraci [%d]: %s"
 
-#: src/cli/main.c:260
+#: src/cli/main.c:261
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "ID profilu: %s\n"
 
-#: src/cli/main.c:261
+#: src/cli/main.c:262
 msgid "Enabled features:"
 msgstr "Povolené funkce:"
 
-#: src/cli/main.c:264
+#: src/cli/main.c:265
 msgid " None\n"
 msgstr "Žádné\n"
 
-#: src/cli/main.c:292
+#: src/cli/main.c:293
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "Nelze otestovat aktuální konfiguraci [%d]: %s"
 
-#: src/cli/main.c:299
+#: src/cli/main.c:300
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
@@ -806,63 +833,63 @@ msgstr ""
 "Aktuální konfigurace je neplatná. Byla pravděpodobně upravena mimo "
 "authselect."
 
-#: src/cli/main.c:304
+#: src/cli/main.c:305
 msgid "Current configuration is valid."
 msgstr "Aktuální konfigurace je platná."
 
-#: src/cli/main.c:327
+#: src/cli/main.c:328
 msgid "Unable to get profile list!"
 msgstr "Nelze získat seznam profilů!"
 
-#: src/cli/main.c:442
+#: src/cli/main.c:443
 msgid "Print content of all files"
 msgstr "Vytisknout obsah všech souborů"
 
-#: src/cli/main.c:443
+#: src/cli/main.c:444
 msgid "Print nsswitch.conf content"
 msgstr "Vytisknout obsah nsswitch.conf"
 
-#: src/cli/main.c:444
+#: src/cli/main.c:445
 msgid "Print system-auth content"
 msgstr "Vytisknout obsah system-auth"
 
-#: src/cli/main.c:445
+#: src/cli/main.c:446
 msgid "Print password-auth content"
 msgstr "Vytisknout obsah password-auth"
 
-#: src/cli/main.c:446
+#: src/cli/main.c:447
 msgid "Print smartcard-auth content"
 msgstr "Vytisknout obsah smartcard-auth"
 
-#: src/cli/main.c:447
+#: src/cli/main.c:448
 msgid "Print fingerprint-auth content"
 msgstr "Vytisknout obsah fingerprint-auth"
 
-#: src/cli/main.c:448
+#: src/cli/main.c:449
 msgid "Print postlogin content"
 msgstr "Vytisknout obsah postlogin"
 
-#: src/cli/main.c:449
+#: src/cli/main.c:450
 msgid "Print dconf database content"
 msgstr "Vytisknout obsah databáze dconf"
 
-#: src/cli/main.c:450
+#: src/cli/main.c:451
 msgid "Print dconf lock content"
 msgstr "Vytisknout obsah dconf lock"
 
-#: src/cli/main.c:477
+#: src/cli/main.c:478
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "Nelze získat generovaný obsah [%d]: %s"
 
-#: src/cli/main.c:496
+#: src/cli/main.c:497
 #, c-format
 msgid "File %s: Empty\n"
 "\n"
 msgstr "Soubor %s: Prázdný\n"
 "\n"
 
-#: src/cli/main.c:498
+#: src/cli/main.c:499
 #, c-format
 msgid "File %s:\n"
 "%s\n"
@@ -871,73 +898,73 @@ msgstr "Soubor %s:\n"
 "%s\n"
 "\n"
 
-#: src/cli/main.c:511
+#: src/cli/main.c:512
 msgid "Feature to enable."
 msgstr "Funkce k povolení."
 
-#: src/cli/main.c:520
+#: src/cli/main.c:521
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "Nelze povolit  funkci [%d]: %s\n"
 
-#: src/cli/main.c:533
+#: src/cli/main.c:534
 msgid "Feature to disable."
 msgstr "Funkce k zakázání."
 
-#: src/cli/main.c:542
+#: src/cli/main.c:543
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "Nelze zakázat  funkci [%d]: %s\n"
 
-#: src/cli/main.c:561
+#: src/cli/main.c:562
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr ""
 
-#: src/cli/main.c:562
+#: src/cli/main.c:563
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr ""
 
-#: src/cli/main.c:563
+#: src/cli/main.c:564
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
 msgstr ""
 
-#: src/cli/main.c:564
+#: src/cli/main.c:565
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr ""
 
-#: src/cli/main.c:565
+#: src/cli/main.c:566
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr ""
 
-#: src/cli/main.c:566
+#: src/cli/main.c:567
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr ""
 
-#: src/cli/main.c:567
+#: src/cli/main.c:568
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
 
-#: src/cli/main.c:568
+#: src/cli/main.c:569
 msgid "Symlink specific file (can be set multiple times)"
 msgstr ""
 
-#: src/cli/main.c:573
+#: src/cli/main.c:574
 msgid "New profile name."
 msgstr ""
 
-#: src/cli/main.c:583
+#: src/cli/main.c:584
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr ""
 
-#: src/cli/main.c:587
+#: src/cli/main.c:588
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr ""
 
-#: src/cli/main.c:644
+#: src/cli/main.c:645
 msgid "Authselect can only be run as root!\n"
 msgstr "Authselect lze spustit pouze s právy root!\n"
 
@@ -957,7 +984,7 @@ msgstr "implicitní NIS doména"
 
 # auto translated by TM merge from project: authconfig, version: master, DocId: po/authconfig
 #: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
-#: src/compat/authcompat_Options.py:97 src/compat/authcompat_Options.py:98
+#: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
 msgid "<server>"
 msgstr "<server>"
 
@@ -1017,165 +1044,169 @@ msgid "action to be taken on smart card removal"
 msgstr "akce po vyjmutí čipové karty"
 
 #: src/compat/authcompat_Options.py:94
+msgid "require smart card for authentication by default"
+msgstr ""
+
+#: src/compat/authcompat_Options.py:95
 msgid "authentication with fingerprint readers by default"
 msgstr "ověřění pomocí čtečky otisků prstů"
 
-#: src/compat/authcompat_Options.py:95
+#: src/compat/authcompat_Options.py:96
 msgid "automatic per-user ecryptfs"
 msgstr "automatický uživatelský ecryptfs"
 
-#: src/compat/authcompat_Options.py:96
+#: src/compat/authcompat_Options.py:97
 msgid "Kerberos authentication by default"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:97
+#: src/compat/authcompat_Options.py:98
 msgid "default Kerberos KDC"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:98
+#: src/compat/authcompat_Options.py:99
 msgid "default Kerberos admin server"
 msgstr ""
 
 # auto translated by TM merge from project: authconfig, version: master, DocId: po/authconfig
-#: src/compat/authcompat_Options.py:99 src/compat/authcompat_Options.py:152
+#: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
 msgid "<realm>"
 msgstr "<realm>"
 
-#: src/compat/authcompat_Options.py:99
+#: src/compat/authcompat_Options.py:100
 msgid "default Kerberos realm"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:100
+#: src/compat/authcompat_Options.py:101
 msgid "use of DNS to find Kerberos KDCs"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:101
+#: src/compat/authcompat_Options.py:102
 msgid "use of DNS to find Kerberos realms"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:102
+#: src/compat/authcompat_Options.py:103
 msgid "winbind for user information by default"
 msgstr "winbind pro informace o uživatelích"
 
-#: src/compat/authcompat_Options.py:103
+#: src/compat/authcompat_Options.py:104
 msgid "winbind for authentication by default"
 msgstr "winbind pro ověření"
 
-#: src/compat/authcompat_Options.py:104
+#: src/compat/authcompat_Options.py:105
 msgid "<Administrator>"
 msgstr "<Administrátor>"
 
 # auto translated by TM merge from project: authconfig, version: master, DocId: po/authconfig
-#: src/compat/authcompat_Options.py:104
+#: src/compat/authcompat_Options.py:105
 msgid "join the winbind domain or ads realm now as this administrator"
 msgstr ""
 "připojit se nyní do domény winbind nebo realmu ads jako tento administrátor"
 
-#: src/compat/authcompat_Options.py:105
+#: src/compat/authcompat_Options.py:106
 msgid "Kerberos 5 for authenticate with winbind"
 msgstr "Kerberos 5 pro ověření s winbind"
 
 # auto translated by TM merge from project: authconfig, version: master, DocId: po/authconfig
-#: src/compat/authcompat_Options.py:106
+#: src/compat/authcompat_Options.py:107
 msgid "<workgroup>"
 msgstr "<pracovní_skupina>"
 
 # auto translated by TM merge from project: authconfig, version: master, DocId: po/authconfig
-#: src/compat/authcompat_Options.py:106
+#: src/compat/authcompat_Options.py:107
 msgid "workgroup authentication servers are in"
 msgstr "pracovní skupina, v níž jsou autentizační servery"
 
-#: src/compat/authcompat_Options.py:107
+#: src/compat/authcompat_Options.py:108
 msgid ""
 "SSSD for user information by default with manually managed configuration"
 msgstr ""
 "SSSD s ručně spravovanou konfigurací pro informace o uživatelích ve výchozím "
 "nastavení"
 
-#: src/compat/authcompat_Options.py:108
+#: src/compat/authcompat_Options.py:109
 msgid "SSSD for authentication by default with manually managed configuration"
 msgstr ""
 "SSSD s ručně spravovanou konfigurací pro ověření ve výchozím nastavení"
 
-#: src/compat/authcompat_Options.py:109
+#: src/compat/authcompat_Options.py:110
 msgid "caching of user credentials in SSSD by default"
 msgstr "kešování ověření uživatelů v SSSD"
 
-#: src/compat/authcompat_Options.py:110
+#: src/compat/authcompat_Options.py:111
 msgid "check of access.conf during account authorization"
 msgstr "kontrolovat access.conf během autorizace účtu"
 
-#: src/compat/authcompat_Options.py:111
+#: src/compat/authcompat_Options.py:112
 msgid "creation of home directories for users on their first login"
 msgstr "vytvoření domovského adresáře uživatelům při jejich prvním přihlášení"
 
-#: src/compat/authcompat_Options.py:112
+#: src/compat/authcompat_Options.py:113
 msgid ""
 "account locking in case of too many consecutive authentication failures"
 msgstr ""
 "zablokování účtu v případě příliš mnoha po sobě jdoucích selhání při ověření"
 
 # auto translated by TM merge from project: authconfig, version: master, DocId: po/authconfig
-#: src/compat/authcompat_Options.py:113 src/compat/authcompat_Options.py:114
-#: src/compat/authcompat_Options.py:115 src/compat/authcompat_Options.py:116
+#: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
+#: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
 msgid "<number>"
 msgstr "<číslo>"
 
-#: src/compat/authcompat_Options.py:113
+#: src/compat/authcompat_Options.py:114
 msgid "minimum length of a password"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:114
+#: src/compat/authcompat_Options.py:115
 msgid "minimum number of character classes in a password"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:115
+#: src/compat/authcompat_Options.py:116
 msgid "maximum number of same consecutive characters in a password"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:116
+#: src/compat/authcompat_Options.py:117
 msgid "maximum number of consecutive characters of same class in a password"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:117
+#: src/compat/authcompat_Options.py:118
 msgid "require at least one lowercase character in a password"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:118
+#: src/compat/authcompat_Options.py:119
 msgid "require at least one uppercase character in a password"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:119
+#: src/compat/authcompat_Options.py:120
 msgid "require at least one digit in a password"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:120
+#: src/compat/authcompat_Options.py:121
 msgid "require at least one other character in a password"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:123
+#: src/compat/authcompat_Options.py:124
 msgid "do not start/stop services"
 msgstr "nestartovat/nevypínat služby"
 
 # auto translated by TM merge from project: authconfig, version: master, DocId: po/authconfig
-#: src/compat/authcompat_Options.py:124
+#: src/compat/authcompat_Options.py:125
 msgid "update all configuration files"
 msgstr "přepsat všechny konfigurační soubory"
 
-#: src/compat/authcompat_Options.py:125 src/compat/authcompat_Options.py:126
+#: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
 msgid "the same as --updateall"
 msgstr "stejné jako --updateall"
 
-#: src/compat/authcompat_Options.py:135 src/compat/authcompat_Options.py:136
+#: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
 msgid "<name>"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:147
+#: src/compat/authcompat_Options.py:148
 msgid "<descrypt|bigcrypt|md5|sha256|sha512>"
 msgstr "<descrypt|bigcrypt|md5|sha256|sha512>"
 
 # auto translated by TM merge from project: authconfig, version: master, DocId: po/authconfig
-#: src/compat/authcompat_Options.py:148
+#: src/compat/authcompat_Options.py:149
 msgid "<URL>"
 msgstr "<URL>"
 
@@ -1244,8 +1275,8 @@ msgstr ""
 msgid "Service %s was not found. Please install the service."
 msgstr ""
 
-#: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:618
-#: src/compat/authcompat.py.in.in:643
+#: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:626
+#: src/compat/authcompat.py.in.in:651
 #, python-format
 msgid "Command [%s] failed with %d, stderr:"
 msgstr ""

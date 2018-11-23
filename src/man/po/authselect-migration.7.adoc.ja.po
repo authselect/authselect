@@ -1,4 +1,4 @@
-# Fabian Affolter <fab@fedoraproject.org>, 2018. #zanata
+# Ludek Janda <ljanda@redhat.com>, 2018. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -6,24 +6,24 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-11-20 11:41+0000\n"
+"PO-Revision-Date: 2018-10-30 02:46+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: German\n"
-"Language: de\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
 "X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 
 #. type: Title =
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:2
 #, no-wrap
 msgid "authselect-migration(7)"
-msgstr "authselect-migration(7)"
+msgstr ""
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:6
 #, no-wrap
 msgid "NAME"
-msgstr "NAME"
+msgstr "名前"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:8
@@ -35,7 +35,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:10
 #, no-wrap
 msgid "DESCRIPTION"
-msgstr "BESCHREIBUNG"
+msgstr "説明"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:15
@@ -156,12 +156,6 @@ msgid ""
 "|--enablewinbind --enablewinbindauth |winbind\n"
 "|--enablenis                         |nis\n"
 msgstr ""
-"|*Authconfig options*                |*Authselect profile*\n"
-"|--enableldap --enableldapauth       |sssd\n"
-"|--enablesssd --enablesssdauth       |sssd\n"
-"|--enablekrb5                        |sssd\n"
-"|--enablewinbind --enablewinbindauth |winbind\n"
-"|--enablenis                         |nis\n"
 
 #. type: Block title
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:78
@@ -187,7 +181,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:90
 #, no-wrap
 msgid "Examples"
-msgstr "Beispiele"
+msgstr ""
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:94
@@ -196,8 +190,6 @@ msgid ""
 "authconfig --enableldap --enableldapauth --enablefaillock --updateall\n"
 "authselect select sssd with-faillock\n"
 msgstr ""
-"authconfig --enableldap --enableldapauth --enablefaillock --updateall\n"
-"authselect select sssd with-faillock\n"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:97
@@ -207,9 +199,6 @@ msgid ""
 "sssd --updateall\n"
 "authselect select sssd with-smartcard\n"
 msgstr ""
-"authconfig --enablesssd --enablesssdauth --enablesmartcard --smartcardmodule="
-"sssd --updateall\n"
-"authselect select sssd with-smartcard\n"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:100
@@ -218,8 +207,6 @@ msgid ""
 "authconfig --enableecryptfs --enablepamaccess --updateall\n"
 "authselect select sssd with-ecryptfs with-pamaccess\n"
 msgstr ""
-"authconfig --enableecryptfs --enablepamaccess --updateall\n"
-"authselect select sssd with-ecryptfs with-pamaccess\n"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:103
@@ -234,7 +221,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:106
 #, no-wrap
 msgid "CONFIGURATION FILES"
-msgstr "KONFIGURATIONSDATEIEN"
+msgstr ""
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:108
@@ -247,7 +234,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:110
 #, no-wrap
 msgid "LDAP"
-msgstr "LDAP"
+msgstr ""
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:114
@@ -261,15 +248,14 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:115
 #, no-wrap
 msgid "{sysconfdir}/openldap/ldap.conf"
-msgstr "{sysconfdir}/openldap/ldap.conf"
+msgstr ""
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:119
 #, no-wrap
 msgid "# Set the default base dn\n"
 "BASE   dc=example,dc=com\n"
-msgstr "# Set the default base dn\n"
-"BASE   dc=example,dc=com\n"
+msgstr ""
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:122
@@ -278,14 +264,12 @@ msgid ""
 "# Set the default LDAP server\n"
 "URI    ldap://ldap.example.com ldap://ldap-master.example.com:666\n"
 msgstr ""
-"# Set the default LDAP server\n"
-"URI    ldap://ldap.example.com ldap://ldap-master.example.com:666\n"
 
 #. type: Title ~
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:125
 #, no-wrap
 msgid "KERBEROS"
-msgstr "KERBEROS"
+msgstr ""
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:128
@@ -299,15 +283,14 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:129
 #, no-wrap
 msgid "{sysconfdir}/krb5.conf"
-msgstr "{sysconfdir}/krb5.conf"
+msgstr ""
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:133
 #, no-wrap
 msgid "[libdefaults]\n"
 " default_realm = MYREALM\n"
-msgstr "[libdefaults]\n"
-" default_realm = MYREALM\n"
+msgstr ""
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:138
@@ -316,10 +299,7 @@ msgid "[realms]\n"
 " MYREALM = {\n"
 "  kdc = kdc.myrealm.org\n"
 " }\n"
-msgstr "[realms]\n"
-" MYREALM = {\n"
-"  kdc = kdc.myrealm.org\n"
-" }\n"
+msgstr ""
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:142
@@ -327,15 +307,13 @@ msgstr "[realms]\n"
 msgid "[domain_realm]\n"
 " myrealm.org = MYREALM\n"
 " .myrealm.org = MYREALM\n"
-msgstr "[domain_realm]\n"
-" myrealm.org = MYREALM\n"
-" .myrealm.org = MYREALM\n"
+msgstr ""
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:145 /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:239
 #, no-wrap
 msgid "SSSD"
-msgstr "SSSD"
+msgstr ""
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:150
@@ -350,7 +328,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:151 /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:167
 #, no-wrap
 msgid "{sysconfdir}/sssd/sssd.conf"
-msgstr "{sysconfdir}/sssd/sssd.conf"
+msgstr ""
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:156 /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:172
@@ -358,9 +336,7 @@ msgstr "{sysconfdir}/sssd/sssd.conf"
 msgid "[sssd]\n"
 "config_file_version = 2\n"
 "domains = default\n"
-msgstr "[sssd]\n"
-"config_file_version = 2\n"
-"domains = default\n"
+msgstr ""
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:161
@@ -371,10 +347,6 @@ msgid ""
 "ldap_uri = _srv_\n"
 "dns_discovery_domain = myrealm\n"
 msgstr ""
-"[domain/default]\n"
-"id_provider = ldap\n"
-"ldap_uri = _srv_\n"
-"dns_discovery_domain = myrealm\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:166
@@ -396,13 +368,6 @@ msgid ""
 "krb5_realm = MYREALM\n"
 "dns_discovery_domain = myrealm\n"
 msgstr ""
-"[domain/default]\n"
-"id_provider = ldap\n"
-"auth_provider = krb5\n"
-"ldap_uri = _srv_\n"
-"krb5_server = _srv_\n"
-"krb5_realm = MYREALM\n"
-"dns_discovery_domain = myrealm\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:186
@@ -417,7 +382,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:188
 #, no-wrap
 msgid "WINBIND"
-msgstr "WINBIND"
+msgstr ""
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:193
@@ -432,7 +397,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:195 /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:247
 #, no-wrap
 msgid "NIS"
-msgstr "NIS"
+msgstr ""
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:199
@@ -446,7 +411,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:200
 #, no-wrap
 msgid "{sysconfdir}/yp.conf"
-msgstr "{sysconfdir}/yp.conf"
+msgstr ""
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:205
@@ -454,9 +419,7 @@ msgstr "{sysconfdir}/yp.conf"
 msgid "domain mydomain broadcast\n"
 "# or\n"
 "# domain mydomain server myserver\n"
-msgstr "domain mydomain broadcast\n"
-"# or\n"
-"# domain mydomain server myserver\n"
+msgstr ""
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:208
@@ -467,13 +430,13 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:209
 #, no-wrap
 msgid "{sysconfdir}/sysconfig/network"
-msgstr "{sysconfdir}/sysconfig/network"
+msgstr ""
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:212
 #, no-wrap
 msgid "NISDOMAIN=mydomain\n"
-msgstr "NISDOMAIN=mydomain\n"
+msgstr ""
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:216
@@ -488,14 +451,13 @@ msgstr ""
 #, no-wrap
 msgid "$ domainname mydomain\n"
 "$ setsebool -P allow_ypbind 1\n"
-msgstr "$ domainname mydomain\n"
-"$ setsebool -P allow_ypbind 1\n"
+msgstr ""
 
 #. type: Title ~
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:223
 #, no-wrap
 msgid "PASSWORD QUALITY"
-msgstr "PASSWORT-QUALITÄT"
+msgstr ""
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:228
@@ -518,7 +480,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:234
 #, no-wrap
 msgid "STARTING SERVICES"
-msgstr "DIENSTE STARTEN"
+msgstr ""
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:237
@@ -531,18 +493,18 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:241
 #, no-wrap
 msgid "systemctl enable sssd.service ; systemctl start sssd.service\n"
-msgstr "systemctl enable sssd.service ; systemctl start sssd.service\n"
+msgstr ""
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:243
 msgid "Winbind"
-msgstr "Winbind"
+msgstr ""
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:245
 #, no-wrap
 msgid "systemctl enable winbind.service ; systemctl start winbind.service\n"
-msgstr "systemctl enable winbind.service ; systemctl start winbind.service\n"
+msgstr ""
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:250
@@ -551,8 +513,6 @@ msgid ""
 "systemctl enable rpcbind.service ; systemctl start rpcbind.service\n"
 "systemctl enable ypbind.service ; systemctl start ypbind.service\n"
 msgstr ""
-"systemctl enable rpcbind.service ; systemctl start rpcbind.service\n"
-"systemctl enable ypbind.service ; systemctl start ypbind.service\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:252
@@ -563,7 +523,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:254
 #, no-wrap
 msgid "systemctl enable oddjobd.service ; systemctl start oddjobd.service\n"
-msgstr "systemctl enable oddjobd.service ; systemctl start oddjobd.service\n"
+msgstr ""
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:256
@@ -583,7 +543,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:262
 #, no-wrap
 msgid "SEE ALSO"
-msgstr "SIEHE AUCH"
+msgstr "以下も参照してください。"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:264
@@ -591,5 +551,3 @@ msgid ""
 "authselect(8), authselect-profiles(5), realm(8), ipa-client-install(1), sssd."
 "conf(5), smb.conf(5), ldap.conf(5), krb5.conf(5)"
 msgstr ""
-"authselect(8), authselect-profiles(5), realm(8), ipa-client-install(1), sssd."
-"conf(5), smb.conf(5), ldap.conf(5), krb5.conf(5)"

@@ -1,9 +1,9 @@
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2018. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: authselect 1.0\n"
+"Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2018-09-27 14:04+0200\n"
+"POT-Creation-Date: 2018-11-20 14:02+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,30 +14,44 @@ msgstr ""
 "X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: src/lib/authselect.c:47
+#: src/lib/authselect.c:47 src/lib/authselect.c:169
+msgid "Unable to obtain supported features"
+msgstr ""
+
+#: src/lib/authselect.c:59
+#, c-format
+msgid "Unknown profile feature [%s], did you mean [%s]?"
+msgstr ""
+
+#: src/lib/authselect.c:62
+#, c-format
+msgid "Unknown profile feature [%s]"
+msgstr ""
+
+#: src/lib/authselect.c:86
 #, c-format
 msgid "Trying to activate profile [%s]"
 msgstr "Intent d'activació del perfil [%s]"
 
-#: src/lib/authselect.c:51 src/lib/profiles/read.c:312
+#: src/lib/authselect.c:90 src/lib/authselect.c:162 src/lib/profiles/read.c:312
 #, c-format
 msgid "Unable to find profile [%s] [%d]: %s"
 msgstr "No es pot trobar el perfil [%s] [%d]: %s"
 
-#: src/lib/authselect.c:57
+#: src/lib/authselect.c:101
 msgid "Enforcing activation!"
 msgstr "Forçament de l'activació!"
 
-#: src/lib/authselect.c:65
+#: src/lib/authselect.c:109
 #, c-format
 msgid "Unable to check configuration [%d]: %s"
 msgstr "No es pot comprovar la configuració [%d]: %s"
 
-#: src/lib/authselect.c:70
+#: src/lib/authselect.c:114
 msgid "Unexpected changes to the configuration were detected."
 msgstr "S'han detectat canvis inesperats a la configuració."
 
-#: src/lib/authselect.c:71
+#: src/lib/authselect.c:115
 msgid ""
 "Refusing to activate profile unless those changes are removed or overwrite "
 "is requested."
@@ -45,11 +59,11 @@ msgstr ""
 "Es refusa l'activació del perfil a menys que se sol·liciti l'eliminació o la "
 "sobreescriptura d'aquests canvis."
 
-#: src/lib/authselect.c:80
+#: src/lib/authselect.c:124
 msgid "File that needs to be overwritten was found"
 msgstr "S'ha trobat un fitxer que s'ha de sobreescriure"
 
-#: src/lib/authselect.c:81
+#: src/lib/authselect.c:125
 msgid ""
 "Refusing to activate profile unless this file is removed or overwrite is "
 "requested."
@@ -57,16 +71,21 @@ msgstr ""
 "Es refusa l'activació del perfil a menys que se sol·liciti l'eliminació o la "
 "sobreescriptura d'aquest fitxer."
 
-#: src/lib/authselect.c:92
+#: src/lib/authselect.c:136
 #, c-format
 msgid "Unable to activate profile [%s] [%d]: %s"
 msgstr "No es pot activar el perfil [%s] [%d]: %s"
 
-#: src/lib/authselect.c:126
+#: src/lib/authselect.c:179
+#, c-format
+msgid "Profile feature [%s] is no longer supported, removing it..."
+msgstr ""
+
+#: src/lib/authselect.c:202
 msgid "Trying to backup system files"
 msgstr ""
 
-#: src/lib/authselect.c:129
+#: src/lib/authselect.c:205
 #, c-format
 msgid "Unable to backup system files [%d]: %s"
 msgstr ""
@@ -149,38 +168,38 @@ msgstr "No es pot obtenir el directori superior de [%s] [%d]: %s"
 msgid "Invalid operator!"
 msgstr "Operador no vàlid!"
 
-#: src/lib/util/template.c:356 src/lib/files/system.c:112
-#: src/lib/files/system.c:170
+#: src/lib/util/template.c:373 src/lib/util/template.c:520
+#: src/lib/files/system.c:112 src/lib/files/system.c:170
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr "No es pot compilar l'expressió regular: error d'expressió regular %d"
 
-#: src/lib/util/template.c:365
+#: src/lib/util/template.c:382 src/lib/util/template.c:530
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "No es pot processar la coincidència [%d]: %s"
 
-#: src/lib/util/template.c:385
+#: src/lib/util/template.c:402
 #, c-format
 msgid "Unable to process operator [%d]: %s"
 msgstr "No es pot processar l'operador [%d]: %s"
 
-#: src/lib/util/template.c:400 src/lib/files/system.c:130
-#: src/lib/files/system.c:195
+#: src/lib/util/template.c:417 src/lib/util/template.c:541
+#: src/lib/files/system.c:130 src/lib/files/system.c:195
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "No es pot cercar la cadena: error d'expressió regular %d"
 
-#: src/lib/util/template.c:431
+#: src/lib/util/template.c:448
 #, c-format
 msgid "Unable to generate template [%d]: %s"
 msgstr "No es pot generar la plantilla [%d]: %s"
 
-#: src/lib/util/template.c:460
+#: src/lib/util/template.c:477
 msgid "Unable to get current time!"
 msgstr "No es pot obtenir l'hora actual!"
 
-#: src/lib/util/template.c:474
+#: src/lib/util/template.c:491
 msgid "Unable to create message!"
 msgstr "No es pot crear el missatge!"
 
@@ -223,93 +242,101 @@ msgstr ""
 msgid "Unable to find nsswitch maps [%d]: %s"
 msgstr ""
 
-#: src/lib/authselect_profile.c:289
+#: src/lib/authselect_profile.c:132
+msgid "Unable to create array (out of memory)"
+msgstr ""
+
+#: src/lib/authselect_profile.c:141 src/lib/authselect_profile.c:150
+msgid "Unable to obtain feature list (out of memory)"
+msgstr ""
+
+#: src/lib/authselect_profile.c:344
 #, c-format
 msgid "Creating empty profile at [%s]"
 msgstr ""
 
-#: src/lib/authselect_profile.c:293 src/lib/authselect_profile.c:383
+#: src/lib/authselect_profile.c:348 src/lib/authselect_profile.c:438
 #, c-format
 msgid "Unable to make path [%s] [%d]: %s"
 msgstr ""
 
-#: src/lib/authselect_profile.c:300 src/lib/authselect_profile.c:342
+#: src/lib/authselect_profile.c:355 src/lib/authselect_profile.c:397
 #, c-format
 msgid "Unable to write to [%s] [%d]: %s"
 msgstr ""
 
-#: src/lib/authselect_profile.c:322 src/lib/authselect_profile.c:391
+#: src/lib/authselect_profile.c:377 src/lib/authselect_profile.c:446
 #: src/lib/files/system.c:673
 #, c-format
 msgid "There is no filename in [%s]"
 msgstr ""
 
-#: src/lib/authselect_profile.c:331
+#: src/lib/authselect_profile.c:386
 #, c-format
 msgid "Unable to create symbolic link [%s] to [%s] [%d]: %s"
 msgstr ""
 
-#: src/lib/authselect_profile.c:364
+#: src/lib/authselect_profile.c:419
 #, c-format
 msgid "Creating new profile from \"%s\" at [%s]"
 msgstr ""
 
-#: src/lib/authselect_profile.c:368
+#: src/lib/authselect_profile.c:423
 #, c-format
 msgid "Unable to read base profile [%s] [%d]: %s"
 msgstr ""
 
-#: src/lib/authselect_profile.c:376
+#: src/lib/authselect_profile.c:431
 msgid "Unable to resolve symbolic links names"
 msgstr ""
 
-#: src/lib/authselect_profile.c:401 src/lib/authselect_profile.c:414
-#: src/lib/authselect_profile.c:428
+#: src/lib/authselect_profile.c:456 src/lib/authselect_profile.c:469
+#: src/lib/authselect_profile.c:483
 #, c-format
 msgid "Unable to create [%s] [%d]: %s"
 msgstr ""
 
-#: src/lib/authselect_profile.c:436
+#: src/lib/authselect_profile.c:491
 #, c-format
 msgid "Unknown file name [%s]"
 msgstr ""
 
-#: src/lib/authselect_profile.c:463
+#: src/lib/authselect_profile.c:518
 msgid "Name can not be empty"
 msgstr ""
 
-#: src/lib/authselect_profile.c:475
+#: src/lib/authselect_profile.c:530
 msgid "Default profile can not be created"
 msgstr ""
 
-#: src/lib/authselect_profile.c:478
+#: src/lib/authselect_profile.c:533
 msgid "Value AUTHSELECT_PROFILE_ANY is invalid in this context"
 msgstr ""
 
-#: src/lib/authselect_profile.c:483
+#: src/lib/authselect_profile.c:538
 msgid "Unable to create profile path: out of memory"
 msgstr ""
 
-#: src/lib/authselect_profile.c:489
+#: src/lib/authselect_profile.c:544
 #, c-format
 msgid "Profile \"%s\" already exist at [%s]"
 msgstr ""
 
-#: src/lib/authselect_profile.c:493
+#: src/lib/authselect_profile.c:548
 #, c-format
 msgid "Unable to access [%s] [%d]: %s"
 msgstr ""
 
-#: src/lib/authselect_profile.c:499
+#: src/lib/authselect_profile.c:554
 msgid "Unable to create file name: out of memory"
 msgstr ""
 
-#: src/lib/authselect_profile.c:507
+#: src/lib/authselect_profile.c:562
 #, c-format
 msgid "Unable to create empty profile [%d]: %s"
 msgstr ""
 
-#: src/lib/authselect_profile.c:516
+#: src/lib/authselect_profile.c:571
 #, c-format
 msgid "Unable to create profile [%d]: %s"
 msgstr ""
@@ -689,12 +716,12 @@ msgid "At least one option is required!\n"
 msgstr "Com a mínim es requereix una opció!\n"
 "\n"
 
-#: src/cli/main.c:70 src/cli/main.c:361
+#: src/cli/main.c:70 src/cli/main.c:362
 msgid "Profile identifier."
 msgstr "Identificador del perfil."
 
-#: src/cli/main.c:73 src/cli/main.c:237 src/cli/main.c:286 src/cli/main.c:321
-#: src/cli/main.c:364 src/cli/main.c:514 src/cli/main.c:536 src/cli/main.c:576
+#: src/cli/main.c:73 src/cli/main.c:238 src/cli/main.c:287 src/cli/main.c:322
+#: src/cli/main.c:365 src/cli/main.c:515 src/cli/main.c:537 src/cli/main.c:577
 msgid "Unable to parse command arguments"
 msgstr "No es poden analitzar els arguments de l'ordre"
 
@@ -718,12 +745,12 @@ msgstr ""
 msgid "Do not print profile requirements"
 msgstr ""
 
-#: src/cli/main.c:128 src/cli/main.c:336 src/cli/main.c:370 src/cli/main.c:397
+#: src/cli/main.c:128 src/cli/main.c:337 src/cli/main.c:371 src/cli/main.c:398
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "No es pot obtenir la informació del perfil [%d]: %s"
 
-#: src/cli/main.c:136 src/cli/main.c:404
+#: src/cli/main.c:136 src/cli/main.c:405
 msgid "Unable to read profile requirements!"
 msgstr ""
 
@@ -750,53 +777,53 @@ msgstr ""
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "No es pot activar el perfil [%d]: %s\n"
 
-#: src/cli/main.c:204
+#: src/cli/main.c:205
 msgid "Changes were successfully applied.\n"
 msgstr ""
 
-#: src/cli/main.c:207 src/cli/main.c:243
+#: src/cli/main.c:208 src/cli/main.c:244
 msgid "No existing configuration detected.\n"
 msgstr "No s'ha detectat cap configuració existent.\n"
 
-#: src/cli/main.c:210
+#: src/cli/main.c:211
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
 msgstr ""
 
-#: src/cli/main.c:214
+#: src/cli/main.c:215
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr ""
 
-#: src/cli/main.c:231
+#: src/cli/main.c:232
 msgid "Print command parameters instead of formatted output"
 msgstr ""
 
-#: src/cli/main.c:246
+#: src/cli/main.c:247
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "No es pot obtenir la configuració actual [%d]: %s"
 
-#: src/cli/main.c:260
+#: src/cli/main.c:261
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "ID de perfil: %s\n"
 
-#: src/cli/main.c:261
+#: src/cli/main.c:262
 msgid "Enabled features:"
 msgstr "Característiques habilitades:"
 
-#: src/cli/main.c:264
+#: src/cli/main.c:265
 msgid " None\n"
 msgstr " Cap\n"
 
-#: src/cli/main.c:292
+#: src/cli/main.c:293
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "No es pot provar la configuració actual [%d]: %s"
 
-#: src/cli/main.c:299
+#: src/cli/main.c:300
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
@@ -804,63 +831,63 @@ msgstr ""
 "La configuració actual no és vàlida. Probablement s'ha modificat fora "
 "d'authselect."
 
-#: src/cli/main.c:304
+#: src/cli/main.c:305
 msgid "Current configuration is valid."
 msgstr "La configuració actual és vàlida."
 
-#: src/cli/main.c:327
+#: src/cli/main.c:328
 msgid "Unable to get profile list!"
 msgstr "No es pot obtenir la llista de perfils!"
 
-#: src/cli/main.c:442
+#: src/cli/main.c:443
 msgid "Print content of all files"
 msgstr "Imprimeix el contingut de tots els fitxers"
 
-#: src/cli/main.c:443
+#: src/cli/main.c:444
 msgid "Print nsswitch.conf content"
 msgstr "Imprimeix el contingut de nsswitch.conf"
 
-#: src/cli/main.c:444
+#: src/cli/main.c:445
 msgid "Print system-auth content"
 msgstr "Imprimeix el contingut de system-auth"
 
-#: src/cli/main.c:445
+#: src/cli/main.c:446
 msgid "Print password-auth content"
 msgstr "Imprimeix el contingut de password-auth"
 
-#: src/cli/main.c:446
+#: src/cli/main.c:447
 msgid "Print smartcard-auth content"
 msgstr "Imprimeix el contingut de smartcard-auth"
 
-#: src/cli/main.c:447
+#: src/cli/main.c:448
 msgid "Print fingerprint-auth content"
 msgstr "Imprimeix el contingut de fingerprint-auth"
 
-#: src/cli/main.c:448
+#: src/cli/main.c:449
 msgid "Print postlogin content"
 msgstr "Imprimeix el contingut de postlogin"
 
-#: src/cli/main.c:449
+#: src/cli/main.c:450
 msgid "Print dconf database content"
 msgstr "Imprimeix el contingut de la base de dades de dconf"
 
-#: src/cli/main.c:450
+#: src/cli/main.c:451
 msgid "Print dconf lock content"
 msgstr "Imprimeix el contingut del bloqueig de dconf"
 
-#: src/cli/main.c:477
+#: src/cli/main.c:478
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "No es pot obtenir el contingut generat [%d]: %s"
 
-#: src/cli/main.c:496
+#: src/cli/main.c:497
 #, c-format
 msgid "File %s: Empty\n"
 "\n"
 msgstr "Fitxer %s: buit\n"
 "\n"
 
-#: src/cli/main.c:498
+#: src/cli/main.c:499
 #, c-format
 msgid "File %s:\n"
 "%s\n"
@@ -869,73 +896,73 @@ msgstr "Fitxer %s:\n"
 "%s\n"
 "\n"
 
-#: src/cli/main.c:511
+#: src/cli/main.c:512
 msgid "Feature to enable."
 msgstr "Característica a habilitar."
 
-#: src/cli/main.c:520
+#: src/cli/main.c:521
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "No es pot habilitar la característica [%d]: %s\n"
 
-#: src/cli/main.c:533
+#: src/cli/main.c:534
 msgid "Feature to disable."
 msgstr "Característica a inhabilitar."
 
-#: src/cli/main.c:542
+#: src/cli/main.c:543
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "No es pot inhabilitar la característica [%d]: %s\n"
 
-#: src/cli/main.c:561
+#: src/cli/main.c:562
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr ""
 
-#: src/cli/main.c:562
+#: src/cli/main.c:563
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr ""
 
-#: src/cli/main.c:563
+#: src/cli/main.c:564
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
 msgstr ""
 
-#: src/cli/main.c:564
+#: src/cli/main.c:565
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr ""
 
-#: src/cli/main.c:565
+#: src/cli/main.c:566
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr ""
 
-#: src/cli/main.c:566
+#: src/cli/main.c:567
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr ""
 
-#: src/cli/main.c:567
+#: src/cli/main.c:568
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
 
-#: src/cli/main.c:568
+#: src/cli/main.c:569
 msgid "Symlink specific file (can be set multiple times)"
 msgstr ""
 
-#: src/cli/main.c:573
+#: src/cli/main.c:574
 msgid "New profile name."
 msgstr ""
 
-#: src/cli/main.c:583
+#: src/cli/main.c:584
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr ""
 
-#: src/cli/main.c:587
+#: src/cli/main.c:588
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr ""
 
-#: src/cli/main.c:644
+#: src/cli/main.c:645
 msgid "Authselect can only be run as root!\n"
 msgstr "Només es pot executar authselect com a root!\n"
 
@@ -952,7 +979,7 @@ msgid "default NIS domain"
 msgstr "domini NIS predeterminat"
 
 #: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
-#: src/compat/authcompat_Options.py:97 src/compat/authcompat_Options.py:98
+#: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
 msgid "<server>"
 msgstr "<servidor>"
 
@@ -1006,160 +1033,164 @@ msgid "action to be taken on smart card removal"
 msgstr "acció a realitzar amb l'extracció de la targeta intel·ligent"
 
 #: src/compat/authcompat_Options.py:94
+msgid "require smart card for authentication by default"
+msgstr ""
+
+#: src/compat/authcompat_Options.py:95
 msgid "authentication with fingerprint readers by default"
 msgstr "per defecte autenticació amb lectors d'empremtes digitals"
 
-#: src/compat/authcompat_Options.py:95
+#: src/compat/authcompat_Options.py:96
 msgid "automatic per-user ecryptfs"
 msgstr "ecryptfs automàtic en funció de l'usuari"
 
-#: src/compat/authcompat_Options.py:96
+#: src/compat/authcompat_Options.py:97
 msgid "Kerberos authentication by default"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:97
+#: src/compat/authcompat_Options.py:98
 msgid "default Kerberos KDC"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:98
+#: src/compat/authcompat_Options.py:99
 msgid "default Kerberos admin server"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:99 src/compat/authcompat_Options.py:152
+#: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
 msgid "<realm>"
 msgstr "<reialme>"
 
-#: src/compat/authcompat_Options.py:99
+#: src/compat/authcompat_Options.py:100
 msgid "default Kerberos realm"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:100
+#: src/compat/authcompat_Options.py:101
 msgid "use of DNS to find Kerberos KDCs"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:101
+#: src/compat/authcompat_Options.py:102
 msgid "use of DNS to find Kerberos realms"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:102
+#: src/compat/authcompat_Options.py:103
 msgid "winbind for user information by default"
 msgstr "per defecte winbind per a la informació de l'usuari"
 
-#: src/compat/authcompat_Options.py:103
+#: src/compat/authcompat_Options.py:104
 msgid "winbind for authentication by default"
 msgstr "per defecte winbind per l'autenticació"
 
-#: src/compat/authcompat_Options.py:104
+#: src/compat/authcompat_Options.py:105
 msgid "<Administrator>"
 msgstr "<Administrador>"
 
-#: src/compat/authcompat_Options.py:104
+#: src/compat/authcompat_Options.py:105
 msgid "join the winbind domain or ads realm now as this administrator"
 msgstr ""
 "ingressa ara al domini winbind o al reialme ads com a aquest administrador"
 
-#: src/compat/authcompat_Options.py:105
+#: src/compat/authcompat_Options.py:106
 msgid "Kerberos 5 for authenticate with winbind"
 msgstr "Kerberos 5 per a l'autenticació amb winbind"
 
-#: src/compat/authcompat_Options.py:106
+#: src/compat/authcompat_Options.py:107
 msgid "<workgroup>"
 msgstr "<grup de treball>"
 
-#: src/compat/authcompat_Options.py:106
+#: src/compat/authcompat_Options.py:107
 msgid "workgroup authentication servers are in"
 msgstr "els servidors d'autenticació del grup de treball estan a"
 
-#: src/compat/authcompat_Options.py:107
+#: src/compat/authcompat_Options.py:108
 msgid ""
 "SSSD for user information by default with manually managed configuration"
 msgstr ""
 "per defecte SSSD per a la informació de l'usuari amb la configuració "
 "gestionada de forma manual"
 
-#: src/compat/authcompat_Options.py:108
+#: src/compat/authcompat_Options.py:109
 msgid "SSSD for authentication by default with manually managed configuration"
 msgstr ""
 "per defecte SSSD per a l'autenticació amb la configuració gestionada de "
 "forma manual"
 
-#: src/compat/authcompat_Options.py:109
+#: src/compat/authcompat_Options.py:110
 msgid "caching of user credentials in SSSD by default"
 msgstr "per defecte captura de les credencials de l'usuari amb SSSD"
 
-#: src/compat/authcompat_Options.py:110
+#: src/compat/authcompat_Options.py:111
 msgid "check of access.conf during account authorization"
 msgstr "comprova access.conf durant l'autorització del compte"
 
-#: src/compat/authcompat_Options.py:111
+#: src/compat/authcompat_Options.py:112
 msgid "creation of home directories for users on their first login"
 msgstr ""
 "creació dels directoris dels usuaris amb el seu primer inici de sessió"
 
-#: src/compat/authcompat_Options.py:112
+#: src/compat/authcompat_Options.py:113
 msgid ""
 "account locking in case of too many consecutive authentication failures"
 msgstr ""
 "bloqueig del compte en cas de massa fracassos d'autenticació consecutius"
 
-#: src/compat/authcompat_Options.py:113 src/compat/authcompat_Options.py:114
-#: src/compat/authcompat_Options.py:115 src/compat/authcompat_Options.py:116
+#: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
+#: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
 msgid "<number>"
 msgstr "<número>"
 
-#: src/compat/authcompat_Options.py:113
+#: src/compat/authcompat_Options.py:114
 msgid "minimum length of a password"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:114
+#: src/compat/authcompat_Options.py:115
 msgid "minimum number of character classes in a password"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:115
+#: src/compat/authcompat_Options.py:116
 msgid "maximum number of same consecutive characters in a password"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:116
+#: src/compat/authcompat_Options.py:117
 msgid "maximum number of consecutive characters of same class in a password"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:117
+#: src/compat/authcompat_Options.py:118
 msgid "require at least one lowercase character in a password"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:118
+#: src/compat/authcompat_Options.py:119
 msgid "require at least one uppercase character in a password"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:119
+#: src/compat/authcompat_Options.py:120
 msgid "require at least one digit in a password"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:120
+#: src/compat/authcompat_Options.py:121
 msgid "require at least one other character in a password"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:123
+#: src/compat/authcompat_Options.py:124
 msgid "do not start/stop services"
 msgstr "no iniciïs/atura els serveis"
 
-#: src/compat/authcompat_Options.py:124
+#: src/compat/authcompat_Options.py:125
 msgid "update all configuration files"
 msgstr "actualitza tots els fitxers de configuració"
 
-#: src/compat/authcompat_Options.py:125 src/compat/authcompat_Options.py:126
+#: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
 msgid "the same as --updateall"
 msgstr "el mateix que --updateall"
 
-#: src/compat/authcompat_Options.py:135 src/compat/authcompat_Options.py:136
+#: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
 msgid "<name>"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:147
+#: src/compat/authcompat_Options.py:148
 msgid "<descrypt|bigcrypt|md5|sha256|sha512>"
 msgstr ""
 
-#: src/compat/authcompat_Options.py:148
+#: src/compat/authcompat_Options.py:149
 msgid "<URL>"
 msgstr "<URL>"
 
@@ -1222,8 +1253,8 @@ msgstr ""
 msgid "Service %s was not found. Please install the service."
 msgstr ""
 
-#: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:618
-#: src/compat/authcompat.py.in.in:643
+#: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:626
+#: src/compat/authcompat.py.in.in:651
 #, python-format
 msgid "Command [%s] failed with %d, stderr:"
 msgstr ""

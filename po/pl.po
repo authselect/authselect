@@ -13,13 +13,13 @@
 # Piotr Drąg <piotrdrag@gmail.com>, 2018. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: authselect 1.0\n"
+"Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2018-09-27 14:04+0200\n"
+"POT-Creation-Date: 2018-11-20 14:02+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-08-14 01:58+0000\n"
+"PO-Revision-Date: 2018-11-21 04:05+0000\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/authconfig/"
 "language/pl/)\n"
@@ -28,30 +28,44 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Zanata 4.6.2\n"
 
-#: src/lib/authselect.c:47
+#: src/lib/authselect.c:47 src/lib/authselect.c:169
+msgid "Unable to obtain supported features"
+msgstr "Nie można uzyskać obsługiwanych funkcji"
+
+#: src/lib/authselect.c:59
+#, c-format
+msgid "Unknown profile feature [%s], did you mean [%s]?"
+msgstr "Nieznana funkcja profilu [%s], czy chodziło o [%s]?"
+
+#: src/lib/authselect.c:62
+#, c-format
+msgid "Unknown profile feature [%s]"
+msgstr "Nieznana funkcja profilu [%s]"
+
+#: src/lib/authselect.c:86
 #, c-format
 msgid "Trying to activate profile [%s]"
 msgstr "Próbowanie aktywacji profilu [%s]"
 
-#: src/lib/authselect.c:51 src/lib/profiles/read.c:312
+#: src/lib/authselect.c:90 src/lib/authselect.c:162 src/lib/profiles/read.c:312
 #, c-format
 msgid "Unable to find profile [%s] [%d]: %s"
 msgstr "Nie można odnaleźć profilu [%s] [%d]: %s"
 
-#: src/lib/authselect.c:57
+#: src/lib/authselect.c:101
 msgid "Enforcing activation!"
 msgstr "Wymuszanie aktywacji."
 
-#: src/lib/authselect.c:65
+#: src/lib/authselect.c:109
 #, c-format
 msgid "Unable to check configuration [%d]: %s"
 msgstr "Nie można sprawdzić konfiguracji [%d]: %s"
 
-#: src/lib/authselect.c:70
+#: src/lib/authselect.c:114
 msgid "Unexpected changes to the configuration were detected."
 msgstr "Wykryto nieoczekiwane zmiany konfiguracji."
 
-#: src/lib/authselect.c:71
+#: src/lib/authselect.c:115
 msgid ""
 "Refusing to activate profile unless those changes are removed or overwrite "
 "is requested."
@@ -59,11 +73,11 @@ msgstr ""
 "Odmawianie aktywacji profilu, jeśli te zmiany nie zostaną usunięte lub "
 "zażądane zostanie zastąpienie."
 
-#: src/lib/authselect.c:80
+#: src/lib/authselect.c:124
 msgid "File that needs to be overwritten was found"
 msgstr "Odnaleziono plik, który musi zostać zastąpiony"
 
-#: src/lib/authselect.c:81
+#: src/lib/authselect.c:125
 msgid ""
 "Refusing to activate profile unless this file is removed or overwrite is "
 "requested."
@@ -71,16 +85,21 @@ msgstr ""
 "Odmawianie aktywacji profilu, jeśli ten plik nie zostanie usunięty lub "
 "zażądane zostanie zastąpienie."
 
-#: src/lib/authselect.c:92
+#: src/lib/authselect.c:136
 #, c-format
 msgid "Unable to activate profile [%s] [%d]: %s"
 msgstr "Nie można aktywować profilu [%s] [%d]: %s"
 
-#: src/lib/authselect.c:126
+#: src/lib/authselect.c:179
+#, c-format
+msgid "Profile feature [%s] is no longer supported, removing it..."
+msgstr "Funkcja profilu [%s] nie jest już obsługiwana, usuwanie jej…"
+
+#: src/lib/authselect.c:202
 msgid "Trying to backup system files"
 msgstr "Próba utworzenia kopii zapasowej plików systemu"
 
-#: src/lib/authselect.c:129
+#: src/lib/authselect.c:205
 #, c-format
 msgid "Unable to backup system files [%d]: %s"
 msgstr "Nie można utworzyć kopii zapasowej plików systemu [%d]: %s"
@@ -163,39 +182,39 @@ msgstr "Nie można uzyskać katalogu nadrzędnego [%s] [%d]: %s"
 msgid "Invalid operator!"
 msgstr "Nieprawidłowy operator."
 
-#: src/lib/util/template.c:356 src/lib/files/system.c:112
-#: src/lib/files/system.c:170
+#: src/lib/util/template.c:373 src/lib/util/template.c:520
+#: src/lib/files/system.c:112 src/lib/files/system.c:170
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr ""
 "Nie można skompilować wyrażenia regularnego: błąd wyrażenia regularnego %d"
 
-#: src/lib/util/template.c:365
+#: src/lib/util/template.c:382 src/lib/util/template.c:530
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "Nie można przetworzyć wyniku [%d]: %s"
 
-#: src/lib/util/template.c:385
+#: src/lib/util/template.c:402
 #, c-format
 msgid "Unable to process operator [%d]: %s"
 msgstr "Nie można przetworzyć operatora [%d]: %s"
 
-#: src/lib/util/template.c:400 src/lib/files/system.c:130
-#: src/lib/files/system.c:195
+#: src/lib/util/template.c:417 src/lib/util/template.c:541
+#: src/lib/files/system.c:130 src/lib/files/system.c:195
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "Nie można wyszukać ciągu: błąd wyrażenia regularnego %d"
 
-#: src/lib/util/template.c:431
+#: src/lib/util/template.c:448
 #, c-format
 msgid "Unable to generate template [%d]: %s"
 msgstr "Nie można utworzyć szablonu [%d]: %s"
 
-#: src/lib/util/template.c:460
+#: src/lib/util/template.c:477
 msgid "Unable to get current time!"
 msgstr "Nie można uzyskać obecnego czasu."
 
-#: src/lib/util/template.c:474
+#: src/lib/util/template.c:491
 msgid "Unable to create message!"
 msgstr "Nie można utworzyć komunikatu."
 
@@ -238,93 +257,101 @@ msgstr "Nie można utworzyć pliku nsswitch.conf"
 msgid "Unable to find nsswitch maps [%d]: %s"
 msgstr "Nie można odnaleźć mapowań nsswitch [%d]: %s"
 
-#: src/lib/authselect_profile.c:289
+#: src/lib/authselect_profile.c:132
+msgid "Unable to create array (out of memory)"
+msgstr "Nie można utworzyć macierzy (brak pamięci)"
+
+#: src/lib/authselect_profile.c:141 src/lib/authselect_profile.c:150
+msgid "Unable to obtain feature list (out of memory)"
+msgstr "Nie można uzyskać listy funkcji (brak pamięci)"
+
+#: src/lib/authselect_profile.c:344
 #, c-format
 msgid "Creating empty profile at [%s]"
 msgstr "Tworzenie pustego profilu w [%s]"
 
-#: src/lib/authselect_profile.c:293 src/lib/authselect_profile.c:383
+#: src/lib/authselect_profile.c:348 src/lib/authselect_profile.c:438
 #, c-format
 msgid "Unable to make path [%s] [%d]: %s"
 msgstr "Nie można utworzyć ścieżki [%s] [%d]: %s"
 
-#: src/lib/authselect_profile.c:300 src/lib/authselect_profile.c:342
+#: src/lib/authselect_profile.c:355 src/lib/authselect_profile.c:397
 #, c-format
 msgid "Unable to write to [%s] [%d]: %s"
 msgstr "Nie można zapisać do [%s] [%d]: %s"
 
-#: src/lib/authselect_profile.c:322 src/lib/authselect_profile.c:391
+#: src/lib/authselect_profile.c:377 src/lib/authselect_profile.c:446
 #: src/lib/files/system.c:673
 #, c-format
 msgid "There is no filename in [%s]"
 msgstr "Nie ma nazwy pliku w [%s]"
 
-#: src/lib/authselect_profile.c:331
+#: src/lib/authselect_profile.c:386
 #, c-format
 msgid "Unable to create symbolic link [%s] to [%s] [%d]: %s"
 msgstr "Nie można utworzyć dowiązania symbolicznego [%s] do [%s] [%d]: %s"
 
-#: src/lib/authselect_profile.c:364
+#: src/lib/authselect_profile.c:419
 #, c-format
 msgid "Creating new profile from \"%s\" at [%s]"
 msgstr "Tworzenie nowego profilu z „%s” w [%s]"
 
-#: src/lib/authselect_profile.c:368
+#: src/lib/authselect_profile.c:423
 #, c-format
 msgid "Unable to read base profile [%s] [%d]: %s"
 msgstr "Nie można odczytać podstawowego profilu [%s] [%d]: %s"
 
-#: src/lib/authselect_profile.c:376
+#: src/lib/authselect_profile.c:431
 msgid "Unable to resolve symbolic links names"
 msgstr "Nie można rozwiązać nazw dowiązań symbolicznych"
 
-#: src/lib/authselect_profile.c:401 src/lib/authselect_profile.c:414
-#: src/lib/authselect_profile.c:428
+#: src/lib/authselect_profile.c:456 src/lib/authselect_profile.c:469
+#: src/lib/authselect_profile.c:483
 #, c-format
 msgid "Unable to create [%s] [%d]: %s"
 msgstr "Nie można utworzyć [%s] [%d]: %s"
 
-#: src/lib/authselect_profile.c:436
+#: src/lib/authselect_profile.c:491
 #, c-format
 msgid "Unknown file name [%s]"
 msgstr "Nieznana nazwa pliku [%s]"
 
-#: src/lib/authselect_profile.c:463
+#: src/lib/authselect_profile.c:518
 msgid "Name can not be empty"
 msgstr "Nazwa nie może być pusta"
 
-#: src/lib/authselect_profile.c:475
+#: src/lib/authselect_profile.c:530
 msgid "Default profile can not be created"
 msgstr "Nie można utworzyć domyślnego profilu"
 
-#: src/lib/authselect_profile.c:478
+#: src/lib/authselect_profile.c:533
 msgid "Value AUTHSELECT_PROFILE_ANY is invalid in this context"
 msgstr "Wartość AUTHSELECT_PROFILE_ANY jest nieprawidłowa w tym kontekście"
 
-#: src/lib/authselect_profile.c:483
+#: src/lib/authselect_profile.c:538
 msgid "Unable to create profile path: out of memory"
 msgstr "Nie można utworzyć ścieżki do profilu: brak pamięci"
 
-#: src/lib/authselect_profile.c:489
+#: src/lib/authselect_profile.c:544
 #, c-format
 msgid "Profile \"%s\" already exist at [%s]"
 msgstr "Profil „%s” już istnieje w [%s]"
 
-#: src/lib/authselect_profile.c:493
+#: src/lib/authselect_profile.c:548
 #, c-format
 msgid "Unable to access [%s] [%d]: %s"
 msgstr "Nie można uzyskać dostępu do [%s] [%d]: %s"
 
-#: src/lib/authselect_profile.c:499
+#: src/lib/authselect_profile.c:554
 msgid "Unable to create file name: out of memory"
 msgstr "Nie można utworzyć nazwy pliku: brak pamięci"
 
-#: src/lib/authselect_profile.c:507
+#: src/lib/authselect_profile.c:562
 #, c-format
 msgid "Unable to create empty profile [%d]: %s"
 msgstr "Nie można utworzyć pustego profilu [%d]: %s"
 
-#: src/lib/authselect_profile.c:516
+#: src/lib/authselect_profile.c:571
 #, c-format
 msgid "Unable to create profile [%d]: %s"
 msgstr "Nie można utworzyć profilu [%d]: %s"
@@ -704,12 +731,12 @@ msgid "At least one option is required!\n"
 msgstr "Wymagana jest co najmniej jedna opcja.\n"
 "\n"
 
-#: src/cli/main.c:70 src/cli/main.c:361
+#: src/cli/main.c:70 src/cli/main.c:362
 msgid "Profile identifier."
 msgstr "Identyfikator profilu."
 
-#: src/cli/main.c:73 src/cli/main.c:237 src/cli/main.c:286 src/cli/main.c:321
-#: src/cli/main.c:364 src/cli/main.c:514 src/cli/main.c:536 src/cli/main.c:576
+#: src/cli/main.c:73 src/cli/main.c:238 src/cli/main.c:287 src/cli/main.c:322
+#: src/cli/main.c:365 src/cli/main.c:515 src/cli/main.c:537 src/cli/main.c:577
 msgid "Unable to parse command arguments"
 msgstr "Nie można przetworzyć parametrów polecenia"
 
@@ -735,12 +762,12 @@ msgstr ""
 msgid "Do not print profile requirements"
 msgstr "Bez wyświetlania wymagań profilu"
 
-#: src/cli/main.c:128 src/cli/main.c:336 src/cli/main.c:370 src/cli/main.c:397
+#: src/cli/main.c:128 src/cli/main.c:337 src/cli/main.c:371 src/cli/main.c:398
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "Nie można uzyskać informacji o profilu [%d]: %s"
 
-#: src/cli/main.c:136 src/cli/main.c:404
+#: src/cli/main.c:136 src/cli/main.c:405
 msgid "Unable to read profile requirements!"
 msgstr "Nie można odczytać wymagań profilu."
 
@@ -767,15 +794,15 @@ msgstr ""
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "Nie można aktywować profilu [%d]: %s\n"
 
-#: src/cli/main.c:204
+#: src/cli/main.c:205
 msgid "Changes were successfully applied.\n"
 msgstr "Pomyślnie zastosowano zmiany.\n"
 
-#: src/cli/main.c:207 src/cli/main.c:243
+#: src/cli/main.c:208 src/cli/main.c:244
 msgid "No existing configuration detected.\n"
 msgstr "Nie wykryto żadnej istniejącej konfiguracji.\n"
 
-#: src/cli/main.c:210
+#: src/cli/main.c:211
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
@@ -783,39 +810,39 @@ msgstr ""
 "Wykryto nieoczekiwane zmiany konfiguracji. Proszę użyć polecenia „select” "
 "zamiast tego.\n"
 
-#: src/cli/main.c:214
+#: src/cli/main.c:215
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr "Nie można zastosować zmian [%d]: %s\n"
 
-#: src/cli/main.c:231
+#: src/cli/main.c:232
 msgid "Print command parameters instead of formatted output"
 msgstr "Wyświetla parametry polecenia zamiast sformatowanego wyjścia"
 
-#: src/cli/main.c:246
+#: src/cli/main.c:247
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "Nie można uzyskać obecnej konfiguracji [%d]: %s"
 
-#: src/cli/main.c:260
+#: src/cli/main.c:261
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "Identyfikator profilu: %s\n"
 
-#: src/cli/main.c:261
+#: src/cli/main.c:262
 msgid "Enabled features:"
 msgstr "Włączone funkcje:"
 
-#: src/cli/main.c:264
+#: src/cli/main.c:265
 msgid " None\n"
 msgstr " Brak\n"
 
-#: src/cli/main.c:292
+#: src/cli/main.c:293
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "Nie można przetestować obecnej konfiguracji [%d]: %s"
 
-#: src/cli/main.c:299
+#: src/cli/main.c:300
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
@@ -823,63 +850,63 @@ msgstr ""
 "Obecna konfiguracja jest nieprawidłowa. Prawdopodobnie została zmodyfikowana "
 "poza programem authselect."
 
-#: src/cli/main.c:304
+#: src/cli/main.c:305
 msgid "Current configuration is valid."
 msgstr "Obecna konfiguracja jest prawidłowa."
 
-#: src/cli/main.c:327
+#: src/cli/main.c:328
 msgid "Unable to get profile list!"
 msgstr "Nie można uzyskać listy profili."
 
-#: src/cli/main.c:442
+#: src/cli/main.c:443
 msgid "Print content of all files"
 msgstr "Wyświetla treść wszystkich plików"
 
-#: src/cli/main.c:443
+#: src/cli/main.c:444
 msgid "Print nsswitch.conf content"
 msgstr "Wyświetla treść pliku nsswitch.conf"
 
-#: src/cli/main.c:444
+#: src/cli/main.c:445
 msgid "Print system-auth content"
 msgstr "Wyświetla treść pliku system-auth"
 
-#: src/cli/main.c:445
+#: src/cli/main.c:446
 msgid "Print password-auth content"
 msgstr "Wyświetla treść pliku password-auth"
 
-#: src/cli/main.c:446
+#: src/cli/main.c:447
 msgid "Print smartcard-auth content"
 msgstr "Wyświetla treść pliku smartcard-auth"
 
-#: src/cli/main.c:447
+#: src/cli/main.c:448
 msgid "Print fingerprint-auth content"
 msgstr "Wyświetla treść pliku fingerprint-auth"
 
-#: src/cli/main.c:448
+#: src/cli/main.c:449
 msgid "Print postlogin content"
 msgstr "Wyświetla treść pliku postlogin"
 
-#: src/cli/main.c:449
+#: src/cli/main.c:450
 msgid "Print dconf database content"
 msgstr "Wyświetla treść bazy danych DConf"
 
-#: src/cli/main.c:450
+#: src/cli/main.c:451
 msgid "Print dconf lock content"
 msgstr "Wyświetla treść blokady DConf"
 
-#: src/cli/main.c:477
+#: src/cli/main.c:478
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "Nie można uzyskać utworzonej treści [%d]: %s"
 
-#: src/cli/main.c:496
+#: src/cli/main.c:497
 #, c-format
 msgid "File %s: Empty\n"
 "\n"
 msgstr "Plik %s: pusty\n"
 "\n"
 
-#: src/cli/main.c:498
+#: src/cli/main.c:499
 #, c-format
 msgid "File %s:\n"
 "%s\n"
@@ -888,33 +915,33 @@ msgstr "Plik %s:\n"
 "%s\n"
 "\n"
 
-#: src/cli/main.c:511
+#: src/cli/main.c:512
 msgid "Feature to enable."
 msgstr "Funkcja do włączenia."
 
-#: src/cli/main.c:520
+#: src/cli/main.c:521
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "Nie można włączyć funkcji [%d]: %s\n"
 
-#: src/cli/main.c:533
+#: src/cli/main.c:534
 msgid "Feature to disable."
 msgstr "Funkcja do wyłączenia."
 
-#: src/cli/main.c:542
+#: src/cli/main.c:543
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "Nie można wyłączyć funkcji [%d]: %s\n"
 
-#: src/cli/main.c:561
+#: src/cli/main.c:562
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr "Tworzy nowy profil jako profil dostawcy zamiast niestandardowego"
 
-#: src/cli/main.c:562
+#: src/cli/main.c:563
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr "Identyfikator profilu, który ma być używany jako podstawa nowego"
 
-#: src/cli/main.c:563
+#: src/cli/main.c:564
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -922,50 +949,50 @@ msgstr ""
 "Tworzy nowy profil na podstawie domyślnego nawet, jeśli istnieje profil "
 "dostawcy o tej samej nazwie"
 
-#: src/cli/main.c:564
+#: src/cli/main.c:565
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr ""
 "Tworzy dowiązania symboliczne plików meta z profilu podstawowego zamiast je "
 "kopiować"
 
-#: src/cli/main.c:565
+#: src/cli/main.c:566
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr ""
 "Tworzy dowiązania symboliczne plików nsswitch z profilu podstawowego zamiast "
 "je kopiować"
 
-#: src/cli/main.c:566
+#: src/cli/main.c:567
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr ""
 "Tworzy dowiązania symboliczne plików pam z profilu podstawowego zamiast je "
 "kopiować"
 
-#: src/cli/main.c:567
+#: src/cli/main.c:568
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
 "Tworzy dowiązania symboliczne plików dconf z profilu podstawowego zamiast je "
 "kopiować"
 
-#: src/cli/main.c:568
+#: src/cli/main.c:569
 msgid "Symlink specific file (can be set multiple times)"
 msgstr ""
 "Tworzy dowiązanie symboliczne podanego pliku (można ustawiać wielokrotnie)"
 
-#: src/cli/main.c:573
+#: src/cli/main.c:574
 msgid "New profile name."
 msgstr "Nazwa nowego profilu."
 
-#: src/cli/main.c:583
+#: src/cli/main.c:584
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "Nie można utworzyć nowego profilu [%d]: %s\n"
 
-#: src/cli/main.c:587
+#: src/cli/main.c:588
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "Utworzono nowy profil w %s\n"
 
-#: src/cli/main.c:644
+#: src/cli/main.c:645
 msgid "Authselect can only be run as root!\n"
 msgstr "Tylko root może uruchamiać program authselect\n"
 
@@ -982,7 +1009,7 @@ msgid "default NIS domain"
 msgstr "domyślna domena NIS"
 
 #: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
-#: src/compat/authcompat_Options.py:97 src/compat/authcompat_Options.py:98
+#: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
 msgid "<server>"
 msgstr "<serwer>"
 
@@ -1036,163 +1063,167 @@ msgid "action to be taken on smart card removal"
 msgstr "działanie podejmowane podczas usuwania smart card"
 
 #: src/compat/authcompat_Options.py:94
+msgid "require smart card for authentication by default"
+msgstr "domyślne wymaganie smart card do uwierzytelniania"
+
+#: src/compat/authcompat_Options.py:95
 msgid "authentication with fingerprint readers by default"
 msgstr "domyślnie uwierzytelnianie za pomocą czytnika linii papilarnych"
 
-#: src/compat/authcompat_Options.py:95
+#: src/compat/authcompat_Options.py:96
 msgid "automatic per-user ecryptfs"
 msgstr "automatyczne eCryptfs dla każdego użytkownika"
 
-#: src/compat/authcompat_Options.py:96
+#: src/compat/authcompat_Options.py:97
 msgid "Kerberos authentication by default"
 msgstr "domyślnie uwierzytelnianie za pomocą Kerberosa"
 
-#: src/compat/authcompat_Options.py:97
+#: src/compat/authcompat_Options.py:98
 msgid "default Kerberos KDC"
 msgstr "domyślne KDC Kerberosa"
 
-#: src/compat/authcompat_Options.py:98
+#: src/compat/authcompat_Options.py:99
 msgid "default Kerberos admin server"
 msgstr "domyślny serwer administracyjny Kerberosa"
 
-#: src/compat/authcompat_Options.py:99 src/compat/authcompat_Options.py:152
+#: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
 msgid "<realm>"
 msgstr "<obszar>"
 
-#: src/compat/authcompat_Options.py:99
+#: src/compat/authcompat_Options.py:100
 msgid "default Kerberos realm"
 msgstr "domyślny obszar Kerberosa"
 
-#: src/compat/authcompat_Options.py:100
+#: src/compat/authcompat_Options.py:101
 msgid "use of DNS to find Kerberos KDCs"
 msgstr "użycie DNS do wyszukiwania KDC Kerberosa"
 
-#: src/compat/authcompat_Options.py:101
+#: src/compat/authcompat_Options.py:102
 msgid "use of DNS to find Kerberos realms"
 msgstr "użycie DNS do wyszukiwania obszarów Kerberosa"
 
-#: src/compat/authcompat_Options.py:102
+#: src/compat/authcompat_Options.py:103
 msgid "winbind for user information by default"
 msgstr "domyślnie winbind do wyszukiwania informacji o użytkowniku"
 
-#: src/compat/authcompat_Options.py:103
+#: src/compat/authcompat_Options.py:104
 msgid "winbind for authentication by default"
 msgstr "domyślnie uwierzytelnianie za pomocą winbind"
 
-#: src/compat/authcompat_Options.py:104
+#: src/compat/authcompat_Options.py:105
 msgid "<Administrator>"
 msgstr "<administrator>"
 
-#: src/compat/authcompat_Options.py:104
+#: src/compat/authcompat_Options.py:105
 msgid "join the winbind domain or ads realm now as this administrator"
 msgstr "dołączenie do domeny winbind lub obszaru ADS jako ten administrator"
 
-#: src/compat/authcompat_Options.py:105
+#: src/compat/authcompat_Options.py:106
 msgid "Kerberos 5 for authenticate with winbind"
 msgstr "Kerberos 5 do uwierzytelniania za pomocą winbind"
 
-#: src/compat/authcompat_Options.py:106
+#: src/compat/authcompat_Options.py:107
 msgid "<workgroup>"
 msgstr "<grupa-robocza>"
 
-#: src/compat/authcompat_Options.py:106
+#: src/compat/authcompat_Options.py:107
 msgid "workgroup authentication servers are in"
 msgstr "serwery uwierzytelniania grupy roboczej znajdują się w"
 
-#: src/compat/authcompat_Options.py:107
+#: src/compat/authcompat_Options.py:108
 msgid ""
 "SSSD for user information by default with manually managed configuration"
 msgstr ""
 "domyślnie informacje o użytkowniku z SSSD za pomocą ręcznie zarządzanej "
 "konfiguracji"
 
-#: src/compat/authcompat_Options.py:108
+#: src/compat/authcompat_Options.py:109
 msgid "SSSD for authentication by default with manually managed configuration"
 msgstr ""
 "domyślnie uwierzytelnianie przez SSSD za pomocą ręcznie zarządzanej "
 "konfiguracji"
 
-#: src/compat/authcompat_Options.py:109
+#: src/compat/authcompat_Options.py:110
 msgid "caching of user credentials in SSSD by default"
 msgstr ""
 "domyślnie zapisywanie danych uwierzytelniających użytkownika w pamięci "
 "podręcznej SSSD"
 
-#: src/compat/authcompat_Options.py:110
+#: src/compat/authcompat_Options.py:111
 msgid "check of access.conf during account authorization"
 msgstr "sprawdzanie pliku access.conf podczas upoważniania konta"
 
-#: src/compat/authcompat_Options.py:111
+#: src/compat/authcompat_Options.py:112
 msgid "creation of home directories for users on their first login"
 msgstr ""
 "tworzenie katalogów domowych użytkowników podczas ich pierwszego logowania"
 
-#: src/compat/authcompat_Options.py:112
+#: src/compat/authcompat_Options.py:113
 msgid ""
 "account locking in case of too many consecutive authentication failures"
 msgstr ""
 "blokowanie konta w przypadku za dużej liczby kolejnych niepowodzeń "
 "uwierzytelniania"
 
-#: src/compat/authcompat_Options.py:113 src/compat/authcompat_Options.py:114
-#: src/compat/authcompat_Options.py:115 src/compat/authcompat_Options.py:116
+#: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
+#: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
 msgid "<number>"
 msgstr "<liczba>"
 
-#: src/compat/authcompat_Options.py:113
+#: src/compat/authcompat_Options.py:114
 msgid "minimum length of a password"
 msgstr "minimalna długość hasła"
 
-#: src/compat/authcompat_Options.py:114
+#: src/compat/authcompat_Options.py:115
 msgid "minimum number of character classes in a password"
 msgstr "minimalna liczba klas znaków w haśle"
 
-#: src/compat/authcompat_Options.py:115
+#: src/compat/authcompat_Options.py:116
 msgid "maximum number of same consecutive characters in a password"
 msgstr "maksymalna liczba takich samych znaków następujących po sobie w haśle"
 
-#: src/compat/authcompat_Options.py:116
+#: src/compat/authcompat_Options.py:117
 msgid "maximum number of consecutive characters of same class in a password"
 msgstr ""
 "maksymalna liczba znaków tej samej klasy następujących po sobie w haśle"
 
-#: src/compat/authcompat_Options.py:117
+#: src/compat/authcompat_Options.py:118
 msgid "require at least one lowercase character in a password"
 msgstr "wymaganie co najmniej jednego małego znaku w haśle"
 
-#: src/compat/authcompat_Options.py:118
+#: src/compat/authcompat_Options.py:119
 msgid "require at least one uppercase character in a password"
 msgstr "wymaganie co najmniej jednego wielkiego znaku w haśle"
 
-#: src/compat/authcompat_Options.py:119
+#: src/compat/authcompat_Options.py:120
 msgid "require at least one digit in a password"
 msgstr "wymaganie co najmniej jednej cyfry w haśle"
 
-#: src/compat/authcompat_Options.py:120
+#: src/compat/authcompat_Options.py:121
 msgid "require at least one other character in a password"
 msgstr "wymaganie co najmniej jednego innego znaku w haśle"
 
-#: src/compat/authcompat_Options.py:123
+#: src/compat/authcompat_Options.py:124
 msgid "do not start/stop services"
 msgstr "bez uruchamiania/zatrzymywania usług"
 
-#: src/compat/authcompat_Options.py:124
+#: src/compat/authcompat_Options.py:125
 msgid "update all configuration files"
 msgstr "aktualizowanie wszystkich plików konfiguracyjnych"
 
-#: src/compat/authcompat_Options.py:125 src/compat/authcompat_Options.py:126
+#: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
 msgid "the same as --updateall"
 msgstr "to samo, co --updateall"
 
-#: src/compat/authcompat_Options.py:135 src/compat/authcompat_Options.py:136
+#: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
 msgid "<name>"
 msgstr "<nazwa>"
 
-#: src/compat/authcompat_Options.py:147
+#: src/compat/authcompat_Options.py:148
 msgid "<descrypt|bigcrypt|md5|sha256|sha512>"
 msgstr "<descrypt|bigcrypt|md5|sha256|sha512>"
 
-#: src/compat/authcompat_Options.py:148
+#: src/compat/authcompat_Options.py:149
 msgid "<URL>"
 msgstr "<URL>"
 
@@ -1255,8 +1286,8 @@ msgstr "Wykonywanie: %s"
 msgid "Service %s was not found. Please install the service."
 msgstr "Nie odnaleziono usługi %s. Proszę ją zainstalować."
 
-#: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:618
-#: src/compat/authcompat.py.in.in:643
+#: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:626
+#: src/compat/authcompat.py.in.in:651
 #, python-format
 msgid "Command [%s] failed with %d, stderr:"
 msgstr "Polecenie [%s] się nie powiodło z %d, standardowe wyjście błędów:"

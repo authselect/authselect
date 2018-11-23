@@ -1,4 +1,3 @@
-# Fabian Affolter <fab@fedoraproject.org>, 2018. #zanata
 # Ludek Janda <ljanda@redhat.com>, 2018. #zanata
 msgid ""
 msgstr ""
@@ -8,655 +7,650 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-11-23 10:49+0000\n"
+"PO-Revision-Date: 2018-10-30 02:46+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: German\n"
-"Language: de\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
 "X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:169
 msgid "Unable to obtain supported features"
-msgstr "Unterstützte Funktionen können nicht abgerufen werden"
+msgstr ""
 
 #: src/lib/authselect.c:59
 #, c-format
 msgid "Unknown profile feature [%s], did you mean [%s]?"
-msgstr "Unbekannte Profilfunktion [%s], meintest du [%s]"
+msgstr ""
 
 #: src/lib/authselect.c:62
 #, c-format
 msgid "Unknown profile feature [%s]"
-msgstr "Unbekannte Profilfunktion [%s]"
+msgstr ""
 
 #: src/lib/authselect.c:86
 #, c-format
 msgid "Trying to activate profile [%s]"
-msgstr "Versuch, das Profil zu aktivieren [%s]"
+msgstr "プロファイル [%s] の実行を試行中"
 
 #: src/lib/authselect.c:90 src/lib/authselect.c:162 src/lib/profiles/read.c:312
 #, c-format
 msgid "Unable to find profile [%s] [%d]: %s"
-msgstr "Profil kann nicht gefunden werden%s] [%d]: %s"
+msgstr "プロファイル [%s] [%d] が見つかりません: %s"
 
 #: src/lib/authselect.c:101
 msgid "Enforcing activation!"
-msgstr "Aktivierung erzwingen!"
+msgstr "強制実行。"
 
 #: src/lib/authselect.c:109
 #, c-format
 msgid "Unable to check configuration [%d]: %s"
-msgstr "Konfiguration kann nicht geprüft werden [%d]: %s"
+msgstr "設定 [%d] を確認できません: %s"
 
 #: src/lib/authselect.c:114
 msgid "Unexpected changes to the configuration were detected."
-msgstr "Unerwartete Änderungen an der Konfiguration wurden festgestellt."
+msgstr "設定への予期せぬ変更を検出しました。"
 
 #: src/lib/authselect.c:115
 msgid ""
 "Refusing to activate profile unless those changes are removed or overwrite "
 "is requested."
-msgstr ""
-"Ablehnung der Aktivierung des Profils, es sei denn, diese Änderungen werden "
-"entfernt oder das Überschreiben wird angefordert."
+msgstr "それらの変更が削除されない限り、または上書きが要求されない限り、プロファイルの実行を拒否しています。"
 
 #: src/lib/authselect.c:124
 msgid "File that needs to be overwritten was found"
-msgstr "Datei, die überschrieben werden muss, wurde gefunden"
+msgstr "上書きが必要なファイルが見つかりました"
 
 #: src/lib/authselect.c:125
 msgid ""
 "Refusing to activate profile unless this file is removed or overwrite is "
 "requested."
-msgstr ""
-"Verweigert die Aktivierung des Profils, es sei denn, diese Datei wird "
-"entfernt oder das Überschreiben wird angefordert."
+msgstr "このファイルが削除されない限り、または上書きが要求されない限り、プロファイルの実行を拒否しています。"
 
 #: src/lib/authselect.c:136
 #, c-format
 msgid "Unable to activate profile [%s] [%d]: %s"
-msgstr "Profil kann nicht aktiviert werden [%s] [%d]: %s"
+msgstr "プロファイル [%s] [%d] を実行できません: %s"
 
 #: src/lib/authselect.c:179
 #, c-format
 msgid "Profile feature [%s] is no longer supported, removing it..."
-msgstr "Profilfunktion [%s] wird nicht mehr unterstützt, es wird entfernt ..."
+msgstr ""
 
 #: src/lib/authselect.c:202
 msgid "Trying to backup system files"
-msgstr "Versuch, Systemdateien zu sichern"
+msgstr "システムファイルのバックアップを試行中"
 
 #: src/lib/authselect.c:205
 #, c-format
 msgid "Unable to backup system files [%d]: %s"
-msgstr "Sicherung von Systemdateien nicht möglich [%d]: %s"
+msgstr "システムファイル [%d] のバックアップができません: %s"
 
 #: src/lib/util/file.c:42
 msgid "Internal error: stat cannot be NULL!"
-msgstr "Interner Fehler: stat kann nicht NULL sein!"
+msgstr "内部エラー: stat は NULL になりません。"
 
 #: src/lib/util/file.c:50
 #, c-format
 msgid "[%s] is not a directory!"
-msgstr "[%s] ist kein Verzeichnis!"
+msgstr "[%s] はディレクトリーではありません。"
 
 #: src/lib/util/file.c:53
 #, c-format
 msgid "[%s] is not a regular file!"
-msgstr "[%s] ist keine reguläre Datei!"
+msgstr "[%s] は通常のファイルではありません。"
 
 #: src/lib/util/file.c:56
 #, c-format
 msgid "[%s] is not a symbolic link!"
-msgstr "[%s] ist kein symbolischer Link!"
+msgstr "[%s] はシンボリックリンクではありません。"
 
 #: src/lib/util/file.c:59
 #, c-format
 msgid "[%s] has wrong type [%.7o], expected [%.7o]!"
-msgstr "[%s] hat falschen Typ [% .7o], erwartet [% .7o]!"
+msgstr "[%s] には不正なタイプ [%.7o] があります、[%.7o] を予期していました。"
 
 #: src/lib/util/file.c:86
 #, c-format
 msgid "[%s] has wrong mode [%.4o], expected [%.4o]!"
-msgstr "[%s] hat falschen Modus [% .4o], erwartet [% .4o]!"
+msgstr "[%s] には不正なモード [%.4o] があります、[%.4o] を予期していました。"
 
 #: src/lib/util/file.c:92
 #, c-format
 msgid "[%s] has wrong owner [%u], expected [%u]!"
-msgstr "[%s] hat falschen Besitzer [%u], erwartet [%u]!"
+msgstr "[%s] には不正なオーナー [%u] があります、[%u] を予期していました。"
 
 #: src/lib/util/file.c:98
 #, c-format
 msgid "[%s] has wrong group [%u], expected [%u]!"
-msgstr "[%s] hat falsche Gruppe [%u], erwartet [%u]!"
+msgstr "[%s] には不正なグループ [%u] があります、[%u] を予期していました。"
 
 #: src/lib/util/file.c:120 src/lib/files/system.c:498
 #, c-format
 msgid "[%s] does not exist!"
-msgstr "[%s] ist nicht vorhanden!"
+msgstr "[%s] は存在しません。"
 
 #: src/lib/util/file.c:125 src/lib/util/file.c:197
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
-msgstr "Stat kann nicht [%s] [%d]: %s"
+msgstr "[%s] [%d] に対する stat の実行に失敗しました: %s "
 
 #: src/lib/util/file.c:163 src/lib/util/file.c:209
 #, c-format
 msgid "Unable to read link destination [%s] [%d]: %s"
-msgstr "Linkziel kann nicht gelesen werden [%s] [%d]: %s"
+msgstr "リンク先 [%s] [%d] の読み込みに失敗しました: %s"
 
 #: src/lib/util/file.c:169
 #, c-format
 msgid "Link [%s] does not point to [%s]"
-msgstr "Verknüpfung [%s] verweist nicht auf [%s]"
+msgstr "リンク [%s] は [%s] にポイントしていません"
 
 #: src/lib/util/file.c:215
 #, c-format
 msgid "Link [%s] points to [%s]"
-msgstr "Verknüpfung [%s] verweist auf [%s]"
+msgstr "リンク [%s] は [%s] にポイントしています"
 
 #: src/lib/util/file.c:265
 msgid "Internal error: filepath cannot be NULL!"
-msgstr "Interner Fehler: Dateipfad kann nicht NULL sein!"
+msgstr "内部エラー: filepath は NULL になりません。"
 
 #: src/lib/util/file.c:297
 #, c-format
 msgid "Unable to get parent directory of [%s] [%d]: %s"
-msgstr "Elternverzeichnis von [kann nicht abgerufen werden.%s] [%d]: %s"
+msgstr "[%s] [%d] の親ディレクトリーを取得できません: %s"
 
 #: src/lib/util/template.c:112 src/lib/util/template.c:152
 #: src/lib/util/template.c:229
 msgid "Invalid operator!"
-msgstr "Ungültiger Betreiber"
+msgstr "無効な演算子です。"
 
 #: src/lib/util/template.c:373 src/lib/util/template.c:520
 #: src/lib/files/system.c:112 src/lib/files/system.c:170
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
-msgstr "Reguläre Ausdrücke können nicht kompiliert werden: Regex-Fehler %d"
+msgstr "正規表現のコンパイルができません: regex エラー %d"
 
 #: src/lib/util/template.c:382 src/lib/util/template.c:530
 #, c-format
 msgid "Unable to process match [%d]: %s"
-msgstr "Match kann nicht verarbeitet werden [%d]: %s"
+msgstr "マッチ [%d] を処理できません: %s"
 
 #: src/lib/util/template.c:402
 #, c-format
 msgid "Unable to process operator [%d]: %s"
-msgstr "Operator kann nicht verarbeitet werden [%d]: %s"
+msgstr "オペレーター [%d] を処理できません: %s"
 
 #: src/lib/util/template.c:417 src/lib/util/template.c:541
 #: src/lib/files/system.c:130 src/lib/files/system.c:195
 #, c-format
 msgid "Unable to search string: regex error %d"
-msgstr "Zeichenfolge kann nicht durchsucht werden: Regex-Fehler %d"
+msgstr "文字列を検索できません: regex エラー %d"
 
 #: src/lib/util/template.c:448
 #, c-format
 msgid "Unable to generate template [%d]: %s"
-msgstr "Vorlage kann nicht generiert werden [%d]: %s"
+msgstr "テンプレート [%d] を生成できません: %s"
 
 #: src/lib/util/template.c:477
 msgid "Unable to get current time!"
-msgstr "Aktuelle Uhrzeit kann nicht abgerufen werden!"
+msgstr "現在の時刻を取得できません。"
 
 #: src/lib/util/template.c:491
 msgid "Unable to create message!"
-msgstr "Nachricht kann nicht erstellt werden!"
+msgstr "メッセージを作成できません。"
 
 #: src/lib/util/textfile.c:56
 #, c-format
 msgid "File [%s] is bigger than %uKiB!"
-msgstr "Datei [%s] ist größer als %uKiB!"
+msgstr "ファイル [%s] は %uKiB より大きいです。"
 
 #: src/lib/util/textfile.c:85
 #, c-format
 msgid "Unable to read file [%s] [%d]: %s"
-msgstr "Datei kann nicht gelesen werden [%s] [%d]: %s"
+msgstr "ファイル [%s] [%d] の読み込みができません: %s"
 
 #: src/lib/util/textfile.c:158
 #, c-format
 msgid "Unable to open file [%s] [%d]: %s"
-msgstr "Datei kann nicht geöffnet werden [%s] [%d]: %s"
+msgstr "ファイル [%s] [%d] を開くことができません: %s"
 
 #: src/lib/util/textfile.c:167
 #, c-format
 msgid "Unable to write data [%s] [%d]: %s"
-msgstr "Daten können nicht geschrieben werden [%s] [%d]: %s"
+msgstr "データ [%s] [%d] の書き込みができません: %s"
 
 #: src/lib/util/textfile.c:175 src/lib/util/textfile.c:266
 #, c-format
 msgid "Unable to chmod file [%s] [%d]: %s"
-msgstr "Chmod-datei nicht möglich [%s] [%d]: %s"
+msgstr "ファイル [%s] [%d] を chmod できません: %s"
 
 #: src/lib/util/textfile.c:273
 #, c-format
 msgid "Unable to chown file [%s] [%d]: %s"
-msgstr "Datei kann nicht chown [%s] [%d]: %s"
+msgstr "ファイル [%s] [%d] を chown できません: %s"
 
 #: src/lib/authselect_profile.c:104
 msgid "Unable to generate nsswitch.conf"
-msgstr "Nsswitch.conf kann nicht generiert werden"
+msgstr "nsswitch.conf を生成できません"
 
 #: src/lib/authselect_profile.c:111
 #, c-format
 msgid "Unable to find nsswitch maps [%d]: %s"
-msgstr "Nsswitch-Karten konnten nicht gefunden werden [%d]: %s"
+msgstr "nsswitch マップ [%d] を見つけることができません: %s"
 
 #: src/lib/authselect_profile.c:132
 msgid "Unable to create array (out of memory)"
-msgstr "Array kann nicht erstellt werden (nicht genügend Speicherplatz)"
+msgstr ""
 
 #: src/lib/authselect_profile.c:141 src/lib/authselect_profile.c:150
 msgid "Unable to obtain feature list (out of memory)"
 msgstr ""
-"Feature-Liste kann nicht abgerufen werden (nicht genügend Speicherplatz)"
 
 #: src/lib/authselect_profile.c:344
 #, c-format
 msgid "Creating empty profile at [%s]"
-msgstr "Leeres Profil erstellen bei [%s]"
+msgstr "[%s] で空のプロファイルを作成中"
 
 #: src/lib/authselect_profile.c:348 src/lib/authselect_profile.c:438
 #, c-format
 msgid "Unable to make path [%s] [%d]: %s"
-msgstr "Pfad kann nicht erstellt werden [%s] [%d]: %s"
+msgstr "パス [%s] [%d] を作成できません: %s"
 
 #: src/lib/authselect_profile.c:355 src/lib/authselect_profile.c:397
 #, c-format
 msgid "Unable to write to [%s] [%d]: %s"
-msgstr "Unfähig zu schreiben [%s] [%d]: %s"
+msgstr "[%s] [%d] への書き込みができません: %s"
 
 #: src/lib/authselect_profile.c:377 src/lib/authselect_profile.c:446
 #: src/lib/files/system.c:673
 #, c-format
 msgid "There is no filename in [%s]"
-msgstr "Es gibt keinen Dateinamen in [%s]"
+msgstr "[%s] にファイル名はありません"
 
 #: src/lib/authselect_profile.c:386
 #, c-format
 msgid "Unable to create symbolic link [%s] to [%s] [%d]: %s"
-msgstr "Symbolischer Link kann nicht erstellt werden [%s] an [%s] [%d]: %s"
+msgstr "シンボリックリンク [%s] を [%s] [%d] に作成できません: %s"
 
 #: src/lib/authselect_profile.c:419
 #, c-format
 msgid "Creating new profile from \"%s\" at [%s]"
-msgstr "Neues Profil erstellen von \"%s\" beim [%s]"
+msgstr "[%s] で \"%s\" から新規のプロファイルを作成中"
 
 #: src/lib/authselect_profile.c:423
 #, c-format
 msgid "Unable to read base profile [%s] [%d]: %s"
-msgstr "Basisprofil kann nicht gelesen werden [%s] [%d]: %s"
+msgstr "ベースプロファイル [%s] [%d] の読み込みができません: %s"
 
 #: src/lib/authselect_profile.c:431
 msgid "Unable to resolve symbolic links names"
-msgstr "Symbolische Linknamen können nicht aufgelöst werden"
+msgstr "シンボリックリンク名を解決できません"
 
 #: src/lib/authselect_profile.c:456 src/lib/authselect_profile.c:469
 #: src/lib/authselect_profile.c:483
 #, c-format
 msgid "Unable to create [%s] [%d]: %s"
-msgstr "Unfähig etwas zu erschaffen [%s] [%d]: %s"
+msgstr "[%s] [%d] を作成できません: %s"
 
 #: src/lib/authselect_profile.c:491
 #, c-format
 msgid "Unknown file name [%s]"
-msgstr "Unbekannter Dateiname [%s]"
+msgstr "不明なファイル名 [%s]"
 
 #: src/lib/authselect_profile.c:518
 msgid "Name can not be empty"
-msgstr "Der Name darf nicht leer sein"
+msgstr "名前は空欄にできません"
 
 #: src/lib/authselect_profile.c:530
 msgid "Default profile can not be created"
-msgstr "Standardprofil kann nicht erstellt werden"
+msgstr "デフォルトのプロファイルを作成できません"
 
 #: src/lib/authselect_profile.c:533
 msgid "Value AUTHSELECT_PROFILE_ANY is invalid in this context"
-msgstr "Der Wert AUTHSELECT_PROFILE_ANY ist in diesem Kontext ungültig"
+msgstr "このコンテキストでは、AUTHSELECT_PROFILE_ANY という値は無効です"
 
 #: src/lib/authselect_profile.c:538
 msgid "Unable to create profile path: out of memory"
-msgstr "Profilpfad kann nicht erstellt werden: Nicht genügend Speicherplatz"
+msgstr "プロファイルパスを作成できません: メモリー不足です"
 
 #: src/lib/authselect_profile.c:544
 #, c-format
 msgid "Profile \"%s\" already exist at [%s]"
-msgstr "Profil \"%s\"existieren bereits bei [%s]"
+msgstr "プロファイル \"%s\" はすでに [%s] に存在します"
 
 #: src/lib/authselect_profile.c:548
 #, c-format
 msgid "Unable to access [%s] [%d]: %s"
-msgstr "Zugang nicht möglich [%s] [%d]: %s"
+msgstr "[%s] [%d] へアクセスできません: %s"
 
 #: src/lib/authselect_profile.c:554
 msgid "Unable to create file name: out of memory"
-msgstr "Dateiname kann nicht erstellt werden: Nicht genügend Speicherplatz"
+msgstr "ファイル名を作成できません: メモリー不足です"
 
 #: src/lib/authselect_profile.c:562
 #, c-format
 msgid "Unable to create empty profile [%d]: %s"
-msgstr "Leeres Profil kann nicht erstellt werden [%d]: %s"
+msgstr "空のプロファイル [%d] を作成できません: %s"
 
 #: src/lib/authselect_profile.c:571
 #, c-format
 msgid "Unable to create profile [%d]: %s"
-msgstr "Profil kann nicht erstellt werden [%d]: %s"
+msgstr "プロファイル [%d] を作成できません: %s"
 
 #: src/lib/profiles/activate.c:44
 #, c-format
 msgid "%s update failed: %d"
-msgstr "%s Update fehlgeschlagen: %d"
+msgstr "%s の更新に失敗しました: %d"
 
 #: src/lib/profiles/activate.c:59
 msgid "Some directories are not accessible by authselect!"
-msgstr ""
-"Auf einige Verzeichnisse kann nicht mit authselect zugegriffen werden!"
+msgstr "authselect は一部のディレクトリーにアクセスできません。"
 
 #: src/lib/profiles/activate.c:65
 #, c-format
 msgid "Unable to write generated system files [%d]: %s"
-msgstr "Generierte Systemdateien können nicht geschrieben werden [%d]: %s"
+msgstr "生成されたシステムファイル [%d] の書き込みができません: %s"
 
 #: src/lib/profiles/activate.c:72
 #, c-format
 msgid "Unable to write configuration [%d]: %s"
-msgstr "Konfiguration kann nicht geschrieben werden [%d]: %s"
+msgstr "設定 [%d] の書き込みができません: %s"
 
 #: src/lib/profiles/activate.c:78
 #, c-format
 msgid "Unable to create symbolic links [%d]: %s"
-msgstr "Symbolische Links können nicht erstellt werden [%d]: %s"
+msgstr "シンボリックリンク [%d] を作成できません: %s"
 
 #: src/lib/profiles/activate.c:84
 msgid "Dconf is not installed on your system"
-msgstr "Dconf ist nicht auf Ihrem System installiert"
+msgstr "お使いのシステムに Dconf はインストールされていません"
 
 #: src/lib/profiles/activate.c:86
 #, c-format
 msgid "Unable to update dconf database [%d]: %s"
-msgstr "Update der Dconf-Datenbank nicht möglich [%d]: %s"
+msgstr "dconf データベース [%d] を更新できません: %s"
 
 #: src/lib/profiles/list.c:58
 #, c-format
 msgid "Unable to stat directory [%d]: %s"
-msgstr "Stat-Verzeichnis kann nicht erstellt werden [%d]: %s"
+msgstr "stat ディレクトリー [%d] の実行に失敗しました: %s"
 
 #: src/lib/profiles/list.c:137
 #, c-format
 msgid "Reading profile directory [%s]"
-msgstr "Leseprofilverzeichnis [%s]"
+msgstr "プロファイルディレクトリー [%s] を読み込み中"
 
 #: src/lib/profiles/list.c:142
 #, c-format
 msgid "Directory [%s] is missing!"
-msgstr "Verzeichnis [%s] wird vermisst!"
+msgstr "ディレクトリー [%s] がありません。"
 
 #: src/lib/profiles/list.c:145 src/lib/profiles/read.c:79
 #, c-format
 msgid "Unable to open directory [%s] [%d]: %s"
-msgstr "Verzeichnis kann nicht geöffnet werden [%s] [%d]: %s"
+msgstr "ディレクトリー [%s] [%d] を開くことができません: %s"
 
 #: src/lib/profiles/list.c:157
 #, c-format
 msgid "Not a directory: %s"
-msgstr "Kein Verzeichnis: %s"
+msgstr "ディレクトリーではありません: %s"
 
 #: src/lib/profiles/list.c:161
 #, c-format
 msgid "Found profile [%s]"
-msgstr "Gefundenes Profil [%s]"
+msgstr "プロファイル [%s] を見つけました"
 
 #: src/lib/profiles/list.c:242
 #, c-format
 msgid "Unable to list profiles [%d]: %s"
-msgstr "Profile können nicht aufgelistet werden [%d]: %s"
+msgstr "プロファイル [%d] の一覧表示ができません: %s"
 
 #: src/lib/profiles/read.c:102
 #, c-format
 msgid "Looking up profile [%s]"
-msgstr "Profil nachschlagen [%s]"
+msgstr "プロファイル [%s] を検索中"
 
 #: src/lib/profiles/read.c:106
 msgid "Locations array is NULL"
-msgstr "Das Array für Standorte ist NULL"
+msgstr "ロケーション配列は NULL です"
 
 #: src/lib/profiles/read.c:129
 #, c-format
 msgid "Profile [%s] is a custom profile"
-msgstr "Profil [%s] ist ein benutzerdefiniertes Profil"
+msgstr "プロファイル [%s] はカスタムプロファイルです"
 
 #: src/lib/profiles/read.c:131
 #, c-format
 msgid "Profile [%s] is a vendor profile"
-msgstr "Profil [%s] ist ein Lieferantenprofil"
+msgstr "プロファイル [%s] はベンダープロファイルです"
 
 #: src/lib/profiles/read.c:133
 #, c-format
 msgid "Profile [%s] is a default profile"
-msgstr "Profil [%s] ist ein Standardprofil"
+msgstr "プロファイル [%s] はデフォルトプロファイルです"
 
 #: src/lib/profiles/read.c:136
 #, c-format
 msgid "Profile [%s] found at [%s]"
-msgstr "Profil [%s] gefunden am [%s]"
+msgstr "プロファイル [%s] は [%s] で見つかりました"
 
 #: src/lib/profiles/read.c:144
 #, c-format
 msgid "Profile [%s] was not found"
-msgstr "Profil [%s] wurde nicht gefunden"
+msgstr "プロファイル [%s] は見つかりませんでした"
 
 #: src/lib/profiles/read.c:158 src/lib/files/system.c:74
 #, c-format
 msgid "Reading file [%s/%s]"
-msgstr "Datei lesen [%s/%s]"
+msgstr "ファイル [%s/%s] を読み込み中"
 
 #: src/lib/profiles/read.c:164 src/lib/profiles/read.c:169
 #: src/lib/files/system.c:82
 #, c-format
 msgid "Unable to read file [%s/%s] [%d]: %s"
-msgstr "Datei kann nicht gelesen werden [%s/%s] [%d]: %s"
+msgstr "ファイル [%s/%s] [%d] の読み込みができません: %s"
 
 #: src/lib/profiles/read.c:199 src/lib/profiles/read.c:218
 #, c-format
 msgid "Profile [%s] does not contain a name in [%s]!"
-msgstr "Profil [%s] enthält keinen Namen in [%s]!"
+msgstr "プロファイル [%s] は [%s] に名前を含んでいません。"
 
 #: src/lib/files/config.c:150
 msgid "Checking if all required directories are writable."
-msgstr "Überprüfen, ob alle erforderlichen Verzeichnisse beschreibbar sind."
+msgstr "すべての必要なディレクトリーが書き込み可能かどうか確認中です。"
 
 #: src/lib/files/config.c:155
 #, c-format
 msgid "Unable to get path to %s parent directory!"
-msgstr "Pfad kann nicht abgerufen werden %s übergeordnetes Verzeichnis!"
+msgstr "%s 親ディレクトリーへのパスの取得ができません。"
 
 #: src/lib/files/config.c:162
 #, c-format
 msgid "Creating path [%s]"
-msgstr "Pfad erstellen [%s]"
+msgstr "パス [%s] の作成中"
 
 #: src/lib/files/config.c:166
 #, c-format
 msgid "Unable to create path [%s] [%d]: %s"
-msgstr "Pfad kann nicht erstellt werden [%s] [%d]: %s"
+msgstr "パス [%s] [%d] を作成できません: %s"
 
 #: src/lib/files/config.c:171
 #, c-format
 msgid "Directory [%s] does not exist, please create it!"
-msgstr "Verzeichnis [%s] existiert nicht, bitte erstellen Sie sie!"
+msgstr "ディレクトリー [%s] は存在しません、作成してください。"
 
 #: src/lib/files/config.c:174
 #, c-format
 msgid "Unable to access directory [%s] in [WX] mode!"
-msgstr "Kein Zugriff auf das Verzeichnis [%s] im [WX] -Modus!"
+msgstr "[WX] モードのディレクトリー [%s] にアクセスできません。"
 
 #: src/lib/files/config.c:193
 #, c-format
 msgid "Unable to load profile [%s] [%d]: %s"
-msgstr "Profil kann nicht geladen werden [%s] [%d]: %s"
+msgstr "プロファイル [%s] [%d] をロードできません: %s"
 
 #: src/lib/files/system.c:272 src/lib/files/system.c:501
 #, c-format
 msgid "Unable to read [%s] [%d]: %s"
-msgstr "Kann nicht lesen [%s] [%d]: %s"
+msgstr "[%s] [%d] の読み込みができません: %s"
 
 #: src/lib/files/system.c:288
 #, c-format
 msgid "Unable to generate nsswitch.conf [%d]: %s"
-msgstr "Nsswitch.conf kann nicht generiert werden [%d]: %s"
+msgstr "nsswitch.conf [%d] を生成できません: %s"
 
 #: src/lib/files/system.c:354
 #, c-format
 msgid "Unable to generate files [%d]: %s"
-msgstr "Dateien können nicht generiert werden%d]: %s"
+msgstr "ファイル [%d] を生成できません: %s"
 
 #: src/lib/files/system.c:368
 #, c-format
 msgid "Writing temporary file for [%s]"
-msgstr "Temporäre Datei für [schreiben]%s]"
+msgstr "[%s] の一時ファイルを書き込み中"
 
 #: src/lib/files/system.c:372
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
-msgstr "Temporäre Datei kann nicht geschrieben werden [%s] [%d]: %s"
+msgstr "一時ファイル [%s] [%d] の書き込みができません: %s"
 
 #: src/lib/files/system.c:377
 #, c-format
 msgid "Temporary file is named [%s]"
-msgstr "Temporäre Datei heißt [%s]"
+msgstr "一時ファイルの名前は [%s] です"
 
 #: src/lib/files/system.c:388
 #, c-format
 msgid "Renaming [%s] to [%s]"
-msgstr "Umbenennen [%s] an [%s]"
+msgstr "名前を [%s] から [%s] へ変更中です"
 
 #: src/lib/files/system.c:393
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
-msgstr "Umbenennung nicht möglich [%s] an [%s] [%d]: %s"
+msgstr "名前を [%s] から [%s] [%d] へ変更できません: %s"
 
 #: src/lib/files/system.c:493
 #, c-format
 msgid "Validating file [%s]"
-msgstr "Datei überprüfen [%s]"
+msgstr "ファイル [%s] を検証中です"
 
 #: src/lib/files/system.c:504
 #, c-format
 msgid "Unable to validate file [%s] [%d]: %s"
-msgstr "Datei kann nicht überprüft werden [%s] [%d]: %s"
+msgstr "ファイル [%s] [%d] を検証できません: %s"
 
 #: src/lib/files/system.c:511
 #, c-format
 msgid "Comparing content against [%s]"
-msgstr "Inhalt vergleichen mit [%s]"
+msgstr "[%s] に対するコンテンツの比較"
 
 #: src/lib/files/system.c:515
 msgid "Comparing content against current profile"
-msgstr "Inhalt mit aktuellem Profil vergleichen"
+msgstr "現行のプロファイルに対するコンテンツの比較"
 
 #: src/lib/files/system.c:521
 #, c-format
 msgid "[%s] has unexpected content!"
-msgstr "[%s] hat unerwarteten Inhalt!"
+msgstr "[%s] には予期せぬコンテンツがあります。"
 
 #: src/lib/files/system.c:528
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
-msgstr "Dateimodus von [kann nicht geprüft werden%s] [%d]: %s"
+msgstr "[%s] [%d] のファイルモードを確認できません: %s"
 
 #: src/lib/files/system.c:550
 #, c-format
 msgid "File [%s] was modified outside authselect!"
-msgstr "Datei [%s] wurde außerhalb von Authselect geändert!"
+msgstr "ファイル [%s] は authselect 外で変更されました。"
 
 #: src/lib/files/system.c:569
 #, c-format
 msgid "File [%s] is still present"
-msgstr "Datei [%s] ist immer noch anwesend"
+msgstr "ファイル [%s] は今も存在します"
 
 #: src/lib/files/system.c:573
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
-msgstr "Fehler beim Versuch, auf die Datei zuzugreifen [%s] [%d]: %s"
+msgstr "ファイル [%s] [%d] へのアクセス試行中にエラー発生: %s"
 
 #: src/lib/files/system.c:596
 #, c-format
 msgid "Unable to create backup directory [%s/%s] [%d]: %s"
-msgstr "Sicherungsverzeichnis kann nicht erstellt werden [%s/%s] [%d]: %s"
+msgstr "バックアップディレクトリー [%s/%s] [%d] を作成できません: %s"
 
 #: src/lib/files/system.c:622
 #, c-format
 msgid "Unable to create backup directory [%s] [%d]: %s"
-msgstr "Sicherungsverzeichnis kann nicht erstellt werden [%s] [%d]: %s"
+msgstr "バックアップディレクトリー [%s] [%d] を作成できません: %s"
 
 #: src/lib/files/system.c:643
 #, c-format
 msgid "Creating temporary directory at [%s]"
-msgstr "Temporäres Verzeichnis erstellen bei [%s]"
+msgstr "[%s] で一時ファイルを作成中"
 
 #: src/lib/files/system.c:666
 #, c-format
 msgid "Unable to create backup directory [%d]: %s"
-msgstr "Sicherungsverzeichnis kann nicht erstellt werden [%d]: %s"
+msgstr "バックアップディレクトリー [%d] を作成できません: %s"
 
 #: src/lib/files/system.c:678
 #, c-format
 msgid "Copying [%s] to [%s/%s]"
-msgstr "Kopieren [%s] an [%s/%s]"
+msgstr "[%s] を [%s/%s] にコピー中"
 
 #: src/lib/files/system.c:682
 #, c-format
 msgid "File [%s] does not exist"
-msgstr "Datei [%s] ist nicht vorhanden"
+msgstr "ファイル [%s] は存在しません"
 
 #: src/lib/files/system.c:684
 #, c-format
 msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
-msgstr "Kopieren nicht möglich%s] an [%s/%s] [%d]: %s"
+msgstr "[%s] を [%s/%s] [%d] へコピーできません: %s"
 
 #: src/cli/cli_tool.c:71
 #, c-format
 msgid "Common options:\n"
-msgstr "Allgemeine Optionen:\n"
+msgstr "一般的なオプション:\n"
 
 #: src/cli/cli_tool.c:73
 msgid "Print error messages"
-msgstr "Fehlermeldungen ausgeben"
+msgstr "エラーメッセージの印刷"
 
 #: src/cli/cli_tool.c:75
 msgid "Print trace messages"
-msgstr "Trace-Nachrichten drucken"
+msgstr "トレースメッセージの印刷"
 
 #: src/cli/cli_tool.c:77
 msgid "Print warning messages"
-msgstr "Warnmeldungen drucken"
+msgstr "警告メッセージの印刷"
 
 #: src/cli/cli_tool.c:79
 #, c-format
 msgid "Help options:\n"
-msgstr "Hilfeoptionen:\n"
+msgstr "ヘルプのオプション:\n"
 
 #: src/cli/cli_tool.c:81
 msgid "Show this for a command"
-msgstr "Zeigen Sie dies für einen Befehl"
+msgstr "コマンドにこれを表示します"
 
 #: src/cli/cli_tool.c:83
 msgid "Show brief usage message for a command"
-msgstr "Zeigt eine kurze Verwendungsnachricht für einen Befehl an"
+msgstr "コマンドに簡単な使用方法のメッセージを表示します"
 
 #: src/cli/cli_tool.c:168
 #, c-format
 msgid "Usage:\n"
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
-msgstr "Verwendungszweck:%s BEFEHL BEFEHLE-ARGS\n"
+msgstr "使い方:\n"
+"%s COMMAND COMMAND-ARGS\n"
 "\n"
 
 #: src/cli/cli_tool.c:169
 #, c-format
 msgid "Available commands:\n"
-msgstr "Verfügbare Befehle:\n"
+msgstr "利用可能なコマンド:\n"
 
 #: src/cli/cli_tool.c:187
 #, c-format
@@ -665,537 +659,534 @@ msgstr "\n"
 
 #: src/cli/cli_tool.c:199
 msgid "Bug: commands can't be NULL!\n"
-msgstr "Bug: Befehle können nicht NULL sein!\n"
+msgstr "バグ: コマンドは NULL ではありません。\n"
 
 #: src/cli/cli_tool.c:255
 msgid "Command options:"
-msgstr "Befehlsoptionen:"
+msgstr "コマンドオプション:"
 
 #: src/cli/cli_tool.c:257
 msgid "Common options:"
-msgstr "Allgemeine Optionen:"
+msgstr "一般的なオプション:"
 
 #: src/cli/cli_tool.c:271 src/cli/cli_tool.c:274
 msgid "[OPTIONS...]"
-msgstr "[OPTIONEN...]"
+msgstr "[OPTIONS...]"
 
 #: src/cli/cli_tool.c:277
 msgid "Out of memory!"
-msgstr "Nicht genügend Speicher!"
+msgstr "メモリの空き容量がありません。"
 
 #: src/cli/cli_tool.c:298
 #, c-format
 msgid "Invalid option %s: %s\n"
 "\n"
-msgstr "Ungültige Option %s: %s\n"
+msgstr "無効なオプション %s: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:310
 #, c-format
 msgid "Missing option: %s\n"
 "\n"
-msgstr "Fehlende Option: %s\n"
+msgstr "足りないオプション: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:320
 #, c-format
 msgid "Only one free argument is expected!\n"
 "\n"
-msgstr "Es wird nur ein freies Argument erwartet!\n"
+msgstr "1 つのフリーな引数のみが予期されます。\n"
 "\n"
 
 #: src/cli/cli_tool.c:330
 #, c-format
 msgid "Unexpected parameter: %s\n"
 "\n"
-msgstr "Unerwarteter Parameter: %s\n"
+msgstr "予期せぬパラメーター: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:342
 #, c-format
 msgid "At least one option is required!\n"
 "\n"
-msgstr "Mindestens eine Option ist erforderlich!\n"
+msgstr "少なくとも 1 つのオプションが必要です。\n"
 "\n"
 
 #: src/cli/main.c:70 src/cli/main.c:362
 msgid "Profile identifier."
-msgstr "Profilkennung"
+msgstr "プロファイル識別子。"
 
 #: src/cli/main.c:73 src/cli/main.c:238 src/cli/main.c:287 src/cli/main.c:322
 #: src/cli/main.c:365 src/cli/main.c:515 src/cli/main.c:537 src/cli/main.c:577
 msgid "Unable to parse command arguments"
-msgstr "Befehlsargumente können nicht analysiert werden"
+msgstr "コマンド引数を解析できません"
 
 #: src/cli/main.c:114
 msgid "Enforce changes"
-msgstr "Änderungen erzwingen"
+msgstr "変更を強制"
 
 #: src/cli/main.c:115
 msgid "Backup system files before activating profile"
-msgstr "Sichern Sie die Systemdateien, bevor Sie das Profil aktivieren"
+msgstr "プロファイルの実行前にシステムファイルをバックアップします"
 
 #: src/cli/main.c:115
 msgid "NAME"
-msgstr "NAME"
+msgstr "名前"
 
 #: src/cli/main.c:116
 msgid "Do not backup system files when --force is set"
-msgstr "Sichern Sie keine Systemdateien, wenn --force eingestellt ist"
+msgstr "--force が設定されている場合は、システムファイルをバックアップしません"
 
 #: src/cli/main.c:117
 msgid "Do not print profile requirements"
-msgstr "Profilanforderungen nicht drucken"
+msgstr "プロファイル要件を印刷しません"
 
 #: src/cli/main.c:128 src/cli/main.c:337 src/cli/main.c:371 src/cli/main.c:398
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
-msgstr "Profilinformationen können nicht abgerufen werden [%d]: %s"
+msgstr "プロファイル情報 [%d] を取得できません: %s"
 
 #: src/cli/main.c:136 src/cli/main.c:405
 msgid "Unable to read profile requirements!"
-msgstr "Profilanforderungen können nicht gelesen werden!"
+msgstr "プロファイル要件を読み込むことができません。"
 
 #: src/cli/main.c:143
 msgid "Unable to obtain nsswitch maps!"
-msgstr "Nsswitch-Karten können nicht abgerufen werden!"
+msgstr "nsswitch マップを取得できません。"
 
 #: src/cli/main.c:151
 msgid "Unable to backup system files!\n"
-msgstr "Sicherung von Systemdateien nicht möglich!\n"
+msgstr "システムファイルをバックアップできません。\n"
 
 #: src/cli/main.c:161
 msgid ""
 "\n"
 "Some unexpected changes to the configuration were detected.\n"
 "Use --force parameter if you want to overwrite these changes.\n"
-msgstr ""
-"\n"
-"Es wurden einige unerwartete Änderungen an der Konfiguration festgestellt. "
-"Verwenden Sie den Parameter --force, wenn Sie diese Änderungen überschreiben "
-"möchten.\n"
+msgstr "\n"
+"設定への予期せぬ変更をいくつか検出しました。\n"
+"これらの変更を上書きしたい場合は、--force パラメーターを使用します。\n"
 
 #: src/cli/main.c:166
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
-msgstr "Profil kann nicht aktiviert werden [%d]: %s\n"
+msgstr "プロファイル [%d] を実行できません: %s\n"
 
 #: src/cli/main.c:205
 msgid "Changes were successfully applied.\n"
-msgstr "Änderungen wurden erfolgreich übernommen.\n"
+msgstr "変更は正常に適用されました。\n"
 
 #: src/cli/main.c:208 src/cli/main.c:244
 msgid "No existing configuration detected.\n"
-msgstr "Es wurde keine vorhandene Konfiguration erkannt.\n"
+msgstr "既存の設定は検出されませんでした。\n"
 
 #: src/cli/main.c:211
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
-msgstr ""
-"Es wurden einige unerwartete Änderungen an der Konfiguration festgestellt. "
-"Verwenden Sie stattdessen den Befehl \"Auswählen\".\n"
+msgstr "設定への予期せぬ変更をいくつか検出しました。代わりに 'select' コマンドを使用します。\n"
 
 #: src/cli/main.c:215
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
-msgstr "Änderungen können nicht übernommen werden [%d]: %s\n"
+msgstr "変更 [%d] を適用できません: %s\n"
 
 #: src/cli/main.c:232
 msgid "Print command parameters instead of formatted output"
-msgstr "Befehlsparameter statt formatierter Ausgabe drucken"
+msgstr "フォーマット化された出力の代わりに、コマンドパラメーターを印刷します"
 
 #: src/cli/main.c:247
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
-msgstr "Aktuelle Konfiguration kann nicht abgerufen werden [%d]: %s"
+msgstr "現在の設定 [%d] を取得できません: %s"
 
 #: src/cli/main.c:261
 #, c-format
 msgid "Profile ID: %s\n"
-msgstr "Profil ID: %s\n"
+msgstr "プロファイル ID: %s\n"
 
 #: src/cli/main.c:262
 msgid "Enabled features:"
-msgstr "Aktivierte Funktionen:"
+msgstr "有効な機能:"
 
 #: src/cli/main.c:265
 msgid " None\n"
-msgstr " Kein\n"
+msgstr " なし\n"
 
 #: src/cli/main.c:293
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
-msgstr "Aktuelle Konfiguration kann nicht getestet werden [%d]: %s"
+msgstr "現在の設定 [%d] をテストできません: %s"
 
 #: src/cli/main.c:300
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
-msgstr ""
-"Die aktuelle Konfiguration ist nicht gültig. Es wurde wahrscheinlich "
-"außerhalb von Authselect geändert."
+msgstr "現在の設定は無効です。authselect 外で変更された可能性があります。"
 
 #: src/cli/main.c:305
 msgid "Current configuration is valid."
-msgstr "Die aktuelle Konfiguration ist gültig."
+msgstr "現在の設定は有効です。"
 
 #: src/cli/main.c:328
 msgid "Unable to get profile list!"
-msgstr "Profilliste kann nicht abgerufen werden!"
+msgstr "プロファイルリストを取得できません。"
 
 #: src/cli/main.c:443
 msgid "Print content of all files"
-msgstr "Inhalt aller Dateien drucken"
+msgstr "すべてのファイルのコンテンツを印刷します"
 
 #: src/cli/main.c:444
 msgid "Print nsswitch.conf content"
-msgstr "Inhalt der nsswitch.conf drucken"
+msgstr "nsswitch.conf コンテンツを印刷します"
 
 #: src/cli/main.c:445
 msgid "Print system-auth content"
-msgstr "Drucken Sie den Inhalt der Systemauthentifizierung"
+msgstr "system-auth コンテンツを印刷します"
 
 #: src/cli/main.c:446
 msgid "Print password-auth content"
-msgstr "Drucken Sie den Inhalt der Kennwortauthentifizierung"
+msgstr "password-auth コンテンツを印刷します"
 
 #: src/cli/main.c:447
 msgid "Print smartcard-auth content"
-msgstr "Smartcard-Auth-Inhalt drucken"
+msgstr "smartcard-auth コンテンツを印刷します"
 
 #: src/cli/main.c:448
 msgid "Print fingerprint-auth content"
-msgstr "Drucken Sie den Fingerabdruck-Auth-Inhalt"
+msgstr "fingerprint-auth コンテンツを印刷します"
 
 #: src/cli/main.c:449
 msgid "Print postlogin content"
-msgstr "Postlogin-Inhalt drucken"
+msgstr "postlogin コンテンツを印刷します"
 
 #: src/cli/main.c:450
 msgid "Print dconf database content"
-msgstr "Dconf-Datenbankinhalt drucken"
+msgstr "dconf データベースコンテンツを印刷します"
 
 #: src/cli/main.c:451
 msgid "Print dconf lock content"
-msgstr "Dconf-Sperrinhalt drucken"
+msgstr "dconf ロックコンテンツを印刷します"
 
 #: src/cli/main.c:478
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
-msgstr "Generierter Inhalt kann nicht abgerufen werden [%d]: %s"
+msgstr "生成されたコンテンツ [%d] を取得できません: %s"
 
 #: src/cli/main.c:497
 #, c-format
 msgid "File %s: Empty\n"
 "\n"
-msgstr "Datei %s: Leer\n"
-"\n"
+msgstr "ファイル %s: 空\n"
 
 #: src/cli/main.c:499
 #, c-format
 msgid "File %s:\n"
 "%s\n"
 "\n"
-msgstr "Datei %s:\n"
+msgstr "File %s:\n"
 "%s\n"
 "\n"
 
 #: src/cli/main.c:512
 msgid "Feature to enable."
-msgstr "Zu aktivierende Funktion"
+msgstr "有効化する機能。"
 
 #: src/cli/main.c:521
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
-msgstr "Funktion kann nicht aktiviert werden [%d]: %s\n"
+msgstr "機能 [%d] を有効化できません: %s\n"
 
 #: src/cli/main.c:534
 msgid "Feature to disable."
-msgstr "Zu deaktivierende Funktion."
+msgstr "無効化する機能。"
 
 #: src/cli/main.c:543
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
-msgstr "Funktion kann nicht deaktiviert werden [%d]: %s\n"
+msgstr "機能 [%d] を無効化できません: %s\n"
 
 #: src/cli/main.c:562
 msgid "Create new profile as a vendor profile instead of a custom profile"
-msgstr ""
-"Erstellen Sie ein neues Profil als Lieferantenprofil anstelle eines "
-"benutzerdefinierten Profils"
+msgstr "カスタムプロファイルの代わりにベンダープロファイルとして新規のプロファイルを作成します"
 
 #: src/cli/main.c:563
 msgid "ID of a profile that should be used as a base for the new profile"
-msgstr ""
-"ID eines Profils, das als Basis für das neue Profil verwendet werden soll"
+msgstr "新規のプロファイルのベースとして使用すべきプロファイルの ID"
 
 #: src/cli/main.c:564
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
-msgstr ""
-"Erstellen Sie ein neues Profil auf einem Standardprofil, auch wenn ein "
-"Lieferantenprofil mit demselben Namen vorhanden ist"
+msgstr "同名のベンダープロファイルがある場合でも、新規のプロファイルのベースをデフォルトプロファイルに置きます"
 
 #: src/cli/main.c:565
 msgid "Symlink meta files from the base profile instead of copying them"
-msgstr "Symlink-Metadateien aus dem Basisprofil statt kopieren"
+msgstr "meta ファイルをコピーする代わりにベースプロファイルから Symlink します"
 
 #: src/cli/main.c:566
 msgid "Symlink nsswitch files from the base profile instead of copying them"
-msgstr "Symlink nsswitch-Dateien vom Basisprofil aus, anstatt sie zu kopieren"
+msgstr "nsswitch ファイルをコピーする代わりにベースプロファイルから Symlink します"
 
 #: src/cli/main.c:567
 msgid "Symlink pam files from the base profile instead of copying them"
-msgstr "Symlink-PAM-Dateien aus dem Basisprofil, anstatt sie zu kopieren"
+msgstr "pam ファイルをコピーする代わりにベースプロファイルから Symlink します"
 
 #: src/cli/main.c:568
 msgid "Symlink dconf files from the base profile instead of copying them"
-msgstr "Symlink-dconf-Dateien aus dem Basisprofil, anstatt sie zu kopieren"
+msgstr "dconf ファイルをコピーする代わりにベースプロファイルから Symlink します"
 
 #: src/cli/main.c:569
 msgid "Symlink specific file (can be set multiple times)"
-msgstr "Symlink-spezifische Datei (kann mehrfach eingestellt werden)"
+msgstr "特定のファイルを Symlink します (複数回設定できます)"
 
 #: src/cli/main.c:574
 msgid "New profile name."
-msgstr "Neuer Profilname"
+msgstr "新規のプロファイル名。"
 
 #: src/cli/main.c:584
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
-msgstr "Neues Profil kann nicht erstellt werden [%d]: %s\n"
+msgstr "新規のプロファイル [%d] を作成できません: %s\n"
 
 #: src/cli/main.c:588
 #, c-format
 msgid "New profile was created at %s\n"
-msgstr "Neues Profil wurde erstellt am %s\n"
+msgstr "%s で新規のプロファイルが作成されました\n"
 
 #: src/cli/main.c:645
 msgid "Authselect can only be run as root!\n"
-msgstr "Authselect kann nur als root ausgeführt werden!\n"
+msgstr "authselect は root としてのみ実行できます。\n"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
-msgstr "NIS für Benutzerinformationen standardmäßig"
+msgstr "デフォルトでのユーザー情報の NIS"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:b13e18563503b3a573ef84b276e70280
 #: src/compat/authcompat_Options.py:83
 msgid "<domain>"
 msgstr "<domain>"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:d2ee751de8c72c965d25f315f6c47df2
 #: src/compat/authcompat_Options.py:83
 msgid "default NIS domain"
-msgstr "Standard-NIS-Domäne"
+msgstr "デフォルトの NIS ドメイン"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:bd59484873912f389e8d5dafd6bfe04a
 #: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
 #: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
 msgid "<server>"
 msgstr "<server>"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:eecb12e478d64a54bb587f07e4c09090
 #: src/compat/authcompat_Options.py:84
 msgid "default NIS server"
-msgstr "Standard-NIS-Server"
+msgstr "デフォルトの NIS サーバー"
 
 #: src/compat/authcompat_Options.py:85
 msgid "LDAP for user information by default"
-msgstr "LDAP für Benutzerinformationen standardmäßig"
+msgstr "デフォルトでのユーザー情報の LDAP"
 
 #: src/compat/authcompat_Options.py:86
 msgid "LDAP for authentication by default"
-msgstr "LDAP für die Authentifizierung standardmäßig"
+msgstr "デフォルトでの LDAP 認証"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:8883a44df11dde68ea35816597236020
 #: src/compat/authcompat_Options.py:87
 msgid "default LDAP server hostname or URI"
-msgstr "Standard-LDAP-Server-Hostname oder URI"
+msgstr "デフォルトの LDAP サーバーホスト名または URI"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:89da964761ba35b49b02d1e945b7d714
 #: src/compat/authcompat_Options.py:88
 msgid "<dn>"
 msgstr "<dn>"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:13338fc91555ecabe0ab87c95e9ee403
 #: src/compat/authcompat_Options.py:88
 msgid "default LDAP base DN"
-msgstr "Standard-LDAP-Basis-DN"
+msgstr "デフォルトの LDAP ベースの DN"
 
 #: src/compat/authcompat_Options.py:89
 msgid "use of TLS with LDAP (RFC-2830)"
-msgstr "Verwendung von TLS mit LDAP (RFC-2830)"
+msgstr "LDAP (RFC-2830) と TLS の併用"
 
 #: src/compat/authcompat_Options.py:90
 msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
-msgstr "Verwendung von TLS für Identitätssuche mit LDAP (RFC-2830)"
+msgstr "アイデンティティーの検索に LDAP (RFC-2830) と TLS を併用"
 
 #: src/compat/authcompat_Options.py:91
 msgid "use of RFC-2307bis schema for LDAP user information lookups"
-msgstr ""
-"Verwendung des RFC-2307bis-Schemas für die Suche nach LDAP-"
-"Benutzerinformationen"
+msgstr "LDAP ユーザー情報の検索に RFC-2307bis スキーマを使用"
 
 #: src/compat/authcompat_Options.py:92
 msgid "authentication with smart card by default"
-msgstr "Authentifizierung mit Smartcard standardmäßig"
+msgstr "デフォルトでのスマートカード認証"
 
 #: src/compat/authcompat_Options.py:93
 msgid "<0=Lock|1=Ignore>"
 msgstr "<0=Lock|1=Ignore>"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:a6cd4bbfebca4a8f2374370e90927e4d
 #: src/compat/authcompat_Options.py:93
 msgid "action to be taken on smart card removal"
-msgstr "Aktion zum Entfernen der Chipkarte"
+msgstr "スマートカードの取り出し時に行う動作"
 
 #: src/compat/authcompat_Options.py:94
 msgid "require smart card for authentication by default"
-msgstr "erfordert standardmäßig eine Smartcard für die Authentifizierung"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:95
 msgid "authentication with fingerprint readers by default"
-msgstr "Authentifizierung mit Fingerabdrucklesern standardmäßig"
+msgstr "デフォルトでの指紋リーダーによる認証"
 
 #: src/compat/authcompat_Options.py:96
 msgid "automatic per-user ecryptfs"
-msgstr "automatische Ecryptfs pro Benutzer"
+msgstr "ユーザーごとの自動 ecryptfs"
 
 #: src/compat/authcompat_Options.py:97
 msgid "Kerberos authentication by default"
-msgstr "Kerberos-Authentifizierung standardmäßig"
+msgstr "デフォルトでの Kerberos 認証"
 
 #: src/compat/authcompat_Options.py:98
 msgid "default Kerberos KDC"
-msgstr "default Kerberos KDC"
+msgstr "デフォルトの Kerberos KDC"
 
 #: src/compat/authcompat_Options.py:99
 msgid "default Kerberos admin server"
-msgstr "Standard-Kerberos-Verwaltungsserver"
+msgstr "デフォルトの Kerberos 管理サーバー"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:29fe7dbe08b6548ac80f9a4cc9fd991f
 #: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
 msgid "<realm>"
 msgstr "<realm>"
 
 #: src/compat/authcompat_Options.py:100
 msgid "default Kerberos realm"
-msgstr "Standard-Kerberos-Bereich"
+msgstr "デフォルトの Kerberos レルム"
 
 #: src/compat/authcompat_Options.py:101
 msgid "use of DNS to find Kerberos KDCs"
-msgstr "Verwendung von DNS zum Auffinden von Kerberos-KDCs"
+msgstr "Kerberos KDC の検索に DNS を使用"
 
 #: src/compat/authcompat_Options.py:102
 msgid "use of DNS to find Kerberos realms"
-msgstr "Verwendung von DNS zum Auffinden von Kerberos-Realms"
+msgstr "Kerberos レルムの検索に DNS を使用"
 
 #: src/compat/authcompat_Options.py:103
 msgid "winbind for user information by default"
-msgstr "Winbind für Benutzerinformationen standardmäßig"
+msgstr "デフォルトでのユーザー情報の winbind"
 
 #: src/compat/authcompat_Options.py:104
 msgid "winbind for authentication by default"
-msgstr "Winbind für die Authentifizierung standardmäßig"
+msgstr "デフォルトでの winbind 認証"
 
 #: src/compat/authcompat_Options.py:105
 msgid "<Administrator>"
 msgstr "<Administrator>"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:fa087f878255f424fae3a2ca5ac8504c
 #: src/compat/authcompat_Options.py:105
 msgid "join the winbind domain or ads realm now as this administrator"
-msgstr ""
-"Treten Sie der winbind-Domäne oder dem Anzeigenbereich jetzt als dieser "
-"Administrator bei"
+msgstr "この管理者として winbind ドメインまたは ADS レルムに参加します"
 
 #: src/compat/authcompat_Options.py:106
 msgid "Kerberos 5 for authenticate with winbind"
-msgstr "Kerberos 5 für die Authentifizierung mit Winbind"
+msgstr "winbind 認証に Kerberos 5"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:621dbf806779e36d9d6cec1643f5c53e
 #: src/compat/authcompat_Options.py:107
 msgid "<workgroup>"
 msgstr "<workgroup>"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:20c3dedbf21dc80956e95eedd059590f
 #: src/compat/authcompat_Options.py:107
 msgid "workgroup authentication servers are in"
-msgstr "Arbeitsgruppenauthentifizierungsserver sind in"
+msgstr "認証サーバーを含むワークグループ"
 
 #: src/compat/authcompat_Options.py:108
 msgid ""
 "SSSD for user information by default with manually managed configuration"
-msgstr ""
-"SSSD für Benutzerinformationen standardmäßig mit manuell verwalteter "
-"Konfiguration"
+msgstr "手動管理の設定を伴うデフォルトでのユーザー情報の SSSD"
 
 #: src/compat/authcompat_Options.py:109
 msgid "SSSD for authentication by default with manually managed configuration"
-msgstr ""
-"SSSD für die Authentifizierung standardmäßig mit manuell verwalteter "
-"Konfiguration"
+msgstr "手動管理の設定を伴うデフォルトでの SSSD 認証"
 
 #: src/compat/authcompat_Options.py:110
 msgid "caching of user credentials in SSSD by default"
-msgstr "Standardmäßig Caching von Benutzeranmeldeinformationen in SSSD"
+msgstr "デフォルトでの SSSD ユーザー認証情報のキャッシュ"
 
 #: src/compat/authcompat_Options.py:111
 msgid "check of access.conf during account authorization"
-msgstr "Überprüfung der access.conf während der Kontoautorisierung"
+msgstr "アカウントの承認中に access.conf を確認する"
 
 #: src/compat/authcompat_Options.py:112
 msgid "creation of home directories for users on their first login"
-msgstr ""
-"Erstellung von Heimatverzeichnissen für Benutzer bei ihrem ersten Login"
+msgstr "ユーザーの最初のログイン時にホームディレクトリーを作成する"
 
 #: src/compat/authcompat_Options.py:113
 msgid ""
 "account locking in case of too many consecutive authentication failures"
-msgstr ""
-"Kontosperrung bei zu vielen aufeinanderfolgenden Authentifizierungsfehlern"
+msgstr "認証を続けて失敗した場合にアカウントロックを有効にする"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:b78a981cc40fc4e66208bf5ee6d1a1eb
 #: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
 #: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
 msgid "<number>"
 msgstr "<number>"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:e10d4b0b5be6f63f3f624565a6039a72
 #: src/compat/authcompat_Options.py:114
 msgid "minimum length of a password"
-msgstr "Mindestlänge eines Passworts"
+msgstr "パスワードの最小文字数"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:092ba8b384fcd6e31d31a0304284d857
 #: src/compat/authcompat_Options.py:115
 msgid "minimum number of character classes in a password"
-msgstr "Mindestanzahl von Zeichenklassen in einem Passwort"
+msgstr "パスワードの文字クラスの最小数"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:c47b4ec5f075bb35c109b6cf027eacd7
 #: src/compat/authcompat_Options.py:116
 msgid "maximum number of same consecutive characters in a password"
-msgstr ""
-"maximale Anzahl der gleichen aufeinanderfolgenden Zeichen in einem Kennwort"
+msgstr "パスワードにおける同じ文字の最大連続数"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:bb89d15b74f4ccd5a7a8f2ebc627f8e8
 #: src/compat/authcompat_Options.py:117
 msgid "maximum number of consecutive characters of same class in a password"
-msgstr ""
-"maximale Anzahl aufeinanderfolgender Zeichen derselben Klasse in einem "
-"Kennwort"
+msgstr "パスワードにおける同じクラスの文字の最大連続数"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:875058de2c436a0ff535fc9c94187476
 #: src/compat/authcompat_Options.py:118
 msgid "require at least one lowercase character in a password"
-msgstr "Erfordert mindestens ein Kleinbuchstabe in einem Kennwort"
+msgstr "パスワードに少なくとも小文字 1 文字を必要とする"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:df5240454af27f1a5cbc56e1dda2ca53
 #: src/compat/authcompat_Options.py:119
 msgid "require at least one uppercase character in a password"
-msgstr "Erfordert mindestens ein Großbuchstabe in einem Passwort"
+msgstr "パスワードに少なくとも大文字 1 文字を必要とする"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:dec9cf3d547d2b8820faf90cb43c9f57
 #: src/compat/authcompat_Options.py:120
 msgid "require at least one digit in a password"
-msgstr "Mindestens eine Ziffer in einem Passwort benötigen"
+msgstr "パスワードに少なくとも数字 1 つを必要とする"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:5278b5333982dcadeec67f57a6781fb9
 #: src/compat/authcompat_Options.py:121
 msgid "require at least one other character in a password"
-msgstr "Erfordert mindestens ein anderes Zeichen in einem Passwort"
+msgstr "パスワードに少なくとも記号 1 つを必要とする"
 
 #: src/compat/authcompat_Options.py:124
 msgid "do not start/stop services"
-msgstr "Dienste nicht starten / stoppen"
+msgstr "サービスを起動/停止しない"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:a2d7531edd445e037e6afcf717f2fab3
 #: src/compat/authcompat_Options.py:125
 msgid "update all configuration files"
-msgstr "Aktualisieren Sie alle Konfigurationsdateien"
+msgstr "すべての設定ファイルの更新"
 
 #: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
 msgid "the same as --updateall"
-msgstr "das gleiche wie --updateall"
+msgstr "--updateall と同じです"
 
 #: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
 msgid "<name>"
@@ -1205,10 +1196,12 @@ msgstr "<name>"
 msgid "<descrypt|bigcrypt|md5|sha256|sha512>"
 msgstr "<descrypt|bigcrypt|md5|sha256|sha512>"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:0bbce02e304562c295a1d57d66c296d3
 #: src/compat/authcompat_Options.py:149
 msgid "<URL>"
 msgstr "<URL>"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:3334b29258653e8ccc2ee7806e9747e7
 #: src/compat/authcompat_Options.py:150
 msgid "<module>"
 msgstr "<module>"
@@ -1217,10 +1210,12 @@ msgstr "<module>"
 msgid "<user|server|domain|ads>"
 msgstr "<user|server|domain|ads>"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:f52cf1eadd24b07d01b4d11b736c06aa
 #: src/compat/authcompat_Options.py:153
 msgid "<servers>"
 msgstr "<servers>"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:ba0c1db826946afa221a50da7b91f6c2
 #: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
 #: src/compat/authcompat_Options.py:156
 msgid "<lowest-highest>"
@@ -1244,50 +1239,49 @@ msgstr "<options>"
 
 #: src/compat/authcompat_Options.py:210
 msgid "These options have a compatibility layer"
-msgstr "Diese Optionen haben eine Kompatibilitätsebene"
+msgstr "これらのオプションには、互換性の層があります"
 
 #: src/compat/authcompat_Options.py:211
 msgid "These options are no longer supported and have no effect"
-msgstr ""
-"Diese Optionen werden nicht mehr unterstützt und haben keine Auswirkungen"
+msgstr "これらのオプションは今後はサポートされず、影響はありません"
 
 #: src/compat/authcompat_Options.py:313
 msgid "enable"
-msgstr "aktivieren"
+msgstr "有効化"
 
 #: src/compat/authcompat_Options.py:314
 msgid "disable"
-msgstr "deaktivieren"
+msgstr "無効化"
 
 #: src/compat/authcompat.py.in.in:49
 #, python-format
 msgid "Executing: %s"
-msgstr "Ausführen: %s"
+msgstr "実行中: %s"
 
 #: src/compat/authcompat.py.in.in:68
 #, python-format
 msgid "Service %s was not found. Please install the service."
-msgstr "Bedienung %s wurde nicht gefunden. Bitte installieren Sie den Dienst."
+msgstr "サービス %s は見つかりませんでした。サービスをインストールしてください。"
 
 #: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:626
 #: src/compat/authcompat.py.in.in:651
 #, python-format
 msgid "Command [%s] failed with %d, stderr:"
-msgstr "Befehl [%s] fehlgeschlagen mit %d, stderr:"
+msgstr "コマンド [%s] が %d、stderr で失敗しました:"
 
 #: src/compat/authcompat.py.in.in:183
 #, python-format
 msgid "Removing file: %s"
-msgstr "Datei entfernen: %s"
+msgstr "ファイルの削除中: %s"
 
 #: src/compat/authcompat.py.in.in:331
 #, python-format
 msgid "%s was not found. Please, install realmd."
-msgstr "%s wurde nicht gefunden. Bitte installieren Sie realmd."
+msgstr "%s は見つかりませんでした。realmd をインストールしてください。"
 
 #: src/compat/authcompat.py.in.in:466
 msgid "Running authconfig compatibility tool."
-msgstr "Authconfig-Kompatibilitätstool ausführen"
+msgstr "authconfig 互換性ツールを実行中です。"
 
 #: src/compat/authcompat.py.in.in:467
 msgid ""
@@ -1295,57 +1289,46 @@ msgid ""
 "with authselect and minimum configuration. It does not provide all "
 "capabilities of authconfig.\n"
 msgstr ""
-"Der Zweck dieses Tools besteht darin, die Authentifizierung für ausgewählte "
-"Dienste mit Authselect und minimaler Konfiguration zu aktivieren. Es bietet "
-"nicht alle Funktionen von authconfig.\n"
+"このツールの目的は、authselect および最小限の設定で選択したサービスに対する認証を有効にすることです。authconfig "
+"のすべての機能は提供しません。\n"
 
 #: src/compat/authcompat.py.in.in:470
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
-msgstr ""
-"WICHTIG: authconfig wird durch authselect ersetzt. Aktualisieren Sie Ihre "
-"Skripts."
+msgstr "重要: authconfig は authselect に置き換えられました。スクリプトを更新してください。"
 
 #: src/compat/authcompat.py.in.in:472
 msgid ""
 "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
 msgstr ""
-"Siehe Fedora 28 Änderungsseite: https://fedoraproject.org/wiki/Changes/"
+"Fedora 28 の Change ページを参照してください: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
 
 #: src/compat/authcompat.py.in.in:473
 msgid ""
 "See man authselect-migration(7) to help you with migration to authselect"
-msgstr ""
-"Siehe man authselect-migration (7), um Sie bei der Migration zu authselect "
-"zu unterstützen"
+msgstr "authselect への移行に役立つ authselect-migration(7) を参照してください"
 
 #: src/compat/authcompat.py.in.in:477
 msgid "Warning: These options are not supported anymore and have no effect:"
-msgstr ""
-"Warnung: Diese Optionen werden nicht mehr unterstützt und haben keine "
-"Auswirkung:"
+msgstr "警告: これらのオプションは今後はサポートされず、影響はありません:"
 
 #: src/compat/authcompat.py.in.in:497
 msgid "authconfig can only be run as root"
-msgstr "authconfig kann nur als root ausgeführt werden"
+msgstr "authconfig は root としてのみ実行できます。"
 
 #: src/compat/authcompat.py.in.in:502
 #, python-format
 msgid ""
 "Error: option --%s is no longer supported and we cannot continue if it is "
 "set."
-msgstr ""
-"Fehler: Option -%s wird nicht mehr unterstützt und wir können nicht "
-"fortfahren, wenn es gesetzt ist."
+msgstr "エラー: オプション --%s は今後はサポートされず、設定されている場合は続行できません。"
 
 #: src/compat/authcompat.py.in.in:507
 msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
-msgstr ""
-"Fehler: Sowohl --enablewinbind als auch --enablewinbindauth müssen gesetzt "
-"sein."
+msgstr "エラー: --enablewinbind および --enablewinbindauth の両方とも設定する必要があります。"
 
 #: src/compat/authcompat.py.in.in:517
 msgid "Error: Please, provide --updateall option."
-msgstr "Fehler: Bitte geben Sie die Option --updateall an."
+msgstr "エラー: --updateall オプションを提供してください。"
