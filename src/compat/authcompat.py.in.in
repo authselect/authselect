@@ -460,7 +460,6 @@ class AuthCompat:
         self.options.parse()
         self.options.applysysconfig(self.sysconfig)
         self.options.updatesysconfig(self.sysconfig)
-        self.sysconfig.write()
 
     def printWarning(self):
         print(_("Running authconfig compatibility tool."))
@@ -647,6 +646,7 @@ def main():
     try:
         authcompat.runAuthselect()
         authcompat.writeConfiguration()
+        authcompat.sysconfig.write()
     except subprocess.CalledProcessError as result:
         eprint(_("Command [%s] failed with %d, stderr:")
                % (' '.join(result.cmd), result.returncode))
