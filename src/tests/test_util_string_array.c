@@ -51,8 +51,7 @@ void test_string_array_del_value__single(void **state)
     assert_null(array[i]);
 
     /* Delete value. */
-    array = string_array_del_value(array, "2");
-    assert_non_null(array);
+    string_array_del_value(array, "2");
 
     /* Test values. */
     for (i = 0; expected[i] != NULL; i++) {
@@ -83,8 +82,7 @@ void test_string_array_del_value__single_repeated(void **state)
     assert_null(array[i]);
 
     /* Delete value. */
-    array = string_array_del_value(array, "2");
-    assert_non_null(array);
+    string_array_del_value(array, "2");
 
     /* Test values. */
     for (i = 0; expected[i] != NULL; i++) {
@@ -115,14 +113,9 @@ void test_string_array_del_value__multiple(void **state)
     assert_null(array[i]);
 
     /* Delete value. */
-    array = string_array_del_value(array, "2");
-    assert_non_null(array);
-
-    array = string_array_del_value(array, "3");
-    assert_non_null(array);
-
-    array = string_array_del_value(array, "5");
-    assert_non_null(array);
+    string_array_del_value(array, "2");
+    string_array_del_value(array, "3");
+    string_array_del_value(array, "5");
 
     /* Test values. */
     for (i = 0; expected[i] != NULL; i++) {
@@ -153,14 +146,9 @@ void test_string_array_del_value__multiple_repeated(void **state)
     assert_null(array[i]);
 
     /* Delete value. */
-    array = string_array_del_value(array, "2");
-    assert_non_null(array);
-
-    array = string_array_del_value(array, "3");
-    assert_non_null(array);
-
-    array = string_array_del_value(array, "5");
-    assert_non_null(array);
+    string_array_del_value(array, "2");
+    string_array_del_value(array, "3");
+    string_array_del_value(array, "5");
 
     /* Test values. */
     for (i = 0; expected[i] != NULL; i++) {

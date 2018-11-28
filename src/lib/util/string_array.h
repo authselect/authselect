@@ -115,7 +115,7 @@ string_array_add_value(char **array, const char *value, bool unique);
  *
  * @return Array without the value.
  */
-char **
+void
 string_array_del_value(char **array, const char *value);
 
 /**
