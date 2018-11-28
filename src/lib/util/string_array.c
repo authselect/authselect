@@ -140,22 +140,31 @@ string_array_add_value(char **array, const char *value, bool unique)
 char **
 string_array_del_value(char **array, const char *value)
 {
-    bool found = false;
-    int i;
+    size_t count;
+    size_t pos;
+    size_t i;
 
-    if (!string_array_has_value(array, value)) {
-        return array;
+    if (array == NULL) {
+        return NULL;
     }
 
-    for (i = 0; array[i] != NULL; i++) {
-        if (strcmp(value, array[i]) == 0) {
+    count = string_array_count(array);
+    for (i = 0; i < count; i++) {
+        if (strcmp(array[i], value) == 0) {
             free(array[i]);
-            found = true;
+            array[i] = NULL;
         }
+    }
 
-        if (found) {
-            array[i] = array[i + 1];
+    for (i = 0, pos = 0; i < count; i++) {
+        if (array[i] != NULL) {
+            array[pos] = array[i];
+            pos++;
         }
+    }
+
+    for (; pos < count; pos++) {
+        array[pos] = NULL;
     }
 
     return array;
