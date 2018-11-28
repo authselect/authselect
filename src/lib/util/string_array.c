@@ -137,7 +137,7 @@ string_array_add_value(char **array, const char *value, bool unique)
     return string_array_add_value_safe(array, value, strlen(value), unique);
 }
 
-char **
+void
 string_array_del_value(char **array, const char *value)
 {
     size_t count;
@@ -145,7 +145,7 @@ string_array_del_value(char **array, const char *value)
     size_t i;
 
     if (array == NULL) {
-        return NULL;
+        return;
     }
 
     count = string_array_count(array);
@@ -167,7 +167,7 @@ string_array_del_value(char **array, const char *value)
         array[pos] = NULL;
     }
 
-    return array;
+    return;
 }
 
 char **

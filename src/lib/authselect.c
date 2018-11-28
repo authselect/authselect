@@ -179,7 +179,7 @@ authselect_apply_changes(void)
         WARN("Profile feature [%s] is no longer supported, removing it...",
              features[i]);
 
-        features = string_array_del_value(features, features[i]);
+        string_array_del_value(features, features[i]);
         i--;
     }
 
@@ -247,15 +247,10 @@ authselect_feature_disable(const char *feature)
         return ret;
     }
 
-    features = string_array_del_value(features, feature);
-    if (features == NULL) {
-        ret = ENOMEM;
-        goto done;
-    }
+    string_array_del_value(features, feature);
 
     ret = authselect_activate(profile_id, (const char **)features, false);
 
-done:
     string_array_free(features);
     free(profile_id);
 
