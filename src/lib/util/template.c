@@ -130,8 +130,8 @@ template_match_get_values(const char *match_string,
                           char **_if_true,
                           char **_if_false)
 {
-    regmatch_t *m_true;
-    regmatch_t *m_false;
+    regmatch_t *m_true = NULL;
+    regmatch_t *m_false = NULL;
     char *if_true;
     char *if_false;
 

@@ -228,7 +228,7 @@ string_array_find_similar(const char *value, char **array, int max_distance)
         }
     }
 
-    if (best > max_distance) {
+    if (word == NULL || best > max_distance) {
         return NULL;
     }
 

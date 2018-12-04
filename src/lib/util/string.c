@@ -353,6 +353,8 @@ string_levenshtein(const char *a, const char *b)
     unsigned int old_diag;
     unsigned int column[len_a + 1];
 
+    memset(column, 0, (len_a + 1) * sizeof(unsigned int));
+
     for (y = 1; y <= len_a; y++) {
         column[y] = y;
     }
