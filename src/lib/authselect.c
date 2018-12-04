@@ -146,9 +146,9 @@ _PUBLIC_ int
 authselect_apply_changes(void)
 {
     struct authselect_profile *profile;
+    char **supported = NULL;
     char *profile_id;
     char **features;
-    char **supported;
     errno_t ret;
     int i;
 
