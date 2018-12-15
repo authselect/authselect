@@ -20,7 +20,7 @@ password    requisite                                    pam_pwquality.so try_fi
 password    sufficient                                   pam_unix.so sha512 shadow {if not "without-nullok":nullok} try_first_pass use_authtok nis
 password    required                                     pam_deny.so
 
-session     optional                                     pam_keyinit.so revoke
+session     optional                                     pam_keyinit.so force revoke
 session     required                                     pam_limits.so
 session     optional                                     pam_ecryptfs.so unwrap                                {include if "with-ecryptfs"}
 session     required                                     pam_systemd.so
