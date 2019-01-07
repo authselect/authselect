@@ -23,7 +23,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
-#include <unistd.h>
 
 #include "authselect.h"
 #include "common/common.h"
@@ -198,6 +197,12 @@ done:
 static errno_t apply_changes(struct cli_cmdline *cmdline)
 {
     errno_t ret;
+
+    ret = cli_tool_popt(cmdline, NULL, CLI_TOOL_OPT_OPTIONAL, NULL, NULL);
+    if (ret != EOK) {
+        ERROR("Unable to parse command arguments");
+        return ret;
+    }
 
     ret = authselect_apply_changes();
     switch (ret) {
@@ -616,20 +621,19 @@ setup_gettext()
 
 int main(int argc, const char **argv)
 {
-    uid_t uid;
     errno_t ret;
     struct cli_route_cmd commands[] = {
-        CLI_TOOL_COMMAND("select", "Select profile", activate),
-        CLI_TOOL_COMMAND("apply-changes", "Regenerate configuration for currently selected command", apply_changes),
-        CLI_TOOL_COMMAND("list", "List available profiles", list),
-        CLI_TOOL_COMMAND("show", "Show profile information", show),
-        CLI_TOOL_COMMAND("requirements", "Print profile requirements", requirements),
-        CLI_TOOL_COMMAND("current", "Get identifier of currently selected profile", current),
-        CLI_TOOL_COMMAND("check", "Check if the current configuration is valid", check),
-        CLI_TOOL_COMMAND("test", "Print changes that would be otherwise written", test),
-        CLI_TOOL_COMMAND("enable-feature", "Enable feature in currently selected profile", enable),
-        CLI_TOOL_COMMAND("disable-feature", "Disable feature in currently selected profile", disable),
-        CLI_TOOL_COMMAND("create-profile", "Create new authselect profile", create),
+        CLI_TOOL_COMMAND("select", "Select profile", CLI_CMD_REQUIRE_ROOT, activate),
+        CLI_TOOL_COMMAND("apply-changes", "Regenerate configuration for currently selected command", CLI_CMD_REQUIRE_ROOT, apply_changes),
+        CLI_TOOL_COMMAND("list", "List available profiles", CLI_CMD_NONE, list),
+        CLI_TOOL_COMMAND("show", "Show profile information", CLI_CMD_NONE, show),
+        CLI_TOOL_COMMAND("requirements", "Print profile requirements", CLI_CMD_NONE, requirements),
+        CLI_TOOL_COMMAND("current", "Get identifier of currently selected profile", CLI_CMD_NONE, current),
+        CLI_TOOL_COMMAND("check", "Check if the current configuration is valid", CLI_CMD_NONE, check),
+        CLI_TOOL_COMMAND("test", "Print changes that would be otherwise written", CLI_CMD_NONE, test),
+        CLI_TOOL_COMMAND("enable-feature", "Enable feature in currently selected profile", CLI_CMD_REQUIRE_ROOT, enable),
+        CLI_TOOL_COMMAND("disable-feature", "Disable feature in currently selected profile", CLI_CMD_REQUIRE_ROOT, disable),
+        CLI_TOOL_COMMAND("create-profile", "Create new authselect profile", CLI_CMD_REQUIRE_ROOT, create),
         CLI_TOOL_LAST
     };
 
@@ -637,12 +641,6 @@ int main(int argc, const char **argv)
     if (ret != EOK) {
         /* We can't use gettext here since it would crash. */
         fprintf(stderr, "Unable to setup gettext!\n");
-        return 1;
-    }
-
-    uid = getuid();
-    if (uid != 0) {
-        CLI_ERROR("Authselect can only be run as root!\n");
         return 1;
     }
 
