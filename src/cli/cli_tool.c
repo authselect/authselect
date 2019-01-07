@@ -20,6 +20,7 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 #include <popt.h>
 
 #include "common/common.h"
@@ -188,11 +189,50 @@ void cli_tool_usage(const char *tool_name, struct cli_route_cmd *commands)
     cli_tool_print_common_opts(min_len);
 }
 
+static bool
+cli_tool_check_root_access(uint32_t flags,
+                           const char *command,
+                           int argc,
+                           const char **argv)
+{
+    uid_t uid;
+    int i;
+
+    if (!(flags & CLI_CMD_REQUIRE_ROOT)) {
+        return true;
+    }
+
+    /* If help was requested, we allow the access. */
+    for (i = 0; i < argc; i++) {
+        if (strcmp(argv[i], "-?") == 0) {
+            return true;
+        }
+
+        if (strcmp(argv[i], "--help") == 0) {
+            return true;
+        }
+
+        if (strcmp(argv[i], "--usage") == 0) {
+            return true;
+        }
+    }
+
+    uid = getuid();
+    if (uid != 0) {
+        fprintf(stderr, _("Authselect command '%s' can only be run as root!\n"),
+                command);
+        return false;
+    }
+
+    return true;
+}
+
 errno_t cli_tool_route(int argc, const char **argv,
                        struct cli_route_cmd *commands)
 {
     struct cli_cmdline cmdline;
     const char *cmd;
+    bool bret;
     int i;
 
     if (commands == NULL) {
@@ -212,6 +252,13 @@ errno_t cli_tool_route(int argc, const char **argv,
         }
 
         if (strcmp(commands[i].command, cmd) == 0) {
+            bret = cli_tool_check_root_access(commands[i].flags,
+                                              commands[i].command,
+                                              argc, argv);
+            if (!bret) {
+                return EACCES;
+            }
+
             cmdline.exec = argv[0];
             cmdline.command = argv[1];
             cmdline.argc = argc - 2;
@@ -388,6 +435,8 @@ int cli_tool_main(int argc, const char **argv,
         return 3;
     case EEXIST:
         return 4;
+    case EACCES:
+        return 5;
     }
 
     /* Generic error. */

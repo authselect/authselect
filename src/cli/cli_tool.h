@@ -29,10 +29,13 @@ struct cli_cmdline;
 typedef errno_t
 (*cli_route_fn)(struct cli_cmdline *cmdline);
 
-#define CLI_TOOL_COMMAND(cmd, msg, fn)     {cmd, _(msg), fn}
-#define CLI_TOOL_COMMAND_NOMSG(cmd, fn)    {cmd, NULL, fn}
-#define CLI_TOOL_DELIMITER(message)        {"", _(message), NULL}
-#define CLI_TOOL_LAST                      {NULL, NULL, NULL}
+#define CLI_CMD_NONE         0x0000
+#define CLI_CMD_REQUIRE_ROOT 0x0001
+
+#define CLI_TOOL_COMMAND(cmd, msg, flags, fn)     {cmd, _(msg), (flags), fn}
+#define CLI_TOOL_COMMAND_NOMSG(cmd, flags, fn)    {cmd, NULL, (flags), fn}
+#define CLI_TOOL_DELIMITER(message)        {"", _(message), CLI_CMD_NONE, NULL}
+#define CLI_TOOL_LAST                      {NULL, NULL, CLI_CMD_NONE, NULL}
 
 struct cli_cmdline {
     const char *exec; /* argv[0] */
@@ -44,6 +47,7 @@ struct cli_cmdline {
 struct cli_route_cmd {
     const char *command;
     const char *description;
+    uint32_t flags;
     cli_route_fn fn;
 };
 
