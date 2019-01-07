@@ -302,7 +302,14 @@ static errno_t check(struct cli_cmdline *cmdline)
         return EBADF;
     }
 
-    puts(_("Current configuration is valid."));
+    switch (ret) {
+    case EOK:
+        puts(_("Current configuration is valid."));
+        break;
+    case ENOENT:
+        puts(_("System was not configured with authselect."));
+        break;
+    }
 
     /* EOK = existing configuration is valid,
      * ENOENT = non-existing configuration is valid */
