@@ -27,6 +27,7 @@
 #include "common/common.h"
 #include "lib/util/template.h"
 #include "lib/util/textfile.h"
+#include "lib/util/selinux.h"
 #include "lib/util/string.h"
 #include "lib/util/string_array.h"
 
@@ -594,22 +595,15 @@ template_write_temporary(const char *filepath,
     mode_t oldmask;
     char *tmpfile;
     errno_t ret;
-    int fd;
-
-    tmpfile = format("%s.XXXXXX", filepath);
-    if (tmpfile == NULL) {
-        return ENOMEM;
-    }
 
     oldmask = umask(mode);
 
-    fd = mkstemp(tmpfile);;
-    if (fd == -1) {
-        ret = errno;
+    ret = selinux_mkstemp_of(filepath, &tmpfile);
+    if (ret != EOK) {
+        ERROR("Unable to create temporary file for [%s] [%d]: %s",
+              filepath, ret, strerror(ret));
         goto done;
     }
-
-    close(fd);
 
     ret = template_write(tmpfile, content, mode);
     if (ret != EOK) {

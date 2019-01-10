@@ -15,6 +15,7 @@ noinst_HEADERS = \
     files/files.h \
     profiles/profiles.h \
     util/file.h \
+    util/selinux.h \
     util/string_array.h \
     util/string.h \
     util/template.h \
@@ -55,6 +56,7 @@ libauthselect_la_SOURCES = \
     profiles/list.c \
     profiles/read.c \
     util/file.c \
+    util/selinux.c \
     util/string_array.c \
     util/string.c \
     util/template.c \
@@ -62,6 +64,7 @@ libauthselect_la_SOURCES = \
     $(NULL)
 libauthselect_la_LIBADD = \
     $(top_builddir)/src/common/libcommon.la \
+    $(SELINUX_LIBS) \
     $(NULL)
 libauthselect_la_CFLAGS = \
     $(AM_CFLAGS) \
