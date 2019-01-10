@@ -18,21 +18,33 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _UTIL_H_
-#define _UTIL_H_
+#ifndef _SELINUX_H_
+#define _SELINUX_H_
+
+#include "common/errno_t.h"
 
 /**
- * Many of the utility functions are not as effective as they can be but
- * this is OK since authselect works only with small configuration files
- * therefore we can prefer clean and simple code over performance.
+ * Get default security context for @path.
+ *
+ * @param path Path to the file.
+ *
+ * @return EOK on success, ENOENT if context was not found, other errno code
+ *         is returned on failure.
  */
+errno_t
+selinux_get_default_context(const char *path);
 
-#include "common/common.h"
-#include "lib/util/file.h"
-#include "lib/util/selinux.h"
-#include "lib/util/string.h"
-#include "lib/util/string_array.h"
-#include "lib/util/template.h"
-#include "lib/util/textfile.h"
+/**
+ * Create temporary file created on @filepath.XXXXXX with security context
+ * set to default security context of @filepath.
+ *
+ * @param filepath File for which a temporary file should be created.
+ * @param _tmpfile Create temporary file.
+ *
+ * @return EOK on success, other errno code on failure.
+ */
+errno_t
+selinux_mkstemp_of(const char *filepath,
+                   char **_tmpfile);
 
-#endif /* _UTIL_H_ */
+#endif /* _SELINUX_H_ */
