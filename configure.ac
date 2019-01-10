@@ -37,6 +37,7 @@ m4_include(external/po4a.m4)
 dnl Required libraries
 REQUIRE_POPT
 REQUIRE_CMOCKA
+REQUIRE_SELINUX
 
 dnl Optional build dependencies - man pages generation
 CHECK_ASCIIDOC_TOOLS
