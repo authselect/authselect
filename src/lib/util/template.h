@@ -38,7 +38,7 @@ template_generate(const char *template,
                   const char **features);
 
 /**
- * Find all features available withint the @template and return them in
+ * Find all features available within the @template and return them in
  * NULL-terminated array.
  *
  * @param template    Template.

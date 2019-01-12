@@ -218,7 +218,7 @@ authselect_system_generate_nsswitch(const char *template,
     "#\n"
     "# Note that your changes may not be applied as they may be\n"
     "# overwritten by selected profile. Maps set in the authselect\n"
-    "# profile takes always precendence and overwrites the same maps\n"
+    "# profile takes always precedence and overwrites the same maps\n"
     "# set in the user file. Only maps that are not set by the profile\n"
     "# are applied from the user file.\n"
     "#\n"
