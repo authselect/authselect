@@ -145,7 +145,7 @@ authselect_symlinks_location_available()
     for (i = 0; symlinks[i].name != NULL; i++) {
         ret = file_exists(symlinks[i].name);
         if (ret == EOK) {
-            ERROR("File [%s] exist but it needs to be overwritten!",
+            ERROR("File [%s] exists but it needs to be overwritten!",
                   symlinks[i].name);
             result = false;
         } else if (ret != ENOENT) {

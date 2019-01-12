@@ -485,7 +485,7 @@ authselect_path_dconf_lock();
 /**
  * Create new profile.
  *
- * Create new profle named @name. Argument @type determines the type of
+ * Create new profile named @name. Argument @type determines the type of
  * newly created profile and can be either AUTHSELECT_PROFILE_VENDOR or
  * AUTHSELECT_PROFILE_CUSTOM. Default profiles cannot be created as they
  * are only shipped with installation.
