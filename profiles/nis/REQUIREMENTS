@@ -1,0 +1,14 @@
+Make sure that NIS service is configured and enabled. See NIS documentation for more information.
+                                                                                          {include if "with-fingerprint"}
+- with-fingerprint is selected, make sure fprintd service is configured and enabled       {include if "with-fingerprint"}
+                                                                                          {include if "with-pam-u2f"}
+- with-pam-u2f is selected, make sure that the pam u2f module is installed                {include if "with-pam-u2f"}
+  - users can then configure keys using the pamu2fcfg tool                                {include if "with-pam-u2f"}
+                                                                                          {include if "with-pam-u2f-2fa"}
+- with-pam-u2f-2fa is selected, make sure that the pam u2f module is installed            {include if "with-pam-u2f-2fa"}
+  - users can then configure keys using the pamu2fcfg tool                                {include if "with-pam-u2f-2fa"}
+                                                                                          {include if "with-mkhomedir"}
+- with-mkhomedir is selected, make sure pam_oddjob_mkhomedir module                       {include if "with-mkhomedir"}
+  is present and oddjobd service is enabled                                               {include if "with-mkhomedir"}
+  - systemctl enable oddjobd.service                                                      {include if "with-mkhomedir"}
+  - systemctl start oddjobd.service                                                       {include if "with-mkhomedir"}

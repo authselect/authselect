@@ -29,6 +29,7 @@
 
 #include "common/common.h"
 #include "lib/util/file.h"
+#include "lib/util/selinux.h"
 #include "lib/util/string.h"
 #include "lib/util/string_array.h"
 #include "lib/util/template.h"

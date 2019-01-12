@@ -28,3 +28,16 @@ AC_DEFUN([REQUIRE_CMOCKA],
     )
     AM_CONDITIONAL([HAVE_CMOCKA], [test x$have_cmocka = xyes])
 ])
+
+AC_DEFUN([REQUIRE_SELINUX],
+[
+  AC_CHECK_HEADERS(selinux/selinux.h,
+    [AC_CHECK_LIB(selinux, is_selinux_enabled,
+      [SELINUX_LIBS="-lselinux"],
+      [AC_MSG_ERROR([SELinux library is missing])]
+    )],
+    [AC_MSG_ERROR([SELinux headers are missing])]
+  )
+  AC_SUBST(SELINUX_LIBS)
+])
+

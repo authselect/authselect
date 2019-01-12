@@ -70,12 +70,30 @@ enum authselect_profile_type {
  *   authselect and @force_overwrite must be set to true to force
  *   overwrite the existing files.
  * - ENOENT if the profile was not found.
+ * - EINVAL if unsupported feature was provided.
  * - Other errno code on generic error.
  */
 int
 authselect_activate(const char *profile_id,
                     const char **features,
                     bool force_overwrite);
+
+/**
+ * Apply any changes to currently selected profile.
+ *
+ * Read currently selected profile together with its enabled features
+ * and regenerate existing configuration. This can be used to apply
+ * any changes to the profile templates.
+ *
+ * @return
+ * - 0 if the profile is successfully updated.
+ * - EEXIST if the system is already configured by other means than
+ *   authselect.
+ * - ENOENT if there is no existing authselect configuration.
+ * - Other errno code on generic error.
+ */
+int
+authselect_apply_changes(void);
 
 /**
  * Backup all system configuration files.
@@ -230,15 +248,43 @@ authselect_profile_description(const struct authselect_profile *profile);
 /**
  * Get profile requirements for selected features.
  *
+ * It is necessary to free the returned pointer manually.
+ *
  * @param profile    Pointer to structure obtained by @authselect_profile.
- * @param features       NULL-terminated array of optional features to enable.
+ * @param features   NULL-terminated array of optional features to enable.
  *
  * @return Profile requirements, empty string if there are none requirements
  * or NULL in case of an error.
  */
-const char *
+char *
 authselect_profile_requirements(const struct authselect_profile *profile,
                                 const char **features);
+
+/**
+ * Return nsswitch maps set by the profile.
+ *
+ * It is necessary to free the returned pointer with @authselect_array_free.
+ *
+ * @param profile    Pointer to structure obtained by @authselect_profile.
+ * @param features   NULL-terminated array of optional features to enable.
+ *
+ * @return Map names, NULL on error.
+ */
+char **
+authselect_profile_nsswitch_maps(const struct authselect_profile *profile,
+                                 const char **features);
+
+/**
+ * List features supported by the profile.
+ *
+ * It is necessary to free the returned pointer with @authselect_array_free.
+ *
+ * @param profile    Pointer to structure obtained by @authselect_profile.
+ *
+ * @return NULL-terminated array of supported features, NULL on error.
+ */
+char **
+authselect_profile_features(const struct authselect_profile *profile);
 
 /**
  * Free authconfig_profile structure obtained by @authselect_profile.

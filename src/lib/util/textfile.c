@@ -230,7 +230,7 @@ textfile_copy(const char *source,
     ret = fstat(fileno(fsource), &statbuf);
     if (ret == -1) {
         ret = errno;
-        return ret;
+        goto done;
     }
 
     fdest = fopen(destpath, "w");
@@ -249,7 +249,7 @@ textfile_copy(const char *source,
             /* eof not error */
         }
 
-        bytes_written = fwrite(buf, sizeof(char), sizeof(buf), fdest);
+        bytes_written = fwrite(buf, sizeof(char), bytes_read, fdest);
         if (bytes_written != bytes_read) {
             if (ferror(fdest) != 0) {
                 ret = EIO;

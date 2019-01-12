@@ -1,0 +1,488 @@
+# Máximo Castañeda Riloba <mcrcctm@gmail.com>, 2018. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2018-09-27 14:04+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-08-24 07:58+0000\n"
+"Last-Translator: Máximo Castañeda Riloba <mcrcctm@gmail.com>\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#. type: Title =
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:2
+#, no-wrap
+msgid "authselect-profiles(5)"
+msgstr "authselect-profiles(5)"
+
+#. type: Title -
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:6
+#, no-wrap
+msgid "NAME"
+msgstr "NOMBRE"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:8
+msgid "authselect-profiles - how to extend authselect profiles."
+msgstr "authselect-profiles - cómo extender los perfiles authselect."
+
+#. type: Title -
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:10
+#, no-wrap
+msgid "DESCRIPTION"
+msgstr "DESCRIPCIÓN"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:13
+msgid ""
+"This manual page explains how are authselect profiles organized and how to "
+"create new profiles."
+msgstr ""
+"En este manual se explica cómo están organizados los perfiles de authselect "
+"y cómo crear otros nuevos."
+
+#. type: Title -
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:15
+#, no-wrap
+msgid "PROFILE DIRECTORIES"
+msgstr "DIRECTORIOS DE PERFILES"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:17
+msgid "Profiles can be found in one of three directories."
+msgstr "Los perfiles pueden estar en tres directorios."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:18
+#, no-wrap
+msgid "*{AUTHSELECT_PROFILE_DIR}*"
+msgstr "*{AUTHSELECT_PROFILE_DIR}*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:20
+msgid ""
+"Read-only directory containing profiles shipped together with authselect."
+msgstr ""
+"Directorio sólo de lectura con los perfiles que se incluyen con authselect."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:21
+#, no-wrap
+msgid "*{AUTHSELECT_VENDOR_DIR}*"
+msgstr "*{AUTHSELECT_VENDOR_DIR}*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:24
+msgid ""
+"Read-only directory for vendor-specific profiles that can override the ones "
+"in _default_ directory."
+msgstr ""
+"Directorio sólo de lectura para perfiles específicos del proveedor, con "
+"prioridad sobre los del directorio predeterminado."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:25
+#, no-wrap
+msgid "*{AUTHSELECT_CUSTOM_DIR}*"
+msgstr "*{AUTHSELECT_CUSTOM_DIR}*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:27
+msgid "Place for administrator-defined profiles."
+msgstr "Directorio para los perfiles definidos por el administrador."
+
+#. type: Title -
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:29
+#, no-wrap
+msgid "PROFILE FILES"
+msgstr "ARCHIVOS DE PERFIL"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:33
+msgid ""
+"Each profile consists of one or more of these files which provide a "
+"mandatory profile description and describe the changes that are done to the "
+"system."
+msgstr ""
+"Cada perfil contiene uno o varios de estos archivos, con una descripción "
+"obligatoria y los cambios que se hacen en el sistema."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:34
+#, no-wrap
+msgid "*README*"
+msgstr "*README*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:36
+msgid ""
+"Description of the profile. The first line must be a name of the profile."
+msgstr ""
+"Descripción del perfil. La primera línea debe ser el nombre del perfil."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:37
+#, no-wrap
+msgid "*system-auth*"
+msgstr "*system-auth*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:40
+msgid ""
+"PAM stack that is included from nearly all individual service configuration "
+"files."
+msgstr ""
+"Pila PAM que se incluye desde casi todos los archivos de configuración de "
+"servicios."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:41
+#, no-wrap
+msgid "*password-auth*, *smartcard-auth*, *fingerprint-auth*"
+msgstr "*password-auth*, *smartcard-auth*, *fingerprint-auth*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:45
+msgid ""
+"These PAM stacks are for applications which handle authentication from "
+"different types of devices via simultaneously running individual "
+"conversations instead of one aggregate conversation."
+msgstr ""
+"Pilas PAM para aplicaciones que gestionan la autenticación desde diferentes "
+"tipos de dispositivos mediante conversaciones individuales en lugar de una "
+"agregada."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:46
+#, no-wrap
+msgid "*postlogin*"
+msgstr "*postlogin*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:54
+msgid ""
+"The purpose of this PAM stack is to provide a common place for all PAM "
+"modules which should be called after the stack configured in system-auth or "
+"the other common PAM configuration files. It is included from all individual "
+"service configuration files that provide login service with shell or file "
+"access. _NOTE: the modules in the postlogin configuration file are executed "
+"regardless of the success or failure of the modules in the system-auth "
+"configuration file._"
+msgstr ""
+"Esta pila PAM proporciona un lugar común para los módulos a los que se tiene "
+"que llamar después de la de system-auth o alguno de los otros comunes. Se "
+"incluye en los servicios de entrada al sistema con acceso a intérprete o a "
+"archivos. _NOTA: los módulos del archivo postlogin se ejecutan "
+"independientemente de que los de system-auth indiquen éxito o no._"
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:55
+#, no-wrap
+msgid "*nsswitch.conf*"
+msgstr "*nsswitch.conf*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:59
+msgid ""
+"Name Service Switch configuration file. Only maps relevant to the profile "
+"must be set. Maps that are not specified by the profile are included from "
+"{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf."
+msgstr ""
+"Archivo de configuración del selección de servicio de nombres. Sólo debe "
+"incluir las asignaciones relevantes para el perfil. Las que no estén "
+"definidas se incluyen desde {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:60
+#, no-wrap
+msgid "*dconf-db*"
+msgstr "*dconf-db*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:64
+msgid ""
+"Changes to dconf database. The main uses case of this file is to set changes "
+"for gnome login screen in order to enable or disable smartcard and "
+"fingerprint authentication."
+msgstr ""
+"Cambios en a base de datos dconf. El uso principal sería el de cambiar la "
+"pantalla de inicio de sesión de gnome para activar o desactivar la "
+"autenticación mediante tarjeta inteligente o lector de huellas."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:65
+#, no-wrap
+msgid "*dconf-locks*"
+msgstr "*dconf-locks*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:67
+msgid "This file define locks on values set in dconf database."
+msgstr "Este archivo define bloqueos de valores de la base de datos dconf."
+
+#. type: Title ~
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:69
+#, no-wrap
+msgid "CONDITIONAL LINES"
+msgstr "LÍNEAS CONDICIONALES"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:73
+msgid ""
+"Each of these files serves as a template. A template is a plain text file "
+"with optional usage of several operators that can be used to provide some "
+"optional profile features."
+msgstr ""
+"Cada uno de estos archivos se usa como una plantilla. Una plantilla es un "
+"archivo de texto que puede contener operadores opcionales para proporcionar "
+"diferentes características."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:74
+#, no-wrap
+msgid "*{continue if \"feature\"}*"
+msgstr "*{continue if \"característica\"}*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:79
+msgid ""
+"Immediately stop processing of the file unless \"feature\" is defined (the "
+"rest of the file content will be removed). If \"feature\" is defined, the "
+"whole line with this operator will be removed and the rest of the template "
+"will be processed."
+msgstr ""
+"Parar el procesamiento del archivo a no ser que se haya definido "
+"\"característica\" (se descarta el resto del contenido del archivo). En caso "
+"de definir \"característica\", se descarta la línea que lleva este operador "
+"y se procesa el resto del archivo."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:80
+#, no-wrap
+msgid "*{stop if \"feature\"}*"
+msgstr "*{stop if \"característica\"}*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:85
+msgid ""
+"Opposite of \"continue if\". Immediately stop processing of the file if "
+"\"feature\" is defined (the rest of the file content will be removed).  If "
+"\"feature\" is not defined, the whole line with this operator will be "
+"removed and the rest of the template will be processed."
+msgstr ""
+"Lo contrario de \"continue if\". Descartar el resto del contenido si se "
+"define \"característica\". Descartar la línea y continuar con el resto de la "
+"plantilla si no."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:86
+#, no-wrap
+msgid "*{include if \"feature\"}*"
+msgstr "*{include if \"característica\"}*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:89
+msgid ""
+"Include the line where this operator is placed only if \"feature\" is "
+"defined."
+msgstr ""
+"Incluir la línea en la que está este operador sólo si se ha definido "
+"\"característica\"."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:90
+#, no-wrap
+msgid "*{exclude if \"feature\"}*"
+msgstr "*{exclude if \"característica\"}*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:93
+msgid ""
+"Opposite to \"include-if\". Include the line where this operator is placed "
+"only if \"feature\" is not defined."
+msgstr ""
+"Lo contrario de \"include-if\". Incluir la línea en la que está este "
+"operador sólo si no se ha definido \"característica\"."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:94
+#, no-wrap
+msgid "*{if \"feature\":true|false}*"
+msgstr "*{if \"característica\":verdadero|falso}*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:97
+msgid ""
+"If \"feature\" is defined, replace this operator with string \"true\", "
+"otherwise with string \"false\"."
+msgstr ""
+"Si se define \"característica\", reemplazar el operador por el texto "
+"\"verdadero\". Hacerlo por \"falso\" si no."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:98
+#, no-wrap
+msgid "*{if \"feature\":true}*"
+msgstr "*{if \"característica\":verdadero}*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:101
+msgid ""
+"If \"feature\" is defined, replace this operator with string \"true\", "
+"otherwise with an empty string."
+msgstr ""
+"Si se define \"característica\", reemplazar el operador por el texto "
+"\"verdadero\". Descartarlo si no."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:102
+#, no-wrap
+msgid "*{if not \"feature\":true|false}*"
+msgstr "*{if not \"característica\":verdadero|falso}*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:105
+msgid ""
+"If \"feature\" is not defined, replace this operator with string \"true\", "
+"otherwise with string \"false\"."
+msgstr ""
+"Si no se define \"característica\", reemplazar el operador por el texto "
+"\"verdadero\". Hacerlo por \"falso\" en caso de estar definida."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:106
+#, no-wrap
+msgid "*{if not \"feature\":true}*"
+msgstr "*{if not \"característica\":verdadero}*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:109
+msgid ""
+"If \"feature\" is not defined, replace this operator with string \"true\", "
+"otherwise with an empty string."
+msgstr ""
+"Si no se define \"característica\", reemplazar el operador por el texto "
+"\"verdadero\". Descartarlo si no."
+
+#. type: Title ~
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:111
+#, no-wrap
+msgid "EXAMPLE"
+msgstr "EJEMPLO"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:114
+msgid ""
+"Here is an example of using \"if\" operator. If \"with-sudo\" feature is "
+"enabled, it will add \"sss\" to sudoers line."
+msgstr ""
+"Ejemplo con \"if\". Si se activa \"with-sudo\", se añade \"sss\" a la línea "
+"sudoers."
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:121
+#, no-wrap
+msgid ""
+"  passwd:     sss files\n"
+"  group:      sss files\n"
+"  netgroup:   sss files\n"
+"  automount:  sss files\n"
+"  services:   sss files\n"
+"  sudoers:    files {if \"with-sudo\":sss}\n"
+msgstr ""
+"  passwd:     sss files\n"
+"  group:      sss files\n"
+"  netgroup:   sss files\n"
+"  automount:  sss files\n"
+"  services:   sss files\n"
+"  sudoers:    files {if \"with-sudo\":sss}\n"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:126
+msgid ""
+"Here is an example of \"continue-if\" and \"include-if\" operators. The "
+"resulting file will be empty unless \"with-smartcard\" feature is enabled. "
+"If it is enabled and also \"with-faillock\" feature is enabled, it will also "
+"enable support for pam_faillock."
+msgstr ""
+"Ejemplo con \"continue-if\" e \"include-if\". El archivo final estará vacío "
+"a no ser que se active \"with-smartcard\". Si además se activa \"with-"
+"faillock\" se incluirá soporte para pam_faillock."
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:139
+#, no-wrap
+msgid ""
+"  {continue if \"with-smartcard\"}\n"
+"  auth        required                                     pam_env.so\n"
+"  auth        required                                     pam_faildelay.so "
+"delay=2000000\n"
+"  auth        required                                     pam_faillock.so "
+"preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
+"uid >= 1000 quiet\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
+"  auth        sufficient                                   pam_unix.so "
+"nullok try_first_pass\n"
+"  auth        requisite                                    pam_succeed_if.so "
+"uid >= 1000 quiet_success\n"
+"  auth        sufficient                                   pam_sss.so "
+"forward_pass\n"
+"  auth        required                                     pam_faillock.so "
+"authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
+"  auth        required                                     pam_deny.so\n"
+"  ...\n"
+msgstr ""
+"  {continue if \"with-smartcard\"}\n"
+"  auth        required                                     pam_env.so\n"
+"  auth        required                                     pam_faildelay.so "
+"delay=2000000\n"
+"  auth        required                                     pam_faillock.so "
+"preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
+"uid >= 1000 quiet\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
+"  auth        sufficient                                   pam_unix.so "
+"nullok try_first_pass\n"
+"  auth        requisite                                    pam_succeed_if.so "
+"uid >= 1000 quiet_success\n"
+"  auth        sufficient                                   pam_sss.so "
+"forward_pass\n"
+"  auth        required                                     pam_faillock.so "
+"authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
+"  auth        required                                     pam_deny.so\n"
+"  ...\n"
+
+#. type: Title -
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:141
+#, no-wrap
+msgid "CREATING A NEW PROFILE"
+msgstr "CREACIÓN DE NUEVOS PERFILES"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:146
+msgid ""
+"To register a new profile within authselect, create a directory in one of "
+"the authselect profile locations with the files listed above. Not all of the "
+"files must be present, only *README* is mandatory. Other files can be "
+"created on per-need basis."
+msgstr ""
+"Para poder usar un nuevo perfil con authselect, cree un directorio en alguno "
+"de los directorios de perfiles con los archivos anteriores. No es necesario "
+"incluir todos los archivos, sólo *README* es obligatorio, los demás estarán "
+"o no según las necesidades."
+
+#. type: Title -
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:148
+#, no-wrap
+msgid "SEE ALSO"
+msgstr "VÉASE TAMBIÉN"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:149
+msgid "authselect(8), nsswitch.conf(5), PAM(8)"
+msgstr "authselect(8), nsswitch.conf(5), PAM(8)"

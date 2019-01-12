@@ -39,11 +39,37 @@ with-ecryptfs::
 with-fingerprint::
     Enable authentication with fingerprint reader through *pam_fprintd*.
 
+with-pam-u2f::
+    Enable authentication via u2f dongle through *pam_u2f*.
+
+with-pam-u2f-2fa::
+    Enable 2nd factor authentication via u2f dongle through *pam_u2f*.
+
 with-krb5::
     Enable Kerberos authentication with *pam_winbind*.
 
 with-silent-lastlog::
     Do not produce pam_lastlog message during login.
+
+with-pamaccess::
+    Check access.conf during account authorization.
+
+without-nullok::
+    Do not add nullok parameter to pam_unix.
+
+DISABLE SPECIFIC NSSWITCH DATABASES
+-----------------------------------
+
+Normally, nsswitch databases set by the profile overwrites values set in
+user-nsswitch.conf. The following options can force authselect to
+ignore value set by the profile and use the one set in user-nsswitch.conf
+instead.
+
+with-custom-passwd::
+Ignore "passwd" database set by the profile.
+
+with-custom-group::
+Ignore "group" database set by the profile.
 
 EXAMPLES
 --------

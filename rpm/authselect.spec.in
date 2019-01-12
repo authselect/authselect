@@ -6,17 +6,25 @@ URL:            https://github.com/pbrezina/authselect
 
 License:        GPLv3+
 Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
+%if 0%{?rhel}
+Source1:        translations.tar.gz
+%endif
+
+%global makedir %{_builddir}/%{name}-%{version}
 
 BuildRequires:  autoconf
 BuildRequires:  automake
+BuildRequires:  findutils
 BuildRequires:  libtool
 BuildRequires:  m4
 BuildRequires:  gcc
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(popt)
 BuildRequires:  gettext-devel
+BuildRequires:  po4a
 BuildRequires:  %{_bindir}/a2x
 BuildRequires:  libcmocka-devel >= 1.0.0
+BuildRequires:  libselinux-devel
 Requires: authselect-libs%{?_isa} = %{version}-%{release}
 Suggests: sssd
 Suggests: samba-winbind
@@ -34,6 +42,14 @@ supported by authselect.
 
 %package libs
 Summary: Utility library used by the authselect tool
+Requires: libselinux
+# Required by scriptlets
+Requires: coreutils
+Requires: findutils
+Requires: gawk
+Requires: grep
+Requires: sed
+Requires: systemd
 
 %description libs
 Common library files for authselect. This package is used by the authselect
@@ -41,18 +57,16 @@ command line tool and any other potential front-ends.
 
 %package compat
 Summary: Tool to provide minimum backwards compatibility with authconfig
-%if 0%{?fedora} && 0%{?fedora} <= 27
-Conflicts: authconfig
-%else
 Obsoletes: authconfig < 7.0.1-6
-%endif
 Provides: authconfig
 BuildRequires: python3-devel
 Requires: authselect%{?_isa} = %{version}-%{release}
+Recommends: oddjob-mkhomedir
 Suggests: sssd
 Suggests: realmd
 Suggests: samba-winbind
-Suggests: oddjob-mkhomedir
+# Required by scriptlets
+Requires: sed
 
 %description compat
 This package will replace %{_sbindir}/authconfig with a tool that will
@@ -72,6 +86,17 @@ you develop a front-end for the authselect library.
 %prep
 %setup -q
 
+for p in %patches ; do
+    %__patch -p1 -i $p
+done
+
+# Install RHEL translations
+# It is not possible to use wildcards here so we need to use 'find'
+%if 0%{?rhel}
+find "%{makedir}/po" "%{makedir}/src/man/po" -name "*.po" -delete
+rm "%{makedir}/po/LINGUAS"
+%setup -T -D -a 1
+%endif
 
 %build
 autoreconf -if
@@ -84,20 +109,40 @@ autoreconf -if
 %install
 %make_install
 
+# Find translations
+%find_lang %{name}
+%find_lang %{name} %{name}.8.lang --with-man
+%find_lang %{name}-migration %{name}-migration.7.lang --with-man
+%find_lang %{name}-profiles %{name}-profiles.5.lang --with-man
+
+# We want this file to contain only manual page translations
+sed -i '/LC_MESSAGES/d' %{name}.8.lang
+
 # Remove .la and .a files created by libtool
 find $RPM_BUILD_ROOT -name "*.la" -exec rm -f {} \;
 find $RPM_BUILD_ROOT -name "*.a" -exec rm -f {} \;
 
 %ldconfig_scriptlets libs
 
-%files libs
+%files libs -f %{name}.lang -f %{name}-profiles.5.lang
 %dir %{_sysconfdir}/authselect
 %dir %{_sysconfdir}/authselect/custom
+%dir %{_localstatedir}/lib/authselect
 %dir %{_datadir}/authselect
 %dir %{_datadir}/authselect/vendor
 %dir %{_datadir}/authselect/default
+%dir %{_datadir}/authselect/default/nis/
 %dir %{_datadir}/authselect/default/sssd/
 %dir %{_datadir}/authselect/default/winbind/
+%{_datadir}/authselect/default/nis/dconf-db
+%{_datadir}/authselect/default/nis/dconf-locks
+%{_datadir}/authselect/default/nis/fingerprint-auth
+%{_datadir}/authselect/default/nis/nsswitch.conf
+%{_datadir}/authselect/default/nis/password-auth
+%{_datadir}/authselect/default/nis/postlogin
+%{_datadir}/authselect/default/nis/README
+%{_datadir}/authselect/default/nis/REQUIREMENTS
+%{_datadir}/authselect/default/nis/system-auth
 %{_datadir}/authselect/default/sssd/dconf-db
 %{_datadir}/authselect/default/sssd/dconf-locks
 %{_datadir}/authselect/default/sssd/fingerprint-auth
@@ -133,55 +178,77 @@ find $RPM_BUILD_ROOT -name "*.a" -exec rm -f {} \;
 %{_libdir}/libauthselect.so
 %{_libdir}/pkgconfig/authselect.pc
 
-%files
+%files  -f %{name}.8.lang  -f %{name}-migration.7.lang
 %{_bindir}/authselect
 %{_mandir}/man8/authselect.8*
 %{_mandir}/man7/authselect-migration.7*
 
-%global updatefile %{_localstatedir}/lib/rpm-state/%{name}.update-profile
+%global validfile %{_localstatedir}/lib/rpm-state/%{name}.config-valid
 
 %pre libs
-rm -f "%{updatefile}"
+rm -f %{validfile}
 if [ $1 -gt 1 ] ; then
-    # Check that authselect cli is installed, otherwise there is nothing to do.
-    rpm -q %{name} &> /dev/null
-    if [ $? -ne 0 ] ; then
-      exit 0
-    fi
-
-    # This is an upgrade. Check that the current configuration is valid
-    # and store the information for later use in posttrans. The check must
-    # be done here (before profiles are updated), otherwise it would return
-    # an error if the new profile is different from the old one but selected.
+    # Remember if the current configuration is valid
     %{_bindir}/authselect check &> /dev/null
     if [ $? -eq 0 ]; then
-      touch "%{updatefile}"
+        touch %{validfile}
     fi
 fi
 
 exit 0
 
 %posttrans libs
-if [ -f "%{updatefile}" ]; then
-    # This is an upgrade. Update current profile if possible.
-    CURRENT=`%{_bindir}/authselect current --raw`
-    if [ $? -eq 0 ]; then
-        PROFILE=`echo $CURRENT | awk '{print $1;}'`
-        FEATURES=`echo $CURRENT | awk '{$1=""; print $0;}'`
+# Copy nsswitch.conf to user-nsswitch.conf if it was not yet created
+if [ ! -f %{_localstatedir}/lib/authselect/user-nsswitch-created ]; then
+    cp -n %{_sysconfdir}/nsswitch.conf %{_sysconfdir}/authselect/user-nsswitch.conf &> /dev/null
+    touch %{_localstatedir}/lib/authselect/user-nsswitch-created &> /dev/null
 
-        if [[ $PROFILE  == "sssd" && $FEATURES != *with-sudo* ]] ; then
-            if grep -E "services[[:blank:]]*=[[:blank:]]*.*sudo" /etc/sssd/sssd.conf &> /dev/null ; then
-                FEATURES+=" with-sudo"
-            elif systemctl is-active sssd-sudo.service sssd-sudo.socket --quiet || systemctl is-enabled sssd-sudo.socket --quiet ; then
-                FEATURES+=" with-sudo"
-            fi
-        fi
-    
-        %{_bindir}/authselect select $PROFILE $FEATURES --force &> /dev/null
-    fi
-    rm -f "%{updatefile}"
+    # If we are upgrading from older version, we want to remove these comments.
+    sed -i '/^# Generated by authselect on .*$/{$!{
+      N;N # Read also next two lines
+      /# Generated by authselect on .*\n# Do not modify this file manually.\n/d
+    }}' %{_sysconfdir}/authselect/user-nsswitch.conf &> /dev/null
 fi
 
+# If the configuration is valid and we are upgrading from older version
+# we need to create these files since they were added in 1.0.
+if [ -f %{validfile} ]; then
+    FILES="nsswitch.conf system-auth password-auth fingerprint-auth \
+           smartcard-auth postlogin dconf-db dconf-locks"
+
+    for FILE in $FILES ; do
+        cp -n %{_sysconfdir}/authselect/$FILE \
+              %{_localstatedir}/lib/authselect/$FILE &> /dev/null
+    done
+
+    rm -f %{validfile}
+fi
+
+# Apply any changes to profiles (validates configuration first internally)
+%{_bindir}/authselect apply-changes &> /dev/null
+
+# Enable with-sudo feature if sssd-sudo responder is enabled. RHBZ#1582111
+CURRENT=`%{_bindir}/authselect current --raw 2> /dev/null`
+if [ $? -eq 0 ]; then
+    PROFILE=`echo $CURRENT | awk '{print $1;}'`
+
+    if [ $PROFILE == "sssd" ] ; then
+        if grep -E "services[[:blank:]]*=[[:blank:]]*.*sudo" /etc/sssd/sssd.conf &> /dev/null ; then
+            %{_bindir}/authselect enable-feature with-sudo &> /dev/null
+        elif systemctl is-active sssd-sudo.service sssd-sudo.socket --quiet || systemctl is-enabled sssd-sudo.socket --quiet ; then
+            %{_bindir}/authselect enable-feature with-sudo &> /dev/null
+        fi
+    fi
+fi
+
+exit 0
+
+%posttrans compat
+# Fix for RHBZ#1618865
+# Remove invalid lines from pwquality.conf generated by authconfig compat tool
+# - previous version could write some options without value, which is invalid
+# - we delete all options without value from existing file
+sed -i -E '/^\w+=$/d' %{_sysconfdir}/security/pwquality.conf.d/10-authconfig-pwquality.conf &> /dev/null
 exit 0
 
 %changelog

@@ -38,6 +38,17 @@ template_generate(const char *template,
                   const char **features);
 
 /**
+ * Find all features available withint the @template and return them in
+ * NULL-terminated array.
+ *
+ * @param template    Template.
+ *
+ * @return List of features in NULL-terminated array or NULL on error.
+ */
+char **
+template_list_features(const char *template);
+
+/**
  * Write generated file preamble together with its content to a file.
  * If the file does not exist, it is created, otherwise its content
  * is truncated. The file mode is set to @mode.

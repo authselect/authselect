@@ -48,7 +48,7 @@ Probably the most controversial change is that authselect only ships profiles
 for sssd and winbind providers. Those two providers cover all modern use cases
 from providing local users and legacy LDAP domain to complex configurations
 with IPA or Active Directory servers. The profiles no longer contain support
-for old nss-pam-ldapd and NIS and users are encouraged to switch to sssd.
+for nss-pam-ldapd and users are encouraged to switch to sssd.
 
 JOINING REMOTE DOMAINS
 ----------------------
@@ -66,51 +66,26 @@ to select a correct profile with desired features. Then you also need to write
 configuration file for required services.
 
 .Relation of authconfig options to authselect profiles
-|===
-|*Authconfig options* |*Authselect profile*
-
-|--enableldap --enableldapauth
-|sssd
-
-|--enablesssd --enablesssdauth
-|sssd
-
-
-|--enablekrb5
-|sssd
-
-|--enablewinbind --enablewinbindauth
-|winbind
-
-|===
+|=========================================================
+|*Authconfig options*                |*Authselect profile*
+|--enableldap --enableldapauth       |sssd
+|--enablesssd --enablesssdauth       |sssd
+|--enablekrb5                        |sssd
+|--enablewinbind --enablewinbindauth |winbind
+|--enablenis                         |nis
+|=========================================================
 
 .Relation of authconfig options to authselect profile features
-|===
+|==================================================
 |*Authconfig options* |*Authselect profile feature*
-
-|--enablesmartcard
-|with-smartcard
-
-|--enablefingerprint
-|with-fingerprint
-
-
-|--enableecryptfs
-|with-ecryptfs
-
-|--enablemkhomedir
-|with-mkhomedir
-
-|--enablefaillock
-|with-faillock
-
-|--enablepamaccess
-|with-pamaccess
-
-|--enablewinbindkrb5
-|with-krb5
-
-|===
+|--enablesmartcard    |with-smartcard
+|--enablefingerprint  |with-fingerprint
+|--enableecryptfs     |with-ecryptfs
+|--enablemkhomedir    |with-mkhomedir
+|--enablefaillock     |with-faillock
+|--enablepamaccess    |with-pamaccess
+|--enablewinbindkrb5  |with-krb5
+|==================================================
 
 .Examples
 ----
@@ -137,7 +112,7 @@ Even if LDAP is not directly used through `pam_ldap` and `nss_ldap`, it
 is still useful to configure ldap.conf to configure openldap-libs and
 indirectly, e.g. LDAP tools such as `ldapsearch`.
 
-.@sysconfdir@/openldap/ldap.conf
+.{sysconfdir}/openldap/ldap.conf
 ----
 # Set the default base dn
 BASE   dc=example,dc=com
@@ -151,7 +126,7 @@ KERBEROS
 If you use Kerberos, the default Kerberos realm should be configured in order
 for krb5-libs and therefore tools such as `kinit` to work out of the box.
 
-.@sysconfdir@/krb5.conf
+.{sysconfdir}/krb5.conf
 ----
 [libdefaults]
  default_realm = MYREALM
@@ -173,7 +148,7 @@ configuration options, see sssd.conf(5). This is a minimal configuration
 that creates one LDAP domain called `default`. The LDAP server is
 auto-discovered through DNS lookups.
 
-.@sysconfdir@/sssd/sssd.conf
+.{sysconfdir}/sssd/sssd.conf
 ----
 [sssd]
 config_file_version = 2
@@ -189,7 +164,7 @@ And here is a configuration snippet for the same domain but now the
 authentication is done over Kerberos. The KDC server is auto-discovered through
 DNS lookups.
 
-.@sysconfdir@/sssd/sssd.conf
+.{sysconfdir}/sssd/sssd.conf
 ----
 [sssd]
 config_file_version = 2
@@ -207,14 +182,42 @@ dns_discovery_domain = myrealm
 If you want to configure SSSD for an IPA or Active Directory domain, use the
 `realm` tool. This will perform an initial setup which involves creating
 a Kerberos keytab and generating basic SSSD configuration. You can then
-tune it up by modifying @sysconfdir@/sssd/sssd.conf.
+tune it up by modifying {sysconfdir}/sssd/sssd.conf.
 
 WINBIND
 ~~~~~~~
 If you want to configure the machine to use Winbind, use `realm`. This
 will perform an initial setup which involves creating a Kerberos keytab and
 running `adcli` to join the domain. It also makes changes to `smb.conf`. You
-can then tune it up by modifying @sysconfdir@/samba/smb.conf.
+can then tune it up by modifying {sysconfdir}/samba/smb.conf.
+
+NIS
+~~~
+There are several places that needs to be configured in order to make
+NIS authentication work. First, you need to set NIS domain and optionally
+also NIS server in {sysconfdir}/yp.conf.
+
+.{sysconfdir}/yp.conf
+----
+domain mydomain broadcast
+# or
+# domain mydomain server myserver
+----
+
+NIS domain must be also set in system network configuration.
+
+.{sysconfdir}/sysconfig/network
+----
+NISDOMAIN=mydomain
+----
+
+Now, you can set the domain name with command line so there is no need to
+reboot your system. Additionaly, it may be necessary to enable NIS in selinux.
+
+----
+$ domainname mydomain
+$ setsebool -P allow_ypbind 1
+----
 
 PASSWORD QUALITY
 ~~~~~~~~~~~~~~~~
@@ -224,7 +227,7 @@ should use the password policy that is enforced by the respective remote
 server.
 
 The `pam_pwquality` module can be configured in
-@sysconfdir@/security/pwquality.conf. See pam_pwquality(8) to see its
+{sysconfdir}/security/pwquality.conf. See pam_pwquality(8) to see its
 configuration options and defaults.
 
 STARTING SERVICES
@@ -239,6 +242,11 @@ with systemd.
 * Winbind
 
   systemctl enable winbind.service ; systemctl start winbind.service
+
+* NIS
+
+  systemctl enable rpcbind.service ; systemctl start rpcbind.service
+  systemctl enable ypbind.service ; systemctl start ypbind.service
 
 * If mkhomedir feature is enabled
 

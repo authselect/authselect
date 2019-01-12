@@ -76,7 +76,7 @@ authselect_profile_description(const struct authselect_profile *profile)
     return profile->description;
 }
 
-_PUBLIC_ const char *
+_PUBLIC_ char *
 authselect_profile_requirements(const struct authselect_profile *profile,
                                 const char **features)
 {
@@ -85,6 +85,85 @@ authselect_profile_requirements(const struct authselect_profile *profile,
     }
 
     return template_generate(profile->requirements, features);
+}
+
+_PUBLIC_ char **
+authselect_profile_nsswitch_maps(const struct authselect_profile *profile,
+                                 const char **features)
+{
+    char *template;
+    char **maps;
+    errno_t ret;
+
+    if (profile == NULL) {
+        return NULL;
+    }
+
+    template = template_generate(profile->files->nsswitch, features);
+    if (template == NULL) {
+        ERROR("Unable to generate nsswitch.conf");
+        return NULL;
+    }
+
+    ret = authselect_system_nsswitch_find_maps(template, &maps);
+    free(template);
+    if (ret != EOK) {
+        ERROR("Unable to find nsswitch maps [%d]: %s", ret, strerror(ret));
+        return NULL;
+    }
+
+    return maps;
+}
+
+_PUBLIC_ char **
+authselect_profile_features(const struct authselect_profile *profile)
+{
+    char **features;
+    char **array;
+    errno_t ret;
+    int i;
+
+    if (profile == NULL) {
+        return NULL;
+    }
+
+    features = string_array_create(10);
+    if (features == NULL) {
+        ERROR("Unable to create array (out of memory)");
+        return NULL;
+    }
+
+    struct authselect_generated files[] = PROFILE_FILES(profile->files);
+
+    for (i = 0; files[i].path != NULL; i++) {
+        array = template_list_features(files[i].content);
+        if (array == NULL) {
+            ERROR("Unable to obtain feature list (out of memory)");
+            ret = ENOMEM;
+            goto done;
+        }
+
+        features = string_array_concat(features, array, true);
+        string_array_free(array);
+
+        if (features == NULL) {
+            ERROR("Unable to obtain feature list (out of memory)");
+            ret = ENOMEM;
+            goto done;
+        }
+    }
+
+    string_array_sort(features);
+
+    ret = EOK;
+
+done:
+    if (ret != EOK) {
+        string_array_free(features);
+        return NULL;
+    }
+
+    return features;
 }
 
 _PUBLIC_ void
@@ -100,6 +179,10 @@ authselect_profile_free(struct authselect_profile *profile)
 
     if (profile->path != NULL) {
         free(profile->path);
+    }
+
+    if (profile->name != NULL) {
+        free(profile->name);
     }
 
     if (profile->description != NULL) {
@@ -196,11 +279,10 @@ authselect_profile_symlinks_get(const char *profile_path,
     const char *sym_nsswitch[] = {FILES_NSSWITCH, NULL};
     const char *sym_pam[]      = {FILES_PAM, NULL};
     const char *sym_dconf[]    = {FILES_DCONF, NULL};
-    const char *sym_all[]      = {FILES_ALL, NULL};
     char **targets;
     errno_t ret;
 
-    targets = string_array_create(sizeof(sym_all) / sizeof(const char *));
+    targets = string_array_create(10);
     if (targets == NULL) {
         ret = ENOMEM;
         goto done;

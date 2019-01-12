@@ -1,5 +1,5 @@
-Enable SSSD for system authentication
-=====================================
+Enable SSSD for system authentication (also for local users only)
+=================================================================
 
 Selecting this profile will enable SSSD as the source of identity
 and authentication providers.
@@ -11,6 +11,16 @@ to connect to multiple different account sources.
 
 More information about SSSD can be found on its project page:
 https://pagure.io/SSSD/sssd
+
+By default, local users are served from SSSD rather then local files if SSSD
+is enabled (however they authenticate via pam_unix). This have a performance
+benefit since SSSD caches the files content in fast in-memory cache and thus
+reduces number of disk operations.
+
+However, if you do not want to keep SSSD running on your machine, you can
+keep this profile selected and just disable SSSD service. The resulting
+configuration will still work correctly even with SSSD disabled and local users
+and groups will be read from local files directly.
 
 SSSD CONFIGURATION
 ------------------
@@ -33,9 +43,6 @@ with-mkhomedir::
 with-ecryptfs::
     Enable automatic per-user ecryptfs.
 
-with-sudo::
-    Use SSSD as a source of sudo rules.
-
 with-smartcard::
     Enable authentication with smartcards through SSSD. Please note that
     smartcard support must be also explicitly enabled within
@@ -43,15 +50,59 @@ with-smartcard::
 
 with-smartcard-lock-on-removal::
     Lock screen when a smartcard is removed.
+    Note: "with-smartcard" must be set as well.
+
+with-smartcard-required::
+    Smartcard authentication is required. No other means of authentication
+    (including password) will be enabled.
+    Note: "with-smartcard" must be set as well.
 
 with-fingerprint::
     Enable authentication with fingerprint reader through *pam_fprintd*.
+
+with-pam-u2f::
+    Enable authentication via u2f dongle through *pam_u2f*.
+
+with-pam-u2f-2fa::
+    Enable 2nd factor authentication via u2f dongle through *pam_u2f*.
 
 with-silent-lastlog::
     Do not produce pam_lastlog message during login.
 
 with-sudo::
     Allow sudo to use SSSD as a source for sudo rules in addition of /etc/sudoers.
+
+with-pamaccess::
+    Check access.conf during account authorization.
+
+without-nullok::
+    Do not add nullok parameter to pam_unix.
+
+DISABLE SPECIFIC NSSWITCH DATABASES
+-----------------------------------
+
+Normally, nsswitch databases set by the profile overwrites values set in
+user-nsswitch.conf. The following options can force authselect to
+ignore value set by the profile and use the one set in user-nsswitch.conf
+instead.
+
+with-custom-passwd::
+Ignore "passwd" database set by the profile.
+
+with-custom-group::
+Ignore "group" database set by the profile.
+
+with-custom-netgroup::
+Ignore "netgroup" database set by the profile.
+
+with-custom-automount::
+Ignore "automount" database set by the profile.
+
+with-custom-services::
+Ignore "services" database set by the profile.
+
+with-custom-sudoers::
+Ignore "sudoers" database set by the profile.
 
 EXAMPLES
 --------

@@ -29,6 +29,45 @@
 #include "lib/files/files.h"
 #include "lib/profiles/profiles.h"
 
+static bool
+authselect_check_features(const struct authselect_profile *profile,
+                          const char **features)
+{
+    const char *similar;
+    bool result = true;
+    char **supported;
+    int i;
+
+    if (features == NULL) {
+        return true;
+    }
+
+    supported = authselect_profile_features(profile);
+    if (supported == NULL) {
+        ERROR("Unable to obtain supported features");
+        return false;
+    }
+
+    for (i = 0; features[i] != NULL; i++) {
+        if (string_array_has_value(supported, features[i])) {
+            continue;
+        }
+
+        result = false;
+        similar = string_array_find_similar(features[i], supported, 5);
+        if (similar != NULL) {
+            ERROR("Unknown profile feature [%s], did you mean [%s]?",
+                  features[i], similar);
+        } else {
+            ERROR("Unknown profile feature [%s]", features[i]);
+        }
+    }
+
+    string_array_free(supported);
+
+    return result;
+}
+
 _PUBLIC_ void
 authselect_set_debug_fn(authselect_debug_fn fn, void *pvt)
 {
@@ -51,6 +90,11 @@ authselect_activate(const char *profile_id,
         ERROR("Unable to find profile [%s] [%d]: %s",
               profile_id, ret, strerror(ret));
         return ret;
+    }
+
+    if (!authselect_check_features(profile, features)) {
+        ret = EINVAL;
+        goto done;
     }
 
     if (force_overwrite) {
@@ -94,6 +138,58 @@ done:
     }
 
     authselect_profile_free(profile);
+
+    return ret;
+}
+
+_PUBLIC_ int
+authselect_apply_changes(void)
+{
+    struct authselect_profile *profile;
+    char **supported = NULL;
+    char *profile_id;
+    char **features;
+    errno_t ret;
+    int i;
+
+    ret = authselect_current_configuration(&profile_id, &features);
+    if (ret != EOK) {
+        return ret;
+    }
+
+    ret = authselect_profile(profile_id, &profile);
+    if (ret != EOK) {
+        ERROR("Unable to find profile [%s] [%d]: %s",
+              profile_id, ret, strerror(ret));
+        goto done;
+    }
+
+    supported = authselect_profile_features(profile);
+    if (supported == NULL) {
+        ERROR("Unable to obtain supported features");
+        ret = ENOMEM;
+        goto done;
+    }
+
+    for (i = 0; features[i] != NULL; i++) {
+        if (string_array_has_value(supported, features[i])) {
+            continue;
+        }
+
+        WARN("Profile feature [%s] is no longer supported, removing it...",
+             features[i]);
+
+        string_array_del_value(features, features[i]);
+        i--;
+    }
+
+    ret = authselect_activate(profile_id, (const char **)features, false);
+
+done:
+    authselect_profile_free(profile);
+    string_array_free(supported);
+    string_array_free(features);
+    free(profile_id);
 
     return ret;
 }
@@ -151,15 +247,10 @@ authselect_feature_disable(const char *feature)
         return ret;
     }
 
-    features = string_array_del_value(features, feature);
-    if (features == NULL) {
-        ret = ENOMEM;
-        goto done;
-    }
+    string_array_del_value(features, feature);
 
     ret = authselect_activate(profile_id, (const char **)features, false);
 
-done:
     string_array_free(features);
     free(profile_id);
 

@@ -1,12 +1,6 @@
-expand_prefix =                                                               \
-    (                                                                         \
-     $(SED) -e 's,$${exec_prefix},$(exec_prefix),g' |                         \
-     $(SED) -e 's,$${prefix},$(prefix),g'                                     \
-    )
-
 if HAVE_MANPAGES
 BUILT_SOURCES = \
-    expand_files \
+    build_manpages \
     $(NULL)
 
 man_MANS = \
@@ -15,16 +9,28 @@ man_MANS = \
     authselect-migration.7 \
     $(NULL)
 
-expand_files:
-	for FILE in $(man_MANS) ; do \
-		$(expand_prefix) < $$FILE.txt.in > $$FILE.txt ; \
-		$(A2X) -D . --doctype manpage --format manpage $$FILE.txt ; \
-	done
+build_manpages:
+	$(abs_top_builddir)/scripts/manpages-build.sh "$(prefix)" "$(exec_prefix)"
 
 .PHONY: expand_files
 
+MAN_FILES = $(shell find $(srcdir) -maxdepth 1 -type f -name '*.adoc' -printf '%d\t%p\n' 2> /dev/null | sort -nk1 | cut -f2-)
+MAN_PO = $(shell find $(srcdir)/po -maxdepth 1 -type f -name '*.po' -printf '%d\t%p\n' 2> /dev/null | sort -nk1 | cut -f2-)
+
+EXTRA_DIST = \
+    $(MAN_FILES) \
+    $(MAN_PO) \
+    $(NULL)
+
+install-data-local:
+	$(abs_top_builddir)/scripts/manpages-install.sh "$(prefix)" "$(DESTDIR)" $(man_MANS)
+
+uninstall-local:
+	$(abs_top_builddir)/scripts/manpages-uninstall.sh "$(prefix)" "$(DESTDIR)" $(man_MANS)
+
 clean-local:
-	for FILE in $(man_MANS) ; do \
-		$(RM) $$FILE $$FILE.txt ; \
-	done
+	$(RM) $(man_MANS) ; \
+	$(RM) -r translations ; \
+	$(RM) build.stamp
+
 endif

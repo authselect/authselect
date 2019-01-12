@@ -100,13 +100,15 @@ static errno_t activate(struct cli_cmdline *cmdline)
     struct authselect_profile *profile = NULL;
     const char **features = NULL;
     const char *profile_id;
-    const char *requirements;
+    char *requirements = NULL;
     char *backup_name = NULL;
     char *backup_path;
+    char **maps = NULL;
     int nobackup = 0;
     int enforce = 0;
     int quiet = 0;
     errno_t ret;
+    int i;
 
     struct poptOption options[] = {
         {"force", 'f', POPT_ARG_VAL, &enforce, 1, _("Enforce changes"), NULL },
@@ -136,6 +138,13 @@ static errno_t activate(struct cli_cmdline *cmdline)
         goto done;
     }
 
+    maps = authselect_profile_nsswitch_maps(profile, features);
+    if (maps == NULL) {
+        ERROR("Unable to obtain nsswitch maps!");
+        ret = EFAULT;
+        goto done;
+    }
+
     if (backup_name != NULL || (enforce && !nobackup)) {
         ret = authselect_backup(backup_name, &backup_path);
         if (ret != EOK) {
@@ -161,6 +170,14 @@ static errno_t activate(struct cli_cmdline *cmdline)
 
     CLI_MSG(quiet, "Profile \"%s\" was selected.\n", profile_id);
 
+    if (maps != NULL && maps[0] != NULL) {
+        CLI_MSG(quiet, "The following nsswitch maps are overwritten "
+                       "by the profile:\n");
+        for (i = 0; maps[i] != NULL; i++) {
+            CLI_MSG(quiet, "- %s\n", maps[i]);
+        }
+    }
+
     if (requirements[0] != '\0') {
         CLI_MSG(quiet, "\n%s\n", requirements);
     }
@@ -168,9 +185,35 @@ static errno_t activate(struct cli_cmdline *cmdline)
     ret = EOK;
 
 done:
+    free(requirements);
+    authselect_array_free(maps);
     authselect_profile_free(profile);
     if (features != NULL) {
         free(features);
+    }
+
+    return ret;
+}
+
+static errno_t apply_changes(struct cli_cmdline *cmdline)
+{
+    errno_t ret;
+
+    ret = authselect_apply_changes();
+    switch (ret) {
+    case EOK:
+        CLI_PRINT("Changes were successfully applied.\n");
+        break;
+    case ENOENT:
+        CLI_ERROR("No existing configuration detected.\n");
+        break;
+    case EEXIST:
+        CLI_ERROR("Some unexpected changes to the configuration were "
+                  "detected. Use 'select' command instead.\n");
+        break;
+    default:
+        CLI_ERROR("Unable to apply changes [%d]: %s\n", ret, strerror(ret));
+        break;
     }
 
     return ret;
@@ -342,7 +385,7 @@ static errno_t requirements(struct cli_cmdline *cmdline)
     struct authselect_profile *profile;
     const char *profile_id;
     const char **features;
-    const char *requirements;
+    char *requirements;
     errno_t ret;
 
     ret = parse_profile_options(cmdline, NULL, &profile_id, &features);
@@ -371,6 +414,7 @@ static errno_t requirements(struct cli_cmdline *cmdline)
     ret = EOK;
 
 done:
+    free(requirements);
     authselect_profile_free(profile);
 
     return ret;
@@ -576,6 +620,7 @@ int main(int argc, const char **argv)
     errno_t ret;
     struct cli_route_cmd commands[] = {
         CLI_TOOL_COMMAND("select", "Select profile", activate),
+        CLI_TOOL_COMMAND("apply-changes", "Regenerate configuration for currently selected command", apply_changes),
         CLI_TOOL_COMMAND("list", "List available profiles", list),
         CLI_TOOL_COMMAND("show", "Show profile information", show),
         CLI_TOOL_COMMAND("requirements", "Print profile requirements", requirements),

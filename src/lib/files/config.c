@@ -139,6 +139,7 @@ authselect_config_locations_writable()
 {
     struct authselect_symlink files[] = {
         {PATH_CONFIG_FILE, NULL, false},
+        {PATH_COPY_SYSTEM, NULL, false},
         SYMLINK_FILES
     };
     bool result = true;
@@ -199,6 +200,8 @@ authselect_config_validate_existing(const char *profile_id,
 
     /* Check that symlinks exist and point to generated files. */
     result &= authselect_symlinks_validate();
+
+    authselect_files_free(files);
 
     return result;
 }

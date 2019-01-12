@@ -109,6 +109,18 @@ authselect_system_read_templates(const char *dirname,
                                  struct authselect_files **_templates);
 
 /**
+ * Find nsswitch maps in generated content.
+ *
+ * @param content Generated content.
+ * @param _maps   Maps found in @content.
+ *
+ * @return EOK on success, other errno code on error.
+ */
+errno_t
+authselect_system_nsswitch_find_maps(char *content,
+                                     char ***_maps);
+
+/**
  * Generate content of system files based on provided templates.
  *
  * @param features    Optional features that should be enabled.

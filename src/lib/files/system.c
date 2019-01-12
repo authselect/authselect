@@ -21,6 +21,7 @@
 #include <time.h>
 #include <errno.h>
 #include <stdio.h>
+#include <regex.h>
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -29,6 +30,9 @@
 #include "lib/constants.h"
 #include "lib/util/util.h"
 #include "lib/files/files.h"
+
+#define RE_NSS "^\\s*([^[:space:]:]+):.*$"
+#define RE_NSS_MATCHES 2
 
 struct authselect_system_paths {
     const char *path;
@@ -88,6 +92,210 @@ authselect_system_read_templates(const char *dirname,
 }
 
 errno_t
+authselect_system_nsswitch_find_maps(char *content,
+                                     char ***_maps)
+{
+    char *match_string;
+    regmatch_t m[RE_NSS_MATCHES];
+    regex_t regex;
+    errno_t ret;
+    char **maps;
+    int reret;
+
+    maps = string_array_create(10);
+    if (maps == NULL) {
+        return ENOMEM;
+    }
+
+    reret = regcomp(&regex, RE_NSS, REG_EXTENDED | REG_NEWLINE);
+    if (reret != REG_NOERROR) {
+        ERROR("Unable to compile regular expression: regex error %d", reret);
+        ret = EFAULT;
+        goto done;
+    }
+
+    match_string = content;
+    while ((reret = regexec(&regex, match_string, 2, m, 0)) == REG_NOERROR) {
+        maps = string_array_add_value_safe(maps, match_string + m[1].rm_so,
+                                           m[1].rm_eo - m[1].rm_so, true);
+        if (maps == NULL) {
+            ret = ENOMEM;
+            goto done;
+        }
+
+        match_string += m[0].rm_eo;
+    }
+
+    if (reret != REG_NOMATCH) {
+        ERROR("Unable to search string: regex error %d", reret);
+        ret = EFAULT;
+        goto done;
+    }
+
+    *_maps = maps;
+
+    ret = EOK;
+
+done:
+    regfree(&regex);
+    if (ret != EOK) {
+        string_array_free(maps);
+    }
+
+    return ret;
+}
+
+static errno_t
+authselect_system_nsswitch_delete_maps(char **maps,
+                                       char *content)
+{
+    char *match_string;
+    const char *map_name;
+    size_t map_len;
+    size_t orig_len;
+    regmatch_t m[RE_NSS_MATCHES];
+    regex_t regex;
+    errno_t ret;
+    int reret;
+    int i;
+
+    if (string_is_empty(content)) {
+        return EOK;
+    }
+
+    orig_len = strlen(content);
+
+    reret = regcomp(&regex, RE_NSS, REG_EXTENDED | REG_NEWLINE);
+    if (reret != REG_NOERROR) {
+        ERROR("Unable to compile regular expression: regex error %d", reret);
+        ret = EFAULT;
+        goto done;
+    }
+
+    match_string = content;
+    while ((reret = regexec(&regex, match_string, 2, m, 0)) == REG_NOERROR) {
+        map_name = match_string + m[1].rm_so;
+        map_len = m[1].rm_eo - m[1].rm_so;
+        for (i = 0; maps[i] != NULL; i++) {
+            if (strncmp(map_name, maps[i], map_len) == 0) {
+                string_remove_line(match_string, m[1].rm_so);
+                break;
+            }
+        }
+
+        /* Since the whole line could have been removed, we have to find first
+         * non-zero position. */
+        match_string += m[0].rm_eo;
+        while (*match_string == '\0' && match_string - content < orig_len) {
+            match_string++;
+        }
+    }
+
+    if (reret != REG_NOMATCH) {
+        ERROR("Unable to search string: regex error %d", reret);
+        ret = EFAULT;
+        goto done;
+    }
+
+    string_replace_shake(content, orig_len);
+
+    ret = EOK;
+
+done:
+    regfree(&regex);
+
+    return ret;
+}
+
+static errno_t
+authselect_system_generate_nsswitch(const char *template,
+                                    const char **features,
+                                    char **_content)
+{
+    static const char *preambule = \
+    "# If you want to make changes to nsswitch.conf please modify\n"
+    "# " PATH_USER_NSSWITCH " and run 'authselect apply-changes'.\n"
+    "#\n"
+    "# Note that your changes may not be applied as they may be\n"
+    "# overwritten by selected profile. Maps set in the authselect\n"
+    "# profile takes always precendence and overwrites the same maps\n"
+    "# set in the user file. Only maps that are not set by the profile\n"
+    "# are applied from the user file.\n"
+    "#\n"
+    "# For example, if the profile sets:\n"
+    "#     passwd: sss files\n"
+    "# and " PATH_USER_NSSWITCH " contains:\n"
+    "#     passwd: files\n"
+    "#     hosts: files dns\n"
+    "# the resulting generated nsswitch.conf will be:\n"
+    "#     passwd: sss files # from profile\n"
+    "#     hosts: files dns  # from user file\n\n";
+    char *user_content = NULL;
+    char *generated = NULL;
+    char *content = NULL;
+    char **maps = NULL;
+    errno_t ret;
+
+    generated = template_generate(template, features);
+    if (generated == NULL) {
+        ret = ENOMEM;
+        goto done;
+    }
+
+    ret = textfile_read(PATH_USER_NSSWITCH, AUTHSELECT_FILE_SIZE_LIMIT,
+                        &user_content);
+    switch (ret) {
+    case EOK:
+        ret = authselect_system_nsswitch_find_maps(generated, &maps);
+        if (ret != EOK) {
+            goto done;
+        }
+
+        ret = authselect_system_nsswitch_delete_maps(maps, user_content);
+        if (ret != EOK) {
+            goto done;
+        }
+
+        if (string_is_empty(user_content)) {
+            content = format("%s%s", preambule, generated);
+            break;
+        }
+
+        content = format("%s%s\n# Included from %s\n\n%s",
+                         preambule, generated, PATH_USER_NSSWITCH,
+                         user_content);
+        break;
+    case ENOENT:
+        content = format("%s%s", preambule, generated);
+        break;
+    default:
+        ERROR("Unable to read [%s] [%d]: %s", PATH_USER_NSSWITCH,
+              ret, strerror(ret));
+        goto done;
+    }
+
+    if (content == NULL) {
+        ret = ENOMEM;
+        goto done;
+    }
+
+    *_content = content;
+
+    ret = EOK;
+
+done:
+    if (ret != EOK) {
+        ERROR("Unable to generate nsswitch.conf [%d]: %s", ret, strerror(ret));
+    }
+
+    free(user_content);
+    free(generated);
+    string_array_free(maps);
+
+    return ret;
+}
+
+errno_t
 authselect_system_generate(const char **features,
                            struct authselect_files *templates,
                            struct authselect_files **_files)
@@ -111,7 +319,6 @@ authselect_system_generate(const char **features,
         {templates->smartcardauth,   &files->smartcardauth},
         {templates->fingerprintauth, &files->fingerprintauth},
         {templates->postlogin,       &files->postlogin},
-        {templates->nsswitch,        &files->nsswitch},
         {templates->dconfdb,         &files->dconfdb},
         {templates->dconflock,       &files->dconflock},
         {NULL, NULL},
@@ -131,6 +338,13 @@ authselect_system_generate(const char **features,
         }
     }
 
+    /* nsswitch.conf is special as it can be merged with user-editable file */
+    ret = authselect_system_generate_nsswitch(templates->nsswitch, features,
+                                              &files->nsswitch);
+    if (ret != EOK) {
+        goto done;
+    }
+
     *_files = files;
 
     ret = EOK;
@@ -140,6 +354,48 @@ done:
         ERROR("Unable to generate files [%d]: %s", ret, strerror(ret));
         authselect_files_free(files);
     }
+
+    return ret;
+}
+
+static errno_t
+authselect_system_write_temp(const char *path,
+                             const char *content,
+                             char **_tmp_file)
+{
+    errno_t ret;
+
+    INFO("Writing temporary file for [%s]", path);
+    ret = template_write_temporary(path, content, AUTHSELECT_FILE_MODE,
+                                   _tmp_file);
+    if (ret != EOK) {
+        ERROR("Unable to write temporary file [%s] [%d]: %s",
+              path, ret, strerror(ret));
+        return ret;
+    }
+
+    INFO("Temporary file is named [%s]", *_tmp_file);
+
+    return EOK;
+}
+
+static errno_t
+authselect_system_rename_temp(char **tmp_path,
+                              const char *final_path)
+{
+    errno_t ret;
+
+    INFO("Renaming [%s] to [%s]", *tmp_path, final_path);
+
+    ret = rename(*tmp_path, final_path);
+    if (ret != 0) {
+        ret = errno;
+        ERROR("Unable to rename [%s] to [%s] [%d]: %s",
+              *tmp_path, final_path, ret, strerror(ret));
+    }
+
+    free(*tmp_path);
+    *tmp_path = NULL;
 
     return ret;
 }
@@ -158,37 +414,47 @@ authselect_system_write(const char **features,
     }
 
     struct authselect_generated generated[] = GENERATED_FILES(files);
-    char *tmpfiles[sizeof(generated)/sizeof(struct authselect_generated)];
+    char *tmp_files[sizeof(generated)/sizeof(struct authselect_generated)] = {NULL};
+    char *tmp_copies[sizeof(generated)/sizeof(struct authselect_generated)] = {NULL};
 
     /* First, write content into temporary files, so we can safely fail
      * on error. */
     for (i = 0; generated[i].path != NULL; i++) {
-        INFO("Writing temporary file for [%s]", generated[i].path);
-        ret = template_write_temporary(generated[i].path, generated[i].content,
-                             AUTHSELECT_FILE_MODE, &tmpfiles[i]);
+        ret = authselect_system_write_temp(generated[i].copy_path,
+                                           generated[i].content,
+                                           &tmp_copies[i]);
         if (ret != EOK) {
             goto done;
         }
-        INFO("Temporary file is named [%s]", tmpfiles[i]);
-    }
 
-    /* Now rename the files. */
-    for (i = 0; generated[i].path != NULL; i++) {
-        INFO("Renaming [%s] to [%s]", tmpfiles[i], generated[i].path);
-        /* We now know that the system is writable, so rename call shall not
-         * fail and it will overwrite any existing file. The only reason it
-         * can fail is EIO which we can not do anything about and we can not
-         * even recover from it. */
-        ret = rename(tmpfiles[i], generated[i].path);
-        if (ret != 0) {
-            ret = errno;
-            ERROR("Unable to rename [%s] to [%s] [%d]: %s",
-                  tmpfiles[i], generated[i].path, ret, strerror(ret));
+        ret = authselect_system_write_temp(generated[i].path,
+                                           generated[i].content,
+                                           &tmp_files[i]);
+        if (ret != EOK) {
             goto done;
         }
+    }
 
-        free(tmpfiles[i]);
-        tmpfiles[i] = NULL;
+    /* Now rename the files.
+     *
+     * We now know that the system is writable, so rename call shall not
+     * fail and it will overwrite any existing file. The only reason it
+     * can fail is EIO which we can not do anything about and we can not
+     * even recover from it.
+     */
+    for (i = 0; generated[i].copy_path != NULL; i++) {
+        ret = authselect_system_rename_temp(&tmp_copies[i],
+                                            generated[i].copy_path);
+        if (ret != EOK) {
+            goto done;
+        }
+    }
+
+    for (i = 0; generated[i].path != NULL; i++) {
+        ret = authselect_system_rename_temp(&tmp_files[i], generated[i].path);
+        if (ret != EOK) {
+            goto done;
+        }
     }
 
     ret = EOK;
@@ -196,10 +462,16 @@ authselect_system_write(const char **features,
 done:
     if (ret != EOK) {
         for (i = 0; generated[i].path != NULL; i++) {
-            if (tmpfiles[i] != NULL) {
-                unlink(tmpfiles[i]);
-                free(tmpfiles[i]);
-                tmpfiles[i] = NULL;
+            if (tmp_copies[i] != NULL) {
+                unlink(tmp_copies[i]);
+                free(tmp_copies[i]);
+                tmp_copies[i] = NULL;
+            }
+
+            if (tmp_files[i] != NULL) {
+                unlink(tmp_files[i]);
+                free(tmp_files[i]);
+                tmp_files[i] = NULL;
             }
         }
     }
@@ -210,13 +482,16 @@ done:
 
 static bool
 authselect_system_validate_file(const char *path,
+                                const char *copy_path,
                                 const char *expected)
 {
     char *content;
+    char *copy_content;
     errno_t ret;
     bool bret;
 
     INFO("Validating file [%s]", path);
+    expected = expected == NULL ? "" : expected;
 
     ret = textfile_read(path, AUTHSELECT_FILE_SIZE_LIMIT, &content);
     if (ret == ENOENT) {
@@ -230,11 +505,17 @@ authselect_system_validate_file(const char *path,
         return false;
     }
 
-    if (expected == NULL) {
-        expected = "";
+    ret = textfile_read(copy_path, AUTHSELECT_FILE_SIZE_LIMIT, &copy_content);
+    if (ret == EOK) {
+        /* Compare against copy of the originally generated files. */
+        INFO("Comparing content against [%s]", copy_path);
+        bret = strcmp(content, copy_content) == 0;
+        free(copy_content);
+    } else {
+        INFO("Comparing content against current profile");
+        bret = template_validate_written_content(content, expected);
     }
 
-    bret = template_validate_written_content(content, expected);
     free(content);
     if (!bret) {
         ERROR("[%s] has unexpected content!", path);
@@ -262,6 +543,7 @@ authselect_system_validate(struct authselect_files *files)
 
     for (i = 0; generated[i].path != NULL; i++) {
         bret = authselect_system_validate_file(generated[i].path,
+                                               generated[i].copy_path,
                                                generated[i].content);
         result &= bret;
         if (!bret) {

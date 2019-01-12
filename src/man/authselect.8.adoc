@@ -21,7 +21,7 @@ identity and authentication sources defined by the profile.
 
 If the provided profile set is not sufficient, the administrator may create
 a custom profile by putting it in a special profile directory
-(@AUTHSELECT_CUSTOM_DIR@). By doing so, the profile is immediately
+({AUTHSELECT_CUSTOM_DIR}). By doing so, the profile is immediately
 usable by *authselect*. See _authselect-profiles(5)_ for more information
 on extending existing profiles.
 
@@ -51,6 +51,13 @@ To print help for the selected command run *authselect COMMAND --help*.
     *--quiet, -q*:::
         The command will not print any informational message such as additional
         profile requirements or backup location. Errors are still being print.
+
+*apply-changes*::
+    Re-apply currently selected profile. If the profile templates were updated
+    this command can be used to regenerate current system configuration in
+    order to apply these changes on the system. This command will only re-apply
+    the changes if the existing configuration is a valid authselect
+    configuration, otherwise an error is returned.
 
 *list*::
     List available profiles.
@@ -138,6 +145,65 @@ These options are available with all commands.
     the program execution but may indicate some undesired situations
     (e.g. unexpected file in a profile directory).
 
+NSSWITCH.CONF MANAGEMENT
+------------------------
+Authselect generates {AUTHSELECT_NSSWITCH_CONF} and does not allow any user
+changes to this file. Such changes are detected and authselect will refuse to
+write any system configuration unless a *--force* option is provided to
+the *select* command. This mechanism prevents authselect from overwriting
+anything that does not match any available profile.
+
+Any user changes to nsswitch maps must be done in file
+{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf. When authselect generates
+new _nsswitch.conf_ it reads this file and combines it with configuration
+from selected profile. The profile configuration takes always precedence.
+In other words, profiles do not have to set all nsswitch maps but can set only
+those that are relevant to the profile. If a map is set within a profile,
+it always overwrites the same map from _user-nsswitch.conf_.
+
+.Example 1
+[subs="attributes"]
+----
+# "sssd" profile
+$ cat {AUTHSELECT_PROFILE_DIR}/sssd/nsswitch.conf
+passwd:     sss files systemd
+group:      sss files systemd
+netgroup:   sss files
+automount:  sss files
+services:   sss files
+sudoers:    files sss {include if "with-sudo"}
+
+$ cat {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf
+passwd: files sss
+group: files sss
+hosts: files dns myhostname
+sudoers: files
+
+$ authselect select sssd
+
+# passwd and group maps from user-nsswitch.conf are ignored
+$ cat {AUTHSELECT_NSSWITCH_CONF}
+passwd:     sss files systemd
+group:      sss files systemd
+netgroup:   sss files
+automount:  sss files
+services:   sss files
+hosts:      files dns myhostname
+sudoers:    files
+
+$ authselect select sssd with-sudo
+
+# passwd, group and sudoers maps from user-nsswitch.conf are ignored
+$ cat {AUTHSELECT_NSSWITCH_CONF}
+passwd:     sss files systemd
+group:      sss files systemd
+netgroup:   sss files
+automount:  sss files
+services:   sss files
+sudoers:    files sss
+hosts:      files dns myhostname
+----
+
 RETURN CODES
 ------------
 The *authselect* can return these exit codes:
@@ -153,19 +219,19 @@ GENERATED FILES
 Authselect creates and maintains the following files to configure system
 identity and authentication providers properly.
 
-*@AUTHSELECT_NSSWITCH_CONF@*::
+*{AUTHSELECT_NSSWITCH_CONF}*::
     Name Service Switch configuration file.
 
-*@AUTHSELECT_PAM_DIR@/system-auth*::
+*{AUTHSELECT_PAM_DIR}/system-auth*::
     PAM stack that is included from nearly all individual service configuration
     files.
 
-*@AUTHSELECT_PAM_DIR@/password-auth, smartcard-auth, fingerprint-auth*::
+*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*::
     These PAM stacks are for applications which handle authentication from
     different types of devices via simultaneously running individual
     conversations instead of one aggregate conversation.
 
-*@AUTHSELECT_PAM_DIR@/postlogin*::
+*{AUTHSELECT_PAM_DIR}/postlogin*::
      The  purpose  of  this  PAM stack is to provide a common place for all
      PAM modules which should be called after the stack configured in
      system-auth or the other common PAM configuration files. It is included
@@ -174,14 +240,14 @@ identity and authentication providers properly.
      configuration file are executed regardless of the success or failure of
      the modules in the system-auth configuration file._
 
-*@AUTHSELECT_DCONF_DIR@/@AUTHSELECT_DCONF_FILE@*::
+*{AUTHSELECT_DCONF_DIR}/{AUTHSELECT_DCONF_FILE}*::
     Changes to dconf database. The main uses case of this file is to set
     changes for gnome login screen in order to enable or disable smartcard
     and fingerprint authentication.
 
-*@AUTHSELECT_DCONF_DIR@/locks/@AUTHSELECT_DCONF_FILE@*::
+*{AUTHSELECT_DCONF_DIR}/locks/{AUTHSELECT_DCONF_FILE}*::
     This file define locks on values set in dconf database.
 
 SEE ALSO
 --------
-authselect-profiles(5), nsswitch.conf(5), PAM(8)
+authselect-profiles(5), authselect-migration(7), nsswitch.conf(5), PAM(8)

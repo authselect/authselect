@@ -39,9 +39,11 @@ def eprint(*args, **kwargs):
 class Command:
     TEST = False
 
-    def __init__(self, command, args, input=None):
+    def __init__(self, command, args, input=None, check=True):
         self.args = [command] + args
         self.input = input.encode() if input is not None else None
+        self.check = check
+        self.result = None
 
     def run(self):
         print(_("Executing: %s") % ' '.join(self.args))
@@ -49,10 +51,10 @@ class Command:
         if self.TEST:
             return
 
-        subprocess.run(self.args, check=True,
-                       input=self.input,
-                       stdout=subprocess.PIPE,
-                       stderr=subprocess.PIPE)
+        self.result = subprocess.run(self.args, check=self.check,
+                                     input=self.input,
+                                     stdout=subprocess.PIPE,
+                                     stderr=subprocess.PIPE)
 
 class Service:
     def __init__(self, name):
@@ -78,8 +80,9 @@ class Service:
         cmd = Command(Path.System("cmd-systemctl"), ["disable", self.name])
         self.runsystemd(cmd, False, 1)
 
-    def start(self):
-        self.stop()
+    def start(self, Restart=True):
+        if Restart:
+            self.stop()
         cmd = Command(Path.System("cmd-systemctl"), ["start", self.name])
         self.runsystemd(cmd, True, 5)
 
@@ -99,9 +102,12 @@ class Path:
         'authconfig'     : '@sysconfdir@/sysconfig/authconfig',
         'network'        : '@sysconfdir@/sysconfig/network',
         'pwquality.conf' : '@sysconfdir@/security/pwquality.conf.d/10-authconfig-pwquality.conf',
+        'yp.conf'        : '@sysconfdir@/yp.conf',
         'cmd-systemctl'  : '@bindir@/systemctl',
         'cmd-authselect' : '@bindir@/authselect',
-        'cmd-realm'      : '@sbindir@/realm'
+        'cmd-realm'      : '@sbindir@/realm',
+        'cmd-domainname' : '@bindir@/domainname',
+        'cmd-setsebool'  : '@sbindir@/setsebool'
     }
 
     @staticmethod
@@ -115,24 +121,41 @@ class Path:
 
 class Configuration:
     class Base(object):
-        def __init__(self, options, service=None):
+        def __init__(self, options, ServiceName=None):
             self.options = options
-            self.service = service
+            self.service = None
+            if ServiceName is not None:
+                self.service = Service(ServiceName)
 
-        def mustGenerate(self):
-            """ Make sure this method method is implemented by children. """
-            raise NotImplementedError("Method mustGenerate() is not implemented!")
-
-        def shouldDisable(self):
+        def isEnabled(self):
             return True
 
-        def write(self):
-            """ Make sure this method method is implemented by children. """
-            raise NotImplementedError("Method write() is not implemented!")
+        def isDisabled(self):
+            return not self.isEnabled()
+
+        def enableService(self, nostart):
+            if self.service is None:
+                return
+
+            self.service.enable()
+
+            if not nostart:
+                self.service.start()
+
+        def disableService(self, nostop):
+            if self.service is None:
+                return
+
+            self.service.disable()
+
+            if not nostop:
+                self.service.stop()
 
         def cleanup(self):
-            """ Make sure this method method is implemented by children. """
-            raise NotImplementedError("Method cleanup() is not implemented!")
+            return
+
+        def write(self):
+            return
 
         def get(self, name):
             return self.options.get(name)
@@ -145,12 +168,15 @@ class Configuration:
 
         def getBool(self, name):
             return self.options.getBool(name)
-        
-        def getBoolAsValue(self, name, if_true, if_false):
+
+        def getBoolAsValue(self, name, if_true, if_false, AllowNone=False):
+            if AllowNone and not self.isset(name):
+                return None
+
             value = self.getBool(name)
             if value:
                 return if_true
-            
+
             return if_false
 
         def removeFile(self, filename):
@@ -167,13 +193,6 @@ class Configuration:
         def __init__(self, options):
             super(Configuration.LDAP, self).__init__(options)
 
-        def mustGenerate(self):
-            return True
-
-        def cleanup(self):
-            # Nothing to do
-            return
-
         def write(self):
             config = EnvironmentFile(Path.System('ldap.conf'), " ",
                                      delimiter_re="\s\t", quotes=False)
@@ -189,13 +208,23 @@ class Configuration:
         def __init__(self, options):
             super(Configuration.Kerberos, self).__init__(options)
 
-        def mustGenerate(self):
-            return self.isset("krb5realm") or self.isset("krb5realmdns")
+        def isEnabled(self):
+            if not self.isset("krb5realm") and not self.isset("krb5realmdns"):
+                return None
+
+            return self.get("krb5realm") != "" or self.getBool("krb5realmdns")
 
         def cleanup(self):
+            # Do not remove the file if these options are not set
+            if not self.isset("krb5realm") and not self.isset("krb5realmdns"):
+                return
+
             self.removeFile(Path.System('krb5.conf'))
 
         def write(self):
+            if self.isDisabled():
+                return
+
             path = Path.Local("snippets/authconfig-krb.conf")
             config = ConfigSnippet(path, Path.System('krb5.conf'))
             realm = self.get("krb5realm")
@@ -215,14 +244,11 @@ class Configuration:
         def __init__(self, options):
             super(Configuration.Network, self).__init__(options)
 
-        def mustGenerate(self):
-            return True
-
         def write(self):
             nisdomain = self.get("nisdomain")
             config = EnvironmentFile(Path.System('network'))
 
-            if nisdomain is None and config.get("NISDOMAIN") is None:
+            if nisdomain is None:
                 return
 
             config.set("NISDOMAIN", nisdomain)
@@ -230,24 +256,24 @@ class Configuration:
 
     class SSSD(Base):
         def __init__(self, options):
-            super(Configuration.SSSD, self).__init__(options, service="sssd")
+            super(Configuration.SSSD, self).__init__(options, ServiceName="sssd")
 
-        def mustGenerate(self):
-            # Authconfig would not generate sssd in this case so we should not
-            # either. Even if --enablesssd[auth] was provided the configuration
-            # would not be generated.
-            return self.getBool("ldap")
+        def isEnabled(self):
+            if not self.isset("ldap") and not self.isset("sssd"):
+                return None
 
-        def shouldDisable(self):
-            if not self.getBool("ldap") and not self.getBool("sssd"):
-                return True
-
-            return False
+            return self.getBool("ldap") or self.getBool("sssd")
 
         def cleanup(self):
             self.removeFile(Path.System('sssd.conf'))
 
         def write(self):
+            # Authconfig would not generate sssd in this case so we should not
+            # either. Even if --enablesssd[auth] was provided the configuration
+            # would not be generated.
+            if not self.getBool("ldap"):
+                return
+
             path = Path.Local("snippets/authconfig-sssd.conf")
             config = ConfigSnippet(path, Path.System('sssd.conf'))
 
@@ -270,21 +296,18 @@ class Configuration:
 
     class Winbind(Base):
         def __init__(self, options):
-            super(Configuration.Winbind, self).__init__(options, service="winbind")
+            super(Configuration.Winbind, self).__init__(options, ServiceName="winbind")
 
-        def mustGenerate(self):
-            return self.isset("winbindjoin")
+        def isEnabled(self):
+            if not self.isset("winbind") and not self.isset("winbindauth"):
+                return None
 
-        def shouldDisable(self):
-            if self.getBool("winbind") and self.getBool("winbindauth"):
-                return False
-
-            return True
-
-        def cleanup(self):
-            return
+            return self.getBool("winbind") or self.getBool("winbindauth")
 
         def write(self):
+            if not self.isset("winbindjoin"):
+                return
+
             creds = self.options.get("winbindjoin").split("%", 1)
 
             user = creds[0]
@@ -312,21 +335,121 @@ class Configuration:
         def __init__(self, options):
             super(Configuration.PWQuality, self).__init__(options)
 
-        def mustGenerate(self):
-            return True
-
         def write(self):
             config = EnvironmentFile(Path.System('pwquality.conf'))
+            value_set = False
 
-            config.set("minlen", self.get("passminlen"))
-            config.set("minclass", self.get("passminclass"))
-            config.set("maxrepeat", self.get("passmaxrepeat"))
-            config.set("maxclassrepeat", self.get("passmaxclassrepeat"))
-            config.set("lcredit", self.getBoolAsValue("reqlower", -1, 0))
-            config.set("ucredit", self.getBoolAsValue("requpper", -1, 0))
-            config.set("dcredit", self.getBoolAsValue("reqdigit", -1, 0))
-            config.set("ocredit", self.getBoolAsValue("reqother", -1, 0))
-            config.write()
+            pwopts = {
+                "minlen" : self.get("passminlen"),
+                "minclass" : self.get("passminclass"),
+                "maxrepeat" : self.get("passmaxrepeat"),
+                "maxclassrepeat" : self.get("passmaxclassrepeat"),
+                "lcredit" : self.getBoolAsValue("reqlower", -1, 0, AllowNone=True),
+                "ucredit" : self.getBoolAsValue("requpper", -1, 0, AllowNone=True),
+                "dcredit" : self.getBoolAsValue("reqdigit", -1, 0, AllowNone=True),
+                "ocredit" : self.getBoolAsValue("reqother", -1, 0, AllowNone=True)
+            }
+
+            # Write options only if their are actually set
+            for opt, value in pwopts.items():
+                if value is not None:
+                    print(opt + "=" + str(value))
+                    config.set(opt, value)
+                    value_set = True
+
+            if value_set:
+                config.write()
+
+    class MakeHomedir(Base):
+        def __init__(self, options):
+            super(Configuration.MakeHomedir, self).__init__(options, ServiceName="oddjobd")
+
+        def isEnabled(self):
+            if not self.isset("mkhomedir"):
+                return None
+
+            return self.getBool("mkhomedir")
+
+        def disableService(self, nostop):
+            # Never disable the service in case it is already running as
+            # other applications may depend on it.
+            return
+
+    class NIS(Base):
+        def __init__(self, options):
+            super(Configuration.NIS, self).__init__(options)
+            self.rpcbind = Service("rpcbind")
+            self.ypbind = Service("ypbind")
+
+        def isEnabled(self):
+            if not self.isset("nis"):
+                return None
+
+            return self.getBool("nis")
+
+        def enableService(self, nostart):
+            if not self.isset("nisdomain"):
+                return
+
+            nisdom = self.get("nisdomain")
+
+            if not nostart:
+                cmd = Command(Path.System('cmd-domainname'), [nisdom])
+                cmd.run()
+
+            cmd = Command(Path.System('cmd-setsebool'),
+                          ['-P', 'allow_ypbind', '1'])
+            cmd.run()
+
+            self.rpcbind.enable()
+            self.ypbind.enable()
+
+            if not nostart:
+                self.rpcbind.start(Restart=False)
+                self.ypbind.start()
+
+        def disableService(self, nostop):
+            if not nostop:
+                cmd = Command(Path.System('cmd-domainname'), ["(none)"])
+                cmd.run()
+
+            cmd = Command(Path.System('cmd-setsebool'),
+                          ['-P', 'allow_ypbind', '0'])
+            cmd.run()
+
+            self.rpcbind.disable()
+            self.ypbind.disable()
+
+            if not nostop:
+                self.rpcbind.stop()
+                self.ypbind.stop()
+
+        def write(self):
+            if not self.isset("nisdomain"):
+                return
+
+            output = "domain " + self.get("nisdomain")
+
+            additional_servers = []
+            if self.isset("nisserver"):
+                servers = self.get("nisserver").split(",")
+                additional_servers = servers[1:]
+                output += " server " + servers[0] + "\n"
+            else:
+                output += " broadcast\n"
+
+            for server in additional_servers:
+                output += "ypserver " + server + "\n"
+
+            filename = Path.System('yp.conf')
+            if self.getBool("test-call"):
+                print("========== BEGIN Content of [%s] ==========" % filename)
+                print(output)
+                print("========== END   Content of [%s] ==========\n" % filename)
+                return
+
+            with open(filename, "w") as f:
+                f.write(output)
 
 
 class AuthCompat:
@@ -383,7 +506,6 @@ class AuthCompat:
             print(_("Error: Both --enablewinbind and --enablewinbindauth must be set."))
             return False
 
-
         # We require one of these options to perform changes
         # We encourage to use --updateall since we no longer support just pure
         # --update or --kickstart, they will act as --updateall.
@@ -396,60 +518,77 @@ class AuthCompat:
 
     def runAuthselect(self):
         map = {
-            'smartcard'   : 'with-smartcard',
-            'fingerprint' : 'with-fingerprint',
-            'ecryptfs'    : 'with-ecryptfs',
-            'mkhomedir'   : 'with-mkhomedir',
-            'faillock'    : 'with-faillock',
-            'pamaccess'   : 'with-pamaccess',
-            'winbindkrb5' : 'with-krb5'
+            'smartcard'        : 'with-smartcard',
+            'requiresmartcard' : 'with-smartcard-required',
+            'fingerprint'      : 'with-fingerprint',
+            'ecryptfs'         : 'with-ecryptfs',
+            'mkhomedir'        : 'with-mkhomedir',
+            'faillock'         : 'with-faillock',
+            'pamaccess'        : 'with-pamaccess',
+            'winbindkrb5'      : 'with-krb5'
         }
 
-        profile = "sssd" if not self.options.getBool("winbind") else "winbind"
+        # Read current configuration first.
+        (profile, features) = self.getCurrentAuthselectConfig()
+
+        # Change profile if requested.
+        if (self.options.getBool("ldap") or self.options.getBool("ldapauth") or
+                self.options.getBool("sssd") or self.options.getBool("sssdauth")):
+            profile = "sssd"
+        elif self.options.getBool("nis"):
+            profile = "nis"
+        elif self.options.getBool("winbind"):
+            profile = "winbind"
+
+        # Default to sssd
+        if profile is None:
+            profile = "sssd"
+
+        # Add enabled and remove disabled features.
+        for option, feature in map.items():
+            if not self.options.isset(option):
+                continue
+
+            enabled = self.options.getBool(option)
+            if enabled:
+                features.append(feature)
+            else:
+                while feature in features:
+                    features.remove(feature)
+
+        # Add lock-on-smartcard-removal if requested
+        if self.options.isset("smartcardaction"):
+            if int(self.options.get("smartcardaction")) == 0:
+                features.append("with-smartcard-lock-on-removal")
+            else:
+                features.remove("with-smartcard-lock-on-removal")
+
+        # Remove duplicates. The order is not kept but that does not matter.
+        features = list(set(features))
 
         # Always run with --force. This is either first call of authconfig
         # in installation script or it is run on already configured system.
         # We want to use authselect in both cases anyway, since authconfig
         # would change the configuration either way.
-        args = ["select", profile, "--force"]
-        for option, feature in map.items():
-            if self.options.getBool(option):
-                args.append(feature)
+        args = ["select", profile]
+        args.extend(features)
+        args.append("--force")
 
         cmd = Command(Path.System('cmd-authselect'), args)
         cmd.run()
 
-    def enableService(self, name):
-        if name is None:
-            return
+    def getCurrentAuthselectConfig(self):
+        cmd = Command(Path.System('cmd-authselect'), ['check'], check=False)
+        cmd.run()
 
-        try:
-            svc = Service(name)
-            svc.enable()
+        if cmd.result is None or cmd.result.returncode != 0:
+            return (None, [])
 
-            if not self.options.getBool("nostart"):
-                svc.start()
-        except subprocess.CalledProcessError as result:
-            # This is not fatal error.
-            eprint(_("Command [%s] failed with %d, stderr:")
-                   % (' '.join(result.cmd), result.returncode))
-            eprint(result.stderr.decode())
+        cmd = Command(Path.System('cmd-authselect'), ['current', '--raw'])
+        cmd.run()
 
-    def disableService(self, name):
-        if name is None:
-            return
-
-        try:
-            svc = Service(name)
-            svc.disable()
-
-            if not self.options.getBool("nostart"):
-                svc.stop()
-        except subprocess.CalledProcessError as result:
-            # This is not fatal error.
-            eprint(_("Command [%s] failed with %d, stderr:")
-                   % (' '.join(result.cmd), result.returncode))
-            eprint(result.stderr.decode())
+        current = cmd.result.stdout.decode("utf-8").split()
+        return (current[0], current[1:])
 
     def writeConfiguration(self):
         configs = [
@@ -458,21 +597,34 @@ class AuthCompat:
             Configuration.Kerberos(self.options),
             Configuration.SSSD(self.options),
             Configuration.Winbind(self.options),
-            Configuration.PWQuality(self.options)
+            Configuration.PWQuality(self.options),
+            Configuration.MakeHomedir(self.options),
+            Configuration.NIS(self.options)
         ]
 
         for config in configs:
-            if config.mustGenerate():
-                config.write()
-                self.enableService(config.service)
-            elif config.shouldDisable():
-                config.cleanup()
-                self.disableService(config.service)
+            # Configuration decides if it needs to write something or not
+            config.write()
 
-        # Enable oddjobd for mkhomedir, but don't disable the service in
-        # case it's already running.
-        if self.options.getBool("mkhomedir"):
-            self.enableService("oddjobd")
+            # Enable or disable service if needed
+            nostart = self.options.getBool("nostart")
+            try:
+                enabled = config.isEnabled()
+
+                # Skip service management if it can not be decided
+                if enabled is None:
+                    continue
+
+                if enabled:
+                    config.enableService(nostart)
+                else:
+                    config.disableService(nostart)
+                    config.cleanup()
+            except subprocess.CalledProcessError as result:
+                # This is not fatal error.
+                eprint(_("Command [%s] failed with %d, stderr:")
+                       % (' '.join(result.cmd), result.returncode))
+                eprint(result.stderr.decode())
 
 
 def main():
@@ -494,6 +646,7 @@ def main():
     try:
         authcompat.runAuthselect()
         authcompat.writeConfiguration()
+        authcompat.sysconfig.write()
     except subprocess.CalledProcessError as result:
         eprint(_("Command [%s] failed with %d, stderr:")
                % (' '.join(result.cmd), result.returncode))

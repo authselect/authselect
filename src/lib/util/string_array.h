@@ -115,7 +115,42 @@ string_array_add_value(char **array, const char *value, bool unique);
  *
  * @return Array without the value.
  */
-char **
+void
 string_array_del_value(char **array, const char *value);
+
+/**
+ * Concatenate two array. Array @items values will be appended to arra @to.
+ *
+ * @param to    NULL-terminated destination array.
+ * @param items NULL-terminated array to be appended into @to.
+ * @param unique If true, value will not be added if it is already present.
+ *
+ * @return Array or NULL if reallocation fails.
+ */
+char **
+string_array_concat(char **to, char **items, bool unique);
+
+/**
+ * Alphabetically sort a NULL-terminated string array.
+ *
+ * @param array NULL-terminated string array.
+ */
+void
+string_array_sort(char **array);
+
+/**
+ * Find similar word inside a NULL-terminated array, based on Levenshtein
+ * distance algorithm.
+ *
+ * @param value        Value to search in @array.
+ * @param array        NULL-terminated string array.
+ * @param max_distance Maximum distance between two strings. If the real
+ *                     distance is greater then this value, those string
+ *                     are not considered as similar.
+ *
+ * @return Most similar word that was found or NULL if non was found.
+ */
+const char *
+string_array_find_similar(const char *value, char **array, int max_distance);
 
 #endif /* _STRING_ARRAY_H_ */

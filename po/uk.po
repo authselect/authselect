@@ -1,0 +1,1315 @@
+# Yuri Chornoivan <yurchor@ukr.net>, 2018.
+# Yuri Chornoivan <yurchor@ukr.net>, 2018. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: authselect 1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
+"POT-Creation-Date: 2018-09-27 14:04+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-08-09 01:27+0000\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: src/lib/authselect.c:47
+#, c-format
+msgid "Trying to activate profile [%s]"
+msgstr "Намагаємося задіяти профіль [%s]"
+
+#: src/lib/authselect.c:51 src/lib/profiles/read.c:312
+#, c-format
+msgid "Unable to find profile [%s] [%d]: %s"
+msgstr "Не вдалося знайти профіль [%s] [%d]: %s"
+
+#: src/lib/authselect.c:57
+msgid "Enforcing activation!"
+msgstr "Примусово застосовуємо активацію!"
+
+#: src/lib/authselect.c:65
+#, c-format
+msgid "Unable to check configuration [%d]: %s"
+msgstr "Не вдалося перевірити налаштування [%d]: %s"
+
+#: src/lib/authselect.c:70
+msgid "Unexpected changes to the configuration were detected."
+msgstr "Виявлено неочікувані зміни у налаштуваннях."
+
+#: src/lib/authselect.c:71
+msgid ""
+"Refusing to activate profile unless those changes are removed or overwrite "
+"is requested."
+msgstr ""
+"Профіль не буде задіяно, якщо ці зміни не буде вилучено або не буде "
+"надіслано запит щодо перезапису."
+
+#: src/lib/authselect.c:80
+msgid "File that needs to be overwritten was found"
+msgstr "Виявлено файл, який потребує перезапису"
+
+#: src/lib/authselect.c:81
+msgid ""
+"Refusing to activate profile unless this file is removed or overwrite is "
+"requested."
+msgstr ""
+"Профіль не буде задіяно, якщо цей файл не буде вилучено або не буде "
+"надіслано запит щодо перезапису."
+
+#: src/lib/authselect.c:92
+#, c-format
+msgid "Unable to activate profile [%s] [%d]: %s"
+msgstr "Не вдалося задіяти профіль [%s] [%d]: %s"
+
+#: src/lib/authselect.c:126
+msgid "Trying to backup system files"
+msgstr "Намагаємося створити резервну копію файлів системи"
+
+#: src/lib/authselect.c:129
+#, c-format
+msgid "Unable to backup system files [%d]: %s"
+msgstr "Не вдалося створити резервну копію файлів системи [%d]: %s"
+
+#: src/lib/util/file.c:42
+msgid "Internal error: stat cannot be NULL!"
+msgstr "Внутрішня помилка: статистичні дані не можуть дорівнювати NULL!"
+
+#: src/lib/util/file.c:50
+#, c-format
+msgid "[%s] is not a directory!"
+msgstr "[%s] не є каталогом!"
+
+#: src/lib/util/file.c:53
+#, c-format
+msgid "[%s] is not a regular file!"
+msgstr "[%s] не є звичайним файлом"
+
+#: src/lib/util/file.c:56
+#, c-format
+msgid "[%s] is not a symbolic link!"
+msgstr "[%s] не є символічним посиланням!"
+
+#: src/lib/util/file.c:59
+#, c-format
+msgid "[%s] has wrong type [%.7o], expected [%.7o]!"
+msgstr "[%s] належить до помилкового типу [%.7o], мав бути тип [%.7o]!"
+
+#: src/lib/util/file.c:86
+#, c-format
+msgid "[%s] has wrong mode [%.4o], expected [%.4o]!"
+msgstr "[%s] має помилковий режим доступу [%.4o], мав бути режим [%.4o]!"
+
+#: src/lib/util/file.c:92
+#, c-format
+msgid "[%s] has wrong owner [%u], expected [%u]!"
+msgstr "[%s] має помилкового власника [%u], мав бути [%u]!"
+
+#: src/lib/util/file.c:98
+#, c-format
+msgid "[%s] has wrong group [%u], expected [%u]!"
+msgstr "[%s] належить помилковій групі [%u], мала бути [%u]!"
+
+#: src/lib/util/file.c:120 src/lib/files/system.c:498
+#, c-format
+msgid "[%s] does not exist!"
+msgstr "[%s] не існує!"
+
+#: src/lib/util/file.c:125 src/lib/util/file.c:197
+#, c-format
+msgid "Unable to stat [%s] [%d]: %s"
+msgstr "Не вдалося обробити [%s] [%d]: %s"
+
+#: src/lib/util/file.c:163 src/lib/util/file.c:209
+#, c-format
+msgid "Unable to read link destination [%s] [%d]: %s"
+msgstr "Не вдалося прочитати ціль посилання [%s] [%d]: %s"
+
+#: src/lib/util/file.c:169
+#, c-format
+msgid "Link [%s] does not point to [%s]"
+msgstr "Посилання [%s] не вказує на [%s]"
+
+#: src/lib/util/file.c:215
+#, c-format
+msgid "Link [%s] points to [%s]"
+msgstr "Посилання [%s] вказує на [%s]"
+
+#: src/lib/util/file.c:265
+msgid "Internal error: filepath cannot be NULL!"
+msgstr "Внутрішня помилка: шлях до файла не може дорівнювати NULL!"
+
+#: src/lib/util/file.c:297
+#, c-format
+msgid "Unable to get parent directory of [%s] [%d]: %s"
+msgstr "Не вдалося отримати батьківський каталог [%s] [%d]: %s"
+
+#: src/lib/util/template.c:112 src/lib/util/template.c:152
+#: src/lib/util/template.c:229
+msgid "Invalid operator!"
+msgstr "Некоректний оператор!"
+
+#: src/lib/util/template.c:356 src/lib/files/system.c:112
+#: src/lib/files/system.c:170
+#, c-format
+msgid "Unable to compile regular expression: regex error %d"
+msgstr "Не вдалося зібрати формальний вираз: помилка у формальному виразі %d"
+
+#: src/lib/util/template.c:365
+#, c-format
+msgid "Unable to process match [%d]: %s"
+msgstr "Не вдалося обробити відповідник [%d]: %s"
+
+#: src/lib/util/template.c:385
+#, c-format
+msgid "Unable to process operator [%d]: %s"
+msgstr "Не вдалося обробити оператор [%d]: %s"
+
+#: src/lib/util/template.c:400 src/lib/files/system.c:130
+#: src/lib/files/system.c:195
+#, c-format
+msgid "Unable to search string: regex error %d"
+msgstr "Не вдалося виконати пошук рядка: помилка у формальному виразі %d"
+
+#: src/lib/util/template.c:431
+#, c-format
+msgid "Unable to generate template [%d]: %s"
+msgstr "Не вдалося створити шаблон [%d]: %s"
+
+#: src/lib/util/template.c:460
+msgid "Unable to get current time!"
+msgstr "Не вдалося визначити поточний час!"
+
+#: src/lib/util/template.c:474
+msgid "Unable to create message!"
+msgstr "Не вдалося створити повідомлення!"
+
+#: src/lib/util/textfile.c:56
+#, c-format
+msgid "File [%s] is bigger than %uKiB!"
+msgstr "Розмір файла [%s] перевищує %u КіБ!"
+
+#: src/lib/util/textfile.c:85
+#, c-format
+msgid "Unable to read file [%s] [%d]: %s"
+msgstr "Не вдалося прочитати файл [%s] [%d]: %s"
+
+#: src/lib/util/textfile.c:158
+#, c-format
+msgid "Unable to open file [%s] [%d]: %s"
+msgstr "Не вдалося відкрити файл [%s] [%d]: %s"
+
+#: src/lib/util/textfile.c:167
+#, c-format
+msgid "Unable to write data [%s] [%d]: %s"
+msgstr "Не вдалося записати дані [%s] [%d]: %s"
+
+#: src/lib/util/textfile.c:175 src/lib/util/textfile.c:266
+#, c-format
+msgid "Unable to chmod file [%s] [%d]: %s"
+msgstr "Не вдалося змінити режим доступу до файла [%s] [%d]: %s"
+
+#: src/lib/util/textfile.c:273
+#, c-format
+msgid "Unable to chown file [%s] [%d]: %s"
+msgstr "Не вдалося змінити власника файла [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:104
+msgid "Unable to generate nsswitch.conf"
+msgstr "Не вдалося створити nsswitch.conf"
+
+#: src/lib/authselect_profile.c:111
+#, c-format
+msgid "Unable to find nsswitch maps [%d]: %s"
+msgstr "Не вдалося знайти карти nsswitch [%d]: %s"
+
+#: src/lib/authselect_profile.c:289
+#, c-format
+msgid "Creating empty profile at [%s]"
+msgstr "Створюємо порожній профіль у [%s]"
+
+#: src/lib/authselect_profile.c:293 src/lib/authselect_profile.c:383
+#, c-format
+msgid "Unable to make path [%s] [%d]: %s"
+msgstr "Не вдалося створити шлях [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:300 src/lib/authselect_profile.c:342
+#, c-format
+msgid "Unable to write to [%s] [%d]: %s"
+msgstr "Не вдалося виконати запис до [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:322 src/lib/authselect_profile.c:391
+#: src/lib/files/system.c:673
+#, c-format
+msgid "There is no filename in [%s]"
+msgstr "Немає назви файла у [%s]"
+
+#: src/lib/authselect_profile.c:331
+#, c-format
+msgid "Unable to create symbolic link [%s] to [%s] [%d]: %s"
+msgstr "Не вдалося створити символічне посилання [%s] на [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:364
+#, c-format
+msgid "Creating new profile from \"%s\" at [%s]"
+msgstr "Створюємо новий профіль з «%s» у [%s]"
+
+#: src/lib/authselect_profile.c:368
+#, c-format
+msgid "Unable to read base profile [%s] [%d]: %s"
+msgstr "Не вдалося прочитати базовий профіль [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:376
+msgid "Unable to resolve symbolic links names"
+msgstr "Не вдалося визначити назви за символічними посиланнями"
+
+#: src/lib/authselect_profile.c:401 src/lib/authselect_profile.c:414
+#: src/lib/authselect_profile.c:428
+#, c-format
+msgid "Unable to create [%s] [%d]: %s"
+msgstr "Не вдалося створити [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:436
+#, c-format
+msgid "Unknown file name [%s]"
+msgstr "Невідома назва файла [%s]"
+
+#: src/lib/authselect_profile.c:463
+msgid "Name can not be empty"
+msgstr "Назва не може бути порожньою"
+
+#: src/lib/authselect_profile.c:475
+msgid "Default profile can not be created"
+msgstr "Не вдалося створити типовий профіль"
+
+#: src/lib/authselect_profile.c:478
+msgid "Value AUTHSELECT_PROFILE_ANY is invalid in this context"
+msgstr "У цьому контексті AUTHSELECT_PROFILE_ANY є некоректним"
+
+#: src/lib/authselect_profile.c:483
+msgid "Unable to create profile path: out of memory"
+msgstr "Не вдалося створити шлях профілю: не вистачає пам'яті"
+
+#: src/lib/authselect_profile.c:489
+#, c-format
+msgid "Profile \"%s\" already exist at [%s]"
+msgstr "Профіль «%s» вже існує у [%s]"
+
+#: src/lib/authselect_profile.c:493
+#, c-format
+msgid "Unable to access [%s] [%d]: %s"
+msgstr "Не вдалося отримати доступ до [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:499
+msgid "Unable to create file name: out of memory"
+msgstr "Не вдалося створити файл із вказаною назвою: не вистачає пам'яті"
+
+#: src/lib/authselect_profile.c:507
+#, c-format
+msgid "Unable to create empty profile [%d]: %s"
+msgstr "Не вдалося створити порожній профіль [%d]: %s"
+
+#: src/lib/authselect_profile.c:516
+#, c-format
+msgid "Unable to create profile [%d]: %s"
+msgstr "Не вдалося створити профіль [%d]: %s"
+
+#: src/lib/profiles/activate.c:44
+#, c-format
+msgid "%s update failed: %d"
+msgstr "Не вдалося оновити %s: %d"
+
+#: src/lib/profiles/activate.c:59
+msgid "Some directories are not accessible by authselect!"
+msgstr "Деякі каталоги недоступні для authselect!"
+
+#: src/lib/profiles/activate.c:65
+#, c-format
+msgid "Unable to write generated system files [%d]: %s"
+msgstr "Не вдалося записати створені файли системи [%d]: %s"
+
+#: src/lib/profiles/activate.c:72
+#, c-format
+msgid "Unable to write configuration [%d]: %s"
+msgstr "Не вдалося записати налаштування [%d]: %s"
+
+#: src/lib/profiles/activate.c:78
+#, c-format
+msgid "Unable to create symbolic links [%d]: %s"
+msgstr "Не вдалося створити символічні посилання [%d]: %s"
+
+#: src/lib/profiles/activate.c:84
+msgid "Dconf is not installed on your system"
+msgstr "У вашій системі не встановлено dconf"
+
+#: src/lib/profiles/activate.c:86
+#, c-format
+msgid "Unable to update dconf database [%d]: %s"
+msgstr "Не вдалося оновити базу даних dconf [%d]: %s"
+
+#: src/lib/profiles/list.c:58
+#, c-format
+msgid "Unable to stat directory [%d]: %s"
+msgstr "Не вдалося обробити каталог [%d]: %s"
+
+#: src/lib/profiles/list.c:137
+#, c-format
+msgid "Reading profile directory [%s]"
+msgstr "Читаємо каталог профілів [%s]"
+
+#: src/lib/profiles/list.c:142
+#, c-format
+msgid "Directory [%s] is missing!"
+msgstr "Не знайдено каталогу [%s]!"
+
+#: src/lib/profiles/list.c:145 src/lib/profiles/read.c:79
+#, c-format
+msgid "Unable to open directory [%s] [%d]: %s"
+msgstr "Не вдалося відкрити каталог [%s] [%d]: %s"
+
+#: src/lib/profiles/list.c:157
+#, c-format
+msgid "Not a directory: %s"
+msgstr "Не є каталогом: %s"
+
+#: src/lib/profiles/list.c:161
+#, c-format
+msgid "Found profile [%s]"
+msgstr "Знайдено профіль [%s]"
+
+#: src/lib/profiles/list.c:242
+#, c-format
+msgid "Unable to list profiles [%d]: %s"
+msgstr "Не вдалося створити список профілів [%d]: %s"
+
+#: src/lib/profiles/read.c:102
+#, c-format
+msgid "Looking up profile [%s]"
+msgstr "Шукаємо профіль [%s]"
+
+#: src/lib/profiles/read.c:106
+msgid "Locations array is NULL"
+msgstr "Масив місць є порожнім"
+
+#: src/lib/profiles/read.c:129
+#, c-format
+msgid "Profile [%s] is a custom profile"
+msgstr "Профіль [%s] є нетиповим профілем"
+
+#: src/lib/profiles/read.c:131
+#, c-format
+msgid "Profile [%s] is a vendor profile"
+msgstr "Профіль [%s] є профілем виробника"
+
+#: src/lib/profiles/read.c:133
+#, c-format
+msgid "Profile [%s] is a default profile"
+msgstr "Профіль [%s] є типовим профілем"
+
+#: src/lib/profiles/read.c:136
+#, c-format
+msgid "Profile [%s] found at [%s]"
+msgstr "Профіль [%s] знайдено у [%s]"
+
+#: src/lib/profiles/read.c:144
+#, c-format
+msgid "Profile [%s] was not found"
+msgstr "Профіль [%s] не знайдено"
+
+#: src/lib/profiles/read.c:158 src/lib/files/system.c:74
+#, c-format
+msgid "Reading file [%s/%s]"
+msgstr "Читаємо файл [%s/%s]"
+
+#: src/lib/profiles/read.c:164 src/lib/profiles/read.c:169
+#: src/lib/files/system.c:82
+#, c-format
+msgid "Unable to read file [%s/%s] [%d]: %s"
+msgstr "Не вдалося прочитати файл [%s/%s] [%d]: %s"
+
+#: src/lib/profiles/read.c:199 src/lib/profiles/read.c:218
+#, c-format
+msgid "Profile [%s] does not contain a name in [%s]!"
+msgstr "Профіль [%s] не містить назви у [%s]!"
+
+#: src/lib/files/config.c:150
+msgid "Checking if all required directories are writable."
+msgstr "Перевіряємо, чи усі обов'язкові каталоги придатні до запису."
+
+#: src/lib/files/config.c:155
+#, c-format
+msgid "Unable to get path to %s parent directory!"
+msgstr "Не вдалося отримати шлях до батьківського каталогу %s!"
+
+#: src/lib/files/config.c:162
+#, c-format
+msgid "Creating path [%s]"
+msgstr "Створюємо шлях [%s]"
+
+#: src/lib/files/config.c:166
+#, c-format
+msgid "Unable to create path [%s] [%d]: %s"
+msgstr "Не вдалося створити шлях [%s] [%d]: %s"
+
+#: src/lib/files/config.c:171
+#, c-format
+msgid "Directory [%s] does not exist, please create it!"
+msgstr "Каталогу [%s] не існує. Будь ласка, створіть його!"
+
+#: src/lib/files/config.c:174
+#, c-format
+msgid "Unable to access directory [%s] in [WX] mode!"
+msgstr "Не вдалося отримати доступ до каталогу [%s] у режимі [WX]!"
+
+#: src/lib/files/config.c:193
+#, c-format
+msgid "Unable to load profile [%s] [%d]: %s"
+msgstr "Не вдалося завантажити профіль [%s] [%d]: %s"
+
+#: src/lib/files/system.c:272 src/lib/files/system.c:501
+#, c-format
+msgid "Unable to read [%s] [%d]: %s"
+msgstr "Не вдалося прочитати [%s] [%d]: %s"
+
+#: src/lib/files/system.c:288
+#, c-format
+msgid "Unable to generate nsswitch.conf [%d]: %s"
+msgstr "Не вдалося створити nsswitch.conf [%d]: %s"
+
+#: src/lib/files/system.c:354
+#, c-format
+msgid "Unable to generate files [%d]: %s"
+msgstr "Не вдалося створити файли [%d]: %s"
+
+#: src/lib/files/system.c:368
+#, c-format
+msgid "Writing temporary file for [%s]"
+msgstr "Записуємо тимчасовий файл для [%s]"
+
+#: src/lib/files/system.c:372
+#, c-format
+msgid "Unable to write temporary file [%s] [%d]: %s"
+msgstr "Не вдалося записати тимчасовий файл [%s] [%d]: %s"
+
+#: src/lib/files/system.c:377
+#, c-format
+msgid "Temporary file is named [%s]"
+msgstr "Назвою тимчасового файла є [%s]"
+
+#: src/lib/files/system.c:388
+#, c-format
+msgid "Renaming [%s] to [%s]"
+msgstr "Перейменовуємо [%s] на [%s]"
+
+#: src/lib/files/system.c:393
+#, c-format
+msgid "Unable to rename [%s] to [%s] [%d]: %s"
+msgstr "Не вдалося перейменувати [%s] на [%s] [%d]: %s"
+
+#: src/lib/files/system.c:493
+#, c-format
+msgid "Validating file [%s]"
+msgstr "Перевіряємо файл [%s]"
+
+#: src/lib/files/system.c:504
+#, c-format
+msgid "Unable to validate file [%s] [%d]: %s"
+msgstr "Не вдалося перевірити файл [%s] [%d]: %s"
+
+#: src/lib/files/system.c:511
+#, c-format
+msgid "Comparing content against [%s]"
+msgstr "Порівнюємо вміст із [%s]"
+
+#: src/lib/files/system.c:515
+msgid "Comparing content against current profile"
+msgstr "Порівнюємо дані із поточним профілем"
+
+#: src/lib/files/system.c:521
+#, c-format
+msgid "[%s] has unexpected content!"
+msgstr "[%s] містить неочікувані дані!"
+
+#: src/lib/files/system.c:528
+#, c-format
+msgid "Unable to check file mode of [%s] [%d]: %s"
+msgstr "Не вдалося перевірити режим доступу до файла [%s] [%d]: %s"
+
+#: src/lib/files/system.c:550
+#, c-format
+msgid "File [%s] was modified outside authselect!"
+msgstr "Файл [%s] змінено поза межами authselect!"
+
+#: src/lib/files/system.c:569
+#, c-format
+msgid "File [%s] is still present"
+msgstr "Файл [%s] усе ще існує"
+
+#: src/lib/files/system.c:573
+#, c-format
+msgid "Error while trying to access file [%s] [%d]: %s"
+msgstr "Помилка під час спроби отримати доступ до файла [%s] [%d]: %s"
+
+#: src/lib/files/system.c:596
+#, c-format
+msgid "Unable to create backup directory [%s/%s] [%d]: %s"
+msgstr "Не вдалося створити каталог резервної копії [%s/%s] [%d]: %s"
+
+#: src/lib/files/system.c:622
+#, c-format
+msgid "Unable to create backup directory [%s] [%d]: %s"
+msgstr "Не вдалося створити каталог резервної копії [%s] [%d]: %s"
+
+#: src/lib/files/system.c:643
+#, c-format
+msgid "Creating temporary directory at [%s]"
+msgstr "Створюємо тимчасовий каталог у [%s]"
+
+#: src/lib/files/system.c:666
+#, c-format
+msgid "Unable to create backup directory [%d]: %s"
+msgstr "Не вдалося створити каталог резервної копії [%d]: %s"
+
+#: src/lib/files/system.c:678
+#, c-format
+msgid "Copying [%s] to [%s/%s]"
+msgstr "Копіюємо [%s] до [%s/%s]"
+
+#: src/lib/files/system.c:682
+#, c-format
+msgid "File [%s] does not exist"
+msgstr "Файла [%s] не існує"
+
+#: src/lib/files/system.c:684
+#, c-format
+msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
+msgstr "Не вдалося скопіювати [%s] до [%s/%s] [%d]: %s"
+
+#: src/cli/cli_tool.c:71
+#, c-format
+msgid "Common options:\n"
+msgstr "Загальні параметри:\n"
+
+#: src/cli/cli_tool.c:73
+msgid "Print error messages"
+msgstr "Виводити повідомлення про помилки"
+
+#: src/cli/cli_tool.c:75
+msgid "Print trace messages"
+msgstr "Виводити повідомлення трасування"
+
+#: src/cli/cli_tool.c:77
+msgid "Print warning messages"
+msgstr "Виводити попередження"
+
+#: src/cli/cli_tool.c:79
+#, c-format
+msgid "Help options:\n"
+msgstr "Параметри довідки:\n"
+
+#: src/cli/cli_tool.c:81
+msgid "Show this for a command"
+msgstr "Показати цю довідку для команди"
+
+#: src/cli/cli_tool.c:83
+msgid "Show brief usage message for a command"
+msgstr "Показати коротке повідомлення щодо користування для команди"
+
+#: src/cli/cli_tool.c:168
+#, c-format
+msgid "Usage:\n"
+"%s COMMAND COMMAND-ARGS\n"
+"\n"
+msgstr "Користування:\n"
+"%s КОМАНДА АРГУМЕНТИ_КОМАНДИ\n"
+"\n"
+
+#: src/cli/cli_tool.c:169
+#, c-format
+msgid "Available commands:\n"
+msgstr "Можливі команди:\n"
+
+#: src/cli/cli_tool.c:187
+#, c-format
+msgid "\n"
+msgstr "\n"
+
+#: src/cli/cli_tool.c:199
+msgid "Bug: commands can't be NULL!\n"
+msgstr "Вада: команди не можуть дорівнювати NULL!\n"
+
+#: src/cli/cli_tool.c:255
+msgid "Command options:"
+msgstr "Параметри команди:"
+
+#: src/cli/cli_tool.c:257
+msgid "Common options:"
+msgstr "Загальні параметри:"
+
+#: src/cli/cli_tool.c:271 src/cli/cli_tool.c:274
+msgid "[OPTIONS...]"
+msgstr "[ПАРАМЕТРИ...]"
+
+#: src/cli/cli_tool.c:277
+msgid "Out of memory!"
+msgstr "Не вистачає пам'яті!"
+
+#: src/cli/cli_tool.c:298
+#, c-format
+msgid "Invalid option %s: %s\n"
+"\n"
+msgstr "Некоректний параметр %s: %s\n"
+"\n"
+
+#: src/cli/cli_tool.c:310
+#, c-format
+msgid "Missing option: %s\n"
+"\n"
+msgstr "Пропущено параметр: %s\n"
+"\n"
+
+#: src/cli/cli_tool.c:320
+#, c-format
+msgid "Only one free argument is expected!\n"
+"\n"
+msgstr "Мало бути вказано лише один вільний аргумент!\n"
+"\n"
+
+#: src/cli/cli_tool.c:330
+#, c-format
+msgid "Unexpected parameter: %s\n"
+"\n"
+msgstr "Неочікуваний параметр: %s\n"
+"\n"
+
+#: src/cli/cli_tool.c:342
+#, c-format
+msgid "At least one option is required!\n"
+"\n"
+msgstr "Слід вказати принаймні один параметр!\n"
+"\n"
+
+#: src/cli/main.c:70 src/cli/main.c:361
+msgid "Profile identifier."
+msgstr "Ідентифікатор профілю."
+
+#: src/cli/main.c:73 src/cli/main.c:237 src/cli/main.c:286 src/cli/main.c:321
+#: src/cli/main.c:364 src/cli/main.c:514 src/cli/main.c:536 src/cli/main.c:576
+msgid "Unable to parse command arguments"
+msgstr "Не вдалося обробити аргументи команди"
+
+#: src/cli/main.c:114
+msgid "Enforce changes"
+msgstr "Примусово змінити"
+
+#: src/cli/main.c:115
+msgid "Backup system files before activating profile"
+msgstr "Створити резервну копію системних файлів до задіяння профілю"
+
+#: src/cli/main.c:115
+msgid "NAME"
+msgstr "НАЗВА"
+
+#: src/cli/main.c:116
+msgid "Do not backup system files when --force is set"
+msgstr ""
+"Не створювати резервних копій системних файлів, якщо встановлено --force"
+
+#: src/cli/main.c:117
+msgid "Do not print profile requirements"
+msgstr "Не виводити вимог щодо профілю"
+
+#: src/cli/main.c:128 src/cli/main.c:336 src/cli/main.c:370 src/cli/main.c:397
+#, c-format
+msgid "Unable to get profile information [%d]: %s"
+msgstr "Не вдалося отримати дані щодо профілю [%d]: %s"
+
+#: src/cli/main.c:136 src/cli/main.c:404
+msgid "Unable to read profile requirements!"
+msgstr "Не вдалося прочитати вимоги щодо профілю!"
+
+#: src/cli/main.c:143
+msgid "Unable to obtain nsswitch maps!"
+msgstr "Не вдалося отримати карти nsswitch!"
+
+#: src/cli/main.c:151
+msgid "Unable to backup system files!\n"
+msgstr "Не вдалося створити резервну копію системних файлів!\n"
+
+#: src/cli/main.c:161
+msgid ""
+"\n"
+"Some unexpected changes to the configuration were detected.\n"
+"Use --force parameter if you want to overwrite these changes.\n"
+msgstr ""
+"\n"
+"Виявлено деякі неочікувані зміни у налаштуваннях.\n"
+"Скористайтеся параметром --force, якщо хочете перезаписати ці зміни.\n"
+
+#: src/cli/main.c:166
+#, c-format
+msgid "Unable to activate profile [%d]: %s\n"
+msgstr "Не вдалося задіяти профіль [%d]: %s\n"
+
+#: src/cli/main.c:204
+msgid "Changes were successfully applied.\n"
+msgstr "Зміни успішно застосовано.\n"
+
+#: src/cli/main.c:207 src/cli/main.c:243
+msgid "No existing configuration detected.\n"
+msgstr "Не виявлено наявних налаштувань.\n"
+
+#: src/cli/main.c:210
+msgid ""
+"Some unexpected changes to the configuration were detected. Use 'select' "
+"command instead.\n"
+msgstr ""
+"Виявлено певні неочікувані зміни у налаштуваннях. Скористайтеся замість цієї "
+"команди командою «select».\n"
+
+#: src/cli/main.c:214
+#, c-format
+msgid "Unable to apply changes [%d]: %s\n"
+msgstr "Не вдалося застосувати зміни [%d]: %s\n"
+
+#: src/cli/main.c:231
+msgid "Print command parameters instead of formatted output"
+msgstr "Вивести параметри команди замість форматованого виведення даних"
+
+#: src/cli/main.c:246
+#, c-format
+msgid "Unable to get current configuration [%d]: %s"
+msgstr "Не вдалося отримати поточні налаштування [%d]: %s"
+
+#: src/cli/main.c:260
+#, c-format
+msgid "Profile ID: %s\n"
+msgstr "Ід. профілю: %s\n"
+
+#: src/cli/main.c:261
+msgid "Enabled features:"
+msgstr "Увімкнені можливості:"
+
+#: src/cli/main.c:264
+msgid " None\n"
+msgstr " Немає\n"
+
+#: src/cli/main.c:292
+#, c-format
+msgid "Unable to test current configuration [%d]: %s"
+msgstr "Не вдалося перевірити поточні налаштування [%d]: %s"
+
+#: src/cli/main.c:299
+msgid ""
+"Current configuration is not valid. It was probably modified outside "
+"authselect."
+msgstr ""
+"Поточні налаштування є некоректними. Ймовірно, їх було змінено поза межами "
+"authselect."
+
+#: src/cli/main.c:304
+msgid "Current configuration is valid."
+msgstr "Поточні налаштування є коректними."
+
+#: src/cli/main.c:327
+msgid "Unable to get profile list!"
+msgstr "Не вдалося отримати список профілів!"
+
+#: src/cli/main.c:442
+msgid "Print content of all files"
+msgstr "Вивести вміст усіх файлів"
+
+#: src/cli/main.c:443
+msgid "Print nsswitch.conf content"
+msgstr "Вивести вміст nsswitch.conf"
+
+#: src/cli/main.c:444
+msgid "Print system-auth content"
+msgstr "Вивести вміст system-auth"
+
+#: src/cli/main.c:445
+msgid "Print password-auth content"
+msgstr "Вивести вміст password-auth"
+
+#: src/cli/main.c:446
+msgid "Print smartcard-auth content"
+msgstr "Вивести вміст smartcard-auth"
+
+#: src/cli/main.c:447
+msgid "Print fingerprint-auth content"
+msgstr "Вивести вміст fingerprint-auth"
+
+#: src/cli/main.c:448
+msgid "Print postlogin content"
+msgstr "Вивести вміст postlogin"
+
+#: src/cli/main.c:449
+msgid "Print dconf database content"
+msgstr "Вивести вміст бази даних dconf"
+
+#: src/cli/main.c:450
+msgid "Print dconf lock content"
+msgstr "Вивести дані блокувань dconf"
+
+#: src/cli/main.c:477
+#, c-format
+msgid "Unable to get generated content [%d]: %s"
+msgstr "Не вдалося отримати створені дані [%d]: %s"
+
+#: src/cli/main.c:496
+#, c-format
+msgid "File %s: Empty\n"
+"\n"
+msgstr "Файл %s: порожньо\n"
+"\n"
+
+#: src/cli/main.c:498
+#, c-format
+msgid "File %s:\n"
+"%s\n"
+"\n"
+msgstr "Файл %s:\n"
+"%s\n"
+"\n"
+
+#: src/cli/main.c:511
+msgid "Feature to enable."
+msgstr "Можливість, яку слід увімкнути."
+
+#: src/cli/main.c:520
+#, c-format
+msgid "Unable to enable feature [%d]: %s\n"
+msgstr "Не вдалося увімкнути можливість [%d]: %s\n"
+
+#: src/cli/main.c:533
+msgid "Feature to disable."
+msgstr "Можливість, яку слід вимкнути."
+
+#: src/cli/main.c:542
+#, c-format
+msgid "Unable to disable feature [%d]: %s\n"
+msgstr "Не вдалося вимкнути можливість [%d]: %s\n"
+
+#: src/cli/main.c:561
+msgid "Create new profile as a vendor profile instead of a custom profile"
+msgstr ""
+"Створити новий профіль як профіль постачальника, а не нетиповий профіль"
+
+#: src/cli/main.c:562
+msgid "ID of a profile that should be used as a base for the new profile"
+msgstr ""
+"Ідентифікатор профілю, яким слід скористатися як основою для нового профілю"
+
+#: src/cli/main.c:563
+msgid ""
+"Base new profile on a default profile even if vendor profile with the same "
+"name exists"
+msgstr ""
+"Заснувати новий профіль на типовому профілі, навіть якщо вже існує профіль "
+"постачальника із вказаною назвою"
+
+#: src/cli/main.c:564
+msgid "Symlink meta files from the base profile instead of copying them"
+msgstr ""
+"Створити символічні посилання на метафайли базового профілю, а не копіювати "
+"їх"
+
+#: src/cli/main.c:565
+msgid "Symlink nsswitch files from the base profile instead of copying them"
+msgstr ""
+"Створити символічні посилання на файли nsswitch базового профілю, а не "
+"копіювати їх"
+
+#: src/cli/main.c:566
+msgid "Symlink pam files from the base profile instead of copying them"
+msgstr ""
+"Створити символічні посилання на файли pam базового профілю, а не копіювати "
+"їх"
+
+#: src/cli/main.c:567
+msgid "Symlink dconf files from the base profile instead of copying them"
+msgstr ""
+"Створити символічні посилання на файли dconf базового профілю, а не "
+"копіювати їх"
+
+#: src/cli/main.c:568
+msgid "Symlink specific file (can be set multiple times)"
+msgstr ""
+"Створити символічне посилання на вказаний файл (можна використовувати "
+"декілька разів)"
+
+#: src/cli/main.c:573
+msgid "New profile name."
+msgstr "Назва нового профілю."
+
+#: src/cli/main.c:583
+#, c-format
+msgid "Unable to create new profile [%d]: %s\n"
+msgstr "Не вдалося створити новий профіль [%d]: %s\n"
+
+#: src/cli/main.c:587
+#, c-format
+msgid "New profile was created at %s\n"
+msgstr "Новий профіль створено у %s\n"
+
+#: src/cli/main.c:644
+msgid "Authselect can only be run as root!\n"
+msgstr "Authselect можна запускати лише від імені користувача root!\n"
+
+#: src/compat/authcompat_Options.py:82
+msgid "NIS for user information by default"
+msgstr "Типовий NIS для даних щодо користувача"
+
+#: src/compat/authcompat_Options.py:83
+msgid "<domain>"
+msgstr "<домен>"
+
+#: src/compat/authcompat_Options.py:83
+msgid "default NIS domain"
+msgstr "типовий домен NIS"
+
+#: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
+#: src/compat/authcompat_Options.py:97 src/compat/authcompat_Options.py:98
+msgid "<server>"
+msgstr "<сервер>"
+
+#: src/compat/authcompat_Options.py:84
+msgid "default NIS server"
+msgstr "типовий сервер NIS"
+
+#: src/compat/authcompat_Options.py:85
+msgid "LDAP for user information by default"
+msgstr "типовий LDAP для даних користувача"
+
+#: src/compat/authcompat_Options.py:86
+msgid "LDAP for authentication by default"
+msgstr "типовий LDAP для розпізнавання"
+
+#: src/compat/authcompat_Options.py:87
+msgid "default LDAP server hostname or URI"
+msgstr "назва вузла або адреса типового сервера LDAP"
+
+#: src/compat/authcompat_Options.py:88
+msgid "<dn>"
+msgstr "<dn>"
+
+#: src/compat/authcompat_Options.py:88
+msgid "default LDAP base DN"
+msgstr "типовий базовий DN LDAP"
+
+#: src/compat/authcompat_Options.py:89
+msgid "use of TLS with LDAP (RFC-2830)"
+msgstr "використання TLS з LDAP (RFC-2830)"
+
+#: src/compat/authcompat_Options.py:90
+msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
+msgstr "використання TLS для пошуку профілів за допомогою LDAP (RFC-2830)"
+
+#: src/compat/authcompat_Options.py:91
+msgid "use of RFC-2307bis schema for LDAP user information lookups"
+msgstr "використання схеми RFC-2307bis для пошуків даних користувача у LDAP"
+
+#: src/compat/authcompat_Options.py:92
+msgid "authentication with smart card by default"
+msgstr "типове розпізнавання за смарт-карткою"
+
+#: src/compat/authcompat_Options.py:93
+msgid "<0=Lock|1=Ignore>"
+msgstr "<0=Заблокувати|1=Ігнорувати>"
+
+#: src/compat/authcompat_Options.py:93
+msgid "action to be taken on smart card removal"
+msgstr "дія, яку слід виконати у відповідь на вилучення смарт-картки"
+
+#: src/compat/authcompat_Options.py:94
+msgid "authentication with fingerprint readers by default"
+msgstr "типове розпізнавання за пристроями для зчитування відбитків"
+
+#: src/compat/authcompat_Options.py:95
+msgid "automatic per-user ecryptfs"
+msgstr "автоматична ecryptfs для кожного з користувачів"
+
+#: src/compat/authcompat_Options.py:96
+msgid "Kerberos authentication by default"
+msgstr "Типове розпізнавання за допомогою Kerberos"
+
+#: src/compat/authcompat_Options.py:97
+msgid "default Kerberos KDC"
+msgstr "типове KDC Kerberos"
+
+#: src/compat/authcompat_Options.py:98
+msgid "default Kerberos admin server"
+msgstr "типовий сервер адміністрування Kerberos"
+
+#: src/compat/authcompat_Options.py:99 src/compat/authcompat_Options.py:152
+msgid "<realm>"
+msgstr "<область>"
+
+#: src/compat/authcompat_Options.py:99
+msgid "default Kerberos realm"
+msgstr "типова область Kerberos"
+
+#: src/compat/authcompat_Options.py:100
+msgid "use of DNS to find Kerberos KDCs"
+msgstr "використовувати DNS для пошуку KDC Kerberos"
+
+#: src/compat/authcompat_Options.py:101
+msgid "use of DNS to find Kerberos realms"
+msgstr "використовувати DNS для пошуку областей Kerberos"
+
+#: src/compat/authcompat_Options.py:102
+msgid "winbind for user information by default"
+msgstr "типовий winbind для даних щодо користувачів"
+
+#: src/compat/authcompat_Options.py:103
+msgid "winbind for authentication by default"
+msgstr "типовий winbind для розпізнавання"
+
+#: src/compat/authcompat_Options.py:104
+msgid "<Administrator>"
+msgstr "<Адміністратор>"
+
+#: src/compat/authcompat_Options.py:104
+msgid "join the winbind domain or ads realm now as this administrator"
+msgstr ""
+"долучитися до домену winbind або області AD тепер як цей адміністратор"
+
+#: src/compat/authcompat_Options.py:105
+msgid "Kerberos 5 for authenticate with winbind"
+msgstr "Kerberos 5 для розпізнавання за допомогою winbind"
+
+#: src/compat/authcompat_Options.py:106
+msgid "<workgroup>"
+msgstr "<робоча_група>"
+
+#: src/compat/authcompat_Options.py:106
+msgid "workgroup authentication servers are in"
+msgstr "сервери розпізнавання у робочій групі перебувають у"
+
+#: src/compat/authcompat_Options.py:107
+msgid ""
+"SSSD for user information by default with manually managed configuration"
+msgstr ""
+"типовий SSSD для даних щодо користувачів із керованими вручну налаштуваннями"
+
+#: src/compat/authcompat_Options.py:108
+msgid "SSSD for authentication by default with manually managed configuration"
+msgstr "типовий SSSD для розпізнавання із керованими вручну налаштуваннями"
+
+#: src/compat/authcompat_Options.py:109
+msgid "caching of user credentials in SSSD by default"
+msgstr "типове кешування реєстраційних даних користувачів у SSSD"
+
+#: src/compat/authcompat_Options.py:110
+msgid "check of access.conf during account authorization"
+msgstr "перевіряти access.conf під час уповноваження облікових записів"
+
+#: src/compat/authcompat_Options.py:111
+msgid "creation of home directories for users on their first login"
+msgstr "створення домашніх каталогів користувачі при першому вході до системи"
+
+#: src/compat/authcompat_Options.py:112
+msgid ""
+"account locking in case of too many consecutive authentication failures"
+msgstr ""
+"блокування облікового запису, якщо користувач здійснить занадто багато "
+"послідовних невдалих спроб пройти розпізнавання"
+
+#: src/compat/authcompat_Options.py:113 src/compat/authcompat_Options.py:114
+#: src/compat/authcompat_Options.py:115 src/compat/authcompat_Options.py:116
+msgid "<number>"
+msgstr "<число>"
+
+#: src/compat/authcompat_Options.py:113
+msgid "minimum length of a password"
+msgstr "мінімальна довжина пароля"
+
+#: src/compat/authcompat_Options.py:114
+msgid "minimum number of character classes in a password"
+msgstr "мінімальна кількість класів символів у паролі"
+
+#: src/compat/authcompat_Options.py:115
+msgid "maximum number of same consecutive characters in a password"
+msgstr "максимальна кількість однакових послідовних символів у паролі"
+
+#: src/compat/authcompat_Options.py:116
+msgid "maximum number of consecutive characters of same class in a password"
+msgstr "максимальна кількість послідовних символів одного класу у паролі"
+
+#: src/compat/authcompat_Options.py:117
+msgid "require at least one lowercase character in a password"
+msgstr "у паролі має бути принаймні одна мала літера"
+
+#: src/compat/authcompat_Options.py:118
+msgid "require at least one uppercase character in a password"
+msgstr "у паролі має бути принаймні одна велика літера"
+
+#: src/compat/authcompat_Options.py:119
+msgid "require at least one digit in a password"
+msgstr "у паролі має бути принаймні одна цифра"
+
+#: src/compat/authcompat_Options.py:120
+msgid "require at least one other character in a password"
+msgstr "у паролі має бути принаймні один інший символ"
+
+#: src/compat/authcompat_Options.py:123
+msgid "do not start/stop services"
+msgstr "не запускати і не зупиняти служби"
+
+#: src/compat/authcompat_Options.py:124
+msgid "update all configuration files"
+msgstr "оновити усі файли налаштувань"
+
+#: src/compat/authcompat_Options.py:125 src/compat/authcompat_Options.py:126
+msgid "the same as --updateall"
+msgstr "те саме, що і --updateall"
+
+#: src/compat/authcompat_Options.py:135 src/compat/authcompat_Options.py:136
+msgid "<name>"
+msgstr "<назва>"
+
+#: src/compat/authcompat_Options.py:147
+msgid "<descrypt|bigcrypt|md5|sha256|sha512>"
+msgstr "<descrypt|bigcrypt|md5|sha256|sha512>"
+
+#: src/compat/authcompat_Options.py:148
+msgid "<URL>"
+msgstr "<адреса>"
+
+#: src/compat/authcompat_Options.py:150
+msgid "<module>"
+msgstr "<модуль>"
+
+#: src/compat/authcompat_Options.py:151
+msgid "<user|server|domain|ads>"
+msgstr "<користувач|сервер|домен|ad>"
+
+#: src/compat/authcompat_Options.py:153
+msgid "<servers>"
+msgstr "<сервери>"
+
+#: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
+#: src/compat/authcompat_Options.py:156
+msgid "<lowest-highest>"
+msgstr "<найнижче-найвище>"
+
+#: src/compat/authcompat_Options.py:157
+msgid "<\\>"
+msgstr "<\\>"
+
+#: src/compat/authcompat_Options.py:158
+msgid "</home/%D/%U>"
+msgstr "</home/%D/%U>"
+
+#: src/compat/authcompat_Options.py:159
+msgid "</bin/false>"
+msgstr "</bin/false>"
+
+#: src/compat/authcompat_Options.py:166
+msgid "<options>"
+msgstr "<параметри>"
+
+#: src/compat/authcompat_Options.py:210
+msgid "These options have a compatibility layer"
+msgstr "У цих параметрів є шар сумісності"
+
+#: src/compat/authcompat_Options.py:211
+msgid "These options are no longer supported and have no effect"
+msgstr "Підтримку цих параметрів припинено, вони не діятимуть"
+
+#: src/compat/authcompat_Options.py:313
+msgid "enable"
+msgstr "увімкнути"
+
+#: src/compat/authcompat_Options.py:314
+msgid "disable"
+msgstr "вимкнути"
+
+#: src/compat/authcompat.py.in.in:49
+#, python-format
+msgid "Executing: %s"
+msgstr "Виконуємо: %s"
+
+#: src/compat/authcompat.py.in.in:68
+#, python-format
+msgid "Service %s was not found. Please install the service."
+msgstr "Не знайдено служби %s. Будь ласка, встановіть цю службу."
+
+#: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:618
+#: src/compat/authcompat.py.in.in:643
+#, python-format
+msgid "Command [%s] failed with %d, stderr:"
+msgstr "Помилка команди [%s], %d, stderr:"
+
+#: src/compat/authcompat.py.in.in:183
+#, python-format
+msgid "Removing file: %s"
+msgstr "Вилучаємо файл: %s"
+
+#: src/compat/authcompat.py.in.in:331
+#, python-format
+msgid "%s was not found. Please, install realmd."
+msgstr "%s не знайдено. Будь ласка, встановіть realmd."
+
+#: src/compat/authcompat.py.in.in:466
+msgid "Running authconfig compatibility tool."
+msgstr "Виконуємо засіб забезпечення сумісності authconfig."
+
+#: src/compat/authcompat.py.in.in:467
+msgid ""
+"The purpose of this tool is to enable authentication against chosen services "
+"with authselect and minimum configuration. It does not provide all "
+"capabilities of authconfig.\n"
+msgstr ""
+"Призначенням цієї програми є уможливлення розпізнавання у вибраних службах "
+"за допомогою authselect із мінімальними налаштуваннями. Ця програма не надає "
+"доступу до усіх можливостей authconfig.\n"
+
+#: src/compat/authcompat.py.in.in:470
+msgid ""
+"IMPORTANT: authconfig is replaced by authselect, please update your scripts."
+msgstr ""
+"ВАЖЛИВО: authconfig замінено на authselect. Будь ласка, оновіть ваші скрипти."
+""
+
+#: src/compat/authcompat.py.in.in:472
+msgid ""
+"See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
+"AuthselectAsDefault"
+msgstr ""
+"Див. сторінку опису змін у Fedora 28: https://fedoraproject.org/wiki/Changes/"
+"AuthselectAsDefault"
+
+#: src/compat/authcompat.py.in.in:473
+msgid ""
+"See man authselect-migration(7) to help you with migration to authselect"
+msgstr ""
+"Див. man authselect-migration(7), щоб дізнатися більше про перехід на "
+"authselect"
+
+#: src/compat/authcompat.py.in.in:477
+msgid "Warning: These options are not supported anymore and have no effect:"
+msgstr "Попередження: підтримку цих параметрів припинено, вони не діятимуть:"
+
+#: src/compat/authcompat.py.in.in:497
+msgid "authconfig can only be run as root"
+msgstr "authconfig можна запускати лише від імені користувача root"
+
+#: src/compat/authcompat.py.in.in:502
+#, python-format
+msgid ""
+"Error: option --%s is no longer supported and we cannot continue if it is "
+"set."
+msgstr ""
+"Помилка: підтримку параметра --%s припинено, роботу не може бути продовжено, "
+"якщо буде встановлено цей параметр."
+
+#: src/compat/authcompat.py.in.in:507
+msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
+msgstr "Помилка: слід вказати одразу --enablewinbind і --enablewinbindauth."
+
+#: src/compat/authcompat.py.in.in:517
+msgid "Error: Please, provide --updateall option."
+msgstr "Помилка: будь ласка, вкажіть параметр --updateall."

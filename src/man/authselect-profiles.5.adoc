@@ -15,14 +15,14 @@ PROFILE DIRECTORIES
 -------------------
 Profiles can be found in one of three directories.
 
-*@AUTHSELECT_PROFILE_DIR@*::
+*{AUTHSELECT_PROFILE_DIR}*::
     Read-only directory containing profiles shipped together with authselect.
 
-*@AUTHSELECT_VENDOR_DIR@*::
+*{AUTHSELECT_VENDOR_DIR}*::
     Read-only directory for vendor-specific profiles that can override the
     ones in _default_ directory.
 
-*@AUTHSELECT_CUSTOM_DIR@*::
+*{AUTHSELECT_CUSTOM_DIR}*::
     Place for administrator-defined profiles.
 
 PROFILE FILES
@@ -53,7 +53,9 @@ done to the system.
      the modules in the system-auth configuration file._
 
 *nsswitch.conf*::
-    Name Service Switch configuration file.
+    Name Service Switch configuration file. Only maps relevant to the profile
+    must be set. Maps that are not specified by the profile are included from
+    {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf.
 
 *dconf-db*::
     Changes to dconf database. The main uses case of this file is to set

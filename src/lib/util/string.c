@@ -329,3 +329,45 @@ string_replace_shake(char *str, size_t original_length)
         str[pos] = '\0';
     }
 }
+
+static int
+min3(unsigned int a, unsigned int b, unsigned int c)
+{
+    if (a < b && a < c) {
+        return a;
+    } else if (b < a && b < c) {
+        return b;
+    }
+
+    return c;
+}
+
+int
+string_levenshtein(const char *a, const char *b)
+{
+    unsigned int len_a = strlen(a);
+    unsigned int len_b = strlen(b);
+    unsigned int x;
+    unsigned int y;
+    unsigned int last_diag;
+    unsigned int old_diag;
+    unsigned int column[len_a + 1];
+
+    memset(column, 0, (len_a + 1) * sizeof(unsigned int));
+
+    for (y = 1; y <= len_a; y++) {
+        column[y] = y;
+    }
+
+    for (x = 1; x <= len_b; x++) {
+        column[0] = x;
+        for (y = 1, last_diag = x - 1; y <= len_a; y++) {
+            old_diag = column[y];
+            column[y] = min3(column[y] + 1, column[y - 1] + 1,
+                             last_diag + (a[y - 1] == b[x - 1] ? 0 : 1));
+            last_diag = old_diag;
+        }
+    }
+
+    return column[len_a];
+}

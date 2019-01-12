@@ -32,11 +32,143 @@ void test_string_array_create(void **state)
     string_array_free(array);
 }
 
+void test_string_array_del_value__single(void **state)
+{
+    char **array;
+    const char *values[] = {"1", "2", "3", "4", "5", NULL};
+    const char *expected[] = {"1", "3", "4", "5", NULL};
+    int i;
+
+    array = string_array_create(10);
+    assert_non_null(array);
+
+    /* Fill array. */
+    for (i = 0; values[i] != NULL; i++) {
+        array = string_array_add_value(array, values[i], false);
+        assert_non_null(array);
+        assert_non_null(array[i]);
+    }
+    assert_null(array[i]);
+
+    /* Delete value. */
+    string_array_del_value(array, "2");
+
+    /* Test values. */
+    for (i = 0; expected[i] != NULL; i++) {
+        assert_non_null(array[i]);
+        assert_string_equal(array[i], expected[i]);
+    }
+    assert_null(array[i]);
+
+    string_array_free(array);
+}
+
+void test_string_array_del_value__single_repeated(void **state)
+{
+    char **array;
+    const char *values[] = {"1", "2", "2", "3", "2", "4", "2", "5", NULL};
+    const char *expected[] = {"1", "3", "4", "5", NULL};
+    int i;
+
+    array = string_array_create(10);
+    assert_non_null(array);
+
+    /* Fill array. */
+    for (i = 0; values[i] != NULL; i++) {
+        array = string_array_add_value(array, values[i], false);
+        assert_non_null(array);
+        assert_non_null(array[i]);
+    }
+    assert_null(array[i]);
+
+    /* Delete value. */
+    string_array_del_value(array, "2");
+
+    /* Test values. */
+    for (i = 0; expected[i] != NULL; i++) {
+        assert_non_null(array[i]);
+        assert_string_equal(array[i], expected[i]);
+    }
+    assert_null(array[i]);
+
+    string_array_free(array);
+}
+
+void test_string_array_del_value__multiple(void **state)
+{
+    char **array;
+    const char *values[] = {"1", "2", "3", "4", "5", NULL};
+    const char *expected[] = {"1", "4", NULL};
+    int i;
+
+    array = string_array_create(10);
+    assert_non_null(array);
+
+    /* Fill array. */
+    for (i = 0; values[i] != NULL; i++) {
+        array = string_array_add_value(array, values[i], false);
+        assert_non_null(array);
+        assert_non_null(array[i]);
+    }
+    assert_null(array[i]);
+
+    /* Delete value. */
+    string_array_del_value(array, "2");
+    string_array_del_value(array, "3");
+    string_array_del_value(array, "5");
+
+    /* Test values. */
+    for (i = 0; expected[i] != NULL; i++) {
+        assert_non_null(array[i]);
+        assert_string_equal(array[i], expected[i]);
+    }
+    assert_null(array[i]);
+
+    string_array_free(array);
+}
+
+void test_string_array_del_value__multiple_repeated(void **state)
+{
+    char **array;
+    const char *values[] = {"1", "2", "2", "3", "3", "2", "4", "2", "5", "5", NULL};
+    const char *expected[] = {"1", "4", NULL};
+    int i;
+
+    array = string_array_create(10);
+    assert_non_null(array);
+
+    /* Fill array. */
+    for (i = 0; values[i] != NULL; i++) {
+        array = string_array_add_value(array, values[i], false);
+        assert_non_null(array);
+        assert_non_null(array[i]);
+    }
+    assert_null(array[i]);
+
+    /* Delete value. */
+    string_array_del_value(array, "2");
+    string_array_del_value(array, "3");
+    string_array_del_value(array, "5");
+
+    /* Test values. */
+    for (i = 0; expected[i] != NULL; i++) {
+        assert_non_null(array[i]);
+        assert_string_equal(array[i], expected[i]);
+    }
+    assert_null(array[i]);
+
+    string_array_free(array);
+}
+
 int main(int argc, const char *argv[])
 {
 
     const struct CMUnitTest tests[] = {
-        cmocka_unit_test(test_string_array_create)
+        cmocka_unit_test(test_string_array_create),
+        cmocka_unit_test(test_string_array_del_value__single),
+        cmocka_unit_test(test_string_array_del_value__single_repeated),
+        cmocka_unit_test(test_string_array_del_value__multiple),
+        cmocka_unit_test(test_string_array_del_value__multiple_repeated)
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);

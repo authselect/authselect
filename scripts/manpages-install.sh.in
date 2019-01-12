@@ -1,0 +1,61 @@
+#!/bin/bash
+#
+#    Authors:
+#        Pavel Březina <pbrezina@redhat.com>
+#
+#    Copyright (C) 2018 Red Hat
+#
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+#
+# Install manual pages translations.
+#
+# Usage: manpages-install.sh prefix DESTDIR
+#
+
+prefix=$1
+DESTDIR=$2
+shift 2
+MANPAGES=$@
+MANDIR="@mandir@"
+
+# Find translated and compiled manual pages.
+# Usage: manpages-find PAGE
+manpages-find() {
+    local PAGE="$1"
+
+    /usr/bin/find @abs_top_builddir@/src/man/translations \
+         -type f -name "$PAGE" -printf '%d\t%p\n' | sort -nk1 | cut -f2-
+}
+
+# Install translated manual page.
+# Usage: manpages-install PAGE
+manpages-install() {
+    local PATH="$1"
+    local NAME=`/usr/bin/basename "$PATH"`
+    local LANG=`echo $PATH | /usr/bin/sed -E 's|.*/([^./]+)/[^/]+|\1|'`
+    local SECTION=`echo $PATH | /usr/bin/sed -E 's|.*\.(.)|\1|'`
+    local DEST="$DESTDIR/$MANDIR/$LANG/man$SECTION"
+
+    echo "Installing $PATH to $DEST/$NAME"
+    /usr/bin/mkdir -p $DEST
+    /usr/bin/install -c -m 644 $PATH "$DEST/$NAME"
+}
+
+for MANPAGE in $MANPAGES; do
+    TRANSLATIONS=`manpages-find $MANPAGE`
+    for PAGE in $TRANSLATIONS; do
+        manpages-install $PAGE
+    done
+done

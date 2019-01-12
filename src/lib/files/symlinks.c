@@ -117,7 +117,7 @@ authselect_symlinks_validate_missing()
 
         ret = file_does_not_link_to(symlinks[i].name, symlinks[i].dest, &valid);
         if (ret != EOK) {
-            ERROR("Unable to check file [%s] [%đ]: %s",
+            ERROR("Unable to check file [%s] [%d]: %s",
                   symlinks[i].name, ret, strerror(ret));
             result = false;
             continue;
