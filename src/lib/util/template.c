@@ -592,36 +592,25 @@ template_write_temporary(const char *filepath,
                          mode_t mode,
                          char **_tmpfile)
 {
-    mode_t oldmask;
     char *tmpfile;
     errno_t ret;
 
-    oldmask = umask(mode);
-
-    ret = selinux_mkstemp_of(filepath, &tmpfile);
+    ret = selinux_mkstemp_for(filepath, mode, &tmpfile);
     if (ret != EOK) {
         ERROR("Unable to create temporary file for [%s] [%d]: %s",
               filepath, ret, strerror(ret));
-        goto done;
+        return ret;
     }
 
     ret = template_write(tmpfile, content, mode);
     if (ret != EOK) {
-        goto done;
+        free(tmpfile);
+        return ret;
     }
 
     *_tmpfile = tmpfile;
 
-    ret = EOK;
-
-done:
-    umask(oldmask);
-
-    if (ret != EOK) {
-        free(tmpfile);
-    }
-
-    return ret;
+    return EOK;
 }
 
 bool

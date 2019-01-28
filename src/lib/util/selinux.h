@@ -39,12 +39,14 @@ selinux_get_default_context(const char *path);
  * set to default security context of @filepath.
  *
  * @param filepath File for which a temporary file should be created.
- * @param _tmpfile Create temporary file.
+ * @param mode     Temporary file mode.
+ * @param _tmpfile Created temporary file.
  *
  * @return EOK on success, other errno code on failure.
  */
 errno_t
-selinux_mkstemp_of(const char *filepath,
-                   char **_tmpfile);
+selinux_mkstemp_for(const char *filepath,
+                    mode_t mode,
+                    char **_tmpfile);
 
 #endif /* _SELINUX_H_ */
