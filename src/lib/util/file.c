@@ -329,3 +329,41 @@ file_make_path(const char *path, mode_t mode)
     return EOK;
 
 }
+
+errno_t
+file_mktmp_for(const char *path, mode_t mode, char **_tmpfile)
+{
+    mode_t oldmask;
+    char *tmpfile;
+    errno_t ret;
+    int fd;
+
+    oldmask = umask(mode);
+
+    tmpfile = format("%s.XXXXXX", path);
+    if (tmpfile == NULL) {
+        ret = ENOMEM;
+        goto done;
+    }
+
+    fd = mkstemp(tmpfile);
+    if (fd == -1) {
+        ret = errno;
+        goto done;
+    }
+
+    close(fd);
+
+    *_tmpfile = tmpfile;
+
+    ret = EOK;
+
+done:
+    if (ret != EOK) {
+        free(tmpfile);
+    }
+
+    umask(oldmask);
+
+    return ret;
+}

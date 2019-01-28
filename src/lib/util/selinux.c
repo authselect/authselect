@@ -26,6 +26,7 @@
 #include <selinux/label.h>
 
 #include "common/common.h"
+#include "lib/util/file.h"
 
 errno_t
 selinux_get_default_context(const char *path,
@@ -61,26 +62,24 @@ selinux_get_default_context(const char *path,
 }
 
 errno_t
-selinux_mkstemp_of(const char *filepath,
-                   char **_tmpfile)
+selinux_mkstemp_for(const char *filepath,
+                    mode_t mode,
+                    char **_tmpfile)
 {
     char *original_context = NULL;
     char *default_context = NULL;
-    char *tmpfile = NULL;
+    char *tmpfile;
     errno_t ret;
     int seret;
-    int fd;
+
+    if (is_selinux_enabled() != 1) {
+        return file_mktmp_for(filepath, mode, _tmpfile);
+    }
 
     seret = getfscreatecon(&original_context);
     if (seret != 0) {
         ERROR("Unable to get current fscreate selinux context!");
         return EIO;
-    }
-
-    tmpfile = format("%s.XXXXXX", filepath);
-    if (tmpfile == NULL) {
-        ret = ENOMEM;
-        goto done;
     }
 
     ret = selinux_get_default_context(filepath, &default_context);
@@ -92,6 +91,7 @@ selinux_mkstemp_of(const char *filepath,
         goto done;
     }
 
+    /* Set desired fs create context. */
     seret = setfscreatecon(default_context);
     if (seret != 0) {
         ERROR("Unable to set fscreate selinux context!");
@@ -99,26 +99,19 @@ selinux_mkstemp_of(const char *filepath,
         goto done;
     }
 
-    fd = mkstemp(tmpfile);
-    if (fd == -1) {
-        ret = errno;
+    ret = file_mktmp_for(filepath, mode, &tmpfile);
 
-        seret = setfscreatecon(original_context);
-        if (seret != 0) {
-            ERROR("Unable to restore fscreate selinux context!");
-            ret = EIO;
-            goto done;
-        }
-
-        goto done;
-    }
-
-    close(fd);
-
+    /* Restore original fs create context. */
     seret = setfscreatecon(original_context);
     if (seret != 0) {
         ERROR("Unable to restore fscreate selinux context!");
         ret = EIO;
+        goto done;
+    }
+
+    /* Check result of file_mktmp_for() */
+    if (ret != EOK) {
+        free(tmpfile);
         goto done;
     }
 
@@ -133,10 +126,6 @@ done:
 
     if (default_context != NULL) {
         freecon(default_context);
-    }
-
-    if (ret != EOK) {
-        free(tmpfile);
     }
 
     return ret;

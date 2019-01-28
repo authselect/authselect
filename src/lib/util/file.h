@@ -133,12 +133,23 @@ file_get_parent_directory(const char *filepath);
 /**
  * Create all directories in a path. Path must end with a directory not a file.
  *
- * @param filename       Path to the file whose directories should be created.
+ * @param path           Path to the file whose directories should be created.
  * @param mode           Directory mode.
  *
  * @return EOK on success, other errno code on error.
  */
 errno_t
 file_make_path(const char *path, mode_t mode);
+
+/**
+ * Make temporary file for @path so it can be first written and then safelly
+ * renamed to @path.
+ *
+ * @param path           Path to the file whose directories should be created.
+ * @param mode           Temporary file mode.
+ * @param _tmpfile       Path to created temporary file.
+ */
+errno_t
+file_mktmp_for(const char *path, mode_t mode, char **_tmpfile);
 
 #endif /* _FILE_H_ */
