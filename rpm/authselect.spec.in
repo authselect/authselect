@@ -128,6 +128,16 @@ find $RPM_BUILD_ROOT -name "*.a" -exec rm -f {} \;
 %dir %{_sysconfdir}/authselect
 %dir %{_sysconfdir}/authselect/custom
 %dir %{_localstatedir}/lib/authselect
+%ghost %{_localstatedir}/lib/authselect/backups/
+%ghost %{_localstatedir}/lib/authselect/dconf-db
+%ghost %{_localstatedir}/lib/authselect/dconf-locks
+%ghost %{_localstatedir}/lib/authselect/fingerprint-auth
+%ghost %{_localstatedir}/lib/authselect/nsswitch.conf
+%ghost %{_localstatedir}/lib/authselect/password-auth
+%ghost %{_localstatedir}/lib/authselect/postlogin
+%ghost %{_localstatedir}/lib/authselect/smartcard-auth
+%ghost %{_localstatedir}/lib/authselect/system-auth
+%ghost %{_localstatedir}/lib/authselect/user-nsswitch-created 
 %dir %{_datadir}/authselect
 %dir %{_datadir}/authselect/vendor
 %dir %{_datadir}/authselect/default
