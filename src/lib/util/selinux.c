@@ -34,7 +34,7 @@ selinux_get_default_context(const char *path,
 {
     struct selabel_handle *handle;
     char *context;
-    errno_t ret;
+    int ret;
 
     handle = selabel_open(SELABEL_CTX_FILE, NULL, 0);
     if (handle == NULL) {
@@ -44,21 +44,51 @@ selinux_get_default_context(const char *path,
     }
 
     ret = selabel_lookup(handle, &context, path, 0);
-    if (ret != 0) {
+    if (ret < 0 && errno == ENOENT) {
+        context = NULL;
+    } else if (ret != 0) {
         ret = errno;
-        if (ret == ENOENT) {
-            return ENOENT;
-        }
-
         ERROR("Unable to lookup selinux context [%d]: %s", ret, strerror(ret));
-    } else {
-        *_context = context;
-        ret = EOK;
+        goto done;
     }
 
+    INFO("Found default selinux context for [%s]: %s",
+         path, context == NULL ? "NULL" : context);
+
+    *_context = context;
+
+    ret = EOK;
+
+done:
     selabel_close(handle);
 
     return ret;
+}
+
+errno_t
+selinux_get_context(const char *path,
+                    char **_context)
+{
+    char *context;
+    int ret;
+
+    ret = getfilecon(path, &context);
+    if (ret < 0 && errno == ENOENT) {
+        return selinux_get_default_context(path, _context);
+    } else if (ret < 0) {
+        ret = errno;
+        ERROR("Unable to obtain selinux context for [%s] [%d]: %s",
+              path, ret, strerror(ret));
+
+        return ret;
+    }
+
+    INFO("Found selinux context for [%s]: %s",
+         path, context == NULL ? _("not set") : context);
+
+    *_context = context;
+
+    return EOK;
 }
 
 errno_t
@@ -82,10 +112,8 @@ selinux_mkstemp_for(const char *filepath,
         return EIO;
     }
 
-    ret = selinux_get_default_context(filepath, &default_context);
-    if (ret == ENOENT) {
-        default_context = NULL;
-    } else if (ret != EOK) {
+    ret = selinux_get_context(filepath, &default_context);
+    if (ret != EOK) {
         ERROR("Unable to get default selinux context for [%s] [%d]: %s!",
               filepath, ret, strerror(ret));
         goto done;
