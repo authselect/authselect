@@ -11,15 +11,16 @@
 # Tom Berner <tom@man.lodz.pl>, 2004
 # Piotr Drąg <piotrdrag@gmail.com>, 2011-2014
 # Piotr Drąg <piotrdrag@gmail.com>, 2018. #zanata
+# Piotr Drąg <piotrdrag@gmail.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2018-11-20 14:02+0100\n"
+"POT-Creation-Date: 2019-02-26 10:26+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-11-21 04:05+0000\n"
+"PO-Revision-Date: 2019-02-26 04:40+0000\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/authconfig/"
 "language/pl/)\n"
@@ -103,150 +104,6 @@ msgstr "Próba utworzenia kopii zapasowej plików systemu"
 #, c-format
 msgid "Unable to backup system files [%d]: %s"
 msgstr "Nie można utworzyć kopii zapasowej plików systemu [%d]: %s"
-
-#: src/lib/util/file.c:42
-msgid "Internal error: stat cannot be NULL!"
-msgstr "Wewnętrzny błąd: stat nie może wynosić NULL."
-
-#: src/lib/util/file.c:50
-#, c-format
-msgid "[%s] is not a directory!"
-msgstr "[%s] nie jest katalogiem."
-
-#: src/lib/util/file.c:53
-#, c-format
-msgid "[%s] is not a regular file!"
-msgstr "[%s] nie jest zwykłym plikiem."
-
-#: src/lib/util/file.c:56
-#, c-format
-msgid "[%s] is not a symbolic link!"
-msgstr "[%s] nie jest dowiązaniem symbolicznym."
-
-#: src/lib/util/file.c:59
-#, c-format
-msgid "[%s] has wrong type [%.7o], expected [%.7o]!"
-msgstr "[%s] ma błędny typ [%.7o], oczekiwano [%.7o]."
-
-#: src/lib/util/file.c:86
-#, c-format
-msgid "[%s] has wrong mode [%.4o], expected [%.4o]!"
-msgstr "[%s] ma błędny tryb [%.4o], oczekiwano [%.4o]."
-
-#: src/lib/util/file.c:92
-#, c-format
-msgid "[%s] has wrong owner [%u], expected [%u]!"
-msgstr "[%s] ma błędnego właściciela [%u], oczekiwano [%u]."
-
-#: src/lib/util/file.c:98
-#, c-format
-msgid "[%s] has wrong group [%u], expected [%u]!"
-msgstr "[%s] ma błędną grupę [%u], oczekiwano [%u]."
-
-#: src/lib/util/file.c:120 src/lib/files/system.c:498
-#, c-format
-msgid "[%s] does not exist!"
-msgstr "[%s] nie istnieje."
-
-#: src/lib/util/file.c:125 src/lib/util/file.c:197
-#, c-format
-msgid "Unable to stat [%s] [%d]: %s"
-msgstr "Nie można wykonać stat na [%s] [%d]: %s"
-
-#: src/lib/util/file.c:163 src/lib/util/file.c:209
-#, c-format
-msgid "Unable to read link destination [%s] [%d]: %s"
-msgstr "Nie można odczytać celu dowiązania [%s] [%d]: %s"
-
-#: src/lib/util/file.c:169
-#, c-format
-msgid "Link [%s] does not point to [%s]"
-msgstr "Dowiązanie [%s] nie wskazuje na [%s]"
-
-#: src/lib/util/file.c:215
-#, c-format
-msgid "Link [%s] points to [%s]"
-msgstr "Dowiązanie [%s] wskazuje na [%s]"
-
-#: src/lib/util/file.c:265
-msgid "Internal error: filepath cannot be NULL!"
-msgstr "Wewnętrzny błąd: ścieżka do pliku nie może wynosić NULL."
-
-#: src/lib/util/file.c:297
-#, c-format
-msgid "Unable to get parent directory of [%s] [%d]: %s"
-msgstr "Nie można uzyskać katalogu nadrzędnego [%s] [%d]: %s"
-
-#: src/lib/util/template.c:112 src/lib/util/template.c:152
-#: src/lib/util/template.c:229
-msgid "Invalid operator!"
-msgstr "Nieprawidłowy operator."
-
-#: src/lib/util/template.c:373 src/lib/util/template.c:520
-#: src/lib/files/system.c:112 src/lib/files/system.c:170
-#, c-format
-msgid "Unable to compile regular expression: regex error %d"
-msgstr ""
-"Nie można skompilować wyrażenia regularnego: błąd wyrażenia regularnego %d"
-
-#: src/lib/util/template.c:382 src/lib/util/template.c:530
-#, c-format
-msgid "Unable to process match [%d]: %s"
-msgstr "Nie można przetworzyć wyniku [%d]: %s"
-
-#: src/lib/util/template.c:402
-#, c-format
-msgid "Unable to process operator [%d]: %s"
-msgstr "Nie można przetworzyć operatora [%d]: %s"
-
-#: src/lib/util/template.c:417 src/lib/util/template.c:541
-#: src/lib/files/system.c:130 src/lib/files/system.c:195
-#, c-format
-msgid "Unable to search string: regex error %d"
-msgstr "Nie można wyszukać ciągu: błąd wyrażenia regularnego %d"
-
-#: src/lib/util/template.c:448
-#, c-format
-msgid "Unable to generate template [%d]: %s"
-msgstr "Nie można utworzyć szablonu [%d]: %s"
-
-#: src/lib/util/template.c:477
-msgid "Unable to get current time!"
-msgstr "Nie można uzyskać obecnego czasu."
-
-#: src/lib/util/template.c:491
-msgid "Unable to create message!"
-msgstr "Nie można utworzyć komunikatu."
-
-#: src/lib/util/textfile.c:56
-#, c-format
-msgid "File [%s] is bigger than %uKiB!"
-msgstr "Plik [%s] jest większy niż %u KiB."
-
-#: src/lib/util/textfile.c:85
-#, c-format
-msgid "Unable to read file [%s] [%d]: %s"
-msgstr "Nie można odczytać pliku [%s] [%d]: %s"
-
-#: src/lib/util/textfile.c:158
-#, c-format
-msgid "Unable to open file [%s] [%d]: %s"
-msgstr "Nie można otworzyć pliku [%s] [%d]: %s"
-
-#: src/lib/util/textfile.c:167
-#, c-format
-msgid "Unable to write data [%s] [%d]: %s"
-msgstr "Nie można zapisać danych [%s] [%d]: %s"
-
-#: src/lib/util/textfile.c:175 src/lib/util/textfile.c:266
-#, c-format
-msgid "Unable to chmod file [%s] [%d]: %s"
-msgstr "Nie można ustawić chmod pliku [%s] [%d]: %s"
-
-#: src/lib/util/textfile.c:273
-#, c-format
-msgid "Unable to chown file [%s] [%d]: %s"
-msgstr "Nie można zmienić właściciela pliku [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:104
 msgid "Unable to generate nsswitch.conf"
@@ -356,6 +213,234 @@ msgstr "Nie można utworzyć pustego profilu [%d]: %s"
 msgid "Unable to create profile [%d]: %s"
 msgstr "Nie można utworzyć profilu [%d]: %s"
 
+#: src/lib/files/config.c:150
+msgid "Checking if all required directories are writable."
+msgstr "Sprawdzanie, czy wszystkie wymagane katalogi są zapisywalne."
+
+#: src/lib/files/config.c:155
+#, c-format
+msgid "Unable to get path to %s parent directory!"
+msgstr "Nie można uzyskać ścieżki do katalogu nadrzędnego %s."
+
+#: src/lib/files/config.c:162
+#, c-format
+msgid "Creating path [%s]"
+msgstr "Tworzenie ścieżki [%s]"
+
+#: src/lib/files/config.c:166
+#, c-format
+msgid "Unable to create path [%s] [%d]: %s"
+msgstr "Nie można utworzyć ścieżki [%s] [%d]: %s"
+
+#: src/lib/files/config.c:171
+#, c-format
+msgid "Directory [%s] does not exist, please create it!"
+msgstr "Katalog [%s] nie istnieje, proszę go utworzyć."
+
+#: src/lib/files/config.c:174
+#, c-format
+msgid "Unable to access directory [%s] in [WX] mode!"
+msgstr "Nie można uzyskać dostępu do katalogu [%s] w trybie [WX]."
+
+#: src/lib/files/config.c:193
+#, c-format
+msgid "Unable to load profile [%s] [%d]: %s"
+msgstr "Nie można wczytać profilu [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:41
+#, c-format
+msgid "Creating symbolic link [%s] to [%s]"
+msgstr "Tworzenie dowiązania symbolicznego [%s] do [%s]"
+
+#: src/lib/files/symlinks.c:47
+#, c-format
+msgid "Unable to overwrite file [%s] [%d]: %s"
+msgstr "Nie można zastąpić pliku [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:55
+#, c-format
+msgid "Unable to create symbolic link [%s] [%d]: %s"
+msgstr "Nie można utworzyć dowiązania symbolicznego [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:79
+#, c-format
+msgid "Validating link [%s]"
+msgstr "Sprawdzanie poprawności dowiązania [%s]"
+
+#: src/lib/files/symlinks.c:83
+#, c-format
+msgid "Unable to validate link [%s] [%d]: %s"
+msgstr "Nie można sprawdzić poprawności dowiązania [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:90
+#, c-format
+msgid "[%s] was not created by authselect!"
+msgstr "[%s] nie zostało utworzone przez program authselect."
+
+#: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:152
+#: src/lib/files/system.c:573
+#, c-format
+msgid "Error while trying to access file [%s] [%d]: %s"
+msgstr "Błąd podczas uzyskiwania dostępu do pliku [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:120
+#, c-format
+msgid "Unable to check file [%s] [%d]: %s"
+msgstr "Nie można sprawdzić pliku [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:127
+#, c-format
+msgid "Symbolic link [%s] to [%s] still exists!"
+msgstr "Dowiązanie symboliczne [%s] to [%s] nadal istnieje."
+
+#: src/lib/files/symlinks.c:148
+#, c-format
+msgid "File [%s] exists but it needs to be overwritten!"
+msgstr "Plik [%s] istnieje, ale musi zostać zastąpiony."
+
+#: src/lib/files/system.c:74 src/lib/profiles/read.c:158
+#, c-format
+msgid "Reading file [%s/%s]"
+msgstr "Odczytywanie pliku [%s/%s]"
+
+#: src/lib/files/system.c:82 src/lib/profiles/read.c:164
+#: src/lib/profiles/read.c:169
+#, c-format
+msgid "Unable to read file [%s/%s] [%d]: %s"
+msgstr "Nie można odczytać pliku [%s/%s] [%d]: %s"
+
+#: src/lib/files/system.c:112 src/lib/files/system.c:170
+#: src/lib/util/template.c:374 src/lib/util/template.c:521
+#, c-format
+msgid "Unable to compile regular expression: regex error %d"
+msgstr ""
+"Nie można skompilować wyrażenia regularnego: błąd wyrażenia regularnego %d"
+
+#: src/lib/files/system.c:130 src/lib/files/system.c:195
+#: src/lib/util/template.c:418 src/lib/util/template.c:542
+#, c-format
+msgid "Unable to search string: regex error %d"
+msgstr "Nie można wyszukać ciągu: błąd wyrażenia regularnego %d"
+
+#: src/lib/files/system.c:272 src/lib/files/system.c:501
+#, c-format
+msgid "Unable to read [%s] [%d]: %s"
+msgstr "Nie można odczytać [%s] [%d]: %s"
+
+#: src/lib/files/system.c:288
+#, c-format
+msgid "Unable to generate nsswitch.conf [%d]: %s"
+msgstr "Nie można utworzyć pliku nsswitch.conf [%d]: %s"
+
+#: src/lib/files/system.c:354
+#, c-format
+msgid "Unable to generate files [%d]: %s"
+msgstr "Nie można utworzyć plików [%d]: %s"
+
+#: src/lib/files/system.c:368
+#, c-format
+msgid "Writing temporary file for [%s]"
+msgstr "Zapisywanie pliku tymczasowego dla [%s]"
+
+#: src/lib/files/system.c:372
+#, c-format
+msgid "Unable to write temporary file [%s] [%d]: %s"
+msgstr "Nie można zapisać pliku tymczasowego [%s] [%d]: %s"
+
+#: src/lib/files/system.c:377
+#, c-format
+msgid "Temporary file is named [%s]"
+msgstr "Plik tymczasowy ma nazwę [%s]"
+
+#: src/lib/files/system.c:388
+#, c-format
+msgid "Renaming [%s] to [%s]"
+msgstr "Zmienianie nazwy [%s] na [%s]"
+
+#: src/lib/files/system.c:393
+#, c-format
+msgid "Unable to rename [%s] to [%s] [%d]: %s"
+msgstr "Nie można zmienić nazwy [%s] na [%s] [%d]: %s"
+
+#: src/lib/files/system.c:493
+#, c-format
+msgid "Validating file [%s]"
+msgstr "Sprawdzanie poprawności pliku [%s]"
+
+#: src/lib/files/system.c:498 src/lib/util/file.c:120
+#, c-format
+msgid "[%s] does not exist!"
+msgstr "[%s] nie istnieje."
+
+#: src/lib/files/system.c:504
+#, c-format
+msgid "Unable to validate file [%s] [%d]: %s"
+msgstr "Nie można sprawdzić poprawności pliku [%s] [%d]: %s"
+
+#: src/lib/files/system.c:511
+#, c-format
+msgid "Comparing content against [%s]"
+msgstr "Porównywanie treści do [%s]"
+
+#: src/lib/files/system.c:515
+msgid "Comparing content against current profile"
+msgstr "Porównywanie treści do obecnego profilu"
+
+#: src/lib/files/system.c:521
+#, c-format
+msgid "[%s] has unexpected content!"
+msgstr "[%s] ma nieoczekiwaną treść."
+
+#: src/lib/files/system.c:528
+#, c-format
+msgid "Unable to check file mode of [%s] [%d]: %s"
+msgstr "Nie można sprawdzić trybu pliku [%s] [%d]: %s"
+
+#: src/lib/files/system.c:550
+#, c-format
+msgid "File [%s] was modified outside authselect!"
+msgstr "Plik [%s] został zmodyfikowany poza programem authselect."
+
+#: src/lib/files/system.c:569
+#, c-format
+msgid "File [%s] is still present"
+msgstr "Plik [%s] jest nadal obecny"
+
+#: src/lib/files/system.c:596
+#, c-format
+msgid "Unable to create backup directory [%s/%s] [%d]: %s"
+msgstr "Nie można utworzyć katalogu kopii zapasowej [%s/%s] [%d]: %s"
+
+#: src/lib/files/system.c:622
+#, c-format
+msgid "Unable to create backup directory [%s] [%d]: %s"
+msgstr "Nie można utworzyć katalogu kopii zapasowej [%s] [%d]: %s"
+
+#: src/lib/files/system.c:643
+#, c-format
+msgid "Creating temporary directory at [%s]"
+msgstr "Tworzenie katalogu tymczasowego w [%s]"
+
+#: src/lib/files/system.c:666
+#, c-format
+msgid "Unable to create backup directory [%d]: %s"
+msgstr "Nie można utworzyć katalogu kopii zapasowej [%d]: %s"
+
+#: src/lib/files/system.c:678
+#, c-format
+msgid "Copying [%s] to [%s/%s]"
+msgstr "Kopiowanie [%s] do [%s/%s]"
+
+#: src/lib/files/system.c:682
+#, c-format
+msgid "File [%s] does not exist"
+msgstr "Plik [%s] nie istnieje"
+
+#: src/lib/files/system.c:684
+#, c-format
+msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
+msgstr "Nie można skopiować [%s] do [%s/%s] [%d]: %s"
+
 #: src/lib/profiles/activate.c:44
 #, c-format
 msgid "%s update failed: %d"
@@ -458,174 +543,187 @@ msgstr "Odnaleziono profil [%s] w [%s]"
 msgid "Profile [%s] was not found"
 msgstr "Nie odnaleziono profilu [%s]"
 
-#: src/lib/profiles/read.c:158 src/lib/files/system.c:74
-#, c-format
-msgid "Reading file [%s/%s]"
-msgstr "Odczytywanie pliku [%s/%s]"
-
-#: src/lib/profiles/read.c:164 src/lib/profiles/read.c:169
-#: src/lib/files/system.c:82
-#, c-format
-msgid "Unable to read file [%s/%s] [%d]: %s"
-msgstr "Nie można odczytać pliku [%s/%s] [%d]: %s"
-
 #: src/lib/profiles/read.c:199 src/lib/profiles/read.c:218
 #, c-format
 msgid "Profile [%s] does not contain a name in [%s]!"
 msgstr "Profil [%s] nie zawiera nazwy w [%s]."
 
-#: src/lib/files/config.c:150
-msgid "Checking if all required directories are writable."
-msgstr "Sprawdzanie, czy wszystkie wymagane katalogi są zapisywalne."
+#: src/lib/util/file.c:42
+msgid "Internal error: stat cannot be NULL!"
+msgstr "Wewnętrzny błąd: stat nie może wynosić NULL."
 
-#: src/lib/files/config.c:155
+#: src/lib/util/file.c:50
 #, c-format
-msgid "Unable to get path to %s parent directory!"
-msgstr "Nie można uzyskać ścieżki do katalogu nadrzędnego %s."
+msgid "[%s] is not a directory!"
+msgstr "[%s] nie jest katalogiem."
 
-#: src/lib/files/config.c:162
+#: src/lib/util/file.c:53
 #, c-format
-msgid "Creating path [%s]"
-msgstr "Tworzenie ścieżki [%s]"
+msgid "[%s] is not a regular file!"
+msgstr "[%s] nie jest zwykłym plikiem."
 
-#: src/lib/files/config.c:166
+#: src/lib/util/file.c:56
 #, c-format
-msgid "Unable to create path [%s] [%d]: %s"
-msgstr "Nie można utworzyć ścieżki [%s] [%d]: %s"
+msgid "[%s] is not a symbolic link!"
+msgstr "[%s] nie jest dowiązaniem symbolicznym."
 
-#: src/lib/files/config.c:171
+#: src/lib/util/file.c:59
 #, c-format
-msgid "Directory [%s] does not exist, please create it!"
-msgstr "Katalog [%s] nie istnieje, proszę go utworzyć."
+msgid "[%s] has wrong type [%.7o], expected [%.7o]!"
+msgstr "[%s] ma błędny typ [%.7o], oczekiwano [%.7o]."
 
-#: src/lib/files/config.c:174
+#: src/lib/util/file.c:86
 #, c-format
-msgid "Unable to access directory [%s] in [WX] mode!"
-msgstr "Nie można uzyskać dostępu do katalogu [%s] w trybie [WX]."
+msgid "[%s] has wrong mode [%.4o], expected [%.4o]!"
+msgstr "[%s] ma błędny tryb [%.4o], oczekiwano [%.4o]."
 
-#: src/lib/files/config.c:193
+#: src/lib/util/file.c:92
 #, c-format
-msgid "Unable to load profile [%s] [%d]: %s"
-msgstr "Nie można wczytać profilu [%s] [%d]: %s"
+msgid "[%s] has wrong owner [%u], expected [%u]!"
+msgstr "[%s] ma błędnego właściciela [%u], oczekiwano [%u]."
 
-#: src/lib/files/system.c:272 src/lib/files/system.c:501
+#: src/lib/util/file.c:98
 #, c-format
-msgid "Unable to read [%s] [%d]: %s"
-msgstr "Nie można odczytać [%s] [%d]: %s"
+msgid "[%s] has wrong group [%u], expected [%u]!"
+msgstr "[%s] ma błędną grupę [%u], oczekiwano [%u]."
 
-#: src/lib/files/system.c:288
+#: src/lib/util/file.c:125 src/lib/util/file.c:197
 #, c-format
-msgid "Unable to generate nsswitch.conf [%d]: %s"
-msgstr "Nie można utworzyć pliku nsswitch.conf [%d]: %s"
+msgid "Unable to stat [%s] [%d]: %s"
+msgstr "Nie można wykonać stat na [%s] [%d]: %s"
 
-#: src/lib/files/system.c:354
+#: src/lib/util/file.c:163 src/lib/util/file.c:209
 #, c-format
-msgid "Unable to generate files [%d]: %s"
-msgstr "Nie można utworzyć plików [%d]: %s"
+msgid "Unable to read link destination [%s] [%d]: %s"
+msgstr "Nie można odczytać celu dowiązania [%s] [%d]: %s"
 
-#: src/lib/files/system.c:368
+#: src/lib/util/file.c:169
 #, c-format
-msgid "Writing temporary file for [%s]"
-msgstr "Zapisywanie pliku tymczasowego dla [%s]"
+msgid "Link [%s] does not point to [%s]"
+msgstr "Dowiązanie [%s] nie wskazuje na [%s]"
 
-#: src/lib/files/system.c:372
+#: src/lib/util/file.c:215
 #, c-format
-msgid "Unable to write temporary file [%s] [%d]: %s"
-msgstr "Nie można zapisać pliku tymczasowego [%s] [%d]: %s"
+msgid "Link [%s] points to [%s]"
+msgstr "Dowiązanie [%s] wskazuje na [%s]"
 
-#: src/lib/files/system.c:377
+#: src/lib/util/file.c:265
+msgid "Internal error: filepath cannot be NULL!"
+msgstr "Wewnętrzny błąd: ścieżka do pliku nie może wynosić NULL."
+
+#: src/lib/util/file.c:297
 #, c-format
-msgid "Temporary file is named [%s]"
-msgstr "Plik tymczasowy ma nazwę [%s]"
+msgid "Unable to get parent directory of [%s] [%d]: %s"
+msgstr "Nie można uzyskać katalogu nadrzędnego [%s] [%d]: %s"
 
-#: src/lib/files/system.c:388
+#: src/lib/util/selinux.c:42
 #, c-format
-msgid "Renaming [%s] to [%s]"
-msgstr "Zmienianie nazwy [%s] na [%s]"
+msgid "Unable to create selabel context [%d]: %s"
+msgstr "Nie można utworzyć kontekstu selabel [%d]: %s"
 
-#: src/lib/files/system.c:393
+#: src/lib/util/selinux.c:51
 #, c-format
-msgid "Unable to rename [%s] to [%s] [%d]: %s"
-msgstr "Nie można zmienić nazwy [%s] na [%s] [%d]: %s"
+msgid "Unable to lookup selinux context [%d]: %s"
+msgstr "Nie można wyszukać kontekstu SELinuksa [%d]: %s"
 
-#: src/lib/files/system.c:493
+#: src/lib/util/selinux.c:55
 #, c-format
-msgid "Validating file [%s]"
-msgstr "Sprawdzanie poprawności pliku [%s]"
+msgid "Found default selinux context for [%s]: %s"
+msgstr "Odnaleziono domyślny kontekst SELinuksa dla [%s]: %s"
 
-#: src/lib/files/system.c:504
+#: src/lib/util/selinux.c:80
 #, c-format
-msgid "Unable to validate file [%s] [%d]: %s"
-msgstr "Nie można sprawdzić poprawności pliku [%s] [%d]: %s"
+msgid "Unable to obtain selinux context for [%s] [%d]: %s"
+msgstr "Nie można uzyskać kontekstu SELinuksa dla [%s] [%d]: %s"
 
-#: src/lib/files/system.c:511
+#: src/lib/util/selinux.c:87
+msgid "not set"
+msgstr "nie ustawiono"
+
+#: src/lib/util/selinux.c:86
 #, c-format
-msgid "Comparing content against [%s]"
-msgstr "Porównywanie treści do [%s]"
+msgid "Found selinux context for [%s]: %s"
+msgstr "Odnaleziono kontekst SELinuksa dla [%s]: %s"
 
-#: src/lib/files/system.c:515
-msgid "Comparing content against current profile"
-msgstr "Porównywanie treści do obecnego profilu"
+#: src/lib/util/selinux.c:111
+msgid "Unable to get current fscreate selinux context!"
+msgstr "Nie można uzyskać obecnego kontekstu fscreate SELinuksa."
 
-#: src/lib/files/system.c:521
+#: src/lib/util/selinux.c:117
 #, c-format
-msgid "[%s] has unexpected content!"
-msgstr "[%s] ma nieoczekiwaną treść."
+msgid "Unable to get default selinux context for [%s] [%d]: %s!"
+msgstr "Nie można uzyskać domyślnego kontekstu SELinuksa dla [%s] [%d]: %s"
 
-#: src/lib/files/system.c:528
-#, c-format
-msgid "Unable to check file mode of [%s] [%d]: %s"
-msgstr "Nie można sprawdzić trybu pliku [%s] [%d]: %s"
+#: src/lib/util/selinux.c:125
+msgid "Unable to set fscreate selinux context!"
+msgstr "Nie można utworzyć kontekstu fscreate SELinuksa."
 
-#: src/lib/files/system.c:550
-#, c-format
-msgid "File [%s] was modified outside authselect!"
-msgstr "Plik [%s] został zmodyfikowany poza programem authselect."
+#: src/lib/util/selinux.c:135
+msgid "Unable to restore fscreate selinux context!"
+msgstr "Nie można przywrócić kontekstu fscreate SELinuksa."
 
-#: src/lib/files/system.c:569
-#, c-format
-msgid "File [%s] is still present"
-msgstr "Plik [%s] jest nadal obecny"
+#: src/lib/util/template.c:113 src/lib/util/template.c:153
+#: src/lib/util/template.c:230
+msgid "Invalid operator!"
+msgstr "Nieprawidłowy operator."
 
-#: src/lib/files/system.c:573
+#: src/lib/util/template.c:383 src/lib/util/template.c:531
 #, c-format
-msgid "Error while trying to access file [%s] [%d]: %s"
-msgstr "Błąd podczas uzyskiwania dostępu do pliku [%s] [%d]: %s"
+msgid "Unable to process match [%d]: %s"
+msgstr "Nie można przetworzyć wyniku [%d]: %s"
 
-#: src/lib/files/system.c:596
+#: src/lib/util/template.c:403
 #, c-format
-msgid "Unable to create backup directory [%s/%s] [%d]: %s"
-msgstr "Nie można utworzyć katalogu kopii zapasowej [%s/%s] [%d]: %s"
+msgid "Unable to process operator [%d]: %s"
+msgstr "Nie można przetworzyć operatora [%d]: %s"
 
-#: src/lib/files/system.c:622
+#: src/lib/util/template.c:449
 #, c-format
-msgid "Unable to create backup directory [%s] [%d]: %s"
-msgstr "Nie można utworzyć katalogu kopii zapasowej [%s] [%d]: %s"
+msgid "Unable to generate template [%d]: %s"
+msgstr "Nie można utworzyć szablonu [%d]: %s"
 
-#: src/lib/files/system.c:643
-#, c-format
-msgid "Creating temporary directory at [%s]"
-msgstr "Tworzenie katalogu tymczasowego w [%s]"
+#: src/lib/util/template.c:478
+msgid "Unable to get current time!"
+msgstr "Nie można uzyskać obecnego czasu."
 
-#: src/lib/files/system.c:666
-#, c-format
-msgid "Unable to create backup directory [%d]: %s"
-msgstr "Nie można utworzyć katalogu kopii zapasowej [%d]: %s"
+#: src/lib/util/template.c:492
+msgid "Unable to create message!"
+msgstr "Nie można utworzyć komunikatu."
 
-#: src/lib/files/system.c:678
+#: src/lib/util/template.c:600
 #, c-format
-msgid "Copying [%s] to [%s/%s]"
-msgstr "Kopiowanie [%s] do [%s/%s]"
+msgid "Unable to create temporary file for [%s] [%d]: %s"
+msgstr "Nie można utworzyć pliku tymczasowego dla [%s] [%d]: %s"
 
-#: src/lib/files/system.c:682
+#: src/lib/util/textfile.c:56
 #, c-format
-msgid "File [%s] does not exist"
-msgstr "Plik [%s] nie istnieje"
+msgid "File [%s] is bigger than %uKiB!"
+msgstr "Plik [%s] jest większy niż %u KiB."
 
-#: src/lib/files/system.c:684
+#: src/lib/util/textfile.c:85
 #, c-format
-msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
-msgstr "Nie można skopiować [%s] do [%s/%s] [%d]: %s"
+msgid "Unable to read file [%s] [%d]: %s"
+msgstr "Nie można odczytać pliku [%s] [%d]: %s"
+
+#: src/lib/util/textfile.c:158
+#, c-format
+msgid "Unable to open file [%s] [%d]: %s"
+msgstr "Nie można otworzyć pliku [%s] [%d]: %s"
+
+#: src/lib/util/textfile.c:167
+#, c-format
+msgid "Unable to write data [%s] [%d]: %s"
+msgstr "Nie można zapisać danych [%s] [%d]: %s"
+
+#: src/lib/util/textfile.c:175 src/lib/util/textfile.c:266
+#, c-format
+msgid "Unable to chmod file [%s] [%d]: %s"
+msgstr "Nie można ustawić chmod pliku [%s] [%d]: %s"
+
+#: src/lib/util/textfile.c:273
+#, c-format
+msgid "Unable to chown file [%s] [%d]: %s"
+msgstr "Nie można zmienić właściciela pliku [%s] [%d]: %s"
 
 #: src/cli/cli_tool.c:71
 #, c-format
@@ -779,6 +877,11 @@ msgstr "Nie można uzyskać mapowań nsswitch."
 msgid "Unable to backup system files!\n"
 msgstr "Nie można utworzyć kopii zapasowej plików systemu.\n"
 
+#: src/cli/main.c:155
+#, c-format
+msgid "Backup stored at %s\n"
+msgstr "Zachowano kopię zapasową w %s\n"
+
 #: src/cli/main.c:161
 msgid ""
 "\n"
@@ -793,6 +896,27 @@ msgstr ""
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "Nie można aktywować profilu [%d]: %s\n"
+
+#: src/cli/main.c:171
+#, c-format
+msgid "Profile \"%s\" was selected.\n"
+msgstr "Wybrano profil „%s”.\n"
+
+#: src/cli/main.c:174
+msgid "The following nsswitch maps are overwritten by the profile:\n"
+msgstr "Te mapowania nsswitch zostały zastąpione przez ten profil:\n"
+
+#: src/cli/main.c:177
+#, c-format
+msgid "- %s\n"
+msgstr "— %s\n"
+
+#: src/cli/main.c:182
+#, c-format
+msgid "\n"
+"%s\n"
+msgstr "\n"
+"%s\n"
 
 #: src/cli/main.c:205
 msgid "Changes were successfully applied.\n"
@@ -991,6 +1115,50 @@ msgstr "Nie można utworzyć nowego profilu [%d]: %s\n"
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "Utworzono nowy profil w %s\n"
+
+#: src/cli/main.c:622
+msgid "Select profile"
+msgstr "Wybiera profil"
+
+#: src/cli/main.c:623
+msgid "Regenerate configuration for currently selected command"
+msgstr "Ponownie tworzy konfigurację dla obecnie wybranego polecenia"
+
+#: src/cli/main.c:624
+msgid "List available profiles"
+msgstr "Wyświetla listę dostępnych profili"
+
+#: src/cli/main.c:625
+msgid "Show profile information"
+msgstr "Wyświetla informacje o profilu"
+
+#: src/cli/main.c:626
+msgid "Print profile requirements"
+msgstr "Wyświetla wymagania profilu"
+
+#: src/cli/main.c:627
+msgid "Get identifier of currently selected profile"
+msgstr "Uzyskuje identyfikator obecnie wybranego profilu"
+
+#: src/cli/main.c:628
+msgid "Check if the current configuration is valid"
+msgstr "Sprawdza, czy obecna konfiguracja jest prawidłowa"
+
+#: src/cli/main.c:629
+msgid "Print changes that would be otherwise written"
+msgstr "Wyświetla zmiany, które zostałyby zapisane"
+
+#: src/cli/main.c:630
+msgid "Enable feature in currently selected profile"
+msgstr "Włącza funkcję w obecnie wybranym profilu"
+
+#: src/cli/main.c:631
+msgid "Disable feature in currently selected profile"
+msgstr "Wyłącza funkcję w obecnie wybranym profilu"
+
+#: src/cli/main.c:632
+msgid "Create new authselect profile"
+msgstr "Tworzy nowy profil authselect"
 
 #: src/cli/main.c:645
 msgid "Authselect can only be run as root!\n"
@@ -1286,7 +1454,7 @@ msgstr "Wykonywanie: %s"
 msgid "Service %s was not found. Please install the service."
 msgstr "Nie odnaleziono usługi %s. Proszę ją zainstalować."
 
-#: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:626
+#: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:625
 #: src/compat/authcompat.py.in.in:651
 #, python-format
 msgid "Command [%s] failed with %d, stderr:"
@@ -1302,11 +1470,11 @@ msgstr "Usuwanie pliku: %s"
 msgid "%s was not found. Please, install realmd."
 msgstr "Nie odnaleziono %s. Proszę zainstalować pakiet realmd."
 
-#: src/compat/authcompat.py.in.in:466
+#: src/compat/authcompat.py.in.in:465
 msgid "Running authconfig compatibility tool."
 msgstr "Uruchamianie narzędzia zgodności z programem authconfig."
 
-#: src/compat/authcompat.py.in.in:467
+#: src/compat/authcompat.py.in.in:466
 msgid ""
 "The purpose of this tool is to enable authentication against chosen services "
 "with authselect and minimum configuration. It does not provide all "
@@ -1316,14 +1484,14 @@ msgstr ""
 "za pomocą programu authselect i minimalnej konfiguracji. Nie zapewnia on "
 "wszystkich możliwości programu authconfig.\n"
 
-#: src/compat/authcompat.py.in.in:470
+#: src/compat/authcompat.py.in.in:469
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
 msgstr ""
 "WAŻNE: authconfig został zastąpiony programem authselect, proszę "
 "zaktualizować skrypty."
 
-#: src/compat/authcompat.py.in.in:472
+#: src/compat/authcompat.py.in.in:471
 msgid ""
 "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
@@ -1331,22 +1499,22 @@ msgstr ""
 "Strona o zmianie w Fedorze 28 https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault zawiera więcej informacji"
 
-#: src/compat/authcompat.py.in.in:473
+#: src/compat/authcompat.py.in.in:472
 msgid ""
 "See man authselect-migration(7) to help you with migration to authselect"
 msgstr ""
 "Polecenie man authselect-migration(7) zawiera informacje o migracji do "
 "authselect"
 
-#: src/compat/authcompat.py.in.in:477
+#: src/compat/authcompat.py.in.in:476
 msgid "Warning: These options are not supported anymore and have no effect:"
 msgstr "Ostrzeżenie: te opcje nie są już obsługiwane i nie są uwzględniane:"
 
-#: src/compat/authcompat.py.in.in:497
+#: src/compat/authcompat.py.in.in:496
 msgid "authconfig can only be run as root"
 msgstr "tylko root może uruchamiać program authconfig"
 
-#: src/compat/authcompat.py.in.in:502
+#: src/compat/authcompat.py.in.in:501
 #, python-format
 msgid ""
 "Error: option --%s is no longer supported and we cannot continue if it is "
@@ -1355,12 +1523,12 @@ msgstr ""
 "Błąd: opcja --%s nie jest już obsługiwana i nie można kontynuować, jeśli "
 "jest ustawiona."
 
-#: src/compat/authcompat.py.in.in:507
+#: src/compat/authcompat.py.in.in:506
 msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
 msgstr ""
 "Błąd: opcje --enablewinbind i --enablewinbindauth muszą być ustawione "
 "jednocześnie."
 
-#: src/compat/authcompat.py.in.in:517
+#: src/compat/authcompat.py.in.in:516
 msgid "Error: Please, provide --updateall option."
 msgstr "Błąd: proszę podać opcję --updateall."

@@ -1,14 +1,15 @@
 # Ludek Janda <ljanda@redhat.com>, 2018. #zanata
+# Kenzo Moriguchi <kmoriguc@redhat.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2018-11-20 14:02+0100\n"
+"POT-Creation-Date: 2019-02-26 10:26+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-10-30 02:46+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"PO-Revision-Date: 2019-01-14 09:32+0000\n"
+"Last-Translator: Kenzo Moriguchi <kmoriguc@redhat.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "X-Generator: Zanata 4.6.2\n"
@@ -16,17 +17,17 @@ msgstr ""
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:169
 msgid "Unable to obtain supported features"
-msgstr ""
+msgstr "サポートされている機能を取得できません"
 
 #: src/lib/authselect.c:59
 #, c-format
 msgid "Unknown profile feature [%s], did you mean [%s]?"
-msgstr ""
+msgstr "不明なプロファイル機能 [%s]、[%s] のことですか?"
 
 #: src/lib/authselect.c:62
 #, c-format
 msgid "Unknown profile feature [%s]"
-msgstr ""
+msgstr "不明なプロファイル機能 [%s]"
 
 #: src/lib/authselect.c:86
 #, c-format
@@ -75,7 +76,7 @@ msgstr "プロファイル [%s] [%d] を実行できません: %s"
 #: src/lib/authselect.c:179
 #, c-format
 msgid "Profile feature [%s] is no longer supported, removing it..."
-msgstr ""
+msgstr "プロファイル機能 [%s] はサポートされなくなりました。削除します。"
 
 #: src/lib/authselect.c:202
 msgid "Trying to backup system files"
@@ -85,149 +86,6 @@ msgstr "システムファイルのバックアップを試行中"
 #, c-format
 msgid "Unable to backup system files [%d]: %s"
 msgstr "システムファイル [%d] のバックアップができません: %s"
-
-#: src/lib/util/file.c:42
-msgid "Internal error: stat cannot be NULL!"
-msgstr "内部エラー: stat は NULL になりません。"
-
-#: src/lib/util/file.c:50
-#, c-format
-msgid "[%s] is not a directory!"
-msgstr "[%s] はディレクトリーではありません。"
-
-#: src/lib/util/file.c:53
-#, c-format
-msgid "[%s] is not a regular file!"
-msgstr "[%s] は通常のファイルではありません。"
-
-#: src/lib/util/file.c:56
-#, c-format
-msgid "[%s] is not a symbolic link!"
-msgstr "[%s] はシンボリックリンクではありません。"
-
-#: src/lib/util/file.c:59
-#, c-format
-msgid "[%s] has wrong type [%.7o], expected [%.7o]!"
-msgstr "[%s] には不正なタイプ [%.7o] があります、[%.7o] を予期していました。"
-
-#: src/lib/util/file.c:86
-#, c-format
-msgid "[%s] has wrong mode [%.4o], expected [%.4o]!"
-msgstr "[%s] には不正なモード [%.4o] があります、[%.4o] を予期していました。"
-
-#: src/lib/util/file.c:92
-#, c-format
-msgid "[%s] has wrong owner [%u], expected [%u]!"
-msgstr "[%s] には不正なオーナー [%u] があります、[%u] を予期していました。"
-
-#: src/lib/util/file.c:98
-#, c-format
-msgid "[%s] has wrong group [%u], expected [%u]!"
-msgstr "[%s] には不正なグループ [%u] があります、[%u] を予期していました。"
-
-#: src/lib/util/file.c:120 src/lib/files/system.c:498
-#, c-format
-msgid "[%s] does not exist!"
-msgstr "[%s] は存在しません。"
-
-#: src/lib/util/file.c:125 src/lib/util/file.c:197
-#, c-format
-msgid "Unable to stat [%s] [%d]: %s"
-msgstr "[%s] [%d] に対する stat の実行に失敗しました: %s "
-
-#: src/lib/util/file.c:163 src/lib/util/file.c:209
-#, c-format
-msgid "Unable to read link destination [%s] [%d]: %s"
-msgstr "リンク先 [%s] [%d] の読み込みに失敗しました: %s"
-
-#: src/lib/util/file.c:169
-#, c-format
-msgid "Link [%s] does not point to [%s]"
-msgstr "リンク [%s] は [%s] にポイントしていません"
-
-#: src/lib/util/file.c:215
-#, c-format
-msgid "Link [%s] points to [%s]"
-msgstr "リンク [%s] は [%s] にポイントしています"
-
-#: src/lib/util/file.c:265
-msgid "Internal error: filepath cannot be NULL!"
-msgstr "内部エラー: filepath は NULL になりません。"
-
-#: src/lib/util/file.c:297
-#, c-format
-msgid "Unable to get parent directory of [%s] [%d]: %s"
-msgstr "[%s] [%d] の親ディレクトリーを取得できません: %s"
-
-#: src/lib/util/template.c:112 src/lib/util/template.c:152
-#: src/lib/util/template.c:229
-msgid "Invalid operator!"
-msgstr "無効な演算子です。"
-
-#: src/lib/util/template.c:373 src/lib/util/template.c:520
-#: src/lib/files/system.c:112 src/lib/files/system.c:170
-#, c-format
-msgid "Unable to compile regular expression: regex error %d"
-msgstr "正規表現のコンパイルができません: regex エラー %d"
-
-#: src/lib/util/template.c:382 src/lib/util/template.c:530
-#, c-format
-msgid "Unable to process match [%d]: %s"
-msgstr "マッチ [%d] を処理できません: %s"
-
-#: src/lib/util/template.c:402
-#, c-format
-msgid "Unable to process operator [%d]: %s"
-msgstr "オペレーター [%d] を処理できません: %s"
-
-#: src/lib/util/template.c:417 src/lib/util/template.c:541
-#: src/lib/files/system.c:130 src/lib/files/system.c:195
-#, c-format
-msgid "Unable to search string: regex error %d"
-msgstr "文字列を検索できません: regex エラー %d"
-
-#: src/lib/util/template.c:448
-#, c-format
-msgid "Unable to generate template [%d]: %s"
-msgstr "テンプレート [%d] を生成できません: %s"
-
-#: src/lib/util/template.c:477
-msgid "Unable to get current time!"
-msgstr "現在の時刻を取得できません。"
-
-#: src/lib/util/template.c:491
-msgid "Unable to create message!"
-msgstr "メッセージを作成できません。"
-
-#: src/lib/util/textfile.c:56
-#, c-format
-msgid "File [%s] is bigger than %uKiB!"
-msgstr "ファイル [%s] は %uKiB より大きいです。"
-
-#: src/lib/util/textfile.c:85
-#, c-format
-msgid "Unable to read file [%s] [%d]: %s"
-msgstr "ファイル [%s] [%d] の読み込みができません: %s"
-
-#: src/lib/util/textfile.c:158
-#, c-format
-msgid "Unable to open file [%s] [%d]: %s"
-msgstr "ファイル [%s] [%d] を開くことができません: %s"
-
-#: src/lib/util/textfile.c:167
-#, c-format
-msgid "Unable to write data [%s] [%d]: %s"
-msgstr "データ [%s] [%d] の書き込みができません: %s"
-
-#: src/lib/util/textfile.c:175 src/lib/util/textfile.c:266
-#, c-format
-msgid "Unable to chmod file [%s] [%d]: %s"
-msgstr "ファイル [%s] [%d] を chmod できません: %s"
-
-#: src/lib/util/textfile.c:273
-#, c-format
-msgid "Unable to chown file [%s] [%d]: %s"
-msgstr "ファイル [%s] [%d] を chown できません: %s"
 
 #: src/lib/authselect_profile.c:104
 msgid "Unable to generate nsswitch.conf"
@@ -240,11 +98,11 @@ msgstr "nsswitch マップ [%d] を見つけることができません: %s"
 
 #: src/lib/authselect_profile.c:132
 msgid "Unable to create array (out of memory)"
-msgstr ""
+msgstr "アレイを作成できません (メモリー不足)"
 
 #: src/lib/authselect_profile.c:141 src/lib/authselect_profile.c:150
 msgid "Unable to obtain feature list (out of memory)"
-msgstr ""
+msgstr "機能一覧を取得できません (メモリー不足)"
 
 #: src/lib/authselect_profile.c:344
 #, c-format
@@ -336,6 +194,233 @@ msgstr "空のプロファイル [%d] を作成できません: %s"
 #, c-format
 msgid "Unable to create profile [%d]: %s"
 msgstr "プロファイル [%d] を作成できません: %s"
+
+#: src/lib/files/config.c:150
+msgid "Checking if all required directories are writable."
+msgstr "すべての必要なディレクトリーが書き込み可能かどうか確認中です。"
+
+#: src/lib/files/config.c:155
+#, c-format
+msgid "Unable to get path to %s parent directory!"
+msgstr "%s 親ディレクトリーへのパスの取得ができません。"
+
+#: src/lib/files/config.c:162
+#, c-format
+msgid "Creating path [%s]"
+msgstr "パス [%s] の作成中"
+
+#: src/lib/files/config.c:166
+#, c-format
+msgid "Unable to create path [%s] [%d]: %s"
+msgstr "パス [%s] [%d] を作成できません: %s"
+
+#: src/lib/files/config.c:171
+#, c-format
+msgid "Directory [%s] does not exist, please create it!"
+msgstr "ディレクトリー [%s] は存在しません、作成してください。"
+
+#: src/lib/files/config.c:174
+#, c-format
+msgid "Unable to access directory [%s] in [WX] mode!"
+msgstr "[WX] モードのディレクトリー [%s] にアクセスできません。"
+
+#: src/lib/files/config.c:193
+#, c-format
+msgid "Unable to load profile [%s] [%d]: %s"
+msgstr "プロファイル [%s] [%d] をロードできません: %s"
+
+#: src/lib/files/symlinks.c:41
+#, c-format
+msgid "Creating symbolic link [%s] to [%s]"
+msgstr "[%s] から [%s] へのシンボリックリンクを作成中"
+
+#: src/lib/files/symlinks.c:47
+#, c-format
+msgid "Unable to overwrite file [%s] [%d]: %s"
+msgstr "ファイル [%s] [%d] を上書きすることができません: %s"
+
+#: src/lib/files/symlinks.c:55
+#, c-format
+msgid "Unable to create symbolic link [%s] [%d]: %s"
+msgstr "シンボリックリンク [%s] [%d] を作成できません: %s"
+
+#: src/lib/files/symlinks.c:79
+#, c-format
+msgid "Validating link [%s]"
+msgstr "リンク [%s] を検証中"
+
+#: src/lib/files/symlinks.c:83
+#, c-format
+msgid "Unable to validate link [%s] [%d]: %s"
+msgstr "リンク [%s] [%d] を検証できません: %s"
+
+#: src/lib/files/symlinks.c:90
+#, c-format
+msgid "[%s] was not created by authselect!"
+msgstr "[%s] は authselect が作成したものではありません!"
+
+#: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:152
+#: src/lib/files/system.c:573
+#, c-format
+msgid "Error while trying to access file [%s] [%d]: %s"
+msgstr "ファイル [%s] [%d] へのアクセス試行中にエラー発生: %s"
+
+#: src/lib/files/symlinks.c:120
+#, c-format
+msgid "Unable to check file [%s] [%d]: %s"
+msgstr "ファイル [%s] [%d] を確認できません: %s"
+
+#: src/lib/files/symlinks.c:127
+#, c-format
+msgid "Symbolic link [%s] to [%s] still exists!"
+msgstr "[%s] から [%s] へのシンボリックリンクがまだ存在します!"
+
+#: src/lib/files/symlinks.c:148
+#, c-format
+msgid "File [%s] exists but it needs to be overwritten!"
+msgstr "ファイル [%s] は存在しますが、上書きする必要があります!"
+
+#: src/lib/files/system.c:74 src/lib/profiles/read.c:158
+#, c-format
+msgid "Reading file [%s/%s]"
+msgstr "ファイル [%s/%s] を読み込み中"
+
+#: src/lib/files/system.c:82 src/lib/profiles/read.c:164
+#: src/lib/profiles/read.c:169
+#, c-format
+msgid "Unable to read file [%s/%s] [%d]: %s"
+msgstr "ファイル [%s/%s] [%d] の読み込みができません: %s"
+
+#: src/lib/files/system.c:112 src/lib/files/system.c:170
+#: src/lib/util/template.c:374 src/lib/util/template.c:521
+#, c-format
+msgid "Unable to compile regular expression: regex error %d"
+msgstr "正規表現のコンパイルができません: regex エラー %d"
+
+#: src/lib/files/system.c:130 src/lib/files/system.c:195
+#: src/lib/util/template.c:418 src/lib/util/template.c:542
+#, c-format
+msgid "Unable to search string: regex error %d"
+msgstr "文字列を検索できません: regex エラー %d"
+
+#: src/lib/files/system.c:272 src/lib/files/system.c:501
+#, c-format
+msgid "Unable to read [%s] [%d]: %s"
+msgstr "[%s] [%d] の読み込みができません: %s"
+
+#: src/lib/files/system.c:288
+#, c-format
+msgid "Unable to generate nsswitch.conf [%d]: %s"
+msgstr "nsswitch.conf [%d] を生成できません: %s"
+
+#: src/lib/files/system.c:354
+#, c-format
+msgid "Unable to generate files [%d]: %s"
+msgstr "ファイル [%d] を生成できません: %s"
+
+#: src/lib/files/system.c:368
+#, c-format
+msgid "Writing temporary file for [%s]"
+msgstr "[%s] の一時ファイルを書き込み中"
+
+#: src/lib/files/system.c:372
+#, c-format
+msgid "Unable to write temporary file [%s] [%d]: %s"
+msgstr "一時ファイル [%s] [%d] の書き込みができません: %s"
+
+#: src/lib/files/system.c:377
+#, c-format
+msgid "Temporary file is named [%s]"
+msgstr "一時ファイルの名前は [%s] です"
+
+#: src/lib/files/system.c:388
+#, c-format
+msgid "Renaming [%s] to [%s]"
+msgstr "名前を [%s] から [%s] へ変更中です"
+
+#: src/lib/files/system.c:393
+#, c-format
+msgid "Unable to rename [%s] to [%s] [%d]: %s"
+msgstr "名前を [%s] から [%s] [%d] へ変更できません: %s"
+
+#: src/lib/files/system.c:493
+#, c-format
+msgid "Validating file [%s]"
+msgstr "ファイル [%s] を検証中です"
+
+#: src/lib/files/system.c:498 src/lib/util/file.c:120
+#, c-format
+msgid "[%s] does not exist!"
+msgstr "[%s] は存在しません。"
+
+#: src/lib/files/system.c:504
+#, c-format
+msgid "Unable to validate file [%s] [%d]: %s"
+msgstr "ファイル [%s] [%d] を検証できません: %s"
+
+#: src/lib/files/system.c:511
+#, c-format
+msgid "Comparing content against [%s]"
+msgstr "[%s] に対するコンテンツの比較"
+
+#: src/lib/files/system.c:515
+msgid "Comparing content against current profile"
+msgstr "現行のプロファイルに対するコンテンツの比較"
+
+#: src/lib/files/system.c:521
+#, c-format
+msgid "[%s] has unexpected content!"
+msgstr "[%s] には予期せぬコンテンツがあります。"
+
+#: src/lib/files/system.c:528
+#, c-format
+msgid "Unable to check file mode of [%s] [%d]: %s"
+msgstr "[%s] [%d] のファイルモードを確認できません: %s"
+
+#: src/lib/files/system.c:550
+#, c-format
+msgid "File [%s] was modified outside authselect!"
+msgstr "ファイル [%s] は authselect 外で変更されました。"
+
+#: src/lib/files/system.c:569
+#, c-format
+msgid "File [%s] is still present"
+msgstr "ファイル [%s] は今も存在します"
+
+#: src/lib/files/system.c:596
+#, c-format
+msgid "Unable to create backup directory [%s/%s] [%d]: %s"
+msgstr "バックアップディレクトリー [%s/%s] [%d] を作成できません: %s"
+
+#: src/lib/files/system.c:622
+#, c-format
+msgid "Unable to create backup directory [%s] [%d]: %s"
+msgstr "バックアップディレクトリー [%s] [%d] を作成できません: %s"
+
+#: src/lib/files/system.c:643
+#, c-format
+msgid "Creating temporary directory at [%s]"
+msgstr "[%s] で一時ファイルを作成中"
+
+#: src/lib/files/system.c:666
+#, c-format
+msgid "Unable to create backup directory [%d]: %s"
+msgstr "バックアップディレクトリー [%d] を作成できません: %s"
+
+#: src/lib/files/system.c:678
+#, c-format
+msgid "Copying [%s] to [%s/%s]"
+msgstr "[%s] を [%s/%s] にコピー中"
+
+#: src/lib/files/system.c:682
+#, c-format
+msgid "File [%s] does not exist"
+msgstr "ファイル [%s] は存在しません"
+
+#: src/lib/files/system.c:684
+#, c-format
+msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
+msgstr "[%s] を [%s/%s] [%d] へコピーできません: %s"
 
 #: src/lib/profiles/activate.c:44
 #, c-format
@@ -439,174 +524,187 @@ msgstr "プロファイル [%s] は [%s] で見つかりました"
 msgid "Profile [%s] was not found"
 msgstr "プロファイル [%s] は見つかりませんでした"
 
-#: src/lib/profiles/read.c:158 src/lib/files/system.c:74
-#, c-format
-msgid "Reading file [%s/%s]"
-msgstr "ファイル [%s/%s] を読み込み中"
-
-#: src/lib/profiles/read.c:164 src/lib/profiles/read.c:169
-#: src/lib/files/system.c:82
-#, c-format
-msgid "Unable to read file [%s/%s] [%d]: %s"
-msgstr "ファイル [%s/%s] [%d] の読み込みができません: %s"
-
 #: src/lib/profiles/read.c:199 src/lib/profiles/read.c:218
 #, c-format
 msgid "Profile [%s] does not contain a name in [%s]!"
 msgstr "プロファイル [%s] は [%s] に名前を含んでいません。"
 
-#: src/lib/files/config.c:150
-msgid "Checking if all required directories are writable."
-msgstr "すべての必要なディレクトリーが書き込み可能かどうか確認中です。"
+#: src/lib/util/file.c:42
+msgid "Internal error: stat cannot be NULL!"
+msgstr "内部エラー: stat は NULL になりません。"
 
-#: src/lib/files/config.c:155
+#: src/lib/util/file.c:50
 #, c-format
-msgid "Unable to get path to %s parent directory!"
-msgstr "%s 親ディレクトリーへのパスの取得ができません。"
+msgid "[%s] is not a directory!"
+msgstr "[%s] はディレクトリーではありません。"
 
-#: src/lib/files/config.c:162
+#: src/lib/util/file.c:53
 #, c-format
-msgid "Creating path [%s]"
-msgstr "パス [%s] の作成中"
+msgid "[%s] is not a regular file!"
+msgstr "[%s] は通常のファイルではありません。"
 
-#: src/lib/files/config.c:166
+#: src/lib/util/file.c:56
 #, c-format
-msgid "Unable to create path [%s] [%d]: %s"
-msgstr "パス [%s] [%d] を作成できません: %s"
+msgid "[%s] is not a symbolic link!"
+msgstr "[%s] はシンボリックリンクではありません。"
 
-#: src/lib/files/config.c:171
+#: src/lib/util/file.c:59
 #, c-format
-msgid "Directory [%s] does not exist, please create it!"
-msgstr "ディレクトリー [%s] は存在しません、作成してください。"
+msgid "[%s] has wrong type [%.7o], expected [%.7o]!"
+msgstr "[%s] には不正なタイプ [%.7o] があります、[%.7o] を予期していました。"
 
-#: src/lib/files/config.c:174
+#: src/lib/util/file.c:86
 #, c-format
-msgid "Unable to access directory [%s] in [WX] mode!"
-msgstr "[WX] モードのディレクトリー [%s] にアクセスできません。"
+msgid "[%s] has wrong mode [%.4o], expected [%.4o]!"
+msgstr "[%s] には不正なモード [%.4o] があります、[%.4o] を予期していました。"
 
-#: src/lib/files/config.c:193
+#: src/lib/util/file.c:92
 #, c-format
-msgid "Unable to load profile [%s] [%d]: %s"
-msgstr "プロファイル [%s] [%d] をロードできません: %s"
+msgid "[%s] has wrong owner [%u], expected [%u]!"
+msgstr "[%s] には不正なオーナー [%u] があります、[%u] を予期していました。"
 
-#: src/lib/files/system.c:272 src/lib/files/system.c:501
+#: src/lib/util/file.c:98
 #, c-format
-msgid "Unable to read [%s] [%d]: %s"
-msgstr "[%s] [%d] の読み込みができません: %s"
+msgid "[%s] has wrong group [%u], expected [%u]!"
+msgstr "[%s] には不正なグループ [%u] があります、[%u] を予期していました。"
 
-#: src/lib/files/system.c:288
+#: src/lib/util/file.c:125 src/lib/util/file.c:197
 #, c-format
-msgid "Unable to generate nsswitch.conf [%d]: %s"
-msgstr "nsswitch.conf [%d] を生成できません: %s"
+msgid "Unable to stat [%s] [%d]: %s"
+msgstr "[%s] [%d] に対する stat の実行に失敗しました: %s "
 
-#: src/lib/files/system.c:354
+#: src/lib/util/file.c:163 src/lib/util/file.c:209
 #, c-format
-msgid "Unable to generate files [%d]: %s"
-msgstr "ファイル [%d] を生成できません: %s"
+msgid "Unable to read link destination [%s] [%d]: %s"
+msgstr "リンク先 [%s] [%d] の読み込みに失敗しました: %s"
 
-#: src/lib/files/system.c:368
+#: src/lib/util/file.c:169
 #, c-format
-msgid "Writing temporary file for [%s]"
-msgstr "[%s] の一時ファイルを書き込み中"
+msgid "Link [%s] does not point to [%s]"
+msgstr "リンク [%s] は [%s] にポイントしていません"
 
-#: src/lib/files/system.c:372
+#: src/lib/util/file.c:215
 #, c-format
-msgid "Unable to write temporary file [%s] [%d]: %s"
-msgstr "一時ファイル [%s] [%d] の書き込みができません: %s"
+msgid "Link [%s] points to [%s]"
+msgstr "リンク [%s] は [%s] にポイントしています"
 
-#: src/lib/files/system.c:377
+#: src/lib/util/file.c:265
+msgid "Internal error: filepath cannot be NULL!"
+msgstr "内部エラー: filepath は NULL になりません。"
+
+#: src/lib/util/file.c:297
 #, c-format
-msgid "Temporary file is named [%s]"
-msgstr "一時ファイルの名前は [%s] です"
+msgid "Unable to get parent directory of [%s] [%d]: %s"
+msgstr "[%s] [%d] の親ディレクトリーを取得できません: %s"
 
-#: src/lib/files/system.c:388
+#: src/lib/util/selinux.c:42
 #, c-format
-msgid "Renaming [%s] to [%s]"
-msgstr "名前を [%s] から [%s] へ変更中です"
+msgid "Unable to create selabel context [%d]: %s"
+msgstr "selabel コンテキスト [%d] を作成できません: %s"
 
-#: src/lib/files/system.c:393
+#: src/lib/util/selinux.c:51
 #, c-format
-msgid "Unable to rename [%s] to [%s] [%d]: %s"
-msgstr "名前を [%s] から [%s] [%d] へ変更できません: %s"
+msgid "Unable to lookup selinux context [%d]: %s"
+msgstr "SELinux コンテキスト [%d] を検索することができません: %s"
 
-#: src/lib/files/system.c:493
+#: src/lib/util/selinux.c:55
 #, c-format
-msgid "Validating file [%s]"
-msgstr "ファイル [%s] を検証中です"
+msgid "Found default selinux context for [%s]: %s"
+msgstr ""
 
-#: src/lib/files/system.c:504
+#: src/lib/util/selinux.c:80
 #, c-format
-msgid "Unable to validate file [%s] [%d]: %s"
-msgstr "ファイル [%s] [%d] を検証できません: %s"
+msgid "Unable to obtain selinux context for [%s] [%d]: %s"
+msgstr ""
 
-#: src/lib/files/system.c:511
+#: src/lib/util/selinux.c:87
+msgid "not set"
+msgstr ""
+
+#: src/lib/util/selinux.c:86
 #, c-format
-msgid "Comparing content against [%s]"
-msgstr "[%s] に対するコンテンツの比較"
+msgid "Found selinux context for [%s]: %s"
+msgstr ""
 
-#: src/lib/files/system.c:515
-msgid "Comparing content against current profile"
-msgstr "現行のプロファイルに対するコンテンツの比較"
+#: src/lib/util/selinux.c:111
+msgid "Unable to get current fscreate selinux context!"
+msgstr "現在の fscreate の SELinux コンテキストを取得することができません!"
 
-#: src/lib/files/system.c:521
+#: src/lib/util/selinux.c:117
 #, c-format
-msgid "[%s] has unexpected content!"
-msgstr "[%s] には予期せぬコンテンツがあります。"
+msgid "Unable to get default selinux context for [%s] [%d]: %s!"
+msgstr "[%s] [%d] のデフォルトの SELinux コンテキストを取得することができません: %s!"
 
-#: src/lib/files/system.c:528
-#, c-format
-msgid "Unable to check file mode of [%s] [%d]: %s"
-msgstr "[%s] [%d] のファイルモードを確認できません: %s"
+#: src/lib/util/selinux.c:125
+msgid "Unable to set fscreate selinux context!"
+msgstr "fscreate の SELinux コンテキストを設定することができません!"
 
-#: src/lib/files/system.c:550
-#, c-format
-msgid "File [%s] was modified outside authselect!"
-msgstr "ファイル [%s] は authselect 外で変更されました。"
+#: src/lib/util/selinux.c:135
+msgid "Unable to restore fscreate selinux context!"
+msgstr "fscreate の SELinux コンテキストを復元することができません!"
 
-#: src/lib/files/system.c:569
-#, c-format
-msgid "File [%s] is still present"
-msgstr "ファイル [%s] は今も存在します"
+#: src/lib/util/template.c:113 src/lib/util/template.c:153
+#: src/lib/util/template.c:230
+msgid "Invalid operator!"
+msgstr "無効な演算子です。"
 
-#: src/lib/files/system.c:573
+#: src/lib/util/template.c:383 src/lib/util/template.c:531
 #, c-format
-msgid "Error while trying to access file [%s] [%d]: %s"
-msgstr "ファイル [%s] [%d] へのアクセス試行中にエラー発生: %s"
+msgid "Unable to process match [%d]: %s"
+msgstr "マッチ [%d] を処理できません: %s"
 
-#: src/lib/files/system.c:596
+#: src/lib/util/template.c:403
 #, c-format
-msgid "Unable to create backup directory [%s/%s] [%d]: %s"
-msgstr "バックアップディレクトリー [%s/%s] [%d] を作成できません: %s"
+msgid "Unable to process operator [%d]: %s"
+msgstr "オペレーター [%d] を処理できません: %s"
 
-#: src/lib/files/system.c:622
+#: src/lib/util/template.c:449
 #, c-format
-msgid "Unable to create backup directory [%s] [%d]: %s"
-msgstr "バックアップディレクトリー [%s] [%d] を作成できません: %s"
+msgid "Unable to generate template [%d]: %s"
+msgstr "テンプレート [%d] を生成できません: %s"
 
-#: src/lib/files/system.c:643
-#, c-format
-msgid "Creating temporary directory at [%s]"
-msgstr "[%s] で一時ファイルを作成中"
+#: src/lib/util/template.c:478
+msgid "Unable to get current time!"
+msgstr "現在の時刻を取得できません。"
 
-#: src/lib/files/system.c:666
-#, c-format
-msgid "Unable to create backup directory [%d]: %s"
-msgstr "バックアップディレクトリー [%d] を作成できません: %s"
+#: src/lib/util/template.c:492
+msgid "Unable to create message!"
+msgstr "メッセージを作成できません。"
 
-#: src/lib/files/system.c:678
+#: src/lib/util/template.c:600
 #, c-format
-msgid "Copying [%s] to [%s/%s]"
-msgstr "[%s] を [%s/%s] にコピー中"
+msgid "Unable to create temporary file for [%s] [%d]: %s"
+msgstr "[%s] [%d] の一時ファイルを作成することができません: %s"
 
-#: src/lib/files/system.c:682
+#: src/lib/util/textfile.c:56
 #, c-format
-msgid "File [%s] does not exist"
-msgstr "ファイル [%s] は存在しません"
+msgid "File [%s] is bigger than %uKiB!"
+msgstr "ファイル [%s] は %uKiB より大きいです。"
 
-#: src/lib/files/system.c:684
+#: src/lib/util/textfile.c:85
 #, c-format
-msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
-msgstr "[%s] を [%s/%s] [%d] へコピーできません: %s"
+msgid "Unable to read file [%s] [%d]: %s"
+msgstr "ファイル [%s] [%d] の読み込みができません: %s"
+
+#: src/lib/util/textfile.c:158
+#, c-format
+msgid "Unable to open file [%s] [%d]: %s"
+msgstr "ファイル [%s] [%d] を開くことができません: %s"
+
+#: src/lib/util/textfile.c:167
+#, c-format
+msgid "Unable to write data [%s] [%d]: %s"
+msgstr "データ [%s] [%d] の書き込みができません: %s"
+
+#: src/lib/util/textfile.c:175 src/lib/util/textfile.c:266
+#, c-format
+msgid "Unable to chmod file [%s] [%d]: %s"
+msgstr "ファイル [%s] [%d] を chmod できません: %s"
+
+#: src/lib/util/textfile.c:273
+#, c-format
+msgid "Unable to chown file [%s] [%d]: %s"
+msgstr "ファイル [%s] [%d] を chown できません: %s"
 
 #: src/cli/cli_tool.c:71
 #, c-format
@@ -758,6 +856,11 @@ msgstr "nsswitch マップを取得できません。"
 msgid "Unable to backup system files!\n"
 msgstr "システムファイルをバックアップできません。\n"
 
+#: src/cli/main.c:155
+#, c-format
+msgid "Backup stored at %s\n"
+msgstr "バックアップは %s に保存されました\n"
+
 #: src/cli/main.c:161
 msgid ""
 "\n"
@@ -771,6 +874,27 @@ msgstr "\n"
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "プロファイル [%d] を実行できません: %s\n"
+
+#: src/cli/main.c:171
+#, c-format
+msgid "Profile \"%s\" was selected.\n"
+msgstr "プロファイル \"%s\" が設定されました。\n"
+
+#: src/cli/main.c:174
+msgid "The following nsswitch maps are overwritten by the profile:\n"
+msgstr "以下の nsswitch マップはプロファイルで上書きされます:\n"
+
+#: src/cli/main.c:177
+#, c-format
+msgid "- %s\n"
+msgstr "- %s\n"
+
+#: src/cli/main.c:182
+#, c-format
+msgid "\n"
+"%s\n"
+msgstr "\n"
+"%s\n"
 
 #: src/cli/main.c:205
 msgid "Changes were successfully applied.\n"
@@ -954,6 +1078,50 @@ msgstr "新規のプロファイル [%d] を作成できません: %s\n"
 msgid "New profile was created at %s\n"
 msgstr "%s で新規のプロファイルが作成されました\n"
 
+#: src/cli/main.c:622
+msgid "Select profile"
+msgstr "プロファイルを選択します"
+
+#: src/cli/main.c:623
+msgid "Regenerate configuration for currently selected command"
+msgstr "選択されたコマンド用の設定を再生成します"
+
+#: src/cli/main.c:624
+msgid "List available profiles"
+msgstr "利用可能なプロファイルを一覧表示します"
+
+#: src/cli/main.c:625
+msgid "Show profile information"
+msgstr "プロファイル情報を表示します"
+
+#: src/cli/main.c:626
+msgid "Print profile requirements"
+msgstr "プロファイル要件をプリントします"
+
+#: src/cli/main.c:627
+msgid "Get identifier of currently selected profile"
+msgstr "現在選択されているプロファイルの識別子を取得します"
+
+#: src/cli/main.c:628
+msgid "Check if the current configuration is valid"
+msgstr "現在の設定が有効化チェックします"
+
+#: src/cli/main.c:629
+msgid "Print changes that would be otherwise written"
+msgstr "書き込まれることになる変更をプリントします"
+
+#: src/cli/main.c:630
+msgid "Enable feature in currently selected profile"
+msgstr "現在選択されているプロファイルの機能を有効にします"
+
+#: src/cli/main.c:631
+msgid "Disable feature in currently selected profile"
+msgstr "現在選択されているプロファイルの機能を無効にします"
+
+#: src/cli/main.c:632
+msgid "Create new authselect profile"
+msgstr "新規の authselect プロファイルを作成"
+
 #: src/cli/main.c:645
 msgid "Authselect can only be run as root!\n"
 msgstr "authselect は root としてのみ実行できます。\n"
@@ -1033,7 +1201,7 @@ msgstr "スマートカードの取り出し時に行う動作"
 
 #: src/compat/authcompat_Options.py:94
 msgid "require smart card for authentication by default"
-msgstr ""
+msgstr "デフォルトでは、認証用のスマートカードが必要です"
 
 #: src/compat/authcompat_Options.py:95
 msgid "authentication with fingerprint readers by default"
@@ -1263,7 +1431,7 @@ msgstr "実行中: %s"
 msgid "Service %s was not found. Please install the service."
 msgstr "サービス %s は見つかりませんでした。サービスをインストールしてください。"
 
-#: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:626
+#: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:625
 #: src/compat/authcompat.py.in.in:651
 #, python-format
 msgid "Command [%s] failed with %d, stderr:"
@@ -1279,11 +1447,11 @@ msgstr "ファイルの削除中: %s"
 msgid "%s was not found. Please, install realmd."
 msgstr "%s は見つかりませんでした。realmd をインストールしてください。"
 
-#: src/compat/authcompat.py.in.in:466
+#: src/compat/authcompat.py.in.in:465
 msgid "Running authconfig compatibility tool."
 msgstr "authconfig 互換性ツールを実行中です。"
 
-#: src/compat/authcompat.py.in.in:467
+#: src/compat/authcompat.py.in.in:466
 msgid ""
 "The purpose of this tool is to enable authentication against chosen services "
 "with authselect and minimum configuration. It does not provide all "
@@ -1292,12 +1460,12 @@ msgstr ""
 "このツールの目的は、authselect および最小限の設定で選択したサービスに対する認証を有効にすることです。authconfig "
 "のすべての機能は提供しません。\n"
 
-#: src/compat/authcompat.py.in.in:470
+#: src/compat/authcompat.py.in.in:469
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
 msgstr "重要: authconfig は authselect に置き換えられました。スクリプトを更新してください。"
 
-#: src/compat/authcompat.py.in.in:472
+#: src/compat/authcompat.py.in.in:471
 msgid ""
 "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
@@ -1305,30 +1473,30 @@ msgstr ""
 "Fedora 28 の Change ページを参照してください: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
 
-#: src/compat/authcompat.py.in.in:473
+#: src/compat/authcompat.py.in.in:472
 msgid ""
 "See man authselect-migration(7) to help you with migration to authselect"
 msgstr "authselect への移行に役立つ authselect-migration(7) を参照してください"
 
-#: src/compat/authcompat.py.in.in:477
+#: src/compat/authcompat.py.in.in:476
 msgid "Warning: These options are not supported anymore and have no effect:"
 msgstr "警告: これらのオプションは今後はサポートされず、影響はありません:"
 
-#: src/compat/authcompat.py.in.in:497
+#: src/compat/authcompat.py.in.in:496
 msgid "authconfig can only be run as root"
 msgstr "authconfig は root としてのみ実行できます。"
 
-#: src/compat/authcompat.py.in.in:502
+#: src/compat/authcompat.py.in.in:501
 #, python-format
 msgid ""
 "Error: option --%s is no longer supported and we cannot continue if it is "
 "set."
 msgstr "エラー: オプション --%s は今後はサポートされず、設定されている場合は続行できません。"
 
-#: src/compat/authcompat.py.in.in:507
+#: src/compat/authcompat.py.in.in:506
 msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
 msgstr "エラー: --enablewinbind および --enablewinbindauth の両方とも設定する必要があります。"
 
-#: src/compat/authcompat.py.in.in:517
+#: src/compat/authcompat.py.in.in:516
 msgid "Error: Please, provide --updateall option."
 msgstr "エラー: --updateall オプションを提供してください。"

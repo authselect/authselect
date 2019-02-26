@@ -1,4 +1,4 @@
-# Fabian Affolter <fab@fedoraproject.org>, 2018. #zanata
+# Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -6,12 +6,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-11-20 11:41+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: German\n"
-"Language: de\n"
+"PO-Revision-Date: 2019-02-27 08:48+0000\n"
+"Last-Translator: Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>\n"
+"Language-Team: French\n"
+"Language: fr\n"
 "X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
 #. type: Title =
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:2
@@ -23,19 +23,21 @@ msgstr "authselect-migration(7)"
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:6
 #, no-wrap
 msgid "NAME"
-msgstr "NAME"
+msgstr "NOM"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:8
 msgid ""
 "authselect-migration - A guide how to migrate from authconfig to authselect."
 msgstr ""
+"authselect-migration - Un guide sur la façon de migrer de authconfig vers "
+"authselect."
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:10
 #, no-wrap
 msgid "DESCRIPTION"
-msgstr "BESCHREIBUNG"
+msgstr "DESCRIPTION"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:15
@@ -45,12 +47,17 @@ msgid ""
 "authselect which replaces it. It also explains what actions need to be done "
 "in order to migrate from authconfig to authselect."
 msgstr ""
+"Cette page de manuel explique les principales différences entre authconfig, "
+"l’outil précédant pour configurer les sources d’authentification et "
+"d’identité du système, et authselect qui le remplace. Elle explique "
+"également quelles actions doivent être faites afin de migrer de authconfig "
+"vers authselect."
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:17
 #, no-wrap
 msgid "MAIN DIFFERENCES"
-msgstr ""
+msgstr "DIFFÉRENCES PRINCIPALES"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:20
@@ -58,6 +65,8 @@ msgid ""
 "Authselect takes a completely different approach to system configuration "
 "than the previous tool authconfig."
 msgstr ""
+"Authselet a une approche totalement différente de la configuration système "
+"que authconfig, l’outil précédent."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:25
@@ -67,6 +76,12 @@ msgid ""
 "(to setup authentication modules and identity sources) but it also generates "
 "simple configuration files for several services such as LDAP and Kerberos."
 msgstr ""
+"Authconfig fait de son mieux pour garder les changements manuels des "
+"utilisateurs dans les fichiers qu’il génère. Il génère non seulement les "
+"fichiers de configuration PAM et nsswitch.conf (pour la configuration des "
+"modules sources d’authentification et d’identité) mais il génère également "
+"des fichiers de configuration simple pour plusieurs services tels que LDAP "
+"et Kerberos."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:34
@@ -80,6 +95,16 @@ msgid ""
 "administrator has an option to create a whole new profile and use it with "
 "authselect.  See authselect-profiles(5) to learn more about profiles."
 msgstr ""
+"Authselect ne fait pas ceci. Il n’essaye pas de générer de fichiers de "
+"configuration autre que PAM et nsswitch.conf et il interdit strictement tout "
+"changement manuel à la configuration générée. Il offre un ensemble de "
+"fichiers appelés profils. Chaque profil décrit ce à quoi la configuration "
+"résultante doit ressembler et elle peut être légèrement modifiée en activant "
+"ou désactivant quelques fonctionnalités optionnelles. Si un besoin se "
+"manifeste pour un profil différent de ceux fournis avec authselect, "
+"l’administrateur a une option pour créer un tout nouveau profil et "
+"l’utiliser avec authselect. Lisez authselect-profiles(5) pour en savoir plus "
+"sur les profils."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:46
@@ -96,6 +121,19 @@ msgid ""
 "configuration that can be fully tested and is much less error prone. It is "
 "also much easier to distribute such configuration across many systems."
 msgstr ""
+"Cela pourrait être un grand désavantage, mais c’est en fait le contraire. "
+"Authconfig est un très vieux outil et les applications offrants les services "
+"requis ont changé rapidement à travers les années. Typiquement, il n’y a "
+"plus besoin d’avoir de multiples modules d’authentification dans PAM et "
+"nsswitch.conf, car la grande majorité des cas d’usages sont couverts par "
+"SSSD. En conséquence, il n’y a plus particulièrement besoin de les ajouter "
+"ou supprimer. Il y a également de meilleurs outils pour générer la "
+"configuration pour les démons système, qui peuvent vous aider à automatiser "
+"le process pour rejoindre un domaine distant tel que « realm ». De plus, les "
+"profils embarqués nous donnent une vision de la configuration système "
+"compréhensible et déterministe qui peut être complètement testée et moins "
+"sujette à l’erreur. Il est également beaucoup plus facile de distribuer ce "
+"type de configuration à travers de nombreux systèmes."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:52
@@ -107,12 +145,19 @@ msgid ""
 "longer contain support for nss-pam-ldapd and users are encouraged to switch "
 "to sssd."
 msgstr ""
+"Le changement qui est probablement le plus controversé est que seul "
+"authselect fourni des profils pour les fournisseurs sssd et winbind. Ces "
+"deux fournisseurs couvrent tous les cas d’utilisation modernes de la "
+"fourniture d’utilisateurs locaux et au domaine LDAP legacy aux "
+"configurations complexes avec des serveurs IPA ou Active Directory. Les "
+"profils ne contiennent plus la prise en charge de nss-pam-ldapd et les "
+"utilisateurs sont encouragés à basculer vers sssd. "
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:54
 #, no-wrap
 msgid "JOINING REMOTE DOMAINS"
-msgstr ""
+msgstr "JOINDRE DES DOMAINES DISTANTS"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:59
@@ -122,12 +167,16 @@ msgid ""
 "the correct authselect profile is selected and all daemons and services are "
 "properly configured."
 msgstr ""
+"Vous pouvez utiliser `ipa-client-install` ou `realm` pour joindre un domaine "
+"IPA et `realm` pour joindre un domaine Active Directory. Ces outil "
+"s’assureront que le bon profil authselect est sélectionné et que tous les "
+"démons et services sont correctement configurés."
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:61
 #, no-wrap
 msgid "CONVERTING YOUR SCRIPTS"
-msgstr ""
+msgstr "CONVERTIR VOS SCRIPTS"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:67
@@ -138,12 +187,18 @@ msgid ""
 "select a correct profile with desired features. Then you also need to write "
 "configuration file for required services."
 msgstr ""
+"Vous pouvez utiliser `ipa-client-install` ou `realm` pour joindre un "
+"domaine, vous pouvez simplement retirer tout appel à authconfig dans vos "
+"scripts. Si ce n’est pas envisageable, vous devez remplacer chaque appel "
+"authconfig avec son équivalent d’appel authselect pour sélectionner un "
+"profil correct avec les fonctionnalités désirées. Alors, vous devrez "
+"également écrire le fichier de configuration pour les services requis."
 
 #. type: Block title
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:68
 #, no-wrap
 msgid "Relation of authconfig options to authselect profiles"
-msgstr ""
+msgstr "Relations entre les options authconfig et les profils authselect"
 
 #. type: delimited block |
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:76
@@ -156,7 +211,7 @@ msgid ""
 "|--enablewinbind --enablewinbindauth |winbind\n"
 "|--enablenis                         |nis\n"
 msgstr ""
-"|*Authconfig options*                |*Authselect profile*\n"
+"|*Options authconfig*                |*Profil authselect*\n"
 "|--enableldap --enableldapauth       |sssd\n"
 "|--enablesssd --enablesssdauth       |sssd\n"
 "|--enablekrb5                        |sssd\n"
@@ -168,6 +223,8 @@ msgstr ""
 #, no-wrap
 msgid "Relation of authconfig options to authselect profile features"
 msgstr ""
+"Relations entre les options authconfig et les fonctionnalités de profil "
+"authselect"
 
 #. type: delimited block |
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:88
@@ -182,12 +239,20 @@ msgid ""
 "|--enablepamaccess    |with-pamaccess\n"
 "|--enablewinbindkrb5  |with-krb5\n"
 msgstr ""
+"|*Options authconfig* |*Fonctionnalité de profil authselect*\n"
+"|--enablesmartcard    |with-smartcard\n"
+"|--enablefingerprint  |with-fingerprint\n"
+"|--enableecryptfs     |with-ecryptfs\n"
+"|--enablemkhomedir    |with-mkhomedir\n"
+"|--enablefaillock     |with-faillock\n"
+"|--enablepamaccess    |with-pamaccess\n"
+"|--enablewinbindkrb5  |with-krb5\n"
 
 #. type: Block title
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:90
 #, no-wrap
 msgid "Examples"
-msgstr "Beispiele"
+msgstr "Exemples"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:94
@@ -229,12 +294,15 @@ msgid ""
 "updateall\n"
 "realm join -U Administrator --client-software=winbind WINBINDDOMAIN\n"
 msgstr ""
+"authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator --"
+"updateall\n"
+"realm join -U Administrator --client-software=winbind WINBINDDOMAIN\n"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:106
 #, no-wrap
 msgid "CONFIGURATION FILES"
-msgstr "KONFIGURATIONSDATEIEN"
+msgstr "FICHIERS DE CONFIGURATION"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:108
@@ -242,6 +310,8 @@ msgid ""
 "This section contains snippets for minimal configuration of various services."
 ""
 msgstr ""
+"Ce paragraphe contient des snippets pour une configuration minimal de divers "
+"services."
 
 #. type: Title ~
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:110
@@ -256,6 +326,9 @@ msgid ""
 "still useful to configure ldap.conf to configure openldap-libs and "
 "indirectly, e.g. LDAP tools such as `ldapsearch`."
 msgstr ""
+"Même si LDAP n’est pas directement utilisé via `pam_ldap` et `nss_ldap`, il "
+"est tout de même utile de configurer ldap.conf pour configurer openldap-libs "
+"et indirectement, par extension les outils LDAP tel quel `ldapsearch`."
 
 #. type: Block title
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:115
@@ -268,7 +341,7 @@ msgstr "{sysconfdir}/openldap/ldap.conf"
 #, no-wrap
 msgid "# Set the default base dn\n"
 "BASE   dc=example,dc=com\n"
-msgstr "# Set the default base dn\n"
+msgstr "# Définir la base par défaut dn\n"
 "BASE   dc=example,dc=com\n"
 
 #. type: delimited block -
@@ -278,7 +351,7 @@ msgid ""
 "# Set the default LDAP server\n"
 "URI    ldap://ldap.example.com ldap://ldap-master.example.com:666\n"
 msgstr ""
-"# Set the default LDAP server\n"
+"# Définir le serveur LDAP par défaut\n"
 "URI    ldap://ldap.example.com ldap://ldap-master.example.com:666\n"
 
 #. type: Title ~
@@ -294,6 +367,9 @@ msgid ""
 "order for krb5-libs and therefore tools such as `kinit` to work out of the "
 "box."
 msgstr ""
+"Si vous utilisez Kerberos, le realm Kerberos par défaut doit être configuré "
+"afin que krb5-libs et donc les outils tels que `kinit` fonctionnent "
+"directement."
 
 #. type: Block title
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:129
@@ -345,6 +421,10 @@ msgid ""
 "that creates one LDAP domain called `default`. The LDAP server is auto-"
 "discovered through DNS lookups."
 msgstr ""
+"Authselect encourage les utilisateurs à utiliser SSSD tant que possible. Il "
+"y a de nombreuses options de configuration, voir sssd.conf(5). Ceci est une "
+"configuration minimale qui crée un domaine LDAP appelé « default ». Le "
+"serveur LDAP est découvert automatique via des recherches DNS."
 
 #. type: Block title
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:151 /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:167
@@ -383,6 +463,9 @@ msgid ""
 "authentication is done over Kerberos. The KDC server is auto-discovered "
 "through DNS lookups."
 msgstr ""
+"Et ici un snippet de configuration pour le même domaine mais maintenant "
+"l’authentification est faite via Kerberos. Le serveur KDC est découvert "
+"automatique via des recherches DNS."
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:180
@@ -412,6 +495,10 @@ msgid ""
 "Kerberos keytab and generating basic SSSD configuration. You can then tune "
 "it up by modifying {sysconfdir}/sssd/sssd.conf."
 msgstr ""
+"Si vous voulez configurer SSSD pour un domaine IPA ou Active Directory, "
+"utilisez l’outil `realm`. Cela réalisera une configuration initiale incluant "
+"la création d’un keytab Kerberos et générant une configuration SSSD basique. "
+"Vous pourrez alors l’ajuster en modifiant {sysconfdir}/sssd/sssd.conf."
 
 #. type: Title ~
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:188
@@ -427,6 +514,11 @@ msgid ""
 "running `adcli` to join the domain. It also makes changes to `smb.conf`. You "
 "can then tune it up by modifying {sysconfdir}/samba/smb.conf."
 msgstr ""
+"Si vous voulez que la machine utilise Winbind, utilisez l’outil `realm`. "
+"Cela réalisera une configuration initiale incluant la création d’un keytab "
+"Kerberos et le lancement de `adcli` pour joindre le domaine. Cela réalise "
+"également des changements à `smb.conf`. Vous pourrez alors l’ajuster en "
+"modifiant {sysconfdir}/samba/smb.conf."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:195 /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:247
@@ -441,6 +533,9 @@ msgid ""
 "authentication work. First, you need to set NIS domain and optionally also "
 "NIS server in {sysconfdir}/yp.conf."
 msgstr ""
+"Il y a plusieurs lieux nécessitant d’être configuré pour faire fonctionner "
+"l’authentification NIS. D’abords, vous devez définir un domaine NIS et en "
+"option également un serveur NIS dans {sysconfdir}/yp.conf."
 
 #. type: Block title
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:200
@@ -455,13 +550,15 @@ msgid "domain mydomain broadcast\n"
 "# or\n"
 "# domain mydomain server myserver\n"
 msgstr "domain mydomain broadcast\n"
-"# or\n"
+"# ou\n"
 "# domain mydomain server myserver\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:208
 msgid "NIS domain must be also set in system network configuration."
 msgstr ""
+"Le domaine NIS doit également être défini dans la configuration réseau du "
+"système."
 
 #. type: Block title
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:209
@@ -482,6 +579,9 @@ msgid ""
 "reboot your system. Additionaly, it may be necessary to enable NIS in "
 "selinux."
 msgstr ""
+"Maintenant, vous pouvez définir le nom de domaine avec la ligne de commande "
+"pour qu’il n’y ait pas besoin de redémarrer le système. De plus, il pourrait "
+"être nécessaire d’activer NIS dans selinux."
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:220
@@ -495,7 +595,7 @@ msgstr "$ domainname mydomain\n"
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:223
 #, no-wrap
 msgid "PASSWORD QUALITY"
-msgstr "PASSWORT-QUALITÄT"
+msgstr "QUALITÉ DE MOT DE PASSE"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:228
@@ -505,6 +605,10 @@ msgid ""
 "should use the password policy that is enforced by the respective remote "
 "server."
 msgstr ""
+"Authselect active le module `pam_pwquality` pour appliquer les restrictions "
+"de qualité des mots de passe. Ce module est uniquement activé pour les "
+"utilisateurs locaux. Les utilisateurs distants doivent utiliser la politique "
+"de mot de passe appliquée par les serveurs distants respectifs."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:232
@@ -513,12 +617,15 @@ msgid ""
 "pwquality.conf. See pam_pwquality(8) to see its configuration options and "
 "defaults."
 msgstr ""
+"Le module `pam_pwquality` peut être configuré dans {sysconfdir}/security/"
+"pwquality.conf. Lisez pam_pwquality(8) pour voir ses options configurables "
+"et par défaut."
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:234
 #, no-wrap
 msgid "STARTING SERVICES"
-msgstr "DIENSTE STARTEN"
+msgstr "DÉMARRAGE DES SERVICES"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:237
@@ -526,6 +633,8 @@ msgid ""
 "Depending on your configuration, you need to start required services "
 "manually with systemd."
 msgstr ""
+"Selon votre configuration, vous avez besoin de démarrer les services "
+"nécessaires manuellement avec systemd."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:241
@@ -557,7 +666,7 @@ msgstr ""
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:252
 msgid "If mkhomedir feature is enabled"
-msgstr ""
+msgstr "Si la fonctionnalité mkhomedir est activée"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:254
@@ -569,7 +678,7 @@ msgstr "systemctl enable oddjobd.service ; systemctl start oddjobd.service\n"
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:256
 #, no-wrap
 msgid "AUTHCONFIG TOOLS"
-msgstr ""
+msgstr "OUTILS AUTHCONFIG"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:260
@@ -578,12 +687,15 @@ msgid ""
 "tool, please switch to native _openssl_ command: *openssl rehash "
 "<directory>* that serves the same purpose."
 msgstr ""
+"Authconfig est fourni avec un outil appelé _cacertdir_rehash_. Si vous "
+"dépendez de cet outil, veuillez basculer vers la commande native _openssl_ : "
+"*openssl rehash <dossier>* qui sert le même but."
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:262
 #, no-wrap
 msgid "SEE ALSO"
-msgstr "SIEHE AUCH"
+msgstr "VOIR AUSSI"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:264

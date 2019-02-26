@@ -2,11 +2,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-11-20 14:02+0100\n"
+"POT-Creation-Date: 2019-02-26 10:26+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-10-30 02:46+0000\n"
+"PO-Revision-Date: 2018-11-26 01:00+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -17,7 +17,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:2
 #, no-wrap
 msgid "authselect-migration(7)"
-msgstr ""
+msgstr "authselect-migration(7)"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:6
@@ -29,7 +29,7 @@ msgstr "名前"
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:8
 msgid ""
 "authselect-migration - A guide how to migrate from authconfig to authselect."
-msgstr ""
+msgstr "authselect-migration - authconfig から authselect への移行方法を示したガイド"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:10
@@ -45,19 +45,22 @@ msgid ""
 "authselect which replaces it. It also explains what actions need to be done "
 "in order to migrate from authconfig to authselect."
 msgstr ""
+"この man ページでは、authconfig と authselect の主な違いについて説明します。authconfig "
+"は、システム認証およびアイデンティティーソースを設定するツールの旧バージョンで、authselect は新バージョンになります。authconfig "
+"から authselect への移行に必要なアクションについても説明します。"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:17
 #, no-wrap
 msgid "MAIN DIFFERENCES"
-msgstr ""
+msgstr "主な差異"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:20
 msgid ""
 "Authselect takes a completely different approach to system configuration "
 "than the previous tool authconfig."
-msgstr ""
+msgstr "authselect ツールは、システム設定に対して旧バージョンの authconfig とはまったく異なるアプローチをとります。"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:25
@@ -67,6 +70,10 @@ msgid ""
 "(to setup authentication modules and identity sources) but it also generates "
 "simple configuration files for several services such as LDAP and Kerberos."
 msgstr ""
+"authconfig "
+"は、生成したファイルに対してユーザーが実施する手動での変更を維持するよう最善を尽くします。(認証モジュールとアイデンティティーソースのセットアップ用に) "
+"PAM 設定ファイルおよび nsswitch.conf を生成するだけでなく、LDAP および Kerberos "
+"などのいくつかのサービス用に簡単な設定ファイルも生成します。"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:34
@@ -80,6 +87,10 @@ msgid ""
 "administrator has an option to create a whole new profile and use it with "
 "authselect.  See authselect-profiles(5) to learn more about profiles."
 msgstr ""
+"authselect は、そのようなことはしません。PAM および nsswitch.conf "
+"以外の設定ファイルは生成しません。また、生成された設定に対する手動での変更を固く禁止しています。プロファイルと呼ばれるファイルのセットを提供します。各プロファイルは、結果として得られる設定について説明し、特定のオプション機能を有効化または無効化することで若干変更することができます。authselect "
+"が出荷するプロファイルとは別のプロファイルへのニーズが生じた場合、管理者は、オプションでまったく新しいプロファイルを作成して authselect "
+"と共に使用することができます。プロファイルの詳細は、authselect-profiles(5) を参照してください。"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:46
@@ -96,6 +107,10 @@ msgid ""
 "configuration that can be fully tested and is much less error prone. It is "
 "also much easier to distribute such configuration across many systems."
 msgstr ""
+"これは大きな欠点と思えるかもしれませんが、実際はその反対です。authconfig "
+"は非常に古いツールで、必要なサービスを提供するアプリケーションは、ここ数年で急激に変化しました。一般に、PAM および nsswitch.conf "
+"では、複数の認証モジュールはもう必要ありません。なぜなら、ユースケースの大部分は SSSD でカバーされるからです。 "
+"したがって、それらを特に追加したり削除したりする必要がありません。「レルム」などのリモートドメインに参加するプロセスの自動化を支援できるシステムデーモンの設定を生成するより優れたツールもあります。さらに、出荷されたプロファイルのシステム設定は、完全にテストが可能で、大幅にエラーが起こりにくい包括的かつ決定論的なものとなっています。また、このような設定を多くのシステムに渡って配布することは、格段に簡単になります。"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:52
@@ -107,12 +122,16 @@ msgid ""
 "longer contain support for nss-pam-ldapd and users are encouraged to switch "
 "to sssd."
 msgstr ""
+"おそらく、最も問題視されている変更は、authselect がプロファイルを sssd プロバイダーと winbind "
+"プラバイダーのみに出荷する点です。これらの 2 つのプロバイダーは、ローカルユーザーとレガシー LDAP ドメインの提供から、IPA サーバーまたは "
+"Active Directory サーバーを使用した複雑な設定まで、現在のすべてのユースケースをカバーします。プロファイルは今後、nss-pam-"
+"ldapd をサポートしません。ユーザーには、sssd への乗り換えを推奨しています。"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:54
 #, no-wrap
 msgid "JOINING REMOTE DOMAINS"
-msgstr ""
+msgstr "リモートドメインへの参加"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:59
@@ -122,12 +141,15 @@ msgid ""
 "the correct authselect profile is selected and all daemons and services are "
 "properly configured."
 msgstr ""
+"IPA ドメインへの参加には、「ipa-client-install」または「レルム」のいずれかを使用でき、Active Directory "
+"ドメインへの参加には「レルム」を使用できます。これらのツールは、正しい authselect "
+"プロファイルが選択され、すべてのデーモンおよびサービスが正しく設定されていることを確認します。"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:61
 #, no-wrap
 msgid "CONVERTING YOUR SCRIPTS"
-msgstr ""
+msgstr "スクリプトの変換"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:67
@@ -138,12 +160,15 @@ msgid ""
 "select a correct profile with desired features. Then you also need to write "
 "configuration file for required services."
 msgstr ""
+"ドメインへの参加に「ipa-client-install」または「レルム」を使用する場合は、単にスクリプト内の authconfig "
+"コールを削除します。このオプションを利用できない場合は、必要な機能を持つ正しいプロファイルを選択するために、各 authconfig "
+"コールをこれと同等の authselect コールと置き換える必要があります。続いて、必要なサービスに設定ファイルを書き込む必要もあります。"
 
 #. type: Block title
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:68
 #, no-wrap
 msgid "Relation of authconfig options to authselect profiles"
-msgstr ""
+msgstr "authselect プロファイルに対する authconfig オプションの関係"
 
 #. type: delimited block |
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:76
@@ -156,12 +181,18 @@ msgid ""
 "|--enablewinbind --enablewinbindauth |winbind\n"
 "|--enablenis                         |nis\n"
 msgstr ""
+"|*Authconfig options*                |*Authselect profile*\n"
+"|--enableldap --enableldapauth       |sssd\n"
+"|--enablesssd --enablesssdauth       |sssd\n"
+"|--enablekrb5                        |sssd\n"
+"|--enablewinbind --enablewinbindauth |winbind\n"
+"|--enablenis                         |nis\n"
 
 #. type: Block title
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:78
 #, no-wrap
 msgid "Relation of authconfig options to authselect profile features"
-msgstr ""
+msgstr "authselect プロファイル機能に対する authconfig オプションの関係"
 
 #. type: delimited block |
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:88
@@ -176,12 +207,21 @@ msgid ""
 "|--enablepamaccess    |with-pamaccess\n"
 "|--enablewinbindkrb5  |with-krb5\n"
 msgstr ""
+"|*Authconfig options* |*Authselect profile feature*\n"
+"|--enablesmartcard    |with-smartcard\n"
+"|--enablefingerprint  |with-fingerprint\n"
+"|--enableecryptfs     |with-ecryptfs\n"
+"|--enablemkhomedir    |with-mkhomedir\n"
+"|--enablefaillock     |with-faillock\n"
+"|--enablepamaccess    |with-pamaccess\n"
+"|--enablewinbindkrb5  |with-krb5\n"
 
+# auto translated by TM merge from translation memory: cp-tmx, unique id: customer-portal:OpenShiftContainerPlatformLifeCycle:OpenShiftContainerPlatformLifeCycle_051016.html:ff7c0fcd6a31e735a61c001f75426961
 #. type: Block title
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:90
 #, no-wrap
 msgid "Examples"
-msgstr ""
+msgstr "例"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:94
@@ -190,6 +230,8 @@ msgid ""
 "authconfig --enableldap --enableldapauth --enablefaillock --updateall\n"
 "authselect select sssd with-faillock\n"
 msgstr ""
+"authconfig --enableldap --enableldapauth --enablefaillock --updateall\n"
+"authselect select sssd with-faillock\n"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:97
@@ -199,6 +241,9 @@ msgid ""
 "sssd --updateall\n"
 "authselect select sssd with-smartcard\n"
 msgstr ""
+"authconfig --enablesssd --enablesssdauth --enablesmartcard --smartcardmodule="
+"sssd --updateall\n"
+"authselect select sssd with-smartcard\n"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:100
@@ -207,6 +252,8 @@ msgid ""
 "authconfig --enableecryptfs --enablepamaccess --updateall\n"
 "authselect select sssd with-ecryptfs with-pamaccess\n"
 msgstr ""
+"authconfig --enableecryptfs --enablepamaccess --updateall\n"
+"authselect select sssd with-ecryptfs with-pamaccess\n"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:103
@@ -216,25 +263,28 @@ msgid ""
 "updateall\n"
 "realm join -U Administrator --client-software=winbind WINBINDDOMAIN\n"
 msgstr ""
+"authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator --"
+"updateall\n"
+"realm join -U Administrator --client-software=winbind WINBINDDOMAIN\n"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:106
 #, no-wrap
 msgid "CONFIGURATION FILES"
-msgstr ""
+msgstr "設定ファイル"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:108
 msgid ""
 "This section contains snippets for minimal configuration of various services."
 ""
-msgstr ""
+msgstr "本セクションには、様々なサービスの最小限の設定に関するスニペットが含まれています。"
 
 #. type: Title ~
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:110
 #, no-wrap
 msgid "LDAP"
-msgstr ""
+msgstr "LDAP"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:114
@@ -243,19 +293,22 @@ msgid ""
 "still useful to configure ldap.conf to configure openldap-libs and "
 "indirectly, e.g. LDAP tools such as `ldapsearch`."
 msgstr ""
+"LDAP が「pam_ldap」および「nss_ldap」を介して直接的に使用されていない場合でも、openldap-libs の設定、そして間接的に "
+"`ldapsearch` などの LDAP ツールを設定するために ldap.conf を設定することは有用です。"
 
 #. type: Block title
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:115
 #, no-wrap
 msgid "{sysconfdir}/openldap/ldap.conf"
-msgstr ""
+msgstr "{sysconfdir}/openldap/ldap.conf"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:119
 #, no-wrap
 msgid "# Set the default base dn\n"
 "BASE   dc=example,dc=com\n"
-msgstr ""
+msgstr "# Set the default base dn\n"
+"BASE   dc=example,dc=com\n"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:122
@@ -264,12 +317,14 @@ msgid ""
 "# Set the default LDAP server\n"
 "URI    ldap://ldap.example.com ldap://ldap-master.example.com:666\n"
 msgstr ""
+"# Set the default LDAP server\n"
+"URI    ldap://ldap.example.com ldap://ldap-master.example.com:666\n"
 
 #. type: Title ~
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:125
 #, no-wrap
 msgid "KERBEROS"
-msgstr ""
+msgstr "Kerberos"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:128
@@ -278,19 +333,22 @@ msgid ""
 "order for krb5-libs and therefore tools such as `kinit` to work out of the "
 "box."
 msgstr ""
+"Kerberos を使用する場合、デフォルトの Kerberos レルムは krb5-libs "
+"のために設定されなければなりません。それによって、「kinit」などのツールが追加設定なしで機能するようになります。 "
 
 #. type: Block title
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:129
 #, no-wrap
 msgid "{sysconfdir}/krb5.conf"
-msgstr ""
+msgstr "{sysconfdir}/krb5.conf"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:133
 #, no-wrap
 msgid "[libdefaults]\n"
 " default_realm = MYREALM\n"
-msgstr ""
+msgstr "[libdefaults]\n"
+" default_realm = MYREALM\n"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:138
@@ -299,7 +357,10 @@ msgid "[realms]\n"
 " MYREALM = {\n"
 "  kdc = kdc.myrealm.org\n"
 " }\n"
-msgstr ""
+msgstr "[realms]\n"
+" MYREALM = {\n"
+"  kdc = kdc.myrealm.org\n"
+" }\n"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:142
@@ -307,13 +368,15 @@ msgstr ""
 msgid "[domain_realm]\n"
 " myrealm.org = MYREALM\n"
 " .myrealm.org = MYREALM\n"
-msgstr ""
+msgstr "[domain_realm]\n"
+" myrealm.org = MYREALM\n"
+" .myrealm.org = MYREALM\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:145 /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:239
 #, no-wrap
 msgid "SSSD"
-msgstr ""
+msgstr "SSSD"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:150
@@ -323,12 +386,15 @@ msgid ""
 "that creates one LDAP domain called `default`. The LDAP server is auto-"
 "discovered through DNS lookups."
 msgstr ""
+"authselect は、可能な限り SSSD を使用するようユーザーに推奨しています。多くの設定オプションがあります。詳細は sssd.conf(5) "
+"を参照してください。これは「デフォルト」と呼ばれる 1 つの LDAP ドメインを作成する最小限の設定です。LDAP サーバーは、DNS "
+"ルックアップを使用して自動検出されます。"
 
 #. type: Block title
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:151 /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:167
 #, no-wrap
 msgid "{sysconfdir}/sssd/sssd.conf"
-msgstr ""
+msgstr "{sysconfdir}/sssd/sssd.conf"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:156 /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:172
@@ -336,7 +402,9 @@ msgstr ""
 msgid "[sssd]\n"
 "config_file_version = 2\n"
 "domains = default\n"
-msgstr ""
+msgstr "[sssd]\n"
+"config_file_version = 2\n"
+"domains = default\n"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:161
@@ -347,6 +415,10 @@ msgid ""
 "ldap_uri = _srv_\n"
 "dns_discovery_domain = myrealm\n"
 msgstr ""
+"[domain/default]\n"
+"id_provider = ldap\n"
+"ldap_uri = _srv_\n"
+"dns_discovery_domain = myrealm\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:166
@@ -355,6 +427,8 @@ msgid ""
 "authentication is done over Kerberos. The KDC server is auto-discovered "
 "through DNS lookups."
 msgstr ""
+"これは、同じドメインの設定スニペットですが、認証には Kerberos を使用します。KDC サーバーは、DNS "
+"ルックアップを使用して自動検出されます。"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:180
@@ -368,6 +442,13 @@ msgid ""
 "krb5_realm = MYREALM\n"
 "dns_discovery_domain = myrealm\n"
 msgstr ""
+"[domain/default]\n"
+"id_provider = ldap\n"
+"auth_provider = krb5\n"
+"ldap_uri = _srv_\n"
+"krb5_server = _srv_\n"
+"krb5_realm = MYREALM\n"
+"dns_discovery_domain = myrealm\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:186
@@ -377,12 +458,15 @@ msgid ""
 "Kerberos keytab and generating basic SSSD configuration. You can then tune "
 "it up by modifying {sysconfdir}/sssd/sssd.conf."
 msgstr ""
+" IPA または Active Directory ドメイン用に SSSD "
+"を設定したい場合は、「レルム」ツールを使用します。これにより、Kerberos keytab の作成および SSSD "
+"の基本設定の生成などの初期設定が実行されます。調整するには、{sysconfdir}/sssd/sssd.conf を変更します。"
 
 #. type: Title ~
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:188
 #, no-wrap
 msgid "WINBIND"
-msgstr ""
+msgstr "Winbind"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:193
@@ -392,12 +476,15 @@ msgid ""
 "running `adcli` to join the domain. It also makes changes to `smb.conf`. You "
 "can then tune it up by modifying {sysconfdir}/samba/smb.conf."
 msgstr ""
+"マシンを設定して Winbind を使用するには「レルム」を使います。これにより、Kerberos keytab "
+"の作成およびドメインに参加するために「adcli」を実行するなどの初期設定が実行されます。「smb."
+"conf」にも変更を加えます。調整するには、{sysconfdir}/samba/smb.conf を変更します。"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:195 /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:247
 #, no-wrap
 msgid "NIS"
-msgstr ""
+msgstr "NIS"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:199
@@ -406,12 +493,14 @@ msgid ""
 "authentication work. First, you need to set NIS domain and optionally also "
 "NIS server in {sysconfdir}/yp.conf."
 msgstr ""
+"NIS 認証を機能させる上で設定が必要な箇所がいくつかあります。まず、NIS ドメインを設定する必要があり、オプションで {sysconfdir}/yp."
+"conf に NIS サーバーも設定します。"
 
 #. type: Block title
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:200
 #, no-wrap
 msgid "{sysconfdir}/yp.conf"
-msgstr ""
+msgstr "{sysconfdir}/yp.conf"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:205
@@ -419,24 +508,26 @@ msgstr ""
 msgid "domain mydomain broadcast\n"
 "# or\n"
 "# domain mydomain server myserver\n"
-msgstr ""
+msgstr "domain mydomain broadcast\n"
+"# or\n"
+"# domain mydomain server myserver\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:208
 msgid "NIS domain must be also set in system network configuration."
-msgstr ""
+msgstr "NIS ドメインは、システムネットワーク設定でも設定される必要があります。"
 
 #. type: Block title
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:209
 #, no-wrap
 msgid "{sysconfdir}/sysconfig/network"
-msgstr ""
+msgstr "{sysconfdir}/sysconfig/network"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:212
 #, no-wrap
 msgid "NISDOMAIN=mydomain\n"
-msgstr ""
+msgstr "NISDOMAIN=mydomain\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:216
@@ -445,19 +536,22 @@ msgid ""
 "reboot your system. Additionaly, it may be necessary to enable NIS in "
 "selinux."
 msgstr ""
+"続いて、システムを再起動する必要がないように、コマンドラインでドメイン名を設定することができます。さらに、selinux の NIS "
+"を有効にする必要があるかもしれません。"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:220
 #, no-wrap
 msgid "$ domainname mydomain\n"
 "$ setsebool -P allow_ypbind 1\n"
-msgstr ""
+msgstr "$ domainname mydomain\n"
+"$ setsebool -P allow_ypbind 1\n"
 
 #. type: Title ~
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:223
 #, no-wrap
 msgid "PASSWORD QUALITY"
-msgstr ""
+msgstr "パスワードの品質"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:228
@@ -467,6 +561,8 @@ msgid ""
 "should use the password policy that is enforced by the respective remote "
 "server."
 msgstr ""
+"authselect "
+"は「pam_pwquality」モジュールを有効にし、パスワード品質制限を実施します。このモジュールは、ローカルユーザーに対してのみ有効となります。リモートユーザーは、各リモートサーバーが実行するパスワードポリシーを使用する必要があります。"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:232
@@ -475,36 +571,40 @@ msgid ""
 "pwquality.conf. See pam_pwquality(8) to see its configuration options and "
 "defaults."
 msgstr ""
+"「pam_pwquality」モジュールは、{sysconfdir}/security/pwquality.conf "
+"に設定できます。設定オプションとデフォルトの詳細は pam_pwquality(8) を参照してください。"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:234
 #, no-wrap
 msgid "STARTING SERVICES"
-msgstr ""
+msgstr "サービスの起動"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:237
 msgid ""
 "Depending on your configuration, you need to start required services "
 "manually with systemd."
-msgstr ""
+msgstr "設定によっては、 systemd を使用して必要なサービスを手動で開始する必要があります。"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:241
 #, no-wrap
 msgid "systemctl enable sssd.service ; systemctl start sssd.service\n"
-msgstr ""
+msgstr "systemctl は sssd.service を有効にします ; systemctl は sssd.service を開始します\n"
 
+# auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:8f3fe0bb1a8f7ff1b85ea28b06a9a046
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:243
 msgid "Winbind"
-msgstr ""
+msgstr "Winbind"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:245
 #, no-wrap
 msgid "systemctl enable winbind.service ; systemctl start winbind.service\n"
 msgstr ""
+"systemctl は winbind.service を有効にします ; systemctl は winbind.service を開始します\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:250
@@ -513,23 +613,26 @@ msgid ""
 "systemctl enable rpcbind.service ; systemctl start rpcbind.service\n"
 "systemctl enable ypbind.service ; systemctl start ypbind.service\n"
 msgstr ""
+"systemctl は rpcbind.service を有効にします ; systemctl は rpcbind.service を開始します\n"
+"systemctl は ypbind.service を有効にします ; systemctl は ypbind.service を開始します\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:252
 msgid "If mkhomedir feature is enabled"
-msgstr ""
+msgstr "mkhomedir 機能が有効な場合"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:254
 #, no-wrap
 msgid "systemctl enable oddjobd.service ; systemctl start oddjobd.service\n"
 msgstr ""
+"systemctl は oddjobd.service を有効にします ; systemctl は oddjobd.service を開始します\n"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:256
 #, no-wrap
 msgid "AUTHCONFIG TOOLS"
-msgstr ""
+msgstr "Authconfig ツール"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:260
@@ -538,6 +641,8 @@ msgid ""
 "tool, please switch to native _openssl_ command: *openssl rehash "
 "<directory>* that serves the same purpose."
 msgstr ""
+"authconfig は、_cacertdir_rehash_ と呼ばれるツールを出荷しました。このツールに依存する場合は、同じ目的を持つ native "
+"_openssl_ command: *openssl rehash <directory>* に切り替えてください。"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:262
@@ -551,3 +656,5 @@ msgid ""
 "authselect(8), authselect-profiles(5), realm(8), ipa-client-install(1), sssd."
 "conf(5), smb.conf(5), ldap.conf(5), krb5.conf(5)"
 msgstr ""
+"authselect(8)、authselect-profiles(5)、realm(8)、ipa-client-install(1)、sssd."
+"conf(5)、smb.conf(5)、ldap.conf(5)、krb5.conf(5)"

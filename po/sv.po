@@ -1,14 +1,16 @@
 # Göran Uddeborg <goeran@uddeborg.se>, 2018. #zanata
+# Göran Uddeborg <goeran@uddeborg.se>, 2019. #zanata
+# Pavel Brezina <pbrezina@redhat.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2018-11-20 14:02+0100\n"
+"POT-Creation-Date: 2019-02-26 10:26+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-08-18 05:11+0000\n"
-"Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
+"PO-Revision-Date: 2019-03-05 10:26+0000\n"
+"Last-Translator: Pavel Brezina <pbrezina@redhat.com>\n"
 "Language-Team: Swedish\n"
 "Language: sv\n"
 "X-Generator: Zanata 4.6.2\n"
@@ -16,17 +18,17 @@ msgstr ""
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:169
 msgid "Unable to obtain supported features"
-msgstr ""
+msgstr "Kan inte ta fram stödda funktioner"
 
 #: src/lib/authselect.c:59
 #, c-format
 msgid "Unknown profile feature [%s], did you mean [%s]?"
-msgstr ""
+msgstr "Okänd profilfunktion [%s], menade du [%s]?"
 
 #: src/lib/authselect.c:62
 #, c-format
 msgid "Unknown profile feature [%s]"
-msgstr ""
+msgstr "Okänd profilfunktion [%s]"
 
 #: src/lib/authselect.c:86
 #, c-format
@@ -79,7 +81,7 @@ msgstr "Kan inte aktivera profilen [%s] [%d]: %s"
 #: src/lib/authselect.c:179
 #, c-format
 msgid "Profile feature [%s] is no longer supported, removing it..."
-msgstr ""
+msgstr "Profilfunktionen [%s] stödjs inte längre, tar bort den …"
 
 #: src/lib/authselect.c:202
 msgid "Trying to backup system files"
@@ -89,149 +91,6 @@ msgstr "Försöker säkerhetskopiera systemfiler"
 #, c-format
 msgid "Unable to backup system files [%d]: %s"
 msgstr "Kan inte säkerhetskopiera systemfiler [%d]: %s"
-
-#: src/lib/util/file.c:42
-msgid "Internal error: stat cannot be NULL!"
-msgstr "Internt fel: stat kan inte vara NULL!"
-
-#: src/lib/util/file.c:50
-#, c-format
-msgid "[%s] is not a directory!"
-msgstr "[%s] är inte en katalog!"
-
-#: src/lib/util/file.c:53
-#, c-format
-msgid "[%s] is not a regular file!"
-msgstr "[%s] är inte en vanlig fil!"
-
-#: src/lib/util/file.c:56
-#, c-format
-msgid "[%s] is not a symbolic link!"
-msgstr "[%s] är inte en symbolisk länk!"
-
-#: src/lib/util/file.c:59
-#, c-format
-msgid "[%s] has wrong type [%.7o], expected [%.7o]!"
-msgstr "[%s] har fel typ [%.7o], [%.7o] förväntades!"
-
-#: src/lib/util/file.c:86
-#, c-format
-msgid "[%s] has wrong mode [%.4o], expected [%.4o]!"
-msgstr "[%s] har fel rättigheter [%.4o], [%.4o] förväntades!"
-
-#: src/lib/util/file.c:92
-#, c-format
-msgid "[%s] has wrong owner [%u], expected [%u]!"
-msgstr "[%s] har fel ägare [%u], [%u] förväntades!"
-
-#: src/lib/util/file.c:98
-#, c-format
-msgid "[%s] has wrong group [%u], expected [%u]!"
-msgstr "[%s] har fel grupp [%u], [%u] förväntades!"
-
-#: src/lib/util/file.c:120 src/lib/files/system.c:498
-#, c-format
-msgid "[%s] does not exist!"
-msgstr "[%s] finns inte!"
-
-#: src/lib/util/file.c:125 src/lib/util/file.c:197
-#, c-format
-msgid "Unable to stat [%s] [%d]: %s"
-msgstr "Kan inte ta status på [%s] [%d]: %s"
-
-#: src/lib/util/file.c:163 src/lib/util/file.c:209
-#, c-format
-msgid "Unable to read link destination [%s] [%d]: %s"
-msgstr "Kan inte läsa länkmålet [%s] [%d]: %s"
-
-#: src/lib/util/file.c:169
-#, c-format
-msgid "Link [%s] does not point to [%s]"
-msgstr "Länken [%s] pekar inte på [%s]"
-
-#: src/lib/util/file.c:215
-#, c-format
-msgid "Link [%s] points to [%s]"
-msgstr "Länken [%s] pekar på [%s]"
-
-#: src/lib/util/file.c:265
-msgid "Internal error: filepath cannot be NULL!"
-msgstr "Internt fel: filepath kan inte vara NULL!"
-
-#: src/lib/util/file.c:297
-#, c-format
-msgid "Unable to get parent directory of [%s] [%d]: %s"
-msgstr "Kan inte ta reda på föräldrakatalogen till [%s] [%d]: %s"
-
-#: src/lib/util/template.c:112 src/lib/util/template.c:152
-#: src/lib/util/template.c:229
-msgid "Invalid operator!"
-msgstr "Felaktig operator!"
-
-#: src/lib/util/template.c:373 src/lib/util/template.c:520
-#: src/lib/files/system.c:112 src/lib/files/system.c:170
-#, c-format
-msgid "Unable to compile regular expression: regex error %d"
-msgstr "Kan inte kompilera det reguljära uttrycket: reguljärt uttrycksfel %d"
-
-#: src/lib/util/template.c:382 src/lib/util/template.c:530
-#, c-format
-msgid "Unable to process match [%d]: %s"
-msgstr "Kan inte bearbeta matchningen [%d]: %s"
-
-#: src/lib/util/template.c:402
-#, c-format
-msgid "Unable to process operator [%d]: %s"
-msgstr "Kan inte bearbeta operator [%d]: %s"
-
-#: src/lib/util/template.c:417 src/lib/util/template.c:541
-#: src/lib/files/system.c:130 src/lib/files/system.c:195
-#, c-format
-msgid "Unable to search string: regex error %d"
-msgstr "Kan inte söka i strängen: reguljärt uttrycksfel %d"
-
-#: src/lib/util/template.c:448
-#, c-format
-msgid "Unable to generate template [%d]: %s"
-msgstr "Kan inte generera mall [%d]: %s"
-
-#: src/lib/util/template.c:477
-msgid "Unable to get current time!"
-msgstr "Kan inte ta reda på aktuell tid!"
-
-#: src/lib/util/template.c:491
-msgid "Unable to create message!"
-msgstr "Kan inte skapa ett meddelande!"
-
-#: src/lib/util/textfile.c:56
-#, c-format
-msgid "File [%s] is bigger than %uKiB!"
-msgstr "Filen [%s] är större än %u KiB!"
-
-#: src/lib/util/textfile.c:85
-#, c-format
-msgid "Unable to read file [%s] [%d]: %s"
-msgstr "Kan inte läsa filen [%s] [%d]: %s"
-
-#: src/lib/util/textfile.c:158
-#, c-format
-msgid "Unable to open file [%s] [%d]: %s"
-msgstr "Kan inte öppna filen [%s] [%d]: %s"
-
-#: src/lib/util/textfile.c:167
-#, c-format
-msgid "Unable to write data [%s] [%d]: %s"
-msgstr "Kan inte skriva data [%s] [%d]: %s"
-
-#: src/lib/util/textfile.c:175 src/lib/util/textfile.c:266
-#, c-format
-msgid "Unable to chmod file [%s] [%d]: %s"
-msgstr "Kan inte ändra rättigheter på filen [%s] [%d]: %s"
-
-#: src/lib/util/textfile.c:273
-#, c-format
-msgid "Unable to chown file [%s] [%d]: %s"
-msgstr "Kan inte ändra ägare på filen [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:104
 msgid "Unable to generate nsswitch.conf"
@@ -244,11 +103,11 @@ msgstr "Kan inte hitta nsswitch-mappar [%d]: %s"
 
 #: src/lib/authselect_profile.c:132
 msgid "Unable to create array (out of memory)"
-msgstr ""
+msgstr "Kan inte skapa en vektor (slut på minne)"
 
 #: src/lib/authselect_profile.c:141 src/lib/authselect_profile.c:150
 msgid "Unable to obtain feature list (out of memory)"
-msgstr ""
+msgstr "Kan inte få tag i funktionslistan (slut på minne)"
 
 #: src/lib/authselect_profile.c:344
 #, c-format
@@ -340,6 +199,233 @@ msgstr "Kan inte skapa en tom profil [%d]: %s"
 #, c-format
 msgid "Unable to create profile [%d]: %s"
 msgstr "Kan inte skapa profilen [%d]: %s"
+
+#: src/lib/files/config.c:150
+msgid "Checking if all required directories are writable."
+msgstr "Kontrollerar om alla nödvändiga kataloger är skrivbara."
+
+#: src/lib/files/config.c:155
+#, c-format
+msgid "Unable to get path to %s parent directory!"
+msgstr "Kan inte få sökvägen till %s föräldrakatalog!"
+
+#: src/lib/files/config.c:162
+#, c-format
+msgid "Creating path [%s]"
+msgstr "Skapar sökvägen [%s]"
+
+#: src/lib/files/config.c:166
+#, c-format
+msgid "Unable to create path [%s] [%d]: %s"
+msgstr "Kan inte skapa sökvägen [%s] [%d]: %s"
+
+#: src/lib/files/config.c:171
+#, c-format
+msgid "Directory [%s] does not exist, please create it!"
+msgstr "Katalogen [%s] finns inte, var god och skapa den!"
+
+#: src/lib/files/config.c:174
+#, c-format
+msgid "Unable to access directory [%s] in [WX] mode!"
+msgstr "Kan inte komma åt katalogen [%s] i [WX]-läge"
+
+#: src/lib/files/config.c:193
+#, c-format
+msgid "Unable to load profile [%s] [%d]: %s"
+msgstr "Kan inte läsa in profilen [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:41
+#, c-format
+msgid "Creating symbolic link [%s] to [%s]"
+msgstr "Skapar en symbolisk länk [%s] till [%s]"
+
+#: src/lib/files/symlinks.c:47
+#, c-format
+msgid "Unable to overwrite file [%s] [%d]: %s"
+msgstr "Kan inte skriva över filen [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:55
+#, c-format
+msgid "Unable to create symbolic link [%s] [%d]: %s"
+msgstr "Kan inte skapa en symbolisk länk [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:79
+#, c-format
+msgid "Validating link [%s]"
+msgstr "Validerar länken [%s]"
+
+#: src/lib/files/symlinks.c:83
+#, c-format
+msgid "Unable to validate link [%s] [%d]: %s"
+msgstr "Kan inte validera länken [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:90
+#, c-format
+msgid "[%s] was not created by authselect!"
+msgstr "[%s] skapades inte av authselect!"
+
+#: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:152
+#: src/lib/files/system.c:573
+#, c-format
+msgid "Error while trying to access file [%s] [%d]: %s"
+msgstr "Fel vid försök att komma åt filen [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:120
+#, c-format
+msgid "Unable to check file [%s] [%d]: %s"
+msgstr "Kan inte kontrollera filen [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:127
+#, c-format
+msgid "Symbolic link [%s] to [%s] still exists!"
+msgstr "Den symboliska länken [%s] till [%s] finns redan!"
+
+#: src/lib/files/symlinks.c:148
+#, c-format
+msgid "File [%s] exists but it needs to be overwritten!"
+msgstr "Filen [%s] finns men den behöver skrivas över!"
+
+#: src/lib/files/system.c:74 src/lib/profiles/read.c:158
+#, c-format
+msgid "Reading file [%s/%s]"
+msgstr "Läser filen [%s/%s]"
+
+#: src/lib/files/system.c:82 src/lib/profiles/read.c:164
+#: src/lib/profiles/read.c:169
+#, c-format
+msgid "Unable to read file [%s/%s] [%d]: %s"
+msgstr "Kan inte läsa filen [%s/%s] [%d]: %s"
+
+#: src/lib/files/system.c:112 src/lib/files/system.c:170
+#: src/lib/util/template.c:374 src/lib/util/template.c:521
+#, c-format
+msgid "Unable to compile regular expression: regex error %d"
+msgstr "Kan inte kompilera det reguljära uttrycket: reguljärt uttrycksfel %d"
+
+#: src/lib/files/system.c:130 src/lib/files/system.c:195
+#: src/lib/util/template.c:418 src/lib/util/template.c:542
+#, c-format
+msgid "Unable to search string: regex error %d"
+msgstr "Kan inte söka i strängen: reguljärt uttrycksfel %d"
+
+#: src/lib/files/system.c:272 src/lib/files/system.c:501
+#, c-format
+msgid "Unable to read [%s] [%d]: %s"
+msgstr "Kan inte läsa [%s] [%d]: %s"
+
+#: src/lib/files/system.c:288
+#, c-format
+msgid "Unable to generate nsswitch.conf [%d]: %s"
+msgstr "Kan inte generera nsswitch.conf [%d]: %s"
+
+#: src/lib/files/system.c:354
+#, c-format
+msgid "Unable to generate files [%d]: %s"
+msgstr "Kan inte generera filerna [%d]: %s"
+
+#: src/lib/files/system.c:368
+#, c-format
+msgid "Writing temporary file for [%s]"
+msgstr "Skriver temporär fil för [%s]"
+
+#: src/lib/files/system.c:372
+#, c-format
+msgid "Unable to write temporary file [%s] [%d]: %s"
+msgstr "Kan inte skriva temporärfilen [%s] [%d]: %s"
+
+#: src/lib/files/system.c:377
+#, c-format
+msgid "Temporary file is named [%s]"
+msgstr "Temporär fil heter [%s]"
+
+#: src/lib/files/system.c:388
+#, c-format
+msgid "Renaming [%s] to [%s]"
+msgstr "Byter namn på [%s] till [%s]"
+
+#: src/lib/files/system.c:393
+#, c-format
+msgid "Unable to rename [%s] to [%s] [%d]: %s"
+msgstr "Kan inte byta namn på [%s] till [%s] [%d]: %s"
+
+#: src/lib/files/system.c:493
+#, c-format
+msgid "Validating file [%s]"
+msgstr "Validerar filen [%s]"
+
+#: src/lib/files/system.c:498 src/lib/util/file.c:120
+#, c-format
+msgid "[%s] does not exist!"
+msgstr "[%s] finns inte!"
+
+#: src/lib/files/system.c:504
+#, c-format
+msgid "Unable to validate file [%s] [%d]: %s"
+msgstr "Kan inte validera filen [%s] [%d]: %s"
+
+#: src/lib/files/system.c:511
+#, c-format
+msgid "Comparing content against [%s]"
+msgstr "Jämför innehållet mot [%s]"
+
+#: src/lib/files/system.c:515
+msgid "Comparing content against current profile"
+msgstr "Jämför innehållet mot den aktuella profilen"
+
+#: src/lib/files/system.c:521
+#, c-format
+msgid "[%s] has unexpected content!"
+msgstr "[%s] har oväntat innehåll!"
+
+#: src/lib/files/system.c:528
+#, c-format
+msgid "Unable to check file mode of [%s] [%d]: %s"
+msgstr "Kan inte kontrollera rättigheterna på [%s] [%d]: %s"
+
+#: src/lib/files/system.c:550
+#, c-format
+msgid "File [%s] was modified outside authselect!"
+msgstr "Filen [%s] ändrades utanför authselect!"
+
+#: src/lib/files/system.c:569
+#, c-format
+msgid "File [%s] is still present"
+msgstr "Filen [%s] är fortfarande kvar"
+
+#: src/lib/files/system.c:596
+#, c-format
+msgid "Unable to create backup directory [%s/%s] [%d]: %s"
+msgstr "Kan inte skapa en katalog för säkerhetskopia [%s/%s] [%d]: %s"
+
+#: src/lib/files/system.c:622
+#, c-format
+msgid "Unable to create backup directory [%s] [%d]: %s"
+msgstr "Kan inte skapa en katalog för säkerhetskopia [%s] [%d]: %s"
+
+#: src/lib/files/system.c:643
+#, c-format
+msgid "Creating temporary directory at [%s]"
+msgstr "Skapar temporär katalog på [%s]"
+
+#: src/lib/files/system.c:666
+#, c-format
+msgid "Unable to create backup directory [%d]: %s"
+msgstr "Kan inte skapa en katalog för säkerhetskopia [%d]: %s"
+
+#: src/lib/files/system.c:678
+#, c-format
+msgid "Copying [%s] to [%s/%s]"
+msgstr "Kopierar [%s] till [%s/%s]"
+
+#: src/lib/files/system.c:682
+#, c-format
+msgid "File [%s] does not exist"
+msgstr "Filen [%s] finns inte"
+
+#: src/lib/files/system.c:684
+#, c-format
+msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
+msgstr "Kan inte kopiera [%s] till [%s/%s] [%d]: %s"
 
 #: src/lib/profiles/activate.c:44
 #, c-format
@@ -443,174 +529,187 @@ msgstr "Profilen [%s] hittad vid [%s]"
 msgid "Profile [%s] was not found"
 msgstr "Profilen [%s] hittades inte"
 
-#: src/lib/profiles/read.c:158 src/lib/files/system.c:74
-#, c-format
-msgid "Reading file [%s/%s]"
-msgstr "Läser filen [%s/%s]"
-
-#: src/lib/profiles/read.c:164 src/lib/profiles/read.c:169
-#: src/lib/files/system.c:82
-#, c-format
-msgid "Unable to read file [%s/%s] [%d]: %s"
-msgstr "Kan inte läsa filen [%s/%s] [%d]: %s"
-
 #: src/lib/profiles/read.c:199 src/lib/profiles/read.c:218
 #, c-format
 msgid "Profile [%s] does not contain a name in [%s]!"
 msgstr "Profilen [%s] innehåller inte ett namn i [%s]!"
 
-#: src/lib/files/config.c:150
-msgid "Checking if all required directories are writable."
-msgstr "Kontrollerar om alla nödvändiga kataloger är skrivbara."
+#: src/lib/util/file.c:42
+msgid "Internal error: stat cannot be NULL!"
+msgstr "Internt fel: stat kan inte vara NULL!"
 
-#: src/lib/files/config.c:155
+#: src/lib/util/file.c:50
 #, c-format
-msgid "Unable to get path to %s parent directory!"
-msgstr "Kan inte få sökvägen till %s föräldrakatalog!"
+msgid "[%s] is not a directory!"
+msgstr "[%s] är inte en katalog!"
 
-#: src/lib/files/config.c:162
+#: src/lib/util/file.c:53
 #, c-format
-msgid "Creating path [%s]"
-msgstr "Skapar sökvägen [%s]"
+msgid "[%s] is not a regular file!"
+msgstr "[%s] är inte en vanlig fil!"
 
-#: src/lib/files/config.c:166
+#: src/lib/util/file.c:56
 #, c-format
-msgid "Unable to create path [%s] [%d]: %s"
-msgstr "Kan inte skapa sökvägen [%s] [%d]: %s"
+msgid "[%s] is not a symbolic link!"
+msgstr "[%s] är inte en symbolisk länk!"
 
-#: src/lib/files/config.c:171
+#: src/lib/util/file.c:59
 #, c-format
-msgid "Directory [%s] does not exist, please create it!"
-msgstr "Katalogen [%s] finns inte, var god och skapa den!"
+msgid "[%s] has wrong type [%.7o], expected [%.7o]!"
+msgstr "[%s] har fel typ [%.7o], [%.7o] förväntades!"
 
-#: src/lib/files/config.c:174
+#: src/lib/util/file.c:86
 #, c-format
-msgid "Unable to access directory [%s] in [WX] mode!"
-msgstr "Kan inte komma åt katalogen [%s] i [WX]-läge"
+msgid "[%s] has wrong mode [%.4o], expected [%.4o]!"
+msgstr "[%s] har fel rättigheter [%.4o], [%.4o] förväntades!"
 
-#: src/lib/files/config.c:193
+#: src/lib/util/file.c:92
 #, c-format
-msgid "Unable to load profile [%s] [%d]: %s"
-msgstr "Kan inte läsa in profilen [%s] [%d]: %s"
+msgid "[%s] has wrong owner [%u], expected [%u]!"
+msgstr "[%s] har fel ägare [%u], [%u] förväntades!"
 
-#: src/lib/files/system.c:272 src/lib/files/system.c:501
+#: src/lib/util/file.c:98
 #, c-format
-msgid "Unable to read [%s] [%d]: %s"
-msgstr "Kan inte läsa [%s] [%d]: %s"
+msgid "[%s] has wrong group [%u], expected [%u]!"
+msgstr "[%s] har fel grupp [%u], [%u] förväntades!"
 
-#: src/lib/files/system.c:288
+#: src/lib/util/file.c:125 src/lib/util/file.c:197
 #, c-format
-msgid "Unable to generate nsswitch.conf [%d]: %s"
-msgstr "Kan inte generera nsswitch.conf [%d]: %s"
+msgid "Unable to stat [%s] [%d]: %s"
+msgstr "Kan inte ta status på [%s] [%d]: %s"
 
-#: src/lib/files/system.c:354
+#: src/lib/util/file.c:163 src/lib/util/file.c:209
 #, c-format
-msgid "Unable to generate files [%d]: %s"
-msgstr "Kan inte generera filerna [%d]: %s"
+msgid "Unable to read link destination [%s] [%d]: %s"
+msgstr "Kan inte läsa länkmålet [%s] [%d]: %s"
 
-#: src/lib/files/system.c:368
+#: src/lib/util/file.c:169
 #, c-format
-msgid "Writing temporary file for [%s]"
-msgstr "Skriver temporär fil för [%s]"
+msgid "Link [%s] does not point to [%s]"
+msgstr "Länken [%s] pekar inte på [%s]"
 
-#: src/lib/files/system.c:372
+#: src/lib/util/file.c:215
 #, c-format
-msgid "Unable to write temporary file [%s] [%d]: %s"
-msgstr "Kan inte skriva temporärfilen [%s] [%d]: %s"
+msgid "Link [%s] points to [%s]"
+msgstr "Länken [%s] pekar på [%s]"
 
-#: src/lib/files/system.c:377
+#: src/lib/util/file.c:265
+msgid "Internal error: filepath cannot be NULL!"
+msgstr "Internt fel: filepath kan inte vara NULL!"
+
+#: src/lib/util/file.c:297
 #, c-format
-msgid "Temporary file is named [%s]"
-msgstr "Temporär fil heter [%s]"
+msgid "Unable to get parent directory of [%s] [%d]: %s"
+msgstr "Kan inte ta reda på föräldrakatalogen till [%s] [%d]: %s"
 
-#: src/lib/files/system.c:388
+#: src/lib/util/selinux.c:42
 #, c-format
-msgid "Renaming [%s] to [%s]"
-msgstr "Byter namn på [%s] till [%s]"
+msgid "Unable to create selabel context [%d]: %s"
+msgstr "Kan inte skapa selabel-kontext [%d]: %s"
 
-#: src/lib/files/system.c:393
+#: src/lib/util/selinux.c:51
 #, c-format
-msgid "Unable to rename [%s] to [%s] [%d]: %s"
-msgstr "Kan inte byta namn på [%s] till [%s] [%d]: %s"
+msgid "Unable to lookup selinux context [%d]: %s"
+msgstr "Kan inte slå upp selinux-kontext [%d]: %s"
 
-#: src/lib/files/system.c:493
+#: src/lib/util/selinux.c:55
 #, c-format
-msgid "Validating file [%s]"
-msgstr "Validerar filen [%s]"
+msgid "Found default selinux context for [%s]: %s"
+msgstr "Hittade standard-selinux-kontext för [%s]: %s"
 
-#: src/lib/files/system.c:504
+#: src/lib/util/selinux.c:80
 #, c-format
-msgid "Unable to validate file [%s] [%d]: %s"
-msgstr "Kan inte validera filen [%s] [%d]: %s"
+msgid "Unable to obtain selinux context for [%s] [%d]: %s"
+msgstr "Kan inte få tag i selinux-kontext för [%s] [%d]: %s"
 
-#: src/lib/files/system.c:511
+#: src/lib/util/selinux.c:87
+msgid "not set"
+msgstr "inte satt"
+
+#: src/lib/util/selinux.c:86
 #, c-format
-msgid "Comparing content against [%s]"
-msgstr "Jämför innehållet mot [%s]"
+msgid "Found selinux context for [%s]: %s"
+msgstr "Hittade selinux-kontext för [%s]: %s"
 
-#: src/lib/files/system.c:515
-msgid "Comparing content against current profile"
-msgstr "Jämför innehållet mot den aktuella profilen"
+#: src/lib/util/selinux.c:111
+msgid "Unable to get current fscreate selinux context!"
+msgstr "Kan inte ta reda på aktuell fscreate selinux-kontext!"
 
-#: src/lib/files/system.c:521
+#: src/lib/util/selinux.c:117
 #, c-format
-msgid "[%s] has unexpected content!"
-msgstr "[%s] har oväntat innehåll!"
+msgid "Unable to get default selinux context for [%s] [%d]: %s!"
+msgstr "Kan inte få tag i standard selinux-kontext för [%s] [%d]: %s!"
 
-#: src/lib/files/system.c:528
-#, c-format
-msgid "Unable to check file mode of [%s] [%d]: %s"
-msgstr "Kan inte kontrollera rättigheterna på [%s] [%d]: %s"
+#: src/lib/util/selinux.c:125
+msgid "Unable to set fscreate selinux context!"
+msgstr "Kan inte sätta fscreate selinux-kontext!"
 
-#: src/lib/files/system.c:550
-#, c-format
-msgid "File [%s] was modified outside authselect!"
-msgstr "Filen [%s] ändrades utanför authselect!"
+#: src/lib/util/selinux.c:135
+msgid "Unable to restore fscreate selinux context!"
+msgstr "Kan inte återställa fscreate selinux-kontext!"
 
-#: src/lib/files/system.c:569
-#, c-format
-msgid "File [%s] is still present"
-msgstr "Filen [%s] är fortfarande kvar"
+#: src/lib/util/template.c:113 src/lib/util/template.c:153
+#: src/lib/util/template.c:230
+msgid "Invalid operator!"
+msgstr "Felaktig operator!"
 
-#: src/lib/files/system.c:573
+#: src/lib/util/template.c:383 src/lib/util/template.c:531
 #, c-format
-msgid "Error while trying to access file [%s] [%d]: %s"
-msgstr "Fel vid försök att komma åt filen [%s] [%d]: %s"
+msgid "Unable to process match [%d]: %s"
+msgstr "Kan inte bearbeta matchningen [%d]: %s"
 
-#: src/lib/files/system.c:596
+#: src/lib/util/template.c:403
 #, c-format
-msgid "Unable to create backup directory [%s/%s] [%d]: %s"
-msgstr "Kan inte skapa en katalog för säkerhetskopia [%s/%s] [%d]: %s"
+msgid "Unable to process operator [%d]: %s"
+msgstr "Kan inte bearbeta operator [%d]: %s"
 
-#: src/lib/files/system.c:622
+#: src/lib/util/template.c:449
 #, c-format
-msgid "Unable to create backup directory [%s] [%d]: %s"
-msgstr "Kan inte skapa en katalog för säkerhetskopia [%s] [%d]: %s"
+msgid "Unable to generate template [%d]: %s"
+msgstr "Kan inte generera mall [%d]: %s"
 
-#: src/lib/files/system.c:643
-#, c-format
-msgid "Creating temporary directory at [%s]"
-msgstr "Skapar temporär katalog på [%s]"
+#: src/lib/util/template.c:478
+msgid "Unable to get current time!"
+msgstr "Kan inte ta reda på aktuell tid!"
 
-#: src/lib/files/system.c:666
-#, c-format
-msgid "Unable to create backup directory [%d]: %s"
-msgstr "Kan inte skapa en katalog för säkerhetskopia [%d]: %s"
+#: src/lib/util/template.c:492
+msgid "Unable to create message!"
+msgstr "Kan inte skapa ett meddelande!"
 
-#: src/lib/files/system.c:678
+#: src/lib/util/template.c:600
 #, c-format
-msgid "Copying [%s] to [%s/%s]"
-msgstr "Kopierar [%s] till [%s/%s]"
+msgid "Unable to create temporary file for [%s] [%d]: %s"
+msgstr "Kan inte skapa temporärfilen för [%s] [%d]: %s"
 
-#: src/lib/files/system.c:682
+#: src/lib/util/textfile.c:56
 #, c-format
-msgid "File [%s] does not exist"
-msgstr "Filen [%s] finns inte"
+msgid "File [%s] is bigger than %uKiB!"
+msgstr "Filen [%s] är större än %u KiB!"
 
-#: src/lib/files/system.c:684
+#: src/lib/util/textfile.c:85
 #, c-format
-msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
-msgstr "Kan inte kopiera [%s] till [%s/%s] [%d]: %s"
+msgid "Unable to read file [%s] [%d]: %s"
+msgstr "Kan inte läsa filen [%s] [%d]: %s"
+
+#: src/lib/util/textfile.c:158
+#, c-format
+msgid "Unable to open file [%s] [%d]: %s"
+msgstr "Kan inte öppna filen [%s] [%d]: %s"
+
+#: src/lib/util/textfile.c:167
+#, c-format
+msgid "Unable to write data [%s] [%d]: %s"
+msgstr "Kan inte skriva data [%s] [%d]: %s"
+
+#: src/lib/util/textfile.c:175 src/lib/util/textfile.c:266
+#, c-format
+msgid "Unable to chmod file [%s] [%d]: %s"
+msgstr "Kan inte ändra rättigheter på filen [%s] [%d]: %s"
+
+#: src/lib/util/textfile.c:273
+#, c-format
+msgid "Unable to chown file [%s] [%d]: %s"
+msgstr "Kan inte ändra ägare på filen [%s] [%d]: %s"
 
 #: src/cli/cli_tool.c:71
 #, c-format
@@ -762,6 +861,11 @@ msgstr "Kan inte ta fram nsswitch-mappar!"
 msgid "Unable to backup system files!\n"
 msgstr "Kan inte säkerhetskopiera systemfiler!\n"
 
+#: src/cli/main.c:155
+#, c-format
+msgid "Backup stored at %s\n"
+msgstr "Säkerhetskopian lagrad i %s\n"
+
 #: src/cli/main.c:161
 msgid ""
 "\n"
@@ -776,6 +880,27 @@ msgstr ""
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "Kan inte aktivera profilen [%d]: %s\n"
+
+#: src/cli/main.c:171
+#, c-format
+msgid "Profile \"%s\" was selected.\n"
+msgstr "Profilen ”%s” valdes.\n"
+
+#: src/cli/main.c:174
+msgid "The following nsswitch maps are overwritten by the profile:\n"
+msgstr "Följande nsswitch-översättningar skrevs över av profilen:\n"
+
+#: src/cli/main.c:177
+#, c-format
+msgid "- %s\n"
+msgstr "- %s\n"
+
+#: src/cli/main.c:182
+#, c-format
+msgid "\n"
+"%s\n"
+msgstr "\n"
+"%s\n"
 
 #: src/cli/main.c:205
 msgid "Changes were successfully applied.\n"
@@ -967,6 +1092,50 @@ msgstr "Kan inte skapa en ny profil [%d]: %s\n"
 msgid "New profile was created at %s\n"
 msgstr "En ny profil skapades i %s\n"
 
+#: src/cli/main.c:622
+msgid "Select profile"
+msgstr "Välj profil"
+
+#: src/cli/main.c:623
+msgid "Regenerate configuration for currently selected command"
+msgstr "Skapa om konfigurationen för det valda kommandot"
+
+#: src/cli/main.c:624
+msgid "List available profiles"
+msgstr "Lista tillgängliga profiler"
+
+#: src/cli/main.c:625
+msgid "Show profile information"
+msgstr "Visa profilinformation"
+
+#: src/cli/main.c:626
+msgid "Print profile requirements"
+msgstr "Skriv ut profilkrav"
+
+#: src/cli/main.c:627
+msgid "Get identifier of currently selected profile"
+msgstr "Hämta identiferaren för den nu valda profilen"
+
+#: src/cli/main.c:628
+msgid "Check if the current configuration is valid"
+msgstr "Kontrollera om den aktuella konfigurationen är giltig"
+
+#: src/cli/main.c:629
+msgid "Print changes that would be otherwise written"
+msgstr "Skriv ut ändringar som annars skulle skrivas"
+
+#: src/cli/main.c:630
+msgid "Enable feature in currently selected profile"
+msgstr "Aktivera en funktion i den nu valda profilen"
+
+#: src/cli/main.c:631
+msgid "Disable feature in currently selected profile"
+msgstr "Avaktivera en funktion i den nu valda profilen"
+
+#: src/cli/main.c:632
+msgid "Create new authselect profile"
+msgstr "Skapa en ny authselect-profil"
+
 #: src/cli/main.c:645
 msgid "Authselect can only be run as root!\n"
 msgstr "Authselect kan bara köras som root!\n"
@@ -1039,7 +1208,7 @@ msgstr "åtgärd som ska utföras då smarta kort tas bort"
 
 #: src/compat/authcompat_Options.py:94
 msgid "require smart card for authentication by default"
-msgstr ""
+msgstr "kräv smartkort för autentisering som standard"
 
 #: src/compat/authcompat_Options.py:95
 msgid "authentication with fingerprint readers by default"
@@ -1255,7 +1424,7 @@ msgstr "Kör: %s"
 msgid "Service %s was not found. Please install the service."
 msgstr "Tjänsten %s finns inte.  Installera tjänsten."
 
-#: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:626
+#: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:625
 #: src/compat/authcompat.py.in.in:651
 #, python-format
 msgid "Command [%s] failed with %d, stderr:"
@@ -1271,11 +1440,11 @@ msgstr "Tar bort filen: %s"
 msgid "%s was not found. Please, install realmd."
 msgstr "%s finns inte.  Installera realmd."
 
-#: src/compat/authcompat.py.in.in:466
+#: src/compat/authcompat.py.in.in:465
 msgid "Running authconfig compatibility tool."
 msgstr "Kör kompatibilitetsverktyget authconfig."
 
-#: src/compat/authcompat.py.in.in:467
+#: src/compat/authcompat.py.in.in:466
 msgid ""
 "The purpose of this tool is to enable authentication against chosen services "
 "with authselect and minimum configuration. It does not provide all "
@@ -1285,12 +1454,12 @@ msgstr ""
 "med authselect och minimal konfiguration.  Det erbjuder inte alla egenskaper "
 "hos authconfig.\n"
 
-#: src/compat/authcompat.py.in.in:470
+#: src/compat/authcompat.py.in.in:469
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
 msgstr "VIKTIGT: authconfig är ersatt av authselect, uppdatera dina skript."
 
-#: src/compat/authcompat.py.in.in:472
+#: src/compat/authcompat.py.in.in:471
 msgid ""
 "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
@@ -1298,21 +1467,21 @@ msgstr ""
 "Se Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
 
-#: src/compat/authcompat.py.in.in:473
+#: src/compat/authcompat.py.in.in:472
 msgid ""
 "See man authselect-migration(7) to help you with migration to authselect"
 msgstr ""
 "Se man authselect-migration(7) för hjälp med migrering till authselect"
 
-#: src/compat/authcompat.py.in.in:477
+#: src/compat/authcompat.py.in.in:476
 msgid "Warning: These options are not supported anymore and have no effect:"
 msgstr "Varning: dessa flaggor stödjs inte längre och har ingen effekt:"
 
-#: src/compat/authcompat.py.in.in:497
+#: src/compat/authcompat.py.in.in:496
 msgid "authconfig can only be run as root"
 msgstr "authconfig kan endast köras som root"
 
-#: src/compat/authcompat.py.in.in:502
+#: src/compat/authcompat.py.in.in:501
 #, python-format
 msgid ""
 "Error: option --%s is no longer supported and we cannot continue if it is "
@@ -1321,10 +1490,10 @@ msgstr ""
 "Fel: flaggan --%s stödjs inte längre och vi kan inte fortsätta om den är "
 "satt."
 
-#: src/compat/authcompat.py.in.in:507
+#: src/compat/authcompat.py.in.in:506
 msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
 msgstr "Fel: både --enablewinbind och --enablewinbindauth måste vara satta."
 
-#: src/compat/authcompat.py.in.in:517
+#: src/compat/authcompat.py.in.in:516
 msgid "Error: Please, provide --updateall option."
 msgstr "Fel: var god ange flaggan --updateall."
