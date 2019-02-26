@@ -1,4 +1,5 @@
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2018. #zanata
+# Ludek Janda <ljanda@redhat.com>, 2018. #zanata
+# Ludek Janda <ljanda@redhat.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
@@ -7,608 +8,604 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-04-02 04:20+0000\n"
-"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
-"Language-Team: Catalan\n"
-"Language: ca\n"
+"PO-Revision-Date: 2019-01-21 12:15+0000\n"
+"Language-Team: \n"
 "X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ko\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:169
 msgid "Unable to obtain supported features"
-msgstr ""
+msgstr "지원되는 기능을 얻을 수 없습니다."
 
 #: src/lib/authselect.c:59
 #, c-format
 msgid "Unknown profile feature [%s], did you mean [%s]?"
-msgstr ""
+msgstr "알 수없는 프로필 기능 [%s], 그런 뜻 이었습니까 [%s]?"
 
 #: src/lib/authselect.c:62
 #, c-format
 msgid "Unknown profile feature [%s]"
-msgstr ""
+msgstr "알 수없는 프로필 기능 [%s]"
 
 #: src/lib/authselect.c:86
 #, c-format
 msgid "Trying to activate profile [%s]"
-msgstr "Intent d'activació del perfil [%s]"
+msgstr "프로필 활성화 시도 중 [%s]"
 
 #: src/lib/authselect.c:90 src/lib/authselect.c:162 src/lib/profiles/read.c:312
 #, c-format
 msgid "Unable to find profile [%s] [%d]: %s"
-msgstr "No es pot trobar el perfil [%s] [%d]: %s"
+msgstr "프로필을 찾을 수 없습니다 [%s] [%d] : %s"
 
 #: src/lib/authselect.c:101
 msgid "Enforcing activation!"
-msgstr "Forçament de l'activació!"
+msgstr "활성화 강제!"
 
 #: src/lib/authselect.c:109
 #, c-format
 msgid "Unable to check configuration [%d]: %s"
-msgstr "No es pot comprovar la configuració [%d]: %s"
+msgstr "구성을 확인할 수 없습니다 [%d] : %s"
 
 #: src/lib/authselect.c:114
 msgid "Unexpected changes to the configuration were detected."
-msgstr "S'han detectat canvis inesperats a la configuració."
+msgstr "예상치 못한 구성 변경이 감지되었습니다."
 
 #: src/lib/authselect.c:115
 msgid ""
 "Refusing to activate profile unless those changes are removed or overwrite "
 "is requested."
-msgstr ""
-"Es refusa l'activació del perfil a menys que se sol·liciti l'eliminació o la "
-"sobreescriptura d'aquests canvis."
+msgstr "변경 사항을 제거하거나 덮어 쓰기를 요청하지 않는 한 프로파일 활성화를 거부합니다."
 
 #: src/lib/authselect.c:124
 msgid "File that needs to be overwritten was found"
-msgstr "S'ha trobat un fitxer que s'ha de sobreescriure"
+msgstr "덮어 쓸 필요가있는 파일을 찾았습니다."
 
 #: src/lib/authselect.c:125
 msgid ""
 "Refusing to activate profile unless this file is removed or overwrite is "
 "requested."
-msgstr ""
-"Es refusa l'activació del perfil a menys que se sol·liciti l'eliminació o la "
-"sobreescriptura d'aquest fitxer."
+msgstr "이 파일을 제거하거나 덮어 쓰기를 요구하지 않는 한 프로필 활성화를 거부합니다."
 
 #: src/lib/authselect.c:136
 #, c-format
 msgid "Unable to activate profile [%s] [%d]: %s"
-msgstr "No es pot activar el perfil [%s] [%d]: %s"
+msgstr "프로필을 활성화 할 수 없습니다 [%s] [%d] : %s"
 
 #: src/lib/authselect.c:179
 #, c-format
 msgid "Profile feature [%s] is no longer supported, removing it..."
-msgstr ""
+msgstr "프로필 기능 [%s]은 더 이상 지원되지 않으며 제거됩니다 ..."
 
 #: src/lib/authselect.c:202
 msgid "Trying to backup system files"
-msgstr ""
+msgstr "시스템 파일을 백업하려고합니다."
 
 #: src/lib/authselect.c:205
 #, c-format
 msgid "Unable to backup system files [%d]: %s"
-msgstr ""
+msgstr "시스템 파일을 백업 할 수 없음 [%d] : %s"
 
 #: src/lib/authselect_profile.c:104
 msgid "Unable to generate nsswitch.conf"
-msgstr ""
+msgstr "nsswitch.conf를 생성 할 수 없습니다."
 
 #: src/lib/authselect_profile.c:111
 #, c-format
 msgid "Unable to find nsswitch maps [%d]: %s"
-msgstr ""
+msgstr "nsswitch 맵을 찾을 수 없음 [%d] : %s"
 
 #: src/lib/authselect_profile.c:132
 msgid "Unable to create array (out of memory)"
-msgstr ""
+msgstr "배열 (메모리 부족)을 만들 수 없습니다."
 
 #: src/lib/authselect_profile.c:141 src/lib/authselect_profile.c:150
 msgid "Unable to obtain feature list (out of memory)"
-msgstr ""
+msgstr "기능 목록 (메모리 부족)을 가져올 수 없습니다."
 
 #: src/lib/authselect_profile.c:344
 #, c-format
 msgid "Creating empty profile at [%s]"
-msgstr ""
+msgstr "[%s]"
 
 #: src/lib/authselect_profile.c:348 src/lib/authselect_profile.c:438
 #, c-format
 msgid "Unable to make path [%s] [%d]: %s"
-msgstr ""
+msgstr "경로를 만들 수 없음 [%s] [%d] : %s"
 
 #: src/lib/authselect_profile.c:355 src/lib/authselect_profile.c:397
 #, c-format
 msgid "Unable to write to [%s] [%d]: %s"
-msgstr ""
+msgstr "[%s] [%d] : %s"
 
 #: src/lib/authselect_profile.c:377 src/lib/authselect_profile.c:446
 #: src/lib/files/system.c:673
 #, c-format
 msgid "There is no filename in [%s]"
-msgstr ""
+msgstr "[%s]"
 
 #: src/lib/authselect_profile.c:386
 #, c-format
 msgid "Unable to create symbolic link [%s] to [%s] [%d]: %s"
-msgstr ""
+msgstr "심볼릭 링크를 생성 할 수 없음 [%s] ~ [%s] [%d] : %s"
 
 #: src/lib/authselect_profile.c:419
 #, c-format
 msgid "Creating new profile from \"%s\" at [%s]"
-msgstr ""
+msgstr "\"에서 새 프로필 만들기\"%s\"[%s]"
 
 #: src/lib/authselect_profile.c:423
 #, c-format
 msgid "Unable to read base profile [%s] [%d]: %s"
-msgstr ""
+msgstr "기본 프로필을 읽을 수 없음 [%s] [%d] : %s"
 
 #: src/lib/authselect_profile.c:431
 msgid "Unable to resolve symbolic links names"
-msgstr ""
+msgstr "심볼릭 링크 이름을 확인할 수 없습니다."
 
 #: src/lib/authselect_profile.c:456 src/lib/authselect_profile.c:469
 #: src/lib/authselect_profile.c:483
 #, c-format
 msgid "Unable to create [%s] [%d]: %s"
-msgstr ""
+msgstr "만들 수 없습니다 [%s] [%d] : %s"
 
 #: src/lib/authselect_profile.c:491
 #, c-format
 msgid "Unknown file name [%s]"
-msgstr ""
+msgstr "알 수없는 파일 이름 [%s]"
 
 #: src/lib/authselect_profile.c:518
 msgid "Name can not be empty"
-msgstr ""
+msgstr "이름은 비워 둘 수 없습니다."
 
 #: src/lib/authselect_profile.c:530
 msgid "Default profile can not be created"
-msgstr ""
+msgstr "기본 프로필을 만들 수 없습니다."
 
 #: src/lib/authselect_profile.c:533
 msgid "Value AUTHSELECT_PROFILE_ANY is invalid in this context"
-msgstr ""
+msgstr "AUTHSELECT_PROFILE_ANY 값은이 컨텍스트에서 유효하지 않습니다."
 
 #: src/lib/authselect_profile.c:538
 msgid "Unable to create profile path: out of memory"
-msgstr ""
+msgstr "프로필 경로를 만들 수 없음 : 메모리가 부족합니다."
 
 #: src/lib/authselect_profile.c:544
 #, c-format
 msgid "Profile \"%s\" already exist at [%s]"
-msgstr ""
+msgstr "프로필 \"%s\"이미 [%s]"
 
 #: src/lib/authselect_profile.c:548
 #, c-format
 msgid "Unable to access [%s] [%d]: %s"
-msgstr ""
+msgstr "[%s] [%d] : %s"
 
 #: src/lib/authselect_profile.c:554
 msgid "Unable to create file name: out of memory"
-msgstr ""
+msgstr "파일 이름을 만들 수 없습니다 : 메모리가 부족합니다."
 
 #: src/lib/authselect_profile.c:562
 #, c-format
 msgid "Unable to create empty profile [%d]: %s"
-msgstr ""
+msgstr "빈 프로필을 만들 수 없음 [%d] : %s"
 
 #: src/lib/authselect_profile.c:571
 #, c-format
 msgid "Unable to create profile [%d]: %s"
-msgstr ""
+msgstr "프로필을 만들 수 없음 [%d] : %s"
 
 #: src/lib/files/config.c:150
 msgid "Checking if all required directories are writable."
-msgstr "Comprovació per si es pot escriure a tots els directoris requerits."
+msgstr "필요한 모든 디렉토리에 쓸 수 있는지 확인합니다."
 
 #: src/lib/files/config.c:155
 #, c-format
 msgid "Unable to get path to %s parent directory!"
-msgstr "No es pot obtenir el directori superior %s!"
+msgstr "경로를 가져올 수 없습니다. %s 상위 디렉토리!"
 
 #: src/lib/files/config.c:162
 #, c-format
 msgid "Creating path [%s]"
-msgstr "Creació del camí [%s]"
+msgstr "경로 만들기 [%s]"
 
 #: src/lib/files/config.c:166
 #, c-format
 msgid "Unable to create path [%s] [%d]: %s"
-msgstr "No es pot crear el camí [%s] [%d]: %s"
+msgstr "경로를 만들 수 없음 [%s] [%d] : %s"
 
 #: src/lib/files/config.c:171
 #, c-format
 msgid "Directory [%s] does not exist, please create it!"
-msgstr "No existeix el directori [%s], creeu-lo!"
+msgstr "디렉토리 [%s] 존재하지 않습니다. 생성하십시오!"
 
 #: src/lib/files/config.c:174
 #, c-format
 msgid "Unable to access directory [%s] in [WX] mode!"
-msgstr "No es pot accedir al directori [%s] en mode [WX]!"
+msgstr "디렉토리 [%s] [WX] 모드에서!"
 
 #: src/lib/files/config.c:193
 #, c-format
 msgid "Unable to load profile [%s] [%d]: %s"
-msgstr "No es pot carregar el perfil [%s] [%d]: %s"
+msgstr "프로필을로드 할 수 없습니다 [%s] [%d] : %s"
 
 #: src/lib/files/symlinks.c:41
 #, c-format
 msgid "Creating symbolic link [%s] to [%s]"
-msgstr ""
+msgstr "심볼릭 링크 만들기 [%s] ~ [%s]"
 
 #: src/lib/files/symlinks.c:47
 #, c-format
 msgid "Unable to overwrite file [%s] [%d]: %s"
-msgstr ""
+msgstr "파일을 덮어 쓸 수 없습니다 [%s] [%d] : %s"
 
 #: src/lib/files/symlinks.c:55
 #, c-format
 msgid "Unable to create symbolic link [%s] [%d]: %s"
-msgstr ""
+msgstr "심볼릭 링크를 생성 할 수 없음 [%s] [%d] : %s"
 
 #: src/lib/files/symlinks.c:79
 #, c-format
 msgid "Validating link [%s]"
-msgstr ""
+msgstr "링크 유효성 확인 [%s]"
 
 #: src/lib/files/symlinks.c:83
 #, c-format
 msgid "Unable to validate link [%s] [%d]: %s"
-msgstr ""
+msgstr "링크 유효성을 검사 할 수 없음 [%s] [%d] : %s"
 
 #: src/lib/files/symlinks.c:90
 #, c-format
 msgid "[%s] was not created by authselect!"
-msgstr ""
+msgstr "[%s] authselect에 의해 만들어지지 않았습니다!"
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:152
 #: src/lib/files/system.c:573
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
-msgstr "Error mentre s'intentava accedir al fitxer [%s] [%d]: %s"
+msgstr "파일에 액세스하는 동안 오류가 발생했습니다 [%s] [%d] : %s"
 
 #: src/lib/files/symlinks.c:120
 #, c-format
 msgid "Unable to check file [%s] [%d]: %s"
-msgstr ""
+msgstr "파일을 확인할 수 없습니다 [%s] [%d] : %s"
 
 #: src/lib/files/symlinks.c:127
 #, c-format
 msgid "Symbolic link [%s] to [%s] still exists!"
-msgstr ""
+msgstr "기호 링크 [%s] ~ [%s] 여전히 존재합니다!"
 
 #: src/lib/files/symlinks.c:148
 #, c-format
 msgid "File [%s] exists but it needs to be overwritten!"
-msgstr ""
+msgstr "파일 [%s] 존재하지만 덮어 써야합니다!"
 
 #: src/lib/files/system.c:74 src/lib/profiles/read.c:158
 #, c-format
 msgid "Reading file [%s/%s]"
-msgstr "Lectura del fitxer [%s/%s]"
+msgstr "파일 읽기 [%s/%s]"
 
 #: src/lib/files/system.c:82 src/lib/profiles/read.c:164
 #: src/lib/profiles/read.c:169
 #, c-format
 msgid "Unable to read file [%s/%s] [%d]: %s"
-msgstr ""
+msgstr "파일을 읽을 수 없습니다 [%s/%s] [%d] : %s"
 
 #: src/lib/files/system.c:112 src/lib/files/system.c:170
 #: src/lib/util/template.c:374 src/lib/util/template.c:521
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
-msgstr "No es pot compilar l'expressió regular: error d'expressió regular %d"
+msgstr "정규 표현식을 컴파일 할 수 없습니다 : 정규 표현식 오류 %d"
 
 #: src/lib/files/system.c:130 src/lib/files/system.c:195
 #: src/lib/util/template.c:418 src/lib/util/template.c:542
 #, c-format
 msgid "Unable to search string: regex error %d"
-msgstr "No es pot cercar la cadena: error d'expressió regular %d"
+msgstr "문자열을 찾을 수 없습니다 : 정규식 오류 %d"
 
 #: src/lib/files/system.c:272 src/lib/files/system.c:501
 #, c-format
 msgid "Unable to read [%s] [%d]: %s"
-msgstr "No es pot llegir [%s] [%d]: %s"
+msgstr "[%s] [%d] : %s"
 
 #: src/lib/files/system.c:288
 #, c-format
 msgid "Unable to generate nsswitch.conf [%d]: %s"
-msgstr ""
+msgstr "nsswitch.conf를 생성 할 수 없습니다 [%d] : %s"
 
 #: src/lib/files/system.c:354
 #, c-format
 msgid "Unable to generate files [%d]: %s"
-msgstr "No es poden generar el fitxers [%d]: %s"
+msgstr "파일을 생성 할 수 없습니다 [%d] : %s"
 
 #: src/lib/files/system.c:368
 #, c-format
 msgid "Writing temporary file for [%s]"
-msgstr ""
+msgstr "[%s]"
 
 #: src/lib/files/system.c:372
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
-msgstr ""
+msgstr "임시 파일을 쓸 수 없습니다 [%s] [%d] : %s"
 
 #: src/lib/files/system.c:377
 #, c-format
 msgid "Temporary file is named [%s]"
-msgstr ""
+msgstr "임시 파일의 이름은 [%s]"
 
 #: src/lib/files/system.c:388
 #, c-format
 msgid "Renaming [%s] to [%s]"
-msgstr ""
+msgstr "이름 바꾸기 [%s] ~ [%s]"
 
 #: src/lib/files/system.c:393
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
-msgstr ""
+msgstr "[%s] ~ [%s] [%d] : %s"
 
 #: src/lib/files/system.c:493
 #, c-format
 msgid "Validating file [%s]"
-msgstr "Validació del fitxer [%s]"
+msgstr "파일 유효성 검사 [%s]"
 
 #: src/lib/files/system.c:498 src/lib/util/file.c:120
 #, c-format
 msgid "[%s] does not exist!"
-msgstr "[%s] no existeix!"
+msgstr "[%s] 존재하지 않는다!"
 
 #: src/lib/files/system.c:504
 #, c-format
 msgid "Unable to validate file [%s] [%d]: %s"
-msgstr "No es pot validar el fitxer [%s] [%d]: %s"
+msgstr "파일의 유효성을 검사 할 수 없습니다 [%s] [%d] : %s"
 
 #: src/lib/files/system.c:511
 #, c-format
 msgid "Comparing content against [%s]"
-msgstr ""
+msgstr "콘텐츠 비교 [%s]"
 
 #: src/lib/files/system.c:515
 msgid "Comparing content against current profile"
-msgstr ""
+msgstr "현재 프로필과 콘텐츠 비교"
 
 #: src/lib/files/system.c:521
 #, c-format
 msgid "[%s] has unexpected content!"
-msgstr "[%s] té un contingut inesperat!"
+msgstr "[%s] 예기치 않은 콘텐츠가 있습니다!"
 
 #: src/lib/files/system.c:528
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
-msgstr "No es pot comprovar el mode de fitxer de [%s] [%d]: %s"
+msgstr "파일 모드 [%s] [%d] : %s"
 
 #: src/lib/files/system.c:550
 #, c-format
 msgid "File [%s] was modified outside authselect!"
-msgstr "El fitxer [%s] ha estat modificat fora d'authselect!"
+msgstr "파일 [%s] authselect 외부 수정되었습니다!"
 
 #: src/lib/files/system.c:569
 #, c-format
 msgid "File [%s] is still present"
-msgstr "El fitxer [%s] encara està present"
+msgstr "파일 [%s]가 아직 있습니다."
 
 #: src/lib/files/system.c:596
 #, c-format
 msgid "Unable to create backup directory [%s/%s] [%d]: %s"
-msgstr ""
+msgstr "백업 디렉토리를 만들 수 없습니다 [%s/%s] [%d] : %s"
 
 #: src/lib/files/system.c:622
 #, c-format
 msgid "Unable to create backup directory [%s] [%d]: %s"
-msgstr ""
+msgstr "백업 디렉토리를 만들 수 없습니다 [%s] [%d] : %s"
 
 #: src/lib/files/system.c:643
 #, c-format
 msgid "Creating temporary directory at [%s]"
-msgstr ""
+msgstr "임시 디렉토리 생성 [%s]"
 
 #: src/lib/files/system.c:666
 #, c-format
 msgid "Unable to create backup directory [%d]: %s"
-msgstr ""
+msgstr "백업 디렉토리를 만들 수 없습니다 [%d] : %s"
 
 #: src/lib/files/system.c:678
 #, c-format
 msgid "Copying [%s] to [%s/%s]"
-msgstr ""
+msgstr "복사 [%s] ~ [%s/%s]"
 
 #: src/lib/files/system.c:682
 #, c-format
 msgid "File [%s] does not exist"
-msgstr ""
+msgstr "파일 [%s] 존재하지 않는다"
 
 #: src/lib/files/system.c:684
 #, c-format
 msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
-msgstr ""
+msgstr "복사 할 수 없습니다 [%s] ~ [%s/%s] [%d] : %s"
 
 #: src/lib/profiles/activate.c:44
 #, c-format
 msgid "%s update failed: %d"
-msgstr ""
+msgstr "%s 업데이트가 실패: %d"
 
 #: src/lib/profiles/activate.c:59
 msgid "Some directories are not accessible by authselect!"
-msgstr "authselect no pot accedir a alguns directoris!"
+msgstr "일부 디렉토리는 authselect를 통해 액세스 할 수 없습니다!"
 
 #: src/lib/profiles/activate.c:65
 #, c-format
 msgid "Unable to write generated system files [%d]: %s"
-msgstr "No es poden escriure els fitxers de sistema generats [%d]: %s"
+msgstr "생성 된 시스템 파일을 쓸 수 없습니다 [%d] : %s"
 
 #: src/lib/profiles/activate.c:72
 #, c-format
 msgid "Unable to write configuration [%d]: %s"
-msgstr "No es pot escriure la configuració [%d]: %s"
+msgstr "구성을 쓸 수 없습니다 [%d] : %s"
 
 #: src/lib/profiles/activate.c:78
 #, c-format
 msgid "Unable to create symbolic links [%d]: %s"
-msgstr "No es poden crear els enllaços simbòlics [%d]: %s"
+msgstr "심볼릭 링크를 만들 수 없음 [%d] : %s"
 
 #: src/lib/profiles/activate.c:84
 msgid "Dconf is not installed on your system"
-msgstr "Dconf no està instal·lat al vostre sistema"
+msgstr "시스템에 Dconf가 설치되어 있지 않습니다."
 
 #: src/lib/profiles/activate.c:86
 #, c-format
 msgid "Unable to update dconf database [%d]: %s"
-msgstr "No es pot actualitzar la base de dades de dconf [%d]: %s"
+msgstr "dconf 데이터베이스를 업데이트 할 수 없습니다 [%d] : %s"
 
 #: src/lib/profiles/list.c:58
 #, c-format
 msgid "Unable to stat directory [%d]: %s"
-msgstr ""
+msgstr "디렉토리를 stat 할 수 없습니다 [%d] : %s"
 
 #: src/lib/profiles/list.c:137
 #, c-format
 msgid "Reading profile directory [%s]"
-msgstr "Lectura del directori del perfil [%s]"
+msgstr "프로파일 디렉토리 읽기 [%s]"
 
 #: src/lib/profiles/list.c:142
 #, c-format
 msgid "Directory [%s] is missing!"
-msgstr "Falta el directori [%s]!"
+msgstr "디렉토리 [%s] 누락!"
 
 #: src/lib/profiles/list.c:145 src/lib/profiles/read.c:79
 #, c-format
 msgid "Unable to open directory [%s] [%d]: %s"
-msgstr "No es pot obrir el directori [%s] [%d]: %s"
+msgstr "디렉토리를 열 수 없습니다 [%s] [%d] : %s"
 
 #: src/lib/profiles/list.c:157
 #, c-format
 msgid "Not a directory: %s"
-msgstr "No és un directori: %s"
+msgstr "디렉토리가 아닙니다. %s"
 
 #: src/lib/profiles/list.c:161
 #, c-format
 msgid "Found profile [%s]"
-msgstr "S'ha trobat el perfil [%s]"
+msgstr "발견 된 프로필 [%s]"
 
 #: src/lib/profiles/list.c:242
 #, c-format
 msgid "Unable to list profiles [%d]: %s"
-msgstr "No es poden llistar els perfils [%d]: %s"
+msgstr "프로필을 나열 할 수 없습니다 [%d] : %s"
 
 #: src/lib/profiles/read.c:102
 #, c-format
 msgid "Looking up profile [%s]"
-msgstr "Cerca del perfil [%s]"
+msgstr "프로필보기 [%s]"
 
 #: src/lib/profiles/read.c:106
 msgid "Locations array is NULL"
-msgstr ""
+msgstr "위치 배열이 NULL입니다."
 
 #: src/lib/profiles/read.c:129
 #, c-format
 msgid "Profile [%s] is a custom profile"
-msgstr "El perfil [%s] és un perfil personalitzat"
+msgstr "프로필 [%s]은 (는) 사용자 정의 프로필입니다."
 
 #: src/lib/profiles/read.c:131
 #, c-format
 msgid "Profile [%s] is a vendor profile"
-msgstr "El perfil [%s] és un perfil de fabricant"
+msgstr "프로필 [%s]는 공급 업체 프로필입니다."
 
 #: src/lib/profiles/read.c:133
 #, c-format
 msgid "Profile [%s] is a default profile"
-msgstr "El perfil [%s] és un perfil predeterminat"
+msgstr "프로필 [%s]는 기본 프로필입니다."
 
 #: src/lib/profiles/read.c:136
 #, c-format
 msgid "Profile [%s] found at [%s]"
-msgstr "El perfil [%s] s'ha trobat a [%s]"
+msgstr "프로필 [%s]에서 발견 [%s]"
 
 #: src/lib/profiles/read.c:144
 #, c-format
 msgid "Profile [%s] was not found"
-msgstr "No s'ha trobat el perfil [%s]"
+msgstr "프로필 [%s] 찾을 수 없습니다"
 
 #: src/lib/profiles/read.c:199 src/lib/profiles/read.c:218
 #, c-format
 msgid "Profile [%s] does not contain a name in [%s]!"
-msgstr "El perfil [%s] no conté un nom a [%s]!"
+msgstr "프로필 [%s]에 이름이 없습니다.%s]!"
 
 #: src/lib/util/file.c:42
 msgid "Internal error: stat cannot be NULL!"
-msgstr ""
+msgstr "내부 오류 : stat는 NULL 일 수 없습니다!"
 
 #: src/lib/util/file.c:50
 #, c-format
 msgid "[%s] is not a directory!"
-msgstr "[%s] no és un directori!"
+msgstr "[%s] 디렉토리가 아닙니다!"
 
 #: src/lib/util/file.c:53
 #, c-format
 msgid "[%s] is not a regular file!"
-msgstr "[%s] no és un fitxer normal!"
+msgstr "[%s] 일반 파일이 아닙니다!"
 
 #: src/lib/util/file.c:56
 #, c-format
 msgid "[%s] is not a symbolic link!"
-msgstr "[%s] no és un enllaç simbòlic!"
+msgstr "[%s]는 상징적 링크가 아닙니다!"
 
 #: src/lib/util/file.c:59
 #, c-format
 msgid "[%s] has wrong type [%.7o], expected [%.7o]!"
-msgstr "[%s] té un tipus incorrecte [%.7o], s'esperava [%.7o]!"
+msgstr "[%s]의 유형이 [% .7o], 예상되는 [% .7o]!"
 
 #: src/lib/util/file.c:86
 #, c-format
 msgid "[%s] has wrong mode [%.4o], expected [%.4o]!"
-msgstr "[%s] té un mode incorrecte [%.4o], s'esperava [%.4o]!"
+msgstr "[%s]에 잘못된 모드 [% .4o], 예상 [% .4o]이 있습니다!"
 
 #: src/lib/util/file.c:92
 #, c-format
 msgid "[%s] has wrong owner [%u], expected [%u]!"
-msgstr "[%s] té un propietari incorrecte [%u], s'esperava [%u]!"
+msgstr "[%s] 소유자가 잘못되었습니다 [%u], 예상 [%u]!"
 
 #: src/lib/util/file.c:98
 #, c-format
 msgid "[%s] has wrong group [%u], expected [%u]!"
-msgstr "[%s] té un grup incorrecte [%u], s'esperava [%u]!"
+msgstr "[%s] 그룹이 잘못되었습니다 [%u], 예상 [%u]!"
 
 #: src/lib/util/file.c:125 src/lib/util/file.c:197
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
-msgstr ""
+msgstr "통계 할 수 없습니다 [%s] [%d] : %s"
 
 #: src/lib/util/file.c:163 src/lib/util/file.c:209
 #, c-format
 msgid "Unable to read link destination [%s] [%d]: %s"
-msgstr "No es pot llegir la destinació de l'enllaç [%s] [%d]: %s"
+msgstr "링크 대상을 읽을 수 없습니다 [%s] [%d] : %s"
 
 #: src/lib/util/file.c:169
 #, c-format
 msgid "Link [%s] does not point to [%s]"
-msgstr "L'enllaç [%s] no apunta a [%s]"
+msgstr "링크 [%s]는 [%s]"
 
 #: src/lib/util/file.c:215
 #, c-format
 msgid "Link [%s] points to [%s]"
-msgstr "L'enllaç [%s] apunta a [%s]"
+msgstr "링크 [%s] 에 중점을 두다 [%s]"
 
 #: src/lib/util/file.c:265
 msgid "Internal error: filepath cannot be NULL!"
-msgstr "Error intern: el camí al fitxer no pot ser NUL!"
+msgstr "내부 오류 : filepath는 NULL 일 수 없습니다!"
 
 #: src/lib/util/file.c:297
 #, c-format
 msgid "Unable to get parent directory of [%s] [%d]: %s"
-msgstr "No es pot obtenir el directori superior de [%s] [%d]: %s"
+msgstr "상위 디렉토리를 가져올 수 없습니다 [%s] [%d] : %s"
 
 #: src/lib/util/selinux.c:42
 #, c-format
 msgid "Unable to create selabel context [%d]: %s"
-msgstr ""
+msgstr "selabel 컨텍스트를 만들 수 없음 [%d] : %s"
 
 #: src/lib/util/selinux.c:51
 #, c-format
 msgid "Unable to lookup selinux context [%d]: %s"
-msgstr ""
+msgstr "selinux 컨텍스트를 찾을 수 없습니다 [%d] : %s"
 
 #: src/lib/util/selinux.c:55
 #, c-format
@@ -631,382 +628,378 @@ msgstr ""
 
 #: src/lib/util/selinux.c:111
 msgid "Unable to get current fscreate selinux context!"
-msgstr ""
+msgstr "현재 fscreate selinux 컨텍스트를 얻을 수 없습니다!"
 
 #: src/lib/util/selinux.c:117
 #, c-format
 msgid "Unable to get default selinux context for [%s] [%d]: %s!"
-msgstr ""
+msgstr "[에 대한 기본 selinux 컨텍스트를 가져올 수 없습니다.%s] [%d] : %s!"
 
 #: src/lib/util/selinux.c:125
 msgid "Unable to set fscreate selinux context!"
-msgstr ""
+msgstr "fscreate selinux 컨텍스트를 설정할 수 없습니다!"
 
 #: src/lib/util/selinux.c:135
 msgid "Unable to restore fscreate selinux context!"
-msgstr ""
+msgstr "fscreate selinux 컨텍스트를 복원 할 수 없습니다!"
 
 #: src/lib/util/template.c:113 src/lib/util/template.c:153
 #: src/lib/util/template.c:230
 msgid "Invalid operator!"
-msgstr "Operador no vàlid!"
+msgstr "연산자가 잘못되었습니다."
 
 #: src/lib/util/template.c:383 src/lib/util/template.c:531
 #, c-format
 msgid "Unable to process match [%d]: %s"
-msgstr "No es pot processar la coincidència [%d]: %s"
+msgstr "일치 항목을 처리 할 수 ​​없음 [%d] : %s"
 
 #: src/lib/util/template.c:403
 #, c-format
 msgid "Unable to process operator [%d]: %s"
-msgstr "No es pot processar l'operador [%d]: %s"
+msgstr "연산자를 처리 할 수 ​​없습니다 [%d] : %s"
 
 #: src/lib/util/template.c:449
 #, c-format
 msgid "Unable to generate template [%d]: %s"
-msgstr "No es pot generar la plantilla [%d]: %s"
+msgstr "템플릿을 생성 할 수 없음 [%d] : %s"
 
 #: src/lib/util/template.c:478
 msgid "Unable to get current time!"
-msgstr "No es pot obtenir l'hora actual!"
+msgstr "현재 시간을 얻을 수 없습니다!"
 
 #: src/lib/util/template.c:492
 msgid "Unable to create message!"
-msgstr "No es pot crear el missatge!"
+msgstr "메시지를 만들 수 없습니다!"
 
 #: src/lib/util/template.c:600
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
-msgstr ""
+msgstr "임시 파일을 [%s] [%d] : %s"
 
 #: src/lib/util/textfile.c:56
 #, c-format
 msgid "File [%s] is bigger than %uKiB!"
-msgstr "El fitxer [%s] és més gran de %u KiB!"
+msgstr "파일 [%s]보다 큼 %uKiB!"
 
 #: src/lib/util/textfile.c:85
 #, c-format
 msgid "Unable to read file [%s] [%d]: %s"
-msgstr "No es pot llegir el fitxer [%s] [%d]: %s"
+msgstr "파일을 읽을 수 없습니다 [%s] [%d] : %s"
 
 #: src/lib/util/textfile.c:158
 #, c-format
 msgid "Unable to open file [%s] [%d]: %s"
-msgstr "No es pot obrir el fitxer [%s] [%d]: %s"
+msgstr "파일을 열 수 없음 [%s] [%d] : %s"
 
 #: src/lib/util/textfile.c:167
 #, c-format
 msgid "Unable to write data [%s] [%d]: %s"
-msgstr "No es poden escriure les dades [%s] [%d]: %s"
+msgstr "데이터를 쓸 수 없습니다 [%s] [%d] : %s"
 
 #: src/lib/util/textfile.c:175 src/lib/util/textfile.c:266
 #, c-format
 msgid "Unable to chmod file [%s] [%d]: %s"
-msgstr "No es pot canviar el mode del fitxer [%s] [%d]: %s"
+msgstr "파일을 chmod 할 수 없습니다 [%s] [%d] : %s"
 
 #: src/lib/util/textfile.c:273
 #, c-format
 msgid "Unable to chown file [%s] [%d]: %s"
-msgstr ""
+msgstr "파일을 열 수 없습니다 [%s] [%d] : %s"
 
 #: src/cli/cli_tool.c:71
 #, c-format
 msgid "Common options:\n"
-msgstr "Opcions comunes:\n"
+msgstr "일반적인 옵션 :\n"
 
 #: src/cli/cli_tool.c:73
 msgid "Print error messages"
-msgstr "Imprimeix els missatges d'error"
+msgstr "오류 메시지 인쇄"
 
 #: src/cli/cli_tool.c:75
 msgid "Print trace messages"
-msgstr "Imprimeix els missatges de traça"
+msgstr "추적 메시지 인쇄"
 
 #: src/cli/cli_tool.c:77
 msgid "Print warning messages"
-msgstr "Imprimeix els missatges d'avís"
+msgstr "경고 메시지 인쇄"
 
 #: src/cli/cli_tool.c:79
 #, c-format
 msgid "Help options:\n"
-msgstr "Opcions d'ajuda:\n"
+msgstr "도움말 옵션 :\n"
 
 #: src/cli/cli_tool.c:81
 msgid "Show this for a command"
-msgstr "Mostra-ho per una ordre"
+msgstr "명령에 대해 표시하십시오."
 
 #: src/cli/cli_tool.c:83
 msgid "Show brief usage message for a command"
-msgstr "Mostra l'ús resumit per a una ordre"
+msgstr "명령에 대한 간단한 사용법 메시지 표시"
 
 #: src/cli/cli_tool.c:168
 #, c-format
 msgid "Usage:\n"
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
-msgstr "Ús:\n"
-"%s ORDRE ARGS-ORDRE\n"
+msgstr "용법:%s 명령 명령 - 명령\n"
 "\n"
 
 #: src/cli/cli_tool.c:169
 #, c-format
 msgid "Available commands:\n"
-msgstr "Ordres disponibles:\n"
+msgstr "사용 가능한 명령 :\n"
 
 #: src/cli/cli_tool.c:187
 #, c-format
 msgid "\n"
-msgstr ""
+msgstr "\n"
 
 #: src/cli/cli_tool.c:199
 msgid "Bug: commands can't be NULL!\n"
-msgstr "Error: commands no pot ser NUL!\n"
+msgstr "버그 : 명령은 NULL 일 수 없습니다!\n"
 
 #: src/cli/cli_tool.c:255
 msgid "Command options:"
-msgstr "Opcions de l'ordre:"
+msgstr "명령 옵션 :"
 
 #: src/cli/cli_tool.c:257
 msgid "Common options:"
-msgstr "Opcions comunes:"
+msgstr "일반적인 옵션 :"
 
 #: src/cli/cli_tool.c:271 src/cli/cli_tool.c:274
 msgid "[OPTIONS...]"
-msgstr "[OPCIONS...]"
+msgstr "[옵션 ...]"
 
 #: src/cli/cli_tool.c:277
 msgid "Out of memory!"
-msgstr "No hi ha prou memòria!"
+msgstr "메모리가 다 찼습니다!"
 
 #: src/cli/cli_tool.c:298
 #, c-format
 msgid "Invalid option %s: %s\n"
 "\n"
-msgstr "Opció no vàlida %s: %s\n"
+msgstr "잘못된 옵션 %s: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:310
 #, c-format
 msgid "Missing option: %s\n"
 "\n"
-msgstr "Falta l'opció: %s\n"
+msgstr "누락 된 옵션 : %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:320
 #, c-format
 msgid "Only one free argument is expected!\n"
 "\n"
-msgstr "Només s'espera un argument lliure!\n"
+msgstr "하나의 무료 인수가 예상됩니다!\n"
 "\n"
 
 #: src/cli/cli_tool.c:330
 #, c-format
 msgid "Unexpected parameter: %s\n"
 "\n"
-msgstr "Paràmetre inesperat: %s\n"
+msgstr "예기치 않은 매개 변수 : %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:342
 #, c-format
 msgid "At least one option is required!\n"
 "\n"
-msgstr "Com a mínim es requereix una opció!\n"
+msgstr "적어도 하나의 옵션이 필요합니다!\n"
 "\n"
 
 #: src/cli/main.c:70 src/cli/main.c:362
 msgid "Profile identifier."
-msgstr "Identificador del perfil."
+msgstr "프로파일 식별자."
 
 #: src/cli/main.c:73 src/cli/main.c:238 src/cli/main.c:287 src/cli/main.c:322
 #: src/cli/main.c:365 src/cli/main.c:515 src/cli/main.c:537 src/cli/main.c:577
 msgid "Unable to parse command arguments"
-msgstr "No es poden analitzar els arguments de l'ordre"
+msgstr "명령 인수를 구문 분석 할 수 없습니다."
 
 #: src/cli/main.c:114
 msgid "Enforce changes"
-msgstr "Força els canvis"
+msgstr "변경 적용"
 
 #: src/cli/main.c:115
 msgid "Backup system files before activating profile"
-msgstr ""
+msgstr "프로필을 활성화하기 전에 시스템 파일 백업"
 
 #: src/cli/main.c:115
 msgid "NAME"
-msgstr ""
+msgstr "이름"
 
 #: src/cli/main.c:116
 msgid "Do not backup system files when --force is set"
-msgstr ""
+msgstr "--force가 설정된 경우 시스템 파일을 백업하지 마십시오."
 
 #: src/cli/main.c:117
 msgid "Do not print profile requirements"
-msgstr ""
+msgstr "프로필 요구 사항을 인쇄하지 않음"
 
 #: src/cli/main.c:128 src/cli/main.c:337 src/cli/main.c:371 src/cli/main.c:398
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
-msgstr "No es pot obtenir la informació del perfil [%d]: %s"
+msgstr "프로필 정보를 가져올 수 없습니다 [%d] : %s"
 
 #: src/cli/main.c:136 src/cli/main.c:405
 msgid "Unable to read profile requirements!"
-msgstr ""
+msgstr "프로필 요구 사항을 읽을 수 없습니다!"
 
 #: src/cli/main.c:143
 msgid "Unable to obtain nsswitch maps!"
-msgstr ""
+msgstr "nsswitch 맵을 얻을 수 없습니다!"
 
 #: src/cli/main.c:151
 msgid "Unable to backup system files!\n"
-msgstr ""
+msgstr "시스템 파일을 백업 할 수 없습니다!\n"
 
 #: src/cli/main.c:155
 #, c-format
 msgid "Backup stored at %s\n"
-msgstr ""
+msgstr "에 저장된 백업 %s\n"
 
 #: src/cli/main.c:161
 msgid ""
 "\n"
 "Some unexpected changes to the configuration were detected.\n"
 "Use --force parameter if you want to overwrite these changes.\n"
-msgstr ""
-"\n"
-"S'han detectat alguns canvis inesperats a la configuració.\n"
-"Utilitzeu el paràmetre --force si voleu sobreescriure aquests canvis.\n"
+msgstr "\n"
+"구성에 예기치 않은 변경 사항이 감지되었습니다. 이러한 변경 사항을 겹쳐 쓰려면 --force 매개 변수를 사용하십시오.\n"
 
 #: src/cli/main.c:166
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
-msgstr "No es pot activar el perfil [%d]: %s\n"
+msgstr "프로필을 활성화 할 수 없습니다 [%d] : %s\n"
 
 #: src/cli/main.c:171
 #, c-format
 msgid "Profile \"%s\" was selected.\n"
-msgstr ""
+msgstr "프로필 \"%s\"이 선정되었습니다.\n"
 
 #: src/cli/main.c:174
 msgid "The following nsswitch maps are overwritten by the profile:\n"
-msgstr ""
+msgstr "다음 nsswitch 맵은 프로필로 덮어 씁니다.\n"
 
 #: src/cli/main.c:177
 #, c-format
 msgid "- %s\n"
-msgstr ""
+msgstr "- %s\n"
 
 #: src/cli/main.c:182
 #, c-format
 msgid "\n"
 "%s\n"
-msgstr ""
+msgstr "\n"
+"%s\n"
 
 #: src/cli/main.c:205
 msgid "Changes were successfully applied.\n"
-msgstr ""
+msgstr "변경 사항이 성공적으로 적용되었습니다.\n"
 
 #: src/cli/main.c:208 src/cli/main.c:244
 msgid "No existing configuration detected.\n"
-msgstr "No s'ha detectat cap configuració existent.\n"
+msgstr "기존 구성이 감지되지 않았습니다.\n"
 
 #: src/cli/main.c:211
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
-msgstr ""
+msgstr "구성에 예기치 않은 변경 사항이 감지되었습니다. 대신 '선택'명령을 사용하십시오.\n"
 
 #: src/cli/main.c:215
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
-msgstr ""
+msgstr "변경 사항을 적용 할 수 없음 [%d] : %s\n"
 
 #: src/cli/main.c:232
 msgid "Print command parameters instead of formatted output"
-msgstr ""
+msgstr "형식화 된 출력 대신 명령 매개 변수 인쇄"
 
 #: src/cli/main.c:247
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
-msgstr "No es pot obtenir la configuració actual [%d]: %s"
+msgstr "현재 구성을 가져올 수 없습니다 [%d] : %s"
 
 #: src/cli/main.c:261
 #, c-format
 msgid "Profile ID: %s\n"
-msgstr "ID de perfil: %s\n"
+msgstr "프로필 ID : %s\n"
 
 #: src/cli/main.c:262
 msgid "Enabled features:"
-msgstr "Característiques habilitades:"
+msgstr "사용 가능한 기능 :"
 
 #: src/cli/main.c:265
 msgid " None\n"
-msgstr " Cap\n"
+msgstr " 없음\n"
 
 #: src/cli/main.c:293
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
-msgstr "No es pot provar la configuració actual [%d]: %s"
+msgstr "현재 구성을 테스트 할 수 없음 [%d] : %s"
 
 #: src/cli/main.c:300
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
-msgstr ""
-"La configuració actual no és vàlida. Probablement s'ha modificat fora "
-"d'authselect."
+msgstr "현재 구성이 올바르지 않습니다. 아마도 authselect 외부에서 수정되었을 것입니다."
 
 #: src/cli/main.c:305
 msgid "Current configuration is valid."
-msgstr "La configuració actual és vàlida."
+msgstr "현재 구성이 유효합니다."
 
 #: src/cli/main.c:328
 msgid "Unable to get profile list!"
-msgstr "No es pot obtenir la llista de perfils!"
+msgstr "프로필 목록을 가져올 수 없습니다!"
 
 #: src/cli/main.c:443
 msgid "Print content of all files"
-msgstr "Imprimeix el contingut de tots els fitxers"
+msgstr "모든 파일의 내용 인쇄"
 
 #: src/cli/main.c:444
 msgid "Print nsswitch.conf content"
-msgstr "Imprimeix el contingut de nsswitch.conf"
+msgstr "nsswitch.conf 내용 인쇄"
 
 #: src/cli/main.c:445
 msgid "Print system-auth content"
-msgstr "Imprimeix el contingut de system-auth"
+msgstr "시스템 인증 내용 인쇄"
 
 #: src/cli/main.c:446
 msgid "Print password-auth content"
-msgstr "Imprimeix el contingut de password-auth"
+msgstr "비밀번호 인증 내용 인쇄"
 
 #: src/cli/main.c:447
 msgid "Print smartcard-auth content"
-msgstr "Imprimeix el contingut de smartcard-auth"
+msgstr "스마트 카드 인증 콘텐츠 인쇄"
 
 #: src/cli/main.c:448
 msgid "Print fingerprint-auth content"
-msgstr "Imprimeix el contingut de fingerprint-auth"
+msgstr "지문 인증 콘텐츠 인쇄"
 
 #: src/cli/main.c:449
 msgid "Print postlogin content"
-msgstr "Imprimeix el contingut de postlogin"
+msgstr "포스트 블로그 콘텐츠 인쇄"
 
 #: src/cli/main.c:450
 msgid "Print dconf database content"
-msgstr "Imprimeix el contingut de la base de dades de dconf"
+msgstr "dconf 데이터베이스 내용 인쇄"
 
 #: src/cli/main.c:451
 msgid "Print dconf lock content"
-msgstr "Imprimeix el contingut del bloqueig de dconf"
+msgstr "dconf 잠금 내용 인쇄"
 
 #: src/cli/main.c:478
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
-msgstr "No es pot obtenir el contingut generat [%d]: %s"
+msgstr "생성 된 콘텐츠를 가져올 수 없습니다 [%d] : %s"
 
 #: src/cli/main.c:497
 #, c-format
 msgid "File %s: Empty\n"
 "\n"
-msgstr "Fitxer %s: buit\n"
+msgstr "파일 %s: 비어 있음\n"
 "\n"
 
 #: src/cli/main.c:499
@@ -1014,156 +1007,156 @@ msgstr "Fitxer %s: buit\n"
 msgid "File %s:\n"
 "%s\n"
 "\n"
-msgstr "Fitxer %s:\n"
+msgstr "파일 %s:\n"
 "%s\n"
 "\n"
 
 #: src/cli/main.c:512
 msgid "Feature to enable."
-msgstr "Característica a habilitar."
+msgstr "사용할 수있는 기능."
 
 #: src/cli/main.c:521
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
-msgstr "No es pot habilitar la característica [%d]: %s\n"
+msgstr "기능을 활성화 할 수 없음 [%d] : %s\n"
 
 #: src/cli/main.c:534
 msgid "Feature to disable."
-msgstr "Característica a inhabilitar."
+msgstr "비활성화 할 기능입니다."
 
 #: src/cli/main.c:543
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
-msgstr "No es pot inhabilitar la característica [%d]: %s\n"
+msgstr "기능을 사용 중지 할 수 없음 [%d] : %s\n"
 
 #: src/cli/main.c:562
 msgid "Create new profile as a vendor profile instead of a custom profile"
-msgstr ""
+msgstr "새 프로파일을 사용자 정의 프로파일 대신 공급 업체 프로파일로 작성"
 
 #: src/cli/main.c:563
 msgid "ID of a profile that should be used as a base for the new profile"
-msgstr ""
+msgstr "새 프로필의 기본으로 사용해야하는 프로필의 ID"
 
 #: src/cli/main.c:564
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
-msgstr ""
+msgstr "동일한 이름의 공급 업체 프로필이있는 경우에도 기본 프로필에 새 프로필 기본 설정"
 
 #: src/cli/main.c:565
 msgid "Symlink meta files from the base profile instead of copying them"
-msgstr ""
+msgstr "Symlink 메타 파일을 복사하는 대신 기본 프로파일에서 가져옴"
 
 #: src/cli/main.c:566
 msgid "Symlink nsswitch files from the base profile instead of copying them"
-msgstr ""
+msgstr "기본 프로파일에서 파일을 복사하는 대신 Symlink nsswitch 파일"
 
 #: src/cli/main.c:567
 msgid "Symlink pam files from the base profile instead of copying them"
-msgstr ""
+msgstr "기본 프로파일에서 파일을 복사하는 대신 Symlink pam 파일"
 
 #: src/cli/main.c:568
 msgid "Symlink dconf files from the base profile instead of copying them"
-msgstr ""
+msgstr "기본 프로필에서 dconf 파일을 복사하는 대신 Symlink에 첨부하십시오."
 
 #: src/cli/main.c:569
 msgid "Symlink specific file (can be set multiple times)"
-msgstr ""
+msgstr "Symlink 특정 파일 (여러 번 설정할 수 있음)"
 
 #: src/cli/main.c:574
 msgid "New profile name."
-msgstr ""
+msgstr "새 프로필 이름."
 
 #: src/cli/main.c:584
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
-msgstr ""
+msgstr "새 프로필을 만들 수 없음 [%d] : %s\n"
 
 #: src/cli/main.c:588
 #, c-format
 msgid "New profile was created at %s\n"
-msgstr ""
+msgstr "새 프로필이에서 생성되었습니다. %s\n"
 
 #: src/cli/main.c:622
 msgid "Select profile"
-msgstr ""
+msgstr "프로필 선택"
 
 #: src/cli/main.c:623
 msgid "Regenerate configuration for currently selected command"
-msgstr ""
+msgstr "현재 선택된 명령에 대한 구성 재생성"
 
 #: src/cli/main.c:624
 msgid "List available profiles"
-msgstr ""
+msgstr "사용 가능한 프로파일 나열"
 
 #: src/cli/main.c:625
 msgid "Show profile information"
-msgstr ""
+msgstr "프로필 정보 표시"
 
 #: src/cli/main.c:626
 msgid "Print profile requirements"
-msgstr ""
+msgstr "프로파일 요구 사항 인쇄"
 
 #: src/cli/main.c:627
 msgid "Get identifier of currently selected profile"
-msgstr ""
+msgstr "현재 선택된 프로파일의 식별자를 가져옵니다."
 
 #: src/cli/main.c:628
 msgid "Check if the current configuration is valid"
-msgstr ""
+msgstr "현재 구성이 유효한지 확인하십시오."
 
 #: src/cli/main.c:629
 msgid "Print changes that would be otherwise written"
-msgstr ""
+msgstr "다른 방법으로 쓰여질 변경 사항을 인쇄하십시오."
 
 #: src/cli/main.c:630
 msgid "Enable feature in currently selected profile"
-msgstr ""
+msgstr "현재 선택한 프로필에서 기능 사용"
 
 #: src/cli/main.c:631
 msgid "Disable feature in currently selected profile"
-msgstr ""
+msgstr "현재 선택한 프로필에서 기능 사용 중지"
 
 #: src/cli/main.c:632
 msgid "Create new authselect profile"
-msgstr ""
+msgstr "새 authselect 프로파일 만들기"
 
 #: src/cli/main.c:645
 msgid "Authselect can only be run as root!\n"
-msgstr "Només es pot executar authselect com a root!\n"
+msgstr "Authselect는 루트로만 실행할 수 있습니다!\n"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
-msgstr ""
+msgstr "기본적으로 사용자 정보를위한 NIS"
 
 #: src/compat/authcompat_Options.py:83
 msgid "<domain>"
-msgstr "<domini>"
+msgstr "<domain>"
 
 #: src/compat/authcompat_Options.py:83
 msgid "default NIS domain"
-msgstr "domini NIS predeterminat"
+msgstr "기본 NIS 도메인"
 
 #: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
 #: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
 msgid "<server>"
-msgstr "<servidor>"
+msgstr "<server>"
 
 #: src/compat/authcompat_Options.py:84
 msgid "default NIS server"
-msgstr ""
+msgstr "기본 NIS 서버"
 
 #: src/compat/authcompat_Options.py:85
 msgid "LDAP for user information by default"
-msgstr "per defecte LDAP per a la informació de l'usuari"
+msgstr "기본적으로 사용자 정보 용 LDAP"
 
 #: src/compat/authcompat_Options.py:86
 msgid "LDAP for authentication by default"
-msgstr "per defecte LDAP per a l'autenticació"
+msgstr "기본적으로 인증 용 LDAP"
 
 #: src/compat/authcompat_Options.py:87
 msgid "default LDAP server hostname or URI"
-msgstr "nom d'amfitrió, o URI, del servidor LDAP"
+msgstr "기본 LDAP 서버 호스트 이름 또는 URI"
 
 #: src/compat/authcompat_Options.py:88
 msgid "<dn>"
@@ -1171,190 +1164,182 @@ msgstr "<dn>"
 
 #: src/compat/authcompat_Options.py:88
 msgid "default LDAP base DN"
-msgstr "DN base predeterminat de LDAP"
+msgstr "기본 LDAP 기본 DN"
 
 #: src/compat/authcompat_Options.py:89
 msgid "use of TLS with LDAP (RFC-2830)"
-msgstr "ús de TLS amb LDAP (RFC-2830)"
+msgstr "LDAP가있는 TLS 사용 (RFC-2830)"
 
 #: src/compat/authcompat_Options.py:90
 msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
-msgstr "ús de TLS per a resoldre la identitat amb LDAP (RFC-2830)"
+msgstr "LDAP (RFC-2830)를 사용한 신원 조회에 TLS 사용"
 
 #: src/compat/authcompat_Options.py:91
 msgid "use of RFC-2307bis schema for LDAP user information lookups"
-msgstr ""
-"ús de l'esquema RFC-2307bis per a resoldre la informació de l'usuari de LDAP"
+msgstr "LDAP 사용자 정보 조회를위한 RFC-2307bis 스키마 사용"
 
 #: src/compat/authcompat_Options.py:92
 msgid "authentication with smart card by default"
-msgstr "per defecte autenticació amb targeta intel·ligent"
+msgstr "기본적으로 스마트 카드를 통한 인증"
 
 #: src/compat/authcompat_Options.py:93
 msgid "<0=Lock|1=Ignore>"
-msgstr ""
+msgstr "<0=Lock|1=Ignore>"
 
 #: src/compat/authcompat_Options.py:93
 msgid "action to be taken on smart card removal"
-msgstr "acció a realitzar amb l'extracció de la targeta intel·ligent"
+msgstr "스마트 카드 제거시 취해야 할 조치"
 
 #: src/compat/authcompat_Options.py:94
 msgid "require smart card for authentication by default"
-msgstr ""
+msgstr "기본적으로 인증을 위해 스마트 카드 필요"
 
 #: src/compat/authcompat_Options.py:95
 msgid "authentication with fingerprint readers by default"
-msgstr "per defecte autenticació amb lectors d'empremtes digitals"
+msgstr "기본적으로 지문 인식 장치로 인증"
 
 #: src/compat/authcompat_Options.py:96
 msgid "automatic per-user ecryptfs"
-msgstr "ecryptfs automàtic en funció de l'usuari"
+msgstr "자동 사용자 별 ecryptfs"
 
 #: src/compat/authcompat_Options.py:97
 msgid "Kerberos authentication by default"
-msgstr ""
+msgstr "기본적으로 Kerberos 인증"
 
 #: src/compat/authcompat_Options.py:98
 msgid "default Kerberos KDC"
-msgstr ""
+msgstr "기본 Kerberos KDC"
 
 #: src/compat/authcompat_Options.py:99
 msgid "default Kerberos admin server"
-msgstr ""
+msgstr "기본 Kerberos 관리 서버"
 
 #: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
 msgid "<realm>"
-msgstr "<reialme>"
+msgstr "<realm>"
 
 #: src/compat/authcompat_Options.py:100
 msgid "default Kerberos realm"
-msgstr ""
+msgstr "기본 Kerberos 영역"
 
 #: src/compat/authcompat_Options.py:101
 msgid "use of DNS to find Kerberos KDCs"
-msgstr ""
+msgstr "Kerberos KDC를 찾기 위해 DNS 사용"
 
 #: src/compat/authcompat_Options.py:102
 msgid "use of DNS to find Kerberos realms"
-msgstr ""
+msgstr "DNS를 사용하여 Kerberos 영역 찾기"
 
 #: src/compat/authcompat_Options.py:103
 msgid "winbind for user information by default"
-msgstr "per defecte winbind per a la informació de l'usuari"
+msgstr "기본적으로 사용자 정보를위한 winbind"
 
 #: src/compat/authcompat_Options.py:104
 msgid "winbind for authentication by default"
-msgstr "per defecte winbind per l'autenticació"
+msgstr "기본적으로 인증 용 winbind"
 
 #: src/compat/authcompat_Options.py:105
 msgid "<Administrator>"
-msgstr "<Administrador>"
+msgstr "<Administrator>"
 
 #: src/compat/authcompat_Options.py:105
 msgid "join the winbind domain or ads realm now as this administrator"
-msgstr ""
-"ingressa ara al domini winbind o al reialme ads com a aquest administrador"
+msgstr "이 관리자로 winbind 도메인 또는 광고 영역에 지금 가입하십시오."
 
 #: src/compat/authcompat_Options.py:106
 msgid "Kerberos 5 for authenticate with winbind"
-msgstr "Kerberos 5 per a l'autenticació amb winbind"
+msgstr "winbind로 인증하기위한 Kerberos 5"
 
 #: src/compat/authcompat_Options.py:107
 msgid "<workgroup>"
-msgstr "<grup de treball>"
+msgstr "<workgroup>"
 
 #: src/compat/authcompat_Options.py:107
 msgid "workgroup authentication servers are in"
-msgstr "els servidors d'autenticació del grup de treball estan a"
+msgstr "작업 그룹 인증 서버는 다음 위치에 있습니다."
 
 #: src/compat/authcompat_Options.py:108
 msgid ""
 "SSSD for user information by default with manually managed configuration"
-msgstr ""
-"per defecte SSSD per a la informació de l'usuari amb la configuració "
-"gestionada de forma manual"
+msgstr "수동으로 관리되는 구성으로 기본적으로 사용자 정보를위한 SSSD"
 
 #: src/compat/authcompat_Options.py:109
 msgid "SSSD for authentication by default with manually managed configuration"
-msgstr ""
-"per defecte SSSD per a l'autenticació amb la configuració gestionada de "
-"forma manual"
+msgstr "수동 관리 구성으로 기본적으로 인증을위한 SSSD"
 
 #: src/compat/authcompat_Options.py:110
 msgid "caching of user credentials in SSSD by default"
-msgstr "per defecte captura de les credencials de l'usuari amb SSSD"
+msgstr "기본적으로 SSSD에서 사용자 자격 증명 캐싱"
 
 #: src/compat/authcompat_Options.py:111
 msgid "check of access.conf during account authorization"
-msgstr "comprova access.conf durant l'autorització del compte"
+msgstr "계정 인증 중 access.conf 점검"
 
 #: src/compat/authcompat_Options.py:112
 msgid "creation of home directories for users on their first login"
-msgstr ""
-"creació dels directoris dels usuaris amb el seu primer inici de sessió"
+msgstr "첫 로그인시 사용자를위한 홈 디렉토리 생성"
 
 #: src/compat/authcompat_Options.py:113
 msgid ""
 "account locking in case of too many consecutive authentication failures"
-msgstr ""
-"bloqueig del compte en cas de massa fracassos d'autenticació consecutius"
+msgstr "너무 많은 연속 된 인증 실패의 경우 계정 잠금"
 
 #: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
 #: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
 msgid "<number>"
-msgstr "<número>"
+msgstr "<number>"
 
 #: src/compat/authcompat_Options.py:114
 msgid "minimum length of a password"
-msgstr ""
+msgstr "최소 암호 길이"
 
 #: src/compat/authcompat_Options.py:115
 msgid "minimum number of character classes in a password"
-msgstr ""
+msgstr "암호의 최소 문자 클래스 수"
 
 #: src/compat/authcompat_Options.py:116
 msgid "maximum number of same consecutive characters in a password"
-msgstr ""
+msgstr "암호에서 연속되는 최대 문자 수"
 
 #: src/compat/authcompat_Options.py:117
 msgid "maximum number of consecutive characters of same class in a password"
-msgstr ""
+msgstr "동일한 클래스의 최대 연속 문자 수"
 
 #: src/compat/authcompat_Options.py:118
 msgid "require at least one lowercase character in a password"
-msgstr ""
+msgstr "암호에 적어도 하나의 소문자가 필요하다."
 
 #: src/compat/authcompat_Options.py:119
 msgid "require at least one uppercase character in a password"
-msgstr ""
+msgstr "암호에 적어도 하나의 대문자가 필요하다."
 
 #: src/compat/authcompat_Options.py:120
 msgid "require at least one digit in a password"
-msgstr ""
+msgstr "암호에 적어도 하나의 숫자가 필요하다."
 
 #: src/compat/authcompat_Options.py:121
 msgid "require at least one other character in a password"
-msgstr ""
+msgstr "암호에 적어도 하나의 다른 문자가 필요하다."
 
 #: src/compat/authcompat_Options.py:124
 msgid "do not start/stop services"
-msgstr "no iniciïs/atura els serveis"
+msgstr "서비스를 시작하거나 중지하지 마십시오."
 
 #: src/compat/authcompat_Options.py:125
 msgid "update all configuration files"
-msgstr "actualitza tots els fitxers de configuració"
+msgstr "모든 구성 파일을 업데이트하십시오."
 
 #: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
 msgid "the same as --updateall"
-msgstr "el mateix que --updateall"
+msgstr "--updateall과 동일합니다."
 
 #: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
 msgid "<name>"
-msgstr ""
+msgstr "<name>"
 
 #: src/compat/authcompat_Options.py:148
 msgid "<descrypt|bigcrypt|md5|sha256|sha512>"
-msgstr ""
+msgstr "<descrypt|bigcrypt|md5|sha256|sha512>"
 
 #: src/compat/authcompat_Options.py:149
 msgid "<URL>"
@@ -1362,24 +1347,24 @@ msgstr "<URL>"
 
 #: src/compat/authcompat_Options.py:150
 msgid "<module>"
-msgstr "<mòdul>"
+msgstr "<module>"
 
 #: src/compat/authcompat_Options.py:151
 msgid "<user|server|domain|ads>"
-msgstr "<usuari|servidor|domini|ads>"
+msgstr "<user|server|domain|ads>"
 
 #: src/compat/authcompat_Options.py:153
 msgid "<servers>"
-msgstr "<servidors>"
+msgstr "<servers>"
 
 #: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
 #: src/compat/authcompat_Options.py:156
 msgid "<lowest-highest>"
-msgstr ""
+msgstr "<lowest-highest>"
 
 #: src/compat/authcompat_Options.py:157
 msgid "<\\>"
-msgstr ""
+msgstr "<\\>"
 
 #: src/compat/authcompat_Options.py:158
 msgid "</home/%D/%U>"
@@ -1387,57 +1372,57 @@ msgstr "</home/%D/%U>"
 
 #: src/compat/authcompat_Options.py:159
 msgid "</bin/false>"
-msgstr ""
+msgstr "</bin/false>"
 
 #: src/compat/authcompat_Options.py:166
 msgid "<options>"
-msgstr "<opcions>"
+msgstr "<options>"
 
 #: src/compat/authcompat_Options.py:210
 msgid "These options have a compatibility layer"
-msgstr "Aquestes opcions tenen una capa de compatibilitat"
+msgstr "이러한 옵션에는 호환성 레이어가 있습니다."
 
 #: src/compat/authcompat_Options.py:211
 msgid "These options are no longer supported and have no effect"
-msgstr "Aquestes opcions ja no són compatibles i no tenen cap efecte"
+msgstr "이 옵션은 더 이상 지원되지 않으며 효과가 없습니다."
 
 #: src/compat/authcompat_Options.py:313
 msgid "enable"
-msgstr "habilita"
+msgstr "가능하게하다"
 
 #: src/compat/authcompat_Options.py:314
 msgid "disable"
-msgstr "inhabilita"
+msgstr "무능하게하다"
 
 #: src/compat/authcompat.py.in.in:49
 #, python-format
 msgid "Executing: %s"
-msgstr ""
+msgstr "실행 중 : %s"
 
 #: src/compat/authcompat.py.in.in:68
 #, python-format
 msgid "Service %s was not found. Please install the service."
-msgstr ""
+msgstr "서비스 %s 찾을 수 없습니다. 서비스를 설치하십시오."
 
 #: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:625
 #: src/compat/authcompat.py.in.in:651
 #, python-format
 msgid "Command [%s] failed with %d, stderr:"
-msgstr ""
+msgstr "명령 [%s]와 함께 실패했습니다. %d, stderr :"
 
 #: src/compat/authcompat.py.in.in:183
 #, python-format
 msgid "Removing file: %s"
-msgstr ""
+msgstr "파일 삭제 : %s"
 
 #: src/compat/authcompat.py.in.in:331
 #, python-format
 msgid "%s was not found. Please, install realmd."
-msgstr ""
+msgstr "%s 찾을 수 없습니다. realmd를 설치하십시오."
 
 #: src/compat/authcompat.py.in.in:465
 msgid "Running authconfig compatibility tool."
-msgstr ""
+msgstr "authconfig 호환성 도구 실행 중."
 
 #: src/compat/authcompat.py.in.in:466
 msgid ""
@@ -1445,51 +1430,46 @@ msgid ""
 "with authselect and minimum configuration. It does not provide all "
 "capabilities of authconfig.\n"
 msgstr ""
+"이 도구의 목적은 authselect 및 최소 구성으로 선택한 서비스에 대한 인증을 사용 가능하게하는 것입니다. authconfig의 "
+"모든 기능을 제공하지는 않습니다.\n"
 
 #: src/compat/authcompat.py.in.in:469
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
-msgstr ""
-"IMPORTANT: authconfig ha estat substituït amb authselect, actualitzeu els "
-"vostres scripts."
+msgstr "중요 : authconfig는 authselect로 바뀌므로 스크립트를 업데이트하십시오."
 
 #: src/compat/authcompat.py.in.in:471
 msgid ""
 "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
 msgstr ""
-"Consulteu la pàgina del canvi de Fedora 28: https://fedoraproject.org/wiki/"
-"Changes/AuthselectAsDefault"
+"Fedora 28 변경 페이지보기 : https://fedoraproject.org/wiki/Changes/"
+"AuthselectAsDefault"
 
 #: src/compat/authcompat.py.in.in:472
 msgid ""
 "See man authselect-migration(7) to help you with migration to authselect"
-msgstr ""
-"Consulteu man authselect-migration(7) per a l'ajudar per a la migració a "
-"authselect"
+msgstr "authselect 로의 마이그레이션을 돕기 위해 man authselect-migration (7)을 참조하십시오."
 
 #: src/compat/authcompat.py.in.in:476
 msgid "Warning: These options are not supported anymore and have no effect:"
-msgstr "Avís: aquestes opcions ja no són compatibles i no tenen cap efecte:"
+msgstr "경고 :이 옵션은 더 이상 지원되지 않으며 영향을 미치지 않습니다."
 
 #: src/compat/authcompat.py.in.in:496
 msgid "authconfig can only be run as root"
-msgstr "només es pot executar authconfig com a root"
+msgstr "authconfig는 루트로만 실행할 수 있습니다."
 
 #: src/compat/authcompat.py.in.in:501
 #, python-format
 msgid ""
 "Error: option --%s is no longer supported and we cannot continue if it is "
 "set."
-msgstr ""
-"Error: l'opció --%s ja no és compatible i no es pot continuar si està "
-"establerta."
+msgstr "오류 : 옵션 -%s 더 이상 지원되지 않으며 설정되면 계속할 수 없습니다."
 
 #: src/compat/authcompat.py.in.in:506
 msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
-msgstr ""
-"Error: S'han d'establir ambdós, --enablewinbind i --enablewinbindauth."
+msgstr "오류 : --enablewinbind 및 --enablewinbindauth를 모두 설정해야합니다."
 
 #: src/compat/authcompat.py.in.in:516
 msgid "Error: Please, provide --updateall option."
-msgstr "Error: proporcioneu l'opció --updateall."
+msgstr "오류 : --updateall 옵션을 제공하십시오."

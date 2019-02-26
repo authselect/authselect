@@ -1,20 +1,17 @@
-# SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-02-26 10:26+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-01-29 12:52+0000\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"X-Generator: Zanata 4.6.2\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
 #. type: Title =
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:2
@@ -26,18 +23,19 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:6
 #, no-wrap
 msgid "NAME"
-msgstr ""
+msgstr "NOM"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:8
-msgid "authselect-migration - A guide how to migrate from authconfig to authselect."
+msgid ""
+"authselect-migration - A guide how to migrate from authconfig to authselect."
 msgstr ""
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:10
 #, no-wrap
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "DESCRIPTION"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:15
@@ -77,28 +75,26 @@ msgid ""
 "beside PAM and nsswitch.conf and it strictly prohibits any manual changes to "
 "generated configuration. It provides a set of files called profiles. Each "
 "profile describes how the resulting configuration should look like and it "
-"can be slightly modified by enabling or disabling certain optional "
-"features. If a need arises for a different profile than what authselect "
-"ships, the administrator has an option to create a whole new profile and use "
-"it with authselect.  See authselect-profiles(5) to learn more about "
-"profiles."
+"can be slightly modified by enabling or disabling certain optional features. "
+"If a need arises for a different profile than what authselect ships, the "
+"administrator has an option to create a whole new profile and use it with "
+"authselect.  See authselect-profiles(5) to learn more about profiles."
 msgstr ""
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:46
 msgid ""
-"This may seem like a big disadvantage but the truth is the "
-"opposite. Authconfig is a very old tool and the applications providing "
-"required services have changed rapidly over the years. Typically, there is "
-"no longer a need to have multiple authentication modules in PAM and "
-"nsswitch.conf, because the vast majority of use-cases is covered by "
-"SSSD. Therefore there is no need to add or remove them specifically. There "
-"are also better tools to generate configuration for system daemons that can "
-"help you automate the process of joining to a remote domain such as "
-"`realm`. In addition, the shipped profiles give us comprehensive and "
-"deterministic system configuration that can be fully tested and is much less "
-"error prone. It is also much easier to distribute such configuration across "
-"many systems."
+"This may seem like a big disadvantage but the truth is the opposite. "
+"Authconfig is a very old tool and the applications providing required "
+"services have changed rapidly over the years. Typically, there is no longer "
+"a need to have multiple authentication modules in PAM and nsswitch.conf, "
+"because the vast majority of use-cases is covered by SSSD. Therefore there "
+"is no need to add or remove them specifically. There are also better tools "
+"to generate configuration for system daemons that can help you automate the "
+"process of joining to a remote domain such as `realm`. In addition, the "
+"shipped profiles give us comprehensive and deterministic system "
+"configuration that can be fully tested and is much less error prone. It is "
+"also much easier to distribute such configuration across many systems."
 msgstr ""
 
 #. type: Plain text
@@ -199,8 +195,8 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:97
 #, no-wrap
 msgid ""
-"authconfig --enablesssd --enablesssdauth --enablesmartcard "
-"--smartcardmodule=sssd --updateall\n"
+"authconfig --enablesssd --enablesssdauth --enablesmartcard --smartcardmodule="
+"sssd --updateall\n"
 "authselect select sssd with-smartcard\n"
 msgstr ""
 
@@ -216,8 +212,8 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:103
 #, no-wrap
 msgid ""
-"authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator "
-"--updateall\n"
+"authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator --"
+"updateall\n"
 "realm join -U Administrator --client-software=winbind WINBINDDOMAIN\n"
 msgstr ""
 
@@ -230,8 +226,8 @@ msgstr ""
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:108
 msgid ""
-"This section contains snippets for minimal configuration of various "
-"services."
+"This section contains snippets for minimal configuration of various services."
+""
 msgstr ""
 
 #. type: Title ~
@@ -257,8 +253,7 @@ msgstr ""
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:119
 #, no-wrap
-msgid ""
-"# Set the default base dn\n"
+msgid "# Set the default base dn\n"
 "BASE   dc=example,dc=com\n"
 msgstr ""
 
@@ -293,16 +288,14 @@ msgstr ""
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:133
 #, no-wrap
-msgid ""
-"[libdefaults]\n"
+msgid "[libdefaults]\n"
 " default_realm = MYREALM\n"
 msgstr ""
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:138
 #, no-wrap
-msgid ""
-"[realms]\n"
+msgid "[realms]\n"
 " MYREALM = {\n"
 "  kdc = kdc.myrealm.org\n"
 " }\n"
@@ -311,8 +304,7 @@ msgstr ""
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:142
 #, no-wrap
-msgid ""
-"[domain_realm]\n"
+msgid "[domain_realm]\n"
 " myrealm.org = MYREALM\n"
 " .myrealm.org = MYREALM\n"
 msgstr ""
@@ -328,8 +320,8 @@ msgstr ""
 msgid ""
 "Authselect encourages users to use SSSD wherever possible. There are many "
 "configuration options, see sssd.conf(5). This is a minimal configuration "
-"that creates one LDAP domain called `default`. The LDAP server is "
-"auto-discovered through DNS lookups."
+"that creates one LDAP domain called `default`. The LDAP server is auto-"
+"discovered through DNS lookups."
 msgstr ""
 
 #. type: Block title
@@ -341,8 +333,7 @@ msgstr ""
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:156 /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:172
 #, no-wrap
-msgid ""
-"[sssd]\n"
+msgid "[sssd]\n"
 "config_file_version = 2\n"
 "domains = default\n"
 msgstr ""
@@ -425,8 +416,7 @@ msgstr ""
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:205
 #, no-wrap
-msgid ""
-"domain mydomain broadcast\n"
+msgid "domain mydomain broadcast\n"
 "# or\n"
 "# domain mydomain server myserver\n"
 msgstr ""
@@ -459,8 +449,7 @@ msgstr ""
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:220
 #, no-wrap
-msgid ""
-"$ domainname mydomain\n"
+msgid "$ domainname mydomain\n"
 "$ setsebool -P allow_ypbind 1\n"
 msgstr ""
 
@@ -482,9 +471,9 @@ msgstr ""
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:232
 msgid ""
-"The `pam_pwquality` module can be configured in "
-"{sysconfdir}/security/pwquality.conf. See pam_pwquality(8) to see its "
-"configuration options and defaults."
+"The `pam_pwquality` module can be configured in {sysconfdir}/security/"
+"pwquality.conf. See pam_pwquality(8) to see its configuration options and "
+"defaults."
 msgstr ""
 
 #. type: Title -
@@ -559,6 +548,6 @@ msgstr ""
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:264
 msgid ""
-"authselect(8), authselect-profiles(5), realm(8), ipa-client-install(1), "
-"sssd.conf(5), smb.conf(5), ldap.conf(5), krb5.conf(5)"
+"authselect(8), authselect-profiles(5), realm(8), ipa-client-install(1), sssd."
+"conf(5), smb.conf(5), ldap.conf(5), krb5.conf(5)"
 msgstr ""

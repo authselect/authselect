@@ -1,4 +1,6 @@
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2018. #zanata
+# Cheng-Chia Tseng <pswo10680@gmail.com>, 2018. #zanata
+# Ludek Janda <ljanda@redhat.com>, 2018. #zanata
+# Ludek Janda <ljanda@redhat.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
@@ -7,608 +9,604 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-04-02 04:20+0000\n"
-"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
-"Language-Team: Catalan\n"
-"Language: ca\n"
+"PO-Revision-Date: 2019-01-21 12:15+0000\n"
+"Language-Team: \n"
 "X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh_TW\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:169
 msgid "Unable to obtain supported features"
-msgstr ""
+msgstr "無法取得支援的功能"
 
 #: src/lib/authselect.c:59
 #, c-format
 msgid "Unknown profile feature [%s], did you mean [%s]?"
-msgstr ""
+msgstr "未知的 [%s] 設定檔功能， 您的意思是指 [%s] 嗎？"
 
 #: src/lib/authselect.c:62
 #, c-format
 msgid "Unknown profile feature [%s]"
-msgstr ""
+msgstr "未知的 [%s] 設定檔功能"
 
 #: src/lib/authselect.c:86
 #, c-format
 msgid "Trying to activate profile [%s]"
-msgstr "Intent d'activació del perfil [%s]"
+msgstr "試圖啟動 [%s] 設定檔"
 
 #: src/lib/authselect.c:90 src/lib/authselect.c:162 src/lib/profiles/read.c:312
 #, c-format
 msgid "Unable to find profile [%s] [%d]: %s"
-msgstr "No es pot trobar el perfil [%s] [%d]: %s"
+msgstr "找不到 [%s] [%d] 設定檔：%s"
 
 #: src/lib/authselect.c:101
 msgid "Enforcing activation!"
-msgstr "Forçament de l'activació!"
+msgstr "強制啟動！"
 
 #: src/lib/authselect.c:109
 #, c-format
 msgid "Unable to check configuration [%d]: %s"
-msgstr "No es pot comprovar la configuració [%d]: %s"
+msgstr "無法檢查 [%d] 組態：%s"
 
 #: src/lib/authselect.c:114
 msgid "Unexpected changes to the configuration were detected."
-msgstr "S'han detectat canvis inesperats a la configuració."
+msgstr "偵測到組態設定意外更改。"
 
 #: src/lib/authselect.c:115
 msgid ""
 "Refusing to activate profile unless those changes are removed or overwrite "
 "is requested."
-msgstr ""
-"Es refusa l'activació del perfil a menys que se sol·liciti l'eliminació o la "
-"sobreescriptura d'aquests canvis."
+msgstr "除非刪除這些更改，或者要求覆蓋組態，否則拒絕啟動設定檔。"
 
 #: src/lib/authselect.c:124
 msgid "File that needs to be overwritten was found"
-msgstr "S'ha trobat un fitxer que s'ha de sobreescriure"
+msgstr "找到需要覆寫的檔案"
 
 #: src/lib/authselect.c:125
 msgid ""
 "Refusing to activate profile unless this file is removed or overwrite is "
 "requested."
-msgstr ""
-"Es refusa l'activació del perfil a menys que se sol·liciti l'eliminació o la "
-"sobreescriptura d'aquest fitxer."
+msgstr "除非刪除此檔案，或者要求覆蓋組態，否則拒絕啟動設定檔。"
 
 #: src/lib/authselect.c:136
 #, c-format
 msgid "Unable to activate profile [%s] [%d]: %s"
-msgstr "No es pot activar el perfil [%s] [%d]: %s"
+msgstr "無法啟動 [%s] [%d] 設定檔：%s"
 
 #: src/lib/authselect.c:179
 #, c-format
 msgid "Profile feature [%s] is no longer supported, removing it..."
-msgstr ""
+msgstr "[%s] 設定檔功能不再支援，移除中..."
 
 #: src/lib/authselect.c:202
 msgid "Trying to backup system files"
-msgstr ""
+msgstr "嘗試備份系統檔案"
 
 #: src/lib/authselect.c:205
 #, c-format
 msgid "Unable to backup system files [%d]: %s"
-msgstr ""
+msgstr "無法備份 [%d] 系統檔案：%s"
 
 #: src/lib/authselect_profile.c:104
 msgid "Unable to generate nsswitch.conf"
-msgstr ""
+msgstr "無法生成 nsswitch.conf"
 
 #: src/lib/authselect_profile.c:111
 #, c-format
 msgid "Unable to find nsswitch maps [%d]: %s"
-msgstr ""
+msgstr "找不到 nsswitch 映射表 [%d]：%s"
 
 #: src/lib/authselect_profile.c:132
 msgid "Unable to create array (out of memory)"
-msgstr ""
+msgstr "無法建立陣列（記憶體不足）"
 
 #: src/lib/authselect_profile.c:141 src/lib/authselect_profile.c:150
 msgid "Unable to obtain feature list (out of memory)"
-msgstr ""
+msgstr "無法取得功能列表（記憶體不足）"
 
 #: src/lib/authselect_profile.c:344
 #, c-format
 msgid "Creating empty profile at [%s]"
-msgstr ""
+msgstr "在 [%s] 位置建立空白設定檔"
 
 #: src/lib/authselect_profile.c:348 src/lib/authselect_profile.c:438
 #, c-format
 msgid "Unable to make path [%s] [%d]: %s"
-msgstr ""
+msgstr "無法創立 [%s] [%d] 路徑：%s"
 
 #: src/lib/authselect_profile.c:355 src/lib/authselect_profile.c:397
 #, c-format
 msgid "Unable to write to [%s] [%d]: %s"
-msgstr ""
+msgstr "無法寫入 [%s] [%d]：%s"
 
 #: src/lib/authselect_profile.c:377 src/lib/authselect_profile.c:446
 #: src/lib/files/system.c:673
 #, c-format
 msgid "There is no filename in [%s]"
-msgstr ""
+msgstr "[%s] 中沒有檔案名稱"
 
 #: src/lib/authselect_profile.c:386
 #, c-format
 msgid "Unable to create symbolic link [%s] to [%s] [%d]: %s"
-msgstr ""
+msgstr "無法建立 [%s] 符號連結指向 [%s] [%d]：%s"
 
 #: src/lib/authselect_profile.c:419
 #, c-format
 msgid "Creating new profile from \"%s\" at [%s]"
-msgstr ""
+msgstr "在 [%2$s] 位置從「%1$s」建立新的設定檔"
 
 #: src/lib/authselect_profile.c:423
 #, c-format
 msgid "Unable to read base profile [%s] [%d]: %s"
-msgstr ""
+msgstr "無法讀取基礎設定檔 [%s] [%d]：%s"
 
 #: src/lib/authselect_profile.c:431
 msgid "Unable to resolve symbolic links names"
-msgstr ""
+msgstr "無法解析符號連結名稱"
 
 #: src/lib/authselect_profile.c:456 src/lib/authselect_profile.c:469
 #: src/lib/authselect_profile.c:483
 #, c-format
 msgid "Unable to create [%s] [%d]: %s"
-msgstr ""
+msgstr "無法建立 [%s] [%d]：%s"
 
 #: src/lib/authselect_profile.c:491
 #, c-format
 msgid "Unknown file name [%s]"
-msgstr ""
+msgstr "未知檔名 [%s]"
 
 #: src/lib/authselect_profile.c:518
 msgid "Name can not be empty"
-msgstr ""
+msgstr "名稱不能空白"
 
 #: src/lib/authselect_profile.c:530
 msgid "Default profile can not be created"
-msgstr ""
+msgstr "無法建立預設的設定檔"
 
 #: src/lib/authselect_profile.c:533
 msgid "Value AUTHSELECT_PROFILE_ANY is invalid in this context"
-msgstr ""
+msgstr "在此情境中，值AUTHSELECT_PROFILE_ANY 無效"
 
 #: src/lib/authselect_profile.c:538
 msgid "Unable to create profile path: out of memory"
-msgstr ""
+msgstr "無法建立設定檔路徑：記憶體不足"
 
 #: src/lib/authselect_profile.c:544
 #, c-format
 msgid "Profile \"%s\" already exist at [%s]"
-msgstr ""
+msgstr "「%s」設定檔已經放在 [%s]"
 
 #: src/lib/authselect_profile.c:548
 #, c-format
 msgid "Unable to access [%s] [%d]: %s"
-msgstr ""
+msgstr "無法存取 [%s] [%d]：%s"
 
 #: src/lib/authselect_profile.c:554
 msgid "Unable to create file name: out of memory"
-msgstr ""
+msgstr "無法建立檔名：記憶體不足"
 
 #: src/lib/authselect_profile.c:562
 #, c-format
 msgid "Unable to create empty profile [%d]: %s"
-msgstr ""
+msgstr "無法建立空白設定檔 [%d]：%s"
 
 #: src/lib/authselect_profile.c:571
 #, c-format
 msgid "Unable to create profile [%d]: %s"
-msgstr ""
+msgstr "無法建立 [%d] 設定檔：%s"
 
 #: src/lib/files/config.c:150
 msgid "Checking if all required directories are writable."
-msgstr "Comprovació per si es pot escriure a tots els directoris requerits."
+msgstr "檢查所有必要的目錄是否可以寫入。"
 
 #: src/lib/files/config.c:155
 #, c-format
 msgid "Unable to get path to %s parent directory!"
-msgstr "No es pot obtenir el directori superior %s!"
+msgstr "無法取得 %s 上層目錄的路徑！"
 
 #: src/lib/files/config.c:162
 #, c-format
 msgid "Creating path [%s]"
-msgstr "Creació del camí [%s]"
+msgstr "建立路徑 [%s]"
 
 #: src/lib/files/config.c:166
 #, c-format
 msgid "Unable to create path [%s] [%d]: %s"
-msgstr "No es pot crear el camí [%s] [%d]: %s"
+msgstr "無法建立路徑 [%s] [%d]：%s"
 
 #: src/lib/files/config.c:171
 #, c-format
 msgid "Directory [%s] does not exist, please create it!"
-msgstr "No existeix el directori [%s], creeu-lo!"
+msgstr "[%s] 目錄不存在，請先建立目錄！"
 
 #: src/lib/files/config.c:174
 #, c-format
 msgid "Unable to access directory [%s] in [WX] mode!"
-msgstr "No es pot accedir al directori [%s] en mode [WX]!"
+msgstr "無法存取 [WX] 模式下的 [%s] 目錄！"
 
 #: src/lib/files/config.c:193
 #, c-format
 msgid "Unable to load profile [%s] [%d]: %s"
-msgstr "No es pot carregar el perfil [%s] [%d]: %s"
+msgstr "無法載入 [%s] [%d] 設定檔：%s"
 
 #: src/lib/files/symlinks.c:41
 #, c-format
 msgid "Creating symbolic link [%s] to [%s]"
-msgstr ""
+msgstr "創建符號鏈接[%s] 至 [%s]"
 
 #: src/lib/files/symlinks.c:47
 #, c-format
 msgid "Unable to overwrite file [%s] [%d]: %s"
-msgstr ""
+msgstr "無法覆蓋文件[%s] [[%d]： %s"
 
 #: src/lib/files/symlinks.c:55
 #, c-format
 msgid "Unable to create symbolic link [%s] [%d]: %s"
-msgstr ""
+msgstr "無法創建符號鏈接[%s] [[%d]： %s"
 
 #: src/lib/files/symlinks.c:79
 #, c-format
 msgid "Validating link [%s]"
-msgstr ""
+msgstr "驗證鏈接[%s]"
 
 #: src/lib/files/symlinks.c:83
 #, c-format
 msgid "Unable to validate link [%s] [%d]: %s"
-msgstr ""
+msgstr "無法驗證鏈接[%s] [[%d]： %s"
 
 #: src/lib/files/symlinks.c:90
 #, c-format
 msgid "[%s] was not created by authselect!"
-msgstr ""
+msgstr "[%s]不是由authselect創建的！"
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:152
 #: src/lib/files/system.c:573
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
-msgstr "Error mentre s'intentava accedir al fitxer [%s] [%d]: %s"
+msgstr "嘗試存取 [%s] [%d] 檔案時出錯：%s"
 
 #: src/lib/files/symlinks.c:120
 #, c-format
 msgid "Unable to check file [%s] [%d]: %s"
-msgstr ""
+msgstr "無法檢查文件[%s] [[%d]： %s"
 
 #: src/lib/files/symlinks.c:127
 #, c-format
 msgid "Symbolic link [%s] to [%s] still exists!"
-msgstr ""
+msgstr "符號鏈接[%s] 至 [%s] 還存在！"
 
 #: src/lib/files/symlinks.c:148
 #, c-format
 msgid "File [%s] exists but it needs to be overwritten!"
-msgstr ""
+msgstr "檔案[%s]存在，但它需要被覆蓋！"
 
 #: src/lib/files/system.c:74 src/lib/profiles/read.c:158
 #, c-format
 msgid "Reading file [%s/%s]"
-msgstr "Lectura del fitxer [%s/%s]"
+msgstr "讀取檔案 [%s/%s]"
 
 #: src/lib/files/system.c:82 src/lib/profiles/read.c:164
 #: src/lib/profiles/read.c:169
 #, c-format
 msgid "Unable to read file [%s/%s] [%d]: %s"
-msgstr ""
+msgstr "無法讀取檔案 [%s/%s] [%d]：%s"
 
 #: src/lib/files/system.c:112 src/lib/files/system.c:170
 #: src/lib/util/template.c:374 src/lib/util/template.c:521
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
-msgstr "No es pot compilar l'expressió regular: error d'expressió regular %d"
+msgstr "無法編譯常規表述式：regex error %d"
 
 #: src/lib/files/system.c:130 src/lib/files/system.c:195
 #: src/lib/util/template.c:418 src/lib/util/template.c:542
 #, c-format
 msgid "Unable to search string: regex error %d"
-msgstr "No es pot cercar la cadena: error d'expressió regular %d"
+msgstr "無法搜索字符串：regex error %d"
 
 #: src/lib/files/system.c:272 src/lib/files/system.c:501
 #, c-format
 msgid "Unable to read [%s] [%d]: %s"
-msgstr "No es pot llegir [%s] [%d]: %s"
+msgstr "無法讀取 [%s] [%d]：%s"
 
 #: src/lib/files/system.c:288
 #, c-format
 msgid "Unable to generate nsswitch.conf [%d]: %s"
-msgstr ""
+msgstr "無法生成 nsswitch.conf [%d]：%s"
 
 #: src/lib/files/system.c:354
 #, c-format
 msgid "Unable to generate files [%d]: %s"
-msgstr "No es poden generar el fitxers [%d]: %s"
+msgstr "無法生成檔案 [%d]：%s"
 
 #: src/lib/files/system.c:368
 #, c-format
 msgid "Writing temporary file for [%s]"
-msgstr ""
+msgstr "為 [%s] 寫入暫存檔"
 
 #: src/lib/files/system.c:372
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
-msgstr ""
+msgstr "無法寫入 [%s] [%d] 暫存檔：%s"
 
 #: src/lib/files/system.c:377
 #, c-format
 msgid "Temporary file is named [%s]"
-msgstr ""
+msgstr "暫存檔名為 [%s]"
 
 #: src/lib/files/system.c:388
 #, c-format
 msgid "Renaming [%s] to [%s]"
-msgstr ""
+msgstr "將 [%s] 重新命名為 [%s]"
 
 #: src/lib/files/system.c:393
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
-msgstr ""
+msgstr "無法將 [%s] 重新命名為 [%s] [%d]：%s"
 
 #: src/lib/files/system.c:493
 #, c-format
 msgid "Validating file [%s]"
-msgstr "Validació del fitxer [%s]"
+msgstr "驗證檔案 [%s]"
 
 #: src/lib/files/system.c:498 src/lib/util/file.c:120
 #, c-format
 msgid "[%s] does not exist!"
-msgstr "[%s] no existeix!"
+msgstr "[%s] 不存在！"
 
 #: src/lib/files/system.c:504
 #, c-format
 msgid "Unable to validate file [%s] [%d]: %s"
-msgstr "No es pot validar el fitxer [%s] [%d]: %s"
+msgstr "無法驗證 [%s] [%d] 檔案：%s"
 
 #: src/lib/files/system.c:511
 #, c-format
 msgid "Comparing content against [%s]"
-msgstr ""
+msgstr "與 [%s] 比較內容"
 
 #: src/lib/files/system.c:515
 msgid "Comparing content against current profile"
-msgstr ""
+msgstr "將內容與目前設定檔進行比較"
 
 #: src/lib/files/system.c:521
 #, c-format
 msgid "[%s] has unexpected content!"
-msgstr "[%s] té un contingut inesperat!"
+msgstr "[%s] 有預期之外的內容！"
 
 #: src/lib/files/system.c:528
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
-msgstr "No es pot comprovar el mode de fitxer de [%s] [%d]: %s"
+msgstr "無法檢查[%s] [%d] 的檔案模式：%s"
 
 #: src/lib/files/system.c:550
 #, c-format
 msgid "File [%s] was modified outside authselect!"
-msgstr "El fitxer [%s] ha estat modificat fora d'authselect!"
+msgstr "[%s] 檔案在 authselect 之外修改過！"
 
 #: src/lib/files/system.c:569
 #, c-format
 msgid "File [%s] is still present"
-msgstr "El fitxer [%s] encara està present"
+msgstr "[%s] 檔案仍然存在"
 
 #: src/lib/files/system.c:596
 #, c-format
 msgid "Unable to create backup directory [%s/%s] [%d]: %s"
-msgstr ""
+msgstr "無法建立 [%s/%s] [%d] 備份目錄：%s"
 
 #: src/lib/files/system.c:622
 #, c-format
 msgid "Unable to create backup directory [%s] [%d]: %s"
-msgstr ""
+msgstr "無法建立 [%s] [%d] 備份目錄：%s"
 
 #: src/lib/files/system.c:643
 #, c-format
 msgid "Creating temporary directory at [%s]"
-msgstr ""
+msgstr "在 [%s] 位置建立暫存目錄"
 
 #: src/lib/files/system.c:666
 #, c-format
 msgid "Unable to create backup directory [%d]: %s"
-msgstr ""
+msgstr "無法建立 [%d] 備份目錄：%s"
 
 #: src/lib/files/system.c:678
 #, c-format
 msgid "Copying [%s] to [%s/%s]"
-msgstr ""
+msgstr "將 [%s] 複製到 [%s/%s]"
 
 #: src/lib/files/system.c:682
 #, c-format
 msgid "File [%s] does not exist"
-msgstr ""
+msgstr "[%s] 檔案不存在"
 
 #: src/lib/files/system.c:684
 #, c-format
 msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
-msgstr ""
+msgstr "無法將 [%s] 複製到 [%s/%s] [%d]：%s"
 
 #: src/lib/profiles/activate.c:44
 #, c-format
 msgid "%s update failed: %d"
-msgstr ""
+msgstr "%s 更新失敗：%d"
 
 #: src/lib/profiles/activate.c:59
 msgid "Some directories are not accessible by authselect!"
-msgstr "authselect no pot accedir a alguns directoris!"
+msgstr "有些目錄 authselect 無法存取！"
 
 #: src/lib/profiles/activate.c:65
 #, c-format
 msgid "Unable to write generated system files [%d]: %s"
-msgstr "No es poden escriure els fitxers de sistema generats [%d]: %s"
+msgstr "無法寫入生成的系統檔案 [%d]：%s"
 
 #: src/lib/profiles/activate.c:72
 #, c-format
 msgid "Unable to write configuration [%d]: %s"
-msgstr "No es pot escriure la configuració [%d]: %s"
+msgstr "無法寫入 [%d] 組態：%s"
 
 #: src/lib/profiles/activate.c:78
 #, c-format
 msgid "Unable to create symbolic links [%d]: %s"
-msgstr "No es poden crear els enllaços simbòlics [%d]: %s"
+msgstr "無法建立 [%d] 符號連結：%s"
 
 #: src/lib/profiles/activate.c:84
 msgid "Dconf is not installed on your system"
-msgstr "Dconf no està instal·lat al vostre sistema"
+msgstr "您的系統尚未安裝 Dconf"
 
 #: src/lib/profiles/activate.c:86
 #, c-format
 msgid "Unable to update dconf database [%d]: %s"
-msgstr "No es pot actualitzar la base de dades de dconf [%d]: %s"
+msgstr "無法更新 dconf 資料庫 [%d]：%s"
 
 #: src/lib/profiles/list.c:58
 #, c-format
 msgid "Unable to stat directory [%d]: %s"
-msgstr ""
+msgstr "無法 stat [%d] 目錄：%s"
 
 #: src/lib/profiles/list.c:137
 #, c-format
 msgid "Reading profile directory [%s]"
-msgstr "Lectura del directori del perfil [%s]"
+msgstr "讀取設定檔目錄 [%s]"
 
 #: src/lib/profiles/list.c:142
 #, c-format
 msgid "Directory [%s] is missing!"
-msgstr "Falta el directori [%s]!"
+msgstr "遺失目錄 [%s]！"
 
 #: src/lib/profiles/list.c:145 src/lib/profiles/read.c:79
 #, c-format
 msgid "Unable to open directory [%s] [%d]: %s"
-msgstr "No es pot obrir el directori [%s] [%d]: %s"
+msgstr "無法開啟 [%s] [%d] 目錄：%s"
 
 #: src/lib/profiles/list.c:157
 #, c-format
 msgid "Not a directory: %s"
-msgstr "No és un directori: %s"
+msgstr "不是個目錄：%s"
 
 #: src/lib/profiles/list.c:161
 #, c-format
 msgid "Found profile [%s]"
-msgstr "S'ha trobat el perfil [%s]"
+msgstr "找到 [%s] 設定檔"
 
 #: src/lib/profiles/list.c:242
 #, c-format
 msgid "Unable to list profiles [%d]: %s"
-msgstr "No es poden llistar els perfils [%d]: %s"
+msgstr "無法列出 [%d] 設定檔：%s"
 
 #: src/lib/profiles/read.c:102
 #, c-format
 msgid "Looking up profile [%s]"
-msgstr "Cerca del perfil [%s]"
+msgstr "查找 [%s] 設定檔"
 
 #: src/lib/profiles/read.c:106
 msgid "Locations array is NULL"
-msgstr ""
+msgstr "位置陣列為 NULL"
 
 #: src/lib/profiles/read.c:129
 #, c-format
 msgid "Profile [%s] is a custom profile"
-msgstr "El perfil [%s] és un perfil personalitzat"
+msgstr "[%s] 設定檔是個自訂設定檔"
 
 #: src/lib/profiles/read.c:131
 #, c-format
 msgid "Profile [%s] is a vendor profile"
-msgstr "El perfil [%s] és un perfil de fabricant"
+msgstr "[%s] 設定檔是個原廠設定檔"
 
 #: src/lib/profiles/read.c:133
 #, c-format
 msgid "Profile [%s] is a default profile"
-msgstr "El perfil [%s] és un perfil predeterminat"
+msgstr "[%s] 設定檔是個預設設定檔"
 
 #: src/lib/profiles/read.c:136
 #, c-format
 msgid "Profile [%s] found at [%s]"
-msgstr "El perfil [%s] s'ha trobat a [%s]"
+msgstr "在 [%2$s] 位置找到 [%1$s] 設定檔"
 
 #: src/lib/profiles/read.c:144
 #, c-format
 msgid "Profile [%s] was not found"
-msgstr "No s'ha trobat el perfil [%s]"
+msgstr "找不到 [%s] 設定檔"
 
 #: src/lib/profiles/read.c:199 src/lib/profiles/read.c:218
 #, c-format
 msgid "Profile [%s] does not contain a name in [%s]!"
-msgstr "El perfil [%s] no conté un nom a [%s]!"
+msgstr "[%s] 設定檔在 [%s] 中不含名稱！"
 
 #: src/lib/util/file.c:42
 msgid "Internal error: stat cannot be NULL!"
-msgstr ""
+msgstr "內部錯誤：stat 不能為 NULL！"
 
 #: src/lib/util/file.c:50
 #, c-format
 msgid "[%s] is not a directory!"
-msgstr "[%s] no és un directori!"
+msgstr "[%s] 不是目錄！"
 
 #: src/lib/util/file.c:53
 #, c-format
 msgid "[%s] is not a regular file!"
-msgstr "[%s] no és un fitxer normal!"
+msgstr "[%s] 不是一般常規檔案！"
 
 #: src/lib/util/file.c:56
 #, c-format
 msgid "[%s] is not a symbolic link!"
-msgstr "[%s] no és un enllaç simbòlic!"
+msgstr "[%s] 不是符號連結！"
 
 #: src/lib/util/file.c:59
 #, c-format
 msgid "[%s] has wrong type [%.7o], expected [%.7o]!"
-msgstr "[%s] té un tipus incorrecte [%.7o], s'esperava [%.7o]!"
+msgstr "[%s] 中有錯誤的 [%.7o] 類型，預期為 [%.7o]！"
 
 #: src/lib/util/file.c:86
 #, c-format
 msgid "[%s] has wrong mode [%.4o], expected [%.4o]!"
-msgstr "[%s] té un mode incorrecte [%.4o], s'esperava [%.4o]!"
+msgstr "[%s] 中有錯誤的 [%.4o] 模式，預期為 [%.4o]！"
 
 #: src/lib/util/file.c:92
 #, c-format
 msgid "[%s] has wrong owner [%u], expected [%u]!"
-msgstr "[%s] té un propietari incorrecte [%u], s'esperava [%u]!"
+msgstr "[%s] 有錯誤的 [%u] 擁有者，預期為 [%u]！"
 
 #: src/lib/util/file.c:98
 #, c-format
 msgid "[%s] has wrong group [%u], expected [%u]!"
-msgstr "[%s] té un grup incorrecte [%u], s'esperava [%u]!"
+msgstr "[%s] 有錯誤的 [%u] 群組，預期為 [%u]！"
 
 #: src/lib/util/file.c:125 src/lib/util/file.c:197
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
-msgstr ""
+msgstr "無法 stat [%s] [%d]：%s"
 
 #: src/lib/util/file.c:163 src/lib/util/file.c:209
 #, c-format
 msgid "Unable to read link destination [%s] [%d]: %s"
-msgstr "No es pot llegir la destinació de l'enllaç [%s] [%d]: %s"
+msgstr "無法讀取連結目的地 [%s] [%d]：%s"
 
 #: src/lib/util/file.c:169
 #, c-format
 msgid "Link [%s] does not point to [%s]"
-msgstr "L'enllaç [%s] no apunta a [%s]"
+msgstr "[%s] 連結沒有指向 [%s]"
 
 #: src/lib/util/file.c:215
 #, c-format
 msgid "Link [%s] points to [%s]"
-msgstr "L'enllaç [%s] apunta a [%s]"
+msgstr "[%s] 連結指向 [%s]"
 
 #: src/lib/util/file.c:265
 msgid "Internal error: filepath cannot be NULL!"
-msgstr "Error intern: el camí al fitxer no pot ser NUL!"
+msgstr "內部錯誤：檔案路徑不能為NULL！"
 
 #: src/lib/util/file.c:297
 #, c-format
 msgid "Unable to get parent directory of [%s] [%d]: %s"
-msgstr "No es pot obtenir el directori superior de [%s] [%d]: %s"
+msgstr "無法取得 [%s] [%d] 的上層目錄：%s"
 
 #: src/lib/util/selinux.c:42
 #, c-format
 msgid "Unable to create selabel context [%d]: %s"
-msgstr ""
+msgstr "無法創建selabel上下文[%d]： %s"
 
 #: src/lib/util/selinux.c:51
 #, c-format
 msgid "Unable to lookup selinux context [%d]: %s"
-msgstr ""
+msgstr "無法查找selinux上下文[%d]： %s"
 
 #: src/lib/util/selinux.c:55
 #, c-format
@@ -631,382 +629,380 @@ msgstr ""
 
 #: src/lib/util/selinux.c:111
 msgid "Unable to get current fscreate selinux context!"
-msgstr ""
+msgstr "無法獲得當前的fscreate selinux上下文！"
 
 #: src/lib/util/selinux.c:117
 #, c-format
 msgid "Unable to get default selinux context for [%s] [%d]: %s!"
-msgstr ""
+msgstr "無法獲取[的默認selinux上下文%s] [[%d]： %s！"
 
 #: src/lib/util/selinux.c:125
 msgid "Unable to set fscreate selinux context!"
-msgstr ""
+msgstr "無法設置fscreate selinux上下文！"
 
 #: src/lib/util/selinux.c:135
 msgid "Unable to restore fscreate selinux context!"
-msgstr ""
+msgstr "無法恢復fscreate selinux上下文！"
 
 #: src/lib/util/template.c:113 src/lib/util/template.c:153
 #: src/lib/util/template.c:230
 msgid "Invalid operator!"
-msgstr "Operador no vàlid!"
+msgstr "操作符無效！"
 
 #: src/lib/util/template.c:383 src/lib/util/template.c:531
 #, c-format
 msgid "Unable to process match [%d]: %s"
-msgstr "No es pot processar la coincidència [%d]: %s"
+msgstr "無法處理 [%d] 比對：%s"
 
 #: src/lib/util/template.c:403
 #, c-format
 msgid "Unable to process operator [%d]: %s"
-msgstr "No es pot processar l'operador [%d]: %s"
+msgstr "無法處理 [%d] 操作符：%s"
 
 #: src/lib/util/template.c:449
 #, c-format
 msgid "Unable to generate template [%d]: %s"
-msgstr "No es pot generar la plantilla [%d]: %s"
+msgstr "無法生成 [%d] 模板：%s"
 
 #: src/lib/util/template.c:478
 msgid "Unable to get current time!"
-msgstr "No es pot obtenir l'hora actual!"
+msgstr "無法取得目前時間！"
 
 #: src/lib/util/template.c:492
 msgid "Unable to create message!"
-msgstr "No es pot crear el missatge!"
+msgstr "無法建立訊息！"
 
 #: src/lib/util/template.c:600
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
-msgstr ""
+msgstr "無法為[創建臨時文件]%s] [[%d]： %s"
 
 #: src/lib/util/textfile.c:56
 #, c-format
 msgid "File [%s] is bigger than %uKiB!"
-msgstr "El fitxer [%s] és més gran de %u KiB!"
+msgstr "[%s] 檔案大於 %uKiB！"
 
 #: src/lib/util/textfile.c:85
 #, c-format
 msgid "Unable to read file [%s] [%d]: %s"
-msgstr "No es pot llegir el fitxer [%s] [%d]: %s"
+msgstr "無法讀取 [%s] [%d] 檔案：%s"
 
 #: src/lib/util/textfile.c:158
 #, c-format
 msgid "Unable to open file [%s] [%d]: %s"
-msgstr "No es pot obrir el fitxer [%s] [%d]: %s"
+msgstr "無法開啟 [%s] [%d] 檔案：%s"
 
 #: src/lib/util/textfile.c:167
 #, c-format
 msgid "Unable to write data [%s] [%d]: %s"
-msgstr "No es poden escriure les dades [%s] [%d]: %s"
+msgstr "無法寫入 [%s] [%d] 資料：%s"
 
 #: src/lib/util/textfile.c:175 src/lib/util/textfile.c:266
 #, c-format
 msgid "Unable to chmod file [%s] [%d]: %s"
-msgstr "No es pot canviar el mode del fitxer [%s] [%d]: %s"
+msgstr "無法 chmod [%s] [%d] 檔案：%s"
 
 #: src/lib/util/textfile.c:273
 #, c-format
 msgid "Unable to chown file [%s] [%d]: %s"
-msgstr ""
+msgstr "無法 chown [%s] [%d] 檔案：%s"
 
 #: src/cli/cli_tool.c:71
 #, c-format
 msgid "Common options:\n"
-msgstr "Opcions comunes:\n"
+msgstr "常用選項：\n"
 
 #: src/cli/cli_tool.c:73
 msgid "Print error messages"
-msgstr "Imprimeix els missatges d'error"
+msgstr "列印錯誤訊息"
 
 #: src/cli/cli_tool.c:75
 msgid "Print trace messages"
-msgstr "Imprimeix els missatges de traça"
+msgstr "列印追蹤訊息"
 
 #: src/cli/cli_tool.c:77
 msgid "Print warning messages"
-msgstr "Imprimeix els missatges d'avís"
+msgstr "列印警告訊息"
 
 #: src/cli/cli_tool.c:79
 #, c-format
 msgid "Help options:\n"
-msgstr "Opcions d'ajuda:\n"
+msgstr "說明選項：\n"
 
 #: src/cli/cli_tool.c:81
 msgid "Show this for a command"
-msgstr "Mostra-ho per una ordre"
+msgstr "顯示此指令"
 
 #: src/cli/cli_tool.c:83
 msgid "Show brief usage message for a command"
-msgstr "Mostra l'ús resumit per a una ordre"
+msgstr "顯示指令的簡要用法訊息"
 
 #: src/cli/cli_tool.c:168
 #, c-format
 msgid "Usage:\n"
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
-msgstr "Ús:\n"
-"%s ORDRE ARGS-ORDRE\n"
+msgstr "用法：\n"
+"%s COMMAND COMMAND-ARGS\n"
 "\n"
 
 #: src/cli/cli_tool.c:169
 #, c-format
 msgid "Available commands:\n"
-msgstr "Ordres disponibles:\n"
+msgstr "可用指令：\n"
 
 #: src/cli/cli_tool.c:187
 #, c-format
 msgid "\n"
-msgstr ""
+msgstr "\n"
 
 #: src/cli/cli_tool.c:199
 msgid "Bug: commands can't be NULL!\n"
-msgstr "Error: commands no pot ser NUL!\n"
+msgstr "臭蟲：指令不能為 NULL！\n"
 
 #: src/cli/cli_tool.c:255
 msgid "Command options:"
-msgstr "Opcions de l'ordre:"
+msgstr "指令選項："
 
 #: src/cli/cli_tool.c:257
 msgid "Common options:"
-msgstr "Opcions comunes:"
+msgstr "常用選項："
 
 #: src/cli/cli_tool.c:271 src/cli/cli_tool.c:274
 msgid "[OPTIONS...]"
-msgstr "[OPCIONS...]"
+msgstr "[OPTIONS...]"
 
 #: src/cli/cli_tool.c:277
 msgid "Out of memory!"
-msgstr "No hi ha prou memòria!"
+msgstr "記憶體不足！"
 
 #: src/cli/cli_tool.c:298
 #, c-format
 msgid "Invalid option %s: %s\n"
 "\n"
-msgstr "Opció no vàlida %s: %s\n"
+msgstr "無效選項 %s：%s\n"
 "\n"
 
 #: src/cli/cli_tool.c:310
 #, c-format
 msgid "Missing option: %s\n"
 "\n"
-msgstr "Falta l'opció: %s\n"
+msgstr "缺少選項：%s\n"
 "\n"
 
 #: src/cli/cli_tool.c:320
 #, c-format
 msgid "Only one free argument is expected!\n"
 "\n"
-msgstr "Només s'espera un argument lliure!\n"
+msgstr "預期只有一個自由引數！\n"
 "\n"
 
 #: src/cli/cli_tool.c:330
 #, c-format
 msgid "Unexpected parameter: %s\n"
 "\n"
-msgstr "Paràmetre inesperat: %s\n"
+msgstr "未預期的參數：%s\n"
 "\n"
 
 #: src/cli/cli_tool.c:342
 #, c-format
 msgid "At least one option is required!\n"
 "\n"
-msgstr "Com a mínim es requereix una opció!\n"
+msgstr "至少需要給一個選項！\n"
 "\n"
 
 #: src/cli/main.c:70 src/cli/main.c:362
 msgid "Profile identifier."
-msgstr "Identificador del perfil."
+msgstr "設定檔標識碼。"
 
 #: src/cli/main.c:73 src/cli/main.c:238 src/cli/main.c:287 src/cli/main.c:322
 #: src/cli/main.c:365 src/cli/main.c:515 src/cli/main.c:537 src/cli/main.c:577
 msgid "Unable to parse command arguments"
-msgstr "No es poden analitzar els arguments de l'ordre"
+msgstr "無法解析指令引數"
 
 #: src/cli/main.c:114
 msgid "Enforce changes"
-msgstr "Força els canvis"
+msgstr "強制變更"
 
 #: src/cli/main.c:115
 msgid "Backup system files before activating profile"
-msgstr ""
+msgstr "啟動設定檔前先備份系統檔案"
 
 #: src/cli/main.c:115
 msgid "NAME"
-msgstr ""
+msgstr "NAME"
 
 #: src/cli/main.c:116
 msgid "Do not backup system files when --force is set"
-msgstr ""
+msgstr "設置 --force 選項時不要備份系統檔案"
 
 #: src/cli/main.c:117
 msgid "Do not print profile requirements"
-msgstr ""
+msgstr "不要列印設定檔要求"
 
 #: src/cli/main.c:128 src/cli/main.c:337 src/cli/main.c:371 src/cli/main.c:398
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
-msgstr "No es pot obtenir la informació del perfil [%d]: %s"
+msgstr "無法取得設定檔資訊 [%d]：%s"
 
 #: src/cli/main.c:136 src/cli/main.c:405
 msgid "Unable to read profile requirements!"
-msgstr ""
+msgstr "無法讀取設定檔要求！"
 
 #: src/cli/main.c:143
 msgid "Unable to obtain nsswitch maps!"
-msgstr ""
+msgstr "無法取得 nsswitch 映射表！"
 
 #: src/cli/main.c:151
 msgid "Unable to backup system files!\n"
-msgstr ""
+msgstr "無法備份系統檔案！\n"
 
 #: src/cli/main.c:155
 #, c-format
 msgid "Backup stored at %s\n"
-msgstr ""
+msgstr "備份存儲在 %s\n"
 
 #: src/cli/main.c:161
 msgid ""
 "\n"
 "Some unexpected changes to the configuration were detected.\n"
 "Use --force parameter if you want to overwrite these changes.\n"
-msgstr ""
-"\n"
-"S'han detectat alguns canvis inesperats a la configuració.\n"
-"Utilitzeu el paràmetre --force si voleu sobreescriure aquests canvis.\n"
+msgstr "\n"
+"偵測到未預期的一些組態變更。\n"
+"如果您想要覆蓋這些變更，請使用 --force 參數。\n"
 
 #: src/cli/main.c:166
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
-msgstr "No es pot activar el perfil [%d]: %s\n"
+msgstr "無法啟動 [%d] 設定檔：%s\n"
 
 #: src/cli/main.c:171
 #, c-format
 msgid "Profile \"%s\" was selected.\n"
-msgstr ""
+msgstr "簡介“%s“被選中了。\n"
 
 #: src/cli/main.c:174
 msgid "The following nsswitch maps are overwritten by the profile:\n"
-msgstr ""
+msgstr "以下nsswitch映射將被配置文件覆蓋：\n"
 
 #: src/cli/main.c:177
 #, c-format
 msgid "- %s\n"
-msgstr ""
+msgstr "- %s\n"
 
 #: src/cli/main.c:182
 #, c-format
 msgid "\n"
 "%s\n"
-msgstr ""
+msgstr "\n"
+"%s\n"
 
 #: src/cli/main.c:205
 msgid "Changes were successfully applied.\n"
-msgstr ""
+msgstr "已成功套用變更。\n"
 
 #: src/cli/main.c:208 src/cli/main.c:244
 msgid "No existing configuration detected.\n"
-msgstr "No s'ha detectat cap configuració existent.\n"
+msgstr "未偵測到既有組態。\n"
 
 #: src/cli/main.c:211
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
-msgstr ""
+msgstr "偵測到預期外的一些組態變更。請改用「select」指令。\n"
 
 #: src/cli/main.c:215
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
-msgstr ""
+msgstr "無法套用變更 [%d]：%s\n"
 
 #: src/cli/main.c:232
 msgid "Print command parameters instead of formatted output"
-msgstr ""
+msgstr "列印指令參數而不是格式設定後的輸出"
 
 #: src/cli/main.c:247
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
-msgstr "No es pot obtenir la configuració actual [%d]: %s"
+msgstr "無法取得目前的 [%d] 組態：%s"
 
 #: src/cli/main.c:261
 #, c-format
 msgid "Profile ID: %s\n"
-msgstr "ID de perfil: %s\n"
+msgstr "設定檔 ID：%s\n"
 
 #: src/cli/main.c:262
 msgid "Enabled features:"
-msgstr "Característiques habilitades:"
+msgstr "啟用的功能："
 
 #: src/cli/main.c:265
 msgid " None\n"
-msgstr " Cap\n"
+msgstr " 無\n"
 
 #: src/cli/main.c:293
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
-msgstr "No es pot provar la configuració actual [%d]: %s"
+msgstr "無法測試目前的 [%d] 組態：%s"
 
 #: src/cli/main.c:300
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
-msgstr ""
-"La configuració actual no és vàlida. Probablement s'ha modificat fora "
-"d'authselect."
+msgstr "目前的組態無效。組態可能在 authselect 之外修改過。"
 
 #: src/cli/main.c:305
 msgid "Current configuration is valid."
-msgstr "La configuració actual és vàlida."
+msgstr "目前的組態有效。"
 
 #: src/cli/main.c:328
 msgid "Unable to get profile list!"
-msgstr "No es pot obtenir la llista de perfils!"
+msgstr "無法取得設定檔列表！"
 
 #: src/cli/main.c:443
 msgid "Print content of all files"
-msgstr "Imprimeix el contingut de tots els fitxers"
+msgstr "列印所有檔案的內容"
 
 #: src/cli/main.c:444
 msgid "Print nsswitch.conf content"
-msgstr "Imprimeix el contingut de nsswitch.conf"
+msgstr "列印 nsswitch.conf 內容"
 
 #: src/cli/main.c:445
 msgid "Print system-auth content"
-msgstr "Imprimeix el contingut de system-auth"
+msgstr "列印 system-auth 內容"
 
 #: src/cli/main.c:446
 msgid "Print password-auth content"
-msgstr "Imprimeix el contingut de password-auth"
+msgstr "列印 password-auth 內容"
 
 #: src/cli/main.c:447
 msgid "Print smartcard-auth content"
-msgstr "Imprimeix el contingut de smartcard-auth"
+msgstr "列印 smartcard-auth 內容"
 
 #: src/cli/main.c:448
 msgid "Print fingerprint-auth content"
-msgstr "Imprimeix el contingut de fingerprint-auth"
+msgstr "列印 fingerprint-auth 內容"
 
 #: src/cli/main.c:449
 msgid "Print postlogin content"
-msgstr "Imprimeix el contingut de postlogin"
+msgstr "列印 postlogin 內容"
 
 #: src/cli/main.c:450
 msgid "Print dconf database content"
-msgstr "Imprimeix el contingut de la base de dades de dconf"
+msgstr "列印 dconf 資料庫內容"
 
 #: src/cli/main.c:451
 msgid "Print dconf lock content"
-msgstr "Imprimeix el contingut del bloqueig de dconf"
+msgstr "列印 dconf 鎖定內容"
 
 #: src/cli/main.c:478
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
-msgstr "No es pot obtenir el contingut generat [%d]: %s"
+msgstr "無法取得生成的內容 [%d]：%s"
 
 #: src/cli/main.c:497
 #, c-format
 msgid "File %s: Empty\n"
 "\n"
-msgstr "Fitxer %s: buit\n"
+msgstr "檔案 %s：空白\n"
 "\n"
 
 #: src/cli/main.c:499
@@ -1014,156 +1010,156 @@ msgstr "Fitxer %s: buit\n"
 msgid "File %s:\n"
 "%s\n"
 "\n"
-msgstr "Fitxer %s:\n"
+msgstr "檔案 %s：\n"
 "%s\n"
 "\n"
 
 #: src/cli/main.c:512
 msgid "Feature to enable."
-msgstr "Característica a habilitar."
+msgstr "要啟用的功能。"
 
 #: src/cli/main.c:521
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
-msgstr "No es pot habilitar la característica [%d]: %s\n"
+msgstr "無法啟用 [%d] 功能：%s\n"
 
 #: src/cli/main.c:534
 msgid "Feature to disable."
-msgstr "Característica a inhabilitar."
+msgstr "要停用的功能。"
 
 #: src/cli/main.c:543
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
-msgstr "No es pot inhabilitar la característica [%d]: %s\n"
+msgstr "無法停用 [%d] 功能：%s\n"
 
 #: src/cli/main.c:562
 msgid "Create new profile as a vendor profile instead of a custom profile"
-msgstr ""
+msgstr "建立新的設定檔以作為原廠設定檔，而不是自訂設定檔"
 
 #: src/cli/main.c:563
 msgid "ID of a profile that should be used as a base for the new profile"
-msgstr ""
+msgstr "應作為新設定檔基礎的設定檔 ID"
 
 #: src/cli/main.c:564
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
-msgstr ""
+msgstr "即使存在具有相同名稱的原廠設定檔，也以預設設定檔作為新設定檔的基礎"
 
 #: src/cli/main.c:565
 msgid "Symlink meta files from the base profile instead of copying them"
-msgstr ""
+msgstr "從基礎設定檔建立符號連結式中介檔案，而不是複製這些檔案"
 
 #: src/cli/main.c:566
 msgid "Symlink nsswitch files from the base profile instead of copying them"
-msgstr ""
+msgstr "從基礎設定檔建立 nsswitch 檔案的符號連結，而不是複製這些檔案"
 
 #: src/cli/main.c:567
 msgid "Symlink pam files from the base profile instead of copying them"
-msgstr ""
+msgstr "從基礎設定檔建立 pam 檔案的符號連結，而不是複製這些檔案"
 
 #: src/cli/main.c:568
 msgid "Symlink dconf files from the base profile instead of copying them"
-msgstr ""
+msgstr "從基礎設定檔建立 dconf 檔案的符號連結，而不是複製這些檔案"
 
 #: src/cli/main.c:569
 msgid "Symlink specific file (can be set multiple times)"
-msgstr ""
+msgstr "建立特定檔案的符號連結（可設定多次）"
 
 #: src/cli/main.c:574
 msgid "New profile name."
-msgstr ""
+msgstr "新的設定檔名稱。"
 
 #: src/cli/main.c:584
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
-msgstr ""
+msgstr "無法建立新的 [%d] 設定檔：%s\n"
 
 #: src/cli/main.c:588
 #, c-format
 msgid "New profile was created at %s\n"
-msgstr ""
+msgstr "新的設定檔建立於 %s 位置\n"
 
 #: src/cli/main.c:622
 msgid "Select profile"
-msgstr ""
+msgstr "選擇個人資料"
 
 #: src/cli/main.c:623
 msgid "Regenerate configuration for currently selected command"
-msgstr ""
+msgstr "為當前選定的命令重新生成配置"
 
 #: src/cli/main.c:624
 msgid "List available profiles"
-msgstr ""
+msgstr "列出可用的配置文"
 
 #: src/cli/main.c:625
 msgid "Show profile information"
-msgstr ""
+msgstr "顯示個人資料信息"
 
 #: src/cli/main.c:626
 msgid "Print profile requirements"
-msgstr ""
+msgstr "打印配置文件要求"
 
 #: src/cli/main.c:627
 msgid "Get identifier of currently selected profile"
-msgstr ""
+msgstr "獲取當前所選配置文件的標識符"
 
 #: src/cli/main.c:628
 msgid "Check if the current configuration is valid"
-msgstr ""
+msgstr "檢查當前配置是否有效"
 
 #: src/cli/main.c:629
 msgid "Print changes that would be otherwise written"
-msgstr ""
+msgstr "打印將以其他方式寫入的更改"
 
 #: src/cli/main.c:630
 msgid "Enable feature in currently selected profile"
-msgstr ""
+msgstr "啟用當前所選配置文件中的功能"
 
 #: src/cli/main.c:631
 msgid "Disable feature in currently selected profile"
-msgstr ""
+msgstr "禁用當前所選配置文件中的功能"
 
 #: src/cli/main.c:632
 msgid "Create new authselect profile"
-msgstr ""
+msgstr "創建新的authselect配置文件"
 
 #: src/cli/main.c:645
 msgid "Authselect can only be run as root!\n"
-msgstr "Només es pot executar authselect com a root!\n"
+msgstr "Authselect 只能以 root 身份執行！\n"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
-msgstr ""
+msgstr "預設為 NIS 使用者資訊"
 
 #: src/compat/authcompat_Options.py:83
 msgid "<domain>"
-msgstr "<domini>"
+msgstr "<domain>"
 
 #: src/compat/authcompat_Options.py:83
 msgid "default NIS domain"
-msgstr "domini NIS predeterminat"
+msgstr "預設 NIS 網域"
 
 #: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
 #: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
 msgid "<server>"
-msgstr "<servidor>"
+msgstr "<server>"
 
 #: src/compat/authcompat_Options.py:84
 msgid "default NIS server"
-msgstr ""
+msgstr "預設 NIS 伺服器"
 
 #: src/compat/authcompat_Options.py:85
 msgid "LDAP for user information by default"
-msgstr "per defecte LDAP per a la informació de l'usuari"
+msgstr "預設為 LDAP 使用者資訊"
 
 #: src/compat/authcompat_Options.py:86
 msgid "LDAP for authentication by default"
-msgstr "per defecte LDAP per a l'autenticació"
+msgstr "預設為 LDAP 身份認證"
 
 #: src/compat/authcompat_Options.py:87
 msgid "default LDAP server hostname or URI"
-msgstr "nom d'amfitrió, o URI, del servidor LDAP"
+msgstr "預設 LDAP 伺服器主機名稱或 URI"
 
 #: src/compat/authcompat_Options.py:88
 msgid "<dn>"
@@ -1171,190 +1167,182 @@ msgstr "<dn>"
 
 #: src/compat/authcompat_Options.py:88
 msgid "default LDAP base DN"
-msgstr "DN base predeterminat de LDAP"
+msgstr "預設 LDAP 基礎 DN"
 
 #: src/compat/authcompat_Options.py:89
 msgid "use of TLS with LDAP (RFC-2830)"
-msgstr "ús de TLS amb LDAP (RFC-2830)"
+msgstr "使用 TLS 搭配 LDAP (RFC-2830)"
 
 #: src/compat/authcompat_Options.py:90
 msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
-msgstr "ús de TLS per a resoldre la identitat amb LDAP (RFC-2830)"
+msgstr "使用 TLS 搭配 LDAP 身份查找 (RFC-2830)"
 
 #: src/compat/authcompat_Options.py:91
 msgid "use of RFC-2307bis schema for LDAP user information lookups"
-msgstr ""
-"ús de l'esquema RFC-2307bis per a resoldre la informació de l'usuari de LDAP"
+msgstr "使用 RFC-2307bis 配置進行 LDAP 使用者資訊查找"
 
 #: src/compat/authcompat_Options.py:92
 msgid "authentication with smart card by default"
-msgstr "per defecte autenticació amb targeta intel·ligent"
+msgstr "預設使用智慧卡認證身份"
 
 #: src/compat/authcompat_Options.py:93
 msgid "<0=Lock|1=Ignore>"
-msgstr ""
+msgstr "<0=鎖定|1=忽略>"
 
 #: src/compat/authcompat_Options.py:93
 msgid "action to be taken on smart card removal"
-msgstr "acció a realitzar amb l'extracció de la targeta intel·ligent"
+msgstr "智慧卡移除時將採取的動作"
 
 #: src/compat/authcompat_Options.py:94
 msgid "require smart card for authentication by default"
-msgstr ""
+msgstr "預設要求以智慧卡認證身份"
 
 #: src/compat/authcompat_Options.py:95
 msgid "authentication with fingerprint readers by default"
-msgstr "per defecte autenticació amb lectors d'empremtes digitals"
+msgstr "預設以指紋識別器認證身份"
 
 #: src/compat/authcompat_Options.py:96
 msgid "automatic per-user ecryptfs"
-msgstr "ecryptfs automàtic en funció de l'usuari"
+msgstr "自動個別使用者採 ecryptfs"
 
 #: src/compat/authcompat_Options.py:97
 msgid "Kerberos authentication by default"
-msgstr ""
+msgstr "預設以 Kerberos 認證身份"
 
 #: src/compat/authcompat_Options.py:98
 msgid "default Kerberos KDC"
-msgstr ""
+msgstr "預設 Kerberos KDC"
 
 #: src/compat/authcompat_Options.py:99
 msgid "default Kerberos admin server"
-msgstr ""
+msgstr "預設 Kerberos 管理伺服器"
 
 #: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
 msgid "<realm>"
-msgstr "<reialme>"
+msgstr "<realm>"
 
 #: src/compat/authcompat_Options.py:100
 msgid "default Kerberos realm"
-msgstr ""
+msgstr "預設 Kerberos 領域"
 
 #: src/compat/authcompat_Options.py:101
 msgid "use of DNS to find Kerberos KDCs"
-msgstr ""
+msgstr "使用 DNS 尋找 Kerberos KDC"
 
 #: src/compat/authcompat_Options.py:102
 msgid "use of DNS to find Kerberos realms"
-msgstr ""
+msgstr "使用 DNS 尋找 Kerberos 領域"
 
 #: src/compat/authcompat_Options.py:103
 msgid "winbind for user information by default"
-msgstr "per defecte winbind per a la informació de l'usuari"
+msgstr "預設 winbind 使用者資訊"
 
 #: src/compat/authcompat_Options.py:104
 msgid "winbind for authentication by default"
-msgstr "per defecte winbind per l'autenticació"
+msgstr "預設以 winbind 認證身份"
 
 #: src/compat/authcompat_Options.py:105
 msgid "<Administrator>"
-msgstr "<Administrador>"
+msgstr "<Administrator>"
 
 #: src/compat/authcompat_Options.py:105
 msgid "join the winbind domain or ads realm now as this administrator"
-msgstr ""
-"ingressa ara al domini winbind o al reialme ads com a aquest administrador"
+msgstr "立刻以此管理員身份加入 winbind 網域或 ads 領域"
 
 #: src/compat/authcompat_Options.py:106
 msgid "Kerberos 5 for authenticate with winbind"
-msgstr "Kerberos 5 per a l'autenticació amb winbind"
+msgstr "Kerberos 5 搭配 winbind 認證身份"
 
 #: src/compat/authcompat_Options.py:107
 msgid "<workgroup>"
-msgstr "<grup de treball>"
+msgstr "<workgroup>"
 
 #: src/compat/authcompat_Options.py:107
 msgid "workgroup authentication servers are in"
-msgstr "els servidors d'autenticació del grup de treball estan a"
+msgstr "工作群組身份認證伺服器位在"
 
 #: src/compat/authcompat_Options.py:108
 msgid ""
 "SSSD for user information by default with manually managed configuration"
-msgstr ""
-"per defecte SSSD per a la informació de l'usuari amb la configuració "
-"gestionada de forma manual"
+msgstr "預設以手動管理組態認證 SSSD 使用者資訊"
 
 #: src/compat/authcompat_Options.py:109
 msgid "SSSD for authentication by default with manually managed configuration"
-msgstr ""
-"per defecte SSSD per a l'autenticació amb la configuració gestionada de "
-"forma manual"
+msgstr "預設以手動管理的組態作 SSSD 身份認證"
 
 #: src/compat/authcompat_Options.py:110
 msgid "caching of user credentials in SSSD by default"
-msgstr "per defecte captura de les credencials de l'usuari amb SSSD"
+msgstr "預設在 SSSD 中採用使用者憑證快取"
 
 #: src/compat/authcompat_Options.py:111
 msgid "check of access.conf during account authorization"
-msgstr "comprova access.conf durant l'autorització del compte"
+msgstr "在帳號授權期間檢查 access.conf"
 
 #: src/compat/authcompat_Options.py:112
 msgid "creation of home directories for users on their first login"
-msgstr ""
-"creació dels directoris dels usuaris amb el seu primer inici de sessió"
+msgstr "使用者首次登入時建立家目錄"
 
 #: src/compat/authcompat_Options.py:113
 msgid ""
 "account locking in case of too many consecutive authentication failures"
-msgstr ""
-"bloqueig del compte en cas de massa fracassos d'autenticació consecutius"
+msgstr "如果身份連續認證失敗太多次則鎖定帳號"
 
 #: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
 #: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
 msgid "<number>"
-msgstr "<número>"
+msgstr "<number>"
 
 #: src/compat/authcompat_Options.py:114
 msgid "minimum length of a password"
-msgstr ""
+msgstr "最短密碼長度"
 
 #: src/compat/authcompat_Options.py:115
 msgid "minimum number of character classes in a password"
-msgstr ""
+msgstr "密碼中的最少字元類別數"
 
 #: src/compat/authcompat_Options.py:116
 msgid "maximum number of same consecutive characters in a password"
-msgstr ""
+msgstr "密碼中相同連續字元的最大數"
 
 #: src/compat/authcompat_Options.py:117
 msgid "maximum number of consecutive characters of same class in a password"
-msgstr ""
+msgstr "密碼中同類字元的最大連續字數"
 
 #: src/compat/authcompat_Options.py:118
 msgid "require at least one lowercase character in a password"
-msgstr ""
+msgstr "密碼中至少要有一個小寫字符"
 
 #: src/compat/authcompat_Options.py:119
 msgid "require at least one uppercase character in a password"
-msgstr ""
+msgstr "密碼中至少要有一個大寫字符"
 
 #: src/compat/authcompat_Options.py:120
 msgid "require at least one digit in a password"
-msgstr ""
+msgstr "密碼中至少要有一個數字"
 
 #: src/compat/authcompat_Options.py:121
 msgid "require at least one other character in a password"
-msgstr ""
+msgstr "密碼中至少要有一個其他類字元"
 
 #: src/compat/authcompat_Options.py:124
 msgid "do not start/stop services"
-msgstr "no iniciïs/atura els serveis"
+msgstr "不要啟動/停止服務"
 
 #: src/compat/authcompat_Options.py:125
 msgid "update all configuration files"
-msgstr "actualitza tots els fitxers de configuració"
+msgstr "更新所有組態檔"
 
 #: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
 msgid "the same as --updateall"
-msgstr "el mateix que --updateall"
+msgstr "與 --updateall 選項相同"
 
 #: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
 msgid "<name>"
-msgstr ""
+msgstr "<name>"
 
 #: src/compat/authcompat_Options.py:148
 msgid "<descrypt|bigcrypt|md5|sha256|sha512>"
-msgstr ""
+msgstr "<descrypt|bigcrypt|md5|sha256|sha512>"
 
 #: src/compat/authcompat_Options.py:149
 msgid "<URL>"
@@ -1362,24 +1350,24 @@ msgstr "<URL>"
 
 #: src/compat/authcompat_Options.py:150
 msgid "<module>"
-msgstr "<mòdul>"
+msgstr "<module>"
 
 #: src/compat/authcompat_Options.py:151
 msgid "<user|server|domain|ads>"
-msgstr "<usuari|servidor|domini|ads>"
+msgstr "<user|server|domain|ads>"
 
 #: src/compat/authcompat_Options.py:153
 msgid "<servers>"
-msgstr "<servidors>"
+msgstr "<servers>"
 
 #: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
 #: src/compat/authcompat_Options.py:156
 msgid "<lowest-highest>"
-msgstr ""
+msgstr "<lowest-highest>"
 
 #: src/compat/authcompat_Options.py:157
 msgid "<\\>"
-msgstr ""
+msgstr "<\\>"
 
 #: src/compat/authcompat_Options.py:158
 msgid "</home/%D/%U>"
@@ -1387,57 +1375,57 @@ msgstr "</home/%D/%U>"
 
 #: src/compat/authcompat_Options.py:159
 msgid "</bin/false>"
-msgstr ""
+msgstr "</bin/false>"
 
 #: src/compat/authcompat_Options.py:166
 msgid "<options>"
-msgstr "<opcions>"
+msgstr "<options>"
 
 #: src/compat/authcompat_Options.py:210
 msgid "These options have a compatibility layer"
-msgstr "Aquestes opcions tenen una capa de compatibilitat"
+msgstr "這些選項有相容層"
 
 #: src/compat/authcompat_Options.py:211
 msgid "These options are no longer supported and have no effect"
-msgstr "Aquestes opcions ja no són compatibles i no tenen cap efecte"
+msgstr "這些選項不再支援也不會有作用"
 
 #: src/compat/authcompat_Options.py:313
 msgid "enable"
-msgstr "habilita"
+msgstr "啟用"
 
 #: src/compat/authcompat_Options.py:314
 msgid "disable"
-msgstr "inhabilita"
+msgstr "停用"
 
 #: src/compat/authcompat.py.in.in:49
 #, python-format
 msgid "Executing: %s"
-msgstr ""
+msgstr "執行中：%s"
 
 #: src/compat/authcompat.py.in.in:68
 #, python-format
 msgid "Service %s was not found. Please install the service."
-msgstr ""
+msgstr "找不到 %s 服務。請安裝該服務。"
 
 #: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:625
 #: src/compat/authcompat.py.in.in:651
 #, python-format
 msgid "Command [%s] failed with %d, stderr:"
-msgstr ""
+msgstr "[%s] 指令失敗碼為 %d，stderr："
 
 #: src/compat/authcompat.py.in.in:183
 #, python-format
 msgid "Removing file: %s"
-msgstr ""
+msgstr "移除檔案：%s"
 
 #: src/compat/authcompat.py.in.in:331
 #, python-format
 msgid "%s was not found. Please, install realmd."
-msgstr ""
+msgstr "找不到 %s。請安裝 realmd。"
 
 #: src/compat/authcompat.py.in.in:465
 msgid "Running authconfig compatibility tool."
-msgstr ""
+msgstr "執行 authconfig 相容性工具。"
 
 #: src/compat/authcompat.py.in.in:466
 msgid ""
@@ -1445,51 +1433,45 @@ msgid ""
 "with authselect and minimum configuration. It does not provide all "
 "capabilities of authconfig.\n"
 msgstr ""
+"此工具的目的，在於透過 authselect 和最少量的組態設定就能啟用所選服務的身份認證作業。它沒有提供 authconfig 的所有功能。\n"
 
 #: src/compat/authcompat.py.in.in:469
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
-msgstr ""
-"IMPORTANT: authconfig ha estat substituït amb authselect, actualitzeu els "
-"vostres scripts."
+msgstr "重要：authconfig 將由 authselect 取代，請對應更新您的指令稿。"
 
 #: src/compat/authcompat.py.in.in:471
 msgid ""
 "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
 msgstr ""
-"Consulteu la pàgina del canvi de Fedora 28: https://fedoraproject.org/wiki/"
-"Changes/AuthselectAsDefault"
+"請參閱 Fedora 28 變動頁面：https://fedoraproject.org/wiki/Changes/"
+"AuthselectAsDefault"
 
 #: src/compat/authcompat.py.in.in:472
 msgid ""
 "See man authselect-migration(7) to help you with migration to authselect"
-msgstr ""
-"Consulteu man authselect-migration(7) per a l'ajudar per a la migració a "
-"authselect"
+msgstr "請參閱 man authselect-migration(7) 以協助您遷移到 authselect"
 
 #: src/compat/authcompat.py.in.in:476
 msgid "Warning: These options are not supported anymore and have no effect:"
-msgstr "Avís: aquestes opcions ja no són compatibles i no tenen cap efecte:"
+msgstr "警告：這些選項已不再支援也不會有作用："
 
 #: src/compat/authcompat.py.in.in:496
 msgid "authconfig can only be run as root"
-msgstr "només es pot executar authconfig com a root"
+msgstr "authconfig 只能以 root 身份執行"
 
 #: src/compat/authcompat.py.in.in:501
 #, python-format
 msgid ""
 "Error: option --%s is no longer supported and we cannot continue if it is "
 "set."
-msgstr ""
-"Error: l'opció --%s ja no és compatible i no es pot continuar si està "
-"establerta."
+msgstr "錯誤：不再支援 -%s 選項，如果有設定該選項我們便無法繼續。"
 
 #: src/compat/authcompat.py.in.in:506
 msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
-msgstr ""
-"Error: S'han d'establir ambdós, --enablewinbind i --enablewinbindauth."
+msgstr "錯誤：必須設定--enablewinbind 以及 --enablewinbindauth 兩者。"
 
 #: src/compat/authcompat.py.in.in:516
 msgid "Error: Please, provide --updateall option."
-msgstr "Error: proporcioneu l'opció --updateall."
+msgstr "錯誤：請提供 --updateall 選項。"

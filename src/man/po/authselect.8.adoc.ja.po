@@ -1,4 +1,4 @@
-# Geert Warrink <geert.warrink@onsnet.nu>, 2018. #zanata
+# Ludek Janda <ljanda@redhat.com>, 2018. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -6,12 +6,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-09-07 07:05+0000\n"
-"Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
-"Language-Team: Dutch\n"
-"Language: nl\n"
+"PO-Revision-Date: 2018-10-30 02:46+0000\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
 "X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 
 #. type: Title =
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:2
@@ -23,30 +23,30 @@ msgstr "authselect(8)"
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:6
 #, no-wrap
 msgid "NAME"
-msgstr "NAAM"
+msgstr "名前"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:9
 msgid "authselect - select system identity and authentication sources."
-msgstr "authselect - selecteert systeemidentiteit en authenticatiebronnen."
+msgstr "authselect - システムアイデンティティーおよび認証ソースを選択します。"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:11
 #, no-wrap
 msgid "SYNOPSIS"
-msgstr "KORTE INHOUD"
+msgstr "概要"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:13
 #, no-wrap
 msgid " authselect [--debug] [--trace] [--warn] command [command options] \n"
-msgstr " authselect [--debug] [--trace] [--warn] commando [commando opties] \n"
+msgstr " authselect [--debug] [--trace] [--warn] コマンド [command options] \n"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:15
 #, no-wrap
 msgid "DESCRIPTION"
-msgstr "BESCHRIJVING"
+msgstr "説明"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:21
@@ -62,15 +62,11 @@ msgid ""
 "use\n"
 "identity and authentication sources defined by the profile.\n"
 msgstr ""
-"*Authselect* is een gereedschap voor het configureren van systeemidentiteit "
-"en authenticatiebronnen\n"
-"en aanbieders door het selecteren van een specifiek profiel. Profiel is een "
-"set of bestanden die\n"
-"beschrijven hoe de resulterende systeemconfiguratie eruit zal zien. Als een "
-"profiel\n"
-"geselecteerd is, zal *authselect* nsswitch.conf(5) en PAM(8) stack aanmaken "
-"voor het gebruik van\n"
-"identiteit en authenticatie bronnen gedefinieerd door het profiel.\n"
+"*authselect* は、特定のプロファイルを選択することでシステムアイデンティティー\n"
+"および認証ソースとプロバイダーを設定するツールです。プロファイルは、\n"
+"結果として得られるシステム設定について説明するファイルのセットです。\n"
+"プロファイルが選択されると、*authselect* は nsswitch.conf(5) および PAM(8) スタックを作成し、\n"
+"プロファイルによって定義されたアイデンティティーおよび認証ソースを使用します。\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:27
@@ -81,17 +77,15 @@ msgid ""
 "*authselect*. See _authselect-profiles(5)_ for more information on extending "
 "existing profiles."
 msgstr ""
-"Als de aangeboden profiel set niet voldoende is, kan de beheerder een "
-"aangepast profiel aanmaken door deze in een speciale profielmap "
-"({AUTHSELECT_CUSTOM_DIR}) te plaatsen. Door dit te doen, is het profiel is "
-"onmiddellijk bruikbaar bij *authselect*. Zie _authselect-profiles(5)_ voor "
-"meer informatie over het uitbreiden van bestaande profielen."
+"提供されたプロファイルセットが十分でない場合、管理者はこれを特別プロファイルディレクトリー ({AUTHSELECT_CUSTOM_DIR}) "
+"に置くことで、カスタムプロファイルを作成できます。これにより、*authselect* "
+"は即時にプロファイルを使用できます。既存のプロファイルの拡張に関する情報は、_authselect-profiles(5)_ を参照してください。"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:29
 #, no-wrap
 msgid "AVAILABLE COMMANDS"
-msgstr "BESCHIKBARE COMMANDO'S "
+msgstr "利用可能なコマンド"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:32
@@ -99,9 +93,8 @@ msgid ""
 "To list all available commands run *authselect* without any parameters.  To "
 "print help for the selected command run *authselect COMMAND --help*."
 msgstr ""
-"Om alle beschikbare commando's te tonen voer je *authselect* uit zonder "
-"parameters.   Om hulp voor het geselecteerde commando te printen voer je "
-"*authselect COMMANDO --help* uit."
+"利用可能なすべてのコマンドを一覧表示するには、パラメーターなしで *authselect* "
+"を実行します。選択したコマンドのヘルプを印刷するには、*authselect COMMAND --help* を実行します。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:33
@@ -115,8 +108,7 @@ msgid ""
 "Activate desired profile. See profile description with *show* command, to "
 "list profile specific optional features."
 msgstr ""
-"Activeert het gewenste profiel. Zie profielbeschrijving met *show* commando, "
-"om profiel specifieke optionele eigenschappen te tonen."
+"必要なプロファイルを実行します。プロファイル特定のオプション機能を一覧表示するには、*show* コマンドでプロファイルの説明を表示します。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:37
@@ -133,19 +125,16 @@ msgid ""
 "automatically backup system files before writing any change unless\n"
 "*--nobackup* option is set.\n"
 msgstr ""
-"Schrijft veranderingen weg zelfs als de vorige configuratie niet aangemaakt "
-"werd door\n"
-"authselect maar door een ander gereedschap of handmatige veranderingen. Deze "
-"optie zal\n"
-"van systeembestanden automatisch een back-up maken voordat veranderingen "
-"weggeschreven worden tenzij\n"
-"de *--nobackup* optie ingesteld is.\n"
+"以前の設定を authselect が作成したのではなく、他のツールまたは手動で\n"
+"の変更によって作成された場合でも、変更を書き込みます。このオプショ\n"
+"ンは、*--nobackup* オプションが設定されない限り、変更を書き込む前に\n"
+"自動的にシステムファイルをバックアップします。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:43
 #, no-wrap
 msgid "*--backup=NAME*:"
-msgstr "*--backup=NAAM*:"
+msgstr "*--backup=NAME*:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:47
@@ -155,11 +144,9 @@ msgid ""
 "be stored at @AUTHSELECT_BACKUP_DIR@/NAME. Current time is used as\n"
 "a name if no value is provided.\n"
 msgstr ""
-"Maak een back-up van systeembestanden voordat het geselecteerde profiel "
-"geactiveerd wordt. De back-up zal\n"
-"opgeslagen worden in @AUTHSELECT_BACKUP_DIR@/NAAM. De huidige tijd wordt als "
-"naam\n"
-"gebruikt als geen waarde opgegeven wordt.\n"
+"選択したプロファイルを実行する前にシステムファイルをバックアップします。\n"
+"バックアップは @AUTHSELECT_BACKUP_DIR@/NAME に保存されます。\n"
+"値が提供されない場合は、現時刻が名前として使用されます。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:48
@@ -171,9 +158,7 @@ msgstr "*--nobackup*:"
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:50
 #, no-wrap
 msgid "Do not backup system configuration even if *--force* is set.\n"
-msgstr ""
-"Maak geen back-up van systeemconfiguratie zelfs als *--force* ingesteld is."
-"\n"
+msgstr "*--force* が設定されている場合でも、システム設定をバックアップしません。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:51
@@ -188,8 +173,7 @@ msgid ""
 "The command will not print any informational message such as additional\n"
 "profile requirements or backup location. Errors are still being print.\n"
 msgstr ""
-"Het commando zal geen informatie berichten printen zoals extra\n"
-"profielvereisten of back-uplocatie. Fouten worden wel geprint.\n"
+"コマンドは、追加のプロファイル要件またはバックアップロケーションなどの情報に関するメッセージは印刷しません。エラーは引き続き印刷されます。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:55
@@ -206,12 +190,8 @@ msgid ""
 "changes if the existing configuration is a valid authselect configuration, "
 "otherwise an error is returned."
 msgstr ""
-"Pas het huidig geselecteerde profiel opnieuw toe. Als de profielsjablonen "
-"vernieuwd werden kan dit commando gebruikt worden om de huidige "
-"systeemconfiguratie opnieuw te genereren om deze veranderingen toe te passen "
-"op het systeem. Dit commando zal de veranderingen alleen opnieuw toepassen "
-"als de bestaande configuratie een geldige authselect configuratie is, anders "
-"wordt een fout teruggegeven."
+"現在選択されたプロファイルを再適用します。プロファイルのテンプレートが更新された場合、これらの変更をシステム上に適用するために、このコマンドを使用して現在のシステム設定を再生成できます。このコマンドは、既存の設定が有効な "
+"authselect 設定である場合にのみ、変更を再適用します。有効な authselect 設定でない場合は、エラーが返されます。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:62
@@ -222,7 +202,7 @@ msgstr "*list*"
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:64
 msgid "List available profiles."
-msgstr "Toon de beschikbare profielen."
+msgstr "利用可能なプロファイルを一覧表示します。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:65
@@ -233,7 +213,7 @@ msgstr "*show* profile_id"
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:67
 msgid "Print information about the profile."
-msgstr "Print informatie over het profiel."
+msgstr "プロファイルに関する情報を印刷します。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:68
@@ -244,7 +224,7 @@ msgstr "*requirements* profile_id [features]"
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:70
 msgid "Print information about profile requirements."
-msgstr "Print informatie ovet de profielvereisten."
+msgstr "プロファイル要件に関する情報を印刷します。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:71
@@ -259,10 +239,8 @@ msgid ""
 "specified, the command will print raw parameters as they were passed to "
 "*select* command instead of formatted output."
 msgstr ""
-"Print informatie over de huidig geselecteerde profielen. Als de *--raw* "
-"optie gespecificeerd is, zal het commando ruwe parameters printen zoals ze "
-"doorgegeven zijn naar het *select* commando in plaats van geformatteerde "
-"output."
+"現在選択しているプロファイルの情報を印刷します。*--raw* オプションが指定された場合、フォーマット化された出力ではなく *select* "
+"コマンドに渡されたので、コマンドはローパラメーターを印刷します。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:76
@@ -277,9 +255,8 @@ msgid ""
 "*authselect* or there are no leftovers from previous authselect "
 "configuration)."
 msgstr ""
-"Check of de huidige configuratie geldig is (of het aangemaakt is door "
-"*authselect* of dat er geen restanten zijn van een vorige authselect "
-"configuratie)."
+"現在の設定が有効かどうかを確認します (これは *authselect* が作成したか、または以前の authselect "
+"設定とは無関係のいずれかになります)。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:81
@@ -292,9 +269,7 @@ msgstr "*test* profile_id [features]"
 msgid ""
 "Print content of files generated by *authselect* without actually writing "
 "anything to system configuration."
-msgstr ""
-"Print de inhoud van bestanden gegenereerd door *authselect* zonder iets naar "
-"de systeemconfiguratie weg te schrijven."
+msgstr "システム設定に実際に何かを書き込むことなく、*authselect* によって生成されたファイルのコンテンツを印刷します。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:85
@@ -305,7 +280,7 @@ msgstr "*enable-feature* feature"
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:87
 msgid "Enable feature in the currently selected profile."
-msgstr "Zet feature aan in de huidig geselecteerde profiel."
+msgstr "現在選択されているプロファイルの機能を有効にします。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:88
@@ -316,13 +291,13 @@ msgstr "*disable-feature* feature"
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:90
 msgid "Disable feature in the currently selected profile."
-msgstr "Zet feature uit in de huidig geselecteerde profiel."
+msgstr "現在選択されているプロファイルの機能を無効にします。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:91
 #, no-wrap
 msgid "*create-profile* NAME [--custom,-c|--vendor,-v] [options]"
-msgstr "*create-profile* NAAM [--custom,-c|--vendor,-v] [opties]"
+msgstr "*create-profile* NAME [--custom,-c|--vendor,-v] [options]"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:96
@@ -332,11 +307,8 @@ msgid ""
 "from the base profile or symbolic links to these files are created if such "
 "option is selected."
 msgstr ""
-"Maak een nieuw aangepast profiel aan met de naam _NAAM_. Het profiel kan "
-"gebaseerd zijn op een bestaand profiel in welk geval de nieuwe "
-"profielsjablonen gecopieerd worden van het basis profiel of er worden "
-"symbolische links naar deze bestanden aangemaakt als zo'n optie geselecteerd "
-"is."
+" _NAME_ "
+"という名前の新規のカスタムプロファイルを作成します。プロファイルは、既存のプロファイルに基づくことができます。この場合、新規のプロファイルテンプレートは、基本となるプロファイルのコピーか、またはこのオプションが選択された場合に作成されるこれらのファイルのシンボリックリンクのいずれかになります。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:97
@@ -351,9 +323,9 @@ msgid ""
 "The new profile is a vendor profile instead of a custom profile. See\n"
 "_authselect-profiles(5)_ for more information on profile types.\n"
 msgstr ""
-"Het nieuwe profiel is een leveranciersprofiel in plaats van een aangepast "
-"profiel. Zie\n"
-"_authselect-profiles(5)_ voor meer informatie over profieltypes.\n"
+"新規のプロファイルはカスタムプロファイルではなく、ベンダー\n"
+"プロファイルです。\n"
+"プロファイルタイプに関する詳細は、_authselect-profiles(5)_ を参照してください。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:101
@@ -368,36 +340,32 @@ msgid ""
 "The new profile will be based on a profile named _BASE-ID_. The base\n"
 "profile location is determined with these steps:\n"
 msgstr ""
-"Het nieuwe profiel zal gebaseerd worden op een profiel met de naam _BASE-ID_."
-" De basis\n"
-"profiellocatie wordt bepaald met de volgen stappen:\n"
+"新規のプロファイルは _BASE-ID_ という名前のプロファイルに基づきます。基本となる\n"
+"プロファイルのロケーションは、以下の手順で決定します。\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:105
 #, no-wrap
 msgid "If _BASE-ID_ starts with prefix _custom/_ it is a custom profile.\n"
-msgstr ""
-"Als _BASE-ID_ begint met voorvoegsel _custom/_ dan is het een aangepast "
-"profiel.\n"
+msgstr "_BASE-ID_ の先頭に _custom/_ がつく場合は、カスタムプロファイルになります。\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:106
 #, no-wrap
 msgid "Try if _BASE-ID_ is found in vendor profiles.\n"
-msgstr ""
-"Probeer of _BASE-ID_ gevonden kan worden in de leverancier profielen.\n"
+msgstr "_BASE-ID_ がベンダープロファイルで見つかるかどうか試します。\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:107
 #, no-wrap
 msgid "Try if _BASE-ID_ is found in default profiles.\n"
-msgstr "Probeer of _BASE-ID_ gevonden kan worden in de standaard profielen.\n"
+msgstr "_BASE-ID_ がデフォルトプロファイルで見つかるかどうか試します。\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:108
 #, no-wrap
 msgid "Return an error.\n"
-msgstr "Geef een fout terug.\n"
+msgstr "エラーを返します。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:109
@@ -411,10 +379,8 @@ msgstr "*--base-on-default*:"
 msgid ""
 "The base profile is a default profile even if it is found also within\n"
 "vendor profiles.\n"
-msgstr ""
-"Het basis profiel is een standaard profiel zelfs als het ook gevonden kan "
-"worden in\n"
-"leverancier profielen.\n"
+msgstr "ベースプロファイルは、同じくベンダープロファイル内で\n"
+"見つかった場合でも、デフォルトプロファイルになります。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:113
@@ -429,8 +395,8 @@ msgid ""
 "Meta files, such as _README_ and _REQUIREMENTS_ will be symbolic links\n"
 "to the origin profile files instead of their copy.\n"
 msgstr ""
-"Meta bestanden, zoals _README_ en _REQUIREMENTS_ zan symbolische links zijn\n"
-"naar de originele profielbestanden op plaats van ze te kopiëren.\n"
+"_README_ および _REQUIREMENTS_ などの meta ファイルは、コピーではなく、\n"
+"オリジナルのプロファイルファイルのシンボリックリンクになります。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:117
@@ -444,10 +410,8 @@ msgstr "*--symlink-nsswitch*:"
 msgid ""
 "_nsswitch.conf_ template will be symbolic link to the origin profile\n"
 "file instead of its copy.\n"
-msgstr ""
-"_nsswitch.conf_ sjabloon zan een symbolische link zijn naar het oorsprong "
-"bestand\n"
-"in plaats van een kopie.\n"
+msgstr "_nsswitch.conf_ テンプレートは、コピーではなくオリジナルの\n"
+"プロファイルファイルのシンボリックリンクになります。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:121
@@ -461,10 +425,8 @@ msgstr "*--symlink-pam*:"
 msgid ""
 "_PAM_ templates will be symbolic links to the origin profile files\n"
 "instead of their copy.\n"
-msgstr ""
-"_PAM_ sjablonen zullen symbolische links zijn van de oorsprong "
-"profielbestanden\n"
-"in plaats van een kopie.\n"
+msgstr "_PAM_ テンプレートは、コピーではなくオリジナルのプロファイル\n"
+"ファイルのシンボリックリンクになります。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:125
@@ -478,16 +440,14 @@ msgstr "*--symlink-dconf*:"
 msgid ""
 "_dconf_ templates will be symbolic links to the origin profile files\n"
 "instead of their copy.\n"
-msgstr ""
-"_dconf_ sjablonen zullen symbolische links zijn van de oorsprong "
-"profielbestanden\n"
-"in plaats van een kopie.\n"
+msgstr "_dconf_ テンプレートは、コピーではなくオリジナルのプロファイル\n"
+"ファイルのシンボリックリンクになります。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:129
 #, no-wrap
 msgid "*--symlink=FILE,-s=FILE*:"
-msgstr "*--symlink=BESTAND,-s=BESTAND*:"
+msgstr "*--symlink=FILE,-s=FILE*:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:132
@@ -496,20 +456,19 @@ msgid ""
 "Create a symbolic link for a template file _FILE_ instead of creating\n"
 "its copy. This option can be passed multiple times.\n"
 msgstr ""
-"Maak een symbolische link aan voor een sjabloonbestand _BESTAND_ in plaats "
-"van het\n"
-"aanmaken van een kopie. Deze optie kan meerdere keren doorgegeven worden.\n"
+"テンプレートファイル _FILE_ のコピーを作成するのではなく、\n"
+"シンボリックリンクを作成します。このオプションは複数回渡すことができます。\n"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:134
 #, no-wrap
 msgid "COMMON OPTIONS"
-msgstr "ALGEMENE OPTIES"
+msgstr "一般的なオプション"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:136
 msgid "These options are available with all commands."
-msgstr "Deze opties zijn beschikbaar voor alle commando's."
+msgstr "これらのオプションは、すべてのコマンドで利用可能です。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:137
@@ -520,7 +479,7 @@ msgstr "*--debug*"
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:139
 msgid "Print debugging information and error messages."
-msgstr "Print debug informatie en foutboodschappen."
+msgstr "デバッグ情報およびエラーメッセージを印刷します。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:140
@@ -531,7 +490,7 @@ msgstr "*--trace*"
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:142
 msgid "Print information about what the tool is doing."
-msgstr "Print informatie over waar het gereedschap mee bezig is."
+msgstr "ツールの実行内容に関する情報を印刷します。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:143
@@ -546,15 +505,14 @@ msgid ""
 "execution but may indicate some undesired situations (e.g. unexpected file "
 "in a profile directory)."
 msgstr ""
-"Print informatie over onverwachte situaties die de programma uitvoering niet "
-"beïnvloeden maar die een indicatie kunnen zijn van ongewenste situaties "
-"(bijv. onverwacht bestand in een profielmap)."
+"プログラムの実行には影響しないが、何らかの望ましくない状況を示す予期せぬ状況 "
+"(たとえば、プロファイルディレクトリーに予期せぬファイルがある場合など)に関する情報を印刷します。"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:149
 #, no-wrap
 msgid "NSSWITCH.CONF MANAGEMENT"
-msgstr "NSSWITCH.CONF BEHEER"
+msgstr "NSSWITCH.CONF の管理"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:155
@@ -565,12 +523,10 @@ msgid ""
 "the *select* command. This mechanism prevents authselect from overwriting "
 "anything that does not match any available profile."
 msgstr ""
-"Authselect genereert {AUTHSELECT_NSSWITCH_CONF} en staat nbiet toe dat een "
-"gebruiker dit bestand kan veranderen. Zulke veranderingen worden "
-"gedetecteerd en authselect zal weigeren om een systeemconfiguratie weg te "
-"schrijven tenzij een *--force* optie werd aangeboden aan het *select* "
-"commando. Dit mechanisme belet authselect het overschrijven van iets dat "
-"niet overeenkomt met een beschikbaar profiel."
+"authselect は {AUTHSELECT_NSSWITCH_CONF} "
+"を生成し、ユーザーがこのファイルを変更することを許可しません。変更した場合は検出され、*select* コマンドに *--force* "
+"オプションが提供されない限り、authselect はあらゆるシステム設定の書き込みを拒否します。このメカニズムは、authselect "
+"が利用可能なプロファイルと一致しないものを上書きすることを防ぎます。"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:163
@@ -583,20 +539,17 @@ msgid ""
 "those that are relevant to the profile. If a map is set within a profile, it "
 "always overwrites the same map from _user-nsswitch.conf_."
 msgstr ""
-"Elke gebruikersverandering in nsswitch mappen moet gebeuren in het bestand "
-"{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf. Als authselect een nieuwe "
-"_nsswitch.conf_  genereert leest het dit bestand enm combineert het met "
-"configuratie van het geselecteerde profiel. De profielconfiguratie heeft "
-"altijd voorrang.  Met andere woorden, profielen hoeven niet alle nsswitch "
-"mappen in te stellen maar kunnen alleen die instellen die relevant zijn voor "
-"het profiel. Als een map is ingesteld in een profiel, overschrijft het "
-"altijd dezelfde map uit _user-nsswitch.conf_."
+"nsswitch マップへのユーザーによる変更はどれも、ファイル {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf "
+"で実行される必要があります。authselect が新しい _nsswitch.conf_ "
+"を生成した場合、このファイルが読み込まれ、選択されたプロファイルの設定と組み合わせます。プロファイル設定は常に優先されます。言い換えると、プロファイルはすべての "
+"nsswitch マップを設定する必要はなく、プロファイルに関連するものだけを設定できます。マップがプロファイル内で設定される場合、常に同じマップを "
+"_user-nsswitch.conf_ から上書きします。"
 
 #. type: Block title
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:164
 #, no-wrap
 msgid "Example 1"
-msgstr "Voorbeeld 1"
+msgstr "例 1"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:175
@@ -656,7 +609,7 @@ msgid ""
 "hosts:      files dns myhostname\n"
 "sudoers:    files\n"
 msgstr ""
-"# passwd en groep mappen uit user-nsswitch.conf worden genegeerd\n"
+"# passwd and group maps from user-nsswitch.conf are ignored\n"
 "$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
 "passwd:     sss files systemd\n"
 "group:      sss files systemd\n"
@@ -686,7 +639,7 @@ msgid ""
 "sudoers:    files sss\n"
 "hosts:      files dns myhostname\n"
 msgstr ""
-"# passwd, groep en sudoers mappen uit iser-nsswitch.conf worden genegeerd\n"
+"# passwd, group and sudoers maps from user-nsswitch.conf are ignored\n"
 "$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
 "passwd:     sss files systemd\n"
 "group:      sss files systemd\n"
@@ -700,34 +653,33 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:208
 #, no-wrap
 msgid "RETURN CODES"
-msgstr "RETOURCODES"
+msgstr "リターンコード"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:210
 msgid "The *authselect* can return these exit codes:"
-msgstr "*authselect* kan de volgende exit codes teruggeven:"
+msgstr "*authselect* はこれらの終了コードを返すことができます。"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:212
 msgid "0: Success."
-msgstr "0: Succes."
+msgstr "0: 成功。"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:213
 msgid "1: Generic error."
-msgstr "1: Algemene fout."
+msgstr "1: 一般エラー。"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:214
 msgid "2: Profile or configuration was not found."
-msgstr "2: Profiel of configuratie werd niet gevonden."
+msgstr "2: プロファイルまたは設定が見つかりませんでした。"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:215
 msgid ""
 "3: Current configuration is not valid, it was edited without authselect."
-msgstr ""
-"3: Huidige configuratie is niet geldig, het werd bewerkt zonder authselect."
+msgstr "3: 現在の設定は無効です。authselect なしで修正されました。"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:216
@@ -735,23 +687,20 @@ msgid ""
 "4: System configuration must be overwritten to activate an authselect "
 "profile, --force parameter is needed."
 msgstr ""
-"4: Systeemconfiguratie moet overschreven worden om een authselect profiel te "
-"activeren, --force parameter is nodig."
+"4: authselect プロファイルを実行するには、システム設定を上書きする必要があります。--force parameter が必要です。"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:218
 #, no-wrap
 msgid "GENERATED FILES"
-msgstr "GEGENEREERDE BESTANDEN"
+msgstr "生成されたファイル"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:221
 msgid ""
 "Authselect creates and maintains the following files to configure system "
 "identity and authentication providers properly."
-msgstr ""
-"Authselect maakt en beheert de volgende bestanden voor het correct "
-"configureren van systeemidentiteit en authenticatie aanbieders."
+msgstr "authselect は、システムアイデンティティーおよび認証プロバイダーを正確に設定するために、以下のファイルを作成および維持します。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:222
@@ -762,7 +711,7 @@ msgstr "*{AUTHSELECT_NSSWITCH_CONF}*"
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:224
 msgid "Name Service Switch configuration file."
-msgstr "Naam Service Switch configuratiebestands."
+msgstr "Name Service Switch 設定ファイルです。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:225
@@ -775,9 +724,7 @@ msgstr "*{AUTHSELECT_PAM_DIR}/system-auth*"
 msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
-msgstr ""
-"PAM stack die ingesloten wordt van bijna alle individuele service "
-"configuratiebestanden."
+msgstr "ほぼすべての個別のサービス設定ファイルからインクルードされた PAM スタック。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:229
@@ -793,9 +740,7 @@ msgid ""
 "different types of devices via simultaneously running individual "
 "conversations instead of one aggregate conversation."
 msgstr ""
-"Deze PAM stacks zijn voor toepassingen die authenticatie afhandelen voor "
-"verschillende types apparaten via gelijktijdige uitvoering van individuele "
-"conversaties in plaats van een samengevoegde conversatie."
+"これらの PAM スタックは、1 つの集合的な会話ではなく個々の会話を同時に実行して、異なるタイプのデバイスの認証を扱うアプリケーション向けです。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:234
@@ -814,13 +759,10 @@ msgid ""
 "regardless of the success or failure of the modules in the system-auth "
 "configuration file._"
 msgstr ""
-"Het doel van deze PAM stack is het bieden van een algemene plaats voor alle "
-"PAM modules die aangeroepen moeten worden na de stack geconfigureerd in "
-"system-auth of de andere algemene PAM configuratiebestanden. Het wordt "
-"ingevoegd vanuit alle individuele service configuratiebestanden die "
-"inlogservice bieden met shell of bestand toegang. _MERK OP: de modules in de "
-"postlogin configuratiebestand worden uitgevoerd onafhankelijk van het succes "
-"of mislukken van de modules in het system-auth configuratiebestand._"
+"この PAM スタックの目的は、system-auth またはその他の共通の PAM 設定ファイルでスタックが設定された後に、呼び込まれるすべての "
+"PAM "
+"モジュールに共通の場所を提供することです。これは、シェルまたはファイルアクセスでログインサービスを提供するすべての個別のサービス設定ファイルからインクルードされます。 "
+"_注意: postlogin 設定ファイルのモジュールは、system-auth 設定ファイルのモジュールの成功または失敗に関係なく実行されます。_"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:243
@@ -835,9 +777,8 @@ msgid ""
 "for gnome login screen in order to enable or disable smartcard and "
 "fingerprint authentication."
 msgstr ""
-"Veranderingen in de dconf database. Het hoofdgebruik van dit bestand is het "
-"instellen van veranderingen voor het gnome inlogscherm voor het aan of "
-"uitzetten smartcard en and vingerafdruk authenticatie."
+"dconf データベースへの変更。このファイルの主なユースケースは、スマートカードや指紋による認証を有効または無効にするために gnome "
+"ログイン画面に変更を設定することです。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:248
@@ -848,18 +789,17 @@ msgstr "*{AUTHSELECT_DCONF_DIR}/locks/{AUTHSELECT_DCONF_FILE}*"
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:250
 msgid "This file define locks on values set in dconf database."
-msgstr ""
-"Dit bestand definieert sloten voor waardes ingesteld in de dconf database."
+msgstr "このファイルは、dconf データベースに設定された値のロックを定義します。"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:252
 #, no-wrap
 msgid "SEE ALSO"
-msgstr "ZIE OOK"
+msgstr "以下も参照してください。"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:253
 msgid ""
 "authselect-profiles(5), authselect-migration(7), nsswitch.conf(5), PAM(8)"
 msgstr ""
-"authselect-profiles(5), authselect-migration(7), nsswitch.conf(5), PAM(8)"
+"authselect-profiles(5)、authselect-migration(7)、nsswitch.conf(5)、PAM(8)"
