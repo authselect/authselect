@@ -1,0 +1,20 @@
+# Travis CI script
+
+sudo: false
+
+services:
+- docker
+
+before_install:
+- docker pull fedora
+- docker run -d --rm --name AUTHSELECT-FEDORA -v `pwd`:/buildroot fedora /bin/sh -c "tail -f /dev/null"
+- docker ps
+- docker exec AUTHSELECT-FEDORA dnf -y install gcc make gettext gettext-devel autoconf automake libtool m4 pkgconfig popt-devel asciidoc libcmocka-devel libselinux-devel file rpm-build python3-devel po4a
+
+script:
+- docker exec AUTHSELECT-FEDORA /bin/sh -c "cd /buildroot && autoreconf -iv && ./configure --enable-silent-rules"
+- docker exec AUTHSELECT-FEDORA /bin/sh -c "cd /buildroot && make"
+- docker exec AUTHSELECT-FEDORA /bin/sh -c "cd /buildroot && make check"
+- docker exec AUTHSELECT-FEDORA /bin/sh -c "cd /buildroot && make distcheck"
+- docker exec AUTHSELECT-FEDORA /bin/sh -c "cd /buildroot && make rpms"
+- docker stop AUTHSELECT-FEDORA
