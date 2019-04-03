@@ -195,20 +195,6 @@ done:
 }
 
 _PUBLIC_ int
-authselect_backup(const char *name, char **_path)
-{
-    errno_t ret;
-
-    INFO("Trying to backup system files");
-    ret = authselect_system_backup(name, _path);
-    if (ret != EOK) {
-        ERROR("Unable to backup system files [%d]: %s", ret, strerror(ret));
-    }
-
-    return ret;
-}
-
-_PUBLIC_ int
 authselect_feature_enable(const char *feature)
 {
     char *profile_id;
