@@ -668,9 +668,9 @@ authselect_system_backup(const char *backup_name, char **_path)
     }
 
     for (i = 0; files[i].name != NULL; i++) {
-        filename = file_get_basename(files[i].name);
+        filename = file_get_basename(files[i].dest);
         if (filename == NULL) {
-            ERROR("There is no filename in [%s]", files[i].name);
+            ERROR("There is no filename in [%s]", files[i].dest);
             ret = EINVAL;
             goto done;
         }
