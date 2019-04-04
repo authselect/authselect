@@ -24,7 +24,8 @@
 #include <stdbool.h>
 
 /* Authselect configuration file. */
-#define PATH_CONFIG_FILE AUTHSELECT_CONFIG_DIR "/authselect.conf"
+#define FILE_CONFIG      "authselect.conf"
+#define PATH_CONFIG_FILE AUTHSELECT_CONFIG_DIR "/" FILE_CONFIG
 
 /* UID and GID of files owned by authselect. -1 means do not check. */
 #define AUTHSELECT_UID -1
