@@ -137,6 +137,22 @@ authselect_backup_system_configuration(const char *path)
     return EOK;
 }
 
+static errno_t
+authselect_backup_authselect_configuration(const char *path)
+{
+    errno_t ret;
+
+    ret = textfile_copy(PATH_CONFIG_FILE, path, FILE_CONFIG,
+                        AUTHSELECT_DIR_MODE);
+    if (ret != EOK) {
+        ERROR("Unable to copy [%s] to [%s/%s] [%d]: %s", PATH_CONFIG_FILE,
+              path, FILE_CONFIG, ret, strerror(ret));
+        return ret;
+    }
+
+    return authselect_backup_system_configuration(path);
+}
+
 _PUBLIC_ int
 authselect_backup(const char *name, char **_path)
 {
@@ -146,6 +162,14 @@ authselect_backup(const char *name, char **_path)
 
     ret = authselect_backup_create(name, &path);
     if (ret != EOK) {
+        goto done;
+    }
+
+    ret = authselect_validate_configuration(&is_valid);
+    if (ret == EOK && is_valid) {
+        /* Valid authselect configuration. */
+        INFO("Trying to backup authselect configuration to [%s]", path);
+        ret = authselect_backup_authselect_configuration(path);
         goto done;
     }
 
