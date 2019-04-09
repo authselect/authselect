@@ -29,147 +29,56 @@
 #include "lib/profiles/profiles.h"
 #include "lib/util/util.h"
 
-static bool
-is_dot_dir(const char *name)
-{
-    return strcmp(name, ".") == 0 || strcmp(name, "..") == 0;
-}
-
-static bool
-is_directory(struct dirent *entry, int dirfd)
-{
-    struct stat statres;
-    errno_t ret;
-
-#ifdef _DIRENT_HAVE_D_TYPE
-    if (entry->d_type == DT_DIR) {
-        return true;
-    } else if (entry->d_type != DT_UNKNOWN) {
-        return false;
-    }
-#endif
-
-    /* We must use stat() if d_type is not available or it couldn't determine
-     * the type (which may happen on some filesystems). */
-
-    ret = fstatat(dirfd, entry->d_name, &statres, 0);
-    if (ret != 0) {
-        ret = errno;
-        ERROR("Unable to stat directory [%d]: %s", ret, strerror(ret));
-        return false;
-    }
-
-    if (S_ISDIR(statres.st_mode)) {
-        return true;
-    }
-
-    return false;
-}
-
-static errno_t
-authselect_profile_dir_open(const char *path,
-                            DIR **_dirstream,
-                            int *_descriptor)
-{
-    DIR *dirstream;
-    int descriptor;
-    errno_t ret;
-
-    if (path == NULL) {
-        return EINVAL;
-    }
-
-    dirstream = opendir(path);
-    if (dirstream == NULL) {
-        /* To silence static analyzers that expect errno == 0. */
-        return errno == EOK ? EINVAL : errno;
-    }
-
-    /* Descriptor is closed when closedir() is called. */
-    descriptor = dirfd(dirstream);
-    if (descriptor == -1) {
-        ret = errno;
-        closedir(dirstream);
-        return ret;
-    }
-
-    *_dirstream = dirstream;
-    *_descriptor = descriptor;
-
-    return EOK;
-}
-
-static errno_t
-authselect_profile_dir_add(char *name,
-                           bool is_custom,
-                           char ***array)
-{
-    char *id = NULL;
-
-    id = !is_custom ? name : authselect_profile_custom_id(name);
-    if (id == NULL) {
-        return ENOMEM;
-    }
-
-    *array = string_array_add_value(*array, id, true);
-
-    if (is_custom) {
-        free(id);
-    }
-
-    if (*array == NULL) {
-        return ENOMEM;
-    }
-
-    return EOK;
-}
-
 static errno_t
 authselect_profile_dir_read(const char *path,
                             char ***array,
                             bool is_custom)
 {
-    struct dirent *entry;
-    DIR *dirstream;
-    int dirfd;
+    char *id;
+    char **subdirs;
     errno_t ret;
+    int i;
 
     INFO("Reading profile directory [%s]", path);
 
-    ret = authselect_profile_dir_open(path, &dirstream, &dirfd);
+    ret = dir_list(path, DIR_LIST_DIRS, &subdirs, NULL);
     if (ret == ENOENT) {
         /* This is just a warning so it should not be treated as error. */
         WARN("Directory [%s] is missing!", path);
         return EOK;
     } else if (ret != EOK) {
-        ERROR("Unable to open directory [%s] [%d]: %s",
+        ERROR("Unable to list directory [%s] [%d]: %s",
               path, ret, strerror(ret));
         return ret;
     }
 
-    errno = 0;
-    while ((entry = readdir(dirstream)) != NULL) {
-        if (is_dot_dir(entry->d_name)) {
-            continue;
+    for (i = 0; subdirs[i] != NULL; i++) {
+        if (is_custom) {
+            /* Custom profile needs to be prefixed with custom/ */
+            id = authselect_profile_custom_id(subdirs[i]);
+            if (id == NULL) {
+                ret = ENOMEM;
+                goto done;
+            }
+
+            free(subdirs[i]);
+            subdirs[i] = id;
+
         }
 
-        if (!is_directory(entry, dirfd)) {
-            WARN("Not a directory: %s", entry->d_name);
-            continue;
-        }
+        INFO("Found profile [%s]", subdirs[i]);
+    }
 
-        INFO("Found profile [%s]", entry->d_name);
-
-        ret = authselect_profile_dir_add(entry->d_name, is_custom, array);
-        if (ret != EOK) {
-            goto done;
-        }
+    *array = string_array_concat(*array, subdirs, true);
+    if (*array == NULL) {
+        ret = ENOMEM;
+        goto done;
     }
 
     ret = EOK;
 
 done:
-    closedir(dirstream);
+    string_array_free(subdirs);
 
     return ret;
 }

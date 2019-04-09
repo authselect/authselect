@@ -14,6 +14,7 @@ noinst_HEADERS = \
     paths.h \
     files/files.h \
     profiles/profiles.h \
+    util/dir.h \
     util/file.h \
     util/selinux.h \
     util/string_array.h \
@@ -56,6 +57,7 @@ libauthselect_la_SOURCES = \
     profiles/custom.c \
     profiles/list.c \
     profiles/read.c \
+    util/dir.c \
     util/file.c \
     util/selinux.c \
     util/string_array.c \

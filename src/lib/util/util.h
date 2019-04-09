@@ -28,6 +28,7 @@
  */
 
 #include "common/common.h"
+#include "lib/util/dir.h"
 #include "lib/util/file.h"
 #include "lib/util/selinux.h"
 #include "lib/util/string.h"
