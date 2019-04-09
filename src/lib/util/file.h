@@ -142,7 +142,7 @@ errno_t
 file_make_path(const char *path, mode_t mode);
 
 /**
- * Make temporary file for @path so it can be first written and then safelly
+ * Make temporary file for @path so it can be first written and then safely
  * renamed to @path.
  *
  * @param path           Path to the file whose directories should be created.

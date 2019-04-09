@@ -119,7 +119,7 @@ void
 string_array_del_value(char **array, const char *value);
 
 /**
- * Concatenate two array. Array @items values will be appended to arra @to.
+ * Concatenate two array. Array @items values will be appended to array @to.
  *
  * @param to    NULL-terminated destination array.
  * @param items NULL-terminated array to be appended into @to.
