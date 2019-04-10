@@ -12,6 +12,8 @@ dist_noinst_HEADERS = \
     cli_tool.h \
     $(NULL)
 
+authselect_backup_dir=@AUTHSELECT_BACKUP_DIR@
+
 authselect_SOURCES = \
     cli_tool.c \
     main.c \
@@ -24,4 +26,5 @@ authselect_LDADD = \
 authselect_CFLAGS = \
     $(AM_CFLAGS) \
     $(POPT_CFLAGS) \
+    -DAUTHSELECT_BACKUP_DIR=\"$(authselect_backup_dir)\" \
     $(NULL)

@@ -18,11 +18,13 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <time.h>
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
+#include <sys/stat.h>
 
 #include "authselect.h"
 #include "common/common.h"
@@ -603,6 +605,80 @@ static errno_t create(struct cli_cmdline *cmdline)
     return EOK;
 }
 
+static errno_t backup_list(struct cli_cmdline *cmdline)
+{
+    int raw_output = 0;
+    char fmttime[255];
+    struct stat st;
+    struct tm *tm;
+    char **names;
+    char *path;
+    int max = 0;
+    int len;
+    errno_t ret;
+    int i;
+
+    struct poptOption options[] = {
+        {"raw", 'r', POPT_ARG_VAL, &raw_output, 1,
+         _("Print backup names without any formatting and additional information"), NULL },
+        POPT_TABLEEND
+    };
+
+    ret = cli_tool_popt(cmdline, options, CLI_TOOL_OPT_OPTIONAL, NULL, NULL);
+    if (ret != EOK) {
+        ERROR("Unable to parse command arguments");
+        return ret;
+    }
+
+    names = authselect_backup_list();
+    if (names == NULL) {
+        ERROR("Unable to list available backups!");
+        return ENOMEM;
+    }
+
+    if (raw_output) {
+        for (i = 0; names[i] != NULL; i++) {
+            printf("%s\n", names[i]);
+        }
+    } else {
+        for (i = 0; names[i] != NULL; i++) {
+            len = strlen(names[i]);
+            if (max < len) {
+                max = len;
+            }
+        }
+
+        for (i = 0; names[i] != NULL; i++) {
+            path = format("%s/%s", AUTHSELECT_BACKUP_DIR, names[i]);
+            if (path == NULL) {
+                ERROR("Out of memory!");
+                ret = ENOMEM;
+                goto done;
+            }
+
+            ret = stat(path, &st);
+            if (ret < 0) {
+                ret = errno;
+                ERROR("Unable to stat [%s] [%d]: %s", path, ret, strerror(ret));
+                free(path);
+                goto done;
+            }
+            free(path);
+
+            tm = localtime(&st.st_ctim.tv_sec);
+            memset(fmttime, '\0', sizeof(fmttime));
+            strftime(fmttime, 255, "%c", tm);
+
+            printf(_("%-*s (created at %s)\n"), max, names[i], fmttime);
+        }
+    }
+
+done:
+    authselect_array_free(names);
+
+    return EOK;
+}
+
 static errno_t
 setup_gettext()
 {
@@ -641,6 +717,8 @@ int main(int argc, const char **argv)
         CLI_TOOL_COMMAND("enable-feature", "Enable feature in currently selected profile", CLI_CMD_REQUIRE_ROOT, enable),
         CLI_TOOL_COMMAND("disable-feature", "Disable feature in currently selected profile", CLI_CMD_REQUIRE_ROOT, disable),
         CLI_TOOL_COMMAND("create-profile", "Create new authselect profile", CLI_CMD_REQUIRE_ROOT, create),
+        CLI_TOOL_DELIMITER("Backup commands:"),
+        CLI_TOOL_COMMAND("backup-list", "List available backups", CLI_CMD_NONE, backup_list),
         CLI_TOOL_LAST
     };
 
