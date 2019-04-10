@@ -188,3 +188,41 @@ done:
 
     return ret;
 }
+
+_PUBLIC_ char **
+authselect_backup_list(void)
+{
+    char **names;
+    errno_t ret;
+
+    ret = dir_list(AUTHSELECT_BACKUP_DIR, DIR_LIST_DIRS, &names, NULL);
+    if (ret != EOK) {
+        ERROR("Unable to list directory [%s] [%d]: %s",
+              AUTHSELECT_BACKUP_DIR, ret, strerror(ret));
+        return NULL;
+    }
+
+    return names;
+}
+
+_PUBLIC_ int
+authselect_backup_remove(const char *name)
+{
+    char *path;
+    errno_t ret;
+
+    INFO("Removing backup [%s]", name);
+
+    path = format("%s/%s", AUTHSELECT_BACKUP_DIR, name);
+    if (path == NULL) {
+        return ENOMEM;
+    }
+
+    ret = dir_remove(path);
+    if (ret != EOK) {
+        ERROR("Unable to delete directory [%s] [%d]: %s",
+              path, ret, strerror(ret));
+    }
+
+    return ret;
+}
