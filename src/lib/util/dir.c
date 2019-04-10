@@ -182,3 +182,64 @@ done:
 
     return ret;
 }
+
+errno_t
+dir_remove(const char *path)
+{
+    char **subdirs = NULL;
+    char **files = NULL;
+    int dirfd = -1;
+    errno_t ret;
+    int i;
+
+    ret = dir_list(path, DIR_LIST_DIRS | DIR_LIST_FULL_PATH, &subdirs, NULL);
+    if (ret == ENOENT) {
+        ret = EOK;
+        goto done;
+    } else if (ret != EOK) {
+        goto done;
+    }
+
+    ret = dir_list(path, DIR_LIST_FILES, &files, &dirfd);
+    if (ret == ENOENT) {
+        ret = EOK;
+        goto done;
+    } else if (ret != EOK) {
+        goto done;
+    }
+
+    for (i = 0; subdirs[i] != NULL; i++) {
+        ret = dir_remove(subdirs[i]);
+        if (ret != EOK) {
+            goto done;
+        }
+    }
+
+    for (i = 0; files[i] != NULL; i++) {
+        INFO("Removing file [%s/%s]", path, files[i]);
+        ret = unlinkat(dirfd, files[i], 0);
+        if (ret != 0) {
+            ret = errno;
+            goto done;
+        }
+    }
+
+    INFO("Removing directory [%s]", path);
+    ret = rmdir(path);
+    if (ret != 0) {
+        ret = errno;
+        goto done;
+    }
+
+    ret = EOK;
+
+done:
+    string_array_free(subdirs);
+    string_array_free(files);
+
+    if (dirfd != -1) {
+        close(dirfd);
+    }
+
+    return ret;
+}
