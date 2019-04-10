@@ -108,6 +108,28 @@ int
 authselect_backup(const char *name, char **_path);
 
 /**
+ * List available backups.
+ *
+ * @param _names NULL-terminated string array that holds the backup names.
+ *
+ * @return EOK on success, other errno code on failure.
+ */
+char **
+authselect_backup_list(void);
+
+/**
+ * Remove backup.
+ *
+ * This will delete the backup configuration files from disk.
+ *
+ * @param name Backup name.
+ *
+ * @return EOK on success, other errno code on failure.
+ */
+int
+authselect_backup_remove(const char *name);
+
+/**
  * Enable a feature with currently activated profile.
  *
  * @param feature       Feature name to activate.
