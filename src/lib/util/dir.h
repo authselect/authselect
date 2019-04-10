@@ -50,4 +50,14 @@ dir_list(const char *path,
          char ***_items,
          int *_dirfd);
 
+/**
+ * Recursively remove (non-empty) directory.
+ *
+ * @param path Path to the directory.
+ *
+ * @return EOK on success, other errno code on failure.
+ */
+errno_t
+dir_remove(const char *path);
+
 #endif /* _DIR_H_ */
