@@ -679,6 +679,30 @@ done:
     return EOK;
 }
 
+static errno_t backup_remove(struct cli_cmdline *cmdline)
+{
+    const char *name;
+    errno_t ret;
+
+    ret = cli_tool_popt_ex(cmdline, NULL, CLI_TOOL_OPT_OPTIONAL,
+                           NULL, NULL, "BACKUP",
+                           _("Name of the backup to remove."),
+                           &name, false, NULL);
+    if (ret != EOK) {
+        ERROR("Unable to parse command arguments");
+        return ret;
+    }
+
+    ret = authselect_backup_remove(name);
+    if (ret != EOK) {
+        CLI_ERROR("Unable to remove backup [%s] [%d]: %s\n",
+                  name, ret, strerror(ret));
+        return ret;
+    }
+
+    return EOK;
+}
+
 static errno_t
 setup_gettext()
 {
@@ -719,6 +743,7 @@ int main(int argc, const char **argv)
         CLI_TOOL_COMMAND("create-profile", "Create new authselect profile", CLI_CMD_REQUIRE_ROOT, create),
         CLI_TOOL_DELIMITER("Backup commands:"),
         CLI_TOOL_COMMAND("backup-list", "List available backups", CLI_CMD_NONE, backup_list),
+        CLI_TOOL_COMMAND("backup-remove", "Remove backup", CLI_CMD_REQUIRE_ROOT, backup_remove),
         CLI_TOOL_LAST
     };
 
