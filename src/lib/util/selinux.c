@@ -24,9 +24,11 @@
 #include <unistd.h>
 #include <selinux/selinux.h>
 #include <selinux/label.h>
+#include <sys/stat.h>
 
 #include "common/common.h"
 #include "lib/util/file.h"
+#include "lib/util/textfile.h"
 
 errno_t
 selinux_get_default_context(const char *path,
@@ -144,6 +146,71 @@ selinux_mkstemp_for(const char *filepath,
     }
 
     *_tmpfile = tmpfile;
+
+    ret = EOK;
+
+done:
+    if (original_context != NULL) {
+        freecon(original_context);
+    }
+
+    if (default_context != NULL) {
+        freecon(default_context);
+    }
+
+    return ret;
+}
+
+errno_t
+selinux_file_copy(const char *source,
+                  const char *destdir,
+                  const char *destname,
+                  mode_t dir_mode)
+{
+    char *original_context = NULL;
+    char *default_context = NULL;
+    errno_t ret;
+    int seret;
+
+    if (is_selinux_enabled() != 1) {
+        return textfile_copy(source, destdir, destname, dir_mode);
+    }
+
+    seret = getfscreatecon(&original_context);
+    if (seret != 0) {
+        ERROR("Unable to get current fscreate selinux context!");
+        return EIO;
+    }
+
+    ret = selinux_get_context(source, &default_context);
+    if (ret != EOK) {
+        ERROR("Unable to get default selinux context for [%s] [%d]: %s!",
+              source, ret, strerror(ret));
+        goto done;
+    }
+
+    /* Set desired fs create context. */
+    seret = setfscreatecon(default_context);
+    if (seret != 0) {
+        ERROR("Unable to set fscreate selinux context!");
+        ret = EIO;
+        goto done;
+    }
+
+    ret = textfile_copy(source, destdir, destname, dir_mode);
+
+    /* Restore original fs create context. */
+    seret = setfscreatecon(original_context);
+    if (seret != 0) {
+        ERROR("Unable to restore fscreate selinux context!");
+        ret = EIO;
+        goto done;
+    }
+
+    /* Check result of textfile_copy() */
+    if (ret != EOK) {
+        goto done;
+    }
 
     ret = EOK;
 
