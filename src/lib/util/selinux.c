@@ -32,7 +32,7 @@
 #include "lib/util/selinux.h"
 #include "lib/util/string_array.h"
 
-errno_t
+static errno_t
 selinux_get_default_context(const char *path,
                             char **_context)
 {
