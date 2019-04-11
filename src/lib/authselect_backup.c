@@ -27,6 +27,8 @@
 #include "common/common.h"
 #include "lib/constants.h"
 #include "lib/util/util.h"
+#include "lib/files/files.h"
+#include "lib/profiles/profiles.h"
 
 static errno_t
 authselect_backup_create_named(const char *name,
@@ -224,6 +226,142 @@ authselect_backup_remove(const char *name)
         ERROR("Unable to delete directory [%s] [%d]: %s",
               path, ret, strerror(ret));
     }
+
+    return ret;
+}
+
+static errno_t
+authselect_restore_system_configuration(const char *path)
+{
+    struct selinux_safe_copy table[] = {
+        {FILE_SYSTEM,      PATH_SYMLINK_SYSTEM},
+        {FILE_PASSWORD,    PATH_SYMLINK_PASSWORD},
+        {FILE_FINGERPRINT, PATH_SYMLINK_FINGERPRINT},
+        {FILE_SMARTCARD,   PATH_SYMLINK_SMARTCARD},
+        {FILE_POSTLOGIN,   PATH_SYMLINK_POSTLOGIN},
+        {FILE_NSSWITCH,    PATH_SYMLINK_NSSWITCH},
+        {FILE_DCONF_DB,    PATH_SYMLINK_DCONF_DB},
+        {FILE_DCONF_LOCK,  PATH_SYMLINK_DCONF_LOCK},
+        {NULL, NULL},
+    };
+    errno_t ret;
+    int i;
+
+    for (i = 0; table[i].source != NULL; i++) {
+        table[i].source = format("%s/%s", path, table[i].source);
+        if (table[i].source == NULL) {
+            ret = ENOMEM;
+            goto done;
+        }
+    }
+
+    ret = selinux_copy_files_safely(table, AUTHSELECT_DIR_MODE);
+
+done:
+    /* In case of an error in formatting the source file, it will be NULL
+     * and the iteration will stop before we free the static data. */
+    for (i = 0; table[i].source != NULL; i++) {
+        free((char*)table[i].source);
+    }
+
+    return ret;
+}
+
+static errno_t
+authselect_restore_authselect_configuration(const char *path)
+{
+    struct selinux_safe_copy table[] = {
+        {FILE_CONFIG,      PATH_CONFIG_FILE},
+        {FILE_SYSTEM,      PATH_SYSTEM},
+        {FILE_PASSWORD,    PATH_PASSWORD},
+        {FILE_FINGERPRINT, PATH_FINGERPRINT},
+        {FILE_SMARTCARD,   PATH_SMARTCARD},
+        {FILE_POSTLOGIN,   PATH_POSTLOGIN},
+        {FILE_NSSWITCH,    PATH_NSSWITCH},
+        {FILE_DCONF_DB,    PATH_DCONF_DB},
+        {FILE_DCONF_LOCK,  PATH_DCONF_LOCK},
+        {NULL, NULL},
+    };
+    errno_t ret;
+    int i;
+
+    for (i = 0; table[i].source != NULL; i++) {
+        table[i].source = format("%s/%s", path, table[i].source);
+        if (table[i].source == NULL) {
+            ret = ENOMEM;
+            goto done;
+        }
+    }
+
+    ret = selinux_copy_files_safely(table, AUTHSELECT_DIR_MODE);
+    if (ret != EOK) {
+        ERROR("Unable to copy files [%d]: %s", ret, strerror(ret));
+        goto done;
+    }
+
+    ret = authselect_symlinks_write();
+    if (ret != EOK) {
+        ERROR("Unable to create symbolic links [%d]: %s", ret, strerror(ret));
+        goto done;
+    }
+
+    ret = authselect_profile_dconf_update();
+    if (ret == ENOENT) {
+        INFO("Dconf is not installed on your system");
+    } else if (ret != EOK) {
+        ERROR("Unable to update dconf database [%d]: %s", ret, strerror(ret));
+        goto done;
+    }
+
+    ret = EOK;
+
+done:
+    /* In case of an error in formatting the source file, it will be NULL
+     * and the iteration will stop before we free the static data. */
+    for (i = 0; table[i].source != NULL; i++) {
+        free((char*)table[i].source);
+    }
+
+    return ret;
+}
+
+_PUBLIC_ int
+authselect_backup_restore(const char *name)
+{
+    char *confpath = NULL;
+    char *path = NULL;
+    errno_t ret;
+
+    INFO("Restoring configuration from backup [%s]", name);
+
+    path = format("%s/%s", AUTHSELECT_BACKUP_DIR, name);
+    if (path == NULL) {
+        ret = ENOMEM;
+        goto done;
+    }
+
+    confpath = format("%s/%s", path, FILE_CONFIG);
+    if (confpath == NULL) {
+        ret = ENOMEM;
+        goto done;
+    }
+
+    ret = file_exists(confpath);
+    if (ret == EOK) {
+        INFO("Backup [%s] contains authselect configuration", name);
+        ret = authselect_restore_authselect_configuration(path);
+    } else if (ret == ENOENT) {
+        INFO("Backup [%s] contains non-authselect configuration", name);
+        ret = authselect_restore_system_configuration(path);
+    }
+
+done:
+    if (ret != EOK) {
+        ERROR("Unable to restore [%s] [%d]: %s", name, ret, strerror(ret));
+    }
+
+    free(confpath);
+    free(path);
 
     return ret;
 }

@@ -28,7 +28,7 @@
 #include "lib/profiles/profiles.h"
 #include "lib/util/util.h"
 
-static errno_t
+errno_t
 authselect_profile_dconf_update()
 {
     errno_t ret;

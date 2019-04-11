@@ -120,4 +120,12 @@ authselect_profile_parse_custom(const char *profile_id);
 bool
 authselect_profile_is_custom(const char *profile_id);
 
+/**
+ * Tell dconf to read updated files.
+ *
+ * @return EOK on success, other errno code on error.
+ */
+errno_t
+authselect_profile_dconf_update(void);
+
 #endif /* _PROFILES_H_ */
