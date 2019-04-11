@@ -124,7 +124,8 @@ authselect_backup_system_configuration(const char *path)
         }
 
         INFO("Copying [%s] to [%s/%s]", files[i].name, path, filename);
-        ret = textfile_copy(files[i].name, path, filename, AUTHSELECT_DIR_MODE);
+        ret = selinux_file_copy(files[i].name, path, filename,
+                                AUTHSELECT_DIR_MODE);
         if (ret == ENOENT) {
             WARN("File [%s] does not exist", files[i].name);
         } else if (ret != EOK) {
@@ -142,8 +143,8 @@ authselect_backup_authselect_configuration(const char *path)
 {
     errno_t ret;
 
-    ret = textfile_copy(PATH_CONFIG_FILE, path, FILE_CONFIG,
-                        AUTHSELECT_DIR_MODE);
+    ret = selinux_file_copy(PATH_CONFIG_FILE, path, FILE_CONFIG,
+                            AUTHSELECT_DIR_MODE);
     if (ret != EOK) {
         ERROR("Unable to copy [%s] to [%s/%s] [%d]: %s", PATH_CONFIG_FILE,
               path, FILE_CONFIG, ret, strerror(ret));
