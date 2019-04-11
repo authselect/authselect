@@ -24,17 +24,6 @@
 #include "common/errno_t.h"
 
 /**
- * Get default security context for @path.
- *
- * @param path Path to the file.
- *
- * @return EOK on success, ENOENT if context was not found, other errno code
- *         is returned on failure.
- */
-errno_t
-selinux_get_default_context(const char *path);
-
-/**
  * Create temporary file created on @filepath.XXXXXX with security context
  * set to default security context of @filepath.
  *
