@@ -18,8 +18,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _SELINUX_H_
-#define _SELINUX_H_
+#ifndef _UTIL_SELINUX_H_
+#define _UTIL_SELINUX_H_
 
 #include "common/errno_t.h"
 
@@ -111,4 +111,4 @@ errno_t
 selinux_copy_files_safely(struct selinux_safe_copy *table,
                           mode_t dir_mode);
 
-#endif /* _SELINUX_H_ */
+#endif /* _UTIL_SELINUX_H_ */
