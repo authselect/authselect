@@ -152,4 +152,21 @@ file_make_path(const char *path, mode_t mode);
 errno_t
 file_mktmp_for(const char *path, mode_t mode, char **_tmpfile);
 
+/**
+ * Copy file to destination. Directory is created if it does not exist.
+ * The original owner and permissions of the source file are kept.
+ *
+ * @param source       Source file name.
+ * @param destdir      Destination directory.
+ * @param destname     Destination file name.
+ * @param dir_mode     Access mode of destination directory if it is created.
+ *
+ * @return EOK on success, other errno code on error.
+ */
+errno_t
+file_copy(const char *source,
+          const char *destdir,
+          const char *destname,
+          mode_t dir_mode);
+
 #endif /* _FILE_H_ */
