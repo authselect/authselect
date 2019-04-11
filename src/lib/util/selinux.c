@@ -225,3 +225,69 @@ done:
 
     return ret;
 }
+
+errno_t
+selinux_mkstemp_copy(const char *source,
+                     const char *destdir,
+                     const char *destname,
+                     mode_t dir_mode,
+                     char **_tmpfile)
+{
+    char *original_context = NULL;
+    char *default_context = NULL;
+    errno_t ret;
+    int seret;
+
+    if (is_selinux_enabled() != 1) {
+        return file_mktmp_copy(source, destdir, destname, dir_mode, _tmpfile);
+    }
+
+    seret = getfscreatecon(&original_context);
+    if (seret != 0) {
+        ERROR("Unable to get current fscreate selinux context!");
+        return EIO;
+    }
+
+    ret = selinux_get_context(source, &default_context);
+    if (ret != EOK) {
+        ERROR("Unable to get default selinux context for [%s] [%d]: %s!",
+              source, ret, strerror(ret));
+        goto done;
+    }
+
+    /* Set desired fs create context. */
+    seret = setfscreatecon(default_context);
+    if (seret != 0) {
+        ERROR("Unable to set fscreate selinux context!");
+        ret = EIO;
+        goto done;
+    }
+
+    ret = file_mktmp_copy(source, destdir, destname, dir_mode, _tmpfile);
+
+    /* Restore original fs create context. */
+    seret = setfscreatecon(original_context);
+    if (seret != 0) {
+        ERROR("Unable to restore fscreate selinux context!");
+        ret = EIO;
+        goto done;
+    }
+
+    /* Check result of textfile_copy() */
+    if (ret != EOK) {
+        goto done;
+    }
+
+    ret = EOK;
+
+done:
+    if (original_context != NULL) {
+        freecon(original_context);
+    }
+
+    if (default_context != NULL) {
+        freecon(default_context);
+    }
+
+    return ret;
+}

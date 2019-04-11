@@ -67,4 +67,24 @@ selinux_file_copy(const char *source,
                   const char *destname,
                   mode_t dir_mode);
 
+/**
+ * Make copy of a file @source and store it in temporary file
+ * @destdir/@destname.XXXXXX, keeping its selinux context, owner
+ * and permissions.
+ *
+ * @param source       Source file name.
+ * @param destdir      Destination directory.
+ * @param destname     Destination file name.
+ * @param dir_mode     Access mode of destination directory if it is created.
+ * @param _tmpfile     Path to created temporary file.
+ *
+ * @return EOK on success, other errno code on error.
+ */
+errno_t
+selinux_mkstemp_copy(const char *source,
+                     const char *destdir,
+                     const char *destname,
+                     mode_t dir_mode,
+                     char **_tmpfile);
+
 #endif /* _SELINUX_H_ */
