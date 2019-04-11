@@ -19,6 +19,7 @@
 */
 
 #include <errno.h>
+#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -28,7 +29,8 @@
 
 #include "common/common.h"
 #include "lib/util/file.h"
-#include "lib/util/textfile.h"
+#include "lib/util/selinux.h"
+#include "lib/util/string_array.h"
 
 errno_t
 selinux_get_default_context(const char *path,
@@ -288,6 +290,125 @@ done:
     if (default_context != NULL) {
         freecon(default_context);
     }
+
+    return ret;
+}
+
+static errno_t
+parse_destination_path(const char *destination,
+                       char **_dir,
+                       char **_name)
+{
+    const char *cname;
+    char *name;
+    char *dir;
+
+    dir = file_get_parent_directory(destination);
+    if (dir == NULL) {
+        return ENOMEM;
+    }
+
+    cname = file_get_basename(destination);
+    if (cname == NULL) {
+        free(dir);
+        return EINVAL;
+    }
+
+    name = strdup(cname);
+    if (name == NULL) {
+        free(dir);
+        return ENOMEM;
+    }
+
+    *_dir = dir;
+    *_name = name;
+
+    return EOK;
+}
+
+errno_t
+selinux_copy_files_safely(struct selinux_safe_copy *table,
+                          mode_t dir_mode)
+{
+    char **tmpfiles = NULL;
+    char **names = NULL;
+    char **dirs = NULL;
+    errno_t ret;
+    int i;
+
+    for (i = 0; table[i].source != NULL; i++) {
+        /* Just counting. */
+    }
+
+    tmpfiles = string_array_create(i);
+    if (tmpfiles == NULL) {
+        ret = ENOMEM;
+        goto done;
+    }
+
+    dirs = string_array_create(i);
+    if (dirs == NULL) {
+        ret = ENOMEM;
+        goto done;
+    }
+
+    names = string_array_create(i);
+    if (names == NULL) {
+        ret = ENOMEM;
+        goto done;
+    }
+
+    /* Parse destination. */
+    for (i = 0; table[i].source != NULL; i++) {
+        ret = parse_destination_path(table[i].destination, &dirs[i], &names[i]);
+        if (ret != EOK) {
+            goto done;
+        }
+    }
+
+    /* First, write content into temporary files, so we can safely fail
+     * on error without overwriting destination files. */
+    for (i = 0; table[i].source != NULL; i++) {
+        INFO("Writing temporary file for [%s]", table[i].destination);
+        ret = selinux_mkstemp_copy(table[i].source, dirs[i], names[i],
+                                   dir_mode, &tmpfiles[i]);
+        if (ret != EOK) {
+            goto done;
+        }
+    }
+
+    /* Now rename the files.
+     *
+     * We now know that the system is writable, so rename call shall not
+     * fail and it will overwrite any existing file. The only reason it
+     * can fail is EIO which we can not do anything about and we can not
+     * even recover from it.
+     */
+    for (i = 0; table[i].source != NULL; i++) {
+        INFO("Renaming [%s] to [%s]", tmpfiles[i], table[i].destination);
+        ret = rename(tmpfiles[i], table[i].destination);
+        if (ret != 0) {
+            ret = errno;
+            ERROR("Unable to rename [%s] to [%s] [%d]: %s",
+                  tmpfiles[i], table[i].destination, ret, strerror(ret));
+            goto done;
+        }
+    }
+
+    ret = EOK;
+
+done:
+    if (ret != EOK && tmpfiles != NULL) {
+        for (i = 0; table[i].source != NULL; i++) {
+            if (tmpfiles[i] != NULL) {
+                unlink(tmpfiles[i]);
+            }
+        }
+    }
+
+    string_array_free(tmpfiles);
+    string_array_free(names);
+    string_array_free(dirs);
 
     return ret;
 }
