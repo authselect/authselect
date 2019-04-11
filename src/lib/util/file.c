@@ -369,6 +369,68 @@ done:
     return ret;
 }
 
+static errno_t
+file_mktmp_at(const char *path, const char *name, mode_t mode, char **_tmpfile)
+{
+    char *fullpath;
+    errno_t ret;
+
+    fullpath = format("%s/%s", path, name);
+    if (fullpath == NULL) {
+        return ENOMEM;
+    }
+
+    ret = file_mktmp_for(fullpath, mode, _tmpfile);
+    free(fullpath);
+
+    return ret;
+}
+
+errno_t
+file_mktmp_copy(const char *source,
+                const char *destdir,
+                const char *destname,
+                mode_t dir_mode,
+                char **_tmpfile)
+{
+    const char *tmpname;
+    char *tmpfile;
+    errno_t ret;
+
+    ret = file_make_path(destdir, dir_mode);
+    if (ret != EOK) {
+        return ret;
+    }
+
+    ret = file_mktmp_at(destdir, destname, 0600, &tmpfile);
+    if (ret != EOK) {
+        return ret;
+    }
+
+    tmpname = file_get_basename(tmpfile);
+    if (tmpname == NULL) {
+        ret = EINVAL;
+        goto done;
+    }
+
+    ret = file_copy(source, destdir, tmpname, dir_mode);
+    if (ret != EOK) {
+        goto done;
+    }
+
+    *_tmpfile = tmpfile;
+
+    ret = EOK;
+
+done:
+    if (ret != EOK) {
+        unlink(tmpfile);
+        free(tmpfile);
+    }
+
+    return ret;
+}
+
 errno_t
 file_copy(const char *source,
           const char *destdir,

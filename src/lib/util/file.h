@@ -153,6 +153,23 @@ errno_t
 file_mktmp_for(const char *path, mode_t mode, char **_tmpfile);
 
 /**
+ * Make copy of a file @source and store it in temporary file
+ * @destdir/@destname.XXXXXX keeping its owner and permissions.
+ *
+ * @param source       Source file name.
+ * @param destdir      Destination directory.
+ * @param destname     Destination file name.
+ * @param dir_mode     Access mode of destination directory if it is created.
+ * @param _tmpfile     Path to created temporary file.
+ */
+errno_t
+file_mktmp_copy(const char *source,
+                const char *destdir,
+                const char *destname,
+                mode_t dir_mode,
+                char **_tmpfile);
+
+/**
  * Copy file to destination. Directory is created if it does not exist.
  * The original owner and permissions of the source file are kept.
  *
