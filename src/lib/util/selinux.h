@@ -87,4 +87,28 @@ selinux_mkstemp_copy(const char *source,
                      mode_t dir_mode,
                      char **_tmpfile);
 
+struct selinux_safe_copy {
+    /* Source file name. */
+    const char *source;
+
+    /* Destination file name. */
+    const char *destination;
+};
+
+/**
+ * Copy multiple files to their new destination, keeping their ownership,
+ * permissions and selinux context. It will first copy the files into
+ * temporary files in their new destination to ensure that the destination
+ * is writable and there is enough space to hold the file. Then it will
+ * rename it to their desired name, overwriting existing file.
+ *
+ * @param table        File definitions.
+ * @param dir_mode     Access mode of destination directory if it is created.
+ *
+ * @return EOK on success, other errno code on error.
+ */
+errno_t
+selinux_copy_files_safely(struct selinux_safe_copy *table,
+                          mode_t dir_mode);
+
 #endif /* _SELINUX_H_ */
