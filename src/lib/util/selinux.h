@@ -49,4 +49,22 @@ selinux_mkstemp_for(const char *filepath,
                     mode_t mode,
                     char **_tmpfile);
 
+/**
+ * Copy file to destination. Directory is created if it does not exist.
+ * The original owner, permissions and selinux context of the source
+ * file are kept.
+ *
+ * @param source       Source file name.
+ * @param destdir      Destination directory.
+ * @param destname     Destination file name.
+ * @param dir_mode     Access mode of destination directory if it is created.
+ *
+ * @return EOK on success, other errno code on error.
+ */
+errno_t
+selinux_file_copy(const char *source,
+                  const char *destdir,
+                  const char *destname,
+                  mode_t dir_mode);
+
 #endif /* _SELINUX_H_ */
