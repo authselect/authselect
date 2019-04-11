@@ -173,7 +173,7 @@ selinux_file_copy(const char *source,
     int seret;
 
     if (is_selinux_enabled() != 1) {
-        return textfile_copy(source, destdir, destname, dir_mode);
+        return file_copy(source, destdir, destname, dir_mode);
     }
 
     seret = getfscreatecon(&original_context);
@@ -197,7 +197,7 @@ selinux_file_copy(const char *source,
         goto done;
     }
 
-    ret = textfile_copy(source, destdir, destname, dir_mode);
+    ret = file_copy(source, destdir, destname, dir_mode);
 
     /* Restore original fs create context. */
     seret = setfscreatecon(original_context);
