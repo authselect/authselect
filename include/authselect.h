@@ -130,6 +130,19 @@ int
 authselect_backup_remove(const char *name);
 
 /**
+ * Restore configuration from backup.
+ *
+ * This will overwrite current configuration with the old one that is stored
+ * in the backup directory.
+ *
+ * @param name Backup name.
+ *
+ * @return EOK on success, other errno code on failure.
+ */
+int
+authselect_backup_restore(const char *name);
+
+/**
  * Enable a feature with currently activated profile.
  *
  * @param feature       Feature name to activate.

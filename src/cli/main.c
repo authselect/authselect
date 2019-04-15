@@ -703,6 +703,30 @@ static errno_t backup_remove(struct cli_cmdline *cmdline)
     return EOK;
 }
 
+static errno_t backup_restore(struct cli_cmdline *cmdline)
+{
+    const char *name;
+    errno_t ret;
+
+    ret = cli_tool_popt_ex(cmdline, NULL, CLI_TOOL_OPT_OPTIONAL,
+                           NULL, NULL, "BACKUP",
+                           _("Name of the backup to restore from."),
+                           &name, false, NULL);
+    if (ret != EOK) {
+        ERROR("Unable to parse command arguments");
+        return ret;
+    }
+
+    ret = authselect_backup_restore(name);
+    if (ret != EOK) {
+        CLI_ERROR("Unable to restore backup [%s] [%d]: %s\n",
+                  name, ret, strerror(ret));
+        return ret;
+    }
+
+    return EOK;
+}
+
 static errno_t
 setup_gettext()
 {
@@ -744,6 +768,7 @@ int main(int argc, const char **argv)
         CLI_TOOL_DELIMITER("Backup commands:"),
         CLI_TOOL_COMMAND("backup-list", "List available backups", CLI_CMD_NONE, backup_list),
         CLI_TOOL_COMMAND("backup-remove", "Remove backup", CLI_CMD_REQUIRE_ROOT, backup_remove),
+        CLI_TOOL_COMMAND("backup-restore", "Restore from backup", CLI_CMD_REQUIRE_ROOT, backup_restore),
         CLI_TOOL_LAST
     };
 
