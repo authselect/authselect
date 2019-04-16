@@ -245,8 +245,18 @@ file_get_basename(const char *filepath)
 {
     const char *filename;
 
+    if (filepath == NULL) {
+        return NULL;
+    }
+
     filename = strrchr(filepath, '/');
-    if (filename == NULL || filename[0] == '\0' || filename[1] == '\0') {
+    if (filename == NULL) {
+        /* There is no slash. */
+        return filepath;
+    }
+
+    if (filename[0] == '\0' || filename[1] == '\0') {
+        /* There is a slash but no file name. */
         return NULL;
     }
 
