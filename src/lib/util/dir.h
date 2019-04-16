@@ -32,6 +32,9 @@
 /* Use fully qualified paths in the output. */
 #define DIR_LIST_FULL_PATH 0x0004
 
+/* Sort listing by creation time. */
+#define DIR_LIST_SORT_BY_CTIME 0x0010
+
 /**
  * List items in a directory.
  *
