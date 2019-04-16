@@ -182,7 +182,7 @@ manpages-translate() {
             --master "$source" \
             --po "$pofilepath" \
             --localized "$dest" \
-            --keep 80 > /dev/null
+            --keep 70 > /dev/null
 
         if [ $? -ne 0 ]; then
             echo "Unable to translate manual page: $adoc, $pofilename"
