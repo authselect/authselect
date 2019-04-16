@@ -96,6 +96,30 @@ parse_profile_options(struct cli_cmdline *cmdline,
     return EOK;
 }
 
+static errno_t
+perform_backup(int quiet,
+               int backup,
+               const char *backup_name)
+{
+    char *backup_path;
+    errno_t ret;
+
+    if (!backup && backup_name == NULL) {
+        return EOK;
+    }
+
+    ret = authselect_backup(backup_name, &backup_path);
+    if (ret != EOK) {
+        CLI_ERROR("Unable to backup current configuration!\n");
+        return ret;
+    }
+
+    CLI_MSG(quiet, "Backup stored at %s\n", backup_path);
+    free(backup_path);
+
+    return EOK;
+}
+
 static errno_t activate(struct cli_cmdline *cmdline)
 {
     struct authselect_profile *profile = NULL;
@@ -103,8 +127,8 @@ static errno_t activate(struct cli_cmdline *cmdline)
     const char *profile_id;
     char *requirements = NULL;
     char *backup_name = NULL;
-    char *backup_path;
     char **maps = NULL;
+    int backup = 0;
     int nobackup = 0;
     int enforce = 0;
     int quiet = 0;
@@ -113,7 +137,8 @@ static errno_t activate(struct cli_cmdline *cmdline)
 
     struct poptOption options[] = {
         {"force", 'f', POPT_ARG_VAL, &enforce, 1, _("Enforce changes"), NULL },
-        {"backup", '\0', POPT_ARG_STRING, &backup_name, 0, _("Backup system files before activating profile"), _("NAME") },
+        {NULL, 'b', POPT_ARG_VAL, &backup, 1, _("Backup system files before activating profile (generate unique name)"), NULL },
+        {"backup", '\0', POPT_ARG_STRING | POPT_ARG_NONE, &backup_name, 0, _("Backup system files before activating profile"), _("NAME") },
         {"nobackup", '\0', POPT_ARG_VAL, &nobackup, 1, _("Do not backup system files when --force is set"), NULL },
         {"quiet", 'q', POPT_ARG_VAL, &quiet, 1, _("Do not print profile requirements"), NULL },
         POPT_TABLEEND
@@ -146,15 +171,11 @@ static errno_t activate(struct cli_cmdline *cmdline)
         goto done;
     }
 
-    if (backup_name != NULL || (enforce && !nobackup)) {
-        ret = authselect_backup(backup_name, &backup_path);
+    if (backup || backup_name != NULL || (enforce && !nobackup)) {
+        ret = perform_backup(quiet, backup, backup_name);
         if (ret != EOK) {
-            CLI_ERROR("Unable to backup system files!\n");
             goto done;
         }
-
-        CLI_MSG(quiet, "Backup stored at %s\n", backup_path);
-        free(backup_path);
     }
 
     ret = authselect_activate(profile_id, features, enforce);
@@ -198,11 +219,24 @@ done:
 
 static errno_t apply_changes(struct cli_cmdline *cmdline)
 {
+    char *backup_name = NULL;
+    int backup = 0;
     errno_t ret;
 
-    ret = cli_tool_popt(cmdline, NULL, CLI_TOOL_OPT_OPTIONAL, NULL, NULL);
+    struct poptOption options[] = {
+        {NULL, 'b', POPT_ARG_VAL, &backup, 1, _("Backup system files before activating profile (generate unique name)"), NULL },
+        {"backup", '\0', POPT_ARG_STRING | POPT_ARG_NONE, &backup_name, 0, _("Backup system files before activating profile"), _("NAME") },
+        POPT_TABLEEND
+    };
+
+    ret = cli_tool_popt(cmdline, options, CLI_TOOL_OPT_OPTIONAL, NULL, NULL);
     if (ret != EOK) {
         ERROR("Unable to parse command arguments");
+        return ret;
+    }
+
+    ret = perform_backup(false, backup, backup_name);
+    if (ret != EOK) {
         return ret;
     }
 
@@ -519,14 +553,27 @@ static errno_t test(struct cli_cmdline *cmdline)
 
 static errno_t enable(struct cli_cmdline *cmdline)
 {
+    int backup = 0;
+    char *backup_name = NULL;
     const char *feature;
     errno_t ret;
 
-    ret = cli_tool_popt_ex(cmdline, NULL, CLI_TOOL_OPT_OPTIONAL,
+    struct poptOption options[] = {
+        {NULL, 'b', POPT_ARG_VAL, &backup, 1, _("Backup system files before activating profile (generate unique name)"), NULL },
+        {"backup", '\0', POPT_ARG_STRING | POPT_ARG_NONE, &backup_name, 0, _("Backup system files before activating profile"), _("NAME") },
+        POPT_TABLEEND
+    };
+
+    ret = cli_tool_popt_ex(cmdline, options, CLI_TOOL_OPT_OPTIONAL,
                            NULL, NULL, "FEATURE", _("Feature to enable."),
                            &feature, false, NULL);
     if (ret != EOK) {
         ERROR("Unable to parse command arguments");
+        return ret;
+    }
+
+    ret = perform_backup(false, backup, backup_name);
+    if (ret != EOK) {
         return ret;
     }
 
@@ -541,14 +588,27 @@ static errno_t enable(struct cli_cmdline *cmdline)
 
 static errno_t disable(struct cli_cmdline *cmdline)
 {
+    int backup = 0;
+    char *backup_name = NULL;
     const char *feature;
     errno_t ret;
 
-    ret = cli_tool_popt_ex(cmdline, NULL, CLI_TOOL_OPT_OPTIONAL,
+    struct poptOption options[] = {
+        {NULL, 'b', POPT_ARG_VAL, &backup, 1, _("Backup system files before activating profile (generate unique name)"), NULL },
+        {"backup", '\0', POPT_ARG_STRING | POPT_ARG_NONE, &backup_name, 0, _("Backup system files before activating profile"), _("NAME") },
+        POPT_TABLEEND
+    };
+
+    ret = cli_tool_popt_ex(cmdline, options, CLI_TOOL_OPT_OPTIONAL,
                            NULL, NULL, "FEATURE", _("Feature to disable."),
                            &feature, false, NULL);
     if (ret != EOK) {
         ERROR("Unable to parse command arguments");
+        return ret;
+    }
+
+    ret = perform_backup(false, backup, backup_name);
+    if (ret != EOK) {
         return ret;
     }
 
