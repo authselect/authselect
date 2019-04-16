@@ -198,7 +198,9 @@ authselect_backup_list(void)
     char **names;
     errno_t ret;
 
-    ret = dir_list(AUTHSELECT_BACKUP_DIR, DIR_LIST_DIRS, &names, NULL);
+    ret = dir_list(AUTHSELECT_BACKUP_DIR,
+                   DIR_LIST_DIRS | DIR_LIST_SORT_BY_CTIME,
+                   &names, NULL);
     if (ret != EOK) {
         ERROR("Unable to list directory [%s] [%d]: %s",
               AUTHSELECT_BACKUP_DIR, ret, strerror(ret));
