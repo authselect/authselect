@@ -25,3 +25,7 @@ authselect_CFLAGS = \
     $(AM_CFLAGS) \
     $(POPT_CFLAGS) \
     $(NULL)
+
+EXTRA_DIST = \
+    authselect-completion.sh \
+    $(NULL)
