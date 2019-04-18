@@ -28,3 +28,7 @@ authselect_CFLAGS = \
     $(POPT_CFLAGS) \
     -DAUTHSELECT_BACKUP_DIR=\"$(authselect_backup_dir)\" \
     $(NULL)
+
+EXTRA_DIST = \
+    authselect-completion.sh \
+    $(NULL)
