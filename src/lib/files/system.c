@@ -361,12 +361,13 @@ done:
 static errno_t
 authselect_system_write_temp(const char *path,
                              const char *content,
+                             time_t timestamp,
                              char **_tmp_file)
 {
     errno_t ret;
 
     INFO("Writing temporary file for [%s]", path);
-    ret = template_write_temporary(path, content, AUTHSELECT_FILE_MODE,
+    ret = template_write_temporary(path, content, AUTHSELECT_FILE_MODE, timestamp,
                                    _tmp_file);
     if (ret != EOK) {
         ERROR("Unable to write temporary file [%s] [%d]: %s",
@@ -406,6 +407,7 @@ authselect_system_write(const char **features,
 {
     struct authselect_files *files;
     errno_t ret;
+    time_t now;
     int i;
 
     ret = authselect_system_generate(features, templates, &files);
@@ -419,17 +421,18 @@ authselect_system_write(const char **features,
 
     /* First, write content into temporary files, so we can safely fail
      * on error. */
+    now = time(NULL);
     for (i = 0; generated[i].path != NULL; i++) {
         ret = authselect_system_write_temp(generated[i].copy_path,
                                            generated[i].content,
-                                           &tmp_copies[i]);
+                                           now, &tmp_copies[i]);
         if (ret != EOK) {
             goto done;
         }
 
         ret = authselect_system_write_temp(generated[i].path,
                                            generated[i].content,
-                                           &tmp_files[i]);
+                                           now, &tmp_files[i]);
         if (ret != EOK) {
             goto done;
         }
