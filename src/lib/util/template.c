@@ -465,15 +465,13 @@ template_generate(const char *template,
 }
 
 static char *
-template_generate_preamble()
+template_generate_preamble(time_t timestamp)
 {
     const char *timestr;
     char *preamble;
     char *trimmed;
-    time_t now;
 
-    now = time(NULL);
-    timestr = ctime(&now);
+    timestr = ctime(&timestamp);
     if (timestr == NULL) {
         ERROR("Unable to get current time!");
         return NULL;
@@ -559,13 +557,14 @@ done:
 errno_t
 template_write(const char *filepath,
                const char *content,
-               mode_t mode)
+               mode_t mode,
+               time_t timestamp)
 {
     char *preamble;
     char *output;
     errno_t ret;
 
-    preamble = template_generate_preamble();
+    preamble = template_generate_preamble(timestamp);
     if (preamble == NULL) {
         return ENOMEM;
     }
@@ -590,6 +589,7 @@ errno_t
 template_write_temporary(const char *filepath,
                          const char *content,
                          mode_t mode,
+                         time_t timestamp,
                          char **_tmpfile)
 {
     char *tmpfile;
@@ -602,7 +602,7 @@ template_write_temporary(const char *filepath,
         return ret;
     }
 
-    ret = template_write(tmpfile, content, mode);
+    ret = template_write(tmpfile, content, mode, timestamp);
     if (ret != EOK) {
         free(tmpfile);
         return ret;
