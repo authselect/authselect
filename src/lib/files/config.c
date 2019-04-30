@@ -91,15 +91,18 @@ authselect_config_read(char **_profile_id,
         goto done;
     }
 
-    features = authselect_config_read_features(lines);
-    if (features == NULL) {
-        free(profile_id);
-        ret = ENOMEM;
-        goto done;
+    if (_features != NULL) {
+        features = authselect_config_read_features(lines);
+        if (features == NULL) {
+            free(profile_id);
+            ret = ENOMEM;
+            goto done;
+        }
+
+        *_features = features;
     }
 
     *_profile_id = profile_id;
-    *_features = features;
 
     ret = EOK;
 
