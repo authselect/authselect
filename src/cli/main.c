@@ -400,6 +400,46 @@ done:
     return ret;
 }
 
+static errno_t list_features(struct cli_cmdline *cmdline)
+{
+    struct authselect_profile *profile;
+    const char *profile_id;
+    char **features;
+    errno_t ret;
+    int i;
+
+    ret = cli_tool_popt_ex(cmdline, NULL, CLI_TOOL_OPT_OPTIONAL,
+                           NULL, NULL, "PROFILE-ID", _("Profile identifier."),
+                           &profile_id, true, NULL);
+    if (ret != EOK) {
+        ERROR("Unable to parse command arguments");
+        return ret;
+    }
+
+    ret = authselect_profile(profile_id, &profile);
+    if (ret != EOK) {
+        ERROR("Unable to get profile information [%d]: %s",
+              ret, strerror(ret));
+        return ret;
+    }
+
+    features = authselect_profile_features(profile);
+    authselect_profile_free(profile);
+    if (features == NULL) {
+        ERROR("Unable to get profile features [%d]: %s",
+              ret, strerror(ret));
+        return ENOMEM;
+    }
+
+    for (i = 0; features[i] != NULL; i++) {
+        puts(features[i]);
+    }
+
+    authselect_array_free(features);
+
+    return EOK;
+}
+
 static errno_t show(struct cli_cmdline *cmdline)
 {
     struct authselect_profile *profile;
@@ -864,6 +904,7 @@ int main(int argc, const char **argv)
         CLI_TOOL_COMMAND("select", "Select profile", CLI_CMD_REQUIRE_ROOT, activate),
         CLI_TOOL_COMMAND("apply-changes", "Regenerate configuration for currently selected command", CLI_CMD_REQUIRE_ROOT, apply_changes),
         CLI_TOOL_COMMAND("list", "List available profiles", CLI_CMD_NONE, list),
+        CLI_TOOL_COMMAND("list-features", "List available profile features", CLI_CMD_NONE, list_features),
         CLI_TOOL_COMMAND("show", "Show profile information", CLI_CMD_NONE, show),
         CLI_TOOL_COMMAND("requirements", "Print profile requirements", CLI_CMD_NONE, requirements),
         CLI_TOOL_COMMAND("current", "Get identifier of currently selected profile", CLI_CMD_NONE, current),
