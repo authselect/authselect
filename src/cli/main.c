@@ -553,14 +553,20 @@ static errno_t test(struct cli_cmdline *cmdline)
 
 static errno_t enable(struct cli_cmdline *cmdline)
 {
-    int backup = 0;
+    struct authselect_profile *profile = NULL;
     char *backup_name = NULL;
+    char *requirements = NULL;
+    char *profile_id = NULL;
     const char *feature;
+    const char *features[2];
+    int backup = 0;
+    int quiet = 0;
     errno_t ret;
 
     struct poptOption options[] = {
         {NULL, 'b', POPT_ARG_VAL, &backup, 1, _("Backup system files before activating profile (generate unique name)"), NULL },
         {"backup", '\0', POPT_ARG_STRING | POPT_ARG_NONE, &backup_name, 0, _("Backup system files before activating profile"), _("NAME") },
+        {"quiet", 'q', POPT_ARG_VAL, &quiet, 1, _("Do not print profile requirements"), NULL },
         POPT_TABLEEND
     };
 
@@ -572,18 +578,59 @@ static errno_t enable(struct cli_cmdline *cmdline)
         return ret;
     }
 
-    ret = perform_backup(false, backup, backup_name);
+    features[0] = feature;
+    features[1] = NULL;
+
+    ret = authselect_current_configuration(&profile_id, NULL);
+    if (ret == ENOENT) {
+        CLI_PRINT("No existing configuration detected.\n");
+        goto done;
+    } else if (ret != EOK) {
+        ERROR("Unable to get current configuration [%d]: %s",
+              ret, strerror(ret));
+        goto done;
+    }
+
+    ret = authselect_profile(profile_id, &profile);
     if (ret != EOK) {
-        return ret;
+        ERROR("Unable to get profile information [%d]: %s",
+              ret, strerror(ret));
+        ret = ENOMEM;
+        goto done;
+    }
+
+    requirements = authselect_profile_requirements(profile, features);
+    if (requirements == NULL) {
+        ERROR("Unable to read profile requirements!");
+        ret = EFAULT;
+        goto done;
+    }
+
+    ret = perform_backup(quiet, backup, backup_name);
+    if (ret != EOK) {
+        CLI_ERROR("Unable to backup current configuration [%d]: %s\n",
+                  ret, strerror(ret));
+        goto done;
     }
 
     ret = authselect_feature_enable(feature);
     if (ret != EOK) {
         CLI_ERROR("Unable to enable feature [%d]: %s\n", ret, strerror(ret));
-        return ret;
+        goto done;
     }
 
-    return EOK;
+    if (requirements[0] != '\0') {
+        CLI_MSG(quiet, "%s\n", requirements);
+    }
+
+    ret = EOK;
+
+done:
+    free(profile_id);
+    free(requirements);
+    authselect_profile_free(profile);
+
+    return ret;
 }
 
 static errno_t disable(struct cli_cmdline *cmdline)
