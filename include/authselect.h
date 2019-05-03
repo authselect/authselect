@@ -195,9 +195,6 @@ authselect_validate_configuration(bool *_is_valid);
  * @param[out] _features       NULL-terminated array of enabled
  *                             optional features. If NULL, this output parameter
  *                             is ignored.
- * @param[out] _is_valid       True if the current configuration is valid
- *                             and created by authselect, false if some
- *                             manual changes were detected.
  *
  * @return
  * - 0 if an configuration was read, current configuration is returned
