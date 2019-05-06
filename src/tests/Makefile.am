@@ -16,6 +16,7 @@ noinst_HEADERS = \
 
 TESTS = \
     test_util_string_array \
+    test_util_template \
     $(NULL)
 
 check_PROGRAMS = $(TESTS)
@@ -29,5 +30,22 @@ test_util_string_array_CFLAGS = \
     $(AM_CFLAGS)
 test_util_string_array_LDADD = \
     $(CMOCKA_LIBS) \
+    $(top_builddir)/src/common/libcommon.la \
+    $(NULL)
+
+test_util_template_SOURCES = \
+    test_util_template.c \
+    ../lib/util/file.c \
+    ../lib/util/selinux.c \
+    ../lib/util/string.c \
+    ../lib/util/string_array.c \
+    ../lib/util/template.c \
+    ../lib/util/textfile.c \
+    $(NULL)
+test_util_template_CFLAGS = \
+    $(AM_CFLAGS)
+test_util_template_LDADD = \
+    $(CMOCKA_LIBS) \
+    $(SELINUX_LIBS) \
     $(top_builddir)/src/common/libcommon.la \
     $(NULL)
