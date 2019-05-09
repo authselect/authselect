@@ -23,8 +23,8 @@
 
 #include "config.h"
 
+#include <stdlib.h>
 #include <stdarg.h>
-#include <malloc.h>
 
 #include "errno_t.h"
 #include "gettext.h"
