@@ -41,8 +41,13 @@
 #define malloc_zero_array(type, num) \
     (type *) calloc((num), sizeof(type))
 
+#ifdef HAVE_REALLOCARRAY
 #define realloc_array(ptr, type, num) \
     (type *) reallocarray((ptr), (num), sizeof(type))
+#else
+#define realloc_array(ptr, type, num) \
+    (type *) realloc((ptr), sizeof(type)*(num))
+#endif
 
 /* Debugging facility. */
 
