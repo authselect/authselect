@@ -71,6 +71,11 @@ Ignore "passwd" database set by the profile.
 with-custom-group::
 Ignore "group" database set by the profile.
 
+with-libnss-role::
+Enaple support of libnss-role (https://github.com/Etersoft/libnss-role),
+which allows to map domain group to local ones, e.g. users from domain
+group 'Domain Admins' may be automatically added to the local group 'wheel'.
+
 EXAMPLES
 --------
 * Enable winbind with no additional modules
