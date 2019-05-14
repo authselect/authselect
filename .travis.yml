@@ -5,9 +5,13 @@ sudo: false
 services:
 - docker
 
+env:
+  global:
+  - CFLAGS="-Wall -Wextra -Werror -Wno-sign-compare -Wno-unused-parameter -ggdb3"
+
 before_install:
 - docker pull fedora
-- docker run -d --rm --name AUTHSELECT-FEDORA -v `pwd`:/buildroot fedora /bin/sh -c "tail -f /dev/null"
+- docker run -d --rm --name AUTHSELECT-FEDORA -e CFLAGS -v `pwd`:/buildroot fedora /bin/sh -c "tail -f /dev/null"
 - docker ps
 - docker exec AUTHSELECT-FEDORA dnf -y install gcc make gettext gettext-devel autoconf automake libtool m4 pkgconfig popt-devel asciidoc libcmocka-devel libselinux-devel file rpm-build python3-devel po4a
 
