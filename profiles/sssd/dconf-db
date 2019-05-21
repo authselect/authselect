@@ -1,3 +1,5 @@
+{imply "with-smartcard" if "with-smartcard-required"}
+{imply "with-smartcard" if "with-smartcard-lock-on-removal"}
 [org/gnome/login-screen]
 enable-smartcard-authentication={if "with-smartcard":true|false}
 enable-fingerprint-authentication={if "with-fingerprint":true|false}

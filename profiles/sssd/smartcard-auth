@@ -1,3 +1,4 @@
+{imply "with-smartcard" if "with-smartcard-required"}
 {continue if "with-smartcard"}
 auth        required                                     pam_env.so
 auth        required                                     pam_faillock.so preauth silent deny=4 unlock_time=1200 {include if "with-faillock"}
