@@ -35,6 +35,17 @@ char **
 string_array_create(size_t num_items);
 
 /**
+ * Create copy of existing NULL-terminated string array.
+ *
+ * @param array NULL-terminated string array..
+ * @param unique If true, value will not be added if it is already present.
+ *
+ * @return Array or NULL if reallocation fails.
+ */
+char **
+string_array_copy(char **array, bool unique);
+
+/**
  * Resize NULL-terminated string array to hold @num_items. If the new capacity
  * is smaller, the elements that do not fit into the new capacity are freed.
  *
