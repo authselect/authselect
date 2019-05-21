@@ -35,6 +35,92 @@ void test_string_array_create(void **state)
     string_array_free(array);
 }
 
+void test_string_array_copy__unique_false(void **state)
+{
+    char **array;
+    char **copy;
+    size_t len_array;
+    size_t len_copy;
+    size_t i;
+
+    array = string_array_create(5);
+    assert_non_null(array);
+
+    array = string_array_add_value(array, "1", false);
+    assert_non_null(array);
+
+    array = string_array_add_value(array, "2", false);
+    assert_non_null(array);
+
+    array = string_array_add_value(array, "3", false);
+    assert_non_null(array);
+
+    array = string_array_add_value(array, "4", false);
+    assert_non_null(array);
+
+    array = string_array_add_value(array, "5", false);
+    assert_non_null(array);
+
+    copy = string_array_copy(array, false);
+    assert_non_null(copy);
+    assert_ptr_not_equal(array, copy);
+
+    len_array = string_array_count(array);
+    len_copy = string_array_count(copy);
+
+    assert_int_equal(len_array, len_copy);
+
+    for (i = 0; i < len_array; i++) {
+        assert_string_equal(array[i], copy[i]);
+        assert_ptr_not_equal(array[i], copy[i]);
+    }
+
+    string_array_free(array);
+    string_array_free(copy);
+}
+
+void test_string_array_copy__unique_true(void **state)
+{
+    char **array;
+    char **copy;
+    size_t len_copy;
+    size_t i;
+
+    array = string_array_create(5);
+    assert_non_null(array);
+
+    array = string_array_add_value(array, "1", false);
+    assert_non_null(array);
+
+    array = string_array_add_value(array, "2", false);
+    assert_non_null(array);
+
+    array = string_array_add_value(array, "3", false);
+    assert_non_null(array);
+
+    array = string_array_add_value(array, "3", false);
+    assert_non_null(array);
+
+    array = string_array_add_value(array, "3", false);
+    assert_non_null(array);
+
+    copy = string_array_copy(array, true);
+    assert_non_null(copy);
+    assert_ptr_not_equal(array, copy);
+
+    len_copy = string_array_count(copy);
+
+    assert_int_equal(len_copy, 3);
+
+    for (i = 0; i < len_copy; i++) {
+        assert_string_equal(array[i], copy[i]);
+        assert_ptr_not_equal(array[i], copy[i]);
+    }
+
+    string_array_free(array);
+    string_array_free(copy);
+}
+
 void test_string_array_del_value__single(void **state)
 {
     char **array;
@@ -197,6 +283,8 @@ int main(int argc, const char *argv[])
 
     const struct CMUnitTest tests[] = {
         cmocka_unit_test(test_string_array_create),
+        cmocka_unit_test(test_string_array_copy__unique_false),
+        cmocka_unit_test(test_string_array_copy__unique_true),
         cmocka_unit_test(test_string_array_del_value__single),
         cmocka_unit_test(test_string_array_del_value__single_repeated),
         cmocka_unit_test(test_string_array_del_value__multiple),

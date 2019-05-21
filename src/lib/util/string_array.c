@@ -36,6 +36,34 @@ string_array_create(size_t num_items)
 }
 
 char **
+string_array_copy(char **array, bool unique)
+{
+    char **copy;
+    size_t len;
+    size_t i;
+
+    if (array == NULL) {
+        return NULL;
+    }
+
+    len = string_array_count(array);
+
+    copy = string_array_create(len);
+    if (copy == NULL) {
+        return NULL;
+    }
+
+    for (i = 0; array[i] != NULL; i++) {
+        copy = string_array_add_value(copy, array[i], unique);
+        if (copy == NULL) {
+            return NULL;
+        }
+    }
+
+    return copy;
+}
+
+char **
 string_array_resize(char **array, size_t num_items)
 {
     char **reallocated;
