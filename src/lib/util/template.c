@@ -20,6 +20,7 @@
 
 #include <time.h>
 #include <regex.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/stat.h>
@@ -49,6 +50,30 @@ enum template_operator {
 
     OP_SENTINEL
 };
+
+void
+template_debug_print_matches(const char *str,
+                             regmatch_t *matches,
+                             int count)
+{
+#ifdef DEBUG_TEMPLATE_REGEX
+    regmatch_t *match;
+    int i;
+
+    printf("\n");
+    for (i = 0; i < count; i++) {
+        match = &matches[i];
+        if (match->rm_so == -1) {
+            continue;
+        }
+
+        printf("Match %d: %.*s\n", i, match->rm_eo - match->rm_so,
+               str + match->rm_so);
+    }
+#else
+    return;
+#endif
+}
 
 static enum template_operator
 template_match_get_operator(const char *match_string,
@@ -307,6 +332,8 @@ template_process_matches(const char *match_string,
     char *if_true;
     char *expression;
     errno_t ret;
+
+    template_debug_print_matches(match_string, m, RE_MATCHES);
 
     op = template_match_get_operator(match_string, &m[1]);
     if (op == OP_SENTINEL) {

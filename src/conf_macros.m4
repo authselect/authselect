@@ -65,3 +65,18 @@ CONFIGURABLE_VALUE(state-dir, state_dir, AUTHSELECT_STATE_DIR, DIR,
 CONFIGURABLE_VALUE(pythonbin, pythonbin, PYTHON_BIN, PATH,
                    [Path to the python interpreter],
                    $bindir/python3)
+
+AC_ARG_ENABLE(
+    [debug-template-regex],
+    AS_HELP_STRING(
+        [--enable-debug-template-regex],
+        [Regular expression matches will be print during template generation]
+    )
+)
+
+AS_IF([test "x$enable_debug_template_regex" = "xyes"],
+    AC_DEFINE_UNQUOTED(
+        DEBUG_TEMPLATE_REGEX, 1,
+        [Debug template regular expressions]
+    )
+)
