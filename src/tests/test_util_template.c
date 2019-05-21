@@ -132,7 +132,6 @@ void test_template_include_if(void **state)
     free(result);
 }
 
-
 void test_template_stop_if(void **state)
 {
     const char *myfeatures[] = {
@@ -249,6 +248,27 @@ void test_template_list_features(void **state)
     }
 }
 
+void test_template_imply_if(void **state)
+{
+    const char *myfeatures[] = {
+        "true",
+        NULL
+    };
+
+    const char *template =
+        "line 01 {include if \"enabled\"}\n"
+        "{imply \"enabled\" if \"true\"}\n"
+        "line 03 {include if \"enabled\"}\n"
+        "";
+    const char *expected =
+        "line 03\n"
+        "";
+
+    char *result = template_generate(template, myfeatures);
+    assert_string_equal(expected, result);
+    free(result);
+}
+
 int main(int argc, const char *argv[])
 {
 
@@ -260,6 +280,7 @@ int main(int argc, const char *argv[])
         cmocka_unit_test(test_template_stop_if),
         cmocka_unit_test(test_template_continue_if),
         cmocka_unit_test(test_template_list_features),
+        cmocka_unit_test(test_template_imply_if),
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);
