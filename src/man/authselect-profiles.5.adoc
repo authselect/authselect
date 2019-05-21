@@ -91,6 +91,11 @@ profile features.
     Opposite to "include-if". Include the line where this operator is placed
     only if "feature" is not defined.
 
+*{imply "implied-feature" if "feature"}*::
+    Enable feature "implied-feature" if feature "feature" is enabled. The whole
+    line with this operator is removed, thus it is not possible to add anything
+    else around this operator at the same line.
+
 *{if "feature":true|false}*::
     If "feature" is defined, replace this operator with string "true", otherwise
     with string "false".
@@ -171,6 +176,26 @@ to include both features but only "with-smartcard-required" is necessary.
   auth        requisite                                    pam_succeed_if.so uid >= 1000 quiet_success
   auth        sufficient                                   pam_sss.so forward_pass
   auth        required                                     pam_faillock.so authfail deny=4 unlock_time=1200       {include if "with-faillock"}
+  auth        required                                     pam_deny.so
+  ...
+
+Here is an example of "imply-if" operator. Enabling feature
+"with-smartcard-required" will also enable "with-smartcard" to make sure that
+all relevant PAM modules are used. This will achieve the same behavior as the
+previous example.
+
+  {imply "with-smartcard" if "with-smartcard-required"}
+  auth        required                                     pam_env.so
+  auth        required                                     pam_faildelay.so delay=2000000
+  auth        [success=1 default=ignore]                   pam_succeed_if.so service notin login:gdm:xdm:kdm:xscreensaver:gnome-screensaver:kscreensaver quiet use_uid {include if "with-smartcard-required"}
+  auth        [success=done ignore=ignore default=die]     pam_sss.so require_cert_auth ignore_authinfo_unavail   {include if "with-smartcard-required"}
+  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so uid >= 1000 quiet
+  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so                                       {exclude if "with-smartcard"}
+  auth        [default=2 ignore=ignore success=ok]         pam_localuser.so                                       {include if "with-smartcard"}
+  auth        [success=done authinfo_unavail=ignore ignore=ignore default=die] pam_sss.so try_cert_auth           {include if "with-smartcard"}
+  auth        sufficient                                   pam_unix.so {if not "without-nullok":nullok} try_first_pass
+  auth        requisite                                    pam_succeed_if.so uid >= 1000 quiet_success
+  auth        sufficient                                   pam_sss.so forward_pass
   auth        required                                     pam_deny.so
   ...
 
