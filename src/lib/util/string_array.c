@@ -87,7 +87,7 @@ string_array_count(char **array)
 }
 
 bool
-string_array_has_value(char **array, const char *value)
+string_array_has_value_safe(char **array, const char *value, size_t len)
 {
     int i;
 
@@ -96,12 +96,18 @@ string_array_has_value(char **array, const char *value)
     }
 
     for (i = 0; array[i] != NULL; i++) {
-        if (strcmp(value, array[i]) == 0) {
+        if (strncmp(value, array[i], len) == 0 && array[i][len] == '\0') {
             return true;
         }
     }
 
     return false;
+}
+
+bool
+string_array_has_value(char **array, const char *value)
+{
+    return string_array_has_value_safe(array, value, strlen(value));
 }
 
 char **

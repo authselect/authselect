@@ -18,6 +18,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <stdbool.h>
+#include <string.h>
+
 #include "tests/test_common.h"
 #include "lib/util/string_array.h"
 
@@ -160,6 +163,35 @@ void test_string_array_del_value__multiple_repeated(void **state)
     string_array_free(array);
 }
 
+void test_string_array_has_value_safe(void **state)
+{
+    const char *values[] = {"meeting", "species", "husband", "prosper", NULL};
+
+    assert_true(string_array_has_value_safe((char**)values,
+                                            "meeting",
+                                            strlen("meeting")));
+
+    assert_false(string_array_has_value_safe((char**)values,
+                                             "meeting cool",
+                                             strlen("meeting cool")));
+
+    assert_false(string_array_has_value_safe((char**)values,
+                                             "meet",
+                                             strlen("meet")));
+
+    assert_true(string_array_has_value_safe((char**)values,
+                                            "prosper",
+                                            strlen("prosper")));
+
+    assert_false(string_array_has_value_safe((char**)values,
+                                             "prosperity",
+                                             strlen("prosperity")));
+
+    assert_false(string_array_has_value_safe((char**)values,
+                                             "prosp",
+                                             strlen("prosp")));
+}
+
 int main(int argc, const char *argv[])
 {
 
@@ -168,7 +200,8 @@ int main(int argc, const char *argv[])
         cmocka_unit_test(test_string_array_del_value__single),
         cmocka_unit_test(test_string_array_del_value__single_repeated),
         cmocka_unit_test(test_string_array_del_value__multiple),
-        cmocka_unit_test(test_string_array_del_value__multiple_repeated)
+        cmocka_unit_test(test_string_array_del_value__multiple_repeated),
+        cmocka_unit_test(test_string_array_has_value_safe)
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);
