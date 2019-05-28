@@ -29,7 +29,7 @@ PROFILE FILES
 -------------
 Each profile consists of one or more of these files which provide
 a mandatory profile description and describe the changes that are
-done to the system. 
+done to the system.
 
 *README*::
     Description of the profile. The first line must be a name of the profile.
@@ -90,7 +90,7 @@ profile features.
 *{exclude if "feature"}*::
     Opposite to "include-if". Include the line where this operator is placed
     only if "feature" is not defined.
-    
+
 *{if "feature":true|false}*::
     If "feature" is defined, replace this operator with string "true", otherwise
     with string "false".
@@ -99,14 +99,33 @@ profile features.
     If "feature" is defined, replace this operator with string "true", otherwise
     with an empty string.
 
+It is also possible to use logical expression in conditional line instead of
+specifying single feature name. In this case the expression will evaluate to
+true or false and the conditional operator will act upon the result.
+
+The expression syntax consists of feature names (e.g. _"feature"_) which returns
+_true_ if the feature is defined or _false_ if it is not defined and from the
+following logical operators: _and_, _or_ and _not_. The expression may also
+be enclosed in parentheses and contain multiple subexpressions.
+
+For example:
+
+*{if "feature1" or "feature2":true}*::
+    If "feature1" or "feature2" is defined, replace this operator with string
+    "true", otherwise with an empty string.
+
 *{if not "feature":true|false}*::
     If "feature" is not defined, replace this operator with string "true",
     otherwise with string "false".
-    
+
 *{if not "feature":true}*::
     If "feature" is not defined, replace this operator with string "true",
     otherwise with an empty string.
-    
+
+*{if "feature1" and ("feature2" or "feature3"):true}*::
+    If "feature1" is defined, and one of "feature2" and "feature3" is defined
+    replace this operator with string "true", otherwise with an empty string.
+
 EXAMPLE
 ~~~~~~~
 Here is an example of using "if" operator. If "with-sudo" feature is enabled,
@@ -118,13 +137,31 @@ it will add "sss" to sudoers line.
   automount:  sss files
   services:   sss files
   sudoers:    files {if "with-sudo":sss}
-  
+
 Here is an example of "continue-if" and "include-if" operators. The resulting
 file will be empty unless "with-smartcard" feature is enabled. If it is enabled
 and also "with-faillock" feature is enabled, it will also enable support
 for pam_faillock.
 
   {continue if "with-smartcard"}
+  auth        required                                     pam_env.so
+  auth        required                                     pam_faildelay.so delay=2000000
+  auth        required                                     pam_faillock.so preauth silent deny=4 unlock_time=1200 {include if "with-faillock"}
+  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so uid >= 1000 quiet
+  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so
+  auth        sufficient                                   pam_unix.so nullok try_first_pass
+  auth        requisite                                    pam_succeed_if.so uid >= 1000 quiet_success
+  auth        sufficient                                   pam_sss.so forward_pass
+  auth        required                                     pam_faillock.so authfail deny=4 unlock_time=1200       {include if "with-faillock"}
+  auth        required                                     pam_deny.so
+  ...
+
+Here is an example of "continue-if" using logical expression. The file will
+be empty unless "with-smartcard" or "with-smartcard-required" is set. This
+will simplify the call of _authselect select_ command which does not have
+to include both features but only "with-smartcard-required" is necessary.
+
+  {continue if "with-smartcard" or "with-smartcard-required"}
   auth        required                                     pam_env.so
   auth        required                                     pam_faildelay.so delay=2000000
   auth        required                                     pam_faillock.so preauth silent deny=4 unlock_time=1200 {include if "with-faillock"}

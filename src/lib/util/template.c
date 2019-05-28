@@ -30,12 +30,14 @@
 #include "lib/util/selinux.h"
 #include "lib/util/string.h"
 #include "lib/util/string_array.h"
+#include "lib/util/evaluator.h"
 
 #define RE_MATCHES   9
 #define RE_VALUE     "([^{}|]{0,})"
 #define RE_FEATURE   "\"([^{}\"|]{1,})\""
-#define OP_RE_LINE   "(continue if|stop if|include if|exclude if) " RE_FEATURE
-#define OP_RE_IF     "(if|if not) " RE_FEATURE ":" RE_VALUE "(\\|" RE_VALUE "){0,1}"
+#define RE_EXPRESSION "([^{}|:]{1,})"
+#define OP_RE_LINE   "(continue if|stop if|include if|exclude if) " RE_EXPRESSION
+#define OP_RE_IF     "(if) " RE_EXPRESSION ":" RE_VALUE "(\\|" RE_VALUE "){0,1}"
 #define OP_RE        "\\{(" OP_RE_LINE "|" OP_RE_IF ")\\}"
 
 enum template_operator {
@@ -44,7 +46,6 @@ enum template_operator {
     OP_INCLUDE,
     OP_EXCLUDE,
     OP_IF,
-    OP_IF_NOT,
 
     OP_SENTINEL
 };
@@ -63,7 +64,6 @@ template_match_get_operator(const char *match_string,
         {"stop if", OP_STOP},
         {"include if", OP_INCLUDE},
         {"exclude if", OP_EXCLUDE},
-        {"if not", OP_IF_NOT},
         {"if", OP_IF},
         {NULL, OP_SENTINEL}
     };
@@ -90,13 +90,13 @@ template_match_get_string(const char *match_string,
 }
 
 static errno_t
-template_match_get_feature(const char *match_string,
-                           enum template_operator op,
-                           regmatch_t *matches,
-                           char **_feature)
+template_match_get_expression(const char *match_string,
+                              enum template_operator op,
+                              regmatch_t *matches,
+                              char **_expression)
 {
     regmatch_t *match = NULL;
-    char *feature;
+    char *expression;
 
     switch (op) {
     case OP_CONTINUE:
@@ -106,7 +106,6 @@ template_match_get_feature(const char *match_string,
         match = &matches[3];
         break;
     case OP_IF:
-    case OP_IF_NOT:
         match = &matches[5];
         break;
     case OP_SENTINEL:
@@ -114,12 +113,12 @@ template_match_get_feature(const char *match_string,
         return EINVAL;
     }
 
-    feature = template_match_get_string(match_string, match);
-    if (feature == NULL) {
+    expression = template_match_get_string(match_string, match);
+    if (expression == NULL) {
         return ENOMEM;
     }
 
-    *_feature = feature;
+    *_expression = expression;
 
     return EOK;
 }
@@ -145,7 +144,6 @@ template_match_get_values(const char *match_string,
         *_if_false = NULL;
         return EOK;
     case OP_IF:
-    case OP_IF_NOT:
         m_true = &matches[6];
         m_false = &matches[8];
         break;
@@ -176,14 +174,18 @@ template_match_replace(const char **features,
                        char *match_string,
                        regmatch_t *match,
                        enum template_operator op,
-                       const char *feature,
+                       const char *expression,
                        const char *if_true,
                        const char *if_false)
 {
     const char *value;
     bool enabled;
+    int ret;
 
-    enabled = string_array_has_value((char **)features, feature);
+    ret = evaluate(expression, features, &enabled);
+    if (ret != EOK) {
+        return ret;
+    }
 
     switch (op) {
     case OP_CONTINUE:
@@ -222,10 +224,6 @@ template_match_replace(const char **features,
         value = enabled ? if_true : if_false;
         string_replace_position(match_string, match->rm_so, match->rm_eo, value);
         break;
-    case OP_IF_NOT:
-        value = !enabled ? if_true : if_false;
-        string_replace_position(match_string, match->rm_so, match->rm_eo, value);
-        break;
     case OP_SENTINEL:
         ERROR("Invalid operator!");
         return EINVAL;
@@ -251,27 +249,27 @@ template_match_replace(const char **features,
  * Match 0: {continue if "with-smartcard"}
  * Match 1: continue if "with-smartcard"
  * Match 2: continue if
- * Match 3: with-smartcard
+ * Match 3: "with-smartcard"
  *
  * Match 0: {stop if "with-smartcard"}
  * Match 1: stop if "with-smartcard"
  * Match 2: stop if
- * Match 3: with-smartcard
+ * Match 3: "with-smartcard"
  *
  * Match 0: {exclude if "with-smartcard"}
  * Match 1: exclude if "with-smartcard"
  * Match 2: exclude if
- * Match 3: with-smartcard
+ * Match 3: "with-smartcard"
  *
  * Match 0: {include if "with-smartcard"}
  * Match 1: include if "with-smartcard"
  * Match 2: include if
- * Match 3: with-smartcard
+ * Match 3: "with-smartcard"
  *
  * Match 0: {if "with-smartcard":true|false}
  * Match 1: if "with-smartcard":true|false
  * Match 4: if
- * Match 5: with-smartcard
+ * Match 5: "with-smartcard"
  * Match 6: true
  * Match 7: |false
  * Match 8: false
@@ -279,19 +277,19 @@ template_match_replace(const char **features,
  * Match 0: {if "with-smartcard":true}
  * Match 1: if "with-smartcard":true
  * Match 4: if
- * Match 5: with-smartcard
+ * Match 5: "with-smartcard"
  * Match 6: true
  *
  * Match 0: {if not "with-smartcard":true}
  * Match 1: if not "with-smartcard":true
- * Match 4: if not
- * Match 5: with-smartcard
+ * Match 4: if
+ * Match 5: not "with-smartcard"
  * Match 6: true
  *
  * Match 0: {if not "with-smartcard":true|false}
  * Match 1: if not "with-smartcard":true|false
- * Match 4: if not
- * Match 5: with-smartcard
+ * Match 4: if
+ * Match 5: not "with-smartcard"
  * Match 6: true
  * Match 7: |false
  * Match 8: false
@@ -300,14 +298,14 @@ static errno_t
 template_process_matches(const char *match_string,
                          regmatch_t *m,
                          enum template_operator *_op,
-                         char **_feature,
+                         char **_expression,
                          char **_if_true,
                          char **_if_false)
 {
     enum template_operator op;
     char *if_false;
     char *if_true;
-    char *feature;
+    char *expression;
     errno_t ret;
 
     op = template_match_get_operator(match_string, &m[1]);
@@ -315,14 +313,14 @@ template_process_matches(const char *match_string,
         return EINVAL;
     }
 
-    ret = template_match_get_feature(match_string, op, m, &feature);
+    ret = template_match_get_expression(match_string, op, m, &expression);
     if (ret != EOK) {
         return ret;
     }
 
     ret = template_match_get_values(match_string, op, m, &if_true, &if_false);
     if (ret != EOK) {
-        free(feature);
+        free(expression);
         return ret;
     }
 
@@ -330,10 +328,10 @@ template_process_matches(const char *match_string,
         *_op = op;
     }
 
-    if (_feature != NULL) {
-        *_feature = feature;
+    if (_expression != NULL) {
+        *_expression = expression;
     } else {
-        free(feature);
+        free(expression);
     }
 
     if (_if_true != NULL) {
@@ -363,7 +361,7 @@ template_process_operators(const char **features,
     enum template_operator op;
     char *if_false = NULL;
     char *if_true = NULL;
-    char *feature = NULL;
+    char *expression = NULL;
     errno_t ret;
     int reret;
 
@@ -377,7 +375,7 @@ template_process_operators(const char **features,
 
     match_string = content;
     while ((reret = regexec(&regex, match_string, RE_MATCHES, m, 0)) == REG_NOERROR) {
-        ret = template_process_matches(match_string, m, &op, &feature,
+        ret = template_process_matches(match_string, m, &op, &expression,
                                        &if_true, &if_false);
         if (ret != EOK) {
             ERROR("Unable to process match [%d]: %s", ret, strerror(ret));
@@ -385,10 +383,10 @@ template_process_operators(const char **features,
         }
 
         ret = template_match_replace(features, match_string, &m[0], op,
-                                     feature, if_true, if_false);
+                                     expression, if_true, if_false);
 
-        if (feature != NULL) {
-            free(feature);
+        if (expression != NULL) {
+            free(expression);
         }
 
         if (if_true != NULL) {
@@ -494,13 +492,53 @@ template_generate_preamble(time_t timestamp)
     return preamble;
 }
 
+errno_t
+template_list_features_from_expression(const char *expression, char ***features)
+{
+    regmatch_t m[RE_MATCHES];
+    const char *match_string;
+    regex_t regex;
+    errno_t ret;
+    int reret;
+
+    reret = regcomp(&regex, "[^\"]{0,}" RE_FEATURE, REG_EXTENDED | REG_NEWLINE);
+    if (reret != REG_NOERROR) {
+        ERROR("Unable to compile regular expression: regex error %d", reret);
+        return EFAULT;
+    }
+
+    match_string = expression;
+    while ((reret = regexec(&regex, match_string, RE_MATCHES, m, 0)) == REG_NOERROR) {
+        if (reret != EOK) {
+            ERROR("Unable to find new match: regex error %d", reret);
+            ret = EFAULT;
+            goto done;
+        }
+        *features = string_array_add_value_safe(*features,
+                                                &match_string[m[1].rm_so],
+                                                m[1].rm_eo - m[1].rm_so,
+                                                true);
+        if (*features == NULL) {
+            ret = ENOMEM;
+            goto done;
+        }
+        match_string += m[0].rm_eo;
+    }
+
+    ret = EOK;
+
+done:
+    regfree(&regex);
+    return ret;
+}
+
 char **
 template_list_features(const char *template)
 {
     regmatch_t m[RE_MATCHES];
     const char *match_string;
     char **features;
-    char *feature;
+    char *expression;
     regex_t regex;
     errno_t ret;
     int reret;
@@ -523,15 +561,20 @@ template_list_features(const char *template)
 
     match_string = template;
     while ((reret = regexec(&regex, match_string, RE_MATCHES, m, 0)) == REG_NOERROR) {
-        ret = template_process_matches(match_string, m, NULL, &feature,
+        ret = template_process_matches(match_string, m, NULL, &expression,
                                        NULL, NULL);
         if (ret != EOK) {
             ERROR("Unable to process match [%d]: %s", ret, strerror(ret));
             goto done;
         }
 
-        features = string_array_add_value(features, feature, true);
-        free(feature);
+        if (expression) {
+            ret = template_list_features_from_expression(expression, &features);
+            free(expression);
+            if (ret != EOK) {
+                goto done;
+            }
+        }
 
         match_string += m[0].rm_eo;
     }
