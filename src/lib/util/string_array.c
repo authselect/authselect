@@ -118,7 +118,7 @@ string_array_add_value_safe(char **array,
 {
     size_t count;
 
-    if (unique && string_array_has_value(array, value)) {
+    if (unique && string_array_has_value_safe(array, value, len)) {
         return array;
     }
 
