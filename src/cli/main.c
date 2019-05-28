@@ -63,6 +63,7 @@ parse_profile_options(struct cli_cmdline *cmdline,
 {
     const char *profile_id;
     const char **features;
+    bool profile_skipped;
     errno_t ret;
     int i, j;
 
@@ -79,9 +80,19 @@ parse_profile_options(struct cli_cmdline *cmdline,
         return ENOMEM;
     }
 
-    for (i = 1, j = 0; i < cmdline->argc; i++) {
+    profile_skipped = false;
+    for (i = 0, j = 0; i < cmdline->argc; i++) {
         /* Skip options. */
         if (cmdline->argv[i][0] == '-') {
+            continue;
+        }
+
+        /* First free option is profile name. We must skip it. For example:
+         * authselect select sssd with-feature --force
+         * authselect select --force sssd with-feature
+         */
+        if (!profile_skipped) {
+            profile_skipped = true;
             continue;
         }
 
