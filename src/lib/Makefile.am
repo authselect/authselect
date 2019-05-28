@@ -20,6 +20,7 @@ noinst_HEADERS = \
     util/string_array.h \
     util/string.h \
     util/template.h \
+    util/evaluator.h \
     util/textfile.h \
     util/util.h \
     $(NULL)
@@ -63,6 +64,7 @@ libauthselect_la_SOURCES = \
     util/string_array.c \
     util/string.c \
     util/template.c \
+    util/evaluator.c \
     util/textfile.c \
     $(NULL)
 libauthselect_la_LIBADD = \

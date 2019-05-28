@@ -16,6 +16,7 @@ noinst_HEADERS = \
 
 TESTS = \
     test_util_string_array \
+    test_util_evaluator \
     test_util_template \
     $(NULL)
 
@@ -40,6 +41,7 @@ test_util_template_SOURCES = \
     ../lib/util/string.c \
     ../lib/util/string_array.c \
     ../lib/util/template.c \
+    ../lib/util/evaluator.c \
     ../lib/util/textfile.c \
     $(NULL)
 test_util_template_CFLAGS = \
@@ -47,5 +49,17 @@ test_util_template_CFLAGS = \
 test_util_template_LDADD = \
     $(CMOCKA_LIBS) \
     $(SELINUX_LIBS) \
+    $(top_builddir)/src/common/libcommon.la \
+    $(NULL)
+
+test_util_evaluator_SOURCES = \
+    test_util_evaluator.c \
+    ../lib/util/string_array.c \
+    ../lib/util/string.c \
+    $(NULL)
+test_util_evaluator_CFLAGS = \
+    $(AM_CFLAGS)
+test_util_evaluator_LDADD = \
+    $(CMOCKA_LIBS) \
     $(top_builddir)/src/common/libcommon.la \
     $(NULL)
