@@ -69,6 +69,19 @@ string_array_count(char **array);
  * Check if a value exist in NULL-terminated array.
  *
  * @param array NULL-terminated array.
+ * @param value Value to look for.
+ * @param len   Length of the string.
+ *
+ * @return True if the array contains the value and false otherwise.
+ */
+bool
+string_array_has_value_safe(char **array, const char *value, size_t len);
+
+/**
+ * Check if a value exist in NULL-terminated array.
+ *
+ * @param array NULL-terminated array.
+ * @param value Value to look for.
  *
  * @return True if the array contains the value and false otherwise.
  */
