@@ -195,6 +195,7 @@ find $RPM_BUILD_ROOT -name "*.a" -exec rm -f {} \;
 %{_bindir}/authselect
 %{_mandir}/man8/authselect.8*
 %{_mandir}/man7/authselect-migration.7*
+%{_sysconfdir}/bash_completion.d/authselect-completion.sh
 
 %global validfile %{_localstatedir}/lib/rpm-state/%{name}.config-valid
 
