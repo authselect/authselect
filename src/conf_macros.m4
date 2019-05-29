@@ -66,6 +66,10 @@ CONFIGURABLE_VALUE(pythonbin, pythonbin, PYTHON_BIN, PATH,
                    [Path to the python interpreter],
                    $bindir/python3)
 
+CONFIGURABLE_VALUE(completion-dir, completion_dir, BASH_COMPLETION_DIR, DIR,
+                   [Path to the directory where bash completion script should be stored],
+                   $sysconfdir/bash_completion.d)
+
 AC_ARG_ENABLE(
     [debug-template-regex],
     AS_HELP_STRING(

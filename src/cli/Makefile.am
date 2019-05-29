@@ -29,6 +29,9 @@ authselect_CFLAGS = \
     -DAUTHSELECT_BACKUP_DIR=\"$(authselect_backup_dir)\" \
     $(NULL)
 
-EXTRA_DIST = \
-    authselect-completion.sh \
+# Install bash completion script
+completion_dir=@BASH_COMPLETION_DIR@
+completiondir = $(completion_dir)
+dist_completion_DATA = \
+    $(top_srcdir)/src/cli/authselect-completion.sh \
     $(NULL)
