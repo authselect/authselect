@@ -83,6 +83,12 @@ parse_profile_options(struct cli_cmdline *cmdline,
     profile_skipped = false;
     for (i = 0, j = 0; i < cmdline->argc; i++) {
         /* Skip options. */
+        if (strcmp(cmdline->argv[i], "--backup") == 0) {
+            /* Skip also the next parameter which is the backup name. */
+            i++;
+            continue;
+        }
+
         if (cmdline->argv[i][0] == '-') {
             continue;
         }
