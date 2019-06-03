@@ -87,7 +87,7 @@ libauthselect_la_CFLAGS = \
     $(NULL)
 libauthselect_la_LDFLAGS = \
     -Wl,--version-script=$(srcdir)/authselect.exports \
-    -version-info 2:0:1
+    -version-info 3:0:2
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = \
