@@ -85,7 +85,6 @@ endif::[]
 |*Authconfig options* |*Authselect profile feature*
 |--enablesmartcard    |with-smartcard
 |--enablefingerprint  |with-fingerprint
-|--enableecryptfs     |with-ecryptfs
 |--enablemkhomedir    |with-mkhomedir
 |--enablefaillock     |with-faillock
 |--enablepamaccess    |with-pamaccess
@@ -108,8 +107,8 @@ authselect select sssd with-faillock
 authconfig --enablesssd --enablesssdauth --enablesmartcard --smartcardmodule=sssd --updateall
 authselect select sssd with-smartcard
 
-authconfig --enableecryptfs --enablepamaccess --updateall
-authselect select sssd with-ecryptfs with-pamaccess
+authconfig --enablepamaccess --updateall
+authselect select sssd with-pamaccess
 
 authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator --updateall
 realm join -U Administrator --client-software=winbind WINBINDDOMAIN
