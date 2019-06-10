@@ -360,6 +360,10 @@ file_mktmp_for(const char *path, mode_t mode, char **_tmpfile)
     fd = mkstemp(tmpfile);
     if (fd == -1) {
         ret = errno;
+        /* To silence static analyzers that assumes that errno can be 0 here. */
+        if (ret == EOK) {
+            ret = EINVAL;
+        }
         goto done;
     }
 

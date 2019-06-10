@@ -70,8 +70,12 @@ authselect_profile_open_location(const char *path,
 
     dirfd = open(path, O_DIRECTORY | O_RDONLY);
     if (dirfd == -1) {
-        /* To silence static analyzers that expect errno == 0. */
-        ret = errno == EOK ? EINVAL : errno;
+        ret = errno;
+        /* To silence static analyzers that assumes that errno can be 0 here. */
+        if (ret == EOK) {
+            ret = EINVAL;
+        }
+
         if (ret == ENOENT) {
             return ENOENT;
         }

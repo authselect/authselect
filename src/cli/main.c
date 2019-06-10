@@ -837,10 +837,12 @@ static errno_t backup_list(struct cli_cmdline *cmdline)
         }
     }
 
+    ret = EOK;
+
 done:
     authselect_array_free(names);
 
-    return EOK;
+    return ret;
 }
 
 static errno_t backup_remove(struct cli_cmdline *cmdline)

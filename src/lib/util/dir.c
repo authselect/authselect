@@ -153,14 +153,24 @@ dir_open(const char *path,
 
     dirstream = opendir(path);
     if (dirstream == NULL) {
-        /* To silence static analyzers that expect errno == 0. */
-        return errno == EOK ? EINVAL : errno;
+        ret = errno;
+        /* To silence static analyzers that assumes that errno can be 0 here. */
+        if (ret == EOK) {
+            ret = EINVAL;
+        }
+
+        return ret;
     }
 
     /* Descriptor is closed when closedir() is called. */
     descriptor = dirfd(dirstream);
     if (descriptor == -1) {
         ret = errno;
+        /* To silence static analyzers that assumes that errno can be 0 here. */
+        if (ret == EOK) {
+            ret = EINVAL;
+        }
+
         closedir(dirstream);
         return ret;
     }
@@ -240,6 +250,11 @@ dir_list(const char *path,
         dupfd = dup(dirfd);
         if (dupfd == -1) {
             ret = errno;
+            /* To silence static analyzers that assumes that errno
+             * can be 0 here. */
+            if (ret == EOK) {
+                ret = EINVAL;
+            }
             goto done;
         }
 
@@ -253,6 +268,10 @@ dir_list(const char *path,
 done:
     if (ret == EOK && _dirfd != NULL)  {
         closedir(dirstream);
+    }
+
+    if (ret != EOK) {
+        string_array_free(items);
     }
 
     return ret;
