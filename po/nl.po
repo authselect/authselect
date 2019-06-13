@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2019-02-26 10:26+0100\n"
+"POT-Creation-Date: 2019-06-13 11:08+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -125,7 +125,7 @@ msgid "Unable to write to [%s] [%d]: %s"
 msgstr "Kan niet schrijven naar [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:377 src/lib/authselect_profile.c:446
-#: src/lib/files/system.c:673
+#: src/lib/files/system.c:676
 #, c-format
 msgid "There is no filename in [%s]"
 msgstr "Er is geen bestandsnaam in [%s]"
@@ -265,7 +265,7 @@ msgid "[%s] was not created by authselect!"
 msgstr "[%s] werd niet aangemaakt door authselect!"
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:152
-#: src/lib/files/system.c:573
+#: src/lib/files/system.c:576
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
 msgstr "Fout bij poging toegang te krijgen tot bestand [%s] [%d]: %s"
@@ -297,18 +297,18 @@ msgid "Unable to read file [%s/%s] [%d]: %s"
 msgstr "Kan bestand [%s/%s] [%d] niet lezen: %s"
 
 #: src/lib/files/system.c:112 src/lib/files/system.c:170
-#: src/lib/util/template.c:374 src/lib/util/template.c:521
+#: src/lib/util/template.c:374 src/lib/util/template.c:519
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr "Kan reguliere expressie niet complileren: regex error %d"
 
 #: src/lib/files/system.c:130 src/lib/files/system.c:195
-#: src/lib/util/template.c:418 src/lib/util/template.c:542
+#: src/lib/util/template.c:418 src/lib/util/template.c:540
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "Kan string niet zoeken: regex error %d"
 
-#: src/lib/files/system.c:272 src/lib/files/system.c:501
+#: src/lib/files/system.c:272 src/lib/files/system.c:504
 #, c-format
 msgid "Unable to read [%s] [%d]: %s"
 msgstr "Kan [%s] [%d] niet lezen: %s"
@@ -323,106 +323,106 @@ msgstr "Kan nsswitch.conf [%d] niet genereren: %s"
 msgid "Unable to generate files [%d]: %s"
 msgstr "Kan bestanden [%d] niet aanmaken: %s"
 
-#: src/lib/files/system.c:368
+#: src/lib/files/system.c:369
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "Naar tijdelijk bestand schrijven voor [%s]"
 
-#: src/lib/files/system.c:372
+#: src/lib/files/system.c:373
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
 msgstr "Kan niet naar tijdelijk bestand [%s] [%d] schrijven: %s"
 
-#: src/lib/files/system.c:377
+#: src/lib/files/system.c:378
 #, c-format
 msgid "Temporary file is named [%s]"
 msgstr "Tijdelijk bestand heeft de naam [%s]"
 
-#: src/lib/files/system.c:388
+#: src/lib/files/system.c:389
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "Herbenoemen van [%s] naar [%s]"
 
-#: src/lib/files/system.c:393
+#: src/lib/files/system.c:394
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "Kan [%s] niet herbenoemen naar [%s] [%d]: %s"
 
-#: src/lib/files/system.c:493
+#: src/lib/files/system.c:496
 #, c-format
 msgid "Validating file [%s]"
 msgstr "Bestand [%s] wordt gevalideerd"
 
-#: src/lib/files/system.c:498 src/lib/util/file.c:120
+#: src/lib/files/system.c:501 src/lib/util/file.c:120
 #, c-format
 msgid "[%s] does not exist!"
 msgstr "[%s] bestaat niet!"
 
-#: src/lib/files/system.c:504
+#: src/lib/files/system.c:507
 #, c-format
 msgid "Unable to validate file [%s] [%d]: %s"
 msgstr "Kan bestand [%s] [%d] niet valideren: %s"
 
-#: src/lib/files/system.c:511
+#: src/lib/files/system.c:514
 #, c-format
 msgid "Comparing content against [%s]"
 msgstr "Inhoud vergelijken met [%s]"
 
-#: src/lib/files/system.c:515
+#: src/lib/files/system.c:518
 msgid "Comparing content against current profile"
 msgstr "Inhoud vergelijken met het huidige profiel"
 
-#: src/lib/files/system.c:521
+#: src/lib/files/system.c:524
 #, c-format
 msgid "[%s] has unexpected content!"
 msgstr "[%s] heeft een onverwachte inhoud!"
 
-#: src/lib/files/system.c:528
+#: src/lib/files/system.c:531
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
 msgstr "Kan bestandsmodus  van [%s] [%d] niet controleren: %s"
 
-#: src/lib/files/system.c:550
+#: src/lib/files/system.c:553
 #, c-format
 msgid "File [%s] was modified outside authselect!"
 msgstr "Bestand [%s] werd buiten authselect veranderd!"
 
-#: src/lib/files/system.c:569
+#: src/lib/files/system.c:572
 #, c-format
 msgid "File [%s] is still present"
 msgstr "Bestand [%s] is nog aanwezig"
 
-#: src/lib/files/system.c:596
+#: src/lib/files/system.c:599
 #, c-format
 msgid "Unable to create backup directory [%s/%s] [%d]: %s"
 msgstr "Kan backup map [%s/%s] [%d] niet aanmaken: %s"
 
-#: src/lib/files/system.c:622
+#: src/lib/files/system.c:625
 #, c-format
 msgid "Unable to create backup directory [%s] [%d]: %s"
 msgstr "Kan backup map [%s] [%d] niet aanmaken: %s"
 
-#: src/lib/files/system.c:643
+#: src/lib/files/system.c:646
 #, c-format
 msgid "Creating temporary directory at [%s]"
 msgstr "Tijdelijke map aanmaken in [%s]"
 
-#: src/lib/files/system.c:666
+#: src/lib/files/system.c:669
 #, c-format
 msgid "Unable to create backup directory [%d]: %s"
 msgstr "Kan backup map [%d] niet aanmaken: %s"
 
-#: src/lib/files/system.c:678
+#: src/lib/files/system.c:681
 #, c-format
 msgid "Copying [%s] to [%s/%s]"
 msgstr "Kopiëren van [%s] naar [%s/%s]"
 
-#: src/lib/files/system.c:682
+#: src/lib/files/system.c:685
 #, c-format
 msgid "File [%s] does not exist"
 msgstr "Bestand [%s] bestaat niet"
 
-#: src/lib/files/system.c:684
+#: src/lib/files/system.c:687
 #, c-format
 msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
 msgstr "Kan [%s] niet kopiëren naar [%s/%s] [%d]: %s"
@@ -653,7 +653,7 @@ msgstr "Kan fscreate selinux context niet herstellen!"
 msgid "Invalid operator!"
 msgstr "Ongeldige operator!"
 
-#: src/lib/util/template.c:383 src/lib/util/template.c:531
+#: src/lib/util/template.c:383 src/lib/util/template.c:529
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "Kan match [%d] niet verwerken: %s"
@@ -668,11 +668,11 @@ msgstr "Kan operator [%d] niet verwerken: %s"
 msgid "Unable to generate template [%d]: %s"
 msgstr "Kan template niet genereren [%d]: %s"
 
-#: src/lib/util/template.c:478
+#: src/lib/util/template.c:476
 msgid "Unable to get current time!"
 msgstr "Kan huidige tijd niet krijgen!"
 
-#: src/lib/util/template.c:492
+#: src/lib/util/template.c:490
 msgid "Unable to create message!"
 msgstr "Kaan geen boodschap aanmaken!"
 
@@ -814,59 +814,59 @@ msgid "At least one option is required!\n"
 "\n"
 msgstr "Ten minste één optie is vereist!\n"
 
-#: src/cli/main.c:70 src/cli/main.c:362
+#: src/cli/main.c:71 src/cli/main.c:379
 msgid "Profile identifier."
 msgstr "Profiel-ID."
 
-#: src/cli/main.c:73 src/cli/main.c:238 src/cli/main.c:287 src/cli/main.c:322
-#: src/cli/main.c:365 src/cli/main.c:515 src/cli/main.c:537 src/cli/main.c:577
+#: src/cli/main.c:74 src/cli/main.c:255 src/cli/main.c:304 src/cli/main.c:339
+#: src/cli/main.c:382 src/cli/main.c:532 src/cli/main.c:554 src/cli/main.c:594
 msgid "Unable to parse command arguments"
 msgstr "Kan commandoargumenten niet ontleden"
 
-#: src/cli/main.c:114
+#: src/cli/main.c:131
 msgid "Enforce changes"
 msgstr "Forceer veranderingen"
 
-#: src/cli/main.c:115
+#: src/cli/main.c:132
 msgid "Backup system files before activating profile"
 msgstr ""
 "Maak een backup van systeembestanden voordat profiel geactiveerd wordt"
 
-#: src/cli/main.c:115
+#: src/cli/main.c:132
 msgid "NAME"
 msgstr "NAAM"
 
-#: src/cli/main.c:116
+#: src/cli/main.c:133
 msgid "Do not backup system files when --force is set"
 msgstr "Maak geen backup van systeembestandeb als --force ingesteld is"
 
-#: src/cli/main.c:117
+#: src/cli/main.c:134
 msgid "Do not print profile requirements"
 msgstr "Print geen profielvereisten"
 
-#: src/cli/main.c:128 src/cli/main.c:337 src/cli/main.c:371 src/cli/main.c:398
+#: src/cli/main.c:145 src/cli/main.c:354 src/cli/main.c:388 src/cli/main.c:415
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "Kan profielinformatie [%d] niet verkrijgen: %s"
 
-#: src/cli/main.c:136 src/cli/main.c:405
+#: src/cli/main.c:153 src/cli/main.c:422
 msgid "Unable to read profile requirements!"
 msgstr "Kan profielvereisten niet lezen!"
 
-#: src/cli/main.c:143
+#: src/cli/main.c:160
 msgid "Unable to obtain nsswitch maps!"
 msgstr "Kan nsswitch mappen niet verkrijgen!"
 
-#: src/cli/main.c:151
+#: src/cli/main.c:168
 msgid "Unable to backup system files!\n"
 msgstr "Kan geen backup maken van systeembestanden!\n"
 
-#: src/cli/main.c:155
+#: src/cli/main.c:172
 #, c-format
 msgid "Backup stored at %s\n"
 msgstr "Back-up is opgeslagen in %s\n"
 
-#: src/cli/main.c:161
+#: src/cli/main.c:178
 msgid ""
 "\n"
 "Some unexpected changes to the configuration were detected.\n"
@@ -876,41 +876,41 @@ msgstr ""
 "Er werden in de configuratie sommige onverwachte veranderingen ontdekt.\n"
 "Gebruik --force parameter als je deze veranderingen wilt overschrijven.\n"
 
-#: src/cli/main.c:166
+#: src/cli/main.c:183
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "Kan profiel [%d] niet activeren: %s\n"
 
-#: src/cli/main.c:171
+#: src/cli/main.c:188
 #, c-format
 msgid "Profile \"%s\" was selected.\n"
 msgstr "Profiel \"%s\" werd geselecteerd.\n"
 
-#: src/cli/main.c:174
+#: src/cli/main.c:191
 msgid "The following nsswitch maps are overwritten by the profile:\n"
 msgstr "De volgende nsswitch kaarten zijn overschreven door het profiel:\n"
 
-#: src/cli/main.c:177
+#: src/cli/main.c:194
 #, c-format
 msgid "- %s\n"
 msgstr "- %s\n"
 
-#: src/cli/main.c:182
+#: src/cli/main.c:199
 #, c-format
 msgid "\n"
 "%s\n"
 msgstr "\n"
 "%s\n"
 
-#: src/cli/main.c:205
+#: src/cli/main.c:222
 msgid "Changes were successfully applied.\n"
 msgstr "De veranderingen werden met succes toegepast.\n"
 
-#: src/cli/main.c:208 src/cli/main.c:244
+#: src/cli/main.c:225 src/cli/main.c:261
 msgid "No existing configuration detected.\n"
 msgstr "Er werd geen bestaande configuratie gedetecteerd.\n"
 
-#: src/cli/main.c:211
+#: src/cli/main.c:228
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
@@ -918,39 +918,39 @@ msgstr ""
 "In de configuratie zijn enkele onverwachte verandering ontdekt. Gebruik in "
 "plaats daarvan het 'select' commando.\n"
 
-#: src/cli/main.c:215
+#: src/cli/main.c:232
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr "Kan veranderingen [%d] niet toepassen: %s\n"
 
-#: src/cli/main.c:232
+#: src/cli/main.c:249
 msgid "Print command parameters instead of formatted output"
 msgstr "Print commandoparameters in plaats van geformatteerde output"
 
-#: src/cli/main.c:247
+#: src/cli/main.c:264
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "Kan huidige configuratie [%d] niet verkrijgen: %s"
 
-#: src/cli/main.c:261
+#: src/cli/main.c:278
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "Profiel-ID: %s\n"
 
-#: src/cli/main.c:262
+#: src/cli/main.c:279
 msgid "Enabled features:"
 msgstr "Aangezette features:"
 
-#: src/cli/main.c:265
+#: src/cli/main.c:282
 msgid " None\n"
 msgstr "Geen\n"
 
-#: src/cli/main.c:293
+#: src/cli/main.c:310
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "Kan huidige configuratie [%d] niet testen: %s"
 
-#: src/cli/main.c:300
+#: src/cli/main.c:317
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
@@ -958,63 +958,63 @@ msgstr ""
 "Huidige configuratie is niet geldig. Het is waarschijnlijk buiten authselect "
 "veranderd."
 
-#: src/cli/main.c:305
+#: src/cli/main.c:322
 msgid "Current configuration is valid."
 msgstr "Huidige configuratie is geldig."
 
-#: src/cli/main.c:328
+#: src/cli/main.c:345
 msgid "Unable to get profile list!"
 msgstr "Kan profiellijst niet verkrijgen!"
 
-#: src/cli/main.c:443
+#: src/cli/main.c:460
 msgid "Print content of all files"
 msgstr "Druk de inhoud van alle bestanden af"
 
-#: src/cli/main.c:444
+#: src/cli/main.c:461
 msgid "Print nsswitch.conf content"
 msgstr "Druk de inhoud van nsswitch.conf af"
 
-#: src/cli/main.c:445
+#: src/cli/main.c:462
 msgid "Print system-auth content"
 msgstr "Druk inhoud van system-auth af"
 
-#: src/cli/main.c:446
+#: src/cli/main.c:463
 msgid "Print password-auth content"
 msgstr "Druk inhoud van password-auth af"
 
-#: src/cli/main.c:447
+#: src/cli/main.c:464
 msgid "Print smartcard-auth content"
 msgstr "Druk inhoud van smartcard-auth af"
 
-#: src/cli/main.c:448
+#: src/cli/main.c:465
 msgid "Print fingerprint-auth content"
 msgstr "Druk inhoud van fingerprint-auth af"
 
-#: src/cli/main.c:449
+#: src/cli/main.c:466
 msgid "Print postlogin content"
 msgstr "Druk inhoud van postlogin af"
 
-#: src/cli/main.c:450
+#: src/cli/main.c:467
 msgid "Print dconf database content"
 msgstr "Druk inhoud van dconf database af"
 
-#: src/cli/main.c:451
+#: src/cli/main.c:468
 msgid "Print dconf lock content"
 msgstr "Druk inhoud van dconf lock af"
 
-#: src/cli/main.c:478
+#: src/cli/main.c:495
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "Kan gegenereerde inhoud [%d] niet verkrijgen: %s"
 
-#: src/cli/main.c:497
+#: src/cli/main.c:514
 #, c-format
 msgid "File %s: Empty\n"
 "\n"
 msgstr "Bestand %s: Leeg\n"
 "\n"
 
-#: src/cli/main.c:499
+#: src/cli/main.c:516
 #, c-format
 msgid "File %s:\n"
 "%s\n"
@@ -1023,37 +1023,37 @@ msgstr "Bestand %s:\n"
 "%s\n"
 "\n"
 
-#: src/cli/main.c:512
+#: src/cli/main.c:529
 msgid "Feature to enable."
 msgstr "Eigenschap die aangezet kan worden."
 
-#: src/cli/main.c:521
+#: src/cli/main.c:538
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "Kan eigenschap [%d] niet aanzetten: %s\n"
 
-#: src/cli/main.c:534
+#: src/cli/main.c:551
 msgid "Feature to disable."
 msgstr "Eigenschap die uitgezet kan worden."
 
-#: src/cli/main.c:543
+#: src/cli/main.c:560
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "Kan eigenschap [%d] niet uitzetten: %s\n"
 
-#: src/cli/main.c:562
+#: src/cli/main.c:579
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr ""
 "Maak nieuw profiel aan als leveranciersprofiel in plaats van aangepast "
 "profiel"
 
-#: src/cli/main.c:563
+#: src/cli/main.c:580
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr ""
 "ID van een profiel dat gebruikt moet worden als basis voor het nieuwe "
 "profiel"
 
-#: src/cli/main.c:564
+#: src/cli/main.c:581
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1061,95 +1061,95 @@ msgstr ""
 "Baseer nieuw profiel op een standaard profiel zelfs als een "
 "leveranciersprofiel met dezelfde naam bestaat"
 
-#: src/cli/main.c:565
+#: src/cli/main.c:582
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr ""
 "Maak symbolische link naar meta bestanden van het basis profiel in plaats "
 "van ze te kopiëren"
 
-#: src/cli/main.c:566
+#: src/cli/main.c:583
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr ""
 "Maak symbolische link naar nsswitch bestanden van het basis profiel in "
 "plaats van ze te kopiëren"
 
-#: src/cli/main.c:567
+#: src/cli/main.c:584
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr ""
 "Maak symbolische link naar pam bestanden van het basis profiel in plaats van "
 "ze te kopiëren"
 
-#: src/cli/main.c:568
+#: src/cli/main.c:585
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
 "Maak symbolische link naar dconf bestanden van het basis profiel in plaats "
 "van ze te kopiëren"
 
-#: src/cli/main.c:569
+#: src/cli/main.c:586
 msgid "Symlink specific file (can be set multiple times)"
 msgstr ""
 "Maak symbolische link naar specifiek bestand (kan meerdere keren ingesteld "
 "worden)"
 
-#: src/cli/main.c:574
+#: src/cli/main.c:591
 msgid "New profile name."
 msgstr "Nieuwe profiel naam."
 
-#: src/cli/main.c:584
+#: src/cli/main.c:601
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "Kan nieuw profiel [%d] niet aanmaken: %s\n"
 
-#: src/cli/main.c:588
+#: src/cli/main.c:605
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "Nieuw profiel is aangemaakt in %s\n"
 
-#: src/cli/main.c:622
+#: src/cli/main.c:639
 msgid "Select profile"
 msgstr "Selecteer profiel"
 
-#: src/cli/main.c:623
+#: src/cli/main.c:640
 msgid "Regenerate configuration for currently selected command"
 msgstr "Regenereer configuratie voor huidig geselecteerd commanddo"
 
-#: src/cli/main.c:624
+#: src/cli/main.c:641
 msgid "List available profiles"
 msgstr "Toon beschikbare profielen"
 
-#: src/cli/main.c:625
+#: src/cli/main.c:642
 msgid "Show profile information"
 msgstr "Laat profielinformatie zien"
 
-#: src/cli/main.c:626
+#: src/cli/main.c:643
 msgid "Print profile requirements"
 msgstr "Print profielvereisten"
 
-#: src/cli/main.c:627
+#: src/cli/main.c:644
 msgid "Get identifier of currently selected profile"
 msgstr "Haal identificatie van huidig geselecteerde profiel op"
 
-#: src/cli/main.c:628
+#: src/cli/main.c:645
 msgid "Check if the current configuration is valid"
 msgstr "Check of de huidige configuratie geldig is"
 
-#: src/cli/main.c:629
+#: src/cli/main.c:646
 msgid "Print changes that would be otherwise written"
 msgstr "Print veranderingen die anders overschreven zouden worden."
 
-#: src/cli/main.c:630
+#: src/cli/main.c:647
 msgid "Enable feature in currently selected profile"
 msgstr "Zet functie aan in het huidig geselecteerde profiel"
 
-#: src/cli/main.c:631
+#: src/cli/main.c:648
 msgid "Disable feature in currently selected profile"
 msgstr "Zet functie uit in het huidig geselecteerde profiel"
 
-#: src/cli/main.c:632
+#: src/cli/main.c:649
 msgid "Create new authselect profile"
 msgstr "Maak een nieuw authselect profiel aan"
 
-#: src/cli/main.c:645
+#: src/cli/main.c:662
 msgid "Authselect can only be run as root!\n"
 msgstr "Authselect kan alleen als root uitgevoerd worden!\n"
 

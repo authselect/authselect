@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2019-02-26 10:26+0100\n"
+"POT-Creation-Date: 2019-06-13 11:08+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -123,7 +123,7 @@ msgid "Unable to write to [%s] [%d]: %s"
 msgstr "[%s] nem írható [%d]: %s"
 
 #: src/lib/authselect_profile.c:377 src/lib/authselect_profile.c:446
-#: src/lib/files/system.c:673
+#: src/lib/files/system.c:676
 #, c-format
 msgid "There is no filename in [%s]"
 msgstr "Nincs itt fájlnév: [%s]"
@@ -263,7 +263,7 @@ msgid "[%s] was not created by authselect!"
 msgstr ""
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:152
-#: src/lib/files/system.c:573
+#: src/lib/files/system.c:576
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
 msgstr "Hiba a(z) [%s] fájl elérésekor [%d]: %s"
@@ -295,18 +295,18 @@ msgid "Unable to read file [%s/%s] [%d]: %s"
 msgstr "[%s/%s] fájl nem olvasható [%d]: %s"
 
 #: src/lib/files/system.c:112 src/lib/files/system.c:170
-#: src/lib/util/template.c:374 src/lib/util/template.c:521
+#: src/lib/util/template.c:374 src/lib/util/template.c:519
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr "A reguláris kifejezés nem fordítható le: regex hiba %d"
 
 #: src/lib/files/system.c:130 src/lib/files/system.c:195
-#: src/lib/util/template.c:418 src/lib/util/template.c:542
+#: src/lib/util/template.c:418 src/lib/util/template.c:540
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "A karakterlánc nem kereshető ki: regex hiba %d"
 
-#: src/lib/files/system.c:272 src/lib/files/system.c:501
+#: src/lib/files/system.c:272 src/lib/files/system.c:504
 #, c-format
 msgid "Unable to read [%s] [%d]: %s"
 msgstr "[%s] nem olvasható [%d]: %s"
@@ -321,106 +321,106 @@ msgstr "Nem állítható elő az nsswitch.conf [%d]: %s"
 msgid "Unable to generate files [%d]: %s"
 msgstr "A fájlok nem állíthatóak elő [%d]: %s"
 
-#: src/lib/files/system.c:368
+#: src/lib/files/system.c:369
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "Ideiglenes fájl írása ehhez: [%s]"
 
-#: src/lib/files/system.c:372
+#: src/lib/files/system.c:373
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
 msgstr "[%s] ideiglenes fájl nem írható [%d]: %s"
 
-#: src/lib/files/system.c:377
+#: src/lib/files/system.c:378
 #, c-format
 msgid "Temporary file is named [%s]"
 msgstr "Az ideiglenes fájl neve: [%s]"
 
-#: src/lib/files/system.c:388
+#: src/lib/files/system.c:389
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "[%s] átnevezése erre: [%s]"
 
-#: src/lib/files/system.c:393
+#: src/lib/files/system.c:394
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "[%s] nem nevezhető át erre: [%s] [%d]: %s"
 
-#: src/lib/files/system.c:493
+#: src/lib/files/system.c:496
 #, c-format
 msgid "Validating file [%s]"
 msgstr "[%s] fájl érvényesítése"
 
-#: src/lib/files/system.c:498 src/lib/util/file.c:120
+#: src/lib/files/system.c:501 src/lib/util/file.c:120
 #, c-format
 msgid "[%s] does not exist!"
 msgstr "[%s] nem létezik!"
 
-#: src/lib/files/system.c:504
+#: src/lib/files/system.c:507
 #, c-format
 msgid "Unable to validate file [%s] [%d]: %s"
 msgstr "[%s] nem érvényesíthető [%d]: %s"
 
-#: src/lib/files/system.c:511
+#: src/lib/files/system.c:514
 #, c-format
 msgid "Comparing content against [%s]"
 msgstr "Tartalom összehasonlítása ezzel: [%s]"
 
-#: src/lib/files/system.c:515
+#: src/lib/files/system.c:518
 msgid "Comparing content against current profile"
 msgstr "Tartalom összehasonlítása a jelenlegi profillal"
 
-#: src/lib/files/system.c:521
+#: src/lib/files/system.c:524
 #, c-format
 msgid "[%s] has unexpected content!"
 msgstr "[%s] váratlan tartalommal rendelkezik!"
 
-#: src/lib/files/system.c:528
+#: src/lib/files/system.c:531
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
 msgstr "[%s] fájl módja nem ellenőrizhető [%d]: %s"
 
-#: src/lib/files/system.c:550
+#: src/lib/files/system.c:553
 #, c-format
 msgid "File [%s] was modified outside authselect!"
 msgstr "[%s] fájl az authselecten kívül lett módosítva!"
 
-#: src/lib/files/system.c:569
+#: src/lib/files/system.c:572
 #, c-format
 msgid "File [%s] is still present"
 msgstr "[%s] fájl még mindig jelen van"
 
-#: src/lib/files/system.c:596
+#: src/lib/files/system.c:599
 #, c-format
 msgid "Unable to create backup directory [%s/%s] [%d]: %s"
 msgstr "A biztonsági mentés könyvtár nem hozható létre: [%s/%s] [%d]: %s"
 
-#: src/lib/files/system.c:622
+#: src/lib/files/system.c:625
 #, c-format
 msgid "Unable to create backup directory [%s] [%d]: %s"
 msgstr "A biztonsági mentés könyvtár nem hozható létre: [%s] [%d]: %s"
 
-#: src/lib/files/system.c:643
+#: src/lib/files/system.c:646
 #, c-format
 msgid "Creating temporary directory at [%s]"
 msgstr "Ideiglenes könyvtár létrehozása itt: [%s]"
 
-#: src/lib/files/system.c:666
+#: src/lib/files/system.c:669
 #, c-format
 msgid "Unable to create backup directory [%d]: %s"
 msgstr "A biztonsági mentés könyvtár nem hozható létre [%d]: %s"
 
-#: src/lib/files/system.c:678
+#: src/lib/files/system.c:681
 #, c-format
 msgid "Copying [%s] to [%s/%s]"
 msgstr "[%s] másolása ide: [%s/%s]"
 
-#: src/lib/files/system.c:682
+#: src/lib/files/system.c:685
 #, c-format
 msgid "File [%s] does not exist"
 msgstr "A(z) [%s] fájl nem létezik"
 
-#: src/lib/files/system.c:684
+#: src/lib/files/system.c:687
 #, c-format
 msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
 msgstr "[%s] nem másolható ide: [%s/%s] [%d]: %s"
@@ -651,7 +651,7 @@ msgstr ""
 msgid "Invalid operator!"
 msgstr "Érvénytelen operátor!"
 
-#: src/lib/util/template.c:383 src/lib/util/template.c:531
+#: src/lib/util/template.c:383 src/lib/util/template.c:529
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "Az illeszkedés nem dolgozható fel [%d]: %s"
@@ -666,11 +666,11 @@ msgstr "Az operátor nem dolgozható fel [%d]: %s"
 msgid "Unable to generate template [%d]: %s"
 msgstr "A sablon nem állítható elő [%d]: %s"
 
-#: src/lib/util/template.c:478
+#: src/lib/util/template.c:476
 msgid "Unable to get current time!"
 msgstr "A jelenlegi idő nem kérhető le!"
 
-#: src/lib/util/template.c:492
+#: src/lib/util/template.c:490
 msgid "Unable to create message!"
 msgstr "Az üzenet nem hozható létre!"
 
@@ -813,58 +813,58 @@ msgid "At least one option is required!\n"
 msgstr "Legalább egy kapcsoló szükséges!\n"
 "\n"
 
-#: src/cli/main.c:70 src/cli/main.c:362
+#: src/cli/main.c:71 src/cli/main.c:379
 msgid "Profile identifier."
 msgstr "Profilazonosító."
 
-#: src/cli/main.c:73 src/cli/main.c:238 src/cli/main.c:287 src/cli/main.c:322
-#: src/cli/main.c:365 src/cli/main.c:515 src/cli/main.c:537 src/cli/main.c:577
+#: src/cli/main.c:74 src/cli/main.c:255 src/cli/main.c:304 src/cli/main.c:339
+#: src/cli/main.c:382 src/cli/main.c:532 src/cli/main.c:554 src/cli/main.c:594
 msgid "Unable to parse command arguments"
 msgstr "A parancs argumentumai nem dolgozhatóak fel"
 
-#: src/cli/main.c:114
+#: src/cli/main.c:131
 msgid "Enforce changes"
 msgstr "Változások kényszerítése"
 
-#: src/cli/main.c:115
+#: src/cli/main.c:132
 msgid "Backup system files before activating profile"
 msgstr "Rendszerfájlok biztonsági mentése a profil aktiválása előtt"
 
-#: src/cli/main.c:115
+#: src/cli/main.c:132
 msgid "NAME"
 msgstr "NÉV"
 
-#: src/cli/main.c:116
+#: src/cli/main.c:133
 msgid "Do not backup system files when --force is set"
 msgstr "Ne mentse a rendszerfájlokat ha a --force kapcsoló meg van adva"
 
-#: src/cli/main.c:117
+#: src/cli/main.c:134
 msgid "Do not print profile requirements"
 msgstr "Ne írja ki a profilkövetelményeket"
 
-#: src/cli/main.c:128 src/cli/main.c:337 src/cli/main.c:371 src/cli/main.c:398
+#: src/cli/main.c:145 src/cli/main.c:354 src/cli/main.c:388 src/cli/main.c:415
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "A profilinformációk nem kérhetőek le [%d]: %s"
 
-#: src/cli/main.c:136 src/cli/main.c:405
+#: src/cli/main.c:153 src/cli/main.c:422
 msgid "Unable to read profile requirements!"
 msgstr "A profilkövetelmények nem olvashatóak."
 
-#: src/cli/main.c:143
+#: src/cli/main.c:160
 msgid "Unable to obtain nsswitch maps!"
 msgstr "Az nsswitch leképezések nem szerezhetőek meg."
 
-#: src/cli/main.c:151
+#: src/cli/main.c:168
 msgid "Unable to backup system files!\n"
 msgstr "A rendszerfájlokról nem készíthető biztonsági mentés.\n"
 
-#: src/cli/main.c:155
+#: src/cli/main.c:172
 #, c-format
 msgid "Backup stored at %s\n"
 msgstr ""
 
-#: src/cli/main.c:161
+#: src/cli/main.c:178
 msgid ""
 "\n"
 "Some unexpected changes to the configuration were detected.\n"
@@ -874,40 +874,40 @@ msgstr ""
 "Néhány váratlan változás észlelve a konfigurációban.\n"
 "Használja a --force paramétert ha felül akarja írni ezeket a változásokat.\n"
 
-#: src/cli/main.c:166
+#: src/cli/main.c:183
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "Profil nem aktiválható [%d]: %s\n"
 
-#: src/cli/main.c:171
+#: src/cli/main.c:188
 #, c-format
 msgid "Profile \"%s\" was selected.\n"
 msgstr ""
 
-#: src/cli/main.c:174
+#: src/cli/main.c:191
 msgid "The following nsswitch maps are overwritten by the profile:\n"
 msgstr ""
 
-#: src/cli/main.c:177
+#: src/cli/main.c:194
 #, c-format
 msgid "- %s\n"
 msgstr ""
 
-#: src/cli/main.c:182
+#: src/cli/main.c:199
 #, c-format
 msgid "\n"
 "%s\n"
 msgstr ""
 
-#: src/cli/main.c:205
+#: src/cli/main.c:222
 msgid "Changes were successfully applied.\n"
 msgstr "A változások sikeresen alkalmazva.\n"
 
-#: src/cli/main.c:208 src/cli/main.c:244
+#: src/cli/main.c:225 src/cli/main.c:261
 msgid "No existing configuration detected.\n"
 msgstr "Nincs létező konfiguráció észlelve.\n"
 
-#: src/cli/main.c:211
+#: src/cli/main.c:228
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
@@ -915,39 +915,39 @@ msgstr ""
 "Néhány váratlan változás észlelve a konfigurációban. Használja inkább a "
 "„select” parancsot.\n"
 
-#: src/cli/main.c:215
+#: src/cli/main.c:232
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr "A változtatások nem alkalmazhatóak [%d]: %s\n"
 
-#: src/cli/main.c:232
+#: src/cli/main.c:249
 msgid "Print command parameters instead of formatted output"
 msgstr "A parancsok paramétereinek kiírása a formázott kimenet helyett"
 
-#: src/cli/main.c:247
+#: src/cli/main.c:264
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "A jelenlegi konfiguráció nem kérhető le [%d]: %s"
 
-#: src/cli/main.c:261
+#: src/cli/main.c:278
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "Profilazonosító: %s\n"
 
-#: src/cli/main.c:262
+#: src/cli/main.c:279
 msgid "Enabled features:"
 msgstr "Engedélyezett funkciók:"
 
-#: src/cli/main.c:265
+#: src/cli/main.c:282
 msgid " None\n"
 msgstr "Nincs\n"
 
-#: src/cli/main.c:293
+#: src/cli/main.c:310
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "A jelenlegi konfiguráció nem tesztelhető [%d]: %s"
 
-#: src/cli/main.c:300
+#: src/cli/main.c:317
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
@@ -955,63 +955,63 @@ msgstr ""
 "A jelenlegi konfiguráció nem érvényes. Valószínűleg az authselecten kívül "
 "lett módosítva."
 
-#: src/cli/main.c:305
+#: src/cli/main.c:322
 msgid "Current configuration is valid."
 msgstr "A jelenlegi konfiguráció érvényes."
 
-#: src/cli/main.c:328
+#: src/cli/main.c:345
 msgid "Unable to get profile list!"
 msgstr "A profillista nem kérhető le!"
 
-#: src/cli/main.c:443
+#: src/cli/main.c:460
 msgid "Print content of all files"
 msgstr "Az összes fájl tartalmának kiírása"
 
-#: src/cli/main.c:444
+#: src/cli/main.c:461
 msgid "Print nsswitch.conf content"
 msgstr "Az nsswitch.conf tartalmának kiírása"
 
-#: src/cli/main.c:445
+#: src/cli/main.c:462
 msgid "Print system-auth content"
 msgstr "A system-auth tartalmának kiírása"
 
-#: src/cli/main.c:446
+#: src/cli/main.c:463
 msgid "Print password-auth content"
 msgstr "A password-auth tartalmának kiírása"
 
-#: src/cli/main.c:447
+#: src/cli/main.c:464
 msgid "Print smartcard-auth content"
 msgstr "A smartcard-auth tartalmának kiírása"
 
-#: src/cli/main.c:448
+#: src/cli/main.c:465
 msgid "Print fingerprint-auth content"
 msgstr "A fingerprint-auth tartalmának kiírása"
 
-#: src/cli/main.c:449
+#: src/cli/main.c:466
 msgid "Print postlogin content"
 msgstr "A postlogin tartalmának kiírása"
 
-#: src/cli/main.c:450
+#: src/cli/main.c:467
 msgid "Print dconf database content"
 msgstr "A dconf adatbázis tartalmának kiírása"
 
-#: src/cli/main.c:451
+#: src/cli/main.c:468
 msgid "Print dconf lock content"
 msgstr "A dlock zár tartalmának kiírása"
 
-#: src/cli/main.c:478
+#: src/cli/main.c:495
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "Az előállított tartalom nem kérhető le [%d]: %s"
 
-#: src/cli/main.c:497
+#: src/cli/main.c:514
 #, c-format
 msgid "File %s: Empty\n"
 "\n"
 msgstr "%s fájl: Üres\n"
 "\n"
 
-#: src/cli/main.c:499
+#: src/cli/main.c:516
 #, c-format
 msgid "File %s:\n"
 "%s\n"
@@ -1019,33 +1019,33 @@ msgid "File %s:\n"
 msgstr "%s fájl:\n"
 "%s\n"
 
-#: src/cli/main.c:512
+#: src/cli/main.c:529
 msgid "Feature to enable."
 msgstr "Engedélyezendő funkció"
 
-#: src/cli/main.c:521
+#: src/cli/main.c:538
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "A funkció nem engedélyezhető [%d]: %s\n"
 
-#: src/cli/main.c:534
+#: src/cli/main.c:551
 msgid "Feature to disable."
 msgstr "Letiltandó funkció"
 
-#: src/cli/main.c:543
+#: src/cli/main.c:560
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "A funkció nem tiltható le [%d]: %s\n"
 
-#: src/cli/main.c:562
+#: src/cli/main.c:579
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr "Új profil létrehozása gyártói profilként, és nem egyéni profilként"
 
-#: src/cli/main.c:563
+#: src/cli/main.c:580
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr "Azon profil azonosítója, amely az új profil alapja lesz"
 
-#: src/cli/main.c:564
+#: src/cli/main.c:581
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1053,90 +1053,90 @@ msgstr ""
 "Az új profil alapja az alapértelmezett profil legyen, még akkor is ha már "
 "létezik azonos nevű gyártói profil"
 
-#: src/cli/main.c:565
+#: src/cli/main.c:582
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr ""
 "A metafájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
 
-#: src/cli/main.c:566
+#: src/cli/main.c:583
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr ""
 "Az nsswitch fájlok szimbolikus linkelése az alapprofilból a másolásuk "
 "helyett"
 
-#: src/cli/main.c:567
+#: src/cli/main.c:584
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr ""
 "A pam fájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
 
-#: src/cli/main.c:568
+#: src/cli/main.c:585
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
 "A dconf fájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
 
-#: src/cli/main.c:569
+#: src/cli/main.c:586
 msgid "Symlink specific file (can be set multiple times)"
 msgstr "Konkrét fájl szimbolikus linkelése (többször is megadható)"
 
-#: src/cli/main.c:574
+#: src/cli/main.c:591
 msgid "New profile name."
 msgstr "Új profilnév."
 
-#: src/cli/main.c:584
+#: src/cli/main.c:601
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "Nem hozható létre új profil [%d]: %s\n"
 
-#: src/cli/main.c:588
+#: src/cli/main.c:605
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "Új profil létrehozva itt: %s\n"
 
-#: src/cli/main.c:622
+#: src/cli/main.c:639
 msgid "Select profile"
 msgstr ""
 
-#: src/cli/main.c:623
+#: src/cli/main.c:640
 msgid "Regenerate configuration for currently selected command"
 msgstr ""
 
-#: src/cli/main.c:624
+#: src/cli/main.c:641
 msgid "List available profiles"
 msgstr ""
 
-#: src/cli/main.c:625
+#: src/cli/main.c:642
 msgid "Show profile information"
 msgstr ""
 
-#: src/cli/main.c:626
+#: src/cli/main.c:643
 msgid "Print profile requirements"
 msgstr ""
 
-#: src/cli/main.c:627
+#: src/cli/main.c:644
 msgid "Get identifier of currently selected profile"
 msgstr ""
 
-#: src/cli/main.c:628
+#: src/cli/main.c:645
 msgid "Check if the current configuration is valid"
 msgstr ""
 
-#: src/cli/main.c:629
+#: src/cli/main.c:646
 msgid "Print changes that would be otherwise written"
 msgstr ""
 
-#: src/cli/main.c:630
+#: src/cli/main.c:647
 msgid "Enable feature in currently selected profile"
 msgstr ""
 
-#: src/cli/main.c:631
+#: src/cli/main.c:648
 msgid "Disable feature in currently selected profile"
 msgstr ""
 
-#: src/cli/main.c:632
+#: src/cli/main.c:649
 msgid "Create new authselect profile"
 msgstr ""
 
-#: src/cli/main.c:645
+#: src/cli/main.c:662
 msgid "Authselect can only be run as root!\n"
 msgstr "Az authselect csak root jogokkal futtatható!\n"
 
