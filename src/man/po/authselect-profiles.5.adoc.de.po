@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-02-26 10:26+0100\n"
+"POT-Creation-Date: 2019-06-13 11:30+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -273,70 +273,133 @@ msgstr ""
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:94
 #, no-wrap
+msgid "*{imply \"implied-feature\" if \"feature\"}*"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:98
+msgid ""
+"Enable feature \"implied-feature\" if feature \"feature\" is enabled. The "
+"whole line with this operator is removed, thus it is not possible to add "
+"anything else around this operator at the same line."
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:99
+#, no-wrap
 msgid "*{if \"feature\":true|false}*"
 msgstr ""
 
 #. type: Plain text
-#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:97
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:102
 msgid ""
 "If \"feature\" is defined, replace this operator with string \"true\", "
 "otherwise with string \"false\"."
 msgstr ""
 
 #. type: Labeled list
-#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:98
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:103
 #, no-wrap
 msgid "*{if \"feature\":true}*"
 msgstr ""
 
 #. type: Plain text
-#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:101
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:106
 msgid ""
 "If \"feature\" is defined, replace this operator with string \"true\", "
 "otherwise with an empty string."
 msgstr ""
 
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:110
+msgid ""
+"It is also possible to use logical expression in conditional line instead of "
+"specifying single feature name. In this case the expression will evaluate to "
+"true or false and the conditional operator will act upon the result."
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:115
+msgid ""
+"The expression syntax consists of feature names (e.g. _\"feature\"_) which "
+"returns _true_ if the feature is defined or _false_ if it is not defined and "
+"from the following logical operators: _and_, _or_ and _not_. The expression "
+"may also be enclosed in parentheses and contain multiple subexpressions."
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:117
+msgid "For example:"
+msgstr ""
+
 #. type: Labeled list
-#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:102
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:118
+#, no-wrap
+msgid "*{if \"feature1\" or \"feature2\":true}*"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:121
+msgid ""
+"If \"feature1\" or \"feature2\" is defined, replace this operator with "
+"string \"true\", otherwise with an empty string."
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:122
 #, no-wrap
 msgid "*{if not \"feature\":true|false}*"
 msgstr ""
 
 #. type: Plain text
-#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:105
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:125
 msgid ""
 "If \"feature\" is not defined, replace this operator with string \"true\", "
 "otherwise with string \"false\"."
 msgstr ""
 
 #. type: Labeled list
-#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:106
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:126
 #, no-wrap
 msgid "*{if not \"feature\":true}*"
 msgstr ""
 
 #. type: Plain text
-#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:109
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:129
 msgid ""
 "If \"feature\" is not defined, replace this operator with string \"true\", "
 "otherwise with an empty string."
 msgstr ""
 
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:130
+#, no-wrap
+msgid "*{if \"feature1\" and (\"feature2\" or \"feature3\"):true}*"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:133
+msgid ""
+"If \"feature1\" is defined, and one of \"feature2\" and \"feature3\" is "
+"defined replace this operator with string \"true\", otherwise with an empty "
+"string."
+msgstr ""
+
 #. type: Title ~
-#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:111
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:135
 #, no-wrap
 msgid "EXAMPLE"
 msgstr ""
 
 #. type: Plain text
-#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:114
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:138
 msgid ""
 "Here is an example of using \"if\" operator. If \"with-sudo\" feature is "
 "enabled, it will add \"sss\" to sudoers line."
 msgstr ""
 
 #. type: Plain text
-#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:121
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:145
 #, no-wrap
 msgid ""
 "  passwd:     sss files\n"
@@ -348,7 +411,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:126
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:150
 msgid ""
 "Here is an example of \"continue-if\" and \"include-if\" operators. The "
 "resulting file will be empty unless \"with-smartcard\" feature is enabled. "
@@ -357,7 +420,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:139
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:163
 #, no-wrap
 msgid ""
 "  {continue if \"with-smartcard\"}\n"
@@ -381,14 +444,90 @@ msgid ""
 "  ...\n"
 msgstr ""
 
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:168
+msgid ""
+"Here is an example of \"continue-if\" using logical expression. The file "
+"will be empty unless \"with-smartcard\" or \"with-smartcard-required\" is "
+"set. This will simplify the call of _authselect select_ command which does "
+"not have to include both features but only \"with-smartcard-required\" is "
+"necessary."
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:181
+#, no-wrap
+msgid ""
+"  {continue if \"with-smartcard\" or \"with-smartcard-required\"}\n"
+"  auth        required                                     pam_env.so\n"
+"  auth        required                                     pam_faildelay.so "
+"delay=2000000\n"
+"  auth        required                                     pam_faillock.so "
+"preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
+"uid >= 1000 quiet\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
+"  auth        sufficient                                   pam_unix.so "
+"nullok try_first_pass\n"
+"  auth        requisite                                    pam_succeed_if.so "
+"uid >= 1000 quiet_success\n"
+"  auth        sufficient                                   pam_sss.so "
+"forward_pass\n"
+"  auth        required                                     pam_faillock.so "
+"authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
+"  auth        required                                     pam_deny.so\n"
+"  ...\n"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:186
+msgid ""
+"Here is an example of \"imply-if\" operator. Enabling feature \"with-"
+"smartcard-required\" will also enable \"with-smartcard\" to make sure that "
+"all relevant PAM modules are used. This will achieve the same behavior as "
+"the previous example."
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:201
+#, no-wrap
+msgid ""
+"  {imply \"with-smartcard\" if \"with-smartcard-required\"}\n"
+"  auth        required                                     pam_env.so\n"
+"  auth        required                                     pam_faildelay.so "
+"delay=2000000\n"
+"  auth        [success=1 default=ignore]                   pam_succeed_if.so "
+"service notin login:gdm:xdm:kdm:xscreensaver:gnome-screensaver:kscreensaver "
+"quiet use_uid {include if \"with-smartcard-required\"}\n"
+"  auth        [success=done ignore=ignore default=die]     pam_sss.so "
+"require_cert_auth ignore_authinfo_unavail   {include if \"with-smartcard-"
+"required\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
+"uid >= 1000 quiet\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so  "
+"                                     {exclude if \"with-smartcard\"}\n"
+"  auth        [default=2 ignore=ignore success=ok]         pam_localuser.so  "
+"                                     {include if \"with-smartcard\"}\n"
+"  auth        [success=done authinfo_unavail=ignore ignore=ignore default="
+"die] pam_sss.so try_cert_auth           {include if \"with-smartcard\"}\n"
+"  auth        sufficient                                   pam_unix.so {if "
+"not \"without-nullok\":nullok} try_first_pass\n"
+"  auth        requisite                                    pam_succeed_if.so "
+"uid >= 1000 quiet_success\n"
+"  auth        sufficient                                   pam_sss.so "
+"forward_pass\n"
+"  auth        required                                     pam_deny.so\n"
+"  ...\n"
+msgstr ""
+
 #. type: Title -
-#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:141
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:203
 #, no-wrap
 msgid "CREATING A NEW PROFILE"
 msgstr ""
 
 #. type: Plain text
-#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:146
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:208
 msgid ""
 "To register a new profile within authselect, create a directory in one of "
 "the authselect profile locations with the files listed above. Not all of the "
@@ -396,13 +535,21 @@ msgid ""
 "created on per-need basis."
 msgstr ""
 
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:212
+msgid ""
+"You may find *authselect create-profile* command helpful when creating new "
+"profile. See *authselect(8)* manual page or *authselect create-profile --"
+"help* for more information."
+msgstr ""
+
 #. type: Title -
-#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:148
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:214
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "SIEHE AUCH"
 
 #. type: Plain text
-#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:149
+#: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:215
 msgid "authselect(8), nsswitch.conf(5), PAM(8)"
 msgstr ""
