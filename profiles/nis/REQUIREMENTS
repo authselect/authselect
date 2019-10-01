@@ -9,6 +9,5 @@ Make sure that NIS service is configured and enabled. See NIS documentation for 
   - users can then configure keys using the pamu2fcfg tool                                {include if "with-pam-u2f-2fa"}
                                                                                           {include if "with-mkhomedir"}
 - with-mkhomedir is selected, make sure pam_oddjob_mkhomedir module                       {include if "with-mkhomedir"}
-  is present and oddjobd service is enabled                                               {include if "with-mkhomedir"}
-  - systemctl enable oddjobd.service                                                      {include if "with-mkhomedir"}
-  - systemctl start oddjobd.service                                                       {include if "with-mkhomedir"}
+  is present and oddjobd service is enabled and active                                    {include if "with-mkhomedir"}
+  - systemctl enable --now oddjobd.service                                                {include if "with-mkhomedir"}
