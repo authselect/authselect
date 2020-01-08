@@ -1,4 +1,5 @@
 # Meskó Balázs <meskobalazs@gmail.com>, 2018. #zanata
+# Meskó Balázs <meskobalazs@gmail.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
@@ -7,12 +8,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-12-06 07:01+0000\n"
+"PO-Revision-Date: 2019-08-25 08:26+0000\n"
 "Last-Translator: Meskó Balázs <meskobalazs@gmail.com>\n"
 "Language-Team: Hungarian\n"
 "Language: hu\n"
 "X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:169
 msgid "Unable to obtain supported features"
@@ -120,42 +121,42 @@ msgstr "[%s] nem másolható ide: [%s/%s] [%d]: %s"
 #: src/lib/authselect_backup.c:174
 #, c-format
 msgid "Trying to backup authselect configuration to [%s]"
-msgstr ""
+msgstr "Az authselect konfiguráció biztonsági mentése ide: [%s]"
 
 #: src/lib/authselect_backup.c:179
 #, c-format
 msgid "Trying to backup system configuration to [%s]"
-msgstr ""
+msgstr "A rendszer-konfiguráció biztonsági mentése ide: [%s]"
 
 #: src/lib/authselect_backup.c:184
 #, c-format
 msgid "Backup was successfuly created at [%s]"
-msgstr ""
+msgstr "Biztonsági mentés sikeresen létrehozva itt: [%s]"
 
 #: src/lib/authselect_backup.c:188
 #, c-format
 msgid "Unable to create backup [%d]: %s"
-msgstr ""
+msgstr "A biztonsági mentés létrehozása sikertelen [%d]: %s"
 
 #: src/lib/authselect_backup.c:205 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
-msgstr ""
+msgstr "A(z) [%s] könyvtár nem listázható [%d]: %s"
 
 #: src/lib/authselect_backup.c:219
 #, c-format
 msgid "Removing backup [%s]"
-msgstr ""
+msgstr "A(z) [%s] biztonsági mentés eltávolítása"
 
 #: src/lib/authselect_backup.c:228
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
-msgstr ""
+msgstr "A(z) [%s] könyvtár nem törölhető [%d]: %s"
 
 #: src/lib/authselect_backup.c:300
 #, c-format
 msgid "Unable to copy files [%d]: %s"
-msgstr ""
+msgstr "A fájlok nem másolhatók [%d]: %s"
 
 #: src/lib/authselect_backup.c:306 src/lib/profiles/activate.c:78
 #, c-format
@@ -174,22 +175,22 @@ msgstr "A dconf adatbázis nem frissíthető [%d]: %s"
 #: src/lib/authselect_backup.c:337
 #, c-format
 msgid "Restoring configuration from backup [%s]"
-msgstr ""
+msgstr "Konfiguráció helyreállítása a(z) [%s] biztonsági mentésből"
 
 #: src/lib/authselect_backup.c:353
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
-msgstr ""
+msgstr "A(z) [%s] biztonsági mentés authselect konfigurációt tartalmaz"
 
 #: src/lib/authselect_backup.c:356
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
-msgstr ""
+msgstr "A(z) [%s] biztonsági mentés nem authselect konfigurációt tartalmaz"
 
 #: src/lib/authselect_backup.c:362
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
-msgstr ""
+msgstr "A(z) [%s] nem állítható helyre [%d]: %s"
 
 #: src/lib/authselect_profile.c:104
 msgid "Unable to generate nsswitch.conf"
@@ -295,7 +296,7 @@ msgstr "Nem hozható létre profil [%d]: %s"
 
 #: src/lib/files/config.c:153
 msgid "Checking if all required directories are writable."
-msgstr "Ellenőrzés, hogy minden szükséges könyvtár írható-e"
+msgstr "Ellenőrzés, hogy minden szükséges könyvtár írható-e."
 
 #: src/lib/files/config.c:158
 #, c-format
@@ -330,32 +331,32 @@ msgstr "[%s] profil nem tölthető be [%d]: %s"
 #: src/lib/files/symlinks.c:41
 #, c-format
 msgid "Creating symbolic link [%s] to [%s]"
-msgstr ""
+msgstr "[%s] szimbolikus link létrehozása ehhez: [%s]"
 
 #: src/lib/files/symlinks.c:47
 #, c-format
 msgid "Unable to overwrite file [%s] [%d]: %s"
-msgstr ""
+msgstr "A(z) [%s] fájl nem írható felül [%d]: %s"
 
 #: src/lib/files/symlinks.c:55
 #, c-format
 msgid "Unable to create symbolic link [%s] [%d]: %s"
-msgstr ""
+msgstr "A(z) [%s] szimbolikus link nem hozható létre [%d]: %s"
 
 #: src/lib/files/symlinks.c:79
 #, c-format
 msgid "Validating link [%s]"
-msgstr ""
+msgstr "[%s] link érvényesítése"
 
 #: src/lib/files/symlinks.c:83
 #, c-format
 msgid "Unable to validate link [%s] [%d]: %s"
-msgstr ""
+msgstr "A(z) [%s] link érvényesítése sikertelen [%d]: %s"
 
 #: src/lib/files/symlinks.c:90
 #, c-format
 msgid "[%s] was not created by authselect!"
-msgstr ""
+msgstr "A(z) [%s] linket nem az authselect hozta létre."
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:152
 #: src/lib/files/system.c:576
@@ -366,17 +367,17 @@ msgstr "Hiba a(z) [%s] fájl elérésekor [%d]: %s"
 #: src/lib/files/symlinks.c:120
 #, c-format
 msgid "Unable to check file [%s] [%d]: %s"
-msgstr ""
+msgstr "A(z) [%s] fájl nem ellenőrizhető [%d]: %s"
 
 #: src/lib/files/symlinks.c:127
 #, c-format
 msgid "Symbolic link [%s] to [%s] still exists!"
-msgstr ""
+msgstr "A(z) [%s] -> [%s] szimbolikus link még mindig létezik."
 
 #: src/lib/files/symlinks.c:148
 #, c-format
 msgid "File [%s] exists but it needs to be overwritten!"
-msgstr ""
+msgstr "A(z) [%s] fájl létezik, de felül kell írni."
 
 #: src/lib/files/system.c:74 src/lib/profiles/read.c:162
 #, c-format
@@ -572,7 +573,7 @@ msgstr "[%s] profil nem tartalmaz nevet itt: [%s]!"
 #: src/lib/util/dir.c:77 src/lib/util/dir.c:83
 #, c-format
 msgid "Unable to get basename of [%s]"
-msgstr ""
+msgstr "A(z) [%s] alap neve nem kérhető le"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
 #: src/lib/util/file.c:198 src/cli/main.c:826
@@ -588,12 +589,12 @@ msgstr "A könyvtár nem statisztikázható [%d]: %s"
 #: src/lib/util/dir.c:313
 #, c-format
 msgid "Removing file [%s/%s]"
-msgstr ""
+msgstr "[%s/%s] fájl eltávolítása"
 
 #: src/lib/util/dir.c:321
 #, c-format
 msgid "Removing directory [%s]"
-msgstr ""
+msgstr "[%s] könyvtár eltávolítása"
 
 #: src/lib/util/file.c:43
 msgid "Internal error: stat cannot be NULL!"
@@ -671,52 +672,54 @@ msgstr "[%s] tulajdonosa nem módosítható [%d]: %s"
 #: src/lib/util/selinux.c:46
 #, c-format
 msgid "Unable to create selabel context [%d]: %s"
-msgstr ""
+msgstr "A selabel környezet nem hozható létre [%d]: %s"
 
 #: src/lib/util/selinux.c:55
 #, c-format
 msgid "Unable to lookup selinux context [%d]: %s"
-msgstr ""
+msgstr "A selinux környezet nem kereshető meg [%d]: %s"
 
 #: src/lib/util/selinux.c:59
 #, c-format
 msgid "Found default selinux context for [%s]: %s"
-msgstr ""
+msgstr "A(z) [%s] alapértelmezett selinux környezete megtalálva: %s"
 
 #: src/lib/util/selinux.c:84
 #, c-format
 msgid "Unable to obtain selinux context for [%s] [%d]: %s"
 msgstr ""
+"A(z) [%s] alapértelmezett selinux környezete nem szerezhető meg [%d]: %s"
 
 #: src/lib/util/selinux.c:91
 msgid "not set"
-msgstr ""
+msgstr "nincs beállítva"
 
 #: src/lib/util/selinux.c:90
 #, c-format
 msgid "Found selinux context for [%s]: %s"
-msgstr ""
+msgstr "A(z) [%s] selinux környezete megtalálva: %s"
 
 #: src/lib/util/selinux.c:115 src/lib/util/selinux.c:183
 #: src/lib/util/selinux.c:249
 msgid "Unable to get current fscreate selinux context!"
-msgstr ""
+msgstr "A jelenlegi fscreate selinux környezet nem kérhető le."
 
 #: src/lib/util/selinux.c:121 src/lib/util/selinux.c:189
 #: src/lib/util/selinux.c:255
 #, c-format
 msgid "Unable to get default selinux context for [%s] [%d]: %s!"
 msgstr ""
+"A(z) [%s] alapértelmezett selinux környezete nem kereshető meg [%d]: %s."
 
 #: src/lib/util/selinux.c:129 src/lib/util/selinux.c:197
 #: src/lib/util/selinux.c:263
 msgid "Unable to set fscreate selinux context!"
-msgstr ""
+msgstr "Az fscreate selinux környezet nem adható meg."
 
 #: src/lib/util/selinux.c:139 src/lib/util/selinux.c:207
 #: src/lib/util/selinux.c:273
 msgid "Unable to restore fscreate selinux context!"
-msgstr ""
+msgstr "Az fscreate selinux környezet nem állítható helyre."
 
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:280
@@ -749,12 +752,12 @@ msgstr "Az üzenet nem hozható létre!"
 #: src/lib/util/template.c:595
 #, c-format
 msgid "Unable to find new match: regex error %d"
-msgstr ""
+msgstr "Nem található új egyezés: regex hiba %d"
 
 #: src/lib/util/template.c:725
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
-msgstr ""
+msgstr "[%s] ideiglenes fájl nem hozható létre [%d]: %s"
 
 #: src/lib/util/textfile.c:56
 #, c-format
@@ -828,7 +831,7 @@ msgstr "\n"
 #: src/cli/cli_tool.c:222
 #, c-format
 msgid "Authselect command '%s' can only be run as root!\n"
-msgstr ""
+msgstr "A(z) „%s” authselect parancs csak rendszergazdaként futtatható.\n"
 
 #: src/cli/cli_tool.c:239
 msgid "Bug: commands can't be NULL!\n"
@@ -898,12 +901,12 @@ msgstr "A parancs argumentumai nem dolgozhatóak fel"
 
 #: src/cli/main.c:130
 msgid "Unable to backup current configuration!\n"
-msgstr ""
+msgstr "A jelenlegi konfigurációról nem készíthető biztonsági másolat.\n"
 
 #: src/cli/main.c:134
 #, c-format
 msgid "Backup stored at %s\n"
-msgstr ""
+msgstr "Biztonsági mentés helye: %s\n"
 
 #: src/cli/main.c:156
 msgid "Enforce changes"
@@ -912,6 +915,8 @@ msgstr "Változások kényszerítése"
 #: src/cli/main.c:157 src/cli/main.c:244 src/cli/main.c:624 src/cli/main.c:701
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr ""
+"Rendszerfájlok biztonsági mentése a profil aktiválása előtt (egyedi név "
+"előállítása)"
 
 #: src/cli/main.c:158 src/cli/main.c:245 src/cli/main.c:625 src/cli/main.c:702
 msgid "Backup system files before activating profile"
@@ -961,22 +966,23 @@ msgstr "Profil nem aktiválható [%d]: %s\n"
 #: src/cli/main.c:210
 #, c-format
 msgid "Profile \"%s\" was selected.\n"
-msgstr ""
+msgstr "A(z) „%s” profil lett kiválasztva.\n"
 
 #: src/cli/main.c:213
 msgid "The following nsswitch maps are overwritten by the profile:\n"
-msgstr ""
+msgstr "A következő nsswitch leképezéseket írja felült a profil:\n"
 
 #: src/cli/main.c:216
 #, c-format
 msgid "- %s\n"
-msgstr ""
+msgstr "- %s\n"
 
 #: src/cli/main.c:221
 #, c-format
 msgid "\n"
 "%s\n"
-msgstr ""
+msgstr "\n"
+"%s\n"
 
 #: src/cli/main.c:263
 msgid "Changes were successfully applied.\n"
@@ -1019,7 +1025,7 @@ msgstr "Engedélyezett funkciók:"
 
 #: src/cli/main.c:323
 msgid " None\n"
-msgstr "Nincs\n"
+msgstr " Nincs\n"
 
 #: src/cli/main.c:351
 #, c-format
@@ -1040,7 +1046,7 @@ msgstr "A jelenlegi konfiguráció érvényes."
 
 #: src/cli/main.c:368
 msgid "System was not configured with authselect."
-msgstr ""
+msgstr "A rendszer nem az authselect segítségével lett konfigurálva."
 
 #: src/cli/main.c:393
 msgid "Unable to get profile list!"
@@ -1049,7 +1055,7 @@ msgstr "A profillista nem kérhető le!"
 #: src/cli/main.c:446
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
-msgstr ""
+msgstr "A profilfunkciók nem kérhetőek le [%d]: %s"
 
 #: src/cli/main.c:548
 msgid "Print content of all files"
@@ -1109,12 +1115,13 @@ msgstr "%s fájl:\n"
 
 #: src/cli/main.c:631
 msgid "Feature to enable."
-msgstr "Engedélyezendő funkció"
+msgstr "Engedélyezendő funkció."
 
 #: src/cli/main.c:668
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
 msgstr ""
+"A jelenlegi konfigurációról nem készíthető biztonsági másolat [%d]: %s\n"
 
 #: src/cli/main.c:675
 #, c-format
@@ -1124,11 +1131,11 @@ msgstr "A funkció nem engedélyezhető [%d]: %s\n"
 #: src/cli/main.c:680
 #, c-format
 msgid "%s\n"
-msgstr ""
+msgstr "%s\n"
 
 #: src/cli/main.c:707
 msgid "Feature to disable."
-msgstr "Letiltandó funkció"
+msgstr "Letiltandó funkció."
 
 #: src/cli/main.c:721
 #, c-format
@@ -1193,103 +1200,102 @@ msgstr "Új profil létrehozva itt: %s\n"
 #: src/cli/main.c:787
 msgid "Print backup names without any formatting and additional information"
 msgstr ""
+"A biztonsági mentések nevének kiírása formázás és további információk nélkül"
 
 #: src/cli/main.c:799
 msgid "Unable to list available backups!"
-msgstr ""
+msgstr "Az elérhető biztonsági mentések listázása sikertelen."
 
 #: src/cli/main.c:836
 #, c-format
 msgid "%-*s (created at %s)\n"
-msgstr ""
+msgstr "%-*s (létrehozva: %s)\n"
 
 #: src/cli/main.c:855
 msgid "Name of the backup to remove."
-msgstr ""
+msgstr "Az eltávolítandó biztonsági mentés neve."
 
 #: src/cli/main.c:864
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
-msgstr ""
+msgstr "A(z) [%s] biztonsági mentés nem távolítható el [%d]: %s\n"
 
 #: src/cli/main.c:879
 msgid "Name of the backup to restore from."
-msgstr ""
+msgstr "A biztonsági mentés, amelyből helyre akar állítani."
 
 #: src/cli/main.c:888
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
-msgstr ""
+msgstr "A(z) [%s] biztonsági mentésből helyreállítás sikertelen [%d]: %s\n"
 
 #: src/cli/main.c:923
 msgid "Select profile"
-msgstr ""
+msgstr "Válasszon profilt"
 
 #: src/cli/main.c:924
 msgid "Regenerate configuration for currently selected command"
-msgstr ""
+msgstr "A konfiguráció újra előállítása a jelenleg kiválasztott parancshoz"
 
 #: src/cli/main.c:925
 msgid "List available profiles"
-msgstr ""
+msgstr "Elérhető profilok listázása"
 
 #: src/cli/main.c:926
 msgid "List available profile features"
-msgstr ""
+msgstr "Elérhető profilfunkciók listázása"
 
 #: src/cli/main.c:927
 msgid "Show profile information"
-msgstr ""
+msgstr "Profilinformációk megjelenítése"
 
 #: src/cli/main.c:928
 msgid "Print profile requirements"
-msgstr ""
+msgstr "Profilkövetelmények kiírása"
 
 #: src/cli/main.c:929
 msgid "Get identifier of currently selected profile"
-msgstr ""
+msgstr "A jelenleg kiválasztott profil azonosítójának lekérése"
 
 #: src/cli/main.c:930
 msgid "Check if the current configuration is valid"
-msgstr ""
+msgstr "Ellenőrzés, hogy a jelenlegi konfiguráció érvényes-e"
 
 #: src/cli/main.c:931
 msgid "Print changes that would be otherwise written"
-msgstr ""
+msgstr "Az egyébként fájlba írandó változások kiírása"
 
 #: src/cli/main.c:932
 msgid "Enable feature in currently selected profile"
-msgstr ""
+msgstr "Funkció engedélyezése a jelenleg kiválasztott profilban"
 
 #: src/cli/main.c:933
 msgid "Disable feature in currently selected profile"
-msgstr ""
+msgstr "Funkció letiltása a jelenleg kiválasztott profilban"
 
 #: src/cli/main.c:934
 msgid "Create new authselect profile"
-msgstr ""
+msgstr "Új authselect profil létrehozása"
 
 #: src/cli/main.c:935
 msgid "Backup commands:"
-msgstr ""
+msgstr "Biztonsági mentés parancsai:"
 
 #: src/cli/main.c:936
 msgid "List available backups"
-msgstr ""
+msgstr "Elérhető biztonsági mentések listázása"
 
 #: src/cli/main.c:937
 msgid "Remove backup"
-msgstr ""
+msgstr "Biztonsági mentés eltávolítása"
 
 #: src/cli/main.c:938
 msgid "Restore from backup"
-msgstr ""
+msgstr "Visszaállítás mentésből"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
-msgstr ""
-"a NIS felhasználói információkhoz való használatának engedélyezése "
-"alapértelmezetten"
+msgstr "alapértelmezetten NIS használata a felhasználói információkhoz"
 
 #: src/compat/authcompat_Options.py:83
 msgid "<domain>"
@@ -1310,11 +1316,11 @@ msgstr "alapértelmezett NIS kiszolgáló"
 
 #: src/compat/authcompat_Options.py:85
 msgid "LDAP for user information by default"
-msgstr "alapértelmezetten LDAP a felhasználói információkhoz"
+msgstr "alapértelmezetten LDAP használata a felhasználói információkhoz"
 
 #: src/compat/authcompat_Options.py:86
 msgid "LDAP for authentication by default"
-msgstr "alapértelmezetten LDAP a hitelesítéshez"
+msgstr "alapértelmezetten LDAP használata a hitelesítéshez"
 
 #: src/compat/authcompat_Options.py:87
 msgid "default LDAP server hostname or URI"

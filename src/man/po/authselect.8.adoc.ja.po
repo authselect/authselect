@@ -1,4 +1,5 @@
 # Ludek Janda <ljanda@redhat.com>, 2018. #zanata
+# Hiroshi Yamanaka <hyamanak@redhat.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -6,8 +7,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-10-30 02:46+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"PO-Revision-Date: 2019-06-25 02:15+0000\n"
+"Last-Translator: Hiroshi Yamanaka <hyamanak@redhat.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "X-Generator: Zanata 4.6.2\n"
@@ -103,6 +104,8 @@ msgid ""
 "*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup="
 "NAME]"
 msgstr ""
+"*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup="
+"NAME]"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:36
@@ -136,7 +139,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:43 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:68 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:137 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:155
 #, no-wrap
 msgid "*-b*:"
-msgstr ""
+msgstr "*-b*:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:48
@@ -147,6 +150,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
+"選択したプロファイルを有効化する前にシステムファイルをバックアップしてください。 バックアップは\n"
+"{AUTHSELECT_BACKUP_DIR}/NAME に保存されています。一意文字列を含む\n"
+"現在時間がバックアップの名前として使用されます。これは\n"
+"*--backup=* のショートカットです。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:49 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:74 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:143 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:161
@@ -162,6 +169,9 @@ msgid ""
 "will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
 "unique string is used as a name if no value is provided.\n"
 msgstr ""
+"選択したプロファイルの有効化を行う前に、システムファイルを\n"
+"バックアップします。このバックアップは、{AUTHSELECT_BACKUP_DIR}/NAME で復元されます。\n"
+"値を指定しない場合、一意の文字列を含む現在の時間は名前として使用されます。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:54
@@ -194,7 +204,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:61
 #, no-wrap
 msgid "*apply-changes* [-b] [--backup=NAME]"
-msgstr ""
+msgstr "*apply-changes* [-b] [--backup=NAME]"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:67
@@ -217,6 +227,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
+"変更を適用する前にシステムファイルをバックアップします。このバックアップは {AUTHSELECT_BACKUP_DIR}/NAME "
+"に保存されます。一意の文字列を含む現在時間がバックアップの名前として使用されます。これは\n"
+" *--backup=* のショートカットです。\n"
+"\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:78
@@ -226,6 +240,10 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
+"変更を適用する前にシステムファイルをバックアップします。このバックアップは {AUTHSELECT_BACKUP_DIR}/NAME "
+"に保存されます。値を指定しないと、一意の文字列を含む現在時間がバックアップの名前として使用されます。\n"
+"\n"
+"\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:79
@@ -242,7 +260,7 @@ msgstr "利用可能なプロファイルを一覧表示します。"
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:82
 #, no-wrap
 msgid "*list-features* profile_id"
-msgstr ""
+msgstr "*list-features* profile_id"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:86
@@ -251,6 +269,8 @@ msgid ""
 "the features without any description. Please, read the profile documentation "
 "with *show* to see what the features do."
 msgstr ""
+"指定のプロファイルで利用できるすべての機能を一覧表示します。+ _Note:_説明なしの機能のみが一覧表示されます。機能の詳細は、*show* "
+"でプロファイルのドキュメンテーションをお読みください。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:87
@@ -310,7 +330,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:103
 #, no-wrap
 msgid "*test* profile_id [options] [features]"
-msgstr ""
+msgstr "*test* profile_id [options] [features]"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:106
@@ -323,115 +343,115 @@ msgstr "システム設定に実際に何かを書き込むことなく、*auths
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:107
 #, no-wrap
 msgid "*-a, --all*:"
-msgstr ""
+msgstr "*-a, --all*:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:109
 #, no-wrap
 msgid "Print content of all files.\n"
-msgstr ""
+msgstr "すべてのファイルの内容を出力します。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:110
 #, no-wrap
 msgid "*-n, --nsswitch*:"
-msgstr ""
+msgstr "*-n, --nsswitch*:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:112
 #, no-wrap
 msgid "Print nsswitch.conf content.\n"
-msgstr ""
+msgstr "nsswitch.conf の内容を出力します。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:113
 #, no-wrap
 msgid "*-s, --system-auth*:"
-msgstr ""
+msgstr "*-s, --system-auth*:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:115
 #, no-wrap
 msgid "Print system-auth content.\n"
-msgstr ""
+msgstr "system-auth の内容を出力します。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:116
 #, no-wrap
 msgid "*-p, --password-auth*:"
-msgstr ""
+msgstr "*-p, --password-auth*:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:118
 #, no-wrap
 msgid "Print password-auth content.\n"
-msgstr ""
+msgstr "password-auth の内容を出力します。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:119
 #, no-wrap
 msgid "*-c, --smartcard-auth*:"
-msgstr ""
+msgstr "*-c, --smartcard-auth*:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:121
 #, no-wrap
 msgid "Print smartcard-auth content.\n"
-msgstr ""
+msgstr "smartcard-auth の内容を出力します。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:122
 #, no-wrap
 msgid "*-f, --fingerprint-auth*:"
-msgstr ""
+msgstr "*-f, --fingerprint-auth*:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:124
 #, no-wrap
 msgid "Print fingerprint-auth content.\n"
-msgstr ""
+msgstr "fingerprint-auth の内容を出力します。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:125
 #, no-wrap
 msgid "*-o, --postlogin*:"
-msgstr ""
+msgstr "*-o, --postlogin*:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:127
 #, no-wrap
 msgid "Print postlogin content.\n"
-msgstr ""
+msgstr "postlogin の内容を出力します。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:128
 #, no-wrap
 msgid "*-d, --dconf-db*:"
-msgstr ""
+msgstr "*-d, --dconf-db*:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:130
 #, no-wrap
 msgid "Print dconf database content.\n"
-msgstr ""
+msgstr "dconf データベースの内容を出力します。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:131
 #, no-wrap
 msgid "*-l, --dconf-lock*:"
-msgstr ""
+msgstr "*-l, --dconf-lock*:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:133
 #, no-wrap
 msgid "Print dconf lock content.\n"
-msgstr ""
+msgstr "dconf ロックの内容を出力します。\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:134
 #, no-wrap
 msgid "*enable-feature* feature [-b] [--backup=NAME] [-q, --quiet]"
-msgstr ""
+msgstr "*enable-feature* feature [-b] [--backup=NAME] [-q, --quiet]"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:136
@@ -447,6 +467,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
+"機能を有効にする前にシステムファイルをバックアップします。このバックアップは {AUTHSELECT_BACKUP_DIR}/NAME "
+"に保存されます。一意の文字列を含む現在時間がバックアップの名前として使用されます。これは\n"
+" *--backup=* のショートカットです。\n"
+"\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:147
@@ -456,12 +480,16 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
+"機能を有効にする前にシステムファイルをバックアップします。このバックアップは {AUTHSELECT_BACKUP_DIR}/NAME "
+"に保存されます。値を指定しないと、一意の文字列を含む現在時間がバックアップの名前として使用されます。\n"
+"\n"
+"\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:152
 #, no-wrap
 msgid "*disable-feature* feature [-b] [--backup=NAME]"
-msgstr ""
+msgstr "*disable-feature* feature [-b] [--backup=NAME]"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:154
@@ -477,6 +505,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
+"機能を無効にする前にシステムファイルをバックアップします。このバックアップは {AUTHSELECT_BACKUP_DIR}/NAME "
+"に保存されます。一意の文字列を含む現在時間がバックアップの名前として使用されます。これは\n"
+" *--backup=* のショートカットです。\n"
+"\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:165
@@ -486,6 +518,10 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
+"機能を無効にする前にシステムファイルをバックアップします。このバックアップは {AUTHSELECT_BACKUP_DIR}/NAME "
+"に保存されます。値を指定しないと、一意の文字列を含む現在時間がバックアップの名前として使用されます。\n"
+"\n"
+"\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:166
@@ -657,18 +693,18 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:209
 #, no-wrap
 msgid "BACKUP COMMANDS"
-msgstr ""
+msgstr "バックアップコマンド"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:211
 msgid "These commands can be used to manage backed up configurations."
-msgstr ""
+msgstr "これらのコマンドは、バックアップした設定を管理するのに使用します。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:212
 #, no-wrap
 msgid "*backup-list* [-r, --raw]"
-msgstr ""
+msgstr "*backup-list* [-r, --raw]"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:215
@@ -676,30 +712,32 @@ msgid ""
 "Print available backups.  If *--raw* option is specified, the command will "
 "print only backup names without any formatting and additional information."
 msgstr ""
+"利用可能なバックアップを出力します。*--raw* "
+"オプションを指定すると、コマンドはフォーマット情報やその他の情報なしでバックアップ名のみを出力します。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:216
 #, no-wrap
 msgid "*backup-remove* BACKUP"
-msgstr ""
+msgstr "*backup-remove* BACKUP"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:218
 msgid "Permanently delete backup named _BACKUP_."
-msgstr ""
+msgstr "_BACKUP_ というバックアップを永久的に削除します。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:219
 #, no-wrap
 msgid "*backup-restore* BACKUP"
-msgstr ""
+msgstr "*backup-restore* BACKUP"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:222
 msgid ""
 "Restore configuration from backup named _BACKUP_. *Note:* this will "
 "overwrite current configuration."
-msgstr ""
+msgstr "_BACKUP_ というバックアップから設定を復元します。*Note:* これは、現在の設定を上書きします。"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:224
@@ -917,7 +955,7 @@ msgstr "1: 一般エラー。"
 msgid ""
 "2: Profile or configuration was not found or the system was not configured "
 "with authselect."
-msgstr ""
+msgstr "2: プロファイルまたは設定が見つからないか、システムが authselect で設定されていません。"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:305
@@ -936,7 +974,7 @@ msgstr ""
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:307
 msgid "5: Executed command must be run as root."
-msgstr ""
+msgstr "5: コマンドは、root で実行する必要があります。"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:309

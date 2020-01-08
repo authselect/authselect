@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-01-21 12:05+0000\n"
+"PO-Revision-Date: 2019-06-14 12:36+0000\n"
 "Language-Team: \n"
 "X-Generator: Zanata 4.6.2\n"
 "Last-Translator: Tony Fu <tfu@redhat.com>\n"
@@ -118,42 +118,42 @@ msgstr "无法把[%s]复制到[%s/%s] [[%d]： %s"
 #: src/lib/authselect_backup.c:174
 #, c-format
 msgid "Trying to backup authselect configuration to [%s]"
-msgstr ""
+msgstr "尝试把 authselect 配置备份到 [%s]"
 
 #: src/lib/authselect_backup.c:179
 #, c-format
 msgid "Trying to backup system configuration to [%s]"
-msgstr ""
+msgstr "尝试把系统配置备份到 [%s]"
 
 #: src/lib/authselect_backup.c:184
 #, c-format
 msgid "Backup was successfuly created at [%s]"
-msgstr ""
+msgstr "备份于 [%s] 成功创建"
 
 #: src/lib/authselect_backup.c:188
 #, c-format
 msgid "Unable to create backup [%d]: %s"
-msgstr ""
+msgstr "无法创建备份 [%d]: %s"
 
 #: src/lib/authselect_backup.c:205 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
-msgstr ""
+msgstr "无法列出目录 [%s] [%d]: %s"
 
 #: src/lib/authselect_backup.c:219
 #, c-format
 msgid "Removing backup [%s]"
-msgstr ""
+msgstr "删除备份 [%s]"
 
 #: src/lib/authselect_backup.c:228
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
-msgstr ""
+msgstr "无法删除目录 [%s] [%d]: %s"
 
 #: src/lib/authselect_backup.c:300
 #, c-format
 msgid "Unable to copy files [%d]: %s"
-msgstr ""
+msgstr "无法复制文件 [%d]: %s"
 
 #: src/lib/authselect_backup.c:306 src/lib/profiles/activate.c:78
 #, c-format
@@ -172,22 +172,22 @@ msgstr "无法更新dconf数据库[%d]： %s"
 #: src/lib/authselect_backup.c:337
 #, c-format
 msgid "Restoring configuration from backup [%s]"
-msgstr ""
+msgstr "从备份 [%s] 恢复配置"
 
 #: src/lib/authselect_backup.c:353
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
-msgstr ""
+msgstr "备份 [%s] 包括 authselect 配置"
 
 #: src/lib/authselect_backup.c:356
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
-msgstr ""
+msgstr "备份 [%s] 包括了非 authselect 的配置"
 
 #: src/lib/authselect_backup.c:362
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
-msgstr ""
+msgstr "无法恢复 [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:104
 msgid "Unable to generate nsswitch.conf"
@@ -570,7 +570,7 @@ msgstr "配置档案[%s] 没有在[%s]中包括一个名称！"
 #: src/lib/util/dir.c:77 src/lib/util/dir.c:83
 #, c-format
 msgid "Unable to get basename of [%s]"
-msgstr ""
+msgstr "无法获得 [%s] 的基础名"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
 #: src/lib/util/file.c:198 src/cli/main.c:826
@@ -586,12 +586,12 @@ msgstr "无法统计目录[%d]： %s"
 #: src/lib/util/dir.c:313
 #, c-format
 msgid "Removing file [%s/%s]"
-msgstr ""
+msgstr "删除文件 [%s/%s]"
 
 #: src/lib/util/dir.c:321
 #, c-format
 msgid "Removing directory [%s]"
-msgstr ""
+msgstr "删除目录 [%s]"
 
 #: src/lib/util/file.c:43
 msgid "Internal error: stat cannot be NULL!"
@@ -679,21 +679,21 @@ msgstr "无法查找 selinux 上下文 [%d]: %s"
 #: src/lib/util/selinux.c:59
 #, c-format
 msgid "Found default selinux context for [%s]: %s"
-msgstr ""
+msgstr "找到 [%s] 默认的 selinux 上下文 : %s"
 
 #: src/lib/util/selinux.c:84
 #, c-format
 msgid "Unable to obtain selinux context for [%s] [%d]: %s"
-msgstr ""
+msgstr "无法获得 [%s] [%d] 的 selinux 上下文 : %s"
 
 #: src/lib/util/selinux.c:91
 msgid "not set"
-msgstr ""
+msgstr "未设置"
 
 #: src/lib/util/selinux.c:90
 #, c-format
 msgid "Found selinux context for [%s]: %s"
-msgstr ""
+msgstr "找到 [%s] 的 selinux 上下文 : %s"
 
 #: src/lib/util/selinux.c:115 src/lib/util/selinux.c:183
 #: src/lib/util/selinux.c:249
@@ -747,7 +747,7 @@ msgstr "无法创建消息！"
 #: src/lib/util/template.c:595
 #, c-format
 msgid "Unable to find new match: regex error %d"
-msgstr ""
+msgstr "无法找到新匹配 : regex 错误 %d"
 
 #: src/lib/util/template.c:725
 #, c-format
@@ -825,7 +825,7 @@ msgstr "\n"
 #: src/cli/cli_tool.c:222
 #, c-format
 msgid "Authselect command '%s' can only be run as root!\n"
-msgstr ""
+msgstr "Authselect 命令 '%s' 只能以 root 用户运行 !\n"
 
 #: src/cli/cli_tool.c:239
 msgid "Bug: commands can't be NULL!\n"
@@ -895,7 +895,7 @@ msgstr "无法解析命令参数"
 
 #: src/cli/main.c:130
 msgid "Unable to backup current configuration!\n"
-msgstr ""
+msgstr "无法备份当前的配置 !\n"
 
 #: src/cli/main.c:134
 #, c-format
@@ -908,7 +908,7 @@ msgstr "强制改变"
 
 #: src/cli/main.c:157 src/cli/main.c:244 src/cli/main.c:624 src/cli/main.c:701
 msgid "Backup system files before activating profile (generate unique name)"
-msgstr ""
+msgstr "在激活配置档案前备份系统文件 (生成唯一的名称)"
 
 #: src/cli/main.c:158 src/cli/main.c:245 src/cli/main.c:625 src/cli/main.c:702
 msgid "Backup system files before activating profile"
@@ -1032,7 +1032,7 @@ msgstr "当前配置有效。"
 
 #: src/cli/main.c:368
 msgid "System was not configured with authselect."
-msgstr ""
+msgstr "系统没有配置 authselect。"
 
 #: src/cli/main.c:393
 msgid "Unable to get profile list!"
@@ -1041,7 +1041,7 @@ msgstr "无法获取配置档案列表！"
 #: src/cli/main.c:446
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
-msgstr ""
+msgstr "无法获得配置档案信息 [%d]: %s"
 
 #: src/cli/main.c:548
 msgid "Print content of all files"
@@ -1107,7 +1107,7 @@ msgstr "要启用的功能。"
 #: src/cli/main.c:668
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
-msgstr ""
+msgstr "无法备份当前配置 [%d]: %s\n"
 
 #: src/cli/main.c:675
 #, c-format
@@ -1117,7 +1117,7 @@ msgstr "无法启用功能[%d]： %s\n"
 #: src/cli/main.c:680
 #, c-format
 msgid "%s\n"
-msgstr ""
+msgstr "%s\n"
 
 #: src/cli/main.c:707
 msgid "Feature to disable."
@@ -1178,34 +1178,34 @@ msgstr "新的配置档案创建于 %s\n"
 
 #: src/cli/main.c:787
 msgid "Print backup names without any formatting and additional information"
-msgstr ""
+msgstr "输出备份名，不包括格式及额外信息"
 
 #: src/cli/main.c:799
 msgid "Unable to list available backups!"
-msgstr ""
+msgstr "无法列出有效的备份!"
 
 #: src/cli/main.c:836
 #, c-format
 msgid "%-*s (created at %s)\n"
-msgstr ""
+msgstr "%-*s (创建于 %s)\n"
 
 #: src/cli/main.c:855
 msgid "Name of the backup to remove."
-msgstr ""
+msgstr "要删除的备份名称"
 
 #: src/cli/main.c:864
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
-msgstr ""
+msgstr "无法删除备份 [%s] [%d]: %s\n"
 
 #: src/cli/main.c:879
 msgid "Name of the backup to restore from."
-msgstr ""
+msgstr "要恢复的备份名"
 
 #: src/cli/main.c:888
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
-msgstr ""
+msgstr "无法恢复备份 [%s] [%d]: %s\n"
 
 #: src/cli/main.c:923
 msgid "Select profile"
@@ -1221,7 +1221,7 @@ msgstr "列出可用的配置集"
 
 #: src/cli/main.c:926
 msgid "List available profile features"
-msgstr ""
+msgstr "列出有效的配置集信息"
 
 #: src/cli/main.c:927
 msgid "Show profile information"
@@ -1257,15 +1257,15 @@ msgstr "创建新的 authselect 配置集"
 
 #: src/cli/main.c:935
 msgid "Backup commands:"
-msgstr ""
+msgstr "备份命令："
 
 #: src/cli/main.c:936
 msgid "List available backups"
-msgstr ""
+msgstr "列出有效备份"
 
 #: src/cli/main.c:937
 msgid "Remove backup"
-msgstr ""
+msgstr "删除备份"
 
 #: src/cli/main.c:938
 msgid "Restore from backup"

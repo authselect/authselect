@@ -1,4 +1,5 @@
 # Ludek Janda <ljanda@redhat.com>, 2018. #zanata
+# Eun-Ju Kim <eukim@redhat.com>, 2019. #zanata
 # Ludek Janda <ljanda@redhat.com>, 2019. #zanata
 msgid ""
 msgstr ""
@@ -8,10 +9,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-01-21 12:15+0000\n"
+"PO-Revision-Date: 2019-06-13 01:20+0000\n"
 "Language-Team: \n"
 "X-Generator: Zanata 4.6.2\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Last-Translator: Eun-Ju Kim <eukim@redhat.com>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language: ko\n"
 
@@ -117,42 +118,42 @@ msgstr "복사 할 수 없습니다 [%s] ~ [%s/%s] [%d] : %s"
 #: src/lib/authselect_backup.c:174
 #, c-format
 msgid "Trying to backup authselect configuration to [%s]"
-msgstr ""
+msgstr "[%s]에 authselect 설정을 백업하려고 합니다. "
 
 #: src/lib/authselect_backup.c:179
 #, c-format
 msgid "Trying to backup system configuration to [%s]"
-msgstr ""
+msgstr "[%s]에 시스템 설정을 백업하려고 합니다. "
 
 #: src/lib/authselect_backup.c:184
 #, c-format
 msgid "Backup was successfuly created at [%s]"
-msgstr ""
+msgstr "[%s]에 백업이 생성되었습니다 "
 
 #: src/lib/authselect_backup.c:188
 #, c-format
 msgid "Unable to create backup [%d]: %s"
-msgstr ""
+msgstr "백업을 생성할 수 없습니다 [%d]: %s"
 
 #: src/lib/authselect_backup.c:205 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
-msgstr ""
+msgstr "디렉토리를 나열할 수 없습니다 [%s] [%d] : %s"
 
 #: src/lib/authselect_backup.c:219
 #, c-format
 msgid "Removing backup [%s]"
-msgstr ""
+msgstr "백업 제거 중 [%s]"
 
 #: src/lib/authselect_backup.c:228
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
-msgstr ""
+msgstr "디렉토리를 삭제할 수 없습니다 [%s] [%d]: %s"
 
 #: src/lib/authselect_backup.c:300
 #, c-format
 msgid "Unable to copy files [%d]: %s"
-msgstr ""
+msgstr "파일을 복사할 수 없습니다 [%d]: %s"
 
 #: src/lib/authselect_backup.c:306 src/lib/profiles/activate.c:78
 #, c-format
@@ -171,22 +172,22 @@ msgstr "dconf 데이터베이스를 업데이트 할 수 없습니다 [%d] : %s"
 #: src/lib/authselect_backup.c:337
 #, c-format
 msgid "Restoring configuration from backup [%s]"
-msgstr ""
+msgstr "백업에서 설정 복구 중 [%s]"
 
 #: src/lib/authselect_backup.c:353
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
-msgstr ""
+msgstr "백업 [%s]에는 authselect 설정이 포함되어 있습니다 "
 
 #: src/lib/authselect_backup.c:356
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
-msgstr ""
+msgstr "백업 [%s]에  비 authselect 설정이 포함되어 있습니다 "
 
 #: src/lib/authselect_backup.c:362
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
-msgstr ""
+msgstr "복구할 수 없음 [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:104
 msgid "Unable to generate nsswitch.conf"
@@ -569,7 +570,7 @@ msgstr "프로필 [%s]에 이름이 없습니다.%s]!"
 #: src/lib/util/dir.c:77 src/lib/util/dir.c:83
 #, c-format
 msgid "Unable to get basename of [%s]"
-msgstr ""
+msgstr " [%s]의 기본 이름을 가져올 수 없습니다 "
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
 #: src/lib/util/file.c:198 src/cli/main.c:826
@@ -585,12 +586,12 @@ msgstr "디렉토리를 stat 할 수 없습니다 [%d] : %s"
 #: src/lib/util/dir.c:313
 #, c-format
 msgid "Removing file [%s/%s]"
-msgstr ""
+msgstr "[%s/%s] 파일 제거 중 "
 
 #: src/lib/util/dir.c:321
 #, c-format
 msgid "Removing directory [%s]"
-msgstr ""
+msgstr "[%s] 디렉토리 제거 중 "
 
 #: src/lib/util/file.c:43
 msgid "Internal error: stat cannot be NULL!"
@@ -678,21 +679,21 @@ msgstr "selinux 컨텍스트를 찾을 수 없습니다 [%d] : %s"
 #: src/lib/util/selinux.c:59
 #, c-format
 msgid "Found default selinux context for [%s]: %s"
-msgstr ""
+msgstr "[%s]의 기본 selinux 컨텍스트가 발견되었습니다: %s"
 
 #: src/lib/util/selinux.c:84
 #, c-format
 msgid "Unable to obtain selinux context for [%s] [%d]: %s"
-msgstr ""
+msgstr "[%s] [%d]의 selinux 컨텍스트를 가져올 수 없습니다: %s"
 
 #: src/lib/util/selinux.c:91
 msgid "not set"
-msgstr ""
+msgstr "설정되어 있지 않음"
 
 #: src/lib/util/selinux.c:90
 #, c-format
 msgid "Found selinux context for [%s]: %s"
-msgstr ""
+msgstr "[%s]의 selinux 컨텍스트가 발견되었습니다: %s"
 
 #: src/lib/util/selinux.c:115 src/lib/util/selinux.c:183
 #: src/lib/util/selinux.c:249
@@ -746,7 +747,7 @@ msgstr "메시지를 만들 수 없습니다!"
 #: src/lib/util/template.c:595
 #, c-format
 msgid "Unable to find new match: regex error %d"
-msgstr ""
+msgstr "새로운 match: regex 오류 %d를 찾을 수 없습니다"
 
 #: src/lib/util/template.c:725
 #, c-format
@@ -824,7 +825,7 @@ msgstr "\n"
 #: src/cli/cli_tool.c:222
 #, c-format
 msgid "Authselect command '%s' can only be run as root!\n"
-msgstr ""
+msgstr "Authselect 명령 '%s'은/는 root로만 실행할 수 있습니다!\n"
 
 #: src/cli/cli_tool.c:239
 msgid "Bug: commands can't be NULL!\n"
@@ -894,7 +895,7 @@ msgstr "명령 인수를 구문 분석 할 수 없습니다."
 
 #: src/cli/main.c:130
 msgid "Unable to backup current configuration!\n"
-msgstr ""
+msgstr "현재 설정을 백업할 수 없습니다!\n"
 
 #: src/cli/main.c:134
 #, c-format
@@ -907,7 +908,7 @@ msgstr "변경 적용"
 
 #: src/cli/main.c:157 src/cli/main.c:244 src/cli/main.c:624 src/cli/main.c:701
 msgid "Backup system files before activating profile (generate unique name)"
-msgstr ""
+msgstr "프로필을 활성화하기 전에 시스템 파일 백업 (고유한 이름 생성)"
 
 #: src/cli/main.c:158 src/cli/main.c:245 src/cli/main.c:625 src/cli/main.c:702
 msgid "Backup system files before activating profile"
@@ -1031,7 +1032,7 @@ msgstr "현재 구성이 유효합니다."
 
 #: src/cli/main.c:368
 msgid "System was not configured with authselect."
-msgstr ""
+msgstr "시스템이 authselect로 설정되지 않았습니다."
 
 #: src/cli/main.c:393
 msgid "Unable to get profile list!"
@@ -1040,7 +1041,7 @@ msgstr "프로필 목록을 가져올 수 없습니다!"
 #: src/cli/main.c:446
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
-msgstr ""
+msgstr "프로필 기능 [%d]을/를 가져올 수 없습니다: %s"
 
 #: src/cli/main.c:548
 msgid "Print content of all files"
@@ -1106,7 +1107,7 @@ msgstr "사용할 수있는 기능."
 #: src/cli/main.c:668
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
-msgstr ""
+msgstr "현재 설정 [%d]을/를 백업할 수 없습니다: %s\n"
 
 #: src/cli/main.c:675
 #, c-format
@@ -1116,7 +1117,7 @@ msgstr "기능을 활성화 할 수 없음 [%d] : %s\n"
 #: src/cli/main.c:680
 #, c-format
 msgid "%s\n"
-msgstr ""
+msgstr "%s\n"
 
 #: src/cli/main.c:707
 msgid "Feature to disable."
@@ -1177,34 +1178,34 @@ msgstr "새 프로필이에서 생성되었습니다. %s\n"
 
 #: src/cli/main.c:787
 msgid "Print backup names without any formatting and additional information"
-msgstr ""
+msgstr "형식 및 추가 정보없이 백업 이름을 인쇄합니다 "
 
 #: src/cli/main.c:799
 msgid "Unable to list available backups!"
-msgstr ""
+msgstr "사용 가능한 백업 나열할 수 없습니다!"
 
 #: src/cli/main.c:836
 #, c-format
 msgid "%-*s (created at %s)\n"
-msgstr ""
+msgstr "%-*s (%s에 생성)\n"
 
 #: src/cli/main.c:855
 msgid "Name of the backup to remove."
-msgstr ""
+msgstr "제거할 백업 이름입니다. "
 
 #: src/cli/main.c:864
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
-msgstr ""
+msgstr "백업 [%s] [%d]을/를 제거할 수 없습니다: %s\n"
 
 #: src/cli/main.c:879
 msgid "Name of the backup to restore from."
-msgstr ""
+msgstr "복원할 백업 이름입니다. "
 
 #: src/cli/main.c:888
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
-msgstr ""
+msgstr "백업 [%s] [%d]을/를 복수할 수 없습니다: %s\n"
 
 #: src/cli/main.c:923
 msgid "Select profile"
@@ -1220,7 +1221,7 @@ msgstr "사용 가능한 프로파일 나열"
 
 #: src/cli/main.c:926
 msgid "List available profile features"
-msgstr ""
+msgstr "사용 가능한 프로필 기능을 나열합니다  "
 
 #: src/cli/main.c:927
 msgid "Show profile information"
@@ -1256,15 +1257,15 @@ msgstr "새 authselect 프로파일 만들기"
 
 #: src/cli/main.c:935
 msgid "Backup commands:"
-msgstr ""
+msgstr "백업 명령: "
 
 #: src/cli/main.c:936
 msgid "List available backups"
-msgstr ""
+msgstr "사용 가능한 백업 나열 "
 
 #: src/cli/main.c:937
 msgid "Remove backup"
-msgstr ""
+msgstr "백업 제거 "
 
 #: src/cli/main.c:938
 msgid "Restore from backup"

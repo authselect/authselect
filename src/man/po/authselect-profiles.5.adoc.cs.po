@@ -1,5 +1,4 @@
-# Ludek Janda <ljanda@redhat.com>, 2018. #zanata
-# Hiroshi Yamanaka <hyamanak@redhat.com>, 2019. #zanata
+# Josef Hruška <hrusjos@gmail.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -7,12 +6,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-06-25 01:55+0000\n"
-"Last-Translator: Hiroshi Yamanaka <hyamanak@redhat.com>\n"
-"Language-Team: Japanese\n"
-"Language: ja\n"
+"PO-Revision-Date: 2019-09-08 11:16+0000\n"
+"Last-Translator: Josef Hruška <hrusjos@gmail.com>\n"
+"Language-Team: Czech\n"
+"Language: cs\n"
 "X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 
 #. type: Title =
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:2
@@ -24,36 +23,38 @@ msgstr "authselect-profiles(5)"
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:6
 #, no-wrap
 msgid "NAME"
-msgstr "名前"
+msgstr "NÁZEV"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:8
 msgid "authselect-profiles - how to extend authselect profiles."
-msgstr "authselect-profiles - authselect プロファイルを拡張する方法"
+msgstr "authselect-profiles - jak rozšířit profily authselect."
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:10
 #, no-wrap
 msgid "DESCRIPTION"
-msgstr "説明"
+msgstr "POPIS"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:13
 msgid ""
 "This manual page explains how are authselect profiles organized and how to "
 "create new profiles."
-msgstr "この man ページでは、authselect プロファイルの構築方法および新規プロファイルの作成方法について説明します。"
+msgstr ""
+"Tato manuálová stránka vysvětluje organizaci profilů authselect a jak "
+"vytvářet nové profily."
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:15
 #, no-wrap
 msgid "PROFILE DIRECTORIES"
-msgstr "プロファイルディレクトリー"
+msgstr "ADRESÁŘE PROFILŮ"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:17
 msgid "Profiles can be found in one of three directories."
-msgstr "プロファイルは、3 つのディレクトリーのうちの 1 つで見つけることができます。"
+msgstr "Profily lze nalézt v jednom ze tří adresářů."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:18
@@ -65,7 +66,9 @@ msgstr "*{AUTHSELECT_PROFILE_DIR}*"
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:20
 msgid ""
 "Read-only directory containing profiles shipped together with authselect."
-msgstr "authselect と共に出荷されたプロファイルを含む読み込み専用のディレクトリー。"
+msgstr ""
+"Adresář pouze pro čtení, který obsahuje profily poskytované společně s "
+"authselect."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:21
@@ -78,7 +81,9 @@ msgstr "*{AUTHSELECT_VENDOR_DIR}*"
 msgid ""
 "Read-only directory for vendor-specific profiles that can override the ones "
 "in _default_ directory."
-msgstr "_default_ directory のプロファイルをオーバーライドできるベンダー固有のプロファイルの読み込み専用ディレクトリー。"
+msgstr ""
+"Adresář pouze pro čtení pro profily, které jsou zvláště určené výrobcům a "
+"mohou potlačovat ty ve _výchozím_ (též default) adresáři."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:25
@@ -89,13 +94,13 @@ msgstr "*{AUTHSELECT_CUSTOM_DIR}*"
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:27
 msgid "Place for administrator-defined profiles."
-msgstr "管理者定義のプロファイルの場所"
+msgstr "Místo pro profily vytvořené počítačovými správci."
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:29
 #, no-wrap
 msgid "PROFILE FILES"
-msgstr "プロファイルファイル"
+msgstr "SOUBORY PROFILU"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:33
@@ -104,7 +109,8 @@ msgid ""
 "mandatory profile description and describe the changes that are done to the "
 "system."
 msgstr ""
-"各プロファイルは、1 つ以上のこれらのファイルで構成されます。これらのファイルは、必須プロファイルの説明をし、システムに対する変更を説明します。"
+"Každý profil se skládá z jednoho nebo více těchto souborů, které poskytují "
+"povinný popis profilu a popisují změny, které jsou provedeny v systému."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:34
@@ -116,7 +122,7 @@ msgstr "*README*"
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:36
 msgid ""
 "Description of the profile. The first line must be a name of the profile."
-msgstr "プロファイルの説明。最初の行はプロファイル名でなければなりません。"
+msgstr "Popis profilu. Na prvním řádku se uvádí název profilu."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:37
@@ -126,16 +132,19 @@ msgstr "*system-auth*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:40
+#, fuzzy
 msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
-msgstr "ほぼすべての個別のサービス設定ファイルからインクルードされた PAM スタック。"
+msgstr ""
+"Stoh PAM, který je vložen z téměř každého jednotlivého konfiguračního "
+"souboru služby."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:41
 #, no-wrap
 msgid "*password-auth*, *smartcard-auth*, *fingerprint-auth*"
-msgstr "*password-auth*、*smartcard-auth*、*fingerprint-auth*"
+msgstr "*password-auth*, *smartcard-auth*, *fingerprint-auth*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:45
@@ -144,7 +153,9 @@ msgid ""
 "different types of devices via simultaneously running individual "
 "conversations instead of one aggregate conversation."
 msgstr ""
-"これらの PAM スタックは、1 つの集合的な会話ではなく個々の会話を同時に実行して、異なるタイプのデバイスの認証を扱うアプリケーション向けです。"
+"Tyto stohy PAM jsou určené pro aplikace, které obsluhují autentizaci z "
+"různých druhů zařízení prostřednictvím souběžného vedení jednotlivých "
+"konverzací, nikoliv jedné hromadné konverzace."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:46
@@ -154,6 +165,7 @@ msgstr "*postlogin*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:54
+#, fuzzy
 msgid ""
 "The purpose of this PAM stack is to provide a common place for all PAM "
 "modules which should be called after the stack configured in system-auth or "
@@ -163,10 +175,13 @@ msgid ""
 "regardless of the success or failure of the modules in the system-auth "
 "configuration file._"
 msgstr ""
-"この PAM スタックの目的は、system-auth またはその他の共通の PAM 設定ファイルでスタックが設定された後に、呼び込まれるすべての "
-"PAM "
-"モジュールに共通の場所を提供することです。これは、シェルまたはファイルアクセスでログインサービスを提供するすべての個別のサービス設定ファイルからインクルードされます。 "
-"_注意: postlogin 設定ファイルのモジュールは、system-auth 設定ファイルのモジュールの成功または失敗に関係なく実行されます。_"
+"Účelem tohoto stohu PAM je poskytovat jedno místo pro všechny moduly PAM, "
+"které by měly být volány po stohu nakonfigurovaném v system-auth nebo "
+"ostatních společných konfiguračních souborech PAM. Je vkládán ze všech "
+"jednotlivých konfiguračních souborů služeb, které poskytují přihlašovací "
+"službu s shellem nebo souborovým přístupem. _POZNÁMKA: moduly v "
+"konfiguračním souboru postlogin jsou vykonány bez ohledu na úspěch či "
+"selhání modulů v konfiguračním souboru system-auth._"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:55
@@ -176,14 +191,15 @@ msgstr "*nsswitch.conf*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:59
+#, fuzzy
 msgid ""
 "Name Service Switch configuration file. Only maps relevant to the profile "
 "must be set. Maps that are not specified by the profile are included from "
 "{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf."
 msgstr ""
-"Name Service Switch "
-"設定ファイル。プロファイルと関係のあるマップのみが設定される必要があります。プロファイルによって指定されないマップは、{AUTHSELECT_CONFIG_DIR}/"
-"user-nsswitch.conf からインクルードされます。"
+"Konfigurační soubor Name Service Switch. Pouze mapy příslušné danému profilu "
+"musí být nastaveny. Mapy které nejsou určeny profilem jsou vloženy z "
+"{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:60
@@ -198,8 +214,9 @@ msgid ""
 "for gnome login screen in order to enable or disable smartcard and "
 "fingerprint authentication."
 msgstr ""
-"dconf データベースへの変更。このファイルの主なユースケースは、スマートカードや指紋による認証を有効または無効にするために gnome "
-"ログイン画面に変更を設定することです。"
+"Změny v databázi dconf. Hlavním příkladem použití tohoto souboru je nastavit "
+"změny u přihlašovací obrazovky gnome tak, aby bylo možné povolit či zakázat "
+"autentizaci přes čipovou kartu nebo otisk prstu."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:65
@@ -210,13 +227,13 @@ msgstr "*dconf-locks*"
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:67
 msgid "This file define locks on values set in dconf database."
-msgstr "このファイルは、dconf データベースに設定された値のロックを定義します。"
+msgstr "Tento soubor nastavuje zámek u hodnot nastavených v databázi dconf."
 
 #. type: Title ~
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:69
 #, no-wrap
 msgid "CONDITIONAL LINES"
-msgstr "条件付きの行"
+msgstr "PODMÍNĚNÉ ŘÁDKY"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:73
@@ -225,13 +242,15 @@ msgid ""
 "with optional usage of several operators that can be used to provide some "
 "optional profile features."
 msgstr ""
-"これらの各ファイルは、テンプレートとして機能します。テンプレートとは、いくつかのオプションのプロファイル機能を提供するために使用できる複数のオペレーターをオプションで使用するプレーンテキストファイルです。"
+"Každý z těchto souborů slouží jako šablona. Šablona je soubor prostého textu "
+"s volitelným použitím několika operátorů, které lze použít k vytvoření "
+"některých volitelných vlastností profilu."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:74
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "*{continue if \"feature\"}*"
-msgstr "*{continue if \"feature\"}*"
+msgstr "*{continue if \"vlastnost\"}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:79
@@ -241,14 +260,15 @@ msgid ""
 "whole line with this operator will be removed and the rest of the template "
 "will be processed."
 msgstr ""
-"\"feature\" が定義されない限り、ファイルの処理を即時停止します (残りのファイルコンテンツは削除されます)。\"feature\" "
-"が定義されている場合、このオペレーターのある行はすべて削除され、残りのテンプレートは処理されます。"
+"Ihned zastavit zpracování souboru, pokud není určena \"vlastnost\" "
+"(zbývající obsah souboru bude vynechán). Je-li vlastnost určena, celý řádek "
+"s tímto operátorem bude vynechán a zbytek šablony naopak zpracován."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:80
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "*{stop if \"feature\"}*"
-msgstr "*{stop if \"feature\"}*"
+msgstr "*{stop if \"vlastnost\"}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:85
@@ -258,41 +278,44 @@ msgid ""
 "\"feature\" is not defined, the whole line with this operator will be "
 "removed and the rest of the template will be processed."
 msgstr ""
-"\"continue if\" の反対。\"feature\" が定義されている場合、ファイルの処理を即時停止します "
-"(残りのファイルコンテンツは削除されます)。\"feature\" "
-"が定義されていない場合、このオペレーターのある行はすべて削除され、残りのテンプレートは処理されます。"
+"Opak \"continue if\". Ihned zastavit zpracování souboru, pokud je určena "
+"\"vlastnost\" (zbývají obsah souboru bude vynechán). Není-li vlastnost "
+"určena, celý řádek s tímto operátorem bude vynechán a zbytek šablony naopak "
+"zpracován."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:86
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "*{include if \"feature\"}*"
-msgstr "*{include if \"feature\"}*"
+msgstr "*{include if \"vlastnost\"}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:89
 msgid ""
 "Include the line where this operator is placed only if \"feature\" is "
 "defined."
-msgstr "\"feature\" が定義されている場合のみ、このオペレーターが置かれている行を含めます。"
+msgstr "Vložit řádek s tímto operátorem jen, pokud je \"vlastnost\" určena."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:90
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "*{exclude if \"feature\"}*"
-msgstr "*{exclude if \"feature\"}*"
+msgstr "*{exclude if \"vlastnost\"}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:93
 msgid ""
 "Opposite to \"include-if\". Include the line where this operator is placed "
 "only if \"feature\" is not defined."
-msgstr "\"include-if\" の反対。\"feature\" が定義されていない場合のみ、このオペレーターが置かれている行を含めます。"
+msgstr ""
+"Opak \"include-if\". Vložit řádek s tímto operátorem jen, pokud "
+"\"vlastnost\" není určena."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:94
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "*{imply \"implied-feature\" if \"feature\"}*"
-msgstr "*{imply \"implied-feature\" if \"feature\"}*"
+msgstr "*{imply \"implicitní-vlastnost\" if \"vlastnost\"}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:98
@@ -301,14 +324,15 @@ msgid ""
 "whole line with this operator is removed, thus it is not possible to add "
 "anything else around this operator at the same line."
 msgstr ""
-"\"feature\" 機能が有効になると、\"implied-feature\" "
-"が有効になります。このオペレーターのある行全体が削除されるため、このオペレーターに何かを同時に追加することはできません。"
+"Povolit vlastnost \"implicitní-vlastnost\", pokud vlastnost \"vlastnost\" je "
+"povolena. Celý řádek s tímto operátorem bude vynechá, proto není možné k "
+"tomuto operátoru přidat nic dalšího na tom samém řádku."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:99
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "*{if \"feature\":true|false}*"
-msgstr "*{if \"feature\":true|false}*"
+msgstr "*{if \"vlastnost\":pravda|nepravda}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:102
@@ -316,14 +340,14 @@ msgid ""
 "If \"feature\" is defined, replace this operator with string \"true\", "
 "otherwise with string \"false\"."
 msgstr ""
-"\"feature\" が定義されている場合、このオペレーターを文字列 \"true\" と置き換えます。定義されていない場合は、文字列 "
-"\"false\" と置き換えます。"
+"Je-li \"vlastnost\" určena, nahraď tento operátor řetězcem \"pravda\", jinak "
+"řetězcem \"nepravda\"."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:103
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "*{if \"feature\":true}*"
-msgstr "*{if \"feature\":true}*"
+msgstr "*{if \"vlastnost\":pravda}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:106
@@ -331,7 +355,8 @@ msgid ""
 "If \"feature\" is defined, replace this operator with string \"true\", "
 "otherwise with an empty string."
 msgstr ""
-"\"false\" が定義されている場合、このオペレーターを文字列 \"true\" と置き換えます。定義されていない場合は、空の文字列と置き換えます。"
+"Je-li \"vlastnost\" určena, nahraď tento operátor řetězcem \"pravda\", jinak "
+"prázdným řetězcem."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:110
@@ -340,7 +365,9 @@ msgid ""
 "specifying single feature name. In this case the expression will evaluate to "
 "true or false and the conditional operator will act upon the result."
 msgstr ""
-"また、単一の機能名を指定せずに、条件付きの行に論理式を使用することも可能です。この場合、この式は真または偽を評価し、条件演算子が結果に従って動作します。"
+"Je též možné v podmíněných řádcích používat logické výrazy namísto uvádění "
+"jednotlivých názvů vlastností. V tomto případě se výraz vyhodnotí jako "
+"pravda či nepravda a podmínkový operátor tak bude jednat dle výsledku."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:115
@@ -350,20 +377,21 @@ msgid ""
 "from the following logical operators: _and_, _or_ and _not_. The expression "
 "may also be enclosed in parentheses and contain multiple subexpressions."
 msgstr ""
-"式の構文は、機能が定義されていると _true_ を返し、機能が定義されておらず、_and_、_or_、_not_ "
-"の論理演算子のものでなければ、_false_ を返す機能名 (例 \"_feature_\") "
-"から成ります。この式は、括弧で閉じられ、複数のサブ式を含むことがあります。"
+"Syntaxe výrazu se skládá z názvů vlastností (např. _\"vlastnost\"_), která "
+"vrací _pravda_, když je vlastnost určena, nebo _nepravda_, když určena není, "
+"a těchto logických operátorů: _and_, _or_ a _not_. Výraz lze rovněž uzavřít "
+"do závorek a mít tak více podvýrazů."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:117
 msgid "For example:"
-msgstr "例:"
+msgstr "Na příklad:"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:118
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "*{if \"feature1\" or \"feature2\":true}*"
-msgstr "*{if \"feature1\" or \"feature2\":true}*"
+msgstr "*{if \"vlastnost1\" or \"vlastnost2\":pravda}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:121
@@ -371,14 +399,14 @@ msgid ""
 "If \"feature1\" or \"feature2\" is defined, replace this operator with "
 "string \"true\", otherwise with an empty string."
 msgstr ""
-"\"feature1\"または \"feature2\" が定義されると、この演算子が文字列 \"true\" "
-"で置き換えられます。定義されていない場合は、空の文字列で置き換えられます。"
+"Jsou-li \"vlastnost1\" a \"vlastnost2\" určeny, nahraď tento operátor "
+"řetězcem \"pravda\", jinak prázdným řetězcem."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:122
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "*{if not \"feature\":true|false}*"
-msgstr "*{if not \"feature\":true|false}*"
+msgstr "*{if not \"vlastnost\":pravda|nepravda}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:125
@@ -386,14 +414,14 @@ msgid ""
 "If \"feature\" is not defined, replace this operator with string \"true\", "
 "otherwise with string \"false\"."
 msgstr ""
-"\"feature\" が定義されていない場合、このオペレーターを文字列 \"true\" と置き換えます。定義されていない場合は、文字列 "
-"\"false\" と置き換えます。"
+"Není-li \"vlastnost\" určena, nahraď tento operátor řetězcem \"pravda\", "
+"jinak řetězcem \"nepravda\"."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:126
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "*{if not \"feature\":true}*"
-msgstr "*{if not \"feature\":true}*"
+msgstr "*{if not \"vlastnost\":pravda}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:129
@@ -401,14 +429,14 @@ msgid ""
 "If \"feature\" is not defined, replace this operator with string \"true\", "
 "otherwise with an empty string."
 msgstr ""
-"\"feature\" が定義されていない場合、このオペレーターを文字列 \"true\" "
-"と置き換えます。定義されていない場合は、空の文字列と置き換えます。"
+"Není-li \"vlastnost\" určena, nahraď tento operátor řetězcem \"pravda\", "
+"jinak prázdným řetězcem. "
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:130
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "*{if \"feature1\" and (\"feature2\" or \"feature3\"):true}*"
-msgstr "*{if \"feature1\" and (\"feature2\" or \"feature3\"):true}*"
+msgstr "*{if \"vlastnost1\" and (\"vlastnost2\" or \"vlastnost3\"):pravda}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:133
@@ -417,14 +445,15 @@ msgid ""
 "defined replace this operator with string \"true\", otherwise with an empty "
 "string."
 msgstr ""
-"\"feature1\" が定義され、\"feature2\" と \"feature3\" のいずれかが定義されると、この演算子が文字列 "
-"\"true\" で置き換えられます。それ以外の場合は、空の文字列で置き換えられます。"
+"Je-li \"vlastnost1\" určena a jedna z vlastností \"vlastnost2 a "
+"\"vlastnost3\" také, nahraď tento operátor řetězcem \"pravda\", jinak "
+"prázdným řetězcem."
 
 #. type: Title ~
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:135
 #, no-wrap
 msgid "EXAMPLE"
-msgstr "例"
+msgstr "PŘÍKLAD"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:138
@@ -432,8 +461,8 @@ msgid ""
 "Here is an example of using \"if\" operator. If \"with-sudo\" feature is "
 "enabled, it will add \"sss\" to sudoers line."
 msgstr ""
-"これは \"if\" オペレーターを使用した例です。\"with-sudo\" 機能が有効になると、sudoers の行に \"sss\" "
-"を追加します。"
+"Zde máte příklad použití operátoru \"if\". Je-li vlastnost \"with-sudo\" "
+"povolena, přidá \"sss\" to řádku sudoers."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:145
@@ -461,10 +490,10 @@ msgid ""
 "If it is enabled and also \"with-faillock\" feature is enabled, it will also "
 "enable support for pam_faillock."
 msgstr ""
-"これは \"continue-if\" オペレーターおよび \"include-if\" "
-"オペレーターの例です。結果として得られるファイルは、\"with-smartcard\" "
-"機能が有効にならない限り、空になります。これが有効になり、\"with-faillock\" 機能も有効になった場合、pam_faillock "
-"へのサポートも有効にします。"
+"Zde je příklad s operátory \"continue-if\" a \"include-if\". Výsledný soubor "
+"bude prázdný, pokud není povolena vlastnost \"with-smartcard\". Je-li tato "
+"vlastnost povolena a rovněž povolena vlastnost \"with-faillock\", povolí "
+"rovněž podporu pro pam_faillock."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:163
@@ -519,9 +548,10 @@ msgid ""
 "not have to include both features but only \"with-smartcard-required\" is "
 "necessary."
 msgstr ""
-"これは、論理式を使用した \"continue-if\" の例です。このファイルは、\"with-smartcard\" または \"with-"
-"smartcard-required\" を設定しない限り空になります。これにより、_authselect select_ "
-"コマンドの読み出しが簡素化されます。\"with-smartcard-required\" のみが必要で、両方の機能を含める必要はありません。"
+"Zde je příklad \"continue=if\" s logickým výrazem. Výsledný soubor bude "
+"prázdný, pokud není nastavena \"with-smartcard\" nebo \"with-smartcard-"
+"required\". Zjednoduší to volání příkazu _authselect select_, který nemusí "
+"vkládat obě vlastnosti, neboť nezbytná je pouze \"with-smartcard-required\"."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:181
@@ -553,8 +583,8 @@ msgstr ""
 "delay=2000000\n"
 "  auth        required                                     pam_faillock.so "
 "preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
-"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
-"uid >= 1000 quiet\n"
+"  auth        [default=1 ignore=ignore success=ok]         paleam_succeed_if."
+"so uid >= 1000 quiet\n"
 "  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
 "  auth        sufficient                                   pam_unix.so "
 "nullok try_first_pass\n"
@@ -575,8 +605,10 @@ msgid ""
 "all relevant PAM modules are used. This will achieve the same behavior as "
 "the previous example."
 msgstr ""
-"これは、\"imply-if\" 演算子の例です。\"with-smartcard-required\" 機能を有効化すると、すべての関連の PAM "
-"モジュールが使用されるようにするために \"with-smartcard\" が有効になります。これにより、以前の例と同じ動作が確立されます。"
+"Zde je příklad s operátorem \"imply-if\". Povolení vlastnosti \"with-"
+"smartcard-required\" povolí rovněž \"with-smart-card\", aby se zajistilo, že "
+"budou použity všechny odpovídající moduly PAM. Tímto se dosáhne stejného "
+"chování, jako v předchozím příkladu."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:201
@@ -640,7 +672,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:203
 #, no-wrap
 msgid "CREATING A NEW PROFILE"
-msgstr "新規プロファイルの作成"
+msgstr "TVORBA NOVÉHO PROFILU"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:208
@@ -650,9 +682,10 @@ msgid ""
 "files must be present, only *README* is mandatory. Other files can be "
 "created on per-need basis."
 msgstr ""
-"authselect 内で新規のプロファイルを登録するには、上記に一覧表示したファイルを使用して authselect プロファイルロケーションの 1 "
-"つにディレクトリーを作成します。すべてのファイルが必要なわけではありません。*README* "
-"のみが必須です。他のファイルは必要に応じて作成することができます。"
+"Chcete-li zaznamenat nový profil v rámci authselect, vytvořte adresář se "
+"výše uvedenými soubory v jednom z umístění profilů authselect. Ne všechny "
+"soubory se musí v adresáři nacházet, povinný je pouze \"README\". Ostatní "
+"soubory lze vytvořit dle potřeby."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:212
@@ -661,17 +694,17 @@ msgid ""
 "profile. See *authselect(8)* manual page or *authselect create-profile --"
 "help* for more information."
 msgstr ""
-"新しいプロファイルを作成する際には *authselect create-profile* "
-"が役立つことがあります。詳細は、*authselect(8)* マニュアルページまたは *authselect create-profile --"
-"help* を参照してください。"
+"Při vytváření nového profilu vám může pomoci příkaz *authselect create-"
+"profile*. Více informací viz manuálová stránka *authselect(8)* nebo "
+"*authselect create-profile --help*."
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:214
 #, no-wrap
 msgid "SEE ALSO"
-msgstr "以下も参照してください。"
+msgstr "VIZ TÉŽ"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:215
 msgid "authselect(8), nsswitch.conf(5), PAM(8)"
-msgstr "authselect(8)、nsswitch.conf(5)、PAM(8)"
+msgstr "authselect(8), nsswitch.conf(5), PAM(8)"

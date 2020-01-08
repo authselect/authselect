@@ -1,5 +1,4 @@
-# Meskó Balázs <meskobalazs@gmail.com>, 2018. #zanata
-# Meskó Balázs <meskobalazs@gmail.com>, 2019. #zanata
+# Josef Hruška <hrusjos@gmail.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -7,12 +6,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-10-26 08:22+0000\n"
-"Last-Translator: Meskó Balázs <meskobalazs@gmail.com>\n"
-"Language-Team: Hungarian\n"
-"Language: hu\n"
+"PO-Revision-Date: 2019-09-07 01:07+0000\n"
+"Last-Translator: Josef Hruška <hrusjos@gmail.com>\n"
+"Language-Team: Czech\n"
+"Language: cs\n"
 "X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 
 #. type: Title =
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:2
@@ -24,33 +23,31 @@ msgstr "authselect(8)"
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:6
 #, no-wrap
 msgid "NAME"
-msgstr "NÉV"
+msgstr "NÁZEV"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:9
 msgid "authselect - select system identity and authentication sources."
 msgstr ""
-"authselect – rendszer személyazonossági és hitelesítési források "
-"kiválasztása."
+"authselect - poskytuje výběr systémové totožnosti a zdrojů autentizace."
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:11
 #, no-wrap
 msgid "SYNOPSIS"
-msgstr "ÁTTEKINTÉS"
+msgstr "SOUHRN"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:13
 #, no-wrap
 msgid " authselect [--debug] [--trace] [--warn] command [command options] \n"
-msgstr ""
-" authselect [--debug] [--trace] [--warn] parancs [parancs kapcsolók] \n"
+msgstr " authselect [--debug] [--trace] [--warn] příkaz [volby příkazu] \n"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:15
 #, no-wrap
 msgid "DESCRIPTION"
-msgstr "LEÍRÁS"
+msgstr "POPIS"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:21
@@ -66,12 +63,13 @@ msgid ""
 "use\n"
 "identity and authentication sources defined by the profile.\n"
 msgstr ""
-"Az *authselect* egy eszköz a rendszer személyazonossági és hitelesítési\n"
-"forrásainak és szolgáltatásainak egy profil kiválasztásával történő \n"
-"beállításához. A profil egy fájlkészlet, amely leírja, hogy fog kinézni a\n"
-"konfiguráció. Ha egy profil kiválasztásra kerül, az *authselect* létrehozza\n"
-"a használandó nsswitch.conf(5) és PAM(8) készletet, hogy azok a profil által\n"
-"megadott személyazonossági és hitelesítési forrásokat használják.\n"
+"*Authselect* je nástroj pro nastavení systémové totožnosti i zdrojů "
+"autentizace\n"
+"a jejích poskytovatelů prostřednictvím výběru určitého profilu. Profil je "
+"sadou\n"
+"souborů, která popisuje, jak má vypadat výsledné nastavení systému. Je-li\n"
+"vybrán profil, *authselect* vytvoří stoh nsswitch.conf(5) a PAM(8), který\n"
+"používá totožnost a zdroje autentizace určené profilem.\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:27
@@ -82,17 +80,17 @@ msgid ""
 "*authselect*. See _authselect-profiles(5)_ for more information on extending "
 "existing profiles."
 msgstr ""
-"Ha a biztosított profilkészlet nem elégséges, akkor a rendszergazda további "
-"egyéni profilokat hozhat létre azáltal, hogy egy speciális profilkönyvtárba "
-"helyezi azokat ({AUTHSELECT_CUSTOM_DIR}). Így téve, a profilt azonnal tudja "
-"használni az *authselect*. A meglévő profilok bővítéséről lásd a következőt: "
-"_authselect-profiles(5)_."
+"Pokud poskytnutá profilová sada nedostačuje, správce může vytvořit vlastní "
+"profil, který umístí do zvláštního profilového adresáře "
+"({AUTHSELECT_CUSTOM_DIR}). Tímto se stane profil pro *authselect* ihned "
+"použitelným. Více informací o rozšiřování současných profilů viz _authselect-"
+"profiles(5)_."
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:29
 #, no-wrap
 msgid "AVAILABLE COMMANDS"
-msgstr "ELÉRHETŐ PARANCSOK"
+msgstr "DOSTUPNÉ PŘÍKAZY"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:32
@@ -100,9 +98,9 @@ msgid ""
 "To list all available commands run *authselect* without any parameters.  To "
 "print help for the selected command run *authselect COMMAND --help*."
 msgstr ""
-"Az összes elérhető parancs felsorolásához futtassa paraméterek nélkül az "
-"*authselect* parancsot. Egy kiválasztott parancs súgójához futtassa a "
-"következőt: *authselect PARANCS --help*."
+"Všechny dostupné příkazy lze vypsat spuštěním *authselect* bez jakýchkoliv "
+"parametrů. Zobrazení nápovědy pro vybraný příkaz lze spustit příkazem "
+"*authselect PŘÍKAZ --help*."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:33
@@ -111,8 +109,8 @@ msgid ""
 "*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup="
 "NAME]"
 msgstr ""
-"*select* profilazonosító [funkciók] [-f, --force] [-q, --quiet] [-b] [--"
-"backup=NÉV]"
+"*select* id_profilu [vlastnosti] [-f, --force] [-q, --quiet] [-b] [--backup="
+"NÁZEV]"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:36
@@ -120,8 +118,8 @@ msgid ""
 "Activate desired profile. See profile description with *show* command, to "
 "list profile specific optional features."
 msgstr ""
-"Kívánt profil aktiválása. A profil saját nem kötelező funkcióihoz lásd a "
-"profilleírást a *show* paranccsal."
+"Aktivuje požadovaný profil. Výpis volitelných vlastností daného profilu viz "
+"popis profilu s příkazem *show*."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:37
@@ -138,10 +136,11 @@ msgid ""
 "automatically backup system files before writing any change unless\n"
 "*--nobackup* option is set.\n"
 msgstr ""
-"A módosítások kiírása akkor is, ha a konfiguráció nem az\n"
-"authselecttel, hanem egy másik eszközzel, vagy kézi módosításokkal\n"
-"készült. Ez a kapcsoló automatikusan biztonsági mentést készít a\n"
-"rendszerfájlokról, hacsak nincs megadva a *--nobackup* kapcsoló.\n"
+"Zapsat změny, i když předchozí konfigurace nebyla vytvořena authselectem, "
+"ale\n"
+"jiným nástrojem nebo ručně. Tato volba automaticky zálohuje systémové "
+"soubory\n"
+"před zápisem kterékoliv změny, pokud není nastavena volba *--nobackup*.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:43 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:68 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:137 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:155
@@ -158,16 +157,16 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"A rendszerfájlok biztonsági mentése a kiválasztott profil aktiválása\n"
-"előtt. A biztonsági mentés tárolási helye: {AUTHSELECT_BACKUP_DIR}/NAME.\n"
-"A jelenlegi idő és egy egyedi karakterlánc lesz a mentés neve. Ez a\n"
-"*--backup=* kapcsoló rövidebb verziója.\n"
+"Vytvořit zálohu systémových souborů před aktivací zvoleného profilu. Záloha\n"
+"bude uložena v {AUTHSELECT_BACKUP_DIR}/NÁZEV. Jako název zálohy\n"
+"se použije aktuální čas a jedinečný řetězec. Jedná se o kratší formu volby\n"
+"*--backup=*.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:49 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:74 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:143 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:161
 #, no-wrap
 msgid "*--backup=NAME*:"
-msgstr "*--backup=NÉV*:"
+msgstr "*--backup=NÁZEV*:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:53
@@ -177,10 +176,9 @@ msgid ""
 "will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
 "unique string is used as a name if no value is provided.\n"
 msgstr ""
-"A rendszerfájlok biztonsági mentése a kiválasztott profil aktiválása\n"
-"előtt. A biztonsági mentés tárolási helye: {AUTHSELECT_BACKUP_DIR}/NAME.\n"
-"Ha nem ad meg más értéket, akkor a jelenlegi idő és egy egyedi\n"
-"karakterlánc lesz a mentés neve.\n"
+"Vytvořit zálohu systémových souborů před aktivací zvoleného profilu. Záloha\n"
+"bude uložena v {AUTHSELECT_BACKUP_DIR}/NÁZEV. Není-li zadána\n"
+"hodnota, jako název zálohy se použije aktuální čas a jedinečný řetězec.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:54
@@ -193,8 +191,7 @@ msgstr "*--nobackup*:"
 #, no-wrap
 msgid "Do not backup system configuration even if *--force* is set.\n"
 msgstr ""
-"Még akkor sem készít biztonsági mentést a rendszerkonfigurációról, ha\n"
-"meg van adva a *--force* kapcsoló.\n"
+"Nezálohovat systémovou konfiguraci, přestože je nastavena volba *--force*.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:57 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:148
@@ -209,15 +206,14 @@ msgid ""
 "The command will not print any informational message such as additional\n"
 "profile requirements or backup location. Errors are still being print.\n"
 msgstr ""
-"A parancs nem fog semmilyen információs üzenetet kiírni, mint például\n"
-"a profilkövetelmények vagy a biztonsági mentés helye. A hibák továbbra\n"
-"is ki lesznek írva.\n"
+"Příkaz nevypíše žádné informační zprávy, jako např. dodatečné požadavky na\n"
+"profil nebo umístění zálohy. Chybové hlášky vypsány budou.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:61
 #, no-wrap
 msgid "*apply-changes* [-b] [--backup=NAME]"
-msgstr "*apply-changes* [-b] [--backup=NÉV]"
+msgstr "*apply-changes* [-b] [--backup=NÁZEV]"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:67
@@ -228,11 +224,11 @@ msgid ""
 "changes if the existing configuration is a valid authselect configuration, "
 "otherwise an error is returned."
 msgstr ""
-"A jelenleg kiválasztott profil újraalkalmazása. Ha profilsablonok frissítve "
-"voltak, akkor a parancs a jelenlegi rendszerkonfiguráció újra előállításához "
-"használható, hogy aktiválja ezen változtatásokat a rendszeren. Ez a parancs "
-"csak akkor alkalmazza újra a módosításokat, ha a jelenlegi konfiguráció egy "
-"érvényes authselect konfiguráció, ellenkező esetben hibát ad vissza."
+"Opětovně aplikovat zvolený profil. Jsou-li zaktualizovány profilové šablony, "
+"tímto příkazem lze znovu vytvořit aktuální systémovou konfiguraci, aby se "
+"tyto změny promítly do systému. Příkaz opětovně aplikuje změny pouze, je-li "
+"aktuální konfigurace platnou konfigurací authselectu, jinak je vrácena chyba."
+""
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:73
@@ -243,10 +239,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"A rendszerfájlok biztonsági mentése a módosítások aktiválása előtt.\n"
-"A biztonsági mentés tárolási helye: {AUTHSELECT_BACKUP_DIR}/NAME.\n"
-"A jelenlegi idő és egy egyedi karakterlánc lesz a mentés neve. Ez a\n"
-"*--backup=* kapcsoló rövidebb verziója.\n"
+"Vytvořit zálohu systémových souborů před použitím změn. Záloha\n"
+"bude uložena v {AUTHSELECT_BACKUP_DIR}/NÁZEV. Jako název zálohy\n"
+"se použije aktuální čas a jedinečný řetězec. Jedná se o kratší formu volby\n"
+"*--backup=*.\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:78
@@ -256,10 +252,9 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
-"A rendszerfájlok biztonsági mentése a módosítások aktiválása előtt.\n"
-"A biztonsági mentés tárolási helye: {AUTHSELECT_BACKUP_DIR}/NAME.\n"
-"Ha nem ad meg más értéket, akkor a jelenlegi idő és egy egyedi\n"
-"karakterlánc lesz a mentés neve.\n"
+"Vytvořit zálohu systémových souborů před použitím změn. Záloha\n"
+"bude uložena v {AUTHSELECT_BACKUP_DIR}/NÁZEV. Není-li zadána\n"
+"hodnota, jako název zálohy se použije aktuální čas a jedinečný řetězec.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:79
@@ -270,13 +265,13 @@ msgstr "*list*"
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:81
 msgid "List available profiles."
-msgstr "Elérhető profilok felsorolása."
+msgstr "Vypsat dostupné profily."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:82
 #, no-wrap
 msgid "*list-features* profile_id"
-msgstr "*list-features* profilazonosító"
+msgstr "*list-features* id_profilu"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:86
@@ -285,31 +280,31 @@ msgid ""
 "the features without any description. Please, read the profile documentation "
 "with *show* to see what the features do."
 msgstr ""
-"Az adott profilban lévő összes elérhető funkció felsorolása. + _Megjegyzés:_ "
-"Ez a leírásuk nélkül sorolja fel a funkciókat. A funkciók leírásához olvassa "
-"el a profil dokumentációját a *show* paranccsal."
+"Vypsat všechny vlastnosti v daném profilu. + _Poznámka:_ Vlastnosti jsou "
+"pouze vypsány bez popisu. Chcete-li získat i popis, prosíme, prostudujte "
+"dokumentaci profilu příkazem *show*."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:87
 #, no-wrap
 msgid "*show* profile_id"
-msgstr "*show* profilazonosító"
+msgstr "*show* id_profilu"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:89
 msgid "Print information about the profile."
-msgstr "Információk kiírása a profilról."
+msgstr "Vypsat informace o profilu."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:90
 #, no-wrap
 msgid "*requirements* profile_id [features]"
-msgstr "*requirements* profilazonosító [funkciók]"
+msgstr "*requirements* id_profilu [vlastnosti]"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:92
 msgid "Print information about profile requirements."
-msgstr "Információk kiírása a profil követelményeiről."
+msgstr "Zobrazit informace o požadavcích na profil."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:93
@@ -324,10 +319,9 @@ msgid ""
 "specified, the command will print raw parameters as they were passed to "
 "*select* command instead of formatted output."
 msgstr ""
-"Információk kiírása a jelenleg kiválasztott profilokról. Ha a *--raw* "
-"kapcsoló meg van adva, akkor a parancs formázott kimenet helyett nyers "
-"paramétereket fog kiírni, ahogy azok átadásra kerülnek a *select* parancsnak."
-""
+"Zobrazit informace o aktuálně zvolených profilech. Je-li uvedena volba *--"
+"raw*, příkaz namísto formátovaného výstupu zobrazí parametry v surovém "
+"stavu, jako kdyby by byly předány příkazu *select*."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:98
@@ -342,14 +336,15 @@ msgid ""
 "*authselect* or there are no leftovers from previous authselect "
 "configuration)."
 msgstr ""
-"Ellenőrzés, hogy a jelenlegi konfiguráció érvényes-e (vagy az *authselect* "
-"készítette vagy nincsenek maradványok az előző authselect konfigurációból)."
+"Provést kontrolu, zda je aktuální konfigurace platná (byla vytvořena buď "
+"nástrojem *authselect* nebo nezůstaly žádné pozůstatky předchozích "
+"konfigurací authselectu)."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:103
 #, no-wrap
 msgid "*test* profile_id [options] [features]"
-msgstr "*test* profilazonosító [kapcsolók] [funkciók]"
+msgstr "*test* id_profilu [volby] [vlastnosti]"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:106
@@ -357,8 +352,8 @@ msgid ""
 "Print content of files generated by *authselect* without actually writing "
 "anything to system configuration."
 msgstr ""
-"Az *authselect* által előállított fájlok tartalmának kiírása anélkül, hogy "
-"bármit ténylegesen a rendszerkonfigurációba írna."
+"Vypsat obsah souborů vytvořených nástrojem *authselect* bez zapsání změn do "
+"systémové konfigurace."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:107
@@ -370,7 +365,7 @@ msgstr "*-a, --all*:"
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:109
 #, no-wrap
 msgid "Print content of all files.\n"
-msgstr "Az összes fájl tartalmának kiírása.\n"
+msgstr "Zobrazit obsah všech souborů.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:110
@@ -382,7 +377,7 @@ msgstr "*-n, --nsswitch*:"
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:112
 #, no-wrap
 msgid "Print nsswitch.conf content.\n"
-msgstr "Az nsswitch.conf tartalmának kiírása.\n"
+msgstr "Zobrazit obsah nsswitch.conf.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:113
@@ -394,7 +389,7 @@ msgstr "*-s, --system-auth*:"
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:115
 #, no-wrap
 msgid "Print system-auth content.\n"
-msgstr "A system-auth tartalmának kiírása.\n"
+msgstr "Zobrazit obsah system-auth.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:116
@@ -406,7 +401,7 @@ msgstr "*-p, --password-auth*:"
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:118
 #, no-wrap
 msgid "Print password-auth content.\n"
-msgstr "A password-auth tartalmának kiírása.\n"
+msgstr "Zobrazit obsah password-auth.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:119
@@ -418,7 +413,7 @@ msgstr "*-c, --smartcard-auth*:"
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:121
 #, no-wrap
 msgid "Print smartcard-auth content.\n"
-msgstr "A smartcard-auth tartalmának kiírása.\n"
+msgstr "Zobrazit obsah smartcard-auth.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:122
@@ -430,7 +425,7 @@ msgstr "*-f, --fingerprint-auth*:"
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:124
 #, no-wrap
 msgid "Print fingerprint-auth content.\n"
-msgstr "A fingerprint-auth tartalmának kiírása.\n"
+msgstr "Zobrazit obsah fingerprint-auth.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:125
@@ -442,7 +437,7 @@ msgstr "*-o, --postlogin*:"
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:127
 #, no-wrap
 msgid "Print postlogin content.\n"
-msgstr "A postlogin tartalmának kiírása.\n"
+msgstr "Zobrazit obsah postlogin.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:128
@@ -454,7 +449,7 @@ msgstr "*-d, --dconf-db*:"
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:130
 #, no-wrap
 msgid "Print dconf database content.\n"
-msgstr "A dconf adatbázis tartalmának kiírása.\n"
+msgstr "Zobrazit obsah databáze dconf.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:131
@@ -466,18 +461,18 @@ msgstr "*-l, --dconf-lock*:"
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:133
 #, no-wrap
 msgid "Print dconf lock content.\n"
-msgstr "A dlock zár tartalmának kiírása.\n"
+msgstr "Zobrazit obsah dconf lock.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:134
 #, no-wrap
 msgid "*enable-feature* feature [-b] [--backup=NAME] [-q, --quiet]"
-msgstr "*enable-feature* funkció [-b] [--backup=NÉV] [-q, --quiet]"
+msgstr "*enable-feature* vlasnost [-b] [--backup=NÁZEV] [-q, --quiet]"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:136
 msgid "Enable feature in the currently selected profile."
-msgstr "Funkció engedélyezése a jelenleg kiválasztott profilban."
+msgstr "Povolit vlastnost v aktuálně zvoleném profilu."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:142
@@ -488,10 +483,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"A rendszerfájlok biztonsági mentése a funkció aktiválása előtt.\n"
-"A biztonsági mentés tárolási helye: {AUTHSELECT_BACKUP_DIR}/NAME.\n"
-"A jelenlegi idő és egy egyedi karakterlánc lesz a mentés neve. Ez a\n"
-"*--backup=* kapcsoló rövidebb verziója.\n"
+"Vytvořit zálohu systémových souborů před povolením vlastnosti. Záloha\n"
+"bude uložena v {AUTHSELECT_BACKUP_DIR}/NÁZEV. Jako název zálohy\n"
+"se použije aktuální čas a jedinečný řetězec. Jedná se o kratší formu volby\n"
+"*--backup=*.\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:147
@@ -501,21 +496,20 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
-"A rendszerfájlok biztonsági mentése a funkció aktiválása előtt.\n"
-"A biztonsági mentés tárolási helye: {AUTHSELECT_BACKUP_DIR}/NAME.\n"
-"Ha nem ad meg más értéket, akkor a jelenlegi idő és egy egyedi\n"
-"karakterlánc lesz a mentés neve.\n"
+"Vytvořit zálohu systémových souborů před povolením vlastnosti. Záloha\n"
+"bude uložena v {AUTHSELECT_BACKUP_DIR}/NÁZEV. Není-li zadána\n"
+"hodnota, jako název zálohy se použije aktuální čas a jedinečný řetězec.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:152
 #, no-wrap
 msgid "*disable-feature* feature [-b] [--backup=NAME]"
-msgstr "*disable-feature* funkció [-b] [--backup=NÉV]"
+msgstr "*disable-feature* vlastnost [-b] [--backup=NÁZEV]"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:154
 msgid "Disable feature in the currently selected profile."
-msgstr "Funkció letiltása a jelenleg kiválasztott profilban."
+msgstr "Zakázat vlastnost v aktuálně zvoleném profilu."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:160
@@ -526,10 +520,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"A rendszerfájlok biztonsági mentése a funkció letiltása előtt.\n"
-"A biztonsági mentés tárolási helye: {AUTHSELECT_BACKUP_DIR}/NAME.\n"
-"A jelenlegi idő és egy egyedi karakterlánc lesz a mentés neve. Ez a\n"
-"*--backup=* kapcsoló rövidebb verziója.\n"
+"Vytvořit zálohu systémových souborů před zákazem vlastnosti. Záloha\n"
+"bude uložena v {AUTHSELECT_BACKUP_DIR}/NÁZEV. Jako název zálohy\n"
+"se použije aktuální čas a jedinečný řetězec. Jedná se o kratší formu volby\n"
+"*--backup=*.\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:165
@@ -539,16 +533,15 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
-"A rendszerfájlok biztonsági mentése a funkció letiltása előtt.\n"
-"A biztonsági mentés tárolási helye: {AUTHSELECT_BACKUP_DIR}/NAME.\n"
-"Ha nem ad meg más értéket, akkor a jelenlegi idő és egy egyedi\n"
-"karakterlánc lesz a mentés neve.\n"
+"Vytvořit zálohu systémových souborů před zákazem vlastnosti. Záloha\n"
+"bude uložena v {AUTHSELECT_BACKUP_DIR}/NÁZEV. Není-li zadána\n"
+"hodnota, jako název zálohy se použije aktuální čas a jedinečný řetězec.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:166
 #, no-wrap
 msgid "*create-profile* NAME [--custom,-c|--vendor,-v] [options]"
-msgstr "*create-profile* NÉV custom,-c|--vendor,-v] [kapcsolók]"
+msgstr "*create-profile* NÁZEV [--custom,-c|--vendor,-v] [volby]"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:171
@@ -558,10 +551,10 @@ msgid ""
 "from the base profile or symbolic links to these files are created if such "
 "option is selected."
 msgstr ""
-"Egy új _NÉV_ nevű egyéni profil létrehozása. A profil alapulhat egy meglévő "
-"profilon, ez esetben az új profilsablonok másolásra kerülnek az alap "
-"profilból, vagy szimbolikus linkek kerülnek létrehozása ha ezt a lehetőséget "
-"választja."
+"Vytvořit nový vlastní profil s názvem dle parametru _NÁZEV_. Profil lze "
+"vytvořit na základě již existujícího profilu, kdy šablony nového profilu "
+"jsou zkopírovány z existujícího (a tedy bázového) profilu, nebo jsou "
+"vytvořeny symbolické odkazy na tyto soubory, je-li uvedena příslušná volba."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:172
@@ -576,15 +569,14 @@ msgid ""
 "The new profile is a vendor profile instead of a custom profile. See\n"
 "_authselect-profiles(5)_ for more information on profile types.\n"
 msgstr ""
-"Az új profil egy gyártói profil egyéni profil helyett. További\n"
-"információkért a profiltípusokról lásd a következőt: \n"
-"_authselect-profiles(5)_.\n"
+"Nový profil se vytvoří jako profil výrobce, nikoliv vlastní profil. Více\n"
+"informací o typech profilů viz _authselect-profiles(5)_.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:176
 #, no-wrap
 msgid "*--base-on=BASE-ID, -b=BASE-ID*:"
-msgstr "*--base-on=ALAP-AZONOSÍTÓ, -b=ALAP-AZONOSÍTÓ*:"
+msgstr "*--base-on=ID-BÁZE, -b=ID-BÁZE*:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:179
@@ -593,38 +585,33 @@ msgid ""
 "The new profile will be based on a profile named _BASE-ID_. The base\n"
 "profile location is determined with these steps:\n"
 msgstr ""
-"Az új profil az _ALAP-AZONOSÍTÓ_ profilon fog alapulni. Az alap profil\n"
-"helyét a következő lépések fogják meghatározni:\n"
+"Nový profil bude založen na (bázovém) profilu s názvem dle parametru _ID-"
+"BÁZE_. Místo, kde se nachází bázový profil, je určeno těmito kroky:\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:180
 #, no-wrap
 msgid "If _BASE-ID_ starts with prefix _custom/_ it is a custom profile.\n"
 msgstr ""
-"Ha az _ALAP-AZONOSÍTÓ_ a _custom/_ előtaggal kezdődik, akkor\n"
-"egy egyéni profil.\n"
+"Je-li před _ID-BÁZE_ předřazeno _custom/_, jedná se o vlastní profil.\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:181
 #, no-wrap
 msgid "Try if _BASE-ID_ is found in vendor profiles.\n"
-msgstr ""
-"Kipróbálás, hogy az _ALAP-AZONOSÍTÓ_ a gyártói profilok\n"
-"között szerepel-e.\n"
+msgstr "Zkus, zda bude _ID-BÁZE_ nalezen v profilech výrobců.\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:182
 #, no-wrap
 msgid "Try if _BASE-ID_ is found in default profiles.\n"
-msgstr ""
-"Kipróbálás, hogy az _ALAP-AZONOSÍTÓ_ az alapértelmezett profilok\n"
-"között szerepel-e.\n"
+msgstr "Zkus, zda bude _ID-BÁZE_ nalezen ve výchozích (default) profilech.\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:183
 #, no-wrap
 msgid "Return an error.\n"
-msgstr "Hiba visszaadása.\n"
+msgstr "Vrať chybu.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:184
@@ -639,12 +626,14 @@ msgid ""
 "The base profile is a default profile even if it is found also within\n"
 "vendor profiles.\n"
 msgstr ""
+"Bázovým profilem bude profil výchozí, i pokud se nalézá též\n"
+"v profilech výrobců.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:188
 #, no-wrap
 msgid "*--symlink-meta*:"
-msgstr ""
+msgstr "*--symlink-meta*:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:191
@@ -653,12 +642,14 @@ msgid ""
 "Meta files, such as _README_ and _REQUIREMENTS_ will be symbolic links\n"
 "to the origin profile files instead of their copy.\n"
 msgstr ""
+"Meta soubory, jako _README_ a _REQUIREMENTS_ budou symbolickými odkazy na\n"
+"soubory původního (tzn. bázového) profilu, nikoliv jejich kopiemi.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:192
 #, no-wrap
 msgid "*--symlink-nsswitch*:"
-msgstr ""
+msgstr "*--symlink-nsswitch*:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:195
@@ -667,12 +658,14 @@ msgid ""
 "_nsswitch.conf_ template will be symbolic link to the origin profile\n"
 "file instead of its copy.\n"
 msgstr ""
+"šablona _nsswitch.conf_ bude symbolickým odkazem na soubor původního (tzn.\n"
+"bázového) profilu, nikoliv jeho kopií.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:196
 #, no-wrap
 msgid "*--symlink-pam*:"
-msgstr ""
+msgstr "*--symlink-pam*:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:199
@@ -681,12 +674,14 @@ msgid ""
 "_PAM_ templates will be symbolic links to the origin profile files\n"
 "instead of their copy.\n"
 msgstr ""
+"šablony _PAM_ budou symbolickými odkazy na soubory původního (tzn.\n"
+"bázového) profilu, nikoliv jejich kopiemi.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:200
 #, no-wrap
 msgid "*--symlink-dconf*:"
-msgstr ""
+msgstr "*--symlink-dconf*:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:203
@@ -695,12 +690,14 @@ msgid ""
 "_dconf_ templates will be symbolic links to the origin profile files\n"
 "instead of their copy.\n"
 msgstr ""
+"šablony _dconf_ budou symbolickými odkazy na soubory původního (tzn.\n"
+"bázového) profilu, nikoliv jejich kopiemi.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:204
 #, no-wrap
 msgid "*--symlink=FILE,-s=FILE*:"
-msgstr ""
+msgstr "*--symlink=SOUBOR,-s=SOUBOR*:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:207
@@ -709,23 +706,26 @@ msgid ""
 "Create a symbolic link for a template file _FILE_ instead of creating\n"
 "its copy. This option can be passed multiple times.\n"
 msgstr ""
+"Vytvořit symbolický odkaz na soubor šablony _SOUBOR_, nikoliv jeho kopii. "
+"Tuto\n"
+"volbu lze uvést vícekrát.\n"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:209
 #, no-wrap
 msgid "BACKUP COMMANDS"
-msgstr ""
+msgstr "PŘÍKAZY ZÁLOHY"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:211
 msgid "These commands can be used to manage backed up configurations."
-msgstr ""
+msgstr "Tyto příkazy lze použít ke správě zálohovaných konfigurací."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:212
 #, no-wrap
 msgid "*backup-list* [-r, --raw]"
-msgstr ""
+msgstr "*backup-list* [-r, --raw]"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:215
@@ -733,23 +733,25 @@ msgid ""
 "Print available backups.  If *--raw* option is specified, the command will "
 "print only backup names without any formatting and additional information."
 msgstr ""
+"Zobrazit dostupné zálohy. Je-li uvedena volba *--raw*, příkaz vypíše pouze "
+"názvy záloh bez jakéhokoliv formátování či dalších informací."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:216
 #, no-wrap
 msgid "*backup-remove* BACKUP"
-msgstr ""
+msgstr "*backup-remove* ZÁLOHA"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:218
 msgid "Permanently delete backup named _BACKUP_."
-msgstr ""
+msgstr "Trvale odstranit zálohu s názvem _ZÁLOHA_."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:219
 #, no-wrap
 msgid "*backup-restore* BACKUP"
-msgstr ""
+msgstr "*backup-restore* BACKUP"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:222
@@ -757,45 +759,47 @@ msgid ""
 "Restore configuration from backup named _BACKUP_. *Note:* this will "
 "overwrite current configuration."
 msgstr ""
+"Obnovit konfiguraci ze zálohy s názvem _ZÁLOHA_. *POZNÁMKA:* Příkaz přepíše "
+"aktuální konfiguraci."
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:224
 #, no-wrap
 msgid "COMMON OPTIONS"
-msgstr ""
+msgstr "SPOLEČNÉ VOLBY"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:226
 msgid "These options are available with all commands."
-msgstr ""
+msgstr "Tyto volby lze použít u všech příkazů."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:227
 #, no-wrap
 msgid "*--debug*"
-msgstr ""
+msgstr "*--debug*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:229
 msgid "Print debugging information and error messages."
-msgstr ""
+msgstr "Zobrazit ladící informace a chybové zprávy."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:230
 #, no-wrap
 msgid "*--trace*"
-msgstr ""
+msgstr "*--trace*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:232
 msgid "Print information about what the tool is doing."
-msgstr ""
+msgstr "Zobrazit informace o tom, co nástroj provádí."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:233
 #, no-wrap
 msgid "*--warn*"
-msgstr ""
+msgstr "*--warn*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:237
@@ -804,12 +808,15 @@ msgid ""
 "execution but may indicate some undesired situations (e.g. unexpected file "
 "in a profile directory)."
 msgstr ""
+"Zobrazit informace o neočekávaných situacích, které nemají vliv na "
+"vykonávání programu, ale mohou naznačovat nějaké nechtěné situace (např. "
+"neočekávaný soubor v adresáři profilu)."
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:239
 #, no-wrap
 msgid "NSSWITCH.CONF MANAGEMENT"
-msgstr ""
+msgstr "SPRÁVA NSSWITCH.CONF"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:245
@@ -820,6 +827,11 @@ msgid ""
 "the *select* command. This mechanism prevents authselect from overwriting "
 "anything that does not match any available profile."
 msgstr ""
+"Authselect vytváří {AUTHSELECT_NSSWITCH_CONF} a žádnému uživateli nedovoluje "
+"provést změny tohoto souboru. Takové změny jsou odhaleny a pokud není "
+"uvedena v příkazu *select* volba *--force*, authselect odmítne zapsat každou "
+"systémovou konfiguraci. Tento mechanismus brání authselectu v přepsání "
+"čehokoliv, co neodpovídá dostupným profilům."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:253
@@ -832,12 +844,19 @@ msgid ""
 "those that are relevant to the profile. If a map is set within a profile, it "
 "always overwrites the same map from _user-nsswitch.conf_."
 msgstr ""
+"Jakékoliv uživatelské změny v mapách nsswitch musí být provedeny v souboru "
+"{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf. Při vytváření nového souboru "
+"_nsswitch.conf_ čte authselect tento soubor a kombinuje ho s konfigurací "
+"zvoleného profilu. Konfigurace profilu má vždy přednost. Jinými slovy "
+"profily nemusí nastavovat všechny mapy nsswitch, mohou pouze nastavovat ty, "
+"jež jsou relevantní pro daný profil. Je-li mapa v rámci profilu nastavena, "
+"vždy přepíše stejnou mapu z _user-nsswitch.conf_."
 
 #. type: Block title
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:254
 #, no-wrap
 msgid "Example 1"
-msgstr ""
+msgstr "Příklad 1"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:265
@@ -852,6 +871,14 @@ msgid ""
 "services:   sss files\n"
 "sudoers:    files sss {include if \"with-sudo\"}\n"
 msgstr ""
+"# \"sssd\" profile\n"
+"$ cat {AUTHSELECT_PROFILE_DIR}/sssd/nsswitch.conf\n"
+"passwd:     sss files systemd\n"
+"group:      sss files systemd\n"
+"netgroup:   sss files\n"
+"automount:  sss files\n"
+"services:   sss files\n"
+"sudoers:    files sss {include if \"with-sudo\"}\n"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:271
@@ -863,12 +890,17 @@ msgid ""
 "hosts: files dns myhostname\n"
 "sudoers: files\n"
 msgstr ""
+"$ cat {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf\n"
+"passwd: files sss\n"
+"group: files sss\n"
+"hosts: files dns myhostname\n"
+"sudoers: files\n"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:273
 #, no-wrap
 msgid "$ authselect select sssd\n"
-msgstr ""
+msgstr "$ authselect select sssd\n"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:283
@@ -884,12 +916,21 @@ msgid ""
 "hosts:      files dns myhostname\n"
 "sudoers:    files\n"
 msgstr ""
+"# k mapám passwd a group z user-nsswitch.conf se nepřihlíží\n"
+"$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
+"passwd:     sss files systemd\n"
+"group:      sss files systemd\n"
+"netgroup:   sss files\n"
+"automount:  sss files\n"
+"services:   sss files\n"
+"hosts:      files dns myhostname\n"
+"sudoers:    files\n"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:285
 #, no-wrap
 msgid "$ authselect select sssd with-sudo\n"
-msgstr ""
+msgstr "$ authselect select sssd with-sudo\n"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:295
@@ -905,27 +946,36 @@ msgid ""
 "sudoers:    files sss\n"
 "hosts:      files dns myhostname\n"
 msgstr ""
+"# k mapám passwd, group a sudoers z user-nsswitch.conf se nepřihlíží\n"
+"$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
+"passwd:     sss files systemdindicate\n"
+"group:      sss files systemd\n"
+"netgroup:   sss files\n"
+"automount:  sss files\n"
+"services:   sss files\n"
+"sudoers:    files sss\n"
+"hosts:      files dns myhostname\n"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:298
 #, no-wrap
 msgid "RETURN CODES"
-msgstr ""
+msgstr "NÁVRATOVÉ KÓDY"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:300
 msgid "The *authselect* can return these exit codes:"
-msgstr ""
+msgstr "*authselect* vrací tyto návraté kódy:"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:302
 msgid "0: Success."
-msgstr ""
+msgstr "0: Úspěch."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:303
 msgid "1: Generic error."
-msgstr ""
+msgstr "1: Obecná chyba."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:304
@@ -933,12 +983,16 @@ msgid ""
 "2: Profile or configuration was not found or the system was not configured "
 "with authselect."
 msgstr ""
+"2: Profil nebo konfigurace nenalezeny nebo systém nebyl konfigurován pomocí "
+"authselect."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:305
 msgid ""
 "3: Current configuration is not valid, it was edited without authselect."
 msgstr ""
+"3: Aktuální konfigurace je neplatná, nebyla upravena prostřednictvím "
+"authselect."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:306
@@ -946,17 +1000,19 @@ msgid ""
 "4: System configuration must be overwritten to activate an authselect "
 "profile, --force parameter is needed."
 msgstr ""
+"4: Systémová konfigurace musí být přepsána, aby se aktivoval profil "
+"authselectu, je nutný parametr --force."
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:307
 msgid "5: Executed command must be run as root."
-msgstr ""
+msgstr "5: Zadaný příkaz lze spustit jen jako uživatel root."
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:309
 #, no-wrap
 msgid "GENERATED FILES"
-msgstr ""
+msgstr "VYTVÁŘENÉ SOUBORY"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:312
@@ -964,36 +1020,42 @@ msgid ""
 "Authselect creates and maintains the following files to configure system "
 "identity and authentication providers properly."
 msgstr ""
+"Authselect vytváří a udržuje následující soubory, z důvodu správného "
+"nastavení systémové totožnosti a poskytovatelů autentizace."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:313
 #, no-wrap
 msgid "*{AUTHSELECT_NSSWITCH_CONF}*"
-msgstr ""
+msgstr "*{AUTHSELECT_NSSWITCH_CONF}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:315
 msgid "Name Service Switch configuration file."
-msgstr ""
+msgstr "Konfigurační soubor Name Service Switch."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:316
 #, no-wrap
 msgid "*{AUTHSELECT_PAM_DIR}/system-auth*"
-msgstr ""
+msgstr "*{AUTHSELECT_PAM_DIR}/system-auth*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:319
+#, fuzzy
 msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
 msgstr ""
+"stoh PAM, který se skládá z téměř všech jednotlivých konfiguračních souborů "
+"služby."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:320
 #, no-wrap
 msgid "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
 msgstr ""
+"*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:324
@@ -1002,15 +1064,19 @@ msgid ""
 "different types of devices via simultaneously running individual "
 "conversations instead of one aggregate conversation."
 msgstr ""
+"Tyto stohy PAM jsou určené pro aplikace, které obsluhují autentizaci z "
+"různých druhů zařízení prostřednictvím souběžného vedení jednotlivých "
+"konverzací, nikoliv jedné hromadné konverzace."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:325
 #, no-wrap
 msgid "*{AUTHSELECT_PAM_DIR}/postlogin*"
-msgstr ""
+msgstr "*{AUTHSELECT_PAM_DIR}/postlogin*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:333
+#, fuzzy
 msgid ""
 "The purpose of this PAM stack is to provide a common place for all PAM "
 "modules which should be called after the stack configured in system-auth or "
@@ -1020,12 +1086,19 @@ msgid ""
 "regardless of the success or failure of the modules in the system-auth "
 "configuration file._"
 msgstr ""
+"Účelem tohoto stohu PAM je poskytnout společné místo pro všechny moduly PAM, "
+"které by měly být zavolány po konfiguraci stohu v system-auth nebo ostatních "
+"společných konfiguračních souborech PAM. Je vložen ze všech jednotlivých "
+"konfiguračních souborů služeb, které poskytují přihlašovací službu pomocí "
+"shellu nebo přístupu k souboru. _POZNÁMKA: moduly v konfiguračním souboru "
+"postlogin jsou spuštěny bez ohledu na úspěch či selhání modulů v "
+"konfiguračním souboru system-auth._"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:334
 #, no-wrap
 msgid "*{AUTHSELECT_DCONF_DIR}/{AUTHSELECT_DCONF_FILE}*"
-msgstr ""
+msgstr "*{AUTHSELECT_DCONF_DIR}/{AUTHSELECT_DCONF_FILE}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:338
@@ -1034,26 +1107,30 @@ msgid ""
 "for gnome login screen in order to enable or disable smartcard and "
 "fingerprint authentication."
 msgstr ""
+"Změny v databázi dconf. Hlavním příkladem použití tohoto souboru je nastavit "
+"změny u přihlašovací obrazovky gnome tak, aby bylo možné povolit či zakázat "
+"autentizaci přes čipovou kartu nebo otisk prstu."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:339
 #, no-wrap
 msgid "*{AUTHSELECT_DCONF_DIR}/locks/{AUTHSELECT_DCONF_FILE}*"
-msgstr ""
+msgstr "*{AUTHSELECT_DCONF_DIR}/locks/{AUTHSELECT_DCONF_FILE}*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:341
 msgid "This file define locks on values set in dconf database."
-msgstr ""
+msgstr "Tento soubor nastavuje zámek u hodnot nastavených v databázi dconf."
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:343
 #, no-wrap
 msgid "SEE ALSO"
-msgstr ""
+msgstr "VIZ TÉŽ"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:344
 msgid ""
 "authselect-profiles(5), authselect-migration(7), nsswitch.conf(5), PAM(8)"
 msgstr ""
+"authselect-profiles(5), authselect-migration(7), nsswitch.conf(5), PAM(8)"

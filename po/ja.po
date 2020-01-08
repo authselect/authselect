@@ -1,4 +1,5 @@
 # Ludek Janda <ljanda@redhat.com>, 2018. #zanata
+# Keiko Moriguchi <kemorigu@redhat.com>, 2019. #zanata
 # Kenzo Moriguchi <kmoriguc@redhat.com>, 2019. #zanata
 msgid ""
 msgstr ""
@@ -8,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-01-14 09:32+0000\n"
-"Last-Translator: Kenzo Moriguchi <kmoriguc@redhat.com>\n"
+"PO-Revision-Date: 2019-06-16 11:00+0000\n"
+"Last-Translator: Keiko Moriguchi <kemorigu@redhat.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
 "X-Generator: Zanata 4.6.2\n"
@@ -117,42 +118,42 @@ msgstr "[%s] を [%s/%s] [%d] へコピーできません: %s"
 #: src/lib/authselect_backup.c:174
 #, c-format
 msgid "Trying to backup authselect configuration to [%s]"
-msgstr ""
+msgstr "authselect 設定の [%s] へのバックアップを試行中"
 
 #: src/lib/authselect_backup.c:179
 #, c-format
 msgid "Trying to backup system configuration to [%s]"
-msgstr ""
+msgstr "システム設定の [%s] へのバックアップを試行中"
 
 #: src/lib/authselect_backup.c:184
 #, c-format
 msgid "Backup was successfuly created at [%s]"
-msgstr ""
+msgstr "バックアップは [%s] に正常に作成されました"
 
 #: src/lib/authselect_backup.c:188
 #, c-format
 msgid "Unable to create backup [%d]: %s"
-msgstr ""
+msgstr "バックアップ [%d] を作成できません: %s"
 
 #: src/lib/authselect_backup.c:205 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
-msgstr ""
+msgstr "ディレクトリー [%s] [%d] を一覧表示できません: %s"
 
 #: src/lib/authselect_backup.c:219
 #, c-format
 msgid "Removing backup [%s]"
-msgstr ""
+msgstr "バックアップ [%s] を削除中"
 
 #: src/lib/authselect_backup.c:228
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
-msgstr ""
+msgstr "ディレクトリー [%s] [%d] を削除できません: %s"
 
 #: src/lib/authselect_backup.c:300
 #, c-format
 msgid "Unable to copy files [%d]: %s"
-msgstr ""
+msgstr "ファイル [%d] をコピーできません: %s"
 
 #: src/lib/authselect_backup.c:306 src/lib/profiles/activate.c:78
 #, c-format
@@ -171,22 +172,22 @@ msgstr "dconf データベース [%d] を更新できません: %s"
 #: src/lib/authselect_backup.c:337
 #, c-format
 msgid "Restoring configuration from backup [%s]"
-msgstr ""
+msgstr "バックアップ [%s] から設定を復元中"
 
 #: src/lib/authselect_backup.c:353
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
-msgstr ""
+msgstr "バックアップ [%s] には authselect 設定が含まれます"
 
 #: src/lib/authselect_backup.c:356
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
-msgstr ""
+msgstr "バックアップ [%s] には authselect 以外の設定が含まれます"
 
 #: src/lib/authselect_backup.c:362
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
-msgstr ""
+msgstr "[%s] [%d] を復元できません: %s"
 
 #: src/lib/authselect_profile.c:104
 msgid "Unable to generate nsswitch.conf"
@@ -569,7 +570,7 @@ msgstr "プロファイル [%s] は [%s] に名前を含んでいません。"
 #: src/lib/util/dir.c:77 src/lib/util/dir.c:83
 #, c-format
 msgid "Unable to get basename of [%s]"
-msgstr ""
+msgstr "[%s] の basename を取得できません"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
 #: src/lib/util/file.c:198 src/cli/main.c:826
@@ -585,12 +586,12 @@ msgstr "stat ディレクトリー [%d] の実行に失敗しました: %s"
 #: src/lib/util/dir.c:313
 #, c-format
 msgid "Removing file [%s/%s]"
-msgstr ""
+msgstr "ファイル [%s/%s] を削除中"
 
 #: src/lib/util/dir.c:321
 #, c-format
 msgid "Removing directory [%s]"
-msgstr ""
+msgstr "ディレクトリー [%s] を削除中"
 
 #: src/lib/util/file.c:43
 msgid "Internal error: stat cannot be NULL!"
@@ -678,21 +679,21 @@ msgstr "SELinux コンテキスト [%d] を検索することができません:
 #: src/lib/util/selinux.c:59
 #, c-format
 msgid "Found default selinux context for [%s]: %s"
-msgstr ""
+msgstr "デフォルトの [%s] の SELinux コンテキストを見つけました: %s"
 
 #: src/lib/util/selinux.c:84
 #, c-format
 msgid "Unable to obtain selinux context for [%s] [%d]: %s"
-msgstr ""
+msgstr "[%s] [%d] の SELinux コンテキストを取得できません: %s"
 
 #: src/lib/util/selinux.c:91
 msgid "not set"
-msgstr ""
+msgstr "未設定"
 
 #: src/lib/util/selinux.c:90
 #, c-format
 msgid "Found selinux context for [%s]: %s"
-msgstr ""
+msgstr "[%s] の SELinux コンテキストを見つけました: %s"
 
 #: src/lib/util/selinux.c:115 src/lib/util/selinux.c:183
 #: src/lib/util/selinux.c:249
@@ -746,7 +747,7 @@ msgstr "メッセージを作成できません。"
 #: src/lib/util/template.c:595
 #, c-format
 msgid "Unable to find new match: regex error %d"
-msgstr ""
+msgstr "新規の一致を見つけられません: regex error %d"
 
 #: src/lib/util/template.c:725
 #, c-format
@@ -825,7 +826,7 @@ msgstr "\n"
 #: src/cli/cli_tool.c:222
 #, c-format
 msgid "Authselect command '%s' can only be run as root!\n"
-msgstr ""
+msgstr "authselect コマンド '%s' は root としてのみ実行できます!\n"
 
 #: src/cli/cli_tool.c:239
 msgid "Bug: commands can't be NULL!\n"
@@ -895,7 +896,7 @@ msgstr "コマンド引数を解析できません"
 
 #: src/cli/main.c:130
 msgid "Unable to backup current configuration!\n"
-msgstr ""
+msgstr "現在の設定をバックアップできません!\n"
 
 #: src/cli/main.c:134
 #, c-format
@@ -908,7 +909,7 @@ msgstr "変更を強制"
 
 #: src/cli/main.c:157 src/cli/main.c:244 src/cli/main.c:624 src/cli/main.c:701
 msgid "Backup system files before activating profile (generate unique name)"
-msgstr ""
+msgstr "プロファイルの実行前にシステムファイルをバックアップします (固有名の生成)"
 
 #: src/cli/main.c:158 src/cli/main.c:245 src/cli/main.c:625 src/cli/main.c:702
 msgid "Backup system files before activating profile"
@@ -1033,7 +1034,7 @@ msgstr "現在の設定は有効です。"
 
 #: src/cli/main.c:368
 msgid "System was not configured with authselect."
-msgstr ""
+msgstr "システムは authselect で設定されませんでした。"
 
 #: src/cli/main.c:393
 msgid "Unable to get profile list!"
@@ -1042,7 +1043,7 @@ msgstr "プロファイルリストを取得できません。"
 #: src/cli/main.c:446
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
-msgstr ""
+msgstr "プロファイル機能 [%d] を取得できませんでした: %s"
 
 #: src/cli/main.c:548
 msgid "Print content of all files"
@@ -1107,7 +1108,7 @@ msgstr "有効化する機能。"
 #: src/cli/main.c:668
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
-msgstr ""
+msgstr "現在の設定 [%d] をバックアップできません: %s\n"
 
 #: src/cli/main.c:675
 #, c-format
@@ -1117,7 +1118,7 @@ msgstr "機能 [%d] を有効化できません: %s\n"
 #: src/cli/main.c:680
 #, c-format
 msgid "%s\n"
-msgstr ""
+msgstr "%s\n"
 
 #: src/cli/main.c:707
 msgid "Feature to disable."
@@ -1178,34 +1179,34 @@ msgstr "%s で新規のプロファイルが作成されました\n"
 
 #: src/cli/main.c:787
 msgid "Print backup names without any formatting and additional information"
-msgstr ""
+msgstr "フォーマットおよび追加情報なしでバックアップ名を印刷します"
 
 #: src/cli/main.c:799
 msgid "Unable to list available backups!"
-msgstr ""
+msgstr "利用可能なバックアップの一覧表示ができません!"
 
 #: src/cli/main.c:836
 #, c-format
 msgid "%-*s (created at %s)\n"
-msgstr ""
+msgstr "%-*s (created at %s)\n"
 
 #: src/cli/main.c:855
 msgid "Name of the backup to remove."
-msgstr ""
+msgstr "削除するバックアップ名。"
 
 #: src/cli/main.c:864
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
-msgstr ""
+msgstr "バックアップ [%s] [%d] を削除できません: %s\n"
 
 #: src/cli/main.c:879
 msgid "Name of the backup to restore from."
-msgstr ""
+msgstr "復元するバックアップ名。"
 
 #: src/cli/main.c:888
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
-msgstr ""
+msgstr "バックアップ [%s] [%d] を復元できません: %s\n"
 
 #: src/cli/main.c:923
 msgid "Select profile"
@@ -1221,7 +1222,7 @@ msgstr "利用可能なプロファイルを一覧表示します"
 
 #: src/cli/main.c:926
 msgid "List available profile features"
-msgstr ""
+msgstr "利用可能なプロファイル機能を一覧表示します"
 
 #: src/cli/main.c:927
 msgid "Show profile information"
@@ -1257,15 +1258,15 @@ msgstr "新規の authselect プロファイルを作成"
 
 #: src/cli/main.c:935
 msgid "Backup commands:"
-msgstr ""
+msgstr "バックアップコマンド:"
 
 #: src/cli/main.c:936
 msgid "List available backups"
-msgstr ""
+msgstr "利用可能なバックアップを一覧表示します"
 
 #: src/cli/main.c:937
 msgid "Remove backup"
-msgstr ""
+msgstr "バックアップを削除します"
 
 #: src/cli/main.c:938
 msgid "Restore from backup"

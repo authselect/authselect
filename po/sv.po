@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-03-05 10:26+0000\n"
-"Last-Translator: Pavel Brezina <pbrezina@redhat.com>\n"
+"PO-Revision-Date: 2019-06-14 08:05+0000\n"
+"Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
 "Language-Team: Swedish\n"
 "Language: sv\n"
 "X-Generator: Zanata 4.6.2\n"
@@ -122,42 +122,42 @@ msgstr "Kan inte kopiera [%s] till [%s/%s] [%d]: %s"
 #: src/lib/authselect_backup.c:174
 #, c-format
 msgid "Trying to backup authselect configuration to [%s]"
-msgstr ""
+msgstr "Försöker säkerhetskopiera authselect-konfigurationen till [%s]"
 
 #: src/lib/authselect_backup.c:179
 #, c-format
 msgid "Trying to backup system configuration to [%s]"
-msgstr ""
+msgstr "Försöker säkerhetskopiera systemkonfigurationen till [%s]"
 
 #: src/lib/authselect_backup.c:184
 #, c-format
 msgid "Backup was successfuly created at [%s]"
-msgstr ""
+msgstr "Säkerhetskopian skapades i [%s]"
 
 #: src/lib/authselect_backup.c:188
 #, c-format
 msgid "Unable to create backup [%d]: %s"
-msgstr ""
+msgstr "Kunde inte skapa säkerhetskopian [%d]: %s"
 
 #: src/lib/authselect_backup.c:205 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
-msgstr ""
+msgstr "Kan inte lista katalogen [%s] [%d]: %s"
 
 #: src/lib/authselect_backup.c:219
 #, c-format
 msgid "Removing backup [%s]"
-msgstr ""
+msgstr "Tar bort säkerhetskopian [%s]"
 
 #: src/lib/authselect_backup.c:228
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
-msgstr ""
+msgstr "Kan inte ta bort katalogen [%s] [%d]: %s"
 
 #: src/lib/authselect_backup.c:300
 #, c-format
 msgid "Unable to copy files [%d]: %s"
-msgstr ""
+msgstr "Kan inte kopiera filer [%d]: %s"
 
 #: src/lib/authselect_backup.c:306 src/lib/profiles/activate.c:78
 #, c-format
@@ -176,22 +176,22 @@ msgstr "Kan inte uppdatera dconf-databasen [%d]: %s"
 #: src/lib/authselect_backup.c:337
 #, c-format
 msgid "Restoring configuration from backup [%s]"
-msgstr ""
+msgstr "Återställer konfigurationen från säkerhetskopian [%s]"
 
 #: src/lib/authselect_backup.c:353
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
-msgstr ""
+msgstr "Säkerhetskopian [%s] innehåller en authselect-konfiguration"
 
 #: src/lib/authselect_backup.c:356
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
-msgstr ""
+msgstr "Säkerhetskpoian [%s] innehåller inte en authselect-konfiguration"
 
 #: src/lib/authselect_backup.c:362
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
-msgstr ""
+msgstr "Kan inte återställa [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:104
 msgid "Unable to generate nsswitch.conf"
@@ -574,7 +574,7 @@ msgstr "Profilen [%s] innehåller inte ett namn i [%s]!"
 #: src/lib/util/dir.c:77 src/lib/util/dir.c:83
 #, c-format
 msgid "Unable to get basename of [%s]"
-msgstr ""
+msgstr "Kan inte ta fram basnamnet av [%s]"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
 #: src/lib/util/file.c:198 src/cli/main.c:826
@@ -590,12 +590,12 @@ msgstr "Kan inte ta status på katalogen [%d]: %s"
 #: src/lib/util/dir.c:313
 #, c-format
 msgid "Removing file [%s/%s]"
-msgstr ""
+msgstr "Tar bort filen [%s/%s]"
 
 #: src/lib/util/dir.c:321
 #, c-format
 msgid "Removing directory [%s]"
-msgstr ""
+msgstr "Tar bort katalogen [%s]"
 
 #: src/lib/util/file.c:43
 msgid "Internal error: stat cannot be NULL!"
@@ -751,7 +751,7 @@ msgstr "Kan inte skapa ett meddelande!"
 #: src/lib/util/template.c:595
 #, c-format
 msgid "Unable to find new match: regex error %d"
-msgstr ""
+msgstr "Kan inte hitta en ny matchning: reguljäruttrycksfel %d"
 
 #: src/lib/util/template.c:725
 #, c-format
@@ -830,7 +830,7 @@ msgstr "\n"
 #: src/cli/cli_tool.c:222
 #, c-format
 msgid "Authselect command '%s' can only be run as root!\n"
-msgstr ""
+msgstr "Authselect-kommandot ”%s” kan bara köras som root!\n"
 
 #: src/cli/cli_tool.c:239
 msgid "Bug: commands can't be NULL!\n"
@@ -900,7 +900,7 @@ msgstr "Kan inte tolka kommandoargument"
 
 #: src/cli/main.c:130
 msgid "Unable to backup current configuration!\n"
-msgstr ""
+msgstr "Kan inte säkerhetskopiera den aktuella konfigurationen!\n"
 
 #: src/cli/main.c:134
 #, c-format
@@ -914,6 +914,8 @@ msgstr "Framtvinga ändringar"
 #: src/cli/main.c:157 src/cli/main.c:244 src/cli/main.c:624 src/cli/main.c:701
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr ""
+"Säkerhetskopiera systemfiler före aktivering av en profil (generera ett "
+"unikt namn)"
 
 #: src/cli/main.c:158 src/cli/main.c:245 src/cli/main.c:625 src/cli/main.c:702
 msgid "Backup system files before activating profile"
@@ -1043,7 +1045,7 @@ msgstr "Den aktuella konfigurationen är giltig."
 
 #: src/cli/main.c:368
 msgid "System was not configured with authselect."
-msgstr ""
+msgstr "Systemet konfigurerades inte med authselect."
 
 #: src/cli/main.c:393
 msgid "Unable to get profile list!"
@@ -1052,7 +1054,7 @@ msgstr "Kan inte ta fram profillistan!"
 #: src/cli/main.c:446
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
-msgstr ""
+msgstr "Kan inte ta fram profilfunktioner [%d]: %s"
 
 #: src/cli/main.c:548
 msgid "Print content of all files"
@@ -1118,7 +1120,7 @@ msgstr "Funktion att aktivera."
 #: src/cli/main.c:668
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
-msgstr ""
+msgstr "Kan inte säkerhetskopiera den aktuella konfigurationen [%d]: %s\n"
 
 #: src/cli/main.c:675
 #, c-format
@@ -1128,7 +1130,7 @@ msgstr "Kan inte aktivera funktionen [%d]: %s\n"
 #: src/cli/main.c:680
 #, c-format
 msgid "%s\n"
-msgstr ""
+msgstr "%s\n"
 
 #: src/cli/main.c:707
 msgid "Feature to disable."
@@ -1193,33 +1195,35 @@ msgstr "En ny profil skapades i %s\n"
 #: src/cli/main.c:787
 msgid "Print backup names without any formatting and additional information"
 msgstr ""
+"Skriv namn på säkerhetskopior utan någon formatering eller ytterligare "
+"information"
 
 #: src/cli/main.c:799
 msgid "Unable to list available backups!"
-msgstr ""
+msgstr "Kan inte lista tillgängliga säkerhetskopior!"
 
 #: src/cli/main.c:836
 #, c-format
 msgid "%-*s (created at %s)\n"
-msgstr ""
+msgstr "%-*s (skapad %s)\n"
 
 #: src/cli/main.c:855
 msgid "Name of the backup to remove."
-msgstr ""
+msgstr "Namn på säkerhetskopian att ta bort."
 
 #: src/cli/main.c:864
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
-msgstr ""
+msgstr "Kan inte ta bort säkerhetskopian [%s] [%d]: %s\n"
 
 #: src/cli/main.c:879
 msgid "Name of the backup to restore from."
-msgstr ""
+msgstr "Namn på säkerhetskopian att återställa ifrån."
 
 #: src/cli/main.c:888
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
-msgstr ""
+msgstr "Kan inte återställa säkerhetskopian [%s] [%d]: %s\n"
 
 #: src/cli/main.c:923
 msgid "Select profile"
@@ -1235,7 +1239,7 @@ msgstr "Lista tillgängliga profiler"
 
 #: src/cli/main.c:926
 msgid "List available profile features"
-msgstr ""
+msgstr "Lista tillgängliga profilfunktioner"
 
 #: src/cli/main.c:927
 msgid "Show profile information"
@@ -1271,19 +1275,19 @@ msgstr "Skapa en ny authselect-profil"
 
 #: src/cli/main.c:935
 msgid "Backup commands:"
-msgstr ""
+msgstr "Säkerhetskopieringskommandon:"
 
 #: src/cli/main.c:936
 msgid "List available backups"
-msgstr ""
+msgstr "Lista tillgängliga säkerhetskopior"
 
 #: src/cli/main.c:937
 msgid "Remove backup"
-msgstr ""
+msgstr "Ta bort säkerhetskopia"
 
 #: src/cli/main.c:938
 msgid "Restore from backup"
-msgstr ""
+msgstr "Återställ från säkerhetskopia"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
