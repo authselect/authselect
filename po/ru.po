@@ -5,16 +5,16 @@ msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
 "POT-Creation-Date: 2019-06-13 11:30+0200\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2019-08-27 08:00+0000\n"
 "Last-Translator: Igor Gorbounov <igor.gorbounov@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:169
 msgid "Unable to obtain supported features"
@@ -396,8 +396,7 @@ msgstr "Не удалось прочитать файл [%s/%s] [%d]: %s"
 #: src/lib/util/template.c:639
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
-msgstr ""
-"Не удается выполнить компиляцию регулярного выражения: ошибка regex %d"
+msgstr "Не удается выполнить компиляцию регулярного выражения: ошибка regex %d"
 
 #: src/lib/files/system.c:130 src/lib/files/system.c:195
 #: src/lib/util/template.c:497 src/lib/util/template.c:665
@@ -811,10 +810,12 @@ msgstr "Показать краткое сообщение об использо
 
 #: src/cli/cli_tool.c:169
 #, c-format
-msgid "Usage:\n"
+msgid ""
+"Usage:\n"
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
-msgstr "Использование:\n"
+msgstr ""
+"Использование:\n"
 "%s КОМАНДА АРГУМЕНТЫ-КОМАНДЫ\n"
 "\n"
 
@@ -855,37 +856,47 @@ msgstr "Недостаточно памяти!"
 
 #: src/cli/cli_tool.c:345
 #, c-format
-msgid "Invalid option %s: %s\n"
+msgid ""
+"Invalid option %s: %s\n"
 "\n"
-msgstr "Недопустимый параметр %s: %s\n"
+msgstr ""
+"Недопустимый параметр %s: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:357
 #, c-format
-msgid "Missing option: %s\n"
+msgid ""
+"Missing option: %s\n"
 "\n"
-msgstr "Отсутствует параметр: %s\n"
+msgstr ""
+"Отсутствует параметр: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:367
 #, c-format
-msgid "Only one free argument is expected!\n"
+msgid ""
+"Only one free argument is expected!\n"
 "\n"
-msgstr "Должен быть только один свободный аргумент!\n"
+msgstr ""
+"Должен быть только один свободный аргумент!\n"
 "\n"
 
 #: src/cli/cli_tool.c:377
 #, c-format
-msgid "Unexpected parameter: %s\n"
+msgid ""
+"Unexpected parameter: %s\n"
 "\n"
-msgstr "Неожиданный параметр: %s\n"
+msgstr ""
+"Неожиданный параметр: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:389
 #, c-format
-msgid "At least one option is required!\n"
+msgid ""
+"At least one option is required!\n"
 "\n"
-msgstr "Требуется хотя бы один параметр!\n"
+msgstr ""
+"Требуется хотя бы один параметр!\n"
 "\n"
 
 #: src/cli/main.c:72 src/cli/main.c:429 src/cli/main.c:467
@@ -979,9 +990,11 @@ msgstr "- %s\n"
 
 #: src/cli/main.c:221
 #, c-format
-msgid "\n"
+msgid ""
+"\n"
 "%s\n"
-msgstr "\n"
+msgstr ""
+"\n"
 "%s\n"
 
 #: src/cli/main.c:263
@@ -1099,17 +1112,21 @@ msgstr "Не удается получить сформированное сод
 
 #: src/cli/main.c:602
 #, c-format
-msgid "File %s: Empty\n"
+msgid ""
+"File %s: Empty\n"
 "\n"
-msgstr "Файл %s: пустой\n"
+msgstr ""
+"Файл %s: пустой\n"
 "\n"
 
 #: src/cli/main.c:604
 #, c-format
-msgid "File %s:\n"
+msgid ""
+"File %s:\n"
 "%s\n"
 "\n"
-msgstr "Файл %s:\n"
+msgstr ""
+"Файл %s:\n"
 "%s\n"
 "\n"
 
@@ -1440,8 +1457,7 @@ msgstr ""
 
 #: src/compat/authcompat_Options.py:109
 msgid "SSSD for authentication by default with manually managed configuration"
-msgstr ""
-"SSSD для идентификации по умолчанию с конфигурацией, ведущейся вручную"
+msgstr "SSSD для идентификации по умолчанию с конфигурацией, ведущейся вручную"
 
 #: src/compat/authcompat_Options.py:110
 msgid "caching of user credentials in SSSD by default"
@@ -1456,8 +1472,7 @@ msgid "creation of home directories for users on their first login"
 msgstr "создание домашних каталогов пользователей при первом входе"
 
 #: src/compat/authcompat_Options.py:113
-msgid ""
-"account locking in case of too many consecutive authentication failures"
+msgid "account locking in case of too many consecutive authentication failures"
 msgstr ""
 "блокирование учетной записи в случае слишком большого числа последовательных "
 "ошибок идентификации"
@@ -1634,8 +1649,7 @@ msgstr "См. man authselect-migration(7) для справки о перехо�
 
 #: src/compat/authcompat.py.in.in:476
 msgid "Warning: These options are not supported anymore and have no effect:"
-msgstr ""
-"Предупреждение: эти параметры больше не поддерживаются и не действуют:"
+msgstr "Предупреждение: эти параметры больше не поддерживаются и не действуют:"
 
 #: src/compat/authcompat.py.in.in:496
 msgid "authconfig can only be run as root"
