@@ -73,6 +73,16 @@ with-sudo::
 with-pamaccess::
     Check access.conf during account authorization.
 
+with-files-access-provider::
+    If set, account management for local users is handled also by pam_sss. This
+    is needed if there is an explicitly configured domain with id_provider=files
+    and non-empty access_provider setting in sssd.conf.
+
+    *WARNING:* SSSD access check will become mandatory for local users and
+    if SSSD is stopped then local users will not be able to log in. Only
+    system accounts (as defined by pam_usertype, including root) will be
+    able to log in.
+
 without-nullok::
     Do not add nullok parameter to pam_unix.
 
