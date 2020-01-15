@@ -189,7 +189,7 @@ static errno_t activate(struct cli_cmdline *cmdline)
     }
 
     if (backup || backup_name != NULL || (enforce && !nobackup)) {
-        ret = perform_backup(quiet, backup, backup_name);
+        ret = perform_backup(quiet, 1, backup_name);
         if (ret != EOK) {
             goto done;
         }
