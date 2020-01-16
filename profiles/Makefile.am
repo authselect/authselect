@@ -1,6 +1,16 @@
 authselect_profile_dir=@AUTHSELECT_PROFILE_DIR@
 
 # The shipped profiles
+profile_minimaldir = $(authselect_profile_dir)/minimal
+dist_profile_minimal_DATA = \
+    $(top_srcdir)/profiles/minimal/nsswitch.conf \
+    $(top_srcdir)/profiles/minimal/password-auth \
+    $(top_srcdir)/profiles/minimal/postlogin \
+    $(top_srcdir)/profiles/minimal/README \
+    $(top_srcdir)/profiles/minimal/REQUIREMENTS \
+    $(top_srcdir)/profiles/minimal/system-auth \
+    $(NULL)
+
 profile_nisdir = $(authselect_profile_dir)/nis
 dist_profile_nis_DATA = \
     $(top_srcdir)/profiles/nis/nsswitch.conf \
