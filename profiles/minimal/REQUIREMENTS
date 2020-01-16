@@ -1,0 +1,5 @@
+- with-mkhomedir is selected, make sure pam_oddjob_mkhomedir module                       {include if "with-mkhomedir"}
+  is present and oddjobd service is enabled and active                                    {include if "with-mkhomedir"}
+  - systemctl enable --now oddjobd.service                                                {include if "with-mkhomedir"}
+                                                                                          {include if "with-mkhomedir"}
+- with-altfiles is selected, make sure nss_altfiles module is present                     {include if "with-altfiles"}
