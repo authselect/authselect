@@ -9,7 +9,7 @@ account     required                                     pam_access.so          
 account     required                                     pam_faillock.so                                        {include if "with-faillock"}
 account     required                                     pam_unix.so broken_shadow
 account     sufficient                                   pam_localuser.so
-account     sufficient                                   pam_succeed_if.so uid < 1000 quiet
+account     sufficient                                   pam_usertype.so issystem
 account     required                                     pam_permit.so
 
 password    required                                     pam_deny.so
