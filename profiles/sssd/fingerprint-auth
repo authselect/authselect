@@ -1,9 +1,9 @@
 {continue if "with-fingerprint"}
 auth        required                                     pam_env.so
 auth        required                                     pam_deny.so # Smartcard authentication is required     {include if "with-smartcard-required"}
-auth        required                                     pam_faillock.so preauth silent deny=4 unlock_time=1200 {include if "with-faillock"}
+auth        required                                     pam_faillock.so preauth silent                         {include if "with-faillock"}
 auth        sufficient                                   pam_fprintd.so
-auth        required                                     pam_faillock.so authfail deny=4 unlock_time=1200       {include if "with-faillock"}
+auth        required                                     pam_faillock.so authfail                               {include if "with-faillock"}
 auth        required                                     pam_deny.so
 
 account     required                                     pam_access.so                                          {include if "with-pamaccess"}
