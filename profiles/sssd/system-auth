@@ -1,7 +1,7 @@
 {imply "with-smartcard" if "with-smartcard-required"}
 auth        required                                     pam_env.so
 auth        required                                     pam_faildelay.so delay=2000000
-auth        required                                     pam_faillock.so preauth silent deny=4 unlock_time=1200 {include if "with-faillock"}
+auth        required                                     pam_faillock.so preauth silent                                {include if "with-faillock"}
 auth        [success=1 default=ignore]                   pam_succeed_if.so service notin login:gdm:xdm:kdm:xscreensaver:gnome-screensaver:kscreensaver quiet use_uid {include if "with-smartcard-required"}
 auth        [success=done ignore=ignore default=die]     pam_sss.so require_cert_auth ignore_authinfo_unavail   {include if "with-smartcard-required"}
 auth        sufficient                                   pam_fprintd.so                                         {include if "with-fingerprint"}
@@ -14,7 +14,7 @@ auth        [success=done authinfo_unavail=ignore ignore=ignore default=die] pam
 auth        sufficient                                   pam_unix.so {if not "without-nullok":nullok} try_first_pass
 auth        requisite                                    pam_succeed_if.so uid >= 1000 quiet_success
 auth        sufficient                                   pam_sss.so forward_pass
-auth        required                                     pam_faillock.so authfail deny=4 unlock_time=1200       {include if "with-faillock"}
+auth        required                                     pam_faillock.so authfail                               {include if "with-faillock"}
 auth        required                                     pam_deny.so
 
 account     required                                     pam_access.so                                          {include if "with-pamaccess"}
