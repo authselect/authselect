@@ -236,16 +236,16 @@ static errno_t
 authselect_restore_system_configuration(const char *path)
 {
     struct selinux_safe_copy table[] = {
-        {FILE_CONFIG,      PATH_CONFIG_FILE},
-        {FILE_SYSTEM,      PATH_SYMLINK_SYSTEM},
-        {FILE_PASSWORD,    PATH_SYMLINK_PASSWORD},
-        {FILE_FINGERPRINT, PATH_SYMLINK_FINGERPRINT},
-        {FILE_SMARTCARD,   PATH_SYMLINK_SMARTCARD},
-        {FILE_POSTLOGIN,   PATH_SYMLINK_POSTLOGIN},
-        {FILE_NSSWITCH,    PATH_SYMLINK_NSSWITCH},
-        {FILE_DCONF_DB,    PATH_SYMLINK_DCONF_DB},
-        {FILE_DCONF_LOCK,  PATH_SYMLINK_DCONF_LOCK},
-        {NULL, NULL},
+        {FILE_CONFIG,      PATH_CONFIG_FILE, true},
+        {FILE_SYSTEM,      PATH_SYMLINK_SYSTEM, false},
+        {FILE_PASSWORD,    PATH_SYMLINK_PASSWORD, true},
+        {FILE_FINGERPRINT, PATH_SYMLINK_FINGERPRINT, true},
+        {FILE_SMARTCARD,   PATH_SYMLINK_SMARTCARD, true},
+        {FILE_POSTLOGIN,   PATH_SYMLINK_POSTLOGIN, false},
+        {FILE_NSSWITCH,    PATH_SYMLINK_NSSWITCH, true},
+        {FILE_DCONF_DB,    PATH_SYMLINK_DCONF_DB, true},
+        {FILE_DCONF_LOCK,  PATH_SYMLINK_DCONF_LOCK, true},
+        {NULL, NULL, false},
     };
     errno_t ret;
     int i;
@@ -274,16 +274,16 @@ static errno_t
 authselect_restore_authselect_configuration(const char *path)
 {
     struct selinux_safe_copy table[] = {
-        {FILE_CONFIG,      PATH_CONFIG_FILE},
-        {FILE_SYSTEM,      PATH_SYSTEM},
-        {FILE_PASSWORD,    PATH_PASSWORD},
-        {FILE_FINGERPRINT, PATH_FINGERPRINT},
-        {FILE_SMARTCARD,   PATH_SMARTCARD},
-        {FILE_POSTLOGIN,   PATH_POSTLOGIN},
-        {FILE_NSSWITCH,    PATH_NSSWITCH},
-        {FILE_DCONF_DB,    PATH_DCONF_DB},
-        {FILE_DCONF_LOCK,  PATH_DCONF_LOCK},
-        {NULL, NULL},
+        {FILE_CONFIG,      PATH_CONFIG_FILE, false},
+        {FILE_SYSTEM,      PATH_SYSTEM, false},
+        {FILE_PASSWORD,    PATH_PASSWORD, false},
+        {FILE_FINGERPRINT, PATH_FINGERPRINT, false},
+        {FILE_SMARTCARD,   PATH_SMARTCARD, false},
+        {FILE_POSTLOGIN,   PATH_POSTLOGIN, false},
+        {FILE_NSSWITCH,    PATH_NSSWITCH, false},
+        {FILE_DCONF_DB,    PATH_DCONF_DB, false},
+        {FILE_DCONF_LOCK,  PATH_DCONF_LOCK, false},
+        {NULL, NULL, false},
     };
     errno_t ret;
     int i;
