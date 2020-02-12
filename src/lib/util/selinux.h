@@ -82,6 +82,9 @@ struct selinux_safe_copy {
 
     /* Destination file name. */
     const char *destination;
+
+    /* Unlink destination if source file does not exist. */
+    bool can_unlink;
 };
 
 /**

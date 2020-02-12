@@ -370,6 +370,13 @@ selinux_copy_files_safely(struct selinux_safe_copy *table,
      * on error without overwriting destination files. */
     for (i = 0; table[i].source != NULL; i++) {
         if (file_exists(table[i].source) == ENOENT) {
+            if (!table[i].can_unlink) {
+                ERROR("File [%s] should exist but is missing. It is not safe to "
+                      "delete [%s]. Aborting.", table[i].source,
+                      table[i].destination);
+                ret = EPERM;
+                goto done;
+            }
             INFO("File [%s] does not exist", table[i].source);
             tmpfiles[i] = NULL;
             continue;
