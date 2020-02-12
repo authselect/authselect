@@ -236,6 +236,7 @@ static errno_t
 authselect_restore_system_configuration(const char *path)
 {
     struct selinux_safe_copy table[] = {
+        {FILE_CONFIG,      PATH_CONFIG_FILE},
         {FILE_SYSTEM,      PATH_SYMLINK_SYSTEM},
         {FILE_PASSWORD,    PATH_SYMLINK_PASSWORD},
         {FILE_FINGERPRINT, PATH_SYMLINK_FINGERPRINT},
