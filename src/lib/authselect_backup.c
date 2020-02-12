@@ -201,7 +201,10 @@ authselect_backup_list(void)
     ret = dir_list(AUTHSELECT_BACKUP_DIR,
                    DIR_LIST_DIRS | DIR_LIST_SORT_BY_CTIME,
                    &names, NULL);
-    if (ret != EOK) {
+    if (ret == ENOENT) {
+        INFO(AUTHSELECT_BACKUP_DIR " does not exist.");
+        return string_array_create(0);
+    } else if (ret != EOK) {
         ERROR("Unable to list directory [%s] [%d]: %s",
               AUTHSELECT_BACKUP_DIR, ret, strerror(ret));
         return NULL;
