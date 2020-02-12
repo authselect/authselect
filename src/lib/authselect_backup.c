@@ -181,7 +181,7 @@ authselect_backup(const char *name, char **_path)
 
 done:
     if (ret == EOK) {
-        INFO("Backup was successfuly created at [%s]", path);
+        INFO("Backup was successfully created at [%s]", path);
         *_path = path;
         ret = EOK;
     } else if (ret != EOK) {
