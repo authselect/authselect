@@ -369,6 +369,12 @@ selinux_copy_files_safely(struct selinux_safe_copy *table,
     /* First, write content into temporary files, so we can safely fail
      * on error without overwriting destination files. */
     for (i = 0; table[i].source != NULL; i++) {
+        if (file_exists(table[i].source) == ENOENT) {
+            INFO("File [%s] does not exist", table[i].source);
+            tmpfiles[i] = NULL;
+            continue;
+        }
+
         INFO("Writing temporary file for [%s]", table[i].destination);
         ret = selinux_mkstemp_copy(table[i].source, dirs[i], names[i],
                                    dir_mode, &tmpfiles[i]);
@@ -385,6 +391,12 @@ selinux_copy_files_safely(struct selinux_safe_copy *table,
      * even recover from it.
      */
     for (i = 0; table[i].source != NULL; i++) {
+        if (tmpfiles[i] == NULL) {
+            INFO("Removing [%s]", table[i].destination);
+            unlink(table[i].destination);
+            continue;
+        }
+
         INFO("Renaming [%s] to [%s]", tmpfiles[i], table[i].destination);
         ret = rename(tmpfiles[i], table[i].destination);
         if (ret != 0) {
