@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
 "POT-Creation-Date: 2020-02-12 11:02+0100\n"
-"PO-Revision-Date: 2020-02-16 08:39+0000\n"
+"PO-Revision-Date: 2020-02-18 15:38+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/uk/>\n"
@@ -142,10 +142,8 @@ msgid "Unable to create backup [%d]: %s"
 msgstr "Не вдалося створити резервну копію [%d]: %s"
 
 #: src/lib/authselect_backup.c:205
-#, fuzzy
-#| msgid "[%s] does not exist!"
 msgid " does not exist."
-msgstr "[%s] не існує!"
+msgstr " не існує."
 
 #: src/lib/authselect_backup.c:208 src/lib/profiles/list.c:50
 #, c-format
@@ -735,12 +733,13 @@ msgid ""
 "File [%s] should exist but is missing. It is not safe to delete [%s]. "
 "Aborting."
 msgstr ""
+"Файл [%s] має існувати, але його немає. Вилучати [%s] небезпечно. "
+"Перериваємо обробку."
 
 #: src/lib/util/selinux.c:402
-#, fuzzy, c-format
-#| msgid "Removing backup [%s]"
+#, c-format
 msgid "Removing [%s]"
-msgstr "Вилучаємо резервну копію [%s]"
+msgstr "Вилучаємо [%s]"
 
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:280
