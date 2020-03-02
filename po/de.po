@@ -1,20 +1,22 @@
 # Fabian Affolter <fab@fedoraproject.org>, 2018. #zanata
 # Ludek Janda <ljanda@redhat.com>, 2018. #zanata
 # Ludek Janda <ljanda@redhat.com>, 2019. #zanata
+# Mike FABIAN <mfabian@redhat.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
 "POT-Creation-Date: 2019-06-13 11:30+0200\n"
-"PO-Revision-Date: 2019-01-21 12:16+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: German\n"
+"PO-Revision-Date: 2020-01-22 11:16+0000\n"
+"Last-Translator: Mike FABIAN <mfabian@redhat.com>\n"
+"Language-Team: German <https://translate.stg.fedoraproject.org/projects/"
+"authselect/master-application/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10.3\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:169
 msgid "Unable to obtain supported features"
@@ -23,7 +25,7 @@ msgstr "Unterstützte Funktionen können nicht abgerufen werden"
 #: src/lib/authselect.c:59
 #, c-format
 msgid "Unknown profile feature [%s], did you mean [%s]?"
-msgstr "Unbekannte Profilfunktion [%s], meintest du [%s]"
+msgstr "Unbekannte Profilfunktion [%s], meintest du [%s]?"
 
 #: src/lib/authselect.c:62
 #, c-format
@@ -123,41 +125,45 @@ msgstr "Kopieren nicht möglich%s] an [%s/%s] [%d]: %s"
 #, c-format
 msgid "Trying to backup authselect configuration to [%s]"
 msgstr ""
+"Es wird versucht eine Sicherheitskopie der authselect Konfiguration "
+"anzulegen in [%s]"
 
 #: src/lib/authselect_backup.c:179
 #, c-format
 msgid "Trying to backup system configuration to [%s]"
 msgstr ""
+"Es wird versucht eine Sicherheitskopie der Systemkonfiguration anzulegen in "
+"[%s]"
 
 #: src/lib/authselect_backup.c:184
 #, c-format
 msgid "Backup was successfuly created at [%s]"
-msgstr ""
+msgstr "Sicherheitskopie wurde erfolgreich angelegt in [%s]"
 
 #: src/lib/authselect_backup.c:188
 #, c-format
 msgid "Unable to create backup [%d]: %s"
-msgstr ""
+msgstr "Kann kein Backup erzeugen [%d]: %s"
 
 #: src/lib/authselect_backup.c:205 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
-msgstr ""
+msgstr "Verzeichnis kann nicht gelisted werden [%s] [%d]: %s"
 
 #: src/lib/authselect_backup.c:219
 #, c-format
 msgid "Removing backup [%s]"
-msgstr ""
+msgstr "Löschen der Sicherheitskopie [%s]"
 
 #: src/lib/authselect_backup.c:228
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
-msgstr ""
+msgstr "Verzeichnis kann nicht gelöscht werden [%s] [%d]: %s"
 
 #: src/lib/authselect_backup.c:300
 #, c-format
 msgid "Unable to copy files [%d]: %s"
-msgstr ""
+msgstr "Kann Dateien nicht kopieren [%d]:%s"
 
 #: src/lib/authselect_backup.c:306 src/lib/profiles/activate.c:78
 #, c-format
@@ -176,22 +182,22 @@ msgstr "Update der Dconf-Datenbank nicht möglich [%d]: %s"
 #: src/lib/authselect_backup.c:337
 #, c-format
 msgid "Restoring configuration from backup [%s]"
-msgstr ""
+msgstr "Wiederherstellung der Konfiguration aus Sicherheitskopie [%s]"
 
 #: src/lib/authselect_backup.c:353
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
-msgstr ""
+msgstr "Sicherheitskopie [%s] enthält authselect Konfiguration"
 
 #: src/lib/authselect_backup.c:356
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
-msgstr ""
+msgstr "Sicherheitskopie [%s] enthält keine authselect Konfiguration"
 
 #: src/lib/authselect_backup.c:362
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
-msgstr ""
+msgstr "Kann nicht wiederherstellen [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:104
 msgid "Unable to generate nsswitch.conf"
@@ -575,7 +581,7 @@ msgstr "Profil [%s] enthält keinen Namen in [%s]!"
 #: src/lib/util/dir.c:77 src/lib/util/dir.c:83
 #, c-format
 msgid "Unable to get basename of [%s]"
-msgstr ""
+msgstr "Kann den Basisnamen von [%s] nicht erlangen"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
 #: src/lib/util/file.c:198 src/cli/main.c:826
@@ -591,12 +597,12 @@ msgstr "Stat-Verzeichnis kann nicht erstellt werden [%d]: %s"
 #: src/lib/util/dir.c:313
 #, c-format
 msgid "Removing file [%s/%s]"
-msgstr ""
+msgstr "Löschen der Datei [%s/%s]"
 
 #: src/lib/util/dir.c:321
 #, c-format
 msgid "Removing directory [%s]"
-msgstr ""
+msgstr "Löschen des Ordners [%s]"
 
 #: src/lib/util/file.c:43
 msgid "Internal error: stat cannot be NULL!"
@@ -684,21 +690,21 @@ msgstr "Selinux-Kontext kann nicht nachgeschlagen werden [%d]: %s"
 #: src/lib/util/selinux.c:59
 #, c-format
 msgid "Found default selinux context for [%s]: %s"
-msgstr ""
+msgstr "Default selinux Kontext gefunden für [%s]: %s"
 
 #: src/lib/util/selinux.c:84
 #, c-format
 msgid "Unable to obtain selinux context for [%s] [%d]: %s"
-msgstr ""
+msgstr "Selinux-Kontext kann nicht abgerufen werden für [%s] [%d]: %s"
 
 #: src/lib/util/selinux.c:91
 msgid "not set"
-msgstr ""
+msgstr "Nicht gesetzt"
 
 #: src/lib/util/selinux.c:90
 #, c-format
 msgid "Found selinux context for [%s]: %s"
-msgstr ""
+msgstr "Selinux Kontext gefunden für [%s]: %s"
 
 #: src/lib/util/selinux.c:115 src/lib/util/selinux.c:183
 #: src/lib/util/selinux.c:249
@@ -725,7 +731,7 @@ msgstr "Der fscreate Selinux-Kontext kann nicht wiederhergestellt werden!"
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:280
 msgid "Invalid operator!"
-msgstr "Ungültiger Betreiber"
+msgstr "Ungültiger Operator!"
 
 #: src/lib/util/template.c:458 src/lib/util/template.c:649
 #, c-format
@@ -753,7 +759,7 @@ msgstr "Nachricht kann nicht erstellt werden!"
 #: src/lib/util/template.c:595
 #, c-format
 msgid "Unable to find new match: regex error %d"
-msgstr ""
+msgstr "Kann keinen neuen Match finden: regex Fehler %d"
 
 #: src/lib/util/template.c:725
 #, c-format
@@ -833,7 +839,7 @@ msgstr "\n"
 #: src/cli/cli_tool.c:222
 #, c-format
 msgid "Authselect command '%s' can only be run as root!\n"
-msgstr ""
+msgstr "Authselect Kommando '%s' kann nur als root ausgeführt werden!\n"
 
 #: src/cli/cli_tool.c:239
 msgid "Bug: commands can't be NULL!\n"
@@ -902,7 +908,7 @@ msgstr ""
 
 #: src/cli/main.c:72 src/cli/main.c:429 src/cli/main.c:467
 msgid "Profile identifier."
-msgstr "Profilkennung"
+msgstr "Profilkennung."
 
 #: src/cli/main.c:75 src/cli/main.c:251 src/cli/main.c:296 src/cli/main.c:345
 #: src/cli/main.c:387 src/cli/main.c:432 src/cli/main.c:470 src/cli/main.c:634
@@ -913,7 +919,7 @@ msgstr "Befehlsargumente können nicht analysiert werden"
 
 #: src/cli/main.c:130
 msgid "Unable to backup current configuration!\n"
-msgstr ""
+msgstr "Kann kein Backup für die aktuelle Konfiguration erzeugen!\n"
 
 #: src/cli/main.c:134
 #, c-format
@@ -927,6 +933,8 @@ msgstr "Änderungen erzwingen"
 #: src/cli/main.c:157 src/cli/main.c:244 src/cli/main.c:624 src/cli/main.c:701
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr ""
+"Sicherheitskopie von Systemdateien anlegen vor der Profilaktivierung ("
+"eindeutigen Namen generieren)"
 
 #: src/cli/main.c:158 src/cli/main.c:245 src/cli/main.c:625 src/cli/main.c:702
 msgid "Backup system files before activating profile"
@@ -1059,7 +1067,7 @@ msgstr "Die aktuelle Konfiguration ist gültig."
 
 #: src/cli/main.c:368
 msgid "System was not configured with authselect."
-msgstr ""
+msgstr "System wurde nicht mit authselect konfiguriert."
 
 #: src/cli/main.c:393
 msgid "Unable to get profile list!"
@@ -1068,7 +1076,7 @@ msgstr "Profilliste kann nicht abgerufen werden!"
 #: src/cli/main.c:446
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
-msgstr ""
+msgstr "Kann Profilfunktionen nicht erlangen [%d]: %s"
 
 #: src/cli/main.c:548
 msgid "Print content of all files"
@@ -1133,12 +1141,12 @@ msgstr ""
 
 #: src/cli/main.c:631
 msgid "Feature to enable."
-msgstr "Zu aktivierende Funktion"
+msgstr "Zu aktivierende Funktion."
 
 #: src/cli/main.c:668
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
-msgstr ""
+msgstr "Kann kein Backup für die aktuelle Konfiguration erzeugen [%d]: %s\n"
 
 #: src/cli/main.c:675
 #, c-format
@@ -1148,7 +1156,7 @@ msgstr "Funktion kann nicht aktiviert werden [%d]: %s\n"
 #: src/cli/main.c:680
 #, c-format
 msgid "%s\n"
-msgstr ""
+msgstr "%s\n"
 
 #: src/cli/main.c:707
 msgid "Feature to disable."
@@ -1200,7 +1208,7 @@ msgstr "Symlink-spezifische Datei (kann mehrfach eingestellt werden)"
 
 #: src/cli/main.c:752
 msgid "New profile name."
-msgstr "Neuer Profilname"
+msgstr "Neuer Profilname."
 
 #: src/cli/main.c:762
 #, c-format
@@ -1215,33 +1223,35 @@ msgstr "Neues Profil wurde erstellt am %s\n"
 #: src/cli/main.c:787
 msgid "Print backup names without any formatting and additional information"
 msgstr ""
+"Namen der Sicherheitskopien ohne jede Formatierungsinformation und sonstiger "
+"Information ausgeben"
 
 #: src/cli/main.c:799
 msgid "Unable to list available backups!"
-msgstr ""
+msgstr "Kann verfügbare Sicherheitskopien nicht auflisten!"
 
 #: src/cli/main.c:836
 #, c-format
 msgid "%-*s (created at %s)\n"
-msgstr ""
+msgstr "%-*s (erzeugt in %s)\n"
 
 #: src/cli/main.c:855
 msgid "Name of the backup to remove."
-msgstr ""
+msgstr "Name der zu löschenden Sicherheitskopie."
 
 #: src/cli/main.c:864
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
-msgstr ""
+msgstr "Kann Sicherheitskopie nicht löschen [%s] [%d]: %s\n"
 
 #: src/cli/main.c:879
 msgid "Name of the backup to restore from."
-msgstr ""
+msgstr "Name der Sicherheitskopie aus der restauriert werden soll."
 
 #: src/cli/main.c:888
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
-msgstr ""
+msgstr "Kann nicht aus Sicherheitskopie restaurieren [%s] [%d]: %s\n"
 
 #: src/cli/main.c:923
 msgid "Select profile"
@@ -1257,7 +1267,7 @@ msgstr "Liste der verfügbaren Profile"
 
 #: src/cli/main.c:926
 msgid "List available profile features"
-msgstr ""
+msgstr "Verfügbare Profilfunktionen auflisten"
 
 #: src/cli/main.c:927
 msgid "Show profile information"
@@ -1293,19 +1303,19 @@ msgstr "Erstellen Sie ein neues Authselect-Profil"
 
 #: src/cli/main.c:935
 msgid "Backup commands:"
-msgstr ""
+msgstr "Sicherheitskopiekommandos:"
 
 #: src/cli/main.c:936
 msgid "List available backups"
-msgstr ""
+msgstr "Verfügbare Sicherheitskopien auflisten"
 
 #: src/cli/main.c:937
 msgid "Remove backup"
-msgstr ""
+msgstr "Sicherheitskopie löschen"
 
 #: src/cli/main.c:938
 msgid "Restore from backup"
-msgstr ""
+msgstr "Aus Sicherheitskopie restaurieren"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
@@ -1617,7 +1627,7 @@ msgstr "%s wurde nicht gefunden. Bitte installieren Sie realmd."
 
 #: src/compat/authcompat.py.in.in:465
 msgid "Running authconfig compatibility tool."
-msgstr "Authconfig-Kompatibilitätstool ausführen"
+msgstr "Authconfig-Kompatibilitätstool ausführen."
 
 #: src/compat/authcompat.py.in.in:466
 msgid ""
