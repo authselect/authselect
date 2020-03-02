@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2019-06-13 11:30+0200\n"
+"POT-Creation-Date: 2020-02-17 12:37+0100\n"
 "PO-Revision-Date: 2020-01-08 10:39+0000\n"
 "Last-Translator: Pavel Brezina <pbrezina@redhat.com>\n"
 "Language-Team: Czech\n"
@@ -111,7 +111,7 @@ msgstr "V [%s] není žádný název souboru"
 msgid "Copying [%s] to [%s/%s]"
 msgstr "Kopírování [%s] do [%s/%s]"
 
-#: src/lib/authselect_backup.c:132
+#: src/lib/authselect_backup.c:132 src/lib/util/selinux.c:380
 #, c-format
 msgid "File [%s] does not exist"
 msgstr "Soubor [%s] neexistuje"
@@ -132,8 +132,9 @@ msgid "Trying to backup system configuration to [%s]"
 msgstr "Pokus o zálohování systémové konfigurace do [%s]"
 
 #: src/lib/authselect_backup.c:184
-#, c-format
-msgid "Backup was successfuly created at [%s]"
+#, fuzzy, c-format
+#| msgid "Backup was successfuly created at [%s]"
+msgid "Backup was successfully created at [%s]"
 msgstr "Záloha byla úspěšně vytvořena v [%s]"
 
 #: src/lib/authselect_backup.c:188
@@ -141,56 +142,62 @@ msgstr "Záloha byla úspěšně vytvořena v [%s]"
 msgid "Unable to create backup [%d]: %s"
 msgstr "Nelze vytvořit zálohu [%d]: %s"
 
-#: src/lib/authselect_backup.c:205 src/lib/profiles/list.c:50
+#: src/lib/authselect_backup.c:205
+#, fuzzy
+#| msgid "[%s] does not exist!"
+msgid " does not exist."
+msgstr "[%s] neexistuje!"
+
+#: src/lib/authselect_backup.c:208 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
 msgstr "Nelze zobrazit obsah adresáře [%s] [%d]: %s"
 
-#: src/lib/authselect_backup.c:219
+#: src/lib/authselect_backup.c:222
 #, c-format
 msgid "Removing backup [%s]"
 msgstr "Odstraňuje se záloha [%s]"
 
-#: src/lib/authselect_backup.c:228
+#: src/lib/authselect_backup.c:231
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
 msgstr "Nelze smazat adresář [%s] [%d]: %s"
 
-#: src/lib/authselect_backup.c:300
+#: src/lib/authselect_backup.c:304
 #, c-format
 msgid "Unable to copy files [%d]: %s"
 msgstr "Nelze zkopírovat soubory [%d]: %s"
 
-#: src/lib/authselect_backup.c:306 src/lib/profiles/activate.c:78
+#: src/lib/authselect_backup.c:310 src/lib/profiles/activate.c:78
 #, c-format
 msgid "Unable to create symbolic links [%d]: %s"
 msgstr "Nelze vytvořit symbolické odkazy [%d]: %s"
 
-#: src/lib/authselect_backup.c:312 src/lib/profiles/activate.c:84
+#: src/lib/authselect_backup.c:316 src/lib/profiles/activate.c:84
 msgid "Dconf is not installed on your system"
 msgstr "Dconf není ve vašem systému nainstalován"
 
-#: src/lib/authselect_backup.c:314 src/lib/profiles/activate.c:86
+#: src/lib/authselect_backup.c:318 src/lib/profiles/activate.c:86
 #, c-format
 msgid "Unable to update dconf database [%d]: %s"
 msgstr "Nelze aktualizovat databázi dconf [%d]: %s"
 
-#: src/lib/authselect_backup.c:337
+#: src/lib/authselect_backup.c:341
 #, c-format
 msgid "Restoring configuration from backup [%s]"
 msgstr "Obnova konfigurace že zálohy [%s]"
 
-#: src/lib/authselect_backup.c:353
+#: src/lib/authselect_backup.c:357
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
 msgstr "Záloha [%s] obsahuje konfiguraci authselect"
 
-#: src/lib/authselect_backup.c:356
+#: src/lib/authselect_backup.c:360
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
 msgstr "Záloha [%s] obsahuje konfiguraci, která není určena pro authselect"
 
-#: src/lib/authselect_backup.c:362
+#: src/lib/authselect_backup.c:366
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
 msgstr "Nelze obnovit [%s] [%d]: %s"
@@ -421,7 +428,7 @@ msgstr "Nelze generovat nsswitch.conf [%d]: %s"
 msgid "Unable to generate files [%d]: %s"
 msgstr "Nelze generovat soubory [%d]: %s"
 
-#: src/lib/files/system.c:369 src/lib/util/selinux.c:372
+#: src/lib/files/system.c:369 src/lib/util/selinux.c:385
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "Vytváření dočasného souboru pro [%s]"
@@ -436,12 +443,12 @@ msgstr "Nelze vytvořit dočasný soubor [%s] [%d]: %s"
 msgid "Temporary file is named [%s]"
 msgstr "Dočasný soubor je pojmenován [%s]"
 
-#: src/lib/files/system.c:389 src/lib/util/selinux.c:388
+#: src/lib/files/system.c:389 src/lib/util/selinux.c:407
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "Přejmenování [%s] na [%s]"
 
-#: src/lib/files/system.c:394 src/lib/util/selinux.c:392
+#: src/lib/files/system.c:394 src/lib/util/selinux.c:411
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "Nelze přejmenovat [%s] na [%s] [%d]: %s"
@@ -725,6 +732,19 @@ msgstr "Nelze nastavit SELinux kontext u fscreate!"
 #: src/lib/util/selinux.c:273
 msgid "Unable to restore fscreate selinux context!"
 msgstr "Nelze obnovit SELinux kontext u fscreate!"
+
+#: src/lib/util/selinux.c:374
+#, c-format
+msgid ""
+"File [%s] should exist but is missing. It is not safe to delete [%s]. "
+"Aborting."
+msgstr ""
+
+#: src/lib/util/selinux.c:402
+#, fuzzy, c-format
+#| msgid "Removing backup [%s]"
+msgid "Removing [%s]"
+msgstr "Odstraňuje se záloha [%s]"
 
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:280

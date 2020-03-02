@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2019-06-13 11:30+0200\n"
+"POT-Creation-Date: 2020-02-17 12:37+0100\n"
 "PO-Revision-Date: 2020-01-13 15:15+0000\n"
 "Last-Translator: Balázs Meskó <meskobalazs@gmail.com>\n"
 "Language-Team: Hungarian <https://translate.stg.fedoraproject.org/projects/"
@@ -110,7 +110,7 @@ msgstr "Nincs itt fájlnév: [%s]"
 msgid "Copying [%s] to [%s/%s]"
 msgstr "[%s] másolása ide: [%s/%s]"
 
-#: src/lib/authselect_backup.c:132
+#: src/lib/authselect_backup.c:132 src/lib/util/selinux.c:380
 #, c-format
 msgid "File [%s] does not exist"
 msgstr "A(z) [%s] fájl nem létezik"
@@ -131,8 +131,9 @@ msgid "Trying to backup system configuration to [%s]"
 msgstr "A rendszer-konfiguráció biztonsági mentése ide: [%s]"
 
 #: src/lib/authselect_backup.c:184
-#, c-format
-msgid "Backup was successfuly created at [%s]"
+#, fuzzy, c-format
+#| msgid "Backup was successfuly created at [%s]"
+msgid "Backup was successfully created at [%s]"
 msgstr "Biztonsági mentés sikeresen létrehozva itt: [%s]"
 
 #: src/lib/authselect_backup.c:188
@@ -140,56 +141,62 @@ msgstr "Biztonsági mentés sikeresen létrehozva itt: [%s]"
 msgid "Unable to create backup [%d]: %s"
 msgstr "A biztonsági mentés létrehozása sikertelen [%d]: %s"
 
-#: src/lib/authselect_backup.c:205 src/lib/profiles/list.c:50
+#: src/lib/authselect_backup.c:205
+#, fuzzy
+#| msgid "[%s] does not exist!"
+msgid " does not exist."
+msgstr "[%s] nem létezik!"
+
+#: src/lib/authselect_backup.c:208 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
 msgstr "A(z) [%s] könyvtár nem listázható [%d]: %s"
 
-#: src/lib/authselect_backup.c:219
+#: src/lib/authselect_backup.c:222
 #, c-format
 msgid "Removing backup [%s]"
 msgstr "A(z) [%s] biztonsági mentés eltávolítása"
 
-#: src/lib/authselect_backup.c:228
+#: src/lib/authselect_backup.c:231
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
 msgstr "A(z) [%s] könyvtár nem törölhető [%d]: %s"
 
-#: src/lib/authselect_backup.c:300
+#: src/lib/authselect_backup.c:304
 #, c-format
 msgid "Unable to copy files [%d]: %s"
 msgstr "A fájlok nem másolhatók [%d]: %s"
 
-#: src/lib/authselect_backup.c:306 src/lib/profiles/activate.c:78
+#: src/lib/authselect_backup.c:310 src/lib/profiles/activate.c:78
 #, c-format
 msgid "Unable to create symbolic links [%d]: %s"
 msgstr "A szimbolikus linkek nem hozhatóak létre [%d]: %s"
 
-#: src/lib/authselect_backup.c:312 src/lib/profiles/activate.c:84
+#: src/lib/authselect_backup.c:316 src/lib/profiles/activate.c:84
 msgid "Dconf is not installed on your system"
 msgstr "A dconf nincs telepítve a rendszerén"
 
-#: src/lib/authselect_backup.c:314 src/lib/profiles/activate.c:86
+#: src/lib/authselect_backup.c:318 src/lib/profiles/activate.c:86
 #, c-format
 msgid "Unable to update dconf database [%d]: %s"
 msgstr "A dconf adatbázis nem frissíthető [%d]: %s"
 
-#: src/lib/authselect_backup.c:337
+#: src/lib/authselect_backup.c:341
 #, c-format
 msgid "Restoring configuration from backup [%s]"
 msgstr "Konfiguráció helyreállítása a(z) [%s] biztonsági mentésből"
 
-#: src/lib/authselect_backup.c:353
+#: src/lib/authselect_backup.c:357
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
 msgstr "A(z) [%s] biztonsági mentés authselect konfigurációt tartalmaz"
 
-#: src/lib/authselect_backup.c:356
+#: src/lib/authselect_backup.c:360
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
 msgstr "A(z) [%s] biztonsági mentés nem authselect konfigurációt tartalmaz"
 
-#: src/lib/authselect_backup.c:362
+#: src/lib/authselect_backup.c:366
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
 msgstr "A(z) [%s] nem állítható helyre [%d]: %s"
@@ -420,7 +427,7 @@ msgstr "Nem állítható elő az nsswitch.conf [%d]: %s"
 msgid "Unable to generate files [%d]: %s"
 msgstr "A fájlok nem állíthatóak elő [%d]: %s"
 
-#: src/lib/files/system.c:369 src/lib/util/selinux.c:372
+#: src/lib/files/system.c:369 src/lib/util/selinux.c:385
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "Ideiglenes fájl írása ehhez: [%s]"
@@ -435,12 +442,12 @@ msgstr "[%s] ideiglenes fájl nem írható [%d]: %s"
 msgid "Temporary file is named [%s]"
 msgstr "Az ideiglenes fájl neve: [%s]"
 
-#: src/lib/files/system.c:389 src/lib/util/selinux.c:388
+#: src/lib/files/system.c:389 src/lib/util/selinux.c:407
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "[%s] átnevezése erre: [%s]"
 
-#: src/lib/files/system.c:394 src/lib/util/selinux.c:392
+#: src/lib/files/system.c:394 src/lib/util/selinux.c:411
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "[%s] nem nevezhető át erre: [%s] [%d]: %s"
@@ -722,6 +729,19 @@ msgstr "Az fscreate selinux környezet nem adható meg."
 #: src/lib/util/selinux.c:273
 msgid "Unable to restore fscreate selinux context!"
 msgstr "Az fscreate selinux környezet nem állítható helyre."
+
+#: src/lib/util/selinux.c:374
+#, c-format
+msgid ""
+"File [%s] should exist but is missing. It is not safe to delete [%s]. "
+"Aborting."
+msgstr ""
+
+#: src/lib/util/selinux.c:402
+#, fuzzy, c-format
+#| msgid "Removing backup [%s]"
+msgid "Removing [%s]"
+msgstr "A(z) [%s] biztonsági mentés eltávolítása"
 
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:280
