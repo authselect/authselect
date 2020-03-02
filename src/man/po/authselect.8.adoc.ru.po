@@ -1,0 +1,762 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Weblate <noreply@weblate.org>, 2020.
+# Igor Gorbounov <igor.gorbounov@gmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-06-13 11:08+0200\n"
+"PO-Revision-Date: 2020-02-29 20:38+0000\n"
+"Last-Translator: Igor Gorbounov <igor.gorbounov@gmail.com>\n"
+"Language-Team: Russian <https://translate.fedoraproject.org/projects/"
+"authselect/branch-1_0_x-authselect8adoc/ru/>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.11.2\n"
+
+#. type: Title =
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:2
+#, fuzzy, no-wrap
+msgid "authselect(8)"
+msgstr "authselect(8)"
+
+#. type: Title -
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:6
+#, no-wrap
+msgid "NAME"
+msgstr "ИМЯ"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:9
+msgid "authselect - select system identity and authentication sources."
+msgstr "authselect - выбор источников идентификации системы и авторизации."
+
+#. type: Title -
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:11
+#, no-wrap
+msgid "SYNOPSIS"
+msgstr "КРАТКОЕ СОДЕРЖАНИЕ"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:13
+#, no-wrap
+msgid " authselect [--debug] [--trace] [--warn] command [command options] \n"
+msgstr " authselect [--debug] [--trace] [--warn] команда [параметры команды] \n"
+
+#. type: Title -
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:15
+#, no-wrap
+msgid "DESCRIPTION"
+msgstr "ОПИСАНИЕ"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:21
+#, fuzzy, no-wrap
+msgid ""
+"*Authselect* is a tool to configure system identity and authentication "
+"sources\n"
+"and providers by selecting a specific profile. Profile is a set of files "
+"that\n"
+"describes how the resulting system configuration will look like. When a "
+"profile\n"
+"is selected, *authselect* will create nsswitch.conf(5) and PAM(8) stack to "
+"use\n"
+"identity and authentication sources defined by the profile.\n"
+msgstr ""
+"*Authselect* - инструмент для настройки источников и провайдеров "
+"идентификации \n"
+"и подтверждения подлинности системы путем выбора определенного профиля.\n"
+"Профиль - это набор файлов, описывающий, как в итоге будет выглядеть "
+"конфигурация системы. \n"
+"Когда выбирается профиль, *authselect* создает стек nsswitch.conf(5) и PAM(8)"
+" для использования \n"
+"источников идентификации и подтверждения подлинности, определенных профилем."
+"\n"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:27
+msgid ""
+"If the provided profile set is not sufficient, the administrator may create "
+"a custom profile by putting it in a special profile directory "
+"({AUTHSELECT_CUSTOM_DIR}). By doing so, the profile is immediately usable by "
+"*authselect*. See _authselect-profiles(5)_ for more information on extending "
+"existing profiles."
+msgstr ""
+"Если предоставленного набора профилей недостаточно, администратор может "
+"создать собственный профиль, поместив его в специальный каталог профилей "
+"({AUTHSELECT_CUSTOM_DIR}). Сразу после этого профиль может использоваться "
+"*authselect*. Дополнительные сведения о расширении существующих профилей см. "
+"_authselect-profiles(5)_."
+
+#. type: Title -
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:29
+#, no-wrap
+msgid "AVAILABLE COMMANDS"
+msgstr "ДОСТУПНЫЕ КОМАНДЫ"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:32
+msgid ""
+"To list all available commands run *authselect* without any parameters.  To "
+"print help for the selected command run *authselect COMMAND --help*."
+msgstr ""
+"Чтобы получить список всех имеющихся команд, запустите команду *authselect* "
+"без параметров.  Чтобы вывести справку по выбранной команде, выполните "
+"команду *authselect COMMAND --help*."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:33
+#, no-wrap
+msgid "*select* profile_id [features] [-f, --force] [-q, --quiet]"
+msgstr "*select* ид_профиля [возможности] [-f, --force] [-q, --quiet]"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:36
+msgid ""
+"Activate desired profile. See profile description with *show* command, to "
+"list profile specific optional features."
+msgstr ""
+"Активировать нужный профиль. Описание профиля можно получить с помощью "
+"команды *show*, при этом выводится список дополнительных функций профиля."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:37
+#, no-wrap
+msgid "*--force, -f*:"
+msgstr "*--force, -f*:"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:42
+#, no-wrap
+msgid ""
+"Write changes even if the previous configuration was not created by\n"
+"authselect but by other tool or by manual changes. This option will\n"
+"automatically backup system files before writing any change unless\n"
+"*--nobackup* option is set.\n"
+msgstr ""
+"Записать изменения, даже если предыдущая конфигурация была создана\n"
+"не authselect, а другим инструментом или путем изменения вручную. Этот "
+"параметр\n"
+"приводит к автоматическому резервному копированию системных файлов перед\n"
+"записью изменений, если только не установлен параметр *--nobackup*.\n"
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:43
+#, no-wrap
+msgid "*--backup=NAME*:"
+msgstr "*--backup=ИМЯ*:"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:47
+#, no-wrap
+msgid ""
+"Backup system files before activating the selected profile. The backup "
+"will\n"
+"be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time is used as\n"
+"a name if no value is provided.\n"
+msgstr ""
+"Резервное копирование системных файлов перед активированием выбранного "
+"профиля.\n"
+"Резервная копия будет храниться в {AUTHSELECT_BACKUP_DIR}/ИМЯ. Если имя не \n"
+"предоставлено, в качестве имени будет использоваться текущее время.\n"
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:48
+#, no-wrap
+msgid "*--nobackup*:"
+msgstr "*--nobackup*:"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:50
+#, no-wrap
+msgid "Do not backup system configuration even if *--force* is set.\n"
+msgstr ""
+"Не делать резервное копирование конфигурации системы, если указано *--force*."
+"\n"
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:51
+#, no-wrap
+msgid "*--quiet, -q*:"
+msgstr "*--quiet, -q*:"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:54
+#, no-wrap
+msgid ""
+"The command will not print any informational message such as additional\n"
+"profile requirements or backup location. Errors are still being print.\n"
+msgstr ""
+"Команда не выводит информационных сообщений, например, дополнительных\n"
+"требований к профилю или расположение резервной копии. Ошибки все же "
+"выводятся.\n"
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:55
+#, no-wrap
+msgid "*apply-changes*"
+msgstr "*apply-changes*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:61
+msgid ""
+"Re-apply currently selected profile. If the profile templates were updated "
+"this command can be used to regenerate current system configuration in order "
+"to apply these changes on the system. This command will only re-apply the "
+"changes if the existing configuration is a valid authselect configuration, "
+"otherwise an error is returned."
+msgstr ""
+"Повторно применить текущий выбранный профиль. Если шаблоны профиля были "
+"обновлены, эта команду можно использовать для восстановления текущей "
+"конфигурации системы, чтобы применить эти изменения в системе. Эта команда "
+"повторно применит изменения, только если существующая конфигурация является "
+"допустимой конфигурацией authselect, в противном случае будет возвращена "
+"ошибка."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:62
+#, no-wrap
+msgid "*list*"
+msgstr "*list*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:64
+msgid "List available profiles."
+msgstr "Вывести список доступных профилей."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:65
+#, no-wrap
+msgid "*show* profile_id"
+msgstr "*show* ид_профиля"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:67
+msgid "Print information about the profile."
+msgstr "Вывести информацию о профиле."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:68
+#, no-wrap
+msgid "*requirements* profile_id [features]"
+msgstr "*requirements* ид_профиля [возможности]"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:70
+msgid "Print information about profile requirements."
+msgstr "Вывести информацию о требованиях профиля."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:71
+#, no-wrap
+msgid "*current* [-r, --raw]"
+msgstr "*current* [-r, --raw]"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:75
+msgid ""
+"Print information about currently selected profiles. If *--raw* option is "
+"specified, the command will print raw parameters as they were passed to "
+"*select* command instead of formatted output."
+msgstr ""
+"Вывести информацию о текущих выбранных профилях. Если задан параметр *--raw*"
+", эта команда выведет параметры без обработки, так, как они были переданы "
+"команде *select*, вместо форматированного вывода."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:76
+#, no-wrap
+msgid "*check*"
+msgstr "*check*"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:80
+msgid ""
+"Check if the current configuration is valid (it was either created by "
+"*authselect* or there are no leftovers from previous authselect "
+"configuration)."
+msgstr ""
+"Проверить правильность текущей конфигурации (либо она была создана "
+"*authselect*, либо нет остатков от предыдущей конфигурации authselect)."
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:81
+#, no-wrap
+msgid "*test* profile_id [features]"
+msgstr "*test* ид_профиля [возможности]"
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:84
+msgid ""
+"Print content of files generated by *authselect* without actually writing "
+"anything to system configuration."
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:85
+#, no-wrap
+msgid "*enable-feature* feature"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:87
+msgid "Enable feature in the currently selected profile."
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:88
+#, no-wrap
+msgid "*disable-feature* feature"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:90
+msgid "Disable feature in the currently selected profile."
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:91
+#, no-wrap
+msgid "*create-profile* NAME [--custom,-c|--vendor,-v] [options]"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:96
+msgid ""
+"Create a new custom profile named _NAME_. The profile can be based on an "
+"existing profile in which case the new profile templates are either copied "
+"from the base profile or symbolic links to these files are created if such "
+"option is selected."
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:97
+#, no-wrap
+msgid "*--vendor,-v*:"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:100
+#, no-wrap
+msgid ""
+"The new profile is a vendor profile instead of a custom profile. See\n"
+"_authselect-profiles(5)_ for more information on profile types.\n"
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:101
+#, no-wrap
+msgid "*--base-on=BASE-ID, -b=BASE-ID*:"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:104
+#, no-wrap
+msgid ""
+"The new profile will be based on a profile named _BASE-ID_. The base\n"
+"profile location is determined with these steps:\n"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:105
+#, no-wrap
+msgid "If _BASE-ID_ starts with prefix _custom/_ it is a custom profile.\n"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:106
+#, no-wrap
+msgid "Try if _BASE-ID_ is found in vendor profiles.\n"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:107
+#, no-wrap
+msgid "Try if _BASE-ID_ is found in default profiles.\n"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:108
+#, no-wrap
+msgid "Return an error.\n"
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:109
+#, no-wrap
+msgid "*--base-on-default*:"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:112
+#, no-wrap
+msgid ""
+"The base profile is a default profile even if it is found also within\n"
+"vendor profiles.\n"
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:113
+#, no-wrap
+msgid "*--symlink-meta*:"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:116
+#, no-wrap
+msgid ""
+"Meta files, such as _README_ and _REQUIREMENTS_ will be symbolic links\n"
+"to the origin profile files instead of their copy.\n"
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:117
+#, no-wrap
+msgid "*--symlink-nsswitch*:"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:120
+#, no-wrap
+msgid ""
+"_nsswitch.conf_ template will be symbolic link to the origin profile\n"
+"file instead of its copy.\n"
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:121
+#, no-wrap
+msgid "*--symlink-pam*:"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:124
+#, no-wrap
+msgid ""
+"_PAM_ templates will be symbolic links to the origin profile files\n"
+"instead of their copy.\n"
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:125
+#, no-wrap
+msgid "*--symlink-dconf*:"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:128
+#, no-wrap
+msgid ""
+"_dconf_ templates will be symbolic links to the origin profile files\n"
+"instead of their copy.\n"
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:129
+#, no-wrap
+msgid "*--symlink=FILE,-s=FILE*:"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:132
+#, no-wrap
+msgid ""
+"Create a symbolic link for a template file _FILE_ instead of creating\n"
+"its copy. This option can be passed multiple times.\n"
+msgstr ""
+
+#. type: Title -
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:134
+#, no-wrap
+msgid "COMMON OPTIONS"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:136
+msgid "These options are available with all commands."
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:137
+#, no-wrap
+msgid "*--debug*"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:139
+msgid "Print debugging information and error messages."
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:140
+#, no-wrap
+msgid "*--trace*"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:142
+msgid "Print information about what the tool is doing."
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:143
+#, no-wrap
+msgid "*--warn*"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:147
+msgid ""
+"Print information about unexpected situations that do not affect the program "
+"execution but may indicate some undesired situations (e.g. unexpected file "
+"in a profile directory)."
+msgstr ""
+
+#. type: Title -
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:149
+#, no-wrap
+msgid "NSSWITCH.CONF MANAGEMENT"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:155
+msgid ""
+"Authselect generates {AUTHSELECT_NSSWITCH_CONF} and does not allow any user "
+"changes to this file. Such changes are detected and authselect will refuse "
+"to write any system configuration unless a *--force* option is provided to "
+"the *select* command. This mechanism prevents authselect from overwriting "
+"anything that does not match any available profile."
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:163
+msgid ""
+"Any user changes to nsswitch maps must be done in file "
+"{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf. When authselect generates new "
+"_nsswitch.conf_ it reads this file and combines it with configuration from "
+"selected profile. The profile configuration takes always precedence.  In "
+"other words, profiles do not have to set all nsswitch maps but can set only "
+"those that are relevant to the profile. If a map is set within a profile, it "
+"always overwrites the same map from _user-nsswitch.conf_."
+msgstr ""
+
+#. type: Block title
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:164
+#, no-wrap
+msgid "Example 1"
+msgstr ""
+
+#. type: delimited block -
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:175
+#, no-wrap
+msgid ""
+"# \"sssd\" profile\n"
+"$ cat {AUTHSELECT_PROFILE_DIR}/sssd/nsswitch.conf\n"
+"passwd:     sss files systemd\n"
+"group:      sss files systemd\n"
+"netgroup:   sss files\n"
+"automount:  sss files\n"
+"services:   sss files\n"
+"sudoers:    files sss {include if \"with-sudo\"}\n"
+msgstr ""
+
+#. type: delimited block -
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:181
+#, no-wrap
+msgid ""
+"$ cat {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf\n"
+"passwd: files sss\n"
+"group: files sss\n"
+"hosts: files dns myhostname\n"
+"sudoers: files\n"
+msgstr ""
+
+#. type: delimited block -
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:183
+#, no-wrap
+msgid "$ authselect select sssd\n"
+msgstr ""
+
+#. type: delimited block -
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:193
+#, no-wrap
+msgid ""
+"# passwd and group maps from user-nsswitch.conf are ignored\n"
+"$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
+"passwd:     sss files systemd\n"
+"group:      sss files systemd\n"
+"netgroup:   sss files\n"
+"automount:  sss files\n"
+"services:   sss files\n"
+"hosts:      files dns myhostname\n"
+"sudoers:    files\n"
+msgstr ""
+
+#. type: delimited block -
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:195
+#, no-wrap
+msgid "$ authselect select sssd with-sudo\n"
+msgstr ""
+
+#. type: delimited block -
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:205
+#, no-wrap
+msgid ""
+"# passwd, group and sudoers maps from user-nsswitch.conf are ignored\n"
+"$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
+"passwd:     sss files systemd\n"
+"group:      sss files systemd\n"
+"netgroup:   sss files\n"
+"automount:  sss files\n"
+"services:   sss files\n"
+"sudoers:    files sss\n"
+"hosts:      files dns myhostname\n"
+msgstr ""
+
+#. type: Title -
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:208
+#, no-wrap
+msgid "RETURN CODES"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:210
+msgid "The *authselect* can return these exit codes:"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:212
+msgid "0: Success."
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:213
+msgid "1: Generic error."
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:214
+msgid "2: Profile or configuration was not found."
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:215
+msgid "3: Current configuration is not valid, it was edited without authselect."
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:216
+msgid ""
+"4: System configuration must be overwritten to activate an authselect "
+"profile, --force parameter is needed."
+msgstr ""
+
+#. type: Title -
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:218
+#, no-wrap
+msgid "GENERATED FILES"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:221
+msgid ""
+"Authselect creates and maintains the following files to configure system "
+"identity and authentication providers properly."
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:222
+#, no-wrap
+msgid "*{AUTHSELECT_NSSWITCH_CONF}*"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:224
+msgid "Name Service Switch configuration file."
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:225
+#, no-wrap
+msgid "*{AUTHSELECT_PAM_DIR}/system-auth*"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:228
+msgid ""
+"PAM stack that is included from nearly all individual service configuration "
+"files."
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:229
+#, no-wrap
+msgid "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:233
+msgid ""
+"These PAM stacks are for applications which handle authentication from "
+"different types of devices via simultaneously running individual "
+"conversations instead of one aggregate conversation."
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:234
+#, no-wrap
+msgid "*{AUTHSELECT_PAM_DIR}/postlogin*"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:242
+msgid ""
+"The purpose of this PAM stack is to provide a common place for all PAM "
+"modules which should be called after the stack configured in system-auth or "
+"the other common PAM configuration files. It is included from all individual "
+"service configuration files that provide login service with shell or file "
+"access. _NOTE: the modules in the postlogin configuration file are executed "
+"regardless of the success or failure of the modules in the system-auth "
+"configuration file._"
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:243
+#, no-wrap
+msgid "*{AUTHSELECT_DCONF_DIR}/{AUTHSELECT_DCONF_FILE}*"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:247
+msgid ""
+"Changes to dconf database. The main uses case of this file is to set changes "
+"for gnome login screen in order to enable or disable smartcard and "
+"fingerprint authentication."
+msgstr ""
+
+#. type: Labeled list
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:248
+#, no-wrap
+msgid "*{AUTHSELECT_DCONF_DIR}/locks/{AUTHSELECT_DCONF_FILE}*"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:250
+msgid "This file define locks on values set in dconf database."
+msgstr ""
+
+#. type: Title -
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:252
+#, no-wrap
+msgid "SEE ALSO"
+msgstr ""
+
+#. type: Plain text
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:253
+msgid "authselect-profiles(5), authselect-migration(7), nsswitch.conf(5), PAM(8)"
+msgstr ""
