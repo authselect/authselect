@@ -3,13 +3,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-06-13 11:08+0200\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2018-11-26 01:00+0000\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
@@ -41,7 +41,9 @@ msgstr "説明"
 msgid ""
 "This manual page explains how are authselect profiles organized and how to "
 "create new profiles."
-msgstr "この man ページでは、authselect プロファイルの構築方法および新規プロファイルの作成方法について説明します。"
+msgstr ""
+"この man ページでは、authselect プロファイルの構築方法および新規プロファイル"
+"の作成方法について説明します。"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:15
@@ -52,7 +54,8 @@ msgstr "プロファイルディレクトリー"
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:17
 msgid "Profiles can be found in one of three directories."
-msgstr "プロファイルは、3 つのディレクトリーのうちの 1 つで見つけることができます。"
+msgstr ""
+"プロファイルは、3 つのディレクトリーのうちの 1 つで見つけることができます。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:18
@@ -64,7 +67,8 @@ msgstr "*{AUTHSELECT_PROFILE_DIR}*"
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:20
 msgid ""
 "Read-only directory containing profiles shipped together with authselect."
-msgstr "authselect と共に出荷されたプロファイルを含む読み込み専用のディレクトリー。"
+msgstr ""
+"authselect と共に出荷されたプロファイルを含む読み込み専用のディレクトリー。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:21
@@ -77,7 +81,9 @@ msgstr "*{AUTHSELECT_VENDOR_DIR}*"
 msgid ""
 "Read-only directory for vendor-specific profiles that can override the ones "
 "in _default_ directory."
-msgstr "_default_ directory のプロファイルをオーバーライドできるベンダー固有のプロファイルの読み込み専用ディレクトリー。"
+msgstr ""
+"_default_ directory のプロファイルをオーバーライドできるベンダー固有のプロ"
+"ファイルの読み込み専用ディレクトリー。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:25
@@ -103,7 +109,8 @@ msgid ""
 "mandatory profile description and describe the changes that are done to the "
 "system."
 msgstr ""
-"各プロファイルは、1 つ以上のこれらのファイルで構成されます。これらのファイルは、必須プロファイルの説明をし、システムに対する変更を説明します。"
+"各プロファイルは、1 つ以上のこれらのファイルで構成されます。これらのファイル"
+"は、必須プロファイルの説明をし、システムに対する変更を説明します。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:34
@@ -128,7 +135,8 @@ msgstr "*system-auth*"
 msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
-msgstr "ほぼすべての個別のサービス設定ファイルからインクルードされた PAM スタック。"
+msgstr ""
+"ほぼすべての個別のサービス設定ファイルからインクルードされた PAM スタック。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:41
@@ -143,7 +151,8 @@ msgid ""
 "different types of devices via simultaneously running individual "
 "conversations instead of one aggregate conversation."
 msgstr ""
-"これらの PAM スタックは、1 つの集合的な会話ではなく個々の会話を同時に実行して、異なるタイプのデバイスの認証を扱うアプリケーション向けです。"
+"これらの PAM スタックは、1 つの集合的な会話ではなく個々の会話を同時に実行し"
+"て、異なるタイプのデバイスの認証を扱うアプリケーション向けです。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:46
@@ -162,10 +171,12 @@ msgid ""
 "regardless of the success or failure of the modules in the system-auth "
 "configuration file._"
 msgstr ""
-"この PAM スタックの目的は、system-auth またはその他の共通の PAM 設定ファイルでスタックが設定された後に、呼び込まれるすべての "
-"PAM "
-"モジュールに共通の場所を提供することです。これは、シェルまたはファイルアクセスでログインサービスを提供するすべての個別のサービス設定ファイルからインクルードされます。 "
-"_注意: postlogin 設定ファイルのモジュールは、system-auth 設定ファイルのモジュールの成功または失敗に関係なく実行されます。_"
+"この PAM スタックの目的は、system-auth またはその他の共通の PAM 設定ファイル"
+"でスタックが設定された後に、呼び込まれるすべての PAM モジュールに共通の場所を"
+"提供することです。これは、シェルまたはファイルアクセスでログインサービスを提"
+"供するすべての個別のサービス設定ファイルからインクルードされます。 _注意: "
+"postlogin 設定ファイルのモジュールは、system-auth 設定ファイルのモジュールの"
+"成功または失敗に関係なく実行されます。_"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:55
@@ -180,9 +191,9 @@ msgid ""
 "must be set. Maps that are not specified by the profile are included from "
 "{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf."
 msgstr ""
-"Name Service Switch "
-"設定ファイル。プロファイルと関係のあるマップのみが設定される必要があります。プロファイルによって指定されないマップは、{AUTHSELECT_CONFIG_DIR}/"
-"user-nsswitch.conf からインクルードされます。"
+"Name Service Switch 設定ファイル。プロファイルと関係のあるマップのみが設定さ"
+"れる必要があります。プロファイルによって指定されないマップは、"
+"{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf からインクルードされます。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:60
@@ -197,8 +208,9 @@ msgid ""
 "for gnome login screen in order to enable or disable smartcard and "
 "fingerprint authentication."
 msgstr ""
-"dconf データベースへの変更。このファイルの主なユースケースは、スマートカードや指紋による認証を有効または無効にするために gnome "
-"ログイン画面に変更を設定することです。"
+"dconf データベースへの変更。このファイルの主なユースケースは、スマートカード"
+"や指紋による認証を有効または無効にするために gnome ログイン画面に変更を設定す"
+"ることです。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:65
@@ -224,7 +236,9 @@ msgid ""
 "with optional usage of several operators that can be used to provide some "
 "optional profile features."
 msgstr ""
-"これらの各ファイルは、テンプレートとして機能します。テンプレートとは、いくつかのオプションのプロファイル機能を提供するために使用できる複数のオペレーターをオプションで使用するプレーンテキストファイルです。"
+"これらの各ファイルは、テンプレートとして機能します。テンプレートとは、いくつ"
+"かのオプションのプロファイル機能を提供するために使用できる複数のオペレーター"
+"をオプションで使用するプレーンテキストファイルです。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:74
@@ -240,8 +254,9 @@ msgid ""
 "whole line with this operator will be removed and the rest of the template "
 "will be processed."
 msgstr ""
-"\"feature\" が定義されない限り、ファイルの処理を即時停止します (残りのファイルコンテンツは削除されます)。\"feature\" "
-"が定義されている場合、このオペレーターのある行はすべて削除され、残りのテンプレートは処理されます。"
+"\"feature\" が定義されない限り、ファイルの処理を即時停止します (残りのファイ"
+"ルコンテンツは削除されます)。\"feature\" が定義されている場合、このオペレー"
+"ターのある行はすべて削除され、残りのテンプレートは処理されます。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:80
@@ -257,9 +272,10 @@ msgid ""
 "\"feature\" is not defined, the whole line with this operator will be "
 "removed and the rest of the template will be processed."
 msgstr ""
-"\"continue if\" の反対。\"feature\" が定義されている場合、ファイルの処理を即時停止します "
-"(残りのファイルコンテンツは削除されます)。\"feature\" "
-"が定義されていない場合、このオペレーターのある行はすべて削除され、残りのテンプレートは処理されます。"
+"\"continue if\" の反対。\"feature\" が定義されている場合、ファイルの処理を即"
+"時停止します (残りのファイルコンテンツは削除されます)。\"feature\" が定義され"
+"ていない場合、このオペレーターのある行はすべて削除され、残りのテンプレートは"
+"処理されます。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:86
@@ -272,7 +288,9 @@ msgstr "*{include if \"feature\"}*"
 msgid ""
 "Include the line where this operator is placed only if \"feature\" is "
 "defined."
-msgstr "\"feature\" が定義されている場合のみ、このオペレーターが置かれている行を含めます。"
+msgstr ""
+"\"feature\" が定義されている場合のみ、このオペレーターが置かれている行を含め"
+"ます。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:90
@@ -285,7 +303,9 @@ msgstr "*{exclude if \"feature\"}*"
 msgid ""
 "Opposite to \"include-if\". Include the line where this operator is placed "
 "only if \"feature\" is not defined."
-msgstr "\"include-if\" の反対。\"feature\" が定義されていない場合のみ、このオペレーターが置かれている行を含めます。"
+msgstr ""
+"\"include-if\" の反対。\"feature\" が定義されていない場合のみ、このオペレー"
+"ターが置かれている行を含めます。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:94
@@ -299,8 +319,8 @@ msgid ""
 "If \"feature\" is defined, replace this operator with string \"true\", "
 "otherwise with string \"false\"."
 msgstr ""
-"\"feature\" が定義されている場合、このオペレーターを文字列 \"true\" と置き換えます。定義されていない場合は、文字列 "
-"\"false\" と置き換えます。"
+"\"feature\" が定義されている場合、このオペレーターを文字列 \"true\" と置き換"
+"えます。定義されていない場合は、文字列 \"false\" と置き換えます。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:98
@@ -314,7 +334,8 @@ msgid ""
 "If \"feature\" is defined, replace this operator with string \"true\", "
 "otherwise with an empty string."
 msgstr ""
-"\"false\" が定義されている場合、このオペレーターを文字列 \"true\" と置き換えます。定義されていない場合は、空の文字列と置き換えます。"
+"\"false\" が定義されている場合、このオペレーターを文字列 \"true\" と置き換え"
+"ます。定義されていない場合は、空の文字列と置き換えます。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:102
@@ -328,8 +349,8 @@ msgid ""
 "If \"feature\" is not defined, replace this operator with string \"true\", "
 "otherwise with string \"false\"."
 msgstr ""
-"\"feature\" が定義されていない場合、このオペレーターを文字列 \"true\" と置き換えます。定義されていない場合は、文字列 "
-"\"false\" と置き換えます。"
+"\"feature\" が定義されていない場合、このオペレーターを文字列 \"true\" と置き"
+"換えます。定義されていない場合は、文字列 \"false\" と置き換えます。"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:106
@@ -343,8 +364,8 @@ msgid ""
 "If \"feature\" is not defined, replace this operator with string \"true\", "
 "otherwise with an empty string."
 msgstr ""
-"\"feature\" が定義されていない場合、このオペレーターを文字列 \"true\" "
-"と置き換えます。定義されていない場合は、空の文字列と置き換えます。"
+"\"feature\" が定義されていない場合、このオペレーターを文字列 \"true\" と置き"
+"換えます。定義されていない場合は、空の文字列と置き換えます。"
 
 #. type: Title ~
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:111
@@ -358,8 +379,8 @@ msgid ""
 "Here is an example of using \"if\" operator. If \"with-sudo\" feature is "
 "enabled, it will add \"sss\" to sudoers line."
 msgstr ""
-"これは \"if\" オペレーターを使用した例です。\"with-sudo\" 機能が有効になると、sudoers の行に \"sss\" "
-"を追加します。"
+"これは \"if\" オペレーターを使用した例です。\"with-sudo\" 機能が有効になる"
+"と、sudoers の行に \"sss\" を追加します。"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:121
@@ -387,10 +408,10 @@ msgid ""
 "If it is enabled and also \"with-faillock\" feature is enabled, it will also "
 "enable support for pam_faillock."
 msgstr ""
-"これは \"continue-if\" オペレーターおよび \"include-if\" "
-"オペレーターの例です。結果として得られるファイルは、\"with-smartcard\" "
-"機能が有効にならない限り、空になります。これが有効になり、\"with-faillock\" 機能も有効になった場合、pam_faillock "
-"へのサポートも有効にします。"
+"これは \"continue-if\" オペレーターおよび \"include-if\" オペレーターの例で"
+"す。結果として得られるファイルは、\"with-smartcard\" 機能が有効にならない限"
+"り、空になります。これが有効になり、\"with-faillock\" 機能も有効になった場"
+"合、pam_faillock へのサポートも有効にします。"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:139
@@ -398,41 +419,27 @@ msgstr ""
 msgid ""
 "  {continue if \"with-smartcard\"}\n"
 "  auth        required                                     pam_env.so\n"
-"  auth        required                                     pam_faildelay.so "
-"delay=2000000\n"
-"  auth        required                                     pam_faillock.so "
-"preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
-"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
-"uid >= 1000 quiet\n"
+"  auth        required                                     pam_faildelay.so delay=2000000\n"
+"  auth        required                                     pam_faillock.so preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so uid >= 1000 quiet\n"
 "  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
-"  auth        sufficient                                   pam_unix.so "
-"nullok try_first_pass\n"
-"  auth        requisite                                    pam_succeed_if.so "
-"uid >= 1000 quiet_success\n"
-"  auth        sufficient                                   pam_sss.so "
-"forward_pass\n"
-"  auth        required                                     pam_faillock.so "
-"authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
+"  auth        sufficient                                   pam_unix.so nullok try_first_pass\n"
+"  auth        requisite                                    pam_succeed_if.so uid >= 1000 quiet_success\n"
+"  auth        sufficient                                   pam_sss.so forward_pass\n"
+"  auth        required                                     pam_faillock.so authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
 "  auth        required                                     pam_deny.so\n"
 "  ...\n"
 msgstr ""
 "  {continue if \"with-smartcard\"}\n"
 "  auth        required                                     pam_env.so\n"
-"  auth        required                                     pam_faildelay.so "
-"delay=2000000\n"
-"  auth        required                                     pam_faillock.so "
-"preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
-"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
-"uid >= 1000 quiet\n"
+"  auth        required                                     pam_faildelay.so delay=2000000\n"
+"  auth        required                                     pam_faillock.so preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so uid >= 1000 quiet\n"
 "  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
-"  auth        sufficient                                   pam_unix.so "
-"nullok try_first_pass\n"
-"  auth        requisite                                    pam_succeed_if.so "
-"uid >= 1000 quiet_success\n"
-"  auth        sufficient                                   pam_sss.so "
-"forward_pass\n"
-"  auth        required                                     pam_faillock.so "
-"authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
+"  auth        sufficient                                   pam_unix.so nullok try_first_pass\n"
+"  auth        requisite                                    pam_succeed_if.so uid >= 1000 quiet_success\n"
+"  auth        sufficient                                   pam_sss.so forward_pass\n"
+"  auth        required                                     pam_faillock.so authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
 "  auth        required                                     pam_deny.so\n"
 "  ...\n"
 
@@ -450,9 +457,10 @@ msgid ""
 "files must be present, only *README* is mandatory. Other files can be "
 "created on per-need basis."
 msgstr ""
-"authselect 内で新規のプロファイルを登録するには、上記に一覧表示したファイルを使用して authselect プロファイルロケーションの 1 "
-"つにディレクトリーを作成します。すべてのファイルが必要なわけではありません。*README* "
-"のみが必須です。他のファイルは必要に応じて作成することができます。"
+"authselect 内で新規のプロファイルを登録するには、上記に一覧表示したファイルを"
+"使用して authselect プロファイルロケーションの 1 つにディレクトリーを作成しま"
+"す。すべてのファイルが必要なわけではありません。*README* のみが必須です。他の"
+"ファイルは必要に応じて作成することができます。"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-profiles.5.adoc:148
