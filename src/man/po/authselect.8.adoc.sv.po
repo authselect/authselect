@@ -5,13 +5,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-06-13 11:30+0200\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2019-06-17 11:36+0000\n"
 "Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
 "Language-Team: Swedish\n"
 "Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
@@ -54,24 +54,16 @@ msgstr "BESKRIVNING"
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:21
 #, no-wrap
 msgid ""
-"*Authselect* is a tool to configure system identity and authentication "
-"sources\n"
-"and providers by selecting a specific profile. Profile is a set of files "
-"that\n"
-"describes how the resulting system configuration will look like. When a "
-"profile\n"
-"is selected, *authselect* will create nsswitch.conf(5) and PAM(8) stack to "
-"use\n"
+"*Authselect* is a tool to configure system identity and authentication sources\n"
+"and providers by selecting a specific profile. Profile is a set of files that\n"
+"describes how the resulting system configuration will look like. When a profile\n"
+"is selected, *authselect* will create nsswitch.conf(5) and PAM(8) stack to use\n"
 "identity and authentication sources defined by the profile.\n"
 msgstr ""
-"”Authselect” är ett verktyg för att konfigurera systemets källor och "
-"leverantörer för identitet och\n"
-"autentisering genom att välja en specifik profil.  En profil är ett antal "
-"filer som\n"
-"beskriver hur den resulterande systemkonfigurationen skall se ut. När en "
-"profil\n"
-"väljs kommer ”authselect” skapa nsswitch.conf(5) och stacken för PAM(8) till "
-"att\n"
+"”Authselect” är ett verktyg för att konfigurera systemets källor och leverantörer för identitet och\n"
+"autentisering genom att välja en specifik profil.  En profil är ett antal filer som\n"
+"beskriver hur den resulterande systemkonfigurationen skall se ut. När en profil\n"
+"väljs kommer ”authselect” skapa nsswitch.conf(5) och stacken för PAM(8) till att\n"
 "använda källor för identitet och autentisering som definieras av profilen.\n"
 
 #. type: Plain text
@@ -108,12 +100,8 @@ msgstr ""
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:33
 #, no-wrap
-msgid ""
-"*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup="
-"NAME]"
-msgstr ""
-"*select* profil-id [funktioner] [-f, --force] [-q, --quiet] [-b] [--backup="
-"NAMN]"
+msgid "*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup=NAME]"
+msgstr "*select* profil-id [funktioner] [-f, --force] [-q, --quiet] [-b] [--backup=NAMN]"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:36
@@ -145,7 +133,10 @@ msgstr ""
 "ändringar skrivs  om inte alternativet *--nobackup* anges.\n"
 
 #. type: Labeled list
-#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:43 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:68 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:137 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:155
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:43
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:68
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:137
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:155
 #, no-wrap
 msgid "*-b*:"
 msgstr "*-b*:"
@@ -159,14 +150,16 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"Säkerhetskopiera systemfiler före aktivering av den valda profilen.  "
-"Säkerhetskopian\n"
+"Säkerhetskopiera systemfiler före aktivering av den valda profilen.  Säkerhetskopian\n"
 "kommer lagras i {AUTHSELECT_BACKUP_DIR}/NAMN.  Aktuell tid  med\n"
 "en unik sträng används som namn på säkerhetskopian.  Detta är en kortform\n"
 "för *--backup=*.\n"
 
 #. type: Labeled list
-#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:49 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:74 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:143 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:161
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:49
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:74
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:143
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:161
 #, no-wrap
 msgid "*--backup=NAME*:"
 msgstr "*--backup=NAMN*:"
@@ -179,8 +172,7 @@ msgid ""
 "will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
 "unique string is used as a name if no value is provided.\n"
 msgstr ""
-"Säkerhetskopiera systemfiler före aktivering av den valda profilen.  "
-"Säkerhetskopian\n"
+"Säkerhetskopiera systemfiler före aktivering av den valda profilen.  Säkerhetskopian\n"
 "kommer lagras i {AUTHSELECT_BACKUP_DIR}/NAMN.  Aktuell tid med\n"
 "en unik sträng används som namn om inget värde anges.\n"
 
@@ -197,21 +189,22 @@ msgid "Do not backup system configuration even if *--force* is set.\n"
 msgstr "Säkerhetskopiera inte systemkonfigurationen även om *--force* anges.\n"
 
 #. type: Labeled list
-#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:57 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:148
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:57
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:148
 #, no-wrap
 msgid "*--quiet, -q*:"
 msgstr "*--quiet, -q*:"
 
 #. type: Plain text
-#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:60 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:151
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:60
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:151
 #, no-wrap
 msgid ""
 "The command will not print any informational message such as additional\n"
 "profile requirements or backup location. Errors are still being print.\n"
 msgstr ""
 "Kommandot kommer inte skriva några informationsmeddelanden såsom\n"
-"ytterligare profilkrav eller plats för säkerhetskopia.  Fel skrivs "
-"fortfarande ut.\n"
+"ytterligare profilkrav eller plats för säkerhetskopia.  Fel skrivs fortfarande ut.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:61
@@ -525,8 +518,7 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"Säkerhetskopiera systemfiler före avaktivering av funktionen.  "
-"Säkerhetskopian\n"
+"Säkerhetskopiera systemfiler före avaktivering av funktionen.  Säkerhetskopian\n"
 "kommer lagras i {AUTHSELECT_BACKUP_DIR}/NAMN.  Aktuell tid  med\n"
 "en unik sträng används som namn på säkerhetskopian.  Detta är en kortform\n"
 "för *--backup=*.\n"
@@ -539,8 +531,7 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
-"Säkerhetskopiera systemfiler före avaktivering av funktionen.  "
-"Säkerhetskopian\n"
+"Säkerhetskopiera systemfiler före avaktivering av funktionen.  Säkerhetskopian\n"
 "kommer lagras i {AUTHSELECT_BACKUP_DIR}/NAMN.  Aktuell tid  med\n"
 "en unik sträng används som namn in inget värde ges.\n"
 
@@ -576,8 +567,7 @@ msgid ""
 "The new profile is a vendor profile instead of a custom profile. See\n"
 "_authselect-profiles(5)_ for more information on profile types.\n"
 msgstr ""
-"Den nya profilen är en leverantörsprofil istället för en anpassad profil.  "
-"Se\n"
+"Den nya profilen är en leverantörsprofil istället för en anpassad profil.  Se\n"
 "_authselect-profiles(5)_ för mer information om profiltyper.\n"
 
 #. type: Labeled list
@@ -593,8 +583,7 @@ msgid ""
 "The new profile will be based on a profile named _BASE-ID_. The base\n"
 "profile location is determined with these steps:\n"
 msgstr ""
-"Den nya profilen kommer baseras på en profil som heter _BAS-ID_.  "
-"Basprofilens\n"
+"Den nya profilen kommer baseras på en profil som heter _BAS-ID_.  Basprofilens\n"
 "plats avgörs med dessa steg:\n"
 
 #. type: Plain text
@@ -1062,8 +1051,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:320
 #, no-wrap
 msgid "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
-msgstr ""
-"*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
+msgstr "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:324

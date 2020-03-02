@@ -6,13 +6,13 @@ msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
 "POT-Creation-Date: 2019-06-13 11:30+0200\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2019-06-16 11:00+0000\n"
 "Last-Translator: Keiko Moriguchi <kemorigu@redhat.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
@@ -57,7 +57,9 @@ msgstr "設定への予期せぬ変更を検出しました。"
 msgid ""
 "Refusing to activate profile unless those changes are removed or overwrite "
 "is requested."
-msgstr "それらの変更が削除されない限り、または上書きが要求されない限り、プロファイルの実行を拒否しています。"
+msgstr ""
+"それらの変更が削除されない限り、または上書きが要求されない限り、プロファイル"
+"の実行を拒否しています。"
 
 #: src/lib/authselect.c:124
 msgid "File that needs to be overwritten was found"
@@ -67,7 +69,9 @@ msgstr "上書きが必要なファイルが見つかりました"
 msgid ""
 "Refusing to activate profile unless this file is removed or overwrite is "
 "requested."
-msgstr "このファイルが削除されない限り、または上書きが要求されない限り、プロファイルの実行を拒否しています。"
+msgstr ""
+"このファイルが削除されない限り、または上書きが要求されない限り、プロファイル"
+"の実行を拒否しています。"
 
 #: src/lib/authselect.c:136
 #, c-format
@@ -704,7 +708,8 @@ msgstr "現在の fscreate の SELinux コンテキストを取得すること�
 #: src/lib/util/selinux.c:255
 #, c-format
 msgid "Unable to get default selinux context for [%s] [%d]: %s!"
-msgstr "[%s] [%d] のデフォルトの SELinux コンテキストを取得することができません: %s!"
+msgstr ""
+"[%s] [%d] のデフォルトの SELinux コンテキストを取得することができません: %s!"
 
 #: src/lib/util/selinux.c:129 src/lib/util/selinux.c:197
 #: src/lib/util/selinux.c:263
@@ -806,10 +811,12 @@ msgstr "コマンドに簡単な使用方法のメッセージを表示します
 
 #: src/cli/cli_tool.c:169
 #, c-format
-msgid "Usage:\n"
+msgid ""
+"Usage:\n"
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
-msgstr "使い方:\n"
+msgstr ""
+"使い方:\n"
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
 
@@ -850,37 +857,47 @@ msgstr "メモリの空き容量がありません。"
 
 #: src/cli/cli_tool.c:345
 #, c-format
-msgid "Invalid option %s: %s\n"
+msgid ""
+"Invalid option %s: %s\n"
 "\n"
-msgstr "無効なオプション %s: %s\n"
+msgstr ""
+"無効なオプション %s: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:357
 #, c-format
-msgid "Missing option: %s\n"
+msgid ""
+"Missing option: %s\n"
 "\n"
-msgstr "足りないオプション: %s\n"
+msgstr ""
+"足りないオプション: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:367
 #, c-format
-msgid "Only one free argument is expected!\n"
+msgid ""
+"Only one free argument is expected!\n"
 "\n"
-msgstr "1 つのフリーな引数のみが予期されます。\n"
+msgstr ""
+"1 つのフリーな引数のみが予期されます。\n"
 "\n"
 
 #: src/cli/cli_tool.c:377
 #, c-format
-msgid "Unexpected parameter: %s\n"
+msgid ""
+"Unexpected parameter: %s\n"
 "\n"
-msgstr "予期せぬパラメーター: %s\n"
+msgstr ""
+"予期せぬパラメーター: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:389
 #, c-format
-msgid "At least one option is required!\n"
+msgid ""
+"At least one option is required!\n"
 "\n"
-msgstr "少なくとも 1 つのオプションが必要です。\n"
+msgstr ""
+"少なくとも 1 つのオプションが必要です。\n"
 "\n"
 
 #: src/cli/main.c:72 src/cli/main.c:429 src/cli/main.c:467
@@ -909,7 +926,8 @@ msgstr "変更を強制"
 
 #: src/cli/main.c:157 src/cli/main.c:244 src/cli/main.c:624 src/cli/main.c:701
 msgid "Backup system files before activating profile (generate unique name)"
-msgstr "プロファイルの実行前にシステムファイルをバックアップします (固有名の生成)"
+msgstr ""
+"プロファイルの実行前にシステムファイルをバックアップします (固有名の生成)"
 
 #: src/cli/main.c:158 src/cli/main.c:245 src/cli/main.c:625 src/cli/main.c:702
 msgid "Backup system files before activating profile"
@@ -946,7 +964,8 @@ msgid ""
 "\n"
 "Some unexpected changes to the configuration were detected.\n"
 "Use --force parameter if you want to overwrite these changes.\n"
-msgstr "\n"
+msgstr ""
+"\n"
 "設定への予期せぬ変更をいくつか検出しました。\n"
 "これらの変更を上書きしたい場合は、--force パラメーターを使用します。\n"
 
@@ -971,9 +990,11 @@ msgstr "- %s\n"
 
 #: src/cli/main.c:221
 #, c-format
-msgid "\n"
+msgid ""
+"\n"
 "%s\n"
-msgstr "\n"
+msgstr ""
+"\n"
 "%s\n"
 
 #: src/cli/main.c:263
@@ -988,7 +1009,9 @@ msgstr "既存の設定は検出されませんでした。\n"
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
-msgstr "設定への予期せぬ変更をいくつか検出しました。代わりに 'select' コマンドを使用します。\n"
+msgstr ""
+"設定への予期せぬ変更をいくつか検出しました。代わりに 'select' コマンドを使用"
+"します。\n"
 
 #: src/cli/main.c:273
 #, c-format
@@ -1088,16 +1111,19 @@ msgstr "生成されたコンテンツ [%d] を取得できません: %s"
 
 #: src/cli/main.c:602
 #, c-format
-msgid "File %s: Empty\n"
+msgid ""
+"File %s: Empty\n"
 "\n"
 msgstr "ファイル %s: 空\n"
 
 #: src/cli/main.c:604
 #, c-format
-msgid "File %s:\n"
+msgid ""
+"File %s:\n"
 "%s\n"
 "\n"
-msgstr "File %s:\n"
+msgstr ""
+"File %s:\n"
 "%s\n"
 "\n"
 
@@ -1131,7 +1157,9 @@ msgstr "機能 [%d] を無効化できません: %s\n"
 
 #: src/cli/main.c:740
 msgid "Create new profile as a vendor profile instead of a custom profile"
-msgstr "カスタムプロファイルの代わりにベンダープロファイルとして新規のプロファイルを作成します"
+msgstr ""
+"カスタムプロファイルの代わりにベンダープロファイルとして新規のプロファイルを"
+"作成します"
 
 #: src/cli/main.c:741
 msgid "ID of a profile that should be used as a base for the new profile"
@@ -1141,7 +1169,9 @@ msgstr "新規のプロファイルのベースとして使用すべきプロフ
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
-msgstr "同名のベンダープロファイルがある場合でも、新規のプロファイルのベースをデフォルトプロファイルに置きます"
+msgstr ""
+"同名のベンダープロファイルがある場合でも、新規のプロファイルのベースをデフォ"
+"ルトプロファイルに置きます"
 
 #: src/cli/main.c:743
 msgid "Symlink meta files from the base profile instead of copying them"
@@ -1149,7 +1179,8 @@ msgstr "meta ファイルをコピーする代わりにベースプロファイ�
 
 #: src/cli/main.c:744
 msgid "Symlink nsswitch files from the base profile instead of copying them"
-msgstr "nsswitch ファイルをコピーする代わりにベースプロファイルから Symlink します"
+msgstr ""
+"nsswitch ファイルをコピーする代わりにベースプロファイルから Symlink します"
 
 #: src/cli/main.c:745
 msgid "Symlink pam files from the base profile instead of copying them"
@@ -1157,7 +1188,8 @@ msgstr "pam ファイルをコピーする代わりにベースプロファイ�
 
 #: src/cli/main.c:746
 msgid "Symlink dconf files from the base profile instead of copying them"
-msgstr "dconf ファイルをコピーする代わりにベースプロファイルから Symlink します"
+msgstr ""
+"dconf ファイルをコピーする代わりにベースプロファイルから Symlink します"
 
 #: src/cli/main.c:747
 msgid "Symlink specific file (can be set multiple times)"
@@ -1439,8 +1471,7 @@ msgid "creation of home directories for users on their first login"
 msgstr "ユーザーの最初のログイン時にホームディレクトリーを作成する"
 
 #: src/compat/authcompat_Options.py:113
-msgid ""
-"account locking in case of too many consecutive authentication failures"
+msgid "account locking in case of too many consecutive authentication failures"
 msgstr "認証を続けて失敗した場合にアカウントロックを有効にする"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:b78a981cc40fc4e66208bf5ee6d1a1eb
@@ -1575,7 +1606,8 @@ msgstr "実行中: %s"
 #: src/compat/authcompat.py.in.in:68
 #, python-format
 msgid "Service %s was not found. Please install the service."
-msgstr "サービス %s は見つかりませんでした。サービスをインストールしてください。"
+msgstr ""
+"サービス %s は見つかりませんでした。サービスをインストールしてください。"
 
 #: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:625
 #: src/compat/authcompat.py.in.in:651
@@ -1603,21 +1635,23 @@ msgid ""
 "with authselect and minimum configuration. It does not provide all "
 "capabilities of authconfig.\n"
 msgstr ""
-"このツールの目的は、authselect および最小限の設定で選択したサービスに対する認証を有効にすることです。authconfig "
-"のすべての機能は提供しません。\n"
+"このツールの目的は、authselect および最小限の設定で選択したサービスに対する認"
+"証を有効にすることです。authconfig のすべての機能は提供しません。\n"
 
 #: src/compat/authcompat.py.in.in:469
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
-msgstr "重要: authconfig は authselect に置き換えられました。スクリプトを更新してください。"
+msgstr ""
+"重要: authconfig は authselect に置き換えられました。スクリプトを更新してくだ"
+"さい。"
 
 #: src/compat/authcompat.py.in.in:471
 msgid ""
 "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
 msgstr ""
-"Fedora 28 の Change ページを参照してください: https://fedoraproject.org/wiki/Changes/"
-"AuthselectAsDefault"
+"Fedora 28 の Change ページを参照してください: https://fedoraproject.org/wiki/"
+"Changes/AuthselectAsDefault"
 
 #: src/compat/authcompat.py.in.in:472
 msgid ""
@@ -1637,11 +1671,15 @@ msgstr "authconfig は root としてのみ実行できます。"
 msgid ""
 "Error: option --%s is no longer supported and we cannot continue if it is "
 "set."
-msgstr "エラー: オプション --%s は今後はサポートされず、設定されている場合は続行できません。"
+msgstr ""
+"エラー: オプション --%s は今後はサポートされず、設定されている場合は続行でき"
+"ません。"
 
 #: src/compat/authcompat.py.in.in:506
 msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
-msgstr "エラー: --enablewinbind および --enablewinbindauth の両方とも設定する必要があります。"
+msgstr ""
+"エラー: --enablewinbind および --enablewinbindauth の両方とも設定する必要があ"
+"ります。"
 
 #: src/compat/authcompat.py.in.in:516
 msgid "Error: Please, provide --updateall option."

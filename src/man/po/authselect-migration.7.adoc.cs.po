@@ -3,13 +3,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-06-13 11:30+0200\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2019-09-09 11:40+0000\n"
 "Last-Translator: Josef Hruška <hrusjos@gmail.com>\n"
 "Language-Team: Czech\n"
 "Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 
@@ -255,12 +255,10 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:97
 #, no-wrap
 msgid ""
-"authconfig --enablesssd --enablesssdauth --enablesmartcard --smartcardmodule="
-"sssd --updateall\n"
+"authconfig --enablesssd --enablesssdauth --enablesmartcard --smartcardmodule=sssd --updateall\n"
 "authselect select sssd with-smartcard\n"
 msgstr ""
-"authconfig --enablesssd --enablesssdauth --enablesmartcard --smartcardmodule="
-"sssd --updateall\n"
+"authconfig --enablesssd --enablesssdauth --enablesmartcard --smartcardmodule=sssd --updateall\n"
 "authselect select sssd with-smartcard\n"
 
 #. type: delimited block -
@@ -277,12 +275,10 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:103
 #, no-wrap
 msgid ""
-"authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator --"
-"updateall\n"
+"authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator --updateall\n"
 "realm join -U Administrator --client-software=winbind WINBINDDOMAIN\n"
 msgstr ""
-"authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator --"
-"updateall\n"
+"authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator --updateall\n"
 "realm join -U Administrator --client-software=winbind WINBINDDOMAIN\n"
 
 #. type: Title -
@@ -295,9 +291,7 @@ msgstr "Konfigurační soubory"
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:108
 msgid ""
 "This section contains snippets for minimal configuration of various services."
-""
-msgstr ""
-"Tato podkapitola obsahuje úryvky minimální konfigurace různých služeb."
+msgstr "Tato podkapitola obsahuje úryvky minimální konfigurace různých služeb."
 
 #. type: Title ~
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:110
@@ -326,9 +320,11 @@ msgstr "{sysconfdir}/openldap/ldap.conf"
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:119
 #, no-wrap
-msgid "# Set the default base dn\n"
+msgid ""
+"# Set the default base dn\n"
 "BASE   dc=example,dc=com\n"
-msgstr "# Nastavení výchozího bázového dn\n"
+msgstr ""
+"# Nastavení výchozího bázového dn\n"
 "BASE   dc=example,dc=com\n"
 
 #. type: delimited block -
@@ -368,19 +364,23 @@ msgstr "{sysconfdir}/krb5.conf"
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:133
 #, no-wrap
-msgid "[libdefaults]\n"
+msgid ""
+"[libdefaults]\n"
 " default_realm = MYREALM\n"
-msgstr "[libdefaults]\n"
+msgstr ""
+"[libdefaults]\n"
 " default_realm = MYREALM\n"
 
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:138
 #, no-wrap
-msgid "[realms]\n"
+msgid ""
+"[realms]\n"
 " MYREALM = {\n"
 "  kdc = kdc.myrealm.org\n"
 " }\n"
-msgstr "[realms]\n"
+msgstr ""
+"[realms]\n"
 " MYREALM = {\n"
 "  kdc = kdc.myrealm.org\n"
 " }\n"
@@ -388,15 +388,18 @@ msgstr "[realms]\n"
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:142
 #, no-wrap
-msgid "[domain_realm]\n"
+msgid ""
+"[domain_realm]\n"
 " myrealm.org = MYREALM\n"
 " .myrealm.org = MYREALM\n"
-msgstr "[domain_realm]\n"
+msgstr ""
+"[domain_realm]\n"
 " myrealm.org = MYREALM\n"
 " .myrealm.org = MYREALM\n"
 
 #. type: Plain text
-#: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:145 /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:239
+#: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:145
+#: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:239
 #, no-wrap
 msgid "SSSD"
 msgstr "SSSD"
@@ -415,18 +418,22 @@ msgstr ""
 "je objevován automaticky přes vyhledávání DNS."
 
 #. type: Block title
-#: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:151 /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:167
+#: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:151
+#: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:167
 #, no-wrap
 msgid "{sysconfdir}/sssd/sssd.conf"
 msgstr "{sysconfdir}/sssd/sssd.conf"
 
 #. type: delimited block -
-#: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:156 /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:172
+#: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:156
+#: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:172
 #, no-wrap
-msgid "[sssd]\n"
+msgid ""
+"[sssd]\n"
 "config_file_version = 2\n"
 "domains = default\n"
-msgstr "[sssd]\n"
+msgstr ""
+"[sssd]\n"
 "config_file_version = 2\n"
 "domains = default\n"
 
@@ -506,10 +513,10 @@ msgstr ""
 "Ten provede počáteční nastavení, které v sobě zahrnuje vytvoření keytab "
 "Kerberos a spuštění `adcli` pro připojení k doméně. Rovněž provede změny v "
 "`smb.conf`. Nastavení pak lze dovylepšít úpravou {sysconfdir}/samba/smb.conf."
-""
 
 #. type: Plain text
-#: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:195 /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:247
+#: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:195
+#: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:247
 #, no-wrap
 msgid "NIS"
 msgstr "NIS"
@@ -534,10 +541,12 @@ msgstr "{sysconfdir}/yp.conf"
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:205
 #, no-wrap
-msgid "domain mydomain broadcast\n"
+msgid ""
+"domain mydomain broadcast\n"
 "# or\n"
 "# domain mydomain server myserver\n"
-msgstr "domain mydomain broadcast\n"
+msgstr ""
+"domain mydomain broadcast\n"
 "# or\n"
 "# domain mydomain server myserver\n"
 
@@ -571,9 +580,11 @@ msgstr ""
 #. type: delimited block -
 #: /home/pbrezina/workspace/authselect/src/man/authselect-migration.7.adoc:220
 #, no-wrap
-msgid "$ domainname mydomain\n"
+msgid ""
+"$ domainname mydomain\n"
 "$ setsebool -P allow_ypbind 1\n"
-msgstr "$ domainname mydomain\n"
+msgstr ""
+"$ domainname mydomain\n"
 "$ setsebool -P allow_ypbind 1\n"
 
 #. type: Title ~

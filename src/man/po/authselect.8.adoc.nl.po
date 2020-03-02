@@ -4,13 +4,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-06-13 11:30+0200\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2019-05-30 01:57+0000\n"
 "Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
@@ -53,24 +53,16 @@ msgstr "BESCHRIJVING"
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:21
 #, no-wrap
 msgid ""
-"*Authselect* is a tool to configure system identity and authentication "
-"sources\n"
-"and providers by selecting a specific profile. Profile is a set of files "
-"that\n"
-"describes how the resulting system configuration will look like. When a "
-"profile\n"
-"is selected, *authselect* will create nsswitch.conf(5) and PAM(8) stack to "
-"use\n"
+"*Authselect* is a tool to configure system identity and authentication sources\n"
+"and providers by selecting a specific profile. Profile is a set of files that\n"
+"describes how the resulting system configuration will look like. When a profile\n"
+"is selected, *authselect* will create nsswitch.conf(5) and PAM(8) stack to use\n"
 "identity and authentication sources defined by the profile.\n"
 msgstr ""
-"*Authselect* is een gereedschap voor het configureren van systeemidentiteit "
-"en authenticatiebronnen\n"
-"en aanbieders door het selecteren van een specifiek profiel. Profiel is een "
-"set of bestanden die\n"
-"beschrijven hoe de resulterende systeemconfiguratie eruit zal zien. Als een "
-"profiel\n"
-"geselecteerd is, zal *authselect* nsswitch.conf(5) en PAM(8) stack aanmaken "
-"voor het gebruik van\n"
+"*Authselect* is een gereedschap voor het configureren van systeemidentiteit en authenticatiebronnen\n"
+"en aanbieders door het selecteren van een specifiek profiel. Profiel is een set of bestanden die\n"
+"beschrijven hoe de resulterende systeemconfiguratie eruit zal zien. Als een profiel\n"
+"geselecteerd is, zal *authselect* nsswitch.conf(5) en PAM(8) stack aanmaken voor het gebruik van\n"
 "identiteit en authenticatie bronnen gedefinieerd door het profiel.\n"
 
 #. type: Plain text
@@ -107,12 +99,8 @@ msgstr ""
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:33
 #, no-wrap
-msgid ""
-"*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup="
-"NAME]"
-msgstr ""
-"*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup="
-"NAAM]"
+msgid "*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup=NAME]"
+msgstr "*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup=NAAM]"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:36
@@ -138,16 +126,16 @@ msgid ""
 "automatically backup system files before writing any change unless\n"
 "*--nobackup* option is set.\n"
 msgstr ""
-"Schrijft veranderingen weg zelfs als de vorige configuratie niet aangemaakt "
-"werd door\n"
-"authselect maar door een ander gereedschap of handmatige veranderingen. Deze "
-"optie zal\n"
-"van systeembestanden automatisch een back-up maken voordat veranderingen "
-"weggeschreven worden tenzij\n"
+"Schrijft veranderingen weg zelfs als de vorige configuratie niet aangemaakt werd door\n"
+"authselect maar door een ander gereedschap of handmatige veranderingen. Deze optie zal\n"
+"van systeembestanden automatisch een back-up maken voordat veranderingen weggeschreven worden tenzij\n"
 "de *--nobackup* optie ingesteld is.\n"
 
 #. type: Labeled list
-#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:43 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:68 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:137 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:155
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:43
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:68
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:137
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:155
 #, no-wrap
 msgid "*-b*:"
 msgstr "*-b*:"
@@ -161,16 +149,17 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"Maak een back-up van systeembestanden voordat het geselecteerde profiel "
-"geactiveerd wordt. De back-up zal\n"
+"Maak een back-up van systeembestanden voordat het geselecteerde profiel geactiveerd wordt. De back-up zal\n"
 "opgeslagen worden in  {AUTHSELECT_BACKUP_DIR}/NAME. De huidige tijd\n"
 "in\n"
-"een unieke string worst gebruikt als de naam van de back-up. Dit is een "
-"snelkoppeling\n"
+"een unieke string worst gebruikt als de naam van de back-up. Dit is een snelkoppeling\n"
 "voor *--backup=*.\n"
 
 #. type: Labeled list
-#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:49 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:74 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:143 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:161
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:49
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:74
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:143
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:161
 #, no-wrap
 msgid "*--backup=NAME*:"
 msgstr "*--backup=NAAM*:"
@@ -183,10 +172,8 @@ msgid ""
 "will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
 "unique string is used as a name if no value is provided.\n"
 msgstr ""
-"Maak een back-up van systeembestanden voordat het geselecteerde profiel "
-"geactiveerd wordt. De back-up zal\n"
-"opgeslagen worden in  {AUTHSELECT_BACKUP_DIR}/NAAM. De huidige tijd in een "
-"unieke string\n"
+"Maak een back-up van systeembestanden voordat het geselecteerde profiel geactiveerd wordt. De back-up zal\n"
+"opgeslagen worden in  {AUTHSELECT_BACKUP_DIR}/NAAM. De huidige tijd in een unieke string\n"
 "wordt als naam gebruikt als geen waarde opgegeven wordt.\n"
 
 #. type: Labeled list
@@ -199,18 +186,18 @@ msgstr "*--nobackup*:"
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:56
 #, no-wrap
 msgid "Do not backup system configuration even if *--force* is set.\n"
-msgstr ""
-"Maak geen back-up van systeemconfiguratie zelfs als *--force* ingesteld is."
-"\n"
+msgstr "Maak geen back-up van systeemconfiguratie zelfs als *--force* ingesteld is.\n"
 
 #. type: Labeled list
-#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:57 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:148
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:57
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:148
 #, no-wrap
 msgid "*--quiet, -q*:"
 msgstr "*--quiet, -q*:"
 
 #. type: Plain text
-#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:60 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:151
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:60
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:151
 #, no-wrap
 msgid ""
 "The command will not print any informational message such as additional\n"
@@ -250,11 +237,9 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"Maak een back-up van systeembestanden voordat je veranderingen toepast. De "
-"back-up\n"
+"Maak een back-up van systeembestanden voordat je veranderingen toepast. De back-up\n"
 "zal opgeslagen worden in {AUTHSELECT_BACKUP_DIR}/NAAM. De huidige tijd in\n"
-"een unieke string wordt gebruikt als naam voor de back-up. Dit is een "
-"snelkoppeling\n"
+"een unieke string wordt gebruikt als naam voor de back-up. Dit is een snelkoppeling\n"
 "voor *--backup=*.\n"
 
 #. type: Plain text
@@ -265,10 +250,8 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
-"Maak een back-up van systeembestanden voordat je veranderingen toepast. De "
-"back-up\n"
-"zal opgeslagen worden in {AUTHSELECT_BACKUP_DIR}/NAME. De huidige tijd in "
-"een unieke\n"
+"Maak een back-up van systeembestanden voordat je veranderingen toepast. De back-up\n"
+"zal opgeslagen worden in {AUTHSELECT_BACKUP_DIR}/NAME. De huidige tijd in een unieke\n"
 "string wordt als naam gebruikt als geen waarde is aangeboden.\n"
 
 #. type: Labeled list
@@ -499,12 +482,9 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"Maak een back-up van systeembestanden voordat je de feature aanzet. De back-"
-"up\n"
-"zal opgeslagen worden in {AUTHSELECT_BACKUP_DIR}/NAAM. De huidige tijd in "
-"een\n"
-"unieke string wordt gebruikt als de naam van de back-up. Dit is een "
-"snelkoppeling \n"
+"Maak een back-up van systeembestanden voordat je de feature aanzet. De back-up\n"
+"zal opgeslagen worden in {AUTHSELECT_BACKUP_DIR}/NAAM. De huidige tijd in een\n"
+"unieke string wordt gebruikt als de naam van de back-up. Dit is een snelkoppeling \n"
 "voor *--backup=*.\n"
 
 #. type: Plain text
@@ -515,10 +495,8 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
-"Maak een back-up van systeembestanden voordat je de feature aanzet. De back-"
-"up\n"
-"zal opgeslagen worden in {AUTHSELECT_BACKUP_DIR}/NAAM. De huidige tijd in "
-"een\n"
+"Maak een back-up van systeembestanden voordat je de feature aanzet. De back-up\n"
+"zal opgeslagen worden in {AUTHSELECT_BACKUP_DIR}/NAAM. De huidige tijd in een\n"
 "unieke string wordt gebruikt als geen waarde is opgegeven.\n"
 
 #. type: Labeled list
@@ -541,12 +519,9 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"Maak een back-up van systeembestanden voordat je de feature uitzet. De back-"
-"up\n"
-"zal opgeslagen worden in {AUTHSELECT_BACKUP_DIR}/NAAM. De huidige tijd in "
-"een\n"
-"unieke string wordt gebruikt als de naam van de back-up. Dit is een "
-"snelkoppeling \n"
+"Maak een back-up van systeembestanden voordat je de feature uitzet. De back-up\n"
+"zal opgeslagen worden in {AUTHSELECT_BACKUP_DIR}/NAAM. De huidige tijd in een\n"
+"unieke string wordt gebruikt als de naam van de back-up. Dit is een snelkoppeling \n"
 "voor *--backup=*.\n"
 
 #. type: Plain text
@@ -557,10 +532,8 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
-"Maak een back-up van systeembestanden voordat je de feature uitzet. De back-"
-"up\n"
-"zal opgeslagen worden in {AUTHSELECT_BACKUP_DIR}/NAAM. De huidige tijd in "
-"een\n"
+"Maak een back-up van systeembestanden voordat je de feature uitzet. De back-up\n"
+"zal opgeslagen worden in {AUTHSELECT_BACKUP_DIR}/NAAM. De huidige tijd in een\n"
 "unieke string wordt gebruikt als geen waarde is opgegeven.\n"
 
 #. type: Labeled list
@@ -596,8 +569,7 @@ msgid ""
 "The new profile is a vendor profile instead of a custom profile. See\n"
 "_authselect-profiles(5)_ for more information on profile types.\n"
 msgstr ""
-"Het nieuwe profiel is een leveranciersprofiel in plaats van een aangepast "
-"profiel. Zie\n"
+"Het nieuwe profiel is een leveranciersprofiel in plaats van een aangepast profiel. Zie\n"
 "_authselect-profiles(5)_ voor meer informatie over profieltypes.\n"
 
 #. type: Labeled list
@@ -613,24 +585,20 @@ msgid ""
 "The new profile will be based on a profile named _BASE-ID_. The base\n"
 "profile location is determined with these steps:\n"
 msgstr ""
-"Het nieuwe profiel zal gebaseerd worden op een profiel met de naam _BASE-ID_."
-" De basis\n"
+"Het nieuwe profiel zal gebaseerd worden op een profiel met de naam _BASE-ID_. De basis\n"
 "profiellocatie wordt bepaald met de volgen stappen:\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:180
 #, no-wrap
 msgid "If _BASE-ID_ starts with prefix _custom/_ it is a custom profile.\n"
-msgstr ""
-"Als _BASE-ID_ begint met voorvoegsel _custom/_ dan is het een aangepast "
-"profiel.\n"
+msgstr "Als _BASE-ID_ begint met voorvoegsel _custom/_ dan is het een aangepast profiel.\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:181
 #, no-wrap
 msgid "Try if _BASE-ID_ is found in vendor profiles.\n"
-msgstr ""
-"Probeer of _BASE-ID_ gevonden kan worden in de leverancier profielen.\n"
+msgstr "Probeer of _BASE-ID_ gevonden kan worden in de leverancier profielen.\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:182
@@ -657,8 +625,7 @@ msgid ""
 "The base profile is a default profile even if it is found also within\n"
 "vendor profiles.\n"
 msgstr ""
-"Het basis profiel is een standaard profiel zelfs als het ook gevonden kan "
-"worden in\n"
+"Het basis profiel is een standaard profiel zelfs als het ook gevonden kan worden in\n"
 "leverancier profielen.\n"
 
 #. type: Labeled list
@@ -690,8 +657,7 @@ msgid ""
 "_nsswitch.conf_ template will be symbolic link to the origin profile\n"
 "file instead of its copy.\n"
 msgstr ""
-"_nsswitch.conf_ sjabloon zan een symbolische link zijn naar het oorsprong "
-"bestand\n"
+"_nsswitch.conf_ sjabloon zan een symbolische link zijn naar het oorsprong bestand\n"
 "in plaats van een kopie.\n"
 
 #. type: Labeled list
@@ -707,8 +673,7 @@ msgid ""
 "_PAM_ templates will be symbolic links to the origin profile files\n"
 "instead of their copy.\n"
 msgstr ""
-"_PAM_ sjablonen zullen symbolische links zijn van de oorsprong "
-"profielbestanden\n"
+"_PAM_ sjablonen zullen symbolische links zijn van de oorsprong profielbestanden\n"
 "in plaats van een kopie.\n"
 
 #. type: Labeled list
@@ -724,8 +689,7 @@ msgid ""
 "_dconf_ templates will be symbolic links to the origin profile files\n"
 "instead of their copy.\n"
 msgstr ""
-"_dconf_ sjablonen zullen symbolische links zijn van de oorsprong "
-"profielbestanden\n"
+"_dconf_ sjablonen zullen symbolische links zijn van de oorsprong profielbestanden\n"
 "in plaats van een kopie.\n"
 
 #. type: Labeled list
@@ -741,8 +705,7 @@ msgid ""
 "Create a symbolic link for a template file _FILE_ instead of creating\n"
 "its copy. This option can be passed multiple times.\n"
 msgstr ""
-"Maak een symbolische link aan voor een sjabloonbestand _BESTAND_ in plaats "
-"van het\n"
+"Maak een symbolische link aan voor een sjabloonbestand _BESTAND_ in plaats van het\n"
 "aanmaken van een kopie. Deze optie kan meerdere keren doorgegeven worden.\n"
 
 #. type: Title -
@@ -1091,8 +1054,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:320
 #, no-wrap
 msgid "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
-msgstr ""
-"*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
+msgstr "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:324

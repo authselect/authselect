@@ -4,13 +4,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-06-13 11:30+0200\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2020-01-08 10:45+0000\n"
 "Last-Translator: Pavel Brezina <pbrezina@redhat.com>\n"
 "Language-Team: French\n"
 "Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
@@ -43,9 +43,7 @@ msgstr "SYNOPSIS"
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:13
 #, no-wrap
 msgid " authselect [--debug] [--trace] [--warn] command [command options] \n"
-msgstr ""
-" authselect [--debug] [--trace] [--warn] commande [options de la commande] "
-"\n"
+msgstr " authselect [--debug] [--trace] [--warn] commande [options de la commande] \n"
 
 #. type: Title -
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:15
@@ -57,22 +55,16 @@ msgstr "DESCRIPTION"
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:21
 #, no-wrap
 msgid ""
-"*Authselect* is a tool to configure system identity and authentication "
-"sources\n"
-"and providers by selecting a specific profile. Profile is a set of files "
-"that\n"
-"describes how the resulting system configuration will look like. When a "
-"profile\n"
-"is selected, *authselect* will create nsswitch.conf(5) and PAM(8) stack to "
-"use\n"
+"*Authselect* is a tool to configure system identity and authentication sources\n"
+"and providers by selecting a specific profile. Profile is a set of files that\n"
+"describes how the resulting system configuration will look like. When a profile\n"
+"is selected, *authselect* will create nsswitch.conf(5) and PAM(8) stack to use\n"
 "identity and authentication sources defined by the profile.\n"
 msgstr ""
 "*Authselect* est un outil de configuration des sources et fournisseurs \n"
-"d’identification et d’authentification en sélectionnant un profil spécifique."
-" \n"
+"d’identification et d’authentification en sélectionnant un profil spécifique. \n"
 "Un profil est un ensemble de fichiers décrivant comment doit être la \n"
-"configuration système résultante. Quand un profil est sélectionné, "
-"*authselect*\n"
+"configuration système résultante. Quand un profil est sélectionné, *authselect*\n"
 " créera les piles nsswitch.conf(5) et PAM(8) pour utiliser les sources \n"
 " d’identification et d’authentification définies par le profil.\n"
 
@@ -110,12 +102,8 @@ msgstr ""
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:33
 #, no-wrap
-msgid ""
-"*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup="
-"NAME]"
-msgstr ""
-"*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup="
-"NAME]"
+msgid "*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup=NAME]"
+msgstr "*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup=NAME]"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:36
@@ -141,16 +129,16 @@ msgid ""
 "automatically backup system files before writing any change unless\n"
 "*--nobackup* option is set.\n"
 msgstr ""
-"Écrire les changements même si la configuration précédente n’a pas été créé "
-"par\n"
-"authselect mais par un autre outils ou des changements manuels. Cette option "
-"\n"
-"sauvegardera automatiquement les fichiers système avant l’écriture du "
-"moindre \n"
+"Écrire les changements même si la configuration précédente n’a pas été créé par\n"
+"authselect mais par un autre outils ou des changements manuels. Cette option \n"
+"sauvegardera automatiquement les fichiers système avant l’écriture du moindre \n"
 "changement, à moins que l’option *--nobackup* soit activée.\n"
 
 #. type: Labeled list
-#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:43 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:68 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:137 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:155
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:43
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:68
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:137
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:155
 #, no-wrap
 msgid "*-b*:"
 msgstr "*-b* :"
@@ -164,14 +152,14 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"Sauvegarde les fichiers système avant l’activation du profil sélectionné. La "
-"\n"
-"sauvegarde sera stockée dans {AUTHSELECT_BACKUP_DIR}/NAME. L’heure actuelle, "
-"liée à une chaîne de caractères unique, est utilisée comme nom de la "
-"sauvegarde. Il s'agit d'un raccourci pour *--backup=*.\n"
+"Sauvegarde les fichiers système avant l’activation du profil sélectionné. La \n"
+"sauvegarde sera stockée dans {AUTHSELECT_BACKUP_DIR}/NAME. L’heure actuelle, liée à une chaîne de caractères unique, est utilisée comme nom de la sauvegarde. Il s'agit d'un raccourci pour *--backup=*.\n"
 
 #. type: Labeled list
-#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:49 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:74 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:143 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:161
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:49
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:74
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:143
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:161
 #, no-wrap
 msgid "*--backup=NAME*:"
 msgstr "*--backup=NAME* :"
@@ -184,10 +172,8 @@ msgid ""
 "will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
 "unique string is used as a name if no value is provided.\n"
 msgstr ""
-"Sauvegarde les fichiers système avant l’activation du profil sélectionné. La "
-"\n"
-"sauvegarde sera stockée dans {AUTHSELECT_BACKUP_DIR}/NAME. L’heure actuelle "
-"est \n"
+"Sauvegarde les fichiers système avant l’activation du profil sélectionné. La \n"
+"sauvegarde sera stockée dans {AUTHSELECT_BACKUP_DIR}/NAME. L’heure actuelle est \n"
 "utilisée comme nom si aucune valeur n’est renseignée.\n"
 
 #. type: Labeled list
@@ -200,24 +186,24 @@ msgstr "*--nobackup* :"
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:56
 #, no-wrap
 msgid "Do not backup system configuration even if *--force* is set.\n"
-msgstr ""
-"Ne pas sauvegarder les fichiers système même si *--force* est activé.\n"
+msgstr "Ne pas sauvegarder les fichiers système même si *--force* est activé.\n"
 
 #. type: Labeled list
-#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:57 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:148
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:57
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:148
 #, no-wrap
 msgid "*--quiet, -q*:"
 msgstr "*--quiet, -q* :"
 
 #. type: Plain text
-#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:60 /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:151
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:60
+#: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:151
 #, no-wrap
 msgid ""
 "The command will not print any informational message such as additional\n"
 "profile requirements or backup location. Errors are still being print.\n"
 msgstr ""
-"La commande n’affichera aucun messages d’information tels que les prérequis "
-"de \n"
+"La commande n’affichera aucun messages d’information tels que les prérequis de \n"
 "profils ou lieu de sauvegarde. Les erreurs seront toujours affichées.\n"
 
 #. type: Labeled list
@@ -237,8 +223,8 @@ msgid ""
 msgstr ""
 "Réappliquer le profil actuellement sélectionné. Si les modèles de profil ont "
 "été mis à jour, cette commande peut être utilisée pour régénérer la "
-"configuration système actuelle afin d’appliquer ces modifications au système."
-" Cette commande n’appliquera à nouveau les modifications que si la "
+"configuration système actuelle afin d’appliquer ces modifications au "
+"système. Cette commande n’appliquera à nouveau les modifications que si la "
 "configuration existante est une configuration authselect valide, sinon une "
 "erreur est renvoyée."
 
@@ -251,11 +237,8 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"Sauvegarder les fichiers de sauvegarde du système avant d'y aposer vos "
-"changements. La\n"
-"sauvegarde sera stockée dans {AUTHSELECT_BACKUP_DIR}/NAME. L’heure actuelle, "
-"liée à une chaîne de caractères unique, est utilisée comme nom de la "
-"sauvegarde. Il s'agit d'un raccourci pour *--backup=*.\n"
+"Sauvegarder les fichiers de sauvegarde du système avant d'y aposer vos changements. La\n"
+"sauvegarde sera stockée dans {AUTHSELECT_BACKUP_DIR}/NAME. L’heure actuelle, liée à une chaîne de caractères unique, est utilisée comme nom de la sauvegarde. Il s'agit d'un raccourci pour *--backup=*.\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:78
@@ -265,11 +248,8 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
-"Sauvegarder les fichiers de sauvegarde du système avant d'y aposer vos "
-"changements. La\n"
-"sauvegarde sera stockée dans {AUTHSELECT_BACKUP_DIR}/NAME. L’heure actuelle, "
-"liée à une chaîne de caractères unique, est utilisée comme nom si aucune "
-"valeur n'est donnée.\n"
+"Sauvegarder les fichiers de sauvegarde du système avant d'y aposer vos changements. La\n"
+"sauvegarde sera stockée dans {AUTHSELECT_BACKUP_DIR}/NAME. L’heure actuelle, liée à une chaîne de caractères unique, est utilisée comme nom si aucune valeur n'est donnée.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:79
@@ -498,11 +478,8 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"Sauvegarder les fichiers de sauvegarde du système avant d'activer la "
-"fonctionnalité. La\n"
-"sauvegarde sera stockée dans {AUTHSELECT_BACKUP_DIR}/NAME. L’heure actuelle, "
-"liée à une chaîne de caractères unique, est utilisée comme nom de la "
-"sauvegarde. Il s'agit d'un raccourci pour *--backup=*.\n"
+"Sauvegarder les fichiers de sauvegarde du système avant d'activer la fonctionnalité. La\n"
+"sauvegarde sera stockée dans {AUTHSELECT_BACKUP_DIR}/NAME. L’heure actuelle, liée à une chaîne de caractères unique, est utilisée comme nom de la sauvegarde. Il s'agit d'un raccourci pour *--backup=*.\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:147
@@ -512,11 +489,8 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
-"Sauvegarder les fichiers de sauvegarde du système avant d'activer la "
-"fonctionnalité. La\n"
-"sauvegarde sera stockée dans {AUTHSELECT_BACKUP_DIR}/NAME. L’heure actuelle, "
-"liée à une chaîne de caractères unique, est utilisée comme nom si aucune "
-"valeur n'est donnée.\n"
+"Sauvegarder les fichiers de sauvegarde du système avant d'activer la fonctionnalité. La\n"
+"sauvegarde sera stockée dans {AUTHSELECT_BACKUP_DIR}/NAME. L’heure actuelle, liée à une chaîne de caractères unique, est utilisée comme nom si aucune valeur n'est donnée.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:152
@@ -538,11 +512,8 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"Sauvegarder les fichiers de sauvegarde du système avant de désactiver la "
-"fonctionnalité. La\n"
-"sauvegarde sera stockée dans {AUTHSELECT_BACKUP_DIR}/NAME. L’heure actuelle, "
-"liée à une chaîne de caractères unique, est utilisée comme nom de la "
-"sauvegarde. Il s'agit d'un raccourci pour *--backup=*.\n"
+"Sauvegarder les fichiers de sauvegarde du système avant de désactiver la fonctionnalité. La\n"
+"sauvegarde sera stockée dans {AUTHSELECT_BACKUP_DIR}/NAME. L’heure actuelle, liée à une chaîne de caractères unique, est utilisée comme nom de la sauvegarde. Il s'agit d'un raccourci pour *--backup=*.\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:165
@@ -552,11 +523,8 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
-"Sauvegarder les fichiers de sauvegarde du système avant de désactiver la "
-"fonctionnalité. La\n"
-"sauvegarde sera stockée dans {AUTHSELECT_BACKUP_DIR}/NAME. L’heure actuelle, "
-"liée à une chaîne de caractères unique, est utilisée comme nom si aucune "
-"valeur n'est donnée.\n"
+"Sauvegarder les fichiers de sauvegarde du système avant de désactiver la fonctionnalité. La\n"
+"sauvegarde sera stockée dans {AUTHSELECT_BACKUP_DIR}/NAME. L’heure actuelle, liée à une chaîne de caractères unique, est utilisée comme nom si aucune valeur n'est donnée.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:166
@@ -590,10 +558,8 @@ msgid ""
 "The new profile is a vendor profile instead of a custom profile. See\n"
 "_authselect-profiles(5)_ for more information on profile types.\n"
 msgstr ""
-"Le nouveau profil est un profil fournisseur au lieu d’un profil personnalisé."
-"\n"
-"Lisez _authselect-profiles(5)_ pour plus d’informations sur les types de "
-"profils.\n"
+"Le nouveau profil est un profil fournisseur au lieu d’un profil personnalisé.\n"
+"Lisez _authselect-profiles(5)_ pour plus d’informations sur les types de profils.\n"
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:176
@@ -608,16 +574,14 @@ msgid ""
 "The new profile will be based on a profile named _BASE-ID_. The base\n"
 "profile location is determined with these steps:\n"
 msgstr ""
-"Le nouveau profil sera basé sur un profil appelé _BASE-ID_. L’emplacement du "
-"\n"
+"Le nouveau profil sera basé sur un profil appelé _BASE-ID_. L’emplacement du \n"
 "profil est déterminé par ces étapes :\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:180
 #, no-wrap
 msgid "If _BASE-ID_ starts with prefix _custom/_ it is a custom profile.\n"
-msgstr ""
-"Si _BASE-ID_ débute par le préfixe _custom/_ c’est un profil personnalisé.\n"
+msgstr "Si _BASE-ID_ débute par le préfixe _custom/_ c’est un profil personnalisé.\n"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:181
@@ -650,8 +614,7 @@ msgid ""
 "The base profile is a default profile even if it is found also within\n"
 "vendor profiles.\n"
 msgstr ""
-"Le profil de base est un profil par défaut même s’il est trouvé dans les "
-"profils\n"
+"Le profil de base est un profil par défaut même s’il est trouvé dans les profils\n"
 "fournisseur.\n"
 
 #. type: Labeled list
@@ -667,8 +630,7 @@ msgid ""
 "Meta files, such as _README_ and _REQUIREMENTS_ will be symbolic links\n"
 "to the origin profile files instead of their copy.\n"
 msgstr ""
-"Métafichiers, tels que _README_ et _REQUIREMENTS_ seront des liens "
-"symboliques \n"
+"Métafichiers, tels que _README_ et _REQUIREMENTS_ seront des liens symboliques \n"
 "vers les fichiers du profil d’origine plutôt que leur copie.\n"
 
 #. type: Labeled list
@@ -732,8 +694,7 @@ msgid ""
 "Create a symbolic link for a template file _FILE_ instead of creating\n"
 "its copy. This option can be passed multiple times.\n"
 msgstr ""
-"Crée un lien symbolique pour le modèle de fichier _FILE_ plutôt que de créer "
-"sa \n"
+"Crée un lien symbolique pour le modèle de fichier _FILE_ plutôt que de créer sa \n"
 "copie. Cette option peut être renseignée plusieurs fois.\n"
 
 #. type: Title -
@@ -1083,8 +1044,7 @@ msgstr ""
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:320
 #, no-wrap
 msgid "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
-msgstr ""
-"*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
+msgstr "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
 
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:324
