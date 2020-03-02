@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2020-02-17 12:37+0100\n"
-"PO-Revision-Date: 2020-02-05 04:16+0000\n"
+"POT-Creation-Date: 2020-02-12 11:02+0100\n"
+"PO-Revision-Date: 2020-02-18 15:38+0000\n"
 "Last-Translator: Julien Humbert <julroy67@gmail.com>\n"
 "Language-Team: French <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/fr/>\n"
@@ -136,10 +136,9 @@ msgid "Trying to backup system configuration to [%s]"
 msgstr "Essayer de sauvegarder la configuration système dans [%s]"
 
 #: src/lib/authselect_backup.c:184
-#, fuzzy, c-format
-#| msgid "Backup was successfuly created at [%s]"
+#, c-format
 msgid "Backup was successfully created at [%s]"
-msgstr "La sauvegarde a été créée avec succès à [%s]"
+msgstr "La sauvegarde a été créée à [%s]"
 
 #: src/lib/authselect_backup.c:188
 #, c-format
@@ -147,10 +146,8 @@ msgid "Unable to create backup [%d]: %s"
 msgstr "Impossible de créer la sauvegarde [%d] : %s"
 
 #: src/lib/authselect_backup.c:205
-#, fuzzy
-#| msgid "[%s] does not exist!"
 msgid " does not exist."
-msgstr "[%s] n’existe pas !"
+msgstr " n’existe pas."
 
 #: src/lib/authselect_backup.c:208 src/lib/profiles/list.c:50
 #, c-format
@@ -588,7 +585,7 @@ msgstr "Le profil [%s] ne contient pas un nom dans [%s] !"
 #: src/lib/util/dir.c:77 src/lib/util/dir.c:83
 #, c-format
 msgid "Unable to get basename of [%s]"
-msgstr "Impossible d'obtenir le basename de %s"
+msgstr "Impossible d’obtenir le basename de [%s]"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
 #: src/lib/util/file.c:198 src/cli/main.c:826
@@ -740,12 +737,13 @@ msgid ""
 "File [%s] should exist but is missing. It is not safe to delete [%s]. "
 "Aborting."
 msgstr ""
+"Le fichier [%s] devrait exister, mais est manquant. Il n’est pas sûr de "
+"supprimer [%s]. Annulation."
 
 #: src/lib/util/selinux.c:402
-#, fuzzy, c-format
-#| msgid "Removing backup [%s]"
+#, c-format
 msgid "Removing [%s]"
-msgstr "Suppression de la sauvegarde [%s]"
+msgstr "Suppression de [%s]"
 
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:280
