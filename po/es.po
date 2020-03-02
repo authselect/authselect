@@ -3,20 +3,22 @@
 # Máximo Castañeda Riloba <mcrcctm@gmail.com>, 2018. #zanata
 # Ludek Janda <ljanda@redhat.com>, 2019. #zanata
 # Máximo Castañeda Riloba <mcrcctm@gmail.com>, 2019. #zanata
+# Dennis Tobar <DENNIS.TOBAR@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2019-06-13 11:30+0200\n"
+"POT-Creation-Date: 2020-02-17 12:37+0100\n"
+"PO-Revision-Date: 2020-01-22 11:16+0000\n"
+"Last-Translator: Dennis Tobar <DENNIS.TOBAR@gmail.com>\n"
+"Language-Team: Spanish <https://translate.stg.fedoraproject.org/projects/"
+"authselect/master-application/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-03-02 12:27+0000\n"
-"Last-Translator: Máximo Castañeda Riloba <mcrcctm@gmail.com>\n"
-"Language-Team: Spanish\n"
-"Language: es\n"
-"X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10.3\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:169
 msgid "Unable to obtain supported features"
@@ -111,7 +113,7 @@ msgstr "No hay ningún nombre de archivo en [%s]"
 msgid "Copying [%s] to [%s/%s]"
 msgstr "Copiando [%s] en [%s/%s]"
 
-#: src/lib/authselect_backup.c:132
+#: src/lib/authselect_backup.c:132 src/lib/util/selinux.c:380
 #, c-format
 msgid "File [%s] does not exist"
 msgstr "El archivo [%s] no existe"
@@ -124,7 +126,7 @@ msgstr "No se pudo copiar [%s] en [%s/%s] [%d]: %s"
 #: src/lib/authselect_backup.c:174
 #, c-format
 msgid "Trying to backup authselect configuration to [%s]"
-msgstr ""
+msgstr "Intentando respaldar la configuración de authselect a [%s]"
 
 #: src/lib/authselect_backup.c:179
 #, c-format
@@ -133,64 +135,70 @@ msgstr ""
 
 #: src/lib/authselect_backup.c:184
 #, c-format
-msgid "Backup was successfuly created at [%s]"
+msgid "Backup was successfully created at [%s]"
 msgstr ""
 
 #: src/lib/authselect_backup.c:188
 #, c-format
 msgid "Unable to create backup [%d]: %s"
-msgstr ""
+msgstr "No se pudo crear [%d]: %s"
 
-#: src/lib/authselect_backup.c:205 src/lib/profiles/list.c:50
+#: src/lib/authselect_backup.c:205
+#, fuzzy
+#| msgid "[%s] does not exist!"
+msgid " does not exist."
+msgstr "¡[%s] no existe!"
+
+#: src/lib/authselect_backup.c:208 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
-msgstr ""
+msgstr "No se pudo abrir el directorio [%s] [%d]: %s"
 
-#: src/lib/authselect_backup.c:219
+#: src/lib/authselect_backup.c:222
 #, c-format
 msgid "Removing backup [%s]"
-msgstr ""
+msgstr "Eliminando respaldo [%s]"
 
-#: src/lib/authselect_backup.c:228
+#: src/lib/authselect_backup.c:231
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
 msgstr ""
 
-#: src/lib/authselect_backup.c:300
+#: src/lib/authselect_backup.c:304
 #, c-format
 msgid "Unable to copy files [%d]: %s"
 msgstr ""
 
-#: src/lib/authselect_backup.c:306 src/lib/profiles/activate.c:78
+#: src/lib/authselect_backup.c:310 src/lib/profiles/activate.c:78
 #, c-format
 msgid "Unable to create symbolic links [%d]: %s"
 msgstr "No se pudieron generar los enlaces simbólicos [%d]: %s"
 
-#: src/lib/authselect_backup.c:312 src/lib/profiles/activate.c:84
+#: src/lib/authselect_backup.c:316 src/lib/profiles/activate.c:84
 msgid "Dconf is not installed on your system"
 msgstr "dconf no está instalado en su sistema"
 
-#: src/lib/authselect_backup.c:314 src/lib/profiles/activate.c:86
+#: src/lib/authselect_backup.c:318 src/lib/profiles/activate.c:86
 #, c-format
 msgid "Unable to update dconf database [%d]: %s"
 msgstr "No se pudo actualizar la base de datos dconf [%d]: %s"
 
-#: src/lib/authselect_backup.c:337
+#: src/lib/authselect_backup.c:341
 #, c-format
 msgid "Restoring configuration from backup [%s]"
-msgstr ""
+msgstr "Restaurando configuración desde respaldo [%s]"
 
-#: src/lib/authselect_backup.c:353
+#: src/lib/authselect_backup.c:357
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
-msgstr ""
+msgstr "Respaldo [%s] contiene configuración de authselect"
 
-#: src/lib/authselect_backup.c:356
+#: src/lib/authselect_backup.c:360
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
 msgstr ""
 
-#: src/lib/authselect_backup.c:362
+#: src/lib/authselect_backup.c:366
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
 msgstr ""
@@ -423,7 +431,7 @@ msgstr "No se pudo generar nsswitch.conf [%d]: %s"
 msgid "Unable to generate files [%d]: %s"
 msgstr "No fue posible generar los archivos [%d]: %s"
 
-#: src/lib/files/system.c:369 src/lib/util/selinux.c:372
+#: src/lib/files/system.c:369 src/lib/util/selinux.c:385
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "Escribiendo archivo temporal para [%s]"
@@ -438,12 +446,12 @@ msgstr "No se pudo escribir archivo temporal [%s] [%d]: %s"
 msgid "Temporary file is named [%s]"
 msgstr "El archivo temporal se llama [%s]"
 
-#: src/lib/files/system.c:389 src/lib/util/selinux.c:388
+#: src/lib/files/system.c:389 src/lib/util/selinux.c:407
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "Cambiando el nombre de [%s] a [%s]"
 
-#: src/lib/files/system.c:394 src/lib/util/selinux.c:392
+#: src/lib/files/system.c:394 src/lib/util/selinux.c:411
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "No se pudo cambiar el nombre de [%s] a [%s] [%d]: %s"
@@ -594,7 +602,7 @@ msgstr "No se pudo acceder a los metadatos del directorio [%d]: %s"
 #: src/lib/util/dir.c:313
 #, c-format
 msgid "Removing file [%s/%s]"
-msgstr ""
+msgstr "Eliminando archivo [%s/%s]"
 
 #: src/lib/util/dir.c:321
 #, c-format
@@ -725,6 +733,19 @@ msgstr "No se puede establecer fscreate selinux context!"
 msgid "Unable to restore fscreate selinux context!"
 msgstr "No se puede restaurar fscreate selinux context!"
 
+#: src/lib/util/selinux.c:374
+#, c-format
+msgid ""
+"File [%s] should exist but is missing. It is not safe to delete [%s]. "
+"Aborting."
+msgstr ""
+
+#: src/lib/util/selinux.c:402
+#, fuzzy, c-format
+#| msgid "Removing backup [%s]"
+msgid "Removing [%s]"
+msgstr "Eliminando respaldo [%s]"
+
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:280
 msgid "Invalid operator!"
@@ -815,10 +836,12 @@ msgstr "Mostrar un mensaje de uso resumido"
 
 #: src/cli/cli_tool.c:169
 #, c-format
-msgid "Usage:\n"
+msgid ""
+"Usage:\n"
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
-msgstr "Uso:\n"
+msgstr ""
+"Uso:\n"
 "%s COMANDO ARGUMENTOS\n"
 "\n"
 
@@ -859,37 +882,47 @@ msgstr "¡No hay memoria!"
 
 #: src/cli/cli_tool.c:345
 #, c-format
-msgid "Invalid option %s: %s\n"
+msgid ""
+"Invalid option %s: %s\n"
 "\n"
-msgstr "La opción %s no es válida: %s\n"
+msgstr ""
+"La opción %s no es válida: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:357
 #, c-format
-msgid "Missing option: %s\n"
+msgid ""
+"Missing option: %s\n"
 "\n"
-msgstr "Falta opción: %s\n"
+msgstr ""
+"Falta opción: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:367
 #, c-format
-msgid "Only one free argument is expected!\n"
+msgid ""
+"Only one free argument is expected!\n"
 "\n"
-msgstr "¡Sólo se esperaba un argumento sin opción!\n"
+msgstr ""
+"¡Sólo se esperaba un argumento sin opción!\n"
 "\n"
 
 #: src/cli/cli_tool.c:377
 #, c-format
-msgid "Unexpected parameter: %s\n"
+msgid ""
+"Unexpected parameter: %s\n"
 "\n"
-msgstr "Parámetro inesperado: %s\n"
+msgstr ""
+"Parámetro inesperado: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:389
 #, c-format
-msgid "At least one option is required!\n"
+msgid ""
+"At least one option is required!\n"
 "\n"
-msgstr "¡Se necesita al menos una opción!\n"
+msgstr ""
+"¡Se necesita al menos una opción!\n"
 "\n"
 
 #: src/cli/main.c:72 src/cli/main.c:429 src/cli/main.c:467
@@ -984,9 +1017,11 @@ msgstr "- %s\n"
 
 #: src/cli/main.c:221
 #, c-format
-msgid "\n"
+msgid ""
+"\n"
 "%s\n"
-msgstr "\n"
+msgstr ""
+"\n"
 "%s\n"
 
 #: src/cli/main.c:263
@@ -1106,17 +1141,21 @@ msgstr "No se pudo obtener el contenido generado [%d]: %s"
 
 #: src/cli/main.c:602
 #, c-format
-msgid "File %s: Empty\n"
+msgid ""
+"File %s: Empty\n"
 "\n"
-msgstr "Archivo %s: vacío\n"
+msgstr ""
+"Archivo %s: vacío\n"
 "\n"
 
 #: src/cli/main.c:604
 #, c-format
-msgid "File %s:\n"
+msgid ""
+"File %s:\n"
 "%s\n"
 "\n"
-msgstr "Archivo %s:\n"
+msgstr ""
+"Archivo %s:\n"
 "%s\n"
 
 #: src/cli/main.c:631
@@ -1136,7 +1175,7 @@ msgstr "No se pudo activar la característica [%d]: %s\n"
 #: src/cli/main.c:680
 #, c-format
 msgid "%s\n"
-msgstr ""
+msgstr "%s\n"
 
 #: src/cli/main.c:707
 msgid "Feature to disable."
@@ -1213,7 +1252,7 @@ msgstr ""
 
 #: src/cli/main.c:855
 msgid "Name of the backup to remove."
-msgstr ""
+msgstr "Nombre del respaldo a eliminar."
 
 #: src/cli/main.c:864
 #, c-format
@@ -1287,11 +1326,11 @@ msgstr ""
 
 #: src/cli/main.c:937
 msgid "Remove backup"
-msgstr ""
+msgstr "Eliminar respaldo"
 
 #: src/cli/main.c:938
 msgid "Restore from backup"
-msgstr ""
+msgstr "Restaurar desde respaldo"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
@@ -1402,8 +1441,7 @@ msgstr "el uso de DNS para encontrar los entornos Kerberos"
 
 #: src/compat/authcompat_Options.py:103
 msgid "winbind for user information by default"
-msgstr ""
-"de modo predeterminado winbind para obtener la información del usuario"
+msgstr "de modo predeterminado winbind para obtener la información del usuario"
 
 #: src/compat/authcompat_Options.py:104
 msgid "winbind for authentication by default"
@@ -1458,8 +1496,7 @@ msgstr ""
 "sesión"
 
 #: src/compat/authcompat_Options.py:113
-msgid ""
-"account locking in case of too many consecutive authentication failures"
+msgid "account locking in case of too many consecutive authentication failures"
 msgstr ""
 "el bloqueo de cuenta en caso de demasiados fallos de autenticación seguidos"
 
@@ -1637,8 +1674,7 @@ msgstr ""
 
 #: src/compat/authcompat.py.in.in:476
 msgid "Warning: These options are not supported anymore and have no effect:"
-msgstr ""
-"Advertencia: estas opciones ya no están soportadas y no tienen efecto:"
+msgstr "Advertencia: estas opciones ya no están soportadas y no tienen efecto:"
 
 #: src/compat/authcompat.py.in.in:496
 msgid "authconfig can only be run as root"
@@ -1655,8 +1691,7 @@ msgstr ""
 
 #: src/compat/authcompat.py.in.in:506
 msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
-msgstr ""
-"Error: Deben indicarse a la vez --enablewinbind y --enablewinbindauth."
+msgstr "Error: Deben indicarse a la vez --enablewinbind y --enablewinbindauth."
 
 #: src/compat/authcompat.py.in.in:516
 msgid "Error: Please, provide --updateall option."

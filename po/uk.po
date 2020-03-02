@@ -1,21 +1,22 @@
-# Yuri Chornoivan <yurchor@ukr.net>, 2018.
-# Yuri Chornoivan <yurchor@ukr.net>, 2018. #zanata
-# Yuri Chornoivan <yurchor@ukr.net>, 2019. #zanata
+# Yuri Chornoivan <yurchor@ukr.net>, 2018, 2020.
+# Yuri Chornoivan <yurchor@ukr.net>, 2018. #zanata, 2020.
+# Yuri Chornoivan <yurchor@ukr.net>, 2019. #zanata, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2019-06-13 11:30+0200\n"
+"POT-Creation-Date: 2020-02-12 11:02+0100\n"
+"PO-Revision-Date: 2020-02-18 15:38+0000\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <https://translate.fedoraproject.org/projects/"
+"authselect/master-application/uk/>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-05-29 06:12+0000\n"
-"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
-"Language: uk\n"
-"X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.10.3\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:169
 msgid "Unable to obtain supported features"
@@ -110,7 +111,7 @@ msgstr "Немає назви файла у [%s]"
 msgid "Copying [%s] to [%s/%s]"
 msgstr "Копіюємо [%s] до [%s/%s]"
 
-#: src/lib/authselect_backup.c:132
+#: src/lib/authselect_backup.c:132 src/lib/util/selinux.c:380
 #, c-format
 msgid "File [%s] does not exist"
 msgstr "Файла [%s] не існує"
@@ -132,7 +133,7 @@ msgstr "Намагаємося створити резервну копію на
 
 #: src/lib/authselect_backup.c:184
 #, c-format
-msgid "Backup was successfuly created at [%s]"
+msgid "Backup was successfully created at [%s]"
 msgstr "Резервну копію успішно створено [%s]"
 
 #: src/lib/authselect_backup.c:188
@@ -140,57 +141,61 @@ msgstr "Резервну копію успішно створено [%s]"
 msgid "Unable to create backup [%d]: %s"
 msgstr "Не вдалося створити резервну копію [%d]: %s"
 
-#: src/lib/authselect_backup.c:205 src/lib/profiles/list.c:50
+#: src/lib/authselect_backup.c:205
+msgid " does not exist."
+msgstr " не існує."
+
+#: src/lib/authselect_backup.c:208 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
 msgstr "Не вдалося побудувати список вмісту каталогу [%s] [%d]: %s"
 
-#: src/lib/authselect_backup.c:219
+#: src/lib/authselect_backup.c:222
 #, c-format
 msgid "Removing backup [%s]"
 msgstr "Вилучаємо резервну копію [%s]"
 
-#: src/lib/authselect_backup.c:228
+#: src/lib/authselect_backup.c:231
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
 msgstr "Не вдалося вилучити каталог [%s] [%d]: %s"
 
-#: src/lib/authselect_backup.c:300
+#: src/lib/authselect_backup.c:304
 #, c-format
 msgid "Unable to copy files [%d]: %s"
 msgstr "Не вдалося скопіювати файли [%d]: %s"
 
-#: src/lib/authselect_backup.c:306 src/lib/profiles/activate.c:78
+#: src/lib/authselect_backup.c:310 src/lib/profiles/activate.c:78
 #, c-format
 msgid "Unable to create symbolic links [%d]: %s"
 msgstr "Не вдалося створити символічні посилання [%d]: %s"
 
-#: src/lib/authselect_backup.c:312 src/lib/profiles/activate.c:84
+#: src/lib/authselect_backup.c:316 src/lib/profiles/activate.c:84
 msgid "Dconf is not installed on your system"
 msgstr "У вашій системі не встановлено dconf"
 
-#: src/lib/authselect_backup.c:314 src/lib/profiles/activate.c:86
+#: src/lib/authselect_backup.c:318 src/lib/profiles/activate.c:86
 #, c-format
 msgid "Unable to update dconf database [%d]: %s"
 msgstr "Не вдалося оновити базу даних dconf [%d]: %s"
 
-#: src/lib/authselect_backup.c:337
+#: src/lib/authselect_backup.c:341
 #, c-format
 msgid "Restoring configuration from backup [%s]"
 msgstr "Відновлюємо налаштування з резервної копії [%s]"
 
-#: src/lib/authselect_backup.c:353
+#: src/lib/authselect_backup.c:357
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
 msgstr "Резервна копію [%s] містить налаштування authselect"
 
-#: src/lib/authselect_backup.c:356
+#: src/lib/authselect_backup.c:360
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
 msgstr ""
 "Резервна копія [%s] містить налаштування, які не пов'язано із authselect"
 
-#: src/lib/authselect_backup.c:362
+#: src/lib/authselect_backup.c:366
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
 msgstr "Не вдалося відновити [%s] [%d]: %s"
@@ -421,7 +426,7 @@ msgstr "Не вдалося створити nsswitch.conf [%d]: %s"
 msgid "Unable to generate files [%d]: %s"
 msgstr "Не вдалося створити файли [%d]: %s"
 
-#: src/lib/files/system.c:369 src/lib/util/selinux.c:372
+#: src/lib/files/system.c:369 src/lib/util/selinux.c:385
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "Записуємо тимчасовий файл для [%s]"
@@ -436,12 +441,12 @@ msgstr "Не вдалося записати тимчасовий файл [%s] 
 msgid "Temporary file is named [%s]"
 msgstr "Назвою тимчасового файла є [%s]"
 
-#: src/lib/files/system.c:389 src/lib/util/selinux.c:388
+#: src/lib/files/system.c:389 src/lib/util/selinux.c:407
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "Перейменовуємо [%s] на [%s]"
 
-#: src/lib/files/system.c:394 src/lib/util/selinux.c:392
+#: src/lib/files/system.c:394 src/lib/util/selinux.c:411
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "Не вдалося перейменувати [%s] на [%s] [%d]: %s"
@@ -611,7 +616,7 @@ msgstr "[%s] не є каталогом!"
 #: src/lib/util/file.c:54
 #, c-format
 msgid "[%s] is not a regular file!"
-msgstr "[%s] не є звичайним файлом"
+msgstr "[%s] не є звичайним файлом!"
 
 #: src/lib/util/file.c:57
 #, c-format
@@ -722,6 +727,20 @@ msgstr "Не вдалося встановити контекст selinux fscrea
 msgid "Unable to restore fscreate selinux context!"
 msgstr "Не вдалося відновити контекст selinux fscreate!"
 
+#: src/lib/util/selinux.c:374
+#, c-format
+msgid ""
+"File [%s] should exist but is missing. It is not safe to delete [%s]. "
+"Aborting."
+msgstr ""
+"Файл [%s] має існувати, але його немає. Вилучати [%s] небезпечно. "
+"Перериваємо обробку."
+
+#: src/lib/util/selinux.c:402
+#, c-format
+msgid "Removing [%s]"
+msgstr "Вилучаємо [%s]"
+
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:280
 msgid "Invalid operator!"
@@ -812,10 +831,12 @@ msgstr "Показати коротке повідомлення щодо кор
 
 #: src/cli/cli_tool.c:169
 #, c-format
-msgid "Usage:\n"
+msgid ""
+"Usage:\n"
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
-msgstr "Користування:\n"
+msgstr ""
+"Користування:\n"
 "%s КОМАНДА АРГУМЕНТИ_КОМАНДИ\n"
 "\n"
 
@@ -856,37 +877,47 @@ msgstr "Не вистачає пам'яті!"
 
 #: src/cli/cli_tool.c:345
 #, c-format
-msgid "Invalid option %s: %s\n"
+msgid ""
+"Invalid option %s: %s\n"
 "\n"
-msgstr "Некоректний параметр %s: %s\n"
+msgstr ""
+"Некоректний параметр %s: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:357
 #, c-format
-msgid "Missing option: %s\n"
+msgid ""
+"Missing option: %s\n"
 "\n"
-msgstr "Пропущено параметр: %s\n"
+msgstr ""
+"Пропущено параметр: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:367
 #, c-format
-msgid "Only one free argument is expected!\n"
+msgid ""
+"Only one free argument is expected!\n"
 "\n"
-msgstr "Мало бути вказано лише один вільний аргумент!\n"
+msgstr ""
+"Мало бути вказано лише один вільний аргумент!\n"
 "\n"
 
 #: src/cli/cli_tool.c:377
 #, c-format
-msgid "Unexpected parameter: %s\n"
+msgid ""
+"Unexpected parameter: %s\n"
 "\n"
-msgstr "Неочікуваний параметр: %s\n"
+msgstr ""
+"Неочікуваний параметр: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:389
 #, c-format
-msgid "At least one option is required!\n"
+msgid ""
+"At least one option is required!\n"
 "\n"
-msgstr "Слід вказати принаймні один параметр!\n"
+msgstr ""
+"Слід вказати принаймні один параметр!\n"
 "\n"
 
 #: src/cli/main.c:72 src/cli/main.c:429 src/cli/main.c:467
@@ -981,9 +1012,11 @@ msgstr "- %s\n"
 
 #: src/cli/main.c:221
 #, c-format
-msgid "\n"
+msgid ""
+"\n"
 "%s\n"
-msgstr "\n"
+msgstr ""
+"\n"
 "%s\n"
 
 #: src/cli/main.c:263
@@ -1102,17 +1135,21 @@ msgstr "Не вдалося отримати створені дані [%d]: %s"
 
 #: src/cli/main.c:602
 #, c-format
-msgid "File %s: Empty\n"
+msgid ""
+"File %s: Empty\n"
 "\n"
-msgstr "Файл %s: порожньо\n"
+msgstr ""
+"Файл %s: порожньо\n"
 "\n"
 
 #: src/cli/main.c:604
 #, c-format
-msgid "File %s:\n"
+msgid ""
+"File %s:\n"
 "%s\n"
 "\n"
-msgstr "Файл %s:\n"
+msgstr ""
+"Файл %s:\n"
 "%s\n"
 "\n"
 
@@ -1244,7 +1281,7 @@ msgstr "Вибрати профіль"
 
 #: src/cli/main.c:924
 msgid "Regenerate configuration for currently selected command"
-msgstr "Повторно створити налаштування для поточної  вибраної команди"
+msgstr "Повторно створити налаштування для поточної вибраної команди"
 
 #: src/cli/main.c:925
 msgid "List available profiles"
@@ -1421,8 +1458,7 @@ msgstr "<Адміністратор>"
 
 #: src/compat/authcompat_Options.py:105
 msgid "join the winbind domain or ads realm now as this administrator"
-msgstr ""
-"долучитися до домену winbind або області AD тепер як цей адміністратор"
+msgstr "долучитися до домену winbind або області AD тепер як цей адміністратор"
 
 #: src/compat/authcompat_Options.py:106
 msgid "Kerberos 5 for authenticate with winbind"
@@ -1459,8 +1495,7 @@ msgid "creation of home directories for users on their first login"
 msgstr "створення домашніх каталогів користувачі при першому вході до системи"
 
 #: src/compat/authcompat_Options.py:113
-msgid ""
-"account locking in case of too many consecutive authentication failures"
+msgid "account locking in case of too many consecutive authentication failures"
 msgstr ""
 "блокування облікового запису, якщо користувач здійснить занадто багато "
 "послідовних невдалих спроб пройти розпізнавання"
@@ -1620,7 +1655,6 @@ msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
 msgstr ""
 "ВАЖЛИВО: authconfig замінено на authselect. Будь ласка, оновіть ваші скрипти."
-""
 
 #: src/compat/authcompat.py.in.in:471
 msgid ""

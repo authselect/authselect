@@ -1,23 +1,25 @@
 # José Fournier <jaaf64@zoraldia.com>, 2018. #zanata
 # Ludek Janda <ljanda@redhat.com>, 2018. #zanata
 # Pavel Brezina <pbrezina@redhat.com>, 2018. #zanata
-# Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>, 2019. #zanata
+# Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>, 2019. #zanata, 2020.
 # Pavel Brezina <pbrezina@redhat.com>, 2019. #zanata
 # corina roe <croe@redhat.com>, 2019. #zanata
+# Julien Humbert <julroy67@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2019-06-13 11:30+0200\n"
+"POT-Creation-Date: 2020-02-12 11:02+0100\n"
+"PO-Revision-Date: 2020-02-18 15:38+0000\n"
+"Last-Translator: Julien Humbert <julroy67@gmail.com>\n"
+"Language-Team: French <https://translate.fedoraproject.org/projects/"
+"authselect/master-application/fr/>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-06-09 05:21+0000\n"
-"Last-Translator: Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>\n"
-"Language-Team: French\n"
-"Language: fr\n"
-"X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 3.10.3\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:169
 msgid "Unable to obtain supported features"
@@ -54,7 +56,7 @@ msgstr "Impossible de vérifier la configuration [%d] : %s"
 
 #: src/lib/authselect.c:114
 msgid "Unexpected changes to the configuration were detected."
-msgstr "Des modifications inattendues de la configuration ont été détectées"
+msgstr "Des modifications inattendues de la configuration ont été détectées."
 
 #: src/lib/authselect.c:115
 msgid ""
@@ -113,7 +115,7 @@ msgstr "Il n’y a pas de nom de fichier dans [%s]"
 msgid "Copying [%s] to [%s/%s]"
 msgstr "Copier [%s] to [%s/%s]"
 
-#: src/lib/authselect_backup.c:132
+#: src/lib/authselect_backup.c:132 src/lib/util/selinux.c:380
 #, c-format
 msgid "File [%s] does not exist"
 msgstr "Fichier [%s] n’existe pas"
@@ -135,64 +137,68 @@ msgstr "Essayer de sauvegarder la configuration système dans [%s]"
 
 #: src/lib/authselect_backup.c:184
 #, c-format
-msgid "Backup was successfuly created at [%s]"
-msgstr "La sauvegarde a été créée avec succès à [%s]"
+msgid "Backup was successfully created at [%s]"
+msgstr "La sauvegarde a été créée à [%s]"
 
 #: src/lib/authselect_backup.c:188
 #, c-format
 msgid "Unable to create backup [%d]: %s"
 msgstr "Impossible de créer la sauvegarde [%d] : %s"
 
-#: src/lib/authselect_backup.c:205 src/lib/profiles/list.c:50
+#: src/lib/authselect_backup.c:205
+msgid " does not exist."
+msgstr " n’existe pas."
+
+#: src/lib/authselect_backup.c:208 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
 msgstr "Impossible de lister le dossier [%s] [%d] : %s"
 
-#: src/lib/authselect_backup.c:219
+#: src/lib/authselect_backup.c:222
 #, c-format
 msgid "Removing backup [%s]"
 msgstr "Suppression de la sauvegarde [%s]"
 
-#: src/lib/authselect_backup.c:228
+#: src/lib/authselect_backup.c:231
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
 msgstr "Impossible de supprimer le dossier [%s] [%d] : %s"
 
-#: src/lib/authselect_backup.c:300
+#: src/lib/authselect_backup.c:304
 #, c-format
 msgid "Unable to copy files [%d]: %s"
 msgstr "Impossible de copier les fichiers [%d] : %s"
 
-#: src/lib/authselect_backup.c:306 src/lib/profiles/activate.c:78
+#: src/lib/authselect_backup.c:310 src/lib/profiles/activate.c:78
 #, c-format
 msgid "Unable to create symbolic links [%d]: %s"
 msgstr "Impossible de créer le lien symbolique [%d] : %s"
 
-#: src/lib/authselect_backup.c:312 src/lib/profiles/activate.c:84
+#: src/lib/authselect_backup.c:316 src/lib/profiles/activate.c:84
 msgid "Dconf is not installed on your system"
 msgstr "Dconf n’est pas installé sur votre système"
 
-#: src/lib/authselect_backup.c:314 src/lib/profiles/activate.c:86
+#: src/lib/authselect_backup.c:318 src/lib/profiles/activate.c:86
 #, c-format
 msgid "Unable to update dconf database [%d]: %s"
 msgstr "Impossible de mettre à jour la base de données dconf [%d] : %s"
 
-#: src/lib/authselect_backup.c:337
+#: src/lib/authselect_backup.c:341
 #, c-format
 msgid "Restoring configuration from backup [%s]"
 msgstr "Restauration de la configuration depuis la sauvegarde [%s]"
 
-#: src/lib/authselect_backup.c:353
+#: src/lib/authselect_backup.c:357
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
 msgstr "La sauvegarde [%s] contient une configuration authselect"
 
-#: src/lib/authselect_backup.c:356
+#: src/lib/authselect_backup.c:360
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
 msgstr "La sauvegarde [%s] contient une configuration non-authselect"
 
-#: src/lib/authselect_backup.c:362
+#: src/lib/authselect_backup.c:366
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
 msgstr "Impossible de restaurer [%s] [%d] : %s"
@@ -302,7 +308,7 @@ msgstr "Impossible de créer un profil [%d] : %s"
 
 #: src/lib/files/config.c:153
 msgid "Checking if all required directories are writable."
-msgstr "Vérification de la possibilité d’écrire dans les tous dossiers requis"
+msgstr "Vérification de la possibilité d’écrire dans les tous dossiers requis."
 
 #: src/lib/files/config.c:158
 #, c-format
@@ -362,7 +368,7 @@ msgstr "Impossible de valider le lien [%s] [%d] : %s"
 #: src/lib/files/symlinks.c:90
 #, c-format
 msgid "[%s] was not created by authselect!"
-msgstr "[%s] n’a pas été créé par authselect."
+msgstr "[%s] n’a pas été créé par authselect !"
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:152
 #: src/lib/files/system.c:576
@@ -383,7 +389,7 @@ msgstr "Le lien symbolique [%s] to [%s] est toujours là !"
 #: src/lib/files/symlinks.c:148
 #, c-format
 msgid "File [%s] exists but it needs to be overwritten!"
-msgstr "Le fichier [%s] existe mais il a besoin d’être remplacé."
+msgstr "Le fichier [%s] existe, mais a besoin d’être écrasé !"
 
 #: src/lib/files/system.c:74 src/lib/profiles/read.c:162
 #, c-format
@@ -424,7 +430,7 @@ msgstr "Impossible de générer nsswitch.conf [%d] : %s"
 msgid "Unable to generate files [%d]: %s"
 msgstr "Impossible de générer les fichiers [%d] : %s"
 
-#: src/lib/files/system.c:369 src/lib/util/selinux.c:372
+#: src/lib/files/system.c:369 src/lib/util/selinux.c:385
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "Ecriture d’un fichier temporaire pour [%s]"
@@ -439,12 +445,12 @@ msgstr "Impossible d’écrire un fichier temporaire [%s] [%d] : %s"
 msgid "Temporary file is named [%s]"
 msgstr "Le fichier temporaire est nommé [%s]"
 
-#: src/lib/files/system.c:389 src/lib/util/selinux.c:388
+#: src/lib/files/system.c:389 src/lib/util/selinux.c:407
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "Renommer [%s] en [%s]"
 
-#: src/lib/files/system.c:394 src/lib/util/selinux.c:392
+#: src/lib/files/system.c:394 src/lib/util/selinux.c:411
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "Impossible de renommer [%s] en [%s] [%d] : %s"
@@ -491,7 +497,7 @@ msgstr "Le fichier [%s] a été modifié en dehors de authselect !"
 #: src/lib/files/system.c:572
 #, c-format
 msgid "File [%s] is still present"
-msgstr "Le fichier [%s] n’est toujours pas présent !"
+msgstr "Le fichier [%s] est toujours présent"
 
 #: src/lib/profiles/activate.c:44
 #, c-format
@@ -579,7 +585,7 @@ msgstr "Le profil [%s] ne contient pas un nom dans [%s] !"
 #: src/lib/util/dir.c:77 src/lib/util/dir.c:83
 #, c-format
 msgid "Unable to get basename of [%s]"
-msgstr "Impossible d'obtenir le basename de %s"
+msgstr "Impossible d’obtenir le basename de [%s]"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
 #: src/lib/util/file.c:198 src/cli/main.c:826
@@ -673,7 +679,7 @@ msgstr "Impossible de changer le mode du fichier [%s] [%d] : %s"
 #: src/lib/util/file.c:526
 #, c-format
 msgid "Unable to chown file [%s] [%d]: %s"
-msgstr "Impossible de chown fichier [ ]%s] [ ]%d: %s"
+msgstr "Impossible de chown fichier [%s] [%d] : %s"
 
 #: src/lib/util/selinux.c:46
 #, c-format
@@ -707,23 +713,37 @@ msgstr "Contexte selinux trouvé pour [%s] : %s"
 #: src/lib/util/selinux.c:115 src/lib/util/selinux.c:183
 #: src/lib/util/selinux.c:249
 msgid "Unable to get current fscreate selinux context!"
-msgstr "Impossible d’obtenir le contexte selinux actuel fscreate."
+msgstr "Impossible d’obtenir le contexte selinux actuel fscreate !"
 
 #: src/lib/util/selinux.c:121 src/lib/util/selinux.c:189
 #: src/lib/util/selinux.c:255
 #, c-format
 msgid "Unable to get default selinux context for [%s] [%d]: %s!"
-msgstr "Impossible d’obtenir le contexte selinux par défaut [%s] [%d] : %s"
+msgstr "Impossible d’obtenir le contexte selinux par défaut [%s] [%d] : %s !"
 
 #: src/lib/util/selinux.c:129 src/lib/util/selinux.c:197
 #: src/lib/util/selinux.c:263
 msgid "Unable to set fscreate selinux context!"
-msgstr "Impossible de définir le contexte selinux fscreate."
+msgstr "Impossible de définir le contexte selinux fscreate !"
 
 #: src/lib/util/selinux.c:139 src/lib/util/selinux.c:207
 #: src/lib/util/selinux.c:273
 msgid "Unable to restore fscreate selinux context!"
-msgstr "Impossible de restaurer le contexte selinux fscreate."
+msgstr "Impossible de restaurer le contexte selinux fscreate !"
+
+#: src/lib/util/selinux.c:374
+#, c-format
+msgid ""
+"File [%s] should exist but is missing. It is not safe to delete [%s]. "
+"Aborting."
+msgstr ""
+"Le fichier [%s] devrait exister, mais est manquant. Il n’est pas sûr de "
+"supprimer [%s]. Annulation."
+
+#: src/lib/util/selinux.c:402
+#, c-format
+msgid "Removing [%s]"
+msgstr "Suppression de [%s]"
 
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:280
@@ -815,10 +835,12 @@ msgstr "Montrer un bref message d’utilisation pour une commande"
 
 #: src/cli/cli_tool.c:169
 #, c-format
-msgid "Usage:\n"
+msgid ""
+"Usage:\n"
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
-msgstr "Utilisation :\n"
+msgstr ""
+"Utilisation :\n"
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
 
@@ -861,31 +883,38 @@ msgstr "Manque de mémoire !"
 
 #: src/cli/cli_tool.c:345
 #, c-format
-msgid "Invalid option %s: %s\n"
+msgid ""
+"Invalid option %s: %s\n"
 "\n"
-msgstr "Option invalide %s: %s\n"
+msgstr ""
+"Option invalide %s : %s\n"
+"\n"
 
 #: src/cli/cli_tool.c:357
 #, c-format
-msgid "Missing option: %s\n"
+msgid ""
+"Missing option: %s\n"
 "\n"
 msgstr "Option manquante : %s\n"
 
 #: src/cli/cli_tool.c:367
 #, c-format
-msgid "Only one free argument is expected!\n"
+msgid ""
+"Only one free argument is expected!\n"
 "\n"
 msgstr "Un seul argument libre est attendu !\n"
 
 #: src/cli/cli_tool.c:377
 #, c-format
-msgid "Unexpected parameter: %s\n"
+msgid ""
+"Unexpected parameter: %s\n"
 "\n"
 msgstr "Paramètre inattendu : %s\n"
 
 #: src/cli/cli_tool.c:389
 #, c-format
-msgid "At least one option is required!\n"
+msgid ""
+"At least one option is required!\n"
 "\n"
 msgstr "Une option au moins est requise !\n"
 
@@ -980,9 +1009,11 @@ msgstr "- %s\n"
 
 #: src/cli/main.c:221
 #, c-format
-msgid "\n"
+msgid ""
+"\n"
 "%s\n"
-msgstr "\n"
+msgstr ""
+"\n"
 "%s\n"
 
 #: src/cli/main.c:263
@@ -1013,7 +1044,7 @@ msgstr "Imprimer les paramètres de la commande au lieu de la sortie formatée"
 #: src/cli/main.c:305 src/cli/main.c:646
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
-msgstr "Impossible d’obtenir la configuration courante [%d[: %s"
+msgstr "Impossible d’obtenir la configuration courante [%d] : %s"
 
 #: src/cli/main.c:319
 #, c-format
@@ -1026,7 +1057,7 @@ msgstr "Fonctionnalités activées :"
 
 #: src/cli/main.c:323
 msgid " None\n"
-msgstr "Aucune\n"
+msgstr " Aucune\n"
 
 #: src/cli/main.c:351
 #, c-format
@@ -1047,7 +1078,7 @@ msgstr "La configuration courante est valide."
 
 #: src/cli/main.c:368
 msgid "System was not configured with authselect."
-msgstr "Le système n'a pas été configuré avec authselect"
+msgstr "Le système n’a pas été configuré avec authselect."
 
 #: src/cli/main.c:393
 msgid "Unable to get profile list!"
@@ -1101,16 +1132,21 @@ msgstr "Impossible d’obtenir le contenu généré [%d] : %s"
 
 #: src/cli/main.c:602
 #, c-format
-msgid "File %s: Empty\n"
+msgid ""
+"File %s: Empty\n"
 "\n"
-msgstr "Fichier %s :  vide\n"
+msgstr ""
+"Fichier %s : vide\n"
+"\n"
 
 #: src/cli/main.c:604
 #, c-format
-msgid "File %s:\n"
+msgid ""
+"File %s:\n"
 "%s\n"
 "\n"
-msgstr "Fichier %s :\n"
+msgstr ""
+"Fichier %s :\n"
 "%s\n"
 
 #: src/cli/main.c:631
@@ -1134,7 +1170,7 @@ msgstr "%s\n"
 
 #: src/cli/main.c:707
 msgid "Feature to disable."
-msgstr "Fonctionnalité à désactiver"
+msgstr "Fonctionnalité à désactiver."
 
 #: src/cli/main.c:721
 #, c-format
@@ -1283,7 +1319,7 @@ msgstr "Commandes des sauvegardes :"
 
 #: src/cli/main.c:936
 msgid "List available backups"
-msgstr "Liste les sauvegardes disponibles."
+msgstr "Liste les sauvegardes disponibles"
 
 #: src/cli/main.c:937
 msgid "Remove backup"
@@ -1460,8 +1496,7 @@ msgstr ""
 "connexion"
 
 #: src/compat/authcompat_Options.py:113
-msgid ""
-"account locking in case of too many consecutive authentication failures"
+msgid "account locking in case of too many consecutive authentication failures"
 msgstr ""
 "verrouillage du compte en cas d’échecs d’authentification consécutifs trop "
 "nombreux"

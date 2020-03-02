@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2019-06-13 11:30+0200\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-02-17 12:37+0100\n"
 "PO-Revision-Date: 2020-01-08 10:39+0000\n"
 "Last-Translator: Pavel Brezina <pbrezina@redhat.com>\n"
 "Language-Team: Czech\n"
 "Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 
@@ -111,7 +111,7 @@ msgstr "V [%s] není žádný název souboru"
 msgid "Copying [%s] to [%s/%s]"
 msgstr "Kopírování [%s] do [%s/%s]"
 
-#: src/lib/authselect_backup.c:132
+#: src/lib/authselect_backup.c:132 src/lib/util/selinux.c:380
 #, c-format
 msgid "File [%s] does not exist"
 msgstr "Soubor [%s] neexistuje"
@@ -132,8 +132,9 @@ msgid "Trying to backup system configuration to [%s]"
 msgstr "Pokus o zálohování systémové konfigurace do [%s]"
 
 #: src/lib/authselect_backup.c:184
-#, c-format
-msgid "Backup was successfuly created at [%s]"
+#, fuzzy, c-format
+#| msgid "Backup was successfuly created at [%s]"
+msgid "Backup was successfully created at [%s]"
 msgstr "Záloha byla úspěšně vytvořena v [%s]"
 
 #: src/lib/authselect_backup.c:188
@@ -141,56 +142,62 @@ msgstr "Záloha byla úspěšně vytvořena v [%s]"
 msgid "Unable to create backup [%d]: %s"
 msgstr "Nelze vytvořit zálohu [%d]: %s"
 
-#: src/lib/authselect_backup.c:205 src/lib/profiles/list.c:50
+#: src/lib/authselect_backup.c:205
+#, fuzzy
+#| msgid "[%s] does not exist!"
+msgid " does not exist."
+msgstr "[%s] neexistuje!"
+
+#: src/lib/authselect_backup.c:208 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
 msgstr "Nelze zobrazit obsah adresáře [%s] [%d]: %s"
 
-#: src/lib/authselect_backup.c:219
+#: src/lib/authselect_backup.c:222
 #, c-format
 msgid "Removing backup [%s]"
 msgstr "Odstraňuje se záloha [%s]"
 
-#: src/lib/authselect_backup.c:228
+#: src/lib/authselect_backup.c:231
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
 msgstr "Nelze smazat adresář [%s] [%d]: %s"
 
-#: src/lib/authselect_backup.c:300
+#: src/lib/authselect_backup.c:304
 #, c-format
 msgid "Unable to copy files [%d]: %s"
 msgstr "Nelze zkopírovat soubory [%d]: %s"
 
-#: src/lib/authselect_backup.c:306 src/lib/profiles/activate.c:78
+#: src/lib/authselect_backup.c:310 src/lib/profiles/activate.c:78
 #, c-format
 msgid "Unable to create symbolic links [%d]: %s"
 msgstr "Nelze vytvořit symbolické odkazy [%d]: %s"
 
-#: src/lib/authselect_backup.c:312 src/lib/profiles/activate.c:84
+#: src/lib/authselect_backup.c:316 src/lib/profiles/activate.c:84
 msgid "Dconf is not installed on your system"
 msgstr "Dconf není ve vašem systému nainstalován"
 
-#: src/lib/authselect_backup.c:314 src/lib/profiles/activate.c:86
+#: src/lib/authselect_backup.c:318 src/lib/profiles/activate.c:86
 #, c-format
 msgid "Unable to update dconf database [%d]: %s"
 msgstr "Nelze aktualizovat databázi dconf [%d]: %s"
 
-#: src/lib/authselect_backup.c:337
+#: src/lib/authselect_backup.c:341
 #, c-format
 msgid "Restoring configuration from backup [%s]"
 msgstr "Obnova konfigurace že zálohy [%s]"
 
-#: src/lib/authselect_backup.c:353
+#: src/lib/authselect_backup.c:357
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
 msgstr "Záloha [%s] obsahuje konfiguraci authselect"
 
-#: src/lib/authselect_backup.c:356
+#: src/lib/authselect_backup.c:360
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
 msgstr "Záloha [%s] obsahuje konfiguraci, která není určena pro authselect"
 
-#: src/lib/authselect_backup.c:362
+#: src/lib/authselect_backup.c:366
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
 msgstr "Nelze obnovit [%s] [%d]: %s"
@@ -421,7 +428,7 @@ msgstr "Nelze generovat nsswitch.conf [%d]: %s"
 msgid "Unable to generate files [%d]: %s"
 msgstr "Nelze generovat soubory [%d]: %s"
 
-#: src/lib/files/system.c:369 src/lib/util/selinux.c:372
+#: src/lib/files/system.c:369 src/lib/util/selinux.c:385
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "Vytváření dočasného souboru pro [%s]"
@@ -436,12 +443,12 @@ msgstr "Nelze vytvořit dočasný soubor [%s] [%d]: %s"
 msgid "Temporary file is named [%s]"
 msgstr "Dočasný soubor je pojmenován [%s]"
 
-#: src/lib/files/system.c:389 src/lib/util/selinux.c:388
+#: src/lib/files/system.c:389 src/lib/util/selinux.c:407
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "Přejmenování [%s] na [%s]"
 
-#: src/lib/files/system.c:394 src/lib/util/selinux.c:392
+#: src/lib/files/system.c:394 src/lib/util/selinux.c:411
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "Nelze přejmenovat [%s] na [%s] [%d]: %s"
@@ -726,6 +733,19 @@ msgstr "Nelze nastavit SELinux kontext u fscreate!"
 msgid "Unable to restore fscreate selinux context!"
 msgstr "Nelze obnovit SELinux kontext u fscreate!"
 
+#: src/lib/util/selinux.c:374
+#, c-format
+msgid ""
+"File [%s] should exist but is missing. It is not safe to delete [%s]. "
+"Aborting."
+msgstr ""
+
+#: src/lib/util/selinux.c:402
+#, fuzzy, c-format
+#| msgid "Removing backup [%s]"
+msgid "Removing [%s]"
+msgstr "Odstraňuje se záloha [%s]"
+
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:280
 msgid "Invalid operator!"
@@ -816,10 +836,12 @@ msgstr "Zobrazit krátkou zprávu o použití pro příkaz"
 
 #: src/cli/cli_tool.c:169
 #, c-format
-msgid "Usage:\n"
+msgid ""
+"Usage:\n"
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
-msgstr "Použití:\n"
+msgstr ""
+"Použití:\n"
 "%s PŘÍKAZ ARGUMENTY-PŘÍKAZU\n"
 "\n"
 
@@ -860,37 +882,47 @@ msgstr "Nedostatek paměti!"
 
 #: src/cli/cli_tool.c:345
 #, c-format
-msgid "Invalid option %s: %s\n"
+msgid ""
+"Invalid option %s: %s\n"
 "\n"
-msgstr "Neplatná volba %s: %s\n"
+msgstr ""
+"Neplatná volba %s: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:357
 #, c-format
-msgid "Missing option: %s\n"
+msgid ""
+"Missing option: %s\n"
 "\n"
-msgstr "Chybějící volba: %s\n"
+msgstr ""
+"Chybějící volba: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:367
 #, c-format
-msgid "Only one free argument is expected!\n"
+msgid ""
+"Only one free argument is expected!\n"
 "\n"
-msgstr "Očekává se pouze jeden volný argument!\n"
+msgstr ""
+"Očekává se pouze jeden volný argument!\n"
 "\n"
 
 #: src/cli/cli_tool.c:377
 #, c-format
-msgid "Unexpected parameter: %s\n"
+msgid ""
+"Unexpected parameter: %s\n"
 "\n"
-msgstr "Neočekávaný parametr: %s\n"
+msgstr ""
+"Neočekávaný parametr: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:389
 #, c-format
-msgid "At least one option is required!\n"
+msgid ""
+"At least one option is required!\n"
 "\n"
-msgstr "Je vyžadována alespoň jedna volba!\n"
+msgstr ""
+"Je vyžadována alespoň jedna volba!\n"
 "\n"
 
 #: src/cli/main.c:72 src/cli/main.c:429 src/cli/main.c:467
@@ -984,9 +1016,11 @@ msgstr "- %s\n"
 
 #: src/cli/main.c:221
 #, c-format
-msgid "\n"
+msgid ""
+"\n"
 "%s\n"
-msgstr "\n"
+msgstr ""
+"\n"
 "%s\n"
 
 #: src/cli/main.c:263
@@ -1105,17 +1139,21 @@ msgstr "Nelze získat generovaný obsah [%d]: %s"
 
 #: src/cli/main.c:602
 #, c-format
-msgid "File %s: Empty\n"
+msgid ""
+"File %s: Empty\n"
 "\n"
-msgstr "Soubor %s: Prázdný\n"
+msgstr ""
+"Soubor %s: Prázdný\n"
 "\n"
 
 #: src/cli/main.c:604
 #, c-format
-msgid "File %s:\n"
+msgid ""
+"File %s:\n"
 "%s\n"
 "\n"
-msgstr "Soubor %s:\n"
+msgstr ""
+"Soubor %s:\n"
 "%s\n"
 "\n"
 
@@ -1126,7 +1164,8 @@ msgstr "Funkce k povolení."
 #: src/cli/main.c:668
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
-msgstr "Nelze vytvořit zálohu současné konfigurace [%d]: %s\n"
+msgstr ""
+"Nelze vytvořit zálohu současné konfigurace [%d]: %s\n"
 "\n"
 
 #: src/cli/main.c:675
@@ -1183,8 +1222,7 @@ msgstr ""
 #: src/cli/main.c:746
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
-"Vytvořit symbolické odkazy místo zkopírování dconf souborů základního "
-"profilu"
+"Vytvořit symbolické odkazy místo zkopírování dconf souborů základního profilu"
 
 #: src/cli/main.c:747
 msgid "Symlink specific file (can be set multiple times)"
@@ -1355,13 +1393,12 @@ msgstr "použití protokolu TLS s protokolem LDAP (RFC-2830)"
 #: src/compat/authcompat_Options.py:90
 msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
 msgstr ""
-"použití protokolu TLS pro vyhledávání identit pomocí protokolu LDAP (RFC-"
-"2830)"
+"použití protokolu TLS pro vyhledávání identit pomocí protokolu LDAP "
+"(RFC-2830)"
 
 #: src/compat/authcompat_Options.py:91
 msgid "use of RFC-2307bis schema for LDAP user information lookups"
-msgstr ""
-"použití schématu RFC-2307bis pro zjišťování informací o uživateli LDAP"
+msgstr "použití schématu RFC-2307bis pro zjišťování informací o uživateli LDAP"
 
 #: src/compat/authcompat_Options.py:92
 msgid "authentication with smart card by default"
@@ -1461,8 +1498,7 @@ msgstr ""
 
 #: src/compat/authcompat_Options.py:109
 msgid "SSSD for authentication by default with manually managed configuration"
-msgstr ""
-"SSSD s ručně spravovanou konfigurací pro ověření ve výchozím nastavení"
+msgstr "SSSD s ručně spravovanou konfigurací pro ověření ve výchozím nastavení"
 
 #: src/compat/authcompat_Options.py:110
 msgid "caching of user credentials in SSSD by default"
@@ -1477,8 +1513,7 @@ msgid "creation of home directories for users on their first login"
 msgstr "vytvoření domovského adresáře uživatelům při jejich prvním přihlášení"
 
 #: src/compat/authcompat_Options.py:113
-msgid ""
-"account locking in case of too many consecutive authentication failures"
+msgid "account locking in case of too many consecutive authentication failures"
 msgstr ""
 "zablokování účtu v případě příliš mnoha po sobě jdoucích selhání při ověření"
 
@@ -1645,8 +1680,7 @@ msgstr ""
 #: src/compat/authcompat.py.in.in:469
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
-msgstr ""
-"DŮLEŽITÉ: authconfig je nahrazen authselect, aktualizujte své skripty."
+msgstr "DŮLEŽITÉ: authconfig je nahrazen authselect, aktualizujte své skripty."
 
 #: src/compat/authcompat.py.in.in:471
 msgid ""

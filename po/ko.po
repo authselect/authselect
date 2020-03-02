@@ -5,16 +5,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2019-06-13 11:30+0200\n"
+"POT-Creation-Date: 2020-02-17 12:37+0100\n"
+"PO-Revision-Date: 2019-06-13 01:20+0000\n"
+"Last-Translator: Eun-Ju Kim <eukim@redhat.com>\n"
+"Language-Team: \n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-06-13 01:20+0000\n"
-"Language-Team: \n"
 "X-Generator: Zanata 4.6.2\n"
-"Last-Translator: Eun-Ju Kim <eukim@redhat.com>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Language: ko\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:169
 msgid "Unable to obtain supported features"
@@ -57,7 +57,9 @@ msgstr "예상치 못한 구성 변경이 감지되었습니다."
 msgid ""
 "Refusing to activate profile unless those changes are removed or overwrite "
 "is requested."
-msgstr "변경 사항을 제거하거나 덮어 쓰기를 요청하지 않는 한 프로파일 활성화를 거부합니다."
+msgstr ""
+"변경 사항을 제거하거나 덮어 쓰기를 요청하지 않는 한 프로파일 활성화를 거부합"
+"니다."
 
 #: src/lib/authselect.c:124
 msgid "File that needs to be overwritten was found"
@@ -67,7 +69,8 @@ msgstr "덮어 쓸 필요가있는 파일을 찾았습니다."
 msgid ""
 "Refusing to activate profile unless this file is removed or overwrite is "
 "requested."
-msgstr "이 파일을 제거하거나 덮어 쓰기를 요구하지 않는 한 프로필 활성화를 거부합니다."
+msgstr ""
+"이 파일을 제거하거나 덮어 쓰기를 요구하지 않는 한 프로필 활성화를 거부합니다."
 
 #: src/lib/authselect.c:136
 #, c-format
@@ -105,7 +108,7 @@ msgstr "[%s]"
 msgid "Copying [%s] to [%s/%s]"
 msgstr "복사 [%s] ~ [%s/%s]"
 
-#: src/lib/authselect_backup.c:132
+#: src/lib/authselect_backup.c:132 src/lib/util/selinux.c:380
 #, c-format
 msgid "File [%s] does not exist"
 msgstr "파일 [%s] 존재하지 않는다"
@@ -126,8 +129,9 @@ msgid "Trying to backup system configuration to [%s]"
 msgstr "[%s]에 시스템 설정을 백업하려고 합니다. "
 
 #: src/lib/authselect_backup.c:184
-#, c-format
-msgid "Backup was successfuly created at [%s]"
+#, fuzzy, c-format
+#| msgid "Backup was successfuly created at [%s]"
+msgid "Backup was successfully created at [%s]"
 msgstr "[%s]에 백업이 생성되었습니다 "
 
 #: src/lib/authselect_backup.c:188
@@ -135,56 +139,62 @@ msgstr "[%s]에 백업이 생성되었습니다 "
 msgid "Unable to create backup [%d]: %s"
 msgstr "백업을 생성할 수 없습니다 [%d]: %s"
 
-#: src/lib/authselect_backup.c:205 src/lib/profiles/list.c:50
+#: src/lib/authselect_backup.c:205
+#, fuzzy
+#| msgid "[%s] does not exist!"
+msgid " does not exist."
+msgstr "[%s] 존재하지 않는다!"
+
+#: src/lib/authselect_backup.c:208 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
 msgstr "디렉토리를 나열할 수 없습니다 [%s] [%d] : %s"
 
-#: src/lib/authselect_backup.c:219
+#: src/lib/authselect_backup.c:222
 #, c-format
 msgid "Removing backup [%s]"
 msgstr "백업 제거 중 [%s]"
 
-#: src/lib/authselect_backup.c:228
+#: src/lib/authselect_backup.c:231
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
 msgstr "디렉토리를 삭제할 수 없습니다 [%s] [%d]: %s"
 
-#: src/lib/authselect_backup.c:300
+#: src/lib/authselect_backup.c:304
 #, c-format
 msgid "Unable to copy files [%d]: %s"
 msgstr "파일을 복사할 수 없습니다 [%d]: %s"
 
-#: src/lib/authselect_backup.c:306 src/lib/profiles/activate.c:78
+#: src/lib/authselect_backup.c:310 src/lib/profiles/activate.c:78
 #, c-format
 msgid "Unable to create symbolic links [%d]: %s"
 msgstr "심볼릭 링크를 만들 수 없음 [%d] : %s"
 
-#: src/lib/authselect_backup.c:312 src/lib/profiles/activate.c:84
+#: src/lib/authselect_backup.c:316 src/lib/profiles/activate.c:84
 msgid "Dconf is not installed on your system"
 msgstr "시스템에 Dconf가 설치되어 있지 않습니다."
 
-#: src/lib/authselect_backup.c:314 src/lib/profiles/activate.c:86
+#: src/lib/authselect_backup.c:318 src/lib/profiles/activate.c:86
 #, c-format
 msgid "Unable to update dconf database [%d]: %s"
 msgstr "dconf 데이터베이스를 업데이트 할 수 없습니다 [%d] : %s"
 
-#: src/lib/authselect_backup.c:337
+#: src/lib/authselect_backup.c:341
 #, c-format
 msgid "Restoring configuration from backup [%s]"
 msgstr "백업에서 설정 복구 중 [%s]"
 
-#: src/lib/authselect_backup.c:353
+#: src/lib/authselect_backup.c:357
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
 msgstr "백업 [%s]에는 authselect 설정이 포함되어 있습니다 "
 
-#: src/lib/authselect_backup.c:356
+#: src/lib/authselect_backup.c:360
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
 msgstr "백업 [%s]에  비 authselect 설정이 포함되어 있습니다 "
 
-#: src/lib/authselect_backup.c:362
+#: src/lib/authselect_backup.c:366
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
 msgstr "복구할 수 없음 [%s] [%d]: %s"
@@ -415,7 +425,7 @@ msgstr "nsswitch.conf를 생성 할 수 없습니다 [%d] : %s"
 msgid "Unable to generate files [%d]: %s"
 msgstr "파일을 생성 할 수 없습니다 [%d] : %s"
 
-#: src/lib/files/system.c:369 src/lib/util/selinux.c:372
+#: src/lib/files/system.c:369 src/lib/util/selinux.c:385
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "[%s]"
@@ -430,12 +440,12 @@ msgstr "임시 파일을 쓸 수 없습니다 [%s] [%d] : %s"
 msgid "Temporary file is named [%s]"
 msgstr "임시 파일의 이름은 [%s]"
 
-#: src/lib/files/system.c:389 src/lib/util/selinux.c:388
+#: src/lib/files/system.c:389 src/lib/util/selinux.c:407
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "이름 바꾸기 [%s] ~ [%s]"
 
-#: src/lib/files/system.c:394 src/lib/util/selinux.c:392
+#: src/lib/files/system.c:394 src/lib/util/selinux.c:411
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "[%s] ~ [%s] [%d] : %s"
@@ -716,6 +726,19 @@ msgstr "fscreate selinux 컨텍스트를 설정할 수 없습니다!"
 msgid "Unable to restore fscreate selinux context!"
 msgstr "fscreate selinux 컨텍스트를 복원 할 수 없습니다!"
 
+#: src/lib/util/selinux.c:374
+#, c-format
+msgid ""
+"File [%s] should exist but is missing. It is not safe to delete [%s]. "
+"Aborting."
+msgstr ""
+
+#: src/lib/util/selinux.c:402
+#, fuzzy, c-format
+#| msgid "Removing backup [%s]"
+msgid "Removing [%s]"
+msgstr "백업 제거 중 [%s]"
+
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:280
 msgid "Invalid operator!"
@@ -806,10 +829,12 @@ msgstr "명령에 대한 간단한 사용법 메시지 표시"
 
 #: src/cli/cli_tool.c:169
 #, c-format
-msgid "Usage:\n"
+msgid ""
+"Usage:\n"
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
-msgstr "용법:%s 명령 명령 - 명령\n"
+msgstr ""
+"용법:%s 명령 명령 - 명령\n"
 "\n"
 
 #: src/cli/cli_tool.c:170
@@ -849,37 +874,47 @@ msgstr "메모리가 다 찼습니다!"
 
 #: src/cli/cli_tool.c:345
 #, c-format
-msgid "Invalid option %s: %s\n"
+msgid ""
+"Invalid option %s: %s\n"
 "\n"
-msgstr "잘못된 옵션 %s: %s\n"
+msgstr ""
+"잘못된 옵션 %s: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:357
 #, c-format
-msgid "Missing option: %s\n"
+msgid ""
+"Missing option: %s\n"
 "\n"
-msgstr "누락 된 옵션 : %s\n"
+msgstr ""
+"누락 된 옵션 : %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:367
 #, c-format
-msgid "Only one free argument is expected!\n"
+msgid ""
+"Only one free argument is expected!\n"
 "\n"
-msgstr "하나의 무료 인수가 예상됩니다!\n"
+msgstr ""
+"하나의 무료 인수가 예상됩니다!\n"
 "\n"
 
 #: src/cli/cli_tool.c:377
 #, c-format
-msgid "Unexpected parameter: %s\n"
+msgid ""
+"Unexpected parameter: %s\n"
 "\n"
-msgstr "예기치 않은 매개 변수 : %s\n"
+msgstr ""
+"예기치 않은 매개 변수 : %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:389
 #, c-format
-msgid "At least one option is required!\n"
+msgid ""
+"At least one option is required!\n"
 "\n"
-msgstr "적어도 하나의 옵션이 필요합니다!\n"
+msgstr ""
+"적어도 하나의 옵션이 필요합니다!\n"
 "\n"
 
 #: src/cli/main.c:72 src/cli/main.c:429 src/cli/main.c:467
@@ -945,8 +980,10 @@ msgid ""
 "\n"
 "Some unexpected changes to the configuration were detected.\n"
 "Use --force parameter if you want to overwrite these changes.\n"
-msgstr "\n"
-"구성에 예기치 않은 변경 사항이 감지되었습니다. 이러한 변경 사항을 겹쳐 쓰려면 --force 매개 변수를 사용하십시오.\n"
+msgstr ""
+"\n"
+"구성에 예기치 않은 변경 사항이 감지되었습니다. 이러한 변경 사항을 겹쳐 쓰려"
+"면 --force 매개 변수를 사용하십시오.\n"
 
 #: src/cli/main.c:205
 #, c-format
@@ -969,9 +1006,11 @@ msgstr "- %s\n"
 
 #: src/cli/main.c:221
 #, c-format
-msgid "\n"
+msgid ""
+"\n"
 "%s\n"
-msgstr "\n"
+msgstr ""
+"\n"
 "%s\n"
 
 #: src/cli/main.c:263
@@ -986,7 +1025,9 @@ msgstr "기존 구성이 감지되지 않았습니다.\n"
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
-msgstr "구성에 예기치 않은 변경 사항이 감지되었습니다. 대신 '선택'명령을 사용하십시오.\n"
+msgstr ""
+"구성에 예기치 않은 변경 사항이 감지되었습니다. 대신 '선택'명령을 사용하십시"
+"오.\n"
 
 #: src/cli/main.c:273
 #, c-format
@@ -1024,7 +1065,9 @@ msgstr "현재 구성을 테스트 할 수 없음 [%d] : %s"
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
-msgstr "현재 구성이 올바르지 않습니다. 아마도 authselect 외부에서 수정되었을 것입니다."
+msgstr ""
+"현재 구성이 올바르지 않습니다. 아마도 authselect 외부에서 수정되었을 것입니"
+"다."
 
 #: src/cli/main.c:365
 msgid "Current configuration is valid."
@@ -1086,17 +1129,21 @@ msgstr "생성 된 콘텐츠를 가져올 수 없습니다 [%d] : %s"
 
 #: src/cli/main.c:602
 #, c-format
-msgid "File %s: Empty\n"
+msgid ""
+"File %s: Empty\n"
 "\n"
-msgstr "파일 %s: 비어 있음\n"
+msgstr ""
+"파일 %s: 비어 있음\n"
 "\n"
 
 #: src/cli/main.c:604
 #, c-format
-msgid "File %s:\n"
+msgid ""
+"File %s:\n"
 "%s\n"
 "\n"
-msgstr "파일 %s:\n"
+msgstr ""
+"파일 %s:\n"
 "%s\n"
 "\n"
 
@@ -1140,7 +1187,9 @@ msgstr "새 프로필의 기본으로 사용해야하는 프로필의 ID"
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
-msgstr "동일한 이름의 공급 업체 프로필이있는 경우에도 기본 프로필에 새 프로필 기본 설정"
+msgstr ""
+"동일한 이름의 공급 업체 프로필이있는 경우에도 기본 프로필에 새 프로필 기본 설"
+"정"
 
 #: src/cli/main.c:743
 msgid "Symlink meta files from the base profile instead of copying them"
@@ -1426,8 +1475,7 @@ msgid "creation of home directories for users on their first login"
 msgstr "첫 로그인시 사용자를위한 홈 디렉토리 생성"
 
 #: src/compat/authcompat_Options.py:113
-msgid ""
-"account locking in case of too many consecutive authentication failures"
+msgid "account locking in case of too many consecutive authentication failures"
 msgstr "너무 많은 연속 된 인증 실패의 경우 계정 잠금"
 
 #: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
@@ -1576,8 +1624,8 @@ msgid ""
 "with authselect and minimum configuration. It does not provide all "
 "capabilities of authconfig.\n"
 msgstr ""
-"이 도구의 목적은 authselect 및 최소 구성으로 선택한 서비스에 대한 인증을 사용 가능하게하는 것입니다. authconfig의 "
-"모든 기능을 제공하지는 않습니다.\n"
+"이 도구의 목적은 authselect 및 최소 구성으로 선택한 서비스에 대한 인증을 사"
+"용 가능하게하는 것입니다. authconfig의 모든 기능을 제공하지는 않습니다.\n"
 
 #: src/compat/authcompat.py.in.in:469
 msgid ""
@@ -1595,7 +1643,9 @@ msgstr ""
 #: src/compat/authcompat.py.in.in:472
 msgid ""
 "See man authselect-migration(7) to help you with migration to authselect"
-msgstr "authselect 로의 마이그레이션을 돕기 위해 man authselect-migration (7)을 참조하십시오."
+msgstr ""
+"authselect 로의 마이그레이션을 돕기 위해 man authselect-migration (7)을 참조"
+"하십시오."
 
 #: src/compat/authcompat.py.in.in:476
 msgid "Warning: These options are not supported anymore and have no effect:"

@@ -4,17 +4,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2019-06-13 11:30+0200\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-02-17 12:37+0100\n"
 "PO-Revision-Date: 2019-08-27 08:00+0000\n"
 "Last-Translator: Igor Gorbounov <igor.gorbounov@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:169
 msgid "Unable to obtain supported features"
@@ -109,7 +109,7 @@ msgstr "Нет имени файла в [%s]"
 msgid "Copying [%s] to [%s/%s]"
 msgstr "Копирование [%s] в [%s/%s]"
 
-#: src/lib/authselect_backup.c:132
+#: src/lib/authselect_backup.c:132 src/lib/util/selinux.c:380
 #, c-format
 msgid "File [%s] does not exist"
 msgstr "Файл [%s] не существует"
@@ -130,8 +130,9 @@ msgid "Trying to backup system configuration to [%s]"
 msgstr "Попытка резервного копирования конфигурации системы в [%s]"
 
 #: src/lib/authselect_backup.c:184
-#, c-format
-msgid "Backup was successfuly created at [%s]"
+#, fuzzy, c-format
+#| msgid "Backup was successfuly created at [%s]"
+msgid "Backup was successfully created at [%s]"
 msgstr "Резервная копия успешно создана в [%s]"
 
 #: src/lib/authselect_backup.c:188
@@ -139,56 +140,62 @@ msgstr "Резервная копия успешно создана в [%s]"
 msgid "Unable to create backup [%d]: %s"
 msgstr "Не удается создать резервную копию [%d]: %s"
 
-#: src/lib/authselect_backup.c:205 src/lib/profiles/list.c:50
+#: src/lib/authselect_backup.c:205
+#, fuzzy
+#| msgid "[%s] does not exist!"
+msgid " does not exist."
+msgstr "[%s] не существует!"
+
+#: src/lib/authselect_backup.c:208 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
 msgstr "Не удается получить список файлов каталога [%s] [%d]: %s"
 
-#: src/lib/authselect_backup.c:219
+#: src/lib/authselect_backup.c:222
 #, c-format
 msgid "Removing backup [%s]"
 msgstr "Удаление резервной копии [%s]"
 
-#: src/lib/authselect_backup.c:228
+#: src/lib/authselect_backup.c:231
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
 msgstr "Не удается удалить каталог [%s] [%d]: %s"
 
-#: src/lib/authselect_backup.c:300
+#: src/lib/authselect_backup.c:304
 #, c-format
 msgid "Unable to copy files [%d]: %s"
 msgstr "Не удается скопировать файлы [%d]: %s"
 
-#: src/lib/authselect_backup.c:306 src/lib/profiles/activate.c:78
+#: src/lib/authselect_backup.c:310 src/lib/profiles/activate.c:78
 #, c-format
 msgid "Unable to create symbolic links [%d]: %s"
 msgstr "Не удается создать символические ссылки [%d]: %s"
 
-#: src/lib/authselect_backup.c:312 src/lib/profiles/activate.c:84
+#: src/lib/authselect_backup.c:316 src/lib/profiles/activate.c:84
 msgid "Dconf is not installed on your system"
 msgstr "Dconf не установлен в вашей системе"
 
-#: src/lib/authselect_backup.c:314 src/lib/profiles/activate.c:86
+#: src/lib/authselect_backup.c:318 src/lib/profiles/activate.c:86
 #, c-format
 msgid "Unable to update dconf database [%d]: %s"
 msgstr "Не удается обновить базу данных dconf [%d]: %s"
 
-#: src/lib/authselect_backup.c:337
+#: src/lib/authselect_backup.c:341
 #, c-format
 msgid "Restoring configuration from backup [%s]"
 msgstr "Восстановление конфигурации из резервной копии [%s]"
 
-#: src/lib/authselect_backup.c:353
+#: src/lib/authselect_backup.c:357
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
 msgstr "Резервная копия [%s] содержит конфигурацию authselect"
 
-#: src/lib/authselect_backup.c:356
+#: src/lib/authselect_backup.c:360
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
 msgstr "Резервная копия [%s] содержит конфигурацию не для authselect"
 
-#: src/lib/authselect_backup.c:362
+#: src/lib/authselect_backup.c:366
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
 msgstr "Не удается восстановить [%s] [%d]: %s"
@@ -396,8 +403,7 @@ msgstr "Не удалось прочитать файл [%s/%s] [%d]: %s"
 #: src/lib/util/template.c:639
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
-msgstr ""
-"Не удается выполнить компиляцию регулярного выражения: ошибка regex %d"
+msgstr "Не удается выполнить компиляцию регулярного выражения: ошибка regex %d"
 
 #: src/lib/files/system.c:130 src/lib/files/system.c:195
 #: src/lib/util/template.c:497 src/lib/util/template.c:665
@@ -420,7 +426,7 @@ msgstr "Не удается создать nsswitch.conf [%d]: %s"
 msgid "Unable to generate files [%d]: %s"
 msgstr "Не удается сформировать файлы [%d]: %s"
 
-#: src/lib/files/system.c:369 src/lib/util/selinux.c:372
+#: src/lib/files/system.c:369 src/lib/util/selinux.c:385
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "Написание временного файла для [%s]"
@@ -435,12 +441,12 @@ msgstr "Не удалось записать временный файл [%s] [%
 msgid "Temporary file is named [%s]"
 msgstr "Временный файл называется [%s]"
 
-#: src/lib/files/system.c:389 src/lib/util/selinux.c:388
+#: src/lib/files/system.c:389 src/lib/util/selinux.c:407
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "Переименование [%s] в [%s]"
 
-#: src/lib/files/system.c:394 src/lib/util/selinux.c:392
+#: src/lib/files/system.c:394 src/lib/util/selinux.c:411
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "Не удалось переименовать [%s] в [%s] [%d]: %s"
@@ -721,6 +727,19 @@ msgstr "Невозможно установить selinux-контекст fscre
 msgid "Unable to restore fscreate selinux context!"
 msgstr "Невозможно восстановить selinux-контекст fscreate!"
 
+#: src/lib/util/selinux.c:374
+#, c-format
+msgid ""
+"File [%s] should exist but is missing. It is not safe to delete [%s]. "
+"Aborting."
+msgstr ""
+
+#: src/lib/util/selinux.c:402
+#, fuzzy, c-format
+#| msgid "Removing backup [%s]"
+msgid "Removing [%s]"
+msgstr "Удаление резервной копии [%s]"
+
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:280
 msgid "Invalid operator!"
@@ -811,10 +830,12 @@ msgstr "Показать краткое сообщение об использо
 
 #: src/cli/cli_tool.c:169
 #, c-format
-msgid "Usage:\n"
+msgid ""
+"Usage:\n"
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
-msgstr "Использование:\n"
+msgstr ""
+"Использование:\n"
 "%s КОМАНДА АРГУМЕНТЫ-КОМАНДЫ\n"
 "\n"
 
@@ -855,37 +876,47 @@ msgstr "Недостаточно памяти!"
 
 #: src/cli/cli_tool.c:345
 #, c-format
-msgid "Invalid option %s: %s\n"
+msgid ""
+"Invalid option %s: %s\n"
 "\n"
-msgstr "Недопустимый параметр %s: %s\n"
+msgstr ""
+"Недопустимый параметр %s: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:357
 #, c-format
-msgid "Missing option: %s\n"
+msgid ""
+"Missing option: %s\n"
 "\n"
-msgstr "Отсутствует параметр: %s\n"
+msgstr ""
+"Отсутствует параметр: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:367
 #, c-format
-msgid "Only one free argument is expected!\n"
+msgid ""
+"Only one free argument is expected!\n"
 "\n"
-msgstr "Должен быть только один свободный аргумент!\n"
+msgstr ""
+"Должен быть только один свободный аргумент!\n"
 "\n"
 
 #: src/cli/cli_tool.c:377
 #, c-format
-msgid "Unexpected parameter: %s\n"
+msgid ""
+"Unexpected parameter: %s\n"
 "\n"
-msgstr "Неожиданный параметр: %s\n"
+msgstr ""
+"Неожиданный параметр: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:389
 #, c-format
-msgid "At least one option is required!\n"
+msgid ""
+"At least one option is required!\n"
 "\n"
-msgstr "Требуется хотя бы один параметр!\n"
+msgstr ""
+"Требуется хотя бы один параметр!\n"
 "\n"
 
 #: src/cli/main.c:72 src/cli/main.c:429 src/cli/main.c:467
@@ -979,9 +1010,11 @@ msgstr "- %s\n"
 
 #: src/cli/main.c:221
 #, c-format
-msgid "\n"
+msgid ""
+"\n"
 "%s\n"
-msgstr "\n"
+msgstr ""
+"\n"
 "%s\n"
 
 #: src/cli/main.c:263
@@ -1099,17 +1132,21 @@ msgstr "Не удается получить сформированное сод
 
 #: src/cli/main.c:602
 #, c-format
-msgid "File %s: Empty\n"
+msgid ""
+"File %s: Empty\n"
 "\n"
-msgstr "Файл %s: пустой\n"
+msgstr ""
+"Файл %s: пустой\n"
 "\n"
 
 #: src/cli/main.c:604
 #, c-format
-msgid "File %s:\n"
+msgid ""
+"File %s:\n"
 "%s\n"
 "\n"
-msgstr "Файл %s:\n"
+msgstr ""
+"Файл %s:\n"
 "%s\n"
 "\n"
 
@@ -1440,8 +1477,7 @@ msgstr ""
 
 #: src/compat/authcompat_Options.py:109
 msgid "SSSD for authentication by default with manually managed configuration"
-msgstr ""
-"SSSD для идентификации по умолчанию с конфигурацией, ведущейся вручную"
+msgstr "SSSD для идентификации по умолчанию с конфигурацией, ведущейся вручную"
 
 #: src/compat/authcompat_Options.py:110
 msgid "caching of user credentials in SSSD by default"
@@ -1456,8 +1492,7 @@ msgid "creation of home directories for users on their first login"
 msgstr "создание домашних каталогов пользователей при первом входе"
 
 #: src/compat/authcompat_Options.py:113
-msgid ""
-"account locking in case of too many consecutive authentication failures"
+msgid "account locking in case of too many consecutive authentication failures"
 msgstr ""
 "блокирование учетной записи в случае слишком большого числа последовательных "
 "ошибок идентификации"
@@ -1634,8 +1669,7 @@ msgstr "См. man authselect-migration(7) для справки о перехо�
 
 #: src/compat/authcompat.py.in.in:476
 msgid "Warning: These options are not supported anymore and have no effect:"
-msgstr ""
-"Предупреждение: эти параметры больше не поддерживаются и не действуют:"
+msgstr "Предупреждение: эти параметры больше не поддерживаются и не действуют:"
 
 #: src/compat/authcompat.py.in.in:496
 msgid "authconfig can only be run as root"

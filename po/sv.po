@@ -1,20 +1,21 @@
-# Göran Uddeborg <goeran@uddeborg.se>, 2018. #zanata
-# Göran Uddeborg <goeran@uddeborg.se>, 2019. #zanata
+# Göran Uddeborg <goeran@uddeborg.se>, 2018. #zanata, 2020.
+# Göran Uddeborg <goeran@uddeborg.se>, 2019. #zanata, 2020.
 # Pavel Brezina <pbrezina@redhat.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2019-06-13 11:30+0200\n"
+"POT-Creation-Date: 2020-02-12 11:02+0100\n"
+"PO-Revision-Date: 2020-02-19 19:38+0000\n"
+"Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
+"Language-Team: Swedish <https://translate.fedoraproject.org/projects/"
+"authselect/master-application/sv/>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-06-14 08:05+0000\n"
-"Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
-"Language-Team: Swedish\n"
-"Language: sv\n"
-"X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10.3\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:169
 msgid "Unable to obtain supported features"
@@ -109,7 +110,7 @@ msgstr "Det finns inget filnamn i [%s]"
 msgid "Copying [%s] to [%s/%s]"
 msgstr "Kopierar [%s] till [%s/%s]"
 
-#: src/lib/authselect_backup.c:132
+#: src/lib/authselect_backup.c:132 src/lib/util/selinux.c:380
 #, c-format
 msgid "File [%s] does not exist"
 msgstr "Filen [%s] finns inte"
@@ -131,7 +132,7 @@ msgstr "Försöker säkerhetskopiera systemkonfigurationen till [%s]"
 
 #: src/lib/authselect_backup.c:184
 #, c-format
-msgid "Backup was successfuly created at [%s]"
+msgid "Backup was successfully created at [%s]"
 msgstr "Säkerhetskopian skapades i [%s]"
 
 #: src/lib/authselect_backup.c:188
@@ -139,56 +140,60 @@ msgstr "Säkerhetskopian skapades i [%s]"
 msgid "Unable to create backup [%d]: %s"
 msgstr "Kunde inte skapa säkerhetskopian [%d]: %s"
 
-#: src/lib/authselect_backup.c:205 src/lib/profiles/list.c:50
+#: src/lib/authselect_backup.c:205
+msgid " does not exist."
+msgstr " finns inte."
+
+#: src/lib/authselect_backup.c:208 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
 msgstr "Kan inte lista katalogen [%s] [%d]: %s"
 
-#: src/lib/authselect_backup.c:219
+#: src/lib/authselect_backup.c:222
 #, c-format
 msgid "Removing backup [%s]"
 msgstr "Tar bort säkerhetskopian [%s]"
 
-#: src/lib/authselect_backup.c:228
+#: src/lib/authselect_backup.c:231
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
 msgstr "Kan inte ta bort katalogen [%s] [%d]: %s"
 
-#: src/lib/authselect_backup.c:300
+#: src/lib/authselect_backup.c:304
 #, c-format
 msgid "Unable to copy files [%d]: %s"
 msgstr "Kan inte kopiera filer [%d]: %s"
 
-#: src/lib/authselect_backup.c:306 src/lib/profiles/activate.c:78
+#: src/lib/authselect_backup.c:310 src/lib/profiles/activate.c:78
 #, c-format
 msgid "Unable to create symbolic links [%d]: %s"
 msgstr "Kan inte skapa den symboliska länken [%d]: %s"
 
-#: src/lib/authselect_backup.c:312 src/lib/profiles/activate.c:84
+#: src/lib/authselect_backup.c:316 src/lib/profiles/activate.c:84
 msgid "Dconf is not installed on your system"
 msgstr "Dconf är inte installerat på ditt system"
 
-#: src/lib/authselect_backup.c:314 src/lib/profiles/activate.c:86
+#: src/lib/authselect_backup.c:318 src/lib/profiles/activate.c:86
 #, c-format
 msgid "Unable to update dconf database [%d]: %s"
 msgstr "Kan inte uppdatera dconf-databasen [%d]: %s"
 
-#: src/lib/authselect_backup.c:337
+#: src/lib/authselect_backup.c:341
 #, c-format
 msgid "Restoring configuration from backup [%s]"
 msgstr "Återställer konfigurationen från säkerhetskopian [%s]"
 
-#: src/lib/authselect_backup.c:353
+#: src/lib/authselect_backup.c:357
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
 msgstr "Säkerhetskopian [%s] innehåller en authselect-konfiguration"
 
-#: src/lib/authselect_backup.c:356
+#: src/lib/authselect_backup.c:360
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
 msgstr "Säkerhetskpoian [%s] innehåller inte en authselect-konfiguration"
 
-#: src/lib/authselect_backup.c:362
+#: src/lib/authselect_backup.c:366
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
 msgstr "Kan inte återställa [%s] [%d]: %s"
@@ -322,7 +327,7 @@ msgstr "Katalogen [%s] finns inte, var god och skapa den!"
 #: src/lib/files/config.c:177
 #, c-format
 msgid "Unable to access directory [%s] in [WX] mode!"
-msgstr "Kan inte komma åt katalogen [%s] i [WX]-läge"
+msgstr "Kan inte komma åt katalogen [%s] i [WX]-läge!"
 
 #: src/lib/files/config.c:196
 #, c-format
@@ -419,7 +424,7 @@ msgstr "Kan inte generera nsswitch.conf [%d]: %s"
 msgid "Unable to generate files [%d]: %s"
 msgstr "Kan inte generera filerna [%d]: %s"
 
-#: src/lib/files/system.c:369 src/lib/util/selinux.c:372
+#: src/lib/files/system.c:369 src/lib/util/selinux.c:385
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "Skriver temporär fil för [%s]"
@@ -434,12 +439,12 @@ msgstr "Kan inte skriva temporärfilen [%s] [%d]: %s"
 msgid "Temporary file is named [%s]"
 msgstr "Temporär fil heter [%s]"
 
-#: src/lib/files/system.c:389 src/lib/util/selinux.c:388
+#: src/lib/files/system.c:389 src/lib/util/selinux.c:407
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "Byter namn på [%s] till [%s]"
 
-#: src/lib/files/system.c:394 src/lib/util/selinux.c:392
+#: src/lib/files/system.c:394 src/lib/util/selinux.c:411
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "Kan inte byta namn på [%s] till [%s] [%d]: %s"
@@ -720,6 +725,20 @@ msgstr "Kan inte sätta fscreate selinux-kontext!"
 msgid "Unable to restore fscreate selinux context!"
 msgstr "Kan inte återställa fscreate selinux-kontext!"
 
+#: src/lib/util/selinux.c:374
+#, c-format
+msgid ""
+"File [%s] should exist but is missing. It is not safe to delete [%s]. "
+"Aborting."
+msgstr ""
+"Filen [%s] skulle funnits men saknas. Det är inte säkert att radera [%s]. "
+"Avbryter."
+
+#: src/lib/util/selinux.c:402
+#, c-format
+msgid "Removing [%s]"
+msgstr "Tar bort [%s]"
+
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:280
 msgid "Invalid operator!"
@@ -810,10 +829,12 @@ msgstr "Visa kort användningsmeddelande för ett kommando"
 
 #: src/cli/cli_tool.c:169
 #, c-format
-msgid "Usage:\n"
+msgid ""
+"Usage:\n"
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
-msgstr "Användning:\n"
+msgstr ""
+"Användning:\n"
 "%s KOMMANDO KOMMANDOARGUMENT\n"
 "\n"
 
@@ -854,37 +875,47 @@ msgstr "Slut på minne!"
 
 #: src/cli/cli_tool.c:345
 #, c-format
-msgid "Invalid option %s: %s\n"
+msgid ""
+"Invalid option %s: %s\n"
 "\n"
-msgstr "Felaktig flagga %s: %s\n"
+msgstr ""
+"Felaktig flagga %s: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:357
 #, c-format
-msgid "Missing option: %s\n"
+msgid ""
+"Missing option: %s\n"
 "\n"
-msgstr "Saknad flagga: %s\n"
+msgstr ""
+"Saknad flagga: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:367
 #, c-format
-msgid "Only one free argument is expected!\n"
+msgid ""
+"Only one free argument is expected!\n"
 "\n"
-msgstr "Endast ett fritt argument förväntas!\n"
+msgstr ""
+"Endast ett fritt argument förväntas!\n"
 "\n"
 
 #: src/cli/cli_tool.c:377
 #, c-format
-msgid "Unexpected parameter: %s\n"
+msgid ""
+"Unexpected parameter: %s\n"
 "\n"
-msgstr "Oväntad parameter: %s\n"
+msgstr ""
+"Oväntad parameter: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:389
 #, c-format
-msgid "At least one option is required!\n"
+msgid ""
+"At least one option is required!\n"
 "\n"
-msgstr "Åtminstone en flagga krävs!\n"
+msgstr ""
+"Åtminstone en flagga krävs!\n"
 "\n"
 
 #: src/cli/main.c:72 src/cli/main.c:429 src/cli/main.c:467
@@ -978,9 +1009,11 @@ msgstr "- %s\n"
 
 #: src/cli/main.c:221
 #, c-format
-msgid "\n"
+msgid ""
+"\n"
 "%s\n"
-msgstr "\n"
+msgstr ""
+"\n"
 "%s\n"
 
 #: src/cli/main.c:263
@@ -1024,7 +1057,7 @@ msgstr "Aktiverade funktioner:"
 
 #: src/cli/main.c:323
 msgid " None\n"
-msgstr "Inga\n"
+msgstr " Inga\n"
 
 #: src/cli/main.c:351
 #, c-format
@@ -1099,17 +1132,21 @@ msgstr "Kan inte ta fram genererat innehåll [%d]: %s"
 
 #: src/cli/main.c:602
 #, c-format
-msgid "File %s: Empty\n"
+msgid ""
+"File %s: Empty\n"
 "\n"
-msgstr "Filen %s: Tom\n"
+msgstr ""
+"Filen %s: Tom\n"
 "\n"
 
 #: src/cli/main.c:604
 #, c-format
-msgid "File %s:\n"
+msgid ""
+"File %s:\n"
 "%s\n"
 "\n"
-msgstr "Filen %s:\n"
+msgstr ""
+"Filen %s:\n"
 "%s\n"
 "\n"
 
@@ -1427,8 +1464,7 @@ msgstr "servrar för autentisering av arbetsgrupper finns på"
 msgid ""
 "SSSD for user information by default with manually managed configuration"
 msgstr ""
-"SSSD för användarinformation som standard med manuellt hanterad "
-"konfiguration"
+"SSSD för användarinformation som standard med manuellt hanterad konfiguration"
 
 #: src/compat/authcompat_Options.py:109
 msgid "SSSD for authentication by default with manually managed configuration"
@@ -1448,8 +1484,7 @@ msgid "creation of home directories for users on their first login"
 msgstr "skapandet av hemkataloger för användare vid första inloggning"
 
 #: src/compat/authcompat_Options.py:113
-msgid ""
-"account locking in case of too many consecutive authentication failures"
+msgid "account locking in case of too many consecutive authentication failures"
 msgstr "kontolåsning ifall för många misslyckade autentiseringar görs i följd"
 
 #: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
@@ -1619,8 +1654,7 @@ msgstr ""
 #: src/compat/authcompat.py.in.in:472
 msgid ""
 "See man authselect-migration(7) to help you with migration to authselect"
-msgstr ""
-"Se man authselect-migration(7) för hjälp med migrering till authselect"
+msgstr "Se man authselect-migration(7) för hjälp med migrering till authselect"
 
 #: src/compat/authcompat.py.in.in:476
 msgid "Warning: These options are not supported anymore and have no effect:"

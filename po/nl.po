@@ -1,19 +1,20 @@
-# Geert Warrink <geert.warrink@onsnet.nu>, 2018. #zanata
-# Geert Warrink <geert.warrink@onsnet.nu>, 2019. #zanata
+# Geert Warrink <geert.warrink@onsnet.nu>, 2018. #zanata, 2020.
+# Geert Warrink <geert.warrink@onsnet.nu>, 2019. #zanata, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2019-06-13 11:30+0200\n"
+"POT-Creation-Date: 2020-02-12 11:02+0100\n"
+"PO-Revision-Date: 2020-02-18 15:38+0000\n"
+"Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
+"Language-Team: Dutch <https://translate.fedoraproject.org/projects/"
+"authselect/master-application/nl/>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-05-30 12:37+0000\n"
-"Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
-"Language-Team: Dutch\n"
-"Language: nl\n"
-"X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.10.3\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:169
 msgid "Unable to obtain supported features"
@@ -58,7 +59,7 @@ msgid ""
 "is requested."
 msgstr ""
 "Het profiel wordt niet geactiveerd tenzij die veranderingen verwijderd "
-"worden of als overschrijven aangevraagd wordt. "
+"worden of als overschrijven aangevraagd wordt."
 
 #: src/lib/authselect.c:124
 msgid "File that needs to be overwritten was found"
@@ -70,7 +71,7 @@ msgid ""
 "requested."
 msgstr ""
 "Het profiel wordt niet geactiveerd tenzij dit bestand verwijderd wordt of "
-"als overschrijven aangevraagd wordt. "
+"als overschrijven aangevraagd wordt."
 
 #: src/lib/authselect.c:136
 #, c-format
@@ -109,7 +110,7 @@ msgstr "Er is geen bestandsnaam in [%s]"
 msgid "Copying [%s] to [%s/%s]"
 msgstr "Kopiëren van [%s] naar [%s/%s]"
 
-#: src/lib/authselect_backup.c:132
+#: src/lib/authselect_backup.c:132 src/lib/util/selinux.c:380
 #, c-format
 msgid "File [%s] does not exist"
 msgstr "Bestand [%s] bestaat niet"
@@ -135,7 +136,7 @@ msgstr ""
 
 #: src/lib/authselect_backup.c:184
 #, c-format
-msgid "Backup was successfuly created at [%s]"
+msgid "Backup was successfully created at [%s]"
 msgstr "De back-up naar [%s] is geslaagd"
 
 #: src/lib/authselect_backup.c:188
@@ -143,56 +144,60 @@ msgstr "De back-up naar [%s] is geslaagd"
 msgid "Unable to create backup [%d]: %s"
 msgstr "De back-up [%d] kon niet aangemaakt worden: %s"
 
-#: src/lib/authselect_backup.c:205 src/lib/profiles/list.c:50
+#: src/lib/authselect_backup.c:205
+msgid " does not exist."
+msgstr " bestaat niet."
+
+#: src/lib/authselect_backup.c:208 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
 msgstr "Kon map [%s] [%d] niet weergeven: %s"
 
-#: src/lib/authselect_backup.c:219
+#: src/lib/authselect_backup.c:222
 #, c-format
 msgid "Removing backup [%s]"
 msgstr "Back-up [%s] wordt verwijderd"
 
-#: src/lib/authselect_backup.c:228
+#: src/lib/authselect_backup.c:231
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
 msgstr "Verwijderen van map [%s] [%d] is mislukt: %s"
 
-#: src/lib/authselect_backup.c:300
+#: src/lib/authselect_backup.c:304
 #, c-format
 msgid "Unable to copy files [%d]: %s"
 msgstr "Kan bestanden [%d] niet kopiëren: %s"
 
-#: src/lib/authselect_backup.c:306 src/lib/profiles/activate.c:78
+#: src/lib/authselect_backup.c:310 src/lib/profiles/activate.c:78
 #, c-format
 msgid "Unable to create symbolic links [%d]: %s"
 msgstr "Kan symbolische links [%d] niet aanmaken: %s"
 
-#: src/lib/authselect_backup.c:312 src/lib/profiles/activate.c:84
+#: src/lib/authselect_backup.c:316 src/lib/profiles/activate.c:84
 msgid "Dconf is not installed on your system"
 msgstr "Dconf is niet geïnstalleerd op je systeem"
 
-#: src/lib/authselect_backup.c:314 src/lib/profiles/activate.c:86
+#: src/lib/authselect_backup.c:318 src/lib/profiles/activate.c:86
 #, c-format
 msgid "Unable to update dconf database [%d]: %s"
 msgstr "Kan dconf database [%d] niet vernieuwen: %s"
 
-#: src/lib/authselect_backup.c:337
+#: src/lib/authselect_backup.c:341
 #, c-format
 msgid "Restoring configuration from backup [%s]"
 msgstr "Configuratie herstellen van back-up [%s]"
 
-#: src/lib/authselect_backup.c:353
+#: src/lib/authselect_backup.c:357
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
 msgstr "Back-up [%s] bevat authselectconfiguratie"
 
-#: src/lib/authselect_backup.c:356
+#: src/lib/authselect_backup.c:360
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
 msgstr "Back-up [%s] bevat geen authselectconfiguratie"
 
-#: src/lib/authselect_backup.c:362
+#: src/lib/authselect_backup.c:366
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
 msgstr "Kan [%s] [%d] niet herstellen: %s"
@@ -423,7 +428,7 @@ msgstr "Kan nsswitch.conf [%d] niet genereren: %s"
 msgid "Unable to generate files [%d]: %s"
 msgstr "Kan bestanden [%d] niet aanmaken: %s"
 
-#: src/lib/files/system.c:369 src/lib/util/selinux.c:372
+#: src/lib/files/system.c:369 src/lib/util/selinux.c:385
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "Naar tijdelijk bestand schrijven voor [%s]"
@@ -438,12 +443,12 @@ msgstr "Kan niet naar tijdelijk bestand [%s] [%d] schrijven: %s"
 msgid "Temporary file is named [%s]"
 msgstr "Tijdelijk bestand heeft de naam [%s]"
 
-#: src/lib/files/system.c:389 src/lib/util/selinux.c:388
+#: src/lib/files/system.c:389 src/lib/util/selinux.c:407
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "Herbenoemen van [%s] naar [%s]"
 
-#: src/lib/files/system.c:394 src/lib/util/selinux.c:392
+#: src/lib/files/system.c:394 src/lib/util/selinux.c:411
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "Kan [%s] niet herbenoemen naar [%s] [%d]: %s"
@@ -724,6 +729,20 @@ msgstr "Kan fscreate selinux context niet instellen!"
 msgid "Unable to restore fscreate selinux context!"
 msgstr "Kan fscreate selinux context niet herstellen!"
 
+#: src/lib/util/selinux.c:374
+#, c-format
+msgid ""
+"File [%s] should exist but is missing. It is not safe to delete [%s]. "
+"Aborting."
+msgstr ""
+"Bestand [%s] zou moeten bestaan maar ontbreekt. Het is niet veilig om [%s] "
+"te verwijderen. Programma wordt afgebroken."
+
+#: src/lib/util/selinux.c:402
+#, c-format
+msgid "Removing [%s]"
+msgstr "[%s] wordt verwijderd"
+
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:280
 msgid "Invalid operator!"
@@ -814,10 +833,12 @@ msgstr "Toon korte gebruiksboodschap voor een commando"
 
 #: src/cli/cli_tool.c:169
 #, c-format
-msgid "Usage:\n"
+msgid ""
+"Usage:\n"
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
-msgstr "Gebruik:\n"
+msgstr ""
+"Gebruik:\n"
 "%s COMMANDO COMMANDO-ARGS\n"
 "\n"
 
@@ -858,35 +879,44 @@ msgstr "Geheugen is vol!"
 
 #: src/cli/cli_tool.c:345
 #, c-format
-msgid "Invalid option %s: %s\n"
+msgid ""
+"Invalid option %s: %s\n"
 "\n"
-msgstr "Ongeldige optie %s: %s\n"
+msgstr ""
+"Ongeldige optie %s: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:357
 #, c-format
-msgid "Missing option: %s\n"
+msgid ""
+"Missing option: %s\n"
 "\n"
-msgstr "Ontbrekende optie: %s\n"
+msgstr ""
+"Ontbrekende optie: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:367
 #, c-format
-msgid "Only one free argument is expected!\n"
+msgid ""
+"Only one free argument is expected!\n"
 "\n"
-msgstr "Er wordt slechts één vrij argument verwacht!\n"
+msgstr ""
+"Er wordt slechts één vrij argument verwacht!\n"
 "\n"
 
 #: src/cli/cli_tool.c:377
 #, c-format
-msgid "Unexpected parameter: %s\n"
+msgid ""
+"Unexpected parameter: %s\n"
 "\n"
-msgstr "Onverwachte parameter: %s\n"
+msgstr ""
+"Onverwachte parameter: %s\n"
 "\n"
 
 #: src/cli/cli_tool.c:389
 #, c-format
-msgid "At least one option is required!\n"
+msgid ""
+"At least one option is required!\n"
 "\n"
 msgstr "Ten minste één optie is vereist!\n"
 
@@ -922,8 +952,7 @@ msgstr ""
 
 #: src/cli/main.c:158 src/cli/main.c:245 src/cli/main.c:625 src/cli/main.c:702
 msgid "Backup system files before activating profile"
-msgstr ""
-"Maak een backup van systeembestanden voordat profiel geactiveerd wordt"
+msgstr "Maak een backup van systeembestanden voordat profiel geactiveerd wordt"
 
 #: src/cli/main.c:158 src/cli/main.c:245 src/cli/main.c:625 src/cli/main.c:702
 msgid "NAME"
@@ -982,9 +1011,11 @@ msgstr "- %s\n"
 
 #: src/cli/main.c:221
 #, c-format
-msgid "\n"
+msgid ""
+"\n"
 "%s\n"
-msgstr "\n"
+msgstr ""
+"\n"
 "%s\n"
 
 #: src/cli/main.c:263
@@ -1028,7 +1059,7 @@ msgstr "Aangezette features:"
 
 #: src/cli/main.c:323
 msgid " None\n"
-msgstr "Geen\n"
+msgstr " Geen\n"
 
 #: src/cli/main.c:351
 #, c-format
@@ -1103,17 +1134,21 @@ msgstr "Kan gegenereerde inhoud [%d] niet verkrijgen: %s"
 
 #: src/cli/main.c:602
 #, c-format
-msgid "File %s: Empty\n"
+msgid ""
+"File %s: Empty\n"
 "\n"
-msgstr "Bestand %s: Leeg\n"
+msgstr ""
+"Bestand %s: Leeg\n"
 "\n"
 
 #: src/cli/main.c:604
 #, c-format
-msgid "File %s:\n"
+msgid ""
+"File %s:\n"
 "%s\n"
 "\n"
-msgstr "Bestand %s:\n"
+msgstr ""
+"Bestand %s:\n"
 "%s\n"
 "\n"
 
@@ -1154,8 +1189,7 @@ msgstr ""
 #: src/cli/main.c:741
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr ""
-"ID van een profiel dat gebruikt moet worden als basis voor het nieuwe "
-"profiel"
+"ID van een profiel dat gebruikt moet worden als basis voor het nieuwe profiel"
 
 #: src/cli/main.c:742
 msgid ""
@@ -1274,7 +1308,7 @@ msgstr "Check of de huidige configuratie geldig is"
 
 #: src/cli/main.c:931
 msgid "Print changes that would be otherwise written"
-msgstr "Print veranderingen die anders overschreven zouden worden."
+msgstr "Print veranderingen die anders overschreven zouden worden"
 
 #: src/cli/main.c:932
 msgid "Enable feature in currently selected profile"
@@ -1355,8 +1389,7 @@ msgstr "gebruik van TLS voor identiteit opzoeken met LDAP (RFC-2830)"
 
 #: src/compat/authcompat_Options.py:91
 msgid "use of RFC-2307bis schema for LDAP user information lookups"
-msgstr ""
-"gebruik vam RFC-2307bis schema voor LDAP gebruikersinformatie opzoeken"
+msgstr "gebruik vam RFC-2307bis schema voor LDAP gebruikersinformatie opzoeken"
 
 #: src/compat/authcompat_Options.py:92
 msgid "authentication with smart card by default"
@@ -1466,8 +1499,7 @@ msgstr ""
 "aanmaken van persoonlijke mappen voor gebruikers tijden hun eerste inlog"
 
 #: src/compat/authcompat_Options.py:113
-msgid ""
-"account locking in case of too many consecutive authentication failures"
+msgid "account locking in case of too many consecutive authentication failures"
 msgstr ""
 "account afsluiten als te veel opeenvolgende authenticatie mislukkingen "
 "optreden"
@@ -1611,7 +1643,7 @@ msgstr "%s werd niet gevonden. Installeer realmd."
 
 #: src/compat/authcompat.py.in.in:465
 msgid "Running authconfig compatibility tool."
-msgstr "Het uitvoeren van authconfig compatibiliteitsgereedschap"
+msgstr "Het uitvoeren van authconfig compatibiliteitsgereedschap."
 
 #: src/compat/authcompat.py.in.in:466
 msgid ""
@@ -1648,7 +1680,6 @@ msgstr ""
 msgid "Warning: These options are not supported anymore and have no effect:"
 msgstr ""
 "Waarschuwing: Deze opties worden niet meer ondersteund en hebben geen effect:"
-""
 
 #: src/compat/authcompat.py.in.in:496
 msgid "authconfig can only be run as root"
