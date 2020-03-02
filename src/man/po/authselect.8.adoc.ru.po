@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-02-17 12:37+0100\n"
-"PO-Revision-Date: 2020-02-07 20:16+0000\n"
+"PO-Revision-Date: 2020-02-29 20:38+0000\n"
 "Last-Translator: Igor Gorbounov <igor.gorbounov@gmail.com>\n"
 "Language-Team: Russian <https://translate.fedoraproject.org/projects/"
 "authselect/master-authselect8adoc/ru/>\n"
@@ -15,9 +15,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.10.3\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.11.2\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
@@ -56,7 +56,7 @@ msgstr "ОПИСАНИЕ"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:21
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "*Authselect* is a tool to configure system identity and authentication sources\n"
 "and providers by selecting a specific profile. Profile is a set of files that\n"
@@ -64,6 +64,15 @@ msgid ""
 "is selected, *authselect* will create nsswitch.conf(5) and PAM(8) stack to use\n"
 "identity and authentication sources defined by the profile.\n"
 msgstr ""
+"*Authselect* - инструмент для настройки источников и провайдеров "
+"идентификации \n"
+"и подтверждения подлинности системы путем выбора определенного профиля.\n"
+"Профиль - это набор файлов, описывающий, как в итоге будет выглядеть "
+"конфигурация системы. \n"
+"Когда выбирается профиль, *authselect* создает стек nsswitch.conf(5) и PAM(8)"
+" для использования \n"
+"источников идентификации и подтверждения подлинности, определенных профилем."
+"\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:27
@@ -74,6 +83,11 @@ msgid ""
 "*authselect*. See _authselect-profiles(5)_ for more information on extending "
 "existing profiles."
 msgstr ""
+"Если предоставленного набора профилей недостаточно, администратор может "
+"создать собственный профиль, поместив его в специальный каталог профилей "
+"({AUTHSELECT_CUSTOM_DIR}). Сразу после этого профиль может использоваться "
+"*authselect*. Дополнительные сведения о расширении существующих профилей см. "
+"_authselect-profiles(5)_."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:29
@@ -99,7 +113,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:41
 #, no-wrap
 msgid "AVAILABLE COMMANDS"
-msgstr ""
+msgstr "ДОСТУПНЫЕ КОМАНДЫ"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:44
@@ -107,6 +121,9 @@ msgid ""
 "To list all available commands run *authselect* without any parameters.  To "
 "print help for the selected command run *authselect COMMAND --help*."
 msgstr ""
+"Чтобы получить список всех имеющихся команд, запустите команду *authselect* "
+"без параметров.  Чтобы вывести справку по выбранной команде, выполните "
+"команду *authselect COMMAND --help*."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:45
@@ -120,12 +137,14 @@ msgid ""
 "Activate desired profile. See profile description with *show* command, to "
 "list profile specific optional features."
 msgstr ""
+"Активировать нужный профиль. Описание профиля можно получить с помощью "
+"команды *show*, при этом выводится список дополнительных функций профиля."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:49
 #, no-wrap
 msgid "*--force, -f*:"
-msgstr ""
+msgstr "*--force, -f*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:54
@@ -136,6 +155,11 @@ msgid ""
 "automatically backup system files before writing any change unless\n"
 "*--nobackup* option is set.\n"
 msgstr ""
+"Записать изменения, даже если предыдущая конфигурация была создана\n"
+"не authselect, а другим инструментом или путем изменения вручную. Этот "
+"параметр\n"
+"приводит к автоматическому резервному копированию системных файлов перед\n"
+"записью изменений, если только не установлен параметр *--nobackup*.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:55 src/man/authselect.8.adoc:80
@@ -159,7 +183,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:155 src/man/authselect.8.adoc:173
 #, no-wrap
 msgid "*--backup=NAME*:"
-msgstr ""
+msgstr "*--backup=ИМЯ*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:65
@@ -174,19 +198,21 @@ msgstr ""
 #: src/man/authselect.8.adoc:66
 #, no-wrap
 msgid "*--nobackup*:"
-msgstr ""
+msgstr "*--nobackup*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:68
 #, no-wrap
 msgid "Do not backup system configuration even if *--force* is set.\n"
 msgstr ""
+"Не делать резервное копирование конфигурации системы, если указано *--force*."
+"\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:69 src/man/authselect.8.adoc:160
 #, no-wrap
 msgid "*--quiet, -q*:"
-msgstr ""
+msgstr "*--quiet, -q*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:72 src/man/authselect.8.adoc:163
@@ -195,6 +221,9 @@ msgid ""
 "The command will not print any informational message such as additional\n"
 "profile requirements or backup location. Errors are still being print.\n"
 msgstr ""
+"Команда не выводит информационных сообщений, например, дополнительных\n"
+"требований к профилю или расположение резервной копии. Ошибки все же "
+"выводятся.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:73
@@ -211,6 +240,12 @@ msgid ""
 "changes if the existing configuration is a valid authselect configuration, "
 "otherwise an error is returned."
 msgstr ""
+"Повторно применить текущий выбранный профиль. Если шаблоны профиля были "
+"обновлены, эта команду можно использовать для восстановления текущей "
+"конфигурации системы, чтобы применить эти изменения в системе. Эта команда "
+"повторно применит изменения, только если существующая конфигурация является "
+"допустимой конфигурацией authselect, в противном случае будет возвращена "
+"ошибка."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:85
@@ -235,12 +270,12 @@ msgstr ""
 #: src/man/authselect.8.adoc:91
 #, no-wrap
 msgid "*list*"
-msgstr ""
+msgstr "*list*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:93
 msgid "List available profiles."
-msgstr ""
+msgstr "Вывести список доступных профилей."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:94
@@ -260,29 +295,29 @@ msgstr ""
 #: src/man/authselect.8.adoc:99
 #, no-wrap
 msgid "*show* profile_id"
-msgstr ""
+msgstr "*show* ид_профиля"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:101
 msgid "Print information about the profile."
-msgstr ""
+msgstr "Вывести информацию о профиле."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:102
 #, no-wrap
 msgid "*requirements* profile_id [features]"
-msgstr ""
+msgstr "*requirements* ид_профиля [возможности]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:104
 msgid "Print information about profile requirements."
-msgstr ""
+msgstr "Вывести информацию о требованиях профиля."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:105
 #, no-wrap
 msgid "*current* [-r, --raw]"
-msgstr ""
+msgstr "*current* [-r, --raw]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:109
@@ -291,12 +326,15 @@ msgid ""
 "specified, the command will print raw parameters as they were passed to "
 "*select* command instead of formatted output."
 msgstr ""
+"Вывести информацию о текущих выбранных профилях. Если задан параметр *--raw*"
+", эта команда выведет параметры без обработки, так, как они были переданы "
+"команде *select*, вместо форматированного вывода."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:110
 #, no-wrap
 msgid "*check*"
-msgstr ""
+msgstr "*check*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:114
@@ -305,6 +343,8 @@ msgid ""
 "*authselect* or there are no leftovers from previous authselect "
 "configuration)."
 msgstr ""
+"Проверить правильность текущей конфигурации (либо она была создана "
+"*authselect*, либо нет остатков от предыдущей конфигурации authselect)."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:115
