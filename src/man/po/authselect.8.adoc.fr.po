@@ -1,18 +1,20 @@
 # Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>, 2019. #zanata
 # Pavel Brezina <pbrezina@redhat.com>, 2020. #zanata
+# Julien Humbert <julroy67@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-06-13 11:30+0200\n"
-"PO-Revision-Date: 2020-01-08 10:45+0000\n"
-"Last-Translator: Pavel Brezina <pbrezina@redhat.com>\n"
-"Language-Team: French\n"
+"PO-Revision-Date: 2020-02-05 04:16+0000\n"
+"Last-Translator: Julien Humbert <julroy67@gmail.com>\n"
+"Language-Team: French <https://translate.fedoraproject.org/projects/"
+"authselect/master-authselect8adoc/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 3.10.3\n"
 
 #. type: Title =
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:2
@@ -299,7 +301,7 @@ msgstr "*requirements* profile_id [features]"
 #. type: Plain text
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:92
 msgid "Print information about profile requirements."
-msgstr "Afficher les informations sur les prérequis du profil"
+msgstr "Afficher les informations sur les prérequis du profil."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:93
@@ -543,7 +545,7 @@ msgstr ""
 "Crée un nouveau profil personnalisé appelé _NOM_. Le profil peut être basé "
 "sur un profil existant, dans ce cas, les modèles du nouveau profil sont soit "
 "une copie du profil existant, soit des liens symboliques vers ces fichiers "
-"sont créés,  si une telle option est sélectionnée."
+"sont créés, si une telle option est sélectionnée."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:172
@@ -722,9 +724,9 @@ msgid ""
 "Print available backups.  If *--raw* option is specified, the command will "
 "print only backup names without any formatting and additional information."
 msgstr ""
-"Affiche les sauvegardes disponibles. Si l'option *--raw est spécifiée, la "
-"commande n'affichera que les noms des sauvegardes sans aucun formatage ou "
-"informations supplémentaires"
+"Affiche les sauvegardes disponibles. Si l’option *--raw* est spécifiée, la "
+"commande n’affichera que les noms des sauvegardes sans aucun formatage ou "
+"informations supplémentaires."
 
 #. type: Labeled list
 #: /home/pbrezina/workspace/authselect/src/man/authselect.8.adoc:216
@@ -863,7 +865,7 @@ msgid ""
 "services:   sss files\n"
 "sudoers:    files sss {include if \"with-sudo\"}\n"
 msgstr ""
-"# \"sssd\" profile\n"
+"# profil « sssd »\n"
 "$ cat {AUTHSELECT_PROFILE_DIR}/sssd/nsswitch.conf\n"
 "passwd:     sss files systemd\n"
 "group:      sss files systemd\n"
@@ -908,7 +910,7 @@ msgid ""
 "hosts:      files dns myhostname\n"
 "sudoers:    files\n"
 msgstr ""
-"# les cartes passwd et group de user-nsswitch.conf are ignored\n"
+"# les cartes passwd et group de user-nsswitch.conf sont ignorées\n"
 "$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
 "passwd:     sss files systemd\n"
 "group:      sss files systemd\n"
@@ -938,7 +940,7 @@ msgid ""
 "sudoers:    files sss\n"
 "hosts:      files dns myhostname\n"
 msgstr ""
-"# les cartes passwd, group et sudoers de user-nsswitch.conf sont ignorés\n"
+"# les cartes passwd, group et sudoers de user-nsswitch.conf sont ignorées\n"
 "$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
 "passwd:     sss files systemd\n"
 "group:      sss files systemd\n"
@@ -975,7 +977,7 @@ msgid ""
 "2: Profile or configuration was not found or the system was not configured "
 "with authselect."
 msgstr ""
-"2: Aucun profil ou configuration n'a pu être trouvé ou le système n'a pas "
+"2: Aucun profil ou configuration n’a pu être trouvé ou le système n’a pas "
 "été configuré avec authselect."
 
 #. type: Plain text

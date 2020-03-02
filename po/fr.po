@@ -4,21 +4,22 @@
 # Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>, 2019. #zanata, 2020.
 # Pavel Brezina <pbrezina@redhat.com>, 2019. #zanata
 # corina roe <croe@redhat.com>, 2019. #zanata
+# Julien Humbert <julroy67@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
 "POT-Creation-Date: 2019-06-13 11:30+0200\n"
-"PO-Revision-Date: 2020-01-08 12:13+0000\n"
-"Last-Translator: Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>\n"
-"Language-Team: French <https://translate.stg.fedoraproject.org/projects/"
+"PO-Revision-Date: 2020-02-05 04:16+0000\n"
+"Last-Translator: Julien Humbert <julroy67@gmail.com>\n"
+"Language-Team: French <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 3.10.3\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:169
 msgid "Unable to obtain supported features"
@@ -363,7 +364,7 @@ msgstr "Impossible de valider le lien [%s] [%d] : %s"
 #: src/lib/files/symlinks.c:90
 #, c-format
 msgid "[%s] was not created by authselect!"
-msgstr "[%s] n’a pas été créé par authselect !"
+msgstr "[%s] n’a pas été créé par authselect !"
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:152
 #: src/lib/files/system.c:576
@@ -384,7 +385,7 @@ msgstr "Le lien symbolique [%s] to [%s] est toujours là !"
 #: src/lib/files/symlinks.c:148
 #, c-format
 msgid "File [%s] exists but it needs to be overwritten!"
-msgstr "Le fichier [%s] existe mais a besoin d’être remplacé !"
+msgstr "Le fichier [%s] existe, mais a besoin d’être écrasé !"
 
 #: src/lib/files/system.c:74 src/lib/profiles/read.c:162
 #, c-format
@@ -492,7 +493,7 @@ msgstr "Le fichier [%s] a été modifié en dehors de authselect !"
 #: src/lib/files/system.c:572
 #, c-format
 msgid "File [%s] is still present"
-msgstr "Le fichier [%s] n’est toujours pas présent !"
+msgstr "Le fichier [%s] est toujours présent"
 
 #: src/lib/profiles/activate.c:44
 #, c-format
@@ -674,7 +675,7 @@ msgstr "Impossible de changer le mode du fichier [%s] [%d] : %s"
 #: src/lib/util/file.c:526
 #, c-format
 msgid "Unable to chown file [%s] [%d]: %s"
-msgstr "Impossible de chown fichier [ ]%s] [ ]%d: %s"
+msgstr "Impossible de chown fichier [%s] [%d] : %s"
 
 #: src/lib/util/selinux.c:46
 #, c-format
@@ -708,23 +709,23 @@ msgstr "Contexte selinux trouvé pour [%s] : %s"
 #: src/lib/util/selinux.c:115 src/lib/util/selinux.c:183
 #: src/lib/util/selinux.c:249
 msgid "Unable to get current fscreate selinux context!"
-msgstr "Impossible d’obtenir le contexte selinux actuel fscreate."
+msgstr "Impossible d’obtenir le contexte selinux actuel fscreate !"
 
 #: src/lib/util/selinux.c:121 src/lib/util/selinux.c:189
 #: src/lib/util/selinux.c:255
 #, c-format
 msgid "Unable to get default selinux context for [%s] [%d]: %s!"
-msgstr "Impossible d’obtenir le contexte selinux par défaut [%s] [%d] : %s"
+msgstr "Impossible d’obtenir le contexte selinux par défaut [%s] [%d] : %s !"
 
 #: src/lib/util/selinux.c:129 src/lib/util/selinux.c:197
 #: src/lib/util/selinux.c:263
 msgid "Unable to set fscreate selinux context!"
-msgstr "Impossible de définir le contexte selinux fscreate."
+msgstr "Impossible de définir le contexte selinux fscreate !"
 
 #: src/lib/util/selinux.c:139 src/lib/util/selinux.c:207
 #: src/lib/util/selinux.c:273
 msgid "Unable to restore fscreate selinux context!"
-msgstr "Impossible de restaurer le contexte selinux fscreate."
+msgstr "Impossible de restaurer le contexte selinux fscreate !"
 
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:280
@@ -867,7 +868,9 @@ msgstr "Manque de mémoire !"
 msgid ""
 "Invalid option %s: %s\n"
 "\n"
-msgstr "Option invalide %s: %s\n"
+msgstr ""
+"Option invalide %s : %s\n"
+"\n"
 
 #: src/cli/cli_tool.c:357
 #, c-format
@@ -1023,7 +1026,7 @@ msgstr "Imprimer les paramètres de la commande au lieu de la sortie formatée"
 #: src/cli/main.c:305 src/cli/main.c:646
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
-msgstr "Impossible d’obtenir la configuration courante [%d[: %s"
+msgstr "Impossible d’obtenir la configuration courante [%d] : %s"
 
 #: src/cli/main.c:319
 #, c-format
@@ -1036,7 +1039,7 @@ msgstr "Fonctionnalités activées :"
 
 #: src/cli/main.c:323
 msgid " None\n"
-msgstr "Aucune\n"
+msgstr " Aucune\n"
 
 #: src/cli/main.c:351
 #, c-format
@@ -1057,7 +1060,7 @@ msgstr "La configuration courante est valide."
 
 #: src/cli/main.c:368
 msgid "System was not configured with authselect."
-msgstr "Le système n'a pas été configuré avec authselect"
+msgstr "Le système n’a pas été configuré avec authselect."
 
 #: src/cli/main.c:393
 msgid "Unable to get profile list!"
@@ -1114,7 +1117,9 @@ msgstr "Impossible d’obtenir le contenu généré [%d] : %s"
 msgid ""
 "File %s: Empty\n"
 "\n"
-msgstr "Fichier %s :  vide\n"
+msgstr ""
+"Fichier %s : vide\n"
+"\n"
 
 #: src/cli/main.c:604
 #, c-format
@@ -1147,7 +1152,7 @@ msgstr "%s\n"
 
 #: src/cli/main.c:707
 msgid "Feature to disable."
-msgstr "Fonctionnalité à désactiver"
+msgstr "Fonctionnalité à désactiver."
 
 #: src/cli/main.c:721
 #, c-format
@@ -1296,7 +1301,7 @@ msgstr "Commandes des sauvegardes :"
 
 #: src/cli/main.c:936
 msgid "List available backups"
-msgstr "Liste les sauvegardes disponibles."
+msgstr "Liste les sauvegardes disponibles"
 
 #: src/cli/main.c:937
 msgid "Remove backup"
