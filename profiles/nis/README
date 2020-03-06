@@ -44,6 +44,10 @@ with-nispwquality::
     for NIS users as well as local users during password change. Without this
     option only local users passwords are checked.
 
+with-session-pam-env::
+    Enable pam_env sessions module.  Useful for setting environment variables
+    for all users via /etc/security/pam_env.conf.
+
 without-nullok::
     Do not add nullok parameter to pam_unix.
 

@@ -83,6 +83,10 @@ with-files-access-provider::
     system accounts (as defined by pam_usertype, including root) will be
     able to log in.
 
+with-session-pam-env::
+    Enable pam_env sessions module.  Useful for setting environment variables
+    for all users via /etc/security/pam_env.conf.
+
 without-nullok::
     Do not add nullok parameter to pam_unix.
 

@@ -35,6 +35,10 @@ with-pamaccess::
 with-altfiles::
     Use nss_altfiles for passwd and group nsswitch databases.
 
+with-session-pam-env::
+    Enable pam_env sessions module.  Useful for setting environment variables
+    for all users via /etc/security/pam_env.conf.
+
 without-nullok::
     Do not add nullok parameter to pam_unix.
 

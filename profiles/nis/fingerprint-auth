@@ -11,6 +11,7 @@ account     required                                     pam_unix.so broken_shad
 
 password    required                                     pam_deny.so
 
+session     optional                                     pam_env.so                                            {include if "with-session-pam-env"}
 session     optional                                     pam_keyinit.so revoke
 session     required                                     pam_limits.so
 session     optional                                     pam_ecryptfs.so unwrap                                {include if "with-ecryptfs"}

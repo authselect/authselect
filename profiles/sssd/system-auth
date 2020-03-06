@@ -30,6 +30,7 @@ password    sufficient                                   pam_unix.so sha512 shad
 password    sufficient                                   pam_sss.so use_authtok
 password    required                                     pam_deny.so
 
+session     optional                                     pam_env.so                                            {include if "with-session-pam-env"}
 session     optional                                     pam_keyinit.so revoke
 session     required                                     pam_limits.so
 session     optional                                     pam_ecryptfs.so unwrap                                {include if "with-ecryptfs"}

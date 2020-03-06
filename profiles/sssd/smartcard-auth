@@ -14,6 +14,7 @@ account     sufficient                                   pam_usertype.so issyste
 account     [default=bad success=ok user_unknown=ignore] pam_sss.so
 account     required                                     pam_permit.so
 
+session     optional                                     pam_env.so                                            {include if "with-session-pam-env"}
 session     optional                                     pam_keyinit.so revoke
 session     required                                     pam_limits.so
 session     optional                                     pam_ecryptfs.so unwrap                                 {include if "with-ecryptfs"}

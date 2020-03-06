@@ -54,6 +54,10 @@ with-silent-lastlog::
 with-pamaccess::
     Check access.conf during account authorization.
 
+with-session-pam-env::
+    Enable pam_env sessions module.  Useful for setting environment variables
+    for all users via /etc/security/pam_env.conf.
+
 without-nullok::
     Do not add nullok parameter to pam_unix.
 
