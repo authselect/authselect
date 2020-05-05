@@ -513,7 +513,7 @@ file_copy(const char *source,
 
     /* Restore original owner and mode.  Errors here are not fatal, since we
      * have the original content already stored and owned by root. */
-    ret = chmod(destpath, statbuf.st_mode);
+    ret = fchmod(fileno(fdest), statbuf.st_mode & ALLPERMS);
     if (ret != 0) {
         ret = errno;
         WARN("Unable to chmod file [%s] [%d]: %s",
