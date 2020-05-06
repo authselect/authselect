@@ -919,6 +919,14 @@ setup_gettext()
 int main(int argc, const char **argv)
 {
     errno_t ret;
+
+    ret = setup_gettext();
+    if (ret != EOK) {
+        /* We can't use gettext here since it would crash. */
+        fprintf(stderr, "Unable to setup gettext!\n");
+        return 1;
+    }
+
     struct cli_route_cmd commands[] = {
         CLI_TOOL_COMMAND("select", "Select profile", CLI_CMD_REQUIRE_ROOT, activate),
         CLI_TOOL_COMMAND("apply-changes", "Regenerate configuration for currently selected command", CLI_CMD_REQUIRE_ROOT, apply_changes),
@@ -938,13 +946,6 @@ int main(int argc, const char **argv)
         CLI_TOOL_COMMAND("backup-restore", "Restore from backup", CLI_CMD_REQUIRE_ROOT, backup_restore),
         CLI_TOOL_LAST
     };
-
-    ret = setup_gettext();
-    if (ret != EOK) {
-        /* We can't use gettext here since it would crash. */
-        fprintf(stderr, "Unable to setup gettext!\n");
-        return 1;
-    }
 
     return cli_tool_main(argc, argv, commands, NULL);
 }
