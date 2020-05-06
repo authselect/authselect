@@ -169,7 +169,7 @@ textfile_write(const char *filepath,
         goto done;
     }
 
-    ret = chmod(filepath, mode);
+    ret = fchmod(fileno(file), mode);
     if (ret != 0) {
         ret = errno;
         ERROR("Unable to chmod file [%s] [%d]: %s",
