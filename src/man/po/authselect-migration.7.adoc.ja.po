@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-02-17 12:37+0100\n"
+"POT-Creation-Date: 2020-05-11 12:25+0200\n"
 "PO-Revision-Date: 2020-03-02 02:38+0000\n"
 "Last-Translator: TAKAHASHI Shuuji <shuuji3@gmail.com>\n"
 "Language-Team: Japanese <https://translate.fedoraproject.org/projects/"
@@ -138,10 +138,12 @@ msgid ""
 "longer contain support for nss-pam-ldapd and users are encouraged to switch "
 "to sssd."
 msgstr ""
-"おそらく、最も問題視されている変更は、authselect がプロファイルを sssd プロバイダーと winbind プロバイダーのみに出荷する点です。"
-"これらの 2 つのプロバイダーは、ローカルユーザーとレガシー LDAP ドメインの提供から、IPA サーバーまたは Active Directory "
-"サーバーを使用した複雑な設定まで、現在のすべてのユースケースをカバーします。プロファイルは今後、nss-pam-ldapd "
-"をサポートしません。ユーザーには、sssd への乗り換えを推奨しています。"
+"おそらく、最も問題視されている変更は、authselect がプロファイルを sssd プロバ"
+"イダーと winbind プロバイダーのみに出荷する点です。これらの 2 つのプロバイ"
+"ダーは、ローカルユーザーとレガシー LDAP ドメインの提供から、IPA サーバーまた"
+"は Active Directory サーバーを使用した複雑な設定まで、現在のすべてのユース"
+"ケースをカバーします。プロファイルは今後、nss-pam-ldapd をサポートしません。"
+"ユーザーには、sssd への乗り換えを推奨しています。"
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:54
@@ -189,7 +191,7 @@ msgstr ""
 msgid "Relation of authconfig options to authselect profiles"
 msgstr "authselect プロファイルに対する authconfig オプションの関係"
 
-#. type: Table
+#. type: delimited block |
 #: src/man/authselect-migration.7.adoc:76
 #, no-wrap
 msgid ""
@@ -213,7 +215,7 @@ msgstr ""
 msgid "Relation of authconfig options to authselect profile features"
 msgstr "authselect プロファイル機能に対する authconfig オプションの関係"
 
-#. type: Table
+#. type: delimited block |
 #: src/man/authselect-migration.7.adoc:88
 #, no-wrap
 msgid ""

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-02-17 12:37+0100\n"
+"POT-Creation-Date: 2020-05-11 12:25+0200\n"
 "PO-Revision-Date: 2020-02-29 20:38+0000\n"
 "Last-Translator: Igor Gorbounov <igor.gorbounov@gmail.com>\n"
 "Language-Team: Russian <https://translate.fedoraproject.org/projects/"
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.11.2\n"
 
 #. type: Title =
@@ -64,15 +64,11 @@ msgid ""
 "is selected, *authselect* will create nsswitch.conf(5) and PAM(8) stack to use\n"
 "identity and authentication sources defined by the profile.\n"
 msgstr ""
-"*Authselect* - инструмент для настройки источников и провайдеров "
-"идентификации \n"
+"*Authselect* - инструмент для настройки источников и провайдеров идентификации \n"
 "и подтверждения подлинности системы путем выбора определенного профиля.\n"
-"Профиль - это набор файлов, описывающий, как в итоге будет выглядеть "
-"конфигурация системы. \n"
-"Когда выбирается профиль, *authselect* создает стек nsswitch.conf(5) и PAM(8)"
-" для использования \n"
-"источников идентификации и подтверждения подлинности, определенных профилем."
-"\n"
+"Профиль - это набор файлов, описывающий, как в итоге будет выглядеть конфигурация системы. \n"
+"Когда выбирается профиль, *authselect* создает стек nsswitch.conf(5) и PAM(8) для использования \n"
+"источников идентификации и подтверждения подлинности, определенных профилем.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:27
@@ -156,8 +152,7 @@ msgid ""
 "*--nobackup* option is set.\n"
 msgstr ""
 "Записать изменения, даже если предыдущая конфигурация была создана\n"
-"не authselect, а другим инструментом или путем изменения вручную. Этот "
-"параметр\n"
+"не authselect, а другим инструментом или путем изменения вручную. Этот параметр\n"
 "приводит к автоматическому резервному копированию системных файлов перед\n"
 "записью изменений, если только не установлен параметр *--nobackup*.\n"
 
@@ -204,9 +199,7 @@ msgstr "*--nobackup*:"
 #: src/man/authselect.8.adoc:68
 #, no-wrap
 msgid "Do not backup system configuration even if *--force* is set.\n"
-msgstr ""
-"Не делать резервное копирование конфигурации системы, если указано *--force*."
-"\n"
+msgstr "Не делать резервное копирование конфигурации системы, если указано *--force*.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:69 src/man/authselect.8.adoc:160
@@ -222,8 +215,7 @@ msgid ""
 "profile requirements or backup location. Errors are still being print.\n"
 msgstr ""
 "Команда не выводит информационных сообщений, например, дополнительных\n"
-"требований к профилю или расположение резервной копии. Ошибки все же "
-"выводятся.\n"
+"требований к профилю или расположение резервной копии. Ошибки все же выводятся.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:73
@@ -326,9 +318,9 @@ msgid ""
 "specified, the command will print raw parameters as they were passed to "
 "*select* command instead of formatted output."
 msgstr ""
-"Вывести информацию о текущих выбранных профилях. Если задан параметр *--raw*"
-", эта команда выведет параметры без обработки, так, как они были переданы "
-"команде *select*, вместо форматированного вывода."
+"Вывести информацию о текущих выбранных профилях. Если задан параметр *--"
+"raw*, эта команда выведет параметры без обработки, так, как они были "
+"переданы команде *select*, вместо форматированного вывода."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:110

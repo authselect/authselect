@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2020-02-17 12:37+0100\n"
+"POT-Creation-Date: 2020-05-11 12:25+0200\n"
 "PO-Revision-Date: 2019-06-13 01:20+0000\n"
 "Last-Translator: Eun-Ju Kim <eukim@redhat.com>\n"
 "Language-Team: \n"
@@ -398,14 +398,14 @@ msgid "Unable to read file [%s/%s] [%d]: %s"
 msgstr "파일을 읽을 수 없습니다 [%s/%s] [%d] : %s"
 
 #: src/lib/files/system.c:112 src/lib/files/system.c:170
-#: src/lib/util/template.c:449 src/lib/util/template.c:588
-#: src/lib/util/template.c:639
+#: src/lib/util/template.c:449 src/lib/util/template.c:589
+#: src/lib/util/template.c:640
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr "정규 표현식을 컴파일 할 수 없습니다 : 정규 표현식 오류 %d"
 
 #: src/lib/files/system.c:130 src/lib/files/system.c:195
-#: src/lib/util/template.c:497 src/lib/util/template.c:665
+#: src/lib/util/template.c:498 src/lib/util/template.c:666
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "문자열을 찾을 수 없습니다 : 정규식 오류 %d"
@@ -744,35 +744,35 @@ msgstr "백업 제거 중 [%s]"
 msgid "Invalid operator!"
 msgstr "연산자가 잘못되었습니다."
 
-#: src/lib/util/template.c:458 src/lib/util/template.c:649
+#: src/lib/util/template.c:459 src/lib/util/template.c:650
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "일치 항목을 처리 할 수 ​​없음 [%d] : %s"
 
-#: src/lib/util/template.c:482
+#: src/lib/util/template.c:483
 #, c-format
 msgid "Unable to process operator [%d]: %s"
 msgstr "연산자를 처리 할 수 ​​없습니다 [%d] : %s"
 
-#: src/lib/util/template.c:529
+#: src/lib/util/template.c:530
 #, c-format
 msgid "Unable to generate template [%d]: %s"
 msgstr "템플릿을 생성 할 수 없음 [%d] : %s"
 
-#: src/lib/util/template.c:556
+#: src/lib/util/template.c:557
 msgid "Unable to get current time!"
 msgstr "현재 시간을 얻을 수 없습니다!"
 
-#: src/lib/util/template.c:570
+#: src/lib/util/template.c:571
 msgid "Unable to create message!"
 msgstr "메시지를 만들 수 없습니다!"
 
-#: src/lib/util/template.c:595
+#: src/lib/util/template.c:596
 #, c-format
 msgid "Unable to find new match: regex error %d"
 msgstr "새로운 match: regex 오류 %d를 찾을 수 없습니다"
 
-#: src/lib/util/template.c:725
+#: src/lib/util/template.c:726
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
 msgstr "임시 파일을 [%s] [%d] : %s"
@@ -1256,67 +1256,67 @@ msgstr "복원할 백업 이름입니다. "
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "백업 [%s] [%d]을/를 복수할 수 없습니다: %s\n"
 
-#: src/cli/main.c:923
+#: src/cli/main.c:931
 msgid "Select profile"
 msgstr "프로필 선택"
 
-#: src/cli/main.c:924
+#: src/cli/main.c:932
 msgid "Regenerate configuration for currently selected command"
 msgstr "현재 선택된 명령에 대한 구성 재생성"
 
-#: src/cli/main.c:925
+#: src/cli/main.c:933
 msgid "List available profiles"
 msgstr "사용 가능한 프로파일 나열"
 
-#: src/cli/main.c:926
+#: src/cli/main.c:934
 msgid "List available profile features"
 msgstr "사용 가능한 프로필 기능을 나열합니다  "
 
-#: src/cli/main.c:927
+#: src/cli/main.c:935
 msgid "Show profile information"
 msgstr "프로필 정보 표시"
 
-#: src/cli/main.c:928
+#: src/cli/main.c:936
 msgid "Print profile requirements"
 msgstr "프로파일 요구 사항 인쇄"
 
-#: src/cli/main.c:929
+#: src/cli/main.c:937
 msgid "Get identifier of currently selected profile"
 msgstr "현재 선택된 프로파일의 식별자를 가져옵니다."
 
-#: src/cli/main.c:930
+#: src/cli/main.c:938
 msgid "Check if the current configuration is valid"
 msgstr "현재 구성이 유효한지 확인하십시오."
 
-#: src/cli/main.c:931
+#: src/cli/main.c:939
 msgid "Print changes that would be otherwise written"
 msgstr "다른 방법으로 쓰여질 변경 사항을 인쇄하십시오."
 
-#: src/cli/main.c:932
+#: src/cli/main.c:940
 msgid "Enable feature in currently selected profile"
 msgstr "현재 선택한 프로필에서 기능 사용"
 
-#: src/cli/main.c:933
+#: src/cli/main.c:941
 msgid "Disable feature in currently selected profile"
 msgstr "현재 선택한 프로필에서 기능 사용 중지"
 
-#: src/cli/main.c:934
+#: src/cli/main.c:942
 msgid "Create new authselect profile"
 msgstr "새 authselect 프로파일 만들기"
 
-#: src/cli/main.c:935
+#: src/cli/main.c:943
 msgid "Backup commands:"
 msgstr "백업 명령: "
 
-#: src/cli/main.c:936
+#: src/cli/main.c:944
 msgid "List available backups"
 msgstr "사용 가능한 백업 나열 "
 
-#: src/cli/main.c:937
+#: src/cli/main.c:945
 msgid "Remove backup"
 msgstr "백업 제거 "
 
-#: src/cli/main.c:938
+#: src/cli/main.c:946
 msgid "Restore from backup"
 msgstr ""
 

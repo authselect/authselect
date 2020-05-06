@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2020-02-12 11:02+0100\n"
+"POT-Creation-Date: 2020-05-11 12:25+0200\n"
 "PO-Revision-Date: 2020-02-18 15:38+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <https://translate.fedoraproject.org/projects/"
@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.10.3\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:169
@@ -399,14 +399,14 @@ msgid "Unable to read file [%s/%s] [%d]: %s"
 msgstr "Не вдалося прочитати файл [%s/%s] [%d]: %s"
 
 #: src/lib/files/system.c:112 src/lib/files/system.c:170
-#: src/lib/util/template.c:449 src/lib/util/template.c:588
-#: src/lib/util/template.c:639
+#: src/lib/util/template.c:449 src/lib/util/template.c:589
+#: src/lib/util/template.c:640
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr "Не вдалося зібрати формальний вираз: помилка у формальному виразі %d"
 
 #: src/lib/files/system.c:130 src/lib/files/system.c:195
-#: src/lib/util/template.c:497 src/lib/util/template.c:665
+#: src/lib/util/template.c:498 src/lib/util/template.c:666
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "Не вдалося виконати пошук рядка: помилка у формальному виразі %d"
@@ -746,35 +746,35 @@ msgstr "Вилучаємо [%s]"
 msgid "Invalid operator!"
 msgstr "Некоректний оператор!"
 
-#: src/lib/util/template.c:458 src/lib/util/template.c:649
+#: src/lib/util/template.c:459 src/lib/util/template.c:650
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "Не вдалося обробити відповідник [%d]: %s"
 
-#: src/lib/util/template.c:482
+#: src/lib/util/template.c:483
 #, c-format
 msgid "Unable to process operator [%d]: %s"
 msgstr "Не вдалося обробити оператор [%d]: %s"
 
-#: src/lib/util/template.c:529
+#: src/lib/util/template.c:530
 #, c-format
 msgid "Unable to generate template [%d]: %s"
 msgstr "Не вдалося створити шаблон [%d]: %s"
 
-#: src/lib/util/template.c:556
+#: src/lib/util/template.c:557
 msgid "Unable to get current time!"
 msgstr "Не вдалося визначити поточний час!"
 
-#: src/lib/util/template.c:570
+#: src/lib/util/template.c:571
 msgid "Unable to create message!"
 msgstr "Не вдалося створити повідомлення!"
 
-#: src/lib/util/template.c:595
+#: src/lib/util/template.c:596
 #, c-format
 msgid "Unable to find new match: regex error %d"
 msgstr "Не вдалося знайти новий відповідник: помилка у формальному виразі %d"
 
-#: src/lib/util/template.c:725
+#: src/lib/util/template.c:726
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
 msgstr "Не вдалося створити тимчасовий файл для [%s] [%d]: %s"
@@ -1275,67 +1275,67 @@ msgstr "Назва резервної копії, дані якої слід в�
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "Не вдалося відновити дані з резервної копії [%s] [%d]: %s\n"
 
-#: src/cli/main.c:923
+#: src/cli/main.c:931
 msgid "Select profile"
 msgstr "Вибрати профіль"
 
-#: src/cli/main.c:924
+#: src/cli/main.c:932
 msgid "Regenerate configuration for currently selected command"
 msgstr "Повторно створити налаштування для поточної вибраної команди"
 
-#: src/cli/main.c:925
+#: src/cli/main.c:933
 msgid "List available profiles"
 msgstr "Вивести список доступних профілів"
 
-#: src/cli/main.c:926
+#: src/cli/main.c:934
 msgid "List available profile features"
 msgstr "Список доступних можливостей профілю"
 
-#: src/cli/main.c:927
+#: src/cli/main.c:935
 msgid "Show profile information"
 msgstr "Вивести дані щодо профілю"
 
-#: src/cli/main.c:928
+#: src/cli/main.c:936
 msgid "Print profile requirements"
 msgstr "Вивести вимоги профілю"
 
-#: src/cli/main.c:929
+#: src/cli/main.c:937
 msgid "Get identifier of currently selected profile"
 msgstr "Отримати ідентифікатор поточного вибраного профілю"
 
-#: src/cli/main.c:930
+#: src/cli/main.c:938
 msgid "Check if the current configuration is valid"
 msgstr "Перевірити, чи є поточні налаштування коректними"
 
-#: src/cli/main.c:931
+#: src/cli/main.c:939
 msgid "Print changes that would be otherwise written"
 msgstr "Вивести зміни, які буде перезаписано"
 
-#: src/cli/main.c:932
+#: src/cli/main.c:940
 msgid "Enable feature in currently selected profile"
 msgstr "Увімкнути можливість у поточному вибраному профілі"
 
-#: src/cli/main.c:933
+#: src/cli/main.c:941
 msgid "Disable feature in currently selected profile"
 msgstr "Вимкнути можливість у поточному вибраному профілі"
 
-#: src/cli/main.c:934
+#: src/cli/main.c:942
 msgid "Create new authselect profile"
 msgstr "Створити профіль authselect"
 
-#: src/cli/main.c:935
+#: src/cli/main.c:943
 msgid "Backup commands:"
 msgstr "Команди резервного копіювання:"
 
-#: src/cli/main.c:936
+#: src/cli/main.c:944
 msgid "List available backups"
 msgstr "Список доступних резервних копій"
 
-#: src/cli/main.c:937
+#: src/cli/main.c:945
 msgid "Remove backup"
 msgstr "Вилучити резервну копію"
 
-#: src/cli/main.c:938
+#: src/cli/main.c:946
 msgid "Restore from backup"
 msgstr "Відновити з резервної копії"
 
