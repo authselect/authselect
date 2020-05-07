@@ -150,7 +150,7 @@ textfile_write(const char *filepath,
         content = "";
     }
 
-    oldmask = umask(mode);
+    oldmask = umask(~mode & ALLPERMS);
 
     file = fopen(filepath, "w");
     if (file == NULL) {
