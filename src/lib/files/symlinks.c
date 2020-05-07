@@ -35,7 +35,7 @@ authselect_symlinks_write()
     errno_t ret;
     int i;
 
-    oldmask = umask(AUTHSELECT_FILE_MODE);
+    oldmask = umask(~AUTHSELECT_FILE_MODE & ALLPERMS);
 
     for (i = 0; symlinks[i].name != NULL; i++) {
         INFO("Creating symbolic link [%s] to [%s]",

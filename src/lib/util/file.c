@@ -349,7 +349,7 @@ file_mktmp_for(const char *path, mode_t mode, char **_tmpfile)
     errno_t ret;
     int fd;
 
-    oldmask = umask(mode);
+    oldmask = umask(~mode & ALLPERMS);
 
     tmpfile = format("%s.XXXXXX", path);
     if (tmpfile == NULL) {
@@ -472,7 +472,7 @@ file_copy(const char *source,
     }
 
     /* Temporary umask before we change the owner and permissions. */
-    oldmask = umask(0600);
+    oldmask = umask(0177);
 
     fsource = fopen(source, "r");
     if (fsource == NULL) {
