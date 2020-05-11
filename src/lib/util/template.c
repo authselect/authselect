@@ -447,6 +447,7 @@ template_process_operators(const char **features,
     reret = regcomp(&regex, OP_RE, REG_EXTENDED | REG_NEWLINE);
     if (reret != REG_NOERROR) {
         ERROR("Unable to compile regular expression: regex error %d", reret);
+        string_array_free(features_copy);
         return EFAULT;
     }
 
