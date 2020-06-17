@@ -2,41 +2,48 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
 # Weblate <noreply@weblate.org>, 2020.
+# Anonymous <noreply@weblate.org>, 2020.
+# Fábio Rodrigues Ribeiro <farribeiro@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-05-11 12:25+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2020-06-17 18:40+0000\n"
+"Last-Translator: Fábio Rodrigues Ribeiro <farribeiro@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) <https://translate.fedoraproject.org/"
+"projects/authselect/master-authselect-migration7adoc/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.0.4\n"
 
 #. type: Title =
 #: src/man/authselect-migration.7.adoc:2
 #, no-wrap
 msgid "authselect-migration(7)"
-msgstr ""
+msgstr "authselect-migration(7)"
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:6
 #, no-wrap
 msgid "NAME"
-msgstr ""
+msgstr "NOME"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:8
 msgid ""
 "authselect-migration - A guide how to migrate from authconfig to authselect."
 msgstr ""
+"authselect-migration - Um guia sobre como migrar do authconfig para "
+"authselect."
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:10
 #, no-wrap
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "DESCRIÇÃO"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:15
@@ -46,12 +53,16 @@ msgid ""
 "authselect which replaces it. It also explains what actions need to be done "
 "in order to migrate from authconfig to authselect."
 msgstr ""
+"Esta página de manual explica as principais diferenças entre o authconfig, a "
+"ferramenta anterior para configurar a autenticação do sistema e as fontes de "
+"identidade, e o authselect que o substitui. Ele também explica quais ações "
+"precisam ser executadas para migrar do authconfig para o authselect."
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:17
 #, no-wrap
 msgid "MAIN DIFFERENCES"
-msgstr ""
+msgstr "PRINCIPAIS DIFERENÇAS"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:20
@@ -59,6 +70,8 @@ msgid ""
 "Authselect takes a completely different approach to system configuration "
 "than the previous tool authconfig."
 msgstr ""
+"O Authselect adota uma abordagem completamente diferente da configuração do "
+"sistema que a ferramenta anterior authconfig."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:25
@@ -128,7 +141,7 @@ msgstr ""
 #: src/man/authselect-migration.7.adoc:61
 #, no-wrap
 msgid "CONVERTING YOUR SCRIPTS"
-msgstr ""
+msgstr "CONVERTENDO SEUS SCRIPTS"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:67
@@ -182,7 +195,7 @@ msgstr ""
 #: src/man/authselect-migration.7.adoc:90
 #, no-wrap
 msgid "Examples"
-msgstr ""
+msgstr "Exemplos"
 
 #. type: delimited block -
 #: src/man/authselect-migration.7.adoc:94
@@ -220,19 +233,19 @@ msgstr ""
 #: src/man/authselect-migration.7.adoc:106
 #, no-wrap
 msgid "CONFIGURATION FILES"
-msgstr ""
+msgstr "ARQUIVOS DE CONFIGURAÇÕES"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:108
 msgid ""
 "This section contains snippets for minimal configuration of various services."
-msgstr ""
+msgstr "Esta seção contém trechos para configuração mínima de vários serviços."
 
 #. type: Title ~
 #: src/man/authselect-migration.7.adoc:110
 #, no-wrap
 msgid "LDAP"
-msgstr ""
+msgstr "LDAP"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:114
@@ -444,7 +457,7 @@ msgstr ""
 #: src/man/authselect-migration.7.adoc:212
 #, no-wrap
 msgid "NISDOMAIN=mydomain\n"
-msgstr ""
+msgstr "NISDOMAIN=mydomain\n"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:216
@@ -461,6 +474,8 @@ msgid ""
 "$ domainname mydomain\n"
 "$ setsebool -P allow_ypbind 1\n"
 msgstr ""
+"$ domainname mydomain\n"
+"$ setsebool -P allow_ypbind 1\n"
 
 #. type: Title ~
 #: src/man/authselect-migration.7.adoc:223
@@ -489,7 +504,7 @@ msgstr ""
 #: src/man/authselect-migration.7.adoc:234
 #, no-wrap
 msgid "STARTING SERVICES"
-msgstr ""
+msgstr "INICIANDO SERVIÇOS"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:237
@@ -507,7 +522,7 @@ msgstr ""
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:243
 msgid "Winbind"
-msgstr ""
+msgstr "Winbind"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:245
@@ -532,7 +547,7 @@ msgstr ""
 #: src/man/authselect-migration.7.adoc:254
 #, no-wrap
 msgid "systemctl enable oddjobd.service ; systemctl start oddjobd.service\n"
-msgstr ""
+msgstr "systemctl enable oddjobd.service ; systemctl start oddjobd.service\n"
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:256
@@ -560,3 +575,5 @@ msgid ""
 "authselect(8), authselect-profiles(5), realm(8), ipa-client-install(1), sssd."
 "conf(5), smb.conf(5), ldap.conf(5), krb5.conf(5)"
 msgstr ""
+"authselect(8), authselect-profiles(5), realm(8), ipa-client-install(1), "
+"sssd.conf(5), smb.conf(5), ldap.conf(5), krb5.conf(5)"

@@ -1,4 +1,4 @@
-# Ludek Janda <ljanda@redhat.com>, 2018. #zanata
+# Ludek Janda <ljanda@redhat.com>, 2018. #zanata, 2020.
 # Keiko Moriguchi <kemorigu@redhat.com>, 2019. #zanata
 # Kenzo Moriguchi <kmoriguc@redhat.com>, 2019. #zanata
 msgid ""
@@ -6,15 +6,16 @@ msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
 "POT-Creation-Date: 2020-05-11 12:25+0200\n"
-"PO-Revision-Date: 2019-06-16 11:00+0000\n"
-"Last-Translator: Keiko Moriguchi <kemorigu@redhat.com>\n"
-"Language-Team: Japanese\n"
+"PO-Revision-Date: 2020-06-11 10:40+0000\n"
+"Last-Translator: Ludek Janda <ljanda@redhat.com>\n"
+"Language-Team: Japanese <https://translate.fedoraproject.org/projects/"
+"authselect/master-application/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.0.4\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:169
 msgid "Unable to obtain supported features"
@@ -130,10 +131,9 @@ msgid "Trying to backup system configuration to [%s]"
 msgstr "システム設定の [%s] へのバックアップを試行中"
 
 #: src/lib/authselect_backup.c:184
-#, fuzzy, c-format
-#| msgid "Backup was successfuly created at [%s]"
+#, c-format
 msgid "Backup was successfully created at [%s]"
-msgstr "バックアップは [%s] に正常に作成されました"
+msgstr "バックアップが正常に [%s] で作成されました"
 
 #: src/lib/authselect_backup.c:188
 #, c-format
@@ -141,10 +141,8 @@ msgid "Unable to create backup [%d]: %s"
 msgstr "バックアップ [%d] を作成できません: %s"
 
 #: src/lib/authselect_backup.c:205
-#, fuzzy
-#| msgid "[%s] does not exist!"
 msgid " does not exist."
-msgstr "[%s] は存在しません。"
+msgstr " 存在しません。"
 
 #: src/lib/authselect_backup.c:208 src/lib/profiles/list.c:50
 #, c-format
@@ -587,7 +585,7 @@ msgstr "[%s] の basename を取得できません"
 #: src/lib/util/file.c:198 src/cli/main.c:826
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
-msgstr "[%s] [%d] に対する stat の実行に失敗しました: %s "
+msgstr "[%s] [%d] に対する stat の実行に失敗しました: %s"
 
 #: src/lib/util/dir.c:130
 #, c-format
@@ -690,7 +688,7 @@ msgstr "SELinux コンテキスト [%d] を検索することができません:
 #: src/lib/util/selinux.c:59
 #, c-format
 msgid "Found default selinux context for [%s]: %s"
-msgstr "デフォルトの [%s] の SELinux コンテキストを見つけました: %s"
+msgstr "デフォルトの [%s] の seLinux コンテキストを見つけました: %s"
 
 #: src/lib/util/selinux.c:84
 #, c-format
@@ -704,7 +702,7 @@ msgstr "未設定"
 #: src/lib/util/selinux.c:90
 #, c-format
 msgid "Found selinux context for [%s]: %s"
-msgstr "[%s] の SELinux コンテキストを見つけました: %s"
+msgstr "[%s] の selinux コンテキストを見つけました: %s"
 
 #: src/lib/util/selinux.c:115 src/lib/util/selinux.c:183
 #: src/lib/util/selinux.c:249
@@ -733,13 +731,12 @@ msgstr "fscreate の SELinux コンテキストを復元することができま
 msgid ""
 "File [%s] should exist but is missing. It is not safe to delete [%s]. "
 "Aborting."
-msgstr ""
+msgstr "ファイル [%s] は存在するはずですが、存在しません。[%s] の削除は安全ではありません。中止します。"
 
 #: src/lib/util/selinux.c:402
-#, fuzzy, c-format
-#| msgid "Removing backup [%s]"
+#, c-format
 msgid "Removing [%s]"
-msgstr "バックアップ [%s] を削除中"
+msgstr "[%s] の削除中"
 
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:280
@@ -1134,7 +1131,9 @@ msgstr "生成されたコンテンツ [%d] を取得できません: %s"
 msgid ""
 "File %s: Empty\n"
 "\n"
-msgstr "ファイル %s: 空\n"
+msgstr ""
+"ファイル %s: 空\n"
+"\n"
 
 #: src/cli/main.c:604
 #, c-format
@@ -1143,7 +1142,7 @@ msgid ""
 "%s\n"
 "\n"
 msgstr ""
-"File %s:\n"
+"ファイル %s:\n"
 "%s\n"
 "\n"
 
@@ -1240,7 +1239,7 @@ msgstr "利用可能なバックアップの一覧表示ができません!"
 #: src/cli/main.c:836
 #, c-format
 msgid "%-*s (created at %s)\n"
-msgstr "%-*s (created at %s)\n"
+msgstr "%-*s (%s で作成)\n"
 
 #: src/cli/main.c:855
 msgid "Name of the backup to remove."
@@ -1322,7 +1321,7 @@ msgstr "バックアップを削除します"
 
 #: src/cli/main.c:946
 msgid "Restore from backup"
-msgstr ""
+msgstr "バックアップからの復元"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"

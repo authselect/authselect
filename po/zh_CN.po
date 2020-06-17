@@ -1,4 +1,4 @@
-# Ludek Janda <ljanda@redhat.com>, 2018. #zanata
+# Ludek Janda <ljanda@redhat.com>, 2018. #zanata, 2020.
 # Pavel Brezina <pbrezina@redhat.com>, 2018. #zanata
 # Tony Fu <tfu@redhat.com>, 2019. #zanata
 msgid ""
@@ -6,15 +6,16 @@ msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
 "POT-Creation-Date: 2020-05-11 12:25+0200\n"
-"PO-Revision-Date: 2019-06-14 12:36+0000\n"
-"Last-Translator: Tony Fu <tfu@redhat.com>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2020-06-11 10:40+0000\n"
+"Last-Translator: Ludek Janda <ljanda@redhat.com>\n"
+"Language-Team: Chinese (Simplified) <https://translate.fedoraproject.org/"
+"projects/authselect/master-application/zh_CN/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 4.6.2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.0.4\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:169
 msgid "Unable to obtain supported features"
@@ -126,10 +127,9 @@ msgid "Trying to backup system configuration to [%s]"
 msgstr "尝试把系统配置备份到 [%s]"
 
 #: src/lib/authselect_backup.c:184
-#, fuzzy, c-format
-#| msgid "Backup was successfuly created at [%s]"
+#, c-format
 msgid "Backup was successfully created at [%s]"
-msgstr "备份于 [%s] 成功创建"
+msgstr "在[%s]成功创建了备份"
 
 #: src/lib/authselect_backup.c:188
 #, c-format
@@ -137,10 +137,8 @@ msgid "Unable to create backup [%d]: %s"
 msgstr "无法创建备份 [%d]: %s"
 
 #: src/lib/authselect_backup.c:205
-#, fuzzy
-#| msgid "[%s] does not exist!"
 msgid " does not exist."
-msgstr "[%s] 不存在！"
+msgstr " 不存在。"
 
 #: src/lib/authselect_backup.c:208 src/lib/profiles/list.c:50
 #, c-format
@@ -236,7 +234,7 @@ msgstr "无法创建符号链接[%s] 至 [%s] [[%d]： %s"
 #: src/lib/authselect_profile.c:419
 #, c-format
 msgid "Creating new profile from \"%s\" at [%s]"
-msgstr "从[%s]上的%s“创建新的配置档案 "
+msgstr "从[%s]上的%s“创建新的配置档案"
 
 #: src/lib/authselect_profile.c:423
 #, c-format
@@ -728,13 +726,12 @@ msgstr "无法恢复 fscreate selinux 上下文！"
 msgid ""
 "File [%s] should exist but is missing. It is not safe to delete [%s]. "
 "Aborting."
-msgstr ""
+msgstr "文件 [%s] 应该存在，但缺失了。删除[%s]是不安全的。终止。"
 
 #: src/lib/util/selinux.c:402
-#, fuzzy, c-format
-#| msgid "Removing backup [%s]"
+#, c-format
 msgid "Removing [%s]"
-msgstr "删除备份 [%s]"
+msgstr "删除[%s]"
 
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:280
@@ -831,7 +828,8 @@ msgid ""
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
 msgstr ""
-"用法：%s COMMAND COMMAND-ARGS\n"
+"用法：\n"
+"%s COMMAND COMMAND-ARGS\n"
 "\n"
 
 #: src/cli/cli_tool.c:170
@@ -979,7 +977,8 @@ msgid ""
 "Use --force parameter if you want to overwrite these changes.\n"
 msgstr ""
 "\n"
-"检测到一些意外的配置更改。如果要覆盖这些更改，请使用--force参数。\n"
+"检测到一些意外的配置更改。\n"
+"如果要覆盖这些更改，请使用--force参数。\n"
 
 #: src/cli/main.c:205
 #, c-format
@@ -1195,7 +1194,7 @@ msgstr "使用基础配置档案的符号链接 pam 文件，而不是复制它�
 
 #: src/cli/main.c:746
 msgid "Symlink dconf files from the base profile instead of copying them"
-msgstr "使用基础配置档案的符号链接 dconf  文件，而不是复制它们"
+msgstr "使用基础配置档案的符号链接 dconf 文件，而不是复制它们"
 
 #: src/cli/main.c:747
 msgid "Symlink specific file (can be set multiple times)"
@@ -1308,7 +1307,7 @@ msgstr "删除备份"
 
 #: src/cli/main.c:946
 msgid "Restore from backup"
-msgstr ""
+msgstr "从备份中恢复"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
