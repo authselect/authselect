@@ -272,17 +272,21 @@ string_replace_position(char *str, size_t start, size_t end, const char *with)
 }
 
 void
-string_remove_line(char *str, size_t inner_position)
+string_remove_line(char *beginning, char *str, size_t inner_position)
 {
     char *left;
 
-    for (left = str + inner_position; left != str; left--) {
+    /* str may not be the beginning of the line so we need to refer
+     * to iterate until we reach the beginning */
+    for (left = str + inner_position; left != beginning; left--) {
         if (*(left - 1) == '\n') {
             break;
         }
     }
 
-    for (; *left != '\0'; left++) {
+    /* Remove the whole line that is in front of our string and then iterate
+     * to the line end or string end. */
+    for (; left < str || *left != '\0'; left++) {
         if (*left == '\n') {
             *left = '\0';
             break;

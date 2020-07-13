@@ -178,7 +178,7 @@ authselect_system_nsswitch_delete_maps(char **maps,
         map_len = m[1].rm_eo - m[1].rm_so;
         for (i = 0; maps[i] != NULL; i++) {
             if (strncmp(map_name, maps[i], map_len) == 0) {
-                string_remove_line(match_string, m[1].rm_so);
+                string_remove_line(content, match_string, m[1].rm_so);
                 break;
             }
         }
