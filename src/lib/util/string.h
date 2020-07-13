@@ -142,11 +142,12 @@ string_replace_position(char *str, size_t start, size_t end, const char *with);
  * When all replacements are done, call @string_replace_shake() to create
  * the final string.
  *
+ * @param beginning Pointer to the left most character of the string.
  * @param str       Destination string.
  * @param inner_position Position inside the line the will be removed.
  */
 void
-string_remove_line(char *str, size_t inner_position);
+string_remove_line(char *beginning, char *str, size_t inner_position);
 
 /**
  * Remove string from @from (including) to @to (excluding).

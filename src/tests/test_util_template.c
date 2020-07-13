@@ -269,6 +269,86 @@ void test_template_imply_if(void **state)
     free(result);
 }
 
+void test_template_if_and_include__true(void **state)
+{
+    const char *myfeatures[] = {
+        "true",
+        NULL
+    };
+
+    const char *template =
+        "L1 {if \"f1\":T1|T2} T3 {include if \"true\"} \n"
+        "L2 \n"
+        "";
+    const char *expected =
+        "L1 T2 T3\n"
+        "L2\n"
+        "";
+
+    char *result = template_generate(template, myfeatures);
+    assert_string_equal(expected, result);
+    free(result);
+}
+
+void test_template_if_and_include__false(void **state)
+{
+    const char *myfeatures[] = {
+        NULL
+    };
+
+    const char *template =
+        "L1 {if \"f1\":T1|T2} T3 {include if \"true\"} \n"
+        "L2 \n"
+        "";
+    const char *expected =
+        "L2\n"
+        "";
+
+    char *result = template_generate(template, myfeatures);
+    assert_string_equal(expected, result);
+    free(result);
+}
+
+void test_template_if_and_exclude__true(void **state)
+{
+    const char *myfeatures[] = {
+        "true",
+        NULL
+    };
+
+    const char *template =
+        "L1 {if \"f1\":T1|T2} T3 {exclude if \"true\"} \n"
+        "L2 \n"
+        "";
+    const char *expected =
+        "L2\n"
+        "";
+
+    char *result = template_generate(template, myfeatures);
+    assert_string_equal(expected, result);
+    free(result);
+}
+
+void test_template_if_and_exclude__false(void **state)
+{
+    const char *myfeatures[] = {
+        NULL
+    };
+
+    const char *template =
+        "L1 {if \"f1\":T1|T2} T3 {exclude if \"true\"} \n"
+        "L2 \n"
+        "";
+    const char *expected =
+        "L1 T2 T3\n"
+        "L2\n"
+        "";
+
+    char *result = template_generate(template, myfeatures);
+    assert_string_equal(expected, result);
+    free(result);
+}
+
 int main(int argc, const char *argv[])
 {
 
@@ -281,6 +361,10 @@ int main(int argc, const char *argv[])
         cmocka_unit_test(test_template_continue_if),
         cmocka_unit_test(test_template_list_features),
         cmocka_unit_test(test_template_imply_if),
+        cmocka_unit_test(test_template_if_and_include__true),
+        cmocka_unit_test(test_template_if_and_include__false),
+        cmocka_unit_test(test_template_if_and_exclude__true),
+        cmocka_unit_test(test_template_if_and_exclude__false),
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);

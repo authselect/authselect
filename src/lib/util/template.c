@@ -211,6 +211,7 @@ template_match_get_values(const char *match_string,
 
 static errno_t
 template_match_replace(char ***features,
+                       char *beginning,
                        char *match_string,
                        regmatch_t *match,
                        enum template_operator op,
@@ -231,7 +232,7 @@ template_match_replace(char ***features,
     switch (op) {
     case OP_CONTINUE:
         if (enabled) {
-            string_remove_line(match_string, match->rm_so);
+            string_remove_line(beginning, match_string, match->rm_so);
             break;
         }
 
@@ -239,7 +240,7 @@ template_match_replace(char ***features,
         break;
     case OP_STOP:
         if (!enabled) {
-            string_remove_line(match_string, match->rm_so);
+            string_remove_line(beginning, match_string, match->rm_so);
             break;
         }
 
@@ -251,7 +252,7 @@ template_match_replace(char ***features,
             break;
         }
 
-        string_remove_line(match_string, match->rm_so);
+        string_remove_line(beginning, match_string, match->rm_so);
         break;
     case OP_EXCLUDE:
         if (!enabled) {
@@ -259,7 +260,7 @@ template_match_replace(char ***features,
             break;
         }
 
-        string_remove_line(match_string, match->rm_so);
+        string_remove_line(beginning, match_string, match->rm_so);
         break;
     case OP_IMPLY:
         if (enabled) {
@@ -269,7 +270,7 @@ template_match_replace(char ***features,
             }
         }
 
-        string_remove_line(match_string, match->rm_so);
+        string_remove_line(beginning, match_string, match->rm_so);
         break;
     case OP_IF:
         replacement = enabled ? if_true : if_false;
@@ -460,8 +461,9 @@ template_process_operators(const char **features,
             goto done;
         }
 
-        ret = template_match_replace(&features_copy, match_string, &m[0], op,
-                                     expression, if_true, if_false, value);
+        ret = template_match_replace(&features_copy, content, match_string,
+                                     &m[0], op, expression,
+                                     if_true, if_false, value);
 
         if (expression != NULL) {
             free(expression);
