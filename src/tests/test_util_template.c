@@ -93,8 +93,9 @@ void test_template_exclude_if(void **state)
         NULL
     };
 
+    /* put the test back */
     const char *template =
-        "line 01 {exclude if \"false\"}\n"
+        "line 01 {exclude if \"true\"}\n"
         "line 02 {exclude if \"false\"}\n"
         "line 03 {exclude if \"false\" or \"true\"}\n"
         "line 04 {exclude if \"false\" and \"true\"}\n"
