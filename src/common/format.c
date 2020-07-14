@@ -30,7 +30,6 @@ vaformat(const char *fmt, va_list in_va)
     va_list va;
     int ret;
 
-    this is broken line
     va_copy(va, in_va);
     ret = vasprintf(&str, fmt, va);
     va_end(va);
