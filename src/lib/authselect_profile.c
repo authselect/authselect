@@ -379,7 +379,18 @@ authselect_profile_create_from_source(const char *filename,
         }
 
         if (strcmp(filename, symname) == 0) {
-            /* Create symlink instead of copying the file. */
+            /* Create symlink instead of copying the file - if it exists. */
+            ret = file_exists(symlinks[i]);
+            if (ret == ENOENT) {
+                INFO("Omitting [%s] since it does not exist in base profile",
+                     symname);
+                return EOK;
+            } else if (ret != EOK) {
+                ERROR("Unable to check presence of [%s] [%d]: %s",
+                      symlinks[i], ret, strerror(ret));
+                return ret;
+            }
+
             ret = symlink(symlinks[i], destination);
             if (ret != 0) {
                 ret = errno;
