@@ -10,10 +10,10 @@ Windows clients. As a means of systems integration, Samba allows a Linux
 client to join an Active Directory Kerberos realm and to use Active Directory
 as its identity store.
 
-Winbind is a component of the Samba suite to provide unified logon. It uses a 
+Winbind is a component of the Samba suite to provide unified logon. It uses a
 UNIX implementation of Microsoft RPC calls, Pluggable Authentication
 Modules (PAMs), and the Name Service Switch (NSS) to allow Windows domain
-users to appear and operate as UNIX users on a UNIX system. 
+users to appear and operate as UNIX users on a UNIX system.
 
 WINBIND CONFIGURATION
 ---------------------
@@ -28,7 +28,7 @@ AVAILABLE OPTIONAL FEATURES
 with-faillock::
     Enable account locking in case of too many consecutive
     authentication failures.
-    
+
 with-mkhomedir::
     Enable automatic creation of home directories for users on their
     first login.
@@ -44,6 +44,12 @@ with-pam-u2f::
 
 with-pam-u2f-2fa::
     Enable 2nd factor authentication via u2f dongle through *pam_u2f*.
+
+without-pam-u2f-nouserok::
+    Module argument nouserok is omitted if also with-pam-u2f-2fa is used.
+    *WARNING*: Omitting nouserok argument means that users without pam-u2f
+    authentication configured will not be able to log in *INCLUDING* root.
+    Make sure you are able to log in before losing root privileges.
 
 with-krb5::
     Enable Kerberos authentication with *pam_winbind*.

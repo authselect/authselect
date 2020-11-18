@@ -6,7 +6,7 @@ auth        [success=1 default=ignore]                   pam_succeed_if.so servi
 auth        [success=done ignore=ignore default=die]     pam_sss.so require_cert_auth ignore_authinfo_unavail   {include if "with-smartcard-required"}
 auth        sufficient                                   pam_fprintd.so                                         {include if "with-fingerprint"}
 auth        sufficient                                   pam_u2f.so cue                                         {include if "with-pam-u2f"}
-auth        required                                     pam_u2f.so cue nouserok                                {include if "with-pam-u2f-2fa"}
+auth        required                                     pam_u2f.so cue {if not "without-pam-u2f-nouserok":nouserok} {include if "with-pam-u2f-2fa"}
 auth        [default=1 ignore=ignore success=ok]         pam_usertype.so isregular
 auth        [default=1 ignore=ignore success=ok]         pam_localuser.so                                       {exclude if "with-smartcard"}
 auth        [default=2 ignore=ignore success=ok]         pam_localuser.so                                       {include if "with-smartcard"}

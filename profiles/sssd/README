@@ -35,7 +35,7 @@ AVAILABLE OPTIONAL FEATURES
 with-faillock::
     Enable account locking in case of too many consecutive
     authentication failures.
-    
+
 with-mkhomedir::
     Enable automatic creation of home directories for users on their
     first login.
@@ -63,6 +63,12 @@ with-pam-u2f::
 
 with-pam-u2f-2fa::
     Enable 2nd factor authentication via u2f dongle through *pam_u2f*.
+
+without-pam-u2f-nouserok::
+    Module argument nouserok is omitted if also with-pam-u2f-2fa is used.
+    *WARNING*: Omitting nouserok argument means that users without pam-u2f
+    authentication configured will not be able to log in *INCLUDING* root.
+    Make sure you are able to log in before losing root privileges.
 
 with-silent-lastlog::
     Do not produce pam_lastlog message during login.
@@ -116,7 +122,7 @@ EXAMPLES
 
   authselect select sssd with-sudo with-smartcard
 
-* Enable SSSD with sudo support and create home directories for users on their 
+* Enable SSSD with sudo support and create home directories for users on their
   first login
 
   authselect select sssd with-mkhomedir with-sudo
