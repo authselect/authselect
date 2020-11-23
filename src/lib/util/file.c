@@ -179,6 +179,7 @@ file_links_to(const char *linkpath,
 errno_t
 file_does_not_link_to(const char *linkpath,
                       const char *destpath,
+                      bool error_mode,
                       bool *_result)
 {
     char linkbuf[PATH_MAX + 1];
@@ -213,7 +214,11 @@ file_does_not_link_to(const char *linkpath,
     }
 
     if (strncmp(linkbuf, destpath, len) == 0) {
-        ERROR("Link [%s] points to [%s]", linkpath, destpath);
+        if (error_mode) {
+            ERROR("Link [%s] points to [%s]", linkpath, destpath);
+        } else {
+            INFO("Link [%s] points to [%s]", linkpath, destpath);
+        }
         *_result = false;
         return EOK;
     }

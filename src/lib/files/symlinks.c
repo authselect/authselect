@@ -115,7 +115,8 @@ authselect_symlinks_validate_missing()
             continue;
         }
 
-        ret = file_does_not_link_to(symlinks[i].name, symlinks[i].dest, &valid);
+        ret = file_does_not_link_to(symlinks[i].name, symlinks[i].dest, true,
+                                    &valid);
         if (ret != EOK) {
             ERROR("Unable to check file [%s] [%d]: %s",
                   symlinks[i].name, ret, strerror(ret));
@@ -156,4 +157,41 @@ authselect_symlinks_location_available()
     }
 
     return result;
+}
+
+errno_t
+authselect_symlinks_uninstall()
+{
+    struct selinux_safe_copy table[] = {
+        {PATH_SYSTEM,      PATH_SYMLINK_SYSTEM, false},
+        {PATH_PASSWORD,    PATH_SYMLINK_PASSWORD, false},
+        {PATH_FINGERPRINT, PATH_SYMLINK_FINGERPRINT, false},
+        {PATH_SMARTCARD,   PATH_SYMLINK_SMARTCARD, false},
+        {PATH_POSTLOGIN,   PATH_SYMLINK_POSTLOGIN, false},
+        {PATH_NSSWITCH,    PATH_SYMLINK_NSSWITCH, false},
+        {PATH_DCONF_DB,    PATH_SYMLINK_DCONF_DB, false},
+        {PATH_DCONF_LOCK,  PATH_SYMLINK_DCONF_LOCK, false},
+        {NULL, NULL, false}
+    };
+    errno_t ret;
+    bool result;
+    int i;
+
+    for (i = 0; table[i].source != NULL; i++) {
+        /* Check if the symlink is still valid. */
+        ret = file_does_not_link_to(table[i].destination, table[i].source,
+                                    false, &result);
+        if (ret != EOK) {
+            return ret;
+        }
+
+        if (result) {
+            /* This path is already not part of authselect. Let's skip it. */
+            INFO("Skipping [%s] because it is not an authselect file",
+                 table[i].destination);
+            table[i].destination = NULL;
+        }
+    }
+
+    return selinux_copy_files_safely(table, AUTHSELECT_DIR_MODE, false);
 }
