@@ -143,6 +143,24 @@ done:
 }
 
 _PUBLIC_ int
+authselect_uninstall(void)
+{
+    errno_t ret;
+
+    INFO("Trying to uninstall authselect configuration");
+
+    ret = authselect_symlinks_uninstall();
+    if (ret != EOK) {
+        ERROR("Unable to remove symlinks [%d]: %s", ret, strerror(ret));
+        return ret;
+    }
+
+    INFO("Symbolic links were successfully removed");
+
+    return EOK;
+}
+
+_PUBLIC_ int
 authselect_apply_changes(void)
 {
     struct authselect_profile *profile;

@@ -233,8 +233,10 @@ selinux_mkstemp_copy(const char *source,
                      const char *destdir,
                      const char *destname,
                      mode_t dir_mode,
+                     bool keep_secontext,
                      char **_tmpfile)
 {
+    const char *context_file = keep_secontext ? source : destname;
     char *original_context = NULL;
     char *default_context = NULL;
     errno_t ret;
@@ -250,7 +252,7 @@ selinux_mkstemp_copy(const char *source,
         return EIO;
     }
 
-    ret = selinux_get_context(source, &default_context);
+    ret = selinux_get_context(context_file, &default_context);
     if (ret != EOK) {
         ERROR("Unable to get default selinux context for [%s] [%d]: %s!",
               source, ret, strerror(ret));
@@ -328,7 +330,8 @@ parse_destination_path(const char *destination,
 
 errno_t
 selinux_copy_files_safely(struct selinux_safe_copy *table,
-                          mode_t dir_mode)
+                          mode_t dir_mode,
+                          bool keep_secontext)
 {
     char **tmpfiles = NULL;
     char **names = NULL;
@@ -360,6 +363,11 @@ selinux_copy_files_safely(struct selinux_safe_copy *table,
 
     /* Parse destination. */
     for (i = 0; table[i].source != NULL; i++) {
+        if (table[i].destination == NULL) {
+            /* Skip this entry. */
+            continue;
+        }
+
         ret = parse_destination_path(table[i].destination, &dirs[i], &names[i]);
         if (ret != EOK) {
             goto done;
@@ -369,6 +377,11 @@ selinux_copy_files_safely(struct selinux_safe_copy *table,
     /* First, write content into temporary files, so we can safely fail
      * on error without overwriting destination files. */
     for (i = 0; table[i].source != NULL; i++) {
+        if (table[i].destination == NULL) {
+            /* Skip this entry. */
+            continue;
+        }
+
         if (file_exists(table[i].source) == ENOENT) {
             if (!table[i].can_unlink) {
                 ERROR("File [%s] should exist but is missing. It is not safe to "
@@ -384,7 +397,7 @@ selinux_copy_files_safely(struct selinux_safe_copy *table,
 
         INFO("Writing temporary file for [%s]", table[i].destination);
         ret = selinux_mkstemp_copy(table[i].source, dirs[i], names[i],
-                                   dir_mode, &tmpfiles[i]);
+                                   dir_mode, keep_secontext, &tmpfiles[i]);
         if (ret != EOK) {
             goto done;
         }
@@ -398,6 +411,11 @@ selinux_copy_files_safely(struct selinux_safe_copy *table,
      * even recover from it.
      */
     for (i = 0; table[i].source != NULL; i++) {
+        if (table[i].destination == NULL) {
+            /* Skip this entry. */
+            continue;
+        }
+
         if (tmpfiles[i] == NULL) {
             INFO("Removing [%s]", table[i].destination);
             unlink(table[i].destination);

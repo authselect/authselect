@@ -261,7 +261,7 @@ authselect_restore_system_configuration(const char *path)
         }
     }
 
-    ret = selinux_copy_files_safely(table, AUTHSELECT_DIR_MODE);
+    ret = selinux_copy_files_safely(table, AUTHSELECT_DIR_MODE, true);
 
 done:
     /* In case of an error in formatting the source file, it will be NULL
@@ -299,7 +299,7 @@ authselect_restore_authselect_configuration(const char *path)
         }
     }
 
-    ret = selinux_copy_files_safely(table, AUTHSELECT_DIR_MODE);
+    ret = selinux_copy_files_safely(table, AUTHSELECT_DIR_MODE, true);
     if (ret != EOK) {
         ERROR("Unable to copy files [%d]: %s", ret, strerror(ret));
         goto done;

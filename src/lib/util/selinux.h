@@ -58,13 +58,13 @@ selinux_file_copy(const char *source,
 
 /**
  * Make copy of a file @source and store it in temporary file
- * @destdir/@destname.XXXXXX, keeping its selinux context, owner
- * and permissions.
+ * @destdir/@destname.XXXXXX, owner and permissions.
  *
  * @param source       Source file name.
  * @param destdir      Destination directory.
  * @param destname     Destination file name.
  * @param dir_mode     Access mode of destination directory if it is created.
+ * @param keep_secontext If true, selinux context of the source file is kept.
  * @param _tmpfile     Path to created temporary file.
  *
  * @return EOK on success, other errno code on error.
@@ -74,6 +74,7 @@ selinux_mkstemp_copy(const char *source,
                      const char *destdir,
                      const char *destname,
                      mode_t dir_mode,
+                     bool keep_secontext,
                      char **_tmpfile);
 
 struct selinux_safe_copy {
@@ -89,18 +90,20 @@ struct selinux_safe_copy {
 
 /**
  * Copy multiple files to their new destination, keeping their ownership,
- * permissions and selinux context. It will first copy the files into
- * temporary files in their new destination to ensure that the destination
- * is writable and there is enough space to hold the file. Then it will
- * rename it to their desired name, overwriting existing file.
+ * permissions. It will first copy the files into temporary files in their
+ * new destination to ensure that the destination is writable and there is
+ * enough space to hold the file. Then it will rename it to their desired name,
+ * overwriting existing file.
  *
  * @param table        File definitions.
  * @param dir_mode     Access mode of destination directory if it is created.
+ * @param keep_secontext If true, selinux context of the source file is kept.
  *
  * @return EOK on success, other errno code on error.
  */
 errno_t
 selinux_copy_files_safely(struct selinux_safe_copy *table,
-                          mode_t dir_mode);
+                          mode_t dir_mode,
+                          bool keep_secontext);
 
 #endif /* _UTIL_SELINUX_H_ */

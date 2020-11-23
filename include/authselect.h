@@ -79,6 +79,19 @@ authselect_activate(const char *profile_id,
                     bool force_overwrite);
 
 /**
+ * Uninstall authselect configuration.
+ *
+ * This will copy the files from /etc/authselect to their standard configuration
+ * and break the symlinks.
+ *
+ * @return
+ * - 0 if the operation was successful
+ * - Other errno code on generic error.
+ */
+int
+authselect_uninstall(void);
+
+/**
  * Apply any changes to currently selected profile.
  *
  * Read currently selected profile together with its enabled features

@@ -76,6 +76,7 @@ file_links_to(const char *linkpath,
  *
  * @param linkpath       Path to the file that should be checked.
  * @param destpath       Destination to which the link must not point.
+ * @param error_mode     If true, ERROR is yielded instead of INFO.
  *
  * @param _result        True if all conditions were met, false otherwise.
  *
@@ -85,6 +86,7 @@ file_links_to(const char *linkpath,
 errno_t
 file_does_not_link_to(const char *linkpath,
                       const char *destpath,
+                      bool error_mode,
                       bool *_result);
 
 /**
