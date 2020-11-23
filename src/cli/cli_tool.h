@@ -31,6 +31,7 @@ typedef errno_t
 
 #define CLI_CMD_NONE         0x0000
 #define CLI_CMD_REQUIRE_ROOT 0x0001
+#define CLI_CMD_HIDDEN       0x0002
 
 #define CLI_TOOL_COMMAND(cmd, msg, flags, fn)     {cmd, _(msg), (flags), fn}
 #define CLI_TOOL_COMMAND_NOMSG(cmd, flags, fn)    {cmd, NULL, (flags), fn}

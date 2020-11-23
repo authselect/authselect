@@ -172,6 +172,10 @@ void cli_tool_usage(const char *tool_name, struct cli_route_cmd *commands)
     min_len = cli_tool_max_length(commands);
 
     for (i = 0; commands[i].command != NULL; i++) {
+        if (commands[i].flags & CLI_CMD_HIDDEN) {
+            continue;
+        }
+
         if (cli_tool_is_delimiter(&commands[i])) {
             fprintf(stderr, "\n%s\n", commands[i].description);
             continue;
