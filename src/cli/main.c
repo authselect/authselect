@@ -893,6 +893,20 @@ static errno_t backup_restore(struct cli_cmdline *cmdline)
     return EOK;
 }
 
+static errno_t uninstall(struct cli_cmdline *cmdline)
+{
+    errno_t ret;
+
+    ret = authselect_uninstall();
+    if (ret != EOK) {
+        CLI_ERROR("Unable to uninstall authselect configuration [%d]: %s\n",
+                  ret, strerror(ret));
+        return ret;
+    }
+
+    return EOK;
+}
+
 static errno_t
 setup_gettext()
 {
@@ -944,6 +958,7 @@ int main(int argc, const char **argv)
         CLI_TOOL_COMMAND("backup-list", "List available backups", CLI_CMD_NONE, backup_list),
         CLI_TOOL_COMMAND("backup-remove", "Remove backup", CLI_CMD_REQUIRE_ROOT, backup_remove),
         CLI_TOOL_COMMAND("backup-restore", "Restore from backup", CLI_CMD_REQUIRE_ROOT, backup_restore),
+        CLI_TOOL_COMMAND("uninstall", "Uninstall authselect configuration", CLI_CMD_REQUIRE_ROOT | CLI_CMD_HIDDEN, uninstall),
         CLI_TOOL_LAST
     };
 
