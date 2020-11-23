@@ -130,6 +130,16 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %files libs -f %{name}.lang -f %{name}-profiles.5.lang
 %dir %{_sysconfdir}/authselect
 %dir %{_sysconfdir}/authselect/custom
+%ghost %attr(0644,root,root) %{_sysconfdir}/authselect/authselect.conf
+%ghost %attr(0644,root,root) %{_sysconfdir}/authselect/dconf-db
+%ghost %attr(0644,root,root) %{_sysconfdir}/authselect/dconf-locks
+%ghost %attr(0644,root,root) %{_sysconfdir}/authselect/fingerprint-auth
+%ghost %attr(0644,root,root) %{_sysconfdir}/authselect/nsswitch.conf
+%ghost %attr(0644,root,root) %{_sysconfdir}/authselect/password-auth
+%ghost %attr(0644,root,root) %{_sysconfdir}/authselect/postlogin
+%ghost %attr(0644,root,root) %{_sysconfdir}/authselect/smartcard-auth
+%ghost %attr(0644,root,root) %{_sysconfdir}/authselect/system-auth
+%ghost %attr(0644,root,root) %{_sysconfdir}/authselect/user-nsswitch.conf
 %dir %{_localstatedir}/lib/authselect
 %ghost %attr(0755,root,root) %{_localstatedir}/lib/authselect/backups/
 %ghost %attr(0644,root,root) %{_localstatedir}/lib/authselect/dconf-db
@@ -205,6 +215,15 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %{_sysconfdir}/bash_completion.d/authselect-completion.sh
 
 %global validfile %{_localstatedir}/lib/rpm-state/%{name}.config-valid
+
+%preun
+if [ $1 == 0 ] ; then
+    # Remove authselect symbolic links so all authselect files can be
+    # deleted safely. If this fail, the uninstallation must fail to avoid
+    # breaking the system by removing PAM files. However, the command can
+    # only fail if it can not write to the file system.
+    %{_bindir}/authselect uninstall
+fi
 
 %pre libs
 %__rm -f %{validfile}
