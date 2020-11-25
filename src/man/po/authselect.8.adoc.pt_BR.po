@@ -3,11 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Weblate <noreply@weblate.org>, 2020.
 # Fábio Rodrigues Ribeiro <farribeiro@gmail.com>, 2020.
+# Flávio Moisés Dalla Porta Schefer <flavio.schefer@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-05-11 12:25+0200\n"
-"PO-Revision-Date: 2020-06-17 18:40+0000\n"
+"POT-Creation-Date: 2020-11-25 10:47+0100\n"
+"PO-Revision-Date: 2020-08-05 21:29+0000\n"
 "Last-Translator: Fábio Rodrigues Ribeiro <farribeiro@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.fedoraproject.org/"
 "projects/authselect/master-authselect8adoc/pt_BR/>\n"
@@ -16,13 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.0.4\n"
+"X-Generator: Weblate 4.1.1\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "authselect(8)"
-msgstr ""
+msgstr "authselect(8)"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:6
@@ -34,12 +35,13 @@ msgstr "NOME"
 #: src/man/authselect.8.adoc:9
 msgid "authselect - select system identity and authentication sources."
 msgstr ""
+"authselect - selecionar identidade do sistema e fontes de autenticação."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:11
 #, no-wrap
 msgid "SYNOPSIS"
-msgstr ""
+msgstr "SINOPSE"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:13
@@ -63,6 +65,11 @@ msgid ""
 "is selected, *authselect* will create nsswitch.conf(5) and PAM(8) stack to use\n"
 "identity and authentication sources defined by the profile.\n"
 msgstr ""
+"*Authselect* é uma ferramenta para configurar a identidade do sistema e fontes de autenticação \n"
+"e provedores selecionando um perfil específico. Perfil é um conjunto de arquivos que \n"
+"descreve como a configuração resultante do sistema será.\n"
+"Quando um perfil é selecionado, *authselect* irá criar nsswitch.conf (5) e pilhas PAM (8) para usar \n"
+"a identidade e as fontes de autenticação definidas pelo perfil.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:27
@@ -73,12 +80,17 @@ msgid ""
 "*authselect*. See _authselect-profiles(5)_ for more information on extending "
 "existing profiles."
 msgstr ""
+"Se o conjunto de perfis disponível não é suficiente, o administrador pode "
+"criar um perfil customizado colocando-o em diretório especial "
+"({AUTHSELECT_CUSTOM_DIR}). Ao fazê-lo, o perfil torna-se imediatamente "
+"usável pelo *authselect* Veja _authselect-profiles(5)_ para mais informações "
+"sobre a extensão de perfis existentes."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:29
 #, no-wrap
 msgid "OPT-IN TO AUTHSELECT"
-msgstr ""
+msgstr "ATIVAR O AUTHSELECT"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:39
@@ -93,19 +105,32 @@ msgid ""
 "so if you wish to go back you can restore it with *authselect backup-"
 "restore* command (see description below)."
 msgstr ""
+"Authselect não mudará sua configuração atual exceto se for criada por ele. "
+"Se você quiser começar a usar o authselect para configurar a autenticação do "
+"seu sistema, chame *authselect select* com o parâmetro *--force* antes (i.e. "
+"*authselect select sssd --force*) O parâmetro *--force* diz ao authselect "
+"que é autorizado sobrescrever configurações existentes e não criadas por ele "
+"(veja a descrição abaixo). Usar o parâmetro *--force* vai automaticamente "
+"gerar uma cópia da sua configuração corrente para caso você queira retornar "
+"a ela, podes restaurá-la com o comando * authselect backup-restore* (veja a "
+"descrição abaixo)."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:41
 #, no-wrap
 msgid "AVAILABLE COMMANDS"
-msgstr ""
+msgstr "COMANDOS DISPONÍVEIS"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:44
+#, fuzzy
 msgid ""
 "To list all available commands run *authselect* without any parameters.  To "
 "print help for the selected command run *authselect COMMAND --help*."
 msgstr ""
+"Pata listar todos os comandos disponíveis rode *authselect* sem parâmetros. "
+"Para mostrar ajuda para o comando selecionado rode *authselect COMMAND --"
+"help*."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:45
@@ -119,6 +144,8 @@ msgid ""
 "Activate desired profile. See profile description with *show* command, to "
 "list profile specific optional features."
 msgstr ""
+"Ativa o perfil desejado. Veja sua descrição com o comando *show* para listar "
+"recursos opcionais específicos do perfil."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:49
@@ -128,13 +155,17 @@ msgstr ""
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:54
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "Write changes even if the previous configuration was not created by\n"
 "authselect but by other tool or by manual changes. This option will\n"
 "automatically backup system files before writing any change unless\n"
 "*--nobackup* option is set.\n"
 msgstr ""
+"Escreve as mudanças mesmo se a configuração prévia não foi criada pelo\n"
+"authselect, mas por outra ferramenta ou mudanças manuais. Essa opção vai\n"
+"automaticamente fazer backup dos arquivos do sistemas antes de fazer quaisquer mudanças exceto se a opção\n"
+"*--nobackup* for colocada.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:55 src/man/authselect.8.adoc:80
@@ -145,13 +176,17 @@ msgstr ""
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:60
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "Backup system files before activating the selected profile. The backup\n"
 "will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
+"Faz backup dos arquivos do sistema antes de ativar o perfil selecionado. O backup\n"
+"será guardado em {AUTHSELECT_BACKUP_DIR}/NAME. Hora atual com\n"
+"linha única é usada como nome do backup. Esse é um atalho\n"
+"para *--backup=*.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:61 src/man/authselect.8.adoc:86
@@ -162,12 +197,15 @@ msgstr ""
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:65
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "Backup system files before activating the selected profile. The backup\n"
 "will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
 "unique string is used as a name if no value is provided.\n"
 msgstr ""
+"Faz backup dos arquivos do sistema antes de ativar o perfil selecionado. O backup\n"
+"será guardado em {AUTHSELECT_BACKUP_DIR}/NAME. Hora atual com linha\n"
+"única é usada como nome se nenhum valor for dado.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:66
@@ -179,7 +217,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:68
 #, no-wrap
 msgid "Do not backup system configuration even if *--force* is set.\n"
-msgstr ""
+msgstr "Não faz backup dos arquivos do sistema mesmo se *--forcce* estiver ativa.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:69 src/man/authselect.8.adoc:160
@@ -189,11 +227,13 @@ msgstr ""
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:72 src/man/authselect.8.adoc:163
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "The command will not print any informational message such as additional\n"
 "profile requirements or backup location. Errors are still being print.\n"
 msgstr ""
+"O comando não mostrará nenhuma mensagem adicional,\n"
+"como requerimentos de perfil extras ou localização do backup. Erros ainda estão sendo mostrados.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:73
@@ -210,16 +250,25 @@ msgid ""
 "changes if the existing configuration is a valid authselect configuration, "
 "otherwise an error is returned."
 msgstr ""
+"Reaplica o perfil atualmente selecionado. Se os leiautes do perfil foram "
+"atualizados esse comando pode ser usado para regenerar a configuração do "
+"sistema para permitir a aplicação dessas mudanças no sistemas. Esse comando "
+"só reaplicará as modificações se a configuração existente for uma "
+"configuração authselect válida. Caso não, um erro é mostrado."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:85
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "Backup system files before applying changes. The backup\n"
 "will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
+"Fazendo backup dos arquivos do sistema antes de aplicar as mudanças. O backup\n"
+"será guardado em {AUTHSELECT_BACKUP_DIR}/NAME. Hora atual com\n"
+"linha única é usada como nome do backup. Isso é um atalho\n"
+"para *--backup=*\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:90

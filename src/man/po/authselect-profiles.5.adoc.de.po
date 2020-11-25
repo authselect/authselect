@@ -1,11 +1,12 @@
 # Ludek Janda <ljanda@redhat.com>, 2018. #zanata
 # Fabian Affolter <mail@fabian-affolter.ch>, 2020.
+# Vitaliy Bukatkin <vitaliy.bukatkin@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-05-11 12:25+0200\n"
-"PO-Revision-Date: 2020-06-17 18:40+0000\n"
-"Last-Translator: Fabian Affolter <mail@fabian-affolter.ch>\n"
+"POT-Creation-Date: 2020-11-25 10:47+0100\n"
+"PO-Revision-Date: 2020-10-18 09:15+0000\n"
+"Last-Translator: Vitaliy Bukatkin <vitaliy.bukatkin@gmail.com>\n"
 "Language-Team: German <https://translate.fedoraproject.org/projects/"
 "authselect/master-authselect-profiles5adoc/de/>\n"
 "Language: de\n"
@@ -13,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.0.4\n"
+"X-Generator: Weblate 4.3.1-dev\n"
 
 #. type: Title =
 #: src/man/authselect-profiles.5.adoc:2
@@ -130,6 +131,8 @@ msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
 msgstr ""
+"PAM-Stack, der aus fast allen einzelnen Dienstkonfigurationsdateien "
+"enthalten ist."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:41
@@ -144,6 +147,9 @@ msgid ""
 "different types of devices via simultaneously running individual "
 "conversations instead of one aggregate conversation."
 msgstr ""
+"Diese PAM-Stapel sind für Anwendungen vorgesehen, die die Authentifizierung "
+"von verschiedenen Gerätetypen über die gleichzeitige Ausführung einzelner "
+"Konversationen anstelle einer aggregierten Konversation verarbeiten."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:46
@@ -162,6 +168,14 @@ msgid ""
 "regardless of the success or failure of the modules in the system-auth "
 "configuration file._"
 msgstr ""
+"Der Zweck dieses PAM-Stapels besteht darin, einen gemeinsamen Platz für alle "
+"PAM-Module bereitzustellen, der nach dem in Systemauthentifizierung oder den "
+"anderen allgemeinen PAM-Konfigurationsdateien konfigurierten Stapel "
+"aufgerufen werden soll. Es ist in allen einzelnen "
+"Dienstkonfigurationsdateien enthalten, die dem Anmeldedienst Shell- oder "
+"Dateizugriff bieten. _HINWEIS: Die Module in der Postlogin-"
+"Konfigurationsdatei werden unabhängig vom Erfolg oder Misserfolg der Module "
+"in der Systemauthentifizierungskonfigurationsdatei ausgeführt ._"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:55
@@ -190,6 +204,10 @@ msgid ""
 "for gnome login screen in order to enable or disable smartcard and "
 "fingerprint authentication."
 msgstr ""
+"Änderungen an der dconf-Datenbank. Der Hauptanwendungsfall dieser Datei "
+"besteht darin, Änderungen für den Gnome-Anmeldebildschirm festzulegen, um "
+"die Smartcard- und Fingerabdruckauthentifizierung zu aktivieren oder zu "
+"deaktivieren."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:65
@@ -201,6 +219,8 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:67
 msgid "This file define locks on values set in dconf database."
 msgstr ""
+"Diese Datei definiert Sperren für Werte, die in der dconf-Datenbank "
+"festgelegt sind."
 
 #. type: Title ~
 #: src/man/authselect-profiles.5.adoc:69
@@ -332,7 +352,7 @@ msgstr ""
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:117
 msgid "For example:"
-msgstr ""
+msgstr "Beispielsweise:"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:118
