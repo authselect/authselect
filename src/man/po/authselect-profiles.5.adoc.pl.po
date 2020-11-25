@@ -3,12 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Weblate <noreply@weblate.org>, 2020.
 # Michal Biesiada <biesiadmichal@gmail.com>, 2020.
+# Michał Smyk <fedora@smyk.it>, 2020.
+# Piotr Drąg <piotrdrag@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-05-11 12:25+0200\n"
-"PO-Revision-Date: 2020-03-02 02:38+0000\n"
-"Last-Translator: Michal Biesiada <biesiadmichal@gmail.com>\n"
+"POT-Creation-Date: 2020-11-25 10:47+0100\n"
+"PO-Revision-Date: 2020-10-03 08:52+0000\n"
+"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <https://translate.fedoraproject.org/projects/"
 "authselect/master-authselect-profiles5adoc/pl/>\n"
 "Language: pl\n"
@@ -17,13 +19,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.11.2\n"
+"X-Generator: Weblate 4.2.2\n"
 
 #. type: Title =
 #: src/man/authselect-profiles.5.adoc:2
 #, no-wrap
 msgid "authselect-profiles(5)"
-msgstr ""
+msgstr "authselect-profiles(5)"
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:6
@@ -34,7 +36,7 @@ msgstr "NAZWA"
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:8
 msgid "authselect-profiles - how to extend authselect profiles."
-msgstr ""
+msgstr "authselect-profiles — jak rozszerzać profile authselect."
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:10
@@ -48,35 +50,39 @@ msgid ""
 "This manual page explains how are authselect profiles organized and how to "
 "create new profiles."
 msgstr ""
+"Ta strona podręcznika zawiera informacje, gdzie znajdują się profile "
+"authselect oraz jak tworzyć nowe profile."
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:15
 #, no-wrap
 msgid "PROFILE DIRECTORIES"
-msgstr ""
+msgstr "KATALOGI Z PROFILAMI"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:17
 msgid "Profiles can be found in one of three directories."
-msgstr ""
+msgstr "Profile mogą znajdować się w jednym z trzech katalogów."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:18
 #, no-wrap
 msgid "*{AUTHSELECT_PROFILE_DIR}*"
-msgstr ""
+msgstr "*{AUTHSELECT_PROFILE_DIR}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:20
 msgid ""
 "Read-only directory containing profiles shipped together with authselect."
 msgstr ""
+"Katalog tylko do odczytu, zawierający profile domyślnie dostarczone w ramach "
+"authselect."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:21
 #, no-wrap
 msgid "*{AUTHSELECT_VENDOR_DIR}*"
-msgstr ""
+msgstr "*{AUTHSELECT_VENDOR_DIR}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:24
@@ -84,23 +90,25 @@ msgid ""
 "Read-only directory for vendor-specific profiles that can override the ones "
 "in _default_ directory."
 msgstr ""
+"Katalog tylko do odczytu, zawierający profile dla konkretnego dostawcy, "
+"które mogą zastąpić te z _domyślnego_ katalogu."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:25
 #, no-wrap
 msgid "*{AUTHSELECT_CUSTOM_DIR}*"
-msgstr ""
+msgstr "*{AUTHSELECT_CUSTOM_DIR}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:27
 msgid "Place for administrator-defined profiles."
-msgstr ""
+msgstr "Miejsce na profile określone przez administratora."
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:29
 #, no-wrap
 msgid "PROFILE FILES"
-msgstr ""
+msgstr "PLIKI PROFILI"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:33
@@ -109,12 +117,14 @@ msgid ""
 "mandatory profile description and describe the changes that are done to the "
 "system."
 msgstr ""
+"Każdy profil zawiera jeden lub więcej plików, które zawierają obowiązkowo "
+"opis profilu oraz opisują, jak ten profil wpływa na system."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:34
 #, no-wrap
 msgid "*README*"
-msgstr ""
+msgstr "*CZYTAJ*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:36
@@ -126,7 +136,7 @@ msgstr "Opis profilu. Pierwszy wiersz musi być nazwą profilu."
 #: src/man/authselect-profiles.5.adoc:37
 #, no-wrap
 msgid "*system-auth*"
-msgstr ""
+msgstr "*system-auth*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:40
@@ -139,7 +149,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:41
 #, no-wrap
 msgid "*password-auth*, *smartcard-auth*, *fingerprint-auth*"
-msgstr ""
+msgstr "*password-auth*, *smartcard-auth*, *fingerprint-auth*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:45
@@ -153,7 +163,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:46
 #, no-wrap
 msgid "*postlogin*"
-msgstr ""
+msgstr "*postlogin*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:54
@@ -171,7 +181,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:55
 #, no-wrap
 msgid "*nsswitch.conf*"
-msgstr ""
+msgstr "*nsswitch.conf*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:59
@@ -185,7 +195,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:60
 #, no-wrap
 msgid "*dconf-db*"
-msgstr ""
+msgstr "*dconf-db*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:64
@@ -199,7 +209,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:65
 #, no-wrap
 msgid "*dconf-locks*"
-msgstr ""
+msgstr "*dconf-locks*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:67
@@ -210,7 +220,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:69
 #, no-wrap
 msgid "CONDITIONAL LINES"
-msgstr ""
+msgstr "WIERSZE WARUNKOWE"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:73
@@ -224,7 +234,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:74
 #, no-wrap
 msgid "*{continue if \"feature\"}*"
-msgstr ""
+msgstr "*{continue if \"nazwa-funkcji\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:79
@@ -239,7 +249,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:80
 #, no-wrap
 msgid "*{stop if \"feature\"}*"
-msgstr ""
+msgstr "*{stop if \"nazwa-funkcji\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:85
@@ -254,7 +264,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:86
 #, no-wrap
 msgid "*{include if \"feature\"}*"
-msgstr ""
+msgstr "*{include if \"nazwa-funkcji\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:89
@@ -267,7 +277,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:90
 #, no-wrap
 msgid "*{exclude if \"feature\"}*"
-msgstr ""
+msgstr "*{exclude if \"nazwa-funkcji\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:93
@@ -280,7 +290,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:94
 #, no-wrap
 msgid "*{imply \"implied-feature\" if \"feature\"}*"
-msgstr ""
+msgstr "*{imply \"nazwa-funkcji-warunkowej\" if \"nazwa-funkcji\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:98
@@ -294,7 +304,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:99
 #, no-wrap
 msgid "*{if \"feature\":true|false}*"
-msgstr ""
+msgstr "*{if \"nazwa-funkcji\":true|false}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:102
@@ -342,7 +352,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:118
 #, no-wrap
 msgid "*{if \"feature1\" or \"feature2\":true}*"
-msgstr ""
+msgstr "*{if \"funkcja1\" or \"funkcja2\":true}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:121
@@ -355,7 +365,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:122
 #, no-wrap
 msgid "*{if not \"feature\":true|false}*"
-msgstr ""
+msgstr "*{if not \"nazwa-funkcji\":true|false}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:125
@@ -368,7 +378,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:126
 #, no-wrap
 msgid "*{if not \"feature\":true}*"
-msgstr ""
+msgstr "*{if not \"nazwa-funkcji\":true}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:129
@@ -381,7 +391,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:130
 #, no-wrap
 msgid "*{if \"feature1\" and (\"feature2\" or \"feature3\"):true}*"
-msgstr ""
+msgstr "*{if \"funkcja1\" and (\"funkcja2\" or \"funkcja3\"):true}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:133
@@ -442,6 +452,18 @@ msgid ""
 "  auth        required                                     pam_deny.so\n"
 "  ...\n"
 msgstr ""
+"  {continue if \"with-smartcard\"}\n"
+"  auth        required                                     pam_env.so\n"
+"  auth        required                                     pam_faildelay.so delay=2000000\n"
+"  auth        required                                     pam_faillock.so preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so uid >= 1000 quiet\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
+"  auth        sufficient                                   pam_unix.so nullok try_first_pass\n"
+"  auth        requisite                                    pam_succeed_if.so uid >= 1000 quiet_success\n"
+"  auth        sufficient                                   pam_sss.so forward_pass\n"
+"  auth        required                                     pam_faillock.so authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
+"  auth        required                                     pam_deny.so\n"
+"  …\n"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:168
@@ -527,9 +549,9 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:214
 #, no-wrap
 msgid "SEE ALSO"
-msgstr ""
+msgstr "ZOBACZ TEŻ"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:215
 msgid "authselect(8), nsswitch.conf(5), PAM(8)"
-msgstr ""
+msgstr "authselect(8), nsswitch.conf(5), PAM(8)"

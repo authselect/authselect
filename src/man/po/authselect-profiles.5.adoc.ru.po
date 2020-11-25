@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Weblate <noreply@weblate.org>, 2020.
 # Igor Gorbounov <igor.gorbounov@gmail.com>, 2020.
+# Vitaliy Bukatkin <vitaliy.bukatkin@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-05-11 12:25+0200\n"
-"PO-Revision-Date: 2020-02-07 20:16+0000\n"
-"Last-Translator: Igor Gorbounov <igor.gorbounov@gmail.com>\n"
+"POT-Creation-Date: 2020-11-25 10:47+0100\n"
+"PO-Revision-Date: 2020-10-18 09:15+0000\n"
+"Last-Translator: Vitaliy Bukatkin <vitaliy.bukatkin@gmail.com>\n"
 "Language-Team: Russian <https://translate.fedoraproject.org/projects/"
 "authselect/master-authselect-profiles5adoc/ru/>\n"
 "Language: ru\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.10.3\n"
+"X-Generator: Weblate 4.3.1-dev\n"
 
 #. type: Title =
 #: src/man/authselect-profiles.5.adoc:2
@@ -134,6 +135,7 @@ msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
 msgstr ""
+"Стек PAM, который включен почти во все файлы конфигурации отдельных сервисов."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:41
@@ -148,6 +150,9 @@ msgid ""
 "different types of devices via simultaneously running individual "
 "conversations instead of one aggregate conversation."
 msgstr ""
+"Эти стеки PAM предназначены для приложений, которые обрабатывают "
+"аутентификацию с разных типов устройств путем одновременного выполнения "
+"отдельных диалогов вместо одного совокупного разговора."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:46
@@ -166,6 +171,13 @@ msgid ""
 "regardless of the success or failure of the modules in the system-auth "
 "configuration file._"
 msgstr ""
+"Цель этого стека PAM - предоставить общее место для всех модулей PAM, "
+"которые должны вызываться после стека, настроенного в system-auth или других "
+"общих файлах конфигурации PAM. Он включается во все файлы конфигурации "
+"отдельных служб, которые предоставляют службу входа в систему с помощью "
+"оболочки или доступа к файлам. _ПРИМЕЧАНИЕ: модули в файле конфигурации "
+"postlogin выполняются независимо от успеха или сбоя модулей в файле "
+"конфигурации system-auth. _"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:55
@@ -194,6 +206,9 @@ msgid ""
 "for gnome login screen in order to enable or disable smartcard and "
 "fingerprint authentication."
 msgstr ""
+"Изменения в базе данных dconf. Основной вариант использования этого файла - "
+"установить изменения для экрана входа в gnome, чтобы включить или отключить "
+"аутентификацию смарт-карты и отпечатка пальца."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:65
@@ -205,6 +220,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:67
 msgid "This file define locks on values set in dconf database."
 msgstr ""
+"Этот файл определяет блокировки значений, установленных в базе данных dconf."
 
 #. type: Title ~
 #: src/man/authselect-profiles.5.adoc:69
@@ -336,7 +352,7 @@ msgstr ""
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:117
 msgid "For example:"
-msgstr ""
+msgstr "Например:"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:118
@@ -527,7 +543,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:214
 #, no-wrap
 msgid "SEE ALSO"
-msgstr ""
+msgstr "СМОТРИТЕ ТАКЖЕ"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:215

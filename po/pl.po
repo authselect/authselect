@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2020-05-11 12:25+0200\n"
+"POT-Creation-Date: 2020-11-25 10:47+0100\n"
 "PO-Revision-Date: 2020-02-19 17:06+0000\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <https://translate.fedoraproject.org/projects/"
@@ -29,7 +29,7 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.10.3\n"
 
-#: src/lib/authselect.c:47 src/lib/authselect.c:169
+#: src/lib/authselect.c:47 src/lib/authselect.c:187
 msgid "Unable to obtain supported features"
 msgstr "Nie można uzyskać obsługiwanych funkcji"
 
@@ -48,7 +48,7 @@ msgstr "Nieznana funkcja profilu [%s]"
 msgid "Trying to activate profile [%s]"
 msgstr "Próbowanie aktywacji profilu [%s]"
 
-#: src/lib/authselect.c:90 src/lib/authselect.c:162 src/lib/profiles/read.c:316
+#: src/lib/authselect.c:90 src/lib/authselect.c:180 src/lib/profiles/read.c:316
 #, c-format
 msgid "Unable to find profile [%s] [%d]: %s"
 msgstr "Nie można odnaleźć profilu [%s] [%d]: %s"
@@ -91,7 +91,25 @@ msgstr ""
 msgid "Unable to activate profile [%s] [%d]: %s"
 msgstr "Nie można aktywować profilu [%s] [%d]: %s"
 
-#: src/lib/authselect.c:179
+#: src/lib/authselect.c:150
+#, fuzzy
+#| msgid "Trying to backup authselect configuration to [%s]"
+msgid "Trying to uninstall authselect configuration"
+msgstr "Próba utworzenia kopii zapasowej konfiguracji authselect w [%s]"
+
+#: src/lib/authselect.c:154
+#, fuzzy, c-format
+#| msgid "Unable to create symbolic links [%d]: %s"
+msgid "Unable to remove symlinks [%d]: %s"
+msgstr "Nie można utworzyć dowiązań symbolicznych [%d]: %s"
+
+#: src/lib/authselect.c:158
+#, fuzzy
+#| msgid "Changes were successfully applied.\n"
+msgid "Symbolic links were successfully removed"
+msgstr "Pomyślnie zastosowano zmiany.\n"
+
+#: src/lib/authselect.c:197
 #, c-format
 msgid "Profile feature [%s] is no longer supported, removing it..."
 msgstr "Funkcja profilu [%s] nie jest już obsługiwana, usuwanie jej…"
@@ -112,7 +130,7 @@ msgid "Creating temporary directory at [%s]"
 msgstr "Tworzenie katalogu tymczasowego w [%s]"
 
 #: src/lib/authselect_backup.c:124 src/lib/authselect_profile.c:377
-#: src/lib/authselect_profile.c:446
+#: src/lib/authselect_profile.c:457
 #, c-format
 msgid "There is no filename in [%s]"
 msgstr "Nie ma nazwy pliku w [%s]"
@@ -122,7 +140,7 @@ msgstr "Nie ma nazwy pliku w [%s]"
 msgid "Copying [%s] to [%s/%s]"
 msgstr "Kopiowanie [%s] do [%s/%s]"
 
-#: src/lib/authselect_backup.c:132 src/lib/util/selinux.c:380
+#: src/lib/authselect_backup.c:132 src/lib/util/selinux.c:393
 #, c-format
 msgid "File [%s] does not exist"
 msgstr "Plik [%s] nie istnieje"
@@ -232,82 +250,93 @@ msgstr "Nie można uzyskać listy funkcji (brak pamięci)"
 msgid "Creating empty profile at [%s]"
 msgstr "Tworzenie pustego profilu w [%s]"
 
-#: src/lib/authselect_profile.c:348 src/lib/authselect_profile.c:438
+#: src/lib/authselect_profile.c:348 src/lib/authselect_profile.c:449
 #, c-format
 msgid "Unable to make path [%s] [%d]: %s"
 msgstr "Nie można utworzyć ścieżki [%s] [%d]: %s"
 
-#: src/lib/authselect_profile.c:355 src/lib/authselect_profile.c:397
+#: src/lib/authselect_profile.c:355 src/lib/authselect_profile.c:408
 #, c-format
 msgid "Unable to write to [%s] [%d]: %s"
 msgstr "Nie można zapisać do [%s] [%d]: %s"
 
-#: src/lib/authselect_profile.c:386
+#: src/lib/authselect_profile.c:385
+#, c-format
+msgid "Omitting [%s] since it does not exist in base profile"
+msgstr ""
+
+#: src/lib/authselect_profile.c:389
+#, fuzzy, c-format
+#| msgid "Unable to check file mode of [%s] [%d]: %s"
+msgid "Unable to check presence of [%s] [%d]: %s"
+msgstr "Nie można sprawdzić trybu pliku [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:397
 #, c-format
 msgid "Unable to create symbolic link [%s] to [%s] [%d]: %s"
 msgstr "Nie można utworzyć dowiązania symbolicznego [%s] do [%s] [%d]: %s"
 
-#: src/lib/authselect_profile.c:419
+#: src/lib/authselect_profile.c:430
 #, c-format
 msgid "Creating new profile from \"%s\" at [%s]"
 msgstr "Tworzenie nowego profilu z „%s” w [%s]"
 
-#: src/lib/authselect_profile.c:423
+#: src/lib/authselect_profile.c:434
 #, c-format
 msgid "Unable to read base profile [%s] [%d]: %s"
 msgstr "Nie można odczytać podstawowego profilu [%s] [%d]: %s"
 
-#: src/lib/authselect_profile.c:431
+#: src/lib/authselect_profile.c:442
 msgid "Unable to resolve symbolic links names"
 msgstr "Nie można rozwiązać nazw dowiązań symbolicznych"
 
-#: src/lib/authselect_profile.c:456 src/lib/authselect_profile.c:469
-#: src/lib/authselect_profile.c:483
+#: src/lib/authselect_profile.c:467 src/lib/authselect_profile.c:480
+#: src/lib/authselect_profile.c:494
 #, c-format
 msgid "Unable to create [%s] [%d]: %s"
 msgstr "Nie można utworzyć [%s] [%d]: %s"
 
-#: src/lib/authselect_profile.c:491
+#: src/lib/authselect_profile.c:502
 #, c-format
 msgid "Unknown file name [%s]"
 msgstr "Nieznana nazwa pliku [%s]"
 
-#: src/lib/authselect_profile.c:518
+#: src/lib/authselect_profile.c:529
 msgid "Name can not be empty"
 msgstr "Nazwa nie może być pusta"
 
-#: src/lib/authselect_profile.c:530
+#: src/lib/authselect_profile.c:541
 msgid "Default profile can not be created"
 msgstr "Nie można utworzyć domyślnego profilu"
 
-#: src/lib/authselect_profile.c:533
+#: src/lib/authselect_profile.c:544
 msgid "Value AUTHSELECT_PROFILE_ANY is invalid in this context"
 msgstr "Wartość AUTHSELECT_PROFILE_ANY jest nieprawidłowa w tym kontekście"
 
-#: src/lib/authselect_profile.c:538
+#: src/lib/authselect_profile.c:549
 msgid "Unable to create profile path: out of memory"
 msgstr "Nie można utworzyć ścieżki do profilu: brak pamięci"
 
-#: src/lib/authselect_profile.c:544
+#: src/lib/authselect_profile.c:555
 #, c-format
 msgid "Profile \"%s\" already exist at [%s]"
 msgstr "Profil „%s” już istnieje w [%s]"
 
-#: src/lib/authselect_profile.c:548
+#: src/lib/authselect_profile.c:559
 #, c-format
 msgid "Unable to access [%s] [%d]: %s"
 msgstr "Nie można uzyskać dostępu do [%s] [%d]: %s"
 
-#: src/lib/authselect_profile.c:554
+#: src/lib/authselect_profile.c:565
 msgid "Unable to create file name: out of memory"
 msgstr "Nie można utworzyć nazwy pliku: brak pamięci"
 
-#: src/lib/authselect_profile.c:562
+#: src/lib/authselect_profile.c:573
 #, c-format
 msgid "Unable to create empty profile [%d]: %s"
 msgstr "Nie można utworzyć pustego profilu [%d]: %s"
 
-#: src/lib/authselect_profile.c:571
+#: src/lib/authselect_profile.c:582
 #, c-format
 msgid "Unable to create profile [%d]: %s"
 msgstr "Nie można utworzyć profilu [%d]: %s"
@@ -376,26 +405,31 @@ msgstr "Nie można sprawdzić poprawności dowiązania [%s] [%d]: %s"
 msgid "[%s] was not created by authselect!"
 msgstr "[%s] nie zostało utworzone przez program authselect."
 
-#: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:152
+#: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
 #: src/lib/files/system.c:576
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
 msgstr "Błąd podczas uzyskiwania dostępu do pliku [%s] [%d]: %s"
 
-#: src/lib/files/symlinks.c:120
+#: src/lib/files/symlinks.c:121
 #, c-format
 msgid "Unable to check file [%s] [%d]: %s"
 msgstr "Nie można sprawdzić pliku [%s] [%d]: %s"
 
-#: src/lib/files/symlinks.c:127
+#: src/lib/files/symlinks.c:128
 #, c-format
 msgid "Symbolic link [%s] to [%s] still exists!"
 msgstr "Dowiązanie symboliczne [%s] to [%s] nadal istnieje."
 
-#: src/lib/files/symlinks.c:148
+#: src/lib/files/symlinks.c:149
 #, c-format
 msgid "File [%s] exists but it needs to be overwritten!"
 msgstr "Plik [%s] istnieje, ale musi zostać zastąpiony."
+
+#: src/lib/files/symlinks.c:190
+#, c-format
+msgid "Skipping [%s] because it is not an authselect file"
+msgstr ""
 
 #: src/lib/files/system.c:74 src/lib/profiles/read.c:162
 #, c-format
@@ -409,15 +443,15 @@ msgid "Unable to read file [%s/%s] [%d]: %s"
 msgstr "Nie można odczytać pliku [%s/%s] [%d]: %s"
 
 #: src/lib/files/system.c:112 src/lib/files/system.c:170
-#: src/lib/util/template.c:449 src/lib/util/template.c:589
-#: src/lib/util/template.c:640
+#: src/lib/util/template.c:450 src/lib/util/template.c:591
+#: src/lib/util/template.c:642
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr ""
 "Nie można skompilować wyrażenia regularnego: błąd wyrażenia regularnego %d"
 
 #: src/lib/files/system.c:130 src/lib/files/system.c:195
-#: src/lib/util/template.c:498 src/lib/util/template.c:666
+#: src/lib/util/template.c:500 src/lib/util/template.c:668
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "Nie można wyszukać ciągu: błąd wyrażenia regularnego %d"
@@ -437,7 +471,7 @@ msgstr "Nie można utworzyć pliku nsswitch.conf [%d]: %s"
 msgid "Unable to generate files [%d]: %s"
 msgstr "Nie można utworzyć plików [%d]: %s"
 
-#: src/lib/files/system.c:369 src/lib/util/selinux.c:385
+#: src/lib/files/system.c:369 src/lib/util/selinux.c:398
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "Zapisywanie pliku tymczasowego dla [%s]"
@@ -452,12 +486,12 @@ msgstr "Nie można zapisać pliku tymczasowego [%s] [%d]: %s"
 msgid "Temporary file is named [%s]"
 msgstr "Plik tymczasowy ma nazwę [%s]"
 
-#: src/lib/files/system.c:389 src/lib/util/selinux.c:407
+#: src/lib/files/system.c:389 src/lib/util/selinux.c:425
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "Zmienianie nazwy [%s] na [%s]"
 
-#: src/lib/files/system.c:394 src/lib/util/selinux.c:411
+#: src/lib/files/system.c:394 src/lib/util/selinux.c:429
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "Nie można zmienić nazwy [%s] na [%s] [%d]: %s"
@@ -595,7 +629,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "Nie można uzyskać podstawowej nazwy [%s]"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:198 src/cli/main.c:826
+#: src/lib/util/file.c:199 src/cli/main.c:826
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "Nie można wykonać stat na [%s] [%d]: %s"
@@ -654,7 +688,7 @@ msgstr "[%s] ma błędnego właściciela [%u], oczekiwano [%u]."
 msgid "[%s] has wrong group [%u], expected [%u]!"
 msgstr "[%s] ma błędną grupę [%u], oczekiwano [%u]."
 
-#: src/lib/util/file.c:164 src/lib/util/file.c:210
+#: src/lib/util/file.c:164 src/lib/util/file.c:211
 #, c-format
 msgid "Unable to read link destination [%s] [%d]: %s"
 msgstr "Nie można odczytać celu dowiązania [%s] [%d]: %s"
@@ -664,26 +698,26 @@ msgstr "Nie można odczytać celu dowiązania [%s] [%d]: %s"
 msgid "Link [%s] does not point to [%s]"
 msgstr "Dowiązanie [%s] nie wskazuje na [%s]"
 
-#: src/lib/util/file.c:216
+#: src/lib/util/file.c:218 src/lib/util/file.c:220
 #, c-format
 msgid "Link [%s] points to [%s]"
 msgstr "Dowiązanie [%s] wskazuje na [%s]"
 
-#: src/lib/util/file.c:276
+#: src/lib/util/file.c:281
 msgid "Internal error: filepath cannot be NULL!"
 msgstr "Wewnętrzny błąd: ścieżka do pliku nie może wynosić NULL."
 
-#: src/lib/util/file.c:308
+#: src/lib/util/file.c:313
 #, c-format
 msgid "Unable to get parent directory of [%s] [%d]: %s"
 msgstr "Nie można uzyskać katalogu nadrzędnego [%s] [%d]: %s"
 
-#: src/lib/util/file.c:519 src/lib/util/textfile.c:175
+#: src/lib/util/file.c:524 src/lib/util/textfile.c:175
 #, c-format
 msgid "Unable to chmod file [%s] [%d]: %s"
 msgstr "Nie można ustawić chmod pliku [%s] [%d]: %s"
 
-#: src/lib/util/file.c:526
+#: src/lib/util/file.c:531
 #, c-format
 msgid "Unable to chown file [%s] [%d]: %s"
 msgstr "Nie można zmienić właściciela pliku [%s] [%d]: %s"
@@ -718,27 +752,27 @@ msgid "Found selinux context for [%s]: %s"
 msgstr "Odnaleziono kontekst SELinuksa dla [%s]: %s"
 
 #: src/lib/util/selinux.c:115 src/lib/util/selinux.c:183
-#: src/lib/util/selinux.c:249
+#: src/lib/util/selinux.c:251
 msgid "Unable to get current fscreate selinux context!"
 msgstr "Nie można uzyskać obecnego kontekstu fscreate SELinuksa."
 
 #: src/lib/util/selinux.c:121 src/lib/util/selinux.c:189
-#: src/lib/util/selinux.c:255
+#: src/lib/util/selinux.c:257
 #, c-format
 msgid "Unable to get default selinux context for [%s] [%d]: %s!"
 msgstr "Nie można uzyskać domyślnego kontekstu SELinuksa dla [%s] [%d]: %s"
 
 #: src/lib/util/selinux.c:129 src/lib/util/selinux.c:197
-#: src/lib/util/selinux.c:263
+#: src/lib/util/selinux.c:265
 msgid "Unable to set fscreate selinux context!"
 msgstr "Nie można utworzyć kontekstu fscreate SELinuksa."
 
 #: src/lib/util/selinux.c:139 src/lib/util/selinux.c:207
-#: src/lib/util/selinux.c:273
+#: src/lib/util/selinux.c:275
 msgid "Unable to restore fscreate selinux context!"
 msgstr "Nie można przywrócić kontekstu fscreate SELinuksa."
 
-#: src/lib/util/selinux.c:374
+#: src/lib/util/selinux.c:387
 #, c-format
 msgid ""
 "File [%s] should exist but is missing. It is not safe to delete [%s]. "
@@ -747,45 +781,45 @@ msgstr ""
 "Plik [%s] powinien istnieć, ale go brak. Usunięcie [%s] nie jest bezpieczne. "
 "Przerywanie."
 
-#: src/lib/util/selinux.c:402
+#: src/lib/util/selinux.c:420
 #, c-format
 msgid "Removing [%s]"
 msgstr "Usuwanie [%s]"
 
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
-#: src/lib/util/template.c:280
+#: src/lib/util/template.c:281
 msgid "Invalid operator!"
 msgstr "Nieprawidłowy operator."
 
-#: src/lib/util/template.c:459 src/lib/util/template.c:650
+#: src/lib/util/template.c:460 src/lib/util/template.c:652
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "Nie można przetworzyć wyniku [%d]: %s"
 
-#: src/lib/util/template.c:483
+#: src/lib/util/template.c:485
 #, c-format
 msgid "Unable to process operator [%d]: %s"
 msgstr "Nie można przetworzyć operatora [%d]: %s"
 
-#: src/lib/util/template.c:530
+#: src/lib/util/template.c:532
 #, c-format
 msgid "Unable to generate template [%d]: %s"
 msgstr "Nie można utworzyć szablonu [%d]: %s"
 
-#: src/lib/util/template.c:557
+#: src/lib/util/template.c:559
 msgid "Unable to get current time!"
 msgstr "Nie można uzyskać obecnego czasu."
 
-#: src/lib/util/template.c:571
+#: src/lib/util/template.c:573
 msgid "Unable to create message!"
 msgstr "Nie można utworzyć komunikatu."
 
-#: src/lib/util/template.c:596
+#: src/lib/util/template.c:598
 #, c-format
 msgid "Unable to find new match: regex error %d"
 msgstr "Nie można odnaleźć nowego wyniku: błąd wyrażenia regularnego %d"
 
-#: src/lib/util/template.c:726
+#: src/lib/util/template.c:728
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
 msgstr "Nie można utworzyć pliku tymczasowego dla [%s] [%d]: %s"
@@ -856,37 +890,37 @@ msgstr ""
 msgid "Available commands:\n"
 msgstr "Dostępne polecenia:\n"
 
-#: src/cli/cli_tool.c:188
+#: src/cli/cli_tool.c:192
 #, c-format
 msgid "\n"
 msgstr "\n"
 
-#: src/cli/cli_tool.c:222
+#: src/cli/cli_tool.c:226
 #, c-format
 msgid "Authselect command '%s' can only be run as root!\n"
 msgstr "Tylko root może uruchamiać polecenie „%s” programu authselect\n"
 
-#: src/cli/cli_tool.c:239
+#: src/cli/cli_tool.c:243
 msgid "Bug: commands can't be NULL!\n"
 msgstr "Błąd: polecenia nie mogą wynosić NULL.\n"
 
-#: src/cli/cli_tool.c:302
+#: src/cli/cli_tool.c:306
 msgid "Command options:"
 msgstr "Opcje poleceń:"
 
-#: src/cli/cli_tool.c:304
+#: src/cli/cli_tool.c:308
 msgid "Common options:"
 msgstr "Wspólne opcje:"
 
-#: src/cli/cli_tool.c:318 src/cli/cli_tool.c:321
+#: src/cli/cli_tool.c:322 src/cli/cli_tool.c:325
 msgid "[OPTIONS...]"
 msgstr "[OPCJE…]"
 
-#: src/cli/cli_tool.c:324 src/cli/main.c:818
+#: src/cli/cli_tool.c:328 src/cli/main.c:818
 msgid "Out of memory!"
 msgstr "Brak pamięci."
 
-#: src/cli/cli_tool.c:345
+#: src/cli/cli_tool.c:349
 #, c-format
 msgid ""
 "Invalid option %s: %s\n"
@@ -895,7 +929,7 @@ msgstr ""
 "Nieprawidłowa opcja %s: %s\n"
 "\n"
 
-#: src/cli/cli_tool.c:357
+#: src/cli/cli_tool.c:361
 #, c-format
 msgid ""
 "Missing option: %s\n"
@@ -904,7 +938,7 @@ msgstr ""
 "Brak opcji: %s\n"
 "\n"
 
-#: src/cli/cli_tool.c:367
+#: src/cli/cli_tool.c:371
 #, c-format
 msgid ""
 "Only one free argument is expected!\n"
@@ -913,7 +947,7 @@ msgstr ""
 "Oczekiwano tylko jednego wolnego parametru.\n"
 "\n"
 
-#: src/cli/cli_tool.c:377
+#: src/cli/cli_tool.c:381
 #, c-format
 msgid ""
 "Unexpected parameter: %s\n"
@@ -922,7 +956,7 @@ msgstr ""
 "Nieoczekiwany parametr: %s\n"
 "\n"
 
-#: src/cli/cli_tool.c:389
+#: src/cli/cli_tool.c:393
 #, c-format
 msgid ""
 "At least one option is required!\n"
@@ -1285,69 +1319,81 @@ msgstr "Nazwa kopii zapasowej do przywrócenia."
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "Nie można przywrócić kopii zapasowej [%s] [%d]: %s\n"
 
-#: src/cli/main.c:931
+#: src/cli/main.c:902
+#, fuzzy, c-format
+#| msgid "Unable to test current configuration [%d]: %s"
+msgid "Unable to uninstall authselect configuration [%d]: %s\n"
+msgstr "Nie można przetestować obecnej konfiguracji [%d]: %s"
+
+#: src/cli/main.c:945
 msgid "Select profile"
 msgstr "Wybiera profil"
 
-#: src/cli/main.c:932
+#: src/cli/main.c:946
 msgid "Regenerate configuration for currently selected command"
 msgstr "Ponownie tworzy konfigurację dla obecnie wybranego polecenia"
 
-#: src/cli/main.c:933
+#: src/cli/main.c:947
 msgid "List available profiles"
 msgstr "Wyświetla listę dostępnych profili"
 
-#: src/cli/main.c:934
+#: src/cli/main.c:948
 msgid "List available profile features"
 msgstr "Wyświetla listę dostępnych funkcji profilu"
 
-#: src/cli/main.c:935
+#: src/cli/main.c:949
 msgid "Show profile information"
 msgstr "Wyświetla informacje o profilu"
 
-#: src/cli/main.c:936
+#: src/cli/main.c:950
 msgid "Print profile requirements"
 msgstr "Wyświetla wymagania profilu"
 
-#: src/cli/main.c:937
+#: src/cli/main.c:951
 msgid "Get identifier of currently selected profile"
 msgstr "Uzyskuje identyfikator obecnie wybranego profilu"
 
-#: src/cli/main.c:938
+#: src/cli/main.c:952
 msgid "Check if the current configuration is valid"
 msgstr "Sprawdza, czy obecna konfiguracja jest prawidłowa"
 
-#: src/cli/main.c:939
+#: src/cli/main.c:953
 msgid "Print changes that would be otherwise written"
 msgstr "Wyświetla zmiany, które zostałyby zapisane"
 
-#: src/cli/main.c:940
+#: src/cli/main.c:954
 msgid "Enable feature in currently selected profile"
 msgstr "Włącza funkcję w obecnie wybranym profilu"
 
-#: src/cli/main.c:941
+#: src/cli/main.c:955
 msgid "Disable feature in currently selected profile"
 msgstr "Wyłącza funkcję w obecnie wybranym profilu"
 
-#: src/cli/main.c:942
+#: src/cli/main.c:956
 msgid "Create new authselect profile"
 msgstr "Tworzy nowy profil authselect"
 
-#: src/cli/main.c:943
+#: src/cli/main.c:957
 msgid "Backup commands:"
 msgstr "Polecenia kopii zapasowej:"
 
-#: src/cli/main.c:944
+#: src/cli/main.c:958
 msgid "List available backups"
 msgstr "Wyświetla listę dostępnych kopii zapasowych"
 
-#: src/cli/main.c:945
+#: src/cli/main.c:959
 msgid "Remove backup"
 msgstr "Usuwa kopię zapasową"
 
-#: src/cli/main.c:946
+#: src/cli/main.c:960
 msgid "Restore from backup"
 msgstr "Przywraca z kopii zapasowej"
+
+#: src/cli/main.c:961
+#, fuzzy
+#| msgid "Backup [%s] contains authselect configuration"
+msgid "Uninstall authselect configuration"
+msgstr "Kopia zapasowa [%s] zawiera konfigurację authselect"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"

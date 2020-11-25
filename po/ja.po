@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2020-05-11 12:25+0200\n"
+"POT-Creation-Date: 2020-11-25 10:47+0100\n"
 "PO-Revision-Date: 2020-06-11 10:40+0000\n"
 "Last-Translator: Ludek Janda <ljanda@redhat.com>\n"
 "Language-Team: Japanese <https://translate.fedoraproject.org/projects/"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.0.4\n"
 
-#: src/lib/authselect.c:47 src/lib/authselect.c:169
+#: src/lib/authselect.c:47 src/lib/authselect.c:187
 msgid "Unable to obtain supported features"
 msgstr "サポートされている機能を取得できません"
 
@@ -36,7 +36,7 @@ msgstr "不明なプロファイル機能 [%s]"
 msgid "Trying to activate profile [%s]"
 msgstr "プロファイル [%s] の実行を試行中"
 
-#: src/lib/authselect.c:90 src/lib/authselect.c:162 src/lib/profiles/read.c:316
+#: src/lib/authselect.c:90 src/lib/authselect.c:180 src/lib/profiles/read.c:316
 #, c-format
 msgid "Unable to find profile [%s] [%d]: %s"
 msgstr "プロファイル [%s] [%d] が見つかりません: %s"
@@ -79,7 +79,25 @@ msgstr ""
 msgid "Unable to activate profile [%s] [%d]: %s"
 msgstr "プロファイル [%s] [%d] を実行できません: %s"
 
-#: src/lib/authselect.c:179
+#: src/lib/authselect.c:150
+#, fuzzy
+#| msgid "Trying to backup authselect configuration to [%s]"
+msgid "Trying to uninstall authselect configuration"
+msgstr "authselect 設定の [%s] へのバックアップを試行中"
+
+#: src/lib/authselect.c:154
+#, fuzzy, c-format
+#| msgid "Unable to create symbolic links [%d]: %s"
+msgid "Unable to remove symlinks [%d]: %s"
+msgstr "シンボリックリンク [%d] を作成できません: %s"
+
+#: src/lib/authselect.c:158
+#, fuzzy
+#| msgid "Changes were successfully applied.\n"
+msgid "Symbolic links were successfully removed"
+msgstr "変更は正常に適用されました。\n"
+
+#: src/lib/authselect.c:197
 #, c-format
 msgid "Profile feature [%s] is no longer supported, removing it..."
 msgstr "プロファイル機能 [%s] はサポートされなくなりました。削除します。"
@@ -100,7 +118,7 @@ msgid "Creating temporary directory at [%s]"
 msgstr "[%s] で一時ファイルを作成中"
 
 #: src/lib/authselect_backup.c:124 src/lib/authselect_profile.c:377
-#: src/lib/authselect_profile.c:446
+#: src/lib/authselect_profile.c:457
 #, c-format
 msgid "There is no filename in [%s]"
 msgstr "[%s] にファイル名はありません"
@@ -110,7 +128,7 @@ msgstr "[%s] にファイル名はありません"
 msgid "Copying [%s] to [%s/%s]"
 msgstr "[%s] を [%s/%s] にコピー中"
 
-#: src/lib/authselect_backup.c:132 src/lib/util/selinux.c:380
+#: src/lib/authselect_backup.c:132 src/lib/util/selinux.c:393
 #, c-format
 msgid "File [%s] does not exist"
 msgstr "ファイル [%s] は存在しません"
@@ -220,82 +238,93 @@ msgstr "機能一覧を取得できません (メモリー不足)"
 msgid "Creating empty profile at [%s]"
 msgstr "[%s] で空のプロファイルを作成中"
 
-#: src/lib/authselect_profile.c:348 src/lib/authselect_profile.c:438
+#: src/lib/authselect_profile.c:348 src/lib/authselect_profile.c:449
 #, c-format
 msgid "Unable to make path [%s] [%d]: %s"
 msgstr "パス [%s] [%d] を作成できません: %s"
 
-#: src/lib/authselect_profile.c:355 src/lib/authselect_profile.c:397
+#: src/lib/authselect_profile.c:355 src/lib/authselect_profile.c:408
 #, c-format
 msgid "Unable to write to [%s] [%d]: %s"
 msgstr "[%s] [%d] への書き込みができません: %s"
 
-#: src/lib/authselect_profile.c:386
+#: src/lib/authselect_profile.c:385
+#, c-format
+msgid "Omitting [%s] since it does not exist in base profile"
+msgstr ""
+
+#: src/lib/authselect_profile.c:389
+#, fuzzy, c-format
+#| msgid "Unable to check file mode of [%s] [%d]: %s"
+msgid "Unable to check presence of [%s] [%d]: %s"
+msgstr "[%s] [%d] のファイルモードを確認できません: %s"
+
+#: src/lib/authselect_profile.c:397
 #, c-format
 msgid "Unable to create symbolic link [%s] to [%s] [%d]: %s"
 msgstr "シンボリックリンク [%s] を [%s] [%d] に作成できません: %s"
 
-#: src/lib/authselect_profile.c:419
+#: src/lib/authselect_profile.c:430
 #, c-format
 msgid "Creating new profile from \"%s\" at [%s]"
 msgstr "[%s] で \"%s\" から新規のプロファイルを作成中"
 
-#: src/lib/authselect_profile.c:423
+#: src/lib/authselect_profile.c:434
 #, c-format
 msgid "Unable to read base profile [%s] [%d]: %s"
 msgstr "ベースプロファイル [%s] [%d] の読み込みができません: %s"
 
-#: src/lib/authselect_profile.c:431
+#: src/lib/authselect_profile.c:442
 msgid "Unable to resolve symbolic links names"
 msgstr "シンボリックリンク名を解決できません"
 
-#: src/lib/authselect_profile.c:456 src/lib/authselect_profile.c:469
-#: src/lib/authselect_profile.c:483
+#: src/lib/authselect_profile.c:467 src/lib/authselect_profile.c:480
+#: src/lib/authselect_profile.c:494
 #, c-format
 msgid "Unable to create [%s] [%d]: %s"
 msgstr "[%s] [%d] を作成できません: %s"
 
-#: src/lib/authselect_profile.c:491
+#: src/lib/authselect_profile.c:502
 #, c-format
 msgid "Unknown file name [%s]"
 msgstr "不明なファイル名 [%s]"
 
-#: src/lib/authselect_profile.c:518
+#: src/lib/authselect_profile.c:529
 msgid "Name can not be empty"
 msgstr "名前は空欄にできません"
 
-#: src/lib/authselect_profile.c:530
+#: src/lib/authselect_profile.c:541
 msgid "Default profile can not be created"
 msgstr "デフォルトのプロファイルを作成できません"
 
-#: src/lib/authselect_profile.c:533
+#: src/lib/authselect_profile.c:544
 msgid "Value AUTHSELECT_PROFILE_ANY is invalid in this context"
 msgstr "このコンテキストでは、AUTHSELECT_PROFILE_ANY という値は無効です"
 
-#: src/lib/authselect_profile.c:538
+#: src/lib/authselect_profile.c:549
 msgid "Unable to create profile path: out of memory"
 msgstr "プロファイルパスを作成できません: メモリー不足です"
 
-#: src/lib/authselect_profile.c:544
+#: src/lib/authselect_profile.c:555
 #, c-format
 msgid "Profile \"%s\" already exist at [%s]"
 msgstr "プロファイル \"%s\" はすでに [%s] に存在します"
 
-#: src/lib/authselect_profile.c:548
+#: src/lib/authselect_profile.c:559
 #, c-format
 msgid "Unable to access [%s] [%d]: %s"
 msgstr "[%s] [%d] へアクセスできません: %s"
 
-#: src/lib/authselect_profile.c:554
+#: src/lib/authselect_profile.c:565
 msgid "Unable to create file name: out of memory"
 msgstr "ファイル名を作成できません: メモリー不足です"
 
-#: src/lib/authselect_profile.c:562
+#: src/lib/authselect_profile.c:573
 #, c-format
 msgid "Unable to create empty profile [%d]: %s"
 msgstr "空のプロファイル [%d] を作成できません: %s"
 
-#: src/lib/authselect_profile.c:571
+#: src/lib/authselect_profile.c:582
 #, c-format
 msgid "Unable to create profile [%d]: %s"
 msgstr "プロファイル [%d] を作成できません: %s"
@@ -364,26 +393,31 @@ msgstr "リンク [%s] [%d] を検証できません: %s"
 msgid "[%s] was not created by authselect!"
 msgstr "[%s] は authselect が作成したものではありません!"
 
-#: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:152
+#: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
 #: src/lib/files/system.c:576
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
 msgstr "ファイル [%s] [%d] へのアクセス試行中にエラー発生: %s"
 
-#: src/lib/files/symlinks.c:120
+#: src/lib/files/symlinks.c:121
 #, c-format
 msgid "Unable to check file [%s] [%d]: %s"
 msgstr "ファイル [%s] [%d] を確認できません: %s"
 
-#: src/lib/files/symlinks.c:127
+#: src/lib/files/symlinks.c:128
 #, c-format
 msgid "Symbolic link [%s] to [%s] still exists!"
 msgstr "[%s] から [%s] へのシンボリックリンクがまだ存在します!"
 
-#: src/lib/files/symlinks.c:148
+#: src/lib/files/symlinks.c:149
 #, c-format
 msgid "File [%s] exists but it needs to be overwritten!"
 msgstr "ファイル [%s] は存在しますが、上書きする必要があります!"
+
+#: src/lib/files/symlinks.c:190
+#, c-format
+msgid "Skipping [%s] because it is not an authselect file"
+msgstr ""
 
 #: src/lib/files/system.c:74 src/lib/profiles/read.c:162
 #, c-format
@@ -397,14 +431,14 @@ msgid "Unable to read file [%s/%s] [%d]: %s"
 msgstr "ファイル [%s/%s] [%d] の読み込みができません: %s"
 
 #: src/lib/files/system.c:112 src/lib/files/system.c:170
-#: src/lib/util/template.c:449 src/lib/util/template.c:589
-#: src/lib/util/template.c:640
+#: src/lib/util/template.c:450 src/lib/util/template.c:591
+#: src/lib/util/template.c:642
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr "正規表現のコンパイルができません: regex エラー %d"
 
 #: src/lib/files/system.c:130 src/lib/files/system.c:195
-#: src/lib/util/template.c:498 src/lib/util/template.c:666
+#: src/lib/util/template.c:500 src/lib/util/template.c:668
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "文字列を検索できません: regex エラー %d"
@@ -424,7 +458,7 @@ msgstr "nsswitch.conf [%d] を生成できません: %s"
 msgid "Unable to generate files [%d]: %s"
 msgstr "ファイル [%d] を生成できません: %s"
 
-#: src/lib/files/system.c:369 src/lib/util/selinux.c:385
+#: src/lib/files/system.c:369 src/lib/util/selinux.c:398
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "[%s] の一時ファイルを書き込み中"
@@ -439,12 +473,12 @@ msgstr "一時ファイル [%s] [%d] の書き込みができません: %s"
 msgid "Temporary file is named [%s]"
 msgstr "一時ファイルの名前は [%s] です"
 
-#: src/lib/files/system.c:389 src/lib/util/selinux.c:407
+#: src/lib/files/system.c:389 src/lib/util/selinux.c:425
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "名前を [%s] から [%s] へ変更中です"
 
-#: src/lib/files/system.c:394 src/lib/util/selinux.c:411
+#: src/lib/files/system.c:394 src/lib/util/selinux.c:429
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "名前を [%s] から [%s] [%d] へ変更できません: %s"
@@ -582,7 +616,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "[%s] の basename を取得できません"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:198 src/cli/main.c:826
+#: src/lib/util/file.c:199 src/cli/main.c:826
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "[%s] [%d] に対する stat の実行に失敗しました: %s"
@@ -641,7 +675,7 @@ msgstr "[%s] には不正なオーナー [%u] があります、[%u] を予期�
 msgid "[%s] has wrong group [%u], expected [%u]!"
 msgstr "[%s] には不正なグループ [%u] があります、[%u] を予期していました。"
 
-#: src/lib/util/file.c:164 src/lib/util/file.c:210
+#: src/lib/util/file.c:164 src/lib/util/file.c:211
 #, c-format
 msgid "Unable to read link destination [%s] [%d]: %s"
 msgstr "リンク先 [%s] [%d] の読み込みに失敗しました: %s"
@@ -651,26 +685,26 @@ msgstr "リンク先 [%s] [%d] の読み込みに失敗しました: %s"
 msgid "Link [%s] does not point to [%s]"
 msgstr "リンク [%s] は [%s] にポイントしていません"
 
-#: src/lib/util/file.c:216
+#: src/lib/util/file.c:218 src/lib/util/file.c:220
 #, c-format
 msgid "Link [%s] points to [%s]"
 msgstr "リンク [%s] は [%s] にポイントしています"
 
-#: src/lib/util/file.c:276
+#: src/lib/util/file.c:281
 msgid "Internal error: filepath cannot be NULL!"
 msgstr "内部エラー: filepath は NULL になりません。"
 
-#: src/lib/util/file.c:308
+#: src/lib/util/file.c:313
 #, c-format
 msgid "Unable to get parent directory of [%s] [%d]: %s"
 msgstr "[%s] [%d] の親ディレクトリーを取得できません: %s"
 
-#: src/lib/util/file.c:519 src/lib/util/textfile.c:175
+#: src/lib/util/file.c:524 src/lib/util/textfile.c:175
 #, c-format
 msgid "Unable to chmod file [%s] [%d]: %s"
 msgstr "ファイル [%s] [%d] を chmod できません: %s"
 
-#: src/lib/util/file.c:526
+#: src/lib/util/file.c:531
 #, c-format
 msgid "Unable to chown file [%s] [%d]: %s"
 msgstr "ファイル [%s] [%d] を chown できません: %s"
@@ -705,73 +739,75 @@ msgid "Found selinux context for [%s]: %s"
 msgstr "[%s] の selinux コンテキストを見つけました: %s"
 
 #: src/lib/util/selinux.c:115 src/lib/util/selinux.c:183
-#: src/lib/util/selinux.c:249
+#: src/lib/util/selinux.c:251
 msgid "Unable to get current fscreate selinux context!"
 msgstr "現在の fscreate の SELinux コンテキストを取得することができません!"
 
 #: src/lib/util/selinux.c:121 src/lib/util/selinux.c:189
-#: src/lib/util/selinux.c:255
+#: src/lib/util/selinux.c:257
 #, c-format
 msgid "Unable to get default selinux context for [%s] [%d]: %s!"
 msgstr ""
 "[%s] [%d] のデフォルトの SELinux コンテキストを取得することができません: %s!"
 
 #: src/lib/util/selinux.c:129 src/lib/util/selinux.c:197
-#: src/lib/util/selinux.c:263
+#: src/lib/util/selinux.c:265
 msgid "Unable to set fscreate selinux context!"
 msgstr "fscreate の SELinux コンテキストを設定することができません!"
 
 #: src/lib/util/selinux.c:139 src/lib/util/selinux.c:207
-#: src/lib/util/selinux.c:273
+#: src/lib/util/selinux.c:275
 msgid "Unable to restore fscreate selinux context!"
 msgstr "fscreate の SELinux コンテキストを復元することができません!"
 
-#: src/lib/util/selinux.c:374
+#: src/lib/util/selinux.c:387
 #, c-format
 msgid ""
 "File [%s] should exist but is missing. It is not safe to delete [%s]. "
 "Aborting."
-msgstr "ファイル [%s] は存在するはずですが、存在しません。[%s] の削除は安全ではありません。中止します。"
+msgstr ""
+"ファイル [%s] は存在するはずですが、存在しません。[%s] の削除は安全ではありま"
+"せん。中止します。"
 
-#: src/lib/util/selinux.c:402
+#: src/lib/util/selinux.c:420
 #, c-format
 msgid "Removing [%s]"
 msgstr "[%s] の削除中"
 
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
-#: src/lib/util/template.c:280
+#: src/lib/util/template.c:281
 msgid "Invalid operator!"
 msgstr "無効な演算子です。"
 
-#: src/lib/util/template.c:459 src/lib/util/template.c:650
+#: src/lib/util/template.c:460 src/lib/util/template.c:652
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "マッチ [%d] を処理できません: %s"
 
-#: src/lib/util/template.c:483
+#: src/lib/util/template.c:485
 #, c-format
 msgid "Unable to process operator [%d]: %s"
 msgstr "オペレーター [%d] を処理できません: %s"
 
-#: src/lib/util/template.c:530
+#: src/lib/util/template.c:532
 #, c-format
 msgid "Unable to generate template [%d]: %s"
 msgstr "テンプレート [%d] を生成できません: %s"
 
-#: src/lib/util/template.c:557
+#: src/lib/util/template.c:559
 msgid "Unable to get current time!"
 msgstr "現在の時刻を取得できません。"
 
-#: src/lib/util/template.c:571
+#: src/lib/util/template.c:573
 msgid "Unable to create message!"
 msgstr "メッセージを作成できません。"
 
-#: src/lib/util/template.c:596
+#: src/lib/util/template.c:598
 #, c-format
 msgid "Unable to find new match: regex error %d"
 msgstr "新規の一致を見つけられません: regex error %d"
 
-#: src/lib/util/template.c:726
+#: src/lib/util/template.c:728
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
 msgstr "[%s] [%d] の一時ファイルを作成することができません: %s"
@@ -842,37 +878,37 @@ msgstr ""
 msgid "Available commands:\n"
 msgstr "利用可能なコマンド:\n"
 
-#: src/cli/cli_tool.c:188
+#: src/cli/cli_tool.c:192
 #, c-format
 msgid "\n"
 msgstr "\n"
 
-#: src/cli/cli_tool.c:222
+#: src/cli/cli_tool.c:226
 #, c-format
 msgid "Authselect command '%s' can only be run as root!\n"
 msgstr "authselect コマンド '%s' は root としてのみ実行できます!\n"
 
-#: src/cli/cli_tool.c:239
+#: src/cli/cli_tool.c:243
 msgid "Bug: commands can't be NULL!\n"
 msgstr "バグ: コマンドは NULL ではありません。\n"
 
-#: src/cli/cli_tool.c:302
+#: src/cli/cli_tool.c:306
 msgid "Command options:"
 msgstr "コマンドオプション:"
 
-#: src/cli/cli_tool.c:304
+#: src/cli/cli_tool.c:308
 msgid "Common options:"
 msgstr "一般的なオプション:"
 
-#: src/cli/cli_tool.c:318 src/cli/cli_tool.c:321
+#: src/cli/cli_tool.c:322 src/cli/cli_tool.c:325
 msgid "[OPTIONS...]"
 msgstr "[OPTIONS...]"
 
-#: src/cli/cli_tool.c:324 src/cli/main.c:818
+#: src/cli/cli_tool.c:328 src/cli/main.c:818
 msgid "Out of memory!"
 msgstr "メモリの空き容量がありません。"
 
-#: src/cli/cli_tool.c:345
+#: src/cli/cli_tool.c:349
 #, c-format
 msgid ""
 "Invalid option %s: %s\n"
@@ -881,7 +917,7 @@ msgstr ""
 "無効なオプション %s: %s\n"
 "\n"
 
-#: src/cli/cli_tool.c:357
+#: src/cli/cli_tool.c:361
 #, c-format
 msgid ""
 "Missing option: %s\n"
@@ -890,7 +926,7 @@ msgstr ""
 "足りないオプション: %s\n"
 "\n"
 
-#: src/cli/cli_tool.c:367
+#: src/cli/cli_tool.c:371
 #, c-format
 msgid ""
 "Only one free argument is expected!\n"
@@ -899,7 +935,7 @@ msgstr ""
 "1 つのフリーな引数のみが予期されます。\n"
 "\n"
 
-#: src/cli/cli_tool.c:377
+#: src/cli/cli_tool.c:381
 #, c-format
 msgid ""
 "Unexpected parameter: %s\n"
@@ -908,7 +944,7 @@ msgstr ""
 "予期せぬパラメーター: %s\n"
 "\n"
 
-#: src/cli/cli_tool.c:389
+#: src/cli/cli_tool.c:393
 #, c-format
 msgid ""
 "At least one option is required!\n"
@@ -1259,69 +1295,81 @@ msgstr "復元するバックアップ名。"
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "バックアップ [%s] [%d] を復元できません: %s\n"
 
-#: src/cli/main.c:931
+#: src/cli/main.c:902
+#, fuzzy, c-format
+#| msgid "Unable to test current configuration [%d]: %s"
+msgid "Unable to uninstall authselect configuration [%d]: %s\n"
+msgstr "現在の設定 [%d] をテストできません: %s"
+
+#: src/cli/main.c:945
 msgid "Select profile"
 msgstr "プロファイルを選択します"
 
-#: src/cli/main.c:932
+#: src/cli/main.c:946
 msgid "Regenerate configuration for currently selected command"
 msgstr "選択されたコマンド用の設定を再生成します"
 
-#: src/cli/main.c:933
+#: src/cli/main.c:947
 msgid "List available profiles"
 msgstr "利用可能なプロファイルを一覧表示します"
 
-#: src/cli/main.c:934
+#: src/cli/main.c:948
 msgid "List available profile features"
 msgstr "利用可能なプロファイル機能を一覧表示します"
 
-#: src/cli/main.c:935
+#: src/cli/main.c:949
 msgid "Show profile information"
 msgstr "プロファイル情報を表示します"
 
-#: src/cli/main.c:936
+#: src/cli/main.c:950
 msgid "Print profile requirements"
 msgstr "プロファイル要件をプリントします"
 
-#: src/cli/main.c:937
+#: src/cli/main.c:951
 msgid "Get identifier of currently selected profile"
 msgstr "現在選択されているプロファイルの識別子を取得します"
 
-#: src/cli/main.c:938
+#: src/cli/main.c:952
 msgid "Check if the current configuration is valid"
 msgstr "現在の設定が有効化チェックします"
 
-#: src/cli/main.c:939
+#: src/cli/main.c:953
 msgid "Print changes that would be otherwise written"
 msgstr "書き込まれることになる変更をプリントします"
 
-#: src/cli/main.c:940
+#: src/cli/main.c:954
 msgid "Enable feature in currently selected profile"
 msgstr "現在選択されているプロファイルの機能を有効にします"
 
-#: src/cli/main.c:941
+#: src/cli/main.c:955
 msgid "Disable feature in currently selected profile"
 msgstr "現在選択されているプロファイルの機能を無効にします"
 
-#: src/cli/main.c:942
+#: src/cli/main.c:956
 msgid "Create new authselect profile"
 msgstr "新規の authselect プロファイルを作成"
 
-#: src/cli/main.c:943
+#: src/cli/main.c:957
 msgid "Backup commands:"
 msgstr "バックアップコマンド:"
 
-#: src/cli/main.c:944
+#: src/cli/main.c:958
 msgid "List available backups"
 msgstr "利用可能なバックアップを一覧表示します"
 
-#: src/cli/main.c:945
+#: src/cli/main.c:959
 msgid "Remove backup"
 msgstr "バックアップを削除します"
 
-#: src/cli/main.c:946
+#: src/cli/main.c:960
 msgid "Restore from backup"
 msgstr "バックアップからの復元"
+
+#: src/cli/main.c:961
+#, fuzzy
+#| msgid "Backup [%s] contains authselect configuration"
+msgid "Uninstall authselect configuration"
+msgstr "バックアップ [%s] には authselect 設定が含まれます"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
