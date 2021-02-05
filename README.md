@@ -4,7 +4,7 @@
 
 It is designed to be **a replacement for authconfig** (which is the default tool for this job on Fedora and RHEL based systems) but it takes a different approach to configure the system. Instead of letting the administrator build the PAM stack with a tool (which may potentially end up with a broken configuration), *it would ship several tested stacks* (profiles) that solve a use-case and are **well tested and supported**. At the same time, some obsolete features of authconfig would not be supported by **authselect**.
 
-This tool aims to be first shipped along and later deprecate and later replace authconfig in a future Fedora release. 
+This tool aims to be first shipped along and later deprecate and later replace authconfig in a future Fedora release.
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ $ sudo dnf install \
 To check out the code from a GitHub git repository to your local machine, run the following command:
 
 ```bash
-$ git clone https://github.com/pbrezina/authselect.git
+$ git clone https://github.com/authselect/authselect.git
 ```
 
 ## Compile, build and install authselect
@@ -73,5 +73,5 @@ $ sudo authselect select $profilename
 
 Any contribution to authselect is welcome. We use git and [GitHub flow](https://help.github.com/articles/github-flow/) for development.
 
-* If you want to report a bug or request a new feature to be implemented, please open an issue here: [Issues](https://github.com/pbrezina/authselect/issues). 
-* If you want to submit a patch, please open a new pull request here: [Pull Requests](https://github.com/pbrezina/authselect/pulls). 
+* If you want to report a bug or request a new feature to be implemented, please open an issue here: [Issues](https://github.com/authselect/authselect/issues).
+* If you want to submit a patch, please open a new pull request here: [Pull Requests](https://github.com/authselect/authselect/pulls).
