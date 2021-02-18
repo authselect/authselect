@@ -79,6 +79,11 @@ with-sudo::
 with-pamaccess::
     Check access.conf during account authorization.
 
+with-files-domain::
+    If set, SSSD will be contacted before "files" when resolving users and
+    groups. The order in nsswitch.conf will be set to "sss files" instead of
+    "files sss" for passwd and group maps.
+
 with-files-access-provider::
     If set, account management for local users is handled also by pam_sss. This
     is needed if there is an explicitly configured domain with id_provider=files
