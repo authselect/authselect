@@ -9,6 +9,8 @@ dist_profile_minimal_DATA = \
     $(top_srcdir)/profiles/minimal/README \
     $(top_srcdir)/profiles/minimal/REQUIREMENTS \
     $(top_srcdir)/profiles/minimal/system-auth \
+    $(top_srcdir)/profiles/minimal/dconf-db \
+    $(top_srcdir)/profiles/minimal/dconf-locks \
     $(NULL)
 
 profile_nisdir = $(authselect_profile_dir)/nis
