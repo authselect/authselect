@@ -2,14 +2,14 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
 # Weblate <noreply@weblate.org>, 2020.
-# Igor Gorbounov <igor.gorbounov@gmail.com>, 2020.
+# Igor Gorbounov <igor.gorbounov@gmail.com>, 2020, 2021.
 # Vitaliy Bukatkin <vitaliy.bukatkin@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-11-25 10:47+0100\n"
-"PO-Revision-Date: 2020-10-18 09:15+0000\n"
-"Last-Translator: Vitaliy Bukatkin <vitaliy.bukatkin@gmail.com>\n"
+"PO-Revision-Date: 2021-03-05 14:01+0000\n"
+"Last-Translator: Igor Gorbounov <igor.gorbounov@gmail.com>\n"
 "Language-Team: Russian <https://translate.fedoraproject.org/projects/"
 "authselect/master-authselect-profiles5adoc/ru/>\n"
 "Language: ru\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.3.1-dev\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #. type: Title =
 #: src/man/authselect-profiles.5.adoc:2
 #, no-wrap
 msgid "authselect-profiles(5)"
-msgstr ""
+msgstr "authselect-profiles(5)"
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:6
@@ -35,7 +35,7 @@ msgstr "ИМЯ"
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:8
 msgid "authselect-profiles - how to extend authselect profiles."
-msgstr ""
+msgstr "authselect-profiles - как расширить возможности профилей authselect."
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:10
@@ -49,35 +49,39 @@ msgid ""
 "This manual page explains how are authselect profiles organized and how to "
 "create new profiles."
 msgstr ""
+"На этой странице руководства объясняется, как организованы профили "
+"authselect, а также как создавать новые профили."
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:15
 #, no-wrap
 msgid "PROFILE DIRECTORIES"
-msgstr ""
+msgstr "КАТАЛОГИ ПРОФИЛЕЙ"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:17
 msgid "Profiles can be found in one of three directories."
-msgstr ""
+msgstr "Профили находятся в одном из трех каталогов."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:18
 #, no-wrap
 msgid "*{AUTHSELECT_PROFILE_DIR}*"
-msgstr ""
+msgstr "*{AUTHSELECT_PROFILE_DIR}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:20
 msgid ""
 "Read-only directory containing profiles shipped together with authselect."
 msgstr ""
+"Каталог только для чтения, содержащий профили, поставляемые вместе с "
+"authselect."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:21
 #, no-wrap
 msgid "*{AUTHSELECT_VENDOR_DIR}*"
-msgstr ""
+msgstr "*{AUTHSELECT_VENDOR_DIR}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:24
@@ -85,23 +89,25 @@ msgid ""
 "Read-only directory for vendor-specific profiles that can override the ones "
 "in _default_ directory."
 msgstr ""
+"Каталог только для чтения для профилей конкретных производителей, которые "
+"могут заменять профили в каталоге _default_."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:25
 #, no-wrap
 msgid "*{AUTHSELECT_CUSTOM_DIR}*"
-msgstr ""
+msgstr "*{AUTHSELECT_CUSTOM_DIR}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:27
 msgid "Place for administrator-defined profiles."
-msgstr ""
+msgstr "Место для профилей, определяемых администратором."
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:29
 #, no-wrap
 msgid "PROFILE FILES"
-msgstr ""
+msgstr "ФАЙЛЫ ПРОФИЛЕЙ"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:33
@@ -110,24 +116,27 @@ msgid ""
 "mandatory profile description and describe the changes that are done to the "
 "system."
 msgstr ""
+"Каждый профиль состоит из одного или нескольких таких файлов, которые "
+"предоставляют обязательное описание профиля и описывают изменения, которые "
+"вносятся в систему."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:34
 #, no-wrap
 msgid "*README*"
-msgstr ""
+msgstr "*README*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:36
 msgid ""
 "Description of the profile. The first line must be a name of the profile."
-msgstr ""
+msgstr "Описание профиля. В первой строке должно быть имя профиля."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:37
 #, no-wrap
 msgid "*system-auth*"
-msgstr ""
+msgstr "*system-auth*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:40
@@ -141,7 +150,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:41
 #, no-wrap
 msgid "*password-auth*, *smartcard-auth*, *fingerprint-auth*"
-msgstr ""
+msgstr "*password-auth*, *smartcard-auth*, *fingerprint-auth*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:45
@@ -158,7 +167,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:46
 #, no-wrap
 msgid "*postlogin*"
-msgstr ""
+msgstr "*postlogin*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:54
@@ -183,7 +192,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:55
 #, no-wrap
 msgid "*nsswitch.conf*"
-msgstr ""
+msgstr "*nsswitch.conf*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:59
@@ -192,12 +201,15 @@ msgid ""
 "must be set. Maps that are not specified by the profile are included from "
 "{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf."
 msgstr ""
+"Файл конфигурации Name Service Switch. Должны быть установлены только карты, "
+"относящиеся к профилю. Карты, которые не указаны в профиле, включены из "
+"{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:60
 #, no-wrap
 msgid "*dconf-db*"
-msgstr ""
+msgstr "*dconf-db*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:64
@@ -214,7 +226,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:65
 #, no-wrap
 msgid "*dconf-locks*"
-msgstr ""
+msgstr "*dconf-locks*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:67
@@ -226,7 +238,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:69
 #, no-wrap
 msgid "CONDITIONAL LINES"
-msgstr ""
+msgstr "СТРОКИ С УСЛОВИЯМИ"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:73
@@ -235,12 +247,15 @@ msgid ""
 "with optional usage of several operators that can be used to provide some "
 "optional profile features."
 msgstr ""
+"Каждый из этих файлов служит шаблоном. Шаблон - это простой текстовый файл с "
+"необязательным использованием нескольких операторов, которые можно "
+"использовать для предоставления некоторых дополнительных функций профиля."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:74
 #, no-wrap
 msgid "*{continue if \"feature\"}*"
-msgstr ""
+msgstr "*{continue if \"feature\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:79
@@ -250,12 +265,16 @@ msgid ""
 "whole line with this operator will be removed and the rest of the template "
 "will be processed."
 msgstr ""
+"Немедленно прекратить обработку файла, если не определена «функция» ("
+"остальное содержимое файла будет удалено). Если \"функция\" определена, вся "
+"строка с этим оператором будет удалена, а остальная часть шаблона будет "
+"обработана."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:80
 #, no-wrap
 msgid "*{stop if \"feature\"}*"
-msgstr ""
+msgstr "*{stop if \"feature\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:85
@@ -265,12 +284,16 @@ msgid ""
 "\"feature\" is not defined, the whole line with this operator will be "
 "removed and the rest of the template will be processed."
 msgstr ""
+"Противоположность «continue if». Немедленно прекратить обработку файла, если "
+"«функция» определена (остальное содержимое файла будет удалено). Если "
+"\"функция\" не определена, вся строка с этим оператором будет удалена, а "
+"остальная часть шаблона будет обработана."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:86
 #, no-wrap
 msgid "*{include if \"feature\"}*"
-msgstr ""
+msgstr "*{include if \"feature\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:89
@@ -278,12 +301,14 @@ msgid ""
 "Include the line where this operator is placed only if \"feature\" is "
 "defined."
 msgstr ""
+"Включить строку, в которой размещен этот оператор, только если «функция» "
+"определена."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:90
 #, no-wrap
 msgid "*{exclude if \"feature\"}*"
-msgstr ""
+msgstr "*{exclude if \"feature\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:93
@@ -291,12 +316,14 @@ msgid ""
 "Opposite to \"include-if\". Include the line where this operator is placed "
 "only if \"feature\" is not defined."
 msgstr ""
+"Противоположность «include-if». Включить строку, в которой находится этот "
+"оператор, только если «функция» не определена."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:94
 #, no-wrap
 msgid "*{imply \"implied-feature\" if \"feature\"}*"
-msgstr ""
+msgstr "*{imply \"implied-feature\" if \"feature\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:98
@@ -305,12 +332,15 @@ msgid ""
 "whole line with this operator is removed, thus it is not possible to add "
 "anything else around this operator at the same line."
 msgstr ""
+"Включить функциональность «implied-feature», если функциональность «функция» "
+"включена. Вся строка с этим оператором удаляется, поэтому невозможно "
+"добавить что-либо еще вокруг этого оператора в той же строке."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:99
 #, no-wrap
 msgid "*{if \"feature\":true|false}*"
-msgstr ""
+msgstr "*{if \"feature\":true|false}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:102
@@ -318,12 +348,14 @@ msgid ""
 "If \"feature\" is defined, replace this operator with string \"true\", "
 "otherwise with string \"false\"."
 msgstr ""
+"Если «функция» определена, замените этот оператор строкой «true», в "
+"противном случае - строкой «false»."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:103
 #, no-wrap
 msgid "*{if \"feature\":true}*"
-msgstr ""
+msgstr "*{if \"функция\":true}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:106
@@ -331,6 +363,8 @@ msgid ""
 "If \"feature\" is defined, replace this operator with string \"true\", "
 "otherwise with an empty string."
 msgstr ""
+"Если «функция» определена, замените этот оператор строкой «true», в "
+"противном случае - пустой строкой."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:110
@@ -339,6 +373,10 @@ msgid ""
 "specifying single feature name. In this case the expression will evaluate to "
 "true or false and the conditional operator will act upon the result."
 msgstr ""
+"Также можно использовать логическое выражение в строке с условиями вместо "
+"указания одного имени функции. В этом случае выражение будет иметь значение "
+"true или false, и условный оператор будет действовать в соответствии с "
+"результатом."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:115
@@ -348,6 +386,11 @@ msgid ""
 "from the following logical operators: _and_, _or_ and _not_. The expression "
 "may also be enclosed in parentheses and contain multiple subexpressions."
 msgstr ""
+"Синтаксис выражения состоит из имен функций (например, _ \"функциональность\""
+" _), которые возвращают _true_, если функция определена, или _false_, если "
+"она не определена, и из следующих логических операторов: _and_, _or_ и "
+"_not_. Выражение также может быть заключено в круглые скобки и содержать "
+"несколько подвыражений."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:117
@@ -358,7 +401,7 @@ msgstr "Например:"
 #: src/man/authselect-profiles.5.adoc:118
 #, no-wrap
 msgid "*{if \"feature1\" or \"feature2\":true}*"
-msgstr ""
+msgstr "*{if \"функция1\" or \"функция2\":true}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:121
@@ -366,12 +409,14 @@ msgid ""
 "If \"feature1\" or \"feature2\" is defined, replace this operator with "
 "string \"true\", otherwise with an empty string."
 msgstr ""
+"Если определено «функция1» или «функция2», замените этот оператор строкой "
+"«true», в противном случае - пустой строкой."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:122
 #, no-wrap
 msgid "*{if not \"feature\":true|false}*"
-msgstr ""
+msgstr "*{if not \"функция\":true|false}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:125
@@ -379,12 +424,14 @@ msgid ""
 "If \"feature\" is not defined, replace this operator with string \"true\", "
 "otherwise with string \"false\"."
 msgstr ""
+"Если «функция» не определена, замените этот оператор строкой «true», в "
+"противном случае - строкой «false»."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:126
 #, no-wrap
 msgid "*{if not \"feature\":true}*"
-msgstr ""
+msgstr "*{if not \"функция\":true}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:129
@@ -392,12 +439,14 @@ msgid ""
 "If \"feature\" is not defined, replace this operator with string \"true\", "
 "otherwise with an empty string."
 msgstr ""
+"Если «функция» не определена, замените этот оператор строкой «true», в "
+"противном случае - пустой строкой."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:130
 #, no-wrap
 msgid "*{if \"feature1\" and (\"feature2\" or \"feature3\"):true}*"
-msgstr ""
+msgstr "*{if \"функция1\" and (\"функция2\" or \"функция3\"):true}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:133
@@ -406,12 +455,14 @@ msgid ""
 "defined replace this operator with string \"true\", otherwise with an empty "
 "string."
 msgstr ""
+"Если определено «функция1» и определено одно из «функция2» и «функция3», "
+"замените этот оператор строкой «true», в противном случае - пустой строкой."
 
 #. type: Title ~
 #: src/man/authselect-profiles.5.adoc:135
 #, no-wrap
 msgid "EXAMPLE"
-msgstr ""
+msgstr "ПРИМЕР"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:138
@@ -419,6 +470,8 @@ msgid ""
 "Here is an example of using \"if\" operator. If \"with-sudo\" feature is "
 "enabled, it will add \"sss\" to sudoers line."
 msgstr ""
+"Вот пример использования оператора «if». Если функция «with-sudo» "
+"активирована, она добавит «sss» в строку sudoers."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:145
@@ -431,6 +484,12 @@ msgid ""
 "  services:   sss files\n"
 "  sudoers:    files {if \"with-sudo\":sss}\n"
 msgstr ""
+"  passwd:     sss files\n"
+"  group:      sss files\n"
+"  netgroup:   sss files\n"
+"  automount:  sss files\n"
+"  services:   sss files\n"
+"  sudoers:    files {if \"with-sudo\":sss}\n"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:150
@@ -440,6 +499,10 @@ msgid ""
 "If it is enabled and also \"with-faillock\" feature is enabled, it will also "
 "enable support for pam_faillock."
 msgstr ""
+"Вот пример операторов «continue-if» и «include-if». Результирующий файл "
+"будет пустым, если не включена функция «with-smartcard». Если она включена, "
+"а также включена функция «with-faillock», она также включит поддержку "
+"pam_faillock."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:163
@@ -458,6 +521,25 @@ msgid ""
 "  auth        required                                     pam_deny.so\n"
 "  ...\n"
 msgstr ""
+"  {continue if \"with-smartcard\"}\n"
+"  auth        required                                     pam_env.so\n"
+"  auth        required                                     pam_faildelay.so "
+"delay=2000000\n"
+"  auth        required                                     pam_faillock.so "
+"preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
+"uid >= 1000 quiet\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
+"  auth        sufficient                                   pam_unix.so "
+"nullok try_first_pass\n"
+"  auth        requisite                                    pam_succeed_if.so "
+"uid >= 1000 quiet_success\n"
+"  auth        sufficient                                   pam_sss.so "
+"forward_pass\n"
+"  auth        required                                     pam_faillock.so "
+"authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
+"  auth        required                                     pam_deny.so\n"
+"  ...\n"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:168
@@ -468,6 +550,10 @@ msgid ""
 "not have to include both features but only \"with-smartcard-required\" is "
 "necessary."
 msgstr ""
+"Вот пример использования логического выражения «continue-if». Файл будет "
+"пустым, если не установлено «with-smartcard» или «with-smartcard-required». "
+"Это упростит вызов команды _authselect select_, которая не должна включать "
+"обе функции, но необходима только «with-smartcard-required»."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:181
@@ -486,6 +572,25 @@ msgid ""
 "  auth        required                                     pam_deny.so\n"
 "  ...\n"
 msgstr ""
+"  {continue if \"with-smartcard\" or \"with-smartcard-required\"}\n"
+"  auth        required                                     pam_env.so\n"
+"  auth        required                                     pam_faildelay.so "
+"delay=2000000\n"
+"  auth        required                                     pam_faillock.so "
+"preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
+"uid >= 1000 quiet\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
+"  auth        sufficient                                   pam_unix.so "
+"nullok try_first_pass\n"
+"  auth        requisite                                    pam_succeed_if.so "
+"uid >= 1000 quiet_success\n"
+"  auth        sufficient                                   pam_sss.so "
+"forward_pass\n"
+"  auth        required                                     pam_faillock.so "
+"authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
+"  auth        required                                     pam_deny.so\n"
+"  ...\n"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:186
@@ -495,6 +600,10 @@ msgid ""
 "all relevant PAM modules are used. This will achieve the same behavior as "
 "the previous example."
 msgstr ""
+"Вот пример оператора «impy-if». Включение функции «with-smartcard-required» "
+"также включает «with-smartcard» для гарантии, что используются все "
+"соответствующие модули PAM. Результат будет таким же, что и в предыдущем "
+"примере."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:201
@@ -515,12 +624,41 @@ msgid ""
 "  auth        required                                     pam_deny.so\n"
 "  ...\n"
 msgstr ""
+"  {imply \"with-smartcard\" if \"with-smartcard-required\"}\n"
+"  auth        required                                     pam_env.so\n"
+"  auth        required                                     pam_faildelay.so "
+"delay=2000000\n"
+"  auth        [success=1 default=ignore]                   pam_succeed_if.so "
+"service notin login:gdm:xdm:kdm:xscreensaver:gnome-screensaver:kscreensaver "
+"quiet use_uid {include if \"with-smartcard-required\"}\n"
+"  auth        [success=done ignore=ignore default=die]     pam_sss.so "
+"require_cert_auth ignore_authinfo_unavail   {include if \"with-smartcard-"
+"required\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
+"uid >= 1000 quiet\n"
+"  auth        [default=1 ignore=ignore success=ok]         "
+"pam_localuser.so                                       {exclude if \"with-"
+"smartcard\"}\n"
+"  auth        [default=2 ignore=ignore success=ok]         "
+"pam_localuser.so                                       {include if \"with-"
+"smartcard\"}\n"
+"  auth        [success=done authinfo_unavail=ignore ignore=ignore "
+"default=die] pam_sss.so try_cert_auth           {include if \"with-"
+"smartcard\"}\n"
+"  auth        sufficient                                   pam_unix.so {if "
+"not \"without-nullok\":nullok} try_first_pass\n"
+"  auth        requisite                                    pam_succeed_if.so "
+"uid >= 1000 quiet_success\n"
+"  auth        sufficient                                   pam_sss.so "
+"forward_pass\n"
+"  auth        required                                     pam_deny.so\n"
+"  ...\n"
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:203
 #, no-wrap
 msgid "CREATING A NEW PROFILE"
-msgstr ""
+msgstr "СОЗДАНИЕ НОВОГО ПРОФИЛЯ"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:208
@@ -530,6 +668,10 @@ msgid ""
 "files must be present, only *README* is mandatory. Other files can be "
 "created on per-need basis."
 msgstr ""
+"Чтобы зарегистрировать новый профиль в authselect, создайте каталог в одном "
+"из мест размещения профиля authselect с файлами, перечисленными выше. Не все "
+"файлы должны присутствовать, только * README * является обязательным. Другие "
+"файлы могут быть созданы по мере необходимости."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:212
@@ -538,6 +680,10 @@ msgid ""
 "profile. See *authselect(8)* manual page or *authselect create-profile --"
 "help* for more information."
 msgstr ""
+"Команду *authselect create-profile* может оказаться полезной при создании "
+"нового профиля. См. страницу руководства *authselect (8)* или воспользуйтесь "
+"командой *authselect create-profile --help* для получения дополнительной "
+"информации."
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:214
@@ -548,4 +694,4 @@ msgstr "СМОТРИТЕ ТАКЖЕ"
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:215
 msgid "authselect(8), nsswitch.conf(5), PAM(8)"
-msgstr ""
+msgstr "authselect(8), nsswitch.conf(5), PAM(8)"

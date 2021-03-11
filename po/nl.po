@@ -1,11 +1,11 @@
-# Geert Warrink <geert.warrink@onsnet.nu>, 2018. #zanata, 2020.
-# Geert Warrink <geert.warrink@onsnet.nu>, 2019. #zanata, 2020.
+# Geert Warrink <geert.warrink@onsnet.nu>, 2018. #zanata, 2020, 2021.
+# Geert Warrink <geert.warrink@onsnet.nu>, 2019. #zanata, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
 "POT-Creation-Date: 2020-11-25 10:47+0100\n"
-"PO-Revision-Date: 2020-02-18 15:38+0000\n"
+"PO-Revision-Date: 2021-02-24 17:40+0000\n"
 "Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
 "Language-Team: Dutch <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/nl/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10.3\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:187
 msgid "Unable to obtain supported features"
@@ -79,24 +79,17 @@ msgid "Unable to activate profile [%s] [%d]: %s"
 msgstr "Kan profiel [%s] [%d] niet activeren.: %s"
 
 #: src/lib/authselect.c:150
-#, fuzzy
-#| msgid "Trying to backup authselect configuration to [%s]"
 msgid "Trying to uninstall authselect configuration"
-msgstr ""
-"Er wordt geprobeerd om een back-up van de authselectconfiguratie te maken "
-"naar [%s]"
+msgstr "Er wordt geprobeerd om de authselect-configuratie te verwijderen"
 
 #: src/lib/authselect.c:154
-#, fuzzy, c-format
-#| msgid "Unable to create symbolic links [%d]: %s"
+#, c-format
 msgid "Unable to remove symlinks [%d]: %s"
-msgstr "Kan symbolische links [%d] niet aanmaken: %s"
+msgstr "Kan sym-links [%d] niet verwijderen: %s"
 
 #: src/lib/authselect.c:158
-#, fuzzy
-#| msgid "Changes were successfully applied.\n"
 msgid "Symbolic links were successfully removed"
-msgstr "De veranderingen werden met succes toegepast.\n"
+msgstr "Symbolische links werden met succes verwijderd"
 
 #: src/lib/authselect.c:197
 #, c-format
@@ -257,13 +250,12 @@ msgstr "Kan niet schrijven naar [%s] [%d]: %s"
 #: src/lib/authselect_profile.c:385
 #, c-format
 msgid "Omitting [%s] since it does not exist in base profile"
-msgstr ""
+msgstr "[%s] wordt weggelaten omdat het niet bestaat in het basisprofiel"
 
 #: src/lib/authselect_profile.c:389
-#, fuzzy, c-format
-#| msgid "Unable to check file mode of [%s] [%d]: %s"
+#, c-format
 msgid "Unable to check presence of [%s] [%d]: %s"
-msgstr "Kan bestandsmodus  van [%s] [%d] niet controleren: %s"
+msgstr "Kan aanwezigheid van [%s] [%d] niet controleren: %s"
 
 #: src/lib/authselect_profile.c:397
 #, c-format
@@ -423,7 +415,7 @@ msgstr "Bestand [%s] bestaat maar het moet nog overschreven worden!"
 #: src/lib/files/symlinks.c:190
 #, c-format
 msgid "Skipping [%s] because it is not an authselect file"
-msgstr ""
+msgstr "[%s] wordt overgeslagen omdat het geen authselect bestand is"
 
 #: src/lib/files/system.c:74 src/lib/profiles/read.c:162
 #, c-format
@@ -521,7 +513,7 @@ msgstr "[%s] heeft een onverwachte inhoud!"
 #: src/lib/files/system.c:531
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
-msgstr "Kan bestandsmodus  van [%s] [%d] niet controleren: %s"
+msgstr "Kan bestandsmodus van [%s] [%d] niet controleren: %s"
 
 #: src/lib/files/system.c:553
 #, c-format
@@ -895,7 +887,7 @@ msgstr "Authselect commando '%s' kan alleen als root uitgevoerd worden!\n"
 
 #: src/cli/cli_tool.c:243
 msgid "Bug: commands can't be NULL!\n"
-msgstr "Bug: commando's kunnen niet NULL  zijn!\n"
+msgstr "Bug: commando's kunnen niet NULL zijn!\n"
 
 #: src/cli/cli_tool.c:306
 msgid "Command options:"
@@ -954,7 +946,9 @@ msgstr ""
 msgid ""
 "At least one option is required!\n"
 "\n"
-msgstr "Ten minste één optie is vereist!\n"
+msgstr ""
+"Ten minste één optie is vereist!\n"
+"\n"
 
 #: src/cli/main.c:72 src/cli/main.c:429 src/cli/main.c:467
 msgid "Profile identifier."
@@ -1311,10 +1305,9 @@ msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "Kan back-up [%s] [%d] niet herstellen: %s\n"
 
 #: src/cli/main.c:902
-#, fuzzy, c-format
-#| msgid "Unable to test current configuration [%d]: %s"
+#, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
-msgstr "Kan huidige configuratie [%d] niet testen: %s"
+msgstr "Kan huidige authselect configuratie [%d] niet verwijderen: %s\n"
 
 #: src/cli/main.c:945
 msgid "Select profile"
@@ -1381,10 +1374,8 @@ msgid "Restore from backup"
 msgstr "Herstel van back-up"
 
 #: src/cli/main.c:961
-#, fuzzy
-#| msgid "Backup [%s] contains authselect configuration"
 msgid "Uninstall authselect configuration"
-msgstr "Back-up [%s] bevat authselectconfiguratie"
+msgstr "Verwijder authselectconfiguratie"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"

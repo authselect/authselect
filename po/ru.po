@@ -1,11 +1,11 @@
-# Igor Gorbounov <igor.gorbounov@gmail.com>, 2018. #zanata, 2020.
-# Igor Gorbounov <igor.gorbounov@gmail.com>, 2019. #zanata, 2020.
+# Igor Gorbounov <igor.gorbounov@gmail.com>, 2018. #zanata, 2020, 2021.
+# Igor Gorbounov <igor.gorbounov@gmail.com>, 2019. #zanata, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
 "POT-Creation-Date: 2020-11-25 10:47+0100\n"
-"PO-Revision-Date: 2020-09-01 20:29+0000\n"
+"PO-Revision-Date: 2021-02-24 17:40+0000\n"
 "Last-Translator: Igor Gorbounov <igor.gorbounov@gmail.com>\n"
 "Language-Team: Russian <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/ru/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.2.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:187
 msgid "Unable to obtain supported features"
@@ -80,22 +80,17 @@ msgid "Unable to activate profile [%s] [%d]: %s"
 msgstr "Не удается активировать профиль [%s] [%d]: %s"
 
 #: src/lib/authselect.c:150
-#, fuzzy
-#| msgid "Trying to backup authselect configuration to [%s]"
 msgid "Trying to uninstall authselect configuration"
-msgstr "Ппоытка резервного копирования конфигурации authselect в [%s]"
+msgstr "Попытка деинсталировать конфигурацию authselect"
 
 #: src/lib/authselect.c:154
-#, fuzzy, c-format
-#| msgid "Unable to create symbolic links [%d]: %s"
+#, c-format
 msgid "Unable to remove symlinks [%d]: %s"
-msgstr "Не удается создать символические ссылки [%d]: %s"
+msgstr "Не удается удалить символические ссылки [%d]: %s"
 
 #: src/lib/authselect.c:158
-#, fuzzy
-#| msgid "Changes were successfully applied.\n"
 msgid "Symbolic links were successfully removed"
-msgstr "Изменения успешно применены.\n"
+msgstr "Символические ссылки успешно удалены"
 
 #: src/lib/authselect.c:197
 #, c-format
@@ -251,13 +246,12 @@ msgstr "Не удается записать в [%s] [%d]: %s"
 #: src/lib/authselect_profile.c:385
 #, c-format
 msgid "Omitting [%s] since it does not exist in base profile"
-msgstr ""
+msgstr "Пропуск [%s], так как его нет в базовом профиле"
 
 #: src/lib/authselect_profile.c:389
-#, fuzzy, c-format
-#| msgid "Unable to check file mode of [%s] [%d]: %s"
+#, c-format
 msgid "Unable to check presence of [%s] [%d]: %s"
-msgstr "Не удается проверить режим файла [%s] [%d]: %s"
+msgstr "Не удается проверить присутствие [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:397
 #, c-format
@@ -417,7 +411,7 @@ msgstr "Файл [%s] существует, но его нужно переза�
 #: src/lib/files/symlinks.c:190
 #, c-format
 msgid "Skipping [%s] because it is not an authselect file"
-msgstr ""
+msgstr "Пропускается [%s], поскольку это не файл authselect"
 
 #: src/lib/files/system.c:74 src/lib/profiles/read.c:162
 #, c-format
@@ -1303,10 +1297,9 @@ msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "Не удается восстановить резервную копию [%s] [%d]: %s\n"
 
 #: src/cli/main.c:902
-#, fuzzy, c-format
-#| msgid "Unable to test current configuration [%d]: %s"
+#, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
-msgstr "Не удается протестировать текущую конфигурацию [%d]: %s"
+msgstr "Не удается деинсталировать конфигурацию authselect [%d]: %s\n"
 
 #: src/cli/main.c:945
 msgid "Select profile"
@@ -1373,10 +1366,8 @@ msgid "Restore from backup"
 msgstr "Восстановить из резервной копии"
 
 #: src/cli/main.c:961
-#, fuzzy
-#| msgid "Backup [%s] contains authselect configuration"
 msgid "Uninstall authselect configuration"
-msgstr "Резервная копия [%s] содержит конфигурацию authselect"
+msgstr "Удалить конфигурацию authselect"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
