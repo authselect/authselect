@@ -1,12 +1,12 @@
-# Göran Uddeborg <goeran@uddeborg.se>, 2018. #zanata, 2020.
-# Göran Uddeborg <goeran@uddeborg.se>, 2019. #zanata, 2020.
+# Göran Uddeborg <goeran@uddeborg.se>, 2018. #zanata, 2020, 2021.
+# Göran Uddeborg <goeran@uddeborg.se>, 2019. #zanata, 2020, 2021.
 # Pavel Brezina <pbrezina@redhat.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
 "POT-Creation-Date: 2020-11-25 10:47+0100\n"
-"PO-Revision-Date: 2020-02-19 19:38+0000\n"
+"PO-Revision-Date: 2021-02-26 19:40+0000\n"
 "Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
 "Language-Team: Swedish <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/sv/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10.3\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:187
 msgid "Unable to obtain supported features"
@@ -80,22 +80,17 @@ msgid "Unable to activate profile [%s] [%d]: %s"
 msgstr "Kan inte aktivera profilen [%s] [%d]: %s"
 
 #: src/lib/authselect.c:150
-#, fuzzy
-#| msgid "Trying to backup authselect configuration to [%s]"
 msgid "Trying to uninstall authselect configuration"
-msgstr "Försöker säkerhetskopiera authselect-konfigurationen till [%s]"
+msgstr "Försöker avinstallera authselect-konfigurationen"
 
 #: src/lib/authselect.c:154
-#, fuzzy, c-format
-#| msgid "Unable to create symbolic links [%d]: %s"
+#, c-format
 msgid "Unable to remove symlinks [%d]: %s"
-msgstr "Kan inte skapa den symboliska länken [%d]: %s"
+msgstr "Kan inte ta bort den symlänkar [%d]: %s"
 
 #: src/lib/authselect.c:158
-#, fuzzy
-#| msgid "Changes were successfully applied.\n"
 msgid "Symbolic links were successfully removed"
-msgstr "Ändringar verkställdes.\n"
+msgstr "Symboliska läkar togs bort"
 
 #: src/lib/authselect.c:197
 #, c-format
@@ -251,13 +246,12 @@ msgstr "Kan inte skriva till [%s] [%d]: %s"
 #: src/lib/authselect_profile.c:385
 #, c-format
 msgid "Omitting [%s] since it does not exist in base profile"
-msgstr ""
+msgstr "Utesluter [%s] eftersom den inte finns i basprofilen"
 
 #: src/lib/authselect_profile.c:389
-#, fuzzy, c-format
-#| msgid "Unable to check file mode of [%s] [%d]: %s"
+#, c-format
 msgid "Unable to check presence of [%s] [%d]: %s"
-msgstr "Kan inte kontrollera rättigheterna på [%s] [%d]: %s"
+msgstr "Kan inte kontrollera förekomsten av [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:397
 #, c-format
@@ -417,7 +411,7 @@ msgstr "Filen [%s] finns men den behöver skrivas över!"
 #: src/lib/files/symlinks.c:190
 #, c-format
 msgid "Skipping [%s] because it is not an authselect file"
-msgstr ""
+msgstr "Hoppar över [%s] eftersom den inte är en authselect-fil"
 
 #: src/lib/files/system.c:74 src/lib/profiles/read.c:162
 #, c-format
@@ -1063,7 +1057,7 @@ msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
 msgstr ""
-"Några oväntade ändringar av konfigurationen upptäcktes.  Använd kommandot "
+"Några oväntade ändringar av konfigurationen upptäcktes. Använd kommandot "
 "”select” istället.\n"
 
 #: src/cli/main.c:273
@@ -1103,7 +1097,7 @@ msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
 msgstr ""
-"Den aktuella konfigurationen är inte giltig.  Den var förmodligen ändrad "
+"Den aktuella konfigurationen är inte giltig. Den var förmodligen ändrad "
 "utanför authselect."
 
 #: src/cli/main.c:365
@@ -1297,10 +1291,9 @@ msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "Kan inte återställa säkerhetskopian [%s] [%d]: %s\n"
 
 #: src/cli/main.c:902
-#, fuzzy, c-format
-#| msgid "Unable to test current configuration [%d]: %s"
+#, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
-msgstr "Kan inte testa den aktuella konfigurationen [%d]: %s"
+msgstr "Kan inte avinstallera authselect-konfigurationen [%d]: %s\n"
 
 #: src/cli/main.c:945
 msgid "Select profile"
@@ -1367,10 +1360,8 @@ msgid "Restore from backup"
 msgstr "Återställ från säkerhetskopia"
 
 #: src/cli/main.c:961
-#, fuzzy
-#| msgid "Backup [%s] contains authselect configuration"
 msgid "Uninstall authselect configuration"
-msgstr "Säkerhetskopian [%s] innehåller en authselect-konfiguration"
+msgstr "Avinstallera authselect-konfigurationen"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
@@ -1652,7 +1643,7 @@ msgstr "Kör: %s"
 #: src/compat/authcompat.py.in.in:68
 #, python-format
 msgid "Service %s was not found. Please install the service."
-msgstr "Tjänsten %s finns inte.  Installera tjänsten."
+msgstr "Tjänsten %s finns inte. Installera tjänsten."
 
 #: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:625
 #: src/compat/authcompat.py.in.in:651
@@ -1668,7 +1659,7 @@ msgstr "Tar bort filen: %s"
 #: src/compat/authcompat.py.in.in:331
 #, python-format
 msgid "%s was not found. Please, install realmd."
-msgstr "%s finns inte.  Installera realmd."
+msgstr "%s finns inte. Installera realmd."
 
 #: src/compat/authcompat.py.in.in:465
 msgid "Running authconfig compatibility tool."
@@ -1681,7 +1672,7 @@ msgid ""
 "capabilities of authconfig.\n"
 msgstr ""
 "Syftet med detta verktyg är att möjliggöra autentisering mot valda tjänster "
-"med authselect och minimal konfiguration.  Det erbjuder inte alla egenskaper "
+"med authselect och minimal konfiguration. Det erbjuder inte alla egenskaper "
 "hos authconfig.\n"
 
 #: src/compat/authcompat.py.in.in:469

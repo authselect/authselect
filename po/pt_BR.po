@@ -1,16 +1,16 @@
 # Ludek Janda <ljanda@redhat.com>, 2018. #zanata
 # Marcelo Ghelman <marcelo.ghelman@gmail.com>, 2018. #zanata
 # Ludek Janda <ljanda@redhat.com>, 2019. #zanata
-# Fábio Rodrigues Ribeiro <farribeiro@gmail.com>, 2020.
-# Flávio Moisés Dalla Porta Schefer <flavio.schefer@gmail.com>, 2020.
+# Fábio Rodrigues Ribeiro <farribeiro@gmail.com>, 2020, 2021.
+# Flávio Moisés Dalla Porta Schefer <flavio.schefer@gmail.com>, 2020, 2021.
 # José Lemos Neto <lemosjosex@protonmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
 "POT-Creation-Date: 2020-11-25 10:47+0100\n"
-"PO-Revision-Date: 2020-08-25 23:11+0000\n"
-"Last-Translator: José Lemos Neto <lemosjosex@protonmail.com>\n"
+"PO-Revision-Date: 2021-03-03 19:40+0000\n"
+"Last-Translator: Fábio Rodrigues Ribeiro <farribeiro@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.fedoraproject.org/"
 "projects/authselect/master-application/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.2.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:187
 msgid "Unable to obtain supported features"
@@ -97,7 +97,7 @@ msgstr "Não é possível criar links simbólicos [%d]: %s"
 #, fuzzy
 #| msgid "Changes were successfully applied.\n"
 msgid "Symbolic links were successfully removed"
-msgstr "As alterações foram aplicadas com sucesso.\n"
+msgstr "Links simbólicos foram removidos com sucesso"
 
 #: src/lib/authselect.c:197
 #, c-format
@@ -161,13 +161,14 @@ msgid "Unable to create backup [%d]: %s"
 msgstr "Falha ao criar backup [%d]: %s"
 
 #: src/lib/authselect_backup.c:205
+#, fuzzy
 msgid " does not exist."
-msgstr " não existe!"
+msgstr " não existe."
 
 #: src/lib/authselect_backup.c:208 src/lib/profiles/list.c:50
 #, fuzzy, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
-msgstr "Não pôde listar o diretório [%s] [d%]: %s"
+msgstr "Não pôde listar o diretório [%s] [%d]: %s"
 
 #: src/lib/authselect_backup.c:222
 #, c-format
@@ -613,9 +614,9 @@ msgid "Profile [%s] does not contain a name in [%s]!"
 msgstr "Perfil [%s] não contém um nome em [%s]!"
 
 #: src/lib/util/dir.c:77 src/lib/util/dir.c:83
-#, c-format
+#, c-format, fuzzy
 msgid "Unable to get basename of [%s]"
-msgstr ""
+msgstr "Incapaz de encontrar nome de base de [%s]"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
 #: src/lib/util/file.c:199 src/cli/main.c:826
@@ -1304,7 +1305,7 @@ msgstr "Incapaz de restaurar o backup [%s] [%d]: %s\n"
 #, fuzzy, c-format
 #| msgid "Unable to test current configuration [%d]: %s"
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
-msgstr "Não é possível testar a configuração atual [%d]: %s"
+msgstr "Não é possível desinstalar a configuração do authselect [%d]: %s\n"
 
 #: src/cli/main.c:945
 msgid "Select profile"
