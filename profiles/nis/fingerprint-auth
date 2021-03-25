@@ -1,7 +1,7 @@
 {continue if "with-fingerprint"}
 auth        required                                     pam_env.so
 auth        required                                     pam_faillock.so preauth silent                         {include if "with-faillock"}
-auth        required                                     pam_fprintd.so
+auth        [success=done default=bad]                   pam_fprintd.so
 auth        required                                     pam_faillock.so authfail                               {include if "with-faillock"}
 auth        required                                     pam_deny.so
 
