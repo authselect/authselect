@@ -2,13 +2,14 @@
 # Eun-Ju Kim <eukim@redhat.com>, 2019. #zanata
 # Ludek Janda <ljanda@redhat.com>, 2019. #zanata, 2020.
 # Sundeep Anand <suanand@redhat.com>, 2021.
+# simmon <simmon@nplob.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
 "POT-Creation-Date: 2020-11-25 10:47+0100\n"
-"PO-Revision-Date: 2021-03-05 14:01+0000\n"
-"Last-Translator: Sundeep Anand <suanand@redhat.com>\n"
+"PO-Revision-Date: 2021-03-27 04:01+0000\n"
+"Last-Translator: simmon <simmon@nplob.com>\n"
 "Language-Team: Korean <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/ko/>\n"
 "Language: ko\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.5.1\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:187
 msgid "Unable to obtain supported features"
@@ -649,12 +650,12 @@ msgstr "[%s]는 상징적 링크가 아닙니다!"
 #: src/lib/util/file.c:60
 #, c-format
 msgid "[%s] has wrong type [%.7o], expected [%.7o]!"
-msgstr "[%s]의 유형이 [% .7o], 예상되는 [% .7o]!"
+msgstr "[%s]의 유형이 [%.7o], 예상되는 [%.7o]!"
 
 #: src/lib/util/file.c:87
 #, c-format
 msgid "[%s] has wrong mode [%.4o], expected [%.4o]!"
-msgstr "[%s]에 잘못된 모드 [% .4o], 예상 [% .4o]이 있습니다!"
+msgstr "[%s]에 잘못된 모드 [%.4o], 예상 [%.4o]이 있습니다!"
 
 #: src/lib/util/file.c:93
 #, c-format
@@ -755,9 +756,7 @@ msgstr "fscreate selinux 컨텍스트를 복원 할 수 없습니다!"
 msgid ""
 "File [%s] should exist but is missing. It is not safe to delete [%s]. "
 "Aborting."
-msgstr ""
-"파일 [%s]이/가 누락되어 있습니다. [ %s ]을/를 삭제하는 것은 안전하지 않습니"
-"다. 종료 중."
+msgstr "파일 [%s]이 누락되어 있습니다. [ %s ]을 삭제하는 것은 안전하지 않습니다. 종료 중."
 
 #: src/lib/util/selinux.c:420
 #, c-format
@@ -859,7 +858,8 @@ msgid ""
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
 msgstr ""
-"용법:%s 명령 명령 - 명령\n"
+"용법:\n"
+"%s 명령 명령-ARGS\n"
 "\n"
 
 #: src/cli/cli_tool.c:170
