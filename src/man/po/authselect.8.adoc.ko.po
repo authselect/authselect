@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-11-25 10:47+0100\n"
-"PO-Revision-Date: 2021-03-11 16:01+0000\n"
+"PO-Revision-Date: 2021-03-31 03:01+0000\n"
 "Last-Translator: simmon <simmon@nplob.com>\n"
 "Language-Team: Korean <https://translate.fedoraproject.org/projects/"
 "authselect/master-authselect8adoc/ko/>\n"
@@ -16,13 +16,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.5.1\n"
+"X-Generator: Weblate 4.5.2\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
 #, no-wrap
 msgid "authselect(8)"
-msgstr ""
+msgstr "authselect(8)"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:6
@@ -33,25 +33,25 @@ msgstr "이름"
 #. type: Plain text
 #: src/man/authselect.8.adoc:9
 msgid "authselect - select system identity and authentication sources."
-msgstr ""
+msgstr "authselect - select 시스템 식별과 인증 소스."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:11
 #, no-wrap
 msgid "SYNOPSIS"
-msgstr ""
+msgstr "개요"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:13
 #, no-wrap
 msgid " authselect [--debug] [--trace] [--warn] command [command options] \n"
-msgstr ""
+msgstr " authselect [--debug] [--trace] [--warn] command [command options] \n"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:15
 #, no-wrap
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "설명"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:21
@@ -63,6 +63,11 @@ msgid ""
 "is selected, *authselect* will create nsswitch.conf(5) and PAM(8) stack to use\n"
 "identity and authentication sources defined by the profile.\n"
 msgstr ""
+"*Authselect*는 시스템 식별과 인증 소스과 지정된 프로파일 선택에 의한\n"
+"공급자를 구성하는 도구입니다. 프로파일은 시스템 구성의 결과로 보여지는\n"
+"것과 같이 설명되어지는 파일의 설정입니다.\n"
+"프로파일이 선택되어졌을 때에, *authselect*는 식별과 프로파일에 정의된 인증 소스\n"
+"사용하는 nsswitch.conf(5) 과 PAM(8)를 생성 할 것입니다.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:27
@@ -73,12 +78,15 @@ msgid ""
 "*authselect*. See _authselect-profiles(5)_ for more information on extending "
 "existing profiles."
 msgstr ""
+"만약 제공된 프로파일 설정이 충분하지 않으면, 관리자는 특별 프로파일 디렉토리 ({AUTHSELECT_CUSTOM_DIR})에 의해 "
+"사용자 정의 프로파일을 생성 할 수 있습니다. 그렇게 하면, *authselect*에 의하여 프로파일은 긴급히 사용되어질 수 있습니다. "
+"기존의 프로파일을 확장하는 상세한 정보를 위하여 _authselect-profiles(5)_를 참조하세요."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:29
 #, no-wrap
 msgid "OPT-IN TO AUTHSELECT"
-msgstr ""
+msgstr "인증 선택에 동의"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:39
@@ -93,12 +101,18 @@ msgid ""
 "so if you wish to go back you can restore it with *authselect backup-"
 "restore* command (see description below)."
 msgstr ""
+"Authselect는 이것에 의해 이미 생성되어진 것이 아니면 당신의 기존 설정을 건드리지 않을 것입니다. 만약 당신이 자신의 시스템 "
+"인증 설정에 authselect 사용하기\n"
+"시작을 원하면, 우선 *--force* 매개변수와 함께 *authselect select*를 호출해주세요. *--force* 매개변수는 "
+"존재하는 비-authselect 구성을 곧바로 덮어쓰기하는 authselect를 말합니다(아래 설명을 참고하세요). *--force* "
+"매개변수 사용은 현재 구성 백업을 자동으로 발생 시킬 것입니다. 그래서 만약 당신이 *authselct-restore * 명령과 함께 "
+"이를 복구 할 수 있도록 뒤로 돌릴 수 있습니다(아래 설명을 참고하세요)."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:41
 #, no-wrap
 msgid "AVAILABLE COMMANDS"
-msgstr ""
+msgstr "이용 가능한 명령"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:44
@@ -106,25 +120,28 @@ msgid ""
 "To list all available commands run *authselect* without any parameters.  To "
 "print help for the selected command run *authselect COMMAND --help*."
 msgstr ""
+"모든 가용한 명령을 목록화 하는 것은 어떤 매개변수 없이 authselect를 실행합니다. 선택된 명령을 위하여 도움을 출력하는 것은 "
+"authselect COMMAND -help를 실행합니다."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:45
 #, no-wrap
 msgid "*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup=NAME]"
 msgstr ""
+"*선택* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup=NAME]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:48
 msgid ""
 "Activate desired profile. See profile description with *show* command, to "
 "list profile specific optional features."
-msgstr ""
+msgstr "기대하는 프로파일을 활성화합니다. 프로파일 지정된 추가 기능을 목록화하여 *show* 명령과 함께 프로파일 설명을 참고하세요."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:49
 #, no-wrap
 msgid "*--force, -f*:"
-msgstr ""
+msgstr "*--force, -f*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:54
@@ -135,13 +152,17 @@ msgid ""
 "automatically backup system files before writing any change unless\n"
 "*--nobackup* option is set.\n"
 msgstr ""
+"앞서 설정이 authselect가 아니라 다른 도구 또는 사용자 변경에 의해서\n"
+"생성된 변경을 기록합니다.\n"
+"이 선택은 *--nobackup* 선택이 설정된 것이 아니라 어떤 변경을 쓰기 전에\n"
+"자동으로 시스템 파일을 백업할 것입니다.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:55 src/man/authselect.8.adoc:80
 #: src/man/authselect.8.adoc:149 src/man/authselect.8.adoc:167
 #, no-wrap
 msgid "*-b*:"
-msgstr ""
+msgstr "*-b*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:60
@@ -152,13 +173,17 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
+"선택된 프로파일을 활성화하기 전에 시스템 파일을 백업\n"
+"하세요. 백업은 {AUTHSELECT_BACKUP_DIR}/NAME에 저장될\n"
+"것입니다. 독특한 문자열과 함께 현재 시간은 백업 이름으로\n"
+"사용됩니다. 이는 *--backup=*를 위한 손쉬운 방법입니다.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:61 src/man/authselect.8.adoc:86
 #: src/man/authselect.8.adoc:155 src/man/authselect.8.adoc:173
 #, no-wrap
 msgid "*--backup=NAME*:"
-msgstr ""
+msgstr "*--backup=NAME*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:65
@@ -168,24 +193,27 @@ msgid ""
 "will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
 "unique string is used as a name if no value is provided.\n"
 msgstr ""
+"선택된 프로파일이 활성화하기 전에 시스템을 백업하세요. 백업은\n"
+"{AUTHSELECT_BACKUP_DIR}/NAME에 저장될 것입니다. 독특한 문자열과\n"
+"함께 만약 어떤 값도 제공되어지지 않으면 이름으로 사용됩니다.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:66
 #, no-wrap
 msgid "*--nobackup*:"
-msgstr ""
+msgstr "*--nobackup*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:68
 #, no-wrap
 msgid "Do not backup system configuration even if *--force* is set.\n"
-msgstr ""
+msgstr "*--force* 설정 되어 있다면 시스템 설정을 대비(backup)하지 않습니다.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:69 src/man/authselect.8.adoc:160
 #, no-wrap
 msgid "*--quiet, -q*:"
-msgstr ""
+msgstr "*--quiet, -q*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:72 src/man/authselect.8.adoc:163
@@ -194,12 +222,14 @@ msgid ""
 "The command will not print any informational message such as additional\n"
 "profile requirements or backup location. Errors are still being print.\n"
 msgstr ""
+"이 명령은 추가 프로파일 요구사항 또는 백업 위치와 같은 어던 정보 메시지도 출력하지\n"
+"않을 것입니다. 오류는 여전히 출력 되어질 것입니다.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:73
 #, no-wrap
 msgid "*apply-changes* [-b] [--backup=NAME]"
-msgstr ""
+msgstr "*apply-changes* [-b] [--backup=NAME]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:79
@@ -210,6 +240,9 @@ msgid ""
 "changes if the existing configuration is a valid authselect configuration, "
 "otherwise an error is returned."
 msgstr ""
+"현재 선택된 프로파일을 재 적용합니다. 만약 프로파일 템플리트가 최신화 되면 이 명령은 시스템에서 이들 변화를 적용하기 위하여 현재 "
+"시스템 구성에 재 발생하는데 사용될 수 있습니다. 이 명령은 만약 존재하는 구성이 유효한 authselect 구성인 경우에만 변경 사항을 "
+"다시 적용하고, 그렇지 않으면 오류를 반환합니다."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:85
@@ -220,6 +253,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
+"백업은 {AUTHSELECT_BACKUP_DIR}/NAME에 저장될\n"
+"것입니다. 독특한 문자열과 함께 현재 시간은 백업 이름\n"
+"으로 사용됩니다. 이것은 *--backup=*을 위해 간단히\n"
+"사용됩니다.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:90
@@ -229,12 +266,15 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
+"변경을 적용하기 전에 시스템 파일을 백업하세요. 이들 백업은\n"
+"{AUTHSELECT_BACKUP_DIR}/NAME에 저장될 것입니다. 독특한 문자열과\n"
+"함께 만약 어떤 값도 제공되어지지 않으면 이름으로 사용됩니다.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:91
 #, no-wrap
 msgid "*list*"
-msgstr ""
+msgstr "*list*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:93
@@ -245,7 +285,7 @@ msgstr "사용가능한 프로파일 목록."
 #: src/man/authselect.8.adoc:94
 #, no-wrap
 msgid "*list-features* profile_id"
-msgstr ""
+msgstr "*목록-기능* profile_id"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:98
@@ -254,34 +294,36 @@ msgid ""
 "the features without any description. Please, read the profile documentation "
 "with *show* to see what the features do."
 msgstr ""
+"주어진 프로파일에 가용한 모든 기능을 목록화합니다. + _기록: _이는 어떤 설명 없이 기능만 목록화합니다. 기능이 하는 것을 보기에 "
+"*show* 와 함께 프로파일 문서를 읽어주길 바랍니다."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:99
 #, no-wrap
 msgid "*show* profile_id"
-msgstr ""
+msgstr "*표시* profile_id"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:101
 msgid "Print information about the profile."
-msgstr ""
+msgstr "프로파일에 대한 정보를 출력합니다."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:102
 #, no-wrap
 msgid "*requirements* profile_id [features]"
-msgstr ""
+msgstr "*요구사항* profile_id [features]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:104
 msgid "Print information about profile requirements."
-msgstr ""
+msgstr "프로파일 요구사항에 대하여 정보를 출력합니다."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:105
 #, no-wrap
 msgid "*current* [-r, --raw]"
-msgstr ""
+msgstr "*current* [-r, --raw]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:109
@@ -290,12 +332,14 @@ msgid ""
 "specified, the command will print raw parameters as they were passed to "
 "*select* command instead of formatted output."
 msgstr ""
+"현재 선택된 프로파일에 대해서 정보를 출력합니다. 만약 *--raw* 선택이 지정되면, 명령은 구성된 출력 대신에 *select*명령을 "
+"전달되는 것과 같은 raw 매개변수를 출력 할 것입니다."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:110
 #, no-wrap
 msgid "*check*"
-msgstr ""
+msgstr "*점검*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:114
@@ -304,25 +348,27 @@ msgid ""
 "*authselect* or there are no leftovers from previous authselect "
 "configuration)."
 msgstr ""
+"만약 현재 설정이 유효한지 점검합니다(이는 authselect에 의해 생성되어지거나 또는 앞서 authselect 설정에서 잔여 부분이 "
+"없을 때입니다)."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:115
 #, no-wrap
 msgid "*test* profile_id [options] [features]"
-msgstr ""
+msgstr "*시험* profile_id [options] [features]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:118
 msgid ""
 "Print content of files generated by *authselect* without actually writing "
 "anything to system configuration."
-msgstr ""
+msgstr "시스템 구성에 어떤 것을 실제로 쓰지 않을 때에 authselect에 의해 발생된 파일의 내용을 출력합니다."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:119
 #, no-wrap
 msgid "*-a, --all*:"
-msgstr ""
+msgstr "*-a, --all*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:121
@@ -334,7 +380,7 @@ msgstr "모든 파일의 내용 인쇄\n"
 #: src/man/authselect.8.adoc:122
 #, no-wrap
 msgid "*-n, --nsswitch*:"
-msgstr ""
+msgstr "*-n, --nsswitch*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:124
@@ -346,7 +392,7 @@ msgstr "nsswitch.conf 내용 인쇄\n"
 #: src/man/authselect.8.adoc:125
 #, no-wrap
 msgid "*-s, --system-auth*:"
-msgstr ""
+msgstr "*-s, --system-auth*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:127
@@ -358,7 +404,7 @@ msgstr "시스템 인증 내용 인쇄\n"
 #: src/man/authselect.8.adoc:128
 #, no-wrap
 msgid "*-p, --password-auth*:"
-msgstr ""
+msgstr "*-p, --password-auth*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:130
@@ -370,7 +416,7 @@ msgstr "비밀번호 인증 내용 인쇄\n"
 #: src/man/authselect.8.adoc:131
 #, no-wrap
 msgid "*-c, --smartcard-auth*:"
-msgstr ""
+msgstr "*-c, --smartcard-auth*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:133
@@ -382,7 +428,7 @@ msgstr "스마트카드 인증 내용 인쇄.\n"
 #: src/man/authselect.8.adoc:134
 #, no-wrap
 msgid "*-f, --fingerprint-auth*:"
-msgstr ""
+msgstr "*-f, --fingerprint-auth*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:136
@@ -394,7 +440,7 @@ msgstr "지문 인증 내용 인쇄.\n"
 #: src/man/authselect.8.adoc:137
 #, no-wrap
 msgid "*-o, --postlogin*:"
-msgstr ""
+msgstr "*-o, --postlogin*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:139
@@ -406,7 +452,7 @@ msgstr "포스트로그인 내용 인쇄.\n"
 #: src/man/authselect.8.adoc:140
 #, no-wrap
 msgid "*-d, --dconf-db*:"
-msgstr ""
+msgstr "*-d, --dconf-db*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:142
@@ -418,7 +464,7 @@ msgstr "dconf 자료저장소 내용 출력.\n"
 #: src/man/authselect.8.adoc:143
 #, no-wrap
 msgid "*-l, --dconf-lock*:"
-msgstr ""
+msgstr "*-l, --dconf-lock*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:145
@@ -430,7 +476,7 @@ msgstr "dconf 잠금 내용 인쇄\n"
 #: src/man/authselect.8.adoc:146
 #, no-wrap
 msgid "*enable-feature* feature [-b] [--backup=NAME] [-q, --quiet]"
-msgstr ""
+msgstr "*enable-feature* feature [-b] [--backup=NAME] [-q, --quiet]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:148
@@ -446,6 +492,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
+"기능을 활성화 하기 전에 시스템 파일을 백업하세요. 백업은\n"
+"{AUTHSELECT_BACKUP_DIR}/NAME에 저장될 것입니다. 독특한 문자열과\n"
+"함께 현재 시간은 백업 이름으로 사용 될 것입니다. 이는 *--backup=*을\n"
+"위하여 간단히 사용됩니다.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:159
@@ -455,12 +505,15 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
+"기능을 활성화 하기 전에 시스템 파일을 백업하세요. 백업은\n"
+"{AUTHSELECT_BACKUP_DIR}/NAME에 저장될 것입니다. 독특한 문자열과\n"
+"함께 현재 시간은 만약 어떤 값도 제공되어지지 않으면 이름으로 사용됩니다.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:164
 #, no-wrap
 msgid "*disable-feature* feature [-b] [--backup=NAME]"
-msgstr ""
+msgstr "*비활성화-기능* feature [-b] [--backup=NAME]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:166
@@ -476,6 +529,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
+"기능을 비활성화 하기 전에 시스템 파일을 백업하세요. 백업은\n"
+"{AUTHSELECT_BACKUP_DIR}/NAME에 저장될 것입니다. 독특한 문자열과\n"
+"함께 백업 이름으로 사용됩니다. 이는 *--backup=*을 위하여\n"
+"간단히 사용됩니다.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:177
@@ -485,12 +542,15 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
+"기능을 비활성화 하기 전에 시스템 파일을 백업하세요. 이 백업은\n"
+"{AUTHSELECT_BACKUP_DIR}/NAME에 저장될 것입니다. 독특한 문자열과\n"
+"함께 현재시간은 만약 어떤 값도 제공되어지지 않으면 이름으로 사용됩니다.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:178
 #, no-wrap
 msgid "*create-profile* NAME [--custom,-c|--vendor,-v] [options]"
-msgstr ""
+msgstr "*프로파일 만들기* NAME [--custom,-c|--vendor,-v] [options]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:183
@@ -500,12 +560,14 @@ msgid ""
 "from the base profile or symbolic links to these files are created if such "
 "option is selected."
 msgstr ""
+"새로운 사용자 프로파일 이름 NAME을 생성합니다. 새로운 프로파일 템플리트는 기본 프로파일 또는 만약 옵션이 선택되어 생성되어지는 이들 "
+"파일 심볼릭 연결에서 복사되어지는 경우와 같이 존재하는 프로파일을 기초로 할 수 있습니다."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:184
 #, no-wrap
 msgid "*--vendor,-v*:"
-msgstr ""
+msgstr "*--vendor,-v*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:187
@@ -514,12 +576,14 @@ msgid ""
 "The new profile is a vendor profile instead of a custom profile. See\n"
 "_authselect-profiles(5)_ for more information on profile types.\n"
 msgstr ""
+"새로운 프로파일은 사용자 정의 프로파일 대신에 제조사 프로파일입니다.\n"
+"프로파일 유형에 상세한 설명을 위하여 _authselect-profiles(5)_을 참조하세요.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:188
 #, no-wrap
 msgid "*--base-on=BASE-ID, -b=BASE-ID*:"
-msgstr ""
+msgstr "*--base-on=BASE-ID, -b=BASE-ID*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:191
@@ -528,36 +592,38 @@ msgid ""
 "The new profile will be based on a profile named _BASE-ID_. The base\n"
 "profile location is determined with these steps:\n"
 msgstr ""
+"새로운 프로파일은 _BASE-ID_라고 불리우는 프로파일에 기초하고 있습니다. 이 기본\n"
+"프로파일 위치는 이들 단계에서 결정됩니다.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:192
 #, no-wrap
 msgid "If _BASE-ID_ starts with prefix _custom/_ it is a custom profile.\n"
-msgstr ""
+msgstr "If _BASE-ID_ starts with prefix _custom/_ it은 사용자 정의 프로파일입니다.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:193
 #, no-wrap
 msgid "Try if _BASE-ID_ is found in vendor profiles.\n"
-msgstr ""
+msgstr "Try if _BASE-ID_은 제조사 프로파일에서 찾을 수 있습니다.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:194
 #, no-wrap
 msgid "Try if _BASE-ID_ is found in default profiles.\n"
-msgstr ""
+msgstr "Try if _BASE-ID_은 지정된 프로파일에서 찾을 수 있습니다.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:195
 #, no-wrap
 msgid "Return an error.\n"
-msgstr ""
+msgstr "오류를 반환합니다.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:196
 #, no-wrap
 msgid "*--base-on-default*:"
-msgstr ""
+msgstr "*--base-on-default*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:199
@@ -566,12 +632,14 @@ msgid ""
 "The base profile is a default profile even if it is found also within\n"
 "vendor profiles.\n"
 msgstr ""
+"기본 프로파일은 제조사 프로파일에서 또한 찾아지는\n"
+"지정 프로파일입니다.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:200
 #, no-wrap
 msgid "*--symlink-meta*:"
-msgstr ""
+msgstr "*--symlink-meta*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:203
@@ -580,12 +648,14 @@ msgid ""
 "Meta files, such as _README_ and _REQUIREMENTS_ will be symbolic links\n"
 "to the origin profile files instead of their copy.\n"
 msgstr ""
+"_README_와 _REQUIREMENTS_와 같은 메타파일은 이들 복사 대신에\n"
+"원래의 프로파일에 심볼릭 연결한 것입니다.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:204
 #, no-wrap
 msgid "*--symlink-nsswitch*:"
-msgstr ""
+msgstr "*--symlink-nsswitch*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:207
@@ -594,12 +664,14 @@ msgid ""
 "_nsswitch.conf_ template will be symbolic link to the origin profile\n"
 "file instead of its copy.\n"
 msgstr ""
+"_nsswitch.conf_ 템플리트는 이 복사 대신에 원래 프로파일의\n"
+"심볼릭 연결일 것입니다.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:208
 #, no-wrap
 msgid "*--symlink-pam*:"
-msgstr ""
+msgstr "*--symlink-pam*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:211
@@ -608,12 +680,14 @@ msgid ""
 "_PAM_ templates will be symbolic links to the origin profile files\n"
 "instead of their copy.\n"
 msgstr ""
+"_PAM_ templates는 이들 복사 대신에 원래\n"
+"프로파일에 심볼릭 연결입니다.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:212
 #, no-wrap
 msgid "*--symlink-dconf*:"
-msgstr ""
+msgstr "*--symlink-dconf*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:215
@@ -622,12 +696,14 @@ msgid ""
 "_dconf_ templates will be symbolic links to the origin profile files\n"
 "instead of their copy.\n"
 msgstr ""
+"_dconf_ 템플리트는 이들 복사 중에 원래의 프로파일에\n"
+"심볼릭 연결일 것입니다.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:216
 #, no-wrap
 msgid "*--symlink=FILE,-s=FILE*:"
-msgstr ""
+msgstr "*--symlink=FILE,-s=FILE*:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:219
@@ -636,93 +712,95 @@ msgid ""
 "Create a symbolic link for a template file _FILE_ instead of creating\n"
 "its copy. This option can be passed multiple times.\n"
 msgstr ""
+"이 복사 생성 대신에 템플리트 파일 _FILE_를 위한 심볼릭 연결을 생성합니다.\n"
+"이 선택은 여러 번 시도 될 수 있습니다.\n"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:221
 #, no-wrap
 msgid "BACKUP COMMANDS"
-msgstr ""
+msgstr "지원(backup) 명령"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:223
 msgid "These commands can be used to manage backed up configurations."
-msgstr ""
+msgstr "이들 명령은 백업하는 설정을 관리하는데 사용 할 수 있습니다."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:224
 #, no-wrap
 msgid "*backup-list* [-r, --raw]"
-msgstr ""
+msgstr "*지원-목록* [-r, --raw]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:227
 msgid ""
 "Print available backups.  If *--raw* option is specified, the command will "
 "print only backup names without any formatting and additional information."
-msgstr ""
+msgstr "가용한 백업을 출력합니다. *--raw* 선택이 지정되면, 명령은 어떤 구성과 추가적인 정보 없이 백업 이름만 출력합니다."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:228
 #, no-wrap
 msgid "*backup-remove* BACKUP"
-msgstr ""
+msgstr "*지원-제거* 지원(BACKUP)"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:230
 msgid "Permanently delete backup named _BACKUP_."
-msgstr ""
+msgstr "영구히 이름 붙여진 _ BACKUP_ 백업을 삭제합니다."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:231
 #, no-wrap
 msgid "*backup-restore* BACKUP"
-msgstr ""
+msgstr "*backup-restore* 백업"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:234
 msgid ""
 "Restore configuration from backup named _BACKUP_. *Note:* this will "
 "overwrite current configuration."
-msgstr ""
+msgstr "이름 붙여진 _BACKUP_백업에서 설정을 복구합니다. *기록:* 이는 현재 설정을 덮어쓸 것입니다."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:236
 #, no-wrap
 msgid "COMMON OPTIONS"
-msgstr ""
+msgstr "공통 선택"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:238
 msgid "These options are available with all commands."
-msgstr ""
+msgstr "이들 선택은 모든 명령과 함께 사용 할 수 있습니다."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:239
 #, no-wrap
 msgid "*--debug*"
-msgstr ""
+msgstr "*--디버그*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:241
 msgid "Print debugging information and error messages."
-msgstr ""
+msgstr "디버깅 정보와 오류 메시지를 출력합니다."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:242
 #, no-wrap
 msgid "*--trace*"
-msgstr ""
+msgstr "*--추적*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:244
 msgid "Print information about what the tool is doing."
-msgstr ""
+msgstr "도구를 사용하는 것에 대한 정보를 출력합니다."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:245
 #, no-wrap
 msgid "*--warn*"
-msgstr ""
+msgstr "*--경고*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:249
@@ -731,12 +809,14 @@ msgid ""
 "execution but may indicate some undesired situations (e.g. unexpected file "
 "in a profile directory)."
 msgstr ""
+"프로그램 실행에 영향을 받지 않으나 몇몇 기대하지 않는 상태를 표시하는 것과 같은 기대하지 않은 상태에 대한 정보를 출력합니다. (예제. "
+"프로파일 디렉토리에서 기대하지 않는 파일)."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:251
 #, no-wrap
 msgid "NSSWITCH.CONF MANAGEMENT"
-msgstr ""
+msgstr "NSSWITCH.CONF 관리"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:257
@@ -747,6 +827,9 @@ msgid ""
 "the *select* command. This mechanism prevents authselect from overwriting "
 "anything that does not match any available profile."
 msgstr ""
+"Authselect는 {AUTHSELECT_NSSWITCH_CONF}을 발생시키고 이 파일에 어떤 사용자 변경도 허용하지 않습니다. 이런 "
+"변경은 검출되고 authselect는 *--force* 선택은 select 명령에서 제공하지 않으면 어떤 시스템 구성도 작성하는 것을 "
+"거부 할 것입니다. 이러한 작용은 authselect를 이용 가능한 프로파일을 일치하지 않은 것에 덮어 쓰는 것을 예방합니다."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:265
@@ -759,12 +842,17 @@ msgid ""
 "those that are relevant to the profile. If a map is set within a profile, it "
 "always overwrites the same map from _user-nsswitch.conf_."
 msgstr ""
+"어떤 사용자는 {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf 파일에서 동작해야만 하는 nsswitch "
+"지도로 변경합니다. authselect는 새로운 _nsswitch.conf_ 을 생성 할 때에 이 파일을 읽고 선택된 프로파일에서 구성과 "
+"함께 이를 조합합니다. 프로파일 구성이 항상 우선시 됩니다. 다른 말로, 프로파일은 모든 nsswitch 지도를 설정하지 않아야 하고 "
+"프로파일과 연관된 것들만 설정해야 합니다. 만약 지도는 프로파일 내에 설정하면, 이는 항상 _user-nsswitch.conf_에서 "
+"동일한 지도를 덮어 씌울 것입니다."
 
 #. type: Block title
 #: src/man/authselect.8.adoc:266
 #, no-wrap
 msgid "Example 1"
-msgstr ""
+msgstr "예제 1"
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:277
@@ -779,6 +867,14 @@ msgid ""
 "services:   sss files\n"
 "sudoers:    files sss {include if \"with-sudo\"}\n"
 msgstr ""
+"# \"sssd\" profile\n"
+"$ cat {AUTHSELECT_PROFILE_DIR}/sssd/nsswitch.conf\n"
+"passwd: sss files systemd\n"
+"group: sss files systemd\n"
+"netgroup: sss files\n"
+"automount: sss files\n"
+"services: sss files\n"
+"sudoers: files sss {include if \"with-sudo\"}\n"
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:283
@@ -790,12 +886,17 @@ msgid ""
 "hosts: files dns myhostname\n"
 "sudoers: files\n"
 msgstr ""
+"$ cat {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf\n"
+"passwd: files sss\n"
+"group: files sss\n"
+"hosts: files dns myhostname\n"
+"sudoers: files\n"
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:285
 #, no-wrap
 msgid "$ authselect select sssd\n"
-msgstr ""
+msgstr "$ authselect select sssd\n"
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:295
@@ -811,12 +912,21 @@ msgid ""
 "hosts:      files dns myhostname\n"
 "sudoers:    files\n"
 msgstr ""
+"# passwd and group maps from user-nsswitch.conf are ignored\n"
+"$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
+"passwd: sss files systemd\n"
+"group: sss files systemd\n"
+"netgroup: sss files\n"
+"automount: sss files\n"
+"services: sss files\n"
+"hosts: files dns myhostname\n"
+"sudoers: files\n"
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:297
 #, no-wrap
 msgid "$ authselect select sssd with-sudo\n"
-msgstr ""
+msgstr "$ authselect select sssd with-sudo\n"
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:307
@@ -832,18 +942,27 @@ msgid ""
 "sudoers:    files sss\n"
 "hosts:      files dns myhostname\n"
 msgstr ""
+"# passwd, group and sudoers maps from user-nsswitch.conf are ignored\n"
+"$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
+"passwd: sss files systemd\n"
+"group: sss files systemd\n"
+"netgroup: sss files\n"
+"automount: sss files\n"
+"services: sss files\n"
+"sudoers: files sss\n"
+"hosts: files dns myhostname\n"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:310
 #, no-wrap
 msgid "TROUBLESHOOTING"
-msgstr ""
+msgstr "문제해결"
 
 #. type: Title ~
 #: src/man/authselect.8.adoc:313
 #, no-wrap
 msgid "How can I tell if my system is using authselect?"
-msgstr ""
+msgstr "내 시스템이 authselect 사용한다는 것을 어떻게 말할 수 있나요?"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:317
@@ -853,12 +972,15 @@ msgid ""
 "configuration that was generated by authselect but modified manually at some "
 "point."
 msgstr ""
+"*authselect check*를 사용합니다. 출력은 만약 당신이 1) authselect에 의해 생성된 구성인지 2) non-"
+"authselect 구성 또는 3) authselect에 의해 생성되었지만 특정 시기에 수동으로 수정되어진 것에 의해 생성되어진 것과 "
+"같은 구성을 갖는 것을 말해줄 것입니다."
 
 #. type: Title ~
 #: src/man/authselect.8.adoc:319
 #, no-wrap
 msgid "Is nsswitch.conf supposed to be a symbolic link now?"
-msgstr ""
+msgstr "nsswitch.conf는 지금 심볼릭 링크일 수 있나요?"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:325
@@ -869,6 +991,9 @@ msgid ""
 "now owning your configuration and should be used instead of any manual "
 "modification."
 msgstr ""
+"Authselect는 {AUTHSELECT_CONFIG_DIR}에서 긁고 저장해서 당신의 시스템 파일을 생성합니다. 시스템 파일은 그런 "
+"후에 이 디렉토리에 심볼릭 연결로 생성됩니다. 심볼릭 연결은 authselect가 당신의 환경과 어떤 수동 변경 대신에 사용되어 질 수 "
+"있는 소유에 의해 보다 분명하게 만들 수 있도록 사용됩니다."
 
 #. type: Title ~
 #: src/man/authselect.8.adoc:327
@@ -879,7 +1004,7 @@ msgstr "오류: 예상치 못한 구성 변경이 감지되었습니다."
 #. type: Plain text
 #: src/man/authselect.8.adoc:329
 msgid "For example:"
-msgstr ""
+msgstr "예를 들면:"
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:335
@@ -891,6 +1016,12 @@ msgid ""
 "[error] Unexpected changes to the configuration were detected.\n"
 "[error] Refusing to activate profile unless those changes are removed or overwrite is requested.\n"
 msgstr ""
+"[error] [/etc/authselect/nsswitch.conf] does not exist!\n"
+"[error] [/etc/nsswitch.conf] is not a symbolic link!\n"
+"[error] [/etc/nsswitch.conf] was not created by authselect!\n"
+"[error] Unexpected changes to the configuration were detected.\n"
+"[error] Refusing to activate profile unless those changes are removed or "
+"overwrite is requested.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:339
@@ -899,95 +1030,97 @@ msgid ""
 "will not be modified. To fix this, please call *authselect select* with *--"
 "force* parameter to say that it is all right to overwrite it."
 msgstr ""
+"이는 당신의 구성이 authselect와 수정되어 질 것 같지 않은 것처럼 알려지지 않은 것을 의미한다. 이들 해결에서 , 곧바로 "
+"덮어쓰는 것에 말하는 *authselect select* with *--force* 매개변수를 호출할 것입니다."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:341
 #, no-wrap
 msgid "RETURN CODES"
-msgstr ""
+msgstr "반환 코드"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:343
 msgid "The *authselect* can return these exit codes:"
-msgstr ""
+msgstr "*authselect*는 이들 exit 코드로 반환 될 수 있습니다:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:345
 msgid "0: Success."
-msgstr ""
+msgstr "0: 성공."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:346
 msgid "1: Generic error."
-msgstr ""
+msgstr "1: 일반적 오류."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:347
 msgid ""
 "2: Profile or configuration was not found or the system was not configured "
 "with authselect."
-msgstr ""
+msgstr "2: 프로파일 또는 구성은 찾을 수 없거나 시스템은 authselect로 설정되지 않았습니다."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:348
 msgid ""
 "3: Current configuration is not valid, it was edited without authselect."
-msgstr ""
+msgstr "3: 현재 설정은 유효하지지 않으며, authselect 없이 편집합니다."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:349
 msgid ""
 "4: System configuration must be overwritten to activate an authselect "
 "profile, --force parameter is needed."
-msgstr ""
+msgstr "4: 시스템 구성은 authselect 프로파일을 활성화하기 위해 덮어 씌워야 하며, --force 매개변수가 필요합니다."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:350
 msgid "5: Executed command must be run as root."
-msgstr ""
+msgstr "5: 실행 명령은 root로서 동작해야 합니다."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:352
 #, no-wrap
 msgid "GENERATED FILES"
-msgstr ""
+msgstr "생성된 파일"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:355
 msgid ""
 "Authselect creates and maintains the following files to configure system "
 "identity and authentication providers properly."
-msgstr ""
+msgstr "Authselect는 시스템 식별과 인증을 적절히 제공을 구성하는 다음 파일을 생성하고 유지합니다."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:356
 #, no-wrap
 msgid "*{AUTHSELECT_NSSWITCH_CONF}*"
-msgstr ""
+msgstr "*{AUTHSELECT_NSSWITCH_CONF}*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:358
 msgid "Name Service Switch configuration file."
-msgstr ""
+msgstr "이름 서비스 전환 설정 파일."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:359
 #, no-wrap
 msgid "*{AUTHSELECT_PAM_DIR}/system-auth*"
-msgstr ""
+msgstr "*{AUTHSELECT_PAM_DIR}/system-auth*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:362
 msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
-msgstr ""
+msgstr "거의 모든 개별 서비스 설정 파일에서 포함되는 PAM 스택."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:363
 #, no-wrap
 msgid "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
-msgstr ""
+msgstr "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:367
@@ -996,12 +1129,13 @@ msgid ""
 "different types of devices via simultaneously running individual "
 "conversations instead of one aggregate conversation."
 msgstr ""
+"이들 PAM 스택은 하나의 집합 대화 대신에 개별적인 대화를 동시에 진행하여 다른 유형의 장치에서 인증을 다루는 응용프로그램입니다."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:368
 #, no-wrap
 msgid "*{AUTHSELECT_PAM_DIR}/postlogin*"
-msgstr ""
+msgstr "*{AUTHSELECT_PAM_DIR}/postlogin*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:376
@@ -1014,12 +1148,16 @@ msgid ""
 "regardless of the success or failure of the modules in the system-auth "
 "configuration file._"
 msgstr ""
+"이 PAM 스택의 목적은 system-auth 또는 다른 공통 PAM 설정 파일에 스택이 설정된 이후에 호출 되어질 모든 PAM 모듈을 "
+"위해 공통 공간을 제공하는 것입니다. 이는 쉘 또는 파일 접근에 로그인 서비스를 제공하는 모든 개별 서비스 설정 파일에서 포함되어집니다. "
+"_기록: 로그인 후 구성 파일 안에 있는 모듈은 system-auth 설정 파일에 모듈의 성공 또는 실패에도 불구하고 실행 되어질 수 "
+"있습니다._"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:377
 #, no-wrap
 msgid "*{AUTHSELECT_DCONF_DIR}/{AUTHSELECT_DCONF_FILE}*"
-msgstr ""
+msgstr "*{AUTHSELECT_DCONF_DIR}/{AUTHSELECT_DCONF_FILE}*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:381
@@ -1028,26 +1166,29 @@ msgid ""
 "for gnome login screen in order to enable or disable smartcard and "
 "fingerprint authentication."
 msgstr ""
+"dconf 자료저장소(database)로 변경합니다. 이 파일이 주로 사용되는 경우는 스마트카드와 지문 인증을 활성화 하거나 비활성화하는 "
+"경우에 그놈 로그인 화면을 위해 변화를 설정합니다."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:382
 #, no-wrap
 msgid "*{AUTHSELECT_DCONF_DIR}/locks/{AUTHSELECT_DCONF_FILE}*"
-msgstr ""
+msgstr "*{AUTHSELECT_DCONF_DIR}/locks/{AUTHSELECT_DCONF_FILE}*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:384
 msgid "This file define locks on values set in dconf database."
-msgstr ""
+msgstr "이 파일은 dconf 자료저장소(database)에서 설정된 값에 잠금을 정의합니다."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:386
 #, no-wrap
 msgid "SEE ALSO"
-msgstr ""
+msgstr "또 보세요"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:387
 msgid ""
 "authselect-profiles(5), authselect-migration(7), nsswitch.conf(5), PAM(8)"
 msgstr ""
+"authselect-profiles(5), authselect-migration(7), nsswitch.conf(5), PAM(8)"
