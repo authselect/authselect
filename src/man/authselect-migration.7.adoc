@@ -85,7 +85,15 @@ configuration file for required services.
 |--enablefaillock     |with-faillock
 |--enablepamaccess    |with-pamaccess
 |--enablewinbindkrb5  |with-krb5
+|--enableshadow       |_none_
+|--passalgo           |_none_
 |==================================================
+
+NOTE: Authconfig options `--enableshadow` and `--passalgo=sha512` were often
+used to make sure that passwords are stored in `/etc/shadow` using `sha512`
+algorithm. *This is default in authselect profiles* and it cannot be changed
+through an option (only by creating a custom profile). You can just
+omit these options.
 
 .Examples
 ----
