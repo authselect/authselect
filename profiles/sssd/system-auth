@@ -11,7 +11,7 @@ auth        [default=1 ignore=ignore success=ok]         pam_usertype.so isregul
 auth        [default=1 ignore=ignore success=ok]         pam_localuser.so                                       {exclude if "with-smartcard"}
 auth        [default=2 ignore=ignore success=ok]         pam_localuser.so                                       {include if "with-smartcard"}
 auth        [success=done authinfo_unavail=ignore ignore=ignore default=die] pam_sss.so try_cert_auth           {include if "with-smartcard"}
-auth        sufficient                                   pam_unix.so {if not "without-nullok":nullok} try_first_pass
+auth        sufficient                                   pam_unix.so {if not "without-nullok":nullok}
 auth        [default=1 ignore=ignore success=ok]         pam_usertype.so isregular
 auth        sufficient                                   pam_sss.so forward_pass
 auth        required                                     pam_faillock.so authfail                               {include if "with-faillock"}
@@ -25,8 +25,8 @@ account     sufficient                                   pam_usertype.so issyste
 account     [default=bad success=ok user_unknown=ignore] pam_sss.so
 account     required                                     pam_permit.so
 
-password    requisite                                    pam_pwquality.so try_first_pass local_users_only
-password    sufficient                                   pam_unix.so sha512 shadow {if not "without-nullok":nullok} try_first_pass use_authtok
+password    requisite                                    pam_pwquality.so local_users_only
+password    sufficient                                   pam_unix.so sha512 shadow {if not "without-nullok":nullok} use_authtok
 password    sufficient                                   pam_sss.so use_authtok
 password    required                                     pam_deny.so
 
