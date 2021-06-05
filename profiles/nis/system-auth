@@ -13,7 +13,7 @@ account     required                                     pam_faillock.so        
 account     required                                     pam_unix.so broken_shadow
 
 password    requisite                                    pam_pwquality.so {if not "with-nispwquality":local_users_only}
-password    sufficient                                   pam_unix.so sha512 shadow {if not "without-nullok":nullok} use_authtok nis
+password    sufficient                                   pam_unix.so yescrypt shadow {if not "without-nullok":nullok} use_authtok nis
 password    required                                     pam_deny.so
 
 session     optional                                     pam_keyinit.so revoke

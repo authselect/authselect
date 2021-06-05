@@ -145,7 +145,7 @@ class Options:
         Option.UnsupportedSwitch ("useshadow"),
         Option.UnsupportedFeature("md5"),
         Option.UnsupportedSwitch ("usemd5"),
-        Option.UnsupportedValued ("passalgo", _("<descrypt|bigcrypt|md5|sha256|sha512>")),
+        Option.UnsupportedValued ("passalgo", _("<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>")),
         Option.UnsupportedValued ("ldaploadcacert", _("<URL>")),
         Option.UnsupportedValued ("smartcardmodule", _("<module>")),
         Option.UnsupportedValued ("smbsecurity", _("<user|server|domain|ads>")),

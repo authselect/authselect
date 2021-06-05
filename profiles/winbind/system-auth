@@ -19,7 +19,7 @@ account     [default=bad success=ok user_unknown=ignore] pam_winbind.so {if "wit
 account     required                                     pam_permit.so
 
 password    requisite                                    pam_pwquality.so local_users_only
-password    sufficient                                   pam_unix.so sha512 shadow {if not "without-nullok":nullok} use_authtok
+password    sufficient                                   pam_unix.so yescrypt shadow {if not "without-nullok":nullok} use_authtok
 password    sufficient                                   pam_winbind.so {if "with-krb5":krb5_auth} use_authtok
 password    required                                     pam_deny.so
 
