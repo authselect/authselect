@@ -1,6 +1,6 @@
 authselect-migration(7)
 =======================
-:revdate: 2018-03-18
+:revdate: 2021-06-05
 
 NAME
 ----
@@ -91,9 +91,9 @@ configuration file for required services.
 
 NOTE: Authconfig options `--enableshadow` and `--passalgo=sha512` were often
 used to make sure that passwords are stored in `/etc/shadow` using `sha512`
-algorithm. *This is default in authselect profiles* and it cannot be changed
-through an option (only by creating a custom profile). You can just
-omit these options.
+algorithm. *The authselect profiles now use the yescrypt hashing method* and
+it cannot be changed through an option (only by creating a custom profile).
+You can just omit these options.
 
 .Examples
 ----
