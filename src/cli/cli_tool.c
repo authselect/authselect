@@ -87,11 +87,15 @@ static void cli_tool_print_common_opts(int min_len)
 static struct poptOption *cli_tool_common_opts_table(void)
 {
     static struct poptOption options[] = {
-        {"debug", '\0', POPT_ARG_NONE | POPT_ARGFLAG_STRIP, NULL, 'd', "Print more verbose debugging information", NULL },
-        {"trace", '\0', POPT_ARG_NONE | POPT_ARGFLAG_STRIP, NULL, 't', "Print trace messages", NULL },
-        {"warn", '\0', POPT_ARG_NONE | POPT_ARGFLAG_STRIP, NULL, 'w', "Print warning messages", NULL },
+        {"debug", '\0', POPT_ARG_NONE | POPT_ARGFLAG_STRIP, NULL, 'd', NULL, NULL },
+        {"trace", '\0', POPT_ARG_NONE | POPT_ARGFLAG_STRIP, NULL, 't', NULL, NULL },
+        {"warn", '\0', POPT_ARG_NONE | POPT_ARGFLAG_STRIP, NULL, 'w', NULL, NULL },
         POPT_TABLEEND
     };
+
+    options[0].descrip = _("Print error messages");
+    options[1].descrip = _("Print trace messages");
+    options[2].descrip = _("Print warning messages");
 
     return options;
 }
