@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
-"Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2020-11-25 10:47+0100\n"
+"Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
+"POT-Creation-Date: 2021-07-09 13:40+0200\n"
 "PO-Revision-Date: 2020-07-21 12:28+0000\n"
 "Last-Translator: Balázs Meskó <meskobalazs@mailbox.org>\n"
 "Language-Team: Hungarian <https://translate.fedoraproject.org/projects/"
@@ -840,15 +840,15 @@ msgstr "[%s] adatok nem írhatóak [%d]: %s"
 msgid "Common options:\n"
 msgstr "Gyakori kapcsolók:\n"
 
-#: src/cli/cli_tool.c:74
+#: src/cli/cli_tool.c:74 src/cli/cli_tool.c:96
 msgid "Print error messages"
 msgstr "Hibaüzenetek kiírása"
 
-#: src/cli/cli_tool.c:76
+#: src/cli/cli_tool.c:76 src/cli/cli_tool.c:97
 msgid "Print trace messages"
 msgstr "Nyomkövetési üzenetek kiírása"
 
-#: src/cli/cli_tool.c:78
+#: src/cli/cli_tool.c:78 src/cli/cli_tool.c:98
 msgid "Print warning messages"
 msgstr "Figyelmeztetések kiírása"
 
@@ -865,7 +865,7 @@ msgstr "Ennek a megjelenítése egy parancshoz"
 msgid "Show brief usage message for a command"
 msgstr "Rövid használati üzenetek megjelenítése egy parancshoz"
 
-#: src/cli/cli_tool.c:169
+#: src/cli/cli_tool.c:173
 #, c-format
 msgid ""
 "Usage:\n"
@@ -876,42 +876,42 @@ msgstr ""
 "%s PARANCS ARGUMENTUMOK\n"
 "\n"
 
-#: src/cli/cli_tool.c:170
+#: src/cli/cli_tool.c:174
 #, c-format
 msgid "Available commands:\n"
 msgstr "Elérhető parancsok:\n"
 
-#: src/cli/cli_tool.c:192
+#: src/cli/cli_tool.c:196
 #, c-format
 msgid "\n"
 msgstr "\n"
 
-#: src/cli/cli_tool.c:226
+#: src/cli/cli_tool.c:230
 #, c-format
 msgid "Authselect command '%s' can only be run as root!\n"
 msgstr "A(z) „%s” authselect parancs csak rendszergazdaként futtatható.\n"
 
-#: src/cli/cli_tool.c:243
+#: src/cli/cli_tool.c:247
 msgid "Bug: commands can't be NULL!\n"
 msgstr "Hiba: a parancsok nem lehetnek NULL-ok!\n"
 
-#: src/cli/cli_tool.c:306
+#: src/cli/cli_tool.c:310
 msgid "Command options:"
 msgstr "Parancs kapcsolók:"
 
-#: src/cli/cli_tool.c:308
+#: src/cli/cli_tool.c:312
 msgid "Common options:"
 msgstr "Gyakori kapcsolók:"
 
-#: src/cli/cli_tool.c:322 src/cli/cli_tool.c:325
+#: src/cli/cli_tool.c:326 src/cli/cli_tool.c:329
 msgid "[OPTIONS...]"
 msgstr "[KAPCSOLÓK…]"
 
-#: src/cli/cli_tool.c:328 src/cli/main.c:818
+#: src/cli/cli_tool.c:332 src/cli/main.c:818
 msgid "Out of memory!"
 msgstr "Elfogyott a memória!"
 
-#: src/cli/cli_tool.c:349
+#: src/cli/cli_tool.c:353
 #, c-format
 msgid ""
 "Invalid option %s: %s\n"
@@ -920,7 +920,7 @@ msgstr ""
 "Érvénytelen kapcsoló: %s: %s\n"
 "\n"
 
-#: src/cli/cli_tool.c:361
+#: src/cli/cli_tool.c:365
 #, c-format
 msgid ""
 "Missing option: %s\n"
@@ -929,7 +929,7 @@ msgstr ""
 "Hiányzó kapcsoló: %s\n"
 "\n"
 
-#: src/cli/cli_tool.c:371
+#: src/cli/cli_tool.c:375
 #, c-format
 msgid ""
 "Only one free argument is expected!\n"
@@ -938,7 +938,7 @@ msgstr ""
 "Csak egy szabad argumentum várt!\n"
 "\n"
 
-#: src/cli/cli_tool.c:381
+#: src/cli/cli_tool.c:385
 #, c-format
 msgid ""
 "Unexpected parameter: %s\n"
@@ -947,7 +947,7 @@ msgstr ""
 "Váratlan paraméter: %s\n"
 "\n"
 
-#: src/cli/cli_tool.c:393
+#: src/cli/cli_tool.c:397
 #, c-format
 msgid ""
 "At least one option is required!\n"
