@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-11-25 10:47+0100\n"
-"PO-Revision-Date: 2021-03-27 04:01+0000\n"
+"POT-Creation-Date: 2021-07-09 13:40+0200\n"
+"PO-Revision-Date: 2021-07-11 10:04+0000\n"
 "Last-Translator: simmon <simmon@nplob.com>\n"
 "Language-Team: Korean <https://translate.fedoraproject.org/projects/"
 "authselect/master-authselect-migration7adoc/ko/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.5.1\n"
+"X-Generator: Weblate 4.7.1\n"
 
 #. type: Title =
 #: src/man/authselect-migration.7.adoc:2
@@ -50,9 +50,10 @@ msgid ""
 "authselect which replaces it. It also explains what actions need to be done "
 "in order to migrate from authconfig to authselect."
 msgstr ""
-"이 설명서는 시스템 인증과 소스를 식별하는 설정에서 이전 도구인 authconfig와 이를 대체하는 authselect 사이에서 주요 "
-"차이점을 설명합니다. 이는 또한 authconfig에서 authselect 까지 이전하기 위해서 실행이 필요한 동작과 같은 것을 "
-"설명합니다."
+"이 설명서는 시스템 인증과 소스를 식별하는 설정에서 이전 도구인 authconfig와 "
+"이를 대체하는 authselect 사이에서 주요 차이점을 설명합니다. 이는 또한 "
+"authconfig에서 authselect 까지 이전하기 위해서 실행이 필요한 동작과 같은 것"
+"을 설명합니다."
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:17
@@ -65,7 +66,9 @@ msgstr "주요 차이점"
 msgid ""
 "Authselect takes a completely different approach to system configuration "
 "than the previous tool authconfig."
-msgstr "Authselect는 이전 도구 authconfig 보다 시스템 설정에 완전히 다른 접근을 가집니다."
+msgstr ""
+"Authselect는 이전 도구 authconfig 보다 시스템 설정에 완전히 다른 접근을 가집"
+"니다."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:25
@@ -75,9 +78,10 @@ msgid ""
 "(to setup authentication modules and identity sources) but it also generates "
 "simple configuration files for several services such as LDAP and Kerberos."
 msgstr ""
-"Authconfig는 파일을 발생시키는 사용자 설명서 변화를 유지하기 위해 가장 좋은 시도입니다. 이는 PAM 설정 파일과 "
-"nsswithch.conf 뿐만 아니라 발생합니다(인증 모델과 공급원 식별 설정)만 또한 LDAP 및 Kerberos와 같은 여러 "
-"서비스를 위하여 단순 설정을 발생시킵니다."
+"Authconfig는 파일을 발생시키는 사용자 설명서 변화를 유지하기 위해 가장 좋은 "
+"시도입니다. 이는 PAM 설정 파일과 nsswithch.conf 뿐만 아니라 발생합니다(인증 "
+"모델과 공급원 식별 설정)만 또한 LDAP 및 Kerberos와 같은 여러 서비스를 위하여 "
+"단순 설정을 발생시킵니다."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:34
@@ -91,11 +95,14 @@ msgid ""
 "administrator has an option to create a whole new profile and use it with "
 "authselect.  See authselect-profiles(5) to learn more about profiles."
 msgstr ""
-"authselect는 그런 것들을 하지 않습니다. PAM과 nsswitch.conf외에 다른 설정 파일을 발생시키지 않으며 이는 발생된 "
-"설정에 다른 수동 변화를 엄격히 금지합니다. 이 프로파일이라고 불리는 파일 설정을 제공합니다. 각각의 프로파일은 결과 설정이 어떻게 "
-"되는지를 설명하고, 이는 특정 선택 기능을 활성화 또는 비활성화에 의해 약간 수정 될 수 있습니다. 만약 요구가 authselect가 "
-"제공하는 것보다 다른 프로파일이 필요한 경우에, 관리자는 모든 새로운 프로파일 생성과 authselect를 사용하는 선택을 가지고 "
-"있습니다. 프로파일에 대해서 보다 더 알고 싶으면 authselect-profile(5)를 참조하세요."
+"authselect는 그런 것들을 하지 않습니다. PAM과 nsswitch.conf외에 다른 설정 파"
+"일을 발생시키지 않으며 이는 발생된 설정에 다른 수동 변화를 엄격히 금지합니"
+"다. 이 프로파일이라고 불리는 파일 설정을 제공합니다. 각각의 프로파일은 결과 "
+"설정이 어떻게 되는지를 설명하고, 이는 특정 선택 기능을 활성화 또는 비활성화"
+"에 의해 약간 수정 될 수 있습니다. 만약 요구가 authselect가 제공하는 것보다 다"
+"른 프로파일이 필요한 경우에, 관리자는 모든 새로운 프로파일 생성과 authselect"
+"를 사용하는 선택을 가지고 있습니다. 프로파일에 대해서 보다 더 알고 싶으면 "
+"authselect-profile(5)를 참조하세요."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:46
@@ -112,12 +119,16 @@ msgid ""
 "configuration that can be fully tested and is much less error prone. It is "
 "also much easier to distribute such configuration across many systems."
 msgstr ""
-"이는 큰 불이익처럼 보이며 사실과는 다릅니다. Authconfig는 매우 오래된 도구이며 요구되는 서비스를 제공하는 응용프로그램은 근래("
-"몇년 사이)에 빨리 변화하였습니다. 전형적으로, 이는 PAM과 nsswitch.conf에서 다중 인증 모듈을 더 이상 가질 필요가 "
-"없습니다, 왜냐하면 SSSD에 의하여 대부분의 사용사례는 처리됩니다. 그러므로 그것들을 특별히 추가하거나 지우거나 할 필요가 "
-"없습니다.이는 또한 `realm` 와 같이 원격 도메인에 자동 처리에 참가하는 것을 도울 수 있는 시스템 데몬을 위하여 설정을 생성하는 "
-"보다 좋은 도구가 있습니다. 게다가, 이 탑재된 프로파일은 완전히 시험되어졌으며 보다 적은 오류 발생 가능성이 훨씬 적으며 이해 할 수 "
-"있고 결정적인 시스템을 환경을 제공합니다. 이는 또한 많은 시스템을 통해 그런 환경을 배분 하는 것을 보다 쉽게 할 수 있습니다."
+"이는 큰 불이익처럼 보이며 사실과는 다릅니다. Authconfig는 매우 오래된 도구이"
+"며 요구되는 서비스를 제공하는 응용프로그램은 근래(몇년 사이)에 빨리 변화하였"
+"습니다. 전형적으로, 이는 PAM과 nsswitch.conf에서 다중 인증 모듈을 더 이상 가"
+"질 필요가 없습니다, 왜냐하면 SSSD에 의하여 대부분의 사용사례는 처리됩니다. 그"
+"러므로 그것들을 특별히 추가하거나 지우거나 할 필요가 없습니다.이는 또한 "
+"`realm` 와 같이 원격 도메인에 자동 처리에 참가하는 것을 도울 수 있는 시스템 "
+"데몬을 위하여 설정을 생성하는 보다 좋은 도구가 있습니다. 게다가, 이 탑재된 프"
+"로파일은 완전히 시험되어졌으며 보다 적은 오류 발생 가능성이 훨씬 적으며 이해 "
+"할 수 있고 결정적인 시스템을 환경을 제공합니다. 이는 또한 많은 시스템을 통해 "
+"그런 환경을 배분 하는 것을 보다 쉽게 할 수 있습니다."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:52
@@ -129,9 +140,11 @@ msgid ""
 "longer contain support for nss-pam-ldapd and users are encouraged to switch "
 "to sssd."
 msgstr ""
-"아마도 대부분 논쟁의 변화는 authselect가 단지 sssd와 winbind 제공자를 위해 프로파일만 탑재한 것입니다. 그들 두개의 "
-"제공자는 로컬 사용자와 기존 LDAP 도메인에서 IPA 또는 동적 디렉토리 서버와 함께 복합 설정까지 모든 최근의 사용 경우를 "
-"제공합니다. 이 프로파일은 nss-pam-ldapd를 위한 지원을 더 이상 포함하지 않으며 사용자는 전환을 sssd로 하는 것이 좋습니다."
+"아마도 대부분 논쟁의 변화는 authselect가 단지 sssd와 winbind 제공자를 위해 프"
+"로파일만 탑재한 것입니다. 그들 두개의 제공자는 로컬 사용자와 기존 LDAP 도메인"
+"에서 IPA 또는 동적 디렉토리 서버와 함께 복합 설정까지 모든 최근의 사용 경우"
+"를 제공합니다. 이 프로파일은 nss-pam-ldapd를 위한 지원을 더 이상 포함하지 않"
+"으며 사용자는 전환을 sssd로 하는 것이 좋습니다."
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:54
@@ -147,9 +160,10 @@ msgid ""
 "the correct authselect profile is selected and all daemons and services are "
 "properly configured."
 msgstr ""
-"당신은 `ipa-client-install` 또는 IPA 도메인에 참여하는 `realm` 중 하나와 동적 디렉토리 도메인에 참여하는 "
-"`realm`을 사용 할 수 있습니다. 이들 도구는 정확한 authselect 프로파일이 선택하는 모든 데몬과 서비스가 적절히 설정되어져 "
-"있는 것을 확실히 만들어 줍니다."
+"당신은 `ipa-client-install` 또는 IPA 도메인에 참여하는 `realm` 중 하나와 동"
+"적 디렉토리 도메인에 참여하는 `realm`을 사용 할 수 있습니다. 이들 도구는 정확"
+"한 authselect 프로파일이 선택하는 모든 데몬과 서비스가 적절히 설정되어져 있"
+"는 것을 확실히 만들어 줍니다."
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:61
@@ -166,10 +180,11 @@ msgid ""
 "select a correct profile with desired features. Then you also need to write "
 "configuration file for required services."
 msgstr ""
-"만약 당신이 도메인에 가입하는데 `ipa-client-install` 또는 `realm`을 사용하면, 당신의 스크립트에서 어떤 "
-"authconfig도 제거 할 수 있습니다. 만약 이들 선택을 사용하지 않으면, 당신은 개별 authconfig 호출과 이와 동일한 "
-"authselect 호출은 요구한 기능과 함께 정확한 프로파일을 선택에 교체가 필요합니다. 그런 후에 당신은 필요한 서비스를 위하여 설정 "
-"파일을 작성이 또한 필요합니다."
+"만약 당신이 도메인에 가입하는데 `ipa-client-install` 또는 `realm`을 사용하"
+"면, 당신의 스크립트에서 어떤 authconfig도 제거 할 수 있습니다. 만약 이들 선택"
+"을 사용하지 않으면, 당신은 개별 authconfig 호출과 이와 동일한 authselect 호출"
+"은 요구한 기능과 함께 정확한 프로파일을 선택에 교체가 필요합니다. 그런 후에 "
+"당신은 필요한 서비스를 위하여 설정 파일을 작성이 또한 필요합니다."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:68
@@ -202,7 +217,7 @@ msgid "Relation of authconfig options to authselect profile features"
 msgstr "authconfig 선택과 authselect 프로파일 기능과의 관계"
 
 #. type: Table
-#: src/man/authselect-migration.7.adoc:88
+#: src/man/authselect-migration.7.adoc:90
 #, no-wrap
 msgid ""
 "|*Authconfig options* |*Authselect profile feature*\n"
@@ -213,24 +228,42 @@ msgid ""
 "|--enablefaillock     |with-faillock\n"
 "|--enablepamaccess    |with-pamaccess\n"
 "|--enablewinbindkrb5  |with-krb5\n"
+"|--enableshadow       |_none_\n"
+"|--passalgo           |_none_\n"
 msgstr ""
 "|*Authconfig options* |*Authselect profile feature*\n"
-"|--enablesmartcard |with-smartcard\n"
-"|--enablefingerprint |with-fingerprint\n"
-"|--enableecryptfs |with-ecryptfs\n"
-"|--enablemkhomedir |with-mkhomedir\n"
-"|--enablefaillock |with-faillock\n"
-"|--enablepamaccess |with-pamaccess\n"
-"|--enablewinbindkrb5 |with-krb5\n"
+"|--enablesmartcard    |with-smartcard\n"
+"|--enablefingerprint  |with-fingerprint\n"
+"|--enableecryptfs     |with-ecryptfs\n"
+"|--enablemkhomedir    |with-mkhomedir\n"
+"|--enablefaillock     |with-faillock\n"
+"|--enablepamaccess    |with-pamaccess\n"
+"|--enablewinbindkrb5  |with-krb5\n"
+"|--enableshadow       |_none_\n"
+"|--passalgo           |_none_\n"
+
+#. type: Plain text
+#: src/man/authselect-migration.7.adoc:97
+msgid ""
+"Authconfig options `--enableshadow` and `--passalgo=sha512` were often used "
+"to make sure that passwords are stored in `/etc/shadow` using `sha512` "
+"algorithm. *The authselect profiles now use the yescrypt hashing method* and "
+"it cannot be changed through an option (only by creating a custom profile).  "
+"You can just omit these options."
+msgstr ""
+"Authconfig 선택 `--enableshadow`와 `--passalgo=sah512`는 비밀번호는 `sha512` 알고리즘을 "
+"사용하여 `/etc/shadow`에서 저장되어지도록 자주 사용되곤 합니다. *authselect 프로파일은 이제 yescrypt 해쉬 "
+"방법을 사용합니다* 그리고 이는 선택(사용자 정의 프로파일 생성에서만)을 통해 변경 될 수 없습니다.  당신은 다만 이들 옵션을 생략 할 "
+"수 있습니다."
 
 #. type: Block title
-#: src/man/authselect-migration.7.adoc:90
+#: src/man/authselect-migration.7.adoc:98
 #, no-wrap
 msgid "Examples"
 msgstr "예제"
 
 #. type: delimited block -
-#: src/man/authselect-migration.7.adoc:94
+#: src/man/authselect-migration.7.adoc:102
 #, no-wrap
 msgid ""
 "authconfig --enableldap --enableldapauth --enablefaillock --updateall\n"
@@ -240,18 +273,17 @@ msgstr ""
 "authselect select sssd with-faillock\n"
 
 #. type: delimited block -
-#: src/man/authselect-migration.7.adoc:97
+#: src/man/authselect-migration.7.adoc:105
 #, no-wrap
 msgid ""
 "authconfig --enablesssd --enablesssdauth --enablesmartcard --smartcardmodule=sssd --updateall\n"
 "authselect select sssd with-smartcard\n"
 msgstr ""
-"authconfig --enablesssd --enablesssdauth --enablesmartcard --"
-"smartcardmodule=sssd --updateall\n"
+"authconfig --enablesssd --enablesssdauth --enablesmartcard --smartcardmodule=sssd --updateall\n"
 "authselect select sssd with-smartcard\n"
 
 #. type: delimited block -
-#: src/man/authselect-migration.7.adoc:100
+#: src/man/authselect-migration.7.adoc:108
 #, no-wrap
 msgid ""
 "authconfig --enableecryptfs --enablepamaccess --updateall\n"
@@ -261,52 +293,52 @@ msgstr ""
 "authselect select sssd with-ecryptfs with-pamaccess\n"
 
 #. type: delimited block -
-#: src/man/authselect-migration.7.adoc:103
+#: src/man/authselect-migration.7.adoc:111
 #, no-wrap
 msgid ""
 "authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator --updateall\n"
 "realm join -U Administrator --client-software=winbind WINBINDDOMAIN\n"
 msgstr ""
-"authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator --"
-"updateall\n"
+"authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator --updateall\n"
 "realm join -U Administrator --client-software=winbind WINBINDDOMAIN\n"
 
 #. type: Title -
-#: src/man/authselect-migration.7.adoc:106
+#: src/man/authselect-migration.7.adoc:114
 #, no-wrap
 msgid "CONFIGURATION FILES"
 msgstr "설정 파일"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:108
+#: src/man/authselect-migration.7.adoc:116
 msgid ""
 "This section contains snippets for minimal configuration of various services."
 msgstr "이 부분은 다양한 서비스의 최소 설정을 위해 부분 인용을 포함합니다."
 
 #. type: Title ~
-#: src/man/authselect-migration.7.adoc:110
+#: src/man/authselect-migration.7.adoc:118
 #, no-wrap
 msgid "LDAP"
 msgstr "LDAP"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:114
+#: src/man/authselect-migration.7.adoc:122
 msgid ""
 "Even if LDAP is not directly used through `pam_ldap` and `nss_ldap`, it is "
 "still useful to configure ldap.conf to configure openldap-libs and "
 "indirectly, e.g. LDAP tools such as `ldapsearch`."
 msgstr ""
-"심지어 LDAP는 `pam_ldap`과 `nss_ldap`를 통해서 곧바로 사용되지 않은 경우에, openldap-libs구성하고 "
-"간접적으로 ldap.conf 설정하는데 아직 유용합니다. 예. `ldapsearch`와 같은 예로LDAP 도구."
+"심지어 LDAP는 `pam_ldap`과 `nss_ldap`를 통해서 곧바로 사용되지 않은 경우에, "
+"openldap-libs구성하고 간접적으로 ldap.conf 설정하는데 아직 유용합니다. 예. "
+"`ldapsearch`와 같은 예로LDAP 도구."
 
 #. type: Block title
-#: src/man/authselect-migration.7.adoc:115
+#: src/man/authselect-migration.7.adoc:123
 #, no-wrap
 msgid "{sysconfdir}/openldap/ldap.conf"
 msgstr "{sysconfdir}/openldap/ldap.conf"
 
 #. type: delimited block -
-#: src/man/authselect-migration.7.adoc:119
+#: src/man/authselect-migration.7.adoc:127
 #, no-wrap
 msgid ""
 "# Set the default base dn\n"
@@ -316,7 +348,7 @@ msgstr ""
 "BASE dc=example,dc=com\n"
 
 #. type: delimited block -
-#: src/man/authselect-migration.7.adoc:122
+#: src/man/authselect-migration.7.adoc:130
 #, no-wrap
 msgid ""
 "# Set the default LDAP server\n"
@@ -326,29 +358,29 @@ msgstr ""
 "URI ldap://ldap.example.com ldap://ldap-master.example.com:666\n"
 
 #. type: Title ~
-#: src/man/authselect-migration.7.adoc:125
+#: src/man/authselect-migration.7.adoc:133
 #, no-wrap
 msgid "KERBEROS"
 msgstr "KERBEROS"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:128
+#: src/man/authselect-migration.7.adoc:136
 msgid ""
 "If you use Kerberos, the default Kerberos realm should be configured in "
 "order for krb5-libs and therefore tools such as `kinit` to work out of the "
 "box."
 msgstr ""
-"만약당신이 Kerberos를 사용하면, 기본 Kerberos 영역은 krb5-lib와 즉시동작하는 `kinit`와 같은 이들 도구를 "
-"위하여 설정되어질 수 있습니다."
+"만약당신이 Kerberos를 사용하면, 기본 Kerberos 영역은 krb5-lib와 즉시동작하는 "
+"`kinit`와 같은 이들 도구를 위하여 설정되어질 수 있습니다."
 
 #. type: Block title
-#: src/man/authselect-migration.7.adoc:129
+#: src/man/authselect-migration.7.adoc:137
 #, no-wrap
 msgid "{sysconfdir}/krb5.conf"
 msgstr "{sysconfdir}/krb5.conf"
 
 #. type: delimited block -
-#: src/man/authselect-migration.7.adoc:133
+#: src/man/authselect-migration.7.adoc:141
 #, no-wrap
 msgid ""
 "[libdefaults]\n"
@@ -358,7 +390,7 @@ msgstr ""
 "default_realm = MYREALM\n"
 
 #. type: delimited block -
-#: src/man/authselect-migration.7.adoc:138
+#: src/man/authselect-migration.7.adoc:146
 #, no-wrap
 msgid ""
 "[realms]\n"
@@ -372,7 +404,7 @@ msgstr ""
 "}\n"
 
 #. type: delimited block -
-#: src/man/authselect-migration.7.adoc:142
+#: src/man/authselect-migration.7.adoc:150
 #, no-wrap
 msgid ""
 "[domain_realm]\n"
@@ -384,34 +416,35 @@ msgstr ""
 ".myrealm.org = MYREALM\n"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:145
-#: src/man/authselect-migration.7.adoc:239
+#: src/man/authselect-migration.7.adoc:153
+#: src/man/authselect-migration.7.adoc:247
 #, no-wrap
 msgid "SSSD"
 msgstr "SSSD"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:150
+#: src/man/authselect-migration.7.adoc:158
 msgid ""
 "Authselect encourages users to use SSSD wherever possible. There are many "
 "configuration options, see sssd.conf(5). This is a minimal configuration "
 "that creates one LDAP domain called `default`. The LDAP server is auto-"
 "discovered through DNS lookups."
 msgstr ""
-"Authselect는 사용자에게 가능한 어디에서나 SSSD를 사용하도록 장려합니다.이들은 많은 구성 선택을 갖고 있으며, sssd."
-"conf(5)를 참조하세요. 이는 `기본`라고 불리우는 하나의 LDAP 도메인을 생성하는 최소 구성입니다. LDAP 서버는 DNS조회를 "
-"통해 자동발견됩니다."
+"Authselect는 사용자에게 가능한 어디에서나 SSSD를 사용하도록 장려합니다.이들"
+"은 많은 구성 선택을 갖고 있으며, sssd.conf(5)를 참조하세요. 이는 `기본`라고 "
+"불리우는 하나의 LDAP 도메인을 생성하는 최소 구성입니다. LDAP 서버는 DNS조회"
+"를 통해 자동발견됩니다."
 
 #. type: Block title
-#: src/man/authselect-migration.7.adoc:151
-#: src/man/authselect-migration.7.adoc:167
+#: src/man/authselect-migration.7.adoc:159
+#: src/man/authselect-migration.7.adoc:175
 #, no-wrap
 msgid "{sysconfdir}/sssd/sssd.conf"
 msgstr "{sysconfdir}/sssd/sssd.conf"
 
 #. type: delimited block -
-#: src/man/authselect-migration.7.adoc:156
-#: src/man/authselect-migration.7.adoc:172
+#: src/man/authselect-migration.7.adoc:164
+#: src/man/authselect-migration.7.adoc:180
 #, no-wrap
 msgid ""
 "[sssd]\n"
@@ -423,7 +456,7 @@ msgstr ""
 "domains = default\n"
 
 #. type: delimited block -
-#: src/man/authselect-migration.7.adoc:161
+#: src/man/authselect-migration.7.adoc:169
 #, no-wrap
 msgid ""
 "[domain/default]\n"
@@ -437,17 +470,17 @@ msgstr ""
 "dns_discovery_domain = myrealm\n"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:166
+#: src/man/authselect-migration.7.adoc:174
 msgid ""
 "And here is a configuration snippet for the same domain but now the "
 "authentication is done over Kerberos. The KDC server is auto-discovered "
 "through DNS lookups."
 msgstr ""
-"그리고 이 곳에서 동일한 도메인을 위해 단편 설정이며, 지금 인증은 Kerberos를 통해 이뤄집니다. KDC 서버는 DNS 조회를 통해 "
-"자동 조회됩니다."
+"그리고 이 곳에서 동일한 도메인을 위해 단편 설정이며, 지금 인증은 Kerberos를 "
+"통해 이뤄집니다. KDC 서버는 DNS 조회를 통해 자동 조회됩니다."
 
 #. type: delimited block -
-#: src/man/authselect-migration.7.adoc:180
+#: src/man/authselect-migration.7.adoc:188
 #, no-wrap
 msgid ""
 "[domain/default]\n"
@@ -467,60 +500,64 @@ msgstr ""
 "dns_discovery_domain = myrealm\n"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:186
+#: src/man/authselect-migration.7.adoc:194
 msgid ""
 "If you want to configure SSSD for an IPA or Active Directory domain, use the "
 "`realm` tool. This will perform an initial setup which involves creating a "
 "Kerberos keytab and generating basic SSSD configuration. You can then tune "
 "it up by modifying {sysconfdir}/sssd/sssd.conf."
 msgstr ""
-"만약 당신이 IPA 또는 동적 디렉토리 도메인을 위해 SSSD 구성하고자 하면,`realm` 도구를 사용하세요. 이는 Kerberos "
-"keytab 생성과 기본 SSSD 구성을 발생하는 것을 포함하여 초기 설정을 수행할 것입니다. 당신은 {sysconfdir}/sssd/"
+"만약 당신이 IPA 또는 동적 디렉토리 도메인을 위해 SSSD 구성하고자 하면,"
+"`realm` 도구를 사용하세요. 이는 Kerberos keytab 생성과 기본 SSSD 구성을 발생"
+"하는 것을 포함하여 초기 설정을 수행할 것입니다. 당신은 {sysconfdir}/sssd/"
 "sssd.conf의 수정을 통한 다음에 조정 할 수 있습니다."
 
 #. type: Title ~
-#: src/man/authselect-migration.7.adoc:188
+#: src/man/authselect-migration.7.adoc:196
 #, no-wrap
 msgid "WINBIND"
 msgstr "WINBIND"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:193
+#: src/man/authselect-migration.7.adoc:201
 msgid ""
 "If you want to configure the machine to use Winbind, use `realm`. This will "
 "perform an initial setup which involves creating a Kerberos keytab and "
 "running `adcli` to join the domain. It also makes changes to `smb.conf`. You "
 "can then tune it up by modifying {sysconfdir}/samba/smb.conf."
 msgstr ""
-"만약 당신이 Winbind를 사용하여 장비(machine)를 설정하고 한다면, `realm`을 사용하세요. 이는 도메인 가입에 "
-"Kerberos keytab생성과 `adcli`동작하는 것을 포함하여 초기 설정을 수행 할 것입니다. 이는 또한 `smb.conf`에 "
-"변화를 만들 것입니다. 당신은 {sysconfdir}/samba/smb.conf를 수정을 통한 다음에 조정 할 수 있습니다."
+"만약 당신이 Winbind를 사용하여 장비(machine)를 설정하고 한다면, `realm`을 사"
+"용하세요. 이는 도메인 가입에 Kerberos keytab생성과 `adcli`동작하는 것을 포함"
+"하여 초기 설정을 수행 할 것입니다. 이는 또한 `smb.conf`에 변화를 만들 것입니"
+"다. 당신은 {sysconfdir}/samba/smb.conf를 수정을 통한 다음에 조정 할 수 있습니"
+"다."
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:195
-#: src/man/authselect-migration.7.adoc:247
+#: src/man/authselect-migration.7.adoc:203
+#: src/man/authselect-migration.7.adoc:255
 #, no-wrap
 msgid "NIS"
 msgstr "NIS"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:199
+#: src/man/authselect-migration.7.adoc:207
 msgid ""
 "There are several places that needs to be configured in order to make NIS "
 "authentication work. First, you need to set NIS domain and optionally also "
 "NIS server in {sysconfdir}/yp.conf."
 msgstr ""
-"NIS 인증 작업을 만들기 위하여 설정이 필요한 몇 가지 경우입니다. 우선, {sysconfdir}/yp.conf.NIS에서 NIS "
-"도메인과 선택적인 NIS 서버 또한 설정해야 합니다."
+"NIS 인증 작업을 만들기 위하여 설정이 필요한 몇 가지 경우입니다. 우선, "
+"{sysconfdir}/yp.conf.NIS에서 NIS 도메인과 선택적인 NIS 서버 또한 설정해야 합"
+"니다."
 
 #. type: Block title
-#: src/man/authselect-migration.7.adoc:200
+#: src/man/authselect-migration.7.adoc:208
 #, no-wrap
 msgid "{sysconfdir}/yp.conf"
 msgstr "{sysconfdir}/yp.conf"
 
 #. type: delimited block -
-#: src/man/authselect-migration.7.adoc:205
+#: src/man/authselect-migration.7.adoc:213
 #, no-wrap
 msgid ""
 "domain mydomain broadcast\n"
@@ -532,34 +569,34 @@ msgstr ""
 "# domain mydomain server myserver\n"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:208
+#: src/man/authselect-migration.7.adoc:216
 msgid "NIS domain must be also set in system network configuration."
 msgstr "NIS 도메인은 시스템 네트워크 구성에 설정되어 있어야 합니다."
 
 #. type: Block title
-#: src/man/authselect-migration.7.adoc:209
+#: src/man/authselect-migration.7.adoc:217
 #, no-wrap
 msgid "{sysconfdir}/sysconfig/network"
 msgstr "{sysconfdir}/sysconfig/network"
 
 #. type: delimited block -
-#: src/man/authselect-migration.7.adoc:212
+#: src/man/authselect-migration.7.adoc:220
 #, no-wrap
 msgid "NISDOMAIN=mydomain\n"
 msgstr "NISDOMAIN=mydomain\n"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:216
+#: src/man/authselect-migration.7.adoc:224
 msgid ""
 "Now, you can set the domain name with command line so there is no need to "
 "reboot your system. Additionaly, it may be necessary to enable NIS in "
 "selinux."
 msgstr ""
-"이제, 당신은 시스템을 재 시작 할 필요 없이 명령줄에서 도메인 이름을 설정 할 수 있습니다. 추가적으로, selinux에서 NIS "
-"활성화가 필요 할 수 있습니다."
+"이제, 당신은 시스템을 재 시작 할 필요 없이 명령줄에서 도메인 이름을 설정 할 "
+"수 있습니다. 추가적으로, selinux에서 NIS 활성화가 필요 할 수 있습니다."
 
 #. type: delimited block -
-#: src/man/authselect-migration.7.adoc:220
+#: src/man/authselect-migration.7.adoc:228
 #, no-wrap
 msgid ""
 "$ domainname mydomain\n"
@@ -569,64 +606,66 @@ msgstr ""
 "$ setsebool -P allow_ypbind 1\n"
 
 #. type: Title ~
-#: src/man/authselect-migration.7.adoc:223
+#: src/man/authselect-migration.7.adoc:231
 #, no-wrap
 msgid "PASSWORD QUALITY"
 msgstr "비밀번호 품질"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:228
+#: src/man/authselect-migration.7.adoc:236
 msgid ""
 "Authselect enables `pam_pwquality` module to enforce password quality "
 "restrictions. This module is enabled only for local users. Remote users "
 "should use the password policy that is enforced by the respective remote "
 "server."
 msgstr ""
-"Authselect는 `pam_pwquality` 모듈을 비밀번호 품질 제한에 강제하는 것을 활성화 합니다. 이들 모듈은 로컬 사용자를 "
-"위해서면 활성화됩니다. 원격 사용자는 개별 원격서버에의해 강제되어지는 비밀번호 정책을 사용해야만 합니다."
+"Authselect는 `pam_pwquality` 모듈을 비밀번호 품질 제한에 강제하는 것을 활성"
+"화 합니다. 이들 모듈은 로컬 사용자를 위해서면 활성화됩니다. 원격 사용자는 개"
+"별 원격서버에의해 강제되어지는 비밀번호 정책을 사용해야만 합니다."
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:232
+#: src/man/authselect-migration.7.adoc:240
 msgid ""
 "The `pam_pwquality` module can be configured in {sysconfdir}/security/"
 "pwquality.conf. See pam_pwquality(8) to see its configuration options and "
 "defaults."
 msgstr ""
-"`pam_pwquality` 모듈은 sysconfdir}/security/pwquality.conf에서 설정되어질 수 있습니다. 이 설정 "
-"선택과 기본값을 보기에 pam_pwquality(8)을 참조하세요."
+"`pam_pwquality` 모듈은 sysconfdir}/security/pwquality.conf에서 설정되어질 수 "
+"있습니다. 이 설정 선택과 기본값을 보기에 pam_pwquality(8)을 참조하세요."
 
 #. type: Title -
-#: src/man/authselect-migration.7.adoc:234
+#: src/man/authselect-migration.7.adoc:242
 #, no-wrap
 msgid "STARTING SERVICES"
 msgstr "서비스 시작"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:237
+#: src/man/authselect-migration.7.adoc:245
 msgid ""
 "Depending on your configuration, you need to start required services "
 "manually with systemd."
-msgstr "당신의 설정에 따라, systemd에 필요한 서비스를 수동으로 시작해야 합니다."
+msgstr ""
+"당신의 설정에 따라, systemd에 필요한 서비스를 수동으로 시작해야 합니다."
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:241
+#: src/man/authselect-migration.7.adoc:249
 #, no-wrap
 msgid "systemctl enable sssd.service ; systemctl start sssd.service\n"
 msgstr "systemctl enable sssd.service ; systemctl start sssd.service\n"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:243
+#: src/man/authselect-migration.7.adoc:251
 msgid "Winbind"
 msgstr "Winbind"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:245
+#: src/man/authselect-migration.7.adoc:253
 #, no-wrap
 msgid "systemctl enable winbind.service ; systemctl start winbind.service\n"
 msgstr "systemctl enable sssd.service ; systemctl start sssd.service\n"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:250
+#: src/man/authselect-migration.7.adoc:258
 #, no-wrap
 msgid ""
 "systemctl enable rpcbind.service ; systemctl start rpcbind.service\n"
@@ -636,40 +675,41 @@ msgstr ""
 "systemctl enable ypbind.service ; systemctl start ypbind.service\n"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:252
+#: src/man/authselect-migration.7.adoc:260
 msgid "If mkhomedir feature is enabled"
 msgstr "mkhomedir 기능이 활성화 되면"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:254
+#: src/man/authselect-migration.7.adoc:262
 #, no-wrap
 msgid "systemctl enable oddjobd.service ; systemctl start oddjobd.service\n"
 msgstr "systemctl enable oddjobd.service ; systemctl start oddjobd.service\n"
 
 #. type: Title -
-#: src/man/authselect-migration.7.adoc:256
+#: src/man/authselect-migration.7.adoc:264
 #, no-wrap
 msgid "AUTHCONFIG TOOLS"
 msgstr "AUTHCONFIG 도구"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:260
+#: src/man/authselect-migration.7.adoc:268
 msgid ""
 "Authconfig shipped a tool called _cacertdir_rehash_. If you depend on this "
 "tool, please switch to native _openssl_ command: *openssl rehash "
 "<directory>* that serves the same purpose."
 msgstr ""
-"Authconfig는 _cacertdir_rehash_라고 불리는 도구를 제공합니다. 만약 당신이 이 도구를 사용하는 경우라면, 원래의 "
-"_openssl_명령으로 전환하세요: *openssl rehash <directory>* 그 서버는 동일한 용도로 사용합니다."
+"Authconfig는 _cacertdir_rehash_라고 불리는 도구를 제공합니다. 만약 당신이 이 "
+"도구를 사용하는 경우라면, 원래의 _openssl_명령으로 전환하세요: *openssl "
+"rehash <directory>* 그 서버는 동일한 용도로 사용합니다."
 
 #. type: Title -
-#: src/man/authselect-migration.7.adoc:262
+#: src/man/authselect-migration.7.adoc:270
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "또 보세요"
 
 #. type: Plain text
-#: src/man/authselect-migration.7.adoc:264
+#: src/man/authselect-migration.7.adoc:272
 msgid ""
 "authselect(8), authselect-profiles(5), realm(8), ipa-client-install(1), sssd."
 "conf(5), smb.conf(5), ldap.conf(5), krb5.conf(5)"

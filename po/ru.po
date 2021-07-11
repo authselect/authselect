@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
-"Report-Msgid-Bugs-To: https://github.com/pbrezina/authselect\n"
-"POT-Creation-Date: 2020-11-25 10:47+0100\n"
+"Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
+"POT-Creation-Date: 2021-07-09 13:40+0200\n"
 "PO-Revision-Date: 2021-02-24 17:40+0000\n"
 "Last-Translator: Igor Gorbounov <igor.gorbounov@gmail.com>\n"
 "Language-Team: Russian <https://translate.fedoraproject.org/projects/"
@@ -830,15 +830,15 @@ msgstr "Не удается записать данные [%s] [%d]: %s"
 msgid "Common options:\n"
 msgstr "Общие параметры:\n"
 
-#: src/cli/cli_tool.c:74
+#: src/cli/cli_tool.c:74 src/cli/cli_tool.c:96
 msgid "Print error messages"
 msgstr "Печать cообщений об ошибках"
 
-#: src/cli/cli_tool.c:76
+#: src/cli/cli_tool.c:76 src/cli/cli_tool.c:97
 msgid "Print trace messages"
 msgstr "Печать сообщений трассировки"
 
-#: src/cli/cli_tool.c:78
+#: src/cli/cli_tool.c:78 src/cli/cli_tool.c:98
 msgid "Print warning messages"
 msgstr "Печать предупреждающих сообщений"
 
@@ -855,7 +855,7 @@ msgstr "Показать это для команды"
 msgid "Show brief usage message for a command"
 msgstr "Показать краткое сообщение об использовании команды"
 
-#: src/cli/cli_tool.c:169
+#: src/cli/cli_tool.c:173
 #, c-format
 msgid ""
 "Usage:\n"
@@ -866,42 +866,42 @@ msgstr ""
 "%s КОМАНДА АРГУМЕНТЫ-КОМАНДЫ\n"
 "\n"
 
-#: src/cli/cli_tool.c:170
+#: src/cli/cli_tool.c:174
 #, c-format
 msgid "Available commands:\n"
 msgstr "Доступные команды:\n"
 
-#: src/cli/cli_tool.c:192
+#: src/cli/cli_tool.c:196
 #, c-format
 msgid "\n"
 msgstr "\n"
 
-#: src/cli/cli_tool.c:226
+#: src/cli/cli_tool.c:230
 #, c-format
 msgid "Authselect command '%s' can only be run as root!\n"
 msgstr "Команда authselect «%s» может выполняться только пользователем root!\n"
 
-#: src/cli/cli_tool.c:243
+#: src/cli/cli_tool.c:247
 msgid "Bug: commands can't be NULL!\n"
 msgstr "Ошибка: команды не могут быть NULL!\n"
 
-#: src/cli/cli_tool.c:306
+#: src/cli/cli_tool.c:310
 msgid "Command options:"
 msgstr "Параметры команды:"
 
-#: src/cli/cli_tool.c:308
+#: src/cli/cli_tool.c:312
 msgid "Common options:"
 msgstr "Общие параметры:"
 
-#: src/cli/cli_tool.c:322 src/cli/cli_tool.c:325
+#: src/cli/cli_tool.c:326 src/cli/cli_tool.c:329
 msgid "[OPTIONS...]"
 msgstr "[ПАРАМЕТРЫ...]"
 
-#: src/cli/cli_tool.c:328 src/cli/main.c:818
+#: src/cli/cli_tool.c:332 src/cli/main.c:818
 msgid "Out of memory!"
 msgstr "Недостаточно памяти!"
 
-#: src/cli/cli_tool.c:349
+#: src/cli/cli_tool.c:353
 #, c-format
 msgid ""
 "Invalid option %s: %s\n"
@@ -910,7 +910,7 @@ msgstr ""
 "Недопустимый параметр %s: %s\n"
 "\n"
 
-#: src/cli/cli_tool.c:361
+#: src/cli/cli_tool.c:365
 #, c-format
 msgid ""
 "Missing option: %s\n"
@@ -919,7 +919,7 @@ msgstr ""
 "Отсутствует параметр: %s\n"
 "\n"
 
-#: src/cli/cli_tool.c:371
+#: src/cli/cli_tool.c:375
 #, c-format
 msgid ""
 "Only one free argument is expected!\n"
@@ -928,7 +928,7 @@ msgstr ""
 "Должен быть только один свободный аргумент!\n"
 "\n"
 
-#: src/cli/cli_tool.c:381
+#: src/cli/cli_tool.c:385
 #, c-format
 msgid ""
 "Unexpected parameter: %s\n"
@@ -937,7 +937,7 @@ msgstr ""
 "Неожиданный параметр: %s\n"
 "\n"
 
-#: src/cli/cli_tool.c:393
+#: src/cli/cli_tool.c:397
 #, c-format
 msgid ""
 "At least one option is required!\n"
