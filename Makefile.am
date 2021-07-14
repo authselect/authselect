@@ -2,7 +2,6 @@ SUBDIRS= \
     po \
     profiles \
     src/common \
-    src/compat \
     src/lib \
     src/cli \
     src/tests \
@@ -24,7 +23,21 @@ EXTRA_DIST = \
     scripts/release-version.sh \
     scripts/po-linguas.sh \
     scripts/zanata-hooks.sh \
+    src/compat/authcompat_ConfigSnippet.py \
+    src/compat/authcompat_EnvironmentFile.py \
+    src/compat/authcompat_Options.py \
+    src/compat/authcompat.py.in.in \
+    src/compat/Makefile.am \
+	src/compat/Makefile.in \
+    src/compat/snippets \
+    src/compat/snippets/authconfig-krb.conf \
+    src/compat/snippets/authconfig-sssd.conf \
     $(NULL)
+
+CLEANFILES = \
+    src/compat/authcompat.py.in \
+    src/compat/Makefile \
+	$(NULL)
 
 # Create authselect directories
 authselect_config_dir=@AUTHSELECT_CONFIG_DIR@
