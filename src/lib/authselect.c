@@ -163,7 +163,7 @@ authselect_uninstall(void)
 _PUBLIC_ int
 authselect_apply_changes(void)
 {
-    struct authselect_profile *profile;
+    struct authselect_profile *profile = NULL;
     char **supported = NULL;
     char *profile_id;
     char **features;
