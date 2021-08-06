@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2021-07-09 13:40+0200\n"
-"PO-Revision-Date: 2021-03-03 19:40+0000\n"
+"PO-Revision-Date: 2021-07-27 14:04+0000\n"
 "Last-Translator: Igor Gorbounov <igor.gorbounov@gmail.com>\n"
 "Language-Team: Russian <https://translate.fedoraproject.org/projects/"
 "authselect/master-authselect-migration7adoc/ru/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.7.2\n"
 
 #. type: Title =
 #: src/man/authselect-migration.7.adoc:2
@@ -227,16 +227,7 @@ msgstr "Связь параметров authconfig с функциями про�
 
 #. type: Table
 #: src/man/authselect-migration.7.adoc:90
-#, fuzzy, no-wrap
-#| msgid ""
-#| "|*Authconfig options* |*Authselect profile feature*\n"
-#| "|--enablesmartcard    |with-smartcard\n"
-#| "|--enablefingerprint  |with-fingerprint\n"
-#| "|--enableecryptfs     |with-ecryptfs\n"
-#| "|--enablemkhomedir    |with-mkhomedir\n"
-#| "|--enablefaillock     |with-faillock\n"
-#| "|--enablepamaccess    |with-pamaccess\n"
-#| "|--enablewinbindkrb5  |with-krb5\n"
+#, no-wrap
 msgid ""
 "|*Authconfig options* |*Authselect profile feature*\n"
 "|--enablesmartcard    |with-smartcard\n"
@@ -257,6 +248,8 @@ msgstr ""
 "|--enablefaillock     |with-faillock\n"
 "|--enablepamaccess    |with-pamaccess\n"
 "|--enablewinbindkrb5  |with-krb5\n"
+"|--enableshadow       |_нет_\n"
+"|--passalgo           |_нет_\n"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:97
@@ -267,6 +260,12 @@ msgid ""
 "it cannot be changed through an option (only by creating a custom profile).  "
 "You can just omit these options."
 msgstr ""
+"Параметры Authconfig `--enableshadow` и`--passalgo=sha512` часто "
+"использовались, чтобы гарантировать хранение паролей в `/ etc / shadow` с "
+"использованием алгоритма`sha512`. *Профили authselect теперь используют "
+"метод хеширования yescrypt*, и его нельзя изменить с помощью параметра ("
+"только путем создания пользовательского профиля). Вы можете просто опустить "
+"эти параметры."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:98
