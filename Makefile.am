@@ -22,7 +22,6 @@ EXTRA_DIST = \
     build/config.rpath \
     scripts/release-version.sh \
     scripts/po-linguas.sh \
-    scripts/zanata-hooks.sh \
     src/compat/authcompat_ConfigSnippet.py \
     src/compat/authcompat_EnvironmentFile.py \
     src/compat/authcompat_Options.py \
