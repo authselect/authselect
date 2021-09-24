@@ -10,10 +10,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install dependencies
       run: |
-        sed -E "s/@\w+@/dummy/g" rpm/authselect.spec.in > authselect.spec
-        dnf install -y "dnf-command(builddep)"
-        dnf builddep -y --spec ./authselect.spec
-        rm authselect.spec
+        scripts/auto install-build-deps
     - run: autoreconf -if && ./configure --enable-silent-rules
     - run: make
     - run: make check
