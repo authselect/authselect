@@ -197,7 +197,7 @@ manpages-translate() {
 # Usage: manpages-compile SOURCE [additional a2x parameters]
 manpages-compile() {
     local FILE=$1
-    local DIR=$(dirname `echo $FILE | sed 's|@abs_top_srcdir@|@abs_top_builddir@|'`)
+    local DIR=`dirname $FILE`
     local MAN=`basename $FILE | sed -E 's/(.*)\.adoc/\1/'`
 
     if ! need-compilation "$FILE" "$DIR/$MAN"
