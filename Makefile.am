@@ -20,6 +20,9 @@ dist_doc_DATA = \
 ACLOCAL_AMFLAGS = -I m4
 EXTRA_DIST = \
     build/config.rpath \
+    scripts/auto \
+    scripts/commands/install-build-deps.sh \
+    scripts/commands/make-srpm.sh \
     scripts/release-version.sh \
     scripts/po-linguas.sh \
     src/compat/authcompat_ConfigSnippet.py \

@@ -1,0 +1,47 @@
+#!/bin/bash
+
+set -e
+cliname=`basename "$0"`
+cmdname=$1
+
+scriptdir=`realpath \`dirname "$0"\``
+srcdir=`realpath "$scriptdir/.."`
+
+[ $# -gt 0 ] && shift
+
+cli_help() {
+    echo "
+    Authselect Automation Scripts
+
+    Usage: $cliname [command]
+
+    Commands:
+    install-build-deps    Install build dependencies.
+    make-srpm             Make source RPM.
+    *                     Help
+    "
+    exit 1
+}
+
+# helper functions
+die() {
+    echo "$*" 1>&2 ;
+    exit 1;
+}
+
+# push to authselect root directory
+pushd "$scriptdir/.." &> /dev/null
+
+case "$cmdname" in
+  install-build-deps)
+    . "$scriptdir/commands/install-build-deps.sh" "$@"
+    ;;
+  make-srpm)
+    . "$scriptdir/commands/make-srpm.sh" "$@"
+    ;;
+  *)
+    cli_help
+    ;;
+esac
+
+popd
