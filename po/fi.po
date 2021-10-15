@@ -1,854 +1,859 @@
-# Ludek Janda <ljanda@redhat.com>, 2018. #zanata, 2020, 2021.
-# Pavel Brezina <pbrezina@redhat.com>, 2018. #zanata
-# Tony Fu <tfu@redhat.com>, 2019. #zanata
-# Sundeep Anand <suanand@redhat.com>, 2021.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Red Hat, Inc.
+# This file is distributed under the same license as the authselect package.
+# Jan Kuparinen <copper_fin@hotmail.com>, 2021.
 msgid ""
 msgstr ""
-"Project-Id-Version: authselect 1.1\n"
+"Project-Id-Version: authselect 1.2.2\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
 "POT-Creation-Date: 2021-07-09 13:40+0200\n"
-"PO-Revision-Date: 2021-09-08 09:05+0000\n"
-"Last-Translator: Sundeep Anand <suanand@redhat.com>\n"
-"Language-Team: Chinese (Simplified) <https://translate.fedoraproject.org/"
-"projects/authselect/master-application/zh_CN/>\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2021-10-15 10:05+0000\n"
+"Last-Translator: Jan Kuparinen <copper_fin@hotmail.com>\n"
+"Language-Team: Finnish <https://translate.fedoraproject.org/projects/"
+"authselect/master-application/fi/>\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.8\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:187
 msgid "Unable to obtain supported features"
-msgstr "无法获得支持的功能"
+msgstr "Tuettuja ominaisuuksia ei voi hakea"
 
 #: src/lib/authselect.c:59
 #, c-format
 msgid "Unknown profile feature [%s], did you mean [%s]?"
-msgstr "未知的配置档案功能 [%s]，是 [%s]吗?"
+msgstr "Tuntematon profiilitoiminto [%s], tarkoititko [%s]?"
 
 #: src/lib/authselect.c:62
 #, c-format
 msgid "Unknown profile feature [%s]"
-msgstr "未知的配置档案功能 [%s]"
+msgstr "Tuntematon profiilitoiminto [%s]"
 
 #: src/lib/authselect.c:86
 #, c-format
 msgid "Trying to activate profile [%s]"
-msgstr "试图激活配置档案[%s]"
+msgstr "Yritetään aktivoida profiili [%s]"
 
 #: src/lib/authselect.c:90 src/lib/authselect.c:180 src/lib/profiles/read.c:316
 #, c-format
 msgid "Unable to find profile [%s] [%d]: %s"
-msgstr "无法找到配置档案[%s] [[%d]： %s"
+msgstr "Ei löydy profiilia [%s] [%d]: %s"
 
 #: src/lib/authselect.c:101
 msgid "Enforcing activation!"
-msgstr "强制激活！"
+msgstr "Pakotetaan aktivointi!"
 
 #: src/lib/authselect.c:109
 #, c-format
 msgid "Unable to check configuration [%d]: %s"
-msgstr "无法检查配置[%d]： %s"
+msgstr "Kokoonpanoa ei voi tarkistaa [%d]: %s"
 
 #: src/lib/authselect.c:114
 msgid "Unexpected changes to the configuration were detected."
-msgstr "检测到对配置的意外更改。"
+msgstr "Odottamattomia muutoksia kokoonpanoon havaittiin."
 
 #: src/lib/authselect.c:115
 msgid ""
 "Refusing to activate profile unless those changes are removed or overwrite "
 "is requested."
-msgstr "拒绝激活档案，除非删除了这些更改或请求覆盖。"
+msgstr ""
+"Kieltäydytään aktivoimasta profiilia, ellei kyseisiä muutoksia poisteta tai "
+"korvaamista pyydetä."
 
 #: src/lib/authselect.c:124
 msgid "File that needs to be overwritten was found"
-msgstr "找到需要覆盖的文件"
+msgstr "Korvaamista tarvitseva tiedosto löytyi"
 
 #: src/lib/authselect.c:125
 msgid ""
 "Refusing to activate profile unless this file is removed or overwrite is "
 "requested."
-msgstr "拒绝激活配置档案，除非删除这个文件或请求覆盖。"
+msgstr ""
+"Kieltäydytään aktivoimasta profiilia, ellei tätä tiedostoa poisteta tai sen "
+"korvausta pyydetä."
 
 #: src/lib/authselect.c:136
 #, c-format
 msgid "Unable to activate profile [%s] [%d]: %s"
-msgstr "无法激活档案[%s] [[%d]： %s"
+msgstr "Profiilin aktivointi epäonnistui [%s] [%d]: %s"
 
 #: src/lib/authselect.c:150
 msgid "Trying to uninstall authselect configuration"
-msgstr "尝试卸载 authselect 配置"
+msgstr "Yritetään poistaa authselect-kokoonpano"
 
 #: src/lib/authselect.c:154
 #, c-format
 msgid "Unable to remove symlinks [%d]: %s"
-msgstr "无法删除符号链接 [%d]: %s"
+msgstr "Symbolilinkkejä ei voi poistaa [%d]: %s"
 
 #: src/lib/authselect.c:158
 msgid "Symbolic links were successfully removed"
-msgstr "符号链接已被成功删除"
+msgstr "Symboliset linkit poistettiin"
 
 #: src/lib/authselect.c:197
 #, c-format
 msgid "Profile feature [%s] is no longer supported, removing it..."
-msgstr "配置档案功能 [%s] 不再被支持。删除它..."
+msgstr "Profiiliominaisuutta [%s] ei enää tueta, poistetaan se ..."
 
 #: src/lib/authselect_backup.c:48
 #, c-format
 msgid "Unable to create backup directory [%s/%s] [%d]: %s"
-msgstr "无法创建备份目录[%s/%s] [[%d]： %s"
+msgstr "Varmuuskopiohakemistoa ei voi luoda [%s/%s] [%d]: %s"
 
 #: src/lib/authselect_backup.c:70
 #, c-format
 msgid "Unable to create backup directory [%s] [%d]: %s"
-msgstr "无法创建备份目录[%s] [[%d]： %s"
+msgstr "Varmuuskopiohakemistoa ei voi luoda [%s] [%d]: %s"
 
 #: src/lib/authselect_backup.c:91
 #, c-format
 msgid "Creating temporary directory at [%s]"
-msgstr "在[%s]创建临时目录"
+msgstr "Luodaan väliaikainen hakemisto osoitteeseen [%s]"
 
 #: src/lib/authselect_backup.c:124 src/lib/authselect_profile.c:377
 #: src/lib/authselect_profile.c:457
 #, c-format
 msgid "There is no filename in [%s]"
-msgstr "[%s]中无文件名"
+msgstr "Kohteessa ei ole tiedostonimeä [%s]"
 
 #: src/lib/authselect_backup.c:128
 #, c-format
 msgid "Copying [%s] to [%s/%s]"
-msgstr "把[%s]复制到[%s/%s]"
+msgstr "Kopioidaan [%s] kohteeseen [%s/%s]"
 
 #: src/lib/authselect_backup.c:132 src/lib/util/selinux.c:393
 #, c-format
 msgid "File [%s] does not exist"
-msgstr "文件[%s] 不存在"
+msgstr "Tiedostoa [%s] ei ole olemassa"
 
 #: src/lib/authselect_backup.c:134 src/lib/authselect_backup.c:151
 #, c-format
 msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
-msgstr "无法把[%s]复制到[%s/%s] [[%d]： %s"
+msgstr "Ei voi kopioida [%s] kohteeseen [%s/%s] [%d]:%s"
 
 #: src/lib/authselect_backup.c:174
 #, c-format
 msgid "Trying to backup authselect configuration to [%s]"
-msgstr "尝试把 authselect 配置备份到 [%s]"
+msgstr ""
+"Yritetään varmuuskopioida automaattisen valinnan kokoonpano kohteeseen [%s]"
 
 #: src/lib/authselect_backup.c:179
 #, c-format
 msgid "Trying to backup system configuration to [%s]"
-msgstr "尝试把系统配置备份到 [%s]"
+msgstr "Yritetään varmuuskopioida järjestelmän kokoonpano kohteeseen [%s]"
 
 #: src/lib/authselect_backup.c:184
 #, c-format
 msgid "Backup was successfully created at [%s]"
-msgstr "在[%s]成功创建了备份"
+msgstr "Varmuuskopiointi luotiin onnistuneesti osoitteeseen [%s]"
 
 #: src/lib/authselect_backup.c:188
 #, c-format
 msgid "Unable to create backup [%d]: %s"
-msgstr "无法创建备份 [%d]: %s"
+msgstr "Varmuuskopion luominen epäonnistui [ %d]: %s"
 
 #: src/lib/authselect_backup.c:205
 msgid " does not exist."
-msgstr " 不存在。"
+msgstr " ei ole olemassa."
 
 #: src/lib/authselect_backup.c:208 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
-msgstr "无法列出目录 [%s] [%d]: %s"
+msgstr "Hakemistoa [%s] [%d]:%s ei voi luetella"
 
 #: src/lib/authselect_backup.c:222
 #, c-format
 msgid "Removing backup [%s]"
-msgstr "删除备份 [%s]"
+msgstr "Poistetaan varmuuskopio [%s]"
 
 #: src/lib/authselect_backup.c:231
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
-msgstr "无法删除目录 [%s] [%d]: %s"
+msgstr "Hakemiston [%s] poistaminen epäonnistui [%d]:%s"
 
 #: src/lib/authselect_backup.c:304
 #, c-format
 msgid "Unable to copy files [%d]: %s"
-msgstr "无法复制文件 [%d]: %s"
+msgstr "Tiedostojen kopioiminen epäonnistui [%d]: %s"
 
 #: src/lib/authselect_backup.c:310 src/lib/profiles/activate.c:78
 #, c-format
 msgid "Unable to create symbolic links [%d]: %s"
-msgstr "无法创建符号链接[%d]： %s"
+msgstr "Symbolisia linkkejä ei voi luoda [ %d]: %s"
 
 #: src/lib/authselect_backup.c:316 src/lib/profiles/activate.c:84
 msgid "Dconf is not installed on your system"
-msgstr "系统上未安装Dconf"
+msgstr "Dconf ei ole asennettu järjestelmääsi"
 
 #: src/lib/authselect_backup.c:318 src/lib/profiles/activate.c:86
 #, c-format
 msgid "Unable to update dconf database [%d]: %s"
-msgstr "无法更新dconf数据库[%d]： %s"
+msgstr "Ei voi päivittää dconf -tietokantaa [ %d]: %s"
 
 #: src/lib/authselect_backup.c:341
 #, c-format
 msgid "Restoring configuration from backup [%s]"
-msgstr "从备份 [%s] 恢复配置"
+msgstr ""
 
 #: src/lib/authselect_backup.c:357
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
-msgstr "备份 [%s] 包括 authselect 配置"
+msgstr ""
 
 #: src/lib/authselect_backup.c:360
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
-msgstr "备份 [%s] 包括了非 authselect 的配置"
+msgstr ""
 
 #: src/lib/authselect_backup.c:366
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
-msgstr "无法恢复 [%s] [%d]: %s"
+msgstr ""
 
 #: src/lib/authselect_profile.c:104
 msgid "Unable to generate nsswitch.conf"
-msgstr "无法生成nsswitch.conf"
+msgstr ""
 
 #: src/lib/authselect_profile.c:111
 #, c-format
 msgid "Unable to find nsswitch maps [%d]: %s"
-msgstr "无法找到nsswitch map[%d]： %s"
+msgstr ""
 
 #: src/lib/authselect_profile.c:132
 msgid "Unable to create array (out of memory)"
-msgstr "无法创建阵列（内存不足）"
+msgstr ""
 
 #: src/lib/authselect_profile.c:141 src/lib/authselect_profile.c:150
 msgid "Unable to obtain feature list (out of memory)"
-msgstr "无法获取功能列表（内存不足）"
+msgstr ""
 
 #: src/lib/authselect_profile.c:344
 #, c-format
 msgid "Creating empty profile at [%s]"
-msgstr "在[%s]创建空配置档案"
+msgstr ""
 
 #: src/lib/authselect_profile.c:348 src/lib/authselect_profile.c:449
 #, c-format
 msgid "Unable to make path [%s] [%d]: %s"
-msgstr "无法建立路径[%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/authselect_profile.c:355 src/lib/authselect_profile.c:408
 #, c-format
 msgid "Unable to write to [%s] [%d]: %s"
-msgstr "无法写到 [%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/authselect_profile.c:385
 #, c-format
 msgid "Omitting [%s] since it does not exist in base profile"
-msgstr "省略 [%s]，因为它在基本配置集中不存在"
+msgstr ""
 
 #: src/lib/authselect_profile.c:389
 #, c-format
 msgid "Unable to check presence of [%s] [%d]: %s"
-msgstr "无法检查 [%s] [%d]: %s"
+msgstr ""
 
 #: src/lib/authselect_profile.c:397
 #, c-format
 msgid "Unable to create symbolic link [%s] to [%s] [%d]: %s"
-msgstr "无法创建符号链接[%s] 至 [%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/authselect_profile.c:430
 #, c-format
 msgid "Creating new profile from \"%s\" at [%s]"
-msgstr "从[%s]上的%s“创建新的配置档案"
+msgstr ""
 
 #: src/lib/authselect_profile.c:434
 #, c-format
 msgid "Unable to read base profile [%s] [%d]: %s"
-msgstr "无法读取基本配置档案[%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/authselect_profile.c:442
 msgid "Unable to resolve symbolic links names"
-msgstr "无法解析符号链接名称"
+msgstr ""
 
 #: src/lib/authselect_profile.c:467 src/lib/authselect_profile.c:480
 #: src/lib/authselect_profile.c:494
 #, c-format
 msgid "Unable to create [%s] [%d]: %s"
-msgstr "无法创建[%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/authselect_profile.c:502
 #, c-format
 msgid "Unknown file name [%s]"
-msgstr "未知文件名[%s]"
+msgstr ""
 
 #: src/lib/authselect_profile.c:529
 msgid "Name can not be empty"
-msgstr "名称不能为空"
+msgstr "Nimi ei voi olla tyhjä"
 
 #: src/lib/authselect_profile.c:541
 msgid "Default profile can not be created"
-msgstr "无法创建默认配置档案"
+msgstr ""
 
 #: src/lib/authselect_profile.c:544
 msgid "Value AUTHSELECT_PROFILE_ANY is invalid in this context"
-msgstr "在此上下文中，AUTHSELECT_PROFILE_ANY的值无效"
+msgstr ""
 
 #: src/lib/authselect_profile.c:549
 msgid "Unable to create profile path: out of memory"
-msgstr "无法创建配置档案路径：内存不足"
+msgstr ""
 
 #: src/lib/authselect_profile.c:555
 #, c-format
 msgid "Profile \"%s\" already exist at [%s]"
-msgstr "配置档案“%s“已经存在于[%s]"
+msgstr ""
 
 #: src/lib/authselect_profile.c:559
 #, c-format
 msgid "Unable to access [%s] [%d]: %s"
-msgstr "无法访问[%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/authselect_profile.c:565
 msgid "Unable to create file name: out of memory"
-msgstr "无法创建文件名：内存不足"
+msgstr ""
 
 #: src/lib/authselect_profile.c:573
 #, c-format
 msgid "Unable to create empty profile [%d]: %s"
-msgstr "无法创建空配置档案[%d]： %s"
+msgstr ""
 
 #: src/lib/authselect_profile.c:582
 #, c-format
 msgid "Unable to create profile [%d]: %s"
-msgstr "无法创建配置档案[%d]： %s"
+msgstr ""
 
 #: src/lib/files/config.c:153
 msgid "Checking if all required directories are writable."
-msgstr "检查所有必需的目录是否可写。"
+msgstr ""
 
 #: src/lib/files/config.c:158
 #, c-format
 msgid "Unable to get path to %s parent directory!"
-msgstr "无法获得到 %s 父目录的路径！"
+msgstr ""
 
 #: src/lib/files/config.c:165
 #, c-format
 msgid "Creating path [%s]"
-msgstr "创建路径[%s]"
+msgstr ""
 
 #: src/lib/files/config.c:169
 #, c-format
 msgid "Unable to create path [%s] [%d]: %s"
-msgstr "无法创建路径[%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/files/config.c:174
 #, c-format
 msgid "Directory [%s] does not exist, please create it!"
-msgstr "目录 [%s]不存在，请创建它！"
+msgstr ""
 
 #: src/lib/files/config.c:177
 #, c-format
 msgid "Unable to access directory [%s] in [WX] mode!"
-msgstr "无法在[WX]模式下访问目录[%s]！"
+msgstr ""
 
 #: src/lib/files/config.c:196
 #, c-format
 msgid "Unable to load profile [%s] [%d]: %s"
-msgstr "无法加载配置档案[%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/files/symlinks.c:41
 #, c-format
 msgid "Creating symbolic link [%s] to [%s]"
-msgstr "创建符号链接 [%s] 到 [%s]"
+msgstr ""
 
 #: src/lib/files/symlinks.c:47
 #, c-format
 msgid "Unable to overwrite file [%s] [%d]: %s"
-msgstr "无法覆盖文件 [%s] [%d]: %s"
+msgstr ""
 
 #: src/lib/files/symlinks.c:55
 #, c-format
 msgid "Unable to create symbolic link [%s] [%d]: %s"
-msgstr "无法创建符号链接 [%s] [%d]: %s"
+msgstr ""
 
 #: src/lib/files/symlinks.c:79
 #, c-format
 msgid "Validating link [%s]"
-msgstr "验证链接 [%s]"
+msgstr ""
 
 #: src/lib/files/symlinks.c:83
 #, c-format
 msgid "Unable to validate link [%s] [%d]: %s"
-msgstr "无法验证链接 [%s] [%d]: %s"
+msgstr ""
 
 #: src/lib/files/symlinks.c:90
 #, c-format
 msgid "[%s] was not created by authselect!"
-msgstr "[%s] 不是由 authselect 创建！"
+msgstr ""
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
 #: src/lib/files/system.c:576
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
-msgstr "尝试访问文件时出错[%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/files/symlinks.c:121
 #, c-format
 msgid "Unable to check file [%s] [%d]: %s"
-msgstr "无法检查文件 [%s] [%d]: %s"
+msgstr ""
 
 #: src/lib/files/symlinks.c:128
 #, c-format
 msgid "Symbolic link [%s] to [%s] still exists!"
-msgstr "符号链接 [%s]（到 [%s]）已存在！"
+msgstr ""
 
 #: src/lib/files/symlinks.c:149
 #, c-format
 msgid "File [%s] exists but it needs to be overwritten!"
-msgstr "文件 [%s] 存在，但它需要被覆盖！"
+msgstr ""
 
 #: src/lib/files/symlinks.c:190
 #, c-format
 msgid "Skipping [%s] because it is not an authselect file"
-msgstr "跳过 [%s]，因为它不是一个 authselect 文件"
+msgstr ""
 
 #: src/lib/files/system.c:74 src/lib/profiles/read.c:162
 #, c-format
 msgid "Reading file [%s/%s]"
-msgstr "读文件[%s/%s]"
+msgstr ""
 
 #: src/lib/files/system.c:82 src/lib/profiles/read.c:168
 #: src/lib/profiles/read.c:173
 #, c-format
 msgid "Unable to read file [%s/%s] [%d]: %s"
-msgstr "无法读取文件[%s/%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/files/system.c:112 src/lib/files/system.c:170
 #: src/lib/util/template.c:450 src/lib/util/template.c:591
 #: src/lib/util/template.c:642
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
-msgstr "无法编译正则表达式：正则表达式错误 %d"
+msgstr ""
 
 #: src/lib/files/system.c:130 src/lib/files/system.c:195
 #: src/lib/util/template.c:500 src/lib/util/template.c:668
 #, c-format
 msgid "Unable to search string: regex error %d"
-msgstr "无法搜索字符串：正则表达式错误 %d"
+msgstr ""
 
 #: src/lib/files/system.c:272 src/lib/files/system.c:504
 #, c-format
 msgid "Unable to read [%s] [%d]: %s"
-msgstr "无法读[%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/files/system.c:288
 #, c-format
 msgid "Unable to generate nsswitch.conf [%d]: %s"
-msgstr "无法生成nsswitch.conf [%d]： %s"
+msgstr ""
 
 #: src/lib/files/system.c:354
 #, c-format
 msgid "Unable to generate files [%d]: %s"
-msgstr "无法生成文件[%d]： %s"
+msgstr ""
 
 #: src/lib/files/system.c:369 src/lib/util/selinux.c:398
 #, c-format
 msgid "Writing temporary file for [%s]"
-msgstr "为[%s]写临时文件"
+msgstr ""
 
 #: src/lib/files/system.c:373
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
-msgstr "无法写临时文件[%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/files/system.c:378
 #, c-format
 msgid "Temporary file is named [%s]"
-msgstr "临时文件名为[%s]"
+msgstr ""
 
 #: src/lib/files/system.c:389 src/lib/util/selinux.c:425
 #, c-format
 msgid "Renaming [%s] to [%s]"
-msgstr "把[%s]重命名为[%s]"
+msgstr ""
 
 #: src/lib/files/system.c:394 src/lib/util/selinux.c:429
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
-msgstr "无法重命名 [%s] 至 [%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/files/system.c:496
 #, c-format
 msgid "Validating file [%s]"
-msgstr "验证文件[%s]"
+msgstr ""
 
 #: src/lib/files/system.c:501 src/lib/util/file.c:121
 #, c-format
 msgid "[%s] does not exist!"
-msgstr "[%s] 不存在！"
+msgstr ""
 
 #: src/lib/files/system.c:507
 #, c-format
 msgid "Unable to validate file [%s] [%d]: %s"
-msgstr "无法验证文件[%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/files/system.c:514
 #, c-format
 msgid "Comparing content against [%s]"
-msgstr "与[%s]比较内容"
+msgstr ""
 
 #: src/lib/files/system.c:518
 msgid "Comparing content against current profile"
-msgstr "将当前配置档案比较内容"
+msgstr ""
 
 #: src/lib/files/system.c:524
 #, c-format
 msgid "[%s] has unexpected content!"
-msgstr "[%s]有意外的内容！"
+msgstr ""
 
 #: src/lib/files/system.c:531
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
-msgstr "无法检查文件模式[%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/files/system.c:553
 #, c-format
 msgid "File [%s] was modified outside authselect!"
-msgstr "文件[%s]在authselect之外进行了修改！"
+msgstr ""
 
 #: src/lib/files/system.c:572
 #, c-format
 msgid "File [%s] is still present"
-msgstr "文件[%s]仍然存在"
+msgstr ""
 
 #: src/lib/profiles/activate.c:44
 #, c-format
 msgid "%s update failed: %d"
-msgstr "%s 更新失败： %d"
+msgstr ""
 
 #: src/lib/profiles/activate.c:59
 msgid "Some directories are not accessible by authselect!"
-msgstr "authselect无法访问某些目录！"
+msgstr ""
 
 #: src/lib/profiles/activate.c:65
 #, c-format
 msgid "Unable to write generated system files [%d]: %s"
-msgstr "无法写生成的系统文件[%d]： %s"
+msgstr ""
 
 #: src/lib/profiles/activate.c:72
 #, c-format
 msgid "Unable to write configuration [%d]: %s"
-msgstr "无法写配置[%d]： %s"
+msgstr ""
 
 #: src/lib/profiles/list.c:42
 #, c-format
 msgid "Reading profile directory [%s]"
-msgstr "阅读配置档案目录[%s]"
+msgstr ""
 
 #: src/lib/profiles/list.c:47
 #, c-format
 msgid "Directory [%s] is missing!"
-msgstr "缺少目录 [%s]！"
+msgstr ""
 
 #: src/lib/profiles/list.c:69
 #, c-format
 msgid "Found profile [%s]"
-msgstr "找到配置档案[%s]"
+msgstr ""
 
 #: src/lib/profiles/list.c:151
 #, c-format
 msgid "Unable to list profiles [%d]: %s"
-msgstr "无法列出配置档案[%d]： %s"
+msgstr ""
 
 #: src/lib/profiles/read.c:83
 #, c-format
 msgid "Unable to open directory [%s] [%d]: %s"
-msgstr "无法打开目录[%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/profiles/read.c:106
 #, c-format
 msgid "Looking up profile [%s]"
-msgstr "查找配置档案[%s]"
+msgstr ""
 
 #: src/lib/profiles/read.c:110
 msgid "Locations array is NULL"
-msgstr "Locations数组为NULL"
+msgstr ""
 
 #: src/lib/profiles/read.c:133
 #, c-format
 msgid "Profile [%s] is a custom profile"
-msgstr "配置档案[%s]是一个自定义配置档案"
+msgstr ""
 
 #: src/lib/profiles/read.c:135
 #, c-format
 msgid "Profile [%s] is a vendor profile"
-msgstr "配置档案[%s]是一个厂商配置档案"
+msgstr ""
 
 #: src/lib/profiles/read.c:137
 #, c-format
 msgid "Profile [%s] is a default profile"
-msgstr "配置档案[%s]是一个默认的配置档案"
+msgstr ""
 
 #: src/lib/profiles/read.c:140
 #, c-format
 msgid "Profile [%s] found at [%s]"
-msgstr "配置档案[%s]发现于[%s]"
+msgstr ""
 
 #: src/lib/profiles/read.c:148
 #, c-format
 msgid "Profile [%s] was not found"
-msgstr "配置档案[%s] 没找到"
+msgstr ""
 
 #: src/lib/profiles/read.c:203 src/lib/profiles/read.c:222
 #, c-format
 msgid "Profile [%s] does not contain a name in [%s]!"
-msgstr "配置档案[%s] 没有在[%s]中包括一个名称！"
+msgstr ""
 
 #: src/lib/util/dir.c:77 src/lib/util/dir.c:83
 #, c-format
 msgid "Unable to get basename of [%s]"
-msgstr "无法获得 [%s] 的基础名"
+msgstr ""
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
 #: src/lib/util/file.c:199 src/cli/main.c:826
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
-msgstr "无法统计[%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/util/dir.c:130
 #, c-format
 msgid "Unable to stat directory [%d]: %s"
-msgstr "无法统计目录[%d]： %s"
+msgstr ""
 
 #: src/lib/util/dir.c:313
 #, c-format
 msgid "Removing file [%s/%s]"
-msgstr "删除文件 [%s/%s]"
+msgstr ""
 
 #: src/lib/util/dir.c:321
 #, c-format
 msgid "Removing directory [%s]"
-msgstr "删除目录 [%s]"
+msgstr ""
 
 #: src/lib/util/file.c:43
 msgid "Internal error: stat cannot be NULL!"
-msgstr "内部错误：stat不能为NULL！"
+msgstr ""
 
 #: src/lib/util/file.c:51
 #, c-format
 msgid "[%s] is not a directory!"
-msgstr "[%s]不是目录！"
+msgstr ""
 
 #: src/lib/util/file.c:54
 #, c-format
 msgid "[%s] is not a regular file!"
-msgstr "[%s]不是常规文件！"
+msgstr ""
 
 #: src/lib/util/file.c:57
 #, c-format
 msgid "[%s] is not a symbolic link!"
-msgstr "[%s]不是符号链接！"
+msgstr ""
 
 #: src/lib/util/file.c:60
 #, c-format
 msgid "[%s] has wrong type [%.7o], expected [%.7o]!"
-msgstr "[%s]有错误的类型[%.7o]，应该为[%.7o]！"
+msgstr ""
 
 #: src/lib/util/file.c:87
 #, c-format
 msgid "[%s] has wrong mode [%.4o], expected [%.4o]!"
-msgstr "[%s]有错误的模式[%.4o]，应该为[%.4o]！"
+msgstr ""
 
 #: src/lib/util/file.c:93
 #, c-format
 msgid "[%s] has wrong owner [%u], expected [%u]!"
-msgstr "[%s]有错误的所有者[%u]，应该为[%u]！"
+msgstr ""
 
 #: src/lib/util/file.c:99
 #, c-format
 msgid "[%s] has wrong group [%u], expected [%u]!"
-msgstr "[%s]有错误的组[%u]，应该为[%u]！"
+msgstr ""
 
 #: src/lib/util/file.c:164 src/lib/util/file.c:211
 #, c-format
 msgid "Unable to read link destination [%s] [%d]: %s"
-msgstr "无法读取链接目的地[%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/util/file.c:170
 #, c-format
 msgid "Link [%s] does not point to [%s]"
-msgstr "链接[%s]没有指向[%s]"
+msgstr ""
 
 #: src/lib/util/file.c:218 src/lib/util/file.c:220
 #, c-format
 msgid "Link [%s] points to [%s]"
-msgstr "链接[%s] 指向 [%s]"
+msgstr ""
 
 #: src/lib/util/file.c:281
 msgid "Internal error: filepath cannot be NULL!"
-msgstr "内部错误：文件路径不能为NULL！"
+msgstr ""
 
 #: src/lib/util/file.c:313
 #, c-format
 msgid "Unable to get parent directory of [%s] [%d]: %s"
-msgstr "无法获取[%s] [%d]的父目录： %s"
+msgstr ""
 
 #: src/lib/util/file.c:524 src/lib/util/textfile.c:175
 #, c-format
 msgid "Unable to chmod file [%s] [%d]: %s"
-msgstr "无法chmod文件[%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/util/file.c:531
 #, c-format
 msgid "Unable to chown file [%s] [%d]: %s"
-msgstr "无法chown文件[%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/util/selinux.c:46
 #, c-format
 msgid "Unable to create selabel context [%d]: %s"
-msgstr "无法创建 selabel 上下文 [%d]: %s"
+msgstr ""
 
 #: src/lib/util/selinux.c:55
 #, c-format
 msgid "Unable to lookup selinux context [%d]: %s"
-msgstr "无法查找 selinux 上下文 [%d]: %s"
+msgstr ""
 
 #: src/lib/util/selinux.c:59
 #, c-format
 msgid "Found default selinux context for [%s]: %s"
-msgstr "找到 [%s] 默认的 selinux 上下文 : %s"
+msgstr ""
 
 #: src/lib/util/selinux.c:84
 #, c-format
 msgid "Unable to obtain selinux context for [%s] [%d]: %s"
-msgstr "无法获得 [%s] [%d] 的 selinux 上下文 : %s"
+msgstr ""
 
 #: src/lib/util/selinux.c:91
 msgid "not set"
-msgstr "未设置"
+msgstr "ei asetettu"
 
 #: src/lib/util/selinux.c:90
 #, c-format
 msgid "Found selinux context for [%s]: %s"
-msgstr "找到 [%s] 的 selinux 上下文 : %s"
+msgstr ""
 
 #: src/lib/util/selinux.c:115 src/lib/util/selinux.c:183
 #: src/lib/util/selinux.c:251
 msgid "Unable to get current fscreate selinux context!"
-msgstr "无法获得当前 fscreate selinux 的上下文！"
+msgstr ""
 
 #: src/lib/util/selinux.c:121 src/lib/util/selinux.c:189
 #: src/lib/util/selinux.c:257
 #, c-format
 msgid "Unable to get default selinux context for [%s] [%d]: %s!"
-msgstr "无法获得 [%s] [%d] 的默认 selinux 上下文：%s！"
+msgstr ""
 
 #: src/lib/util/selinux.c:129 src/lib/util/selinux.c:197
 #: src/lib/util/selinux.c:265
 msgid "Unable to set fscreate selinux context!"
-msgstr "无法设置 fscreate selinux 上下文！"
+msgstr ""
 
 #: src/lib/util/selinux.c:139 src/lib/util/selinux.c:207
 #: src/lib/util/selinux.c:275
 msgid "Unable to restore fscreate selinux context!"
-msgstr "无法恢复 fscreate selinux 上下文！"
+msgstr ""
 
 #: src/lib/util/selinux.c:387
 #, c-format
 msgid ""
 "File [%s] should exist but is missing. It is not safe to delete [%s]. "
 "Aborting."
-msgstr "文件 [%s] 应该存在，但缺失了。删除[%s]是不安全的。终止。"
+msgstr ""
 
 #: src/lib/util/selinux.c:420
 #, c-format
 msgid "Removing [%s]"
-msgstr "删除[%s]"
+msgstr ""
 
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:281
 msgid "Invalid operator!"
-msgstr "操作符无效！"
+msgstr ""
 
 #: src/lib/util/template.c:460 src/lib/util/template.c:652
 #, c-format
 msgid "Unable to process match [%d]: %s"
-msgstr "无法处理匹配[%d]： %s"
+msgstr ""
 
 #: src/lib/util/template.c:485
 #, c-format
 msgid "Unable to process operator [%d]: %s"
-msgstr "无法处理操作符[%d]： %s"
+msgstr ""
 
 #: src/lib/util/template.c:532
 #, c-format
 msgid "Unable to generate template [%d]: %s"
-msgstr "无法生成模板[%d]： %s"
+msgstr ""
 
 #: src/lib/util/template.c:559
 msgid "Unable to get current time!"
-msgstr "无法获得当前时间！"
+msgstr ""
 
 #: src/lib/util/template.c:573
 msgid "Unable to create message!"
-msgstr "无法创建消息！"
+msgstr ""
 
 #: src/lib/util/template.c:598
 #, c-format
 msgid "Unable to find new match: regex error %d"
-msgstr "无法找到新匹配 : regex 错误 %d"
+msgstr ""
 
 #: src/lib/util/template.c:728
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
-msgstr "无法为 [%s] [%d] 创建临时文件: %s"
+msgstr ""
 
 #: src/lib/util/textfile.c:56
 #, c-format
 msgid "File [%s] is bigger than %uKiB!"
-msgstr "文件[%s]大于 %uKiB！"
+msgstr ""
 
 #: src/lib/util/textfile.c:85
 #, c-format
 msgid "Unable to read file [%s] [%d]: %s"
-msgstr "无法读取文件[%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/util/textfile.c:158
 #, c-format
 msgid "Unable to open file [%s] [%d]: %s"
-msgstr "无法打开文件 [%s] [[%d]： %s"
+msgstr ""
 
 #: src/lib/util/textfile.c:167
 #, c-format
 msgid "Unable to write data [%s] [%d]: %s"
-msgstr "无法写入数据[%s] [[%d]： %s"
+msgstr ""
 
 #: src/cli/cli_tool.c:72
 #, c-format
 msgid "Common options:\n"
-msgstr "常见选项：\n"
+msgstr ""
 
 #: src/cli/cli_tool.c:74 src/cli/cli_tool.c:96
 msgid "Print error messages"
-msgstr "输出错误消息"
+msgstr ""
 
 #: src/cli/cli_tool.c:76 src/cli/cli_tool.c:97
 msgid "Print trace messages"
-msgstr "输出跟踪消息"
+msgstr ""
 
 #: src/cli/cli_tool.c:78 src/cli/cli_tool.c:98
 msgid "Print warning messages"
-msgstr "输出警告消息"
+msgstr ""
 
 #: src/cli/cli_tool.c:80
 #, c-format
 msgid "Help options:\n"
-msgstr "帮助选项：\n"
+msgstr "Ohjevalitsimet:\n"
 
 #: src/cli/cli_tool.c:82
 msgid "Show this for a command"
-msgstr "为一个命令显示此信息"
+msgstr ""
 
 #: src/cli/cli_tool.c:84
 msgid "Show brief usage message for a command"
-msgstr "为一个命令显示简要用法消息"
+msgstr ""
 
 #: src/cli/cli_tool.c:173
 #, c-format
@@ -857,44 +862,41 @@ msgid ""
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
 msgstr ""
-"用法：\n"
-"%s COMMAND COMMAND-ARGS\n"
-"\n"
 
 #: src/cli/cli_tool.c:174
 #, c-format
 msgid "Available commands:\n"
-msgstr "可用命令：\n"
+msgstr ""
 
 #: src/cli/cli_tool.c:196
 #, c-format
 msgid "\n"
-msgstr "\n"
+msgstr ""
 
 #: src/cli/cli_tool.c:230
 #, c-format
 msgid "Authselect command '%s' can only be run as root!\n"
-msgstr "Authselect 命令 '%s' 只能以 root 用户运行 !\n"
+msgstr ""
 
 #: src/cli/cli_tool.c:247
 msgid "Bug: commands can't be NULL!\n"
-msgstr "错误：命令不能为NULL！\n"
+msgstr ""
 
 #: src/cli/cli_tool.c:310
 msgid "Command options:"
-msgstr "命令选项："
+msgstr ""
 
 #: src/cli/cli_tool.c:312
 msgid "Common options:"
-msgstr "常见选项："
+msgstr ""
 
 #: src/cli/cli_tool.c:326 src/cli/cli_tool.c:329
 msgid "[OPTIONS...]"
-msgstr "[选项...]"
+msgstr "[VALITSIN...]"
 
 #: src/cli/cli_tool.c:332 src/cli/main.c:818
 msgid "Out of memory!"
-msgstr "无可用的内存！"
+msgstr "Muisti loppui!"
 
 #: src/cli/cli_tool.c:353
 #, c-format
@@ -902,8 +904,6 @@ msgid ""
 "Invalid option %s: %s\n"
 "\n"
 msgstr ""
-"选项无效 %s： %s\n"
-"\n"
 
 #: src/cli/cli_tool.c:365
 #, c-format
@@ -911,8 +911,6 @@ msgid ""
 "Missing option: %s\n"
 "\n"
 msgstr ""
-"缺少选项： %s\n"
-"\n"
 
 #: src/cli/cli_tool.c:375
 #, c-format
@@ -920,8 +918,6 @@ msgid ""
 "Only one free argument is expected!\n"
 "\n"
 msgstr ""
-"只能使用一个 free 参数！\n"
-"\n"
 
 #: src/cli/cli_tool.c:385
 #, c-format
@@ -929,8 +925,6 @@ msgid ""
 "Unexpected parameter: %s\n"
 "\n"
 msgstr ""
-"意外的参数： %s\n"
-"\n"
 
 #: src/cli/cli_tool.c:397
 #, c-format
@@ -938,66 +932,64 @@ msgid ""
 "At least one option is required!\n"
 "\n"
 msgstr ""
-"至少需要一个选项！\n"
-"\n"
 
 #: src/cli/main.c:72 src/cli/main.c:429 src/cli/main.c:467
 msgid "Profile identifier."
-msgstr "配置档案标识符。"
+msgstr ""
 
 #: src/cli/main.c:75 src/cli/main.c:251 src/cli/main.c:296 src/cli/main.c:345
 #: src/cli/main.c:387 src/cli/main.c:432 src/cli/main.c:470 src/cli/main.c:634
 #: src/cli/main.c:710 src/cli/main.c:755 src/cli/main.c:793 src/cli/main.c:858
 #: src/cli/main.c:882
 msgid "Unable to parse command arguments"
-msgstr "无法解析命令参数"
+msgstr ""
 
 #: src/cli/main.c:130
 msgid "Unable to backup current configuration!\n"
-msgstr "无法备份当前的配置 !\n"
+msgstr ""
 
 #: src/cli/main.c:134
 #, c-format
 msgid "Backup stored at %s\n"
-msgstr "备份保存在 %s\n"
+msgstr ""
 
 #: src/cli/main.c:156
 msgid "Enforce changes"
-msgstr "强制改变"
+msgstr ""
 
 #: src/cli/main.c:157 src/cli/main.c:244 src/cli/main.c:624 src/cli/main.c:701
 msgid "Backup system files before activating profile (generate unique name)"
-msgstr "在激活配置档案前备份系统文件 (生成唯一的名称)"
+msgstr ""
 
 #: src/cli/main.c:158 src/cli/main.c:245 src/cli/main.c:625 src/cli/main.c:702
 msgid "Backup system files before activating profile"
-msgstr "激活配置档案前备份系统文件"
+msgstr ""
 
 #: src/cli/main.c:158 src/cli/main.c:245 src/cli/main.c:625 src/cli/main.c:702
 msgid "NAME"
-msgstr "名称"
+msgstr ""
 
 #: src/cli/main.c:159
 msgid "Do not backup system files when --force is set"
-msgstr "设置--force时，请勿备份系统文件"
+msgstr ""
 
 #: src/cli/main.c:160 src/cli/main.c:626
 msgid "Do not print profile requirements"
-msgstr "不要打印配置档案要求"
+msgstr ""
 
 #: src/cli/main.c:171 src/cli/main.c:402 src/cli/main.c:438 src/cli/main.c:476
 #: src/cli/main.c:503 src/cli/main.c:653
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
-msgstr "无法获取配置档案信息[%d]： %s"
+msgstr ""
 
 #: src/cli/main.c:179 src/cli/main.c:510 src/cli/main.c:661
 msgid "Unable to read profile requirements!"
-msgstr "无法读配置档案要求！"
+msgstr ""
 
 #: src/cli/main.c:186
 msgid "Unable to obtain nsswitch maps!"
-msgstr "无法获取 nsswitch maps!"
+msgstr ""
 
 #: src/cli/main.c:200
 msgid ""
@@ -1005,28 +997,25 @@ msgid ""
 "Some unexpected changes to the configuration were detected.\n"
 "Use --force parameter if you want to overwrite these changes.\n"
 msgstr ""
-"\n"
-"检测到一些意外的配置更改。\n"
-"如果要覆盖这些更改，请使用--force参数。\n"
 
 #: src/cli/main.c:205
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
-msgstr "无法激活配置档案[%d]： %s\n"
+msgstr ""
 
 #: src/cli/main.c:210
 #, c-format
 msgid "Profile \"%s\" was selected.\n"
-msgstr "选择了配置文件 \"%s\"。\n"
+msgstr ""
 
 #: src/cli/main.c:213
 msgid "The following nsswitch maps are overwritten by the profile:\n"
-msgstr "以下 nsswitch 映射信息被配置集覆盖：\n"
+msgstr ""
 
 #: src/cli/main.c:216
 #, c-format
 msgid "- %s\n"
-msgstr "- %s\n"
+msgstr ""
 
 #: src/cli/main.c:221
 #, c-format
@@ -1034,118 +1023,116 @@ msgid ""
 "\n"
 "%s\n"
 msgstr ""
-"\n"
-"%s\n"
 
 #: src/cli/main.c:263
 msgid "Changes were successfully applied.\n"
-msgstr "已成功应用更改。\n"
+msgstr ""
 
 #: src/cli/main.c:266 src/cli/main.c:302 src/cli/main.c:643
 msgid "No existing configuration detected.\n"
-msgstr "未检测到现有配置。\n"
+msgstr ""
 
 #: src/cli/main.c:269
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
-msgstr "检测到一些意外的配置更改。请改用“select”命令。\n"
+msgstr ""
 
 #: src/cli/main.c:273
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
-msgstr "无法应用更改[%d]： %s\n"
+msgstr ""
 
 #: src/cli/main.c:290
 msgid "Print command parameters instead of formatted output"
-msgstr "打印命令参数而不是格式化输出"
+msgstr ""
 
 #: src/cli/main.c:305 src/cli/main.c:646
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
-msgstr "无法获取当前配置[%d]： %s"
+msgstr ""
 
 #: src/cli/main.c:319
 #, c-format
 msgid "Profile ID: %s\n"
-msgstr "档案档案 ID： %s\n"
+msgstr ""
 
 #: src/cli/main.c:320
 msgid "Enabled features:"
-msgstr "启用的功能："
+msgstr ""
 
 #: src/cli/main.c:323
 msgid " None\n"
-msgstr " 无\n"
+msgstr ""
 
 #: src/cli/main.c:351
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
-msgstr "无法测试当前配置[%d]： %s"
+msgstr ""
 
 #: src/cli/main.c:358
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
-msgstr "当前配置无效。它可能在authselect之外进行了修改。"
+msgstr ""
 
 #: src/cli/main.c:365
 msgid "Current configuration is valid."
-msgstr "当前配置有效。"
+msgstr ""
 
 #: src/cli/main.c:368
 msgid "System was not configured with authselect."
-msgstr "系统没有配置 authselect。"
+msgstr ""
 
 #: src/cli/main.c:393
 msgid "Unable to get profile list!"
-msgstr "无法获取配置档案列表！"
+msgstr ""
 
 #: src/cli/main.c:446
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
-msgstr "无法获得配置档案信息 [%d]: %s"
+msgstr ""
 
 #: src/cli/main.c:548
 msgid "Print content of all files"
-msgstr "打印所有文件的内容"
+msgstr ""
 
 #: src/cli/main.c:549
 msgid "Print nsswitch.conf content"
-msgstr "打印nsswitch.conf内容"
+msgstr ""
 
 #: src/cli/main.c:550
 msgid "Print system-auth content"
-msgstr "打印system-auth内容"
+msgstr ""
 
 #: src/cli/main.c:551
 msgid "Print password-auth content"
-msgstr "打印 password-auth 内容"
+msgstr ""
 
 #: src/cli/main.c:552
 msgid "Print smartcard-auth content"
-msgstr "打印smartcard-auth内容"
+msgstr ""
 
 #: src/cli/main.c:553
 msgid "Print fingerprint-auth content"
-msgstr "打印 fingerprint-auth 内容"
+msgstr ""
 
 #: src/cli/main.c:554
 msgid "Print postlogin content"
-msgstr "打印postlogin内容"
+msgstr ""
 
 #: src/cli/main.c:555
 msgid "Print dconf database content"
-msgstr "打印dconf数据库内容"
+msgstr ""
 
 #: src/cli/main.c:556
 msgid "Print dconf lock content"
-msgstr "打印dconf锁定内容"
+msgstr ""
 
 #: src/cli/main.c:583
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
-msgstr "无法获取生成的内容[%d]： %s"
+msgstr ""
 
 #: src/cli/main.c:602
 #, c-format
@@ -1153,8 +1140,6 @@ msgid ""
 "File %s: Empty\n"
 "\n"
 msgstr ""
-"文件 %s：空\n"
-"\n"
 
 #: src/cli/main.c:604
 #, c-format
@@ -1163,23 +1148,23 @@ msgid ""
 "%s\n"
 "\n"
 msgstr ""
-"文件 %s：\n"
+"Tiedosto %s: \n"
 "%s\n"
 "\n"
 
 #: src/cli/main.c:631
 msgid "Feature to enable."
-msgstr "要启用的功能。"
+msgstr ""
 
 #: src/cli/main.c:668
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
-msgstr "无法备份当前配置 [%d]: %s\n"
+msgstr ""
 
 #: src/cli/main.c:675
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
-msgstr "无法启用功能[%d]： %s\n"
+msgstr ""
 
 #: src/cli/main.c:680
 #, c-format
@@ -1188,462 +1173,462 @@ msgstr "%s\n"
 
 #: src/cli/main.c:707
 msgid "Feature to disable."
-msgstr "要禁用的功能。"
+msgstr ""
 
 #: src/cli/main.c:721
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
-msgstr "无法禁用功能[%d]： %s\n"
+msgstr ""
 
 #: src/cli/main.c:740
 msgid "Create new profile as a vendor profile instead of a custom profile"
-msgstr "创建新的配置档案作为供应商的配置档案，而不是自定义配置档案"
+msgstr ""
 
 #: src/cli/main.c:741
 msgid "ID of a profile that should be used as a base for the new profile"
-msgstr "作为新配置档案基础的配置档案的ID"
+msgstr ""
 
 #: src/cli/main.c:742
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
-msgstr "新配置档案基于一个默认的配置档案，即使存在具有相同名称的供应商配置档案"
+msgstr ""
 
 #: src/cli/main.c:743
 msgid "Symlink meta files from the base profile instead of copying them"
-msgstr "使用基础配置档案的符号链接元文件，而不是复制它们"
+msgstr ""
 
 #: src/cli/main.c:744
 msgid "Symlink nsswitch files from the base profile instead of copying them"
-msgstr "使用基础配置档案的符号链接 nsswitch文件，而不是复制它们"
+msgstr ""
 
 #: src/cli/main.c:745
 msgid "Symlink pam files from the base profile instead of copying them"
-msgstr "使用基础配置档案的符号链接 pam 文件，而不是复制它们"
+msgstr ""
 
 #: src/cli/main.c:746
 msgid "Symlink dconf files from the base profile instead of copying them"
-msgstr "使用基础配置档案的符号链接 dconf 文件，而不是复制它们"
+msgstr ""
 
 #: src/cli/main.c:747
 msgid "Symlink specific file (can be set multiple times)"
-msgstr "符号链接特定文件（可多次设置）"
+msgstr ""
 
 #: src/cli/main.c:752
 msgid "New profile name."
-msgstr "新的配置集名称。"
+msgstr ""
 
 #: src/cli/main.c:762
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
-msgstr "无法创建新的配置档案[%d]： %s\n"
+msgstr ""
 
 #: src/cli/main.c:766
 #, c-format
 msgid "New profile was created at %s\n"
-msgstr "新的配置档案创建于 %s\n"
+msgstr ""
 
 #: src/cli/main.c:787
 msgid "Print backup names without any formatting and additional information"
-msgstr "输出备份名，不包括格式及额外信息"
+msgstr ""
 
 #: src/cli/main.c:799
 msgid "Unable to list available backups!"
-msgstr "无法列出有效的备份!"
+msgstr ""
 
 #: src/cli/main.c:836
 #, c-format
 msgid "%-*s (created at %s)\n"
-msgstr "%-*s (创建于 %s)\n"
+msgstr ""
 
 #: src/cli/main.c:855
 msgid "Name of the backup to remove."
-msgstr "要删除的备份名称。"
+msgstr ""
 
 #: src/cli/main.c:864
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
-msgstr "无法删除备份 [%s] [%d]: %s\n"
+msgstr ""
 
 #: src/cli/main.c:879
 msgid "Name of the backup to restore from."
-msgstr "要从中恢复的备份名称。"
+msgstr ""
 
 #: src/cli/main.c:888
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
-msgstr "无法恢复备份 [%s] [%d]: %s\n"
+msgstr ""
 
 #: src/cli/main.c:902
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
-msgstr "无法卸载 authselect 配置 [%d]: %s\n"
+msgstr ""
 
 #: src/cli/main.c:945
 msgid "Select profile"
-msgstr "选择配置集"
+msgstr "Valitse profiili"
 
 #: src/cli/main.c:946
 msgid "Regenerate configuration for currently selected command"
-msgstr "为当前选择的命令重新生成配置"
+msgstr ""
 
 #: src/cli/main.c:947
 msgid "List available profiles"
-msgstr "列出可用的配置集"
+msgstr ""
 
 #: src/cli/main.c:948
 msgid "List available profile features"
-msgstr "列出有效的配置集信息"
+msgstr ""
 
 #: src/cli/main.c:949
 msgid "Show profile information"
-msgstr "显示配置集信息"
+msgstr ""
 
 #: src/cli/main.c:950
 msgid "Print profile requirements"
-msgstr "打印配置集的要求"
+msgstr ""
 
 #: src/cli/main.c:951
 msgid "Get identifier of currently selected profile"
-msgstr "获得当前选择配置集的标识符"
+msgstr ""
 
 #: src/cli/main.c:952
 msgid "Check if the current configuration is valid"
-msgstr "检查当前配置是否有效"
+msgstr ""
 
 #: src/cli/main.c:953
 msgid "Print changes that would be otherwise written"
-msgstr "打印要改写的信息"
+msgstr ""
 
 #: src/cli/main.c:954
 msgid "Enable feature in currently selected profile"
-msgstr "启用当前选择配置集中的功能"
+msgstr ""
 
 #: src/cli/main.c:955
 msgid "Disable feature in currently selected profile"
-msgstr "禁用当前选择配置集的功能"
+msgstr ""
 
 #: src/cli/main.c:956
 msgid "Create new authselect profile"
-msgstr "创建新的 authselect 配置集"
+msgstr ""
 
 #: src/cli/main.c:957
 msgid "Backup commands:"
-msgstr "备份命令："
+msgstr ""
 
 #: src/cli/main.c:958
 msgid "List available backups"
-msgstr "列出有效备份"
+msgstr ""
 
 #: src/cli/main.c:959
 msgid "Remove backup"
-msgstr "删除备份"
+msgstr ""
 
 #: src/cli/main.c:960
 msgid "Restore from backup"
-msgstr "从备份中恢复"
+msgstr ""
 
 #: src/cli/main.c:961
 msgid "Uninstall authselect configuration"
-msgstr "卸载 authselect 配置"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
-msgstr "默认情况下使用 NIS 提供的用户信息"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:83
 msgid "<domain>"
-msgstr "<domain>"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:83
 msgid "default NIS domain"
-msgstr "默认NIS域"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
 #: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
 msgid "<server>"
-msgstr "<server>"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:84
 msgid "default NIS server"
-msgstr "默认NIS服务器"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:85
 msgid "LDAP for user information by default"
-msgstr "默认情况下使用 LDAP 提供的用户信息"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:86
 msgid "LDAP for authentication by default"
-msgstr "默认情况下使用 LDAP 用于身份验证"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:87
 msgid "default LDAP server hostname or URI"
-msgstr "默认LDAP服务器的主机名或URI"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:88
 msgid "<dn>"
-msgstr "<dn>"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:88
 msgid "default LDAP base DN"
-msgstr "默认LDAP基本DN"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:89
 msgid "use of TLS with LDAP (RFC-2830)"
-msgstr "使用带有 LDAP 的 TLS（RFC-2830）"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:90
 msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
-msgstr "使用带有 LDAP 的 TLS进行身份查找（RFC-2830）"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:91
 msgid "use of RFC-2307bis schema for LDAP user information lookups"
-msgstr "使用 RFC-2307bis schema 进行 LDAP 用户身份查找"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:92
 msgid "authentication with smart card by default"
-msgstr "默认情况下使用智能卡进行身份验证"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:93
 msgid "<0=Lock|1=Ignore>"
-msgstr "<0=Lock|1=Ignore>"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:93
 msgid "action to be taken on smart card removal"
-msgstr "删除智能卡要进行的操作"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:94
 msgid "require smart card for authentication by default"
-msgstr "默认需要智能卡进行身份验证"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:95
 msgid "authentication with fingerprint readers by default"
-msgstr "默认情况下使用指纹识别器进行身份验证"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:96
 msgid "automatic per-user ecryptfs"
-msgstr "自动 per-user ecryptfs"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:97
 msgid "Kerberos authentication by default"
-msgstr "默认情况下使用 Kerberos 进行身份验证"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:98
 msgid "default Kerberos KDC"
-msgstr "默认Kerberos KDC"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:99
 msgid "default Kerberos admin server"
-msgstr "默认Kerberos管理服务器"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
 msgid "<realm>"
-msgstr "<realm>"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:100
 msgid "default Kerberos realm"
-msgstr "默认的Kerberos领域"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:101
 msgid "use of DNS to find Kerberos KDCs"
-msgstr "使用DNS查找Kerberos KDC"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:102
 msgid "use of DNS to find Kerberos realms"
-msgstr "使用DNS查找Kerberos领域"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:103
 msgid "winbind for user information by default"
-msgstr "默认使用 winbind 提供的用户信息"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:104
 msgid "winbind for authentication by default"
-msgstr "默认使用 winbind 进行用户身份验证"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:105
 msgid "<Administrator>"
-msgstr "<Administrator>"
+msgstr "<Ylläpitäjä>"
 
 #: src/compat/authcompat_Options.py:105
 msgid "join the winbind domain or ads realm now as this administrator"
-msgstr "现在以此管理员身份加入winbind域 ads realm"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:106
 msgid "Kerberos 5 for authenticate with winbind"
-msgstr "Kerberos 5用于通过winbind进行身份验证"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:107
 msgid "<workgroup>"
-msgstr "<workgroup>"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:107
 msgid "workgroup authentication servers are in"
-msgstr "工作组身份验证服务器在"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:108
 msgid ""
 "SSSD for user information by default with manually managed configuration"
-msgstr "默认情况下，使用 SSSD 手动管理配置的用户信息"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:109
 msgid "SSSD for authentication by default with manually managed configuration"
-msgstr "默认情况下，使用 SSSD 手动管理配置进行身份验"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:110
 msgid "caching of user credentials in SSSD by default"
-msgstr "默认情况下，在 SSSD 中缓存用户凭证"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:111
 msgid "check of access.conf during account authorization"
-msgstr "在帐户授权时检查 access.conf"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:112
 msgid "creation of home directories for users on their first login"
-msgstr "在用户首次登录时为用户创建主目录"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:113
 msgid "account locking in case of too many consecutive authentication failures"
-msgstr "如果连续验证失败次数太多，则会锁定帐户"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
 #: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
 msgid "<number>"
-msgstr "<number>"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:114
 msgid "minimum length of a password"
-msgstr "密码的最小长度"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:115
 msgid "minimum number of character classes in a password"
-msgstr "密码中的最小字符类数"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:116
 msgid "maximum number of same consecutive characters in a password"
-msgstr "密码中相同连续字符的最大数量"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:117
 msgid "maximum number of consecutive characters of same class in a password"
-msgstr "密码中同一类的最大连续字符数"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:118
 msgid "require at least one lowercase character in a password"
-msgstr "密码中至少需要一个小写字符"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:119
 msgid "require at least one uppercase character in a password"
-msgstr "密码中至少需要一个大写字符"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:120
 msgid "require at least one digit in a password"
-msgstr "密码中至少需要一个数字"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:121
 msgid "require at least one other character in a password"
-msgstr "密码中至少需要一个其他字符"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:124
 msgid "do not start/stop services"
-msgstr "不要启动/停止服务"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:125
 msgid "update all configuration files"
-msgstr "更新所有配置文件"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
 msgid "the same as --updateall"
-msgstr "与--updateall相同"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
 msgid "<name>"
-msgstr "<name>"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:148
 msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:149
 msgid "<URL>"
-msgstr "<URL>"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:150
 msgid "<module>"
-msgstr "<module>"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:151
 msgid "<user|server|domain|ads>"
-msgstr "<user|server|domain|ads>"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:153
 msgid "<servers>"
-msgstr "<servers>"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
 #: src/compat/authcompat_Options.py:156
 msgid "<lowest-highest>"
-msgstr "<lowest-highest>"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:157
 msgid "<\\>"
-msgstr "<\\>"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:158
 msgid "</home/%D/%U>"
-msgstr "</home/%D/%U>"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:159
 msgid "</bin/false>"
-msgstr "</bin/false>"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:166
 msgid "<options>"
-msgstr "<options>"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:210
 msgid "These options have a compatibility layer"
-msgstr "这些选项具有一个兼容性层"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:211
 msgid "These options are no longer supported and have no effect"
-msgstr "这些选项不再被支持，也不起作用"
+msgstr ""
 
 #: src/compat/authcompat_Options.py:313
 msgid "enable"
-msgstr "启用"
+msgstr "ota käyttöön"
 
 #: src/compat/authcompat_Options.py:314
 msgid "disable"
-msgstr "禁用"
+msgstr "poista käytöstä"
 
 #: src/compat/authcompat.py.in.in:49
 #, python-format
 msgid "Executing: %s"
-msgstr "执行： %s"
+msgstr ""
 
 #: src/compat/authcompat.py.in.in:68
 #, python-format
 msgid "Service %s was not found. Please install the service."
-msgstr "服务 %s 没找到。请安装该服务。"
+msgstr ""
 
 #: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:625
 #: src/compat/authcompat.py.in.in:651
 #, python-format
 msgid "Command [%s] failed with %d, stderr:"
-msgstr "命令[%s失败] %d，stderr："
+msgstr ""
 
 #: src/compat/authcompat.py.in.in:183
 #, python-format
 msgid "Removing file: %s"
-msgstr "删除文件： %s"
+msgstr "Poistetaan tiedosto: %s"
 
 #: src/compat/authcompat.py.in.in:331
 #, python-format
 msgid "%s was not found. Please, install realmd."
-msgstr "%s 没找到。请安装realmd。"
+msgstr ""
 
 #: src/compat/authcompat.py.in.in:465
 msgid "Running authconfig compatibility tool."
-msgstr "运行authconfig兼容性工具。"
+msgstr ""
 
 #: src/compat/authcompat.py.in.in:466
 msgid ""
@@ -1651,46 +1636,42 @@ msgid ""
 "with authselect and minimum configuration. It does not provide all "
 "capabilities of authconfig.\n"
 msgstr ""
-"此工具的目的是通过所选带有 authselect 和最低配置的服务进行身份验证。它不提供 "
-"authconfig 的所有功能。\n"
 
 #: src/compat/authcompat.py.in.in:469
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
-msgstr "重要信息：authconfig 将被authselect 替代，请更新您的脚本。"
+msgstr ""
 
 #: src/compat/authcompat.py.in.in:471
 msgid ""
 "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
 msgstr ""
-"请参阅Fedora 28 的更改页：https：//fedoraproject.org/wiki/Changes/"
-"AuthselectAsDefault"
 
 #: src/compat/authcompat.py.in.in:472
 msgid ""
 "See man authselect-migration(7) to help you with migration to authselect"
-msgstr "请参阅 man authselect-migration (7) 以帮助您迁移到authselect"
+msgstr ""
 
 #: src/compat/authcompat.py.in.in:476
 msgid "Warning: These options are not supported anymore and have no effect:"
-msgstr "警告：这些选项不再被支持，且不起作用："
+msgstr ""
 
 #: src/compat/authcompat.py.in.in:496
 msgid "authconfig can only be run as root"
-msgstr "authconfig只能以root身份运行"
+msgstr ""
 
 #: src/compat/authcompat.py.in.in:501
 #, python-format
 msgid ""
 "Error: option --%s is no longer supported and we cannot continue if it is "
 "set."
-msgstr "错误：选项 -%s 不再被支持，如果设置它将无法继续。"
+msgstr ""
 
 #: src/compat/authcompat.py.in.in:506
 msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
-msgstr "错误：--enablewinbind和--enablewinbindauth 必须都被设置。"
+msgstr ""
 
 #: src/compat/authcompat.py.in.in:516
 msgid "Error: Please, provide --updateall option."
-msgstr "错误：请提供--updateall选项。"
+msgstr ""
