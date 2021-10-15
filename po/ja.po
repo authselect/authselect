@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
 "POT-Creation-Date: 2021-07-09 13:40+0200\n"
-"PO-Revision-Date: 2021-03-05 14:01+0000\n"
+"PO-Revision-Date: 2021-09-08 09:05+0000\n"
 "Last-Translator: Sundeep Anand <suanand@redhat.com>\n"
 "Language-Team: Japanese <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/ja/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.8\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:187
 msgid "Unable to obtain supported features"
@@ -44,7 +44,7 @@ msgstr "プロファイル [%s] [%d] が見つかりません: %s"
 
 #: src/lib/authselect.c:101
 msgid "Enforcing activation!"
-msgstr "強制実行。"
+msgstr "アクティベーションを強制しています。"
 
 #: src/lib/authselect.c:109
 #, c-format
@@ -505,7 +505,7 @@ msgstr "現行のプロファイルに対するコンテンツの比較"
 #: src/lib/files/system.c:524
 #, c-format
 msgid "[%s] has unexpected content!"
-msgstr "[%s] には予期せぬコンテンツがあります。"
+msgstr "[%s] には予期しないコンテンツがあります。"
 
 #: src/lib/files/system.c:531
 #, c-format
@@ -653,22 +653,22 @@ msgstr "[%s] はシンボリックリンクではありません。"
 #: src/lib/util/file.c:60
 #, c-format
 msgid "[%s] has wrong type [%.7o], expected [%.7o]!"
-msgstr "[%s] には不正なタイプ [%.7o] があります、[%.7o] を予期していました。"
+msgstr "[%s] には不正なタイプ [%.7o] があります。本来は [%.7o] が必要です。"
 
 #: src/lib/util/file.c:87
 #, c-format
 msgid "[%s] has wrong mode [%.4o], expected [%.4o]!"
-msgstr "[%s] には不正なモード [%.4o] があります、[%.4o] を予期していました。"
+msgstr "[%s] には不正なモード [%.4o] があります。本来は [%.4o] が必要です。"
 
 #: src/lib/util/file.c:93
 #, c-format
 msgid "[%s] has wrong owner [%u], expected [%u]!"
-msgstr "[%s] には不正なオーナー [%u] があります、[%u] を予期していました。"
+msgstr "[%s] には正しくない所有者 [%u] があります。本来は [%u] が必要です。"
 
 #: src/lib/util/file.c:99
 #, c-format
 msgid "[%s] has wrong group [%u], expected [%u]!"
-msgstr "[%s] には不正なグループ [%u] があります、[%u] を予期していました。"
+msgstr "[%s] には不正なグループ [%u] があります。本来は [%u] が必要です。"
 
 #: src/lib/util/file.c:164 src/lib/util/file.c:211
 #, c-format
@@ -687,7 +687,7 @@ msgstr "リンク [%s] は [%s] にポイントしています"
 
 #: src/lib/util/file.c:281
 msgid "Internal error: filepath cannot be NULL!"
-msgstr "内部エラー: filepath は NULL になりません。"
+msgstr "内部エラー: ファイルパスは NULL にはできません。"
 
 #: src/lib/util/file.c:313
 #, c-format
@@ -901,7 +901,7 @@ msgstr "[OPTIONS...]"
 
 #: src/cli/cli_tool.c:332 src/cli/main.c:818
 msgid "Out of memory!"
-msgstr "メモリの空き容量がありません。"
+msgstr "メモリーの空き容量がありません。"
 
 #: src/cli/cli_tool.c:353
 #, c-format
@@ -1723,7 +1723,7 @@ msgstr "警告: これらのオプションは今後はサポートされず、�
 
 #: src/compat/authcompat.py.in.in:496
 msgid "authconfig can only be run as root"
-msgstr "authconfig は root としてのみ実行できます。"
+msgstr "authconfig は root としてのみ実行できます"
 
 #: src/compat/authcompat.py.in.in:501
 #, python-format
