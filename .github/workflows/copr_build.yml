@@ -1,0 +1,117 @@
+name: Fedora Copr
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: fedora:latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+        repository: ${{ github.event.pull_request.head.repo.full_name }}
+
+    - name: Install dependencies
+      run: |
+        dnf install -y rpm-build m4 copr-cli
+
+    - name: Get version number
+      id: info
+      env:
+        PRID: ${{ github.event.pull_request.number }}
+      run: |
+        PROJECT="pr$PRID"
+        VERSION=`echo -e 'm4_include(version.m4)\nVERSION_NUMBER' | m4 -P | tail -n1`
+        RELEASE="$PROJECT.$GITHUB_RUN_NUMBER"
+
+        echo ::set-output name=project::$PROJECT
+        echo ::set-output name=version::$VERSION
+        echo ::set-output name=release::$RELEASE
+
+    - name: Build source rpm
+      env:
+        VERSION: ${{ steps.info.outputs.version }}
+        RELEASE: ${{ steps.info.outputs.release }}
+      run: |
+        set -ex
+
+        NAME="authselect-$VERSION"
+        TARBALL="$NAME.tar.gz"
+
+        tar -cvzf $TARBALL --transform "s,^,$NAME/," *
+
+        rm -f rpmbuild
+        mkdir -p rpmbuild/BUILD
+        mkdir -p rpmbuild/RPMS
+        mkdir -p rpmbuild/SOURCES
+        mkdir -p rpmbuild/SPECS
+        mkdir -p rpmbuild/SRPMS
+
+        mv $TARBALL rpmbuild/SOURCES
+        cp rpm/authselect.spec.in rpmbuild/SPECS/authselect.spec
+
+        sed -iE "s/@PACKAGE_VERSION@/$VERSION/g" rpmbuild/SPECS/authselect.spec
+        sed -iE "s/@RELEASE_NUMBER@/$RELEASE/g" rpmbuild/SPECS/authselect.spec
+
+        rpmbuild --define "_topdir $(pwd)/rpmbuild" -bs rpmbuild/SPECS/authselect.spec
+
+    - name: Create copr configuration
+      env:
+        COPR_SECRETS: ${{ secrets.COPR_SECRETS }}
+      run: |
+        echo -e "$COPR_SECRETS" > .coprcfg
+
+    - name: Add pull request comment
+      env:
+        PRID: ${{ github.event.pull_request.number }}
+        PROJECT: https://copr.fedorainfracloud.org/coprs/g/authselect/pr${{ github.event.pull_request.number }}
+        BUILDS: https://copr.fedorainfracloud.org/coprs/g/authselect/pr${{ github.event.pull_request.number }}/builds
+        BADGE: https://copr.fedorainfracloud.org/coprs/g/authselect/pr${{ github.event.pull_request.number }}/package/authselect/status_image/last_build.png
+      uses: marocchino/sticky-pull-request-comment@v2
+      with:
+        message: |
+          * Fedora Copr project of this Pull Request: ${{ env.PROJECT }}
+            [![The project is not yet created.](${{ env.BADGE }})](${{ env.BUILDS }})
+          * You can install this pull request by running:
+
+          ```console
+          $ dnf copr enable @authselect/${{ env.PRID }}
+          $ dnf install authselect
+          ```
+
+    - name: Create copr project
+      env:
+        PROJECT: ${{ steps.info.outputs.project }}
+        PRID: ${{ github.event.pull_request.number }}
+        URL: ${{ github.event.pull_request.html_url }}
+      run: |
+        set -ex
+
+        if copr-cli --config .coprcfg list @authselect | grep "$PROJECT" &> /dev/null; then
+          echo "Project $PROJECT already exist. Nothing to do."
+          exit 0
+        fi
+
+        copr-cli --config .coprcfg create @authselect/$PROJECT \
+          --chroot centos-stream-8-x86_64    \
+          --chroot centos-stream-9-x86_64    \
+          --chroot epel-8-x86_64             \
+          --chroot fedora-34-x86_64          \
+          --chroot fedora-35-x86_64          \
+          --chroot fedora-rawhide-x86_64     \
+          --unlisted-on-hp on                \
+          --appstream off                    \
+          --delete-after-days 60             \
+          --fedora-review                    \
+          --description "Development package for [authselect pull request #$PRID]($URL)." \
+          --instructions "Use this for test purpose only. Do not use this in production."
+
+    - name: Submit copr build
+      env:
+        PROJECT: ${{ steps.info.outputs.project }}
+      run: |
+        copr-cli --config .coprcfg  build @authselect/$PROJECT rpmbuild/SRPMS/authselect-*.rpm
