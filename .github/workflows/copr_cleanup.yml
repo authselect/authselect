@@ -1,0 +1,31 @@
+name: Fedora Copr Cleanup
+on:
+  pull_request_target:
+    types: [closed]
+jobs:
+  delete:
+    runs-on: ubuntu-latest
+    container: fedora:latest
+    permissions:
+      contents: read
+    steps:
+    - name: Install dependencies
+      run: |
+        dnf install -y copr-cli
+
+    - name: Create copr configuration
+      env:
+        COPR_SECRETS: ${{ secrets.COPR_SECRETS }}
+      run: |
+        echo -e "$COPR_SECRETS" > .coprcfg
+
+    - name: Delete copr project
+      env:
+        PROJECT: pr${{ github.event.pull_request.number }}
+      run: |
+        set -x
+
+        builds=`copr-cli --config .coprcfg list-builds --output-format text-row @authselect/$PROJECT | grep "running\|pending" | cut -f1`
+        for i in $builds; do copr-cli --config .coprcfg cancel $i; done
+
+        copr-cli --config .coprcfg delete @authselect/$PROJECT
