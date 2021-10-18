@@ -4,6 +4,8 @@ jobs:
   make-check:
     runs-on: ubuntu-latest
     container: fedora:latest
+    permissions:
+      contents: read
     env:
       CFLAGS: -Wall -Wextra -Werror -Wno-sign-compare -Wno-unused-parameter -ggdb3
     steps:
