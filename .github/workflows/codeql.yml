@@ -1,0 +1,40 @@
+name: CodeQL
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+    - cron: '30 7 * * 1'
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    container: fedora:latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+    - name: Install git
+      run: |
+        dnf install -y git
+
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        scripts/auto install-build-deps
+        dnf install -y python3 which
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+      with:
+        languages: cpp, python
+        queries: +security-and-quality
+
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v1
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
