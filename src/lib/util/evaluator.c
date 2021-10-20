@@ -176,13 +176,15 @@ static errno_t evaluator_get_feature(const char *token,
                                      bool *_result)
 {
     char *feature_name;
+    int len;
 
     *_result = false;
     if (features == NULL || token == NULL) {
         return EINVAL;
     }
 
-    feature_name = format("%.*s", strlen(token) - 2, &token[1]);
+    len = strlen(token) - 2;
+    feature_name = format("%.*s", len, &token[1]);
     if (feature_name == NULL) {
         return ENOMEM;
     }
