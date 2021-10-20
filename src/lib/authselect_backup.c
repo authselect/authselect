@@ -58,7 +58,8 @@ authselect_backup_create_named(const char *name,
 static errno_t
 authselect_backup_create_anonymous(char **_path)
 {
-    struct tm *tm;
+    struct tm *gmtime_ret;
+    struct tm tm;
     char date[255];
     char *path;
     time_t now;
@@ -73,12 +74,12 @@ authselect_backup_create_anonymous(char **_path)
     }
 
     now = time(NULL);
-    tm = gmtime(&now);
-    if (tm == NULL) {
+    gmtime_ret = gmtime_r(&now, &tm);
+    if (gmtime_ret == NULL) {
         return EINVAL;
     }
 
-    n = strftime(date, sizeof(date), "%Y-%m-%d-%H-%M-%S", tm);
+    n = strftime(date, sizeof(date), "%Y-%m-%d-%H-%M-%S", &tm);
     if (n == 0) {
         return EINVAL;
     }
