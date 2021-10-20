@@ -201,10 +201,6 @@ string_explode(const char *str, char delimiter, unsigned int flags)
         remainder = pos + 1;
     }
 
-    if (remainder != str && *(remainder - 1) == delimiter) {
-
-    }
-
     if (string_is_empty(remainder)) {
         /* Add empty line if string end with delimiter. */
         if (remainder != str && *(remainder - 1) == delimiter
