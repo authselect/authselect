@@ -1,0 +1,83 @@
+name: Coverity Scan
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 0 * * 1'
+jobs:
+  has_changed:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      changed: ${{ steps.check.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Print latest commit
+        run: echo ${{ github.sha }}
+
+      - id: check
+        name: Check that there were changes in the repository in the last 24 hours
+        run: |
+          commits=`git rev-list  --after="24 hours"  ${{ github.sha }}`
+          if [ -z "$commits" ]; then
+            echo "::set-output name=changed::false"
+            exit 0
+          fi
+
+          echo "::set-output name=changed::true"
+
+  submit:
+    needs: has_changed
+    if: ${{ needs.has_changed.outputs.changed == 'true' }}
+    runs-on: ubuntu-latest
+    container: fedora:latest
+    permissions:
+      contents: read
+    env:
+      TOKEN: ${{ secrets.COVERITY_SCAN_TOKEN }}
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Load Coverity Scan tool from cache
+      id: cache
+      uses: actions/cache@v2
+      with:
+        path: covscan
+        key: ${{ runner.os }}-covscan
+
+    - name: Download Coverity Build Tool
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: |
+        set -ex
+
+        curl \
+          --data "token=$TOKEN&project=authselect%2Fauthselect" \
+          -o covscan.tar.gz \
+          https://scan.coverity.com/download/linux64
+        mkdir covscan
+        tar -xzf covscan.tar.gz --strip 1 -C covscan
+        rm covscan.tar.gz
+
+    - name: Install dependencies
+      run: |
+        scripts/auto install-build-deps
+
+    - run: autoreconf -if && ./configure --enable-silent-rules
+
+    - name: Build with cov-build
+      run: |
+        export PATH="$(pwd)/covscan/bin:$PATH"
+        cov-build --dir cov-int make
+
+    - name: Submit the result to Coverity Scan
+      run: |
+        tar -czvf build.tgz cov-int
+        curl \
+          --form project=authselect/authselect \
+          --form token=$TOKEN \
+          --form email=pbrezina@redhat.com \
+          --form file=@build.tgz \
+          --form version=master \
+          --form description="Latest upstream code." \
+          https://scan.coverity.com/builds?project=authselect%2Fauthselect
