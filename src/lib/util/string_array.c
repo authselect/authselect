@@ -247,7 +247,7 @@ string_array_find_similar(const char *value, char **array, int max_distance)
 {
     const char *word = NULL;
     int current;
-    int best;
+    int best = 0;
     int i;
 
     for (i = 0; array[i] != NULL; i++) {
