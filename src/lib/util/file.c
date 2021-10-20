@@ -525,7 +525,7 @@ file_copy(const char *source,
              destpath, ret, strerror(ret));
     }
 
-    ret = chown(destpath, statbuf.st_uid, statbuf.st_gid);
+    ret = fchown(fileno(fdest), statbuf.st_uid, statbuf.st_gid);
     if (ret != 0) {
         ret = errno;
         WARN("Unable to chown file [%s] [%d]: %s",
