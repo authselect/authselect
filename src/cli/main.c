@@ -774,7 +774,7 @@ static errno_t backup_list(struct cli_cmdline *cmdline)
     int raw_output = 0;
     char fmttime[255];
     struct stat st;
-    struct tm *tm;
+    struct tm tm;
     char **names;
     char *path;
     int max = 0;
@@ -829,9 +829,9 @@ static errno_t backup_list(struct cli_cmdline *cmdline)
             }
             free(path);
 
-            tm = localtime(&st.st_ctim.tv_sec);
+            localtime_r(&st.st_ctim.tv_sec, &tm);
             memset(fmttime, '\0', sizeof(fmttime));
-            strftime(fmttime, 255, "%c", tm);
+            strftime(fmttime, 255, "%c", &tm);
 
             printf(_("%-*s (created at %s)\n"), max, names[i], fmttime);
         }
