@@ -550,12 +550,13 @@ template_generate(const char *template,
 static char *
 template_generate_preamble(time_t timestamp)
 {
-    const char *timestr;
+    char timestr[255];
+    char *ctime_ret;
     char *preamble;
     char *trimmed;
 
-    timestr = ctime(&timestamp);
-    if (timestr == NULL) {
+    ctime_ret = ctime_r(&timestamp, timestr);
+    if (ctime_ret == NULL) {
         ERROR("Unable to get current time!");
         return NULL;
     }
