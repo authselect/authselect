@@ -1,4 +1,4 @@
-name: CodeQL
+name: Analyze
 on:
   push:
     branches: [ master ]
@@ -7,25 +7,19 @@ on:
   schedule:
     - cron: '30 7 * * 1'
 jobs:
-  analyze:
+  codeql:
     runs-on: ubuntu-latest
-    container: fedora:latest
     permissions:
       actions: read
       contents: read
       security-events: write
     steps:
-    - name: Install git
-      run: |
-        dnf install -y git
-
     - name: Checkout repository
       uses: actions/checkout@v2
 
     - name: Install dependencies
       run: |
-        scripts/auto install-build-deps
-        dnf install -y python3 which
+        sudo scripts/auto install-build-deps
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v1
@@ -38,3 +32,19 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
+
+  flake8:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install flake8
+      run: |
+        sudo apt update
+        sudo apt install -y flake8
+
+    - name: Execute flake8 on the repository
+      run: flake8 --ignore=W503,E501 src/compat/authcompat.py.in.in .
