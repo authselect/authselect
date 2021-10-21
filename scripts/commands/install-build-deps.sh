@@ -20,6 +20,24 @@ case "$ID" in
     dnf builddep -y --spec ./authselect.spec
     rm authselect.spec
     ;;
+  ubuntu)
+    apt update
+    apt install -y \
+      asciidoc \
+      autoconf \
+      automake \
+      autopoint \
+      gcc \
+      gettext \
+      libcmocka-dev \
+      libpopt-dev \
+      libselinux1-dev \
+      libtool \
+      m4 \
+      make \
+      pkg-config \
+      po4a
+    ;;
   *)
     die "Unknown release, please install dependencies manualy."
     ;;
