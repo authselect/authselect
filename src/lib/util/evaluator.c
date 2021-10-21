@@ -246,6 +246,91 @@ static errno_t evaluator_handle_begin_state(struct evaluator *self,
 
 /*
  * Handle state machine in E_STATE_OPERATOR and E_STATE_UNARY_NOT state
+ * when the next state is going to be E_STATE_STRING
+ */
+static errno_t evaluator_handle_operator_state_string(struct evaluator *self,
+                                                      const char **features,
+                                                      bool *result,
+                                                      bool *negation,
+                                                      enum e_operator *operator)
+{
+    errno_t ret;
+    bool sub_result;
+
+    switch(*operator) {
+    case E_OPERATOR_AND:
+        ret = evaluator_get_feature(self->token, features, &sub_result);
+        if (ret != EOK) {
+            return ret;
+        }
+
+        *result = *result && (*negation ? !sub_result : sub_result);
+        *negation = false;
+        break;
+    case E_OPERATOR_OR:
+        ret = evaluator_get_feature(self->token, features, &sub_result);
+        if (ret != EOK) {
+            return ret;
+        }
+
+        *result = *result || (*negation ? !sub_result : sub_result);
+        *negation = false;
+        break;
+    case E_OPERATOR_INVALID: /* no operator yet */
+        ret = evaluator_get_feature(self->token, features, &sub_result);
+        if (ret != EOK) {
+            return ret;
+        }
+
+        *result = *negation ? !sub_result : sub_result;
+        *negation = false;
+        break;
+    default:
+        return EINVAL;
+    }
+    return EOK;
+}
+
+/*
+ * Handle state machine in E_STATE_OPERATOR and E_STATE_UNARY_NOT state
+ * when the next state is going to be E_STATE_SUBEXPRESSION
+ */
+static errno_t evaluator_handle_operator_state_subexpression(struct evaluator *self,
+                                                             int depth,
+                                                             const char **features,
+                                                             bool *result,
+                                                             bool *negation,
+                                                             enum e_operator *operator)
+{
+    bool sub_result;
+    errno_t ret;
+
+    ret = evaluator_state_machine(self, depth + 1, features, &sub_result);
+    if (ret != EOK) {
+        return ret;
+    }
+
+    switch(*operator) {
+    case E_OPERATOR_AND:
+        *result = *result && (*negation ? !sub_result : sub_result);
+        *negation = false;
+        break;
+    case E_OPERATOR_OR:
+        *result = *result || (*negation ? !sub_result : sub_result);
+        *negation = false;
+        break;
+    case E_OPERATOR_INVALID: /* no operator yet */
+        *result = (*negation ? !sub_result : sub_result);
+        *negation = false;
+        break;
+    default:
+        return EINVAL;
+    }
+    return EOK;
+}
+
+/*
+ * Handle state machine in E_STATE_OPERATOR and E_STATE_UNARY_NOT state
  */
 static errno_t evaluator_handle_operator_state(struct evaluator *self,
                                                int depth,
@@ -255,69 +340,14 @@ static errno_t evaluator_handle_operator_state(struct evaluator *self,
                                                bool *negation,
                                                enum e_operator *operator)
 {
-    bool sub_result;
-    errno_t ret;
-
     switch (nextstate) {
     case E_STATE_STRING:
-        switch(*operator) {
-        case E_OPERATOR_AND:
-            ret = evaluator_get_feature(self->token, features, &sub_result);
-            if (ret != EOK) {
-                return ret;
-            }
-
-            *result = *result && (*negation ? !sub_result : sub_result);
-            *negation = false;
-            break;
-        case E_OPERATOR_OR:
-            ret = evaluator_get_feature(self->token, features, &sub_result);
-            if (ret != EOK) {
-                return ret;
-            }
-
-            *result = *result || (*negation ? !sub_result : sub_result);
-            *negation = false;
-            break;
-        case E_OPERATOR_INVALID: /* no operator yet */
-            ret = evaluator_get_feature(self->token, features, &sub_result);
-            if (ret != EOK) {
-                return ret;
-            }
-
-            *result = *negation ? !sub_result : sub_result;
-            *negation = false;
-            break;
-        default:
-            return EINVAL;
-        }
-        return EOK;
+        return evaluator_handle_operator_state_string(self, features, result, negation, operator);
     case E_STATE_UNARY_NOT:
         *negation = !*negation;
         return EOK;
     case E_STATE_SUBEXPRESSION:
-        ret = evaluator_state_machine(self, depth + 1, features, &sub_result);
-        if (ret != EOK) {
-            return ret;
-        }
-
-        switch(*operator) {
-        case E_OPERATOR_AND:
-            *result = *result && (*negation ? !sub_result : sub_result);
-            *negation = false;
-            break;
-        case E_OPERATOR_OR:
-            *result = *result || (*negation ? !sub_result : sub_result);
-            *negation = false;
-            break;
-        case E_OPERATOR_INVALID: /* no operator yet */
-            *result = (*negation ? !sub_result : sub_result);
-            *negation = false;
-            break;
-        default:
-            return EINVAL;
-        }
-        return EOK;
+        return evaluator_handle_operator_state_subexpression(self, depth, features, result, negation, operator);
     case E_STATE_END:
         if (depth == 0) {
             return EINVAL; /* too many ) */
