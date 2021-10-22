@@ -84,3 +84,12 @@ AS_IF([test "x$enable_debug_template_regex" = "xyes"],
         [Debug template regular expressions]
     )
 )
+
+AC_ARG_WITH([compat],
+    [AC_HELP_STRING([--with-compat], [Build with compatibility tool [no]])],
+    [], with_compat=no
+)
+if test x"$with_compat" = xyes; then
+    AM_PATH_PYTHON([3])
+fi
+AM_CONDITIONAL([BUILD_COMPAT], [test x$with_compat = xyes])

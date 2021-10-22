@@ -24,7 +24,6 @@ AC_LANG([C])
 AC_HEADER_STDC
 AM_GNU_GETTEXT([external])
 AM_GNU_GETTEXT_VERSION(0.19)
-AM_PATH_PYTHON([3])
 
 AC_SUBST([RELEASE_NUMBER], m4_esyscmd(./scripts/release-version.sh RELEASE_VERSION))
 
