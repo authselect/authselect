@@ -19,14 +19,16 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+import errno
 import os
 import re
+
 
 class ConfigSnippet:
     TEST = False
 
-    AllKeysRE = re.compile('\${\??(?P<key>[\w-]*)}')
-    DummyKeysRE = re.compile('\${\?[\w-]*}')
+    AllKeysRE = re.compile(r'\${\??(?P<key>[\w-]*)}')
+    DummyKeysRE = re.compile(r'\${\?[\w-]*}')
 
     def __init__(self, template, destination):
         with open(template, "r") as f:
@@ -75,7 +77,6 @@ class ConfigSnippet:
             print(output)
             print("========== END   Content of [%s] ==========\n" % self.destination)
             return
-
 
         dirname = os.path.dirname(self.destination)
         if not os.path.exists(dirname):

@@ -26,15 +26,17 @@ import locale
 import gettext
 import subprocess
 
-from authcompat_Options import *
-from authcompat_EnvironmentFile import *
-from authcompat_ConfigSnippet import *
+
+from authcompat_Options import Options
+from authcompat_EnvironmentFile import EnvironmentFile
+from authcompat_ConfigSnippet import ConfigSnippet
 
 _ = gettext.gettext
 
 
 def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
+
 
 class Command:
     TEST = False
@@ -55,6 +57,7 @@ class Command:
                                      input=self.input,
                                      stdout=subprocess.PIPE,
                                      stderr=subprocess.PIPE)
+
 
 class Service:
     def __init__(self, name):
@@ -87,7 +90,7 @@ class Service:
         self.runsystemd(cmd, True, 5)
 
     def stop(self):
-        cmd = Command(Path.System("cmd-systemctl"), ["stop",  self.name])
+        cmd = Command(Path.System("cmd-systemctl"), ["stop", self.name])
         self.runsystemd(cmd, False, 5)
 
 
@@ -96,18 +99,18 @@ class Path:
     Config = EnvironmentFile(LocalDir + "/authcompat_paths")
 
     Files = {
-        'ldap.conf'      : '@sysconfdir@/openldap/ldap.conf',
-        'krb5.conf'      : '@sysconfdir@/krb5.conf.d/authconfig-krb.conf',
-        'sssd.conf'      : '@sysconfdir@/sssd/conf.d/authconfig-sssd.conf',
-        'authconfig'     : '@sysconfdir@/sysconfig/authconfig',
-        'network'        : '@sysconfdir@/sysconfig/network',
-        'pwquality.conf' : '@sysconfdir@/security/pwquality.conf.d/10-authconfig-pwquality.conf',
-        'yp.conf'        : '@sysconfdir@/yp.conf',
-        'cmd-systemctl'  : '@bindir@/systemctl',
-        'cmd-authselect' : '@bindir@/authselect',
-        'cmd-realm'      : '@sbindir@/realm',
-        'cmd-domainname' : '@bindir@/domainname',
-        'cmd-setsebool'  : '@sbindir@/setsebool'
+        'ldap.conf': '@sysconfdir@/openldap/ldap.conf',
+        'krb5.conf': '@sysconfdir@/krb5.conf.d/authconfig-krb.conf',
+        'sssd.conf': '@sysconfdir@/sssd/conf.d/authconfig-sssd.conf',
+        'authconfig': '@sysconfdir@/sysconfig/authconfig',
+        'network': '@sysconfdir@/sysconfig/network',
+        'pwquality.conf': '@sysconfdir@/security/pwquality.conf.d/10-authconfig-pwquality.conf',
+        'yp.conf': '@sysconfdir@/yp.conf',
+        'cmd-systemctl': '@bindir@/systemctl',
+        'cmd-authselect': '@bindir@/authselect',
+        'cmd-realm': '@sbindir@/realm',
+        'cmd-domainname': '@bindir@/domainname',
+        'cmd-setsebool': '@sbindir@/setsebool'
     }
 
     @staticmethod
@@ -195,7 +198,7 @@ class Configuration:
 
         def write(self):
             config = EnvironmentFile(Path.System('ldap.conf'), " ",
-                                     delimiter_re="\s\t", quotes=False)
+                                     delimiter_re=r"\s\t", quotes=False)
             if self.isset("ldapserver"):
                 config.set("URI", self.get("ldapserver"))
 
@@ -230,12 +233,12 @@ class Configuration:
             realm = self.get("krb5realm")
 
             keys = {
-                'realm'       : self.get("krb5realm"),
-                'kdc-srv'     : self.get("krb5kdcdns"),
-                'realm-srv'   : self.get("krb5realmdns"),
-                'kdc'         : self.get("krb5kdc") if realm else None,
-                'adminserver' : self.get("krb5adminserver") if realm else None,
-                'domain'      : realm.lower() if realm else None
+                'realm': self.get("krb5realm"),
+                'kdc-srv': self.get("krb5kdcdns"),
+                'realm-srv': self.get("krb5realmdns"),
+                'kdc': self.get("krb5kdc") if realm else None,
+                'adminserver': self.get("krb5adminserver") if realm else None,
+                'domain': realm.lower() if realm else None
             }
 
             config.write(keys)
@@ -284,12 +287,12 @@ class Configuration:
                 'ldap-basedn': self.get("ldapbasedn"),
                 'ldap-tls': self.getTrueOrNone("ldaptls"),
                 'ldap-schema': schema,
-                'krb5' : self.getTrueOrNone("krb5"),
+                'krb5': self.getTrueOrNone("krb5"),
                 'kdc-uri': self.get("krb5kdc"),
                 'kpasswd-uri': self.get("krb5adminserver"),
                 'realm': self.get("krb5realm"),
                 'cache-creds': self.getTrueOrNone("cachecreds"),
-                'cert-auth' : self.getTrueOrNone("smartcard")
+                'cert-auth': self.getTrueOrNone("smartcard")
             }
 
             config.write(keys)
@@ -327,7 +330,7 @@ class Configuration:
             cmd = Command(Path.System('cmd-realm'), args, input=password)
             try:
                 cmd.run()
-            except FileNotFoundError as result:
+            except FileNotFoundError:
                 eprint(_("%s was not found. Please, install realmd.")
                        % Path.System('cmd-realm'))
 
@@ -340,14 +343,14 @@ class Configuration:
             value_set = False
 
             pwopts = {
-                "minlen" : self.get("passminlen"),
-                "minclass" : self.get("passminclass"),
-                "maxrepeat" : self.get("passmaxrepeat"),
-                "maxclassrepeat" : self.get("passmaxclassrepeat"),
-                "lcredit" : self.getBoolAsValue("reqlower", -1, 0, AllowNone=True),
-                "ucredit" : self.getBoolAsValue("requpper", -1, 0, AllowNone=True),
-                "dcredit" : self.getBoolAsValue("reqdigit", -1, 0, AllowNone=True),
-                "ocredit" : self.getBoolAsValue("reqother", -1, 0, AllowNone=True)
+                "minlen": self.get("passminlen"),
+                "minclass": self.get("passminclass"),
+                "maxrepeat": self.get("passmaxrepeat"),
+                "maxclassrepeat": self.get("passmaxclassrepeat"),
+                "lcredit": self.getBoolAsValue("reqlower", -1, 0, AllowNone=True),
+                "ucredit": self.getBoolAsValue("requpper", -1, 0, AllowNone=True),
+                "dcredit": self.getBoolAsValue("reqdigit", -1, 0, AllowNone=True),
+                "ocredit": self.getBoolAsValue("reqother", -1, 0, AllowNone=True)
             }
 
             # Write options only if their are actually set
@@ -490,7 +493,7 @@ class AuthCompat:
 
     def canContinue(self):
         disallowed = ["test", "probe", "restorebackup", "restorelastbackup"]
-        required   = ["update", "updateall", "kickstart"]
+        required = ["update", "updateall", "kickstart"]
 
         if not self.options.getBool("test") and os.getuid() != 0:
             print(_("authconfig can only be run as root"))
@@ -518,22 +521,24 @@ class AuthCompat:
 
     def runAuthselect(self):
         map = {
-            'smartcard'        : 'with-smartcard',
-            'requiresmartcard' : 'with-smartcard-required',
-            'fingerprint'      : 'with-fingerprint',
-            'ecryptfs'         : 'with-ecryptfs',
-            'mkhomedir'        : 'with-mkhomedir',
-            'faillock'         : 'with-faillock',
-            'pamaccess'        : 'with-pamaccess',
-            'winbindkrb5'      : 'with-krb5'
+            'smartcard': 'with-smartcard',
+            'requiresmartcard': 'with-smartcard-required',
+            'fingerprint': 'with-fingerprint',
+            'ecryptfs': 'with-ecryptfs',
+            'mkhomedir': 'with-mkhomedir',
+            'faillock': 'with-faillock',
+            'pamaccess': 'with-pamaccess',
+            'winbindkrb5': 'with-krb5'
         }
 
         # Read current configuration first.
         (profile, features) = self.getCurrentAuthselectConfig()
 
         # Change profile if requested.
-        if (self.options.getBool("ldap") or self.options.getBool("ldapauth") or
-                self.options.getBool("sssd") or self.options.getBool("sssdauth")):
+        if (self.options.getBool("ldap")
+                or self.options.getBool("ldapauth")
+                or self.options.getBool("sssd")
+                or self.options.getBool("sssdauth")):
             profile = "sssd"
         elif self.options.getBool("nis"):
             profile = "nis"
@@ -636,9 +641,9 @@ def main():
     authcompat = AuthCompat()
     authcompat.printWarning()
 
-    Command.TEST         = authcompat.options.getBool("test-call")
+    Command.TEST = authcompat.options.getBool("test-call")
     EnvironmentFile.TEST = authcompat.options.getBool("test-call")
-    ConfigSnippet.TEST   = authcompat.options.getBool("test-call")
+    ConfigSnippet.TEST = authcompat.options.getBool("test-call")
 
     if not authcompat.canContinue():
         sys.exit(1)
@@ -653,6 +658,7 @@ def main():
         eprint(result.stderr.decode())
 
     sys.exit(0)
+
 
 if __name__ == "__main__":
     main()
