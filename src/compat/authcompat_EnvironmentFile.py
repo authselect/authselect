@@ -19,8 +19,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+import errno
 import os
 import re
+
 
 class EnvironmentFile:
     TEST = False
@@ -34,9 +36,9 @@ class EnvironmentFile:
         self.environment = []
 
         delimiter_re = delimiter_re if delimiter_re is not None else delimiter
-        self.pattern = re.compile('^(\s*)(\S*)([^\n\S]*)(' +
-                                  delimiter_re +
-                                  ')([^\n\S]*)(.*)$',
+        self.pattern = re.compile(r'^(\s*)(\S*)([^\n\S]*)('
+                                  + delimiter_re
+                                  + r')([^\n\S]*)(.*)$',
                                   re.MULTILINE)
 
         self.read()
@@ -140,7 +142,7 @@ class EnvironmentFile:
             if self.isOriginal():
                 return self.original
 
-            value = self.value if not self.value is None else ""
+            value = self.value if self.value is not None else ""
             replacement = {
                 'name': self.name,
                 'value': self.Escape(value, self.quotes)
@@ -177,9 +179,9 @@ class EnvironmentFile:
             value = value.replace("\\", "\\\\")
             value = value.replace("\"", "\\\"")
             value = value.replace("'", "\\\'")
-            value = value.replace("$", "\\\$")
-            value = value.replace("~", "\\\~")
-            value = value.replace("`", "\\\`")
+            value = value.replace("$", "\\$")
+            value = value.replace("~", "\\~")
+            value = value.replace("`", "\\`")
 
             if quotes:
                 if value.find(" ") > 0 or value.find("\t") > 0:
