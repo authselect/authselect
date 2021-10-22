@@ -1,3 +1,4 @@
+if BUILD_COMPAT
 expand_prefix =                                                               \
     (                                                                         \
      $(SED) -e 's,$${exec_prefix},$(exec_prefix),g' |                         \
@@ -43,3 +44,4 @@ install-exec-hook:
 
 uninstall-local:
 	$(RM) $(DESTDIR)/$(sbindir)/authconfig
+endif

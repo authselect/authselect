@@ -12,6 +12,12 @@ Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
 %global makedir %{_builddir}/%{name}-%{version}
 
+%if 0%{?fedora} <= 34 || 0%{?rhel} <= 9
+%global with_compat 1
+%else
+%global with_compat 0
+%endif
+
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  findutils
@@ -25,6 +31,9 @@ BuildRequires:  po4a
 BuildRequires:  %{_bindir}/a2x
 BuildRequires:  libcmocka-devel >= 1.0.0
 BuildRequires:  libselinux-devel
+%if %{with_compat}
+BuildRequires: python3-devel
+%endif
 Requires: authselect-libs%{?_isa} = %{version}-%{release}
 Suggests: sssd
 Suggests: samba-winbind
@@ -63,6 +72,24 @@ Requires: authselect-libs%{?_isa} = %{version}-%{release}
 System header files and development libraries for authselect. Useful if
 you develop a front-end for the authselect library.
 
+%if %{with_compat}
+%package compat
+Summary: Tool to provide minimum backwards compatibility with authconfig
+Obsoletes: authconfig < 7.0.1-6
+Provides: authconfig
+Requires: authselect%{?_isa} = %{version}-%{release}
+Recommends: oddjob-mkhomedir
+Suggests: sssd
+Suggests: realmd
+Suggests: samba-winbind
+
+%description compat
+This package will replace %{_sbindir}/authconfig with a tool that will
+translate some of the authconfig calls into authselect calls. It provides
+only minimum backward compatibility and users are encouraged to migrate
+to authselect completely.
+%endif
+
 
 %prep
 %setup -q
@@ -73,7 +100,13 @@ done
 
 %build
 autoreconf -if
-%configure --with-pythonbin="%{__python3}"
+%configure \
+%if %{with_compat}
+    --with-pythonbin="%{__python3}" \
+    --with-compat \
+%endif
+    %{nil}
+
 %make_build
 
 %check
@@ -179,6 +212,12 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %{_includedir}/authselect.h
 %{_libdir}/libauthselect.so
 %{_libdir}/pkgconfig/authselect.pc
+
+%if %{with_compat}
+%files compat
+%{_sbindir}/authconfig
+%{python3_sitelib}/authselect/
+%endif
 
 %files  -f %{name}.8.lang  -f %{name}-migration.7.lang
 %{_bindir}/authselect
