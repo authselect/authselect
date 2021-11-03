@@ -199,6 +199,7 @@ manpages-compile() {
     local FILE=$1
     local DIR=`dirname $FILE`
     local MAN=`basename $FILE | sed -E 's/(.*)\.adoc/\1/'`
+    local LOG="@abs_top_builddir@/translations.log"
 
     if ! need-compilation "$FILE" "$DIR/$MAN"
     then
@@ -211,6 +212,12 @@ manpages-compile() {
 
     mkdir -p "$DIR"
     @A2X@ -D "$DIR" --doctype manpage --format manpage "$FILE" $*
+    if [ $? -ne 0 ]; then
+        # Repeat with increased verbosity and save to log
+        echo ">>> Unable to compile translation \"$FILE\":" &>> $LOG
+        echo "@A2X@ -D \"$DIR\" --doctype manpage --format manpage \"$FILE\" $* -vv" &>> $LOG
+        @A2X@ -D "$DIR" --doctype manpage --format manpage "$FILE" $* -vv &>> $LOG
+    fi
 }
 
 ATTR=""
@@ -228,6 +235,7 @@ ATTR+=" -a AUTHSELECT_BACKUP_DIR=\"@AUTHSELECT_BACKUP_DIR@\""
 
 manpages-translate
 
+rm "@abs_top_builddir@/translations.log"
 for ADOC in `manpages-find` ; do \
     manpages-compile $ADOC $ATTR
 done

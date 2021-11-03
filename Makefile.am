@@ -28,6 +28,10 @@ EXTRA_DIST = \
     scripts/po-linguas.sh \
     $(NULL)
 
+CLEANFILES = \
+    translations.log \
+	$(NULL)
+
 # Create authselect directories
 authselect_config_dir=@AUTHSELECT_CONFIG_DIR@
 authselect_vendor_dir=@AUTHSELECT_VENDOR_DIR@
