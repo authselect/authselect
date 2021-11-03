@@ -17,3 +17,12 @@ jobs:
     - run: make
     - run: make check
     - run: make distcheck
+    - name: Check translations
+      run: |
+        if [ -s "translations.log" ]; then
+          cat translations.log
+          exit 1
+        else
+          echo "All translations compiled successfully."
+          exit 0
+        fi

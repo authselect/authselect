@@ -22,6 +22,10 @@ EXTRA_DIST = \
     $(MAN_PO) \
     $(NULL)
 
+CLEANFILES = \
+    $(abs_top_builddir)/translations.log \
+    $(NULL)
+
 install-data-local:
 	$(abs_top_builddir)/scripts/manpages-install.sh "$(prefix)" "$(DESTDIR)" $(man_MANS)
 
