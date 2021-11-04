@@ -70,6 +70,10 @@ jobs:
         export PATH="$(pwd)/covscan/bin:$PATH"
         cov-build --dir cov-int make
 
+    - name: Print logs
+      run: |
+        cat cov-int/build-log.txt
+
     - name: Submit the result to Coverity Scan
       run: |
         tar -czvf build.tgz cov-int
