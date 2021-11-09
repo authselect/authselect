@@ -9,7 +9,7 @@ authselect - select system identity and authentication sources.
 
 SYNOPSIS
 --------
- authselect [--debug] [--trace] [--warn] command [command options] 
+ authselect [--debug] [--trace] [--warn] command [command options]
 
 DESCRIPTION
 -----------
@@ -326,16 +326,16 @@ modification.
 Error: Unexpected changes to the configuration were detected.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 For example:
-----
+....
 [error] [/etc/authselect/nsswitch.conf] does not exist!
 [error] [/etc/nsswitch.conf] is not a symbolic link!
 [error] [/etc/nsswitch.conf] was not created by authselect!
 [error] Unexpected changes to the configuration were detected.
 [error] Refusing to activate profile unless those changes are removed or overwrite is requested.
-----
+....
 This means that your configuration is unknown to authselect and as such it
 will not be modified. To fix this, please call *authselect select* with
-*--force* parameter to say that it is all right to overwrite it. 
+*--force* parameter to say that it is all right to overwrite it.
 
 RETURN CODES
 ------------
