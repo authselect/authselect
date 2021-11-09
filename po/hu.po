@@ -1,15 +1,15 @@
 # Meskó Balázs <meskobalazs@gmail.com>, 2018. #zanata
 # Meskó Balázs <meskobalazs@gmail.com>, 2019. #zanata
 # Balázs Meskó <meskobalazs@gmail.com>, 2020.
-# Bendegúz Gyönki <gyonkibendeguz@gmail.com>, 2020.
-# Balázs Meskó <meskobalazs@mailbox.org>, 2020.
+# Bendegúz Gyönki <gyonkibendeguz@gmail.com>, 2020, 2021.
+# Balázs Meskó <meskobalazs@mailbox.org>, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
 "POT-Creation-Date: 2021-07-09 13:40+0200\n"
-"PO-Revision-Date: 2020-07-21 12:28+0000\n"
-"Last-Translator: Balázs Meskó <meskobalazs@mailbox.org>\n"
+"PO-Revision-Date: 2021-11-09 11:25+0000\n"
+"Last-Translator: Bendegúz Gyönki <gyonkibendeguz@gmail.com>\n"
 "Language-Team: Hungarian <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/hu/>\n"
 "Language: hu\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.1.1\n"
+"X-Generator: Weblate 4.8\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:187
 msgid "Unable to obtain supported features"
@@ -82,22 +82,17 @@ msgid "Unable to activate profile [%s] [%d]: %s"
 msgstr "[%s] profil nem aktiválható [%d]: %s"
 
 #: src/lib/authselect.c:150
-#, fuzzy
-#| msgid "Trying to backup authselect configuration to [%s]"
 msgid "Trying to uninstall authselect configuration"
-msgstr "Az authselect konfiguráció biztonsági mentése ide: [%s]"
+msgstr "Az authselect konfiguráció eltávolítási kísérlete"
 
 #: src/lib/authselect.c:154
-#, fuzzy, c-format
-#| msgid "Unable to create symbolic links [%d]: %s"
+#, c-format
 msgid "Unable to remove symlinks [%d]: %s"
-msgstr "A szimbolikus linkek nem hozhatóak létre [%d]: %s"
+msgstr "A szimbolikus linkek nem távolíthatók el [%d]: %s"
 
 #: src/lib/authselect.c:158
-#, fuzzy
-#| msgid "Changes were successfully applied.\n"
 msgid "Symbolic links were successfully removed"
-msgstr "A változások sikeresen alkalmazva.\n"
+msgstr "A szimbolikus linkek sikeresen eltávolítva"
 
 #: src/lib/authselect.c:197
 #, c-format
@@ -253,13 +248,12 @@ msgstr "[%s] nem írható [%d]: %s"
 #: src/lib/authselect_profile.c:385
 #, c-format
 msgid "Omitting [%s] since it does not exist in base profile"
-msgstr ""
+msgstr "A(z) [%s] kihagyása, mert nem létezik az alapprofilban"
 
 #: src/lib/authselect_profile.c:389
-#, fuzzy, c-format
-#| msgid "Unable to check file mode of [%s] [%d]: %s"
+#, c-format
 msgid "Unable to check presence of [%s] [%d]: %s"
-msgstr "[%s] fájl módja nem ellenőrizhető [%d]: %s"
+msgstr "A(z) [%s] fájl jelenléte nem ellenőrizhető [%d]: %s"
 
 #: src/lib/authselect_profile.c:397
 #, c-format
@@ -419,7 +413,7 @@ msgstr "A(z) [%s] fájl létezik, de felül kell írni."
 #: src/lib/files/symlinks.c:190
 #, c-format
 msgid "Skipping [%s] because it is not an authselect file"
-msgstr ""
+msgstr "A(z) [%s] kihagyása, mert nem authselect fájl"
 
 #: src/lib/files/system.c:74 src/lib/profiles/read.c:162
 #, c-format
@@ -1235,8 +1229,7 @@ msgstr ""
 
 #: src/cli/main.c:743
 msgid "Symlink meta files from the base profile instead of copying them"
-msgstr ""
-"A metafájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
+msgstr "A metafájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
 
 #: src/cli/main.c:744
 msgid "Symlink nsswitch files from the base profile instead of copying them"
@@ -1245,8 +1238,7 @@ msgstr ""
 
 #: src/cli/main.c:745
 msgid "Symlink pam files from the base profile instead of copying them"
-msgstr ""
-"A pam fájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
+msgstr "A pam fájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
 
 #: src/cli/main.c:746
 msgid "Symlink dconf files from the base profile instead of copying them"
@@ -1304,10 +1296,9 @@ msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "A(z) [%s] biztonsági mentésből helyreállítás sikertelen [%d]: %s\n"
 
 #: src/cli/main.c:902
-#, fuzzy, c-format
-#| msgid "Unable to test current configuration [%d]: %s"
+#, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
-msgstr "A jelenlegi konfiguráció nem tesztelhető [%d]: %s"
+msgstr "Az authselect konfiguráció nem távolítható el [%d]: %s\n"
 
 #: src/cli/main.c:945
 msgid "Select profile"
@@ -1374,10 +1365,8 @@ msgid "Restore from backup"
 msgstr "Visszaállítás mentésből"
 
 #: src/cli/main.c:961
-#, fuzzy
-#| msgid "Backup [%s] contains authselect configuration"
 msgid "Uninstall authselect configuration"
-msgstr "A(z) [%s] biztonsági mentés authselect konfigurációt tartalmaz"
+msgstr "Az authselect konfiguráció eltávolítása"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
@@ -1537,8 +1526,7 @@ msgstr "access.conf ellenőrzése a fiók hitelesítésekor"
 
 #: src/compat/authcompat_Options.py:112
 msgid "creation of home directories for users on their first login"
-msgstr ""
-"felhasználók saját könyvtárainak létrehozása az első bejelentkezésükkor"
+msgstr "felhasználók saját könyvtárainak létrehozása az első bejelentkezésükkor"
 
 #: src/compat/authcompat_Options.py:113
 msgid "account locking in case of too many consecutive authentication failures"

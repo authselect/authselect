@@ -1,12 +1,14 @@
-# Ludek Janda <ljanda@redhat.com>, 2018. #zanata
+# Ludek Janda <ljanda@redhat.com>, 2018. #zanata, 2021.
 # Hiroshi Yamanaka <hyamanak@redhat.com>, 2019. #zanata
 # simmon <simmon@nplob.com>, 2021.
+# Sundeep Anand <suanand@redhat.com>, 2021.
+# Pavel Brezina <pbrezina@redhat.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2021-08-09 10:58+0200\n"
-"PO-Revision-Date: 2021-03-29 15:01+0000\n"
-"Last-Translator: simmon <simmon@nplob.com>\n"
+"PO-Revision-Date: 2021-11-09 11:25+0000\n"
+"Last-Translator: Pavel Brezina <pbrezina@redhat.com>\n"
 "Language-Team: Japanese <https://translate.fedoraproject.org/projects/"
 "authselect/master-authselect8adoc/ja/>\n"
 "Language: ja\n"
@@ -14,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.5.2\n"
+"X-Generator: Weblate 4.8\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
@@ -86,7 +88,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:29
 #, no-wrap
 msgid "OPT-IN TO AUTHSELECT"
-msgstr ""
+msgstr "AUTHSELECT へのオプトイン"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:39
@@ -101,6 +103,12 @@ msgid ""
 "so if you wish to go back you can restore it with *authselect backup-"
 "restore* command (see description below)."
 msgstr ""
+"authselect は、すでに作成されていない限り、既存の設定には触れません。authselect を使用してシステム認証の設定を開始する場合は、"
+"最初に *--force* パラメーターを指定して *authselect select* を呼び出すようにしてください(*authselect "
+"select sssd --force*)。 *--force* パラメーターは、authselect "
+"以外の既存の設定を上書きするのに適したものであることを authselect に指示します（以下の説明を参照してください）。*--force* "
+"パラメーターを使用すると、現在の設定のバックアップが自動的に生成されるため、*authselect backup-restore* "
+"コマンドで復元することができます（以下の説明を参照してください）。"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:41
@@ -217,7 +225,9 @@ msgstr "*--quiet, -q*:"
 msgid ""
 "The command will not print any informational message such as additional\n"
 "profile requirements or backup location. Errors are still being print.\n"
-msgstr "コマンドは、追加のプロファイル要件またはバックアップロケーションなどの情報に関するメッセージは印刷しません。エラーは引き続き印刷されます。\n"
+msgstr ""
+"コマンドは、追加のプロファイル要件またはバックアップロケーションなどの情報に関するメッセージは印刷しません。\n"
+"エラーは引き続き印刷されます。\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:73
@@ -249,9 +259,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"変更を適用する前にシステムファイルをバックアップします。このバックアップは {AUTHSELECT_BACKUP_DIR}/NAME に保存されます。一意の文字列を含む現在時間がバックアップの名前として使用されます。これは\n"
+"変更を適用する前にシステムファイルをバックアップします。\n"
+"このバックアップは {AUTHSELECT_BACKUP_DIR}/NAME に保存されます。\n"
+"一意の文字列を含む現在時間がバックアップの名前として使用されます。これは\n"
 " *--backup=* のショートカットです。\n"
-"\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:90
@@ -261,9 +272,9 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
-"変更を適用する前にシステムファイルをバックアップします。このバックアップは {AUTHSELECT_BACKUP_DIR}/NAME に保存されます。値を指定しないと、一意の文字列を含む現在時間がバックアップの名前として使用されます。\n"
-"\n"
-"\n"
+"変更を適用する前にシステムファイルをバックアップします。\n"
+"このバックアップは {AUTHSELECT_BACKUP_DIR}/NAME に保存されます。\n"
+"値を指定しないと、一意の文字列を含む現在時間がバックアップの名前として使用されます。\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:91
@@ -491,9 +502,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"機能を有効にする前にシステムファイルをバックアップします。このバックアップは {AUTHSELECT_BACKUP_DIR}/NAME に保存されます。一意の文字列を含む現在時間がバックアップの名前として使用されます。これは\n"
+"機能を有効にする前にシステムファイルをバックアップします。\n"
+"このバックアップは {AUTHSELECT_BACKUP_DIR}/NAME に保存されます。\n"
+"一意の文字列を含む現在時間がバックアップの名前として使用されます。これは\n"
 " *--backup=* のショートカットです。\n"
-"\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:159
@@ -503,9 +515,9 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
-"機能を有効にする前にシステムファイルをバックアップします。このバックアップは {AUTHSELECT_BACKUP_DIR}/NAME に保存されます。値を指定しないと、一意の文字列を含む現在時間がバックアップの名前として使用されます。\n"
-"\n"
-"\n"
+"機能を有効にする前にシステムファイルをバックアップします。このバックアップは\n"
+" {AUTHSELECT_BACKUP_DIR}/NAME に保存されます。値を指定しないと、\n"
+"一意の文字列を含む現在時間がバックアップの名前として使用されます。\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:164
@@ -527,9 +539,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"機能を無効にする前にシステムファイルをバックアップします。このバックアップは {AUTHSELECT_BACKUP_DIR}/NAME に保存されます。一意の文字列を含む現在時間がバックアップの名前として使用されます。これは\n"
+"機能を無効にする前にシステムファイルをバックアップします。\n"
+"このバックアップは {AUTHSELECT_BACKUP_DIR}/NAME に保存されます。\n"
+"一意の文字列を含む現在時間がバックアップの名前として使用されます。これは\n"
 " *--backup=* のショートカットです。\n"
-"\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:177
@@ -557,10 +570,8 @@ msgid ""
 "from the base profile or symbolic links to these files are created if such "
 "option is selected."
 msgstr ""
-" _NAME_ という名前の新規のカスタムプロファイルを作成します。プロファイルは、"
-"既存のプロファイルに基づくことができます。この場合、新規のプロファイルテンプ"
-"レートは、基本となるプロファイルのコピーか、またはこのオプションが選択された"
-"場合に作成されるこれらのファイルのシンボリックリンクのいずれかになります。"
+"_NAME_ という名前の新規のカスタムプロファイルを作成します。プロファイルは、既存のプロファイルに基づくことができます。この場合、新規のプロファイルテ"
+"ンプレートは、基本となるプロファイルのコピーか、またはこのオプションが選択された場合に作成されるこれらのファイルのシンボリックリンクのいずれかになります。"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:184
@@ -575,8 +586,7 @@ msgid ""
 "The new profile is a vendor profile instead of a custom profile. See\n"
 "_authselect-profiles(5)_ for more information on profile types.\n"
 msgstr ""
-"新規のプロファイルはカスタムプロファイルではなく、ベンダー\n"
-"プロファイルです。\n"
+"新規のプロファイルはカスタムプロファイルではなく、ベンダープロファイルです。\n"
 "プロファイルタイプに関する詳細は、_authselect-profiles(5)_ を参照してください。\n"
 
 #. type: Labeled list
@@ -965,13 +975,13 @@ msgstr ""
 #: src/man/authselect.8.adoc:310
 #, no-wrap
 msgid "TROUBLESHOOTING"
-msgstr ""
+msgstr "トラブルシューティング"
 
 #. type: Title ~
 #: src/man/authselect.8.adoc:313
 #, no-wrap
 msgid "How can I tell if my system is using authselect?"
-msgstr ""
+msgstr "システムが authselect を使用しているかどうかを指示する方法?"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:317
@@ -981,12 +991,14 @@ msgid ""
 "configuration that was generated by authselect but modified manually at some "
 "point."
 msgstr ""
+"*authselect check* を使用します。この出力では、（1）authselect 設定、（2）authselect 以外の設定または (3) "
+"で生成された設定があるものの、ある時点で手動で変更したかを伝えます。"
 
 #. type: Title ~
 #: src/man/authselect.8.adoc:319
 #, no-wrap
 msgid "Is nsswitch.conf supposed to be a symbolic link now?"
-msgstr ""
+msgstr "nsswitch.conf は、現在シンボリックリンクとなりますか？"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:325
@@ -997,12 +1009,17 @@ msgid ""
 "now owning your configuration and should be used instead of any manual "
 "modification."
 msgstr ""
+"authselect は、ゼロからシステム設定を生成し、{AUTHSELECT_CONFIG_DIR} "
+"に保存します。システムファイルは、このディレクトリーへのシンボリックリンクとして作成されます。これらのリンクは、authselect "
+"が設定を所有するので、手動で変更せずに使用することを明確にするために使用されます。"
 
 #. type: Title ~
 #: src/man/authselect.8.adoc:327
 #, no-wrap
 msgid "Error: Unexpected changes to the configuration were detected."
 msgstr ""
+"Error: Unexpected changes to the configuration was detected. "
+"(エラー：設定への予期しない変更が検出されました。)"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:329
@@ -1019,6 +1036,12 @@ msgid ""
 "[error] Unexpected changes to the configuration were detected.\n"
 "[error] Refusing to activate profile unless those changes are removed or overwrite is requested.\n"
 msgstr ""
+"[error] [/etc/authselect/nsswitch.conf] does not exist! \n"
+"[error] [/etc/nsswitch.conf] is not a symbolic link! \n"
+"[error] [/etc/nsswitch.conf] is not created by authselect! \n"
+"[error] Un expected changes to the configuration was detected. \n"
+"[error] Refusing to activate to activate the profile if the changes is "
+"requested.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:339
@@ -1027,6 +1050,8 @@ msgid ""
 "will not be modified. To fix this, please call *authselect select* with *--"
 "force* parameter to say that it is all right to overwrite it."
 msgstr ""
+"これは、設定がauthselectに対して不明であり、変更されないことを意味します。これを修正するには、*--force* パラメーターを指定して *"
+"authselect select* を呼び出して、上書きする権利がすべて表示してください。"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:341
