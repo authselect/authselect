@@ -105,7 +105,7 @@ authselect_profile_nsswitch_maps(const struct authselect_profile *profile,
         return NULL;
     }
 
-    ret = authselect_system_nsswitch_find_maps(template, &maps);
+    ret = authselect_nsswitch_find_maps(template, &maps);
     free(template);
     if (ret != EOK) {
         ERROR("Unable to find nsswitch maps [%d]: %s", ret, strerror(ret));

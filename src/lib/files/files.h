@@ -83,6 +83,32 @@ authselect_config_validate_existing(const char *profile_id,
                                     const char **features);
 
 /**
+ * Generate contents of nsswitch.conf.
+ *
+ * @param template The file template.
+ * @param features List of enabled features.
+ * @param _content Generated content.
+ *
+ * @return EOK on success, other errno code on failure.
+ */
+errno_t
+authselect_nsswitch_generate(const char *template,
+                             const char **features,
+                             char **_content);
+
+/**
+ * Find nsswitch maps in generated content.
+ *
+ * @param content Generated content.
+ * @param _maps   Maps found in @content.
+ *
+ * @return EOK on success, other errno code on error.
+ */
+errno_t
+authselect_nsswitch_find_maps(char *content,
+                              char ***_maps);
+
+/**
  * Validate non-existing configuration.
  *
  * Check that there are no left overs from previous authselect configuration.
@@ -107,18 +133,6 @@ errno_t
 authselect_system_read_templates(const char *dirname,
                                  int dirfd,
                                  struct authselect_files **_templates);
-
-/**
- * Find nsswitch maps in generated content.
- *
- * @param content Generated content.
- * @param _maps   Maps found in @content.
- *
- * @return EOK on success, other errno code on error.
- */
-errno_t
-authselect_system_nsswitch_find_maps(char *content,
-                                     char ***_maps);
 
 /**
  * Generate content of system files based on provided templates.
