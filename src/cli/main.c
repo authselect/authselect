@@ -18,6 +18,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "config.h"
+
 #include <time.h>
 #include <errno.h>
 #include <stdio.h>
@@ -181,12 +183,14 @@ static errno_t activate(struct cli_cmdline *cmdline)
         goto done;
     }
 
+#ifdef BUILD_USER_NSSWITCH
     maps = authselect_profile_nsswitch_maps(profile, features);
     if (maps == NULL) {
         ERROR("Unable to obtain nsswitch maps!");
         ret = EFAULT;
         goto done;
     }
+#endif
 
     if (backup || backup_name != NULL || (enforce && !nobackup)) {
         ret = perform_backup(quiet, 1, backup_name);
