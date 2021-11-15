@@ -18,6 +18,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "config.h"
+
 #include <errno.h>
 #include <regex.h>
 #include <string.h>
@@ -84,6 +86,8 @@ done:
 
     return ret;
 }
+
+#ifdef BUILD_USER_NSSWITCH
 
 static errno_t
 authselect_nsswitch_delete_maps(char **maps,
@@ -234,3 +238,24 @@ done:
 
     return ret;
 }
+
+#else /* BUILD_USER_NSSWITCH */
+
+errno_t
+authselect_nsswitch_generate(const char *template,
+                             const char **features,
+                             char **_content)
+{
+    char *content;
+
+    content = template_generate(template, features);
+    if (content == NULL) {
+        return ENOMEM;
+    }
+
+    *_content = content;
+
+    return EOK;
+}
+
+#endif /* BUILD_USER_NSSWITCH */

@@ -53,9 +53,14 @@ done to the system.
      the modules in the system-auth configuration file._
 
 *nsswitch.conf*::
+ifeval::[{BUILD_USER_NSSWITCH} == 0]
+    Name Service Switch configuration file.
+endif::[]
+ifeval::[{BUILD_USER_NSSWITCH} == 1]
     Name Service Switch configuration file. Only maps relevant to the profile
     must be set. Maps that are not specified by the profile are included from
     {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf.
+endif::[]
 
 *dconf-db*::
     Changes to dconf database. The main uses case of this file is to set

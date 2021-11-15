@@ -18,6 +18,12 @@ Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 %global with_compat 0
 %endif
 
+%if 0%{?fedora} >= 36 || 0%{?rhel} >= 10
+%global with_user_nsswitch 0
+%else
+%global with_user_nsswitch 1
+%endif
+
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  findutils
@@ -105,6 +111,9 @@ autoreconf -if
     --with-pythonbin="%{__python3}" \
     --with-compat \
 %endif
+%if %{with_user_nsswitch}
+    --with-user-nsswitch \
+%endif
     %{nil}
 
 %make_build
@@ -142,7 +151,9 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %ghost %attr(0644,root,root) %{_sysconfdir}/authselect/postlogin
 %ghost %attr(0644,root,root) %{_sysconfdir}/authselect/smartcard-auth
 %ghost %attr(0644,root,root) %{_sysconfdir}/authselect/system-auth
+%if %{with_user_nsswitch}
 %ghost %attr(0644,root,root) %{_sysconfdir}/authselect/user-nsswitch.conf
+%endif
 %dir %{_localstatedir}/lib/authselect
 %ghost %attr(0755,root,root) %{_localstatedir}/lib/authselect/backups/
 %ghost %attr(0644,root,root) %{_localstatedir}/lib/authselect/dconf-db
@@ -250,6 +261,7 @@ exit 0
 
 %posttrans libs
 # Copy nsswitch.conf to user-nsswitch.conf if it was not yet created
+%if %{with_user_nsswitch}
 if [ ! -f %{_localstatedir}/lib/authselect/user-nsswitch-created ]; then
     %__cp -n %{_sysconfdir}/nsswitch.conf %{_sysconfdir}/authselect/user-nsswitch.conf &> /dev/null
     touch %{_localstatedir}/lib/authselect/user-nsswitch-created &> /dev/null
@@ -274,6 +286,7 @@ if [ -f %{validfile} ]; then
 
     %__rm -f %{validfile}
 fi
+%endif
 
 # Keep nss-altfiles for all rpm-ostree based systems.
 # See https://github.com/authselect/authselect/issues/48

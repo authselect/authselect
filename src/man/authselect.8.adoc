@@ -247,6 +247,7 @@ These options are available with all commands.
     the program execution but may indicate some undesired situations
     (e.g. unexpected file in a profile directory).
 
+ifeval::[{BUILD_USER_NSSWITCH} == 1]
 NSSWITCH.CONF MANAGEMENT
 ------------------------
 Authselect generates {AUTHSELECT_NSSWITCH_CONF} and does not allow any user
@@ -305,6 +306,7 @@ services:   sss files
 sudoers:    files sss
 hosts:      files dns myhostname
 ----
+endif::[]
 
 TROUBLESHOOTING
 ---------------
