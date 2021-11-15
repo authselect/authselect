@@ -67,10 +67,9 @@ jobs:
 
     - name: Add pull request comment
       env:
-        PRID: ${{ github.event.pull_request.number }}
-        PROJECT: https://copr.fedorainfracloud.org/coprs/g/authselect/pr${{ github.event.pull_request.number }}
-        BUILDS: https://copr.fedorainfracloud.org/coprs/g/authselect/pr${{ github.event.pull_request.number }}/builds
-        BADGE: https://copr.fedorainfracloud.org/coprs/g/authselect/pr${{ github.event.pull_request.number }}/package/authselect/status_image/last_build.png
+        PROJECT: https://copr.fedorainfracloud.org/coprs/g/authselect/${{ steps.info.outputs.project }}
+        BUILDS: https://copr.fedorainfracloud.org/coprs/g/authselect/${{ steps.info.outputs.project }}/builds
+        BADGE: https://copr.fedorainfracloud.org/coprs/g/authselect/${{ steps.info.outputs.project }}/package/authselect/status_image/last_build.png
       uses: marocchino/sticky-pull-request-comment@v2
       with:
         message: |
@@ -79,7 +78,7 @@ jobs:
           * You can install this pull request by running:
 
           ```console
-          $ dnf copr enable @authselect/${{ env.PRID }}
+          $ dnf copr enable @authselect/${{ steps.info.outputs.project }}
           $ dnf install authselect
           ```
 
