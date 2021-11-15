@@ -30,7 +30,6 @@ jobs:
     needs: has_changed
     if: ${{ needs.has_changed.outputs.changed == 'true' }}
     runs-on: ubuntu-latest
-    container: fedora:latest
     permissions:
       contents: read
     env:
@@ -61,7 +60,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        scripts/auto install-build-deps
+        sudo scripts/auto install-build-deps
 
     - run: autoreconf -if && ./configure --enable-silent-rules
 
