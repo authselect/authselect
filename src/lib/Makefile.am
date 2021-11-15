@@ -52,6 +52,7 @@ libauthselect_la_SOURCES = \
     authselect_files.c \
     authselect_paths.c \
     files/config.c \
+    files/nsswitch.c \
     files/symlinks.c \
     files/system.c \
     profiles/activate.c \
