@@ -907,6 +907,13 @@ static errno_t uninstall(struct cli_cmdline *cmdline)
     return EOK;
 }
 
+static errno_t version(struct cli_cmdline *cmdline)
+{
+    puts(PACKAGE_VERSION);
+
+    return EOK;
+}
+
 static errno_t
 setup_gettext()
 {
@@ -959,6 +966,7 @@ int main(int argc, const char **argv)
         CLI_TOOL_COMMAND("backup-remove", "Remove backup", CLI_CMD_REQUIRE_ROOT, backup_remove),
         CLI_TOOL_COMMAND("backup-restore", "Restore from backup", CLI_CMD_REQUIRE_ROOT, backup_restore),
         CLI_TOOL_COMMAND("uninstall", "Uninstall authselect configuration", CLI_CMD_REQUIRE_ROOT | CLI_CMD_HIDDEN, uninstall),
+        CLI_TOOL_COMMAND("version", "Print authselect version", CLI_CMD_HIDDEN, version),
         CLI_TOOL_LAST
     };
 
