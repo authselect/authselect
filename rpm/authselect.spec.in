@@ -293,7 +293,11 @@ fi
 if %__grep "OSTREE_VERSION=" /etc/os-release &> /dev/null; then
     for PROFILE in `ls %{_datadir}/authselect/default`; do
         %{_bindir}/authselect create-profile $PROFILE --vendor --base-on $PROFILE --symlink-pam --symlink-dconf --symlink=REQUIREMENTS --symlink=README &> /dev/null
+%if %{with_user_nsswitch}
         %__sed -ie "s/^\(passwd\|group\):\(.*\)systemd\(.*\)/\1:\2systemd altfiles\3/g" %{_datadir}/authselect/vendor/$PROFILE/nsswitch.conf &> /dev/null
+%else
+        %__sed -ie 's/{if "with-altfiles":altfiles }/altfiles /g' %{_datadir}/authselect/vendor/$PROFILE/nsswitch.conf &> /dev/null
+%endif
     done
 fi
 
