@@ -60,22 +60,17 @@ with-silent-lastlog::
 with-pamaccess::
     Check access.conf during account authorization.
 
+with-altfiles::
+    Use nss_altfiles for passwd and group nsswitch databases.
+
+with-mdns4::
+    Enable multicast DNS over IPv4.
+
+with-mdns6::
+    Enable multicast DNS over IPv6.
+
 without-nullok::
     Do not add nullok parameter to pam_unix.
-
-DISABLE SPECIFIC NSSWITCH DATABASES
------------------------------------
-
-Normally, nsswitch databases set by the profile overwrites values set in
-user-nsswitch.conf. The following options can force authselect to
-ignore value set by the profile and use the one set in user-nsswitch.conf
-instead.
-
-with-custom-passwd::
-Ignore "passwd" database set by the profile.
-
-with-custom-group::
-Ignore "group" database set by the profile.
 
 EXAMPLES
 --------
