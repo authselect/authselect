@@ -20,8 +20,10 @@ Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
 %if 0%{?fedora} >= 36 || 0%{?rhel} >= 10
 %global with_user_nsswitch 0
+%global enforce_authselect 1
 %else
 %global with_user_nsswitch 1
+%global enforce_authselect 0
 %endif
 
 BuildRequires:  autoconf
@@ -151,6 +153,14 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %ghost %attr(0644,root,root) %{_sysconfdir}/authselect/postlogin
 %ghost %attr(0644,root,root) %{_sysconfdir}/authselect/smartcard-auth
 %ghost %attr(0644,root,root) %{_sysconfdir}/authselect/system-auth
+%if %{enforce_authselect}
+%ghost %attr(0644,root,root) %{_sysconfdir}/nsswitch.conf
+%ghost %attr(0644,root,root) %{_sysconfdir}/pam.d/fingerprint-auth
+%ghost %attr(0644,root,root) %{_sysconfdir}/pam.d/password-auth
+%ghost %attr(0644,root,root) %{_sysconfdir}/pam.d/postlogin
+%ghost %attr(0644,root,root) %{_sysconfdir}/pam.d/smartcard-auth
+%ghost %attr(0644,root,root) %{_sysconfdir}/pam.d/system-auth
+%endif
 %if %{with_user_nsswitch}
 %ghost %attr(0644,root,root) %{_sysconfdir}/authselect/user-nsswitch.conf
 %endif
