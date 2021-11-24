@@ -12,10 +12,10 @@ Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
 %global makedir %{_builddir}/%{name}-%{version}
 
-%if 0%{?fedora} <= 34 || 0%{?rhel} <= 9
-%global with_compat 1
-%else
+%if 0%{?fedora} >= 35 || 0%{?rhel} >= 10
 %global with_compat 0
+%else
+%global with_compat 1
 %endif
 
 %if 0%{?fedora} >= 36 || 0%{?rhel} >= 10
