@@ -70,7 +70,14 @@ Requires: gawk
 Requires: grep
 Requires: sed
 Requires: systemd
-Requires: pam >= 1.3.1-23
+%if %{enforce_authselect}
+# authselect now owns nsswitch.conf (glibc) and pam files
+Conflicts: pam < 1.5.2-8
+Conflicts: glibc < 2.34.9000-27
+# systemd, nss-mdns no longer contains nsswitch.conf scriptlets
+Conflicts: systemd < 249.7-4
+Conflicts: nss-mdns < 0.15.1-3
+%endif
 
 %description libs
 Common library files for authselect. This package is used by the authselect
