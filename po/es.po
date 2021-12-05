@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
 "POT-Creation-Date: 2021-07-09 13:40+0200\n"
-"PO-Revision-Date: 2021-11-09 11:25+0000\n"
-"Last-Translator: Dennis Tobar <DENNIS.TOBAR@gmail.com>\n"
+"PO-Revision-Date: 2021-12-05 11:16+0000\n"
+"Last-Translator: Emilio Herrera <ehespinosa57@gmail.com>\n"
 "Language-Team: Spanish <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/es/>\n"
 "Language: es\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.8\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:187
 msgid "Unable to obtain supported features"
@@ -68,7 +68,7 @@ msgstr ""
 
 #: src/lib/authselect.c:124
 msgid "File that needs to be overwritten was found"
-msgstr "Se encontró un archivo que tendría que sobrescribirse."
+msgstr "Se encontró un archivo que tendría que sobrescribirse"
 
 #: src/lib/authselect.c:125
 msgid ""
@@ -84,22 +84,17 @@ msgid "Unable to activate profile [%s] [%d]: %s"
 msgstr "No se pudo activar el perfil [%s] [%d]: %s"
 
 #: src/lib/authselect.c:150
-#, fuzzy
-#| msgid "Trying to backup authselect configuration to [%s]"
 msgid "Trying to uninstall authselect configuration"
-msgstr "Intentando respaldar la configuración de authselect a [%s]"
+msgstr "Intentando desinstalar la configuración de authselect"
 
 #: src/lib/authselect.c:154
-#, fuzzy, c-format
-#| msgid "Unable to create symbolic links [%d]: %s"
+#, c-format
 msgid "Unable to remove symlinks [%d]: %s"
-msgstr "No se pudieron generar los enlaces simbólicos [%d]: %s"
+msgstr "Incapaz de quitar enlaces simbólicos [%d]: %s"
 
 #: src/lib/authselect.c:158
-#, fuzzy
-#| msgid "Changes were successfully applied.\n"
 msgid "Symbolic links were successfully removed"
-msgstr "Se han aplicado los cambios.\n"
+msgstr "Los enlaces simbólicos se quitaron con éxito"
 
 #: src/lib/authselect.c:197
 #, c-format
@@ -256,13 +251,12 @@ msgstr "No se pudo escribir en [%s] [%d]: %s"
 #: src/lib/authselect_profile.c:385
 #, c-format
 msgid "Omitting [%s] since it does not exist in base profile"
-msgstr ""
+msgstr "Omitiendo [%s] puesto que o existe en el perfil base"
 
 #: src/lib/authselect_profile.c:389
-#, fuzzy, c-format
-#| msgid "Unable to check file mode of [%s] [%d]: %s"
+#, c-format
 msgid "Unable to check presence of [%s] [%d]: %s"
-msgstr "No se pudo comprobar el tipo del archivo [%s] [%d]: %s"
+msgstr "Incapaz de comprobar la presencia de [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:397
 #, c-format
@@ -308,7 +302,7 @@ msgstr "El valor AUTHSELECT_PROFILE_ANY no es válido en este contexto"
 
 #: src/lib/authselect_profile.c:549
 msgid "Unable to create profile path: out of memory"
-msgstr "No se pudo crear la ruta del perfil. Memoria insuficiente."
+msgstr "No se pudo crear la ruta del perfil. Memoria insuficiente"
 
 #: src/lib/authselect_profile.c:555
 #, c-format
@@ -322,7 +316,7 @@ msgstr "No se pudo acceder a [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:565
 msgid "Unable to create file name: out of memory"
-msgstr "No se pudo crear el archivo. Memoria insuficiente."
+msgstr "No se pudo crear el archivo: Memoria insuficiente"
 
 #: src/lib/authselect_profile.c:573
 #, c-format
@@ -424,7 +418,7 @@ msgstr "El archivo [ ]%sexiste pero necesita ser sobreescrito!"
 #: src/lib/files/symlinks.c:190
 #, c-format
 msgid "Skipping [%s] because it is not an authselect file"
-msgstr ""
+msgstr "Saltando [%s] porque no es un archivo authselect"
 
 #: src/lib/files/system.c:74 src/lib/profiles/read.c:162
 #, c-format
@@ -822,7 +816,7 @@ msgstr "No se puede crear un archivo temporal para [%s] [%d]: %s"
 #: src/lib/util/textfile.c:56
 #, c-format
 msgid "File [%s] is bigger than %uKiB!"
-msgstr "¡El archivo [%s] es de más de  %uKiB!"
+msgstr "¡El archivo [%s] es de más de %uKiB!"
 
 #: src/lib/util/textfile.c:85
 #, c-format
@@ -973,7 +967,7 @@ msgstr "No fue posible interpretar los parámetros del comando"
 
 #: src/cli/main.c:130
 msgid "Unable to backup current configuration!\n"
-msgstr ""
+msgstr "¡Incapaz de hacer copia de seguridad de la configuración actual!\n"
 
 #: src/cli/main.c:134
 #, c-format
@@ -987,6 +981,8 @@ msgstr "Forzar cambios"
 #: src/cli/main.c:157 src/cli/main.c:244 src/cli/main.c:624 src/cli/main.c:701
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr ""
+"Haga copia de seguridad de los archivos del sistema antes de activar el "
+"perfil (genere nombre único)"
 
 #: src/cli/main.c:158 src/cli/main.c:245 src/cli/main.c:625 src/cli/main.c:702
 msgid "Backup system files before activating profile"
@@ -1015,11 +1011,11 @@ msgstr "No se pudo obtener la información del perfil [%d]: %s"
 
 #: src/cli/main.c:179 src/cli/main.c:510 src/cli/main.c:661
 msgid "Unable to read profile requirements!"
-msgstr "No fue posible leer los requisitos del perfil"
+msgstr "¡No fue posible leer los requisitos del perfil!"
 
 #: src/cli/main.c:186
 msgid "Unable to obtain nsswitch maps!"
-msgstr "No fue posible obtener los mapeos de nsswitch"
+msgstr "¡No fue posible obtener los mapeos de nsswitch!"
 
 #: src/cli/main.c:200
 msgid ""
@@ -1121,7 +1117,7 @@ msgstr "La configuración actual es válida."
 
 #: src/cli/main.c:368
 msgid "System was not configured with authselect."
-msgstr ""
+msgstr "El sistema no fue configurado con authselect."
 
 #: src/cli/main.c:393
 msgid "Unable to get profile list!"
@@ -1130,7 +1126,7 @@ msgstr "¡No se pudo obtener la lista de perfiles!"
 #: src/cli/main.c:446
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
-msgstr ""
+msgstr "Incapaz de obtener las características del perfil [%d]: %s"
 
 #: src/cli/main.c:548
 msgid "Print content of all files"
@@ -1191,6 +1187,7 @@ msgid ""
 msgstr ""
 "Archivo %s:\n"
 "%s\n"
+"\n"
 
 #: src/cli/main.c:631
 msgid "Feature to enable."
@@ -1200,6 +1197,7 @@ msgstr "Característica a activar."
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
 msgstr ""
+"Incapaz de hacer copia de seguridad de la configuración actual [%d]: %s\n"
 
 #: src/cli/main.c:675
 #, c-format
@@ -1274,15 +1272,17 @@ msgstr "Se creó el nuevo perfil en %s\n"
 #: src/cli/main.c:787
 msgid "Print backup names without any formatting and additional information"
 msgstr ""
+"Imprime los nombres de copia de seguridad sin ningún formato e información "
+"adicional"
 
 #: src/cli/main.c:799
 msgid "Unable to list available backups!"
-msgstr ""
+msgstr "¡Incapaz de listar las copias de seguridad disponibles!"
 
 #: src/cli/main.c:836
 #, c-format
 msgid "%-*s (created at %s)\n"
-msgstr ""
+msgstr "%-*s (creado en %s)\n"
 
 #: src/cli/main.c:855
 msgid "Name of the backup to remove."
@@ -1291,22 +1291,21 @@ msgstr "Nombre del respaldo a eliminar."
 #: src/cli/main.c:864
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
-msgstr ""
+msgstr "Incapaz de quitar la copia de seguridad [%s] [%d]: %s\n"
 
 #: src/cli/main.c:879
 msgid "Name of the backup to restore from."
-msgstr ""
+msgstr "Nombre de la copia de seguridad desde la que restaurar."
 
 #: src/cli/main.c:888
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
-msgstr ""
+msgstr "Incapaz de restaurar copia de seguridad [%s] [%d]: %s\n"
 
 #: src/cli/main.c:902
-#, fuzzy, c-format
-#| msgid "Unable to test current configuration [%d]: %s"
+#, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
-msgstr "No se pudo comprobar la configuración actual [%d]: %s"
+msgstr "Incapaz de desinstalar configuración authselect[%d]: %s\n"
 
 #: src/cli/main.c:945
 msgid "Select profile"
@@ -1322,7 +1321,7 @@ msgstr "Listar perfiles disponibles"
 
 #: src/cli/main.c:948
 msgid "List available profile features"
-msgstr ""
+msgstr "Lista de características de perfil disponibles"
 
 #: src/cli/main.c:949
 msgid "Show profile information"
@@ -1358,11 +1357,11 @@ msgstr "Crear nuevo perfil de autenticación"
 
 #: src/cli/main.c:957
 msgid "Backup commands:"
-msgstr ""
+msgstr "Comandos de copia de seguridad:"
 
 #: src/cli/main.c:958
 msgid "List available backups"
-msgstr ""
+msgstr "Lista de copias de seguridad disponibles"
 
 #: src/cli/main.c:959
 msgid "Remove backup"
@@ -1373,10 +1372,8 @@ msgid "Restore from backup"
 msgstr "Restaurar desde respaldo"
 
 #: src/cli/main.c:961
-#, fuzzy
-#| msgid "Backup [%s] contains authselect configuration"
 msgid "Uninstall authselect configuration"
-msgstr "Respaldo [%s] contiene configuración de authselect"
+msgstr "Desinstalar configuración authselect"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
@@ -1741,4 +1738,4 @@ msgstr "Error: Deben indicarse a la vez --enablewinbind y --enablewinbindauth."
 
 #: src/compat/authcompat.py.in.in:516
 msgid "Error: Please, provide --updateall option."
-msgstr "Error: Por favor, indique la opción --updateall"
+msgstr "Error: Por favor, indique la opción --updateall."
