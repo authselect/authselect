@@ -52,6 +52,13 @@ Suggests: samba-winbind
 Suggests: fprintd-pam
 Suggests: oddjob-mkhomedir
 
+%if !%{with_compat}
+# Properly obsolete removed authselect-compat package.
+Obsoletes: authselect-compat < 1.2.4
+# Inherited from former authselect-compat package.
+Obsoletes: authconfig < 7.0.1-6
+%endif
+
 %description
 Authselect is designed to be a replacement for authconfig but it takes
 a different approach to configure the system. Instead of letting
