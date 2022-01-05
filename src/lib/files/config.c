@@ -142,15 +142,26 @@ authselect_config_locations_writable()
 {
     struct authselect_symlink files[] = {
         {PATH_CONFIG_FILE, NULL, false},
-        {PATH_COPY_SYSTEM, NULL, false},
-        SYMLINK_FILES
+        SYMLINK_FILES,
+        {PATH_COPY_SYSTEM, NULL, false}
     };
     bool result = true;
     char *dirpath;
     errno_t ret;
     int i;
+    bool maintain_shadow = true;
 
     INFO("Checking if all required directories are writable.");
+
+    ret = should_maintain_shadow_copy(&maintain_shadow);
+    if (ret != EOK) {
+        ERROR("Failed to query for shadow copy state");
+        return false;
+    }
+    if (!maintain_shadow) {
+        /* Neuter the PATH_COPY_SYSTEM bits */
+        files[2].name = NULL;
+    }
 
     for (i = 0; files[i].name != NULL; i++) {
         dirpath = file_get_parent_directory(files[i].name);

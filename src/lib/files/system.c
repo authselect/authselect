@@ -205,6 +205,12 @@ authselect_system_write(const char **features,
     errno_t ret;
     time_t now;
     int i;
+    bool maintain_shadow = true;
+
+    ret = should_maintain_shadow_copy(&maintain_shadow);
+    if (ret != EOK) {
+        return ret;
+    }
 
     ret = authselect_system_generate(features, templates, &files);
     if (ret != EOK) {
@@ -219,11 +225,13 @@ authselect_system_write(const char **features,
      * on error. */
     now = time(NULL);
     for (i = 0; generated[i].path != NULL; i++) {
-        ret = authselect_system_write_temp(generated[i].copy_path,
-                                           generated[i].content,
-                                           now, &tmp_copies[i]);
-        if (ret != EOK) {
-            goto done;
+        if (maintain_shadow) {
+            ret = authselect_system_write_temp(generated[i].copy_path,
+                                               generated[i].content,
+                                               now, &tmp_copies[i]);
+            if (ret != EOK) {
+                goto done;
+            }
         }
 
         ret = authselect_system_write_temp(generated[i].path,
@@ -241,11 +249,13 @@ authselect_system_write(const char **features,
      * can fail is EIO which we can not do anything about and we can not
      * even recover from it.
      */
-    for (i = 0; generated[i].copy_path != NULL; i++) {
-        ret = authselect_system_rename_temp(&tmp_copies[i],
-                                            generated[i].copy_path);
-        if (ret != EOK) {
-            goto done;
+    if (maintain_shadow) {
+        for (i = 0; generated[i].copy_path != NULL; i++) {
+            ret = authselect_system_rename_temp(&tmp_copies[i],
+                                                generated[i].copy_path);
+            if (ret != EOK) {
+                goto done;
+            }
         }
     }
 

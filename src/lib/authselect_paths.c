@@ -19,6 +19,7 @@
 */
 
 #include "lib/constants.h"
+#include <sys/statvfs.h>
 
 _PUBLIC_ const char *
 authselect_path_nsswitch()
@@ -66,4 +67,21 @@ _PUBLIC_ const char *
 authselect_path_dconf_lock()
 {
     return PATH_SYMLINK_DCONF_LOCK;
+}
+
+/* Determine if we should maintain a separate "shadow" copy
+ * of the config files to detect out of band changes.
+ *
+ * As of right now, this will return `FALSE` on ostree based systems
+ * which have `/var` readonly at *build* time, because that directory
+ * is for user state and will not be changed across in-place updates.
+ */
+errno_t
+should_maintain_shadow_copy(bool* should_shadow) {
+    struct statvfs stbuf;
+    if (statvfs(AUTHSELECT_STATE_DIR, &stbuf) < 0) {
+        return errno;
+    }
+    *should_shadow = (stbuf.f_flag & ST_RDONLY) == 0;
+    return EOK;
 }

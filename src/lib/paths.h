@@ -22,6 +22,7 @@
 #define _AUTHSELECT_PATHS_H_
 
 #include <stdbool.h>
+#include "common/errno_t.h"
 
 /* Authselect configuration file. */
 #define FILE_CONFIG      "authselect.conf"
@@ -163,5 +164,7 @@ struct authselect_symlink {
 #define FILES_DCONF     FILE_DCONF_DB, FILE_DCONF_LOCK
 
 #define FILES_ALL       FILES_META, FILES_NSSWITCH, FILES_PAM, FILES_DCONF
+
+errno_t should_maintain_shadow_copy(bool* should_shadow);
 
 #endif /* _AUTHSELECT_PATHS_H_ */
