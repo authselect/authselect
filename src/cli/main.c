@@ -115,6 +115,23 @@ parse_profile_options(struct cli_cmdline *cmdline,
     return EOK;
 }
 
+/* Check if there's an /etc/nsswitch.conf file.  If not,
+ * it means authselect must not have been invoked.
+ */
+static errno_t
+system_is_initialized(bool* initialized)
+{
+    struct stat stbuf;
+    *initialized = false;
+    if (stat (authselect_path_nsswitch (), &stbuf) < 0) {
+        if (errno == ENOENT)
+            return EOK;
+        return errno;
+    }
+    *initialized = true;
+    return EOK;
+}
+
 static errno_t
 perform_backup(int quiet,
                int backup,
@@ -153,6 +170,7 @@ static errno_t activate(struct cli_cmdline *cmdline)
     int quiet = 0;
     errno_t ret;
     int i;
+    bool initialized = false;
 
     struct poptOption options[] = {
         {"force", 'f', POPT_ARG_VAL, &enforce, 1, _("Enforce changes"), NULL },
@@ -162,6 +180,16 @@ static errno_t activate(struct cli_cmdline *cmdline)
         {"quiet", 'q', POPT_ARG_VAL, &quiet, 1, _("Do not print profile requirements"), NULL },
         POPT_TABLEEND
     };
+
+    ret = system_is_initialized (&initialized);
+    if (ret != EOK) {
+        goto done;
+    }
+    /* Don't require a backup by default on initial run */
+    if (!initialized) {
+        backup = 0;
+        nobackup = 1;
+    }
 
     ret = parse_profile_options(cmdline, options, &profile_id, &features);
     if (ret != EOK) {
