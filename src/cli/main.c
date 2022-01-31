@@ -349,7 +349,7 @@ static errno_t check(struct cli_cmdline *cmdline)
     }
 
     ret = authselect_validate_configuration(&is_valid);
-    if (ret != EOK && ret != ENOENT) {
+    if (ret != EOK && ret != ENOENT && ret != EEXIST) {
         ERROR("Unable to test current configuration [%d]: %s",
               ret, strerror(ret));
 
@@ -367,12 +367,18 @@ static errno_t check(struct cli_cmdline *cmdline)
         puts(_("Current configuration is valid."));
         break;
     case ENOENT:
+        puts(_("No configuration detected."));
+        ret = ENODEV;
+        break;
+    case EEXIST:
         puts(_("System was not configured with authselect."));
+        ret = ENOENT; /* for backwards compatibility */
         break;
     }
 
     /* EOK = existing configuration is valid,
-     * ENOENT = non-existing configuration is valid */
+     * ENODEV = no configuration detected,
+     * ENOENT = non-authselet configuration is valid */
     return ret;
 }
 

@@ -183,8 +183,8 @@ authselect_config_locations_writable()
 }
 
 bool
-authselect_config_validate_existing(const char *profile_id,
-                                    const char **features)
+authselect_config_validate_authselect(const char *profile_id,
+                                      const char **features)
 {
     struct authselect_files *files;
     bool result = true;
@@ -209,7 +209,7 @@ authselect_config_validate_existing(const char *profile_id,
 }
 
 bool
-authselect_config_validate_non_existing()
+authselect_config_validate_user()
 {
     bool result = true;
 
@@ -217,4 +217,34 @@ authselect_config_validate_non_existing()
     result &= authselect_symlinks_validate_missing();
 
     return result;
+}
+
+bool
+authselect_config_validate_missing()
+{
+    struct authselect_generated generated[] = GENERATED_FILES_PATHS;
+    struct authselect_symlink symlinks[] = {SYMLINK_FILES};
+    errno_t ret;
+    int i;
+
+    ret = file_exists(PATH_CONFIG_FILE);
+    if (ret != ENOENT) {
+        return false;
+    }
+
+    for (i = 0; generated[i].path != NULL; i++) {
+        ret = file_exists(generated[i].path);
+        if (ret != ENOENT) {
+            return false;
+        }
+    }
+
+    for (i = 0; symlinks[i].name != NULL; i++) {
+        ret = file_exists(symlinks[i].name);
+        if (ret != ENOENT) {
+            return false;
+        }
+    }
+
+    return true;
 }
