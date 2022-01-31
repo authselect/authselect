@@ -142,7 +142,6 @@ authselect_config_locations_writable()
 {
     struct authselect_symlink files[] = {
         {PATH_CONFIG_FILE, NULL, false},
-        {PATH_COPY_SYSTEM, NULL, false},
         SYMLINK_FILES
     };
     bool result = true;

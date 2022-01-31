@@ -103,30 +103,15 @@ authselect_activate(const char *profile_id,
         goto done;
     }
 
-    /* First, check that current configuration is valid. */
+    /* Require force if authselect.conf is missing or invalid but otherwise
+     * ignore user changes. */
     ret = authselect_validate_configuration(&is_valid);
-    if (ret != EOK && ret != ENOENT) {
-        ERROR("Unable to check configuration [%d]: %s", ret, strerror(ret));
-        goto done;
-    }
-
-    if (!is_valid) {
-        ERROR("Unexpected changes to the configuration were detected.");
-        ERROR("Refusing to activate profile unless those changes are removed "
-              "or overwrite is requested.");
+    if (ret != EOK) {
+        ERROR("%s is missing or unreadable, system was not properly configured "
+              "by authselect.", PATH_CONFIG_FILE);
+        ERROR("Refusing to activate profile unless overwrite is requested.");
         ret = EEXIST;
         goto done;
-    }
-
-    /* If no configuration is present, check for existing files. */
-    if (ret == ENOENT) {
-        if (!authselect_symlinks_location_available()) {
-            ERROR("File that needs to be overwritten was found");
-            ERROR("Refusing to activate profile unless this file is removed "
-                  "or overwrite is requested.");
-            ret = EEXIST;
-            goto done;
-        }
     }
 
     ret = authselect_profile_activate(profile, features);

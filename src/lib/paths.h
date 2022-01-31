@@ -56,17 +56,6 @@
 /* Path to files that can be modified by user. */
 #define PATH_USER_NSSWITCH  AUTHSELECT_CONFIG_DIR "/user-nsswitch.conf"
 
-/* Paths to copy generated system files. Used to check changes
- * in configuration. */
-#define PATH_COPY_SYSTEM      AUTHSELECT_STATE_DIR "/" FILE_SYSTEM
-#define PATH_COPY_PASSWORD    AUTHSELECT_STATE_DIR "/" FILE_PASSWORD
-#define PATH_COPY_FINGERPRINT AUTHSELECT_STATE_DIR "/" FILE_FINGERPRINT
-#define PATH_COPY_SMARTCARD   AUTHSELECT_STATE_DIR "/" FILE_SMARTCARD
-#define PATH_COPY_POSTLOGIN   AUTHSELECT_STATE_DIR "/" FILE_POSTLOGIN
-#define PATH_COPY_NSSWITCH    AUTHSELECT_STATE_DIR "/" FILE_NSSWITCH
-#define PATH_COPY_DCONF_DB    AUTHSELECT_STATE_DIR "/" FILE_DCONF_DB
-#define PATH_COPY_DCONF_LOCK  AUTHSELECT_STATE_DIR "/" FILE_DCONF_LOCK
-
 /* Names of symbolic links that points to generated files. */
 #define PATH_SYMLINK_SYSTEM      AUTHSELECT_PAM_DIR "/" FILE_SYSTEM
 #define PATH_SYMLINK_PASSWORD    AUTHSELECT_PAM_DIR "/" FILE_PASSWORD
@@ -86,47 +75,46 @@
  * @see GENERATED_FILES, GENERATED_FILES_PATHS */
 struct authselect_generated {
     const char *path;
-    const char *copy_path;
     const char *content;
 };
 
-#define GENERATED_FILES(files)                                             \
-{                                                                          \
-    {PATH_SYSTEM,      PATH_COPY_SYSTEM,      (files)->systemauth},        \
-    {PATH_PASSWORD,    PATH_COPY_PASSWORD,    (files)->passwordauth},      \
-    {PATH_FINGERPRINT, PATH_COPY_FINGERPRINT, (files)->fingerprintauth},   \
-    {PATH_SMARTCARD,   PATH_COPY_SMARTCARD,   (files)->smartcardauth},     \
-    {PATH_POSTLOGIN,   PATH_COPY_POSTLOGIN,   (files)->postlogin},         \
-    {PATH_NSSWITCH,    PATH_COPY_NSSWITCH,    (files)->nsswitch},          \
-    {PATH_DCONF_DB,    PATH_COPY_DCONF_DB,    (files)->dconfdb},           \
-    {PATH_DCONF_LOCK,  PATH_COPY_DCONF_LOCK,  (files)->dconflock},         \
-    {NULL, NULL, NULL}                                                     \
+#define GENERATED_FILES(files)                                       \
+{                                                                    \
+    {PATH_SYSTEM,      (files)->systemauth},                         \
+    {PATH_PASSWORD,    (files)->passwordauth},                       \
+    {PATH_FINGERPRINT, (files)->fingerprintauth},                    \
+    {PATH_SMARTCARD,   (files)->smartcardauth},                      \
+    {PATH_POSTLOGIN,   (files)->postlogin},                          \
+    {PATH_NSSWITCH,    (files)->nsswitch},                           \
+    {PATH_DCONF_DB,    (files)->dconfdb},                            \
+    {PATH_DCONF_LOCK,  (files)->dconflock},                          \
+    {NULL, NULL}                                                     \
 }
 
-#define GENERATED_FILES_PATHS                                              \
-{                                                                          \
-    {PATH_SYSTEM,      NULL, NULL},                                        \
-    {PATH_PASSWORD,    NULL, NULL},                                        \
-    {PATH_FINGERPRINT, NULL, NULL},                                        \
-    {PATH_SMARTCARD,   NULL, NULL},                                        \
-    {PATH_POSTLOGIN,   NULL, NULL},                                        \
-    {PATH_NSSWITCH,    NULL, NULL},                                        \
-    {PATH_DCONF_DB,    NULL, NULL},                                        \
-    {PATH_DCONF_LOCK,  NULL, NULL},                                        \
-    {NULL, NULL, NULL}                                                     \
+#define GENERATED_FILES_PATHS                                        \
+{                                                                    \
+    {PATH_SYSTEM,      NULL},                                        \
+    {PATH_PASSWORD,    NULL},                                        \
+    {PATH_FINGERPRINT, NULL},                                        \
+    {PATH_SMARTCARD,   NULL},                                        \
+    {PATH_POSTLOGIN,   NULL},                                        \
+    {PATH_NSSWITCH,    NULL},                                        \
+    {PATH_DCONF_DB,    NULL},                                        \
+    {PATH_DCONF_LOCK,  NULL},                                        \
+    {NULL, NULL}                                                     \
 }
 
-#define PROFILE_FILES(files)                                            \
-{                                                                       \
-    {FILE_SYSTEM,      NULL, (files)->systemauth},                      \
-    {FILE_PASSWORD,    NULL, (files)->passwordauth},                    \
-    {FILE_FINGERPRINT, NULL, (files)->fingerprintauth},                 \
-    {FILE_SMARTCARD,   NULL, (files)->smartcardauth},                   \
-    {FILE_POSTLOGIN,   NULL, (files)->postlogin},                       \
-    {FILE_NSSWITCH,    NULL, (files)->nsswitch},                        \
-    {FILE_DCONF_DB,    NULL, (files)->dconfdb},                         \
-    {FILE_DCONF_LOCK,  NULL, (files)->dconflock},                       \
-    {NULL, NULL, NULL}                                                  \
+#define PROFILE_FILES(files)                                         \
+{                                                                    \
+    {FILE_SYSTEM,      (files)->systemauth},                         \
+    {FILE_PASSWORD,    (files)->passwordauth},                       \
+    {FILE_FINGERPRINT, (files)->fingerprintauth},                    \
+    {FILE_SMARTCARD,   (files)->smartcardauth},                      \
+    {FILE_POSTLOGIN,   (files)->postlogin},                          \
+    {FILE_NSSWITCH,    (files)->nsswitch},                           \
+    {FILE_DCONF_DB,    (files)->dconfdb},                            \
+    {FILE_DCONF_LOCK,  (files)->dconflock},                          \
+    {NULL, NULL}                                                     \
 }
 
 /* Structure to hold information about symbolic link names and destinations.

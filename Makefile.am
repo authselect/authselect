@@ -35,7 +35,6 @@ authselect_custom_dir=@AUTHSELECT_CUSTOM_DIR@
 authselect_dconf_dir=@AUTHSELECT_DCONF_DIR@
 authselect_pam_dir=@AUTHSELECT_PAM_DIR@
 authselect_backup_dir=@AUTHSELECT_BACKUP_DIR@
-authselect_state_dir=@AUTHSELECT_STATE_DIR@
 
 install-exec-hook:
 	$(MKDIR_P) $(DESTDIR)$/$(authselect_config_dir)
@@ -45,7 +44,6 @@ install-exec-hook:
 	$(MKDIR_P) $(DESTDIR)$/$(authselect_dconf_dir)/locks
 	$(MKDIR_P) $(DESTDIR)$/$(authselect_pam_dir)
 	$(MKDIR_P) $(DESTDIR)$/$(authselect_backup_dir)
-	$(MKDIR_P) $(DESTDIR)$/$(authselect_state_dir)
 
 # Build RPMs
 RPMBUILD ?= $(PWD)/rpmbuild

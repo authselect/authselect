@@ -213,19 +213,11 @@ authselect_system_write(const char **features,
 
     struct authselect_generated generated[] = GENERATED_FILES(files);
     char *tmp_files[sizeof(generated)/sizeof(struct authselect_generated)] = {NULL};
-    char *tmp_copies[sizeof(generated)/sizeof(struct authselect_generated)] = {NULL};
 
     /* First, write content into temporary files, so we can safely fail
      * on error. */
     now = time(NULL);
     for (i = 0; generated[i].path != NULL; i++) {
-        ret = authselect_system_write_temp(generated[i].copy_path,
-                                           generated[i].content,
-                                           now, &tmp_copies[i]);
-        if (ret != EOK) {
-            goto done;
-        }
-
         ret = authselect_system_write_temp(generated[i].path,
                                            generated[i].content,
                                            now, &tmp_files[i]);
@@ -241,14 +233,6 @@ authselect_system_write(const char **features,
      * can fail is EIO which we can not do anything about and we can not
      * even recover from it.
      */
-    for (i = 0; generated[i].copy_path != NULL; i++) {
-        ret = authselect_system_rename_temp(&tmp_copies[i],
-                                            generated[i].copy_path);
-        if (ret != EOK) {
-            goto done;
-        }
-    }
-
     for (i = 0; generated[i].path != NULL; i++) {
         ret = authselect_system_rename_temp(&tmp_files[i], generated[i].path);
         if (ret != EOK) {
@@ -261,12 +245,6 @@ authselect_system_write(const char **features,
 done:
     if (ret != EOK) {
         for (i = 0; generated[i].path != NULL; i++) {
-            if (tmp_copies[i] != NULL) {
-                unlink(tmp_copies[i]);
-                free(tmp_copies[i]);
-                tmp_copies[i] = NULL;
-            }
-
             if (tmp_files[i] != NULL) {
                 unlink(tmp_files[i]);
                 free(tmp_files[i]);
@@ -280,46 +258,12 @@ done:
 }
 
 static bool
-authselect_system_validate_file(const char *path,
-                                const char *copy_path,
-                                const char *expected)
+authselect_system_validate_file(const char *path)
 {
-    char *content;
-    char *copy_content;
     errno_t ret;
     bool bret;
 
     INFO("Validating file [%s]", path);
-    expected = expected == NULL ? "" : expected;
-
-    ret = textfile_read(path, AUTHSELECT_FILE_SIZE_LIMIT, &content);
-    if (ret == ENOENT) {
-        ERROR("[%s] does not exist!", path);
-        return false;
-    } else if (ret == EACCES) {
-        ERROR("Unable to read [%s] [%d]: %s", path, ret, strerror(ret));
-        return false;
-    } else if (ret != EOK) {
-        ERROR("Unable to validate file [%s] [%d]: %s", path, ret, strerror(ret));
-        return false;
-    }
-
-    ret = textfile_read(copy_path, AUTHSELECT_FILE_SIZE_LIMIT, &copy_content);
-    if (ret == EOK) {
-        /* Compare against copy of the originally generated files. */
-        INFO("Comparing content against [%s]", copy_path);
-        bret = strcmp(content, copy_content) == 0;
-        free(copy_content);
-    } else {
-        INFO("Comparing content against current profile");
-        bret = template_validate_written_content(content, expected);
-    }
-
-    free(content);
-    if (!bret) {
-        ERROR("[%s] has unexpected content!", path);
-        return false;
-    }
 
     ret = file_is_regular(path, AUTHSELECT_UID, AUTHSELECT_GID,
                           S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH, &bret);
@@ -341,9 +285,7 @@ authselect_system_validate(struct authselect_files *files)
     int i;
 
     for (i = 0; generated[i].path != NULL; i++) {
-        bret = authselect_system_validate_file(generated[i].path,
-                                               generated[i].copy_path,
-                                               generated[i].content);
+        bret = authselect_system_validate_file(generated[i].path);
         result &= bret;
         if (!bret) {
             WARN("File [%s] was modified outside authselect!",
