@@ -312,10 +312,15 @@ if %__grep "OSTREE_VERSION=" /etc/os-release &> /dev/null; then
     done
 fi
 
+%{_bindir}/authselect check &> /dev/null
+if [ $? -eq 6 ]; then
+    NOBACKUP="--nobackup"
+fi
+
 # If we are upgrading from pre authselect-1.3.0 or this is a new installation
 # select the default configuration.
 if [ -f %{forcefile} ]; then
-    %{_bindir}/authselect select %{default_profile} --force &> /dev/null
+    %{_bindir}/authselect select %{default_profile} --force $NOBACKUP &> /dev/null
     %__rm -f %{forcefile}
 fi
 
