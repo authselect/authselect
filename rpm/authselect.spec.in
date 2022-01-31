@@ -179,12 +179,12 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %ghost %attr(0644,root,root) %{_sysconfdir}/pam.d/smartcard-auth
 %ghost %attr(0644,root,root) %{_sysconfdir}/pam.d/system-auth
 %endif
-%if %{with_user_nsswitch}
-%ghost %attr(0644,root,root) %{_sysconfdir}/authselect/user-nsswitch.conf
-%endif
 %dir %{_localstatedir}/lib/authselect
 %ghost %attr(0755,root,root) %{_localstatedir}/lib/authselect/backups/
+%if %{with_user_nsswitch}
+%ghost %attr(0644,root,root) %{_sysconfdir}/authselect/user-nsswitch.conf
 %ghost %attr(0644,root,root) %{_localstatedir}/lib/authselect/user-nsswitch-created
+%endif
 %dir %{_datadir}/authselect
 %dir %{_datadir}/authselect/vendor
 %dir %{_datadir}/authselect/default
