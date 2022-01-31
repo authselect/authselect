@@ -142,6 +142,16 @@ authselect_uninstall(void)
 
     INFO("Symbolic links were successfully removed");
 
+    /* Remove files from /etc/authselect */
+    ret = authselect_files_uninstall();
+    if (ret != EOK) {
+        ERROR("Unable to remove authselect configuration [%d]: %s",
+              ret, strerror(ret));
+        return ret;
+    }
+
+    INFO("Authselect configuration was successfully removed");
+
     return EOK;
 }
 

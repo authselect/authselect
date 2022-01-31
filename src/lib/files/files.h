@@ -230,6 +230,12 @@ errno_t
 authselect_symlinks_uninstall();
 
 /**
+ * Remove files from authselect directory.
+ */
+errno_t
+authselect_files_uninstall(void);
+
+/**
  * List all profile directories in a sorted NULL-terminated string array.
  *
  * This will find all profiles within default, vendor and custom profile

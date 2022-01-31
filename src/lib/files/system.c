@@ -319,3 +319,33 @@ authselect_system_validate_missing()
 
     return result;
 }
+
+errno_t
+authselect_files_uninstall()
+{
+    struct authselect_generated generated[] = GENERATED_FILES_PATHS;
+    errno_t ret;
+    int iret;
+    int i;
+
+    errno = 0;
+    iret = unlink(PATH_CONFIG_FILE);
+    if (iret != 0 && errno != ENOENT) {
+        ret = errno;
+        ERROR("Unable to delete [%s] [%d]: %s", PATH_CONFIG_FILE,
+              ret, strerror(ret));
+        return ret;
+    }
+
+    for (i = 0; generated[i].path != NULL; i++) {
+        /* We can ignore errors here. */
+        iret = unlink(generated[i].path);
+        if (iret != 0 && errno != ENOENT) {
+            ret = errno;
+            WARN("Unable to delete [%s] [%d]: %s", generated[i].path,
+                 ret, strerror(ret));
+        }
+    }
+
+    return EOK;
+}
