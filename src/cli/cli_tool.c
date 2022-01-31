@@ -445,6 +445,8 @@ int cli_tool_main(int argc, const char **argv,
         return 4;
     case EACCES:
         return 5;
+    case ENODEV:
+        return 6;
     }
 
     /* Generic error. */

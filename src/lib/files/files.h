@@ -71,7 +71,7 @@ bool
 authselect_config_locations_writable(void);
 
 /**
- * Validate existing configuration.
+ * Validate existing authselect configuration.
  *
  * Check that all files are created, readable and with correct content
  * and that all symbolic links exist.
@@ -79,8 +79,31 @@ authselect_config_locations_writable(void);
  * @return True if the configuration is valid, false otherwise.
  */
 bool
-authselect_config_validate_existing(const char *profile_id,
-                                    const char **features);
+authselect_config_validate_authselect(const char *profile_id,
+                                      const char **features);
+
+/**
+ * Validate existing non-authselect configuration.
+ *
+ * Check that there are no left overs from previous authselect configuration.
+ * All generated files must be removed and all symbolic links must either not
+ * exists, point to different location or must be other file or directory.
+ *
+ * @return True if the are no left overs, false otherwise.
+ */
+bool
+authselect_config_validate_user(void);
+
+/**
+ * Validate missing configuration.
+ *
+ * Check that there is no configuration at all (there are no authselect and
+ * no system files present).
+ *
+ * @return True if there is no configuration, false otherwise.
+ */
+bool
+authselect_config_validate_missing(void);
 
 /**
  * Generate contents of nsswitch.conf.
@@ -107,18 +130,6 @@ authselect_nsswitch_generate(const char *template,
 errno_t
 authselect_nsswitch_find_maps(char *content,
                               char ***_maps);
-
-/**
- * Validate non-existing configuration.
- *
- * Check that there are no left overs from previous authselect configuration.
- * All generated files must be removed and all symbolic links must either not
- * exists, point to different location or must be other file or directory.
- *
- * @return True if the are no left overs, false otherwise.
- */
-bool
-authselect_config_validate_non_existing();
 
 /**
  * Read system files templates and return them in files structure.
@@ -234,6 +245,7 @@ authselect_symlinks_uninstall();
  */
 errno_t
 authselect_files_uninstall(void);
+
 
 /**
  * List all profile directories in a sorted NULL-terminated string array.

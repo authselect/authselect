@@ -271,14 +271,19 @@ authselect_validate_configuration(bool *_is_valid)
 
     ret = authselect_config_read(&profile_id, &features);
     if (ret == ENOENT) {
-        *_is_valid = authselect_config_validate_non_existing();
-        return ENOENT;
+        *_is_valid = authselect_config_validate_user();
+
+        if (*_is_valid && authselect_config_validate_missing()) {
+            return ENOENT;
+        }
+
+        return EEXIST;
     } if (ret != EOK) {
         return ret;
     }
 
-    *_is_valid = authselect_config_validate_existing(profile_id,
-                                                     (const char **)features);
+    *_is_valid = authselect_config_validate_authselect(profile_id,
+                                                       (const char **)features);
 
     free(profile_id);
     string_array_free(features);

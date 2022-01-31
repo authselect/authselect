@@ -192,8 +192,9 @@ authselect_feature_disable(const char *feature);
  * @return
  * - 0 if there is an existing authselect configuration, the result of
  *   validation is returned in @_is_valid output variable.
- * - ENOENT if there is no existing authselect configuration, the result of
- *   validation is returned in @_is_valid output variable.
+ * - ENOENT if there is no existing configuration
+ * - EEXIST if there is existing configuration, not created by authselect,
+  *  the result of validation is returned in @_is_valid output variable.
  * - Other errno code on generic error.
  */
 int
