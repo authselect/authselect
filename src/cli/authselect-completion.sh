@@ -191,7 +191,7 @@ _authselect_completions()
 
     COMMANDS=(select apply-changes list list-features show requirements current
               check test enable-feature disable-feature create-profile
-              backup-list backup-remove backup-restore)
+              backup-list backup-remove backup-restore opt-out)
 
     possibleopts="$(get_option_params)"
     if [[ "$possibleopts" != "" ]]; then

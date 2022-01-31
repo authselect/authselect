@@ -37,6 +37,12 @@ automatically generate a backup of your current configuration so if you wish
 to go back you can restore it with *authselect backup-restore* command
 (see description below).
 
+OPT-OUT FROM AUTHSELECT
+-----------------------
+To stop authselect from managing your configuration, run *authselect opt-out*.
+This will remove all authselect configuration from your system and you can then
+modify your configuration manually.
+
 AVAILABLE COMMANDS
 ------------------
 To list all available commands run *authselect* without any parameters.
@@ -231,6 +237,14 @@ These commands can be used to manage backed up configurations.
 *backup-restore* BACKUP::
     Restore configuration from backup named _BACKUP_. *Note:* this will
     overwrite current configuration.
+
+OTHER COMMANDS
+--------------
+
+*opt-out*::
+    Remove authselect configuration. This will restore nsswitch and PAM
+    configuration under its system location and authselect will no longer
+    manage it. Run *authselect select* to opt-in again.
 
 COMMON OPTIONS
 --------------

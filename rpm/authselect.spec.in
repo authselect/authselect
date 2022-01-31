@@ -264,7 +264,7 @@ if [ $1 == 0 ] ; then
     # deleted safely. If this fail, the uninstallation must fail to avoid
     # breaking the system by removing PAM files. However, the command can
     # only fail if it can not write to the file system.
-    %{_bindir}/authselect uninstall
+    %{_bindir}/authselect opt-out
 fi
 
 %pre libs

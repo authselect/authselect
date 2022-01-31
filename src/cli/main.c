@@ -967,7 +967,9 @@ int main(int argc, const char **argv)
         CLI_TOOL_COMMAND("backup-list", "List available backups", CLI_CMD_NONE, backup_list),
         CLI_TOOL_COMMAND("backup-remove", "Remove backup", CLI_CMD_REQUIRE_ROOT, backup_remove),
         CLI_TOOL_COMMAND("backup-restore", "Restore from backup", CLI_CMD_REQUIRE_ROOT, backup_restore),
-        CLI_TOOL_COMMAND("uninstall", "Uninstall authselect configuration", CLI_CMD_REQUIRE_ROOT | CLI_CMD_HIDDEN, uninstall),
+        CLI_TOOL_DELIMITER("Other:"),
+        CLI_TOOL_COMMAND("opt-out", "Opt-out from authselect managed configuration", CLI_CMD_REQUIRE_ROOT, uninstall),
+        /* Hidden commands */
         CLI_TOOL_COMMAND("version", "Print authselect version", CLI_CMD_HIDDEN, version),
         CLI_TOOL_LAST
     };

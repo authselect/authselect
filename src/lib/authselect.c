@@ -114,6 +114,12 @@ authselect_activate(const char *profile_id,
         goto done;
     }
 
+    if (!is_valid) {
+        ERROR("Changes to the authselect configuration were detected. "
+              "These changes will be overwritten. Please call "
+              "'authselect opt-out' in order to keep them.");
+    }
+
     ret = authselect_profile_activate(profile, features);
 
 done:
