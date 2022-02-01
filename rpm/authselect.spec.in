@@ -72,11 +72,8 @@ supported by authselect.
 Summary: Utility library used by the authselect tool
 # Required by scriptlets
 Requires: coreutils
-Requires: findutils
-Requires: gawk
-Requires: grep
 Requires: sed
-Requires: systemd
+Suggests: systemd
 %if %{enforce_authselect}
 # authselect now owns nsswitch.conf (glibc) and pam files
 Conflicts: pam < 1.5.2-8
