@@ -301,7 +301,7 @@ fi
 
 # Keep nss-altfiles for all rpm-ostree based systems.
 # See https://github.com/authselect/authselect/issues/48
-if %__grep "OSTREE_VERSION=" /etc/os-release &> /dev/null; then
+if test -e /run/ostree-booted; then
     for PROFILE in `ls %{_datadir}/authselect/default`; do
         %{_bindir}/authselect create-profile $PROFILE --vendor --base-on $PROFILE --symlink-pam --symlink-dconf --symlink=REQUIREMENTS --symlink=README &> /dev/null
 %if %{with_user_nsswitch}
