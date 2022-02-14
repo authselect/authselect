@@ -4,6 +4,9 @@ Make sure that NIS service is configured and enabled. See NIS documentation for 
                                                                                           {include if "with-pam-u2f"}
 - with-pam-u2f is selected, make sure that the pam u2f module is installed                {include if "with-pam-u2f"}
   - users can then configure keys using the pamu2fcfg tool                                {include if "with-pam-u2f"}
+                                                                                          {include if "with-pam-gnome-keyring"}
+- with-pam-gnome-keyring is selected, make sure the pam_gnome_keyring module              {include if "with-pam-gnome-keyring"}
+  is present.                                                                             {include if "with-pam-gnome-keyring"}
                                                                                           {include if "with-pam-u2f-2fa"}
 - with-pam-u2f-2fa is selected, make sure that the pam u2f module is installed            {include if "with-pam-u2f-2fa"}
   - users can then configure keys using the pamu2fcfg tool                                {include if "with-pam-u2f-2fa"}
