@@ -4,6 +4,7 @@ auth        required                                     pam_env.so
 auth        required                                     pam_faillock.so preauth silent                         {include if "with-faillock"}
 auth        [success=done default=bad]                   pam_fprintd.so
 auth        required                                     pam_faillock.so authfail                               {include if "with-faillock"}
+auth        optional                                     pam_gnome_keyring.so only_if=login auto_start          {include if "with-pam-gnome-keyring"}
 auth        required                                     pam_deny.so
 
 account     required                                     pam_access.so                                          {include if "with-pamaccess"}
@@ -19,3 +20,4 @@ session     optional                                     pam_ecryptfs.so unwrap 
 session     optional                                     pam_oddjob_mkhomedir.so                               {include if "with-mkhomedir"}
 session     [success=1 default=ignore]                   pam_succeed_if.so service in crond quiet use_uid
 session     required                                     pam_unix.so
+session     optional                                     pam_gnome_keyring.so only_if=login auto_start          {include if "with-pam-gnome-keyring"}
