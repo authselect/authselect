@@ -21,3 +21,7 @@ Make sure that SSSD service is configured and enabled. See SSSD documentation fo
 - with-files-domain is selected, make sure the files provider is enabled in SSSD          {include if "with-files-domain"}
   - set enable_files_domain=true in [sssd] section of /etc/sssd/sssd.conf                 {include if "with-files-domain"}
   - or create a custom domain with id_provider=files                                      {include if "with-files-domain"}
+                                                                                          {include if "with-gssapi"}
+- with-gssapi is selected, make sure that GSSAPI authenticaiton is enabled in SSSD        {include if "with-gssapi"}
+  - set pam_gssapi_services to a list of allowed services in /etc/sssd/sssd.conf          {include if "with-gssapi"}
+  - see additional information in pam_sss_gss(8)                                          {include if "with-gssapi"}

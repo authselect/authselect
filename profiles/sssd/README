@@ -97,6 +97,10 @@ with-files-access-provider::
     system accounts (as defined by pam_usertype, including root) will be
     able to log in.
 
+with-gssapi::
+    If set, pam_sss_gss module is enabled to perform user authentication over
+    GSSAPI.
+
 without-nullok::
     Do not add nullok parameter to pam_unix.
 
