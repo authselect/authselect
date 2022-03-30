@@ -193,11 +193,11 @@ previous example.
   auth        required                                     pam_env.so
   auth        required                                     pam_faildelay.so delay=2000000
   auth        [success=1 default=ignore]                   pam_succeed_if.so service notin login:gdm:xdm:kdm:kde:xscreensaver:gnome-screensaver:kscreensaver quiet use_uid {include if "with-smartcard-required"}
-  auth        [success=done ignore=ignore default=die]     pam_sss.so require_cert_auth ignore_authinfo_unavail   {include if "with-smartcard-required"}
+  auth        [success=done ignore=ignore default=die]     pam_sss.so require_cert_auth ignore_authinfo_unavail             {include if "with-smartcard-required"}
   auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so uid >= 1000 quiet
-  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so                                       {exclude if "with-smartcard"}
-  auth        [default=2 ignore=ignore success=ok]         pam_localuser.so                                       {include if "with-smartcard"}
-  auth        [success=done authinfo_unavail=ignore ignore=ignore default=die] pam_sss.so try_cert_auth           {include if "with-smartcard"}
+  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so                                                 {exclude if "with-smartcard"}
+  auth        [default=2 ignore=ignore success=ok]         pam_localuser.so                                                 {include if "with-smartcard"}
+  auth        [success=done authinfo_unavail=ignore user_unknown=ignore ignore=ignore default=die] pam_sss.so try_cert_auth {include if "with-smartcard"}
   auth        sufficient                                   pam_unix.so {if not "without-nullok":nullok}
   auth        requisite                                    pam_succeed_if.so uid >= 1000 quiet_success
   auth        sufficient                                   pam_sss.so forward_pass
