@@ -287,6 +287,16 @@ authselect_restore_authselect_configuration(const char *path)
         {FILE_NSSWITCH,    PATH_NSSWITCH, false},
         {FILE_DCONF_DB,    PATH_DCONF_DB, false},
         {FILE_DCONF_LOCK,  PATH_DCONF_LOCK, false},
+
+        {FILE_SYSTEM,      PATH_COPY_SYSTEM, false},
+        {FILE_PASSWORD,    PATH_COPY_PASSWORD, false},
+        {FILE_FINGERPRINT, PATH_COPY_FINGERPRINT, false},
+        {FILE_SMARTCARD,   PATH_COPY_SMARTCARD, false},
+        {FILE_POSTLOGIN,   PATH_COPY_POSTLOGIN, false},
+        {FILE_NSSWITCH,    PATH_COPY_NSSWITCH, false},
+        {FILE_DCONF_DB,    PATH_COPY_DCONF_DB, false},
+        {FILE_DCONF_LOCK,  PATH_COPY_DCONF_LOCK, false},
+
         {NULL, NULL, false},
     };
     errno_t ret;
