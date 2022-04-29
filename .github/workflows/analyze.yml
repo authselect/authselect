@@ -4,6 +4,9 @@ on:
   pull_request:
   schedule:
     - cron: '30 7 * * 1'
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   codeql:
     runs-on: ubuntu-latest
