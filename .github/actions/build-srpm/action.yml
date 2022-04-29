@@ -1,0 +1,43 @@
+name: Build Authselect's source rpm
+inputs:
+  version:
+    description: Package version.
+    required: true
+  release:
+    description: Package release.
+    required: false
+    default: '${{ github.run_number }}'
+  working-directory:
+    description: Working directory.
+    required: false
+    default: '.'
+outputs:
+  file:
+    description: Source rpm file name.
+    value: ${{ steps.srpm.outputs.file }}
+  path:
+    description: Path to the source rpm.
+    value: ${{ steps.srpm.outputs.path }}
+runs:
+  using: 'composite'
+  steps:
+  - name: Generate tarball and spec file
+    shell: bash
+    run: |
+      pushd '${{ inputs.working-directory }}'
+      version="${{ inputs.version }}"
+      release="${{ inputs.release }}"
+      name="authselect-$version"
+      tar -cvzf "$name.tar.gz" --transform "s,^,$name/," *
+
+      cp rpm/authselect.spec.in ./authselect.spec
+
+      sed -iE "s/@PACKAGE_VERSION@/$version/g" ./authselect.spec
+      sed -iE "s/@RELEASE_NUMBER@/$release/g" ./authselect.spec
+      popd
+  - name: Build source rpm
+    id: srpm
+    uses: next-actions/build-srpm@master
+    with:
+      tarball: ${{ inputs.working-directory }}/authselect-${{ inputs.version }}.tar.gz
+      specfile: ${{ inputs.working-directory }}/authselect.spec

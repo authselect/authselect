@@ -1,116 +1,102 @@
-name: Fedora Copr
+name: copr
 on:
   pull_request_target:
     types: [opened, synchronize, reopened]
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+env:
+  COPR_ACCOUNT: '@authselect'
+  COPR_PROJECT: pr${{ github.event.pull_request.number }}
+  PR_ID: ${{ github.event.pull_request.number }}
+  PR_URL: ${{ github.event.pull_request.html_url }}
 jobs:
-  build:
+  prepare:
     runs-on: ubuntu-latest
-    container: fedora:latest
+    outputs:
+      srpm: ${{ steps.srpm.outputs.file }}
+      chroots_json: ${{ steps.chroots.outputs.json }}
     permissions:
       contents: read
-      pull-requests: write
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout source
+      uses: actions/checkout@v2
       with:
         ref: ${{ github.event.pull_request.head.ref }}
         repository: ${{ github.event.pull_request.head.repo.full_name }}
 
-    - name: Install dependencies
-      run: |
-        dnf install -y rpm-build m4 copr-cli
-
-    - name: Get version number
-      id: info
-      env:
-        PRID: ${{ github.event.pull_request.number }}
-      run: |
-        PROJECT="pr$PRID"
-        VERSION=`echo -e 'm4_include(version.m4)\nVERSION_NUMBER' | m4 -P | tail -n1`
-        RELEASE="$PROJECT.$GITHUB_RUN_NUMBER"
-
-        echo ::set-output name=project::$PROJECT
-        echo ::set-output name=version::$VERSION
-        echo ::set-output name=release::$RELEASE
-
     - name: Build source rpm
-      env:
-        VERSION: ${{ steps.info.outputs.version }}
-        RELEASE: ${{ steps.info.outputs.release }}
-      run: |
-        set -ex
-
-        NAME="authselect-$VERSION"
-        TARBALL="$NAME.tar.gz"
-
-        tar -cvzf $TARBALL --transform "s,^,$NAME/," *
-
-        rm -f rpmbuild
-        mkdir -p rpmbuild/BUILD
-        mkdir -p rpmbuild/RPMS
-        mkdir -p rpmbuild/SOURCES
-        mkdir -p rpmbuild/SPECS
-        mkdir -p rpmbuild/SRPMS
-
-        mv $TARBALL rpmbuild/SOURCES
-        cp rpm/authselect.spec.in rpmbuild/SPECS/authselect.spec
-
-        sed -iE "s/@PACKAGE_VERSION@/$VERSION/g" rpmbuild/SPECS/authselect.spec
-        sed -iE "s/@RELEASE_NUMBER@/$RELEASE/g" rpmbuild/SPECS/authselect.spec
-
-        rpmbuild --define "_topdir $(pwd)/rpmbuild" -bs rpmbuild/SPECS/authselect.spec
-
-    - name: Create copr configuration
-      env:
-        COPR_SECRETS: ${{ secrets.COPR_SECRETS }}
-      run: |
-        echo -e "$COPR_SECRETS" > .coprcfg
-
-    - name: Add pull request comment
-      env:
-        PROJECT: https://copr.fedorainfracloud.org/coprs/g/authselect/${{ steps.info.outputs.project }}
-        BUILDS: https://copr.fedorainfracloud.org/coprs/g/authselect/${{ steps.info.outputs.project }}/builds
-        BADGE: https://copr.fedorainfracloud.org/coprs/g/authselect/${{ steps.info.outputs.project }}/package/authselect/status_image/last_build.png
-      uses: marocchino/sticky-pull-request-comment@v2
+      id: srpm
+      uses: ./.github/actions/build-srpm
       with:
-        message: |
-          * Fedora Copr project of this Pull Request: ${{ env.PROJECT }}
-            [![The project is not yet created.](${{ env.BADGE }})](${{ env.BUILDS }})
-          * You can install this pull request by running:
+        version: ${{ env.COPR_PROJECT }}
 
-          ```console
-          $ dnf copr enable @authselect/${{ steps.info.outputs.project }}
-          $ dnf install authselect
-          ```
+    - name: Upload source rpm as an artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{ steps.srpm.outputs.file }}
+        path: ${{ steps.srpm.outputs.path }}
+
+    - name: Initialize copr actions
+      id: copr
+      uses: next-actions/copr/init@master
+      with:
+        token: ${{ secrets.COPR_SECRETS }}
+
+    - name: Get copr chroots
+      id: chroots
+      uses: next-actions/copr/filter-chroots@master
+      with:
+        coprcfg: ${{ secrets.COPR_SECRETS }}
+        filter: "fedora-.+-x86_64|centos-stream-.*-x86_64"
+        exclude: "fedora-eln-.+"
 
     - name: Create copr project
-      env:
-        PROJECT: ${{ steps.info.outputs.project }}
-        PRID: ${{ github.event.pull_request.number }}
-        URL: ${{ github.event.pull_request.html_url }}
-      run: |
-        set -ex
+      uses: next-actions/copr/create-project@master
+      with:
+        coprcfg: ${{ steps.copr.outputs.coprcfg }}
+        chroots: ${{ steps.chroots.outputs.list }}
+        project: ${{ env.COPR_PROJECT }}
+        account: ${{ env.COPR_ACCOUNT }}
+        fedora-review: off
+        description: 'Development package for [authselect pull request #${{ env.PR_ID }}](${{ env.PR_URL }}).'
+        instructions: 'Use this for test purpose only. Do not use this in production.'
 
-        if copr-cli --config .coprcfg list @authselect | grep "$PROJECT" &> /dev/null; then
-          echo "Project $PROJECT already exist. Nothing to do."
-          exit 0
-        fi
+    - name: Cancel pending builds
+      uses: next-actions/copr/cancel-builds@master
+      with:
+        coprcfg: ${{ steps.copr.outputs.coprcfg }}
+        project: ${{ env.COPR_PROJECT }}
+        account: ${{ env.COPR_ACCOUNT }}
 
-        copr-cli --config .coprcfg create @authselect/$PROJECT \
-          --chroot centos-stream-8-x86_64    \
-          --chroot centos-stream-9-x86_64    \
-          --chroot epel-8-x86_64             \
-          --chroot fedora-34-x86_64          \
-          --chroot fedora-35-x86_64          \
-          --chroot fedora-rawhide-x86_64     \
-          --unlisted-on-hp on                \
-          --appstream off                    \
-          --delete-after-days 60             \
-          --fedora-review                    \
-          --description "Development package for [authselect pull request #$PRID]($URL)." \
-          --instructions "Use this for test purpose only. Do not use this in production."
+  build:
+    runs-on: ubuntu-latest
+    needs: [prepare]
+    strategy:
+      matrix:
+        chroot: ${{ fromJson(needs.prepare.outputs.chroots_json) }}
+      fail-fast: false
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v2
 
-    - name: Submit copr build
-      env:
-        PROJECT: ${{ steps.info.outputs.project }}
-      run: |
-        copr-cli --config .coprcfg  build @authselect/$PROJECT rpmbuild/SRPMS/authselect-*.rpm
+    - name: Downlooad source rpm
+      uses: actions/download-artifact@v2
+      with:
+        name: ${{ needs.prepare.outputs.srpm }}
+        path: .
+
+    - name: Initialize copr actions
+      id: copr
+      uses: next-actions/copr/init@master
+      with:
+        token: ${{ secrets.COPR_SECRETS }}
+
+    - name: Build srpm in copr for ${{ matrix.chroot }}
+      uses: next-actions/copr/submit-build@master
+      with:
+        coprcfg: ${{ steps.copr.outputs.coprcfg }}
+        srpm: ${{ needs.prepare.outputs.srpm }}
+        chroots: ${{ matrix.chroot }}
+        project: ${{ env.COPR_PROJECT }}
+        account: ${{ env.COPR_ACCOUNT }}
