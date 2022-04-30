@@ -1,0 +1,1729 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Red Hat, Inc.
+# This file is distributed under the same license as the authselect package.
+# Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: authselect 1.2.4\n"
+"Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
+"POT-Creation-Date: 2021-12-06 14:13+0100\n"
+"PO-Revision-Date: 2022-03-16 19:17+0000\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <https://translate.fedoraproject.org/projects/"
+"authselect/master-application/ka/>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.11.2\n"
+
+#: src/lib/authselect.c:47 src/lib/authselect.c:187
+msgid "Unable to obtain supported features"
+msgstr "მიხარდაჭერილი თვისებების სიის მიღება"
+
+#: src/lib/authselect.c:59
+#, c-format
+msgid "Unknown profile feature [%s], did you mean [%s]?"
+msgstr "პროფილის უცნობი თვისება [%s]. იქნებ [%s]?"
+
+#: src/lib/authselect.c:62
+#, c-format
+msgid "Unknown profile feature [%s]"
+msgstr "პროფილის უცნობი თვისება [%s]"
+
+#: src/lib/authselect.c:86
+#, c-format
+msgid "Trying to activate profile [%s]"
+msgstr "პროფილის აქტივაცია: [%s]"
+
+#: src/lib/authselect.c:90 src/lib/authselect.c:180 src/lib/profiles/read.c:316
+#, c-format
+msgid "Unable to find profile [%s] [%d]: %s"
+msgstr "პროფილის მოძებნის შეცდომა [%s] [%d]: %s"
+
+#: src/lib/authselect.c:101
+msgid "Enforcing activation!"
+msgstr "ძალით აქტივაცია!"
+
+#: src/lib/authselect.c:109
+#, c-format
+msgid "Unable to check configuration [%d]: %s"
+msgstr "კონფიგურაციის შემოწმების შეცდომა [%d]: %s"
+
+#: src/lib/authselect.c:114
+msgid "Unexpected changes to the configuration were detected."
+msgstr "კონფიგურაციაში შეტანილია მოულოდნელი ცვლილებები."
+
+#: src/lib/authselect.c:115
+msgid ""
+"Refusing to activate profile unless those changes are removed or overwrite "
+"is requested."
+msgstr ""
+"უარი პროფილის აქტივაციაზე მანამდე, სანამ მოთხოვნილი ხაზები, მოთხოვნის "
+"შესაბამისად არ შეიცვლება ან არ წაიშლება."
+
+#: src/lib/authselect.c:124
+msgid "File that needs to be overwritten was found"
+msgstr "გადაწერი ფაილი ნაპოვნია"
+
+#: src/lib/authselect.c:125
+msgid ""
+"Refusing to activate profile unless this file is removed or overwrite is "
+"requested."
+msgstr ""
+"უარი პროფილის აქტივაციაზე მანამდე, სანამ ეს ფაილი არ წაიშლება ან "
+"გადაიწერება, მოთხოვნის შესაბამისად."
+
+#: src/lib/authselect.c:136
+#, c-format
+msgid "Unable to activate profile [%s] [%d]: %s"
+msgstr "პროფილის აქტივაციის შეცდომა [%s] [%d]:%s"
+
+#: src/lib/authselect.c:150
+msgid "Trying to uninstall authselect configuration"
+msgstr "authselect-ის კონფიგურაციის წაშლა"
+
+#: src/lib/authselect.c:154
+#, c-format
+msgid "Unable to remove symlinks [%d]: %s"
+msgstr "სიმბმულების წაშლის შეცდომა [%d]:%s"
+
+#: src/lib/authselect.c:158
+msgid "Symbolic links were successfully removed"
+msgstr "სიმბოლური ბმულები წარმატებით წაიშალა"
+
+#: src/lib/authselect.c:197
+#, c-format
+msgid "Profile feature [%s] is no longer supported, removing it..."
+msgstr "პროფილის თვისება [%s] მხარდაჭერილი აღარაა. მიმდინარეობს მისი წაშლა.."
+
+#: src/lib/authselect_backup.c:48
+#, c-format
+msgid "Unable to create backup directory [%s/%s] [%d]: %s"
+msgstr "მარქაფის საქაღალდის შექმნის შეცდომა [%s/%s] [%d]:%s"
+
+#: src/lib/authselect_backup.c:71
+#, c-format
+msgid "Unable to create backup directory [%s] [%d]: %s"
+msgstr "მარქაფის საქაღალდის შექმნის შეცდომა [%s] [%d]:%s"
+
+#: src/lib/authselect_backup.c:92
+#, c-format
+msgid "Creating temporary directory at [%s]"
+msgstr "დროებითი საქაღალდის შექმნა: [%s]"
+
+#: src/lib/authselect_backup.c:125 src/lib/authselect_profile.c:377
+#: src/lib/authselect_profile.c:457
+#, c-format
+msgid "There is no filename in [%s]"
+msgstr "[%s]-ში ფაილის სახელი არაა"
+
+#: src/lib/authselect_backup.c:129
+#, c-format
+msgid "Copying [%s] to [%s/%s]"
+msgstr "[%s]-ის კოპირება [%s/%s]-ში"
+
+#: src/lib/authselect_backup.c:133 src/lib/util/selinux.c:393
+#, c-format
+msgid "File [%s] does not exist"
+msgstr "ფაილი [%s] არ არსებობს"
+
+#: src/lib/authselect_backup.c:135 src/lib/authselect_backup.c:152
+#, c-format
+msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
+msgstr "[%s]-ის [%s/%s] [%d]:%s-ში კოპირების შეცდომა"
+
+#: src/lib/authselect_backup.c:175
+#, c-format
+msgid "Trying to backup authselect configuration to [%s]"
+msgstr "მინდინარეობს authselect-ის მიმდინარე კონფიგურაციის [%s]-ში მარქაფი"
+
+#: src/lib/authselect_backup.c:180
+#, c-format
+msgid "Trying to backup system configuration to [%s]"
+msgstr "მიმდინარეობს სისტემის კონფიგურაციის მარქაფი [%s]-ში"
+
+#: src/lib/authselect_backup.c:185
+#, c-format
+msgid "Backup was successfully created at [%s]"
+msgstr "მარქაფი [%s]-ში წარმატებით შეიქმნა"
+
+#: src/lib/authselect_backup.c:189
+#, c-format
+msgid "Unable to create backup [%d]: %s"
+msgstr "მარქაფის [%d]:%s შექმნის შეცდომა"
+
+#: src/lib/authselect_backup.c:206
+msgid " does not exist."
+msgstr " არ არსებობს."
+
+#: src/lib/authselect_backup.c:209 src/lib/profiles/list.c:50
+#, c-format
+msgid "Unable to list directory [%s] [%d]: %s"
+msgstr "საქაღალდეების სიის მიღების შეცდომა [%s] [%d]:%s"
+
+#: src/lib/authselect_backup.c:223
+#, c-format
+msgid "Removing backup [%s]"
+msgstr "მარქაფის [%s] წაშლა"
+
+#: src/lib/authselect_backup.c:232
+#, c-format
+msgid "Unable to delete directory [%s] [%d]: %s"
+msgstr "საქაღალდის [%s] [%d]:%s წაშლის შეცდომა"
+
+#: src/lib/authselect_backup.c:305
+#, c-format
+msgid "Unable to copy files [%d]: %s"
+msgstr "ფაილების [%d]:%s კოპირების შეცდომა"
+
+#: src/lib/authselect_backup.c:311 src/lib/profiles/activate.c:78
+#, c-format
+msgid "Unable to create symbolic links [%d]: %s"
+msgstr "სიმბოლური ბმულების შექმნის შეცდომა: [%d]:%s"
+
+#: src/lib/authselect_backup.c:317 src/lib/profiles/activate.c:84
+msgid "Dconf is not installed on your system"
+msgstr "თქვენს სისტემაში Dconf არ აყენია"
+
+#: src/lib/authselect_backup.c:319 src/lib/profiles/activate.c:86
+#, c-format
+msgid "Unable to update dconf database [%d]: %s"
+msgstr "dconf-ის ბაზის გახსნის შეცდომა [%d]:%s"
+
+#: src/lib/authselect_backup.c:342
+#, c-format
+msgid "Restoring configuration from backup [%s]"
+msgstr "კონფიგურაციის [%s]-დან აღდგენა"
+
+#: src/lib/authselect_backup.c:358
+#, c-format
+msgid "Backup [%s] contains authselect configuration"
+msgstr "მარქაფი [%s] შეიცავს authselect-ის კონფიგურაციას"
+
+#: src/lib/authselect_backup.c:361
+#, c-format
+msgid "Backup [%s] contains non-authselect configuration"
+msgstr "მარქაფი [%s] არ შეიცავს authselect-ის კონფიგურაციას"
+
+#: src/lib/authselect_backup.c:367
+#, c-format
+msgid "Unable to restore [%s] [%d]: %s"
+msgstr "[%s] [%d]:%s-ის აღდგენის შეცდომა"
+
+#: src/lib/authselect_profile.c:104
+msgid "Unable to generate nsswitch.conf"
+msgstr "nsswitch.conf-ის გენერაციის შეცდომა"
+
+#: src/lib/authselect_profile.c:111
+#, c-format
+msgid "Unable to find nsswitch maps [%d]: %s"
+msgstr "nsswitch-ის მიმაგრებების ძებნის შეცდომა [%d]:%s"
+
+#: src/lib/authselect_profile.c:132
+msgid "Unable to create array (out of memory)"
+msgstr "მასივის შექმნის შეცდომა (არასაკმარისი მეხსიერება)"
+
+#: src/lib/authselect_profile.c:141 src/lib/authselect_profile.c:150
+msgid "Unable to obtain feature list (out of memory)"
+msgstr "თვისებების სიის მიღება შეუძლებელია (არასაკმარისი მეხსიერება)"
+
+#: src/lib/authselect_profile.c:344
+#, c-format
+msgid "Creating empty profile at [%s]"
+msgstr "[%s]-ში ცარიელი პროფილის შექმნა"
+
+#: src/lib/authselect_profile.c:348 src/lib/authselect_profile.c:449
+#, c-format
+msgid "Unable to make path [%s] [%d]: %s"
+msgstr "ბილიკი [%s] [%d]:%s-ს შექმნის შეცდომა"
+
+#: src/lib/authselect_profile.c:355 src/lib/authselect_profile.c:408
+#, c-format
+msgid "Unable to write to [%s] [%d]: %s"
+msgstr "[%s] [%d]:%s-ში ჩაწერის შეცდომა"
+
+#: src/lib/authselect_profile.c:385
+#, c-format
+msgid "Omitting [%s] since it does not exist in base profile"
+msgstr "[%s]-ის გამოტოვება მისი საბაზისო პროფილში არარსებობის გამო"
+
+#: src/lib/authselect_profile.c:389
+#, c-format
+msgid "Unable to check presence of [%s] [%d]: %s"
+msgstr "[%s] [%d]:%s-ის ყოფნადობის შემოწმების შეცდომა"
+
+#: src/lib/authselect_profile.c:397
+#, c-format
+msgid "Unable to create symbolic link [%s] to [%s] [%d]: %s"
+msgstr "სიმბმული [%s]-ის [%s] [%d]:%s-მდე შექმნის შეცდომა"
+
+#: src/lib/authselect_profile.c:430
+#, c-format
+msgid "Creating new profile from \"%s\" at [%s]"
+msgstr "ახალი პროფილის შექმნა \"%s\"-დან [%s]-მდე"
+
+#: src/lib/authselect_profile.c:434
+#, c-format
+msgid "Unable to read base profile [%s] [%d]: %s"
+msgstr "საბაზისო პროფილის წაკითხვის შეცდომა [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:442
+msgid "Unable to resolve symbolic links names"
+msgstr "სიმბოლური ბმულების სახელების გადაწყვეტის შეცდომა"
+
+#: src/lib/authselect_profile.c:467 src/lib/authselect_profile.c:480
+#: src/lib/authselect_profile.c:494
+#, c-format
+msgid "Unable to create [%s] [%d]: %s"
+msgstr "[%s] [%d]: %s-ის შექმნის შეცდომა"
+
+#: src/lib/authselect_profile.c:502
+#, c-format
+msgid "Unknown file name [%s]"
+msgstr "ფაილის უცნობი სახელი [%s]"
+
+#: src/lib/authselect_profile.c:529
+msgid "Name can not be empty"
+msgstr "სახელი არ შეიძლება იყოს ცარიელი"
+
+#: src/lib/authselect_profile.c:541
+msgid "Default profile can not be created"
+msgstr "ნაგულისხმევი პროფილის შექმნა შეუძლებელია"
+
+#: src/lib/authselect_profile.c:544
+msgid "Value AUTHSELECT_PROFILE_ANY is invalid in this context"
+msgstr "მნიშვნელობა AUTHSELECT_PROFILE_ANY მა კონტექსტში არასწორია"
+
+#: src/lib/authselect_profile.c:549
+msgid "Unable to create profile path: out of memory"
+msgstr "პროფილის ბილიკის შექმნის შეცდომა: არასაკმარისი მეხსიერება"
+
+#: src/lib/authselect_profile.c:555
+#, c-format
+msgid "Profile \"%s\" already exist at [%s]"
+msgstr "პროფილი \"%s\" უკვე არსებობს [%s]-ზე"
+
+#: src/lib/authselect_profile.c:559
+#, c-format
+msgid "Unable to access [%s] [%d]: %s"
+msgstr "წვდომა [%s] [%d]: %s-ზე აკრძალულია"
+
+#: src/lib/authselect_profile.c:565
+msgid "Unable to create file name: out of memory"
+msgstr "ფაილის სახელის შექმნის შეცდომა: არასაკმარისი მეხსიერება"
+
+#: src/lib/authselect_profile.c:573
+#, c-format
+msgid "Unable to create empty profile [%d]: %s"
+msgstr "ცარიელი პროფილის შექმნის შეცდომა [%d]:%s"
+
+#: src/lib/authselect_profile.c:582
+#, c-format
+msgid "Unable to create profile [%d]: %s"
+msgstr "პროფილის შექმნის შეცდომა [%d]:%s"
+
+#: src/lib/files/config.c:153
+msgid "Checking if all required directories are writable."
+msgstr "საჭირო საქაღალდეების ჩაწერის წვდომის შემოწმება."
+
+#: src/lib/files/config.c:158
+#, c-format
+msgid "Unable to get path to %s parent directory!"
+msgstr "%s-ის მშობელი საქაღალდის ბილიკის მიღების შეცდომა!"
+
+#: src/lib/files/config.c:165
+#, c-format
+msgid "Creating path [%s]"
+msgstr "ბილიკის შექმნა [%s]"
+
+#: src/lib/files/config.c:169
+#, c-format
+msgid "Unable to create path [%s] [%d]: %s"
+msgstr "ბილიკის შექმნის შეცდომა [%s] [%d]:%s"
+
+#: src/lib/files/config.c:174
+#, c-format
+msgid "Directory [%s] does not exist, please create it!"
+msgstr "საქაღალდე [%s] არ არსებობს. გთხოვთ, შექმენით!"
+
+#: src/lib/files/config.c:177
+#, c-format
+msgid "Unable to access directory [%s] in [WX] mode!"
+msgstr "საქაღალდესთან [%s] წვდომის შეცდომა [WX] რეჟიმში!"
+
+#: src/lib/files/config.c:196
+#, c-format
+msgid "Unable to load profile [%s] [%d]: %s"
+msgstr "პროფილის ჩატვირთვის შეცდომა [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:41
+#, c-format
+msgid "Creating symbolic link [%s] to [%s]"
+msgstr "[%s]-დან [%s]-მდე სიმბმულის შექმნა"
+
+#: src/lib/files/symlinks.c:47
+#, c-format
+msgid "Unable to overwrite file [%s] [%d]: %s"
+msgstr "ფაილის გადაწერის შეცდომა [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:55
+#, c-format
+msgid "Unable to create symbolic link [%s] [%d]: %s"
+msgstr "სიმბმულის შექმნის შეცდომა [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:79
+#, c-format
+msgid "Validating link [%s]"
+msgstr "ბმულის შემოწმება [%s]"
+
+#: src/lib/files/symlinks.c:83
+#, c-format
+msgid "Unable to validate link [%s] [%d]: %s"
+msgstr "ბმულის გადამოწმების შეცდომა [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:90
+#, c-format
+msgid "[%s] was not created by authselect!"
+msgstr "[%s] authselect-ის მიერ შექმნილი არაა!"
+
+#: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
+#: src/lib/files/system.c:372
+#, c-format
+msgid "Error while trying to access file [%s] [%d]: %s"
+msgstr "ფაილთან წვდომის შეცდომა [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:121
+#, c-format
+msgid "Unable to check file [%s] [%d]: %s"
+msgstr "ფაილის შემოწმების შეცდომა [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:128
+#, c-format
+msgid "Symbolic link [%s] to [%s] still exists!"
+msgstr "სიმბმული [%s]-დან [%s]-მდე ჯერ კიდევ არსებობს!"
+
+#: src/lib/files/symlinks.c:149
+#, c-format
+msgid "File [%s] exists but it needs to be overwritten!"
+msgstr "ფაილი [%s] არსებობს, მაგრამ საჭიროა მისი გადაწერა!"
+
+#: src/lib/files/symlinks.c:190
+#, c-format
+msgid "Skipping [%s] because it is not an authselect file"
+msgstr "[%s] გამოტოვებულია. არ წარმოადგენს authselect-ის ფაილს"
+
+#: src/lib/files/system.c:74 src/lib/profiles/read.c:162
+#, c-format
+msgid "Reading file [%s/%s]"
+msgstr "ფაილის წაკითხვა [%s/%s]"
+
+#: src/lib/files/system.c:82 src/lib/profiles/read.c:168
+#: src/lib/profiles/read.c:173
+#, c-format
+msgid "Unable to read file [%s/%s] [%d]: %s"
+msgstr "ფაილის წაკითხვის შეცდომა [%s/%s] [%d]:%s"
+
+#: src/lib/files/system.c:150
+#, c-format
+msgid "Unable to generate files [%d]: %s"
+msgstr "ფაილების გენერაციის შეცდომა [%d]:%s"
+
+#: src/lib/files/system.c:165 src/lib/util/selinux.c:398
+#, c-format
+msgid "Writing temporary file for [%s]"
+msgstr "[%s]-ის დროებითი ფაილის ჩაწერა"
+
+#: src/lib/files/system.c:169
+#, c-format
+msgid "Unable to write temporary file [%s] [%d]: %s"
+msgstr "[%s] [%d]: %s-თვის დროებითი ფაილის ჩაწერის შეცდომა"
+
+#: src/lib/files/system.c:174
+#, c-format
+msgid "Temporary file is named [%s]"
+msgstr "დროებითი ფაილის სახელია [%s]"
+
+#: src/lib/files/system.c:185 src/lib/util/selinux.c:425
+#, c-format
+msgid "Renaming [%s] to [%s]"
+msgstr "[%s]-ის გადარქმევა [%s]-ად"
+
+#: src/lib/files/system.c:190 src/lib/util/selinux.c:429
+#, c-format
+msgid "Unable to rename [%s] to [%s] [%d]: %s"
+msgstr "[%s]-ის [%s] [%d]: %s-ად გადარქმევის შეცდომა"
+
+#: src/lib/files/system.c:292
+#, c-format
+msgid "Validating file [%s]"
+msgstr "ფაილის შემოწმება [%s]"
+
+#: src/lib/files/system.c:297 src/lib/util/file.c:121
+#, c-format
+msgid "[%s] does not exist!"
+msgstr "[%s] არ არსებობს!"
+
+#: src/lib/files/system.c:300
+#, c-format
+msgid "Unable to read [%s] [%d]: %s"
+msgstr "[%s] [%d]: %s-ის წაკითხვის შეცდომა"
+
+#: src/lib/files/system.c:303
+#, c-format
+msgid "Unable to validate file [%s] [%d]: %s"
+msgstr "[%s] [%d]: %s-ის გადამოწმების შეცდომა"
+
+#: src/lib/files/system.c:310
+#, c-format
+msgid "Comparing content against [%s]"
+msgstr "შემცველობის [%s]-თან შედარება"
+
+#: src/lib/files/system.c:314
+msgid "Comparing content against current profile"
+msgstr "შემცველობის მიმდინარე პროფილთან შედარება"
+
+#: src/lib/files/system.c:320
+#, c-format
+msgid "[%s] has unexpected content!"
+msgstr "[%s]-ს მოულოდნელი შემცველობა გააჩნია!"
+
+#: src/lib/files/system.c:327
+#, c-format
+msgid "Unable to check file mode of [%s] [%d]: %s"
+msgstr "[%s] [%d]: %s-ის რეჟიმის შემოწმების შეცდომა"
+
+#: src/lib/files/system.c:349
+#, c-format
+msgid "File [%s] was modified outside authselect!"
+msgstr "ფაილი [%s] შეცვლილია authselect-ის გარეშე!"
+
+#: src/lib/files/system.c:368
+#, c-format
+msgid "File [%s] is still present"
+msgstr "ფაილი [%s] ჯერ კიდევ არსებობს"
+
+#: src/lib/profiles/activate.c:44
+#, c-format
+msgid "%s update failed: %d"
+msgstr "[%s]-ის განახლების შეცდომა: %d"
+
+#: src/lib/profiles/activate.c:59
+msgid "Some directories are not accessible by authselect!"
+msgstr "ზოგიერთი საქაღალდე authselect-თვის ხელმიუწვდომელია!"
+
+#: src/lib/profiles/activate.c:65
+#, c-format
+msgid "Unable to write generated system files [%d]: %s"
+msgstr "დაგენერირებული სისტემური ფაილების ჩაწერის შეცდომა: [%d]:%s"
+
+#: src/lib/profiles/activate.c:72
+#, c-format
+msgid "Unable to write configuration [%d]: %s"
+msgstr "კონფიგურაციის ჩაწერის შეცდომა [%d]:%s"
+
+#: src/lib/profiles/list.c:42
+#, c-format
+msgid "Reading profile directory [%s]"
+msgstr "პროფილის საქაღალდის [%s] წაკითხვა"
+
+#: src/lib/profiles/list.c:47
+#, c-format
+msgid "Directory [%s] is missing!"
+msgstr "საქაღალდე [%s] აკლია!"
+
+#: src/lib/profiles/list.c:69
+#, c-format
+msgid "Found profile [%s]"
+msgstr "ნაპოვნია პროფილი [%s]"
+
+#: src/lib/profiles/list.c:151
+#, c-format
+msgid "Unable to list profiles [%d]: %s"
+msgstr "პროფილების სიის გამოტანის პრობლემა [%d]:%s"
+
+#: src/lib/profiles/read.c:83
+#, c-format
+msgid "Unable to open directory [%s] [%d]: %s"
+msgstr "[%s] [%d]: %s საქაღალდის გახსნის შეცდომა"
+
+#: src/lib/profiles/read.c:106
+#, c-format
+msgid "Looking up profile [%s]"
+msgstr "პროფილის [%s] ძებნა"
+
+#: src/lib/profiles/read.c:110
+msgid "Locations array is NULL"
+msgstr "მდებარეობების მასივი ცარიელია"
+
+#: src/lib/profiles/read.c:133
+#, c-format
+msgid "Profile [%s] is a custom profile"
+msgstr "[%s] ხელით მორგებული პროფილია"
+
+#: src/lib/profiles/read.c:135
+#, c-format
+msgid "Profile [%s] is a vendor profile"
+msgstr "[%s] მომწოდებლის პროფილია"
+
+#: src/lib/profiles/read.c:137
+#, c-format
+msgid "Profile [%s] is a default profile"
+msgstr "[%s] ნაგულისხმები პროფილია"
+
+#: src/lib/profiles/read.c:140
+#, c-format
+msgid "Profile [%s] found at [%s]"
+msgstr "პროფილი [%s] ნაპოვნია [%s]-ში"
+
+#: src/lib/profiles/read.c:148
+#, c-format
+msgid "Profile [%s] was not found"
+msgstr "პროფილი [%s] ნაპოვნი არაა"
+
+#: src/lib/profiles/read.c:203 src/lib/profiles/read.c:222
+#, c-format
+msgid "Profile [%s] does not contain a name in [%s]!"
+msgstr "პროფილი [%s] არ შეიცავს სახელს [%s]-ში!"
+
+#: src/lib/util/dir.c:77 src/lib/util/dir.c:83
+#, c-format
+msgid "Unable to get basename of [%s]"
+msgstr "[%s]-ის საბაზისო სახელის მიღების შეცდომა"
+
+#: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
+#: src/lib/util/file.c:199 src/cli/main.c:830
+#, c-format
+msgid "Unable to stat [%s] [%d]: %s"
+msgstr "[%s] [%d]: %s-ის გაშვების შეცდომა"
+
+#: src/lib/util/dir.c:130
+#, c-format
+msgid "Unable to stat directory [%d]: %s"
+msgstr "[%d]:%s საქაღალდის პოვნის შეცდომა"
+
+#: src/lib/util/dir.c:313
+#, c-format
+msgid "Removing file [%s/%s]"
+msgstr "ფაილის წაშლა [%s/%s]"
+
+#: src/lib/util/dir.c:321
+#, c-format
+msgid "Removing directory [%s]"
+msgstr "საქაღალდის წაშლა [%s]"
+
+#: src/lib/util/file.c:43
+msgid "Internal error: stat cannot be NULL!"
+msgstr "შიდა შეცდომა: სტატი არ შეიძლება ცარიელი იყოს!"
+
+#: src/lib/util/file.c:51
+#, c-format
+msgid "[%s] is not a directory!"
+msgstr "[%s] არ წარმოადგენს საქაღალდეს!"
+
+#: src/lib/util/file.c:54
+#, c-format
+msgid "[%s] is not a regular file!"
+msgstr "[%s] ფაილს არ წარმოადგენს!"
+
+#: src/lib/util/file.c:57
+#, c-format
+msgid "[%s] is not a symbolic link!"
+msgstr "[%s] სიმბმულს არ წარმოადგენს!"
+
+#: src/lib/util/file.c:60
+#, c-format
+msgid "[%s] has wrong type [%.7o], expected [%.7o]!"
+msgstr "[%s]-ს არასწორი [%.7o] ტიპისაა. უნდა ყოფილიყო [%.7o]!"
+
+#: src/lib/util/file.c:87
+#, c-format
+msgid "[%s] has wrong mode [%.4o], expected [%.4o]!"
+msgstr "[%s]-ს არასწორი რეჟიმი [%.4o] აქვს. უნდა იყოს [%.4o]!"
+
+#: src/lib/util/file.c:93
+#, c-format
+msgid "[%s] has wrong owner [%u], expected [%u]!"
+msgstr "[%s]-ს არასწორი [%u] მფლობელი აქვს. უნდა იყოს [%u]!"
+
+#: src/lib/util/file.c:99
+#, c-format
+msgid "[%s] has wrong group [%u], expected [%u]!"
+msgstr "[%s]-ს არასწორი ჯგუფი [%u] აქვს. უნდა იყოს [%u]!"
+
+#: src/lib/util/file.c:164 src/lib/util/file.c:211
+#, c-format
+msgid "Unable to read link destination [%s] [%d]: %s"
+msgstr "[%s] [%d]: %s-ის ბმულის სამიზნის წაკითხვის შეცდომა"
+
+#: src/lib/util/file.c:170
+#, c-format
+msgid "Link [%s] does not point to [%s]"
+msgstr "ბმული [%s] არ მიუთითებს [%s]-ზე"
+
+#: src/lib/util/file.c:218 src/lib/util/file.c:220
+#, c-format
+msgid "Link [%s] points to [%s]"
+msgstr "ბმული [%s] მიუთითებს [%s]-ზე"
+
+#: src/lib/util/file.c:281
+msgid "Internal error: filepath cannot be NULL!"
+msgstr "შიდა შეცდომა: ფაილის ბილიკი ცარიელი არ შეიძლება იყოს!"
+
+#: src/lib/util/file.c:313
+#, c-format
+msgid "Unable to get parent directory of [%s] [%d]: %s"
+msgstr "[%s] [%d]: %s-ის მშობელი საქაღალდის მიღების შეცდომა"
+
+#: src/lib/util/file.c:524 src/lib/util/textfile.c:175
+#, c-format
+msgid "Unable to chmod file [%s] [%d]: %s"
+msgstr "ფაილის chmod-ის შეცდომა [%s] [%d]: %s"
+
+#: src/lib/util/file.c:531
+#, c-format
+msgid "Unable to chown file [%s] [%d]: %s"
+msgstr "[%s] [%d]: %s-ის chown-ის შეცდომა"
+
+#: src/lib/util/selinux.c:46
+#, c-format
+msgid "Unable to create selabel context [%d]: %s"
+msgstr "[%d]:%s-ის selinux-ის კონტექსტის შექმნის შეცდომა"
+
+#: src/lib/util/selinux.c:55
+#, c-format
+msgid "Unable to lookup selinux context [%d]: %s"
+msgstr "[%d]:%s-ის selinux-ის კონტექსტის მოძებნის შეცდომა"
+
+#: src/lib/util/selinux.c:59
+#, c-format
+msgid "Found default selinux context for [%s]: %s"
+msgstr "[%s]:%s-თვის selinux-ის ნაგულისხმები კონტექსტი ნაპოვნია"
+
+#: src/lib/util/selinux.c:84
+#, c-format
+msgid "Unable to obtain selinux context for [%s] [%d]: %s"
+msgstr "[%s] [%d]: %s-ის selinux-ის კონტექსტის მიღების შეცდომა"
+
+#: src/lib/util/selinux.c:91
+msgid "not set"
+msgstr "არაა დაყენებული"
+
+#: src/lib/util/selinux.c:90
+#, c-format
+msgid "Found selinux context for [%s]: %s"
+msgstr "[%s]:%s-ის selinux-ის კონტექსტი ნაპოვნია"
+
+#: src/lib/util/selinux.c:115 src/lib/util/selinux.c:183
+#: src/lib/util/selinux.c:251
+msgid "Unable to get current fscreate selinux context!"
+msgstr "მიმდინარე fscreate-ის selinux-ის კონტექსტის მიღების შეცდომა!"
+
+#: src/lib/util/selinux.c:121 src/lib/util/selinux.c:189
+#: src/lib/util/selinux.c:257
+#, c-format
+msgid "Unable to get default selinux context for [%s] [%d]: %s!"
+msgstr "[%s] [%d]: %s-ის selinux-ის ნაგულისხმები კონტექსტის მიღების შეცდომა!"
+
+#: src/lib/util/selinux.c:129 src/lib/util/selinux.c:197
+#: src/lib/util/selinux.c:265
+msgid "Unable to set fscreate selinux context!"
+msgstr "fscreate-ის selinux-ის კონტექსტის დაყენების შეცდომა!"
+
+#: src/lib/util/selinux.c:139 src/lib/util/selinux.c:207
+#: src/lib/util/selinux.c:275
+msgid "Unable to restore fscreate selinux context!"
+msgstr "fscreate-ის selinux-ის კონტექსტის აღდგენის შეცდომა!"
+
+#: src/lib/util/selinux.c:387
+#, c-format
+msgid ""
+"File [%s] should exist but is missing. It is not safe to delete [%s]. "
+"Aborting."
+msgstr ""
+"ფაილი [%s] უნდა არსებობდეს, მაგრამ აკლია. [%s]-ის წაშლა არც ისე უსაფრთხოა. "
+"მუშაობის დასასრული."
+
+#: src/lib/util/selinux.c:420
+#, c-format
+msgid "Removing [%s]"
+msgstr "[%s]-ის წაშლა"
+
+#: src/lib/util/template.c:143 src/lib/util/template.c:205
+#: src/lib/util/template.c:281
+msgid "Invalid operator!"
+msgstr "არასწორი ოპერატორი!"
+
+#: src/lib/util/template.c:450 src/lib/util/template.c:592
+#: src/lib/util/template.c:643
+#, c-format
+msgid "Unable to compile regular expression: regex error %d"
+msgstr "რეგულარული გამოსახულების კომპილაციის შეცდომა: regex-ს შეცდომა %d"
+
+#: src/lib/util/template.c:460 src/lib/util/template.c:653
+#, c-format
+msgid "Unable to process match [%d]: %s"
+msgstr "დამთხვევის დამუშავების [%d]:%s-ის შეცდომა"
+
+#: src/lib/util/template.c:485
+#, c-format
+msgid "Unable to process operator [%d]: %s"
+msgstr "ოპერატორის დამუშავების შეცდომა [%d]:%s"
+
+#: src/lib/util/template.c:500 src/lib/util/template.c:669
+#, c-format
+msgid "Unable to search string: regex error %d"
+msgstr "სტრიქონის ძებნის შეცდომა: რეგ. გამოსახულების შეცდომა %d"
+
+#: src/lib/util/template.c:532
+#, c-format
+msgid "Unable to generate template [%d]: %s"
+msgstr "შაბლონის [%d] გენერაციის შეცდომა: %s"
+
+#: src/lib/util/template.c:560
+msgid "Unable to get current time!"
+msgstr "მიმდინარე დროის მიღება შეუძლებელია!"
+
+#: src/lib/util/template.c:574
+msgid "Unable to create message!"
+msgstr "შეტყობინების შექმნა შეუძლებელია!"
+
+#: src/lib/util/template.c:599
+#, c-format
+msgid "Unable to find new match: regex error %d"
+msgstr "ახალი დამთხვევის პოვნა შეუძლებელია: რეგ. გამოსახულების შეცდომა %d"
+
+#: src/lib/util/template.c:729
+#, c-format
+msgid "Unable to create temporary file for [%s] [%d]: %s"
+msgstr "[%s] [%d]: %s-თვის დროებითი ფაილის შექმნის შეცდომა"
+
+#: src/lib/util/textfile.c:56
+#, c-format
+msgid "File [%s] is bigger than %uKiB!"
+msgstr "ფაილი [%s] %uკიბ-ზე დიდია!"
+
+#: src/lib/util/textfile.c:85
+#, c-format
+msgid "Unable to read file [%s] [%d]: %s"
+msgstr "ფაილის წაკითხვის პრობლემა [%s] [%d]:%s"
+
+#: src/lib/util/textfile.c:158
+#, c-format
+msgid "Unable to open file [%s] [%d]: %s"
+msgstr "ფაილის გახსნის შეცდომა [%s] [%d]: %s"
+
+#: src/lib/util/textfile.c:167
+#, c-format
+msgid "Unable to write data [%s] [%d]: %s"
+msgstr "[%s] [%d]: %s-ში მონაცემების ჩაწერის შეცდომა"
+
+#: src/cli/cli_tool.c:72
+#, c-format
+msgid "Common options:\n"
+msgstr "საერთო პარამეტრები:\n"
+
+#: src/cli/cli_tool.c:74 src/cli/cli_tool.c:96
+msgid "Print error messages"
+msgstr "შეცდომის შეტყობინებების დაბეჭდვა"
+
+#: src/cli/cli_tool.c:76 src/cli/cli_tool.c:97
+msgid "Print trace messages"
+msgstr "დევნების შეტყობინებების გამოტანა"
+
+#: src/cli/cli_tool.c:78 src/cli/cli_tool.c:98
+msgid "Print warning messages"
+msgstr "გაფრთხილებების გამოტანა"
+
+#: src/cli/cli_tool.c:80
+#, c-format
+msgid "Help options:\n"
+msgstr "დახმარების პარამეტრები:\n"
+
+#: src/cli/cli_tool.c:82
+msgid "Show this for a command"
+msgstr "ამ ბრძანებისთვის ჩვენება"
+
+#: src/cli/cli_tool.c:84
+msgid "Show brief usage message for a command"
+msgstr "ბრძანების მოკლე შეტყობინების ჩვენება"
+
+#: src/cli/cli_tool.c:173
+#, c-format
+msgid ""
+"Usage:\n"
+"%s COMMAND COMMAND-ARGS\n"
+"\n"
+msgstr ""
+"გამოყენება:\n"
+"%s ბრძანება ბრძანების-არგუმენტები\n"
+"\n"
+
+#: src/cli/cli_tool.c:174
+#, c-format
+msgid "Available commands:\n"
+msgstr "ხელმისაწვდომი ბრძანებები:\n"
+
+#: src/cli/cli_tool.c:196
+#, c-format
+msgid "\n"
+msgstr "\n"
+
+#: src/cli/cli_tool.c:230
+#, c-format
+msgid "Authselect command '%s' can only be run as root!\n"
+msgstr ""
+"Authselect-ის ბრძანება '%s' მხოლოდ ადმინისტრატორის უფლებებით შეგიძლიათ "
+"გამოიყენოთ!\n"
+
+#: src/cli/cli_tool.c:247
+msgid "Bug: commands can't be NULL!\n"
+msgstr "შეცდომა: ბრძანებები ცარიელი არ შეიძლება იყოს\n"
+
+#: src/cli/cli_tool.c:310
+msgid "Command options:"
+msgstr "ბრძანების პარამეტრები:"
+
+#: src/cli/cli_tool.c:312
+msgid "Common options:"
+msgstr "საერთო პარამეტრები:"
+
+#: src/cli/cli_tool.c:326 src/cli/cli_tool.c:329
+msgid "[OPTIONS...]"
+msgstr "[პარამეტრები...]"
+
+#: src/cli/cli_tool.c:332 src/cli/main.c:822
+msgid "Out of memory!"
+msgstr "არასაკმარისი მეხსიერება!"
+
+#: src/cli/cli_tool.c:353
+#, c-format
+msgid ""
+"Invalid option %s: %s\n"
+"\n"
+msgstr ""
+"არასწორი პარამეტრი %s:%s\n"
+"\n"
+
+#: src/cli/cli_tool.c:365
+#, c-format
+msgid ""
+"Missing option: %s\n"
+"\n"
+msgstr ""
+"აკლია არგუმენტი: %s\n"
+"\n"
+
+#: src/cli/cli_tool.c:375
+#, c-format
+msgid ""
+"Only one free argument is expected!\n"
+"\n"
+msgstr ""
+"მოსალოდნელი იყო მხოლოდ ერთი თავისუფალი არგუმენტი“\n"
+"\n"
+
+#: src/cli/cli_tool.c:385
+#, c-format
+msgid ""
+"Unexpected parameter: %s\n"
+"\n"
+msgstr ""
+"მოულოდნელი პარამეტრი: %s\n"
+"\n"
+
+#: src/cli/cli_tool.c:397
+#, c-format
+msgid ""
+"At least one option is required!\n"
+"\n"
+msgstr ""
+"საჭიროა ერთი პარამეტრი მაინც!\n"
+"\n"
+
+#: src/cli/main.c:74 src/cli/main.c:433 src/cli/main.c:471
+msgid "Profile identifier."
+msgstr "პროფილის იდენტიფიკატორი."
+
+#: src/cli/main.c:77 src/cli/main.c:255 src/cli/main.c:300 src/cli/main.c:349
+#: src/cli/main.c:391 src/cli/main.c:436 src/cli/main.c:474 src/cli/main.c:638
+#: src/cli/main.c:714 src/cli/main.c:759 src/cli/main.c:797 src/cli/main.c:862
+#: src/cli/main.c:886
+msgid "Unable to parse command arguments"
+msgstr "ბრძანების პარამეტრების დამუშავების შეცდომა"
+
+#: src/cli/main.c:132
+msgid "Unable to backup current configuration!\n"
+msgstr "მიმდინარე კონფგურაციის მარქაფის შეცდომა!\n"
+
+#: src/cli/main.c:136
+#, c-format
+msgid "Backup stored at %s\n"
+msgstr "მარქაფის შენახვის ბილიკი %s\n"
+
+#: src/cli/main.c:158
+msgid "Enforce changes"
+msgstr "ცვლილებების დაძალება"
+
+#: src/cli/main.c:159 src/cli/main.c:248 src/cli/main.c:628 src/cli/main.c:705
+msgid "Backup system files before activating profile (generate unique name)"
+msgstr "პროფილის აქტივაციამდე სისტემური ფაილების მარქაფი (უნიკალური სახელით)"
+
+#: src/cli/main.c:160 src/cli/main.c:249 src/cli/main.c:629 src/cli/main.c:706
+msgid "Backup system files before activating profile"
+msgstr "პროფილის აქტივაციამდე სისტემური ფაილების მარქაფი"
+
+#: src/cli/main.c:160 src/cli/main.c:249 src/cli/main.c:629 src/cli/main.c:706
+msgid "NAME"
+msgstr "სახელი"
+
+#: src/cli/main.c:161
+msgid "Do not backup system files when --force is set"
+msgstr "--force-ის დროს სისტემური ფაილების არქაფი არ გაკეთდება"
+
+#: src/cli/main.c:162 src/cli/main.c:630
+msgid "Do not print profile requirements"
+msgstr "პროფილის მოთხოვნები არ დაიბეჭდება"
+
+#: src/cli/main.c:173 src/cli/main.c:406 src/cli/main.c:442 src/cli/main.c:480
+#: src/cli/main.c:507 src/cli/main.c:657
+#, c-format
+msgid "Unable to get profile information [%d]: %s"
+msgstr "შეცდომა პროფილის შესახებ ინფორმაციის მიღებისას [%d]:%s"
+
+#: src/cli/main.c:181 src/cli/main.c:514 src/cli/main.c:665
+msgid "Unable to read profile requirements!"
+msgstr "პროფილის მოთხოვნის ჩატვირთვის შეცდომა!"
+
+#: src/cli/main.c:189
+msgid "Unable to obtain nsswitch maps!"
+msgstr "nsswitch-ის რუკების მიღება შეუძლებელია!"
+
+#: src/cli/main.c:204
+msgid ""
+"\n"
+"Some unexpected changes to the configuration were detected.\n"
+"Use --force parameter if you want to overwrite these changes.\n"
+msgstr ""
+"\n"
+"კონფიგურაციაში ნაპოვნია მოულოდნელი ცვლილებები.\n"
+"ამ ცვლილებების გადასაწერად გამოიყენეთ --force პარამეტრი.\n"
+
+#: src/cli/main.c:209
+#, c-format
+msgid "Unable to activate profile [%d]: %s\n"
+msgstr "პროფილის აქტივაციის შეცდომა [%d]:%s\n"
+
+#: src/cli/main.c:214
+#, c-format
+msgid "Profile \"%s\" was selected.\n"
+msgstr "არჩეულია პროფილი \"%s\".\n"
+
+#: src/cli/main.c:217
+msgid "The following nsswitch maps are overwritten by the profile:\n"
+msgstr "nsswitch-ის შემდეგი რუკები გადაიწერება პროფილის მიერ:\n"
+
+#: src/cli/main.c:220
+#, c-format
+msgid "- %s\n"
+msgstr "- %s\n"
+
+#: src/cli/main.c:225
+#, c-format
+msgid ""
+"\n"
+"%s\n"
+msgstr ""
+"\n"
+"%s\n"
+
+#: src/cli/main.c:267
+msgid "Changes were successfully applied.\n"
+msgstr "ცვლილებები წარმატებით გადატარდა.\n"
+
+#: src/cli/main.c:270 src/cli/main.c:306 src/cli/main.c:647
+msgid "No existing configuration detected.\n"
+msgstr "არსებული კონფიგურაცია ნაპოვნი არაა.\n"
+
+#: src/cli/main.c:273
+msgid ""
+"Some unexpected changes to the configuration were detected. Use 'select' "
+"command instead.\n"
+msgstr ""
+"კონფიგურაციაში ნაპოვნია რამდენიმე მოულოდნელი ცვლილბება. გამოიყენეთ 'select' "
+"ბრძანება.\n"
+
+#: src/cli/main.c:277
+#, c-format
+msgid "Unable to apply changes [%d]: %s\n"
+msgstr "ცვლილებების გადატარების შეცდომა [%d]:%s\n"
+
+#: src/cli/main.c:294
+msgid "Print command parameters instead of formatted output"
+msgstr "ფორმატირებული გამოტანის მაგიერ ბრძანების პარამეტრების გამოტანა"
+
+#: src/cli/main.c:309 src/cli/main.c:650
+#, c-format
+msgid "Unable to get current configuration [%d]: %s"
+msgstr "მიმდინარე კონფიგურაციის მიღების შეცდომა [%d]:%s"
+
+#: src/cli/main.c:323
+#, c-format
+msgid "Profile ID: %s\n"
+msgstr "პროფილის ID: %s\n"
+
+#: src/cli/main.c:324
+msgid "Enabled features:"
+msgstr "ჩართული თვისებები:"
+
+#: src/cli/main.c:327
+msgid " None\n"
+msgstr " არცერთი\n"
+
+#: src/cli/main.c:355
+#, c-format
+msgid "Unable to test current configuration [%d]: %s"
+msgstr "მიმდინარე კონფიგურაციის ტესტირების შეცდომა [%d]:%s"
+
+#: src/cli/main.c:362
+msgid ""
+"Current configuration is not valid. It was probably modified outside "
+"authselect."
+msgstr ""
+"მიმდინარე კონფიგურაცია არასწორია. ის ალბათ authselect-ის გარეთ შეიცვალა."
+
+#: src/cli/main.c:369
+msgid "Current configuration is valid."
+msgstr "მინდინარე კონფიგურაცია სწორია."
+
+#: src/cli/main.c:372
+msgid "System was not configured with authselect."
+msgstr "სისტემა authselect-ის საშუალებით არაა მორგებული."
+
+#: src/cli/main.c:397
+msgid "Unable to get profile list!"
+msgstr "პროფილების სიის მიღების პრობლემა!"
+
+#: src/cli/main.c:450
+#, c-format
+msgid "Unable to get profile features [%d]: %s"
+msgstr "პროფილის თვისებების მიღების შეცდომა [%d]:%s"
+
+#: src/cli/main.c:552
+msgid "Print content of all files"
+msgstr "ყველა ფაილის შემცველობის გამოტანა"
+
+#: src/cli/main.c:553
+msgid "Print nsswitch.conf content"
+msgstr "nsswitch.conf-ის შემცველობის ჩვენება"
+
+#: src/cli/main.c:554
+msgid "Print system-auth content"
+msgstr "system-auth-ის შემცველობის ჩვენება"
+
+#: src/cli/main.c:555
+msgid "Print password-auth content"
+msgstr "password-auth-ის შემცველობის ჩვენება"
+
+#: src/cli/main.c:556
+msgid "Print smartcard-auth content"
+msgstr "smartcard-auth-ის შემცველობის ჩვენება"
+
+#: src/cli/main.c:557
+msgid "Print fingerprint-auth content"
+msgstr "fingerprint-auth-ის შემცველობის ჩვენება"
+
+#: src/cli/main.c:558
+msgid "Print postlogin content"
+msgstr "postlogin-ის შემცველობის ჩვენება"
+
+#: src/cli/main.c:559
+msgid "Print dconf database content"
+msgstr "dconf-ის ბაზის შემცველობის გამოტანა"
+
+#: src/cli/main.c:560
+msgid "Print dconf lock content"
+msgstr "dconf-ის ჩამკეტის შემცველობის გამოტანა"
+
+#: src/cli/main.c:587
+#, c-format
+msgid "Unable to get generated content [%d]: %s"
+msgstr "გენერირებული შემცველობის მიღების პრობლემა [%d]:%s"
+
+#: src/cli/main.c:606
+#, c-format
+msgid ""
+"File %s: Empty\n"
+"\n"
+msgstr ""
+"ფაილი %s: ცარიელია\n"
+"\n"
+
+#: src/cli/main.c:608
+#, c-format
+msgid ""
+"File %s:\n"
+"%s\n"
+"\n"
+msgstr ""
+"ფაილი %s:\n"
+"%s\n"
+"\n"
+
+#: src/cli/main.c:635
+msgid "Feature to enable."
+msgstr "ჩასართავი თვისება."
+
+#: src/cli/main.c:672
+#, c-format
+msgid "Unable to backup current configuration [%d]: %s\n"
+msgstr "მიმდინარე კონფიგურაციის მარქაფის შეცდომა [%d]:%s\n"
+
+#: src/cli/main.c:679
+#, c-format
+msgid "Unable to enable feature [%d]: %s\n"
+msgstr "თვისების ჩართვის შეცდომა [%d]:%s\n"
+
+#: src/cli/main.c:684
+#, c-format
+msgid "%s\n"
+msgstr "%s\n"
+
+#: src/cli/main.c:711
+msgid "Feature to disable."
+msgstr "გამოსართავი თვისება."
+
+#: src/cli/main.c:725
+#, c-format
+msgid "Unable to disable feature [%d]: %s\n"
+msgstr "თვისების გამორთვის შეცდომა [%d]:%s\n"
+
+#: src/cli/main.c:744
+msgid "Create new profile as a vendor profile instead of a custom profile"
+msgstr "ახალი პროფილის როგორც მომწოდებლის და არა თქვენზე მორგებულის შექმნა"
+
+#: src/cli/main.c:745
+msgid "ID of a profile that should be used as a base for the new profile"
+msgstr "ახალი პროფილის საბაზისოდ გამოსაყენებელი პროფილის ID"
+
+#: src/cli/main.c:746
+msgid ""
+"Base new profile on a default profile even if vendor profile with the same "
+"name exists"
+msgstr ""
+"ახალი პროფილის ნაგულისხმევ პროფილზე ბაზირება მაშინაც კი, როცა არსებობს "
+"მომწოდებლის პროფილი იგივე სახელით"
+
+#: src/cli/main.c:747
+msgid "Symlink meta files from the base profile instead of copying them"
+msgstr "ფაილების კოპირების მაგიერ სიმბმულების გაკეთება"
+
+#: src/cli/main.c:748
+msgid "Symlink nsswitch files from the base profile instead of copying them"
+msgstr "nsswitch-ის ფაილების კოპირების მაგიერ სიმბმულების შექმნა"
+
+#: src/cli/main.c:749
+msgid "Symlink pam files from the base profile instead of copying them"
+msgstr "pam ფაილების სიმბმულების შექმნა კოპირების მაგიერ"
+
+#: src/cli/main.c:750
+msgid "Symlink dconf files from the base profile instead of copying them"
+msgstr "dconf-ის ფაილების სიმბმულების შექმნა კოპირების მაგიერ"
+
+#: src/cli/main.c:751
+msgid "Symlink specific file (can be set multiple times)"
+msgstr "მითითებული ფაილის სიმბმულის შექმნა (მრავალჯერ გამოყენება ნებადართულია)"
+
+#: src/cli/main.c:756
+msgid "New profile name."
+msgstr "ახალი პროფილის სახელი."
+
+#: src/cli/main.c:766
+#, c-format
+msgid "Unable to create new profile [%d]: %s\n"
+msgstr "ახალი პროფილის შექმნის შეცდომა [%d]:%s\n"
+
+#: src/cli/main.c:770
+#, c-format
+msgid "New profile was created at %s\n"
+msgstr "ახლად შექმნილი პროფილის ბილიკია %s\n"
+
+#: src/cli/main.c:791
+msgid "Print backup names without any formatting and additional information"
+msgstr ""
+"მარქაფების სახელების დამატებითი ფორმატირებისა და ინფორმაციის გარეშე გამოტანა"
+
+#: src/cli/main.c:803
+msgid "Unable to list available backups!"
+msgstr "ხელმისაწვდომი მარქაფების სიის მიღება შეუძლებელია!"
+
+#: src/cli/main.c:840
+#, c-format
+msgid "%-*s (created at %s)\n"
+msgstr "%-*s (შექმნილა %s-ში)\n"
+
+#: src/cli/main.c:859
+msgid "Name of the backup to remove."
+msgstr "წასაშლელი მარქაფის სახელი."
+
+#: src/cli/main.c:868
+#, c-format
+msgid "Unable to remove backup [%s] [%d]: %s\n"
+msgstr "მარქაფის წაშლის შეცდომა [%s] [%d]:%s\n"
+
+#: src/cli/main.c:883
+msgid "Name of the backup to restore from."
+msgstr "აღსადგენი მარქაფის სახელი."
+
+#: src/cli/main.c:892
+#, c-format
+msgid "Unable to restore backup [%s] [%d]: %s\n"
+msgstr "მარქაფის აღდგენის შეცდომა [%s] [%d]:%s\n"
+
+#: src/cli/main.c:906
+#, c-format
+msgid "Unable to uninstall authselect configuration [%d]: %s\n"
+msgstr "authselect-ის კონფიგურაციის წაშლის სეცდომა [%d]:%s\n"
+
+#: src/cli/main.c:956
+msgid "Select profile"
+msgstr "აირჩიეთ პროფილი"
+
+#: src/cli/main.c:957
+msgid "Regenerate configuration for currently selected command"
+msgstr "კონფიგურაციის რეგენერაცია ამჟამად არჩეული ბრძანებისთვის"
+
+#: src/cli/main.c:958
+msgid "List available profiles"
+msgstr "ხელმისაწვდომი პროფილების სია"
+
+#: src/cli/main.c:959
+msgid "List available profile features"
+msgstr "პროფილის ხელმისაწვდომი თვისებების სია"
+
+#: src/cli/main.c:960
+msgid "Show profile information"
+msgstr "პროფილის ინფორმაციის ჩვენება"
+
+#: src/cli/main.c:961
+msgid "Print profile requirements"
+msgstr "პროფილის მოთხოვნების ჩვენება"
+
+#: src/cli/main.c:962
+msgid "Get identifier of currently selected profile"
+msgstr "ამჟამად არჩეული პროფილის იდენტიფიკატორის მიღება"
+
+#: src/cli/main.c:963
+msgid "Check if the current configuration is valid"
+msgstr "მიმდინარე კონფგურაციის სისწორეზე შემოწმება"
+
+#: src/cli/main.c:964
+msgid "Print changes that would be otherwise written"
+msgstr "ჩასაწერი ცვლილებების დაბეჭდვა"
+
+#: src/cli/main.c:965
+msgid "Enable feature in currently selected profile"
+msgstr "თვისების აქტივაცია ამჟამად არჩეულ პროფილში"
+
+#: src/cli/main.c:966
+msgid "Disable feature in currently selected profile"
+msgstr "თვისების გამორთვა ამჟამად არჩეულ პროფილში"
+
+#: src/cli/main.c:967
+msgid "Create new authselect profile"
+msgstr "authselect-ის ახალი პროფილის შექმნა"
+
+#: src/cli/main.c:968
+msgid "Backup commands:"
+msgstr "მარქაფის ბრძანებები:"
+
+#: src/cli/main.c:969
+msgid "List available backups"
+msgstr "ხელმისაწვდომი მარქაფების სია"
+
+#: src/cli/main.c:970
+msgid "Remove backup"
+msgstr "მარქაფის წაშლა"
+
+#: src/cli/main.c:971
+msgid "Restore from backup"
+msgstr "მარქაფიდან აღდგენა"
+
+#: src/cli/main.c:972
+msgid "Uninstall authselect configuration"
+msgstr "authselect-ის კონფიგურაციის წაშლა"
+
+#: src/cli/main.c:973
+msgid "Print authselect version"
+msgstr "authselect-ის ვერსიის ჩვენება"
+
+#: src/compat/authcompat_Options.py:82
+msgid "NIS for user information by default"
+msgstr "მომხმარებელზე ინფორმაციისთვის NIS-ის ნაგულისხმევად გამოყენება"
+
+#: src/compat/authcompat_Options.py:83
+#, fuzzy
+msgid "<domain>"
+msgstr "<domain>"
+
+#: src/compat/authcompat_Options.py:83
+msgid "default NIS domain"
+msgstr "NIS-ის ნაგულისხმევი დომენი"
+
+#: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
+#: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
+#, fuzzy
+msgid "<server>"
+msgstr "<server>"
+
+#: src/compat/authcompat_Options.py:84
+msgid "default NIS server"
+msgstr "NIS-ის ნაგულისხმები სერვერი"
+
+#: src/compat/authcompat_Options.py:85
+msgid "LDAP for user information by default"
+msgstr "მომხმარებლის ინფორმაციის მისახებად ნაგულისხმებად LDAP-ის გამოყენება"
+
+#: src/compat/authcompat_Options.py:86
+msgid "LDAP for authentication by default"
+msgstr "ავთენტიკაციისთვის ნაგულისხმევად LDAP-ისგამოყენება"
+
+#: src/compat/authcompat_Options.py:87
+msgid "default LDAP server hostname or URI"
+msgstr "ნაგულისხმები LDAP სერვერის ჰოსტის სახელი ან URI"
+
+#: src/compat/authcompat_Options.py:88
+#, fuzzy
+msgid "<dn>"
+msgstr "<dn>"
+
+#: src/compat/authcompat_Options.py:88
+msgid "default LDAP base DN"
+msgstr "LDAP-ის ნაგულისხმები საბაზისო DN"
+
+#: src/compat/authcompat_Options.py:89
+msgid "use of TLS with LDAP (RFC-2830)"
+msgstr "LDAP-ის TLS-ით გამოყენება (RFC-2830)"
+
+#: src/compat/authcompat_Options.py:90
+msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
+msgstr "LDAP-ში მოთხოვნების გასაგზავნად TLS-ის გამოყენება (RFC-2830)"
+
+#: src/compat/authcompat_Options.py:91
+msgid "use of RFC-2307bis schema for LDAP user information lookups"
+msgstr "LDAP-ში მომხმარებლის ინფორმაციის მოსაძებნად RFC-2307bis-ის გამოყენება"
+
+#: src/compat/authcompat_Options.py:92
+msgid "authentication with smart card by default"
+msgstr "ავთენტიკაციისთვის ნაგულისხმევად ჭკვიანი ბარათის გამოყენება"
+
+#: src/compat/authcompat_Options.py:93
+#, fuzzy
+msgid "<0=Lock|1=Ignore>"
+msgstr "<0=Lock|1=Ignore>"
+
+#: src/compat/authcompat_Options.py:93
+msgid "action to be taken on smart card removal"
+msgstr "ქმედება ჭკვიანი ბარათის გამოძრობისას"
+
+#: src/compat/authcompat_Options.py:94
+msgid "require smart card for authentication by default"
+msgstr "შესასვლელად ჭკვიანი ბარათის ნაგულისხმევად გამოყენება"
+
+#: src/compat/authcompat_Options.py:95
+msgid "authentication with fingerprint readers by default"
+msgstr "ანაბეჭდებით ავთენტიკაცია ნაგულისხმევად"
+
+#: src/compat/authcompat_Options.py:96
+msgid "automatic per-user ecryptfs"
+msgstr "ecryptfs თითოეული მომხმარებლისთვის"
+
+#: src/compat/authcompat_Options.py:97
+msgid "Kerberos authentication by default"
+msgstr "Kerberos-ით ავთენტიკაცია ნაგულისხმევად"
+
+#: src/compat/authcompat_Options.py:98
+msgid "default Kerberos KDC"
+msgstr "ნაგულისხმები Kerberos KDC"
+
+#: src/compat/authcompat_Options.py:99
+msgid "default Kerberos admin server"
+msgstr "Kerberos-ის ნაგულისხმები ადმინისტრირების სერვერი"
+
+#: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
+#, fuzzy
+msgid "<realm>"
+msgstr "<realm>"
+
+#: src/compat/authcompat_Options.py:100
+msgid "default Kerberos realm"
+msgstr "Kerberos-ის ნაგულისხმები realm-ი"
+
+#: src/compat/authcompat_Options.py:101
+msgid "use of DNS to find Kerberos KDCs"
+msgstr "DNS-ის გამოყენება Kerberos KDC-ების საპოვნელად"
+
+#: src/compat/authcompat_Options.py:102
+msgid "use of DNS to find Kerberos realms"
+msgstr "Kerberos realm-ების საპოვნელად DNS-ის გამოყენება"
+
+#: src/compat/authcompat_Options.py:103
+msgid "winbind for user information by default"
+msgstr "მომხმარებელზე ინფორმაციის მისაღებად ნაგულისხმევად winbind-ის გამოყენება"
+
+#: src/compat/authcompat_Options.py:104
+msgid "winbind for authentication by default"
+msgstr "ავთენტიკაციისთვის winbind-ს ნაგულისხმევად გამოყენება"
+
+#: src/compat/authcompat_Options.py:105
+msgid "<Administrator>"
+msgstr "<ადმინსტრატორი>"
+
+#: src/compat/authcompat_Options.py:105
+msgid "join the winbind domain or ads realm now as this administrator"
+msgstr "ამ ადინისტრატორით შეგიძლიათ შეხვიდეთ winbind-ის დომენში ან ads realm-ში"
+
+#: src/compat/authcompat_Options.py:106
+msgid "Kerberos 5 for authenticate with winbind"
+msgstr "Kerberos 5-ის ავთენტიკაცია winbind-თან"
+
+#: src/compat/authcompat_Options.py:107
+#, fuzzy
+msgid "<workgroup>"
+msgstr "<workgroup>"
+
+#: src/compat/authcompat_Options.py:107
+msgid "workgroup authentication servers are in"
+msgstr "სამუშაო ჯგუფის ავთენტიკაციის სერვერების მდებარეობა"
+
+#: src/compat/authcompat_Options.py:108
+msgid ""
+"SSSD for user information by default with manually managed configuration"
+msgstr "მომხმარებლის ინფორმაციის მისაღებად ხელით მორგებული SSSD-ის გამოყენება"
+
+#: src/compat/authcompat_Options.py:109
+msgid "SSSD for authentication by default with manually managed configuration"
+msgstr "SSD-ის გამოყენება ავთენტიკაციისთვის მორგებული კონფიგურაციით"
+
+#: src/compat/authcompat_Options.py:110
+msgid "caching of user credentials in SSSD by default"
+msgstr "მომხმარებლისა და პაროლის SSSD-ში ნაგულისხმებად დაკეშვა"
+
+#: src/compat/authcompat_Options.py:111
+msgid "check of access.conf during account authorization"
+msgstr "ანგარიშის ავტორიზაციისას შეამოწმეთ access.conf"
+
+#: src/compat/authcompat_Options.py:112
+msgid "creation of home directories for users on their first login"
+msgstr "სახლის საქაღალდეების პირველად შესვლისას შექმნა"
+
+#: src/compat/authcompat_Options.py:113
+msgid "account locking in case of too many consecutive authentication failures"
+msgstr "შესვლის მრავალჯერადი წარუმატებელი ცდისას ანგარიშის დაბლოკვა"
+
+#: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
+#: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
+#, fuzzy
+msgid "<number>"
+msgstr "<number>"
+
+#: src/compat/authcompat_Options.py:114
+msgid "minimum length of a password"
+msgstr "პაროლის მინიმალური სიგრძე"
+
+#: src/compat/authcompat_Options.py:115
+msgid "minimum number of character classes in a password"
+msgstr "პაროლში სიმბოლოების კლასის მინიმალური რაოდენობა"
+
+#: src/compat/authcompat_Options.py:116
+msgid "maximum number of same consecutive characters in a password"
+msgstr "პაროლში მიყოლებით ერთიდაიგივე სიმბოლოების მაქსიმალური რაოდენობა"
+
+#: src/compat/authcompat_Options.py:117
+msgid "maximum number of consecutive characters of same class in a password"
+msgstr "პაროლში იგივე კლასის სიმბოლოების გამეორების მაქსიმალური რაოდენობა"
+
+#: src/compat/authcompat_Options.py:118
+msgid "require at least one lowercase character in a password"
+msgstr "პაროლში ერთი პატარა სიმბოლოს არსებობის მოთხოვნა"
+
+#: src/compat/authcompat_Options.py:119
+msgid "require at least one uppercase character in a password"
+msgstr "პაროლში ერთზე მეტი დიდი სიმბოლოს მოთხოვნა"
+
+#: src/compat/authcompat_Options.py:120
+msgid "require at least one digit in a password"
+msgstr "პაროლში ერთზე მეტი ციფრის მოთხოვნა"
+
+#: src/compat/authcompat_Options.py:121
+msgid "require at least one other character in a password"
+msgstr "პაროლში ერთზე მეტი სხვა სიმბოლოს მოთხოვნა"
+
+#: src/compat/authcompat_Options.py:124
+msgid "do not start/stop services"
+msgstr "პაროლების არ გაშვება/გაჩერება"
+
+#: src/compat/authcompat_Options.py:125
+msgid "update all configuration files"
+msgstr "კონფიგურაციის ყველა ფაილის განახლება"
+
+#: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
+msgid "the same as --updateall"
+msgstr "იგივე, რაც --updateall"
+
+#: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
+#, fuzzy
+msgid "<name>"
+msgstr "<name>"
+
+#: src/compat/authcompat_Options.py:148
+#, fuzzy
+msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+
+#: src/compat/authcompat_Options.py:149
+#, fuzzy
+msgid "<URL>"
+msgstr "<URL>"
+
+#: src/compat/authcompat_Options.py:150
+#, fuzzy
+msgid "<module>"
+msgstr "<module>"
+
+#: src/compat/authcompat_Options.py:151
+#, fuzzy
+msgid "<user|server|domain|ads>"
+msgstr "<user|server|domain|ads>"
+
+#: src/compat/authcompat_Options.py:153
+#, fuzzy
+msgid "<servers>"
+msgstr "<servers>"
+
+#: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
+#: src/compat/authcompat_Options.py:156
+#, fuzzy
+msgid "<lowest-highest>"
+msgstr "<lowest-highest>"
+
+#: src/compat/authcompat_Options.py:157
+#, fuzzy
+msgid "<\\>"
+msgstr "<\\>"
+
+#: src/compat/authcompat_Options.py:158
+msgid "</home/%D/%U>"
+msgstr "</home/%D/%U>"
+
+#: src/compat/authcompat_Options.py:159
+#, fuzzy
+msgid "</bin/false>"
+msgstr "</bin/false>"
+
+#: src/compat/authcompat_Options.py:166
+#, fuzzy
+msgid "<options>"
+msgstr "<options>"
+
+#: src/compat/authcompat_Options.py:210
+msgid "These options have a compatibility layer"
+msgstr "ამ პარამეტრებს ასევე გააჩნიათ თავსებადობის შრეც"
+
+#: src/compat/authcompat_Options.py:211
+msgid "These options are no longer supported and have no effect"
+msgstr "ეს პარამეტრები მხარდაჭერილი აღარაა და აღარაფერს აკეთებს"
+
+#: src/compat/authcompat_Options.py:313
+msgid "enable"
+msgstr "ჩართვა"
+
+#: src/compat/authcompat_Options.py:314
+msgid "disable"
+msgstr "გამორთვა"
+
+#: src/compat/authcompat.py.in.in:51
+#, python-format
+msgid "Executing: %s"
+msgstr "გაშვება: %s"
+
+#: src/compat/authcompat.py.in.in:71
+#, python-format
+msgid "Service %s was not found. Please install the service."
+msgstr "სერვისი %s ნაპოვნი არაა. დააყენეთ სერვისი."
+
+#: src/compat/authcompat.py.in.in:74 src/compat/authcompat.py.in.in:630
+#: src/compat/authcompat.py.in.in:656
+#, python-format
+msgid "Command [%s] failed with %d, stderr:"
+msgstr "ბრძანება [%s] გაუქმების კოდი %d-ით, strerr:"
+
+#: src/compat/authcompat.py.in.in:186
+#, python-format
+msgid "Removing file: %s"
+msgstr "ფაილის წაშლა %s"
+
+#: src/compat/authcompat.py.in.in:334
+#, python-format
+msgid "%s was not found. Please, install realmd."
+msgstr "%s ნაპოვნი არაა. realmd თავიდან დააყენეთ."
+
+#: src/compat/authcompat.py.in.in:468
+msgid "Running authconfig compatibility tool."
+msgstr "გაშვებულია authconfig თავსებადი ხელსაწყო."
+
+#: src/compat/authcompat.py.in.in:469
+msgid ""
+"The purpose of this tool is to enable authentication against chosen services "
+"with authselect and minimum configuration. It does not provide all "
+"capabilities of authconfig.\n"
+msgstr ""
+"ამ ხელსაწყოს დანიშნულებაა სხვადასხვა სერვერებზე ავთენტიკაციის ჩართვა "
+"მინიმალური კონფიგურაციით.მას არ გააჩნია authconfig-ის ყველა შესაძლებლობა.\n"
+
+#: src/compat/authcompat.py.in.in:472
+msgid ""
+"IMPORTANT: authconfig is replaced by authselect, please update your scripts."
+msgstr ""
+"მნიშვნელოვანია: authconfig-ი ჩანაცვლდა authselect-ით. განაახლეთ თქვენი "
+"სკრიპტები."
+
+#: src/compat/authcompat.py.in.in:474
+msgid ""
+"See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
+"AuthselectAsDefault"
+msgstr ""
+"Fedora 28-ის ცვლილებების გვერდის ბმული: https://fedoraproject.org/wiki/"
+"Changes/AuthselectAsDefault"
+
+#: src/compat/authcompat.py.in.in:475
+msgid ""
+"See man authselect-migration(7) to help you with migration to authselect"
+msgstr "იხილეთ authselect-მდე მიგრაციისთვის authselect-migration(7)"
+
+#: src/compat/authcompat.py.in.in:479
+msgid "Warning: These options are not supported anymore and have no effect:"
+msgstr "გაფრთხილება: ამ პარამეტრების მხარდაჭერა აღარ არსებობს:"
+
+#: src/compat/authcompat.py.in.in:499
+msgid "authconfig can only be run as root"
+msgstr "authconfig-ის გაშვება მხოლოდ root მომხმარებლითაა შესაძლებელი"
+
+#: src/compat/authcompat.py.in.in:504
+#, python-format
+msgid ""
+"Error: option --%s is no longer supported and we cannot continue if it is "
+"set."
+msgstr ""
+"შეცდომა: პარამეტრი --%s აღარაა მხარდაჭერილი. თუ ის ჩართულია, ჩვენ ვერ "
+"გავაგრძელებთ ურთიერთობას."
+
+#: src/compat/authcompat.py.in.in:509
+msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
+msgstr ""
+"შეცდომა: დაყენებული უნდა იყოს ორივე, --enablewinbind და --enablewinbindauth."
+
+#: src/compat/authcompat.py.in.in:519
+msgid "Error: Please, provide --updateall option."
+msgstr "შეცდომა: გთხოვთ გაუსვათ --updateall პარამეტრით."

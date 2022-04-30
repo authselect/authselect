@@ -1,12 +1,13 @@
 # Fabian Affolter <fab@fedoraproject.org>, 2018. #zanata
 # David Bauer <dbxx@posteo.net>, 2020.
 # Ettore Atalan <atalanttore@googlemail.com>, 2021.
+# Joachim Philipp <joachim.philipp@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-08-09 10:58+0200\n"
-"PO-Revision-Date: 2021-11-21 21:16+0000\n"
-"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
+"POT-Creation-Date: 2021-12-06 14:13+0100\n"
+"PO-Revision-Date: 2022-04-27 13:17+0000\n"
+"Last-Translator: Joachim Philipp <joachim.philipp@gmail.com>\n"
 "Language-Team: German <https://translate.fedoraproject.org/projects/"
 "authselect/master-authselect-migration7adoc/de/>\n"
 "Language: de\n"
@@ -14,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9\n"
+"X-Generator: Weblate 4.12\n"
 
 #. type: Title =
 #: src/man/authselect-migration.7.adoc:2
@@ -33,6 +34,8 @@ msgstr "NAME"
 msgid ""
 "authselect-migration - A guide how to migrate from authconfig to authselect."
 msgstr ""
+"authselect-migration - Eine Anleitung zur Migration von authconfig nach "
+"authselect."
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:10
@@ -48,6 +51,10 @@ msgid ""
 "authselect which replaces it. It also explains what actions need to be done "
 "in order to migrate from authconfig to authselect."
 msgstr ""
+"Dieses Handbuch erklärt die Hauptunterschiede zwischen authconfig, dem "
+"früheren Tool zur Konfiguration von System Authentisierung und "
+"Identitätsquellen, und authselect, welches es ablöst. Es erklärt ebenfalls, "
+"welche Schritte zur Migration von authconfig nach authselect nötig sind."
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:17
@@ -61,6 +68,8 @@ msgid ""
 "Authselect takes a completely different approach to system configuration "
 "than the previous tool authconfig."
 msgstr ""
+"Authselect geht die Systemkonfiguration komplett anders an als das alte Tool "
+"authconfig."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:25
@@ -70,6 +79,11 @@ msgid ""
 "(to setup authentication modules and identity sources) but it also generates "
 "simple configuration files for several services such as LDAP and Kerberos."
 msgstr ""
+"Authconfig tut sein Bestes, die manuellen Änderungen der Nutzer an den "
+"Dateien, die generiert werden, zu erhalten. Es generiert nicht nur PAM "
+"Konfigurationsdateien und nsswitch.conf (um Authentifizierungsmodule und "
+"Identitätsquellen einzurichten), sondern auch einfache Konfigurationsdateien "
+"für diverse Dienste wie LDAP und Kerberos."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:34
@@ -83,6 +97,15 @@ msgid ""
 "administrator has an option to create a whole new profile and use it with "
 "authselect.  See authselect-profiles(5) to learn more about profiles."
 msgstr ""
+"Authselect geht einen anderen Weg. Es generiert keine Konfigurationsdateien "
+"ausser PAM und nsswitch.conf und es verhindert jegliche Änderung der "
+"generierten Konfiguration. Es stellt einen Dateisatz  bereit, der sich "
+"profiles nennt. Jedes Profil beschreibt, wie die endgültige Konfiguration "
+"aussehen wird und kann leicht verändert werden durch Ein- oder Ausschalten "
+"bestimmter optionaler Eigenschaften. Falls ein Profil benötigt wird, das "
+"über die mitgelieferten hinausgeht, kann der Administrator ein neues Profil "
+"erstellen und es mit authselect benutzen. Weitere Informationen unter "
+"authselect-profiles (5)."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:46
@@ -99,6 +122,19 @@ msgid ""
 "configuration that can be fully tested and is much less error prone. It is "
 "also much easier to distribute such configuration across many systems."
 msgstr ""
+"Was am Anfang nach einem großen Nachteil aussieht, ist in Wahrheit das "
+"Gegenteil. Authconfig ist ein veraltetes Tool und die Anwendungen, die die "
+"benötigten Dienste bereitstellen, haben sich über die Jahre drastisch "
+"verändert. Z. B. gibt es keinen Bedarf mehr für vielfache "
+"Authentifizierungsmodule in PAM oder nsswitch.com, da die Mehrzahl aller "
+"Fälle durch SSSD abgedeckt wird. Daher ist es nicht mehr nötig, diese "
+"explizit hinzuzufügen oder zu entfernen zu können. Mittlerweile gibt es auch "
+"bessere Tools zur Erstellung oder Konfiguration von System Daemons um einer "
+"entfernten Domäne beizutreten, wie etwa 'realm'. Darüber hinaus bieten uns "
+"die mitgelieferten Profile eine verständliche und deterministische Art der "
+"Systemkonfiguration, die vollständig getestet werden kann und dadurch "
+"weniger fehleranfällig ist. Ausserdem kann eine solche Konfiguration "
+"leichter über mehrere Systeme verteilt werden."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:52
@@ -110,12 +146,18 @@ msgid ""
 "longer contain support for nss-pam-ldapd and users are encouraged to switch "
 "to sssd."
 msgstr ""
+"Die wahrscheinlich umstrittendste Änderung ist, daß authselect nur Profile "
+"für sssd und winbind Anbieter mitliefert. Diese zwei Anbieter decken alle "
+"gegenwärtigen Fälle ab von lokalen Benutzern und älteren LDAP Domänen bis "
+"hin zu komplexen Konfigurationen mit IPA oder Active Directory Servern. Die "
+"Profile unterstützen kein nss-pam-ldapd mehr, so daß die Benutzer ermutigt "
+"werden, auf sssd zu wechseln."
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:54
 #, no-wrap
 msgid "JOINING REMOTE DOMAINS"
-msgstr ""
+msgstr "VERBINDEN ENTFERNTER DOMÄNEN"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:59
@@ -125,6 +167,10 @@ msgid ""
 "the correct authselect profile is selected and all daemons and services are "
 "properly configured."
 msgstr ""
+"Benutzen Sie 'ipa-client-install' oder 'realm', um einer IPA Domäne "
+"beizutreten, und 'realm', um einer Active Directory Domäne beizutreten. "
+"Diese Anwendungen stellen sicher, dass die richtigen authselect Profile "
+"ausgewählt und alle daemons und Dienste richtig konfiguriert werden."
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:61
