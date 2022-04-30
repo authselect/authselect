@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-08-09 10:58+0200\n"
+"POT-Creation-Date: 2021-12-06 14:13+0100\n"
 "PO-Revision-Date: 2021-11-09 11:25+0000\n"
 "Last-Translator: Pavel Brezina <pbrezina@redhat.com>\n"
 "Language-Team: Japanese <https://translate.fedoraproject.org/projects/"
@@ -189,24 +189,29 @@ msgid "*nsswitch.conf*"
 msgstr "*nsswitch.conf*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:59
-msgid ""
-"Name Service Switch configuration file. Only maps relevant to the profile "
-"must be set. Maps that are not specified by the profile are included from "
-"{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf."
+#: src/man/authselect-profiles.5.adoc:58
+#, no-wrap
+msgid "    Name Service Switch configuration file.\n"
 msgstr ""
-"Name Service Switch 設定ファイル。プロファイルと関係のあるマップのみが設定さ"
-"れる必要があります。プロファイルによって指定されないマップは、"
-"{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf からインクルードされます。"
+
+#. type: Plain text
+#: src/man/authselect-profiles.5.adoc:63
+#, fuzzy, no-wrap
+#| msgid "Name Service Switch configuration file. Only maps relevant to the profile must be set. Maps that are not specified by the profile are included from {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf."
+msgid ""
+"    Name Service Switch configuration file. Only maps relevant to the profile\n"
+"    must be set. Maps that are not specified by the profile are included from\n"
+"    {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf.\n"
+msgstr "Name Service Switch 設定ファイル。プロファイルと関係のあるマップのみが設定される必要があります。プロファイルによって指定されないマップは、{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf からインクルードされます。"
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:60
+#: src/man/authselect-profiles.5.adoc:65
 #, no-wrap
 msgid "*dconf-db*"
 msgstr "*dconf-db*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:64
+#: src/man/authselect-profiles.5.adoc:69
 msgid ""
 "Changes to dconf database. The main uses case of this file is to set changes "
 "for gnome login screen in order to enable or disable smartcard and "
@@ -217,24 +222,24 @@ msgstr ""
 "ることです。"
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:65
+#: src/man/authselect-profiles.5.adoc:70
 #, no-wrap
 msgid "*dconf-locks*"
 msgstr "*dconf-locks*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:67
+#: src/man/authselect-profiles.5.adoc:72
 msgid "This file define locks on values set in dconf database."
 msgstr "このファイルは、dconf データベースに設定された値のロックを定義します。"
 
 #. type: Title ~
-#: src/man/authselect-profiles.5.adoc:69
+#: src/man/authselect-profiles.5.adoc:74
 #, no-wrap
 msgid "CONDITIONAL LINES"
 msgstr "条件付きの行"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:73
+#: src/man/authselect-profiles.5.adoc:78
 msgid ""
 "Each of these files serves as a template. A template is a plain text file "
 "with optional usage of several operators that can be used to provide some "
@@ -245,13 +250,13 @@ msgstr ""
 "をオプションで使用するプレーンテキストファイルです。"
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:74
+#: src/man/authselect-profiles.5.adoc:79
 #, no-wrap
 msgid "*{continue if \"feature\"}*"
 msgstr "*{continue if \"feature\"}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:79
+#: src/man/authselect-profiles.5.adoc:84
 msgid ""
 "Immediately stop processing of the file unless \"feature\" is defined (the "
 "rest of the file content will be removed). If \"feature\" is defined, the "
@@ -263,13 +268,13 @@ msgstr ""
 "ターのある行はすべて削除され、残りのテンプレートは処理されます。"
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:80
+#: src/man/authselect-profiles.5.adoc:85
 #, no-wrap
 msgid "*{stop if \"feature\"}*"
 msgstr "*{stop if \"feature\"}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:85
+#: src/man/authselect-profiles.5.adoc:90
 msgid ""
 "Opposite of \"continue if\". Immediately stop processing of the file if "
 "\"feature\" is defined (the rest of the file content will be removed).  If "
@@ -282,13 +287,13 @@ msgstr ""
 "処理されます。"
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:86
+#: src/man/authselect-profiles.5.adoc:91
 #, no-wrap
 msgid "*{include if \"feature\"}*"
 msgstr "*{include if \"feature\"}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:89
+#: src/man/authselect-profiles.5.adoc:94
 msgid ""
 "Include the line where this operator is placed only if \"feature\" is "
 "defined."
@@ -297,13 +302,13 @@ msgstr ""
 "ます。"
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:90
+#: src/man/authselect-profiles.5.adoc:95
 #, no-wrap
 msgid "*{exclude if \"feature\"}*"
 msgstr "*{exclude if \"feature\"}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:93
+#: src/man/authselect-profiles.5.adoc:98
 msgid ""
 "Opposite to \"include-if\". Include the line where this operator is placed "
 "only if \"feature\" is not defined."
@@ -312,13 +317,13 @@ msgstr ""
 "ターが置かれている行を含めます。"
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:94
+#: src/man/authselect-profiles.5.adoc:99
 #, no-wrap
 msgid "*{imply \"implied-feature\" if \"feature\"}*"
 msgstr "*{imply \"implied-feature\" if \"feature\"}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:98
+#: src/man/authselect-profiles.5.adoc:103
 msgid ""
 "Enable feature \"implied-feature\" if feature \"feature\" is enabled. The "
 "whole line with this operator is removed, thus it is not possible to add "
@@ -329,13 +334,13 @@ msgstr ""
 "ることはできません。"
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:99
+#: src/man/authselect-profiles.5.adoc:104
 #, no-wrap
 msgid "*{if \"feature\":true|false}*"
 msgstr "*{if \"feature\":true|false}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:102
+#: src/man/authselect-profiles.5.adoc:107
 msgid ""
 "If \"feature\" is defined, replace this operator with string \"true\", "
 "otherwise with string \"false\"."
@@ -344,13 +349,13 @@ msgstr ""
 "えます。定義されていない場合は、文字列 \"false\" と置き換えます。"
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:103
+#: src/man/authselect-profiles.5.adoc:108
 #, no-wrap
 msgid "*{if \"feature\":true}*"
 msgstr "*{if \"feature\":true}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:106
+#: src/man/authselect-profiles.5.adoc:111
 msgid ""
 "If \"feature\" is defined, replace this operator with string \"true\", "
 "otherwise with an empty string."
@@ -359,7 +364,7 @@ msgstr ""
 "ます。定義されていない場合は、空の文字列と置き換えます。"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:110
+#: src/man/authselect-profiles.5.adoc:115
 msgid ""
 "It is also possible to use logical expression in conditional line instead of "
 "specifying single feature name. In this case the expression will evaluate to "
@@ -370,7 +375,7 @@ msgstr ""
 "す。"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:115
+#: src/man/authselect-profiles.5.adoc:120
 msgid ""
 "The expression syntax consists of feature names (e.g. _\"feature\"_) which "
 "returns _true_ if the feature is defined or _false_ if it is not defined and "
@@ -383,18 +388,18 @@ msgstr ""
 "があります。"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:117
+#: src/man/authselect-profiles.5.adoc:122
 msgid "For example:"
 msgstr "例:"
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:118
+#: src/man/authselect-profiles.5.adoc:123
 #, no-wrap
 msgid "*{if \"feature1\" or \"feature2\":true}*"
 msgstr "*{if \"feature1\" or \"feature2\":true}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:121
+#: src/man/authselect-profiles.5.adoc:126
 msgid ""
 "If \"feature1\" or \"feature2\" is defined, replace this operator with "
 "string \"true\", otherwise with an empty string."
@@ -403,13 +408,13 @@ msgstr ""
 "で置き換えられます。定義されていない場合は、空の文字列で置き換えられます。"
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:122
+#: src/man/authselect-profiles.5.adoc:127
 #, no-wrap
 msgid "*{if not \"feature\":true|false}*"
 msgstr "*{if not \"feature\":true|false}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:125
+#: src/man/authselect-profiles.5.adoc:130
 msgid ""
 "If \"feature\" is not defined, replace this operator with string \"true\", "
 "otherwise with string \"false\"."
@@ -418,13 +423,13 @@ msgstr ""
 "換えます。定義されていない場合は、文字列 \"false\" と置き換えます。"
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:126
+#: src/man/authselect-profiles.5.adoc:131
 #, no-wrap
 msgid "*{if not \"feature\":true}*"
 msgstr "*{if not \"feature\":true}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:129
+#: src/man/authselect-profiles.5.adoc:134
 msgid ""
 "If \"feature\" is not defined, replace this operator with string \"true\", "
 "otherwise with an empty string."
@@ -433,13 +438,13 @@ msgstr ""
 "換えます。定義されていない場合は、空の文字列と置き換えます。"
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:130
+#: src/man/authselect-profiles.5.adoc:135
 #, no-wrap
 msgid "*{if \"feature1\" and (\"feature2\" or \"feature3\"):true}*"
 msgstr "*{if \"feature1\" and (\"feature2\" or \"feature3\"):true}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:133
+#: src/man/authselect-profiles.5.adoc:138
 msgid ""
 "If \"feature1\" is defined, and one of \"feature2\" and \"feature3\" is "
 "defined replace this operator with string \"true\", otherwise with an empty "
@@ -450,13 +455,13 @@ msgstr ""
 "字列で置き換えられます。"
 
 #. type: Title ~
-#: src/man/authselect-profiles.5.adoc:135
+#: src/man/authselect-profiles.5.adoc:140
 #, no-wrap
 msgid "EXAMPLE"
 msgstr "例"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:138
+#: src/man/authselect-profiles.5.adoc:143
 msgid ""
 "Here is an example of using \"if\" operator. If \"with-sudo\" feature is "
 "enabled, it will add \"sss\" to sudoers line."
@@ -465,7 +470,7 @@ msgstr ""
 "と、sudoers の行に \"sss\" を追加します。"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:145
+#: src/man/authselect-profiles.5.adoc:150
 #, no-wrap
 msgid ""
 "  passwd:     sss files\n"
@@ -483,7 +488,7 @@ msgstr ""
 "  sudoers:    files {if \"with-sudo\":sss}\n"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:150
+#: src/man/authselect-profiles.5.adoc:155
 msgid ""
 "Here is an example of \"continue-if\" and \"include-if\" operators. The "
 "resulting file will be empty unless \"with-smartcard\" feature is enabled. "
@@ -496,7 +501,7 @@ msgstr ""
 "合、pam_faillock へのサポートも有効にします。"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:163
+#: src/man/authselect-profiles.5.adoc:168
 #, fuzzy, no-wrap
 #| msgid ""
 #| "  {continue if \"with-smartcard\"}\n"
@@ -539,7 +544,7 @@ msgstr ""
 "  ...\n"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:168
+#: src/man/authselect-profiles.5.adoc:173
 msgid ""
 "Here is an example of \"continue-if\" using logical expression. The file "
 "will be empty unless \"with-smartcard\" or \"with-smartcard-required\" is "
@@ -553,7 +558,7 @@ msgstr ""
 "smartcard-required\" のみが必要で、両方の機能を含める必要はありません。"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:181
+#: src/man/authselect-profiles.5.adoc:186
 #, fuzzy, no-wrap
 #| msgid ""
 #| "  {continue if \"with-smartcard\" or \"with-smartcard-required\"}\n"
@@ -596,7 +601,7 @@ msgstr ""
 "  ...\n"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:186
+#: src/man/authselect-profiles.5.adoc:191
 msgid ""
 "Here is an example of \"imply-if\" operator. Enabling feature \"with-"
 "smartcard-required\" will also enable \"with-smartcard\" to make sure that "
@@ -608,7 +613,7 @@ msgstr ""
 "smartcard\" が有効になります。これにより、以前の例と同じ動作が確立されます。"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:201
+#: src/man/authselect-profiles.5.adoc:206
 #, fuzzy, no-wrap
 #| msgid ""
 #| "  {imply \"with-smartcard\" if \"with-smartcard-required\"}\n"
@@ -657,13 +662,13 @@ msgstr ""
 "  ...\n"
 
 #. type: Title -
-#: src/man/authselect-profiles.5.adoc:203
+#: src/man/authselect-profiles.5.adoc:208
 #, no-wrap
 msgid "CREATING A NEW PROFILE"
 msgstr "新規プロファイルの作成"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:208
+#: src/man/authselect-profiles.5.adoc:213
 msgid ""
 "To register a new profile within authselect, create a directory in one of "
 "the authselect profile locations with the files listed above. Not all of the "
@@ -676,7 +681,7 @@ msgstr ""
 "ファイルは必要に応じて作成することができます。"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:212
+#: src/man/authselect-profiles.5.adoc:217
 msgid ""
 "You may find *authselect create-profile* command helpful when creating new "
 "profile. See *authselect(8)* manual page or *authselect create-profile --"
@@ -687,12 +692,12 @@ msgstr ""
 "profile --help* を参照してください。"
 
 #. type: Title -
-#: src/man/authselect-profiles.5.adoc:214
+#: src/man/authselect-profiles.5.adoc:219
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "以下も参照してください"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:215
+#: src/man/authselect-profiles.5.adoc:220
 msgid "authselect(8), nsswitch.conf(5), PAM(8)"
 msgstr "authselect(8)、nsswitch.conf(5)、PAM(8)"
