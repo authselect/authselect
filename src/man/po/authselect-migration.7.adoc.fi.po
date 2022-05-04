@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-12-06 14:13+0100\n"
+"POT-Creation-Date: 2022-05-04 13:46+0200\n"
 "PO-Revision-Date: 2022-02-02 20:20+0000\n"
 "Last-Translator: Jan Kuparinen <copper_fin@hotmail.com>\n"
 "Language-Team: Finnish <https://translate.fedoraproject.org/projects/"
@@ -18,30 +18,31 @@ msgstr ""
 "X-Generator: Weblate 4.10.1\n"
 
 #. type: Title =
-#: ./src/man/authselect-migration.7.adoc:2
+#: src/man/authselect-migration.7.adoc:2
 #, no-wrap
 msgid "authselect-migration(7)"
 msgstr ""
 
 #. type: Title -
-#: ./src/man/authselect-migration.7.adoc:6
+#: src/man/authselect-migration.7.adoc:6
 #, no-wrap
 msgid "NAME"
 msgstr "NIMI"
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:8
-msgid "authselect-migration - A guide how to migrate from authconfig to authselect."
+#: src/man/authselect-migration.7.adoc:8
+msgid ""
+"authselect-migration - A guide how to migrate from authconfig to authselect."
 msgstr ""
 
 #. type: Title -
-#: ./src/man/authselect-migration.7.adoc:10
+#: src/man/authselect-migration.7.adoc:10
 #, no-wrap
 msgid "DESCRIPTION"
 msgstr "KUVAUS"
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:15
+#: src/man/authselect-migration.7.adoc:15
 msgid ""
 "This manual page explains the main differences between authconfig, the "
 "previous tool to configure system authentication and identity sources, and "
@@ -50,20 +51,20 @@ msgid ""
 msgstr ""
 
 #. type: Title -
-#: ./src/man/authselect-migration.7.adoc:17
+#: src/man/authselect-migration.7.adoc:17
 #, no-wrap
 msgid "MAIN DIFFERENCES"
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:20
+#: src/man/authselect-migration.7.adoc:20
 msgid ""
 "Authselect takes a completely different approach to system configuration "
 "than the previous tool authconfig."
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:25
+#: src/man/authselect-migration.7.adoc:25
 msgid ""
 "Authconfig tries its best to keep users's manual changes to the files it "
 "generates. It generates not only PAM configuration files and nsswitch.conf "
@@ -72,38 +73,36 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:34
+#: src/man/authselect-migration.7.adoc:34
 msgid ""
 "Authselect does no such things. It does not generate any configuration files "
 "beside PAM and nsswitch.conf and it strictly prohibits any manual changes to "
 "generated configuration. It provides a set of files called profiles. Each "
 "profile describes how the resulting configuration should look like and it "
-"can be slightly modified by enabling or disabling certain optional "
-"features. If a need arises for a different profile than what authselect "
-"ships, the administrator has an option to create a whole new profile and use "
-"it with authselect.  See authselect-profiles(5) to learn more about "
-"profiles."
+"can be slightly modified by enabling or disabling certain optional features. "
+"If a need arises for a different profile than what authselect ships, the "
+"administrator has an option to create a whole new profile and use it with "
+"authselect.  See authselect-profiles(5) to learn more about profiles."
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:46
+#: src/man/authselect-migration.7.adoc:46
 msgid ""
-"This may seem like a big disadvantage but the truth is the "
-"opposite. Authconfig is a very old tool and the applications providing "
-"required services have changed rapidly over the years. Typically, there is "
-"no longer a need to have multiple authentication modules in PAM and "
-"nsswitch.conf, because the vast majority of use-cases is covered by "
-"SSSD. Therefore there is no need to add or remove them specifically. There "
-"are also better tools to generate configuration for system daemons that can "
-"help you automate the process of joining to a remote domain such as "
-"`realm`. In addition, the shipped profiles give us comprehensive and "
-"deterministic system configuration that can be fully tested and is much less "
-"error prone. It is also much easier to distribute such configuration across "
-"many systems."
+"This may seem like a big disadvantage but the truth is the opposite. "
+"Authconfig is a very old tool and the applications providing required "
+"services have changed rapidly over the years. Typically, there is no longer "
+"a need to have multiple authentication modules in PAM and nsswitch.conf, "
+"because the vast majority of use-cases is covered by SSSD. Therefore there "
+"is no need to add or remove them specifically. There are also better tools "
+"to generate configuration for system daemons that can help you automate the "
+"process of joining to a remote domain such as `realm`. In addition, the "
+"shipped profiles give us comprehensive and deterministic system "
+"configuration that can be fully tested and is much less error prone. It is "
+"also much easier to distribute such configuration across many systems."
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:52
+#: src/man/authselect-migration.7.adoc:52
 msgid ""
 "Probably the most controversial change is that authselect only ships "
 "profiles for sssd and winbind providers. Those two providers cover all "
@@ -114,13 +113,13 @@ msgid ""
 msgstr ""
 
 #. type: Title -
-#: ./src/man/authselect-migration.7.adoc:54
+#: src/man/authselect-migration.7.adoc:54
 #, no-wrap
 msgid "JOINING REMOTE DOMAINS"
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:59
+#: src/man/authselect-migration.7.adoc:59
 msgid ""
 "You can use either `ipa-client-install` or `realm` to join an IPA domain and "
 "`realm` to join an Active Directory domain. These tools will make sure that "
@@ -129,13 +128,13 @@ msgid ""
 msgstr ""
 
 #. type: Title -
-#: ./src/man/authselect-migration.7.adoc:61
+#: src/man/authselect-migration.7.adoc:61
 #, no-wrap
 msgid "CONVERTING YOUR SCRIPTS"
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:67
+#: src/man/authselect-migration.7.adoc:67
 msgid ""
 "If you use `ipa-client-install` or `realm` to join a domain, you can just "
 "remove any authconfig call in your scripts. If this is not an option, you "
@@ -145,13 +144,13 @@ msgid ""
 msgstr ""
 
 #. type: Block title
-#: ./src/man/authselect-migration.7.adoc:68
+#: src/man/authselect-migration.7.adoc:68
 #, no-wrap
 msgid "Relation of authconfig options to authselect profiles"
 msgstr ""
 
 #. type: Table
-#: ./src/man/authselect-migration.7.adoc:76
+#: src/man/authselect-migration.7.adoc:76
 #, no-wrap
 msgid ""
 "|*Authconfig options*                |*Authselect profile*\n"
@@ -163,13 +162,13 @@ msgid ""
 msgstr ""
 
 #. type: Block title
-#: ./src/man/authselect-migration.7.adoc:78
+#: src/man/authselect-migration.7.adoc:78
 #, no-wrap
 msgid "Relation of authconfig options to authselect profile features"
 msgstr ""
 
 #. type: Table
-#: ./src/man/authselect-migration.7.adoc:90
+#: src/man/authselect-migration.7.adoc:90
 #, no-wrap
 msgid ""
 "|*Authconfig options* |*Authselect profile feature*\n"
@@ -185,7 +184,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:97
+#: src/man/authselect-migration.7.adoc:97
 msgid ""
 "Authconfig options `--enableshadow` and `--passalgo=sha512` were often used "
 "to make sure that passwords are stored in `/etc/shadow` using `sha512` "
@@ -195,13 +194,13 @@ msgid ""
 msgstr ""
 
 #. type: Block title
-#: ./src/man/authselect-migration.7.adoc:98
+#: src/man/authselect-migration.7.adoc:98
 #, no-wrap
 msgid "Examples"
 msgstr "Esimerkit"
 
 #. type: delimited block -
-#: ./src/man/authselect-migration.7.adoc:102
+#: src/man/authselect-migration.7.adoc:102
 #, no-wrap
 msgid ""
 "authconfig --enableldap --enableldapauth --enablefaillock --updateall\n"
@@ -209,16 +208,15 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: ./src/man/authselect-migration.7.adoc:105
+#: src/man/authselect-migration.7.adoc:105
 #, no-wrap
 msgid ""
-"authconfig --enablesssd --enablesssdauth --enablesmartcard "
-"--smartcardmodule=sssd --updateall\n"
+"authconfig --enablesssd --enablesssdauth --enablesmartcard --smartcardmodule=sssd --updateall\n"
 "authselect select sssd with-smartcard\n"
 msgstr ""
 
 #. type: delimited block -
-#: ./src/man/authselect-migration.7.adoc:108
+#: src/man/authselect-migration.7.adoc:108
 #, no-wrap
 msgid ""
 "authconfig --enableecryptfs --enablepamaccess --updateall\n"
@@ -226,35 +224,33 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: ./src/man/authselect-migration.7.adoc:111
+#: src/man/authselect-migration.7.adoc:111
 #, no-wrap
 msgid ""
-"authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator "
-"--updateall\n"
+"authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator --updateall\n"
 "realm join -U Administrator --client-software=winbind WINBINDDOMAIN\n"
 msgstr ""
 
 #. type: Title -
-#: ./src/man/authselect-migration.7.adoc:114
+#: src/man/authselect-migration.7.adoc:114
 #, no-wrap
 msgid "CONFIGURATION FILES"
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:116
+#: src/man/authselect-migration.7.adoc:116
 msgid ""
-"This section contains snippets for minimal configuration of various "
-"services."
+"This section contains snippets for minimal configuration of various services."
 msgstr ""
 
 #. type: Title ~
-#: ./src/man/authselect-migration.7.adoc:118
+#: src/man/authselect-migration.7.adoc:118
 #, no-wrap
 msgid "LDAP"
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:122
+#: src/man/authselect-migration.7.adoc:122
 msgid ""
 "Even if LDAP is not directly used through `pam_ldap` and `nss_ldap`, it is "
 "still useful to configure ldap.conf to configure openldap-libs and "
@@ -262,13 +258,13 @@ msgid ""
 msgstr ""
 
 #. type: Block title
-#: ./src/man/authselect-migration.7.adoc:123
+#: src/man/authselect-migration.7.adoc:123
 #, no-wrap
 msgid "{sysconfdir}/openldap/ldap.conf"
 msgstr ""
 
 #. type: delimited block -
-#: ./src/man/authselect-migration.7.adoc:127
+#: src/man/authselect-migration.7.adoc:127
 #, no-wrap
 msgid ""
 "# Set the default base dn\n"
@@ -276,7 +272,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: ./src/man/authselect-migration.7.adoc:130
+#: src/man/authselect-migration.7.adoc:130
 #, no-wrap
 msgid ""
 "# Set the default LDAP server\n"
@@ -284,13 +280,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ~
-#: ./src/man/authselect-migration.7.adoc:133
+#: src/man/authselect-migration.7.adoc:133
 #, no-wrap
 msgid "KERBEROS"
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:136
+#: src/man/authselect-migration.7.adoc:136
 msgid ""
 "If you use Kerberos, the default Kerberos realm should be configured in "
 "order for krb5-libs and therefore tools such as `kinit` to work out of the "
@@ -298,13 +294,13 @@ msgid ""
 msgstr ""
 
 #. type: Block title
-#: ./src/man/authselect-migration.7.adoc:137
+#: src/man/authselect-migration.7.adoc:137
 #, no-wrap
 msgid "{sysconfdir}/krb5.conf"
 msgstr ""
 
 #. type: delimited block -
-#: ./src/man/authselect-migration.7.adoc:141
+#: src/man/authselect-migration.7.adoc:141
 #, no-wrap
 msgid ""
 "[libdefaults]\n"
@@ -312,7 +308,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: ./src/man/authselect-migration.7.adoc:146
+#: src/man/authselect-migration.7.adoc:146
 #, no-wrap
 msgid ""
 "[realms]\n"
@@ -322,7 +318,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: ./src/man/authselect-migration.7.adoc:150
+#: src/man/authselect-migration.7.adoc:150
 #, no-wrap
 msgid ""
 "[domain_realm]\n"
@@ -331,31 +327,31 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:153
-#: ./src/man/authselect-migration.7.adoc:247
+#: src/man/authselect-migration.7.adoc:153
+#: src/man/authselect-migration.7.adoc:247
 #, no-wrap
 msgid "SSSD"
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:158
+#: src/man/authselect-migration.7.adoc:158
 msgid ""
 "Authselect encourages users to use SSSD wherever possible. There are many "
 "configuration options, see sssd.conf(5). This is a minimal configuration "
-"that creates one LDAP domain called `default`. The LDAP server is "
-"auto-discovered through DNS lookups."
+"that creates one LDAP domain called `default`. The LDAP server is auto-"
+"discovered through DNS lookups."
 msgstr ""
 
 #. type: Block title
-#: ./src/man/authselect-migration.7.adoc:159
-#: ./src/man/authselect-migration.7.adoc:175
+#: src/man/authselect-migration.7.adoc:159
+#: src/man/authselect-migration.7.adoc:175
 #, no-wrap
 msgid "{sysconfdir}/sssd/sssd.conf"
 msgstr ""
 
 #. type: delimited block -
-#: ./src/man/authselect-migration.7.adoc:164
-#: ./src/man/authselect-migration.7.adoc:180
+#: src/man/authselect-migration.7.adoc:164
+#: src/man/authselect-migration.7.adoc:180
 #, no-wrap
 msgid ""
 "[sssd]\n"
@@ -364,7 +360,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: ./src/man/authselect-migration.7.adoc:169
+#: src/man/authselect-migration.7.adoc:169
 #, no-wrap
 msgid ""
 "[domain/default]\n"
@@ -374,7 +370,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:174
+#: src/man/authselect-migration.7.adoc:174
 msgid ""
 "And here is a configuration snippet for the same domain but now the "
 "authentication is done over Kerberos. The KDC server is auto-discovered "
@@ -382,7 +378,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: ./src/man/authselect-migration.7.adoc:188
+#: src/man/authselect-migration.7.adoc:188
 #, no-wrap
 msgid ""
 "[domain/default]\n"
@@ -395,7 +391,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:194
+#: src/man/authselect-migration.7.adoc:194
 msgid ""
 "If you want to configure SSSD for an IPA or Active Directory domain, use the "
 "`realm` tool. This will perform an initial setup which involves creating a "
@@ -404,13 +400,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ~
-#: ./src/man/authselect-migration.7.adoc:196
+#: src/man/authselect-migration.7.adoc:196
 #, no-wrap
 msgid "WINBIND"
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:201
+#: src/man/authselect-migration.7.adoc:201
 msgid ""
 "If you want to configure the machine to use Winbind, use `realm`. This will "
 "perform an initial setup which involves creating a Kerberos keytab and "
@@ -419,14 +415,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:203
-#: ./src/man/authselect-migration.7.adoc:255
+#: src/man/authselect-migration.7.adoc:203
+#: src/man/authselect-migration.7.adoc:255
 #, no-wrap
 msgid "NIS"
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:207
+#: src/man/authselect-migration.7.adoc:207
 msgid ""
 "There are several places that needs to be configured in order to make NIS "
 "authentication work. First, you need to set NIS domain and optionally also "
@@ -434,13 +430,13 @@ msgid ""
 msgstr ""
 
 #. type: Block title
-#: ./src/man/authselect-migration.7.adoc:208
+#: src/man/authselect-migration.7.adoc:208
 #, no-wrap
 msgid "{sysconfdir}/yp.conf"
 msgstr ""
 
 #. type: delimited block -
-#: ./src/man/authselect-migration.7.adoc:213
+#: src/man/authselect-migration.7.adoc:213
 #, no-wrap
 msgid ""
 "domain mydomain broadcast\n"
@@ -449,24 +445,24 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:216
+#: src/man/authselect-migration.7.adoc:216
 msgid "NIS domain must be also set in system network configuration."
 msgstr ""
 
 #. type: Block title
-#: ./src/man/authselect-migration.7.adoc:217
+#: src/man/authselect-migration.7.adoc:217
 #, no-wrap
 msgid "{sysconfdir}/sysconfig/network"
 msgstr ""
 
 #. type: delimited block -
-#: ./src/man/authselect-migration.7.adoc:220
+#: src/man/authselect-migration.7.adoc:220
 #, no-wrap
 msgid "NISDOMAIN=mydomain\n"
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:224
+#: src/man/authselect-migration.7.adoc:224
 msgid ""
 "Now, you can set the domain name with command line so there is no need to "
 "reboot your system. Additionaly, it may be necessary to enable NIS in "
@@ -474,7 +470,7 @@ msgid ""
 msgstr ""
 
 #. type: delimited block -
-#: ./src/man/authselect-migration.7.adoc:228
+#: src/man/authselect-migration.7.adoc:228
 #, no-wrap
 msgid ""
 "$ domainname mydomain\n"
@@ -482,13 +478,13 @@ msgid ""
 msgstr ""
 
 #. type: Title ~
-#: ./src/man/authselect-migration.7.adoc:231
+#: src/man/authselect-migration.7.adoc:231
 #, no-wrap
 msgid "PASSWORD QUALITY"
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:236
+#: src/man/authselect-migration.7.adoc:236
 msgid ""
 "Authselect enables `pam_pwquality` module to enforce password quality "
 "restrictions. This module is enabled only for local users. Remote users "
@@ -497,45 +493,45 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:240
+#: src/man/authselect-migration.7.adoc:240
 msgid ""
-"The `pam_pwquality` module can be configured in "
-"{sysconfdir}/security/pwquality.conf. See pam_pwquality(8) to see its "
-"configuration options and defaults."
+"The `pam_pwquality` module can be configured in {sysconfdir}/security/"
+"pwquality.conf. See pam_pwquality(8) to see its configuration options and "
+"defaults."
 msgstr ""
 
 #. type: Title -
-#: ./src/man/authselect-migration.7.adoc:242
+#: src/man/authselect-migration.7.adoc:242
 #, no-wrap
 msgid "STARTING SERVICES"
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:245
+#: src/man/authselect-migration.7.adoc:245
 msgid ""
 "Depending on your configuration, you need to start required services "
 "manually with systemd."
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:249
+#: src/man/authselect-migration.7.adoc:249
 #, no-wrap
 msgid "systemctl enable sssd.service ; systemctl start sssd.service\n"
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:251
+#: src/man/authselect-migration.7.adoc:251
 msgid "Winbind"
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:253
+#: src/man/authselect-migration.7.adoc:253
 #, no-wrap
 msgid "systemctl enable winbind.service ; systemctl start winbind.service\n"
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:258
+#: src/man/authselect-migration.7.adoc:258
 #, no-wrap
 msgid ""
 "systemctl enable rpcbind.service ; systemctl start rpcbind.service\n"
@@ -543,24 +539,24 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:260
+#: src/man/authselect-migration.7.adoc:260
 msgid "If mkhomedir feature is enabled"
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:262
+#: src/man/authselect-migration.7.adoc:262
 #, no-wrap
 msgid "systemctl enable oddjobd.service ; systemctl start oddjobd.service\n"
 msgstr ""
 
 #. type: Title -
-#: ./src/man/authselect-migration.7.adoc:264
+#: src/man/authselect-migration.7.adoc:264
 #, no-wrap
 msgid "AUTHCONFIG TOOLS"
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:268
+#: src/man/authselect-migration.7.adoc:268
 msgid ""
 "Authconfig shipped a tool called _cacertdir_rehash_. If you depend on this "
 "tool, please switch to native _openssl_ command: *openssl rehash "
@@ -568,14 +564,14 @@ msgid ""
 msgstr ""
 
 #. type: Title -
-#: ./src/man/authselect-migration.7.adoc:270
+#: src/man/authselect-migration.7.adoc:270
 #, no-wrap
 msgid "SEE ALSO"
 msgstr ""
 
 #. type: Plain text
-#: ./src/man/authselect-migration.7.adoc:272
+#: src/man/authselect-migration.7.adoc:272
 msgid ""
-"authselect(8), authselect-profiles(5), realm(8), ipa-client-install(1), "
-"sssd.conf(5), smb.conf(5), ldap.conf(5), krb5.conf(5)"
+"authselect(8), authselect-profiles(5), realm(8), ipa-client-install(1), sssd."
+"conf(5), smb.conf(5), ldap.conf(5), krb5.conf(5)"
 msgstr ""
