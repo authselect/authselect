@@ -7,16 +7,16 @@ msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
 "POT-Creation-Date: 2021-07-09 13:40+0200\n"
-"PO-Revision-Date: 2021-11-09 11:25+0000\n"
-"Last-Translator: Sundeep Anand <suanand@redhat.com>\n"
+"PO-Revision-Date: 2022-05-04 11:57+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Japanese <https://translate.fedoraproject.org/projects/"
-"authselect/master-application/ja/>\n"
+"authselect/1-2-x-application/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.8\n"
+"X-Generator: Weblate 4.12.1\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:187
 msgid "Unable to obtain supported features"
@@ -59,7 +59,8 @@ msgstr "設定への予期せぬ変更を検出しました。"
 msgid ""
 "Refusing to activate profile unless those changes are removed or overwrite "
 "is requested."
-msgstr "それらの変更が削除されない限り、または上書きが要求されない限り、プロファイルの実行を拒否しています。"
+msgstr "それらの変更が削除されない限り、または上書きが要求されない限り、プロファイル"
+"の実行を拒否しています。"
 
 #: src/lib/authselect.c:124
 msgid "File that needs to be overwritten was found"
@@ -69,7 +70,8 @@ msgstr "上書きが必要なファイルが見つかりました"
 msgid ""
 "Refusing to activate profile unless this file is removed or overwrite is "
 "requested."
-msgstr "このファイルが削除されない限り、または上書きが要求されない限り、プロファイルの実行を拒否しています。"
+msgstr "このファイルが削除されない限り、または上書きが要求されない限り、プロファイル"
+"の実行を拒否しています。"
 
 #: src/lib/authselect.c:136
 #, c-format
@@ -755,7 +757,8 @@ msgstr "fscreate の SELinux コンテキストを復元することができま
 msgid ""
 "File [%s] should exist but is missing. It is not safe to delete [%s]. "
 "Aborting."
-msgstr "ファイル [%s] は存在するはずですが、存在しません。[%s] の削除は安全ではありません。中止します。"
+msgstr "ファイル [%s] は存在するはずですが、存在しません。[%s] "
+"の削除は安全ではありません。中止します。"
 
 #: src/lib/util/selinux.c:420
 #, c-format
@@ -1049,7 +1052,8 @@ msgstr "既存の設定は検出されませんでした。\n"
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
-msgstr "設定への予期せぬ変更をいくつか検出しました。代わりに 'select' コマンドを使用します。\n"
+msgstr "設定への予期せぬ変更をいくつか検出しました。代わりに 'select' "
+"コマンドを使用します。\n"
 
 #: src/cli/main.c:273
 #, c-format
@@ -1197,7 +1201,8 @@ msgstr "機能 [%d] を無効化できません: %s\n"
 
 #: src/cli/main.c:740
 msgid "Create new profile as a vendor profile instead of a custom profile"
-msgstr "カスタムプロファイルの代わりにベンダープロファイルとして新規のプロファイルを作成します"
+msgstr "カスタムプロファイルの代わりにベンダープロファイルとして新規のプロファイルを"
+"作成します"
 
 #: src/cli/main.c:741
 msgid "ID of a profile that should be used as a base for the new profile"
@@ -1207,7 +1212,8 @@ msgstr "新規のプロファイルのベースとして使用すべきプロフ
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
-msgstr "同名のベンダープロファイルがある場合でも、新規のプロファイルのベースをデフォルトプロファイルに置きます"
+msgstr "同名のベンダープロファイルがある場合でも、新規のプロファイルのベースをデフォ"
+"ルトプロファイルに置きます"
 
 #: src/cli/main.c:743
 msgid "Symlink meta files from the base profile instead of copying them"
@@ -1677,21 +1683,23 @@ msgid ""
 "with authselect and minimum configuration. It does not provide all "
 "capabilities of authconfig.\n"
 msgstr ""
-"このツールの目的は、authselect および最小限の設定で選択したサービスに対する認証を有効にすることです。authconfig "
-"のすべての機能は提供しません。\n"
+"このツールの目的は、authselect "
+"および最小限の設定で選択したサービスに対する認証を有効にすることです。"
+"authconfig のすべての機能は提供しません。\n"
 
 #: src/compat/authcompat.py.in.in:469
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
-msgstr "重要: authconfig は authselect に置き換えられました。スクリプトを更新してください。"
+msgstr "重要: authconfig は authselect "
+"に置き換えられました。スクリプトを更新してください。"
 
 #: src/compat/authcompat.py.in.in:471
 msgid ""
 "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
 msgstr ""
-"Fedora 28 の Change ページを参照してください: https://fedoraproject.org/wiki/Changes/"
-"AuthselectAsDefault"
+"Fedora 28 の Change ページを参照してください: https://fedoraproject.org/wiki/"
+"Changes/AuthselectAsDefault"
 
 #: src/compat/authcompat.py.in.in:472
 msgid ""
@@ -1711,11 +1719,13 @@ msgstr "authconfig は root としてのみ実行できます"
 msgid ""
 "Error: option --%s is no longer supported and we cannot continue if it is "
 "set."
-msgstr "エラー: オプション --%s は今後はサポートされず、設定されている場合は続行できません。"
+msgstr "エラー: オプション --%s "
+"は今後はサポートされず、設定されている場合は続行できません。"
 
 #: src/compat/authcompat.py.in.in:506
 msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
-msgstr "エラー: --enablewinbind および --enablewinbindauth の両方とも設定する必要があります。"
+msgstr "エラー: --enablewinbind および --enablewinbindauth "
+"の両方とも設定する必要があります。"
 
 #: src/compat/authcompat.py.in.in:516
 msgid "Error: Please, provide --updateall option."
