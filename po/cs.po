@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2021-12-06 14:13+0100\n"
+"POT-Creation-Date: 2022-05-04 13:46+0200\n"
 "PO-Revision-Date: 2021-11-09 11:25+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Czech <https://translate.fedoraproject.org/projects/"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Weblate 4.8\n"
 
-#: src/lib/authselect.c:47 src/lib/authselect.c:187
+#: src/lib/authselect.c:47 src/lib/authselect.c:188
 msgid "Unable to obtain supported features"
 msgstr "Není možné získat podporované vlastnosti"
 
@@ -38,7 +38,7 @@ msgstr "Neznámá profilová vlastnost [%s]"
 msgid "Trying to activate profile [%s]"
 msgstr "Pokus o aktivaci profilu [%s]"
 
-#: src/lib/authselect.c:90 src/lib/authselect.c:180 src/lib/profiles/read.c:316
+#: src/lib/authselect.c:90 src/lib/authselect.c:181 src/lib/profiles/read.c:316
 #, c-format
 msgid "Unable to find profile [%s] [%d]: %s"
 msgstr "Nelze nalézt profil [%s] [%d]: %s"
@@ -47,59 +47,66 @@ msgstr "Nelze nalézt profil [%s] [%d]: %s"
 msgid "Enforcing activation!"
 msgstr "Vynucuji aktivaci!"
 
-#: src/lib/authselect.c:109
-#, c-format
-msgid "Unable to check configuration [%d]: %s"
-msgstr "Nelze zkontrolovat konfiguraci [%d]: %s"
-
-#: src/lib/authselect.c:114
-msgid "Unexpected changes to the configuration were detected."
-msgstr "Nalezeny neočekávané změny konfigurace."
-
-#: src/lib/authselect.c:115
+#: src/lib/authselect.c:110
+#, fuzzy, c-format
+#| msgid "System was not configured with authselect."
 msgid ""
-"Refusing to activate profile unless those changes are removed or overwrite "
-"is requested."
-msgstr ""
-"Aktivace profilu odmítnuta dokud tyto změny nebudou odstraněny nebo patřičně "
-"upraveny."
+"%s is missing or unreadable, system was not properly configured by "
+"authselect."
+msgstr "Systém nebyl nakonfigurován prostřednictvím authselect."
 
-#: src/lib/authselect.c:124
-msgid "File that needs to be overwritten was found"
-msgstr "Nalezen soubor, který je nutné přepsat"
-
-#: src/lib/authselect.c:125
-msgid ""
-"Refusing to activate profile unless this file is removed or overwrite is "
-"requested."
+#: src/lib/authselect.c:112
+#, fuzzy
+#| msgid ""
+#| "Refusing to activate profile unless this file is removed or overwrite is "
+#| "requested."
+msgid "Refusing to activate profile unless overwrite is requested."
 msgstr ""
 "Aktivace profilu odmítnuta dokud nebude tento soubor odstraněn nebo patřičně "
 "upraven."
 
-#: src/lib/authselect.c:136
+#: src/lib/authselect.c:118
+msgid ""
+"Changes to the authselect configuration were detected. These changes will be "
+"overwritten. Please call 'authselect opt-out' in order to keep them."
+msgstr ""
+
+#: src/lib/authselect.c:127
 #, c-format
 msgid "Unable to activate profile [%s] [%d]: %s"
 msgstr "Nelze aktivovat profil [%s] [%d]: %s"
 
-#: src/lib/authselect.c:150
+#: src/lib/authselect.c:141
 #, fuzzy
 #| msgid "Trying to backup authselect configuration to [%s]"
 msgid "Trying to uninstall authselect configuration"
 msgstr "Pokus o zálohování authselect konfigurace do [%s]"
 
-#: src/lib/authselect.c:154
+#: src/lib/authselect.c:145
 #, fuzzy, c-format
 #| msgid "Unable to create symbolic links [%d]: %s"
 msgid "Unable to remove symlinks [%d]: %s"
 msgstr "Nelze vytvořit symbolické odkazy [%d]: %s"
 
-#: src/lib/authselect.c:158
+#: src/lib/authselect.c:149
 #, fuzzy
 #| msgid "Changes were successfully applied.\n"
 msgid "Symbolic links were successfully removed"
 msgstr "Změny byly úspěšně použity.\n"
 
-#: src/lib/authselect.c:197
+#: src/lib/authselect.c:154
+#, fuzzy, c-format
+#| msgid "Unable to test current configuration [%d]: %s"
+msgid "Unable to remove authselect configuration [%d]: %s"
+msgstr "Nelze otestovat aktuální konfiguraci [%d]: %s"
+
+#: src/lib/authselect.c:159
+#, fuzzy
+#| msgid "Changes were successfully applied.\n"
+msgid "Authselect configuration was successfully removed"
+msgstr "Změny byly úspěšně použity.\n"
+
+#: src/lib/authselect.c:198
 #, c-format
 msgid "Profile feature [%s] is no longer supported, removing it..."
 msgstr "Profilová vlastnost [%s] není už nadále podporována, odstraňuji ji..."
@@ -334,36 +341,36 @@ msgstr "Nelze vytvořit prázdný profil [%d]: %s"
 msgid "Unable to create profile [%d]: %s"
 msgstr "Nelze vytvořit profil [%d]: %s"
 
-#: src/lib/files/config.c:153
+#: src/lib/files/config.c:152
 msgid "Checking if all required directories are writable."
 msgstr "Zkontrola, zda jsou všechny požadované adresáře zapisovatelné."
 
-#: src/lib/files/config.c:158
+#: src/lib/files/config.c:157
 #, c-format
 msgid "Unable to get path to %s parent directory!"
 msgstr "Nelze získat cestu k nadřazenému adresáři %s!"
 
-#: src/lib/files/config.c:165
+#: src/lib/files/config.c:164
 #, c-format
 msgid "Creating path [%s]"
 msgstr "Vytváření cesty [%s]"
 
-#: src/lib/files/config.c:169
+#: src/lib/files/config.c:168
 #, c-format
 msgid "Unable to create path [%s] [%d]: %s"
 msgstr "Nelze vytvořit cestu [%s] [%d]: %s"
 
-#: src/lib/files/config.c:174
+#: src/lib/files/config.c:173
 #, c-format
 msgid "Directory [%s] does not exist, please create it!"
 msgstr "Adresář [%s] neexistuje, prosím, vytvořte jej!"
 
-#: src/lib/files/config.c:177
+#: src/lib/files/config.c:176
 #, c-format
 msgid "Unable to access directory [%s] in [WX] mode!"
 msgstr "Nelze získat přístup k adresáři [%s] s přístupovými právy [WX]!"
 
-#: src/lib/files/config.c:196
+#: src/lib/files/config.c:195
 #, c-format
 msgid "Unable to load profile [%s] [%d]: %s"
 msgstr "Nelze načíst profil [%s] [%d]: %s"
@@ -399,7 +406,7 @@ msgid "[%s] was not created by authselect!"
 msgstr "[%s] byl vytvořen mimo authselect!"
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
-#: src/lib/files/system.c:372
+#: src/lib/files/system.c:314
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
 msgstr "Došlo k chybě při pokusu o přístup k souboru [%s] [%d]: %s"
@@ -465,54 +472,31 @@ msgstr "Přejmenování [%s] na [%s]"
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "Nelze přejmenovat [%s] na [%s] [%d]: %s"
 
-#: src/lib/files/system.c:292
+#: src/lib/files/system.c:266
 #, c-format
 msgid "Validating file [%s]"
 msgstr "Ověřování souboru [%s]"
 
-#: src/lib/files/system.c:297 src/lib/util/file.c:121
-#, c-format
-msgid "[%s] does not exist!"
-msgstr "[%s] neexistuje!"
-
-#: src/lib/files/system.c:300
-#, c-format
-msgid "Unable to read [%s] [%d]: %s"
-msgstr "Nelze číst [%s] [%d]: %s"
-
-#: src/lib/files/system.c:303
-#, c-format
-msgid "Unable to validate file [%s] [%d]: %s"
-msgstr "Nelze ověřit soubor [%s] [%d]: %s"
-
-#: src/lib/files/system.c:310
-#, c-format
-msgid "Comparing content against [%s]"
-msgstr "Porovnání obsahu proti [%s]"
-
-#: src/lib/files/system.c:314
-msgid "Comparing content against current profile"
-msgstr "Porovnání obsahu proti současnému profilu"
-
-#: src/lib/files/system.c:320
-#, c-format
-msgid "[%s] has unexpected content!"
-msgstr "[%s] má neočekávaný obsah!"
-
-#: src/lib/files/system.c:327
+#: src/lib/files/system.c:271
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
 msgstr "Nelze zkontrolovat oprávnění souboru [%s] [%d]: %s"
 
-#: src/lib/files/system.c:349
+#: src/lib/files/system.c:291
 #, c-format
 msgid "File [%s] was modified outside authselect!"
 msgstr "Soubor [%s] byl změněn mimo authselect!"
 
-#: src/lib/files/system.c:368
+#: src/lib/files/system.c:310
 #, c-format
 msgid "File [%s] is still present"
 msgstr "Soubor [%s] je stále přítomen"
+
+#: src/lib/files/system.c:335 src/lib/files/system.c:345
+#, fuzzy, c-format
+#| msgid "Unable to create [%s] [%d]: %s"
+msgid "Unable to delete [%s] [%d]: %s"
+msgstr "Nelze vytvořit [%s] [%d]: %s"
 
 #: src/lib/profiles/activate.c:44
 #, c-format
@@ -604,7 +588,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "Nelze získat základní název [%s]"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:830
+#: src/lib/util/file.c:199 src/cli/main.c:834
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr ""
@@ -663,6 +647,11 @@ msgstr "[%s] má chybného vlastníka [%u], očekáván vlastník [%u]!"
 #, c-format
 msgid "[%s] has wrong group [%u], expected [%u]!"
 msgstr "[%s] má chybnou skupinu [%u], očekávána skupina [%u]!"
+
+#: src/lib/util/file.c:121
+#, c-format
+msgid "[%s] does not exist!"
+msgstr "[%s] neexistuje!"
 
 #: src/lib/util/file.c:164 src/lib/util/file.c:211
 #, c-format
@@ -768,13 +757,13 @@ msgstr "Odstraňuje se záloha [%s]"
 msgid "Invalid operator!"
 msgstr "Neplatný operátor!"
 
-#: src/lib/util/template.c:450 src/lib/util/template.c:592
-#: src/lib/util/template.c:643
+#: src/lib/util/template.c:450 src/lib/util/template.c:594
+#: src/lib/util/template.c:645
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr "Nelze přeložit regulární výraz: chyba regex %d"
 
-#: src/lib/util/template.c:460 src/lib/util/template.c:653
+#: src/lib/util/template.c:460 src/lib/util/template.c:655
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "Nelze zpracovat shodu [%d]: %s"
@@ -784,7 +773,7 @@ msgstr "Nelze zpracovat shodu [%d]: %s"
 msgid "Unable to process operator [%d]: %s"
 msgstr "Nelze zpracovat operátor [%d]: %s"
 
-#: src/lib/util/template.c:500 src/lib/util/template.c:669
+#: src/lib/util/template.c:500 src/lib/util/template.c:671
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "Nelze vyhledat řetězec: chyba regex %d"
@@ -798,16 +787,16 @@ msgstr "Nelze generovat šablonu [%d]: %s"
 msgid "Unable to get current time!"
 msgstr "Nelze získat aktuální čas!"
 
-#: src/lib/util/template.c:574
+#: src/lib/util/template.c:576
 msgid "Unable to create message!"
 msgstr "Nelze vytvořit zprávu!"
 
-#: src/lib/util/template.c:599
+#: src/lib/util/template.c:601
 #, c-format
 msgid "Unable to find new match: regex error %d"
 msgstr "Nelze nalézt novou shodu: chyba regulárního výrazu %d"
 
-#: src/lib/util/template.c:729
+#: src/lib/util/template.c:731
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
 msgstr "Nelze vytvořit dočasný soubor pro [%s] [%d]: %s"
@@ -904,7 +893,7 @@ msgstr "Společné možnosti:"
 msgid "[OPTIONS...]"
 msgstr "[VOLBY...]"
 
-#: src/cli/cli_tool.c:332 src/cli/main.c:822
+#: src/cli/cli_tool.c:332 src/cli/main.c:826
 msgid "Out of memory!"
 msgstr "Nedostatek paměti!"
 
@@ -953,14 +942,14 @@ msgstr ""
 "Je vyžadována alespoň jedna volba!\n"
 "\n"
 
-#: src/cli/main.c:74 src/cli/main.c:433 src/cli/main.c:471
+#: src/cli/main.c:74 src/cli/main.c:437 src/cli/main.c:475
 msgid "Profile identifier."
 msgstr "Identifikátor profilu."
 
-#: src/cli/main.c:77 src/cli/main.c:255 src/cli/main.c:300 src/cli/main.c:349
-#: src/cli/main.c:391 src/cli/main.c:436 src/cli/main.c:474 src/cli/main.c:638
-#: src/cli/main.c:714 src/cli/main.c:759 src/cli/main.c:797 src/cli/main.c:862
-#: src/cli/main.c:886
+#: src/cli/main.c:77 src/cli/main.c:253 src/cli/main.c:298 src/cli/main.c:347
+#: src/cli/main.c:395 src/cli/main.c:440 src/cli/main.c:478 src/cli/main.c:642
+#: src/cli/main.c:718 src/cli/main.c:763 src/cli/main.c:801 src/cli/main.c:866
+#: src/cli/main.c:890
 msgid "Unable to parse command arguments"
 msgstr "Nelze analyzovat parametry příkazu"
 
@@ -977,17 +966,17 @@ msgstr "Záloha uložena v %s\n"
 msgid "Enforce changes"
 msgstr "Vynucení změn"
 
-#: src/cli/main.c:159 src/cli/main.c:248 src/cli/main.c:628 src/cli/main.c:705
+#: src/cli/main.c:159 src/cli/main.c:246 src/cli/main.c:632 src/cli/main.c:709
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr ""
 "Zazálohovat systémové soubory před aktivací profilu (vytvořit jedinečný "
 "název)"
 
-#: src/cli/main.c:160 src/cli/main.c:249 src/cli/main.c:629 src/cli/main.c:706
+#: src/cli/main.c:160 src/cli/main.c:247 src/cli/main.c:633 src/cli/main.c:710
 msgid "Backup system files before activating profile"
 msgstr "Zazálohovat systémové soubory před aktivací profilu"
 
-#: src/cli/main.c:160 src/cli/main.c:249 src/cli/main.c:629 src/cli/main.c:706
+#: src/cli/main.c:160 src/cli/main.c:247 src/cli/main.c:633 src/cli/main.c:710
 msgid "NAME"
 msgstr "NÁZEV"
 
@@ -995,17 +984,17 @@ msgstr "NÁZEV"
 msgid "Do not backup system files when --force is set"
 msgstr "Nezálohovat systémové soubory, je-li nastavena volba --force"
 
-#: src/cli/main.c:162 src/cli/main.c:630
+#: src/cli/main.c:162 src/cli/main.c:634
 msgid "Do not print profile requirements"
 msgstr "Netisknout požadavky na profil"
 
-#: src/cli/main.c:173 src/cli/main.c:406 src/cli/main.c:442 src/cli/main.c:480
-#: src/cli/main.c:507 src/cli/main.c:657
+#: src/cli/main.c:173 src/cli/main.c:410 src/cli/main.c:446 src/cli/main.c:484
+#: src/cli/main.c:511 src/cli/main.c:661
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "Nelze získat informace o profilu [%d]: %s"
 
-#: src/cli/main.c:181 src/cli/main.c:514 src/cli/main.c:665
+#: src/cli/main.c:181 src/cli/main.c:518 src/cli/main.c:669
 msgid "Unable to read profile requirements!"
 msgstr "Nelze přečíst požadavky na profil!"
 
@@ -1051,15 +1040,15 @@ msgstr ""
 "\n"
 "%s\n"
 
-#: src/cli/main.c:267
+#: src/cli/main.c:265
 msgid "Changes were successfully applied.\n"
 msgstr "Změny byly úspěšně použity.\n"
 
-#: src/cli/main.c:270 src/cli/main.c:306 src/cli/main.c:647
+#: src/cli/main.c:268 src/cli/main.c:304 src/cli/main.c:651
 msgid "No existing configuration detected.\n"
 msgstr "Nebyla zjištěna žádná existující konfigurace.\n"
 
-#: src/cli/main.c:273
+#: src/cli/main.c:271
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
@@ -1067,39 +1056,39 @@ msgstr ""
 "Nalezeny některé neobvyklé změny konfigurace. Použijte raději příkaz "
 "'select'.\n"
 
-#: src/cli/main.c:277
+#: src/cli/main.c:275
 #, fuzzy, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr "Změny nelze použít [%d]: %s\n"
 
-#: src/cli/main.c:294
+#: src/cli/main.c:292
 msgid "Print command parameters instead of formatted output"
 msgstr "Místo formátovaného výstupu vytisknout parametry příkazu"
 
-#: src/cli/main.c:309 src/cli/main.c:650
+#: src/cli/main.c:307 src/cli/main.c:654
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "Nelze získat aktuální konfiguraci [%d]: %s"
 
-#: src/cli/main.c:323
+#: src/cli/main.c:321
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "ID profilu: %s\n"
 
-#: src/cli/main.c:324
+#: src/cli/main.c:322
 msgid "Enabled features:"
 msgstr "Povolené funkce:"
 
-#: src/cli/main.c:327
+#: src/cli/main.c:325
 msgid " None\n"
 msgstr "Žádné\n"
 
-#: src/cli/main.c:355
+#: src/cli/main.c:353
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "Nelze otestovat aktuální konfiguraci [%d]: %s"
 
-#: src/cli/main.c:362
+#: src/cli/main.c:360
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
@@ -1107,65 +1096,71 @@ msgstr ""
 "Aktuální konfigurace je neplatná. Byla pravděpodobně upravena mimo "
 "authselect."
 
-#: src/cli/main.c:369
+#: src/cli/main.c:367
 msgid "Current configuration is valid."
 msgstr "Aktuální konfigurace je platná."
 
-#: src/cli/main.c:372
+#: src/cli/main.c:370
+#, fuzzy
+#| msgid "No existing configuration detected.\n"
+msgid "No configuration detected."
+msgstr "Nebyla zjištěna žádná existující konfigurace.\n"
+
+#: src/cli/main.c:374
 msgid "System was not configured with authselect."
 msgstr "Systém nebyl nakonfigurován prostřednictvím authselect."
 
-#: src/cli/main.c:397
+#: src/cli/main.c:401
 msgid "Unable to get profile list!"
 msgstr "Nelze získat seznam profilů!"
 
-#: src/cli/main.c:450
+#: src/cli/main.c:454
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
 msgstr "Nelze získat vlastnosti profilu [%d]: %s"
 
-#: src/cli/main.c:552
+#: src/cli/main.c:556
 msgid "Print content of all files"
 msgstr "Vytisknout obsah všech souborů"
 
-#: src/cli/main.c:553
+#: src/cli/main.c:557
 msgid "Print nsswitch.conf content"
 msgstr "Vytisknout obsah nsswitch.conf"
 
-#: src/cli/main.c:554
+#: src/cli/main.c:558
 msgid "Print system-auth content"
 msgstr "Vytisknout obsah system-auth"
 
-#: src/cli/main.c:555
+#: src/cli/main.c:559
 msgid "Print password-auth content"
 msgstr "Vytisknout obsah password-auth"
 
-#: src/cli/main.c:556
+#: src/cli/main.c:560
 msgid "Print smartcard-auth content"
 msgstr "Vytisknout obsah smartcard-auth"
 
-#: src/cli/main.c:557
+#: src/cli/main.c:561
 msgid "Print fingerprint-auth content"
 msgstr "Vytisknout obsah fingerprint-auth"
 
-#: src/cli/main.c:558
+#: src/cli/main.c:562
 msgid "Print postlogin content"
 msgstr "Vytisknout obsah postlogin"
 
-#: src/cli/main.c:559
+#: src/cli/main.c:563
 msgid "Print dconf database content"
 msgstr "Vytisknout obsah databáze dconf"
 
-#: src/cli/main.c:560
+#: src/cli/main.c:564
 msgid "Print dconf lock content"
 msgstr "Vytisknout obsah dconf lock"
 
-#: src/cli/main.c:587
+#: src/cli/main.c:591
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "Nelze získat generovaný obsah [%d]: %s"
 
-#: src/cli/main.c:606
+#: src/cli/main.c:610
 #, c-format
 msgid ""
 "File %s: Empty\n"
@@ -1174,7 +1169,7 @@ msgstr ""
 "Soubor %s: Prázdný\n"
 "\n"
 
-#: src/cli/main.c:608
+#: src/cli/main.c:612
 #, c-format
 msgid ""
 "File %s:\n"
@@ -1185,45 +1180,45 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/cli/main.c:635
+#: src/cli/main.c:639
 msgid "Feature to enable."
 msgstr "Funkce k povolení."
 
-#: src/cli/main.c:672
+#: src/cli/main.c:676
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
 msgstr ""
 "Nelze vytvořit zálohu současné konfigurace [%d]: %s\n"
 "\n"
 
-#: src/cli/main.c:679
+#: src/cli/main.c:683
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "Nelze povolit  funkci [%d]: %s\n"
 
-#: src/cli/main.c:684
+#: src/cli/main.c:688
 #, c-format
 msgid "%s\n"
 msgstr "%s\n"
 
-#: src/cli/main.c:711
+#: src/cli/main.c:715
 msgid "Feature to disable."
 msgstr "Funkce k zakázání."
 
-#: src/cli/main.c:725
+#: src/cli/main.c:729
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "Nelze zakázat  funkci [%d]: %s\n"
 
-#: src/cli/main.c:744
+#: src/cli/main.c:748
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr "Vytvořit nový profil jako profil výrobce místo vlastního profil"
 
-#: src/cli/main.c:745
+#: src/cli/main.c:749
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr "ID profilu, na němž bude založen nový profil"
 
-#: src/cli/main.c:746
+#: src/cli/main.c:750
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1231,154 +1226,158 @@ msgstr ""
 "Založit nový profil na výchozím profilu, přestože profil výrobce se stejným "
 "názvem existuje"
 
-#: src/cli/main.c:747
+#: src/cli/main.c:751
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr ""
 "Vytvořit symbolické odkazy místo zkopírování meta souborů základního profilu"
 
-#: src/cli/main.c:748
+#: src/cli/main.c:752
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr ""
 "Vytvořit symbolické odkazy místo zkopírování souborů nsswitch základního "
 "profilu"
 
-#: src/cli/main.c:749
+#: src/cli/main.c:753
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr ""
 "Vytvořit symbolické odkazy místo zkopírování pam souborů základního profilu"
 
-#: src/cli/main.c:750
+#: src/cli/main.c:754
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
 "Vytvořit symbolické odkazy místo zkopírování dconf souborů základního profilu"
 
-#: src/cli/main.c:751
+#: src/cli/main.c:755
 msgid "Symlink specific file (can be set multiple times)"
 msgstr "Vytvořit symbolický odkaz na určený soubor (lze použít několikrát)"
 
-#: src/cli/main.c:756
+#: src/cli/main.c:760
 msgid "New profile name."
 msgstr "Nový název profilu."
 
-#: src/cli/main.c:766
+#: src/cli/main.c:770
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "Nelze vytvořit nový profil [%d]: %s\n"
 
-#: src/cli/main.c:770
+#: src/cli/main.c:774
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "Nový profil vytvořen v %s\n"
 
-#: src/cli/main.c:791
+#: src/cli/main.c:795
 msgid "Print backup names without any formatting and additional information"
 msgstr "Vytisknout názvy záloh bez formátování a dalších informací"
 
-#: src/cli/main.c:803
+#: src/cli/main.c:807
 msgid "Unable to list available backups!"
 msgstr "Nelze vypsat dostupné zálohy!"
 
-#: src/cli/main.c:840
+#: src/cli/main.c:844
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (vytvořeno v %s)\n"
 
-#: src/cli/main.c:859
+#: src/cli/main.c:863
 msgid "Name of the backup to remove."
 msgstr "Název zálohy, která bude odstraněna."
 
-#: src/cli/main.c:868
+#: src/cli/main.c:872
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "Nelze odstranit zálohu [%s] [%d]: %s\n"
 
-#: src/cli/main.c:883
+#: src/cli/main.c:887
 msgid "Name of the backup to restore from."
 msgstr "Název zálohy, z níž se bude obnovovat."
 
-#: src/cli/main.c:892
+#: src/cli/main.c:896
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "Nelze provést obnovu ze zálohy [%s] [%d]: %s\n"
 
-#: src/cli/main.c:906
+#: src/cli/main.c:910
 #, fuzzy, c-format
 #| msgid "Unable to test current configuration [%d]: %s"
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "Nelze otestovat aktuální konfiguraci [%d]: %s"
 
-#: src/cli/main.c:956
+#: src/cli/main.c:960
 msgid "Select profile"
 msgstr "Vybrat profil"
 
-#: src/cli/main.c:957
+#: src/cli/main.c:961
 msgid "Regenerate configuration for currently selected command"
 msgstr "Obnovit konfiguraci pro aktuálně zvolený příkaz"
 
-#: src/cli/main.c:958
+#: src/cli/main.c:962
 msgid "List available profiles"
 msgstr "Vypsat dostupné profily"
 
-#: src/cli/main.c:959
+#: src/cli/main.c:963
 msgid "List available profile features"
 msgstr "Vypsat dostupné vlastnosti profilu"
 
-#: src/cli/main.c:960
+#: src/cli/main.c:964
 msgid "Show profile information"
 msgstr "Zobrazit informace o profilu"
 
-#: src/cli/main.c:961
+#: src/cli/main.c:965
 msgid "Print profile requirements"
 msgstr "Vytisknout požadavky na profil"
 
-#: src/cli/main.c:962
+#: src/cli/main.c:966
 msgid "Get identifier of currently selected profile"
 msgstr "Získat identifikátor aktuálně zvoleného profilu"
 
-#: src/cli/main.c:963
+#: src/cli/main.c:967
 msgid "Check if the current configuration is valid"
 msgstr "Zkontrolovat, zda je současná konfigurace platná"
 
-#: src/cli/main.c:964
+#: src/cli/main.c:968
 #, fuzzy
 msgid "Print changes that would be otherwise written"
 msgstr "Vytisknout změny, které by byly jinak zapsány"
 
-#: src/cli/main.c:965
+#: src/cli/main.c:969
 msgid "Enable feature in currently selected profile"
 msgstr "Povolit vlastnost v aktuálně zvoleném profilu"
 
-#: src/cli/main.c:966
+#: src/cli/main.c:970
 msgid "Disable feature in currently selected profile"
 msgstr "Zakázat vlastnost v aktuálně zvoleném profilu"
 
-#: src/cli/main.c:967
+#: src/cli/main.c:971
 msgid "Create new authselect profile"
 msgstr "Vytvořit nový profil authselect"
 
-#: src/cli/main.c:968
+#: src/cli/main.c:972
 msgid "Backup commands:"
 msgstr "Příkazy pro zálohování:"
 
-#: src/cli/main.c:969
+#: src/cli/main.c:973
 msgid "List available backups"
 msgstr "Vypsat dostupné zálohy"
 
-#: src/cli/main.c:970
+#: src/cli/main.c:974
 msgid "Remove backup"
 msgstr "Odstranit zálohu"
 
-#: src/cli/main.c:971
+#: src/cli/main.c:975
 msgid "Restore from backup"
 msgstr "Obnovit ze zálohy"
 
-#: src/cli/main.c:972
+#: src/cli/main.c:976
+msgid "Other:"
+msgstr ""
+
+#: src/cli/main.c:977
 #, fuzzy
 #| msgid "Backup [%s] contains authselect configuration"
-msgid "Uninstall authselect configuration"
+msgid "Opt-out from authselect managed configuration"
 msgstr "Záloha [%s] obsahuje konfiguraci authselect"
 
-#: src/cli/main.c:973
+#: src/cli/main.c:979
 #, fuzzy
 #| msgid "Backup [%s] contains authselect configuration"
 msgid "Print authselect version"
@@ -1769,6 +1768,37 @@ msgstr ""
 #: src/compat/authcompat.py.in.in:519
 msgid "Error: Please, provide --updateall option."
 msgstr "Chyba: Zadejte prosím volbu --updateall."
+
+#~ msgid "Unable to check configuration [%d]: %s"
+#~ msgstr "Nelze zkontrolovat konfiguraci [%d]: %s"
+
+#~ msgid "Unexpected changes to the configuration were detected."
+#~ msgstr "Nalezeny neočekávané změny konfigurace."
+
+#~ msgid ""
+#~ "Refusing to activate profile unless those changes are removed or "
+#~ "overwrite is requested."
+#~ msgstr ""
+#~ "Aktivace profilu odmítnuta dokud tyto změny nebudou odstraněny nebo "
+#~ "patřičně upraveny."
+
+#~ msgid "File that needs to be overwritten was found"
+#~ msgstr "Nalezen soubor, který je nutné přepsat"
+
+#~ msgid "Unable to read [%s] [%d]: %s"
+#~ msgstr "Nelze číst [%s] [%d]: %s"
+
+#~ msgid "Unable to validate file [%s] [%d]: %s"
+#~ msgstr "Nelze ověřit soubor [%s] [%d]: %s"
+
+#~ msgid "Comparing content against [%s]"
+#~ msgstr "Porovnání obsahu proti [%s]"
+
+#~ msgid "Comparing content against current profile"
+#~ msgstr "Porovnání obsahu proti současnému profilu"
+
+#~ msgid "[%s] has unexpected content!"
+#~ msgstr "[%s] má neočekávaný obsah!"
 
 #~ msgid "Unable to generate nsswitch.conf [%d]: %s"
 #~ msgstr "Nelze generovat nsswitch.conf [%d]: %s"

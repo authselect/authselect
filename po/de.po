@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2021-12-06 14:13+0100\n"
+"POT-Creation-Date: 2022-05-04 13:46+0200\n"
 "PO-Revision-Date: 2022-04-09 13:17+0000\n"
 "Last-Translator: Joachim Philipp <joachim.philipp@gmail.com>\n"
 "Language-Team: German <https://translate.fedoraproject.org/projects/"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.11.2\n"
 
-#: src/lib/authselect.c:47 src/lib/authselect.c:187
+#: src/lib/authselect.c:47 src/lib/authselect.c:188
 msgid "Unable to obtain supported features"
 msgstr "Unterstützte Funktionen können nicht abgerufen werden"
 
@@ -39,7 +39,7 @@ msgstr "Unbekannte Profilfunktion [%s]"
 msgid "Trying to activate profile [%s]"
 msgstr "Versuch, das Profil zu aktivieren [%s]"
 
-#: src/lib/authselect.c:90 src/lib/authselect.c:180 src/lib/profiles/read.c:316
+#: src/lib/authselect.c:90 src/lib/authselect.c:181 src/lib/profiles/read.c:316
 #, c-format
 msgid "Unable to find profile [%s] [%d]: %s"
 msgstr "Profil kann nicht gefunden werden%s] [%d]: %s"
@@ -48,54 +48,61 @@ msgstr "Profil kann nicht gefunden werden%s] [%d]: %s"
 msgid "Enforcing activation!"
 msgstr "Aktivierung erzwingen!"
 
-#: src/lib/authselect.c:109
-#, c-format
-msgid "Unable to check configuration [%d]: %s"
-msgstr "Konfiguration kann nicht geprüft werden [%d]: %s"
-
-#: src/lib/authselect.c:114
-msgid "Unexpected changes to the configuration were detected."
-msgstr "Unerwartete Änderungen an der Konfiguration wurden festgestellt."
-
-#: src/lib/authselect.c:115
+#: src/lib/authselect.c:110
+#, fuzzy, c-format
+#| msgid "System was not configured with authselect."
 msgid ""
-"Refusing to activate profile unless those changes are removed or overwrite "
-"is requested."
-msgstr ""
-"Ablehnung der Aktivierung des Profils, es sei denn, diese Änderungen werden "
-"entfernt oder das Überschreiben wird angefordert."
+"%s is missing or unreadable, system was not properly configured by "
+"authselect."
+msgstr "System wurde nicht mit authselect konfiguriert."
 
-#: src/lib/authselect.c:124
-msgid "File that needs to be overwritten was found"
-msgstr "Datei, die überschrieben werden muss, wurde gefunden"
-
-#: src/lib/authselect.c:125
-msgid ""
-"Refusing to activate profile unless this file is removed or overwrite is "
-"requested."
+#: src/lib/authselect.c:112
+#, fuzzy
+#| msgid ""
+#| "Refusing to activate profile unless this file is removed or overwrite is "
+#| "requested."
+msgid "Refusing to activate profile unless overwrite is requested."
 msgstr ""
 "Verweigert die Aktivierung des Profils, es sei denn, diese Datei wird "
 "entfernt oder das Überschreiben wird angefordert."
 
-#: src/lib/authselect.c:136
+#: src/lib/authselect.c:118
+msgid ""
+"Changes to the authselect configuration were detected. These changes will be "
+"overwritten. Please call 'authselect opt-out' in order to keep them."
+msgstr ""
+
+#: src/lib/authselect.c:127
 #, c-format
 msgid "Unable to activate profile [%s] [%d]: %s"
 msgstr "Profil kann nicht aktiviert werden [%s] [%d]: %s"
 
-#: src/lib/authselect.c:150
+#: src/lib/authselect.c:141
 msgid "Trying to uninstall authselect configuration"
 msgstr "Es wird versucht, die authselect-Konfiguration zu deinstallieren"
 
-#: src/lib/authselect.c:154
+#: src/lib/authselect.c:145
 #, c-format
 msgid "Unable to remove symlinks [%d]: %s"
 msgstr "Symbolische Verknüpfungen können nicht entfernt werden [%d]: %s"
 
-#: src/lib/authselect.c:158
+#: src/lib/authselect.c:149
 msgid "Symbolic links were successfully removed"
 msgstr "Symbolische Verknüpfungen wurden erfolgreich entfernt"
 
-#: src/lib/authselect.c:197
+#: src/lib/authselect.c:154
+#, fuzzy, c-format
+#| msgid "Unable to uninstall authselect configuration [%d]: %s\n"
+msgid "Unable to remove authselect configuration [%d]: %s"
+msgstr "Authselect Konfiguration [%d]: %s kann nicht entfernt werden\n"
+
+#: src/lib/authselect.c:159
+#, fuzzy
+#| msgid "Symbolic links were successfully removed"
+msgid "Authselect configuration was successfully removed"
+msgstr "Symbolische Verknüpfungen wurden erfolgreich entfernt"
+
+#: src/lib/authselect.c:198
 #, c-format
 msgid "Profile feature [%s] is no longer supported, removing it..."
 msgstr "Profilfunktion [%s] wird nicht mehr unterstützt, es wird entfernt ..."
@@ -331,36 +338,36 @@ msgstr "Leeres Profil kann nicht erstellt werden [%d]: %s"
 msgid "Unable to create profile [%d]: %s"
 msgstr "Profil kann nicht erstellt werden [%d]: %s"
 
-#: src/lib/files/config.c:153
+#: src/lib/files/config.c:152
 msgid "Checking if all required directories are writable."
 msgstr "Überprüfen, ob alle erforderlichen Verzeichnisse beschreibbar sind."
 
-#: src/lib/files/config.c:158
+#: src/lib/files/config.c:157
 #, c-format
 msgid "Unable to get path to %s parent directory!"
 msgstr "Pfad kann nicht abgerufen werden %s übergeordnetes Verzeichnis!"
 
-#: src/lib/files/config.c:165
+#: src/lib/files/config.c:164
 #, c-format
 msgid "Creating path [%s]"
 msgstr "Pfad erstellen [%s]"
 
-#: src/lib/files/config.c:169
+#: src/lib/files/config.c:168
 #, c-format
 msgid "Unable to create path [%s] [%d]: %s"
 msgstr "Pfad kann nicht erstellt werden [%s] [%d]: %s"
 
-#: src/lib/files/config.c:174
+#: src/lib/files/config.c:173
 #, c-format
 msgid "Directory [%s] does not exist, please create it!"
 msgstr "Verzeichnis [%s] existiert nicht, bitte erstellen Sie sie!"
 
-#: src/lib/files/config.c:177
+#: src/lib/files/config.c:176
 #, c-format
 msgid "Unable to access directory [%s] in [WX] mode!"
 msgstr "Kein Zugriff auf das Verzeichnis [%s] im [WX] -Modus!"
 
-#: src/lib/files/config.c:196
+#: src/lib/files/config.c:195
 #, c-format
 msgid "Unable to load profile [%s] [%d]: %s"
 msgstr "Profil kann nicht geladen werden [%s] [%d]: %s"
@@ -396,7 +403,7 @@ msgid "[%s] was not created by authselect!"
 msgstr "[%s] wurde nicht von authselect erstellt!"
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
-#: src/lib/files/system.c:372
+#: src/lib/files/system.c:314
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
 msgstr "Fehler beim Versuch, auf die Datei zuzugreifen [%s] [%d]: %s"
@@ -462,54 +469,31 @@ msgstr "Umbenennen [%s] an [%s]"
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "Umbenennung nicht möglich [%s] an [%s] [%d]: %s"
 
-#: src/lib/files/system.c:292
+#: src/lib/files/system.c:266
 #, c-format
 msgid "Validating file [%s]"
 msgstr "Datei überprüfen [%s]"
 
-#: src/lib/files/system.c:297 src/lib/util/file.c:121
-#, c-format
-msgid "[%s] does not exist!"
-msgstr "[%s] ist nicht vorhanden!"
-
-#: src/lib/files/system.c:300
-#, c-format
-msgid "Unable to read [%s] [%d]: %s"
-msgstr "Kann nicht lesen [%s] [%d]: %s"
-
-#: src/lib/files/system.c:303
-#, c-format
-msgid "Unable to validate file [%s] [%d]: %s"
-msgstr "Datei kann nicht überprüft werden [%s] [%d]: %s"
-
-#: src/lib/files/system.c:310
-#, c-format
-msgid "Comparing content against [%s]"
-msgstr "Inhalt vergleichen mit [%s]"
-
-#: src/lib/files/system.c:314
-msgid "Comparing content against current profile"
-msgstr "Inhalt mit aktuellem Profil vergleichen"
-
-#: src/lib/files/system.c:320
-#, c-format
-msgid "[%s] has unexpected content!"
-msgstr "[%s] hat unerwarteten Inhalt!"
-
-#: src/lib/files/system.c:327
+#: src/lib/files/system.c:271
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
 msgstr "Dateimodus von [kann nicht geprüft werden%s] [%d]: %s"
 
-#: src/lib/files/system.c:349
+#: src/lib/files/system.c:291
 #, c-format
 msgid "File [%s] was modified outside authselect!"
 msgstr "Datei [%s] wurde außerhalb von Authselect geändert!"
 
-#: src/lib/files/system.c:368
+#: src/lib/files/system.c:310
 #, c-format
 msgid "File [%s] is still present"
 msgstr "Datei [%s] ist immer noch anwesend"
+
+#: src/lib/files/system.c:335 src/lib/files/system.c:345
+#, fuzzy, c-format
+#| msgid "Unable to create [%s] [%d]: %s"
+msgid "Unable to delete [%s] [%d]: %s"
+msgstr "Unfähig etwas zu erschaffen [%s] [%d]: %s"
 
 #: src/lib/profiles/activate.c:44
 #, c-format
@@ -600,7 +584,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "Kann den Basisnamen von [%s] nicht erlangen"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:830
+#: src/lib/util/file.c:199 src/cli/main.c:834
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "Stat kann nicht [%s] [%d]: %s"
@@ -658,6 +642,11 @@ msgstr "[%s] hat falschen Besitzer [%u], erwartet [%u]!"
 #, c-format
 msgid "[%s] has wrong group [%u], expected [%u]!"
 msgstr "[%s] hat falsche Gruppe [%u], erwartet [%u]!"
+
+#: src/lib/util/file.c:121
+#, c-format
+msgid "[%s] does not exist!"
+msgstr "[%s] ist nicht vorhanden!"
 
 #: src/lib/util/file.c:164 src/lib/util/file.c:211
 #, c-format
@@ -763,13 +752,13 @@ msgstr "Wird entfernt [%s]"
 msgid "Invalid operator!"
 msgstr "Ungültiger Operator!"
 
-#: src/lib/util/template.c:450 src/lib/util/template.c:592
-#: src/lib/util/template.c:643
+#: src/lib/util/template.c:450 src/lib/util/template.c:594
+#: src/lib/util/template.c:645
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr "Reguläre Ausdrücke können nicht kompiliert werden: Regex-Fehler %d"
 
-#: src/lib/util/template.c:460 src/lib/util/template.c:653
+#: src/lib/util/template.c:460 src/lib/util/template.c:655
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "Match kann nicht verarbeitet werden [%d]: %s"
@@ -779,7 +768,7 @@ msgstr "Match kann nicht verarbeitet werden [%d]: %s"
 msgid "Unable to process operator [%d]: %s"
 msgstr "Operator kann nicht verarbeitet werden [%d]: %s"
 
-#: src/lib/util/template.c:500 src/lib/util/template.c:669
+#: src/lib/util/template.c:500 src/lib/util/template.c:671
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "Zeichenfolge kann nicht durchsucht werden: Regex-Fehler %d"
@@ -793,16 +782,16 @@ msgstr "Vorlage kann nicht generiert werden [%d]: %s"
 msgid "Unable to get current time!"
 msgstr "Aktuelle Uhrzeit kann nicht abgerufen werden!"
 
-#: src/lib/util/template.c:574
+#: src/lib/util/template.c:576
 msgid "Unable to create message!"
 msgstr "Nachricht kann nicht erstellt werden!"
 
-#: src/lib/util/template.c:599
+#: src/lib/util/template.c:601
 #, c-format
 msgid "Unable to find new match: regex error %d"
 msgstr "Kann keinen neuen Match finden: regex Fehler %d"
 
-#: src/lib/util/template.c:729
+#: src/lib/util/template.c:731
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
 msgstr "Temporäre Datei für [kann nicht erstellt werden%s] [%d]: %s"
@@ -898,7 +887,7 @@ msgstr "Allgemeine Optionen:"
 msgid "[OPTIONS...]"
 msgstr "[OPTIONEN...]"
 
-#: src/cli/cli_tool.c:332 src/cli/main.c:822
+#: src/cli/cli_tool.c:332 src/cli/main.c:826
 msgid "Out of memory!"
 msgstr "Nicht genügend Speicher!"
 
@@ -947,14 +936,14 @@ msgstr ""
 "Mindestens eine Option ist erforderlich!\n"
 "\n"
 
-#: src/cli/main.c:74 src/cli/main.c:433 src/cli/main.c:471
+#: src/cli/main.c:74 src/cli/main.c:437 src/cli/main.c:475
 msgid "Profile identifier."
 msgstr "Profilkennung."
 
-#: src/cli/main.c:77 src/cli/main.c:255 src/cli/main.c:300 src/cli/main.c:349
-#: src/cli/main.c:391 src/cli/main.c:436 src/cli/main.c:474 src/cli/main.c:638
-#: src/cli/main.c:714 src/cli/main.c:759 src/cli/main.c:797 src/cli/main.c:862
-#: src/cli/main.c:886
+#: src/cli/main.c:77 src/cli/main.c:253 src/cli/main.c:298 src/cli/main.c:347
+#: src/cli/main.c:395 src/cli/main.c:440 src/cli/main.c:478 src/cli/main.c:642
+#: src/cli/main.c:718 src/cli/main.c:763 src/cli/main.c:801 src/cli/main.c:866
+#: src/cli/main.c:890
 msgid "Unable to parse command arguments"
 msgstr "Befehlsargumente können nicht analysiert werden"
 
@@ -971,17 +960,17 @@ msgstr "Backup gespeichert um %s\n"
 msgid "Enforce changes"
 msgstr "Änderungen erzwingen"
 
-#: src/cli/main.c:159 src/cli/main.c:248 src/cli/main.c:628 src/cli/main.c:705
+#: src/cli/main.c:159 src/cli/main.c:246 src/cli/main.c:632 src/cli/main.c:709
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr ""
 "Sicherheitskopie von Systemdateien anlegen vor der Profilaktivierung "
 "(eindeutigen Namen generieren)"
 
-#: src/cli/main.c:160 src/cli/main.c:249 src/cli/main.c:629 src/cli/main.c:706
+#: src/cli/main.c:160 src/cli/main.c:247 src/cli/main.c:633 src/cli/main.c:710
 msgid "Backup system files before activating profile"
 msgstr "Sichern Sie die Systemdateien, bevor Sie das Profil aktivieren"
 
-#: src/cli/main.c:160 src/cli/main.c:249 src/cli/main.c:629 src/cli/main.c:706
+#: src/cli/main.c:160 src/cli/main.c:247 src/cli/main.c:633 src/cli/main.c:710
 msgid "NAME"
 msgstr "NAME"
 
@@ -989,17 +978,17 @@ msgstr "NAME"
 msgid "Do not backup system files when --force is set"
 msgstr "Sichern Sie keine Systemdateien, wenn --force eingestellt ist"
 
-#: src/cli/main.c:162 src/cli/main.c:630
+#: src/cli/main.c:162 src/cli/main.c:634
 msgid "Do not print profile requirements"
 msgstr "Profilanforderungen nicht drucken"
 
-#: src/cli/main.c:173 src/cli/main.c:406 src/cli/main.c:442 src/cli/main.c:480
-#: src/cli/main.c:507 src/cli/main.c:657
+#: src/cli/main.c:173 src/cli/main.c:410 src/cli/main.c:446 src/cli/main.c:484
+#: src/cli/main.c:511 src/cli/main.c:661
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "Profilinformationen können nicht abgerufen werden [%d]: %s"
 
-#: src/cli/main.c:181 src/cli/main.c:514 src/cli/main.c:665
+#: src/cli/main.c:181 src/cli/main.c:518 src/cli/main.c:669
 msgid "Unable to read profile requirements!"
 msgstr "Profilanforderungen können nicht gelesen werden!"
 
@@ -1046,15 +1035,15 @@ msgstr ""
 "\n"
 "%s\n"
 
-#: src/cli/main.c:267
+#: src/cli/main.c:265
 msgid "Changes were successfully applied.\n"
 msgstr "Änderungen wurden erfolgreich übernommen.\n"
 
-#: src/cli/main.c:270 src/cli/main.c:306 src/cli/main.c:647
+#: src/cli/main.c:268 src/cli/main.c:304 src/cli/main.c:651
 msgid "No existing configuration detected.\n"
 msgstr "Es wurde keine vorhandene Konfiguration erkannt.\n"
 
-#: src/cli/main.c:273
+#: src/cli/main.c:271
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
@@ -1062,39 +1051,39 @@ msgstr ""
 "Es wurden einige unerwartete Änderungen an der Konfiguration festgestellt. "
 "Verwenden Sie stattdessen den Befehl \"Auswählen\".\n"
 
-#: src/cli/main.c:277
+#: src/cli/main.c:275
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr "Änderungen können nicht übernommen werden [%d]: %s\n"
 
-#: src/cli/main.c:294
+#: src/cli/main.c:292
 msgid "Print command parameters instead of formatted output"
 msgstr "Befehlsparameter statt formatierter Ausgabe drucken"
 
-#: src/cli/main.c:309 src/cli/main.c:650
+#: src/cli/main.c:307 src/cli/main.c:654
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "Aktuelle Konfiguration kann nicht abgerufen werden [%d]: %s"
 
-#: src/cli/main.c:323
+#: src/cli/main.c:321
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "Profil ID: %s\n"
 
-#: src/cli/main.c:324
+#: src/cli/main.c:322
 msgid "Enabled features:"
 msgstr "Aktivierte Funktionen:"
 
-#: src/cli/main.c:327
+#: src/cli/main.c:325
 msgid " None\n"
 msgstr " Kein\n"
 
-#: src/cli/main.c:355
+#: src/cli/main.c:353
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "Aktuelle Konfiguration kann nicht getestet werden [%d]: %s"
 
-#: src/cli/main.c:362
+#: src/cli/main.c:360
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
@@ -1102,65 +1091,71 @@ msgstr ""
 "Die aktuelle Konfiguration ist nicht gültig. Es wurde wahrscheinlich "
 "außerhalb von Authselect geändert."
 
-#: src/cli/main.c:369
+#: src/cli/main.c:367
 msgid "Current configuration is valid."
 msgstr "Die aktuelle Konfiguration ist gültig."
 
-#: src/cli/main.c:372
+#: src/cli/main.c:370
+#, fuzzy
+#| msgid "No existing configuration detected.\n"
+msgid "No configuration detected."
+msgstr "Es wurde keine vorhandene Konfiguration erkannt.\n"
+
+#: src/cli/main.c:374
 msgid "System was not configured with authselect."
 msgstr "System wurde nicht mit authselect konfiguriert."
 
-#: src/cli/main.c:397
+#: src/cli/main.c:401
 msgid "Unable to get profile list!"
 msgstr "Profilliste kann nicht abgerufen werden!"
 
-#: src/cli/main.c:450
+#: src/cli/main.c:454
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
 msgstr "Kann Profilfunktionen nicht erlangen [%d]: %s"
 
-#: src/cli/main.c:552
+#: src/cli/main.c:556
 msgid "Print content of all files"
 msgstr "Inhalt aller Dateien drucken"
 
-#: src/cli/main.c:553
+#: src/cli/main.c:557
 msgid "Print nsswitch.conf content"
 msgstr "Inhalt der nsswitch.conf drucken"
 
-#: src/cli/main.c:554
+#: src/cli/main.c:558
 msgid "Print system-auth content"
 msgstr "Drucken Sie den Inhalt der Systemauthentifizierung"
 
-#: src/cli/main.c:555
+#: src/cli/main.c:559
 msgid "Print password-auth content"
 msgstr "Drucken Sie den Inhalt der Kennwortauthentifizierung"
 
-#: src/cli/main.c:556
+#: src/cli/main.c:560
 msgid "Print smartcard-auth content"
 msgstr "Smartcard-Auth-Inhalt drucken"
 
-#: src/cli/main.c:557
+#: src/cli/main.c:561
 msgid "Print fingerprint-auth content"
 msgstr "Drucken Sie den Fingerabdruck-Auth-Inhalt"
 
-#: src/cli/main.c:558
+#: src/cli/main.c:562
 msgid "Print postlogin content"
 msgstr "Postlogin-Inhalt drucken"
 
-#: src/cli/main.c:559
+#: src/cli/main.c:563
 msgid "Print dconf database content"
 msgstr "Dconf-Datenbankinhalt drucken"
 
-#: src/cli/main.c:560
+#: src/cli/main.c:564
 msgid "Print dconf lock content"
 msgstr "Dconf-Sperrinhalt drucken"
 
-#: src/cli/main.c:587
+#: src/cli/main.c:591
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "Generierter Inhalt kann nicht abgerufen werden [%d]: %s"
 
-#: src/cli/main.c:606
+#: src/cli/main.c:610
 #, c-format
 msgid ""
 "File %s: Empty\n"
@@ -1169,7 +1164,7 @@ msgstr ""
 "Datei %s: Leer\n"
 "\n"
 
-#: src/cli/main.c:608
+#: src/cli/main.c:612
 #, c-format
 msgid ""
 "File %s:\n"
@@ -1180,46 +1175,46 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/cli/main.c:635
+#: src/cli/main.c:639
 msgid "Feature to enable."
 msgstr "Zu aktivierende Funktion."
 
-#: src/cli/main.c:672
+#: src/cli/main.c:676
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
 msgstr "Kann kein Backup für die aktuelle Konfiguration erzeugen [%d]: %s\n"
 
-#: src/cli/main.c:679
+#: src/cli/main.c:683
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "Funktion kann nicht aktiviert werden [%d]: %s\n"
 
-#: src/cli/main.c:684
+#: src/cli/main.c:688
 #, c-format
 msgid "%s\n"
 msgstr "%s\n"
 
-#: src/cli/main.c:711
+#: src/cli/main.c:715
 msgid "Feature to disable."
 msgstr "Zu deaktivierende Funktion."
 
-#: src/cli/main.c:725
+#: src/cli/main.c:729
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "Funktion kann nicht deaktiviert werden [%d]: %s\n"
 
-#: src/cli/main.c:744
+#: src/cli/main.c:748
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr ""
 "Erstellen Sie ein neues Profil als Lieferantenprofil anstelle eines "
 "benutzerdefinierten Profils"
 
-#: src/cli/main.c:745
+#: src/cli/main.c:749
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr ""
 "ID eines Profils, das als Basis für das neue Profil verwendet werden soll"
 
-#: src/cli/main.c:746
+#: src/cli/main.c:750
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1227,147 +1222,153 @@ msgstr ""
 "Erstellen Sie ein neues Profil auf einem Standardprofil, auch wenn ein "
 "Lieferantenprofil mit demselben Namen vorhanden ist"
 
-#: src/cli/main.c:747
+#: src/cli/main.c:751
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr "Symlink-Metadateien aus dem Basisprofil statt kopieren"
 
-#: src/cli/main.c:748
+#: src/cli/main.c:752
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr "Symlink nsswitch-Dateien vom Basisprofil aus, anstatt sie zu kopieren"
 
-#: src/cli/main.c:749
+#: src/cli/main.c:753
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr "Symlink-PAM-Dateien aus dem Basisprofil, anstatt sie zu kopieren"
 
-#: src/cli/main.c:750
+#: src/cli/main.c:754
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr "Symlink-dconf-Dateien aus dem Basisprofil, anstatt sie zu kopieren"
 
-#: src/cli/main.c:751
+#: src/cli/main.c:755
 msgid "Symlink specific file (can be set multiple times)"
 msgstr "Symlink-spezifische Datei (kann mehrfach eingestellt werden)"
 
-#: src/cli/main.c:756
+#: src/cli/main.c:760
 msgid "New profile name."
 msgstr "Neuer Profilname."
 
-#: src/cli/main.c:766
+#: src/cli/main.c:770
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "Neues Profil kann nicht erstellt werden [%d]: %s\n"
 
-#: src/cli/main.c:770
+#: src/cli/main.c:774
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "Neues Profil wurde erstellt am %s\n"
 
-#: src/cli/main.c:791
+#: src/cli/main.c:795
 msgid "Print backup names without any formatting and additional information"
 msgstr ""
 "Namen der Sicherheitskopien ohne jede Formatierungsinformation und sonstiger "
 "Information ausgeben"
 
-#: src/cli/main.c:803
+#: src/cli/main.c:807
 msgid "Unable to list available backups!"
 msgstr "Kann verfügbare Sicherheitskopien nicht auflisten!"
 
-#: src/cli/main.c:840
+#: src/cli/main.c:844
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (erzeugt in %s)\n"
 
-#: src/cli/main.c:859
+#: src/cli/main.c:863
 msgid "Name of the backup to remove."
 msgstr "Name der zu löschenden Sicherheitskopie."
 
-#: src/cli/main.c:868
+#: src/cli/main.c:872
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "Kann Sicherheitskopie nicht löschen [%s] [%d]: %s\n"
 
-#: src/cli/main.c:883
+#: src/cli/main.c:887
 msgid "Name of the backup to restore from."
 msgstr "Name der Sicherheitskopie aus der restauriert werden soll."
 
-#: src/cli/main.c:892
+#: src/cli/main.c:896
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "Kann nicht aus Sicherheitskopie restaurieren [%s] [%d]: %s\n"
 
-#: src/cli/main.c:906
+#: src/cli/main.c:910
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "Authselect Konfiguration [%d]: %s kann nicht entfernt werden\n"
 
-#: src/cli/main.c:956
+#: src/cli/main.c:960
 msgid "Select profile"
 msgstr "Wähle Profil"
 
-#: src/cli/main.c:957
+#: src/cli/main.c:961
 msgid "Regenerate configuration for currently selected command"
 msgstr "Konfiguration für aktuell ausgewählten Befehl neu erstellen"
 
-#: src/cli/main.c:958
+#: src/cli/main.c:962
 msgid "List available profiles"
 msgstr "Liste der verfügbaren Profile"
 
-#: src/cli/main.c:959
+#: src/cli/main.c:963
 msgid "List available profile features"
 msgstr "Verfügbare Profilfunktionen auflisten"
 
-#: src/cli/main.c:960
+#: src/cli/main.c:964
 msgid "Show profile information"
 msgstr "Profilinformationen anzeigen"
 
-#: src/cli/main.c:961
+#: src/cli/main.c:965
 msgid "Print profile requirements"
 msgstr "Profilanforderungen drucken"
 
-#: src/cli/main.c:962
+#: src/cli/main.c:966
 msgid "Get identifier of currently selected profile"
 msgstr "Kennung des aktuell ausgewählten Profils abrufen"
 
-#: src/cli/main.c:963
+#: src/cli/main.c:967
 msgid "Check if the current configuration is valid"
 msgstr "Prüfen Sie, ob die aktuelle Konfiguration gültig ist"
 
-#: src/cli/main.c:964
+#: src/cli/main.c:968
 msgid "Print changes that would be otherwise written"
 msgstr "Drucken Sie Änderungen aus, die andernfalls geschrieben würden"
 
-#: src/cli/main.c:965
+#: src/cli/main.c:969
 msgid "Enable feature in currently selected profile"
 msgstr "Funktion im aktuell ausgewählten Profil aktivieren"
 
-#: src/cli/main.c:966
+#: src/cli/main.c:970
 msgid "Disable feature in currently selected profile"
 msgstr "Funktion im aktuell ausgewählten Profil deaktivieren"
 
-#: src/cli/main.c:967
+#: src/cli/main.c:971
 msgid "Create new authselect profile"
 msgstr "Erstellen Sie ein neues Authselect-Profil"
 
-#: src/cli/main.c:968
+#: src/cli/main.c:972
 msgid "Backup commands:"
 msgstr "Sicherheitskopiekommandos:"
 
-#: src/cli/main.c:969
+#: src/cli/main.c:973
 msgid "List available backups"
 msgstr "Verfügbare Sicherheitskopien auflisten"
 
-#: src/cli/main.c:970
+#: src/cli/main.c:974
 msgid "Remove backup"
 msgstr "Sicherheitskopie löschen"
 
-#: src/cli/main.c:971
+#: src/cli/main.c:975
 msgid "Restore from backup"
 msgstr "Aus Sicherheitskopie restaurieren"
 
-#: src/cli/main.c:972
-msgid "Uninstall authselect configuration"
+#: src/cli/main.c:976
+msgid "Other:"
+msgstr ""
+
+#: src/cli/main.c:977
+#, fuzzy
+#| msgid "Uninstall authselect configuration"
+msgid "Opt-out from authselect managed configuration"
 msgstr "authselect-Konfiguration deinstallieren"
 
-#: src/cli/main.c:973
+#: src/cli/main.c:979
 msgid "Print authselect version"
 msgstr "authselect-Version ausgeben"
 
@@ -1743,6 +1744,37 @@ msgstr ""
 #: src/compat/authcompat.py.in.in:519
 msgid "Error: Please, provide --updateall option."
 msgstr "Fehler: Bitte geben Sie die Option --updateall an."
+
+#~ msgid "Unable to check configuration [%d]: %s"
+#~ msgstr "Konfiguration kann nicht geprüft werden [%d]: %s"
+
+#~ msgid "Unexpected changes to the configuration were detected."
+#~ msgstr "Unerwartete Änderungen an der Konfiguration wurden festgestellt."
+
+#~ msgid ""
+#~ "Refusing to activate profile unless those changes are removed or "
+#~ "overwrite is requested."
+#~ msgstr ""
+#~ "Ablehnung der Aktivierung des Profils, es sei denn, diese Änderungen "
+#~ "werden entfernt oder das Überschreiben wird angefordert."
+
+#~ msgid "File that needs to be overwritten was found"
+#~ msgstr "Datei, die überschrieben werden muss, wurde gefunden"
+
+#~ msgid "Unable to read [%s] [%d]: %s"
+#~ msgstr "Kann nicht lesen [%s] [%d]: %s"
+
+#~ msgid "Unable to validate file [%s] [%d]: %s"
+#~ msgstr "Datei kann nicht überprüft werden [%s] [%d]: %s"
+
+#~ msgid "Comparing content against [%s]"
+#~ msgstr "Inhalt vergleichen mit [%s]"
+
+#~ msgid "Comparing content against current profile"
+#~ msgstr "Inhalt mit aktuellem Profil vergleichen"
+
+#~ msgid "[%s] has unexpected content!"
+#~ msgstr "[%s] hat unerwarteten Inhalt!"
 
 #~ msgid "Unable to generate nsswitch.conf [%d]: %s"
 #~ msgstr "Nsswitch.conf kann nicht generiert werden [%d]: %s"
