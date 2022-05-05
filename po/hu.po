@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2021-07-09 13:40+0200\n"
+"POT-Creation-Date: 2022-05-04 13:50+0200\n"
 "PO-Revision-Date: 2022-05-04 11:57+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Hungarian <https://translate.fedoraproject.org/projects/"
@@ -104,111 +104,111 @@ msgstr "A(z) [%s] profilfunkció már nem támogatott, eltávolítás…"
 msgid "Unable to create backup directory [%s/%s] [%d]: %s"
 msgstr "A biztonsági mentés könyvtár nem hozható létre: [%s/%s] [%d]: %s"
 
-#: src/lib/authselect_backup.c:70
+#: src/lib/authselect_backup.c:71
 #, c-format
 msgid "Unable to create backup directory [%s] [%d]: %s"
 msgstr "A biztonsági mentés könyvtár nem hozható létre: [%s] [%d]: %s"
 
-#: src/lib/authselect_backup.c:91
+#: src/lib/authselect_backup.c:92
 #, c-format
 msgid "Creating temporary directory at [%s]"
 msgstr "Ideiglenes könyvtár létrehozása itt: [%s]"
 
-#: src/lib/authselect_backup.c:124 src/lib/authselect_profile.c:377
+#: src/lib/authselect_backup.c:125 src/lib/authselect_profile.c:377
 #: src/lib/authselect_profile.c:457
 #, c-format
 msgid "There is no filename in [%s]"
 msgstr "Nincs itt fájlnév: [%s]"
 
-#: src/lib/authselect_backup.c:128
+#: src/lib/authselect_backup.c:129
 #, c-format
 msgid "Copying [%s] to [%s/%s]"
 msgstr "[%s] másolása ide: [%s/%s]"
 
-#: src/lib/authselect_backup.c:132 src/lib/util/selinux.c:393
+#: src/lib/authselect_backup.c:133 src/lib/util/selinux.c:393
 #, c-format
 msgid "File [%s] does not exist"
 msgstr "A(z) [%s] fájl nem létezik"
 
-#: src/lib/authselect_backup.c:134 src/lib/authselect_backup.c:151
+#: src/lib/authselect_backup.c:135 src/lib/authselect_backup.c:152
 #, c-format
 msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
 msgstr "[%s] nem másolható ide: [%s/%s] [%d]: %s"
 
-#: src/lib/authselect_backup.c:174
+#: src/lib/authselect_backup.c:175
 #, c-format
 msgid "Trying to backup authselect configuration to [%s]"
 msgstr "Az authselect konfiguráció biztonsági mentése ide: [%s]"
 
-#: src/lib/authselect_backup.c:179
+#: src/lib/authselect_backup.c:180
 #, c-format
 msgid "Trying to backup system configuration to [%s]"
 msgstr "A rendszer-konfiguráció biztonsági mentése ide: [%s]"
 
-#: src/lib/authselect_backup.c:184
+#: src/lib/authselect_backup.c:185
 #, c-format
 msgid "Backup was successfully created at [%s]"
 msgstr "Biztonsági mentés sikeresen létrehozva itt: [%s]"
 
-#: src/lib/authselect_backup.c:188
+#: src/lib/authselect_backup.c:189
 #, c-format
 msgid "Unable to create backup [%d]: %s"
 msgstr "A biztonsági mentés létrehozása sikertelen [%d]: %s"
 
-#: src/lib/authselect_backup.c:205
+#: src/lib/authselect_backup.c:206
 msgid " does not exist."
 msgstr " nem létezik."
 
-#: src/lib/authselect_backup.c:208 src/lib/profiles/list.c:50
+#: src/lib/authselect_backup.c:209 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
 msgstr "A(z) [%s] könyvtár nem listázható [%d]: %s"
 
-#: src/lib/authselect_backup.c:222
+#: src/lib/authselect_backup.c:223
 #, c-format
 msgid "Removing backup [%s]"
 msgstr "A(z) [%s] biztonsági mentés eltávolítása"
 
-#: src/lib/authselect_backup.c:231
+#: src/lib/authselect_backup.c:232
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
 msgstr "A(z) [%s] könyvtár nem törölhető [%d]: %s"
 
-#: src/lib/authselect_backup.c:304
+#: src/lib/authselect_backup.c:315
 #, c-format
 msgid "Unable to copy files [%d]: %s"
 msgstr "A fájlok nem másolhatók [%d]: %s"
 
-#: src/lib/authselect_backup.c:310 src/lib/profiles/activate.c:78
+#: src/lib/authselect_backup.c:321 src/lib/profiles/activate.c:78
 #, c-format
 msgid "Unable to create symbolic links [%d]: %s"
 msgstr "A szimbolikus linkek nem hozhatóak létre [%d]: %s"
 
-#: src/lib/authselect_backup.c:316 src/lib/profiles/activate.c:84
+#: src/lib/authselect_backup.c:327 src/lib/profiles/activate.c:84
 msgid "Dconf is not installed on your system"
 msgstr "A dconf nincs telepítve a rendszerén"
 
-#: src/lib/authselect_backup.c:318 src/lib/profiles/activate.c:86
+#: src/lib/authselect_backup.c:329 src/lib/profiles/activate.c:86
 #, c-format
 msgid "Unable to update dconf database [%d]: %s"
 msgstr "A dconf adatbázis nem frissíthető [%d]: %s"
 
-#: src/lib/authselect_backup.c:341
+#: src/lib/authselect_backup.c:352
 #, c-format
 msgid "Restoring configuration from backup [%s]"
 msgstr "Konfiguráció helyreállítása a(z) [%s] biztonsági mentésből"
 
-#: src/lib/authselect_backup.c:357
+#: src/lib/authselect_backup.c:368
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
 msgstr "A(z) [%s] biztonsági mentés authselect konfigurációt tartalmaz"
 
-#: src/lib/authselect_backup.c:360
+#: src/lib/authselect_backup.c:371
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
 msgstr "A(z) [%s] biztonsági mentés nem authselect konfigurációt tartalmaz"
 
-#: src/lib/authselect_backup.c:366
+#: src/lib/authselect_backup.c:377
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
 msgstr "A(z) [%s] nem állítható helyre [%d]: %s"
@@ -427,14 +427,14 @@ msgid "Unable to read file [%s/%s] [%d]: %s"
 msgstr "[%s/%s] fájl nem olvasható [%d]: %s"
 
 #: src/lib/files/system.c:112 src/lib/files/system.c:170
-#: src/lib/util/template.c:450 src/lib/util/template.c:591
-#: src/lib/util/template.c:642
+#: src/lib/util/template.c:450 src/lib/util/template.c:592
+#: src/lib/util/template.c:643
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr "A reguláris kifejezés nem fordítható le: regex hiba %d"
 
 #: src/lib/files/system.c:130 src/lib/files/system.c:195
-#: src/lib/util/template.c:500 src/lib/util/template.c:668
+#: src/lib/util/template.c:500 src/lib/util/template.c:669
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "A karakterlánc nem kereshető ki: regex hiba %d"
@@ -612,7 +612,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "A(z) [%s] alap neve nem kérhető le"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:826
+#: src/lib/util/file.c:199 src/cli/main.c:824
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "[%s] nem statisztikázható [%d]: %s"
@@ -776,7 +776,7 @@ msgstr "A(z) [%s] eltávolítása"
 msgid "Invalid operator!"
 msgstr "Érvénytelen operátor!"
 
-#: src/lib/util/template.c:460 src/lib/util/template.c:652
+#: src/lib/util/template.c:460 src/lib/util/template.c:653
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "Az illeszkedés nem dolgozható fel [%d]: %s"
@@ -791,20 +791,20 @@ msgstr "Az operátor nem dolgozható fel [%d]: %s"
 msgid "Unable to generate template [%d]: %s"
 msgstr "A sablon nem állítható elő [%d]: %s"
 
-#: src/lib/util/template.c:559
+#: src/lib/util/template.c:560
 msgid "Unable to get current time!"
 msgstr "A jelenlegi idő nem kérhető le!"
 
-#: src/lib/util/template.c:573
+#: src/lib/util/template.c:574
 msgid "Unable to create message!"
 msgstr "Az üzenet nem hozható létre!"
 
-#: src/lib/util/template.c:598
+#: src/lib/util/template.c:599
 #, c-format
 msgid "Unable to find new match: regex error %d"
 msgstr "Nem található új egyezés: regex hiba %d"
 
-#: src/lib/util/template.c:728
+#: src/lib/util/template.c:729
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
 msgstr "[%s] ideiglenes fájl nem hozható létre [%d]: %s"
@@ -901,7 +901,7 @@ msgstr "Gyakori kapcsolók:"
 msgid "[OPTIONS...]"
 msgstr "[KAPCSOLÓK…]"
 
-#: src/cli/cli_tool.c:332 src/cli/main.c:818
+#: src/cli/cli_tool.c:332 src/cli/main.c:816
 msgid "Out of memory!"
 msgstr "Elfogyott a memória!"
 
@@ -950,14 +950,14 @@ msgstr ""
 "Legalább egy kapcsoló szükséges!\n"
 "\n"
 
-#: src/cli/main.c:72 src/cli/main.c:429 src/cli/main.c:467
+#: src/cli/main.c:72 src/cli/main.c:427 src/cli/main.c:465
 msgid "Profile identifier."
 msgstr "Profilazonosító."
 
-#: src/cli/main.c:75 src/cli/main.c:251 src/cli/main.c:296 src/cli/main.c:345
-#: src/cli/main.c:387 src/cli/main.c:432 src/cli/main.c:470 src/cli/main.c:634
-#: src/cli/main.c:710 src/cli/main.c:755 src/cli/main.c:793 src/cli/main.c:858
-#: src/cli/main.c:882
+#: src/cli/main.c:75 src/cli/main.c:249 src/cli/main.c:294 src/cli/main.c:343
+#: src/cli/main.c:385 src/cli/main.c:430 src/cli/main.c:468 src/cli/main.c:632
+#: src/cli/main.c:708 src/cli/main.c:753 src/cli/main.c:791 src/cli/main.c:856
+#: src/cli/main.c:880
 msgid "Unable to parse command arguments"
 msgstr "A parancs argumentumai nem dolgozhatóak fel"
 
@@ -974,17 +974,17 @@ msgstr "Biztonsági mentés helye: %s\n"
 msgid "Enforce changes"
 msgstr "Változások kényszerítése"
 
-#: src/cli/main.c:157 src/cli/main.c:244 src/cli/main.c:624 src/cli/main.c:701
+#: src/cli/main.c:157 src/cli/main.c:242 src/cli/main.c:622 src/cli/main.c:699
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr ""
 "Rendszerfájlok biztonsági mentése a profil aktiválása előtt (egyedi név "
 "előállítása)"
 
-#: src/cli/main.c:158 src/cli/main.c:245 src/cli/main.c:625 src/cli/main.c:702
+#: src/cli/main.c:158 src/cli/main.c:243 src/cli/main.c:623 src/cli/main.c:700
 msgid "Backup system files before activating profile"
 msgstr "Rendszerfájlok biztonsági mentése a profil aktiválása előtt"
 
-#: src/cli/main.c:158 src/cli/main.c:245 src/cli/main.c:625 src/cli/main.c:702
+#: src/cli/main.c:158 src/cli/main.c:243 src/cli/main.c:623 src/cli/main.c:700
 msgid "NAME"
 msgstr "NÉV"
 
@@ -992,17 +992,17 @@ msgstr "NÉV"
 msgid "Do not backup system files when --force is set"
 msgstr "Ne mentse a rendszerfájlokat ha a --force kapcsoló meg van adva"
 
-#: src/cli/main.c:160 src/cli/main.c:626
+#: src/cli/main.c:160 src/cli/main.c:624
 msgid "Do not print profile requirements"
 msgstr "Ne írja ki a profilkövetelményeket"
 
-#: src/cli/main.c:171 src/cli/main.c:402 src/cli/main.c:438 src/cli/main.c:476
-#: src/cli/main.c:503 src/cli/main.c:653
+#: src/cli/main.c:171 src/cli/main.c:400 src/cli/main.c:436 src/cli/main.c:474
+#: src/cli/main.c:501 src/cli/main.c:651
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "A profilinformációk nem kérhetőek le [%d]: %s"
 
-#: src/cli/main.c:179 src/cli/main.c:510 src/cli/main.c:661
+#: src/cli/main.c:179 src/cli/main.c:508 src/cli/main.c:659
 msgid "Unable to read profile requirements!"
 msgstr "A profilkövetelmények nem olvashatók."
 
@@ -1048,15 +1048,15 @@ msgstr ""
 "\n"
 "%s\n"
 
-#: src/cli/main.c:263
+#: src/cli/main.c:261
 msgid "Changes were successfully applied.\n"
 msgstr "A változások sikeresen alkalmazva.\n"
 
-#: src/cli/main.c:266 src/cli/main.c:302 src/cli/main.c:643
+#: src/cli/main.c:264 src/cli/main.c:300 src/cli/main.c:641
 msgid "No existing configuration detected.\n"
 msgstr "Nincs létező konfiguráció észlelve.\n"
 
-#: src/cli/main.c:269
+#: src/cli/main.c:267
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
@@ -1064,39 +1064,39 @@ msgstr ""
 "Néhány váratlan változás észlelve a konfigurációban. Használja inkább a "
 "„select” parancsot.\n"
 
-#: src/cli/main.c:273
+#: src/cli/main.c:271
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr "A változtatások nem alkalmazhatóak [%d]: %s\n"
 
-#: src/cli/main.c:290
+#: src/cli/main.c:288
 msgid "Print command parameters instead of formatted output"
 msgstr "A parancsok paramétereinek kiírása a formázott kimenet helyett"
 
-#: src/cli/main.c:305 src/cli/main.c:646
+#: src/cli/main.c:303 src/cli/main.c:644
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "A jelenlegi konfiguráció nem kérhető le [%d]: %s"
 
-#: src/cli/main.c:319
+#: src/cli/main.c:317
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "Profilazonosító: %s\n"
 
-#: src/cli/main.c:320
+#: src/cli/main.c:318
 msgid "Enabled features:"
 msgstr "Engedélyezett funkciók:"
 
-#: src/cli/main.c:323
+#: src/cli/main.c:321
 msgid " None\n"
 msgstr " Nincs\n"
 
-#: src/cli/main.c:351
+#: src/cli/main.c:349
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "A jelenlegi konfiguráció nem tesztelhető [%d]: %s"
 
-#: src/cli/main.c:358
+#: src/cli/main.c:356
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
@@ -1104,65 +1104,65 @@ msgstr ""
 "A jelenlegi konfiguráció nem érvényes. Valószínűleg az authselecten kívül "
 "lett módosítva."
 
-#: src/cli/main.c:365
+#: src/cli/main.c:363
 msgid "Current configuration is valid."
 msgstr "A jelenlegi konfiguráció érvényes."
 
-#: src/cli/main.c:368
+#: src/cli/main.c:366
 msgid "System was not configured with authselect."
 msgstr "A rendszer nem az authselect segítségével lett konfigurálva."
 
-#: src/cli/main.c:393
+#: src/cli/main.c:391
 msgid "Unable to get profile list!"
 msgstr "A profillista nem kérhető le!"
 
-#: src/cli/main.c:446
+#: src/cli/main.c:444
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
 msgstr "A profilfunkciók nem kérhetőek le [%d]: %s"
 
-#: src/cli/main.c:548
+#: src/cli/main.c:546
 msgid "Print content of all files"
 msgstr "Az összes fájl tartalmának kiírása"
 
-#: src/cli/main.c:549
+#: src/cli/main.c:547
 msgid "Print nsswitch.conf content"
 msgstr "Az nsswitch.conf tartalmának kiírása"
 
-#: src/cli/main.c:550
+#: src/cli/main.c:548
 msgid "Print system-auth content"
 msgstr "A system-auth tartalmának kiírása"
 
-#: src/cli/main.c:551
+#: src/cli/main.c:549
 msgid "Print password-auth content"
 msgstr "A password-auth tartalmának kiírása"
 
-#: src/cli/main.c:552
+#: src/cli/main.c:550
 msgid "Print smartcard-auth content"
 msgstr "A smartcard-auth tartalmának kiírása"
 
-#: src/cli/main.c:553
+#: src/cli/main.c:551
 msgid "Print fingerprint-auth content"
 msgstr "A fingerprint-auth tartalmának kiírása"
 
-#: src/cli/main.c:554
+#: src/cli/main.c:552
 msgid "Print postlogin content"
 msgstr "A postlogin tartalmának kiírása"
 
-#: src/cli/main.c:555
+#: src/cli/main.c:553
 msgid "Print dconf database content"
 msgstr "A dconf adatbázis tartalmának kiírása"
 
-#: src/cli/main.c:556
+#: src/cli/main.c:554
 msgid "Print dconf lock content"
 msgstr "A dlock zár tartalmának kiírása"
 
-#: src/cli/main.c:583
+#: src/cli/main.c:581
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "Az előállított tartalom nem kérhető le [%d]: %s"
 
-#: src/cli/main.c:602
+#: src/cli/main.c:600
 #, c-format
 msgid ""
 "File %s: Empty\n"
@@ -1171,7 +1171,7 @@ msgstr ""
 "%s fájl: Üres\n"
 "\n"
 
-#: src/cli/main.c:604
+#: src/cli/main.c:602
 #, c-format
 msgid ""
 "File %s:\n"
@@ -1182,44 +1182,44 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/cli/main.c:631
+#: src/cli/main.c:629
 msgid "Feature to enable."
 msgstr "Engedélyezendő funkció."
 
-#: src/cli/main.c:668
+#: src/cli/main.c:666
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
 msgstr ""
 "A jelenlegi konfigurációról nem készíthető biztonsági másolat [%d]: %s\n"
 
-#: src/cli/main.c:675
+#: src/cli/main.c:673
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "A funkció nem engedélyezhető [%d]: %s\n"
 
-#: src/cli/main.c:680
+#: src/cli/main.c:678
 #, c-format
 msgid "%s\n"
 msgstr "%s\n"
 
-#: src/cli/main.c:707
+#: src/cli/main.c:705
 msgid "Feature to disable."
 msgstr "Letiltandó funkció."
 
-#: src/cli/main.c:721
+#: src/cli/main.c:719
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "A funkció nem tiltható le [%d]: %s\n"
 
-#: src/cli/main.c:740
+#: src/cli/main.c:738
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr "Új profil létrehozása gyártói profilként, és nem egyéni profilként"
 
-#: src/cli/main.c:741
+#: src/cli/main.c:739
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr "Azon profil azonosítója, amely az új profil alapja lesz"
 
-#: src/cli/main.c:742
+#: src/cli/main.c:740
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1227,144 +1227,146 @@ msgstr ""
 "Az új profil alapja az alapértelmezett profil legyen, még akkor is ha már "
 "létezik azonos nevű gyártói profil"
 
-#: src/cli/main.c:743
+#: src/cli/main.c:741
 msgid "Symlink meta files from the base profile instead of copying them"
-msgstr "A metafájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
+msgstr ""
+"A metafájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
 
-#: src/cli/main.c:744
+#: src/cli/main.c:742
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr ""
 "Az nsswitch fájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
 
-#: src/cli/main.c:745
+#: src/cli/main.c:743
 msgid "Symlink pam files from the base profile instead of copying them"
-msgstr "A pam fájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
+msgstr ""
+"A pam fájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
 
-#: src/cli/main.c:746
+#: src/cli/main.c:744
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
 "A dconf fájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
 
-#: src/cli/main.c:747
+#: src/cli/main.c:745
 msgid "Symlink specific file (can be set multiple times)"
 msgstr "Konkrét fájl szimbolikus linkelése (többször is megadható)"
 
-#: src/cli/main.c:752
+#: src/cli/main.c:750
 msgid "New profile name."
 msgstr "Új profilnév."
 
-#: src/cli/main.c:762
+#: src/cli/main.c:760
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "Nem hozható létre új profil [%d]: %s\n"
 
-#: src/cli/main.c:766
+#: src/cli/main.c:764
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "Új profil létrehozva itt: %s\n"
 
-#: src/cli/main.c:787
+#: src/cli/main.c:785
 msgid "Print backup names without any formatting and additional information"
 msgstr ""
 "A biztonsági mentések nevének kiírása formázás és további információk nélkül"
 
-#: src/cli/main.c:799
+#: src/cli/main.c:797
 msgid "Unable to list available backups!"
 msgstr "Az elérhető biztonsági mentések listázása sikertelen."
 
-#: src/cli/main.c:836
+#: src/cli/main.c:834
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (létrehozva: %s)\n"
 
-#: src/cli/main.c:855
+#: src/cli/main.c:853
 msgid "Name of the backup to remove."
 msgstr "Az eltávolítandó biztonsági mentés neve."
 
-#: src/cli/main.c:864
+#: src/cli/main.c:862
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "A(z) [%s] biztonsági mentés nem távolítható el [%d]: %s\n"
 
-#: src/cli/main.c:879
+#: src/cli/main.c:877
 msgid "Name of the backup to restore from."
 msgstr "A biztonsági mentés, amelyből helyre akar állítani."
 
-#: src/cli/main.c:888
+#: src/cli/main.c:886
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "A(z) [%s] biztonsági mentésből helyreállítás sikertelen [%d]: %s\n"
 
-#: src/cli/main.c:902
+#: src/cli/main.c:900
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "Az authselect konfiguráció nem távolítható el [%d]: %s\n"
 
-#: src/cli/main.c:945
+#: src/cli/main.c:943
 msgid "Select profile"
 msgstr "Válasszon profilt"
 
-#: src/cli/main.c:946
+#: src/cli/main.c:944
 msgid "Regenerate configuration for currently selected command"
 msgstr "A konfiguráció újra előállítása a jelenleg kiválasztott parancshoz"
 
-#: src/cli/main.c:947
+#: src/cli/main.c:945
 msgid "List available profiles"
 msgstr "Elérhető profilok listázása"
 
-#: src/cli/main.c:948
+#: src/cli/main.c:946
 msgid "List available profile features"
 msgstr "Elérhető profilfunkciók listázása"
 
-#: src/cli/main.c:949
+#: src/cli/main.c:947
 msgid "Show profile information"
 msgstr "Profilinformációk megjelenítése"
 
-#: src/cli/main.c:950
+#: src/cli/main.c:948
 msgid "Print profile requirements"
 msgstr "Profilkövetelmények kiírása"
 
-#: src/cli/main.c:951
+#: src/cli/main.c:949
 msgid "Get identifier of currently selected profile"
 msgstr "A jelenleg kiválasztott profil azonosítójának lekérése"
 
-#: src/cli/main.c:952
+#: src/cli/main.c:950
 msgid "Check if the current configuration is valid"
 msgstr "Ellenőrzés, hogy a jelenlegi konfiguráció érvényes-e"
 
-#: src/cli/main.c:953
+#: src/cli/main.c:951
 msgid "Print changes that would be otherwise written"
 msgstr "Az egyébként fájlba írandó változások kiírása"
 
-#: src/cli/main.c:954
+#: src/cli/main.c:952
 msgid "Enable feature in currently selected profile"
 msgstr "Funkció engedélyezése a jelenleg kiválasztott profilban"
 
-#: src/cli/main.c:955
+#: src/cli/main.c:953
 msgid "Disable feature in currently selected profile"
 msgstr "Funkció letiltása a jelenleg kiválasztott profilban"
 
-#: src/cli/main.c:956
+#: src/cli/main.c:954
 msgid "Create new authselect profile"
 msgstr "Új authselect profil létrehozása"
 
-#: src/cli/main.c:957
+#: src/cli/main.c:955
 msgid "Backup commands:"
 msgstr "Biztonsági mentés parancsai:"
 
-#: src/cli/main.c:958
+#: src/cli/main.c:956
 msgid "List available backups"
 msgstr "Elérhető biztonsági mentések listázása"
 
-#: src/cli/main.c:959
+#: src/cli/main.c:957
 msgid "Remove backup"
 msgstr "Biztonsági mentés eltávolítása"
 
-#: src/cli/main.c:960
+#: src/cli/main.c:958
 msgid "Restore from backup"
 msgstr "Visszaállítás mentésből"
 
-#: src/cli/main.c:961
+#: src/cli/main.c:959
 msgid "Uninstall authselect configuration"
 msgstr "Az authselect konfiguráció eltávolítása"
 
@@ -1526,7 +1528,8 @@ msgstr "access.conf ellenőrzése a fiók hitelesítésekor"
 
 #: src/compat/authcompat_Options.py:112
 msgid "creation of home directories for users on their first login"
-msgstr "felhasználók saját könyvtárainak létrehozása az első bejelentkezésükkor"
+msgstr ""
+"felhasználók saját könyvtárainak létrehozása az első bejelentkezésükkor"
 
 #: src/compat/authcompat_Options.py:113
 msgid "account locking in case of too many consecutive authentication failures"
@@ -1642,37 +1645,37 @@ msgstr "engedélyezés"
 msgid "disable"
 msgstr "letiltás"
 
-#: src/compat/authcompat.py.in.in:49
+#: src/compat/authcompat.py.in.in:51
 #, python-format
 msgid "Executing: %s"
 msgstr "Végrehajtás: %s"
 
-#: src/compat/authcompat.py.in.in:68
+#: src/compat/authcompat.py.in.in:71
 #, python-format
 msgid "Service %s was not found. Please install the service."
 msgstr "A(z) %s szolgáltatás nem található. Telepítse a szolgáltatást."
 
-#: src/compat/authcompat.py.in.in:71 src/compat/authcompat.py.in.in:625
-#: src/compat/authcompat.py.in.in:651
+#: src/compat/authcompat.py.in.in:74 src/compat/authcompat.py.in.in:630
+#: src/compat/authcompat.py.in.in:656
 #, python-format
 msgid "Command [%s] failed with %d, stderr:"
 msgstr "A(z) [%s] parancs meghiúsult ezzel: %d, stderr:"
 
-#: src/compat/authcompat.py.in.in:183
+#: src/compat/authcompat.py.in.in:186
 #, python-format
 msgid "Removing file: %s"
 msgstr "Fájl eltávolítása: %s"
 
-#: src/compat/authcompat.py.in.in:331
+#: src/compat/authcompat.py.in.in:334
 #, python-format
 msgid "%s was not found. Please, install realmd."
 msgstr "%s nem található. Telepítse a realmd szolgáltatást."
 
-#: src/compat/authcompat.py.in.in:465
+#: src/compat/authcompat.py.in.in:468
 msgid "Running authconfig compatibility tool."
 msgstr "Az authconfig kompatibilitási eszköz futtatása."
 
-#: src/compat/authcompat.py.in.in:466
+#: src/compat/authcompat.py.in.in:469
 msgid ""
 "The purpose of this tool is to enable authentication against chosen services "
 "with authselect and minimum configuration. It does not provide all "
@@ -1682,14 +1685,14 @@ msgstr ""
 "kiválasztott szolgáltatásokkal, és minimális konfigurációval. Az eszköz nem "
 "biztosítja az authconfig összes képességét.\n"
 
-#: src/compat/authcompat.py.in.in:469
+#: src/compat/authcompat.py.in.in:472
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
 msgstr ""
 "FONTOS: az authconfigot leváltotta az authselect, frissítse a "
 "parancsfájljait."
 
-#: src/compat/authcompat.py.in.in:471
+#: src/compat/authcompat.py.in.in:474
 msgid ""
 "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
@@ -1697,22 +1700,22 @@ msgstr ""
 "Lásd a Fedora 28 változások oldalt: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
 
-#: src/compat/authcompat.py.in.in:472
+#: src/compat/authcompat.py.in.in:475
 msgid ""
 "See man authselect-migration(7) to help you with migration to authselect"
 msgstr ""
 "Lásd az authselect-migration(7) man oldalt az authselectre történő "
 "migrációval kapcsolatban"
 
-#: src/compat/authcompat.py.in.in:476
+#: src/compat/authcompat.py.in.in:479
 msgid "Warning: These options are not supported anymore and have no effect:"
 msgstr "Figyelmeztetés: Ezen kapcsolók nem támogatottak, és nincs hatásuk:"
 
-#: src/compat/authcompat.py.in.in:496
+#: src/compat/authcompat.py.in.in:499
 msgid "authconfig can only be run as root"
 msgstr "az authconfig csak root jogokkal futtatható"
 
-#: src/compat/authcompat.py.in.in:501
+#: src/compat/authcompat.py.in.in:504
 #, python-format
 msgid ""
 "Error: option --%s is no longer supported and we cannot continue if it is "
@@ -1721,11 +1724,11 @@ msgstr ""
 "Hiba: a(z) --%s kapcsoló már nem támogatott, és nem megyünk tovább, ha be "
 "van állítva."
 
-#: src/compat/authcompat.py.in.in:506
+#: src/compat/authcompat.py.in.in:509
 msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
 msgstr ""
 "Hiba: Az --enablewinbind és az --enablewinbindauth megadása is szükséges."
 
-#: src/compat/authcompat.py.in.in:516
+#: src/compat/authcompat.py.in.in:519
 msgid "Error: Please, provide --updateall option."
 msgstr "Hiba: adja meg az --updateall kapcsolót."
