@@ -301,7 +301,7 @@ errno_t cli_tool_popt_ex(struct cli_cmdline *cmdline,
                          void *popt_fn_pvt,
                          const char *fopt_name,
                          const char *fopt_help,
-                         const char **_fopt,
+                         char **_fopt,
                          bool allow_more_free_opts,
                          bool *_opt_set)
 {
@@ -318,6 +318,11 @@ errno_t cli_tool_popt_ex(struct cli_cmdline *cmdline,
     poptContext pc;
     bool opt_set;
     int ret;
+
+    /* Set output parameter _fopt to NULL value if present. */
+    if (_fopt != NULL) {
+        *_fopt = NULL;
+    }
 
     /* Create help option string. We always need to append command name since
      * we use POPT_CONTEXT_KEEP_FIRST. */
@@ -379,7 +384,12 @@ errno_t cli_tool_popt_ex(struct cli_cmdline *cmdline,
             }
         }
 
-        *_fopt = fopt;
+        *_fopt = strdup(fopt);
+        if (*_fopt == NULL) {
+            ERROR("Out of memory!");
+            ret = ENOMEM;
+            goto done;
+        }
     } else if (_fopt == NULL && fopt != NULL) {
         /* Unexpected free argument. */
         fprintf(stderr, _("Unexpected parameter: %s\n\n"), fopt);
@@ -410,6 +420,11 @@ errno_t cli_tool_popt_ex(struct cli_cmdline *cmdline,
 done:
     poptFreeContext(pc);
     free(help);
+    if (ret != EOK && _fopt != NULL) {
+        free(*_fopt);
+        *_fopt = NULL;
+    }
+
     return ret;
 }
 

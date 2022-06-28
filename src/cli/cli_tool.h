@@ -68,7 +68,7 @@ errno_t cli_tool_popt_ex(struct cli_cmdline *cmdline,
                          void *popt_fn_pvt,
                          const char *fopt_name,
                          const char *fopt_help,
-                         const char **_fopt,
+                         char **_fopt,
                          bool allow_more_free_opts,
                          bool *_opt_set);
 
