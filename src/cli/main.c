@@ -59,14 +59,16 @@ list_max_length(char **list)
 static errno_t
 parse_profile_options(struct cli_cmdline *cmdline,
                       struct poptOption *options,
-                      const char **_profile_id,
+                      char **_profile_id,
                       const char ***_features)
 {
-    const char *profile_id;
+    char *profile_id;
     const char **features;
     bool profile_skipped;
     errno_t ret;
     int i, j;
+
+    *_profile_id = NULL;
 
     ret = cli_tool_popt_ex(cmdline, options, CLI_TOOL_OPT_OPTIONAL,
                            NULL, NULL, "PROFILE-ID", _("Profile identifier."),
@@ -78,6 +80,7 @@ parse_profile_options(struct cli_cmdline *cmdline,
 
     features = malloc_zero_array(const char *, cmdline->argc);
     if (features == NULL) {
+        free(profile_id);
         return ENOMEM;
     }
 
@@ -141,7 +144,7 @@ static errno_t activate(struct cli_cmdline *cmdline)
 {
     struct authselect_profile *profile = NULL;
     const char **features = NULL;
-    const char *profile_id;
+    char *profile_id = NULL;
     char *requirements = NULL;
     char *backup_name = NULL;
     char **maps = NULL;
@@ -228,6 +231,7 @@ done:
     authselect_array_free(maps);
     authselect_profile_free(profile);
     free(features);
+    free(profile_id);
 
     return ret;
 }
@@ -418,7 +422,7 @@ done:
 static errno_t list_features(struct cli_cmdline *cmdline)
 {
     struct authselect_profile *profile;
-    const char *profile_id;
+    char *profile_id;
     char **features;
     errno_t ret;
     int i;
@@ -428,14 +432,14 @@ static errno_t list_features(struct cli_cmdline *cmdline)
                            &profile_id, true, NULL);
     if (ret != EOK) {
         ERROR("Unable to parse command arguments");
-        return ret;
+        goto done;
     }
 
     ret = authselect_profile(profile_id, &profile);
     if (ret != EOK) {
         ERROR("Unable to get profile information [%d]: %s",
               ret, strerror(ret));
-        return ret;
+        goto done;
     }
 
     features = authselect_profile_features(profile);
@@ -443,7 +447,8 @@ static errno_t list_features(struct cli_cmdline *cmdline)
     if (features == NULL) {
         ERROR("Unable to get profile features [%d]: %s",
               ret, strerror(ret));
-        return ENOMEM;
+        ret = ENOMEM;
+        goto done;
     }
 
     for (i = 0; features[i] != NULL; i++) {
@@ -452,13 +457,17 @@ static errno_t list_features(struct cli_cmdline *cmdline)
 
     authselect_array_free(features);
 
-    return EOK;
+    ret = EOK;
+
+done:
+    free(profile_id);
+    return ret;
 }
 
 static errno_t show(struct cli_cmdline *cmdline)
 {
     struct authselect_profile *profile;
-    const char *profile_id;
+    char *profile_id;
     errno_t ret;
 
     ret = cli_tool_popt_ex(cmdline, NULL, CLI_TOOL_OPT_OPTIONAL,
@@ -466,41 +475,47 @@ static errno_t show(struct cli_cmdline *cmdline)
                            &profile_id, false, NULL);
     if (ret != EOK) {
         ERROR("Unable to parse command arguments");
-        return ret;
+        goto done;
     }
 
     ret = authselect_profile(profile_id, &profile);
     if (ret != EOK) {
         ERROR("Unable to get profile information [%d]: %s",
               ret, strerror(ret));
-        return ENOMEM;
+        ret = ENOMEM;
+        goto done;
     }
 
     puts(authselect_profile_description(profile));
 
     authselect_profile_free(profile);
 
-    return EOK;
+    ret = EOK;
+
+done:
+    free(profile_id);
+    return ret;
 }
 
 static errno_t requirements(struct cli_cmdline *cmdline)
 {
-    struct authselect_profile *profile;
-    const char *profile_id;
+    struct authselect_profile *profile = NULL;
+    char *profile_id = NULL;
     const char **features;
-    char *requirements;
+    char *requirements = NULL;
     errno_t ret;
 
     ret = parse_profile_options(cmdline, NULL, &profile_id, &features);
     if (ret != EOK) {
-        return ret;
+        goto done;
     }
 
     ret = authselect_profile(profile_id, &profile);
     if (ret != EOK) {
         ERROR("Unable to get profile information [%d]: %s",
               ret, strerror(ret));
-        return ENOMEM;
+        ret = ENOMEM;
+        goto done;
     }
 
     requirements = authselect_profile_requirements(profile, features);
@@ -518,6 +533,7 @@ static errno_t requirements(struct cli_cmdline *cmdline)
 
 done:
     free(requirements);
+    free(profile_id);
     authselect_profile_free(profile);
 
     return ret;
@@ -526,7 +542,7 @@ done:
 static errno_t test(struct cli_cmdline *cmdline)
 {
     struct authselect_files *files;
-    const char *profile_id;
+    char *profile_id = NULL;
     const char **features;
     const char *content;
     const char *path;
@@ -573,13 +589,13 @@ static errno_t test(struct cli_cmdline *cmdline)
 
     ret = parse_profile_options(cmdline, options, &profile_id, &features);
     if (ret != EOK) {
-        return ret;
+        goto done;
     }
 
     ret = authselect_files(profile_id, features, &files);
     if (ret != EOK) {
         ERROR("Unable to get generated content [%d]: %s", ret, strerror(ret));
-        return ret;
+        goto done;
     }
 
     for (i = 0; generated[i].content_fn != NULL; i++) {
@@ -603,7 +619,9 @@ static errno_t test(struct cli_cmdline *cmdline)
         }
     }
 
-    return EOK;
+done:
+    free(profile_id);
+    return ret;
 }
 
 static errno_t enable(struct cli_cmdline *cmdline)
@@ -612,7 +630,7 @@ static errno_t enable(struct cli_cmdline *cmdline)
     char *backup_name = NULL;
     char *requirements = NULL;
     char *profile_id = NULL;
-    const char *feature;
+    char *feature;
     const char *features[2];
     int backup = 0;
     int quiet = 0;
@@ -683,6 +701,7 @@ static errno_t enable(struct cli_cmdline *cmdline)
 done:
     free(profile_id);
     free(requirements);
+    free(feature);
     authselect_profile_free(profile);
 
     return ret;
@@ -692,7 +711,7 @@ static errno_t disable(struct cli_cmdline *cmdline)
 {
     int backup = 0;
     char *backup_name = NULL;
-    const char *feature;
+    char *feature;
     errno_t ret;
 
     struct poptOption options[] = {
@@ -706,32 +725,34 @@ static errno_t disable(struct cli_cmdline *cmdline)
                            &feature, false, NULL);
     if (ret != EOK) {
         ERROR("Unable to parse command arguments");
-        return ret;
+        goto done;
     }
 
     ret = perform_backup(false, backup, backup_name);
     if (ret != EOK) {
-        return ret;
+        goto done;
     }
 
     ret = authselect_feature_disable(feature);
     if (ret != EOK) {
         CLI_ERROR("Unable to disable feature [%d]: %s\n", ret, strerror(ret));
-        return ret;
+        goto done;
     }
 
-    return EOK;
+done:
+    free(feature);
+    return ret;
 }
 
 static errno_t create(struct cli_cmdline *cmdline)
 {
-    const char *name;
+    char *name;
     const char *base_id = NULL;
     enum authselect_profile_type type = AUTHSELECT_PROFILE_CUSTOM;
     enum authselect_profile_type base_type = AUTHSELECT_PROFILE_ANY;
     int symlink_flags = AUTHSELECT_SYMLINK_NONE;
     const char **symlinks = NULL;
-    char *path;
+    char *path = NULL;
     errno_t ret;
 
     struct poptOption options[] = {
@@ -751,20 +772,22 @@ static errno_t create(struct cli_cmdline *cmdline)
                            &name, false, NULL);
     if (ret != EOK) {
         ERROR("Unable to parse command arguments");
-        return ret;
+        goto done;
     }
 
     ret = authselect_profile_create(name, type, base_id, base_type,
                                     symlink_flags, symlinks, &path);
     if (ret != EOK) {
         CLI_ERROR("Unable to create new profile [%d]: %s\n", ret, strerror(ret));
-        return ret;
+        goto done;
     }
 
     CLI_PRINT("New profile was created at %s\n", path);
-    free(path);
 
-    return EOK;
+done:
+    free(path);
+    free(name);
+    return ret;
 }
 
 static errno_t backup_list(struct cli_cmdline *cmdline)
@@ -845,7 +868,7 @@ done:
 
 static errno_t backup_remove(struct cli_cmdline *cmdline)
 {
-    const char *name;
+    char *name;
     errno_t ret;
 
     ret = cli_tool_popt_ex(cmdline, NULL, CLI_TOOL_OPT_OPTIONAL,
@@ -854,22 +877,24 @@ static errno_t backup_remove(struct cli_cmdline *cmdline)
                            &name, false, NULL);
     if (ret != EOK) {
         ERROR("Unable to parse command arguments");
-        return ret;
+        goto done;
     }
 
     ret = authselect_backup_remove(name);
     if (ret != EOK) {
         CLI_ERROR("Unable to remove backup [%s] [%d]: %s\n",
                   name, ret, strerror(ret));
-        return ret;
+        goto done;
     }
 
-    return EOK;
+done:
+    free(name);
+    return ret;
 }
 
 static errno_t backup_restore(struct cli_cmdline *cmdline)
 {
-    const char *name;
+    char *name;
     errno_t ret;
 
     ret = cli_tool_popt_ex(cmdline, NULL, CLI_TOOL_OPT_OPTIONAL,
@@ -878,17 +903,19 @@ static errno_t backup_restore(struct cli_cmdline *cmdline)
                            &name, false, NULL);
     if (ret != EOK) {
         ERROR("Unable to parse command arguments");
-        return ret;
+        goto done;
     }
 
     ret = authselect_backup_restore(name);
     if (ret != EOK) {
         CLI_ERROR("Unable to restore backup [%s] [%d]: %s\n",
                   name, ret, strerror(ret));
-        return ret;
+        goto done;
     }
 
-    return EOK;
+done:
+    free(name);
+    return ret;
 }
 
 static errno_t uninstall(struct cli_cmdline *cmdline)
