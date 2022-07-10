@@ -27,3 +27,6 @@ Make sure that SSSD service is configured and enabled. See SSSD documentation fo
   - see additional information in pam_sss_gss(8)                                          {include if "with-gssapi"}
                                                                                           {include if "with-libvirt"}
 - with-libvirt is selected, make sure that the libvirt NSS plugins are installed          {include if "with-libvirt"}
+                                                                                          {include if "with-homed"}
+- with-homed is selected, make sure that the system-homed service is enabled              {include if "with-homed"}
+  - systemctl enable --now systemd-homed.service                                          {include if "with-homed"}

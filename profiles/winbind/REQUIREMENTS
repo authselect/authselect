@@ -16,3 +16,6 @@ Make sure that winbind service is configured and enabled. See winbind documentat
   - systemctl enable --now oddjobd.service                                                {include if "with-mkhomedir"}
                                                                                           {include if "with-libvirt"}
 - with-libvirt is selected, make sure that the libvirt NSS plugins are installed          {include if "with-libvirt"}
+                                                                                          {include if "with-homed"}
+- with-homed is selected, make sure that the system-homed service is enabled              {include if "with-homed"}
+  - systemctl enable --now systemd-homed.service                                          {include if "with-homed"}
