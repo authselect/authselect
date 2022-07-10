@@ -14,3 +14,6 @@ Make sure that NIS service is configured and enabled. See NIS documentation for 
 - with-mkhomedir is selected, make sure pam_oddjob_mkhomedir module                       {include if "with-mkhomedir"}
   is present and oddjobd service is enabled and active                                    {include if "with-mkhomedir"}
   - systemctl enable --now oddjobd.service                                                {include if "with-mkhomedir"}
+
+- with-homed is selected, make sure that the system-homed service is enabled              {include if "with-homed"}
+  - systemctl enable --now systemd-homed.service                                          {include if "with-homed"}
