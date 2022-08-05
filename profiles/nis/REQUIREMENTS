@@ -14,3 +14,5 @@ Make sure that NIS service is configured and enabled. See NIS documentation for 
 - with-mkhomedir is selected, make sure pam_oddjob_mkhomedir module                       {include if "with-mkhomedir"}
   is present and oddjobd service is enabled and active                                    {include if "with-mkhomedir"}
   - systemctl enable --now oddjobd.service                                                {include if "with-mkhomedir"}
+                                                                                          {include if "with-libvirt"}
+- with-libvirt is selected, make sure that the libvirt NSS plugins are installed          {include if "with-libvirt"}
