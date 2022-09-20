@@ -10,6 +10,8 @@ account     required                                     pam_faillock.so        
 account     required                                     pam_unix.so
 
 password    requisite                                    pam_pwquality.so
+password    [default=1 ignore=ignore success=ok]         pam_localuser.so                                       {include if "with-pwhistory"}
+password    requisite                                    pam_pwhistory.so use_authtok                           {include if "with-pwhistory"}
 password    sufficient                                   pam_unix.so yescrypt shadow {if not "without-nullok":nullok} use_authtok
 password    required                                     pam_deny.so
 
