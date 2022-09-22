@@ -1,7 +1,8 @@
 Enable winbind for system authentication
 ========================================
 
-Selecting this profile will enable Samba's winbind as the source of identity
+Selecting this profile will enable Samba's winbind as the source of identitywith-systemd-home::
+    Enable authentication of home directories for users of systemd
 and authentication providers.
 
 The Samba standard Windows interoperability suite of utilities allows Linux
@@ -79,6 +80,9 @@ with-libvirt::
     Enable connecting to libvirt VMs using the hostname configured in the
     guest OS or, as a fallback, their name.
 
+with-systemd-home::
+    Enable authentication of home directories for users of systemd
+    
 EXAMPLES
 --------
 * Enable winbind with no additional modules

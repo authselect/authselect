@@ -16,3 +16,7 @@ Make sure that NIS service is configured and enabled. See NIS documentation for 
   - systemctl enable --now oddjobd.service                                                {include if "with-mkhomedir"}
                                                                                           {include if "with-libvirt"}
 - with-libvirt is selected, make sure that the libvirt NSS plugins are installed          {include if "with-libvirt"}
+                                                                                          {include if "with-systemd-home"}
+- with-systemd-home selected, make sure pam_systemd_home module                           {include if "with-systemd-home"}
+  is present and systemd-homed service is enabled and active.                             {include if "with-systemd-home"}
+  - systemctl enable --now systemd-homed.service                                          {include if "with-systemd-home"}
