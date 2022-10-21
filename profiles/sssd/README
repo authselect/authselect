@@ -4,18 +4,13 @@ Enable SSSD for system authentication (also for local users only)
 Selecting this profile will enable SSSD as the source of identity
 and authentication providers.
 
-SSSD provides a set of daemons to manage access to remote directories
-and authentication mechanisms such as LDAP, Kerberos or FreeIPA. It provides
+SSSD provides a set of daemons to manage access to remote directories and
+authentication mechanisms such as LDAP, Kerberos, FreeIPA or AD. It provides
 an NSS and PAM interface toward the system and a pluggable backend system
 to connect to multiple different account sources.
 
 More information about SSSD can be found on its project page:
-https://pagure.io/SSSD/sssd
-
-By default, local users are served from SSSD rather then local files if SSSD
-is enabled (however they authenticate via pam_unix). This has a performance
-benefit since SSSD caches the files content in fast in-memory cache and thus
-reduces number of disk operations.
+https://sssd.io
 
 However, if you do not want to keep SSSD running on your machine, you can
 keep this profile selected and just disable SSSD service. The resulting
