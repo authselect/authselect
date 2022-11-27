@@ -11,15 +11,16 @@ This tool aims to be first shipped along and later deprecate and later replace a
 Authselect requires few packages to be installed during build time. To install them on a Fedora machine, run:
 
 ```bash
-$ sudo dnf install \
-    autoconf       \
-    automake       \
-    libtool        \
-    m4             \
-    pkgconfig      \
-    gettext-devel  \
-    popt-devel     \
-    asciidoc
+$ sudo dnf install   \
+    autoconf         \
+    automake         \
+    libtool          \
+    m4               \
+    pkgconfig        \
+    gettext-devel    \
+    popt-devel       \
+    asciidoc         \
+    libselinux-devel
 ```
 
 ## Checkout the code

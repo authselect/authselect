@@ -296,6 +296,7 @@ class Configuration:
             }
 
             config.write(keys)
+            os.chmod(Path.System('sssd.conf'), mode=0o600)
 
     class Winbind(Base):
         def __init__(self, options):
