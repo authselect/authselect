@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: authselect 1.2.4\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
 "POT-Creation-Date: 2022-05-04 13:46+0200\n"
-"PO-Revision-Date: 2022-03-16 19:17+0000\n"
+"PO-Revision-Date: 2022-06-23 20:18+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/ka/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.11.2\n"
+"X-Generator: Weblate 4.13\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:188
 msgid "Unable to obtain supported features"
@@ -47,28 +47,25 @@ msgid "Enforcing activation!"
 msgstr "ძალით აქტივაცია!"
 
 #: src/lib/authselect.c:110
-#, fuzzy, c-format
-#| msgid "System was not configured with authselect."
+#, c-format
 msgid ""
 "%s is missing or unreadable, system was not properly configured by "
 "authselect."
-msgstr "სისტემა authselect-ის საშუალებით არაა მორგებული."
+msgstr ""
+"%s აკლია, წაკითხვა შეუძლებელია, ან სისტემა authselect-ის საშუალებით არაა "
+"მორგებული."
 
 #: src/lib/authselect.c:112
-#, fuzzy
-#| msgid ""
-#| "Refusing to activate profile unless this file is removed or overwrite is "
-#| "requested."
 msgid "Refusing to activate profile unless overwrite is requested."
-msgstr ""
-"უარი პროფილის აქტივაციაზე მანამდე, სანამ ეს ფაილი არ წაიშლება ან "
-"გადაიწერება, მოთხოვნის შესაბამისად."
+msgstr "უარი პროფილის აქტივაციაზე მანამდე, სანამ გადაწერა არ იქნება მოთხოვნილი."
 
 #: src/lib/authselect.c:118
 msgid ""
 "Changes to the authselect configuration were detected. These changes will be "
 "overwritten. Please call 'authselect opt-out' in order to keep them."
 msgstr ""
+"გამოვლინდა ცვლილებები authselect კონფიგურაციაში. ეს ცვლილებები გადაიწერება. "
+"გთხოვთ, დარეკოთ 'authselect opt-out' მათი შესანარჩუნებლად."
 
 #: src/lib/authselect.c:127
 #, c-format
@@ -77,7 +74,7 @@ msgstr "პროფილის აქტივაციის შეცდო�
 
 #: src/lib/authselect.c:141
 msgid "Trying to uninstall authselect configuration"
-msgstr "authselect-ის კონფიგურაციის წაშლა"
+msgstr "Authselect-ის კონფიგურაციის წაშლა"
 
 #: src/lib/authselect.c:145
 #, c-format
@@ -89,16 +86,13 @@ msgid "Symbolic links were successfully removed"
 msgstr "სიმბოლური ბმულები წარმატებით წაიშალა"
 
 #: src/lib/authselect.c:154
-#, fuzzy, c-format
-#| msgid "Unable to uninstall authselect configuration [%d]: %s\n"
+#, c-format
 msgid "Unable to remove authselect configuration [%d]: %s"
-msgstr "authselect-ის კონფიგურაციის წაშლის სეცდომა [%d]:%s\n"
+msgstr "Authselect-ის კონფიგურაციის წაშლის შეცდომა [%d]:%s"
 
 #: src/lib/authselect.c:159
-#, fuzzy
-#| msgid "Symbolic links were successfully removed"
 msgid "Authselect configuration was successfully removed"
-msgstr "სიმბოლური ბმულები წარმატებით წაიშალა"
+msgstr "Authselect-ის კონფიგურაცია წარმატებით წაიშალა"
 
 #: src/lib/authselect.c:198
 #, c-format
@@ -197,7 +191,7 @@ msgstr "თქვენს სისტემაში Dconf არ აყენ
 #: src/lib/authselect_backup.c:319 src/lib/profiles/activate.c:86
 #, c-format
 msgid "Unable to update dconf database [%d]: %s"
-msgstr "dconf-ის ბაზის გახსნის შეცდომა [%d]:%s"
+msgstr "Dconf-ის ბაზის გახსნის შეცდომა [%d]:%s"
 
 #: src/lib/authselect_backup.c:342
 #, c-format
@@ -221,12 +215,12 @@ msgstr "[%s] [%d]:%s-ის აღდგენის შეცდომა"
 
 #: src/lib/authselect_profile.c:104
 msgid "Unable to generate nsswitch.conf"
-msgstr "nsswitch.conf-ის გენერაციის შეცდომა"
+msgstr "Nsswitch.conf-ის გენერაციის შეცდომა"
 
 #: src/lib/authselect_profile.c:111
 #, c-format
 msgid "Unable to find nsswitch maps [%d]: %s"
-msgstr "nsswitch-ის მიმაგრებების ძებნის შეცდომა [%d]:%s"
+msgstr "Nsswitch-ის მიმაგრებების ძებნის შეცდომა [%d]:%s"
 
 #: src/lib/authselect_profile.c:132
 msgid "Unable to create array (out of memory)"
@@ -483,10 +477,9 @@ msgid "File [%s] is still present"
 msgstr "ფაილი [%s] ჯერ კიდევ არსებობს"
 
 #: src/lib/files/system.c:335 src/lib/files/system.c:345
-#, fuzzy, c-format
-#| msgid "Unable to create [%s] [%d]: %s"
+#, c-format
 msgid "Unable to delete [%s] [%d]: %s"
-msgstr "[%s] [%d]: %s-ის შექმნის შეცდომა"
+msgstr "[%s] [%d]: %s-ის წაშლის შეცდომა"
 
 #: src/lib/profiles/activate.c:44
 #, c-format
@@ -718,12 +711,12 @@ msgstr "[%s] [%d]: %s-ის selinux-ის ნაგულისხმები
 #: src/lib/util/selinux.c:129 src/lib/util/selinux.c:197
 #: src/lib/util/selinux.c:265
 msgid "Unable to set fscreate selinux context!"
-msgstr "fscreate-ის selinux-ის კონტექსტის დაყენების შეცდომა!"
+msgstr "Fscreate-ის selinux-ის კონტექსტის დაყენების შეცდომა!"
 
 #: src/lib/util/selinux.c:139 src/lib/util/selinux.c:207
 #: src/lib/util/selinux.c:275
 msgid "Unable to restore fscreate selinux context!"
-msgstr "fscreate-ის selinux-ის კონტექსტის აღდგენის შეცდომა!"
+msgstr "Fscreate-ის selinux-ის კონტექსტის აღდგენის შეცდომა!"
 
 #: src/lib/util/selinux.c:387
 #, c-format
@@ -880,7 +873,7 @@ msgstr "საერთო პარამეტრები:"
 
 #: src/cli/cli_tool.c:326 src/cli/cli_tool.c:329
 msgid "[OPTIONS...]"
-msgstr "[პარამეტრები...]"
+msgstr "[პარამეტრებ...]"
 
 #: src/cli/cli_tool.c:332 src/cli/main.c:826
 msgid "Out of memory!"
@@ -987,7 +980,7 @@ msgstr "პროფილის მოთხოვნის ჩატვირ�
 
 #: src/cli/main.c:189
 msgid "Unable to obtain nsswitch maps!"
-msgstr "nsswitch-ის რუკების მიღება შეუძლებელია!"
+msgstr "Nsswitch-ის რუკების მიღება შეუძლებელია!"
 
 #: src/cli/main.c:204
 msgid ""
@@ -1011,7 +1004,7 @@ msgstr "არჩეულია პროფილი \"%s\".\n"
 
 #: src/cli/main.c:217
 msgid "The following nsswitch maps are overwritten by the profile:\n"
-msgstr "nsswitch-ის შემდეგი რუკები გადაიწერება პროფილის მიერ:\n"
+msgstr "Nsswitch-ის შემდეგი რუკები გადაიწერება პროფილის მიერ:\n"
 
 #: src/cli/main.c:220
 #, c-format
@@ -1087,10 +1080,8 @@ msgid "Current configuration is valid."
 msgstr "მინდინარე კონფიგურაცია სწორია."
 
 #: src/cli/main.c:370
-#, fuzzy
-#| msgid "No existing configuration detected.\n"
 msgid "No configuration detected."
-msgstr "არსებული კონფიგურაცია ნაპოვნი არაა.\n"
+msgstr "კონფიგურაცია ნაპოვნი არაა."
 
 #: src/cli/main.c:374
 msgid "System was not configured with authselect."
@@ -1111,35 +1102,35 @@ msgstr "ყველა ფაილის შემცველობის გ
 
 #: src/cli/main.c:557
 msgid "Print nsswitch.conf content"
-msgstr "nsswitch.conf-ის შემცველობის ჩვენება"
+msgstr "Nsswitch.conf-ის შემცველობის ჩვენება"
 
 #: src/cli/main.c:558
 msgid "Print system-auth content"
-msgstr "system-auth-ის შემცველობის ჩვენება"
+msgstr "System-auth-ის შემცველობის ჩვენება"
 
 #: src/cli/main.c:559
 msgid "Print password-auth content"
-msgstr "password-auth-ის შემცველობის ჩვენება"
+msgstr "Password-auth-ის შემცველობის ჩვენება"
 
 #: src/cli/main.c:560
 msgid "Print smartcard-auth content"
-msgstr "smartcard-auth-ის შემცველობის ჩვენება"
+msgstr "Smartcard-auth-ის შემცველობის ჩვენება"
 
 #: src/cli/main.c:561
 msgid "Print fingerprint-auth content"
-msgstr "fingerprint-auth-ის შემცველობის ჩვენება"
+msgstr "Fingerprint-auth-ის შემცველობის ჩვენება"
 
 #: src/cli/main.c:562
 msgid "Print postlogin content"
-msgstr "postlogin-ის შემცველობის ჩვენება"
+msgstr "Postlogin-ის შემცველობის ჩვენება"
 
 #: src/cli/main.c:563
 msgid "Print dconf database content"
-msgstr "dconf-ის ბაზის შემცველობის გამოტანა"
+msgstr "Dconf-ის ბაზის შემცველობის გამოტანა"
 
 #: src/cli/main.c:564
 msgid "Print dconf lock content"
-msgstr "dconf-ის ჩამკეტის შემცველობის გამოტანა"
+msgstr "Dconf-ის ჩამკეტის შემცველობის გამოტანა"
 
 #: src/cli/main.c:591
 #, c-format
@@ -1216,15 +1207,15 @@ msgstr "ფაილების კოპირების მაგიერ 
 
 #: src/cli/main.c:752
 msgid "Symlink nsswitch files from the base profile instead of copying them"
-msgstr "nsswitch-ის ფაილების კოპირების მაგიერ სიმბმულების შექმნა"
+msgstr "Nsswitch-ის ფაილების კოპირების მაგიერ სიმბმულების შექმნა"
 
 #: src/cli/main.c:753
 msgid "Symlink pam files from the base profile instead of copying them"
-msgstr "pam ფაილების სიმბმულების შექმნა კოპირების მაგიერ"
+msgstr "Pam ფაილების სიმბმულების შექმნა კოპირების მაგიერ"
 
 #: src/cli/main.c:754
 msgid "Symlink dconf files from the base profile instead of copying them"
-msgstr "dconf-ის ფაილების სიმბმულების შექმნა კოპირების მაგიერ"
+msgstr "Dconf-ის ფაილების სიმბმულების შექმნა კოპირების მაგიერ"
 
 #: src/cli/main.c:755
 msgid "Symlink specific file (can be set multiple times)"
@@ -1279,7 +1270,7 @@ msgstr "მარქაფის აღდგენის შეცდომა 
 #: src/cli/main.c:910
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
-msgstr "authselect-ის კონფიგურაციის წაშლის სეცდომა [%d]:%s\n"
+msgstr "Authselect-ის კონფიგურაციის წაშლის სეცდომა [%d]:%s\n"
 
 #: src/cli/main.c:960
 msgid "Select profile"
@@ -1327,7 +1318,7 @@ msgstr "თვისების გამორთვა ამჟამად 
 
 #: src/cli/main.c:971
 msgid "Create new authselect profile"
-msgstr "authselect-ის ახალი პროფილის შექმნა"
+msgstr "Authselect-ის ახალი პროფილის შექმნა"
 
 #: src/cli/main.c:972
 msgid "Backup commands:"
@@ -1347,40 +1338,36 @@ msgstr "მარქაფიდან აღდგენა"
 
 #: src/cli/main.c:976
 msgid "Other:"
-msgstr ""
+msgstr "სხვა:"
 
 #: src/cli/main.c:977
-#, fuzzy
-#| msgid "Uninstall authselect configuration"
 msgid "Opt-out from authselect managed configuration"
-msgstr "authselect-ის კონფიგურაციის წაშლა"
+msgstr "Athselect-ის კონფიგურაციიდან გადახვევა"
 
 #: src/cli/main.c:979
 msgid "Print authselect version"
-msgstr "authselect-ის ვერსიის ჩვენება"
+msgstr "Authselect-ის ვერსიის ჩვენება"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
 msgstr "მომხმარებელზე ინფორმაციისთვის NIS-ის ნაგულისხმევად გამოყენება"
 
 #: src/compat/authcompat_Options.py:83
-#, fuzzy
 msgid "<domain>"
 msgstr "<domain>"
 
 #: src/compat/authcompat_Options.py:83
 msgid "default NIS domain"
-msgstr "NIS-ის ნაგულისხმევი დომენი"
+msgstr "nis-ის ნაგულისხმევი დომენი"
 
 #: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
 #: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
-#, fuzzy
 msgid "<server>"
 msgstr "<server>"
 
 #: src/compat/authcompat_Options.py:84
 msgid "default NIS server"
-msgstr "NIS-ის ნაგულისხმები სერვერი"
+msgstr "nis-ის ნაგულისხმები სერვერი"
 
 #: src/compat/authcompat_Options.py:85
 msgid "LDAP for user information by default"
@@ -1395,32 +1382,30 @@ msgid "default LDAP server hostname or URI"
 msgstr "ნაგულისხმები LDAP სერვერის ჰოსტის სახელი ან URI"
 
 #: src/compat/authcompat_Options.py:88
-#, fuzzy
 msgid "<dn>"
 msgstr "<dn>"
 
 #: src/compat/authcompat_Options.py:88
 msgid "default LDAP base DN"
-msgstr "LDAP-ის ნაგულისხმები საბაზისო DN"
+msgstr "ldap-ის ნაგულისხმები საბაზისო DN"
 
 #: src/compat/authcompat_Options.py:89
 msgid "use of TLS with LDAP (RFC-2830)"
-msgstr "LDAP-ის TLS-ით გამოყენება (RFC-2830)"
+msgstr "ldap-ის TLS-ით გამოყენება (RFC-2830)"
 
 #: src/compat/authcompat_Options.py:90
 msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
-msgstr "LDAP-ში მოთხოვნების გასაგზავნად TLS-ის გამოყენება (RFC-2830)"
+msgstr "ldap-ში მოთხოვნების გასაგზავნად TLS-ის გამოყენება (RFC-2830)"
 
 #: src/compat/authcompat_Options.py:91
 msgid "use of RFC-2307bis schema for LDAP user information lookups"
-msgstr "LDAP-ში მომხმარებლის ინფორმაციის მოსაძებნად RFC-2307bis-ის გამოყენება"
+msgstr "ldap-ში მომხმარებლის ინფორმაციის მოსაძებნად RFC-2307bis-ის გამოყენება"
 
 #: src/compat/authcompat_Options.py:92
 msgid "authentication with smart card by default"
 msgstr "ავთენტიკაციისთვის ნაგულისხმევად ჭკვიანი ბარათის გამოყენება"
 
 #: src/compat/authcompat_Options.py:93
-#, fuzzy
 msgid "<0=Lock|1=Ignore>"
 msgstr "<0=Lock|1=Ignore>"
 
@@ -1450,24 +1435,23 @@ msgstr "ნაგულისხმები Kerberos KDC"
 
 #: src/compat/authcompat_Options.py:99
 msgid "default Kerberos admin server"
-msgstr "Kerberos-ის ნაგულისხმები ადმინისტრირების სერვერი"
+msgstr "kerberos-ის ნაგულისხმები ადმინისტრირების სერვერი"
 
 #: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
-#, fuzzy
 msgid "<realm>"
 msgstr "<realm>"
 
 #: src/compat/authcompat_Options.py:100
 msgid "default Kerberos realm"
-msgstr "Kerberos-ის ნაგულისხმები realm-ი"
+msgstr "kerberos-ის ნაგულისხმები realm-ი"
 
 #: src/compat/authcompat_Options.py:101
 msgid "use of DNS to find Kerberos KDCs"
-msgstr "DNS-ის გამოყენება Kerberos KDC-ების საპოვნელად"
+msgstr "dns-ის გამოყენება Kerberos KDC-ების საპოვნელად"
 
 #: src/compat/authcompat_Options.py:102
 msgid "use of DNS to find Kerberos realms"
-msgstr "Kerberos realm-ების საპოვნელად DNS-ის გამოყენება"
+msgstr "kerberos realm-ების საპოვნელად DNS-ის გამოყენება"
 
 #: src/compat/authcompat_Options.py:103
 msgid "winbind for user information by default"
@@ -1492,7 +1476,6 @@ msgid "Kerberos 5 for authenticate with winbind"
 msgstr "Kerberos 5-ის ავთენტიკაცია winbind-თან"
 
 #: src/compat/authcompat_Options.py:107
-#, fuzzy
 msgid "<workgroup>"
 msgstr "<workgroup>"
 
@@ -1527,7 +1510,6 @@ msgstr "შესვლის მრავალჯერადი წარუ�
 
 #: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
 #: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
-#, fuzzy
 msgid "<number>"
 msgstr "<number>"
 
@@ -1576,43 +1558,35 @@ msgid "the same as --updateall"
 msgstr "იგივე, რაც --updateall"
 
 #: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
-#, fuzzy
 msgid "<name>"
 msgstr "<name>"
 
 #: src/compat/authcompat_Options.py:148
-#, fuzzy
 msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
 msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
 
 #: src/compat/authcompat_Options.py:149
-#, fuzzy
 msgid "<URL>"
 msgstr "<URL>"
 
 #: src/compat/authcompat_Options.py:150
-#, fuzzy
 msgid "<module>"
 msgstr "<module>"
 
 #: src/compat/authcompat_Options.py:151
-#, fuzzy
 msgid "<user|server|domain|ads>"
 msgstr "<user|server|domain|ads>"
 
 #: src/compat/authcompat_Options.py:153
-#, fuzzy
 msgid "<servers>"
 msgstr "<servers>"
 
 #: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
 #: src/compat/authcompat_Options.py:156
-#, fuzzy
 msgid "<lowest-highest>"
 msgstr "<lowest-highest>"
 
 #: src/compat/authcompat_Options.py:157
-#, fuzzy
 msgid "<\\>"
 msgstr "<\\>"
 
@@ -1621,12 +1595,10 @@ msgid "</home/%D/%U>"
 msgstr "</home/%D/%U>"
 
 #: src/compat/authcompat_Options.py:159
-#, fuzzy
 msgid "</bin/false>"
 msgstr "</bin/false>"
 
 #: src/compat/authcompat_Options.py:166
-#, fuzzy
 msgid "<options>"
 msgstr "<options>"
 
