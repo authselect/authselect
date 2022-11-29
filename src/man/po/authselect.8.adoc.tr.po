@@ -2,20 +2,21 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
 # Oğuz Ersen <oguzersen@protonmail.com>, 2020, 2021.
+# Oğuz Ersen <oguz@ersen.moe>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-05-04 13:50+0200\n"
-"PO-Revision-Date: 2021-11-10 16:05+0000\n"
-"Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
+"PO-Revision-Date: 2022-05-23 17:18+0000\n"
+"Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
 "Language-Team: Turkish <https://translate.fedoraproject.org/projects/"
-"authselect/master-authselect8adoc/tr/>\n"
+"authselect/12x-authselect8adoc/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.8.1\n"
+"X-Generator: Weblate 4.12.2\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
@@ -27,7 +28,7 @@ msgstr "authselect(8)"
 #: src/man/authselect.8.adoc:6
 #, no-wrap
 msgid "NAME"
-msgstr "İSİM"
+msgstr "AD"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:9
@@ -87,7 +88,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:29
 #, no-wrap
 msgid "OPT-IN TO AUTHSELECT"
-msgstr "AUTHSELECT'E DAHİL OLMA"
+msgstr "AUTHSELECT'E DAHİL OL"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:39
@@ -133,7 +134,9 @@ msgstr ""
 #: src/man/authselect.8.adoc:45
 #, no-wrap
 msgid "*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup=NAME]"
-msgstr "*select* profil_kimliği [özellikler] [-f, --force] [-q, --quiet] [-b] [--backup=İSİM]"
+msgstr ""
+"*select* profil_kimliği [özellikler] [-f, --force] [-q, --quiet] [-b] "
+"[--backup=AD]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:48
@@ -146,9 +149,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:49
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*--force, -f*"
-msgstr "*--force, -f*:"
+msgstr "*--force, -f*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:54
@@ -167,9 +170,9 @@ msgstr ""
 #. type: Labeled list
 #: src/man/authselect.8.adoc:55 src/man/authselect.8.adoc:80
 #: src/man/authselect.8.adoc:149 src/man/authselect.8.adoc:167
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*-b*"
-msgstr "*-b*:"
+msgstr "*-b*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:60
@@ -181,16 +184,16 @@ msgid ""
 "for *--backup=*.\n"
 msgstr ""
 "Seçilen profili etkinleştirmeden önce sistem dosyalarını yedekle.\n"
-"Yedekleme {AUTHSELECT_BACKUP_DIR}/İSİM konumuna kaydedilecektir.\n"
+"Yedekleme {AUTHSELECT_BACKUP_DIR}/AD konumuna kaydedilecektir.\n"
 "Benzersiz bir dizge ile geçerli zaman yedekleme adı olarak kullanılır.\n"
 "Bu, *--backup=* için bir kısayoldur.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:61 src/man/authselect.8.adoc:86
 #: src/man/authselect.8.adoc:155 src/man/authselect.8.adoc:173
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*--backup=NAME*"
-msgstr "*--backup=İSİM*:"
+msgstr "*--backup=AD*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:65
@@ -201,14 +204,15 @@ msgid ""
 "unique string is used as a name if no value is provided.\n"
 msgstr ""
 "Seçilen profili etkinleştirmeden önce sistem dosyalarını yedekle. Yedekleme\n"
-"{AUTHSELECT_BACKUP_DIR}/İSİM konumuna kaydedilecektir. Herhangi bir\n"
-"değer belirtilmemişse, benzersiz bir dizge ile geçerli zaman isim olarak kullanılır.\n"
+"{AUTHSELECT_BACKUP_DIR}/AD konumuna kaydedilecektir. Herhangi bir\n"
+"değer belirtilmemişse, benzersiz bir dizge ile geçerli zaman ad olarak "
+"kullanılır.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:66
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*--nobackup*"
-msgstr "*--nobackup*:"
+msgstr "*--nobackup*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:68
@@ -218,9 +222,9 @@ msgstr "*--force* belirtilmiş olsa bile sistem yapılandırmasını yedekleme.\
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:69 src/man/authselect.8.adoc:160
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*--quiet, -q*"
-msgstr "*--quiet, -q*:"
+msgstr "*--quiet, -q*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:72 src/man/authselect.8.adoc:163
@@ -236,7 +240,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:73
 #, no-wrap
 msgid "*apply-changes* [-b] [--backup=NAME]"
-msgstr "*apply-changes* [-b] [--backup=İSİM]"
+msgstr "*apply-changes* [-b] [--backup=AD]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:79
@@ -249,7 +253,7 @@ msgid ""
 msgstr ""
 "Seçili olan profili yeniden uygula. Profil şablonları güncellendiğinde, "
 "değişiklikleri sistemde uygulamak üzere geçerli sistem yapılandırmasını "
-"yeniden oluşturmak için bu komut kullanılabilir. Bu komut sadece var olan "
+"yeniden oluşturmak için bu komut kullanılabilir. Bu komut yalnızca var olan "
 "yapılandırma geçerli bir authselect yapılandırmasıysa değişiklikleri yeniden "
 "uygular, aksi takdirde bir hata döndürülür."
 
@@ -263,7 +267,7 @@ msgid ""
 "for *--backup=*.\n"
 msgstr ""
 "Değişiklikleri uygulamadan önce sistem dosyalarını yedekle.\n"
-"Yedekleme {AUTHSELECT_BACKUP_DIR}/İSİM konumuna kaydedilecektir.\n"
+"Yedekleme {AUTHSELECT_BACKUP_DIR}/AD konumuna kaydedilecektir.\n"
 "Benzersiz bir dizge ile geçerli zaman yedekleme adı olarak kullanılır.\n"
 "Bu, *--backup=* için bir kısayoldur.\n"
 
@@ -276,8 +280,9 @@ msgid ""
 "string is used as a name if no value is provided.\n"
 msgstr ""
 "Değişiklikleri uygulamadan önce sistem dosyalarını yedekle. Yedekleme\n"
-"{AUTHSELECT_BACKUP_DIR}/İSİM konumuna kaydedilecektir. Herhangi bir\n"
-"değer belirtilmemişse, benzersiz bir dizge ile geçerli zaman isim olarak kullanılır.\n"
+"{AUTHSELECT_BACKUP_DIR}/AD konumuna kaydedilecektir. Herhangi bir\n"
+"değer belirtilmemişse, benzersiz bir dizge ile geçerli zaman ad olarak "
+"kullanılır.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:91
@@ -304,7 +309,7 @@ msgid ""
 "with *show* to see what the features do."
 msgstr ""
 "Verilen profildeki kullanılabilir tüm özellikleri listele. + _Not:_ Bu, "
-"herhangi bir açıklama olmadan sadece özellikleri listeleyecektir. "
+"herhangi bir açıklama olmadan yalnızca özellikleri listeleyecektir. "
 "Özelliklerin ne yaptığını görmek için lütfen *show* komutunu kullanarak "
 "profil belgelendirmesini okuyun."
 
@@ -381,9 +386,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:119
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*-a, --all*"
-msgstr "*-a, --all*:"
+msgstr "*-a, --all*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:121
@@ -393,9 +398,9 @@ msgstr "Tüm dosyaların içeriklerini yazdır.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:122
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*-n, --nsswitch*"
-msgstr "*-n, --nsswitch*:"
+msgstr "*-n, --nsswitch*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:124
@@ -405,9 +410,9 @@ msgstr "nsswitch.conf içeriğini yazdır.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:125
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*-s, --system-auth*"
-msgstr "*-s, --system-auth*:"
+msgstr "*-s, --system-auth*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:127
@@ -417,9 +422,9 @@ msgstr "system-auth içeriğini yazdır.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:128
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*-p, --password-auth*"
-msgstr "*-p, --password-auth*:"
+msgstr "*-p, --password-auth*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:130
@@ -429,9 +434,9 @@ msgstr "password-auth içeriğini yazdır.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:131
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*-c, --smartcard-auth*"
-msgstr "*-c, --smartcard-auth*:"
+msgstr "*-c, --smartcard-auth*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:133
@@ -441,9 +446,9 @@ msgstr "smartcard-auth içeriğini yazdır.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:134
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*-f, --fingerprint-auth*"
-msgstr "*-f, --fingerprint-auth*:"
+msgstr "*-f, --fingerprint-auth*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:136
@@ -453,9 +458,9 @@ msgstr "fingerprint-auth içeriğini yazdır.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:137
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*-o, --postlogin*"
-msgstr "*-o, --postlogin*:"
+msgstr "*-o, --postlogin*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:139
@@ -465,9 +470,9 @@ msgstr "postlogin içeriğini yazdır.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:140
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*-d, --dconf-db*"
-msgstr "*-d, --dconf-db*:"
+msgstr "*-d, --dconf-db*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:142
@@ -477,9 +482,9 @@ msgstr "dconf veri tabanı içeriğini yazdır.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:143
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*-l, --dconf-lock*"
-msgstr "*-l, --dconf-lock*:"
+msgstr "*-l, --dconf-lock*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:145
@@ -491,7 +496,7 @@ msgstr "dconf kilidi içeriğini yazdır.\n"
 #: src/man/authselect.8.adoc:146
 #, no-wrap
 msgid "*enable-feature* feature [-b] [--backup=NAME] [-q, --quiet]"
-msgstr "*enable-feature* özellik [-b] [--backup=İSİM] [-q, --quiet]"
+msgstr "*enable-feature* özellik [-b] [--backup=AD] [-q, --quiet]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:148
@@ -508,7 +513,7 @@ msgid ""
 "for *--backup=*.\n"
 msgstr ""
 "Özelliği etkinleştirmeden önce sistem dosyalarını yedekle.\n"
-"Yedekleme {AUTHSELECT_BACKUP_DIR}/İSİM konumuna kaydedilecektir.\n"
+"Yedekleme {AUTHSELECT_BACKUP_DIR}/AD konumuna kaydedilecektir.\n"
 "Benzersiz bir dizge ile geçerli zaman yedekleme adı olarak kullanılır.\n"
 "Bu, *--backup=* için bir kısayoldur.\n"
 
@@ -521,14 +526,15 @@ msgid ""
 "string is used as a name if no value is provided.\n"
 msgstr ""
 "Özelliği etkinleştirmeden önce sistem dosyalarını yedekle. Yedekleme\n"
-"{AUTHSELECT_BACKUP_DIR}/İSİM konumuna kaydedilecektir. Herhangi bir\n"
-"değer belirtilmemişse, benzersiz bir dizge ile geçerli zaman isim olarak kullanılır.\n"
+"{AUTHSELECT_BACKUP_DIR}/AD konumuna kaydedilecektir. Herhangi bir\n"
+"değer belirtilmemişse, benzersiz bir dizge ile geçerli zaman ad olarak "
+"kullanılır.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:164
 #, no-wrap
 msgid "*disable-feature* feature [-b] [--backup=NAME]"
-msgstr "*disable-feature* özellik [-b] [--backup=İSİM]"
+msgstr "*disable-feature* özellik [-b] [--backup=AD]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:166
@@ -545,7 +551,7 @@ msgid ""
 "for *--backup=*.\n"
 msgstr ""
 "Özelliği devre dışı bırakmadan önce sistem dosyalarını yedekle.\n"
-"Yedekleme {AUTHSELECT_BACKUP_DIR}/İSİM konumuna kaydedilecektir.\n"
+"Yedekleme {AUTHSELECT_BACKUP_DIR}/AD konumuna kaydedilecektir.\n"
 "Benzersiz bir dizge ile geçerli zaman yedekleme adı olarak kullanılır.\n"
 "Bu, *--backup=* için bir kısayoldur.\n"
 
@@ -558,14 +564,15 @@ msgid ""
 "string is used as a name if no value is provided.\n"
 msgstr ""
 "Özelliği devre dışı bırakmadan önce sistem dosyalarını yedekle. Yedekleme\n"
-"{AUTHSELECT_BACKUP_DIR}/İSİM konumuna kaydedilecektir. Herhangi bir\n"
-"değer belirtilmemişse, benzersiz bir dizge ile geçerli zaman isim olarak kullanılır.\n"
+"{AUTHSELECT_BACKUP_DIR}/AD konumuna kaydedilecektir. Herhangi bir\n"
+"değer belirtilmemişse, benzersiz bir dizge ile geçerli zaman ad olarak "
+"kullanılır.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:178
 #, no-wrap
 msgid "*create-profile* NAME [--custom,-c|--vendor,-v] [options]"
-msgstr "*create-profile* İSİM [--custom,-c|--vendor,-v] [seçenekler]"
+msgstr "*create-profile* AD [--custom,-c|--vendor,-v] [seçenekler]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:183
@@ -575,16 +582,16 @@ msgid ""
 "from the base profile or symbolic links to these files are created if such "
 "option is selected."
 msgstr ""
-"_İSİM_ adlı yeni bir özelleştirilmiş profil oluştur. Profil var olan bir "
+"_AD_ adında yeni bir özelleştirilmiş profil oluştur. Profil var olan bir "
 "profili temel alabilir; bu durumda yeni profil şablonları temel profilden "
 "kopyalanır veya ilgili seçenek belirtilirse bu dosyalara sembolik "
 "bağlantılar oluşturulur."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:184
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*--vendor,-v*"
-msgstr "*--vendor,-v*:"
+msgstr "*--vendor, -v*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:187
@@ -598,9 +605,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:188
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*--base-on=BASE-ID, -b=BASE-ID*"
-msgstr "*--base-on=TEMEL-KİMLİĞİ, -b=TEMEL-KİMLİĞİ*:"
+msgstr "*--base-on=TEMEL-KİMLİĞİ, -b=TEMEL-KİMLİĞİ*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:191
@@ -638,9 +645,9 @@ msgstr "Bir hata döndür.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:196
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*--base-on-default*"
-msgstr "*--base-on-default*:"
+msgstr "*--base-on-default*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:199
@@ -654,9 +661,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:200
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*--symlink-meta*"
-msgstr "*--symlink-meta*:"
+msgstr "*--symlink-meta*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:203
@@ -670,9 +677,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:204
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*--symlink-nsswitch*"
-msgstr "*--symlink-nsswitch*:"
+msgstr "*--symlink-nsswitch*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:207
@@ -686,9 +693,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:208
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*--symlink-pam*"
-msgstr "*--symlink-pam*:"
+msgstr "*--symlink-pam*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:211
@@ -702,9 +709,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:212
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*--symlink-dconf*"
-msgstr "*--symlink-dconf*:"
+msgstr "*--symlink-dconf*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:215
@@ -718,9 +725,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:216
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*--symlink=FILE,-s=FILE*"
-msgstr "*--symlink=DOSYA,-s=DOSYA*:"
+msgstr "*--symlink=DOSYA, -s=DOSYA*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:219
@@ -756,7 +763,7 @@ msgid ""
 "print only backup names without any formatting and additional information."
 msgstr ""
 "Kullanılabilir yedeklemeleri yazdır.  *--raw* seçeneği belirtilirse, komut "
-"herhangi bir biçimlendirme ve ek bilgi olmadan sadece yedekleme adlarını "
+"herhangi bir biçimlendirme ve ek bilgi olmadan yalnızca yedekleme adlarını "
 "yazdıracaktır."
 
 #. type: Labeled list
@@ -873,7 +880,7 @@ msgstr ""
 "Authselect yeni _nsswitch.conf_ oluşturduğunda, bu dosyayı okur ve seçilen "
 "profildeki yapılandırma ile birleştirir. Profil yapılandırması her zaman "
 "önceliklidir.  Başka bir deyişle, profillerin tüm nsswitch eşleşmelerini "
-"ayarlaması gerekmez, sadece profille ilgili olanları ayarlayabilir. Bir "
+"ayarlaması gerekmez, yalnızca profille ilgili olanları ayarlayabilir. Bir "
 "profil içinde bir eşleşme ayarlanırsa, her zaman_user-nsswitch.conf_ "
 "dosyasındaki aynı eşleşmenin üzerine yazar."
 
@@ -1115,7 +1122,7 @@ msgstr ""
 #. type: Plain text
 #: src/man/authselect.8.adoc:350
 msgid "5: Executed command must be run as root."
-msgstr "5: Yürütülen komut root kullanıcısı tarafından çalıştırılmalıdır."
+msgstr "5: Çalıştırılan komut root kullanıcısı tarafından çalıştırılmalıdır."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:352
