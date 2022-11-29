@@ -4,13 +4,14 @@
 # Sundeep Anand <suanand@redhat.com>, 2021.
 # simmon <simmon@nplob.com>, 2021.
 # Seong-ho Cho <darkcircle.0426@gmail.com>, 2021.
+# 김인수 <simmon@nplob.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
 "POT-Creation-Date: 2022-05-04 13:46+0200\n"
-"PO-Revision-Date: 2021-12-10 17:16+0000\n"
-"Last-Translator: simmon <simmon@nplob.com>\n"
+"PO-Revision-Date: 2022-07-18 15:18+0000\n"
+"Last-Translator: 김인수 <simmon@nplob.com>\n"
 "Language-Team: Korean <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/ko/>\n"
 "Language: ko\n"
@@ -18,64 +19,60 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.9.1\n"
+"X-Generator: Weblate 4.13\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:188
 msgid "Unable to obtain supported features"
-msgstr "지원하는 기능을 가져올 수 없습니다"
+msgstr "지원되는 기능을 가져올 수 없습니다"
 
 #: src/lib/authselect.c:59
 #, c-format
 msgid "Unknown profile feature [%s], did you mean [%s]?"
-msgstr "알 수 없는 프로필 기능 [%s], [%s]을(를) 의미하나요?"
+msgstr "알 수 없는 프로필 기능 [%s], [%s]를 의미하나요?"
 
 #: src/lib/authselect.c:62
 #, c-format
 msgid "Unknown profile feature [%s]"
-msgstr "알 수 없는 프로필 기능 [%s]"
+msgstr "알 수 없는 프로파일 기능 [%s]"
 
 #: src/lib/authselect.c:86
 #, c-format
 msgid "Trying to activate profile [%s]"
-msgstr "프로필 활성화 시도 중 [%s]"
+msgstr "프로파일 활성화 시도 중 [%s]"
 
 #: src/lib/authselect.c:90 src/lib/authselect.c:181 src/lib/profiles/read.c:316
 #, c-format
 msgid "Unable to find profile [%s] [%d]: %s"
-msgstr "프로필을 찾을 수 없습니다 [%s] [%d] : %s"
+msgstr "프로파일을 찾을 수 없습니다 [%s] [%d]: %s"
 
 #: src/lib/authselect.c:101
 msgid "Enforcing activation!"
-msgstr "강제 활성화 중!"
+msgstr "활성화 강제!"
 
 #: src/lib/authselect.c:110
-#, fuzzy, c-format
-#| msgid "System was not configured with authselect."
+#, c-format
 msgid ""
 "%s is missing or unreadable, system was not properly configured by "
 "authselect."
-msgstr "시스템을 authselect로 설정하지 않았습니다."
+msgstr "%s는 누락되었거나 읽을 수 없으며, authselect에 의해 시스템은 적절하게 "
+"구성되지 않았습니다."
 
 #: src/lib/authselect.c:112
-#, fuzzy
-#| msgid ""
-#| "Refusing to activate profile unless this file is removed or overwrite is "
-#| "requested."
 msgid "Refusing to activate profile unless overwrite is requested."
-msgstr ""
-"이 파일을 제거하거나 덮어쓰기를 요구하지 않는 한 프로파일 활성화를 거부합니"
-"다."
+msgstr "덮어쓰기를 요구하지 않는 한 프로파일 활성화를 거부."
 
 #: src/lib/authselect.c:118
 msgid ""
 "Changes to the authselect configuration were detected. These changes will be "
 "overwritten. Please call 'authselect opt-out' in order to keep them."
 msgstr ""
+"authselect 구성에 대한 변경 부분이 탐지되었습니다. 이들 변경 사항을 덮어씁니"
+"다. 이를 유지하려면 'authselect opt-out'을 호출하세요."
 
 #: src/lib/authselect.c:127
 #, c-format
 msgid "Unable to activate profile [%s] [%d]: %s"
-msgstr "[%s] [%d] 프로필을 활성화할 수 없음: %s"
+msgstr "프로파일을 활성화 할 수 없음 [%s] [%d]: %s"
 
 #: src/lib/authselect.c:141
 msgid "Trying to uninstall authselect configuration"
@@ -84,23 +81,20 @@ msgstr "authselect 구성 제거를 시도 중입니다"
 #: src/lib/authselect.c:145
 #, c-format
 msgid "Unable to remove symlinks [%d]: %s"
-msgstr "symlink [%d]을(를) 제거할 수 없음: %s"
+msgstr "심볼릭 링크를 제거 할 수 없음 [%d]: %s"
 
 #: src/lib/authselect.c:149
 msgid "Symbolic links were successfully removed"
 msgstr "심볼릭 링크 제거에 성공했습니다"
 
 #: src/lib/authselect.c:154
-#, fuzzy, c-format
-#| msgid "Unable to uninstall authselect configuration [%d]: %s\n"
+#, c-format
 msgid "Unable to remove authselect configuration [%d]: %s"
-msgstr "authselect 구성 [%d](을)를 제거할 수 없습니다: %s\n"
+msgstr "authselect 구성을 제거 할 수 없습니다 [%d]: %s"
 
 #: src/lib/authselect.c:159
-#, fuzzy
-#| msgid "Symbolic links were successfully removed"
 msgid "Authselect configuration was successfully removed"
-msgstr "심볼릭 링크 제거에 성공했습니다"
+msgstr "Authselect 구성이 성공적으로 제거되었습니다"
 
 #: src/lib/authselect.c:198
 #, c-format
@@ -110,17 +104,17 @@ msgstr "[%s] 프로필 기능은 더 이상 지원하지 않습니다. 제거합
 #: src/lib/authselect_backup.c:48
 #, c-format
 msgid "Unable to create backup directory [%s/%s] [%d]: %s"
-msgstr "[%s/%s] 백업 디렉터리를 만들 수 없음 [%d]: %s"
+msgstr "백업 디렉토리를 생성 할 수 없음 [%s/%s] [%d]: %s"
 
 #: src/lib/authselect_backup.c:71
 #, c-format
 msgid "Unable to create backup directory [%s] [%d]: %s"
-msgstr "[%s] 백업 디렉터리를 만들 수 없음 [%d]: %s"
+msgstr "백업 디렉토리를 생성 할 수 없음 [%s] [%d]: %s"
 
 #: src/lib/authselect_backup.c:92
 #, c-format
 msgid "Creating temporary directory at [%s]"
-msgstr "[%s]에서 임시 디렉터리 만드는 중"
+msgstr "[%s]에서 임시 디렉토리 생성 중"
 
 #: src/lib/authselect_backup.c:125 src/lib/authselect_profile.c:377
 #: src/lib/authselect_profile.c:457
@@ -131,7 +125,7 @@ msgstr "[%s]에 파일 이름이 없습니다"
 #: src/lib/authselect_backup.c:129
 #, c-format
 msgid "Copying [%s] to [%s/%s]"
-msgstr "[%s]을(를) [%s/%s](으)로 복사 중"
+msgstr "[%s]를 [%s/%s]로 복사 중"
 
 #: src/lib/authselect_backup.c:133 src/lib/util/selinux.c:393
 #, c-format
@@ -170,7 +164,7 @@ msgstr " 존재하지 않습니다."
 #: src/lib/authselect_backup.c:209 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
-msgstr "[%s] [%d] 디렉터리를 나열할 수 없음: %s"
+msgstr "디렉토리를 목록화 할 수 없음 [%s] [%d]: %s"
 
 #: src/lib/authselect_backup.c:223
 #, c-format
@@ -180,17 +174,17 @@ msgstr "백업 제거 중 [%s]"
 #: src/lib/authselect_backup.c:232
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
-msgstr "[%s] [%d] 디렉터리를 삭제할 수 없음: %s"
+msgstr "디렉토리를 삭제 할 수 없음 [%s] [%d]: %s"
 
 #: src/lib/authselect_backup.c:305
 #, c-format
 msgid "Unable to copy files [%d]: %s"
-msgstr "[%d] 파일을 복사할 수 없음: %s"
+msgstr "파일을 복사 할 수 없음[%d]: %s"
 
 #: src/lib/authselect_backup.c:311 src/lib/profiles/activate.c:78
 #, c-format
 msgid "Unable to create symbolic links [%d]: %s"
-msgstr "[%d] 심볼릭 링크를 만들 수 없음: %s"
+msgstr "심볼릭 링크를 만들 수 없음 [%d]: %s"
 
 #: src/lib/authselect_backup.c:317 src/lib/profiles/activate.c:84
 msgid "Dconf is not installed on your system"
@@ -256,37 +250,37 @@ msgstr "[%s] [%d]에 작성할 수 없음: %s"
 #: src/lib/authselect_profile.c:385
 #, c-format
 msgid "Omitting [%s] since it does not exist in base profile"
-msgstr "기본 프로필에 없기 때문에 [%s]을(를) 생략합니다"
+msgstr "기본 프로파일에 없기 때문에 [%s]를 생략합니다"
 
 #: src/lib/authselect_profile.c:389
 #, c-format
 msgid "Unable to check presence of [%s] [%d]: %s"
-msgstr "[%s] [%d]의 존재를 확인할 수 없음: %s"
+msgstr "존재를 확인 할 수 없음 [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:397
 #, c-format
 msgid "Unable to create symbolic link [%s] to [%s] [%d]: %s"
-msgstr "[%s] ~ [%s] [%d] 심볼릭 링크를 생성할 수 없음: %s"
+msgstr "심볼릭 링크를 생성 할 수 없음 [%s] ~ [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:430
 #, c-format
 msgid "Creating new profile from \"%s\" at [%s]"
-msgstr "[%s]의 \"%s\"에서 새 프로필 만들기"
+msgstr "[%s]의 \"%s\"에서 신규 프로파일 만들기"
 
 #: src/lib/authselect_profile.c:434
 #, c-format
 msgid "Unable to read base profile [%s] [%d]: %s"
-msgstr "[%s] [%d] 기본 프로필을 읽을 수 없음: %s"
+msgstr "기본 프로파일을 읽을 수 없음 [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:442
 msgid "Unable to resolve symbolic links names"
-msgstr "심볼릭 링크 이름을 확인할 수 없습니다"
+msgstr "심볼릭 링크 이름을 확인 할 수 없습니다"
 
 #: src/lib/authselect_profile.c:467 src/lib/authselect_profile.c:480
 #: src/lib/authselect_profile.c:494
 #, c-format
 msgid "Unable to create [%s] [%d]: %s"
-msgstr "[%s] [%d]을(를) 만들 수 없음: %s"
+msgstr "생성 할 수 없음 [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:502
 #, c-format
@@ -335,12 +329,12 @@ msgstr "[%d] 프로필을 만들 수 없음: %s"
 
 #: src/lib/files/config.c:152
 msgid "Checking if all required directories are writable."
-msgstr "필요한 모든 디렉터리에 쓸 수 있는지 확인합니다."
+msgstr "모든 필요한 디렉토리에 쓸 수 있는지 확인 중."
 
 #: src/lib/files/config.c:157
 #, c-format
 msgid "Unable to get path to %s parent directory!"
-msgstr "%s 상위 디렉터리의 경로를 가져올 수 없습니다!"
+msgstr "%s 상위 디렉토리로 경로를 가져올 수 없음!"
 
 #: src/lib/files/config.c:164
 #, c-format
@@ -355,17 +349,17 @@ msgstr "경로를 만들 수 없음 [%s] [%d] : %s"
 #: src/lib/files/config.c:173
 #, c-format
 msgid "Directory [%s] does not exist, please create it!"
-msgstr "[%s] 디렉터리가 없습니다. 만드십시오!"
+msgstr "디렉토리 [%s]가 없으므로, 이를 생성해주세요!"
 
 #: src/lib/files/config.c:176
 #, c-format
 msgid "Unable to access directory [%s] in [WX] mode!"
-msgstr "[WX] 모드에서 [%s] 디렉터리에 접근할 수 없습니다!"
+msgstr "[WX] 방식에서 디렉토리 [%s]에 접근 할 수 없음!"
 
 #: src/lib/files/config.c:195
 #, c-format
 msgid "Unable to load profile [%s] [%d]: %s"
-msgstr "[%s] [%d] 프로필을 로드할 수 없음: %s"
+msgstr "프로파일을 적재 할 수 없음 [%s] [%d]: %s"
 
 #: src/lib/files/symlinks.c:41
 #, c-format
@@ -411,17 +405,17 @@ msgstr "[%s] [%d] 파일을 확인할 수 없음: %s"
 #: src/lib/files/symlinks.c:128
 #, c-format
 msgid "Symbolic link [%s] to [%s] still exists!"
-msgstr "기호 링크 [%s] ~ [%s]이(가) 여전히 존재합니다!"
+msgstr "심볼릭 링크 [%s] ~ [%s]가 여전히 존재합니다!"
 
 #: src/lib/files/symlinks.c:149
 #, c-format
 msgid "File [%s] exists but it needs to be overwritten!"
-msgstr "파일 [%s]이(가) 존재하지만 덮어쓰기해야 합니다!"
+msgstr "파일 [%s]가 존재하지만 덮어쓰기해야 합니다!"
 
 #: src/lib/files/symlinks.c:190
 #, c-format
 msgid "Skipping [%s] because it is not an authselect file"
-msgstr "authselect 파일이 아니므로 [%s]을(를) 건너뜁니다"
+msgstr "authselect 파일이 아니므로 [%s]를 건너뜁니다"
 
 #: src/lib/files/system.c:74 src/lib/profiles/read.c:162
 #, c-format
@@ -437,7 +431,7 @@ msgstr "[%s/%s] [%d] 파일을 읽을 수 없습니다: %s"
 #: src/lib/files/system.c:150
 #, c-format
 msgid "Unable to generate files [%d]: %s"
-msgstr "[%d] 파일을 생성할 수 없습니다: %s"
+msgstr "파일을 생성 할 수 없습니다 [%d]: %s"
 
 #: src/lib/files/system.c:165 src/lib/util/selinux.c:398
 #, c-format
@@ -462,7 +456,7 @@ msgstr "[%s]을(를) [%s](으)로 이름 바꾸기"
 #: src/lib/files/system.c:190 src/lib/util/selinux.c:429
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
-msgstr "[%s]을(를) [%s][%d](으)로 이름을 바꿀 수 없습니다: %s"
+msgstr "이름을 바꿀 수 없습니다 [%s] ~ [%s][%d]: %s"
 
 #: src/lib/files/system.c:266
 #, c-format
@@ -485,10 +479,9 @@ msgid "File [%s] is still present"
 msgstr "파일 [%s]이(가) 아직 있습니다"
 
 #: src/lib/files/system.c:335 src/lib/files/system.c:345
-#, fuzzy, c-format
-#| msgid "Unable to create [%s] [%d]: %s"
+#, c-format
 msgid "Unable to delete [%s] [%d]: %s"
-msgstr "[%s] [%d]을(를) 만들 수 없음: %s"
+msgstr "삭제 할 수 없음 [%s] [%d]: %s"
 
 #: src/lib/profiles/activate.c:44
 #, c-format
@@ -497,7 +490,7 @@ msgstr "%s 업데이트가 실패했습니다: %d"
 
 #: src/lib/profiles/activate.c:59
 msgid "Some directories are not accessible by authselect!"
-msgstr "authselect에서 일부 디렉터리에 접근할 수 없습니다!"
+msgstr "authselect에서 일부 디렉토리에 접근 할 수 없음!"
 
 #: src/lib/profiles/activate.c:65
 #, c-format
@@ -512,12 +505,12 @@ msgstr "구성을 쓸 수 없습니다 [%d] : %s"
 #: src/lib/profiles/list.c:42
 #, c-format
 msgid "Reading profile directory [%s]"
-msgstr "[%s] 프로파일 디렉터리 읽기"
+msgstr "프로파일 디렉토리 [%s] 읽기"
 
 #: src/lib/profiles/list.c:47
 #, c-format
 msgid "Directory [%s] is missing!"
-msgstr "[%s] 디렉터리가 빠졌습니다!"
+msgstr "디렉토리 [%s]가 누락되었습니다!"
 
 #: src/lib/profiles/list.c:69
 #, c-format
@@ -532,7 +525,7 @@ msgstr "프로필을 나열 할 수 없습니다 [%d] : %s"
 #: src/lib/profiles/read.c:83
 #, c-format
 msgid "Unable to open directory [%s] [%d]: %s"
-msgstr "[%s] 디렉터리를 열 수 없습니다 [%d] : %s"
+msgstr "디렉토리를 열 수 없음 [%s] [%d]: %s"
 
 #: src/lib/profiles/read.c:106
 #, c-format
@@ -587,7 +580,7 @@ msgstr "통계 할 수 없습니다 [%s] [%d] : %s"
 #: src/lib/util/dir.c:130
 #, c-format
 msgid "Unable to stat directory [%d]: %s"
-msgstr "디렉터리 상태 정보를 조회(stat)할 수 없습니다 [%d] : %s"
+msgstr "디렉토리 상태를 확인 할 수 없음 [%d]: %s"
 
 #: src/lib/util/dir.c:313
 #, c-format
@@ -597,7 +590,7 @@ msgstr "[%s/%s] 파일 제거 중"
 #: src/lib/util/dir.c:321
 #, c-format
 msgid "Removing directory [%s]"
-msgstr "[%s] 디렉터리 제거 중"
+msgstr "디렉토리 제거 중 [%s]"
 
 #: src/lib/util/file.c:43
 msgid "Internal error: stat cannot be NULL!"
@@ -606,7 +599,7 @@ msgstr "내부 오류 : stat는 NULL 일 수 없습니다!"
 #: src/lib/util/file.c:51
 #, c-format
 msgid "[%s] is not a directory!"
-msgstr "[%s]은(는) 디렉터리가 아닙니다!"
+msgstr "[%s]는 디렉토리가 아닙니다!"
 
 #: src/lib/util/file.c:54
 #, c-format
@@ -665,7 +658,7 @@ msgstr "내부 오류 : filepath는 NULL 일 수 없습니다!"
 #: src/lib/util/file.c:313
 #, c-format
 msgid "Unable to get parent directory of [%s] [%d]: %s"
-msgstr "상위 디렉터리를 가져올 수 없습니다 [%s] [%d] : %s"
+msgstr "상위 디렉토리를 가져올 수 없음 [%s] [%d] : %s"
 
 #: src/lib/util/file.c:524 src/lib/util/textfile.c:175
 #, c-format
@@ -1084,10 +1077,8 @@ msgid "Current configuration is valid."
 msgstr "현재 구성이 유효합니다."
 
 #: src/cli/main.c:370
-#, fuzzy
-#| msgid "No existing configuration detected.\n"
 msgid "No configuration detected."
-msgstr "기존 구성이 없습니다.\n"
+msgstr "감지된 구성이 없습니다."
 
 #: src/cli/main.c:374
 msgid "System was not configured with authselect."
@@ -1170,12 +1161,12 @@ msgstr "사용할 수있는 기능."
 #: src/cli/main.c:676
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
-msgstr "현재 구성 [%d](을)를 백업할 수 없음: %s\n"
+msgstr "현재 구성을 백업 할 수 없음 [%d]: %s\n"
 
 #: src/cli/main.c:683
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
-msgstr "[%d] 기능을 활성화 할 수 없음: %s\n"
+msgstr "기능을 활성화 할 수 없음 [%d] : %s\n"
 
 #: src/cli/main.c:688
 #, c-format
@@ -1270,12 +1261,12 @@ msgstr "복원할 백업 이름입니다."
 #: src/cli/main.c:896
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
-msgstr "백업 [%s] [%d]을 복수할 수 없습니다: %s\n"
+msgstr "백업을 복구 할 수 없습니다 [%s] [%d]: %s\n"
 
 #: src/cli/main.c:910
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
-msgstr "authselect 구성 [%d](을)를 제거할 수 없습니다: %s\n"
+msgstr "authselect 구성을 제거 할 수 없습니다 [%d]: %s\n"
 
 #: src/cli/main.c:960
 msgid "Select profile"
@@ -1343,13 +1334,11 @@ msgstr "백업에서 복원"
 
 #: src/cli/main.c:976
 msgid "Other:"
-msgstr ""
+msgstr "기타:"
 
 #: src/cli/main.c:977
-#, fuzzy
-#| msgid "Uninstall authselect configuration"
 msgid "Opt-out from authselect managed configuration"
-msgstr "authselect 설정 제거"
+msgstr "authselect 설정된 구성에서 선택하지 않으면 불가능"
 
 #: src/cli/main.c:979
 msgid "Print authselect version"
@@ -1361,7 +1350,7 @@ msgstr "기본적으로 사용자 정보를위한 NIS"
 
 #: src/compat/authcompat_Options.py:83
 msgid "<domain>"
-msgstr "<domain>"
+msgstr "<도메인>"
 
 #: src/compat/authcompat_Options.py:83
 msgid "default NIS domain"
@@ -1466,11 +1455,11 @@ msgstr "기본적으로 사용자 정보를위한 winbind"
 
 #: src/compat/authcompat_Options.py:104
 msgid "winbind for authentication by default"
-msgstr "기본적으로 인증 용 winbind"
+msgstr "기본 인증을 위한 winbind"
 
 #: src/compat/authcompat_Options.py:105
 msgid "<Administrator>"
-msgstr "<Administrator>"
+msgstr "<관리자>"
 
 #: src/compat/authcompat_Options.py:105
 msgid "join the winbind domain or ads realm now as this administrator"
@@ -1507,7 +1496,7 @@ msgstr "계정 인증 중 access.conf 점검"
 
 #: src/compat/authcompat_Options.py:112
 msgid "creation of home directories for users on their first login"
-msgstr "처음 로그인할 때 사용자 디렉터리 만듦"
+msgstr "처음 로그인에서 사용자를 위한 홈 디렉토리 생성"
 
 #: src/compat/authcompat_Options.py:113
 msgid "account locking in case of too many consecutive authentication failures"
@@ -1520,43 +1509,43 @@ msgstr "<number>"
 
 #: src/compat/authcompat_Options.py:114
 msgid "minimum length of a password"
-msgstr "최소 암호 길이"
+msgstr "최소 비밀번호 길이"
 
 #: src/compat/authcompat_Options.py:115
 msgid "minimum number of character classes in a password"
-msgstr "비밀본호의 최소 문자 등급 수"
+msgstr "비밀번호의 최소 문자 등급 수"
 
 #: src/compat/authcompat_Options.py:116
 msgid "maximum number of same consecutive characters in a password"
-msgstr "암호의 연속 최대 문자 갯수"
+msgstr "비밀번호의 연속 최대 문자 갯수"
 
 #: src/compat/authcompat_Options.py:117
 msgid "maximum number of consecutive characters of same class in a password"
-msgstr "동일한 등급의 최대 연속 문자 수"
+msgstr "비밀번호의 동일한 등급의 최대 연속 문자 수"
 
 #: src/compat/authcompat_Options.py:118
 msgid "require at least one lowercase character in a password"
-msgstr "암호에 적어도 하나의 소문자가 필요하다"
+msgstr "비밀번호에 적어도 하나의 소문자가 필요하다"
 
 #: src/compat/authcompat_Options.py:119
 msgid "require at least one uppercase character in a password"
-msgstr "암호에 적어도 하나의 대문자가 필요하다"
+msgstr "비밀번호에 적어도 하나의 대문자가 필요하다"
 
 #: src/compat/authcompat_Options.py:120
 msgid "require at least one digit in a password"
-msgstr "암호에 적어도 하나의 숫자가 필요하다"
+msgstr "비밀번호에 적어도 하나의 숫자가 필요하다"
 
 #: src/compat/authcompat_Options.py:121
 msgid "require at least one other character in a password"
-msgstr "암호에 적어도 하나의 다른 문자가 필요하다"
+msgstr "비밀번호에 적어도 하나의 다른 문자가 필요하다"
 
 #: src/compat/authcompat_Options.py:124
 msgid "do not start/stop services"
-msgstr "서비스를 시작하거나 중지하지 마십시오"
+msgstr "서비스를 시작/중지하지 마세요"
 
 #: src/compat/authcompat_Options.py:125
 msgid "update all configuration files"
-msgstr "모든 구성 파일을 업데이트하십시오"
+msgstr "모든 구성 파일을 최신화합니다"
 
 #: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
 msgid "the same as --updateall"
@@ -1647,7 +1636,7 @@ msgstr "파일 삭제 : %s"
 #: src/compat/authcompat.py.in.in:334
 #, python-format
 msgid "%s was not found. Please, install realmd."
-msgstr "%s을(를) 찾을 수 없습니다. realmd를 설치하십시오."
+msgstr "%s를 찾을 수 없습니다. realmd를 설치하세요."
 
 #: src/compat/authcompat.py.in.in:468
 msgid "Running authconfig compatibility tool."
@@ -1672,15 +1661,13 @@ msgid ""
 "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
 msgstr ""
-"Fedora 28 변경 페이지보기 : https://fedoraproject.org/wiki/Changes/"
-"AuthselectAsDefault"
+"페도라 28 변경 부분: https://fedoraproject.org/wiki/Changes/"
+"AuthselectAsDefault을 참고하세요"
 
 #: src/compat/authcompat.py.in.in:475
 msgid ""
 "See man authselect-migration(7) to help you with migration to authselect"
-msgstr ""
-"authselect로의 마이그레이션 도움을 받으려면 man authselect-migration(7)을 참"
-"고하십시오"
+msgstr "authselect로의 이전 도움을 받으려면 man authselect-migration(7)을 참고하세요"
 
 #: src/compat/authcompat.py.in.in:479
 msgid "Warning: These options are not supported anymore and have no effect:"
@@ -1740,3 +1727,13 @@ msgstr "오류: --updateall 옵션을 지정하십시오."
 
 #~ msgid "Unable to generate nsswitch.conf [%d]: %s"
 #~ msgstr "nsswitch.conf [%d]를 생성할 수 없습니다: %s"
+
+#~ msgid ""
+#~ "Refusing to activate profile unless this file is removed or overwrite is "
+#~ "requested."
+#~ msgstr ""
+#~ "이 파일을 제거하거나 덮어쓰기를 요구하지 않는 한 프로파일 활성화를 거부합"
+#~ "니다."
+
+#~ msgid "Uninstall authselect configuration"
+#~ msgstr "authselect 설정 제거"

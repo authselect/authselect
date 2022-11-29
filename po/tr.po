@@ -48,28 +48,26 @@ msgid "Enforcing activation!"
 msgstr "Etkinleştirmeye zorlanıyor!"
 
 #: src/lib/authselect.c:110
-#, fuzzy, c-format
-#| msgid "System was not configured with authselect."
+#, c-format
 msgid ""
 "%s is missing or unreadable, system was not properly configured by "
 "authselect."
-msgstr "Sistem authselect ile yapılandırılmadı."
+msgstr ""
+"%s eksik veya okunamıyor, sistem authselect tarafından düzgün "
+"yapılandırılmadı."
 
 #: src/lib/authselect.c:112
-#, fuzzy
-#| msgid ""
-#| "Refusing to activate profile unless this file is removed or overwrite is "
-#| "requested."
 msgid "Refusing to activate profile unless overwrite is requested."
-msgstr ""
-"Bu dosya kaldırılmadığı veya üzerine yazma istenmediği sürece profili "
-"etkinleştirme reddediliyor."
+msgstr "Üzerine yazma istenmediği sürece profili etkinleştirme reddediliyor."
 
 #: src/lib/authselect.c:118
 msgid ""
 "Changes to the authselect configuration were detected. These changes will be "
 "overwritten. Please call 'authselect opt-out' in order to keep them."
 msgstr ""
+"Authselect yapılandırmasında yapılan değişiklikler algılandı. Bu "
+"değişikliklerin üzerine yazılacak. Lütfen bunları tutmak için 'authselect "
+"opt-out' komutunu çalıştırın."
 
 #: src/lib/authselect.c:127
 #, c-format
@@ -90,16 +88,13 @@ msgid "Symbolic links were successfully removed"
 msgstr "Sembolik bağlantılar başarıyla kaldırıldı"
 
 #: src/lib/authselect.c:154
-#, fuzzy, c-format
-#| msgid "Unable to uninstall authselect configuration [%d]: %s\n"
+#, c-format
 msgid "Unable to remove authselect configuration [%d]: %s"
-msgstr "Authselect yapılandırması kaldırılamadı [%d]: %s\n"
+msgstr "Authselect yapılandırması kaldırılamadı [%d]: %s"
 
 #: src/lib/authselect.c:159
-#, fuzzy
-#| msgid "Symbolic links were successfully removed"
 msgid "Authselect configuration was successfully removed"
-msgstr "Sembolik bağlantılar başarıyla kaldırıldı"
+msgstr "Authselect yapılandırması başarıyla kaldırıldı"
 
 #: src/lib/authselect.c:198
 #, c-format
@@ -294,7 +289,7 @@ msgstr "Bilinmeyen dosya adı [%s]"
 
 #: src/lib/authselect_profile.c:529
 msgid "Name can not be empty"
-msgstr "İsim boş olamaz"
+msgstr "Ad boş olamaz"
 
 #: src/lib/authselect_profile.c:541
 msgid "Default profile can not be created"
@@ -484,10 +479,9 @@ msgid "File [%s] is still present"
 msgstr "[%s] dosyası hâlâ var"
 
 #: src/lib/files/system.c:335 src/lib/files/system.c:345
-#, fuzzy, c-format
-#| msgid "Unable to create [%s] [%d]: %s"
+#, c-format
 msgid "Unable to delete [%s] [%d]: %s"
-msgstr "[%s] oluşturulamadı [%d]: %s"
+msgstr "[%s] silinemedi [%d]: %s"
 
 #: src/lib/profiles/activate.c:44
 #, c-format
@@ -966,7 +960,7 @@ msgstr "Profili etkinleştirmeden önce sistem dosyalarını yedekle"
 
 #: src/cli/main.c:160 src/cli/main.c:247 src/cli/main.c:633 src/cli/main.c:710
 msgid "NAME"
-msgstr "İSİM"
+msgstr "AD"
 
 #: src/cli/main.c:161
 msgid "Do not backup system files when --force is set"
@@ -1088,10 +1082,8 @@ msgid "Current configuration is valid."
 msgstr "Geçerli yapılandırma doğru."
 
 #: src/cli/main.c:370
-#, fuzzy
-#| msgid "No existing configuration detected.\n"
 msgid "No configuration detected."
-msgstr "Mevcut yapılandırma tespit edilmedi.\n"
+msgstr "Yapılandırma tespit edilmedi."
 
 #: src/cli/main.c:374
 msgid "System was not configured with authselect."
@@ -1356,13 +1348,11 @@ msgstr "Yedeklemeden geri yükle"
 
 #: src/cli/main.c:976
 msgid "Other:"
-msgstr ""
+msgstr "Diğer:"
 
 #: src/cli/main.c:977
-#, fuzzy
-#| msgid "Uninstall authselect configuration"
 msgid "Opt-out from authselect managed configuration"
-msgstr "Authselect yapılandırmasını kaldır"
+msgstr "Authselect tarafından yönetilen yapılandırmadan ayrıl"
 
 #: src/cli/main.c:979
 msgid "Print authselect version"
@@ -1583,7 +1573,7 @@ msgstr "--updateall ile aynı"
 
 #: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
 msgid "<name>"
-msgstr "<isim>"
+msgstr "<ad>"
 
 #: src/compat/authcompat_Options.py:148
 msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
@@ -1763,3 +1753,13 @@ msgstr "Hata: Lütfen --updateall seçeneğini belirtin."
 
 #~ msgid "Unable to generate nsswitch.conf [%d]: %s"
 #~ msgstr "nsswitch.conf oluşturulamadı [%d]: %s"
+
+#~ msgid ""
+#~ "Refusing to activate profile unless this file is removed or overwrite is "
+#~ "requested."
+#~ msgstr ""
+#~ "Bu dosya kaldırılmadığı veya üzerine yazma istenmediği sürece profili "
+#~ "etkinleştirme reddediliyor."
+
+#~ msgid "Uninstall authselect configuration"
+#~ msgstr "Authselect yapılandırmasını kaldır"
