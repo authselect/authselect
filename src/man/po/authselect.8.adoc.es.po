@@ -1,17 +1,19 @@
 # Máximo Castañeda Riloba <mcrcctm@gmail.com>, 2018. #zanata
+# Emilio Herrera <ehespinosa57@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-05-04 13:50+0200\n"
-"PO-Revision-Date: 2018-09-27 02:18+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Spanish\n"
+"PO-Revision-Date: 2022-07-19 23:19+0000\n"
+"Last-Translator: Emilio Herrera <ehespinosa57@gmail.com>\n"
+"Language-Team: Spanish <https://translate.fedoraproject.org/projects/"
+"authselect/12x-authselect8adoc/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.13\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
@@ -38,9 +40,10 @@ msgstr "SINOPSIS"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:13
-#, fuzzy, no-wrap
+#, no-wrap
 msgid " authselect [--debug] [--trace] [--warn] command [command options]\n"
-msgstr " authselect [--debug] [--trace] [--warn] comando [opciones del comando] \n"
+msgstr ""
+" authselect [--debug] [--trace] [--warn] comando [opciones del comando]\n"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:15
@@ -83,7 +86,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:29
 #, no-wrap
 msgid "OPT-IN TO AUTHSELECT"
-msgstr ""
+msgstr "OPT-IN A AUTHSELECT"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:39
@@ -98,6 +101,16 @@ msgid ""
 "so if you wish to go back you can restore it with *authselect backup-"
 "restore* command (see description below)."
 msgstr ""
+"Authselect no modificará su configuración existente a no ser que la haya "
+"creado. Si quiere comenzar a utilizar authselect para configurar la "
+"autentificación de su sistema, por favor invoque *authselect select* con el "
+"parámetro *--force* primero (ej. *authselect select sssd --force*). El "
+"parámetro *--force* dice a authselect que se puede sobrescribir "
+"configuraciones ya existentes que no son de authselect (ver descripción "
+"debajo). Usar el parámetro *--force* generará automáticamente una copia de "
+"seguridad de su configuración actual, así que si desea revertir los cambios "
+"puede restaurarla con el comando *authselect backup-restore* (ver "
+"descripción debajo)."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:41
@@ -120,6 +133,8 @@ msgstr ""
 #, no-wrap
 msgid "*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup=NAME]"
 msgstr ""
+"*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] "
+"[--backup=NAME]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:48
@@ -132,9 +147,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:49
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*--force, -f*"
-msgstr "*--force, -f*:"
+msgstr "*--force, -f*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:54
@@ -155,7 +170,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:149 src/man/authselect.8.adoc:167
 #, no-wrap
 msgid "*-b*"
-msgstr ""
+msgstr "*-b*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:60

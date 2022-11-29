@@ -1,20 +1,20 @@
-# Göran Uddeborg <goeran@uddeborg.se>, 2018. #zanata, 2021.
+# Göran Uddeborg <goeran@uddeborg.se>, 2018. #zanata, 2021, 2022.
 # Pavel Brezina <pbrezina@redhat.com>, 2018. #zanata
-# Göran Uddeborg <goeran@uddeborg.se>, 2019. #zanata, 2021.
+# Göran Uddeborg <goeran@uddeborg.se>, 2019. #zanata, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-05-04 13:50+0200\n"
-"PO-Revision-Date: 2021-08-06 21:04+0000\n"
+"PO-Revision-Date: 2022-10-07 21:19+0000\n"
 "Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
 "Language-Team: Swedish <https://translate.fedoraproject.org/projects/"
-"authselect/master-authselect-profiles5adoc/sv/>\n"
+"authselect/12x-authselect-profiles5adoc/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.7.2\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. type: Title =
 #: src/man/authselect-profiles.5.adoc:2
@@ -127,7 +127,7 @@ msgstr "*README*"
 msgid ""
 "Description of the profile. The first line must be a name of the profile."
 msgstr ""
-"Beskrivning av profilen.  Den första raden måste vara ett namn på profilen."
+"Beskrivning av profilen. Den första raden måste vara ett namn på profilen."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:37
@@ -180,9 +180,9 @@ msgid ""
 msgstr ""
 "Syftet med denna PAM-stack är att vara en gemensam plats för alla PAM-"
 "moduler som skall anropas efter att stacken konfigurerats i system-auth "
-"eller andra gemensamma PAM-konfigurationsfiler.  Den inkluderas från alla "
+"eller andra gemensamma PAM-konfigurationsfiler. Den inkluderas från alla "
 "individuella tjänstekonfigurationsfiler som tillhandahåller en "
-"inloggningstjänst med skalåtkomst.  _OBSERVERA: modulerna i "
+"inloggningstjänst med skalåtkomst. _OBSERVERA: modulerna i "
 "konfigurationsfilen postlogin körs oavsett om modulerna i "
 "konfigurationsfilen system-auth lyckas eller inte._"
 
@@ -216,8 +216,8 @@ msgid ""
 "for gnome login screen in order to enable or disable smartcard and "
 "fingerprint authentication."
 msgstr ""
-"Ändringar av dconf-databasen.  Det huvudsakliga användningsfallet för denna "
-"fil är att ange ändrignar för gnomes inloggningsskärm för att aktivera eller "
+"Ändringar av dconf-databasen. Det huvudsakliga användningsfallet för denna "
+"fil är att ange ändringar för gnomes inloggningsskärm för att aktivera eller "
 "avaktivera autentisering med smartkort eller och fingeravtryck."
 
 #. type: Labeled list
@@ -244,7 +244,7 @@ msgid ""
 "with optional usage of several operators that can be used to provide some "
 "optional profile features."
 msgstr ""
-"Var och en av dessa filer tjänstgör som en mall.  En mall är en ren textfil "
+"Var och en av dessa filer tjänstgör som en mall. En mall är en ren textfil "
 "med möjlig användning av flera operatorer som kan användas för att "
 "tillhandahålla några valfria profilfunktioner."
 
@@ -262,10 +262,9 @@ msgid ""
 "whole line with this operator will be removed and the rest of the template "
 "will be processed."
 msgstr ""
-"Avsluta omedelbart bearbetning av filen om inte ”funktion” är definierat "
-"(resten av filinnehållet kommer tas bort).  Om ”funktion” är definierat "
-"kommer hela raden med denna operator tas bort och resten av mallen kommer "
-"behandlas."
+"Avsluta omedelbart bearbetning av filen om inte ”funktion” är definierat ("
+"resten av filinnehållet kommer tas bort). Om ”funktion” är definierat kommer "
+"hela raden med denna operator tas bort och resten av mallen kommer behandlas."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:80
@@ -311,8 +310,8 @@ msgid ""
 "Opposite to \"include-if\". Include the line where this operator is placed "
 "only if \"feature\" is not defined."
 msgstr ""
-"Motsatsen till ”include-if”.  Inkludera raden där denna operator står om "
-"”funktion” inte är definierat"
+"Motsatsen till ”include-if”. Inkludera raden där denna operator står om "
+"”funktion” inte är definierat."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:94
@@ -328,7 +327,7 @@ msgid ""
 "anything else around this operator at the same line."
 msgstr ""
 "Aktivera funktionen ”implicerad-funktion” om funktionen ”funktion” "
-"aktiveras.  Hela raden med denna operator tas bort, det är alltså inte "
+"aktiveras. Hela raden med denna operator tas bort, det är alltså inte "
 "möjligt att lägga till något annat runt denna operator på samma rad."
 
 #. type: Labeled list
@@ -369,9 +368,9 @@ msgid ""
 "true or false and the conditional operator will act upon the result."
 msgstr ""
 "Det är också möjligt att använda lokiska uttryck i villkorliga rader "
-"istället för att ange ett enskilt funktionsnamn.  I detta fall kommer "
+"istället för att ange ett enskilt funktionsnamn. I detta fall kommer "
 "uttrycket evalueras till sant eller falskt och den villkorliga operatorn "
-"kommer att agera utgående från resultatet. "
+"kommer att agera utgående från resultatet."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:115
@@ -383,8 +382,8 @@ msgid ""
 msgstr ""
 "Uttryckssyntaxen består av funktionsnamn (t.ex. _\"feature\"_) som "
 "returnerar _true_ om funktionen är definierad eller _false_ om den inte är "
-"definierad samt av följande logiska operatorer: _and_, _or_ och _not_.  "
-"Uttrycket kan även inneslutas i paranteser och innehålla flera deluttryck."
+"definierad samt av följande logiska operatorer: _and_, _or_ och _not_. "
+"Uttrycket kan även inneslutas i parenteser och innehålla flera deluttryck."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:117
@@ -465,7 +464,7 @@ msgid ""
 "Here is an example of using \"if\" operator. If \"with-sudo\" feature is "
 "enabled, it will add \"sss\" to sudoers line."
 msgstr ""
-"Här är ett exempel på användningen av operatorn ”if”.  Om funktionen ”med-"
+"Här är ett exempel på användningen av operatorn ”if”. Om funktionen ”med-"
 "sudo” är aktiverad kommer det lägga till ”sss” till sudoers-raden."
 
 #. type: Plain text
@@ -494,10 +493,10 @@ msgid ""
 "If it is enabled and also \"with-faillock\" feature is enabled, it will also "
 "enable support for pam_faillock."
 msgstr ""
-"Här är ett exempel på operatorerna ”continue-if” och ”include-if”.  Den "
+"Här är ett exempel på operatorerna ”continue-if” och ”include-if”. Den "
 "resulterande filen kommer vara tom om inte funktionen ”med-smartkort” är "
-"aktiverad.  Om den är aktiverad och även funktionen ”med-fellås” är "
-"aktiverad kommer den även aktivera stöd för pam_faillock."
+"aktiverad. Om den är aktiverad och även funktionen ”med-fellås” är aktiverad "
+"kommer den även aktivera stöd för pam_faillock."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:163
@@ -538,11 +537,11 @@ msgid ""
 "not have to include both features but only \"with-smartcard-required\" is "
 "necessary."
 msgstr ""
-"Här är ett exempel på ”continue-if” som använder ett logiskt uttryck.  Filen "
-"kommer vara tom om inte ”with-smartcard” eller  ”with-smartcard-required” är "
-"satt.  Detta kommer förenkla anropet av kommandot _autselect select_ som "
-"inte behöver inkludera båda funktionerna utan bara ”with-smartcard-required” "
-"är nödvändigt."
+"Här är ett exempel på ”continue-if” som använder ett logiskt uttryck. Filen "
+"kommer vara tom om inte ”with-smartcard” eller ”with-smartcard-required” är "
+"satt. Detta kommer förenkla anropet av kommandot _autselect select_ som inte "
+"behöver inkludera båda funktionerna utan bara ”with-smartcard-required” är "
+"nödvändigt."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:181
@@ -582,14 +581,14 @@ msgid ""
 "all relevant PAM modules are used. This will achieve the same behavior as "
 "the previous example."
 msgstr ""
-"Här är ett exempel på operatorn ”imply-if”.  Att aktivera funktionen ”with-"
+"Här är ett exempel på operatorn ”imply-if”. Att aktivera funktionen ”with-"
 "smartcard-required” kommer också aktivera ”with-smartcard” för att "
-"säkerställa att alla relevanta PAM-moduler används.  Detta kommer åstadkomma "
+"säkerställa att alla relevanta PAM-moduler används. Detta kommer åstadkomma "
 "samma beteende som det föregående exemplet."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:201
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "  {imply \"with-smartcard\" if \"with-smartcard-required\"}\n"
 "  auth        required                                     pam_env.so\n"
@@ -608,16 +607,31 @@ msgid ""
 msgstr ""
 "  {imply \"with-smartcard\" if \"with-smartcard-required\"}\n"
 "  auth        required                                     pam_env.so\n"
-"  auth        required                                     pam_faildelay.so delay=2000000\n"
-"  auth        [success=1 default=ignore]                   pam_succeed_if.so service notin login:gdm:xdm:kdm:kde:xscreensaver:gnome-screensaver:kscreensaver quiet use_uid {include if \"with-smartcard-required\"}\n"
-"  auth        [success=done ignore=ignore default=die]     pam_sss.so require_cert_auth ignore_authinfo_unavail   {include if \"with-smartcard-required\"}\n"
-"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so uid >= 1000 quiet\n"
-"  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so                                       {exclude if \"with-smartcard\"}\n"
-"  auth        [default=2 ignore=ignore success=ok]         pam_localuser.so                                       {include if \"with-smartcard\"}\n"
-"  auth        [success=done authinfo_unavail=ignore ignore=ignore default=die] pam_sss.so try_cert_auth           {include if \"with-smartcard\"}\n"
-"  auth        sufficient                                   pam_unix.so {if not \"without-nullok\":nullok}\n"
-"  auth        requisite                                    pam_succeed_if.so uid >= 1000 quiet_success\n"
-"  auth        sufficient                                   pam_sss.so forward_pass\n"
+"  auth        required                                     pam_faildelay.so "
+"delay=2000000\n"
+"  auth        [success=1 default=ignore]                   pam_succeed_if.so "
+"service notin login:gdm:xdm:kdm:kde:xscreensaver:gnome-screensaver:"
+"kscreensaver quiet use_uid {include if \"with-smartcard-required\"}\n"
+"  auth        [success=done ignore=ignore default=die]     pam_sss.so "
+"require_cert_auth ignore_authinfo_unavail   {include if \"with-smartcard-"
+"required\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
+"uid >= 1000 quiet\n"
+"  auth        [default=1 ignore=ignore success=ok]         "
+"pam_localuser.so                                       {exclude if \"with-"
+"smartcard\"}\n"
+"  auth        [default=2 ignore=ignore success=ok]         "
+"pam_localuser.so                                       {include if \"with-"
+"smartcard\"}\n"
+"  auth        [success=done authinfo_unavail=ignore user_unknown=ignore "
+"ignore=ignore default=die] pam_sss.so try_cert_auth {include if \"with-"
+"smartcard\"}\n"
+"  auth        sufficient                                   pam_unix.so {if "
+"not \"without-nullok\":nullok}\n"
+"  auth        requisite                                    pam_succeed_if.so "
+"uid >= 1000 quiet_success\n"
+"  auth        sufficient                                   pam_sss.so "
+"forward_pass\n"
 "  auth        required                                     pam_deny.so\n"
 "  …\n"
 
@@ -636,8 +650,8 @@ msgid ""
 "created on per-need basis."
 msgstr ""
 "För att registrera en ny profil i authselect, skapa en katalog i en av "
-"authselects profilplatser med filerna listade ovan.  Alla filer behöver inte "
-"finnas, endast *README* är obligatorisk.  Andra filer kan skapas baserat på "
+"authselects profilplatser med filerna listade ovan. Alla filer behöver inte "
+"finnas, endast *README* är obligatorisk. Andra filer kan skapas baserat på "
 "behov."
 
 #. type: Plain text
@@ -648,8 +662,8 @@ msgid ""
 "help* for more information."
 msgstr ""
 "Kommandot ”authselect create-profile” kan förenkla när man skapar en ny "
-"profil.  Se manualsidan ”authselect(8)” eller ”authselect create-profile --"
-"help” för mer information."
+"profil. Se manualsidan ”authselect(8)” eller ”authselect create-profile "
+"--help” för mer information."
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:214
