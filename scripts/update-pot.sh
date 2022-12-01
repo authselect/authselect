@@ -49,7 +49,7 @@ fi
 DIR="./src/man"
 for file in $DIR/*.adoc; do
     name=`basename $file`
-    po4a-gettextize -f asciidoc -m $file -p "$DIR/po/$name.pot" > /dev/null
+    po4a-updatepo -f asciidoc -m $file -p "$DIR/po/$name.pot" > /dev/null
     if [ $? -ne 0 ]; then
         exit 1
     fi
