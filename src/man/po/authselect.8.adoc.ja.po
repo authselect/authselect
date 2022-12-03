@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-04 13:50+0200\n"
+"POT-Creation-Date: 2022-12-01 13:40+0100\n"
 "PO-Revision-Date: 2021-11-09 11:25+0000\n"
 "Last-Translator: Pavel Brezina <pbrezina@redhat.com>\n"
 "Language-Team: Japanese <https://translate.fedoraproject.org/projects/"
@@ -297,14 +297,12 @@ msgstr "*list-features* profile_id"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:98
+#, fuzzy, no-wrap
+#| msgid "List all features available in given profile. + _Note:_ This will only list the features without any description. Please, read the profile documentation with *show* to see what the features do."
 msgid ""
-"List all features available in given profile. + _Note:_ This will only list "
-"the features without any description. Please, read the profile documentation "
-"with *show* to see what the features do."
-msgstr ""
-"指定のプロファイルで利用できるすべての機能を一覧表示します。+ _Note:_説明なし"
-"の機能のみが一覧表示されます。機能の詳細は、*show* でプロファイルのドキュメン"
-"テーションをお読みください。"
+"List all features available in given profile.\n"
+"_Note:_ This will only list the features without any description. Please, read the profile documentation with *show* to see what the features do."
+msgstr "指定のプロファイルで利用できるすべての機能を一覧表示します。+ _Note:_説明なしの機能のみが一覧表示されます。機能の詳細は、*show* でプロファイルのドキュメンテーションをお読みください。"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:99
@@ -560,8 +558,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:178
-#, no-wrap
-msgid "*create-profile* NAME [--custom,-c|--vendor,-v] [options]"
+#, fuzzy, no-wrap
+#| msgid "*create-profile* NAME [--custom,-c|--vendor,-v] [options]"
+msgid "*create-profile* NAME [--vendor,-v] [options]"
 msgstr "*create-profile* NAME [--custom,-c|--vendor,-v] [options]"
 
 #. type: Plain text
