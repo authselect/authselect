@@ -1,14 +1,15 @@
-# Ludek Janda <ljanda@redhat.com>, 2018. #zanata, 2020, 2021.
+# Ludek Janda <ljanda@redhat.com>, 2018. #zanata, 2020, 2021, 2022.
 # Keiko Moriguchi <kemorigu@redhat.com>, 2019. #zanata
 # Kenzo Moriguchi <kmoriguc@redhat.com>, 2019. #zanata
 # Sundeep Anand <suanand@redhat.com>, 2021.
+# 김인수 <simmon@nplob.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2022-05-04 13:50+0200\n"
-"PO-Revision-Date: 2022-05-04 11:57+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"POT-Creation-Date: 2022-12-01 13:40+0100\n"
+"PO-Revision-Date: 2022-12-03 10:19+0000\n"
+"Last-Translator: 김인수 <simmon@nplob.com>\n"
 "Language-Team: Japanese <https://translate.fedoraproject.org/projects/"
 "authselect/1-2-x-application/ja/>\n"
 "Language: ja\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.12.1\n"
+"X-Generator: Weblate 4.14.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:187
 msgid "Unable to obtain supported features"
@@ -44,7 +45,7 @@ msgstr "プロファイル [%s] [%d] が見つかりません: %s"
 
 #: src/lib/authselect.c:101
 msgid "Enforcing activation!"
-msgstr "アクティベーションを強制しています。"
+msgstr "アクティベーションを強制しています!"
 
 #: src/lib/authselect.c:109
 #, c-format
@@ -331,7 +332,7 @@ msgstr "すべての必要なディレクトリーが書き込み可能かどう
 #: src/lib/files/config.c:158
 #, c-format
 msgid "Unable to get path to %s parent directory!"
-msgstr "%s 親ディレクトリーへのパスの取得ができません。"
+msgstr "%s 親ディレクトリーへのパスの取得ができません!"
 
 #: src/lib/files/config.c:165
 #, c-format
@@ -346,12 +347,12 @@ msgstr "パス [%s] [%d] を作成できません: %s"
 #: src/lib/files/config.c:174
 #, c-format
 msgid "Directory [%s] does not exist, please create it!"
-msgstr "ディレクトリー [%s] は存在しません、作成してください。"
+msgstr "ディレクトリー [%s] は存在しません、作成してください!"
 
 #: src/lib/files/config.c:177
 #, c-format
 msgid "Unable to access directory [%s] in [WX] mode!"
-msgstr "[WX] モードのディレクトリー [%s] にアクセスできません。"
+msgstr "[WX] モードのディレクトリー [%s] にアクセスできません!"
 
 #: src/lib/files/config.c:196
 #, c-format
@@ -486,7 +487,7 @@ msgstr "ファイル [%s] を検証中です"
 #: src/lib/files/system.c:501 src/lib/util/file.c:121
 #, c-format
 msgid "[%s] does not exist!"
-msgstr "[%s] は存在しません。"
+msgstr "[%s] は存在しません!"
 
 #: src/lib/files/system.c:507
 #, c-format
@@ -505,7 +506,7 @@ msgstr "現行のプロファイルに対するコンテンツの比較"
 #: src/lib/files/system.c:524
 #, c-format
 msgid "[%s] has unexpected content!"
-msgstr "[%s] には予期しないコンテンツがあります。"
+msgstr "[%s] には予期しないコンテンツがあります!"
 
 #: src/lib/files/system.c:531
 #, c-format
@@ -515,7 +516,7 @@ msgstr "[%s] [%d] のファイルモードを確認できません: %s"
 #: src/lib/files/system.c:553
 #, c-format
 msgid "File [%s] was modified outside authselect!"
-msgstr "ファイル [%s] は authselect 外で変更されました。"
+msgstr "ファイル [%s] は authselect 外で変更されました!"
 
 #: src/lib/files/system.c:572
 #, c-format
@@ -529,7 +530,7 @@ msgstr "%s の更新に失敗しました: %d"
 
 #: src/lib/profiles/activate.c:59
 msgid "Some directories are not accessible by authselect!"
-msgstr "authselect は一部のディレクトリーにアクセスできません。"
+msgstr "authselect は一部のディレクトリーにアクセスできません!"
 
 #: src/lib/profiles/activate.c:65
 #, c-format
@@ -549,7 +550,7 @@ msgstr "プロファイルディレクトリー [%s] を読み込み中"
 #: src/lib/profiles/list.c:47
 #, c-format
 msgid "Directory [%s] is missing!"
-msgstr "ディレクトリー [%s] がありません。"
+msgstr "ディレクトリー [%s] がありません!"
 
 #: src/lib/profiles/list.c:69
 #, c-format
@@ -603,7 +604,7 @@ msgstr "プロファイル [%s] は見つかりませんでした"
 #: src/lib/profiles/read.c:203 src/lib/profiles/read.c:222
 #, c-format
 msgid "Profile [%s] does not contain a name in [%s]!"
-msgstr "プロファイル [%s] は [%s] に名前を含んでいません。"
+msgstr "プロファイル [%s] は [%s] に名前を含んでいません!"
 
 #: src/lib/util/dir.c:77 src/lib/util/dir.c:83
 #, c-format
@@ -611,7 +612,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "[%s] の basename を取得できません"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:824
+#: src/lib/util/file.c:199 src/cli/main.c:847
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "[%s] [%d] に対する stat の実行に失敗しました: %s"
@@ -633,42 +634,42 @@ msgstr "ディレクトリー [%s] を削除中"
 
 #: src/lib/util/file.c:43
 msgid "Internal error: stat cannot be NULL!"
-msgstr "内部エラー: stat は NULL になりません。"
+msgstr "内部エラー: stat は NULL になりません!"
 
 #: src/lib/util/file.c:51
 #, c-format
 msgid "[%s] is not a directory!"
-msgstr "[%s] はディレクトリーではありません。"
+msgstr "[%s] はディレクトリーではありません!"
 
 #: src/lib/util/file.c:54
 #, c-format
 msgid "[%s] is not a regular file!"
-msgstr "[%s] は通常のファイルではありません。"
+msgstr "[%s] は通常のファイルではありません!"
 
 #: src/lib/util/file.c:57
 #, c-format
 msgid "[%s] is not a symbolic link!"
-msgstr "[%s] はシンボリックリンクではありません。"
+msgstr "[%s] はシンボリックリンクではありません!"
 
 #: src/lib/util/file.c:60
 #, c-format
 msgid "[%s] has wrong type [%.7o], expected [%.7o]!"
-msgstr "[%s] には不正なタイプ [%.7o] があります。本来は [%.7o] が必要です。"
+msgstr "[%s] には不正なタイプ [%.7o] があります。本来は [%.7o] が必要です!"
 
 #: src/lib/util/file.c:87
 #, c-format
 msgid "[%s] has wrong mode [%.4o], expected [%.4o]!"
-msgstr "[%s] には不正なモード [%.4o] があります。本来は [%.4o] が必要です。"
+msgstr "[%s] には不正なモード [%.4o] があります。本来は [%.4o] が必要です!"
 
 #: src/lib/util/file.c:93
 #, c-format
 msgid "[%s] has wrong owner [%u], expected [%u]!"
-msgstr "[%s] には正しくない所有者 [%u] があります。本来は [%u] が必要です。"
+msgstr "[%s] には正しくない所有者 [%u] があります。本来は [%u] が必要です!"
 
 #: src/lib/util/file.c:99
 #, c-format
 msgid "[%s] has wrong group [%u], expected [%u]!"
-msgstr "[%s] には不正なグループ [%u] があります。本来は [%u] が必要です。"
+msgstr "[%s] には不正なグループ [%u] があります。本来は [%u] が必要です!"
 
 #: src/lib/util/file.c:164 src/lib/util/file.c:211
 #, c-format
@@ -687,7 +688,7 @@ msgstr "リンク [%s] は [%s] にポイントしています"
 
 #: src/lib/util/file.c:281
 msgid "Internal error: filepath cannot be NULL!"
-msgstr "内部エラー: ファイルパスは NULL にはできません。"
+msgstr "内部エラー: ファイルパスは NULL にはできません!"
 
 #: src/lib/util/file.c:313
 #, c-format
@@ -772,7 +773,7 @@ msgstr "[%s] の削除中"
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:281
 msgid "Invalid operator!"
-msgstr "無効な演算子です。"
+msgstr "無効な演算子です!"
 
 #: src/lib/util/template.c:460 src/lib/util/template.c:653
 #, c-format
@@ -791,11 +792,11 @@ msgstr "テンプレート [%d] を生成できません: %s"
 
 #: src/lib/util/template.c:560
 msgid "Unable to get current time!"
-msgstr "現在の時刻を取得できません。"
+msgstr "現在の時刻を取得できません!"
 
 #: src/lib/util/template.c:574
 msgid "Unable to create message!"
-msgstr "メッセージを作成できません。"
+msgstr "メッセージを作成できません!"
 
 #: src/lib/util/template.c:599
 #, c-format
@@ -810,7 +811,7 @@ msgstr "[%s] [%d] の一時ファイルを作成することができません: 
 #: src/lib/util/textfile.c:56
 #, c-format
 msgid "File [%s] is bigger than %uKiB!"
-msgstr "ファイル [%s] は %uKiB より大きいです。"
+msgstr "ファイル [%s] は %uKiB より大きいです!"
 
 #: src/lib/util/textfile.c:85
 #, c-format
@@ -895,15 +896,15 @@ msgstr "コマンドオプション:"
 msgid "Common options:"
 msgstr "一般的なオプション:"
 
-#: src/cli/cli_tool.c:326 src/cli/cli_tool.c:329
+#: src/cli/cli_tool.c:331 src/cli/cli_tool.c:334
 msgid "[OPTIONS...]"
 msgstr "[OPTIONS...]"
 
-#: src/cli/cli_tool.c:332 src/cli/main.c:816
+#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:839
 msgid "Out of memory!"
 msgstr "メモリーの空き容量がありません。"
 
-#: src/cli/cli_tool.c:353
+#: src/cli/cli_tool.c:358
 #, c-format
 msgid ""
 "Invalid option %s: %s\n"
@@ -912,7 +913,7 @@ msgstr ""
 "無効なオプション %s: %s\n"
 "\n"
 
-#: src/cli/cli_tool.c:365
+#: src/cli/cli_tool.c:370
 #, c-format
 msgid ""
 "Missing option: %s\n"
@@ -921,7 +922,7 @@ msgstr ""
 "足りないオプション: %s\n"
 "\n"
 
-#: src/cli/cli_tool.c:375
+#: src/cli/cli_tool.c:380
 #, c-format
 msgid ""
 "Only one free argument is expected!\n"
@@ -930,7 +931,7 @@ msgstr ""
 "1 つのフリーな引数のみが予期されます。\n"
 "\n"
 
-#: src/cli/cli_tool.c:385
+#: src/cli/cli_tool.c:395
 #, c-format
 msgid ""
 "Unexpected parameter: %s\n"
@@ -939,7 +940,7 @@ msgstr ""
 "予期せぬパラメーター: %s\n"
 "\n"
 
-#: src/cli/cli_tool.c:397
+#: src/cli/cli_tool.c:407
 #, c-format
 msgid ""
 "At least one option is required!\n"
@@ -948,66 +949,66 @@ msgstr ""
 "少なくとも 1 つのオプションが必要です。\n"
 "\n"
 
-#: src/cli/main.c:72 src/cli/main.c:427 src/cli/main.c:465
+#: src/cli/main.c:74 src/cli/main.c:431 src/cli/main.c:474
 msgid "Profile identifier."
 msgstr "プロファイル識別子。"
 
-#: src/cli/main.c:75 src/cli/main.c:249 src/cli/main.c:294 src/cli/main.c:343
-#: src/cli/main.c:385 src/cli/main.c:430 src/cli/main.c:468 src/cli/main.c:632
-#: src/cli/main.c:708 src/cli/main.c:753 src/cli/main.c:791 src/cli/main.c:856
-#: src/cli/main.c:880
+#: src/cli/main.c:77 src/cli/main.c:253 src/cli/main.c:298 src/cli/main.c:347
+#: src/cli/main.c:389 src/cli/main.c:434 src/cli/main.c:477 src/cli/main.c:650
+#: src/cli/main.c:727 src/cli/main.c:774 src/cli/main.c:814 src/cli/main.c:879
+#: src/cli/main.c:905
 msgid "Unable to parse command arguments"
 msgstr "コマンド引数を解析できません"
 
-#: src/cli/main.c:130
+#: src/cli/main.c:133
 msgid "Unable to backup current configuration!\n"
 msgstr "現在の設定をバックアップできません!\n"
 
-#: src/cli/main.c:134
+#: src/cli/main.c:137
 #, c-format
 msgid "Backup stored at %s\n"
 msgstr "バックアップは %s に保存されました\n"
 
-#: src/cli/main.c:156
+#: src/cli/main.c:159
 msgid "Enforce changes"
 msgstr "変更を強制"
 
-#: src/cli/main.c:157 src/cli/main.c:242 src/cli/main.c:622 src/cli/main.c:699
+#: src/cli/main.c:160 src/cli/main.c:246 src/cli/main.c:640 src/cli/main.c:718
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr ""
 "プロファイルの実行前にシステムファイルをバックアップします (固有名の生成)"
 
-#: src/cli/main.c:158 src/cli/main.c:243 src/cli/main.c:623 src/cli/main.c:700
+#: src/cli/main.c:161 src/cli/main.c:247 src/cli/main.c:641 src/cli/main.c:719
 msgid "Backup system files before activating profile"
 msgstr "プロファイルの実行前にシステムファイルをバックアップします"
 
-#: src/cli/main.c:158 src/cli/main.c:243 src/cli/main.c:623 src/cli/main.c:700
+#: src/cli/main.c:161 src/cli/main.c:247 src/cli/main.c:641 src/cli/main.c:719
 msgid "NAME"
 msgstr "名前"
 
-#: src/cli/main.c:159
+#: src/cli/main.c:162
 msgid "Do not backup system files when --force is set"
 msgstr "--force が設定されている場合は、システムファイルをバックアップしません"
 
-#: src/cli/main.c:160 src/cli/main.c:624
+#: src/cli/main.c:163 src/cli/main.c:642
 msgid "Do not print profile requirements"
 msgstr "プロファイル要件を印刷しません"
 
-#: src/cli/main.c:171 src/cli/main.c:400 src/cli/main.c:436 src/cli/main.c:474
-#: src/cli/main.c:501 src/cli/main.c:651
+#: src/cli/main.c:174 src/cli/main.c:404 src/cli/main.c:440 src/cli/main.c:483
+#: src/cli/main.c:515 src/cli/main.c:669
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "プロファイル情報 [%d] を取得できません: %s"
 
-#: src/cli/main.c:179 src/cli/main.c:508 src/cli/main.c:659
+#: src/cli/main.c:182 src/cli/main.c:523 src/cli/main.c:677
 msgid "Unable to read profile requirements!"
-msgstr "プロファイル要件を読み込むことができません。"
+msgstr "プロファイル要件を読み込むことができません!"
 
-#: src/cli/main.c:186
+#: src/cli/main.c:189
 msgid "Unable to obtain nsswitch maps!"
-msgstr "nsswitch マップを取得できません。"
+msgstr "nsswitch マップを取得できません!"
 
-#: src/cli/main.c:200
+#: src/cli/main.c:203
 msgid ""
 "\n"
 "Some unexpected changes to the configuration were detected.\n"
@@ -1017,26 +1018,26 @@ msgstr ""
 "設定への予期せぬ変更をいくつか検出しました。\n"
 "これらの変更を上書きしたい場合は、--force パラメーターを使用します。\n"
 
-#: src/cli/main.c:205
+#: src/cli/main.c:208
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "プロファイル [%d] を実行できません: %s\n"
 
-#: src/cli/main.c:210
+#: src/cli/main.c:213
 #, c-format
 msgid "Profile \"%s\" was selected.\n"
 msgstr "プロファイル \"%s\" が設定されました。\n"
 
-#: src/cli/main.c:213
+#: src/cli/main.c:216
 msgid "The following nsswitch maps are overwritten by the profile:\n"
 msgstr "以下の nsswitch マップはプロファイルで上書きされます:\n"
 
-#: src/cli/main.c:216
+#: src/cli/main.c:219
 #, c-format
 msgid "- %s\n"
 msgstr "- %s\n"
 
-#: src/cli/main.c:221
+#: src/cli/main.c:224
 #, c-format
 msgid ""
 "\n"
@@ -1045,15 +1046,15 @@ msgstr ""
 "\n"
 "%s\n"
 
-#: src/cli/main.c:261
+#: src/cli/main.c:265
 msgid "Changes were successfully applied.\n"
 msgstr "変更は正常に適用されました。\n"
 
-#: src/cli/main.c:264 src/cli/main.c:300 src/cli/main.c:641
+#: src/cli/main.c:268 src/cli/main.c:304 src/cli/main.c:659
 msgid "No existing configuration detected.\n"
 msgstr "既存の設定は検出されませんでした。\n"
 
-#: src/cli/main.c:267
+#: src/cli/main.c:271
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
@@ -1061,103 +1062,103 @@ msgstr ""
 "設定への予期せぬ変更をいくつか検出しました。代わりに 'select' コマンドを使用"
 "します。\n"
 
-#: src/cli/main.c:271
+#: src/cli/main.c:275
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr "変更 [%d] を適用できません: %s\n"
 
-#: src/cli/main.c:288
+#: src/cli/main.c:292
 msgid "Print command parameters instead of formatted output"
 msgstr "フォーマット化された出力の代わりに、コマンドパラメーターを印刷します"
 
-#: src/cli/main.c:303 src/cli/main.c:644
+#: src/cli/main.c:307 src/cli/main.c:662
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "現在の設定 [%d] を取得できません: %s"
 
-#: src/cli/main.c:317
+#: src/cli/main.c:321
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "プロファイル ID: %s\n"
 
-#: src/cli/main.c:318
+#: src/cli/main.c:322
 msgid "Enabled features:"
 msgstr "有効な機能:"
 
-#: src/cli/main.c:321
+#: src/cli/main.c:325
 msgid " None\n"
 msgstr " なし\n"
 
-#: src/cli/main.c:349
+#: src/cli/main.c:353
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "現在の設定 [%d] をテストできません: %s"
 
-#: src/cli/main.c:356
+#: src/cli/main.c:360
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
 msgstr "現在の設定は無効です。authselect 外で変更された可能性があります。"
 
-#: src/cli/main.c:363
+#: src/cli/main.c:367
 msgid "Current configuration is valid."
 msgstr "現在の設定は有効です。"
 
-#: src/cli/main.c:366
+#: src/cli/main.c:370
 msgid "System was not configured with authselect."
 msgstr "システムは authselect で設定されませんでした。"
 
-#: src/cli/main.c:391
+#: src/cli/main.c:395
 msgid "Unable to get profile list!"
-msgstr "プロファイルリストを取得できません。"
+msgstr "プロファイルリストを取得できません!"
 
-#: src/cli/main.c:444
+#: src/cli/main.c:448
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
 msgstr "プロファイル機能 [%d] を取得できませんでした: %s"
 
-#: src/cli/main.c:546
+#: src/cli/main.c:562
 msgid "Print content of all files"
 msgstr "すべてのファイルのコンテンツを印刷します"
 
-#: src/cli/main.c:547
+#: src/cli/main.c:563
 msgid "Print nsswitch.conf content"
 msgstr "nsswitch.conf コンテンツを印刷します"
 
-#: src/cli/main.c:548
+#: src/cli/main.c:564
 msgid "Print system-auth content"
 msgstr "system-auth コンテンツを印刷します"
 
-#: src/cli/main.c:549
+#: src/cli/main.c:565
 msgid "Print password-auth content"
 msgstr "password-auth コンテンツを印刷します"
 
-#: src/cli/main.c:550
+#: src/cli/main.c:566
 msgid "Print smartcard-auth content"
 msgstr "smartcard-auth コンテンツを印刷します"
 
-#: src/cli/main.c:551
+#: src/cli/main.c:567
 msgid "Print fingerprint-auth content"
 msgstr "fingerprint-auth コンテンツを印刷します"
 
-#: src/cli/main.c:552
+#: src/cli/main.c:568
 msgid "Print postlogin content"
 msgstr "postlogin コンテンツを印刷します"
 
-#: src/cli/main.c:553
+#: src/cli/main.c:569
 msgid "Print dconf database content"
 msgstr "dconf データベースコンテンツを印刷します"
 
-#: src/cli/main.c:554
+#: src/cli/main.c:570
 msgid "Print dconf lock content"
 msgstr "dconf ロックコンテンツを印刷します"
 
-#: src/cli/main.c:581
+#: src/cli/main.c:597
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "生成されたコンテンツ [%d] を取得できません: %s"
 
-#: src/cli/main.c:600
+#: src/cli/main.c:616
 #, c-format
 msgid ""
 "File %s: Empty\n"
@@ -1166,7 +1167,7 @@ msgstr ""
 "ファイル %s: 空\n"
 "\n"
 
-#: src/cli/main.c:602
+#: src/cli/main.c:618
 #, c-format
 msgid ""
 "File %s:\n"
@@ -1177,45 +1178,45 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/cli/main.c:629
+#: src/cli/main.c:647
 msgid "Feature to enable."
 msgstr "有効化する機能。"
 
-#: src/cli/main.c:666
+#: src/cli/main.c:684
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
 msgstr "現在の設定 [%d] をバックアップできません: %s\n"
 
-#: src/cli/main.c:673
+#: src/cli/main.c:691
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "機能 [%d] を有効化できません: %s\n"
 
-#: src/cli/main.c:678
+#: src/cli/main.c:696
 #, c-format
 msgid "%s\n"
 msgstr "%s\n"
 
-#: src/cli/main.c:705
+#: src/cli/main.c:724
 msgid "Feature to disable."
 msgstr "無効化する機能。"
 
-#: src/cli/main.c:719
+#: src/cli/main.c:738
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "機能 [%d] を無効化できません: %s\n"
 
-#: src/cli/main.c:738
+#: src/cli/main.c:759
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr ""
 "カスタムプロファイルの代わりにベンダープロファイルとして新規のプロファイルを"
 "作成します"
 
-#: src/cli/main.c:739
+#: src/cli/main.c:760
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr "新規のプロファイルのベースとして使用すべきプロファイルの ID"
 
-#: src/cli/main.c:740
+#: src/cli/main.c:761
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1223,143 +1224,143 @@ msgstr ""
 "同名のベンダープロファイルがある場合でも、新規のプロファイルのベースをデフォ"
 "ルトプロファイルに置きます"
 
-#: src/cli/main.c:741
+#: src/cli/main.c:762
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr "meta ファイルをコピーする代わりにベースプロファイルから Symlink します"
 
-#: src/cli/main.c:742
+#: src/cli/main.c:763
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr ""
 "nsswitch ファイルをコピーする代わりにベースプロファイルから Symlink します"
 
-#: src/cli/main.c:743
+#: src/cli/main.c:764
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr "pam ファイルをコピーする代わりにベースプロファイルから Symlink します"
 
-#: src/cli/main.c:744
+#: src/cli/main.c:765
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
 "dconf ファイルをコピーする代わりにベースプロファイルから Symlink します"
 
-#: src/cli/main.c:745
+#: src/cli/main.c:766
 msgid "Symlink specific file (can be set multiple times)"
 msgstr "特定のファイルを Symlink します (複数回設定できます)"
 
-#: src/cli/main.c:750
+#: src/cli/main.c:771
 msgid "New profile name."
 msgstr "新規のプロファイル名。"
 
-#: src/cli/main.c:760
+#: src/cli/main.c:781
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "新規のプロファイル [%d] を作成できません: %s\n"
 
-#: src/cli/main.c:764
+#: src/cli/main.c:785
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "%s で新規のプロファイルが作成されました\n"
 
-#: src/cli/main.c:785
+#: src/cli/main.c:808
 msgid "Print backup names without any formatting and additional information"
 msgstr "フォーマットおよび追加情報なしでバックアップ名を印刷します"
 
-#: src/cli/main.c:797
+#: src/cli/main.c:820
 msgid "Unable to list available backups!"
 msgstr "利用可能なバックアップの一覧表示ができません!"
 
-#: src/cli/main.c:834
+#: src/cli/main.c:857
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (%s で作成)\n"
 
-#: src/cli/main.c:853
+#: src/cli/main.c:876
 msgid "Name of the backup to remove."
 msgstr "削除するバックアップ名。"
 
-#: src/cli/main.c:862
+#: src/cli/main.c:885
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "バックアップ [%s] [%d] を削除できません: %s\n"
 
-#: src/cli/main.c:877
+#: src/cli/main.c:902
 msgid "Name of the backup to restore from."
 msgstr "復元するバックアップ名。"
 
-#: src/cli/main.c:886
+#: src/cli/main.c:911
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "バックアップ [%s] [%d] を復元できません: %s\n"
 
-#: src/cli/main.c:900
+#: src/cli/main.c:927
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "authselect 設定 %d をアンインストールできません: %s\n"
 
-#: src/cli/main.c:943
+#: src/cli/main.c:970
 msgid "Select profile"
 msgstr "プロファイルを選択します"
 
-#: src/cli/main.c:944
+#: src/cli/main.c:971
 msgid "Regenerate configuration for currently selected command"
 msgstr "選択されたコマンド用の設定を再生成します"
 
-#: src/cli/main.c:945
+#: src/cli/main.c:972
 msgid "List available profiles"
 msgstr "利用可能なプロファイルを一覧表示します"
 
-#: src/cli/main.c:946
+#: src/cli/main.c:973
 msgid "List available profile features"
 msgstr "利用可能なプロファイル機能を一覧表示します"
 
-#: src/cli/main.c:947
+#: src/cli/main.c:974
 msgid "Show profile information"
 msgstr "プロファイル情報を表示します"
 
-#: src/cli/main.c:948
+#: src/cli/main.c:975
 msgid "Print profile requirements"
 msgstr "プロファイル要件をプリントします"
 
-#: src/cli/main.c:949
+#: src/cli/main.c:976
 msgid "Get identifier of currently selected profile"
 msgstr "現在選択されているプロファイルの識別子を取得します"
 
-#: src/cli/main.c:950
+#: src/cli/main.c:977
 msgid "Check if the current configuration is valid"
-msgstr "現在の設定が有効化チェックします"
+msgstr "現在の設定が有効か確認します"
 
-#: src/cli/main.c:951
+#: src/cli/main.c:978
 msgid "Print changes that would be otherwise written"
 msgstr "書き込まれることになる変更をプリントします"
 
-#: src/cli/main.c:952
+#: src/cli/main.c:979
 msgid "Enable feature in currently selected profile"
 msgstr "現在選択されているプロファイルの機能を有効にします"
 
-#: src/cli/main.c:953
+#: src/cli/main.c:980
 msgid "Disable feature in currently selected profile"
 msgstr "現在選択されているプロファイルの機能を無効にします"
 
-#: src/cli/main.c:954
+#: src/cli/main.c:981
 msgid "Create new authselect profile"
 msgstr "新規の authselect プロファイルを作成"
 
-#: src/cli/main.c:955
+#: src/cli/main.c:982
 msgid "Backup commands:"
 msgstr "バックアップコマンド:"
 
-#: src/cli/main.c:956
+#: src/cli/main.c:983
 msgid "List available backups"
 msgstr "利用可能なバックアップを一覧表示します"
 
-#: src/cli/main.c:957
+#: src/cli/main.c:984
 msgid "Remove backup"
 msgstr "バックアップを削除します"
 
-#: src/cli/main.c:958
+#: src/cli/main.c:985
 msgid "Restore from backup"
 msgstr "バックアップからの復元"
 
-#: src/cli/main.c:959
+#: src/cli/main.c:986
 msgid "Uninstall authselect configuration"
 msgstr "authselect 設定のアンインストール"
 
@@ -1668,8 +1669,8 @@ msgid "Service %s was not found. Please install the service."
 msgstr ""
 "サービス %s は見つかりませんでした。サービスをインストールしてください。"
 
-#: src/compat/authcompat.py.in.in:74 src/compat/authcompat.py.in.in:630
-#: src/compat/authcompat.py.in.in:656
+#: src/compat/authcompat.py.in.in:74 src/compat/authcompat.py.in.in:631
+#: src/compat/authcompat.py.in.in:657
 #, python-format
 msgid "Command [%s] failed with %d, stderr:"
 msgstr "コマンド [%s] が %d、stderr で失敗しました:"
@@ -1679,16 +1680,16 @@ msgstr "コマンド [%s] が %d、stderr で失敗しました:"
 msgid "Removing file: %s"
 msgstr "ファイルの削除中: %s"
 
-#: src/compat/authcompat.py.in.in:334
+#: src/compat/authcompat.py.in.in:335
 #, python-format
 msgid "%s was not found. Please, install realmd."
 msgstr "%s は見つかりませんでした。realmd をインストールしてください。"
 
-#: src/compat/authcompat.py.in.in:468
+#: src/compat/authcompat.py.in.in:469
 msgid "Running authconfig compatibility tool."
 msgstr "authconfig 互換性ツールを実行中です。"
 
-#: src/compat/authcompat.py.in.in:469
+#: src/compat/authcompat.py.in.in:470
 msgid ""
 "The purpose of this tool is to enable authentication against chosen services "
 "with authselect and minimum configuration. It does not provide all "
@@ -1697,14 +1698,14 @@ msgstr ""
 "このツールの目的は、authselect および最小限の設定で選択したサービスに対する認"
 "証を有効にすることです。authconfig のすべての機能は提供しません。\n"
 
-#: src/compat/authcompat.py.in.in:472
+#: src/compat/authcompat.py.in.in:473
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
 msgstr ""
 "重要: authconfig は authselect に置き換えられました。スクリプトを更新してくだ"
 "さい。"
 
-#: src/compat/authcompat.py.in.in:474
+#: src/compat/authcompat.py.in.in:475
 msgid ""
 "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
@@ -1712,20 +1713,20 @@ msgstr ""
 "Fedora 28 の Change ページを参照してください: https://fedoraproject.org/wiki/"
 "Changes/AuthselectAsDefault"
 
-#: src/compat/authcompat.py.in.in:475
+#: src/compat/authcompat.py.in.in:476
 msgid ""
 "See man authselect-migration(7) to help you with migration to authselect"
 msgstr "authselect への移行に役立つ authselect-migration(7) を参照してください"
 
-#: src/compat/authcompat.py.in.in:479
+#: src/compat/authcompat.py.in.in:480
 msgid "Warning: These options are not supported anymore and have no effect:"
 msgstr "警告: これらのオプションは今後はサポートされず、影響はありません:"
 
-#: src/compat/authcompat.py.in.in:499
+#: src/compat/authcompat.py.in.in:500
 msgid "authconfig can only be run as root"
 msgstr "authconfig は root としてのみ実行できます"
 
-#: src/compat/authcompat.py.in.in:504
+#: src/compat/authcompat.py.in.in:505
 #, python-format
 msgid ""
 "Error: option --%s is no longer supported and we cannot continue if it is "
@@ -1734,12 +1735,12 @@ msgstr ""
 "エラー: オプション --%s は今後はサポートされず、設定されている場合は続行でき"
 "ません。"
 
-#: src/compat/authcompat.py.in.in:509
+#: src/compat/authcompat.py.in.in:510
 msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
 msgstr ""
 "エラー: --enablewinbind および --enablewinbindauth の両方とも設定する必要があ"
 "ります。"
 
-#: src/compat/authcompat.py.in.in:519
+#: src/compat/authcompat.py.in.in:520
 msgid "Error: Please, provide --updateall option."
 msgstr "エラー: --updateall オプションを提供してください。"

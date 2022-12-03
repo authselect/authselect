@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-04 13:50+0200\n"
+"POT-Creation-Date: 2022-12-01 13:40+0100\n"
 "PO-Revision-Date: 2022-10-07 21:19+0000\n"
 "Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
 "Language-Team: Swedish <https://translate.fedoraproject.org/projects/"
@@ -62,14 +62,10 @@ msgid ""
 "is selected, *authselect* will create nsswitch.conf(5) and PAM(8) stack to use\n"
 "identity and authentication sources defined by the profile.\n"
 msgstr ""
-"”Authselect” är ett verktyg för att konfigurera systemets källor och "
-"leverantörer för identitet och\n"
-"autentisering genom att välja en specifik profil. En profil är ett antal "
-"filer som\n"
-"beskriver hur den resulterande systemkonfigurationen skall se ut. När en "
-"profil\n"
-"väljs kommer ”authselect” skapa nsswitch.conf(5) och stacken för PAM(8) till "
-"att\n"
+"”Authselect” är ett verktyg för att konfigurera systemets källor och leverantörer för identitet och\n"
+"autentisering genom att välja en specifik profil. En profil är ett antal filer som\n"
+"beskriver hur den resulterande systemkonfigurationen skall se ut. När en profil\n"
+"väljs kommer ”authselect” skapa nsswitch.conf(5) och stacken för PAM(8) till att\n"
 "använda källor för identitet och autentisering som definieras av profilen.\n"
 
 #. type: Plain text
@@ -111,10 +107,10 @@ msgstr ""
 "systemets autentisering, anropa *authselect select* med parametern *--force* "
 "först (t.ex. *authselect select sssd --force*). Parametern *--force* säger "
 "till authselect att det är ok att skriva över en befintlig konfiguration som "
-"inte är authselect-skapad (se beskrivning nedan). Att använda parametern "
-"*--force* kommer automatiskt generera en säkerhetskopia av din befintliga "
-"konfiguration så om du vill gå tillbaka kan du återställa den med kommandot *"
-"authselect backup-restore* (se beskrivning nedan)."
+"inte är authselect-skapad (se beskrivning nedan). Att använda parametern *--"
+"force* kommer automatiskt generera en säkerhetskopia av din befintliga "
+"konfiguration så om du vill gå tillbaka kan du återställa den med kommandot "
+"*authselect backup-restore* (se beskrivning nedan)."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:41
@@ -183,8 +179,7 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"Säkerhetskopiera systemfiler före aktivering av den valda profilen. "
-"Säkerhetskopian\n"
+"Säkerhetskopiera systemfiler före aktivering av den valda profilen. Säkerhetskopian\n"
 "kommer lagras i {AUTHSELECT_BACKUP_DIR}/NAMN. Aktuell tid med\n"
 "en unik sträng används som namn på säkerhetskopian. Detta är en kortform\n"
 "för *--backup=*.\n"
@@ -204,8 +199,7 @@ msgid ""
 "will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
 "unique string is used as a name if no value is provided.\n"
 msgstr ""
-"Säkerhetskopiera systemfiler före aktivering av den valda profilen. "
-"Säkerhetskopian\n"
+"Säkerhetskopiera systemfiler före aktivering av den valda profilen. Säkerhetskopian\n"
 "kommer lagras i {AUTHSELECT_BACKUP_DIR}/NAMN. Aktuell tid med\n"
 "en unik sträng används som namn om inget värde anges.\n"
 
@@ -235,8 +229,7 @@ msgid ""
 "profile requirements or backup location. Errors are still being print.\n"
 msgstr ""
 "Kommandot kommer inte skriva några informationsmeddelanden såsom\n"
-"ytterligare profilkrav eller plats för säkerhetskopia. Fel skrivs "
-"fortfarande ut.\n"
+"ytterligare profilkrav eller plats för säkerhetskopia. Fel skrivs fortfarande ut.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:73
@@ -304,14 +297,12 @@ msgstr "*list-features* profil-id"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:98
+#, fuzzy, no-wrap
+#| msgid "List all features available in given profile. + _Note:_ This will only list the features without any description. Please, read the profile documentation with *show* to see what the features do."
 msgid ""
-"List all features available in given profile. + _Note:_ This will only list "
-"the features without any description. Please, read the profile documentation "
-"with *show* to see what the features do."
-msgstr ""
-"Lista alla funktioner som är tillgängliga i en given profil. + _Obs:_ Detta "
-"kommer endast lista funktionerna utan någon beskrivning. Läs "
-"profildokumentation med *show* för att se vad funktionerna gör."
+"List all features available in given profile.\n"
+"_Note:_ This will only list the features without any description. Please, read the profile documentation with *show* to see what the features do."
+msgstr "Lista alla funktioner som är tillgängliga i en given profil. + _Obs:_ Detta kommer endast lista funktionerna utan någon beskrivning. Läs profildokumentation med *show* för att se vad funktionerna gör."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:99
@@ -549,8 +540,7 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"Säkerhetskopiera systemfiler före avaktivering av funktionen. "
-"Säkerhetskopian\n"
+"Säkerhetskopiera systemfiler före avaktivering av funktionen. Säkerhetskopian\n"
 "kommer lagras i {AUTHSELECT_BACKUP_DIR}/NAMN. Aktuell tid med\n"
 "en unik sträng används som namn på säkerhetskopian. Detta är en kortform\n"
 "för *--backup=*.\n"
@@ -563,15 +553,15 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
-"Säkerhetskopiera systemfiler före avaktivering av funktionen. "
-"Säkerhetskopian\n"
+"Säkerhetskopiera systemfiler före avaktivering av funktionen. Säkerhetskopian\n"
 "kommer lagras i {AUTHSELECT_BACKUP_DIR}/NAMN. Aktuell tid med\n"
 "en unik sträng används som namn in inget värde ges.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:178
-#, no-wrap
-msgid "*create-profile* NAME [--custom,-c|--vendor,-v] [options]"
+#, fuzzy, no-wrap
+#| msgid "*create-profile* NAME [--custom,-c|--vendor,-v] [options]"
+msgid "*create-profile* NAME [--vendor,-v] [options]"
 msgstr "*create-profile* NAMN [--custom,-c|--vendor,-v] [flaggor]"
 
 #. type: Plain text
@@ -600,8 +590,7 @@ msgid ""
 "The new profile is a vendor profile instead of a custom profile. See\n"
 "_authselect-profiles(5)_ for more information on profile types.\n"
 msgstr ""
-"Den nya profilen är en leverantörsprofil istället för en anpassad profil. "
-"Se\n"
+"Den nya profilen är en leverantörsprofil istället för en anpassad profil. Se\n"
 "_authselect-profiles(5)_ för mer information om profiltyper.\n"
 
 #. type: Labeled list
@@ -617,8 +606,7 @@ msgid ""
 "The new profile will be based on a profile named _BASE-ID_. The base\n"
 "profile location is determined with these steps:\n"
 msgstr ""
-"Den nya profilen kommer baseras på en profil som heter _BAS-ID_. "
-"Basprofilens\n"
+"Den nya profilen kommer baseras på en profil som heter _BAS-ID_. Basprofilens\n"
 "plats avgörs med dessa steg:\n"
 
 #. type: Plain text
@@ -863,9 +851,9 @@ msgid ""
 msgstr ""
 "Authselect genererar {AUTHSELECT_NSSWITCH_CONF} och tillåter inte några "
 "användarändringar av denna fil. Sådana ändringar upptäcks och authselect "
-"kommer vägra att skriva någon systemkonfiguration om inte en flagga *--force*"
-" anges till kommandot *select*. Denna mekanism förhindrar authselect från "
-"att skriva över något som inte matchar någon tillgänglig profil."
+"kommer vägra att skriva någon systemkonfiguration om inte en flagga *--"
+"force* anges till kommandot *select*. Denna mekanism förhindrar authselect "
+"från att skriva över något som inte matchar någon tillgänglig profil."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:265
