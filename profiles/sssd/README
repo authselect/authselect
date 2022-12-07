@@ -50,6 +50,10 @@ with-smartcard-required::
     Smartcard authentication is required. No other means of authentication
     (including password) will be enabled.
 
+with-oathtool::
+    Enable authentication with oathtool secrets through *pam_oath*.
+    User secrets expected in /etc/users.oath
+
 with-fingerprint::
     Enable authentication with fingerprint reader through *pam_fprintd*.
 

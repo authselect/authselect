@@ -8,6 +8,7 @@ auth        sufficient                                   pam_unix.so {if not "wi
 auth        sufficient                                   pam_systemd_home.so                                    {include if "with-systemd-homed"}
 auth        [default=1 ignore=ignore success=ok]         pam_usertype.so isregular
 auth        sufficient                                   pam_winbind.so {if "with-krb5":krb5_auth} use_first_pass
+auth        [user_unknown=ignore success=done]           pam_oath.so usersfile=/etc/users.oath                  {include if "with-oathtool"}
 auth        required                                     pam_faillock.so authfail                               {include if "with-faillock"}
 auth        optional                                     pam_gnome_keyring.so only_if=login auto_start          {include if "with-pam-gnome-keyring"}
 auth        required                                     pam_deny.so

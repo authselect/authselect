@@ -26,6 +26,10 @@ with-mkhomedir::
 with-ecryptfs::
     Enable automatic per-user ecryptfs.
 
+with-oathtool::
+    Enable authentication with oathtool secrets through *pam_oath*.
+    User secrets expected in /etc/users.oath
+
 with-silent-lastlog::
     Do not produce pam_lastlog message during login.
 

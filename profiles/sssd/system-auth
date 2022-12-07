@@ -17,6 +17,7 @@ auth        [default=1 ignore=ignore success=ok]         pam_usertype.so isregul
 auth        sufficient                                   pam_sss_gss.so                                         {include if "with-gssapi"}
 auth        [default=1 ignore=ignore success=ok]         pam_usertype.so isregular
 auth        sufficient                                   pam_sss.so forward_pass
+auth        [user_unknown=ignore success=done]           pam_oath.so usersfile=/etc/users.oath                  {include if "with-oathtool"}
 auth        required                                     pam_faillock.so authfail                               {include if "with-faillock"}
 auth        optional                                     pam_gnome_keyring.so only_if=login auto_start          {include if "with-pam-gnome-keyring"}
 auth        required                                     pam_deny.so

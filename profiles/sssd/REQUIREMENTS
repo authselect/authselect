@@ -4,6 +4,8 @@ Make sure that SSSD service is configured and enabled. See SSSD documentation fo
   - set "pam_cert_auth = True" in [pam] section                                           {include if "with-smartcard"}
                                                                                           {include if "with-fingerprint"}
 - with-fingerprint is selected, make sure fprintd service is configured and enabled       {include if "with-fingerprint"}
+                                                                                          {include if "with-oathtool"}
+- with-oathtool is selected, make sure /etc/users.oath is present                         {include if "with-oathtool"}
                                                                                           {include if "with-pam-gnome-keyring"}
 - with-pam-gnome-keyring is selected, make sure the pam_gnome_keyring module              {include if "with-pam-gnome-keyring"}
   is present.                                                                             {include if "with-pam-gnome-keyring"}
