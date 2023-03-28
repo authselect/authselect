@@ -1,7 +1,7 @@
 auth        required                                     pam_env.so
 auth        required                                     pam_faildelay.so delay=2000000
 auth        required                                     pam_faillock.so preauth silent                         {include if "with-faillock"}
-auth        required                                     pam_u2f.so cue {if not "without-pam-u2f-nouserok":nouserok} {include if "with-pam-u2f-2fa"}
+auth        requisite                                    pam_u2f.so cue {if not "without-pam-u2f-nouserok":nouserok} {include if "with-pam-u2f-2fa"}
 auth        sufficient                                   pam_u2f.so cue                                         {include if "with-pam-u2f"}
 auth        sufficient                                   pam_fprintd.so                                         {include if "with-fingerprint"}
 auth        sufficient                                   pam_unix.so {if not "without-nullok":nullok}
