@@ -68,6 +68,9 @@ without-pam-u2f-nouserok::
     authentication configured will not be able to log in *INCLUDING* root.
     Make sure you are able to log in before losing root privileges.
 
+with-pam_krb5::
+    Enable fallback to pam_krb5 if other authentication methods fail.
+
 with-silent-lastlog::
     Do not produce pam_lastlog message during login.
 
