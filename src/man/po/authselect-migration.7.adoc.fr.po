@@ -1,12 +1,13 @@
 # Jean-Baptiste Holcroft <jean-baptiste@holcroft.fr>, 2019. #zanata
 # Julien Humbert <julroy67@gmail.com>, 2020.
 # Jérôme Fenal <jfenal@free.fr>, 2021.
+# grimst <grimaitres@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-05-04 13:46+0200\n"
-"PO-Revision-Date: 2021-08-18 19:04+0000\n"
-"Last-Translator: Jérôme Fenal <jfenal@free.fr>\n"
+"PO-Revision-Date: 2023-03-19 01:20+0000\n"
+"Last-Translator: grimst <grimaitres@gmail.com>\n"
 "Language-Team: French <https://translate.fedoraproject.org/projects/"
 "authselect/master-authselect-migration7adoc/fr/>\n"
 "Language: fr\n"
@@ -14,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.7.2\n"
+"X-Generator: Weblate 4.15.2\n"
 
 #. type: Title =
 #: src/man/authselect-migration.7.adoc:2
@@ -229,16 +230,7 @@ msgstr "Relations entre les options authconfig et les fonctionnalités de profil
 
 #. type: Table
 #: src/man/authselect-migration.7.adoc:90
-#, fuzzy, no-wrap
-#| msgid ""
-#| "|*Authconfig options* |*Authselect profile feature*\n"
-#| "|--enablesmartcard    |with-smartcard\n"
-#| "|--enablefingerprint  |with-fingerprint\n"
-#| "|--enableecryptfs     |with-ecryptfs\n"
-#| "|--enablemkhomedir    |with-mkhomedir\n"
-#| "|--enablefaillock     |with-faillock\n"
-#| "|--enablepamaccess    |with-pamaccess\n"
-#| "|--enablewinbindkrb5  |with-krb5\n"
+#, no-wrap
 msgid ""
 "|*Authconfig options* |*Authselect profile feature*\n"
 "|--enablesmartcard    |with-smartcard\n"
@@ -271,6 +263,12 @@ msgid ""
 "it cannot be changed through an option (only by creating a custom profile).  "
 "You can just omit these options."
 msgstr ""
+"Les options d’Authconfig '--enableshadow' et '--passalgo=sha512' ont souvent "
+"été utilisées pour s’assurer que les mots de passe sont stockés dans '/etc/"
+"shadow' en utilisant l’algorithme 'sha512'. *Les profils authselect "
+"utilisent maintenant la méthode de hachage yescrypt* et elle ne peut pas "
+"être modifiée via une option (uniquement en créant un profil personnalisé).  "
+"Vous pouvez simplement omettre ces options."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:98

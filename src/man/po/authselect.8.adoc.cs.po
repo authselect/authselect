@@ -1,17 +1,19 @@
 # Josef Hruška <hrusjos@gmail.com>, 2019. #zanata
+# Jan Kalabza <jan.kalabza@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-04 13:46+0200\n"
-"PO-Revision-Date: 2019-09-07 01:07+0000\n"
-"Last-Translator: Josef Hruška <hrusjos@gmail.com>\n"
-"Language-Team: Czech\n"
+"POT-Creation-Date: 2022-12-01 13:36+0100\n"
+"PO-Revision-Date: 2023-05-02 18:20+0000\n"
+"Last-Translator: Jan Kalabza <jan.kalabza@gmail.com>\n"
+"Language-Team: Czech <https://translate.fedoraproject.org/projects/"
+"authselect/master-authselect8adoc/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 4.15.2\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
@@ -39,10 +41,9 @@ msgstr "SOUHRN"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:13
-#, fuzzy, no-wrap
-#| msgid " authselect [--debug] [--trace] [--warn] command [command options] \n"
+#, no-wrap
 msgid " authselect [--debug] [--trace] [--warn] command [command options]\n"
-msgstr " authselect [--debug] [--trace] [--warn] příkaz [volby příkazu] \n"
+msgstr " authselect [--debug] [--trace] [--warn] příkaz [volby příkazu]\n"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:15
@@ -100,6 +101,15 @@ msgid ""
 "so if you wish to go back you can restore it with *authselect backup-"
 "restore* command (see description below)."
 msgstr ""
+"Nástroj Authselect se nedotkne vaší stávající konfigurace, pokud již nebyla "
+"vytvořena tímto nástrojem. Pokud chcete začít používat authselect ke "
+"konfiguraci ověřování systému, zavolejte nejprve *authselect select* s "
+"parametrem *--force* (např. *authselect select sssd --force*). Parametr "
+"*--force* říká nástroji authselect, že může přepsat stávající konfiguraci, "
+"která není součástí nástroje authselect (viz popis níže). Použití parametru "
+"*--force* automaticky vytvoří zálohu aktuální konfigurace, takže pokud se "
+"budete chtít vrátit zpět, můžete ji obnovit příkazem *authselect backup-"
+"restore* (viz popis níže)."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:41
@@ -114,6 +124,9 @@ msgid ""
 "out*.  This will remove all authselect configuration from your system and "
 "you can then modify your configuration manually."
 msgstr ""
+"Chcete-li zabránit správě konfigurace pomocí nástroje authselect, spusťte "
+"příkaz *authselect opt-out*.  Tím odstraníte veškerou konfiguraci authselect "
+"ze systému a poté můžete konfiguraci upravit ručně."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:47
@@ -148,10 +161,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:55
-#, fuzzy, no-wrap
-#| msgid "*--force, -f*:"
+#, no-wrap
 msgid "*--force, -f*"
-msgstr "*--force, -f*:"
+msgstr "*--force, -f*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:60
@@ -169,10 +181,9 @@ msgstr ""
 #. type: Labeled list
 #: src/man/authselect.8.adoc:61 src/man/authselect.8.adoc:86
 #: src/man/authselect.8.adoc:155 src/man/authselect.8.adoc:173
-#, fuzzy, no-wrap
-#| msgid "*-b*:"
+#, no-wrap
 msgid "*-b*"
-msgstr "*-b*:"
+msgstr "*-b*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:66
@@ -191,10 +202,9 @@ msgstr ""
 #. type: Labeled list
 #: src/man/authselect.8.adoc:67 src/man/authselect.8.adoc:92
 #: src/man/authselect.8.adoc:161 src/man/authselect.8.adoc:179
-#, fuzzy, no-wrap
-#| msgid "*--backup=NAME*:"
+#, no-wrap
 msgid "*--backup=NAME*"
-msgstr "*--backup=NÁZEV*:"
+msgstr "*--backup=NÁZEV*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:71
@@ -210,10 +220,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:72
-#, fuzzy, no-wrap
-#| msgid "*--nobackup*:"
+#, no-wrap
 msgid "*--nobackup*"
-msgstr "*--nobackup*:"
+msgstr "*--nobackup*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:74
@@ -223,10 +232,9 @@ msgstr "Nezálohovat systémovou konfiguraci, přestože je nastavena volba *--f
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:75 src/man/authselect.8.adoc:166
-#, fuzzy, no-wrap
-#| msgid "*--quiet, -q*:"
+#, no-wrap
 msgid "*--quiet, -q*"
-msgstr "*--quiet, -q*:"
+msgstr "*--quiet, -q*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:78 src/man/authselect.8.adoc:169
@@ -303,14 +311,15 @@ msgstr "*list-features* id_profilu"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:104
+#, no-wrap
 msgid ""
-"List all features available in given profile. + _Note:_ This will only list "
-"the features without any description. Please, read the profile documentation "
-"with *show* to see what the features do."
+"List all features available in given profile.\n"
+"_Note:_ This will only list the features without any description. Please, read the profile documentation with *show* to see what the features do."
 msgstr ""
-"Vypsat všechny vlastnosti v daném profilu. + _Poznámka:_ Vlastnosti jsou "
-"pouze vypsány bez popisu. Chcete-li získat i popis, prosíme, prostudujte "
-"dokumentaci profilu příkazem *show*."
+"Vypsat všechny funkce dostupné v daném profilu.\n"
+"_Poznámka:_ Vypíše pouze funkce bez jakéhokoli popisu. Přečtěte si prosím "
+"dokumentaci k profilu s příkazem *show*, abyste zjistili, co dané funkce "
+"dělají."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:105
@@ -385,10 +394,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:125
-#, fuzzy, no-wrap
-#| msgid "*-a, --all*:"
+#, no-wrap
 msgid "*-a, --all*"
-msgstr "*-a, --all*:"
+msgstr "*-a, --all*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:127
@@ -398,10 +406,9 @@ msgstr "Zobrazit obsah všech souborů.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:128
-#, fuzzy, no-wrap
-#| msgid "*-n, --nsswitch*:"
+#, no-wrap
 msgid "*-n, --nsswitch*"
-msgstr "*-n, --nsswitch*:"
+msgstr "*-n, --nsswitch*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:130
@@ -411,10 +418,9 @@ msgstr "Zobrazit obsah nsswitch.conf.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:131
-#, fuzzy, no-wrap
-#| msgid "*-s, --system-auth*:"
+#, no-wrap
 msgid "*-s, --system-auth*"
-msgstr "*-s, --system-auth*:"
+msgstr "*-s, --system-auth*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:133
@@ -424,10 +430,9 @@ msgstr "Zobrazit obsah system-auth.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:134
-#, fuzzy, no-wrap
-#| msgid "*-p, --password-auth*:"
+#, no-wrap
 msgid "*-p, --password-auth*"
-msgstr "*-p, --password-auth*:"
+msgstr "*-p, --password-auth*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:136
@@ -437,10 +442,9 @@ msgstr "Zobrazit obsah password-auth.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:137
-#, fuzzy, no-wrap
-#| msgid "*-c, --smartcard-auth*:"
+#, no-wrap
 msgid "*-c, --smartcard-auth*"
-msgstr "*-c, --smartcard-auth*:"
+msgstr "*-c, --smartcard-auth*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:139
@@ -450,10 +454,9 @@ msgstr "Zobrazit obsah smartcard-auth.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:140
-#, fuzzy, no-wrap
-#| msgid "*-f, --fingerprint-auth*:"
+#, no-wrap
 msgid "*-f, --fingerprint-auth*"
-msgstr "*-f, --fingerprint-auth*:"
+msgstr "*-f, --fingerprint-auth*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:142
@@ -463,10 +466,9 @@ msgstr "Zobrazit obsah fingerprint-auth.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:143
-#, fuzzy, no-wrap
-#| msgid "*-o, --postlogin*:"
+#, no-wrap
 msgid "*-o, --postlogin*"
-msgstr "*-o, --postlogin*:"
+msgstr "*-o, --postlogin*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:145
@@ -476,10 +478,9 @@ msgstr "Zobrazit obsah postlogin.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:146
-#, fuzzy, no-wrap
-#| msgid "*-d, --dconf-db*:"
+#, no-wrap
 msgid "*-d, --dconf-db*"
-msgstr "*-d, --dconf-db*:"
+msgstr "*-d, --dconf-db*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:148
@@ -489,10 +490,9 @@ msgstr "Zobrazit obsah databáze dconf.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:149
-#, fuzzy, no-wrap
-#| msgid "*-l, --dconf-lock*:"
+#, no-wrap
 msgid "*-l, --dconf-lock*"
-msgstr "*-l, --dconf-lock*:"
+msgstr "*-l, --dconf-lock*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:151
@@ -577,7 +577,7 @@ msgstr ""
 #. type: Labeled list
 #: src/man/authselect.8.adoc:184
 #, no-wrap
-msgid "*create-profile* NAME [--custom,-c|--vendor,-v] [options]"
+msgid "*create-profile* NAME [--vendor,-v] [options]"
 msgstr "*create-profile* NÁZEV [--custom,-c|--vendor,-v] [volby]"
 
 #. type: Plain text
@@ -595,10 +595,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:190
-#, fuzzy, no-wrap
-#| msgid "*--vendor,-v*:"
+#, no-wrap
 msgid "*--vendor,-v*"
-msgstr "*--vendor,-v*:"
+msgstr "*--vendor,-v*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:193
@@ -612,10 +611,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:194
-#, fuzzy, no-wrap
-#| msgid "*--base-on=BASE-ID, -b=BASE-ID*:"
+#, no-wrap
 msgid "*--base-on=BASE-ID, -b=BASE-ID*"
-msgstr "*--base-on=ID-BÁZE, -b=ID-BÁZE*:"
+msgstr "*--base-on=ID-BÁZE, -b=ID-BÁZE*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:197
@@ -651,10 +649,9 @@ msgstr "Vrať chybu.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:202
-#, fuzzy, no-wrap
-#| msgid "*--base-on-default*:"
+#, no-wrap
 msgid "*--base-on-default*"
-msgstr "*--base-on-default*:"
+msgstr "*--base-on-default*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:205
@@ -668,10 +665,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:206
-#, fuzzy, no-wrap
-#| msgid "*--symlink-meta*:"
+#, no-wrap
 msgid "*--symlink-meta*"
-msgstr "*--symlink-meta*:"
+msgstr "*--symlink-meta*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:209
@@ -685,10 +681,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:210
-#, fuzzy, no-wrap
-#| msgid "*--symlink-nsswitch*:"
+#, no-wrap
 msgid "*--symlink-nsswitch*"
-msgstr "*--symlink-nsswitch*:"
+msgstr "*--symlink-nsswitch*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:213
@@ -702,10 +697,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:214
-#, fuzzy, no-wrap
-#| msgid "*--symlink-pam*:"
+#, no-wrap
 msgid "*--symlink-pam*"
-msgstr "*--symlink-pam*:"
+msgstr "*--symlink-pam*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:217
@@ -719,10 +713,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:218
-#, fuzzy, no-wrap
-#| msgid "*--symlink-dconf*:"
+#, no-wrap
 msgid "*--symlink-dconf*"
-msgstr "*--symlink-dconf*:"
+msgstr "*--symlink-dconf*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:221
@@ -736,10 +729,9 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:222
-#, fuzzy, no-wrap
-#| msgid "*--symlink=FILE,-s=FILE*:"
+#, no-wrap
 msgid "*--symlink=FILE,-s=FILE*"
-msgstr "*--symlink=SOUBOR,-s=SOUBOR*:"
+msgstr "*--symlink=SOUBOR,-s=SOUBOR*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:225
@@ -805,16 +797,15 @@ msgstr ""
 
 #. type: Title -
 #: src/man/authselect.8.adoc:242
-#, fuzzy, no-wrap
-#| msgid "AVAILABLE COMMANDS"
+#, no-wrap
 msgid "OTHER COMMANDS"
-msgstr "DOSTUPNÉ PŘÍKAZY"
+msgstr "OSTATNÍ PŘÍKAZY"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:244
 #, no-wrap
 msgid "*opt-out*"
-msgstr ""
+msgstr "*opt-out*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:248
@@ -823,6 +814,9 @@ msgid ""
 "configuration under its system location and authselect will no longer manage "
 "it. Run *authselect select* to opt-in again."
 msgstr ""
+"Odstranění konfigurace authselect. Tím se obnoví konfigurace nsswitch a PAM "
+"v jeho systémovém umístění a authselect ji již nebude spravovat. Spusťte *"
+"authselect select* a znovu se přihlaste."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:250
@@ -1022,13 +1016,13 @@ msgstr ""
 #: src/man/authselect.8.adoc:326
 #, no-wrap
 msgid "TROUBLESHOOTING"
-msgstr ""
+msgstr "ŘEŠENÍ PROBLÉMŮ"
 
 #. type: Title ~
 #: src/man/authselect.8.adoc:329
 #, no-wrap
 msgid "How can I tell if my system is using authselect?"
-msgstr ""
+msgstr "Jak zjistím, zda můj systém používá authselect?"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:333
@@ -1038,12 +1032,16 @@ msgid ""
 "configuration that was generated by authselect but modified manually at some "
 "point."
 msgstr ""
+"Použijte *authselect check*. Výstup vám řekne, zda máte 1) konfiguraci "
+"vygenerovanou pomocí authselect 2) konfiguraci bez authselect nebo 3) "
+"konfiguraci, která byla vygenerována pomocí authselect, ale v určitém "
+"okamžiku byla upravena ručně."
 
 #. type: Title ~
 #: src/man/authselect.8.adoc:335
 #, no-wrap
 msgid "Is nsswitch.conf supposed to be a symbolic link now?"
-msgstr ""
+msgstr "Má být nyní soubor nsswitch.conf symbolickým odkazem?"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:341
@@ -1054,17 +1052,22 @@ msgid ""
 "now owning your configuration and should be used instead of any manual "
 "modification."
 msgstr ""
+"Authselect generuje konfiguraci systému od začátku a ukládá ji do "
+"{AUTHSELECT_CONFIG_DIR}. Systémové soubory jsou pak vytvořeny jako "
+"symbolické odkazy na tento adresář. Symbolické odkazy se používají k tomu, "
+"aby bylo jasné, že authselect nyní vlastní vaši konfiguraci a že by se měla "
+"používat místo jakýchkoli ručních úprav."
 
 #. type: Title ~
 #: src/man/authselect.8.adoc:343
 #, no-wrap
 msgid "Error: Unexpected changes to the configuration were detected."
-msgstr ""
+msgstr "Chyba: Nalezeny neočekávané změny konfigurace."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:345
 msgid "For example:"
-msgstr ""
+msgstr "Na příklad:"
 
 #. type: delimited block .
 #: src/man/authselect.8.adoc:351
@@ -1076,6 +1079,12 @@ msgid ""
 "[error] Unexpected changes to the configuration were detected.\n"
 "[error] Refusing to activate profile unless those changes are removed or overwrite is requested.\n"
 msgstr ""
+"[error] [/etc/authselect/nsswitch.conf] neexistuje!\n"
+"[error] [/etc/nsswitch.conf] není symbolický odkaz!\n"
+"[error] [/etc/nsswitch.conf] nebyl vytvořen authselectem!\n"
+"[error] Byly zjištěny neočekávané změny v konfiguraci.\n"
+"[Chyba] Odmítá aktivaci profilu, pokud tyto změny nebudou odstraněny nebo "
+"nebude vyžádán přepis.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:355
@@ -1084,6 +1093,9 @@ msgid ""
 "will not be modified. To fix this, please call *authselect select* with *--"
 "force* parameter to say that it is all right to overwrite it."
 msgstr ""
+"To znamená, že vaše konfigurace je pro authselect neznámá, a proto nebude "
+"upravena. Chcete-li to napravit, zavolejte *authselect select* s parametrem "
+"*--force*, abyste řekli, že ji můžete přepsat."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:357
@@ -1140,7 +1152,7 @@ msgstr "5: Zadaný příkaz lze spustit jen jako uživatel root."
 #. type: Plain text
 #: src/man/authselect.8.adoc:367
 msgid "6: No configuration was detected."
-msgstr ""
+msgstr "6: Nebyla zjištěna žádná konfigurace."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:369
@@ -1176,13 +1188,12 @@ msgstr "*{AUTHSELECT_PAM_DIR}/system-auth*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:379
-#, fuzzy
 msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
 msgstr ""
-"stoh PAM, který se skládá z téměř všech jednotlivých konfiguračních souborů "
-"služby."
+"PAM stack, který je součástí téměř všech konfiguračních souborů jednotlivých "
+"služeb."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:380
@@ -1209,7 +1220,6 @@ msgstr "*{AUTHSELECT_PAM_DIR}/postlogin*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:393
-#, fuzzy
 msgid ""
 "The purpose of this PAM stack is to provide a common place for all PAM "
 "modules which should be called after the stack configured in system-auth or "
@@ -1219,12 +1229,12 @@ msgid ""
 "regardless of the success or failure of the modules in the system-auth "
 "configuration file._"
 msgstr ""
-"Účelem tohoto stohu PAM je poskytnout společné místo pro všechny moduly PAM, "
-"které by měly být zavolány po konfiguraci stohu v system-auth nebo ostatních "
-"společných konfiguračních souborech PAM. Je vložen ze všech jednotlivých "
-"konfiguračních souborů služeb, které poskytují přihlašovací službu pomocí "
-"shellu nebo přístupu k souboru. _POZNÁMKA: moduly v konfiguračním souboru "
-"postlogin jsou spuštěny bez ohledu na úspěch či selhání modulů v "
+"Účelem tohoto zásobníku PAM je poskytnout společné místo pro všechny moduly "
+"PAM, které by měly být volány po zásobníku nakonfigurovaném v system-auth "
+"nebo jiných běžných konfiguračních souborech PAM. Je zahrnut ze všech "
+"konfiguračních souborů jednotlivých služeb, které poskytují přihlašovací "
+"službu s přístupem k shellu nebo souborům. _POZNÁMKA: moduly v konfiguračním "
+"souboru postlogin se spustí bez ohledu na úspěch nebo neúspěch modulů v "
 "konfiguračním souboru system-auth._"
 
 #. type: Labeled list

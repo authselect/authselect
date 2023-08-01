@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-04 13:46+0200\n"
+"POT-Creation-Date: 2022-12-01 13:36+0100\n"
 "PO-Revision-Date: 2022-10-31 11:19+0000\n"
 "Last-Translator: Jingge Chen <mariocanfly@hotmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://translate.fedoraproject.org/"
@@ -65,8 +65,7 @@ msgid ""
 "is selected, *authselect* will create nsswitch.conf(5) and PAM(8) stack to use\n"
 "identity and authentication sources defined by the profile.\n"
 msgstr ""
-"*Authselect*是一个通过选择特定配置文件来配置系统标识和身份验证源及提供者的工"
-"具。\n"
+"*Authselect*是一个通过选择特定配置文件来配置系统标识和身份验证源及提供者的工具。\n"
 "配置文件是一组文件，描述了生成的系统配置的外观。\n"
 "选择配置文件后，*authselect*将创建nsswitch.conf(5)和PAM(8)堆栈\n"
 "并使用由配置文件定义的身份和验证源。\n"
@@ -80,9 +79,9 @@ msgid ""
 "*authselect*. See _authselect-profiles(5)_ for more information on extending "
 "existing profiles."
 msgstr ""
-"如果提供的配置文件集不够，管理员可以将其放置在特殊的文件目录({AUTHSELECT_CUST"
-"OM_DIR}) 中，以创建自定义配置文件。这允许*authselect*立即使用配置文件。有关扩"
-"展现有配置文件的信息，请参见_authselect-profiles(5)_ 。"
+"如果提供的配置文件集不够，管理员可以将其放置在特殊的文件目录"
+"({AUTHSELECT_CUSTOM_DIR}) 中，以创建自定义配置文件。这允许*authselect*立即使"
+"用配置文件。有关扩展现有配置文件的信息，请参见_authselect-profiles(5)_ 。"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:29
@@ -106,8 +105,8 @@ msgstr ""
 "Authselect不会修改现有配置除非配置由authselect生成。如果要开始使用authselect"
 "配置系统身份验证，请首先用*-force*参数调用*authselect select*（*authselect "
 "select sssd-force*）*--force*参数指示authselect覆盖除authselect之外的现有设置"
-"（请参阅以下说明）。*--force*参数会自动生成当前设置的备份，因此可以使用*"
-"authselect backup-restore*命令进行恢复（请参阅以下说明）。"
+"（请参阅以下说明）。*--force*参数会自动生成当前设置的备份，因此可以使用"
+"*authselect backup-restore*命令进行恢复（请参阅以下说明）。"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:41
@@ -142,16 +141,15 @@ msgstr ""
 #: src/man/authselect.8.adoc:51
 #, fuzzy, no-wrap
 msgid "*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup=NAME]"
-msgstr ""
-"*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] "
-"[--backup=NAME]"
+msgstr "*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup=NAME]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:54
 msgid ""
 "Activate desired profile. See profile description with *show* command, to "
 "list profile specific optional features."
-msgstr "激活所需的配置文件。请使用*show*命令查看配置文件说明，以列出特定于配置文件的"
+msgstr ""
+"激活所需的配置文件。请使用*show*命令查看配置文件说明，以列出特定于配置文件的"
 "可选功能。"
 
 #. type: Labeled list
@@ -168,10 +166,7 @@ msgid ""
 "authselect but by other tool or by manual changes. This option will\n"
 "automatically backup system files before writing any change unless\n"
 "*--nobackup* option is set.\n"
-msgstr ""
-"即使以前的配置不是由authselect创建的，而是由其他工具或手动更改创建的，也要写"
-"入更改。除非使用了*--nobackup*选项，否则将在写入任何更改之前自动备份系统文件"
-"。\n"
+msgstr "即使以前的配置不是由authselect创建的，而是由其他工具或手动更改创建的，也要写入更改。除非使用了*--nobackup*选项，否则将在写入任何更改之前自动备份系统文件。\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:61 src/man/authselect.8.adoc:86
@@ -290,10 +285,10 @@ msgstr ""
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:104
+#, no-wrap
 msgid ""
-"List all features available in given profile. + _Note:_ This will only list "
-"the features without any description. Please, read the profile documentation "
-"with *show* to see what the features do."
+"List all features available in given profile.\n"
+"_Note:_ This will only list the features without any description. Please, read the profile documentation with *show* to see what the features do."
 msgstr ""
 
 #. type: Labeled list
@@ -530,7 +525,7 @@ msgstr ""
 #. type: Labeled list
 #: src/man/authselect.8.adoc:184
 #, no-wrap
-msgid "*create-profile* NAME [--custom,-c|--vendor,-v] [options]"
+msgid "*create-profile* NAME [--vendor,-v] [options]"
 msgstr ""
 
 #. type: Plain text

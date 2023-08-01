@@ -9,8 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-04 13:46+0200\n"
-"PO-Revision-Date: 2022-05-25 05:18+0000\n"
+"POT-Creation-Date: 2022-12-01 13:36+0100\n"
+"PO-Revision-Date: 2022-12-03 10:19+0000\n"
 "Last-Translator: 김인수 <simmon@nplob.com>\n"
 "Language-Team: Korean <https://translate.fedoraproject.org/projects/"
 "authselect/master-authselect8adoc/ko/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.12.2\n"
+"X-Generator: Weblate 4.14.2\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
@@ -69,8 +69,7 @@ msgstr ""
 "*Authselect*는 시스템 식별과 인증 소스과 지정된 프로파일 선택에 의한\n"
 "공급자를 구성하는 도구입니다. 프로파일은 시스템 구성의 결과로 보여지는\n"
 "것과 같이 설명되어지는 파일의 설정입니다.\n"
-"프로파일이 선택되어졌을 때에, *authselect*는 식별과 프로파일에 정의된 인증 "
-"원천을\n"
+"프로파일이 선택되어졌을 때에, *authselect*는 식별과 프로파일에 정의된 인증 원천을\n"
 "사용하는 nsswitch.conf(5) 과 PAM(8)를 생성 할 것입니다.\n"
 
 #. type: Plain text
@@ -317,14 +316,14 @@ msgstr "*목록-기능* profile_id"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:104
+#, no-wrap
 msgid ""
-"List all features available in given profile. + _Note:_ This will only list "
-"the features without any description. Please, read the profile documentation "
-"with *show* to see what the features do."
+"List all features available in given profile.\n"
+"_Note:_ This will only list the features without any description. Please, read the profile documentation with *show* to see what the features do."
 msgstr ""
-"주어진 프로파일에 가용한 모든 기능을 목록화합니다. + _기록: _이는 어떤 설명 "
-"없이 기능만 목록화합니다. 기능이 하는 것을 보기에 *show* 와 함께 프로파일 문"
-"서를 읽어주길 바랍니다."
+"주어진 프로파일에 가용한 모든 기능을 목록화합니다. \n"
+"_기록: _이는 어떤 설명 없이 기능만 목록화합니다. 기능이 하는 것을 보기에 "
+"*show* 와 함께 프로파일 문서를 읽어주길 바랍니다."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:105
@@ -581,8 +580,8 @@ msgstr ""
 #. type: Labeled list
 #: src/man/authselect.8.adoc:184
 #, no-wrap
-msgid "*create-profile* NAME [--custom,-c|--vendor,-v] [options]"
-msgstr "*프로파일 만들기* NAME [--custom,-c|--vendor,-v] [options]"
+msgid "*create-profile* NAME [--vendor,-v] [options]"
+msgstr "*create-profile* NAME [--vendor,-v] [options]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:189
