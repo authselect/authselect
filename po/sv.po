@@ -1,13 +1,14 @@
 # Göran Uddeborg <goeran@uddeborg.se>, 2018. #zanata, 2020, 2021.
 # Göran Uddeborg <goeran@uddeborg.se>, 2019. #zanata, 2020, 2021.
 # Pavel Brezina <pbrezina@redhat.com>, 2019. #zanata
+# Luna Jernberg <bittin@reimu.nl>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
 "POT-Creation-Date: 2022-12-01 13:40+0100\n"
-"PO-Revision-Date: 2022-05-04 11:58+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2023-07-21 11:20+0000\n"
+"Last-Translator: Luna Jernberg <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://translate.fedoraproject.org/projects/"
 "authselect/1-2-x-application/sv/>\n"
 "Language: sv\n"
@@ -15,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.12.1\n"
+"X-Generator: Weblate 4.18.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:187
 msgid "Unable to obtain supported features"
@@ -77,20 +78,20 @@ msgstr ""
 #: src/lib/authselect.c:136
 #, c-format
 msgid "Unable to activate profile [%s] [%d]: %s"
-msgstr "Kan inte aktivera profilen [%s] [%d]: %s"
+msgstr "Det gick inte att aktivera profilen [%s] [%d]: %s"
 
 #: src/lib/authselect.c:150
 msgid "Trying to uninstall authselect configuration"
-msgstr "Försöker avinstallera authselect-konfigurationen"
+msgstr "Försöker att avinstallera authselect konfiguration"
 
 #: src/lib/authselect.c:154
 #, c-format
 msgid "Unable to remove symlinks [%d]: %s"
-msgstr "Kan inte ta bort den symlänkar [%d]: %s"
+msgstr "Kunde inte ta bort symboliska länkar [%d]: %s"
 
 #: src/lib/authselect.c:158
 msgid "Symbolic links were successfully removed"
-msgstr "Symboliska läkar togs bort"
+msgstr "Symboliska länkar har tagits bort framgångsrikt"
 
 #: src/lib/authselect.c:197
 #, c-format
@@ -100,7 +101,7 @@ msgstr "Profilfunktionen [%s] stödjs inte längre, tar bort den …"
 #: src/lib/authselect_backup.c:48
 #, c-format
 msgid "Unable to create backup directory [%s/%s] [%d]: %s"
-msgstr "Kan inte skapa en katalog för säkerhetskopia [%s/%s] [%d]: %s"
+msgstr "Kunde inte skapa katalog för säkerhetskopior [%s/%s] [%d]: %s"
 
 #: src/lib/authselect_backup.c:71
 #, c-format
@@ -136,7 +137,7 @@ msgstr "Kan inte kopiera [%s] till [%s/%s] [%d]: %s"
 #: src/lib/authselect_backup.c:175
 #, c-format
 msgid "Trying to backup authselect configuration to [%s]"
-msgstr "Försöker säkerhetskopiera authselect-konfigurationen till [%s]"
+msgstr "Försöker säkerhetskopiera authselect konfiguration till [%s]"
 
 #: src/lib/authselect_backup.c:180
 #, c-format
@@ -577,7 +578,7 @@ msgstr "Platsvektorn är NOLL"
 #: src/lib/profiles/read.c:133
 #, c-format
 msgid "Profile [%s] is a custom profile"
-msgstr "Profilen [%s] är en anpassad profil"
+msgstr "Profil [%s] är en anpassad profil"
 
 #: src/lib/profiles/read.c:135
 #, c-format
@@ -618,7 +619,7 @@ msgstr "Kan inte ta status på [%s] [%d]: %s"
 #: src/lib/util/dir.c:130
 #, c-format
 msgid "Unable to stat directory [%d]: %s"
-msgstr "Kan inte ta status på katalogen [%d]: %s"
+msgstr "Det gick inte att omedelbart ange katalog [%d]: %s"
 
 #: src/lib/util/dir.c:313
 #, c-format
@@ -770,7 +771,7 @@ msgstr "Tar bort [%s]"
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:281
 msgid "Invalid operator!"
-msgstr "Felaktig operator!"
+msgstr "Ogiltig operatör!"
 
 #: src/lib/util/template.c:460 src/lib/util/template.c:653
 #, c-format
@@ -780,12 +781,12 @@ msgstr "Kan inte bearbeta matchningen [%d]: %s"
 #: src/lib/util/template.c:485
 #, c-format
 msgid "Unable to process operator [%d]: %s"
-msgstr "Kan inte bearbeta operator [%d]: %s"
+msgstr "Det gick inte att bearbeta operatören [%d]: %s"
 
 #: src/lib/util/template.c:532
 #, c-format
 msgid "Unable to generate template [%d]: %s"
-msgstr "Kan inte generera mall [%d]: %s"
+msgstr "Det gick inte att generera schablon [%d]: %s"
 
 #: src/lib/util/template.c:560
 msgid "Unable to get current time!"

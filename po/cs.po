@@ -3,13 +3,14 @@
 # Josef Hruška <hrusjos@gmail.com>, 2019. #zanata
 # Michal Konečný <michalkonec666@gmail.com>, 2019. #zanata
 # Pavel Brezina <pbrezina@redhat.com>, 2020. #zanata
+# Jan Kalabza <jan.kalabza@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
 "POT-Creation-Date: 2022-12-01 13:40+0100\n"
-"PO-Revision-Date: 2022-05-04 11:57+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2023-04-09 19:20+0000\n"
+"Last-Translator: Jan Kalabza <jan.kalabza@gmail.com>\n"
 "Language-Team: Czech <https://translate.fedoraproject.org/projects/"
 "authselect/1-2-x-application/cs/>\n"
 "Language: cs\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.12.1\n"
+"X-Generator: Weblate 4.15.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:187
 msgid "Unable to obtain supported features"
@@ -82,19 +83,17 @@ msgid "Unable to activate profile [%s] [%d]: %s"
 msgstr "Nelze aktivovat profil [%s] [%d]: %s"
 
 #: src/lib/authselect.c:150
-#, fuzzy
 msgid "Trying to uninstall authselect configuration"
-msgstr "Pokus o zálohování authselect konfigurace do [%s]"
+msgstr "Pokus o odinstalování authselect konfigurace"
 
 #: src/lib/authselect.c:154
-#, fuzzy, c-format
+#, c-format
 msgid "Unable to remove symlinks [%d]: %s"
 msgstr "Nelze vytvořit symbolické odkazy [%d]: %s"
 
 #: src/lib/authselect.c:158
-#, fuzzy
 msgid "Symbolic links were successfully removed"
-msgstr "Změny byly úspěšně použity.\n"
+msgstr "Změny byly úspěšně použity"
 
 #: src/lib/authselect.c:197
 #, c-format
@@ -148,7 +147,7 @@ msgid "Trying to backup system configuration to [%s]"
 msgstr "Pokus o zálohování systémové konfigurace do [%s]"
 
 #: src/lib/authselect_backup.c:185
-#, fuzzy, c-format
+#, c-format
 msgid "Backup was successfully created at [%s]"
 msgstr "Záloha byla úspěšně vytvořena v [%s]"
 
@@ -158,9 +157,8 @@ msgid "Unable to create backup [%d]: %s"
 msgstr "Nelze vytvořit zálohu [%d]: %s"
 
 #: src/lib/authselect_backup.c:206
-#, fuzzy
 msgid " does not exist."
-msgstr "[%s] neexistuje!"
+msgstr " neexistuje."
 
 #: src/lib/authselect_backup.c:209 src/lib/profiles/list.c:50
 #, c-format
@@ -251,12 +249,12 @@ msgstr "Nelze zapisovat data do [%s] [%d]: %s"
 #: src/lib/authselect_profile.c:385
 #, c-format
 msgid "Omitting [%s] since it does not exist in base profile"
-msgstr ""
+msgstr "Vynechání [%s], protože v základním profilu neexistuje"
 
 #: src/lib/authselect_profile.c:389
-#, fuzzy, c-format
+#, c-format
 msgid "Unable to check presence of [%s] [%d]: %s"
-msgstr "Nelze zkontrolovat oprávnění souboru [%s] [%d]: %s"
+msgstr "Nelze zkontrolovat existenci [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:397
 #, c-format
@@ -416,7 +414,7 @@ msgstr "Soubor [%s] existuje, ale je potřeba jej přepsat!"
 #: src/lib/files/symlinks.c:190
 #, c-format
 msgid "Skipping [%s] because it is not an authselect file"
-msgstr ""
+msgstr "Přeskakuji [%s], protože to není soubor authselect"
 
 #: src/lib/files/system.c:74 src/lib/profiles/read.c:162
 #, c-format
@@ -576,9 +574,8 @@ msgid "Looking up profile [%s]"
 msgstr "Prohlížení profilu [%s]"
 
 #: src/lib/profiles/read.c:110
-#, fuzzy
 msgid "Locations array is NULL"
-msgstr "Pole míst není nastaveno -- NULL"
+msgstr "Pole míst je NULL"
 
 #: src/lib/profiles/read.c:133
 #, c-format
@@ -611,7 +608,7 @@ msgid "Profile [%s] does not contain a name in [%s]!"
 msgstr "Profil [%s] neobsahuje jméno v [%s]!"
 
 #: src/lib/util/dir.c:77 src/lib/util/dir.c:83
-#, fuzzy, c-format
+#, c-format
 msgid "Unable to get basename of [%s]"
 msgstr "Nelze získat základní název [%s]"
 
@@ -659,7 +656,7 @@ msgstr "[%s] není symbolický odkaz!"
 #: src/lib/util/file.c:60
 #, c-format
 msgid "[%s] has wrong type [%.7o], expected [%.7o]!"
-msgstr "[%s] má chybný typ [%.7o], očekáván typ [%.7o]"
+msgstr "[%s] má chybný typ [%.7o], očekáván typ [%.7o]!"
 
 #: src/lib/util/file.c:87
 #, c-format
@@ -708,15 +705,15 @@ msgstr "Nelze změnit oprávnění souboru [%s] [%d]: %s"
 #: src/lib/util/file.c:531
 #, c-format
 msgid "Unable to chown file [%s] [%d]: %s"
-msgstr "Nelze změnit vlastníka u souboru  [%s] [%d]: %s"
+msgstr "Nelze změnit vlastníka u souboru [%s] [%d]: %s"
 
 #: src/lib/util/selinux.c:46
-#, fuzzy, c-format
+#, c-format
 msgid "Unable to create selabel context [%d]: %s"
 msgstr "Nelze vytvořit selabel kontext [%d]: %s"
 
 #: src/lib/util/selinux.c:55
-#, fuzzy, c-format
+#, c-format
 msgid "Unable to lookup selinux context [%d]: %s"
 msgstr "Nelze dohledat SELinux kontext [%d]: %s"
 
@@ -741,21 +738,19 @@ msgstr "Nalezen SELinux kontext pro [%s]: %s"
 
 #: src/lib/util/selinux.c:115 src/lib/util/selinux.c:183
 #: src/lib/util/selinux.c:251
-#, fuzzy
 msgid "Unable to get current fscreate selinux context!"
 msgstr "Nelze získat současný fscreate SELinux kontext!"
 
 #: src/lib/util/selinux.c:121 src/lib/util/selinux.c:189
 #: src/lib/util/selinux.c:257
-#, fuzzy, c-format
+#, c-format
 msgid "Unable to get default selinux context for [%s] [%d]: %s!"
-msgstr "Nelze získat výchozí SELinux kontext pro [%s] [%d]: %s"
+msgstr "Nelze získat výchozí SELinux kontext pro [%s] [%d]: %s!"
 
 #: src/lib/util/selinux.c:129 src/lib/util/selinux.c:197
 #: src/lib/util/selinux.c:265
-#, fuzzy
 msgid "Unable to set fscreate selinux context!"
-msgstr "Nelze nastavit SELinux kontext u fscreate!"
+msgstr "Nelze nastavit fscreate SELinux kontext!"
 
 #: src/lib/util/selinux.c:139 src/lib/util/selinux.c:207
 #: src/lib/util/selinux.c:275
@@ -768,11 +763,13 @@ msgid ""
 "File [%s] should exist but is missing. It is not safe to delete [%s]. "
 "Aborting."
 msgstr ""
+"Soubor [%s] by měl existovat, ale chybí. Není bezpečné smazat [%s]. "
+"Přerušuji."
 
 #: src/lib/util/selinux.c:420
-#, fuzzy, c-format
+#, c-format
 msgid "Removing [%s]"
-msgstr "Odstraňuje se záloha [%s]"
+msgstr "Odstraňování [%s]"
 
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:281
@@ -1068,7 +1065,7 @@ msgstr ""
 "'select'.\n"
 
 #: src/cli/main.c:275
-#, fuzzy, c-format
+#, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr "Změny nelze použít [%d]: %s\n"
 
@@ -1092,7 +1089,7 @@ msgstr "Povolené funkce:"
 
 #: src/cli/main.c:325
 msgid " None\n"
-msgstr "Žádné\n"
+msgstr " Žádné\n"
 
 #: src/cli/main.c:353
 #, c-format
@@ -1192,14 +1189,12 @@ msgstr "Funkce k povolení."
 #: src/cli/main.c:684
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
-msgstr ""
-"Nelze vytvořit zálohu současné konfigurace [%d]: %s\n"
-"\n"
+msgstr "Nelze vytvořit zálohu současné konfigurace [%d]: %s\n"
 
 #: src/cli/main.c:691
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
-msgstr "Nelze povolit  funkci [%d]: %s\n"
+msgstr "Nelze povolit funkci [%d]: %s\n"
 
 #: src/cli/main.c:696
 #, c-format
@@ -1213,7 +1208,7 @@ msgstr "Funkce k zakázání."
 #: src/cli/main.c:738
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
-msgstr "Nelze zakázat  funkci [%d]: %s\n"
+msgstr "Nelze zakázat funkci [%d]: %s\n"
 
 #: src/cli/main.c:759
 msgid "Create new profile as a vendor profile instead of a custom profile"
@@ -1302,9 +1297,9 @@ msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "Nelze provést obnovu ze zálohy [%s] [%d]: %s\n"
 
 #: src/cli/main.c:927
-#, fuzzy, c-format
+#, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
-msgstr "Nelze otestovat aktuální konfiguraci [%d]: %s"
+msgstr "Nelze odinstalovat authselect konfiguraci [%d]: %s\n"
 
 #: src/cli/main.c:970
 msgid "Select profile"
@@ -1339,7 +1334,6 @@ msgid "Check if the current configuration is valid"
 msgstr "Zkontrolovat, zda je současná konfigurace platná"
 
 #: src/cli/main.c:978
-#, fuzzy
 msgid "Print changes that would be otherwise written"
 msgstr "Vytisknout změny, které by byly jinak zapsány"
 
@@ -1372,9 +1366,8 @@ msgid "Restore from backup"
 msgstr "Obnovit ze zálohy"
 
 #: src/cli/main.c:986
-#, fuzzy
 msgid "Uninstall authselect configuration"
-msgstr "Záloha [%s] obsahuje konfiguraci authselect"
+msgstr "Odinstalování authselect konfigurace"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
@@ -1382,7 +1375,6 @@ msgstr "NIS pro informace o uživatelích jako výchozí"
 
 # auto translated by TM merge from project: authconfig, version: master, DocId: po/authconfig
 #: src/compat/authcompat_Options.py:83
-#, fuzzy
 msgid "<domain>"
 msgstr "<doména>"
 
@@ -1443,7 +1435,6 @@ msgid "authentication with smart card by default"
 msgstr "ověření pomocí karty Smart Card ve výchozím nastavení"
 
 #: src/compat/authcompat_Options.py:93
-#, fuzzy
 msgid "<0=Lock|1=Ignore>"
 msgstr "<0=Zamknout|1=Ignorovat>"
 
@@ -1502,7 +1493,6 @@ msgid "winbind for authentication by default"
 msgstr "winbind pro ověření"
 
 #: src/compat/authcompat_Options.py:105
-#, fuzzy
 msgid "<Administrator>"
 msgstr "<Administrátor>"
 
@@ -1518,7 +1508,6 @@ msgstr "Kerberos 5 pro ověření s winbind"
 
 # auto translated by TM merge from project: authconfig, version: master, DocId: po/authconfig
 #: src/compat/authcompat_Options.py:107
-#, fuzzy
 msgid "<workgroup>"
 msgstr "<pracovní_skupina>"
 
@@ -1607,9 +1596,8 @@ msgid "the same as --updateall"
 msgstr "stejné jako --updateall"
 
 #: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
-#, fuzzy
 msgid "<name>"
-msgstr "<name>"
+msgstr "<jméno>"
 
 #: src/compat/authcompat_Options.py:148
 msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
@@ -1676,7 +1664,7 @@ msgid "disable"
 msgstr "zakázat"
 
 #: src/compat/authcompat.py.in.in:51
-#, fuzzy, python-format
+#, python-format
 msgid "Executing: %s"
 msgstr "Probíhá: %s"
 

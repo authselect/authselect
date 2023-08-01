@@ -4,13 +4,13 @@
 # Sundeep Anand <suanand@redhat.com>, 2021.
 # simmon <simmon@nplob.com>, 2021.
 # Seong-ho Cho <darkcircle.0426@gmail.com>, 2021.
-# 김인수 <simmon@nplob.com>, 2022.
+# 김인수 <simmon@nplob.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
 "POT-Creation-Date: 2022-12-01 13:40+0100\n"
-"PO-Revision-Date: 2022-07-18 15:19+0000\n"
+"PO-Revision-Date: 2023-07-21 11:20+0000\n"
 "Last-Translator: 김인수 <simmon@nplob.com>\n"
 "Language-Team: Korean <https://translate.fedoraproject.org/projects/"
 "authselect/1-2-x-application/ko/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.13\n"
+"X-Generator: Weblate 4.18.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:187
 msgid "Unable to obtain supported features"
@@ -81,20 +81,20 @@ msgstr ""
 #: src/lib/authselect.c:136
 #, c-format
 msgid "Unable to activate profile [%s] [%d]: %s"
-msgstr "프로파일을 활성화 할 수 없음 [%s] [%d]: %s"
+msgstr "프로파일 [%s] [%d]를 활성화 할 수 없음 : %s"
 
 #: src/lib/authselect.c:150
 msgid "Trying to uninstall authselect configuration"
-msgstr "authselect 구성 제거를 시도 중입니다"
+msgstr "authselect 구성 제거를 시도 중"
 
 #: src/lib/authselect.c:154
 #, c-format
 msgid "Unable to remove symlinks [%d]: %s"
-msgstr "심볼릭 링크를 제거 할 수 없음 [%d]: %s"
+msgstr "심볼릭 링크 [%d]를 제거 할 수 없음: %s"
 
 #: src/lib/authselect.c:158
 msgid "Symbolic links were successfully removed"
-msgstr "심볼릭 링크 제거에 성공했습니다"
+msgstr "심볼릭 링크가 성공적으로 제거되었습니다"
 
 #: src/lib/authselect.c:197
 #, c-format
@@ -104,17 +104,17 @@ msgstr "[%s] 프로필 기능은 더 이상 지원하지 않습니다. 제거합
 #: src/lib/authselect_backup.c:48
 #, c-format
 msgid "Unable to create backup directory [%s/%s] [%d]: %s"
-msgstr "백업 디렉토리를 생성 할 수 없음 [%s/%s] [%d]: %s"
+msgstr "백업 디렉토리 [%s/%s] [%d]를 생성 할 수 없음: %s"
 
 #: src/lib/authselect_backup.c:71
 #, c-format
 msgid "Unable to create backup directory [%s] [%d]: %s"
-msgstr "백업 디렉토리를 생성 할 수 없음 [%s] [%d]: %s"
+msgstr "백업 디렉토리 [%s] [%d]를 생성 할 수 없음: %s"
 
 #: src/lib/authselect_backup.c:92
 #, c-format
 msgid "Creating temporary directory at [%s]"
-msgstr "[%s]에서 임시 디렉토리 생성 중"
+msgstr "[%s]에 임시 디렉토리 생성 중"
 
 #: src/lib/authselect_backup.c:125 src/lib/authselect_profile.c:377
 #: src/lib/authselect_profile.c:457
@@ -140,7 +140,7 @@ msgstr "[%s]을(를) [%s/%s] (으)로 복사할 수 없음 [%d]: %s"
 #: src/lib/authselect_backup.c:175
 #, c-format
 msgid "Trying to backup authselect configuration to [%s]"
-msgstr "[%s]에 authselect 구성 백업을 시도합니다"
+msgstr "authselect 구성을 [%s]로 백업하려고 시도 중"
 
 #: src/lib/authselect_backup.c:180
 #, c-format
@@ -164,7 +164,7 @@ msgstr " 존재하지 않습니다."
 #: src/lib/authselect_backup.c:209 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
-msgstr "디렉토리를 목록화 할 수 없음 [%s] [%d]: %s"
+msgstr "디렉토리 [%s] [%d]를 나열 할 수 없음: %s"
 
 #: src/lib/authselect_backup.c:223
 #, c-format
@@ -369,7 +369,7 @@ msgstr "심볼릭 링크 만들기 [%s] ~ [%s]"
 #: src/lib/files/symlinks.c:47
 #, c-format
 msgid "Unable to overwrite file [%s] [%d]: %s"
-msgstr "[%s] [%d] 파일을 덮어쓰기할 수 없음: %s"
+msgstr "[%s] [%d] 파일을 덮어쓰기 할 수 없음: %s"
 
 #: src/lib/files/symlinks.c:55
 #, c-format
@@ -410,7 +410,7 @@ msgstr "심볼릭 링크 [%s] ~ [%s]가 여전히 존재합니다!"
 #: src/lib/files/symlinks.c:149
 #, c-format
 msgid "File [%s] exists but it needs to be overwritten!"
-msgstr "파일 [%s]가 존재하지만 덮어쓰기해야 합니다!"
+msgstr "파일 [%s]가 존재하지만 덮어쓰기 해야 합니다!"
 
 #: src/lib/files/symlinks.c:190
 #, c-format
@@ -581,7 +581,7 @@ msgstr "위치 배열이 NULL입니다"
 #: src/lib/profiles/read.c:133
 #, c-format
 msgid "Profile [%s] is a custom profile"
-msgstr "프로필 [%s]은 (는) 사용자 정의 프로필입니다"
+msgstr "프로파일 [%s]는 사용자 정의 프로파일입니다"
 
 #: src/lib/profiles/read.c:135
 #, c-format
@@ -622,7 +622,7 @@ msgstr "통계 할 수 없습니다 [%s] [%d] : %s"
 #: src/lib/util/dir.c:130
 #, c-format
 msgid "Unable to stat directory [%d]: %s"
-msgstr "디렉토리 상태를 확인 할 수 없음 [%d]: %s"
+msgstr "디렉토리 [%d] 상태를 확인 할 수 없음: %s"
 
 #: src/lib/util/dir.c:313
 #, c-format
@@ -782,12 +782,12 @@ msgstr "일치 항목을 처리 할 수 없습니다 [%d] : %s"
 #: src/lib/util/template.c:485
 #, c-format
 msgid "Unable to process operator [%d]: %s"
-msgstr "연산자를 처리 할 수 없습니다 [%d] : %s"
+msgstr "연산자를 처리 할 수 없습니다 [%d]: %s"
 
 #: src/lib/util/template.c:532
 #, c-format
 msgid "Unable to generate template [%d]: %s"
-msgstr "양식을 생성 할 수 없습니다 [%d] : %s"
+msgstr "템플릿을 생성 할 수 없습니다 [%d]: %s"
 
 #: src/lib/util/template.c:560
 msgid "Unable to get current time!"
@@ -1013,8 +1013,8 @@ msgid ""
 "Use --force parameter if you want to overwrite these changes.\n"
 msgstr ""
 "\n"
-"갑작스럽게 바뀐 구성을 찾았습니다. \n"
-"바뀐 내용을 덮어쓰려면 --force 매개 변수를 사용하십시오.\n"
+"구성에 예상치 못한 변경이 감지되었습니다.\n"
+"만약 이들 변경 부분을 덮어쓰려면 --force 매개변수를 사용하세요.\n"
 
 #: src/cli/main.c:208
 #, c-format
@@ -1028,7 +1028,7 @@ msgstr "\"%s\"프로필을 선택했습니다.\n"
 
 #: src/cli/main.c:216
 msgid "The following nsswitch maps are overwritten by the profile:\n"
-msgstr "다음 nsswitch 맵은 프로필로 덮어 씁니다.\n"
+msgstr "다음 nsswitch 맵은 프로파일에 의해 덮어 씁니다:\n"
 
 #: src/cli/main.c:219
 #, c-format

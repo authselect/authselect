@@ -1,12 +1,13 @@
 # Geert Warrink <geert.warrink@onsnet.nu>, 2018. #zanata, 2020, 2021.
 # Geert Warrink <geert.warrink@onsnet.nu>, 2019. #zanata, 2020, 2021.
+# Maarten <maarten@posteo.de>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
 "POT-Creation-Date: 2022-12-01 13:40+0100\n"
-"PO-Revision-Date: 2022-05-04 11:57+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2023-04-09 19:20+0000\n"
+"Last-Translator: Maarten <maarten@posteo.de>\n"
 "Language-Team: Dutch <https://translate.fedoraproject.org/projects/"
 "authselect/1-2-x-application/nl/>\n"
 "Language: nl\n"
@@ -14,26 +15,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.12.1\n"
+"X-Generator: Weblate 4.15.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:187
 msgid "Unable to obtain supported features"
-msgstr "Kan ondersteunde kenmerken niet verkrijgen"
+msgstr "Kan ondersteunde functies niet verkrijgen"
 
 #: src/lib/authselect.c:59
 #, c-format
 msgid "Unknown profile feature [%s], did you mean [%s]?"
-msgstr "Onbekende profielkenmerk [%s], bedoelde de je [%s]?"
+msgstr "Onbekende profielfunctie [%s], bedoelde u [%s]?"
 
 #: src/lib/authselect.c:62
 #, c-format
 msgid "Unknown profile feature [%s]"
-msgstr "Onbekende profielkenmerk [%s]"
+msgstr "Onbekende profielfunctie [%s]"
 
 #: src/lib/authselect.c:86
 #, c-format
 msgid "Trying to activate profile [%s]"
-msgstr "Profiel [%s] wordt geactiveerd"
+msgstr "Getracht wordt profiel [%s] te activeren"
 
 #: src/lib/authselect.c:90 src/lib/authselect.c:180 src/lib/profiles/read.c:316
 #, c-format
@@ -47,7 +48,7 @@ msgstr "Activatie wordt geforceerd!"
 #: src/lib/authselect.c:109
 #, c-format
 msgid "Unable to check configuration [%d]: %s"
-msgstr "Kan configuratie [%d] niet checken: %s"
+msgstr "Kan configuratie [%d] niet controleren: %s"
 
 #: src/lib/authselect.c:114
 msgid "Unexpected changes to the configuration were detected."
@@ -80,12 +81,12 @@ msgstr "Kan profiel [%s] [%d] niet activeren.: %s"
 
 #: src/lib/authselect.c:150
 msgid "Trying to uninstall authselect configuration"
-msgstr "Er wordt geprobeerd om de authselect-configuratie te verwijderen"
+msgstr "Getracht wordt de configuratie van authselect te verwijderen"
 
 #: src/lib/authselect.c:154
 #, c-format
 msgid "Unable to remove symlinks [%d]: %s"
-msgstr "Kan sym-links [%d] niet verwijderen: %s"
+msgstr "Kan symbolische links [%d] niet verwijderen: %s"
 
 #: src/lib/authselect.c:158
 msgid "Symbolic links were successfully removed"
@@ -95,22 +96,22 @@ msgstr "Symbolische links werden met succes verwijderd"
 #, c-format
 msgid "Profile feature [%s] is no longer supported, removing it..."
 msgstr ""
-"Profielkenmerk [%s] wordt niet meer ondersteund, het wordt verwijderd..."
+"Profielfunctie [%s] wordt niet meer ondersteund, het wordt verwijderd ..."
 
 #: src/lib/authselect_backup.c:48
 #, c-format
 msgid "Unable to create backup directory [%s/%s] [%d]: %s"
-msgstr "Kan backup map [%s/%s] [%d] niet aanmaken: %s"
+msgstr "Kan back-up map [%s/%s] [%d] niet aanmaken: %s"
 
 #: src/lib/authselect_backup.c:71
 #, c-format
 msgid "Unable to create backup directory [%s] [%d]: %s"
-msgstr "Kan backup map [%s] [%d] niet aanmaken: %s"
+msgstr "Kan back-up map [%s] [%d] niet aanmaken: %s"
 
 #: src/lib/authselect_backup.c:92
 #, c-format
 msgid "Creating temporary directory at [%s]"
-msgstr "Tijdelijke map aanmaken in [%s]"
+msgstr "Er wordt een tijdelijke map aangemaakt in [%s]"
 
 #: src/lib/authselect_backup.c:125 src/lib/authselect_profile.c:377
 #: src/lib/authselect_profile.c:457
@@ -137,20 +138,19 @@ msgstr "Kan [%s] niet kopiëren naar [%s/%s] [%d]: %s"
 #, c-format
 msgid "Trying to backup authselect configuration to [%s]"
 msgstr ""
-"Er wordt geprobeerd om een back-up van de authselectconfiguratie te maken "
-"naar [%s]"
+"Getracht wordt een back-up van de authselect-configuratie aan te maken in "
+"[%s]"
 
 #: src/lib/authselect_backup.c:180
 #, c-format
 msgid "Trying to backup system configuration to [%s]"
 msgstr ""
-"Er wordt geprobeerd om een back-up van de systeemconfiguratie te maken naar "
-"[%s]"
+"Getracht wordt een back-up van de systeemconfiguratie aan te maken in [%s]"
 
 #: src/lib/authselect_backup.c:185
 #, c-format
 msgid "Backup was successfully created at [%s]"
-msgstr "De back-up naar [%s] is geslaagd"
+msgstr "De back-up werd met succes aangemaakt in [%s]"
 
 #: src/lib/authselect_backup.c:189
 #, c-format
@@ -164,7 +164,7 @@ msgstr " bestaat niet."
 #: src/lib/authselect_backup.c:209 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
-msgstr "Kon map [%s] [%d] niet weergeven: %s"
+msgstr "Kon de inhoud van de map [%s] [%d] niet weergeven: %s"
 
 #: src/lib/authselect_backup.c:223
 #, c-format
@@ -174,7 +174,7 @@ msgstr "Back-up [%s] wordt verwijderd"
 #: src/lib/authselect_backup.c:232
 #, c-format
 msgid "Unable to delete directory [%s] [%d]: %s"
-msgstr "Verwijderen van map [%s] [%d] is mislukt: %s"
+msgstr "Kan de map [%s] [%d] niet verwijderen: %s"
 
 #: src/lib/authselect_backup.c:315
 #, c-format
@@ -188,27 +188,27 @@ msgstr "Kan symbolische links [%d] niet aanmaken: %s"
 
 #: src/lib/authselect_backup.c:327 src/lib/profiles/activate.c:84
 msgid "Dconf is not installed on your system"
-msgstr "Dconf is niet geïnstalleerd op je systeem"
+msgstr "Dconf is niet geïnstalleerd op uw systeem"
 
 #: src/lib/authselect_backup.c:329 src/lib/profiles/activate.c:86
 #, c-format
 msgid "Unable to update dconf database [%d]: %s"
-msgstr "Kan dconf database [%d] niet vernieuwen: %s"
+msgstr "Kan dconf-database [%d] niet vernieuwen: %s"
 
 #: src/lib/authselect_backup.c:352
 #, c-format
 msgid "Restoring configuration from backup [%s]"
-msgstr "Configuratie herstellen van back-up [%s]"
+msgstr "Configuratie herstellen op basis van back-up [%s]"
 
 #: src/lib/authselect_backup.c:368
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
-msgstr "Back-up [%s] bevat authselectconfiguratie"
+msgstr "Back-up [%s] bevat de configuratie van authselect"
 
 #: src/lib/authselect_backup.c:371
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
-msgstr "Back-up [%s] bevat geen authselectconfiguratie"
+msgstr "Back-up [%s] bevat een configuratie die niet van authselect is"
 
 #: src/lib/authselect_backup.c:377
 #, c-format
@@ -222,7 +222,7 @@ msgstr "Kan nsswitch.conf niet genereren"
 #: src/lib/authselect_profile.c:111
 #, c-format
 msgid "Unable to find nsswitch maps [%d]: %s"
-msgstr "Kan nsswitch mappen [%d] niet vinden: %s"
+msgstr "Kan de nsswitch-afbeeldingen [%d] niet vinden: %s"
 
 #: src/lib/authselect_profile.c:132
 msgid "Unable to create array (out of memory)"
@@ -230,7 +230,7 @@ msgstr "Kan array niet aanmaken (te weinig geheugen)"
 
 #: src/lib/authselect_profile.c:141 src/lib/authselect_profile.c:150
 msgid "Unable to obtain feature list (out of memory)"
-msgstr "Kan kenmerkenlijst niet verkrijgen (te weinig geheugen)"
+msgstr "Kan functielijst niet verkrijgen (te weinig geheugen)"
 
 #: src/lib/authselect_profile.c:344
 #, c-format
@@ -250,7 +250,7 @@ msgstr "Kan niet schrijven naar [%s] [%d]: %s"
 #: src/lib/authselect_profile.c:385
 #, c-format
 msgid "Omitting [%s] since it does not exist in base profile"
-msgstr "[%s] wordt weggelaten omdat het niet bestaat in het basisprofiel"
+msgstr "[%s] wordt weggelaten omdat het niet voorkomt in het basisprofiel"
 
 #: src/lib/authselect_profile.c:389
 #, c-format
@@ -265,16 +265,16 @@ msgstr "Kan geen symbolische link [%s] aanmaken naar [%s] [%d]: %s"
 #: src/lib/authselect_profile.c:430
 #, c-format
 msgid "Creating new profile from \"%s\" at [%s]"
-msgstr "Er wordt een nieuw profiel aangemaakt van \"%s\" op [%s]"
+msgstr "Er wordt een nieuw profiel aangemaakt van \"%s\" in [%s]"
 
 #: src/lib/authselect_profile.c:434
 #, c-format
 msgid "Unable to read base profile [%s] [%d]: %s"
-msgstr "Kan basis profiel [%s] [%d] niet lezen: %s"
+msgstr "Kan basisprofiel [%s] [%d] niet lezen: %s"
 
 #: src/lib/authselect_profile.c:442
 msgid "Unable to resolve symbolic links names"
-msgstr "Kan symbolische linknamen niet oplossen"
+msgstr "Kan symbolische links niet tot bestaande bestanden herleiden"
 
 #: src/lib/authselect_profile.c:467 src/lib/authselect_profile.c:480
 #: src/lib/authselect_profile.c:494
@@ -289,11 +289,11 @@ msgstr "Onbekende bestandsnaam [%s]"
 
 #: src/lib/authselect_profile.c:529
 msgid "Name can not be empty"
-msgstr "Naam mag niet leeg zijn"
+msgstr "Naam mag niet afwezig blijven"
 
 #: src/lib/authselect_profile.c:541
 msgid "Default profile can not be created"
-msgstr "Standaard profiel kan niet aangemaakt worden"
+msgstr "Standaardprofiel kan niet aangemaakt worden"
 
 #: src/lib/authselect_profile.c:544
 msgid "Value AUTHSELECT_PROFILE_ANY is invalid in this context"
@@ -301,7 +301,7 @@ msgstr "Waarde van AUTHSELECT_PROFILE_ANY is in deze context niet geldig"
 
 #: src/lib/authselect_profile.c:549
 msgid "Unable to create profile path: out of memory"
-msgstr "Kan profielpad niet aanmaken: te weinig geheugen"
+msgstr "Kan het pad van het profiel niet aanmaken: te weinig geheugen"
 
 #: src/lib/authselect_profile.c:555
 #, c-format
@@ -334,12 +334,12 @@ msgstr "Controleren of alle vereiste mappen beschrijfbaar zijn."
 #: src/lib/files/config.c:158
 #, c-format
 msgid "Unable to get path to %s parent directory!"
-msgstr "Kan pad naar %s oudermap niet verkrijgen!"
+msgstr "Kan pad naar de oudermap %s niet verkrijgen!"
 
 #: src/lib/files/config.c:165
 #, c-format
 msgid "Creating path [%s]"
-msgstr "Pad[%s] wordt aangemaakt"
+msgstr "Pad [%s] wordt aangemaakt"
 
 #: src/lib/files/config.c:169
 #, c-format
@@ -349,12 +349,12 @@ msgstr "Kan pad [%s] [%d] niet aanmaken: %s"
 #: src/lib/files/config.c:174
 #, c-format
 msgid "Directory [%s] does not exist, please create it!"
-msgstr "Map [%s] bestaat niet, maak het aan!"
+msgstr "Map [%s] bestaat niet, gelieve het aan te maken!"
 
 #: src/lib/files/config.c:177
 #, c-format
 msgid "Unable to access directory [%s] in [WX] mode!"
-msgstr "Toegang tot map [%s] is niet mogelijk in [WX] modus!"
+msgstr "Kan geen toegang krijgen tot map [%s] in [WX]-modus!"
 
 #: src/lib/files/config.c:196
 #, c-format
@@ -410,17 +410,17 @@ msgstr "Symbolische link [%s] naar [%s] bestaat nog steeds!"
 #: src/lib/files/symlinks.c:149
 #, c-format
 msgid "File [%s] exists but it needs to be overwritten!"
-msgstr "Bestand [%s] bestaat maar het moet nog overschreven worden!"
+msgstr "Bestand [%s] bestaat maar het moet overschreven worden!"
 
 #: src/lib/files/symlinks.c:190
 #, c-format
 msgid "Skipping [%s] because it is not an authselect file"
-msgstr "[%s] wordt overgeslagen omdat het geen authselect bestand is"
+msgstr "[%s] wordt overgeslagen omdat het geen authselect-bestand is"
 
 #: src/lib/files/system.c:74 src/lib/profiles/read.c:162
 #, c-format
 msgid "Reading file [%s/%s]"
-msgstr "Bestrand [%s/%s] wordt gelzen"
+msgstr "Bestand [%s/%s] wordt gelezen"
 
 #: src/lib/files/system.c:82 src/lib/profiles/read.c:168
 #: src/lib/profiles/read.c:173
@@ -439,7 +439,7 @@ msgstr "Kan reguliere expressie niet complileren: regex error %d"
 #: src/lib/util/template.c:500 src/lib/util/template.c:669
 #, c-format
 msgid "Unable to search string: regex error %d"
-msgstr "Kan string niet zoeken: regex error %d"
+msgstr "Kan tekenreeks niet zoeken: regex error %d"
 
 #: src/lib/files/system.c:272 src/lib/files/system.c:504
 #, c-format
@@ -454,12 +454,12 @@ msgstr "Kan nsswitch.conf [%d] niet genereren: %s"
 #: src/lib/files/system.c:354
 #, c-format
 msgid "Unable to generate files [%d]: %s"
-msgstr "Kan bestanden [%d] niet aanmaken: %s"
+msgstr "Kan bestanden [%d] niet genereren: %s"
 
 #: src/lib/files/system.c:369 src/lib/util/selinux.c:398
 #, c-format
 msgid "Writing temporary file for [%s]"
-msgstr "Naar tijdelijk bestand schrijven voor [%s]"
+msgstr "Tijdelijk bestand voor [%s] wordt geschreven"
 
 #: src/lib/files/system.c:373
 #, c-format
@@ -469,17 +469,17 @@ msgstr "Kan niet naar tijdelijk bestand [%s] [%d] schrijven: %s"
 #: src/lib/files/system.c:378
 #, c-format
 msgid "Temporary file is named [%s]"
-msgstr "Tijdelijk bestand heeft de naam [%s]"
+msgstr "Tijdelijk bestand wordt genoemd [%s]"
 
 #: src/lib/files/system.c:389 src/lib/util/selinux.c:425
 #, c-format
 msgid "Renaming [%s] to [%s]"
-msgstr "Herbenoemen van [%s] naar [%s]"
+msgstr "Hernoemen van [%s] naar [%s]"
 
 #: src/lib/files/system.c:394 src/lib/util/selinux.c:429
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
-msgstr "Kan [%s] niet herbenoemen naar [%s] [%d]: %s"
+msgstr "Kan [%s] niet hernoemen naar [%s] [%d]: %s"
 
 #: src/lib/files/system.c:496
 #, c-format
@@ -518,7 +518,7 @@ msgstr "Kan bestandsmodus van [%s] [%d] niet controleren: %s"
 #: src/lib/files/system.c:553
 #, c-format
 msgid "File [%s] was modified outside authselect!"
-msgstr "Bestand [%s] werd buiten authselect veranderd!"
+msgstr "Bestand [%s] werd buiten authselect om veranderd!"
 
 #: src/lib/files/system.c:572
 #, c-format
@@ -537,17 +537,17 @@ msgstr "Sommige mappen zijn niet toegankelijk voor authselect!"
 #: src/lib/profiles/activate.c:65
 #, c-format
 msgid "Unable to write generated system files [%d]: %s"
-msgstr "Kan gegenereerde systeembestanden [%d] niet schrijven: %s"
+msgstr "Kan gegenereerde systeembestanden [%d] niet wegschrijven: %s"
 
 #: src/lib/profiles/activate.c:72
 #, c-format
 msgid "Unable to write configuration [%d]: %s"
-msgstr "Kan configuratie niet schrijven [%d]: %s"
+msgstr "Kan configuratie niet wegschrijven [%d]: %s"
 
 #: src/lib/profiles/list.c:42
 #, c-format
 msgid "Reading profile directory [%s]"
-msgstr "Profiel map [%s] wordt gelezen"
+msgstr "Profielmap [%s] wordt gelezen"
 
 #: src/lib/profiles/list.c:47
 #, c-format
@@ -562,7 +562,7 @@ msgstr "Profiel [%s] is gevonden"
 #: src/lib/profiles/list.c:151
 #, c-format
 msgid "Unable to list profiles [%d]: %s"
-msgstr "Kan profielen [%d] niet tonen: %s"
+msgstr "Kan de profielen [%d] niet tonen: %s"
 
 #: src/lib/profiles/read.c:83
 #, c-format
@@ -576,7 +576,7 @@ msgstr "Profiel [%s] wordt opgezocht"
 
 #: src/lib/profiles/read.c:110
 msgid "Locations array is NULL"
-msgstr "Locatie array is NULL"
+msgstr "Het array met locaties is NULL"
 
 #: src/lib/profiles/read.c:133
 #, c-format
@@ -617,7 +617,7 @@ msgstr "Kan basisnaam van [%s] niet verkrijgen"
 #: src/lib/util/file.c:199 src/cli/main.c:847
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
-msgstr "Stat [%s] [%d] mislukte: %s"
+msgstr "stat [%s] [%d] mislukte: %s"
 
 #: src/lib/util/dir.c:130
 #, c-format
@@ -676,7 +676,7 @@ msgstr "[%s] heeft de verkeerde groep [%u], verwacht werd [%u]!"
 #: src/lib/util/file.c:164 src/lib/util/file.c:211
 #, c-format
 msgid "Unable to read link destination [%s] [%d]: %s"
-msgstr "Kan link bestemming [%s] [%d] niet lezen: %s"
+msgstr "Kan bestemming [%s] [%d] van link niet lezen: %s"
 
 #: src/lib/util/file.c:170
 #, c-format
@@ -705,27 +705,27 @@ msgstr "Kan chmod niet toepassen op bestand [%s] [%d]: %s"
 #: src/lib/util/file.c:531
 #, c-format
 msgid "Unable to chown file [%s] [%d]: %s"
-msgstr "Chown mislukt voor bestand [%s] [%d]: %s"
+msgstr "chown mislukt voor bestand [%s] [%d]: %s"
 
 #: src/lib/util/selinux.c:46
 #, c-format
 msgid "Unable to create selabel context [%d]: %s"
-msgstr "Kan selabel context [%d] niet aanmaken: %s"
+msgstr "Kan context [%d] voor selabel niet aanmaken: %s"
 
 #: src/lib/util/selinux.c:55
 #, c-format
 msgid "Unable to lookup selinux context [%d]: %s"
-msgstr "Kan selinux context [%d] niet opzoeken: %s"
+msgstr "Kan context [%d] van selinux niet opzoeken: %s"
 
 #: src/lib/util/selinux.c:59
 #, c-format
 msgid "Found default selinux context for [%s]: %s"
-msgstr "Standaard selinux context gevonden voor [%s]: %s"
+msgstr "Standaard selinux-context gevonden voor [%s]: %s"
 
 #: src/lib/util/selinux.c:84
 #, c-format
 msgid "Unable to obtain selinux context for [%s] [%d]: %s"
-msgstr "Kan selinux context niet verkrijgen voor [%s] [%d]: %s"
+msgstr "Kan selinux-context niet verkrijgen voor [%s] [%d]: %s"
 
 #: src/lib/util/selinux.c:91
 msgid "not set"
@@ -734,28 +734,28 @@ msgstr "niet ingesteld"
 #: src/lib/util/selinux.c:90
 #, c-format
 msgid "Found selinux context for [%s]: %s"
-msgstr "selinux context gevonden voor [%s]: %s"
+msgstr "selinux-context gevonden voor [%s]: %s"
 
 #: src/lib/util/selinux.c:115 src/lib/util/selinux.c:183
 #: src/lib/util/selinux.c:251
 msgid "Unable to get current fscreate selinux context!"
-msgstr "Kan huidige fscreate selinux context niet verkrijgen!"
+msgstr "Kan huidige selinux-context van fscreate niet verkrijgen!"
 
 #: src/lib/util/selinux.c:121 src/lib/util/selinux.c:189
 #: src/lib/util/selinux.c:257
 #, c-format
 msgid "Unable to get default selinux context for [%s] [%d]: %s!"
-msgstr "Kan standaard selinux context voor [%s] [%d] niet verkrijgen: %s!"
+msgstr "Kan standaard selinux-context voor [%s] [%d] niet verkrijgen: %s!"
 
 #: src/lib/util/selinux.c:129 src/lib/util/selinux.c:197
 #: src/lib/util/selinux.c:265
 msgid "Unable to set fscreate selinux context!"
-msgstr "Kan fscreate selinux context niet instellen!"
+msgstr "Kan selinux-context van fscreate niet instellen!"
 
 #: src/lib/util/selinux.c:139 src/lib/util/selinux.c:207
 #: src/lib/util/selinux.c:275
 msgid "Unable to restore fscreate selinux context!"
-msgstr "Kan fscreate selinux context niet herstellen!"
+msgstr "Kan selinux-context van fscreate niet herstellen!"
 
 #: src/lib/util/selinux.c:387
 #, c-format
@@ -769,7 +769,7 @@ msgstr ""
 #: src/lib/util/selinux.c:420
 #, c-format
 msgid "Removing [%s]"
-msgstr "[%s] wordt verwijderd"
+msgstr "Verwijderen van [%s]"
 
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:281
@@ -793,16 +793,16 @@ msgstr "Kan template niet genereren [%d]: %s"
 
 #: src/lib/util/template.c:560
 msgid "Unable to get current time!"
-msgstr "Kan huidige tijd niet krijgen!"
+msgstr "Kan huidige tijd niet verkrijgen!"
 
 #: src/lib/util/template.c:574
 msgid "Unable to create message!"
-msgstr "Kaan geen boodschap aanmaken!"
+msgstr "Kaan geen bericht aanmaken!"
 
 #: src/lib/util/template.c:599
 #, c-format
 msgid "Unable to find new match: regex error %d"
-msgstr "Kan nieuwe match niet vinden: regex error %d"
+msgstr "Kan geen nieuwe match vinden: regex error %d"
 
 #: src/lib/util/template.c:729
 #, c-format
@@ -812,7 +812,7 @@ msgstr "Kan tijdelijk bestand voor [%s] [%d] niet aanmaken: %s"
 #: src/lib/util/textfile.c:56
 #, c-format
 msgid "File [%s] is bigger than %uKiB!"
-msgstr "Bestand [%s] is groter dan %uKiB!"
+msgstr "Bestand [%s] is groter dan %u KiB!"
 
 #: src/lib/util/textfile.c:85
 #, c-format
@@ -827,7 +827,7 @@ msgstr "Kan bestand [%s] [%d] niet openen: %s"
 #: src/lib/util/textfile.c:167
 #, c-format
 msgid "Unable to write data [%s] [%d]: %s"
-msgstr "Kan data [%s] [%d] niet schrijven: %s"
+msgstr "Kan de data [%s] [%d] niet wegschrijven: %s"
 
 #: src/cli/cli_tool.c:72
 #, c-format
@@ -836,20 +836,20 @@ msgstr "Algemene opties:\n"
 
 #: src/cli/cli_tool.c:74 src/cli/cli_tool.c:96
 msgid "Print error messages"
-msgstr "Druk foutboodschappen af"
+msgstr "Druk foutmeldingen af"
 
 #: src/cli/cli_tool.c:76 src/cli/cli_tool.c:97
 msgid "Print trace messages"
-msgstr "Druk traceboodschappen af"
+msgstr "Druk meldingen over de loop van het programma af"
 
 #: src/cli/cli_tool.c:78 src/cli/cli_tool.c:98
 msgid "Print warning messages"
-msgstr "Druk waarschuwingsboodschappen af"
+msgstr "Druk waarschuwingen af"
 
 #: src/cli/cli_tool.c:80
 #, c-format
 msgid "Help options:\n"
-msgstr "Hulp opties:\n"
+msgstr "Opties voor hulp:\n"
 
 #: src/cli/cli_tool.c:82
 msgid "Show this for a command"
@@ -857,7 +857,7 @@ msgstr "Toon dit voor een commando"
 
 #: src/cli/cli_tool.c:84
 msgid "Show brief usage message for a command"
-msgstr "Toon korte gebruiksboodschap voor een commando"
+msgstr "Toon beknopte informatie over hoe een commando te gebruiken"
 
 #: src/cli/cli_tool.c:173
 #, c-format
@@ -867,7 +867,7 @@ msgid ""
 "\n"
 msgstr ""
 "Gebruik:\n"
-"%s COMMANDO COMMANDO-ARGS\n"
+"%s commando argumenten\n"
 "\n"
 
 #: src/cli/cli_tool.c:174
@@ -883,7 +883,7 @@ msgstr "\n"
 #: src/cli/cli_tool.c:230
 #, c-format
 msgid "Authselect command '%s' can only be run as root!\n"
-msgstr "Authselect commando '%s' kan alleen als root uitgevoerd worden!\n"
+msgstr "Authselect-commando '%s' kan alleen door root uitgevoerd worden!\n"
 
 #: src/cli/cli_tool.c:247
 msgid "Bug: commands can't be NULL!\n"
@@ -891,7 +891,7 @@ msgstr "Bug: commando's kunnen niet NULL zijn!\n"
 
 #: src/cli/cli_tool.c:310
 msgid "Command options:"
-msgstr "Commando opties:"
+msgstr "Commando-opties:"
 
 #: src/cli/cli_tool.c:312
 msgid "Common options:"
@@ -899,7 +899,7 @@ msgstr "Algemene opties:"
 
 #: src/cli/cli_tool.c:331 src/cli/cli_tool.c:334
 msgid "[OPTIONS...]"
-msgstr "[OPTIES...]"
+msgstr "[OPTIES ...]"
 
 #: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:839
 msgid "Out of memory!"
@@ -929,7 +929,7 @@ msgid ""
 "Only one free argument is expected!\n"
 "\n"
 msgstr ""
-"Er wordt slechts één vrij argument verwacht!\n"
+"Er wordt slechts één vrijstaand argument verwacht!\n"
 "\n"
 
 #: src/cli/cli_tool.c:395
@@ -952,7 +952,7 @@ msgstr ""
 
 #: src/cli/main.c:74 src/cli/main.c:431 src/cli/main.c:474
 msgid "Profile identifier."
-msgstr "Profiel-ID."
+msgstr "Identificatiecode van profiel."
 
 #: src/cli/main.c:77 src/cli/main.c:253 src/cli/main.c:298 src/cli/main.c:347
 #: src/cli/main.c:389 src/cli/main.c:434 src/cli/main.c:477 src/cli/main.c:650
@@ -972,17 +972,18 @@ msgstr "Back-up is opgeslagen in %s\n"
 
 #: src/cli/main.c:159
 msgid "Enforce changes"
-msgstr "Forceer veranderingen"
+msgstr "Forceer wijzigingen"
 
 #: src/cli/main.c:160 src/cli/main.c:246 src/cli/main.c:640 src/cli/main.c:718
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr ""
-"Maak back-up van systeembestanden voordat je het profiel activeert (creëer "
-"een unieke naam)"
+"Maak een back-up van systeembestanden voordat het profiel geactiveerd wordt "
+"en genereer daarvoor een unieke naam"
 
 #: src/cli/main.c:161 src/cli/main.c:247 src/cli/main.c:641 src/cli/main.c:719
 msgid "Backup system files before activating profile"
-msgstr "Maak een backup van systeembestanden voordat profiel geactiveerd wordt"
+msgstr ""
+"Maak een back-up van systeembestanden voordat het profiel geactiveerd wordt"
 
 #: src/cli/main.c:161 src/cli/main.c:247 src/cli/main.c:641 src/cli/main.c:719
 msgid "NAME"
@@ -990,11 +991,11 @@ msgstr "NAAM"
 
 #: src/cli/main.c:162
 msgid "Do not backup system files when --force is set"
-msgstr "Maak geen backup van systeembestandeb als --force ingesteld is"
+msgstr "Maak geen back-up van systeembestanden als --force meegegeven is"
 
 #: src/cli/main.c:163 src/cli/main.c:642
 msgid "Do not print profile requirements"
-msgstr "Print geen profielvereisten"
+msgstr "Druk geen profielvereisten af"
 
 #: src/cli/main.c:174 src/cli/main.c:404 src/cli/main.c:440 src/cli/main.c:483
 #: src/cli/main.c:515 src/cli/main.c:669
@@ -1004,11 +1005,11 @@ msgstr "Kan profielinformatie [%d] niet verkrijgen: %s"
 
 #: src/cli/main.c:182 src/cli/main.c:523 src/cli/main.c:677
 msgid "Unable to read profile requirements!"
-msgstr "Kan profielvereisten niet lezen!"
+msgstr "Kan profielvereisten niet inlezen!"
 
 #: src/cli/main.c:189
 msgid "Unable to obtain nsswitch maps!"
-msgstr "Kan nsswitch mappen niet verkrijgen!"
+msgstr "Kan nsswitch-afbeeldingen niet verkrijgen!"
 
 #: src/cli/main.c:203
 msgid ""
@@ -1017,8 +1018,8 @@ msgid ""
 "Use --force parameter if you want to overwrite these changes.\n"
 msgstr ""
 "\n"
-"Er werden in de configuratie sommige onverwachte veranderingen ontdekt.\n"
-"Gebruik --force parameter als je deze veranderingen wilt overschrijven.\n"
+"Er werden enkele onverwachte wijzigingen in de configuratie ontdekt.\n"
+"Gebruik de parameter --force als u deze wijzigingen wilt overschrijven.\n"
 
 #: src/cli/main.c:208
 #, c-format
@@ -1032,7 +1033,7 @@ msgstr "Profiel \"%s\" werd geselecteerd.\n"
 
 #: src/cli/main.c:216
 msgid "The following nsswitch maps are overwritten by the profile:\n"
-msgstr "De volgende nsswitch kaarten zijn overschreven door het profiel:\n"
+msgstr "De volgende nsswitch-afbeeldingen zijn overschreven door het profiel:\n"
 
 #: src/cli/main.c:219
 #, c-format
@@ -1050,7 +1051,7 @@ msgstr ""
 
 #: src/cli/main.c:265
 msgid "Changes were successfully applied.\n"
-msgstr "De veranderingen werden met succes toegepast.\n"
+msgstr "De wijzigingen werden met succes toegepast.\n"
 
 #: src/cli/main.c:268 src/cli/main.c:304 src/cli/main.c:659
 msgid "No existing configuration detected.\n"
@@ -1061,17 +1062,17 @@ msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
 msgstr ""
-"In de configuratie zijn enkele onverwachte verandering ontdekt. Gebruik in "
-"plaats daarvan het 'select' commando.\n"
+"Enkele onverwachte wijzigingen van de configuratie werden ontdekt. Gebruik "
+"het commando 'select' als alternatief.\n"
 
 #: src/cli/main.c:275
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
-msgstr "Kan veranderingen [%d] niet toepassen: %s\n"
+msgstr "Kan wijzigingen [%d] niet toepassen: %s\n"
 
 #: src/cli/main.c:292
 msgid "Print command parameters instead of formatted output"
-msgstr "Print commandoparameters in plaats van geformatteerde output"
+msgstr "Druk commandoparameters af in plaats van geformatteerde uitvoer"
 
 #: src/cli/main.c:307 src/cli/main.c:662
 #, c-format
@@ -1081,11 +1082,11 @@ msgstr "Kan huidige configuratie [%d] niet verkrijgen: %s"
 #: src/cli/main.c:321
 #, c-format
 msgid "Profile ID: %s\n"
-msgstr "Profiel-ID: %s\n"
+msgstr "Identificatiecode van profiel: %s\n"
 
 #: src/cli/main.c:322
 msgid "Enabled features:"
-msgstr "Aangezette features:"
+msgstr "Aangezette functies:"
 
 #: src/cli/main.c:325
 msgid " None\n"
@@ -1101,8 +1102,8 @@ msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
 msgstr ""
-"Huidige configuratie is niet geldig. Het is waarschijnlijk buiten authselect "
-"veranderd."
+"Huidige configuratie is niet geldig. Zij werd waarschijnlijk buiten "
+"authselect om veranderd."
 
 #: src/cli/main.c:367
 msgid "Current configuration is valid."
@@ -1119,7 +1120,7 @@ msgstr "Kan profiellijst niet verkrijgen!"
 #: src/cli/main.c:448
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
-msgstr "Kan profiel features [%d] niet verkrijgen: %s"
+msgstr "Kan profielfuncties [%d] niet verkrijgen: %s"
 
 #: src/cli/main.c:562
 msgid "Print content of all files"
@@ -1131,31 +1132,31 @@ msgstr "Druk de inhoud van nsswitch.conf af"
 
 #: src/cli/main.c:564
 msgid "Print system-auth content"
-msgstr "Druk inhoud van system-auth af"
+msgstr "Druk de inhoud van system-auth af"
 
 #: src/cli/main.c:565
 msgid "Print password-auth content"
-msgstr "Druk inhoud van password-auth af"
+msgstr "Druk de inhoud van password-auth af"
 
 #: src/cli/main.c:566
 msgid "Print smartcard-auth content"
-msgstr "Druk inhoud van smartcard-auth af"
+msgstr "Druk de inhoud van smartcard-auth af"
 
 #: src/cli/main.c:567
 msgid "Print fingerprint-auth content"
-msgstr "Druk inhoud van fingerprint-auth af"
+msgstr "Druk de inhoud van fingerprint-auth af"
 
 #: src/cli/main.c:568
 msgid "Print postlogin content"
-msgstr "Druk inhoud van postlogin af"
+msgstr "Druk de inhoud van postlogin af"
 
 #: src/cli/main.c:569
 msgid "Print dconf database content"
-msgstr "Druk inhoud van dconf database af"
+msgstr "Druk de inhoud van de dconf-database af"
 
 #: src/cli/main.c:570
 msgid "Print dconf lock content"
-msgstr "Druk inhoud van dconf lock af"
+msgstr "Druk de inhoud van dconf's lock af"
 
 #: src/cli/main.c:597
 #, c-format
@@ -1184,7 +1185,7 @@ msgstr ""
 
 #: src/cli/main.c:647
 msgid "Feature to enable."
-msgstr "Eigenschap die aangezet kan worden."
+msgstr "Functie die aangezet kan worden."
 
 #: src/cli/main.c:684
 #, c-format
@@ -1194,7 +1195,7 @@ msgstr "Kan geen back-up maken van huidige configuratie [%d]: %s\n"
 #: src/cli/main.c:691
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
-msgstr "Kan eigenschap [%d] niet aanzetten: %s\n"
+msgstr "Kan functie [%d] niet aanzetten: %s\n"
 
 #: src/cli/main.c:696
 #, c-format
@@ -1203,23 +1204,24 @@ msgstr "%s\n"
 
 #: src/cli/main.c:724
 msgid "Feature to disable."
-msgstr "Eigenschap die uitgezet kan worden."
+msgstr "Functie die uitgezet kan worden."
 
 #: src/cli/main.c:738
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
-msgstr "Kan eigenschap [%d] niet uitzetten: %s\n"
+msgstr "Kan functie [%d] niet uitzetten: %s\n"
 
 #: src/cli/main.c:759
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr ""
-"Maak nieuw profiel aan als leveranciersprofiel in plaats van aangepast "
-"profiel"
+"Maak nieuw profiel aan als een leveranciersprofiel in plaats van als een "
+"aangepast profiel"
 
 #: src/cli/main.c:760
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr ""
-"ID van een profiel dat gebruikt moet worden als basis voor het nieuwe profiel"
+"Identificatiecode van een profiel dat gebruikt moet worden als basis voor "
+"het nieuwe profiel"
 
 #: src/cli/main.c:761
 msgid ""
@@ -1232,25 +1234,25 @@ msgstr ""
 #: src/cli/main.c:762
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr ""
-"Maak symbolische link naar meta bestanden van het basis profiel in plaats "
-"van ze te kopiëren"
+"Maak symbolische link naar metabestanden van het basisprofiel in plaats van "
+"ze te kopiëren"
 
 #: src/cli/main.c:763
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr ""
-"Maak symbolische link naar nsswitch bestanden van het basis profiel in "
-"plaats van ze te kopiëren"
+"Maak symbolische link naar nsswitch-bestanden van het basisprofiel in plaats "
+"van ze te kopiëren"
 
 #: src/cli/main.c:764
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr ""
-"Maak symbolische link naar pam bestanden van het basis profiel in plaats van "
+"Maak symbolische link naar pam-bestanden van het basisprofiel in plaats van "
 "ze te kopiëren"
 
 #: src/cli/main.c:765
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
-"Maak symbolische link naar dconf bestanden van het basis profiel in plaats "
+"Maak symbolische link naar dconf-bestanden van het basisprofiel in plaats "
 "van ze te kopiëren"
 
 #: src/cli/main.c:766
@@ -1261,7 +1263,7 @@ msgstr ""
 
 #: src/cli/main.c:771
 msgid "New profile name."
-msgstr "Nieuwe profiel naam."
+msgstr "Nieuwe profielnaam."
 
 #: src/cli/main.c:781
 #, c-format
@@ -1275,7 +1277,7 @@ msgstr "Nieuw profiel is aangemaakt in %s\n"
 
 #: src/cli/main.c:808
 msgid "Print backup names without any formatting and additional information"
-msgstr "Print back-up namen zonder formattering en extra informatie"
+msgstr "Druk de namen van back-ups af zonder formattering en extra informatie"
 
 #: src/cli/main.c:820
 msgid "Unable to list available backups!"
@@ -1288,7 +1290,7 @@ msgstr "%-*s (aangemaakt in %s)\n"
 
 #: src/cli/main.c:876
 msgid "Name of the backup to remove."
-msgstr "Naam van te verwijderen back-up."
+msgstr "Naam van de te verwijderen back-up."
 
 #: src/cli/main.c:885
 #, c-format
@@ -1307,7 +1309,7 @@ msgstr "Kan back-up [%s] [%d] niet herstellen: %s\n"
 #: src/cli/main.c:927
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
-msgstr "Kan huidige authselect configuratie [%d] niet verwijderen: %s\n"
+msgstr "Kan huidige authselect-configuratie [%d] niet verwijderen: %s\n"
 
 #: src/cli/main.c:970
 msgid "Select profile"
@@ -1315,7 +1317,7 @@ msgstr "Selecteer profiel"
 
 #: src/cli/main.c:971
 msgid "Regenerate configuration for currently selected command"
-msgstr "Regenereer configuratie voor huidig geselecteerd commanddo"
+msgstr "Regenereer configuratie voor huidig geselecteerd commando"
 
 #: src/cli/main.c:972
 msgid "List available profiles"
@@ -1331,19 +1333,19 @@ msgstr "Laat profielinformatie zien"
 
 #: src/cli/main.c:975
 msgid "Print profile requirements"
-msgstr "Print profielvereisten"
+msgstr "Druk profielvereisten af"
 
 #: src/cli/main.c:976
 msgid "Get identifier of currently selected profile"
-msgstr "Haal identificatie van huidig geselecteerde profiel op"
+msgstr "Haal identificatiecode van huidig geselecteerde profiel op"
 
 #: src/cli/main.c:977
 msgid "Check if the current configuration is valid"
-msgstr "Check of de huidige configuratie geldig is"
+msgstr "Controleer of de huidige configuratie geldig is"
 
 #: src/cli/main.c:978
 msgid "Print changes that would be otherwise written"
-msgstr "Print veranderingen die anders overschreven zouden worden"
+msgstr "Druk wijzigingen af die anders overschreven zouden worden"
 
 #: src/cli/main.c:979
 msgid "Enable feature in currently selected profile"
@@ -1355,7 +1357,7 @@ msgstr "Zet functie uit in het huidig geselecteerde profiel"
 
 #: src/cli/main.c:981
 msgid "Create new authselect profile"
-msgstr "Maak een nieuw authselect profiel aan"
+msgstr "Maak nieuw authselect-profiel aan"
 
 #: src/cli/main.c:982
 msgid "Backup commands:"
@@ -1379,7 +1381,7 @@ msgstr "Verwijder authselectconfiguratie"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
-msgstr "Gebruik NIS standaard voor gebruikersinformatie"
+msgstr "Gebruik standaard NIS voor gebruikersinformatie"
 
 #: src/compat/authcompat_Options.py:83
 msgid "<domain>"
@@ -1387,7 +1389,7 @@ msgstr "<domein>"
 
 #: src/compat/authcompat_Options.py:83
 msgid "default NIS domain"
-msgstr "standaard NIS domein"
+msgstr "standaard NIS-domein"
 
 #: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
 #: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
@@ -1396,19 +1398,19 @@ msgstr "<server>"
 
 #: src/compat/authcompat_Options.py:84
 msgid "default NIS server"
-msgstr "standaard NIS server"
+msgstr "standaard NIS-server"
 
 #: src/compat/authcompat_Options.py:85
 msgid "LDAP for user information by default"
-msgstr "standaard LDAP gebruiken voor gebruikersinformatie"
+msgstr "Gebruik standaard LDAP voor gebruikersinformatie"
 
 #: src/compat/authcompat_Options.py:86
 msgid "LDAP for authentication by default"
-msgstr "standaard LDAP gebruiken voor authenticatie"
+msgstr "Gebruik standaard LDAP voor authenticatie"
 
 #: src/compat/authcompat_Options.py:87
 msgid "default LDAP server hostname or URI"
-msgstr "Standaard LDAP server hostnaam of URI"
+msgstr "standaard LDAP-server-hostnaam of URI"
 
 #: src/compat/authcompat_Options.py:88
 msgid "<dn>"
@@ -1416,31 +1418,33 @@ msgstr "<dn>"
 
 #: src/compat/authcompat_Options.py:88
 msgid "default LDAP base DN"
-msgstr "standaard LDAP base DN"
+msgstr "standaardnaam van het basisdomein van LDAP"
 
 #: src/compat/authcompat_Options.py:89
 msgid "use of TLS with LDAP (RFC-2830)"
-msgstr "gebruik van TLS mer LDAP (RFC-2830)"
+msgstr "gebruik van TLS met LDAP (RFC-2830)"
 
 #: src/compat/authcompat_Options.py:90
 msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
-msgstr "gebruik van TLS voor identiteit opzoeken met LDAP (RFC-2830)"
+msgstr "gebruik van TLS voor het opzoeken van identiteiten met LDAP (RFC-2830)"
 
 #: src/compat/authcompat_Options.py:91
 msgid "use of RFC-2307bis schema for LDAP user information lookups"
-msgstr "gebruik vam RFC-2307bis schema voor LDAP gebruikersinformatie opzoeken"
+msgstr ""
+"gebruik van het 'RFC 2307bis'-schema voor het opzoeken van "
+"gebruikersinformatie met LDAP"
 
 #: src/compat/authcompat_Options.py:92
 msgid "authentication with smart card by default"
-msgstr "standaard authenticatie met smart card gebruiken"
+msgstr "authenticatie met smartcard standaard gebruiken"
 
 #: src/compat/authcompat_Options.py:93
 msgid "<0=Lock|1=Ignore>"
-msgstr "<0=Lock|1=Ignore>"
+msgstr "<0=Vergrendelen|1=Negeren>"
 
 #: src/compat/authcompat_Options.py:93
 msgid "action to be taken on smart card removal"
-msgstr "te ondernemen actie bij verwijderen van smart card"
+msgstr "te ondernemen actie bij verwijderen van smartcard"
 
 #: src/compat/authcompat_Options.py:94
 msgid "require smart card for authentication by default"
@@ -1448,23 +1452,23 @@ msgstr "authenticatie met smartcard standaard vereisen"
 
 #: src/compat/authcompat_Options.py:95
 msgid "authentication with fingerprint readers by default"
-msgstr "standaard authenticatie met vingerprintlezers gebruiken"
+msgstr "authenticatie met vingerprintlezers standaard gebruiken"
 
 #: src/compat/authcompat_Options.py:96
 msgid "automatic per-user ecryptfs"
-msgstr "automatische per-gebruiker ecryptfs"
+msgstr "automatische ecryptfs per gebruiker"
 
 #: src/compat/authcompat_Options.py:97
 msgid "Kerberos authentication by default"
-msgstr "Gebruik standaard Kerberos authenticatie"
+msgstr "Gebruik standaard authenticatie met Kerberos"
 
 #: src/compat/authcompat_Options.py:98
 msgid "default Kerberos KDC"
-msgstr "standaard Kerberos KDC"
+msgstr "standaard KDC van Kerberos"
 
 #: src/compat/authcompat_Options.py:99
 msgid "default Kerberos admin server"
-msgstr "standaard Kerberos admin server"
+msgstr "standaard server voor het beheer van Kerberos"
 
 #: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
 msgid "<realm>"
@@ -1472,7 +1476,7 @@ msgstr "<realm>"
 
 #: src/compat/authcompat_Options.py:100
 msgid "default Kerberos realm"
-msgstr "standaardt Kerberos realm"
+msgstr "standaard realm van Kerberos"
 
 #: src/compat/authcompat_Options.py:101
 msgid "use of DNS to find Kerberos KDCs"
@@ -1492,12 +1496,11 @@ msgstr "standaard winbind gebruiken voor authenticatie"
 
 #: src/compat/authcompat_Options.py:105
 msgid "<Administrator>"
-msgstr "<Administrator>"
+msgstr "<Beheerder>"
 
 #: src/compat/authcompat_Options.py:105
 msgid "join the winbind domain or ads realm now as this administrator"
-msgstr ""
-"wordt als deze beheerder nu lid van het winbind domein of de ads omgeving"
+msgstr "wordt als deze beheerder nu lid van het winbind-domein of de ads-realm"
 
 #: src/compat/authcompat_Options.py:106
 msgid "Kerberos 5 for authenticate with winbind"
@@ -1505,65 +1508,66 @@ msgstr "Kerberos 5 voor authenticatie met winbind"
 
 #: src/compat/authcompat_Options.py:107
 msgid "<workgroup>"
-msgstr "<workgroup>"
+msgstr "<werkgroep>"
 
 #: src/compat/authcompat_Options.py:107
 msgid "workgroup authentication servers are in"
-msgstr "workgroup authenticatie servers bevinden zich in"
+msgstr "werkgroepauthenticatieservers bevinden zich in"
 
 #: src/compat/authcompat_Options.py:108
 msgid ""
 "SSSD for user information by default with manually managed configuration"
 msgstr ""
-"standaard SSSD gebruiken voor gebruikersinformatie met handmatig beheerde "
+"standaard SSSD gebruiken voor gebruikersinformatie, met handmatig beheerde "
 "configuratie"
 
 #: src/compat/authcompat_Options.py:109
 msgid "SSSD for authentication by default with manually managed configuration"
 msgstr ""
-"standard SSSD gebruiken voor authenticatie met handmatig beheerde "
+"standaard SSSD gebruiken voor authenticatie, met handmatig beheerde "
 "configuratie"
 
 #: src/compat/authcompat_Options.py:110
 msgid "caching of user credentials in SSSD by default"
-msgstr "standaard SSSD gebruiken voor opslaan gebruikersgegevens"
+msgstr ""
+"standaard SSSD gebruiken voor opslaan van gebruikerslegitimatie in "
+"cachegeheugen"
 
 #: src/compat/authcompat_Options.py:111
 msgid "check of access.conf during account authorization"
-msgstr "controleren van access.conf tijdens account authorizatie"
+msgstr "controle van access.conf tijdens account-autorisatie"
 
 #: src/compat/authcompat_Options.py:112
 msgid "creation of home directories for users on their first login"
 msgstr ""
-"aanmaken van persoonlijke mappen voor gebruikers tijden hun eerste inlog"
+"aanmaken van persoonlijke mappen voor gebruikers bij hun eerste aanmelding"
 
 #: src/compat/authcompat_Options.py:113
 msgid "account locking in case of too many consecutive authentication failures"
 msgstr ""
-"account afsluiten als te veel opeenvolgende authenticatie mislukkingen "
-"optreden"
+"account blokkeren indien te veel authenticatiefouten achter elkaar optreden"
 
 #: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
 #: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
 msgid "<number>"
-msgstr "<number>"
+msgstr "<aantal>"
 
 #: src/compat/authcompat_Options.py:114
 msgid "minimum length of a password"
-msgstr "minimum lengte van een wachtwoord"
+msgstr "minimale lengte van een wachtwoord"
 
 #: src/compat/authcompat_Options.py:115
 msgid "minimum number of character classes in a password"
-msgstr "minimum aantal tekenklassen in een wachrwoord"
+msgstr "minimaal aantal tekenklassen in een wachtwoord"
 
 #: src/compat/authcompat_Options.py:116
 msgid "maximum number of same consecutive characters in a password"
-msgstr "maximum aantal dezelfde opeenvolgende tekens in een wachtwoord"
+msgstr "maximale aantal van gelijke opeenvolgende tekens in een wachtwoord"
 
 #: src/compat/authcompat_Options.py:117
 msgid "maximum number of consecutive characters of same class in a password"
 msgstr ""
-"maximum aantal opeenvolgende tekens van dezelfde klasse in een wachtwoord"
+"maximale aantal van opeenvolgende tekens van dezelfde soort in een wachtwoord"
 
 #: src/compat/authcompat_Options.py:118
 msgid "require at least one lowercase character in a password"
@@ -1583,7 +1587,7 @@ msgstr "vereis tenminste één ander karakter in een wachtwoord"
 
 #: src/compat/authcompat_Options.py:124
 msgid "do not start/stop services"
-msgstr "start/stop geen services"
+msgstr "start of stop geen diensten"
 
 #: src/compat/authcompat_Options.py:125
 msgid "update all configuration files"
@@ -1595,7 +1599,7 @@ msgstr "hetzelfde als --updateall"
 
 #: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
 msgid "<name>"
-msgstr "<name>"
+msgstr "<naam>"
 
 #: src/compat/authcompat_Options.py:148
 msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
@@ -1611,7 +1615,7 @@ msgstr "<module>"
 
 #: src/compat/authcompat_Options.py:151
 msgid "<user|server|domain|ads>"
-msgstr "<user|server|domain|ads>"
+msgstr "<gebruiker|server|domein|ads>"
 
 #: src/compat/authcompat_Options.py:153
 msgid "<servers>"
@@ -1620,7 +1624,7 @@ msgstr "<servers>"
 #: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
 #: src/compat/authcompat_Options.py:156
 msgid "<lowest-highest>"
-msgstr "<lowest-highest>"
+msgstr "<laagste-hoogste>"
 
 #: src/compat/authcompat_Options.py:157
 msgid "<\\>"
@@ -1636,7 +1640,7 @@ msgstr "</bin/false>"
 
 #: src/compat/authcompat_Options.py:166
 msgid "<options>"
-msgstr "<options>"
+msgstr "<opties>"
 
 #: src/compat/authcompat_Options.py:210
 msgid "These options have a compatibility layer"
@@ -1662,7 +1666,7 @@ msgstr "%s wordt uitgevoerd"
 #: src/compat/authcompat.py.in.in:71
 #, python-format
 msgid "Service %s was not found. Please install the service."
-msgstr "Service %s werd niet gevonden. Installeer deze service."
+msgstr "Dienst %s werd niet gevonden. Gelieve de dienst te installeren."
 
 #: src/compat/authcompat.py.in.in:74 src/compat/authcompat.py.in.in:631
 #: src/compat/authcompat.py.in.in:657
@@ -1678,11 +1682,11 @@ msgstr "Verwijderen van bestand: %s"
 #: src/compat/authcompat.py.in.in:335
 #, python-format
 msgid "%s was not found. Please, install realmd."
-msgstr "%s werd niet gevonden. Installeer realmd."
+msgstr "%s werd niet gevonden. Gelieve realmd te installeren."
 
 #: src/compat/authcompat.py.in.in:469
 msgid "Running authconfig compatibility tool."
-msgstr "Het uitvoeren van authconfig compatibiliteitsgereedschap."
+msgstr "Het compatibiliteitsgereedschap authconfig wordt uitgevoerd."
 
 #: src/compat/authcompat.py.in.in:470
 msgid ""
@@ -1690,15 +1694,15 @@ msgid ""
 "with authselect and minimum configuration. It does not provide all "
 "capabilities of authconfig.\n"
 msgstr ""
-"Het doel van dit gereedschap is het mogelijk maken van authenticatie tegen "
-"gekozen services met authselect en minimale configuratie. Het biedt niet "
-"alle mogelijkheden van authconfig.\n"
+"Het doel van dit gereedschap is het mogelijk maken van authenticatie "
+"tegenover gekozen diensten met authselect en met minimale configuratie. Het "
+"biedt niet alle mogelijkheden van authconfig.\n"
 
 #: src/compat/authcompat.py.in.in:473
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
 msgstr ""
-"BELANGRIJK: authconfig is vervangen door by authselect, update je scripts."
+"BELANGRIJK: authconfig is vervangen door authselect. Pas uw scripts aan."
 
 #: src/compat/authcompat.py.in.in:475
 msgid ""
@@ -1712,8 +1716,8 @@ msgstr ""
 msgid ""
 "See man authselect-migration(7) to help you with migration to authselect"
 msgstr ""
-"Bekijk man authselect-migration(7) om je te helpen met de migratie naar "
-"authselect"
+"Type 'man authselect-migration(7)' op de commandoregel voor hulp met de "
+"overgang naar authselect"
 
 #: src/compat/authcompat.py.in.in:480
 msgid "Warning: These options are not supported anymore and have no effect:"
@@ -1722,7 +1726,7 @@ msgstr ""
 
 #: src/compat/authcompat.py.in.in:500
 msgid "authconfig can only be run as root"
-msgstr "authconfig kan alleen als root worden uitgevoerd"
+msgstr "authconfig kan alleen door root worden uitgevoerd"
 
 #: src/compat/authcompat.py.in.in:505
 #, python-format
@@ -1740,4 +1744,4 @@ msgstr ""
 
 #: src/compat/authcompat.py.in.in:520
 msgid "Error: Please, provide --updateall option."
-msgstr "Fout: Bied de --updateall optie aan."
+msgstr "Fout: Gelieve de optie --updateall mee te geven."
