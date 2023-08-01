@@ -3,13 +3,14 @@
 # Balázs Meskó <meskobalazs@gmail.com>, 2020.
 # Bendegúz Gyönki <gyonkibendeguz@gmail.com>, 2020, 2021.
 # Balázs Meskó <meskobalazs@mailbox.org>, 2020, 2021.
+# Dankaházi (ifj.) István <dankahazi.istvan@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
 "POT-Creation-Date: 2022-12-01 13:40+0100\n"
-"PO-Revision-Date: 2022-05-04 11:57+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2023-05-12 16:21+0000\n"
+"Last-Translator: Dankaházi (ifj.) István <dankahazi.istvan@gmail.com>\n"
 "Language-Team: Hungarian <https://translate.fedoraproject.org/projects/"
 "authselect/1-2-x-application/hu/>\n"
 "Language: hu\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.12.1\n"
+"X-Generator: Weblate 4.15.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:187
 msgid "Unable to obtain supported features"
@@ -45,7 +46,7 @@ msgstr "[%s] profil nem található [%d]: %s"
 
 #: src/lib/authselect.c:101
 msgid "Enforcing activation!"
-msgstr "Aktiválás kényszerítése."
+msgstr "Aktiválás kényszerítése!"
 
 #: src/lib/authselect.c:109
 #, c-format
@@ -387,7 +388,7 @@ msgstr "A(z) [%s] link érvényesítése sikertelen [%d]: %s"
 #: src/lib/files/symlinks.c:90
 #, c-format
 msgid "[%s] was not created by authselect!"
-msgstr "A(z) [%s] linket nem az authselect hozta létre."
+msgstr "[%s] nem az authselect hozta létre!"
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
 #: src/lib/files/system.c:576
@@ -403,12 +404,12 @@ msgstr "A(z) [%s] fájl nem ellenőrizhető [%d]: %s"
 #: src/lib/files/symlinks.c:128
 #, c-format
 msgid "Symbolic link [%s] to [%s] still exists!"
-msgstr "A(z) [%s] -> [%s] szimbolikus link még mindig létezik."
+msgstr "A(z) [%s] -> [%s] szimbolikus link még mindig létezik!"
 
 #: src/lib/files/symlinks.c:149
 #, c-format
 msgid "File [%s] exists but it needs to be overwritten!"
-msgstr "A(z) [%s] fájl létezik, de felül kell írni."
+msgstr "A(z) [%s] fájl létezik, de felül kell írni!"
 
 #: src/lib/files/symlinks.c:190
 #, c-format
@@ -738,24 +739,24 @@ msgstr "A(z) [%s] selinux környezete megtalálva: %s"
 #: src/lib/util/selinux.c:115 src/lib/util/selinux.c:183
 #: src/lib/util/selinux.c:251
 msgid "Unable to get current fscreate selinux context!"
-msgstr "A jelenlegi fscreate selinux környezet nem kérhető le."
+msgstr "A jelenlegi fscreate selinux környezet nem kérhető le!"
 
 #: src/lib/util/selinux.c:121 src/lib/util/selinux.c:189
 #: src/lib/util/selinux.c:257
 #, c-format
 msgid "Unable to get default selinux context for [%s] [%d]: %s!"
 msgstr ""
-"A(z) [%s] alapértelmezett selinux környezete nem kereshető meg [%d]: %s."
+"A(z) [%s] alapértelmezett selinux környezete nem kereshető meg [%d]: %s!"
 
 #: src/lib/util/selinux.c:129 src/lib/util/selinux.c:197
 #: src/lib/util/selinux.c:265
 msgid "Unable to set fscreate selinux context!"
-msgstr "Az fscreate selinux környezet nem adható meg."
+msgstr "Az fscreate selinux környezet nem adható meg!"
 
 #: src/lib/util/selinux.c:139 src/lib/util/selinux.c:207
 #: src/lib/util/selinux.c:275
 msgid "Unable to restore fscreate selinux context!"
-msgstr "Az fscreate selinux környezet nem állítható helyre."
+msgstr "Az fscreate selinux környezet nem állítható helyre!"
 
 #: src/lib/util/selinux.c:387
 #, c-format
@@ -1004,11 +1005,11 @@ msgstr "A profilinformációk nem kérhetőek le [%d]: %s"
 
 #: src/cli/main.c:182 src/cli/main.c:523 src/cli/main.c:677
 msgid "Unable to read profile requirements!"
-msgstr "A profilkövetelmények nem olvashatók."
+msgstr "A profilkövetelmények nem olvashatók!"
 
 #: src/cli/main.c:189
 msgid "Unable to obtain nsswitch maps!"
-msgstr "Az nsswitch leképezések nem szerezhetőek meg."
+msgstr "Az nsswitch leképezések nem szerezhetőek meg!"
 
 #: src/cli/main.c:203
 msgid ""
@@ -1272,7 +1273,7 @@ msgstr ""
 
 #: src/cli/main.c:820
 msgid "Unable to list available backups!"
-msgstr "Az elérhető biztonsági mentések listázása sikertelen."
+msgstr "Az elérhető biztonsági mentések listázása sikertelen!"
 
 #: src/cli/main.c:857
 #, c-format
@@ -1503,7 +1504,7 @@ msgstr "<munkacsoport>"
 
 #: src/compat/authcompat_Options.py:107
 msgid "workgroup authentication servers are in"
-msgstr "munkacsoport-hitelesítési kiszolgálók a következőben:"
+msgstr "munkacsoport-hitelesítési kiszolgálók a következőben"
 
 #: src/compat/authcompat_Options.py:108
 msgid ""

@@ -1,17 +1,19 @@
 # Geert Warrink <geert.warrink@onsnet.nu>, 2018. #zanata
+# Maarten <maarten@posteo.de>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-05-04 13:50+0200\n"
-"PO-Revision-Date: 2018-10-03 06:27+0000\n"
-"Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
-"Language-Team: Dutch\n"
+"PO-Revision-Date: 2023-04-09 19:20+0000\n"
+"Last-Translator: Maarten <maarten@posteo.de>\n"
+"Language-Team: Dutch <https://translate.fedoraproject.org/projects/"
+"authselect/12x-authselect-migration7adoc/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.15.2\n"
 
 #. type: Title =
 #: src/man/authselect-migration.7.adoc:2
@@ -47,10 +49,10 @@ msgid ""
 "authselect which replaces it. It also explains what actions need to be done "
 "in order to migrate from authconfig to authselect."
 msgstr ""
-"Deze handboekpagina legt de belangrijkste verschillen uit tussen authconfig, "
-"het vorige gereedschap voor het configureren van systeem authenticatie en "
-"identiteit en identiteit bronnen, en authselect welke deze vervangt. Het "
-"legt ook uit welke acties genomen moeten worden voor het migreren van "
+"Deze handleidingspagina legt de belangrijkste verschillen uit tussen "
+"authconfig, het vorige gereedschap voor het configureren van "
+"systeemauthenticatie en identiteitsbronnen, en authselect die het vervangt. "
+"Het legt ook uit welke stappen moeten worden gezet voor het migreren van "
 "authconfig naar authselect."
 
 #. type: Title -
@@ -65,8 +67,8 @@ msgid ""
 "Authselect takes a completely different approach to system configuration "
 "than the previous tool authconfig."
 msgstr ""
-"Authselect heeft een totaal verschillende aanpak voor systeemconfiguratie "
-"dan het vorige gereedschap authconfig."
+"Authselect heeft een geheel andere benadering van systeemconfiguratie dan "
+"het vorige gereedschap authconfig."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:25
@@ -76,11 +78,11 @@ msgid ""
 "(to setup authentication modules and identity sources) but it also generates "
 "simple configuration files for several services such as LDAP and Kerberos."
 msgstr ""
-"Authconfig doet zijn best om de handmatige veranderingen van de gebruiker te "
-"behouden in de bestanden die het aanmaakt. Het maakt niet alleen PAM "
+"Authconfig doet zijn best om de handmatige wijzigingen van de gebruiker te "
+"behouden in de bestanden die het aanmaakt. Het maakt niet alleen PAM-"
 "configuratiebestanden en nsswitch.conf aan (voor het instellen van "
-"authenticatiemodules en identiteit bronnen) maar het genereert ook "
-"eenvoudige configuratiebestanden voor verschillende services zoals LDAP en "
+"authenticatiemodules en identiteitsbronnen) maar het genereert ook "
+"eenvoudige configuratiebestanden voor verscheidene diensten zoals LDAP en "
 "Kerberos."
 
 #. type: Plain text
@@ -95,16 +97,16 @@ msgid ""
 "administrator has an option to create a whole new profile and use it with "
 "authselect.  See authselect-profiles(5) to learn more about profiles."
 msgstr ""
-"Authselect doet dat niet. Het maakt naast PAM en nsswitch.conf geen andere "
-"configuratiebestanden aan en het  verbiedt strikt alle handmatige "
-"veranderingen in de gegenereerde configuratie. Het biedt een set bestanden "
-"die profielen genoemd worden. Elk profiel beschrijft hoe de resulterende "
-"configuratie er uit moet zien en het kam enigszins aangepast worden met het "
-"aan of uitzetten van bepaald optionele features. Als er een behoeft ontstaat "
-"voor een ander profiel dan de door authselect meegeleverde, dan heeft de "
-"beheerder een optie voor het aanmaken van een geheel nieuw profiel en dat "
-"met authselect te gebruiken.  Zie authselect-profiles(5) meer te weten te "
-"komen over profielen."
+"Authselect doet dat allemaal niet. Het maakt naast PAM en nsswitch.conf geen "
+"andere configuratiebestanden aan en het belet elke handmatige verandering "
+"van de gegenereerde configuratie. Het levert een verzameling bestanden die "
+"profielen genoemd worden. Elk profiel beschrijft hoe de uiteindelijke "
+"configuratie er uit moet zien en elk profiel kan enigszins aangepast worden "
+"met het aan- of uitzetten van bepaalde functies. Als de behoefte ontstaat "
+"voor een ander profiel dan wat authselect meelevert, dan heeft de beheerder "
+"de mogelijkheid tot het aanmaken van een geheel nieuw profiel om dat met "
+"authselect te gebruiken. Zie authselect-profiles(5) voor meer informatie "
+"over de profielen."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:46
@@ -121,19 +123,19 @@ msgid ""
 "configuration that can be fully tested and is much less error prone. It is "
 "also much easier to distribute such configuration across many systems."
 msgstr ""
-"Dit lijkt misschien een groot nadeel, maar de waarheid is tegenovergesteld.\n"
-"Authconfig is een heel oud gereedschap en de toepassingen die vereiste "
-"services aanbieden zijn door de jaren heen snel veranderd. Het is "
-"bijvoorbeeld niet meer nodig om meerdere authenticatie modules te hebben in "
-"PAM en nsswitch.conf, omdat de overgrote meerderheid van use-cases afgedekt "
-"wordt door SSSD. Het is daarom niet meer nodig ze specifiek toe te voegen of "
-"te verwijderen. Er zijn ook betere gereedschappen voor het genereren van "
-"configuratie voor systeem daemons die je kunnen helpen met het automatiseren "
-"van het proces voor toetreden naar een domein op afstand zoals `realm`. "
-"Bovendien bieden de meegeleverde profielen ons uitgebreide en "
-"deterministische systeemconfiguratie die volledig getest kan zijn en veel "
-"minder foutgevoelig is. Het kan ook veel eenvoudiger om zulke configuratie "
-"te distribueren over vele systemen."
+"Dit lijkt misschien een groot nadeel maar het tegengestelde is waar. "
+"Authconfig is een zeer oud gereedschap en de programma's die de benodigde "
+"diensten aanbieden zijn met de jaren snel veranderd. Het is doorgaans niet "
+"meer nodig om meerdere authenticatiemodules te hebben in PAM en "
+"nsswitch.conf, omdat in de overgrote meerderheid van de gebruiksgevallen "
+"voorzien wordt door SSSD. Derhalve is het niet nodig ze specifiek toe te "
+"voegen of te verwijderen. Ook zijn er betere programma's om de configuratie "
+"van systeemachtergrondprocessen te genereren die u kunnen helpen met het "
+"automatiseren van de procedure van toetreden naar een ander domein zoals "
+"'realm'. Tevens geven de meegeleverde profielen ons een complete en concrete "
+"systeemconfiguratie die volledig getest kan zijn en veel minder foutgevoelig "
+"is. Het is ook veel gemakkelijker een dergelijke configuratie te "
+"distribueren over vele systemen."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:52
@@ -146,17 +148,17 @@ msgid ""
 "to sssd."
 msgstr ""
 "De meest controversiële verandering is waarschijnlijk dat authselect alleen "
-"profielen mee levert voor sssd en winbind aanbieders. Deze twee aanbieders "
-"omvatten alle use cases van het aanbieden van lokale gebruikers en legacy "
-"LDAP domein tot complexe configuraties met IPA of Active Directory servers. "
-"Deze profielen bevatten geen ondersteuning meer voor nss-pam-ldapd en "
-"gebruikers worden aangemoedigd om over te gaan naar sssd."
+"profielen meelevert voor sssd- en winbind-aanbieders. Deze twee aanbieders "
+"ondersteunen alle moderne gebruiksgevallen, van het aanbieden van lokale "
+"gebruikers en het verouderde LDAP-domein tot complexe configuraties met IPA- "
+"of Active Directory-servers. Deze profielen ondersteunen geen nss-pam-ldapd "
+"meer en gebruikers worden aangemoedigd om over te gaan op sssd."
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:54
 #, no-wrap
 msgid "JOINING REMOTE DOMAINS"
-msgstr "VERBINDEN MET DOMEINEN OP AFSTAND"
+msgstr "VERBINDEN MET AFGELEGEN DOMEINEN"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:59
@@ -166,17 +168,17 @@ msgid ""
 "the correct authselect profile is selected and all daemons and services are "
 "properly configured."
 msgstr ""
-"Je kunt `ipa-client-install` of `realm` gebruiken om te verbinden met een "
-"IPA domein en `realm` om te verbinden met een Active Directory domein. Deze "
-"gereedschappen zorgen ervoor dat het correcte authselect profiel "
-"geselecteerd wordt en dat alle daemons en services juist geconfigureerd "
-"worden."
+"U kunt 'ipa-client-install' of 'realm' gebruiken om te verbinden met een IPA-"
+"domein en 'realm' om te verbinden met een Active Directory-domein. Deze "
+"gereedschappen zorgen ervoor dat het correcte authselect-profiel "
+"geselecteerd wordt en dat alle achtergrondprocessen en diensten juist "
+"geconfigureerd worden."
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:61
 #, no-wrap
 msgid "CONVERTING YOUR SCRIPTS"
-msgstr "JE SCRIPTS CONVERTEREN"
+msgstr "UW SCRIPTS CONVERTEREN"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:67
@@ -187,18 +189,18 @@ msgid ""
 "select a correct profile with desired features. Then you also need to write "
 "configuration file for required services."
 msgstr ""
-"Je kun `ipa-client-install` of `realm` gebruiken om te verbinden met een "
-"domein, je kunt gewoon alle authconfig aanroepen in je scripts verwijderen. "
-"Als dit geen optie is, moet je elke authconfig aanroep vervangen met de "
-"equivalente authselect aanroep om een correct profiel met de gewenste "
-"features te selecteren. Dan moet je ook configuratie schrijven voor de "
-"vereiste services."
+"Als u 'ipa-client-install' of 'realm' gebruikt om te verbinden met een "
+"domein, kunt u gewoon elke authconfig-aanroep in uw scripts verwijderen. Als "
+"dit niet mogelijk is, moet u elke authconfig-aanroep vervangen door zijn "
+"gelijkwaardige authselect-aanroep om een correct profiel met de gewenste "
+"functies te selecteren. Dan moet u ook een configuratie-bestand schrijven "
+"voor de benodigde diensten."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:68
 #, no-wrap
 msgid "Relation of authconfig options to authselect profiles"
-msgstr "Relatie van authconfig opties met authselect profielen"
+msgstr "Relatie van authconfig-opties met authselect-profielen"
 
 #. type: Table
 #: src/man/authselect-migration.7.adoc:76
@@ -211,7 +213,7 @@ msgid ""
 "|--enablewinbind --enablewinbindauth |winbind\n"
 "|--enablenis                         |nis\n"
 msgstr ""
-"|*Authconfig options*                |*Authselect profile*\n"
+"|*Authconfig optie*                |*Authselect profiel*\n"
 "|--enableldap --enableldapauth       |sssd\n"
 "|--enablesssd --enablesssdauth       |sssd\n"
 "|--enablekrb5                        |sssd\n"
@@ -222,11 +224,11 @@ msgstr ""
 #: src/man/authselect-migration.7.adoc:78
 #, no-wrap
 msgid "Relation of authconfig options to authselect profile features"
-msgstr "Relatie van authconfig opties met authselect profiel features"
+msgstr "Relatie van authconfig-opties met profiel-functies van authselect"
 
 #. type: Table
 #: src/man/authselect-migration.7.adoc:90
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "|*Authconfig options* |*Authselect profile feature*\n"
 "|--enablesmartcard    |with-smartcard\n"
@@ -239,14 +241,16 @@ msgid ""
 "|--enableshadow       |_none_\n"
 "|--passalgo           |_none_\n"
 msgstr ""
-"|*Authconfig opies* |*Authselect profiel feature*\n"
-"|--enablesmartcard    |with-smartcard\n"
-"|--enablefingerprint  |with-fingerprint\n"
-"|--enableecryptfs     |with-ecryptfs\n"
-"|--enablemkhomedir    |with-mkhomedir\n"
-"|--enablefaillock     |with-faillock\n"
-"|--enablepamaccess    |with-pamaccess\n"
-"|--enablewinbindkrb5  |with-krb5\n"
+"|*Authconfig optie* |*Authselect profielfunctie*\n"
+"|--enablesmartcard    |met smartcard\n"
+"|--enablefingerprint  |met vingerafdruk\n"
+"|--enableecryptfs     |met ecryptfs\n"
+"|--enablemkhomedir    |met mkhomedir\n"
+"|--enablefaillock     |met faillock\n"
+"|--enablepamaccess    |met pamaccess\n"
+"|--enablewinbindkrb5  |met krb5\n"
+"|--enableshadow       |_none_\n"
+"|--passalgo           |_none_\n"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:97
@@ -257,6 +261,12 @@ msgid ""
 "it cannot be changed through an option (only by creating a custom profile).  "
 "You can just omit these options."
 msgstr ""
+"De authconfig-opties '--enableshadow' and '--passalgo=sha512' werden vaak "
+"gebruikt om te verzekeren dat wachtwoorden worden opgeslagen in /etc/shadow "
+"met gebruik van het sha512-algoritme. *De authselect-profielen gebruiken "
+"thans hashing met yescrypt.* Dit kan niet met een optie worden gewijzigd, "
+"maar alleen door een eigen profiel aan te maken. U kunt de voornoemde opties "
+"gewoon weglaten."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:98
@@ -301,8 +311,9 @@ msgid ""
 "authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator --updateall\n"
 "realm join -U Administrator --client-software=winbind WINBINDDOMAIN\n"
 msgstr ""
-"authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator --updateall\n"
-"realm join -U Administrator --client-software=winbind WINBINDDOMAIN\n"
+"authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator --"
+"updateall\n"
+"realm join -U Administrator --client-software=winbind WINBIND-DOMEIN\n"
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:114
@@ -331,10 +342,10 @@ msgid ""
 "still useful to configure ldap.conf to configure openldap-libs and "
 "indirectly, e.g. LDAP tools such as `ldapsearch`."
 msgstr ""
-"Zelfs als LDAP niet rechtstreeks gebruikt wordt door `pam_ldap` en "
-"`nss_ldap`, dan is het nog steeds nuttig om ldap.conf te configureren voor "
-"het indirect configureren van openldap-libs, bijv. LDAP gereedschapen zoals "
-"`ldapsearch`."
+"ldap.conf hoeft niet te worden geconfigureerd voor systeemidentiteit en "
+"authenticatiebronnen wanneer het sssd-profiel wordt gebruikt. ldap.conf zou "
+"echter moeten worden geconfigureerd wanneer LDAP-gereedschappen zoals "
+"ldapsearch worden geïnstalleerd met het pakket openldap-clients."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:123
@@ -359,7 +370,7 @@ msgid ""
 "# Set the default LDAP server\n"
 "URI    ldap://ldap.example.com ldap://ldap-master.example.com:666\n"
 msgstr ""
-"# Instellen van de standaard LDAP server\n"
+"# Instellen van de standaard LDAP-server\n"
 "URI    ldap://ldap.example.com ldap://ldap-master.example.com:666\n"
 
 #. type: Title ~
@@ -375,9 +386,9 @@ msgid ""
 "order for krb5-libs and therefore tools such as `kinit` to work out of the "
 "box."
 msgstr ""
-"Als je Kerberos gebruikt, moet de standaard Kerberos realm geconfigureerd "
-"worden om krb5-libs en daarom ook gereedschappen zoals `kinit` zonder meer "
-"te laten werken."
+"Als u Kerberos gebruikt, dan moet de standaard Kerberos-realm geconfigureerd "
+"worden. Opdat krb5-libs en daarmee ook gereedschappen zoals 'kinit' meteen "
+"werken."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:137
@@ -436,10 +447,10 @@ msgid ""
 "that creates one LDAP domain called `default`. The LDAP server is auto-"
 "discovered through DNS lookups."
 msgstr ""
-"Authselect moedigt gebruikers aan om wanneer mogelijk SSSD te gebruiken. Er "
-"zijn veel configuratie opties, zie sssd.conf(5). Dit is een minimale "
-"configuratie die een LDAP domein met de naam `default` aanmaakt. De LDAP "
-"server wordt automatisch gevonden met DNS opzoeken."
+"Authselect moedigt gebruikers aan om waar mogelijk SSSD te gebruiken. Er "
+"zijn veel configuratie-opties, zie sssd.conf(5). Dit is een minimale "
+"configuratie die een LDAP-domein met de naam 'default' aanmaakt. De LDAP-"
+"server wordt automatisch gevonden met DNS-verzoeken."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:159
@@ -482,9 +493,9 @@ msgid ""
 "authentication is done over Kerberos. The KDC server is auto-discovered "
 "through DNS lookups."
 msgstr ""
-"En hier volgt een configuratie fragment voor hetzelfde domein maar nu wordt "
-"de authenticatie uitgevoerd door Kerberos. De KDC server  wordt automatisch "
-"gevonden met DNS opzoeken."
+"En hier volgt een configuratiefragment voor hetzelfde domein maar nu wordt "
+"de authenticatie uitgevoerd met Kerberos. De KDC-server wordt automatisch "
+"gevonden via DNS-verzoeken."
 
 #. type: delimited block -
 #: src/man/authselect-migration.7.adoc:188
@@ -514,11 +525,11 @@ msgid ""
 "Kerberos keytab and generating basic SSSD configuration. You can then tune "
 "it up by modifying {sysconfdir}/sssd/sssd.conf."
 msgstr ""
-"Als je SSSD wilt configureren voor een IPA of Active Directory domein, dan "
-"gebruik je het `realm` gereedschap. Deze zal een initiële instelling "
-"uitvoeren wat het aanmaken van een Kerberos keytab en aanmaken van basis "
-"SSSD configuratie met zich meebrengt. Je kunt het daarna bijstellen door het "
-"veranderen van {sysconfdir}/sssd/sssd.conf."
+"Als u SSSD wilt configureren voor een IPA- of Active Directory-domein, "
+"gebruik dan het realm-gereedschap. Dit zal een initiële configuratie "
+"uitvoeren, wat inhoudt het aanmaken van een Kerberos sleuteltab en het "
+"genereren van een basale SSSD-configuratie. U kunt het daarna optimaliseren "
+"door {sysconfdir}/sssd/sssd.conf te modificeren."
 
 #. type: Title ~
 #: src/man/authselect-migration.7.adoc:196
@@ -534,11 +545,11 @@ msgid ""
 "running `adcli` to join the domain. It also makes changes to `smb.conf`. You "
 "can then tune it up by modifying {sysconfdir}/samba/smb.conf."
 msgstr ""
-"Als je de machine wilt configureren om Winbind te gebruiken, dan gebruik je "
-"`realm`. Deze zal een initiële instelling uitvoeren wat het aanmaken van een "
-"Kerberos keytab en het uitvoeren van `adcli` om toe te treden tot het domein "
-"met zich meebrengt. Het brengt ook veraderingen aan in `smb.conf`. Je kunt "
-"dit daarna bijstellen met het veranderen van {sysconfdir}/samba/smb.conf."
+"Als u de machine wilt configureren om Winbind te gebruiken, gebruik dan "
+"'realm'. Deze zal een initiële configuratie uitvoeren, wat inhoudt het "
+"aanmaken van een Kerberos sleuteltab en het uitvoeren van 'adcli' om toe te "
+"treden tot het domein. Het wijzigt ook 'smb.conf'. U kunt het daarna "
+"optimaliseren door {sysconfdir}/samba/smb.conf te modificeren."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:203
@@ -554,9 +565,9 @@ msgid ""
 "authentication work. First, you need to set NIS domain and optionally also "
 "NIS server in {sysconfdir}/yp.conf."
 msgstr ""
-"Er zijn meerdere plaatsen die geconfigureerd moeten worden om NIS "
-"authenticatie te laten werken. Eerst moet je een NIS domein en optioneel ook "
-"een NIS server instellen in {sysconfdir}/yp.conf."
+"Er zijn enkele zaken die geconfigureerd moeten worden om NIS-authenticatie "
+"te laten werken. U moet namelijk een NIS-domein en desgewenst ook een NIS-"
+"server instellen in {sysconfdir}/yp.conf."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:208
@@ -579,7 +590,7 @@ msgstr ""
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:216
 msgid "NIS domain must be also set in system network configuration."
-msgstr "NIS domein moet ook ingesteld worden in de systeemnetwerkconfiguratie."
+msgstr "NIS-domein moet ook ingesteld worden in de systeemnetwerkconfiguratie."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:217
@@ -600,9 +611,9 @@ msgid ""
 "reboot your system. Additionaly, it may be necessary to enable NIS in "
 "selinux."
 msgstr ""
-"Nu kun je de domeinnaam instellen op de commandoregel dus is het niet nodig "
-"om je steem opnieuw op te starten. Daarnaast kan het nodig zijn om NIS in "
-"selinux aan te zetten."
+"Welnu, u kunt de domeinnaam instellen op de commandoregel dus is het niet "
+"nodig uw systeem te herstarten. Tevens kan het nodig zijn om NIS in selinux "
+"aan te zetten."
 
 #. type: delimited block -
 #: src/man/authselect-migration.7.adoc:228
@@ -628,10 +639,10 @@ msgid ""
 "should use the password policy that is enforced by the respective remote "
 "server."
 msgstr ""
-"Authselect zet de `pam_pwquality` module aan om wachtwoord "
-"kwaliteitsrestricties te forceren. Deze module wordt alleen voor lokale "
-"gebruikers aangezet. Gebruikers op afstand moeten de wachtwoordbeleid "
-"gebruiken dat geldt op de respectivele server op afstand."
+"Authselect zet de module 'pam_pwquality' aan om kwaliteitseisen aan "
+"wachtwoorden op te leggen. Deze module wordt alleen voor lokale gebruikers "
+"aangezet. Afgelegen gebruikers moeten het wachtwoordbeleid volgen dat op hun "
+"afgelegen server wordt afgedwongen."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:240
@@ -640,15 +651,15 @@ msgid ""
 "pwquality.conf. See pam_pwquality(8) to see its configuration options and "
 "defaults."
 msgstr ""
-"De `pam_pwquality` module kan geconfigureerd worden in {sysconfdir}/security/"
-"pwquality.conf. Zie pam_pwquality(8) voor de configuratie opties en "
-"standaarden."
+"De module 'pam_pwquality' kan geconfigureerd worden in {sysconfdir}/security/"
+"pwquality.conf. Zie pam_pwquality(8) voor de instelmogelijkheden en de "
+"standaardwaarden."
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:242
 #, no-wrap
 msgid "STARTING SERVICES"
-msgstr "SERVICES OPSTARTEN"
+msgstr "DIENSTEN OPSTARTEN"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:245
@@ -656,8 +667,8 @@ msgid ""
 "Depending on your configuration, you need to start required services "
 "manually with systemd."
 msgstr ""
-"Afhankelijk van je configuratie, moet je vereiste services handmatig starten "
-"met systemd."
+"Afhankelijk van uw configuratie, moet u de benodigde diensten handmatig "
+"starten met systemd."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:249
@@ -689,7 +700,7 @@ msgstr ""
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:260
 msgid "If mkhomedir feature is enabled"
-msgstr "Als de mkhomedir feature aangezet is"
+msgstr "Als de mkhomedir-functie aangezet is"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:262
@@ -701,7 +712,7 @@ msgstr "systemctl enable oddjobd.service ; systemctl start oddjobd.service\n"
 #: src/man/authselect-migration.7.adoc:264
 #, no-wrap
 msgid "AUTHCONFIG TOOLS"
-msgstr "AUTHCONFIG GEREEDSCHAPPEN"
+msgstr "AUTHCONFIG-GEREEDSCHAPPEN"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:268
@@ -710,9 +721,9 @@ msgid ""
 "tool, please switch to native _openssl_ command: *openssl rehash "
 "<directory>* that serves the same purpose."
 msgstr ""
-"Authconfig levert een gereedschap met de naam _cacertdir_rehash_. Als je "
-"afhankelijk bent van dit gereedschap, schakel dan om naar het native "
-"_openssl_ commando: *openssl rehash <directory>* wat hetzelfde doel dient."
+"Authconfig leverde een gereedschap genaamd _cacertdir_rehash_ mee. Als u "
+"afhankelijk bent van dit gereedschap, stapt u dan over op uw systeemeigen "
+"_openssl_ commando: *openssl rehash <directory>* dat hetzelfde doel dient."
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:270
