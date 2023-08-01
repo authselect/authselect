@@ -4,12 +4,13 @@
 # Weblate <noreply@weblate.org>, 2020.
 # Ludek Janda <ljanda@redhat.com>, 2021.
 # Jingge Chen <mariocanfly@hotmail.com>, 2022.
+# Merlin Dust <merlindust@foxmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-05-04 13:46+0200\n"
-"PO-Revision-Date: 2022-10-31 11:19+0000\n"
-"Last-Translator: Jingge Chen <mariocanfly@hotmail.com>\n"
+"PO-Revision-Date: 2023-02-21 08:20+0000\n"
+"Last-Translator: Merlin Dust <merlindust@foxmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://translate.fedoraproject.org/"
 "projects/authselect/master-authselect-profiles5adoc/zh_CN/>\n"
 "Language: zh_CN\n"
@@ -17,13 +18,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.15.2\n"
 
 #. type: Title =
 #: src/man/authselect-profiles.5.adoc:2
 #, no-wrap
 msgid "authselect-profiles(5)"
-msgstr ""
+msgstr "authselect-profiles(5)"
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:6
@@ -34,7 +35,7 @@ msgstr "名称"
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:8
 msgid "authselect-profiles - how to extend authselect profiles."
-msgstr ""
+msgstr "authselect-profiles - 如何扩展authselect配置文件。"
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:10
@@ -47,60 +48,60 @@ msgstr "描述"
 msgid ""
 "This manual page explains how are authselect profiles organized and how to "
 "create new profiles."
-msgstr ""
+msgstr "本手册页介绍了如何组织authselect配置文件以及如何创建新的配置文件。"
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:15
 #, no-wrap
 msgid "PROFILE DIRECTORIES"
-msgstr ""
+msgstr "配置文件目录"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:17
 msgid "Profiles can be found in one of three directories."
-msgstr ""
+msgstr "在三个目录其中之一可以找到配置文件。"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:18
 #, no-wrap
 msgid "*{AUTHSELECT_PROFILE_DIR}*"
-msgstr ""
+msgstr "*{AUTHSELECT_PROFILE_DIR}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:20
 msgid ""
 "Read-only directory containing profiles shipped together with authselect."
-msgstr ""
+msgstr "包含与authselect一起提供的配置文件的只读目录。"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:21
 #, no-wrap
 msgid "*{AUTHSELECT_VENDOR_DIR}*"
-msgstr ""
+msgstr "*{AUTHSELECT_VENDOR_DIR}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:24
 msgid ""
 "Read-only directory for vendor-specific profiles that can override the ones "
 "in _default_ directory."
-msgstr ""
+msgstr "特定配置文件的只读目录，可以覆盖默认目录。"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:25
 #, no-wrap
 msgid "*{AUTHSELECT_CUSTOM_DIR}*"
-msgstr ""
+msgstr "*{AUTHSELECT_CUSTOM_DIR}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:27
 msgid "Place for administrator-defined profiles."
-msgstr ""
+msgstr "管理员定义配置文件的位置。"
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:29
 #, no-wrap
 msgid "PROFILE FILES"
-msgstr ""
+msgstr "配置文件"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:33
@@ -108,25 +109,26 @@ msgid ""
 "Each profile consists of one or more of these files which provide a "
 "mandatory profile description and describe the changes that are done to the "
 "system."
-msgstr ""
+msgstr "每个配置由一个或多个文件组成，这些文件提供了强制性的配置文件描述，并描述了对"
+"系统所做的更改。"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:34
 #, no-wrap
 msgid "*README*"
-msgstr ""
+msgstr "*README*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:36
 msgid ""
 "Description of the profile. The first line must be a name of the profile."
-msgstr ""
+msgstr "配置文件的描述。第一行必须是配置的名称。"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:37
 #, no-wrap
 msgid "*system-auth*"
-msgstr ""
+msgstr "*system-auth*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:40
@@ -139,7 +141,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:41
 #, no-wrap
 msgid "*password-auth*, *smartcard-auth*, *fingerprint-auth*"
-msgstr ""
+msgstr "*password-auth*, *smartcard-auth*, *fingerprint-auth*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:45
@@ -153,7 +155,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:46
 #, no-wrap
 msgid "*postlogin*"
-msgstr ""
+msgstr "*postlogin*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:54
@@ -171,7 +173,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:55
 #, no-wrap
 msgid "*nsswitch.conf*"
-msgstr ""
+msgstr "*nsswitch.conf*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:58
@@ -191,7 +193,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:65
 #, no-wrap
 msgid "*dconf-db*"
-msgstr ""
+msgstr "*dconf-db*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:69
@@ -205,7 +207,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:70
 #, no-wrap
 msgid "*dconf-locks*"
-msgstr ""
+msgstr "*dconf-locks*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:72

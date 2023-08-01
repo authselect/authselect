@@ -1,17 +1,19 @@
 # Josef Hruška <hrusjos@gmail.com>, 2019. #zanata
+# Jan Kalabza <jan.kalabza@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-05-04 13:46+0200\n"
-"PO-Revision-Date: 2019-09-08 11:16+0000\n"
-"Last-Translator: Josef Hruška <hrusjos@gmail.com>\n"
-"Language-Team: Czech\n"
+"PO-Revision-Date: 2023-05-02 18:20+0000\n"
+"Last-Translator: Jan Kalabza <jan.kalabza@gmail.com>\n"
+"Language-Team: Czech <https://translate.fedoraproject.org/projects/"
+"authselect/master-authselect-profiles5adoc/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 4.15.2\n"
 
 #. type: Title =
 #: src/man/authselect-profiles.5.adoc:2
@@ -132,13 +134,12 @@ msgstr "*system-auth*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:40
-#, fuzzy
 msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
 msgstr ""
-"Stoh PAM, který je vložen z téměř každého jednotlivého konfiguračního "
-"souboru služby."
+"PAM stack, který je součástí téměř všech konfiguračních souborů jednotlivých "
+"služeb."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:41
@@ -165,7 +166,6 @@ msgstr "*postlogin*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:54
-#, fuzzy
 msgid ""
 "The purpose of this PAM stack is to provide a common place for all PAM "
 "modules which should be called after the stack configured in system-auth or "
@@ -175,13 +175,13 @@ msgid ""
 "regardless of the success or failure of the modules in the system-auth "
 "configuration file._"
 msgstr ""
-"Účelem tohoto stohu PAM je poskytovat jedno místo pro všechny moduly PAM, "
-"které by měly být volány po stohu nakonfigurovaném v system-auth nebo "
-"ostatních společných konfiguračních souborech PAM. Je vkládán ze všech "
-"jednotlivých konfiguračních souborů služeb, které poskytují přihlašovací "
-"službu s shellem nebo souborovým přístupem. _POZNÁMKA: moduly v "
-"konfiguračním souboru postlogin jsou vykonány bez ohledu na úspěch či "
-"selhání modulů v konfiguračním souboru system-auth._"
+"Účelem tohoto zásobníku PAM je poskytnout společné místo pro všechny moduly "
+"PAM, které by měly být volány po zásobníku nakonfigurovaném v system-auth "
+"nebo jiných běžných konfiguračních souborech PAM. Je zahrnut ze všech "
+"konfiguračních souborů jednotlivých služeb, které poskytují přihlašovací "
+"službu s přístupem k shellu nebo souborům. _POZNÁMKA: moduly v konfiguračním "
+"souboru postlogin se spustí bez ohledu na úspěch nebo neúspěch modulů v "
+"konfiguračním souboru system-auth._"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:55
@@ -192,16 +192,20 @@ msgstr "*nsswitch.conf*"
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:58
 msgid "Name Service Switch configuration file."
-msgstr ""
+msgstr "Konfigurační soubor Name Service Switch."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:63
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "    Name Service Switch configuration file. Only maps relevant to the profile\n"
 "    must be set. Maps that are not specified by the profile are included from\n"
 "    {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf.\n"
-msgstr "Konfigurační soubor Name Service Switch. Pouze mapy příslušné danému profilu musí být nastaveny. Mapy které nejsou určeny profilem jsou vloženy z {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf."
+msgstr ""
+"    Konfigurační soubor Name Service Switch. Pouze mapy příslušné danému "
+"profilu\n"
+"   musí být nastaveny. Mapy které nejsou určeny profilem jsou vloženy z\n"
+"    {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf.\n"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:65
@@ -432,7 +436,7 @@ msgid ""
 "otherwise with an empty string."
 msgstr ""
 "Není-li \"vlastnost\" určena, nahraď tento operátor řetězcem \"pravda\", "
-"jinak prázdným řetězcem. "
+"jinak prázdným řetězcem."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:135

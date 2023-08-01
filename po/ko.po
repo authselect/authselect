@@ -4,13 +4,13 @@
 # Sundeep Anand <suanand@redhat.com>, 2021.
 # simmon <simmon@nplob.com>, 2021.
 # Seong-ho Cho <darkcircle.0426@gmail.com>, 2021.
-# 김인수 <simmon@nplob.com>, 2022.
+# 김인수 <simmon@nplob.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2022-05-04 13:46+0200\n"
-"PO-Revision-Date: 2022-07-18 15:18+0000\n"
+"POT-Creation-Date: 2022-12-01 13:36+0100\n"
+"PO-Revision-Date: 2023-07-19 15:20+0000\n"
 "Last-Translator: 김인수 <simmon@nplob.com>\n"
 "Language-Team: Korean <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/ko/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.13\n"
+"X-Generator: Weblate 4.18.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:188
 msgid "Unable to obtain supported features"
@@ -54,8 +54,9 @@ msgstr "활성화 강제!"
 msgid ""
 "%s is missing or unreadable, system was not properly configured by "
 "authselect."
-msgstr "%s는 누락되었거나 읽을 수 없으며, authselect에 의해 시스템은 적절하게 "
-"구성되지 않았습니다."
+msgstr ""
+"%s는 누락되었거나 읽을 수 없으며, authselect에 의해 시스템은 적절하게 구성되"
+"지 않았습니다."
 
 #: src/lib/authselect.c:112
 msgid "Refusing to activate profile unless overwrite is requested."
@@ -72,20 +73,20 @@ msgstr ""
 #: src/lib/authselect.c:127
 #, c-format
 msgid "Unable to activate profile [%s] [%d]: %s"
-msgstr "프로파일을 활성화 할 수 없음 [%s] [%d]: %s"
+msgstr "프로파일 [%s] [%d]를 활성화 할 수 없음 : %s"
 
 #: src/lib/authselect.c:141
 msgid "Trying to uninstall authselect configuration"
-msgstr "authselect 구성 제거를 시도 중입니다"
+msgstr "authselect 구성 제거를 시도 중"
 
 #: src/lib/authselect.c:145
 #, c-format
 msgid "Unable to remove symlinks [%d]: %s"
-msgstr "심볼릭 링크를 제거 할 수 없음 [%d]: %s"
+msgstr "심볼릭 링크 [%d]를 제거 할 수 없음: %s"
 
 #: src/lib/authselect.c:149
 msgid "Symbolic links were successfully removed"
-msgstr "심볼릭 링크 제거에 성공했습니다"
+msgstr "심볼릭 링크가 성공적으로 제거되었습니다"
 
 #: src/lib/authselect.c:154
 #, c-format
@@ -104,17 +105,17 @@ msgstr "[%s] 프로필 기능은 더 이상 지원하지 않습니다. 제거합
 #: src/lib/authselect_backup.c:48
 #, c-format
 msgid "Unable to create backup directory [%s/%s] [%d]: %s"
-msgstr "백업 디렉토리를 생성 할 수 없음 [%s/%s] [%d]: %s"
+msgstr "백업 디렉토리 [%s/%s] [%d]를 생성 할 수 없음: %s"
 
 #: src/lib/authselect_backup.c:71
 #, c-format
 msgid "Unable to create backup directory [%s] [%d]: %s"
-msgstr "백업 디렉토리를 생성 할 수 없음 [%s] [%d]: %s"
+msgstr "백업 디렉토리 [%s] [%d]를 생성 할 수 없음: %s"
 
 #: src/lib/authselect_backup.c:92
 #, c-format
 msgid "Creating temporary directory at [%s]"
-msgstr "[%s]에서 임시 디렉토리 생성 중"
+msgstr "[%s]에 임시 디렉토리 생성 중"
 
 #: src/lib/authselect_backup.c:125 src/lib/authselect_profile.c:377
 #: src/lib/authselect_profile.c:457
@@ -140,7 +141,7 @@ msgstr "[%s]을(를) [%s/%s] (으)로 복사할 수 없음 [%d]: %s"
 #: src/lib/authselect_backup.c:175
 #, c-format
 msgid "Trying to backup authselect configuration to [%s]"
-msgstr "[%s]에 authselect 구성 백업을 시도합니다"
+msgstr "authselect 구성을 [%s]로 백업하려고 시도 중"
 
 #: src/lib/authselect_backup.c:180
 #, c-format
@@ -164,7 +165,7 @@ msgstr " 존재하지 않습니다."
 #: src/lib/authselect_backup.c:209 src/lib/profiles/list.c:50
 #, c-format
 msgid "Unable to list directory [%s] [%d]: %s"
-msgstr "디렉토리를 목록화 할 수 없음 [%s] [%d]: %s"
+msgstr "디렉토리 [%s] [%d]를 나열 할 수 없음: %s"
 
 #: src/lib/authselect_backup.c:223
 #, c-format
@@ -369,7 +370,7 @@ msgstr "심볼릭 링크 만들기 [%s] ~ [%s]"
 #: src/lib/files/symlinks.c:47
 #, c-format
 msgid "Unable to overwrite file [%s] [%d]: %s"
-msgstr "[%s] [%d] 파일을 덮어쓰기할 수 없음: %s"
+msgstr "[%s] [%d] 파일을 덮어쓰기 할 수 없음: %s"
 
 #: src/lib/files/symlinks.c:55
 #, c-format
@@ -410,7 +411,7 @@ msgstr "심볼릭 링크 [%s] ~ [%s]가 여전히 존재합니다!"
 #: src/lib/files/symlinks.c:149
 #, c-format
 msgid "File [%s] exists but it needs to be overwritten!"
-msgstr "파일 [%s]가 존재하지만 덮어쓰기해야 합니다!"
+msgstr "파일 [%s]가 존재하지만 덮어쓰기 해야 합니다!"
 
 #: src/lib/files/symlinks.c:190
 #, c-format
@@ -539,7 +540,7 @@ msgstr "위치 배열이 NULL입니다"
 #: src/lib/profiles/read.c:133
 #, c-format
 msgid "Profile [%s] is a custom profile"
-msgstr "프로필 [%s]은 (는) 사용자 정의 프로필입니다"
+msgstr "프로파일 [%s]는 사용자 정의 프로파일입니다"
 
 #: src/lib/profiles/read.c:135
 #, c-format
@@ -572,7 +573,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "[%s]의 기본 이름을 가져올 수 없습니다"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:834
+#: src/lib/util/file.c:199 src/cli/main.c:857
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "통계 할 수 없습니다 [%s] [%d] : %s"
@@ -580,7 +581,7 @@ msgstr "통계 할 수 없습니다 [%s] [%d] : %s"
 #: src/lib/util/dir.c:130
 #, c-format
 msgid "Unable to stat directory [%d]: %s"
-msgstr "디렉토리 상태를 확인 할 수 없음 [%d]: %s"
+msgstr "디렉토리 [%d] 상태를 확인 할 수 없음: %s"
 
 #: src/lib/util/dir.c:313
 #, c-format
@@ -751,7 +752,7 @@ msgstr "일치 항목을 처리 할 수 없습니다 [%d] : %s"
 #: src/lib/util/template.c:485
 #, c-format
 msgid "Unable to process operator [%d]: %s"
-msgstr "연산자를 처리 할 수 없습니다 [%d] : %s"
+msgstr "연산자를 처리 할 수 없습니다 [%d]: %s"
 
 #: src/lib/util/template.c:500 src/lib/util/template.c:671
 #, c-format
@@ -761,7 +762,7 @@ msgstr "문자열을 찾을 수 없습니다: 정규식 오류 %d"
 #: src/lib/util/template.c:532
 #, c-format
 msgid "Unable to generate template [%d]: %s"
-msgstr "양식을 생성 할 수 없습니다 [%d] : %s"
+msgstr "템플릿을 생성 할 수 없습니다 [%d]: %s"
 
 #: src/lib/util/template.c:560
 msgid "Unable to get current time!"
@@ -869,15 +870,15 @@ msgstr "명령 옵션:"
 msgid "Common options:"
 msgstr "일반 옵션:"
 
-#: src/cli/cli_tool.c:326 src/cli/cli_tool.c:329
+#: src/cli/cli_tool.c:331 src/cli/cli_tool.c:334
 msgid "[OPTIONS...]"
 msgstr "[<옵션>...]"
 
-#: src/cli/cli_tool.c:332 src/cli/main.c:826
+#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:849
 msgid "Out of memory!"
 msgstr "메모리가 다 찼습니다!"
 
-#: src/cli/cli_tool.c:353
+#: src/cli/cli_tool.c:358
 #, c-format
 msgid ""
 "Invalid option %s: %s\n"
@@ -886,7 +887,7 @@ msgstr ""
 "잘못된 옵션 %s: %s\n"
 "\n"
 
-#: src/cli/cli_tool.c:365
+#: src/cli/cli_tool.c:370
 #, c-format
 msgid ""
 "Missing option: %s\n"
@@ -895,7 +896,7 @@ msgstr ""
 "누락된 옵션 : %s\n"
 "\n"
 
-#: src/cli/cli_tool.c:375
+#: src/cli/cli_tool.c:380
 #, c-format
 msgid ""
 "Only one free argument is expected!\n"
@@ -904,7 +905,7 @@ msgstr ""
 "자유 인자 하나가 필요합니다!\n"
 "\n"
 
-#: src/cli/cli_tool.c:385
+#: src/cli/cli_tool.c:395
 #, c-format
 msgid ""
 "Unexpected parameter: %s\n"
@@ -913,7 +914,7 @@ msgstr ""
 "예기치 않은 매개 변수 : %s\n"
 "\n"
 
-#: src/cli/cli_tool.c:397
+#: src/cli/cli_tool.c:407
 #, c-format
 msgid ""
 "At least one option is required!\n"
@@ -922,94 +923,94 @@ msgstr ""
 "적어도 하나의 옵션이 필요합니다!\n"
 "\n"
 
-#: src/cli/main.c:74 src/cli/main.c:437 src/cli/main.c:475
+#: src/cli/main.c:76 src/cli/main.c:441 src/cli/main.c:484
 msgid "Profile identifier."
 msgstr "프로파일 식별자."
 
-#: src/cli/main.c:77 src/cli/main.c:253 src/cli/main.c:298 src/cli/main.c:347
-#: src/cli/main.c:395 src/cli/main.c:440 src/cli/main.c:478 src/cli/main.c:642
-#: src/cli/main.c:718 src/cli/main.c:763 src/cli/main.c:801 src/cli/main.c:866
-#: src/cli/main.c:890
+#: src/cli/main.c:79 src/cli/main.c:257 src/cli/main.c:302 src/cli/main.c:351
+#: src/cli/main.c:399 src/cli/main.c:444 src/cli/main.c:487 src/cli/main.c:660
+#: src/cli/main.c:737 src/cli/main.c:784 src/cli/main.c:824 src/cli/main.c:889
+#: src/cli/main.c:915
 msgid "Unable to parse command arguments"
 msgstr "명령 인자를 구문 분석 할 수 없습니다"
 
-#: src/cli/main.c:132
+#: src/cli/main.c:135
 msgid "Unable to backup current configuration!\n"
 msgstr "현재 구성을 백업할 수 없습니다!\n"
 
-#: src/cli/main.c:136
+#: src/cli/main.c:139
 #, c-format
 msgid "Backup stored at %s\n"
 msgstr "%s에 저장한 백업\n"
 
-#: src/cli/main.c:158
+#: src/cli/main.c:161
 msgid "Enforce changes"
 msgstr "변경 적용"
 
-#: src/cli/main.c:159 src/cli/main.c:246 src/cli/main.c:632 src/cli/main.c:709
+#: src/cli/main.c:162 src/cli/main.c:250 src/cli/main.c:650 src/cli/main.c:728
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr "프로필을 활성화하기 전에 시스템 파일 백업 (고유한 이름 생성)"
 
-#: src/cli/main.c:160 src/cli/main.c:247 src/cli/main.c:633 src/cli/main.c:710
+#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
 msgid "Backup system files before activating profile"
 msgstr "프로필을 활성화하기 전에 시스템 파일 백업"
 
-#: src/cli/main.c:160 src/cli/main.c:247 src/cli/main.c:633 src/cli/main.c:710
+#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
 msgid "NAME"
 msgstr "이름"
 
-#: src/cli/main.c:161
+#: src/cli/main.c:164
 msgid "Do not backup system files when --force is set"
 msgstr "--force가 설정된 경우 시스템 파일을 백업하지 마십시오"
 
-#: src/cli/main.c:162 src/cli/main.c:634
+#: src/cli/main.c:165 src/cli/main.c:652
 msgid "Do not print profile requirements"
 msgstr "프로필 요구 사항을 인쇄하지 않음"
 
-#: src/cli/main.c:173 src/cli/main.c:410 src/cli/main.c:446 src/cli/main.c:484
-#: src/cli/main.c:511 src/cli/main.c:661
+#: src/cli/main.c:176 src/cli/main.c:414 src/cli/main.c:450 src/cli/main.c:493
+#: src/cli/main.c:525 src/cli/main.c:679
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "프로필 정보를 가져올 수 없습니다 [%d] : %s"
 
-#: src/cli/main.c:181 src/cli/main.c:518 src/cli/main.c:669
+#: src/cli/main.c:184 src/cli/main.c:533 src/cli/main.c:687
 msgid "Unable to read profile requirements!"
 msgstr "프로필 요구 사항을 읽을 수 없습니다!"
 
-#: src/cli/main.c:189
+#: src/cli/main.c:192
 msgid "Unable to obtain nsswitch maps!"
 msgstr "nsswitch 맵을 얻을 수 없습니다!"
 
-#: src/cli/main.c:204
+#: src/cli/main.c:207
 msgid ""
 "\n"
 "Some unexpected changes to the configuration were detected.\n"
 "Use --force parameter if you want to overwrite these changes.\n"
 msgstr ""
 "\n"
-"갑작스럽게 바뀐 구성을 찾았습니다. \n"
-"바뀐 내용을 덮어쓰려면 --force 매개 변수를 사용하십시오.\n"
+"구성에 예상치 못한 변경이 감지되었습니다.\n"
+"만약 이들 변경 부분을 덮어쓰려면 --force 매개변수를 사용하세요.\n"
 
-#: src/cli/main.c:209
+#: src/cli/main.c:212
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "프로필을 활성화 할 수 없습니다 [%d] : %s\n"
 
-#: src/cli/main.c:214
+#: src/cli/main.c:217
 #, c-format
 msgid "Profile \"%s\" was selected.\n"
 msgstr "\"%s\"프로필을 선택했습니다.\n"
 
-#: src/cli/main.c:217
-msgid "The following nsswitch maps are overwritten by the profile:\n"
-msgstr "다음 nsswitch 맵은 프로필로 덮어 씁니다.\n"
-
 #: src/cli/main.c:220
+msgid "The following nsswitch maps are overwritten by the profile:\n"
+msgstr "다음 nsswitch 맵은 프로파일에 의해 덮어 씁니다:\n"
+
+#: src/cli/main.c:223
 #, c-format
 msgid "- %s\n"
 msgstr "- %s\n"
 
-#: src/cli/main.c:225
+#: src/cli/main.c:228
 #, c-format
 msgid ""
 "\n"
@@ -1018,123 +1019,123 @@ msgstr ""
 "\n"
 "%s\n"
 
-#: src/cli/main.c:265
+#: src/cli/main.c:269
 msgid "Changes were successfully applied.\n"
 msgstr "바뀐 설정 적용에 성공했습니다.\n"
 
-#: src/cli/main.c:268 src/cli/main.c:304 src/cli/main.c:651
+#: src/cli/main.c:272 src/cli/main.c:308 src/cli/main.c:669
 msgid "No existing configuration detected.\n"
 msgstr "기존 구성이 없습니다.\n"
 
-#: src/cli/main.c:271
+#: src/cli/main.c:275
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
 msgstr ""
 "갑작스럽게 바뀐 구성을 찾았습니다. 대신 'select' 명령을 사용하십시오.\n"
 
-#: src/cli/main.c:275
+#: src/cli/main.c:279
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr "변경 사항을 적용할 수 없음 [%d] : %s\n"
 
-#: src/cli/main.c:292
+#: src/cli/main.c:296
 msgid "Print command parameters instead of formatted output"
 msgstr "형식화 된 출력 대신 명령 매개 변수 인쇄"
 
-#: src/cli/main.c:307 src/cli/main.c:654
+#: src/cli/main.c:311 src/cli/main.c:672
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "현재 구성 [%d](을)를 가져올 수 없음: %s"
 
-#: src/cli/main.c:321
+#: src/cli/main.c:325
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "프로필 ID : %s\n"
 
-#: src/cli/main.c:322
+#: src/cli/main.c:326
 msgid "Enabled features:"
 msgstr "사용 가능한 기능 :"
 
-#: src/cli/main.c:325
+#: src/cli/main.c:329
 msgid " None\n"
 msgstr " 없음\n"
 
-#: src/cli/main.c:353
+#: src/cli/main.c:357
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "현재 구성 [%d](을)를 테스트할 수 없음: %s"
 
-#: src/cli/main.c:360
+#: src/cli/main.c:364
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
 msgstr ""
 "현재 구성이 올바르지 않습니다. authselect 외부에서 수정했을 수 있습니다."
 
-#: src/cli/main.c:367
+#: src/cli/main.c:371
 msgid "Current configuration is valid."
 msgstr "현재 구성이 유효합니다."
 
-#: src/cli/main.c:370
+#: src/cli/main.c:374
 msgid "No configuration detected."
 msgstr "감지된 구성이 없습니다."
 
-#: src/cli/main.c:374
+#: src/cli/main.c:378
 msgid "System was not configured with authselect."
 msgstr "시스템을 authselect로 설정하지 않았습니다."
 
-#: src/cli/main.c:401
+#: src/cli/main.c:405
 msgid "Unable to get profile list!"
 msgstr "프로필 목록을 가져올 수 없습니다!"
 
-#: src/cli/main.c:454
+#: src/cli/main.c:458
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
 msgstr "프로필 기능 [%d]을 가져올 수 없음: %s"
 
-#: src/cli/main.c:556
+#: src/cli/main.c:572
 msgid "Print content of all files"
 msgstr "모든 파일의 내용 인쇄"
 
-#: src/cli/main.c:557
+#: src/cli/main.c:573
 msgid "Print nsswitch.conf content"
 msgstr "nsswitch.conf 내용 인쇄"
 
-#: src/cli/main.c:558
+#: src/cli/main.c:574
 msgid "Print system-auth content"
 msgstr "시스템 인증 내용 인쇄"
 
-#: src/cli/main.c:559
+#: src/cli/main.c:575
 msgid "Print password-auth content"
 msgstr "비밀번호 인증 내용 인쇄"
 
-#: src/cli/main.c:560
+#: src/cli/main.c:576
 msgid "Print smartcard-auth content"
 msgstr "스마트 카드 인증 콘텐츠 인쇄"
 
-#: src/cli/main.c:561
+#: src/cli/main.c:577
 msgid "Print fingerprint-auth content"
 msgstr "지문 인증 콘텐츠 인쇄"
 
-#: src/cli/main.c:562
+#: src/cli/main.c:578
 msgid "Print postlogin content"
 msgstr "포스트 블로그 콘텐츠 인쇄"
 
-#: src/cli/main.c:563
+#: src/cli/main.c:579
 msgid "Print dconf database content"
 msgstr "dconf 데이터베이스 내용 인쇄"
 
-#: src/cli/main.c:564
+#: src/cli/main.c:580
 msgid "Print dconf lock content"
 msgstr "dconf 잠금 내용 인쇄"
 
-#: src/cli/main.c:591
+#: src/cli/main.c:607
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "생성된 콘텐츠 [%d]을(를) 가져올 수 없음: %s"
 
-#: src/cli/main.c:610
+#: src/cli/main.c:626
 #, c-format
 msgid ""
 "File %s: Empty\n"
@@ -1143,7 +1144,7 @@ msgstr ""
 "파일 %s: 비어 있음\n"
 "\n"
 
-#: src/cli/main.c:612
+#: src/cli/main.c:628
 #, c-format
 msgid ""
 "File %s:\n"
@@ -1154,43 +1155,43 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/cli/main.c:639
+#: src/cli/main.c:657
 msgid "Feature to enable."
 msgstr "사용할 수있는 기능."
 
-#: src/cli/main.c:676
+#: src/cli/main.c:694
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
 msgstr "현재 구성을 백업 할 수 없음 [%d]: %s\n"
 
-#: src/cli/main.c:683
+#: src/cli/main.c:701
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "기능을 활성화 할 수 없음 [%d] : %s\n"
 
-#: src/cli/main.c:688
+#: src/cli/main.c:706
 #, c-format
 msgid "%s\n"
 msgstr "%s\n"
 
-#: src/cli/main.c:715
+#: src/cli/main.c:734
 msgid "Feature to disable."
 msgstr "비활성화 할 기능입니다."
 
-#: src/cli/main.c:729
+#: src/cli/main.c:748
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "기능을 사용 중지 할 수 없음 [%d] : %s\n"
 
-#: src/cli/main.c:748
+#: src/cli/main.c:769
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr "새 프로파일을 사용자 정의 프로파일 대신 공급 업체 프로파일로 작성"
 
-#: src/cli/main.c:749
+#: src/cli/main.c:770
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr "새 프로필의 기본으로 사용해야하는 프로필의 ID"
 
-#: src/cli/main.c:750
+#: src/cli/main.c:771
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1198,149 +1199,149 @@ msgstr ""
 "동일한 이름의 공급 업체 프로필이있는 경우에도 기본 프로필에 새 프로필 기본 설"
 "정"
 
-#: src/cli/main.c:751
+#: src/cli/main.c:772
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr "Symlink 메타 파일을 복사하는 대신 기본 프로파일에서 가져옴"
 
-#: src/cli/main.c:752
+#: src/cli/main.c:773
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr "기본 프로파일에서 파일을 복사하는 대신 Symlink nsswitch 파일"
 
-#: src/cli/main.c:753
+#: src/cli/main.c:774
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr "기본 프로파일에서 파일을 복사하는 대신 Symlink pam 파일"
 
-#: src/cli/main.c:754
+#: src/cli/main.c:775
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr "기본 프로필에서 dconf 파일을 복사하는 대신 Symlink에 첨부하십시오"
 
-#: src/cli/main.c:755
+#: src/cli/main.c:776
 msgid "Symlink specific file (can be set multiple times)"
 msgstr "Symlink 특정 파일 (여러 번 설정할 수 있음)"
 
-#: src/cli/main.c:760
+#: src/cli/main.c:781
 msgid "New profile name."
 msgstr "새 프로필 이름."
 
-#: src/cli/main.c:770
+#: src/cli/main.c:791
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "새 프로필을 만들 수 없음 [%d] : %s\n"
 
-#: src/cli/main.c:774
+#: src/cli/main.c:795
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "%s에 새 프로필을 만들었습니다.\n"
 
-#: src/cli/main.c:795
+#: src/cli/main.c:818
 msgid "Print backup names without any formatting and additional information"
 msgstr "형식 및 추가 정보없이 백업 이름을 인쇄합니다"
 
-#: src/cli/main.c:807
+#: src/cli/main.c:830
 msgid "Unable to list available backups!"
 msgstr "사용 가능한 백업 나열할 수 없습니다!"
 
-#: src/cli/main.c:844
+#: src/cli/main.c:867
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (%s에 생성)\n"
 
-#: src/cli/main.c:863
+#: src/cli/main.c:886
 msgid "Name of the backup to remove."
 msgstr "제거할 백업 이름입니다."
 
-#: src/cli/main.c:872
+#: src/cli/main.c:895
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "백업 [%s] [%d]을 제거 할 수 없습니다: %s\n"
 
-#: src/cli/main.c:887
+#: src/cli/main.c:912
 msgid "Name of the backup to restore from."
 msgstr "복원할 백업 이름입니다."
 
-#: src/cli/main.c:896
+#: src/cli/main.c:921
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "백업을 복구 할 수 없습니다 [%s] [%d]: %s\n"
 
-#: src/cli/main.c:910
+#: src/cli/main.c:937
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "authselect 구성을 제거 할 수 없습니다 [%d]: %s\n"
 
-#: src/cli/main.c:960
+#: src/cli/main.c:987
 msgid "Select profile"
 msgstr "프로필 선택"
 
-#: src/cli/main.c:961
+#: src/cli/main.c:988
 msgid "Regenerate configuration for currently selected command"
 msgstr "현재 선택된 명령에 대한 구성 재생성"
 
-#: src/cli/main.c:962
+#: src/cli/main.c:989
 msgid "List available profiles"
 msgstr "사용 가능한 프로파일 나열"
 
-#: src/cli/main.c:963
+#: src/cli/main.c:990
 msgid "List available profile features"
 msgstr "사용 가능한 프로필 기능을 나열합니다"
 
-#: src/cli/main.c:964
+#: src/cli/main.c:991
 msgid "Show profile information"
 msgstr "프로필 정보 표시"
 
-#: src/cli/main.c:965
+#: src/cli/main.c:992
 msgid "Print profile requirements"
 msgstr "프로파일 요구 사항 인쇄"
 
-#: src/cli/main.c:966
+#: src/cli/main.c:993
 msgid "Get identifier of currently selected profile"
 msgstr "현재 선택된 프로파일의 식별자를 가져옵니다"
 
-#: src/cli/main.c:967
+#: src/cli/main.c:994
 msgid "Check if the current configuration is valid"
 msgstr "현재 구성이 유효한지 확인하십시오"
 
-#: src/cli/main.c:968
+#: src/cli/main.c:995
 msgid "Print changes that would be otherwise written"
 msgstr "다른 방법으로 쓰여질 변경 사항을 인쇄하십시오"
 
-#: src/cli/main.c:969
+#: src/cli/main.c:996
 msgid "Enable feature in currently selected profile"
 msgstr "현재 선택한 프로필에서 기능 사용"
 
-#: src/cli/main.c:970
+#: src/cli/main.c:997
 msgid "Disable feature in currently selected profile"
 msgstr "현재 선택한 프로필에서 기능 사용 중지"
 
-#: src/cli/main.c:971
+#: src/cli/main.c:998
 msgid "Create new authselect profile"
 msgstr "새 authselect 프로파일 만들기"
 
-#: src/cli/main.c:972
+#: src/cli/main.c:999
 msgid "Backup commands:"
 msgstr "백업 명령:"
 
-#: src/cli/main.c:973
+#: src/cli/main.c:1000
 msgid "List available backups"
 msgstr "사용 가능한 백업 나열"
 
-#: src/cli/main.c:974
+#: src/cli/main.c:1001
 msgid "Remove backup"
 msgstr "백업 제거"
 
-#: src/cli/main.c:975
+#: src/cli/main.c:1002
 msgid "Restore from backup"
 msgstr "백업에서 복원"
 
-#: src/cli/main.c:976
+#: src/cli/main.c:1003
 msgid "Other:"
 msgstr "기타:"
 
-#: src/cli/main.c:977
+#: src/cli/main.c:1004
 msgid "Opt-out from authselect managed configuration"
 msgstr "authselect 설정된 구성에서 선택하지 않으면 불가능"
 
-#: src/cli/main.c:979
+#: src/cli/main.c:1006
 msgid "Print authselect version"
 msgstr "authselect 버전 출력"
 
@@ -1622,8 +1623,8 @@ msgstr "실행 중 : %s"
 msgid "Service %s was not found. Please install the service."
 msgstr "%s 서비스를 찾을 수 없습니다. 서비스를 설치하십시오."
 
-#: src/compat/authcompat.py.in.in:74 src/compat/authcompat.py.in.in:630
-#: src/compat/authcompat.py.in.in:656
+#: src/compat/authcompat.py.in.in:74 src/compat/authcompat.py.in.in:631
+#: src/compat/authcompat.py.in.in:657
 #, python-format
 msgid "Command [%s] failed with %d, stderr:"
 msgstr "[%s] 명령 실행 실패. 표준 출력에 %d 코드 반환:"
@@ -1633,16 +1634,16 @@ msgstr "[%s] 명령 실행 실패. 표준 출력에 %d 코드 반환:"
 msgid "Removing file: %s"
 msgstr "파일 삭제 : %s"
 
-#: src/compat/authcompat.py.in.in:334
+#: src/compat/authcompat.py.in.in:335
 #, python-format
 msgid "%s was not found. Please, install realmd."
 msgstr "%s를 찾을 수 없습니다. realmd를 설치하세요."
 
-#: src/compat/authcompat.py.in.in:468
+#: src/compat/authcompat.py.in.in:469
 msgid "Running authconfig compatibility tool."
 msgstr "authconfig 호환성 도구 실행 중."
 
-#: src/compat/authcompat.py.in.in:469
+#: src/compat/authcompat.py.in.in:470
 msgid ""
 "The purpose of this tool is to enable authentication against chosen services "
 "with authselect and minimum configuration. It does not provide all "
@@ -1651,12 +1652,12 @@ msgstr ""
 "이 도구의 용도는 authselect 및 최소 구성으로 선택한 서비스의 인증 기능 활성입"
 "니다. authconfig의 모든 기능을 제공하지는 않습니다.\n"
 
-#: src/compat/authcompat.py.in.in:472
+#: src/compat/authcompat.py.in.in:473
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
 msgstr "중요 : authconfig는 authselect로 바뀌므로 스크립트를 업데이트하십시오."
 
-#: src/compat/authcompat.py.in.in:474
+#: src/compat/authcompat.py.in.in:475
 msgid ""
 "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
@@ -1664,20 +1665,21 @@ msgstr ""
 "페도라 28 변경 부분: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault을 참고하세요"
 
-#: src/compat/authcompat.py.in.in:475
+#: src/compat/authcompat.py.in.in:476
 msgid ""
 "See man authselect-migration(7) to help you with migration to authselect"
-msgstr "authselect로의 이전 도움을 받으려면 man authselect-migration(7)을 참고하세요"
+msgstr ""
+"authselect로의 이전 도움을 받으려면 man authselect-migration(7)을 참고하세요"
 
-#: src/compat/authcompat.py.in.in:479
+#: src/compat/authcompat.py.in.in:480
 msgid "Warning: These options are not supported anymore and have no effect:"
 msgstr "경고: 이 옵션은 더 이상 지원하지 않으며 동작하지 않습니다:"
 
-#: src/compat/authcompat.py.in.in:499
+#: src/compat/authcompat.py.in.in:500
 msgid "authconfig can only be run as root"
 msgstr "authconfig는 루트로만 실행할 수 있습니다"
 
-#: src/compat/authcompat.py.in.in:504
+#: src/compat/authcompat.py.in.in:505
 #, python-format
 msgid ""
 "Error: option --%s is no longer supported and we cannot continue if it is "
@@ -1686,11 +1688,11 @@ msgstr ""
 "오류 : --%s 옵션은 더 이상 지원하지 않으며 설정 동작을 계속 진행할 수 없습니"
 "다."
 
-#: src/compat/authcompat.py.in.in:509
+#: src/compat/authcompat.py.in.in:510
 msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
 msgstr "오류 : --enablewinbind 및 --enablewinbindauth를 모두 설정해야합니다."
 
-#: src/compat/authcompat.py.in.in:519
+#: src/compat/authcompat.py.in.in:520
 msgid "Error: Please, provide --updateall option."
 msgstr "오류: --updateall 옵션을 지정하십시오."
 
