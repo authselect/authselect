@@ -8,18 +8,21 @@ auth        sufficient                                   pam_unix.so {if not "wi
 auth        sufficient                                   pam_systemd_home.so                                    {include if "with-systemd-homed"}
 auth        required                                     pam_faillock.so authfail                               {include if "with-faillock"}
 auth        optional                                     pam_gnome_keyring.so only_if=login auto_start          {include if "with-pam-gnome-keyring"}
+auth        include                                      custom-authselect                                      {include if "with-custom-pam-include"}
 auth        required                                     pam_deny.so
 
 account     required                                     pam_access.so                                          {include if "with-pamaccess"}
 account     required                                     pam_faillock.so                                        {include if "with-faillock"}
 account     sufficient                                   pam_systemd_home.so                                    {include if "with-systemd-homed"}
 account     required                                     pam_unix.so broken_shadow
+account     include                                      custom-authselect                                      {include if "with-custom-pam-include"}
 
 password    sufficient                                   pam_systemd_home.so                                    {include if "with-systemd-homed"}
 password    requisite                                    pam_pwquality.so {if not "with-nispwquality":local_users_only}
 password    [default=1 ignore=ignore success=ok]         pam_localuser.so                                       {include if "with-pwhistory"}
 password    requisite                                    pam_pwhistory.so use_authtok                           {include if "with-pwhistory"}
 password    sufficient                                   pam_unix.so yescrypt shadow {if not "without-nullok":nullok} use_authtok nis
+password    include                                      custom-authselect                                      {include if "with-custom-pam-include"}
 password    required                                     pam_deny.so
 
 session     optional                                     pam_keyinit.so revoke
@@ -31,3 +34,4 @@ session     optional                                     pam_oddjob_mkhomedir.so
 session     [success=1 default=ignore]                   pam_succeed_if.so service in crond quiet use_uid
 session     required                                     pam_unix.so
 session     optional                                     pam_gnome_keyring.so only_if=login auto_start          {include if "with-pam-gnome-keyring"}
+session     include                                      custom-authselect                                      {include if "with-custom-pam-include"}

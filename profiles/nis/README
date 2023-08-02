@@ -68,6 +68,11 @@ with-mdns6::
 with-systemd-homed::
     If set, pam_systemd_homed is enabled for all pam operations.
 
+with-custom-pam-include::
+    If set pam will include a file called `custom-authselect`.
+    You are responsible to ensure the file exists and has safe
+    values for your environment.
+
 without-nullok::
     Do not add nullok parameter to pam_unix.
 
