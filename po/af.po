@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: authselect 1.2.5\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
 "POT-Creation-Date: 2022-12-01 13:40+0100\n"
-"PO-Revision-Date: 2023-08-01 12:17+0000\n"
+"PO-Revision-Date: 2023-08-06 02:42+0000\n"
 "Last-Translator: Dewald Gerber <dewaldgerber53@gmail.com>\n"
 "Language-Team: Afrikaans <https://translate.fedoraproject.org/projects/"
 "authselect/1-2-x-application/af/>\n"
@@ -841,20 +841,20 @@ msgstr "Druk spoorboodskappe"
 
 #: src/cli/cli_tool.c:78 src/cli/cli_tool.c:98
 msgid "Print warning messages"
-msgstr ""
+msgstr "Druk waarskuwingsboodskappe"
 
 #: src/cli/cli_tool.c:80
 #, c-format
 msgid "Help options:\n"
-msgstr ""
+msgstr "Hulp opsies:\n"
 
 #: src/cli/cli_tool.c:82
 msgid "Show this for a command"
-msgstr ""
+msgstr "Wys dit vir 'n opdrag"
 
 #: src/cli/cli_tool.c:84
 msgid "Show brief usage message for a command"
-msgstr ""
+msgstr "Toon 'n kort gebruiksboodskap vir 'n opdrag"
 
 #: src/cli/cli_tool.c:173
 #, c-format
@@ -863,11 +863,14 @@ msgid ""
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
 msgstr ""
+"Gebruik:\n"
+"%s OPDRAG OPDRAG-ARGS\n"
+"\n"
 
 #: src/cli/cli_tool.c:174
 #, c-format
 msgid "Available commands:\n"
-msgstr ""
+msgstr "Beskikbare opdragte:\n"
 
 #: src/cli/cli_tool.c:196
 #, c-format
@@ -877,15 +880,15 @@ msgstr ""
 #: src/cli/cli_tool.c:230
 #, c-format
 msgid "Authselect command '%s' can only be run as root!\n"
-msgstr ""
+msgstr "Authselect opdrag '%s' kan slegs as root uitgevoer word!\n"
 
 #: src/cli/cli_tool.c:247
 msgid "Bug: commands can't be NULL!\n"
-msgstr ""
+msgstr "Programfout: opdragte kan nie NULL wees nie!\n"
 
 #: src/cli/cli_tool.c:310
 msgid "Command options:"
-msgstr "Opdrag keuses:"
+msgstr "Algemene opsies:"
 
 #: src/cli/cli_tool.c:312
 msgid "Common options:"
@@ -1333,7 +1336,7 @@ msgstr "Druk veranderinge wat andersins geskryf sou word"
 
 #: src/cli/main.c:979
 msgid "Enable feature in currently selected profile"
-msgstr ""
+msgstr "Aktiveer kenmerk in tans gekose profiel"
 
 #: src/cli/main.c:980
 msgid "Disable feature in currently selected profile"
@@ -1446,35 +1449,35 @@ msgstr "Kerberos-verifikasie by verstek"
 
 #: src/compat/authcompat_Options.py:98
 msgid "default Kerberos KDC"
-msgstr ""
+msgstr "standaard Kerberos KDC"
 
 #: src/compat/authcompat_Options.py:99
 msgid "default Kerberos admin server"
-msgstr ""
+msgstr "verstek Kerberos admin bediener"
 
 #: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
 msgid "<realm>"
-msgstr ""
+msgstr "<gebied>"
 
 #: src/compat/authcompat_Options.py:100
 msgid "default Kerberos realm"
-msgstr ""
+msgstr "standaard Kerberosgebied"
 
 #: src/compat/authcompat_Options.py:101
 msgid "use of DNS to find Kerberos KDCs"
-msgstr ""
+msgstr "gebruik van DNS om Kerberos KDC's te vind"
 
 #: src/compat/authcompat_Options.py:102
 msgid "use of DNS to find Kerberos realms"
-msgstr ""
+msgstr "gebruik van DNS om Kerberosgebied te vind"
 
 #: src/compat/authcompat_Options.py:103
 msgid "winbind for user information by default"
-msgstr ""
+msgstr "winbind vir gebruikersinligting by verstek"
 
 #: src/compat/authcompat_Options.py:104
 msgid "winbind for authentication by default"
-msgstr ""
+msgstr "winbind vir verifikasie by verstek"
 
 #: src/compat/authcompat_Options.py:105
 msgid "<Administrator>"
@@ -1483,183 +1486,186 @@ msgstr "Administrateur"
 #: src/compat/authcompat_Options.py:105
 msgid "join the winbind domain or ads realm now as this administrator"
 msgstr ""
+"sluit aan by die winbind-domein of advertensiewêreld as hierdie "
+"administrateur"
 
 #: src/compat/authcompat_Options.py:106
 msgid "Kerberos 5 for authenticate with winbind"
-msgstr ""
+msgstr "Kerberos 5 vir verifikasie met winbind"
 
 #: src/compat/authcompat_Options.py:107
 msgid "<workgroup>"
-msgstr ""
+msgstr "<werkgroep>"
 
 #: src/compat/authcompat_Options.py:107
 msgid "workgroup authentication servers are in"
-msgstr ""
+msgstr "werkgroepverifikasiebedieners is in"
 
 #: src/compat/authcompat_Options.py:108
 msgid ""
 "SSSD for user information by default with manually managed configuration"
-msgstr ""
+msgstr "SSSD vir gebruikersinligting by verstek met handbestuurde konfigurasie"
 
 #: src/compat/authcompat_Options.py:109
 msgid "SSSD for authentication by default with manually managed configuration"
-msgstr ""
+msgstr "SSSD vir verifikasie by verstek met handbestuurde konfigurasie"
 
 #: src/compat/authcompat_Options.py:110
 msgid "caching of user credentials in SSSD by default"
-msgstr ""
+msgstr "voorlopige berging van gebruikersbewyse in SSSD standaard"
 
 #: src/compat/authcompat_Options.py:111
 msgid "check of access.conf during account authorization"
-msgstr ""
+msgstr "bevestiging van access.conf tydens rekeningmagtiging"
 
 #: src/compat/authcompat_Options.py:112
 msgid "creation of home directories for users on their first login"
-msgstr ""
+msgstr "Skepping van tuisadresse vir gebruikers met hul eerste aanmelding"
 
 #: src/compat/authcompat_Options.py:113
 msgid "account locking in case of too many consecutive authentication failures"
-msgstr ""
+msgstr "rekeningsluiting in geval van te veel opeenvolgende verifikasiefoute"
 
 #: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
 #: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
 msgid "<number>"
-msgstr ""
+msgstr "<nommer>"
 
 #: src/compat/authcompat_Options.py:114
 msgid "minimum length of a password"
-msgstr ""
+msgstr "minimum lengte van 'n wagwoord"
 
 #: src/compat/authcompat_Options.py:115
 msgid "minimum number of character classes in a password"
-msgstr ""
+msgstr "minimum aantal karakterklasse in 'n wagwoord"
 
 #: src/compat/authcompat_Options.py:116
 msgid "maximum number of same consecutive characters in a password"
-msgstr ""
+msgstr "maksimum aantal dieselfde opeenvolgende karakters in 'n wagwoord"
 
 #: src/compat/authcompat_Options.py:117
 msgid "maximum number of consecutive characters of same class in a password"
 msgstr ""
+"maksimum aantal opeenvolgende karakters van dieselfde klas in 'n wagwoord"
 
 #: src/compat/authcompat_Options.py:118
 msgid "require at least one lowercase character in a password"
-msgstr ""
+msgstr "Vereis ten minste een kleinletterkarakter in 'n wagwoord"
 
 #: src/compat/authcompat_Options.py:119
 msgid "require at least one uppercase character in a password"
-msgstr ""
+msgstr "Vereis ten minste een hoofletterkarakter in 'n wagwoord"
 
 #: src/compat/authcompat_Options.py:120
 msgid "require at least one digit in a password"
-msgstr ""
+msgstr "benodig ten minste een syfer in 'n wagwoord"
 
 #: src/compat/authcompat_Options.py:121
 msgid "require at least one other character in a password"
-msgstr ""
+msgstr "vereis ten minste een ander karakter in 'n wagwoord"
 
 #: src/compat/authcompat_Options.py:124
 msgid "do not start/stop services"
-msgstr ""
+msgstr "moenie dienste begin/ stop nie"
 
 #: src/compat/authcompat_Options.py:125
 msgid "update all configuration files"
-msgstr ""
+msgstr "konfigurasielêers moet almal opgedateer word"
 
 #: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
 msgid "the same as --updateall"
-msgstr ""
+msgstr "dieselfde as --updateall"
 
 #: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
 msgid "<name>"
-msgstr ""
+msgstr "<naam>"
 
 #: src/compat/authcompat_Options.py:148
 msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-msgstr ""
+msgstr "<ontsyfer|bigcrypt|md5|sha256|sha512|yescrypt>"
 
 #: src/compat/authcompat_Options.py:149
 msgid "<URL>"
-msgstr ""
+msgstr "<URL>"
 
 #: src/compat/authcompat_Options.py:150
 msgid "<module>"
-msgstr ""
+msgstr "<module>"
 
 #: src/compat/authcompat_Options.py:151
 msgid "<user|server|domain|ads>"
-msgstr ""
+msgstr "<gebruiker|bediener|domein|advertensies>"
 
 #: src/compat/authcompat_Options.py:153
 msgid "<servers>"
-msgstr ""
+msgstr "<bedieners>"
 
 #: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
 #: src/compat/authcompat_Options.py:156
 msgid "<lowest-highest>"
-msgstr ""
+msgstr "<laagste-hoogste>"
 
 #: src/compat/authcompat_Options.py:157
 msgid "<\\>"
-msgstr ""
+msgstr "<\\>"
 
 #: src/compat/authcompat_Options.py:158
 msgid "</home/%D/%U>"
-msgstr ""
+msgstr "</home/%D/%U>"
 
 #: src/compat/authcompat_Options.py:159
 msgid "</bin/false>"
-msgstr ""
+msgstr "</bin/false>"
 
 #: src/compat/authcompat_Options.py:166
 msgid "<options>"
-msgstr ""
+msgstr "<keuses>"
 
 #: src/compat/authcompat_Options.py:210
 msgid "These options have a compatibility layer"
-msgstr ""
+msgstr "Hierdie opsies het 'n verenigbaarheidslaag"
 
 #: src/compat/authcompat_Options.py:211
 msgid "These options are no longer supported and have no effect"
-msgstr ""
+msgstr "Hierdie opsies word nie meer gebruik nie en het geen uitwerking nie"
 
 #: src/compat/authcompat_Options.py:313
 msgid "enable"
-msgstr ""
+msgstr "aktiveer"
 
 #: src/compat/authcompat_Options.py:314
 msgid "disable"
-msgstr ""
+msgstr "deaktiveer"
 
 #: src/compat/authcompat.py.in.in:51
 #, python-format
 msgid "Executing: %s"
-msgstr ""
+msgstr "Voer tans uit: %s"
 
 #: src/compat/authcompat.py.in.in:71
 #, python-format
 msgid "Service %s was not found. Please install the service."
-msgstr ""
+msgstr "Diens %s is nie gevind nie. Installeer asseblief die diens."
 
 #: src/compat/authcompat.py.in.in:74 src/compat/authcompat.py.in.in:631
 #: src/compat/authcompat.py.in.in:657
 #, python-format
 msgid "Command [%s] failed with %d, stderr:"
-msgstr ""
+msgstr "Opdrag [%s] misluk met %d, stderr:"
 
 #: src/compat/authcompat.py.in.in:186
 #, python-format
 msgid "Removing file: %s"
-msgstr ""
+msgstr "Verwyder lêer: %s"
 
 #: src/compat/authcompat.py.in.in:335
 #, python-format
 msgid "%s was not found. Please, install realmd."
-msgstr ""
+msgstr "%s is nie gevind nie. Installeer asseblief realmd."
 
 #: src/compat/authcompat.py.in.in:469
 msgid "Running authconfig compatibility tool."
-msgstr ""
+msgstr "Voer die authconf-saambruikbaarheid toets uit."
 
 #: src/compat/authcompat.py.in.in:470
 msgid ""
@@ -1667,30 +1673,40 @@ msgid ""
 "with authselect and minimum configuration. It does not provide all "
 "capabilities of authconfig.\n"
 msgstr ""
+"Die doel van hierdie instrument is om verifikasie teen gekose dienste met "
+"authselect en minimum konfigurasie moontlik te maak. Dit bied nie alle "
+"vermoëns van authconfig aan nie.\n"
 
 #: src/compat/authcompat.py.in.in:473
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
 msgstr ""
+"BELANGRIK: authconfig word vervang deur authselect, opdateer asseblief jou "
+"skrifte ."
 
 #: src/compat/authcompat.py.in.in:475
 msgid ""
 "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
 msgstr ""
+"Sien Fedora 28 Verander bladsy: https://fedoraproject.org/wiki/Changes/"
+"AuthselectAsDefault"
 
 #: src/compat/authcompat.py.in.in:476
 msgid ""
 "See man authselect-migration(7) to help you with migration to authselect"
 msgstr ""
+"Sien man authselect-migration (7) om u te help met migrasie na authselect"
 
 #: src/compat/authcompat.py.in.in:480
 msgid "Warning: These options are not supported anymore and have no effect:"
 msgstr ""
+"Waarskuwing: Hierdie opsies word nie meer ondersteun nie en het geen effek "
+"nie:"
 
 #: src/compat/authcompat.py.in.in:500
 msgid "authconfig can only be run as root"
-msgstr ""
+msgstr "authconfig kan slegs as root uitgevoer word"
 
 #: src/compat/authcompat.py.in.in:505
 #, python-format
@@ -1698,11 +1714,13 @@ msgid ""
 "Error: option --%s is no longer supported and we cannot continue if it is "
 "set."
 msgstr ""
+"Fout: opsie --%s word nie meer ondersteun nie en ons kan nie voortgaan as "
+"dit gestel is nie."
 
 #: src/compat/authcompat.py.in.in:510
 msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
-msgstr ""
+msgstr "Fout: Beide --enablewinbind en --enablewinbindauth moet gestel word."
 
 #: src/compat/authcompat.py.in.in:520
 msgid "Error: Please, provide --updateall option."
-msgstr ""
+msgstr "Fout: Verskaf asseblief --updateall opsie."
