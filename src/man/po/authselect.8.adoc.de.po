@@ -3,12 +3,13 @@
 # Mark E. Fuller <mark.e.fuller@gmx.de>, 2020.
 # Vitaliy Bukatkin <vitaliy.bukatkin@gmail.com>, 2020.
 # Ettore Atalan <atalanttore@googlemail.com>, 2021.
+# Jens Maucher <jensmaucher@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-12-01 13:36+0100\n"
-"PO-Revision-Date: 2021-11-21 21:16+0000\n"
-"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
+"PO-Revision-Date: 2023-08-15 14:21+0000\n"
+"Last-Translator: Jens Maucher <jensmaucher@gmail.com>\n"
 "Language-Team: German <https://translate.fedoraproject.org/projects/"
 "authselect/master-authselect8adoc/de/>\n"
 "Language: de\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9\n"
+"X-Generator: Weblate 4.18.2\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
@@ -129,6 +130,10 @@ msgid ""
 "out*.  This will remove all authselect configuration from your system and "
 "you can then modify your configuration manually."
 msgstr ""
+"Um authselect davon abzuhalten, Ihre Konfiguration zu verwalten, führen Sie *"
+"authselect opt-out* aus.  Dadurch wird die gesamte authselect-Konfiguration "
+"von Ihrem System entfernt und Sie können Ihre Konfiguration dann manuell "
+"ändern."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:47
@@ -835,7 +840,7 @@ msgstr "VERFÜGBARE BEFEHLE"
 #: src/man/authselect.8.adoc:244
 #, no-wrap
 msgid "*opt-out*"
-msgstr ""
+msgstr "*opt-out*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:248
@@ -844,6 +849,10 @@ msgid ""
 "configuration under its system location and authselect will no longer manage "
 "it. Run *authselect select* to opt-in again."
 msgstr ""
+"Entfernen Sie die authselect-Konfiguration. Dadurch wird die nsswitch- und "
+"PAM-Konfiguration an ihrem Systemort wiederhergestellt und authselect "
+"verwaltet sie nicht mehr. Führen Sie *authselect select* aus, um sich erneut "
+"anzumelden."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:250
