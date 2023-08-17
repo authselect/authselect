@@ -1,12 +1,13 @@
 # Manuela Silva <mmsrs@sky.com>, 2019. #zanata, 2020, 2021.
 # Anonymous <noreply@weblate.org>, 2020.
+# Gabriel Aguas <gabriel.alex.aguas@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
 "POT-Creation-Date: 2022-12-01 13:36+0100\n"
-"PO-Revision-Date: 2021-11-09 11:25+0000\n"
-"Last-Translator: Manuela Silva <mmsrs@sky.com>\n"
+"PO-Revision-Date: 2023-08-17 17:21+0000\n"
+"Last-Translator: Gabriel Aguas <gabriel.alex.aguas@gmail.com>\n"
 "Language-Team: Portuguese <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/pt/>\n"
 "Language: pt\n"
@@ -14,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.8\n"
+"X-Generator: Weblate 4.18.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:188
 msgid "Unable to obtain supported features"
@@ -71,10 +72,9 @@ msgid "Trying to uninstall authselect configuration"
 msgstr ""
 
 #: src/lib/authselect.c:145
-#, fuzzy, c-format
-#| msgid "Unable to find profile [%s] [%d]: %s"
+#, c-format
 msgid "Unable to remove symlinks [%d]: %s"
-msgstr "Não é possível encontrar o perfil [%s] [%d]: %s"
+msgstr "Não é possível remover ligações simbólicas [%d]: %s"
 
 #: src/lib/authselect.c:149
 msgid "Symbolic links were successfully removed"
@@ -266,7 +266,7 @@ msgstr ""
 #: src/lib/authselect_profile.c:434
 #, c-format
 msgid "Unable to read base profile [%s] [%d]: %s"
-msgstr ""
+msgstr "Não é possível carregar o perfil [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:442
 msgid "Unable to resolve symbolic links names"
@@ -321,7 +321,7 @@ msgstr ""
 #: src/lib/authselect_profile.c:582
 #, c-format
 msgid "Unable to create profile [%d]: %s"
-msgstr ""
+msgstr "Não é possível criar o perfil [%d]: %s"
 
 #: src/lib/files/config.c:152
 msgid "Checking if all required directories are writable."
@@ -517,7 +517,7 @@ msgstr ""
 #: src/lib/profiles/list.c:151
 #, c-format
 msgid "Unable to list profiles [%d]: %s"
-msgstr ""
+msgstr "Não é possível listar perfis [%d]: %s"
 
 #: src/lib/profiles/read.c:83
 #, c-format
@@ -631,7 +631,7 @@ msgstr ""
 #: src/lib/util/file.c:121
 #, c-format
 msgid "[%s] does not exist!"
-msgstr ""
+msgstr "[%s] não existe!"
 
 #: src/lib/util/file.c:164 src/lib/util/file.c:211
 #, c-format
@@ -660,7 +660,7 @@ msgstr ""
 #: src/lib/util/file.c:524 src/lib/util/textfile.c:175
 #, c-format
 msgid "Unable to chmod file [%s] [%d]: %s"
-msgstr ""
+msgstr "Não é possível fazer chmod ao ficheiro [%s] [%d]: %s"
 
 #: src/lib/util/file.c:531
 #, c-format
@@ -689,7 +689,7 @@ msgstr ""
 
 #: src/lib/util/selinux.c:91
 msgid "not set"
-msgstr ""
+msgstr "não definido"
 
 #: src/lib/util/selinux.c:90
 #, c-format
@@ -786,12 +786,12 @@ msgstr ""
 #: src/lib/util/textfile.c:85
 #, c-format
 msgid "Unable to read file [%s] [%d]: %s"
-msgstr ""
+msgstr "Não foi possível ler o ficheiro [%s] [%d]: %s"
 
 #: src/lib/util/textfile.c:158
 #, c-format
 msgid "Unable to open file [%s] [%d]: %s"
-msgstr ""
+msgstr "Não foi possível abrir o ficheiro [%s] [%d]: %s"
 
 #: src/lib/util/textfile.c:167
 #, c-format
@@ -818,7 +818,7 @@ msgstr ""
 #: src/cli/cli_tool.c:80
 #, c-format
 msgid "Help options:\n"
-msgstr ""
+msgstr "Opções de ajuda:\n"
 
 #: src/cli/cli_tool.c:82
 msgid "Show this for a command"
@@ -844,7 +844,7 @@ msgstr ""
 #: src/cli/cli_tool.c:196
 #, c-format
 msgid "\n"
-msgstr ""
+msgstr "\n"
 
 #: src/cli/cli_tool.c:230
 #, c-format
@@ -865,11 +865,11 @@ msgstr ""
 
 #: src/cli/cli_tool.c:331 src/cli/cli_tool.c:334
 msgid "[OPTIONS...]"
-msgstr ""
+msgstr "[OPÇÕES...]"
 
 #: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:849
 msgid "Out of memory!"
-msgstr ""
+msgstr "Sem memória!"
 
 #: src/cli/cli_tool.c:358
 #, c-format
@@ -1127,6 +1127,9 @@ msgid ""
 "%s\n"
 "\n"
 msgstr ""
+"Ficheiro %s:\n"
+"%s\n"
+"\n"
 
 #: src/cli/main.c:657
 msgid "Feature to enable."
@@ -1145,7 +1148,7 @@ msgstr ""
 #: src/cli/main.c:706
 #, c-format
 msgid "%s\n"
-msgstr ""
+msgstr "%s\n"
 
 #: src/cli/main.c:734
 msgid "Feature to disable."
@@ -1243,7 +1246,7 @@ msgstr "Não é possível verificar a configuração [%d]: %s"
 
 #: src/cli/main.c:987
 msgid "Select profile"
-msgstr ""
+msgstr "Selecionar perfil"
 
 #: src/cli/main.c:988
 msgid "Regenerate configuration for currently selected command"
@@ -1436,7 +1439,7 @@ msgstr ""
 
 #: src/compat/authcompat_Options.py:105
 msgid "<Administrator>"
-msgstr ""
+msgstr "<Administrador>"
 
 #: src/compat/authcompat_Options.py:105
 msgid "join the winbind domain or ads realm now as this administrator"
