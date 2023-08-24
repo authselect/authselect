@@ -18,23 +18,13 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _UTIL_H_
-#define _UTIL_H_
+#ifndef _UTIL_TIME_H_
+#define _UTIL_TIME_H_
 
-/**
- * Many of the utility functions are not as effective as they can be but
- * this is OK since authselect works only with small configuration files
- * therefore we can prefer clean and simple code over performance.
- */
+#include <time.h>
 
 #include "common/common.h"
-#include "lib/util/dir.h"
-#include "lib/util/file.h"
-#include "lib/util/selinux.h"
-#include "lib/util/string.h"
-#include "lib/util/string_array.h"
-#include "lib/util/template.h"
-#include "lib/util/textfile.h"
-#include "lib/util/time.h"
 
-#endif /* _UTIL_H_ */
+errno_t time_now(time_t *now);
+
+#endif /* _UTIL_TIME_H_ */

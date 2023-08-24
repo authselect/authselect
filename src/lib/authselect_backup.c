@@ -22,11 +22,13 @@
 #include <errno.h>
 #include <string.h>
 #include <stdlib.h>
+#include <limits.h>
 
 #include "authselect.h"
 #include "common/common.h"
 #include "lib/constants.h"
 #include "lib/util/util.h"
+#include "lib/util/time.h"
 #include "lib/files/files.h"
 #include "lib/profiles/profiles.h"
 
@@ -73,7 +75,10 @@ authselect_backup_create_anonymous(char **_path)
         return ret;
     }
 
-    now = time(NULL);
+    ret = time_now(&now);
+    if (ret != EOK) {
+        return ret;
+    }
     gmtime_ret = gmtime_r(&now, &tm);
     if (gmtime_ret == NULL) {
         return EINVAL;

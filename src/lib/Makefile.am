@@ -63,6 +63,7 @@ libauthselect_la_SOURCES = \
     util/selinux.c \
     util/string_array.c \
     util/string.c \
+    util/time.c \
     util/template.c \
     util/evaluator.c \
     util/textfile.c \

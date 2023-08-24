@@ -29,6 +29,7 @@
 #include "common/common.h"
 #include "lib/constants.h"
 #include "lib/util/util.h"
+#include "lib/util/time.h"
 #include "lib/files/files.h"
 
 #define RE_NSS "^\\s*([^[:space:]:]+):.*$"
@@ -211,12 +212,16 @@ authselect_system_write(const char **features,
         return ret;
     }
 
+    ret = time_now(&now);
+    if (ret != EOK) {
+        return ret;
+    }
+
     struct authselect_generated generated[] = GENERATED_FILES(files);
     char *tmp_files[sizeof(generated)/sizeof(struct authselect_generated)] = {NULL};
 
     /* First, write content into temporary files, so we can safely fail
      * on error. */
-    now = time(NULL);
     for (i = 0; generated[i].path != NULL; i++) {
         ret = authselect_system_write_temp(generated[i].path,
                                            generated[i].content,
