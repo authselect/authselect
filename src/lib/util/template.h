@@ -56,16 +56,13 @@ template_list_features(const char *template);
  * @param filepath     Path to the file.
  * @param content      Content to write.
  * @param mode         Mode to create the file with.
- * @param timestamp    Time when the content was generated that
- *                     will be written to preambule.
  *
  * @return EOK on success, other errno code on error.
  */
 errno_t
 template_write(const char *filepath,
                const char *content,
-               mode_t mode,
-               time_t timestamp);
+               mode_t mode);
 
 /**
  * Write generated file preamble together with its content to a temporary file.
@@ -75,8 +72,6 @@ template_write(const char *filepath,
  * @param filepath     Path to the file.
  * @param content      Content to write.
  * @param mode         Mode to create the file with.
- * @param timestamp    Time when the content was generated that
- *                     will be written to preambule.
  * @param _tmpfile     Name of created temporary file.
  *
  * @return EOK on success, other errno code on error.
@@ -85,7 +80,6 @@ errno_t
 template_write_temporary(const char *filepath,
                          const char *content,
                          mode_t mode,
-                         time_t timestamp,
                          char **_tmpfile);
 
 /**
