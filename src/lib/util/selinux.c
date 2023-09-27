@@ -43,7 +43,7 @@ selinux_get_default_context(const char *path,
     handle = selabel_open(SELABEL_CTX_FILE, NULL, 0);
     if (handle == NULL) {
         ret = errno;
-        ERROR("Unable to create selabel context [%d]: %s", ret, strerror(ret));
+        ERROR("Unable to create selabel handle [%d]: %s", ret, strerror(ret));
         return ret;
     }
 
