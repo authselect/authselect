@@ -4,13 +4,14 @@
 # Bendegúz Gyönki <gyonkibendeguz@gmail.com>, 2020, 2021.
 # Balázs Meskó <meskobalazs@mailbox.org>, 2020, 2021.
 # Dankaházi (ifj.) István <dankahazi.istvan@gmail.com>, 2023.
+# Hoppár Zoltán <hopparz@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2022-12-01 13:36+0100\n"
-"PO-Revision-Date: 2023-05-12 16:21+0000\n"
-"Last-Translator: Dankaházi (ifj.) István <dankahazi.istvan@gmail.com>\n"
+"POT-Creation-Date: 2023-09-27 13:03+0200\n"
+"PO-Revision-Date: 2023-10-04 08:35+0000\n"
+"Last-Translator: Hoppár Zoltán <hopparz@gmail.com>\n"
 "Language-Team: Hungarian <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/hu/>\n"
 "Language: hu\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15.2\n"
+"X-Generator: Weblate 5.0.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:188
 msgid "Unable to obtain supported features"
@@ -58,20 +59,17 @@ msgstr ""
 "rendszert."
 
 #: src/lib/authselect.c:112
-#, fuzzy
-#| msgid ""
-#| "Refusing to activate profile unless this file is removed or overwrite is "
-#| "requested."
 msgid "Refusing to activate profile unless overwrite is requested."
-msgstr ""
-"A profil aktiválásának megtagadása addig, amíg a fájl eltávolításra kerül "
-"vagy felülírást kér."
+msgstr "A profil aktiválásának megtagadása addig, amíg felülírást nem kér."
 
 #: src/lib/authselect.c:118
 msgid ""
 "Changes to the authselect configuration were detected. These changes will be "
 "overwritten. Please call 'authselect opt-out' in order to keep them."
 msgstr ""
+"Változásokat észleltünk az authselect konfigurációban. Ezeket a "
+"változtatásokat a rendszer felülírja. Kérjük, hívja az „authselect opt-out” "
+"lehetőséget, hogy megőrizze őket."
 
 #: src/lib/authselect.c:127
 #, c-format
@@ -97,10 +95,8 @@ msgid "Unable to remove authselect configuration [%d]: %s"
 msgstr "Az authselect konfiguráció nem távolítható el [%d]: %s"
 
 #: src/lib/authselect.c:159
-#, fuzzy
-#| msgid "Symbolic links were successfully removed"
 msgid "Authselect configuration was successfully removed"
-msgstr "A szimbolikus linkek sikeresen eltávolítva"
+msgstr "Az Authselect konfiguráció sikeresen eltávolítva"
 
 #: src/lib/authselect.c:198
 #, c-format
@@ -398,7 +394,7 @@ msgid "[%s] was not created by authselect!"
 msgstr "[%s] nem az authselect hozta létre!"
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
-#: src/lib/files/system.c:314
+#: src/lib/files/system.c:309
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
 msgstr "Hiba a(z) [%s] fájl elérésekor [%d]: %s"
@@ -423,72 +419,71 @@ msgstr "A(z) [%s] fájl létezik, de felül kell írni!"
 msgid "Skipping [%s] because it is not an authselect file"
 msgstr "A(z) [%s] kihagyása, mert nem authselect fájl"
 
-#: src/lib/files/system.c:74 src/lib/profiles/read.c:162
+#: src/lib/files/system.c:73 src/lib/profiles/read.c:162
 #, c-format
 msgid "Reading file [%s/%s]"
 msgstr "Fájl olvasása [%s/%s]"
 
-#: src/lib/files/system.c:82 src/lib/profiles/read.c:168
+#: src/lib/files/system.c:81 src/lib/profiles/read.c:168
 #: src/lib/profiles/read.c:173
 #, c-format
 msgid "Unable to read file [%s/%s] [%d]: %s"
 msgstr "[%s/%s] fájl nem olvasható [%d]: %s"
 
-#: src/lib/files/system.c:150
+#: src/lib/files/system.c:149
 #, c-format
 msgid "Unable to generate files [%d]: %s"
 msgstr "A fájlok nem állíthatóak elő [%d]: %s"
 
-#: src/lib/files/system.c:165 src/lib/util/selinux.c:398
+#: src/lib/files/system.c:163 src/lib/util/selinux.c:398
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "Ideiglenes fájl írása ehhez: [%s]"
 
-#: src/lib/files/system.c:169
+#: src/lib/files/system.c:166
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
 msgstr "[%s] ideiglenes fájl nem írható [%d]: %s"
 
-#: src/lib/files/system.c:174
+#: src/lib/files/system.c:171
 #, c-format
 msgid "Temporary file is named [%s]"
 msgstr "Az ideiglenes fájl neve: [%s]"
 
-#: src/lib/files/system.c:185 src/lib/util/selinux.c:425
+#: src/lib/files/system.c:182 src/lib/util/selinux.c:425
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "[%s] átnevezése erre: [%s]"
 
-#: src/lib/files/system.c:190 src/lib/util/selinux.c:429
+#: src/lib/files/system.c:187 src/lib/util/selinux.c:429
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "[%s] nem nevezhető át erre: [%s] [%d]: %s"
 
-#: src/lib/files/system.c:266
+#: src/lib/files/system.c:261
 #, c-format
 msgid "Validating file [%s]"
 msgstr "[%s] fájl érvényesítése"
 
-#: src/lib/files/system.c:271
+#: src/lib/files/system.c:266
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
 msgstr "[%s] fájl módja nem ellenőrizhető [%d]: %s"
 
-#: src/lib/files/system.c:291
+#: src/lib/files/system.c:286
 #, c-format
 msgid "File [%s] was modified outside authselect!"
 msgstr "[%s] fájl az authselecten kívül lett módosítva!"
 
-#: src/lib/files/system.c:310
+#: src/lib/files/system.c:305
 #, c-format
 msgid "File [%s] is still present"
 msgstr "[%s] fájl még mindig jelen van"
 
-#: src/lib/files/system.c:335 src/lib/files/system.c:345
-#, fuzzy, c-format
-#| msgid "Unable to create [%s] [%d]: %s"
+#: src/lib/files/system.c:330 src/lib/files/system.c:340
+#, c-format
 msgid "Unable to delete [%s] [%d]: %s"
-msgstr "[%s] nem hozható létre [%d]: %s"
+msgstr "[%s] nem törölhető [%d]: %s"
 
 #: src/lib/profiles/activate.c:44
 #, c-format
@@ -679,8 +674,8 @@ msgstr "[%s] tulajdonosa nem módosítható [%d]: %s"
 
 #: src/lib/util/selinux.c:46
 #, c-format
-msgid "Unable to create selabel context [%d]: %s"
-msgstr "A selabel környezet nem hozható létre [%d]: %s"
+msgid "Unable to create selabel handle [%d]: %s"
+msgstr "A selabel kezelő nem hozható létre [%d]: %s"
 
 #: src/lib/util/selinux.c:55
 #, c-format
@@ -748,13 +743,13 @@ msgstr "A(z) [%s] eltávolítása"
 msgid "Invalid operator!"
 msgstr "Érvénytelen operátor!"
 
-#: src/lib/util/template.c:450 src/lib/util/template.c:594
-#: src/lib/util/template.c:645
+#: src/lib/util/template.c:450 src/lib/util/template.c:573
+#: src/lib/util/template.c:624
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr "A reguláris kifejezés nem fordítható le: regex hiba %d"
 
-#: src/lib/util/template.c:460 src/lib/util/template.c:655
+#: src/lib/util/template.c:460 src/lib/util/template.c:634
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "Az illeszkedés nem dolgozható fel [%d]: %s"
@@ -764,7 +759,7 @@ msgstr "Az illeszkedés nem dolgozható fel [%d]: %s"
 msgid "Unable to process operator [%d]: %s"
 msgstr "Az operátor nem dolgozható fel [%d]: %s"
 
-#: src/lib/util/template.c:500 src/lib/util/template.c:671
+#: src/lib/util/template.c:500 src/lib/util/template.c:650
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "A karakterlánc nem kereshető ki: regex hiba %d"
@@ -774,20 +769,12 @@ msgstr "A karakterlánc nem kereshető ki: regex hiba %d"
 msgid "Unable to generate template [%d]: %s"
 msgstr "A sablon nem állítható elő [%d]: %s"
 
-#: src/lib/util/template.c:560
-msgid "Unable to get current time!"
-msgstr "A jelenlegi idő nem kérhető le!"
-
-#: src/lib/util/template.c:576
-msgid "Unable to create message!"
-msgstr "Az üzenet nem hozható létre!"
-
-#: src/lib/util/template.c:601
+#: src/lib/util/template.c:580
 #, c-format
 msgid "Unable to find new match: regex error %d"
 msgstr "Nem található új egyezés: regex hiba %d"
 
-#: src/lib/util/template.c:731
+#: src/lib/util/template.c:705
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
 msgstr "[%s] ideiglenes fájl nem hozható létre [%d]: %s"
@@ -1355,19 +1342,15 @@ msgstr "Visszaállítás mentésből"
 
 #: src/cli/main.c:1003
 msgid "Other:"
-msgstr ""
+msgstr "Egyéb:"
 
 #: src/cli/main.c:1004
-#, fuzzy
-#| msgid "Uninstall authselect configuration"
 msgid "Opt-out from authselect managed configuration"
-msgstr "Az authselect konfiguráció eltávolítása"
+msgstr "Leiratkozás a felügyelt konfiguráció hitelesítéséről"
 
 #: src/cli/main.c:1006
-#, fuzzy
-#| msgid "Uninstall authselect configuration"
 msgid "Print authselect version"
-msgstr "Az authselect konfiguráció eltávolítása"
+msgstr "Authselect verzió nyomtatása/kiírása"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
@@ -1461,7 +1444,7 @@ msgstr "alapértelmezett Kerberos adminisztrációs kiszolgáló"
 
 #: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
 msgid "<realm>"
-msgstr "<tartomány>"
+msgstr "<terület>"
 
 #: src/compat/authcompat_Options.py:100
 msgid "default Kerberos realm"
@@ -1731,6 +1714,12 @@ msgstr ""
 #: src/compat/authcompat.py.in.in:520
 msgid "Error: Please, provide --updateall option."
 msgstr "Hiba: adja meg az --updateall kapcsolót."
+
+#~ msgid "Unable to get current time!"
+#~ msgstr "A jelenlegi idő nem kérhető le!"
+
+#~ msgid "Unable to create message!"
+#~ msgstr "Az üzenet nem hozható létre!"
 
 #~ msgid "Unable to check configuration [%d]: %s"
 #~ msgstr "A konfiguráció nem ellenőrizhető [%d]: %s"

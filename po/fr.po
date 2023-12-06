@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2022-12-01 13:36+0100\n"
+"POT-Creation-Date: 2023-09-27 13:03+0200\n"
 "PO-Revision-Date: 2022-12-08 08:19+0000\n"
 "Last-Translator: Ludek Janda <ljanda@redhat.com>\n"
 "Language-Team: French <https://translate.fedoraproject.org/projects/"
@@ -398,7 +398,7 @@ msgid "[%s] was not created by authselect!"
 msgstr "[%s] n’a pas été créé par authselect !"
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
-#: src/lib/files/system.c:314
+#: src/lib/files/system.c:309
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
 msgstr "Erreur lors de la tentative d’accéder au fichier [%s] [%d] : %s"
@@ -423,68 +423,68 @@ msgstr "Le fichier [%s] existe, mais a besoin d’être écrasé !"
 msgid "Skipping [%s] because it is not an authselect file"
 msgstr "Sauter [%s] car il ne s'agit pas d'un fichier authselect"
 
-#: src/lib/files/system.c:74 src/lib/profiles/read.c:162
+#: src/lib/files/system.c:73 src/lib/profiles/read.c:162
 #, c-format
 msgid "Reading file [%s/%s]"
 msgstr "Lecture du fichier [%s/%s]"
 
-#: src/lib/files/system.c:82 src/lib/profiles/read.c:168
+#: src/lib/files/system.c:81 src/lib/profiles/read.c:168
 #: src/lib/profiles/read.c:173
 #, c-format
 msgid "Unable to read file [%s/%s] [%d]: %s"
 msgstr "Impossible de lire le fichier [%s/%s] [%d] : %s"
 
-#: src/lib/files/system.c:150
+#: src/lib/files/system.c:149
 #, c-format
 msgid "Unable to generate files [%d]: %s"
 msgstr "Impossible de générer les fichiers [%d] : %s"
 
-#: src/lib/files/system.c:165 src/lib/util/selinux.c:398
+#: src/lib/files/system.c:163 src/lib/util/selinux.c:398
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "Ecriture d’un fichier temporaire pour [%s]"
 
-#: src/lib/files/system.c:169
+#: src/lib/files/system.c:166
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
 msgstr "Impossible d’écrire un fichier temporaire [%s] [%d] : %s"
 
-#: src/lib/files/system.c:174
+#: src/lib/files/system.c:171
 #, c-format
 msgid "Temporary file is named [%s]"
 msgstr "Le fichier temporaire est nommé [%s]"
 
-#: src/lib/files/system.c:185 src/lib/util/selinux.c:425
+#: src/lib/files/system.c:182 src/lib/util/selinux.c:425
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "Renommer [%s] en [%s]"
 
-#: src/lib/files/system.c:190 src/lib/util/selinux.c:429
+#: src/lib/files/system.c:187 src/lib/util/selinux.c:429
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "Impossible de renommer [%s] en [%s] [%d] : %s"
 
-#: src/lib/files/system.c:266
+#: src/lib/files/system.c:261
 #, c-format
 msgid "Validating file [%s]"
 msgstr "Validation du fichier [%s]"
 
-#: src/lib/files/system.c:271
+#: src/lib/files/system.c:266
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
 msgstr "Impossible de vérifier le mode du fichier [%s] [%d] : %s"
 
-#: src/lib/files/system.c:291
+#: src/lib/files/system.c:286
 #, c-format
 msgid "File [%s] was modified outside authselect!"
 msgstr "Le fichier [%s] a été modifié en dehors de authselect !"
 
-#: src/lib/files/system.c:310
+#: src/lib/files/system.c:305
 #, c-format
 msgid "File [%s] is still present"
 msgstr "Le fichier [%s] est toujours présent"
 
-#: src/lib/files/system.c:335 src/lib/files/system.c:345
+#: src/lib/files/system.c:330 src/lib/files/system.c:340
 #, c-format
 msgid "Unable to delete [%s] [%d]: %s"
 msgstr "Impossible de supprimer [%s] [%d] : %s"
@@ -677,8 +677,9 @@ msgid "Unable to chown file [%s] [%d]: %s"
 msgstr "Impossible de chown fichier [%s] [%d] : %s"
 
 #: src/lib/util/selinux.c:46
-#, c-format
-msgid "Unable to create selabel context [%d]: %s"
+#, fuzzy, c-format
+#| msgid "Unable to create selabel context [%d]: %s"
+msgid "Unable to create selabel handle [%d]: %s"
 msgstr "Impossible de créer un contexte selabel [%d] : %s"
 
 #: src/lib/util/selinux.c:55
@@ -745,13 +746,13 @@ msgstr "Suppression de [%s]"
 msgid "Invalid operator!"
 msgstr "Opérateur invalide !"
 
-#: src/lib/util/template.c:450 src/lib/util/template.c:594
-#: src/lib/util/template.c:645
+#: src/lib/util/template.c:450 src/lib/util/template.c:573
+#: src/lib/util/template.c:624
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr "Impossible de compiler l’expression régulière : erreur regex %d"
 
-#: src/lib/util/template.c:460 src/lib/util/template.c:655
+#: src/lib/util/template.c:460 src/lib/util/template.c:634
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "Impossible de traiter la correspondance [%d] : %s"
@@ -761,7 +762,7 @@ msgstr "Impossible de traiter la correspondance [%d] : %s"
 msgid "Unable to process operator [%d]: %s"
 msgstr "Impossible de traiter l’opérateur [%d] : %s"
 
-#: src/lib/util/template.c:500 src/lib/util/template.c:671
+#: src/lib/util/template.c:500 src/lib/util/template.c:650
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "Impossible de rechercher la chaîne : erreur regex %d"
@@ -771,20 +772,12 @@ msgstr "Impossible de rechercher la chaîne : erreur regex %d"
 msgid "Unable to generate template [%d]: %s"
 msgstr "Impossible de générer le modèle [%d] : %s"
 
-#: src/lib/util/template.c:560
-msgid "Unable to get current time!"
-msgstr "Impossible d’obtenir l’heure courante !"
-
-#: src/lib/util/template.c:576
-msgid "Unable to create message!"
-msgstr "Impossible de créer le message !"
-
-#: src/lib/util/template.c:601
+#: src/lib/util/template.c:580
 #, c-format
 msgid "Unable to find new match: regex error %d"
 msgstr "Impossible de trouver une nouvelle correspondance : erreur regex %d"
 
-#: src/lib/util/template.c:731
+#: src/lib/util/template.c:705
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
 msgstr "Impossible de créer un fichier temporaire pour [%s] [%d] : %s"
@@ -1739,6 +1732,12 @@ msgstr ""
 #: src/compat/authcompat.py.in.in:520
 msgid "Error: Please, provide --updateall option."
 msgstr "Erreur : veuillez activer l’option --updateall."
+
+#~ msgid "Unable to get current time!"
+#~ msgstr "Impossible d’obtenir l’heure courante !"
+
+#~ msgid "Unable to create message!"
+#~ msgstr "Impossible de créer le message !"
 
 #~ msgid "Unable to check configuration [%d]: %s"
 #~ msgstr "Impossible de vérifier la configuration [%d] : %s"

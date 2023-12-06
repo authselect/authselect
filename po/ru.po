@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2022-12-01 13:36+0100\n"
+"POT-Creation-Date: 2023-09-27 13:03+0200\n"
 "PO-Revision-Date: 2022-06-01 20:18+0000\n"
 "Last-Translator: Ivan Vorstanenko <ivanvorstanenko@proton.me>\n"
 "Language-Team: Russian <https://translate.fedoraproject.org/projects/"
@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.12.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:188
@@ -390,7 +390,7 @@ msgid "[%s] was not created by authselect!"
 msgstr "[%s] не был создан с помощью authselect!"
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
-#: src/lib/files/system.c:314
+#: src/lib/files/system.c:309
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
 msgstr "Ошибка при попытке доступа к файлу [%s] [%d]: %s"
@@ -415,68 +415,68 @@ msgstr "Файл [%s] существует, но его нужно переза�
 msgid "Skipping [%s] because it is not an authselect file"
 msgstr "Пропускается [%s], поскольку это не файл authselect"
 
-#: src/lib/files/system.c:74 src/lib/profiles/read.c:162
+#: src/lib/files/system.c:73 src/lib/profiles/read.c:162
 #, c-format
 msgid "Reading file [%s/%s]"
 msgstr "Чтение файла [%s/%s]"
 
-#: src/lib/files/system.c:82 src/lib/profiles/read.c:168
+#: src/lib/files/system.c:81 src/lib/profiles/read.c:168
 #: src/lib/profiles/read.c:173
 #, c-format
 msgid "Unable to read file [%s/%s] [%d]: %s"
 msgstr "Не удалось прочитать файл [%s/%s] [%d]: %s"
 
-#: src/lib/files/system.c:150
+#: src/lib/files/system.c:149
 #, c-format
 msgid "Unable to generate files [%d]: %s"
 msgstr "Не удается сформировать файлы [%d]: %s"
 
-#: src/lib/files/system.c:165 src/lib/util/selinux.c:398
+#: src/lib/files/system.c:163 src/lib/util/selinux.c:398
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "Написание временного файла для [%s]"
 
-#: src/lib/files/system.c:169
+#: src/lib/files/system.c:166
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
 msgstr "Не удалось записать временный файл [%s] [%d]: %s"
 
-#: src/lib/files/system.c:174
+#: src/lib/files/system.c:171
 #, c-format
 msgid "Temporary file is named [%s]"
 msgstr "Временный файл называется [%s]"
 
-#: src/lib/files/system.c:185 src/lib/util/selinux.c:425
+#: src/lib/files/system.c:182 src/lib/util/selinux.c:425
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "Переименование [%s] в [%s]"
 
-#: src/lib/files/system.c:190 src/lib/util/selinux.c:429
+#: src/lib/files/system.c:187 src/lib/util/selinux.c:429
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "Не удалось переименовать [%s] в [%s] [%d]: %s"
 
-#: src/lib/files/system.c:266
+#: src/lib/files/system.c:261
 #, c-format
 msgid "Validating file [%s]"
 msgstr "Проверка файла [%s]"
 
-#: src/lib/files/system.c:271
+#: src/lib/files/system.c:266
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
 msgstr "Не удается проверить режим файла [%s] [%d]: %s"
 
-#: src/lib/files/system.c:291
+#: src/lib/files/system.c:286
 #, c-format
 msgid "File [%s] was modified outside authselect!"
 msgstr "Файл [%s] изменён вне authselect!"
 
-#: src/lib/files/system.c:310
+#: src/lib/files/system.c:305
 #, c-format
 msgid "File [%s] is still present"
 msgstr "Файл [%s] всё ещё присутствует"
 
-#: src/lib/files/system.c:335 src/lib/files/system.c:345
+#: src/lib/files/system.c:330 src/lib/files/system.c:340
 #, c-format
 msgid "Unable to delete [%s] [%d]: %s"
 msgstr "Не удалось удалить [%s] [%d]: %s"
@@ -669,8 +669,9 @@ msgid "Unable to chown file [%s] [%d]: %s"
 msgstr "Не удается выполнить chown для файла [%s] [%d]: %s"
 
 #: src/lib/util/selinux.c:46
-#, c-format
-msgid "Unable to create selabel context [%d]: %s"
+#, fuzzy, c-format
+#| msgid "Unable to create selabel context [%d]: %s"
+msgid "Unable to create selabel handle [%d]: %s"
 msgstr "Не удается создать контекст selabel [%d]: %s"
 
 #: src/lib/util/selinux.c:55
@@ -737,13 +738,13 @@ msgstr "Удаление [%s]"
 msgid "Invalid operator!"
 msgstr "Недопустимый оператор!"
 
-#: src/lib/util/template.c:450 src/lib/util/template.c:594
-#: src/lib/util/template.c:645
+#: src/lib/util/template.c:450 src/lib/util/template.c:573
+#: src/lib/util/template.c:624
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr "Не удается выполнить компиляцию регулярного выражения: ошибка regex %d"
 
-#: src/lib/util/template.c:460 src/lib/util/template.c:655
+#: src/lib/util/template.c:460 src/lib/util/template.c:634
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "Не удается обработать соответствие [%d]: %s"
@@ -753,7 +754,7 @@ msgstr "Не удается обработать соответствие [%d]: 
 msgid "Unable to process operator [%d]: %s"
 msgstr "Не удается обработать оператор [%d]: %s"
 
-#: src/lib/util/template.c:500 src/lib/util/template.c:671
+#: src/lib/util/template.c:500 src/lib/util/template.c:650
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "Не удается выполнить поиск строки: ошибка regex %d"
@@ -763,20 +764,12 @@ msgstr "Не удается выполнить поиск строки: ошиб
 msgid "Unable to generate template [%d]: %s"
 msgstr "Не удается сформировать шаблон [%d]: %s"
 
-#: src/lib/util/template.c:560
-msgid "Unable to get current time!"
-msgstr "Не удается получить текущее время!"
-
-#: src/lib/util/template.c:576
-msgid "Unable to create message!"
-msgstr "Не удается создать сообщение!"
-
-#: src/lib/util/template.c:601
+#: src/lib/util/template.c:580
 #, c-format
 msgid "Unable to find new match: regex error %d"
 msgstr "Не удается найти новое соответствие: ошибка regex %d"
 
-#: src/lib/util/template.c:731
+#: src/lib/util/template.c:705
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
 msgstr "Невозможно создать временный файл для [%s] [%d]: %s"
@@ -1716,6 +1709,12 @@ msgstr ""
 #: src/compat/authcompat.py.in.in:520
 msgid "Error: Please, provide --updateall option."
 msgstr "Ошибка: укажите параметр --updateall."
+
+#~ msgid "Unable to get current time!"
+#~ msgstr "Не удается получить текущее время!"
+
+#~ msgid "Unable to create message!"
+#~ msgstr "Не удается создать сообщение!"
 
 #~ msgid "Unable to check configuration [%d]: %s"
 #~ msgstr "Не удается проверить конфигурацию [%d]: %s"

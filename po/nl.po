@@ -1,13 +1,13 @@
-# Geert Warrink <geert.warrink@onsnet.nu>, 2018. #zanata, 2020, 2021.
-# Geert Warrink <geert.warrink@onsnet.nu>, 2019. #zanata, 2020, 2021.
+# Geert Warrink <geert.warrink@onsnet.nu>, 2018. #zanata, 2020, 2021, 2023.
+# Geert Warrink <geert.warrink@onsnet.nu>, 2019. #zanata, 2020, 2021, 2023.
 # Maarten <maarten@posteo.de>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2022-12-01 13:36+0100\n"
-"PO-Revision-Date: 2023-04-09 19:20+0000\n"
-"Last-Translator: Maarten <maarten@posteo.de>\n"
+"POT-Creation-Date: 2023-09-27 13:03+0200\n"
+"PO-Revision-Date: 2023-10-04 08:35+0000\n"
+"Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
 "Language-Team: Dutch <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/nl/>\n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15.2\n"
+"X-Generator: Weblate 5.0.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:188
 msgid "Unable to obtain supported features"
@@ -395,7 +395,7 @@ msgid "[%s] was not created by authselect!"
 msgstr "[%s] werd niet aangemaakt door authselect!"
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
-#: src/lib/files/system.c:314
+#: src/lib/files/system.c:309
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
 msgstr "Fout bij poging toegang te krijgen tot bestand [%s] [%d]: %s"
@@ -420,68 +420,68 @@ msgstr "Bestand [%s] bestaat maar het moet overschreven worden!"
 msgid "Skipping [%s] because it is not an authselect file"
 msgstr "[%s] wordt overgeslagen omdat het geen authselect-bestand is"
 
-#: src/lib/files/system.c:74 src/lib/profiles/read.c:162
+#: src/lib/files/system.c:73 src/lib/profiles/read.c:162
 #, c-format
 msgid "Reading file [%s/%s]"
 msgstr "Bestand [%s/%s] wordt gelezen"
 
-#: src/lib/files/system.c:82 src/lib/profiles/read.c:168
+#: src/lib/files/system.c:81 src/lib/profiles/read.c:168
 #: src/lib/profiles/read.c:173
 #, c-format
 msgid "Unable to read file [%s/%s] [%d]: %s"
 msgstr "Kan bestand [%s/%s] [%d] niet lezen: %s"
 
-#: src/lib/files/system.c:150
+#: src/lib/files/system.c:149
 #, c-format
 msgid "Unable to generate files [%d]: %s"
 msgstr "Kan bestanden [%d] niet genereren: %s"
 
-#: src/lib/files/system.c:165 src/lib/util/selinux.c:398
+#: src/lib/files/system.c:163 src/lib/util/selinux.c:398
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "Tijdelijk bestand voor [%s] wordt geschreven"
 
-#: src/lib/files/system.c:169
+#: src/lib/files/system.c:166
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
 msgstr "Kan niet naar tijdelijk bestand [%s] [%d] schrijven: %s"
 
-#: src/lib/files/system.c:174
+#: src/lib/files/system.c:171
 #, c-format
 msgid "Temporary file is named [%s]"
 msgstr "Tijdelijk bestand wordt genoemd [%s]"
 
-#: src/lib/files/system.c:185 src/lib/util/selinux.c:425
+#: src/lib/files/system.c:182 src/lib/util/selinux.c:425
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "Hernoemen van [%s] naar [%s]"
 
-#: src/lib/files/system.c:190 src/lib/util/selinux.c:429
+#: src/lib/files/system.c:187 src/lib/util/selinux.c:429
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "Kan [%s] niet hernoemen naar [%s] [%d]: %s"
 
-#: src/lib/files/system.c:266
+#: src/lib/files/system.c:261
 #, c-format
 msgid "Validating file [%s]"
 msgstr "Bestand [%s] wordt gevalideerd"
 
-#: src/lib/files/system.c:271
+#: src/lib/files/system.c:266
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
 msgstr "Kan bestandsmodus van [%s] [%d] niet controleren: %s"
 
-#: src/lib/files/system.c:291
+#: src/lib/files/system.c:286
 #, c-format
 msgid "File [%s] was modified outside authselect!"
 msgstr "Bestand [%s] werd buiten authselect om veranderd!"
 
-#: src/lib/files/system.c:310
+#: src/lib/files/system.c:305
 #, c-format
 msgid "File [%s] is still present"
 msgstr "Bestand [%s] is nog aanwezig"
 
-#: src/lib/files/system.c:335 src/lib/files/system.c:345
+#: src/lib/files/system.c:330 src/lib/files/system.c:340
 #, c-format
 msgid "Unable to delete [%s] [%d]: %s"
 msgstr "Kan [%s] [%d] niet verwijderen: %s"
@@ -675,8 +675,8 @@ msgstr "chown mislukt voor bestand [%s] [%d]: %s"
 
 #: src/lib/util/selinux.c:46
 #, c-format
-msgid "Unable to create selabel context [%d]: %s"
-msgstr "Kan context [%d] voor selabel niet aanmaken: %s"
+msgid "Unable to create selabel handle [%d]: %s"
+msgstr "Kan handvat [%d] voor selabel niet aanmaken: %s"
 
 #: src/lib/util/selinux.c:55
 #, c-format
@@ -742,13 +742,13 @@ msgstr "Verwijderen van [%s]"
 msgid "Invalid operator!"
 msgstr "Ongeldige operator!"
 
-#: src/lib/util/template.c:450 src/lib/util/template.c:594
-#: src/lib/util/template.c:645
+#: src/lib/util/template.c:450 src/lib/util/template.c:573
+#: src/lib/util/template.c:624
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr "Kan reguliere expressie niet complileren: regex error %d"
 
-#: src/lib/util/template.c:460 src/lib/util/template.c:655
+#: src/lib/util/template.c:460 src/lib/util/template.c:634
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "Kan match [%d] niet verwerken: %s"
@@ -758,7 +758,7 @@ msgstr "Kan match [%d] niet verwerken: %s"
 msgid "Unable to process operator [%d]: %s"
 msgstr "Kan operator [%d] niet verwerken: %s"
 
-#: src/lib/util/template.c:500 src/lib/util/template.c:671
+#: src/lib/util/template.c:500 src/lib/util/template.c:650
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "Kan tekenreeks niet zoeken: regex error %d"
@@ -768,20 +768,12 @@ msgstr "Kan tekenreeks niet zoeken: regex error %d"
 msgid "Unable to generate template [%d]: %s"
 msgstr "Kan template niet genereren [%d]: %s"
 
-#: src/lib/util/template.c:560
-msgid "Unable to get current time!"
-msgstr "Kan huidige tijd niet verkrijgen!"
-
-#: src/lib/util/template.c:576
-msgid "Unable to create message!"
-msgstr "Kaan geen bericht aanmaken!"
-
-#: src/lib/util/template.c:601
+#: src/lib/util/template.c:580
 #, c-format
 msgid "Unable to find new match: regex error %d"
 msgstr "Kan geen nieuwe match vinden: regex error %d"
 
-#: src/lib/util/template.c:731
+#: src/lib/util/template.c:705
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
 msgstr "Kan tijdelijk bestand voor [%s] [%d] niet aanmaken: %s"
@@ -1010,7 +1002,8 @@ msgstr "Profiel \"%s\" werd geselecteerd.\n"
 
 #: src/cli/main.c:220
 msgid "The following nsswitch maps are overwritten by the profile:\n"
-msgstr "De volgende nsswitch-afbeeldingen zijn overschreven door het profiel:\n"
+msgstr ""
+"De volgende nsswitch-afbeeldingen zijn overschreven door het profiel:\n"
 
 #: src/cli/main.c:223
 #, c-format
@@ -1735,6 +1728,12 @@ msgstr ""
 #: src/compat/authcompat.py.in.in:520
 msgid "Error: Please, provide --updateall option."
 msgstr "Fout: Gelieve de optie --updateall mee te geven."
+
+#~ msgid "Unable to get current time!"
+#~ msgstr "Kan huidige tijd niet verkrijgen!"
+
+#~ msgid "Unable to create message!"
+#~ msgstr "Kaan geen bericht aanmaken!"
 
 #~ msgid "Unable to check configuration [%d]: %s"
 #~ msgstr "Kan configuratie [%d] niet checken: %s"

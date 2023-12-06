@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2022-12-01 13:36+0100\n"
+"POT-Creation-Date: 2023-09-27 13:03+0200\n"
 "PO-Revision-Date: 2023-08-07 20:21+0000\n"
 "Last-Translator: Jan Kalabza <jan.kalabza@gmail.com>\n"
 "Language-Team: Czech <https://translate.fedoraproject.org/projects/"
@@ -392,7 +392,7 @@ msgid "[%s] was not created by authselect!"
 msgstr "[%s] byl vytvořen mimo authselect!"
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
-#: src/lib/files/system.c:314
+#: src/lib/files/system.c:309
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
 msgstr "Došlo k chybě při pokusu o přístup k souboru [%s] [%d]: %s"
@@ -417,68 +417,68 @@ msgstr "Soubor [%s] existuje, ale je potřeba jej přepsat!"
 msgid "Skipping [%s] because it is not an authselect file"
 msgstr "Přeskakuji [%s], protože to není soubor authselect"
 
-#: src/lib/files/system.c:74 src/lib/profiles/read.c:162
+#: src/lib/files/system.c:73 src/lib/profiles/read.c:162
 #, c-format
 msgid "Reading file [%s/%s]"
 msgstr "Čtení souboru [%s/%s]"
 
-#: src/lib/files/system.c:82 src/lib/profiles/read.c:168
+#: src/lib/files/system.c:81 src/lib/profiles/read.c:168
 #: src/lib/profiles/read.c:173
 #, c-format
 msgid "Unable to read file [%s/%s] [%d]: %s"
 msgstr "Nelze číst soubor [%s/%s] [%d]: %s"
 
-#: src/lib/files/system.c:150
+#: src/lib/files/system.c:149
 #, c-format
 msgid "Unable to generate files [%d]: %s"
 msgstr "Nelze generovat soubory [%d]: %s"
 
-#: src/lib/files/system.c:165 src/lib/util/selinux.c:398
+#: src/lib/files/system.c:163 src/lib/util/selinux.c:398
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "Vytváření dočasného souboru pro [%s]"
 
-#: src/lib/files/system.c:169
+#: src/lib/files/system.c:166
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
 msgstr "Nelze vytvořit dočasný soubor [%s] [%d]: %s"
 
-#: src/lib/files/system.c:174
+#: src/lib/files/system.c:171
 #, c-format
 msgid "Temporary file is named [%s]"
 msgstr "Dočasný soubor je pojmenován [%s]"
 
-#: src/lib/files/system.c:185 src/lib/util/selinux.c:425
+#: src/lib/files/system.c:182 src/lib/util/selinux.c:425
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "Přejmenování [%s] na [%s]"
 
-#: src/lib/files/system.c:190 src/lib/util/selinux.c:429
+#: src/lib/files/system.c:187 src/lib/util/selinux.c:429
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "Nelze přejmenovat [%s] na [%s] [%d]: %s"
 
-#: src/lib/files/system.c:266
+#: src/lib/files/system.c:261
 #, c-format
 msgid "Validating file [%s]"
 msgstr "Ověřování souboru [%s]"
 
-#: src/lib/files/system.c:271
+#: src/lib/files/system.c:266
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
 msgstr "Nelze zkontrolovat oprávnění souboru [%s] [%d]: %s"
 
-#: src/lib/files/system.c:291
+#: src/lib/files/system.c:286
 #, c-format
 msgid "File [%s] was modified outside authselect!"
 msgstr "Soubor [%s] byl změněn mimo authselect!"
 
-#: src/lib/files/system.c:310
+#: src/lib/files/system.c:305
 #, c-format
 msgid "File [%s] is still present"
 msgstr "Soubor [%s] je stále přítomen"
 
-#: src/lib/files/system.c:335 src/lib/files/system.c:345
+#: src/lib/files/system.c:330 src/lib/files/system.c:340
 #, c-format
 msgid "Unable to delete [%s] [%d]: %s"
 msgstr "Nelze odstranit [%s] [%d]: %s"
@@ -672,8 +672,9 @@ msgid "Unable to chown file [%s] [%d]: %s"
 msgstr "Nelze změnit vlastníka u souboru [%s] [%d]: %s"
 
 #: src/lib/util/selinux.c:46
-#, c-format
-msgid "Unable to create selabel context [%d]: %s"
+#, fuzzy, c-format
+#| msgid "Unable to create selabel context [%d]: %s"
+msgid "Unable to create selabel handle [%d]: %s"
 msgstr "Nelze vytvořit selabel kontext [%d]: %s"
 
 #: src/lib/util/selinux.c:55
@@ -740,13 +741,13 @@ msgstr "Odstraňování [%s]"
 msgid "Invalid operator!"
 msgstr "Neplatný operátor!"
 
-#: src/lib/util/template.c:450 src/lib/util/template.c:594
-#: src/lib/util/template.c:645
+#: src/lib/util/template.c:450 src/lib/util/template.c:573
+#: src/lib/util/template.c:624
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr "Nelze přeložit regulární výraz: chyba regex %d"
 
-#: src/lib/util/template.c:460 src/lib/util/template.c:655
+#: src/lib/util/template.c:460 src/lib/util/template.c:634
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "Nelze zpracovat shodu [%d]: %s"
@@ -756,7 +757,7 @@ msgstr "Nelze zpracovat shodu [%d]: %s"
 msgid "Unable to process operator [%d]: %s"
 msgstr "Nelze zpracovat operátor [%d]: %s"
 
-#: src/lib/util/template.c:500 src/lib/util/template.c:671
+#: src/lib/util/template.c:500 src/lib/util/template.c:650
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "Nelze vyhledat řetězec: chyba regex %d"
@@ -766,20 +767,12 @@ msgstr "Nelze vyhledat řetězec: chyba regex %d"
 msgid "Unable to generate template [%d]: %s"
 msgstr "Nelze vygenerovat šablonu [%d]: %s"
 
-#: src/lib/util/template.c:560
-msgid "Unable to get current time!"
-msgstr "Nelze získat aktuální čas!"
-
-#: src/lib/util/template.c:576
-msgid "Unable to create message!"
-msgstr "Nelze vytvořit zprávu!"
-
-#: src/lib/util/template.c:601
+#: src/lib/util/template.c:580
 #, c-format
 msgid "Unable to find new match: regex error %d"
 msgstr "Nelze nalézt novou shodu: chyba regulárního výrazu %d"
 
-#: src/lib/util/template.c:731
+#: src/lib/util/template.c:705
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
 msgstr "Nelze vytvořit dočasný soubor pro [%s] [%d]: %s"
@@ -1736,6 +1729,12 @@ msgstr ""
 #: src/compat/authcompat.py.in.in:520
 msgid "Error: Please, provide --updateall option."
 msgstr "Chyba: Zadejte prosím volbu --updateall."
+
+#~ msgid "Unable to get current time!"
+#~ msgstr "Nelze získat aktuální čas!"
+
+#~ msgid "Unable to create message!"
+#~ msgstr "Nelze vytvořit zprávu!"
 
 #~ msgid "Unable to check configuration [%d]: %s"
 #~ msgstr "Nelze zkontrolovat konfiguraci [%d]: %s"
