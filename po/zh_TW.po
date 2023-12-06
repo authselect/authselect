@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2022-12-01 13:36+0100\n"
+"POT-Creation-Date: 2023-09-27 13:03+0200\n"
 "PO-Revision-Date: 2021-11-09 11:26+0000\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://translate.fedoraproject.org/"
@@ -400,7 +400,7 @@ msgid "[%s] was not created by authselect!"
 msgstr "[%s]不是由authselect創建的！"
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
-#: src/lib/files/system.c:314
+#: src/lib/files/system.c:309
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
 msgstr "嘗試存取 [%s] [%d] 檔案時出錯：%s"
@@ -425,68 +425,68 @@ msgstr "檔案[%s]存在，但它需要被覆蓋！"
 msgid "Skipping [%s] because it is not an authselect file"
 msgstr ""
 
-#: src/lib/files/system.c:74 src/lib/profiles/read.c:162
+#: src/lib/files/system.c:73 src/lib/profiles/read.c:162
 #, c-format
 msgid "Reading file [%s/%s]"
 msgstr "讀取檔案 [%s/%s]"
 
-#: src/lib/files/system.c:82 src/lib/profiles/read.c:168
+#: src/lib/files/system.c:81 src/lib/profiles/read.c:168
 #: src/lib/profiles/read.c:173
 #, c-format
 msgid "Unable to read file [%s/%s] [%d]: %s"
 msgstr "無法讀取檔案 [%s/%s] [%d]：%s"
 
-#: src/lib/files/system.c:150
+#: src/lib/files/system.c:149
 #, c-format
 msgid "Unable to generate files [%d]: %s"
 msgstr "無法生成檔案 [%d]：%s"
 
-#: src/lib/files/system.c:165 src/lib/util/selinux.c:398
+#: src/lib/files/system.c:163 src/lib/util/selinux.c:398
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "為 [%s] 寫入暫存檔"
 
-#: src/lib/files/system.c:169
+#: src/lib/files/system.c:166
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
 msgstr "無法寫入 [%s] [%d] 暫存檔：%s"
 
-#: src/lib/files/system.c:174
+#: src/lib/files/system.c:171
 #, c-format
 msgid "Temporary file is named [%s]"
 msgstr "暫存檔名為 [%s]"
 
-#: src/lib/files/system.c:185 src/lib/util/selinux.c:425
+#: src/lib/files/system.c:182 src/lib/util/selinux.c:425
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "將 [%s] 重新命名為 [%s]"
 
-#: src/lib/files/system.c:190 src/lib/util/selinux.c:429
+#: src/lib/files/system.c:187 src/lib/util/selinux.c:429
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "無法將 [%s] 重新命名為 [%s] [%d]：%s"
 
-#: src/lib/files/system.c:266
+#: src/lib/files/system.c:261
 #, c-format
 msgid "Validating file [%s]"
 msgstr "驗證檔案 [%s]"
 
-#: src/lib/files/system.c:271
+#: src/lib/files/system.c:266
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
 msgstr "無法檢查[%s] [%d] 的檔案模式：%s"
 
-#: src/lib/files/system.c:291
+#: src/lib/files/system.c:286
 #, c-format
 msgid "File [%s] was modified outside authselect!"
 msgstr "[%s] 檔案在 authselect 之外修改過！"
 
-#: src/lib/files/system.c:310
+#: src/lib/files/system.c:305
 #, c-format
 msgid "File [%s] is still present"
 msgstr "[%s] 檔案仍然存在"
 
-#: src/lib/files/system.c:335 src/lib/files/system.c:345
+#: src/lib/files/system.c:330 src/lib/files/system.c:340
 #, fuzzy, c-format
 #| msgid "Unable to create [%s] [%d]: %s"
 msgid "Unable to delete [%s] [%d]: %s"
@@ -680,8 +680,9 @@ msgid "Unable to chown file [%s] [%d]: %s"
 msgstr "無法 chown [%s] [%d] 檔案：%s"
 
 #: src/lib/util/selinux.c:46
-#, c-format
-msgid "Unable to create selabel context [%d]: %s"
+#, fuzzy, c-format
+#| msgid "Unable to create selabel context [%d]: %s"
+msgid "Unable to create selabel handle [%d]: %s"
 msgstr "無法創建selabel上下文[%d]： %s"
 
 #: src/lib/util/selinux.c:55
@@ -746,13 +747,13 @@ msgstr "正在移除 [%s]"
 msgid "Invalid operator!"
 msgstr "操作符無效！"
 
-#: src/lib/util/template.c:450 src/lib/util/template.c:594
-#: src/lib/util/template.c:645
+#: src/lib/util/template.c:450 src/lib/util/template.c:573
+#: src/lib/util/template.c:624
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr "無法編譯常規表述式：regex error %d"
 
-#: src/lib/util/template.c:460 src/lib/util/template.c:655
+#: src/lib/util/template.c:460 src/lib/util/template.c:634
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "無法處理 [%d] 比對：%s"
@@ -762,7 +763,7 @@ msgstr "無法處理 [%d] 比對：%s"
 msgid "Unable to process operator [%d]: %s"
 msgstr "無法處理 [%d] 操作符：%s"
 
-#: src/lib/util/template.c:500 src/lib/util/template.c:671
+#: src/lib/util/template.c:500 src/lib/util/template.c:650
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "無法搜索字符串：regex error %d"
@@ -772,20 +773,12 @@ msgstr "無法搜索字符串：regex error %d"
 msgid "Unable to generate template [%d]: %s"
 msgstr "無法生成 [%d] 模板：%s"
 
-#: src/lib/util/template.c:560
-msgid "Unable to get current time!"
-msgstr "無法取得目前時間！"
-
-#: src/lib/util/template.c:576
-msgid "Unable to create message!"
-msgstr "無法建立訊息！"
-
-#: src/lib/util/template.c:601
+#: src/lib/util/template.c:580
 #, c-format
 msgid "Unable to find new match: regex error %d"
 msgstr "找不到新的符合項目：正規表示式中有錯誤 %d"
 
-#: src/lib/util/template.c:731
+#: src/lib/util/template.c:705
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
 msgstr "無法建立 [%s] [%d] 的暫存檔案：%s"
@@ -1703,6 +1696,12 @@ msgstr "錯誤：必須設定--enablewinbind 以及 --enablewinbindauth 兩者�
 #: src/compat/authcompat.py.in.in:520
 msgid "Error: Please, provide --updateall option."
 msgstr "錯誤：請提供 --updateall 選項。"
+
+#~ msgid "Unable to get current time!"
+#~ msgstr "無法取得目前時間！"
+
+#~ msgid "Unable to create message!"
+#~ msgstr "無法建立訊息！"
 
 #~ msgid "Unable to check configuration [%d]: %s"
 #~ msgstr "無法檢查 [%d] 組態：%s"

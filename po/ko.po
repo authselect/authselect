@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2022-12-01 13:36+0100\n"
-"PO-Revision-Date: 2023-08-06 02:42+0000\n"
+"POT-Creation-Date: 2023-09-27 13:03+0200\n"
+"PO-Revision-Date: 2023-10-11 09:36+0000\n"
 "Last-Translator: 김인수 <simmon@nplob.com>\n"
 "Language-Team: Korean <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/ko/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.18.2\n"
+"X-Generator: Weblate 5.0.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:188
 msgid "Unable to obtain supported features"
@@ -312,7 +312,7 @@ msgstr "[%s]에 프로필 \"%s\"이(가) 이미 있습니다"
 #: src/lib/authselect_profile.c:559
 #, c-format
 msgid "Unable to access [%s] [%d]: %s"
-msgstr "[%s] [%d]에 액세스할 수 없음 : %s"
+msgstr "[%s] [%d]에 접근 할 수 없음 : %s"
 
 #: src/lib/authselect_profile.c:565
 msgid "Unable to create file name: out of memory"
@@ -393,10 +393,10 @@ msgid "[%s] was not created by authselect!"
 msgstr "[%s]은(는) authselect에서 만들지 않았습니다!"
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
-#: src/lib/files/system.c:314
+#: src/lib/files/system.c:309
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
-msgstr "[%s] [%d] 파일에 액세스하는 동안 오류가 발생함: %s"
+msgstr "파일에 접근하는 동안 오류가 발생함 [%s] [%d]: %s"
 
 #: src/lib/files/symlinks.c:121
 #, c-format
@@ -418,68 +418,68 @@ msgstr "파일 [%s]가 존재하지만 덮어쓰기 해야 합니다!"
 msgid "Skipping [%s] because it is not an authselect file"
 msgstr "authselect 파일이 아니므로 [%s]를 건너뜁니다"
 
-#: src/lib/files/system.c:74 src/lib/profiles/read.c:162
+#: src/lib/files/system.c:73 src/lib/profiles/read.c:162
 #, c-format
 msgid "Reading file [%s/%s]"
 msgstr "[%s/%s] 파일 읽기"
 
-#: src/lib/files/system.c:82 src/lib/profiles/read.c:168
+#: src/lib/files/system.c:81 src/lib/profiles/read.c:168
 #: src/lib/profiles/read.c:173
 #, c-format
 msgid "Unable to read file [%s/%s] [%d]: %s"
 msgstr "[%s/%s] [%d] 파일을 읽을 수 없습니다: %s"
 
-#: src/lib/files/system.c:150
+#: src/lib/files/system.c:149
 #, c-format
 msgid "Unable to generate files [%d]: %s"
 msgstr "파일을 생성 할 수 없습니다 [%d]: %s"
 
-#: src/lib/files/system.c:165 src/lib/util/selinux.c:398
+#: src/lib/files/system.c:163 src/lib/util/selinux.c:398
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "[%s]에 대한 임시 파일 쓰기"
 
-#: src/lib/files/system.c:169
+#: src/lib/files/system.c:166
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
 msgstr "임시 파일 [%s] [%d]을(를) 쓸 수 없습니다: %s"
 
-#: src/lib/files/system.c:174
+#: src/lib/files/system.c:171
 #, c-format
 msgid "Temporary file is named [%s]"
 msgstr "임시 파일의 이름은 [%s]입니다"
 
-#: src/lib/files/system.c:185 src/lib/util/selinux.c:425
+#: src/lib/files/system.c:182 src/lib/util/selinux.c:425
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "[%s]을(를) [%s](으)로 이름 바꾸기"
 
-#: src/lib/files/system.c:190 src/lib/util/selinux.c:429
+#: src/lib/files/system.c:187 src/lib/util/selinux.c:429
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "이름을 바꿀 수 없습니다 [%s] ~ [%s][%d]: %s"
 
-#: src/lib/files/system.c:266
+#: src/lib/files/system.c:261
 #, c-format
 msgid "Validating file [%s]"
 msgstr "[%s] 파일 유효성 검사"
 
-#: src/lib/files/system.c:271
+#: src/lib/files/system.c:266
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
 msgstr "[%s] [%d] 파일 모드를 확인할 수 없습니다: %s"
 
-#: src/lib/files/system.c:291
+#: src/lib/files/system.c:286
 #, c-format
 msgid "File [%s] was modified outside authselect!"
 msgstr "[%s] 파일을 authselect 외부에서 수정했습니다!"
 
-#: src/lib/files/system.c:310
+#: src/lib/files/system.c:305
 #, c-format
 msgid "File [%s] is still present"
 msgstr "파일 [%s]이(가) 아직 있습니다"
 
-#: src/lib/files/system.c:335 src/lib/files/system.c:345
+#: src/lib/files/system.c:330 src/lib/files/system.c:340
 #, c-format
 msgid "Unable to delete [%s] [%d]: %s"
 msgstr "삭제 할 수 없음 [%s] [%d]: %s"
@@ -673,8 +673,8 @@ msgstr "파일을 열 수 없습니다 [%s] [%d] : %s"
 
 #: src/lib/util/selinux.c:46
 #, c-format
-msgid "Unable to create selabel context [%d]: %s"
-msgstr "selabel 컨텍스트를 만들 수 없음 [%d] : %s"
+msgid "Unable to create selabel handle [%d]: %s"
+msgstr "selabel 핸들을 생성 할 수 없음 [%d]: %s"
 
 #: src/lib/util/selinux.c:55
 #, c-format
@@ -738,13 +738,13 @@ msgstr "[%s] 삭제 중"
 msgid "Invalid operator!"
 msgstr "부적절한 연산자입니다!"
 
-#: src/lib/util/template.c:450 src/lib/util/template.c:594
-#: src/lib/util/template.c:645
+#: src/lib/util/template.c:450 src/lib/util/template.c:573
+#: src/lib/util/template.c:624
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr "정규식을 컴파일할 수 없습니다: 정규식 오류 %d"
 
-#: src/lib/util/template.c:460 src/lib/util/template.c:655
+#: src/lib/util/template.c:460 src/lib/util/template.c:634
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "일치 항목을 처리 할 수 없습니다 [%d] : %s"
@@ -754,7 +754,7 @@ msgstr "일치 항목을 처리 할 수 없습니다 [%d] : %s"
 msgid "Unable to process operator [%d]: %s"
 msgstr "연산자를 처리 할 수 없습니다 [%d]: %s"
 
-#: src/lib/util/template.c:500 src/lib/util/template.c:671
+#: src/lib/util/template.c:500 src/lib/util/template.c:650
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "문자열을 찾을 수 없습니다: 정규식 오류 %d"
@@ -764,20 +764,12 @@ msgstr "문자열을 찾을 수 없습니다: 정규식 오류 %d"
 msgid "Unable to generate template [%d]: %s"
 msgstr "템플릿을 생성 할 수 없습니다 [%d]: %s"
 
-#: src/lib/util/template.c:560
-msgid "Unable to get current time!"
-msgstr "현재 시간을 가져올 수 없습니다!"
-
-#: src/lib/util/template.c:576
-msgid "Unable to create message!"
-msgstr "메시지를 만들 수 없습니다!"
-
-#: src/lib/util/template.c:601
+#: src/lib/util/template.c:580
 #, c-format
 msgid "Unable to find new match: regex error %d"
 msgstr "새 일치 항목을 찾을 수 없음: 정규식 오류 %d"
 
-#: src/lib/util/template.c:731
+#: src/lib/util/template.c:705
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
 msgstr "[%s]의 임시 파일을 만들 수 없음 [%d] : %s"
@@ -1655,7 +1647,8 @@ msgstr ""
 #: src/compat/authcompat.py.in.in:473
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
-msgstr "중요 : authconfig는 authselect로 대체되므로, 자신의 스크립트를 최신화 하세요."
+msgstr ""
+"중요 : authconfig는 authselect로 대체되므로, 자신의 스크립트를 최신화 하세요."
 
 #: src/compat/authcompat.py.in.in:475
 msgid ""
@@ -1695,6 +1688,12 @@ msgstr "오류 : --enablewinbind 및 --enablewinbindauth를 모두 설정해야�
 #: src/compat/authcompat.py.in.in:520
 msgid "Error: Please, provide --updateall option."
 msgstr "오류: --updateall 옵션을 지정하십시오."
+
+#~ msgid "Unable to get current time!"
+#~ msgstr "현재 시간을 가져올 수 없습니다!"
+
+#~ msgid "Unable to create message!"
+#~ msgstr "메시지를 만들 수 없습니다!"
 
 #~ msgid "Unable to check configuration [%d]: %s"
 #~ msgstr "[%d] 구성을 확인할 수 없습니다: %s"

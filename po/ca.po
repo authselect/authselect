@@ -1,11 +1,13 @@
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2018. #zanata
+# Jose Luis Pavón Pavón <jolupameister@gmail.com>, 2023.
+# Julen Sansó <julensanso@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2022-12-01 13:36+0100\n"
-"PO-Revision-Date: 2021-11-09 11:25+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"POT-Creation-Date: 2023-09-27 13:03+0200\n"
+"PO-Revision-Date: 2023-11-22 16:01+0000\n"
+"Last-Translator: Julen Sansó <julensanso@gmail.com>\n"
 "Language-Team: Catalan <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/ca/>\n"
 "Language: ca\n"
@@ -13,21 +15,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.8\n"
+"X-Generator: Weblate 5.2.1\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:188
 msgid "Unable to obtain supported features"
-msgstr ""
+msgstr "No és pot obtenir les opcions suportades"
 
 #: src/lib/authselect.c:59
 #, c-format
 msgid "Unknown profile feature [%s], did you mean [%s]?"
-msgstr ""
+msgstr "Característica de perfil desconegut [%s], volies dir [%s]?"
 
 #: src/lib/authselect.c:62
 #, c-format
 msgid "Unknown profile feature [%s]"
-msgstr ""
+msgstr "Característica de perfil desconegut [%s]"
 
 #: src/lib/authselect.c:86
 #, c-format
@@ -73,17 +75,16 @@ msgstr "No es pot activar el perfil [%s] [%d]: %s"
 
 #: src/lib/authselect.c:141
 msgid "Trying to uninstall authselect configuration"
-msgstr ""
+msgstr "Intentant desinstal·lar la configuració d'authselect"
 
 #: src/lib/authselect.c:145
-#, fuzzy, c-format
-#| msgid "Unable to create symbolic links [%d]: %s"
+#, c-format
 msgid "Unable to remove symlinks [%d]: %s"
-msgstr "No es poden crear els enllaços simbòlics [%d]: %s"
+msgstr "No es poden treure els enllaços simbòlics [%d]: %s"
 
 #: src/lib/authselect.c:149
 msgid "Symbolic links were successfully removed"
-msgstr ""
+msgstr "Els enllaços s'han tret amb èxit"
 
 #: src/lib/authselect.c:154
 #, fuzzy, c-format
@@ -394,7 +395,7 @@ msgid "[%s] was not created by authselect!"
 msgstr ""
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
-#: src/lib/files/system.c:314
+#: src/lib/files/system.c:309
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
 msgstr "Error mentre s'intentava accedir al fitxer [%s] [%d]: %s"
@@ -419,68 +420,68 @@ msgstr ""
 msgid "Skipping [%s] because it is not an authselect file"
 msgstr ""
 
-#: src/lib/files/system.c:74 src/lib/profiles/read.c:162
+#: src/lib/files/system.c:73 src/lib/profiles/read.c:162
 #, c-format
 msgid "Reading file [%s/%s]"
 msgstr "Lectura del fitxer [%s/%s]"
 
-#: src/lib/files/system.c:82 src/lib/profiles/read.c:168
+#: src/lib/files/system.c:81 src/lib/profiles/read.c:168
 #: src/lib/profiles/read.c:173
 #, c-format
 msgid "Unable to read file [%s/%s] [%d]: %s"
 msgstr ""
 
-#: src/lib/files/system.c:150
+#: src/lib/files/system.c:149
 #, c-format
 msgid "Unable to generate files [%d]: %s"
 msgstr "No es poden generar el fitxers [%d]: %s"
 
-#: src/lib/files/system.c:165 src/lib/util/selinux.c:398
+#: src/lib/files/system.c:163 src/lib/util/selinux.c:398
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr ""
 
-#: src/lib/files/system.c:169
+#: src/lib/files/system.c:166
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
 msgstr ""
 
-#: src/lib/files/system.c:174
+#: src/lib/files/system.c:171
 #, c-format
 msgid "Temporary file is named [%s]"
 msgstr ""
 
-#: src/lib/files/system.c:185 src/lib/util/selinux.c:425
+#: src/lib/files/system.c:182 src/lib/util/selinux.c:425
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr ""
 
-#: src/lib/files/system.c:190 src/lib/util/selinux.c:429
+#: src/lib/files/system.c:187 src/lib/util/selinux.c:429
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr ""
 
-#: src/lib/files/system.c:266
+#: src/lib/files/system.c:261
 #, c-format
 msgid "Validating file [%s]"
 msgstr "Validació del fitxer [%s]"
 
-#: src/lib/files/system.c:271
+#: src/lib/files/system.c:266
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
 msgstr "No es pot comprovar el mode de fitxer de [%s] [%d]: %s"
 
-#: src/lib/files/system.c:291
+#: src/lib/files/system.c:286
 #, c-format
 msgid "File [%s] was modified outside authselect!"
 msgstr "El fitxer [%s] ha estat modificat fora d'authselect!"
 
-#: src/lib/files/system.c:310
+#: src/lib/files/system.c:305
 #, c-format
 msgid "File [%s] is still present"
 msgstr "El fitxer [%s] encara està present"
 
-#: src/lib/files/system.c:335 src/lib/files/system.c:345
+#: src/lib/files/system.c:330 src/lib/files/system.c:340
 #, fuzzy, c-format
 #| msgid "Unable to read [%s] [%d]: %s"
 msgid "Unable to delete [%s] [%d]: %s"
@@ -674,9 +675,10 @@ msgid "Unable to chown file [%s] [%d]: %s"
 msgstr ""
 
 #: src/lib/util/selinux.c:46
-#, c-format
-msgid "Unable to create selabel context [%d]: %s"
-msgstr ""
+#, fuzzy, c-format
+#| msgid "Unable to create symbolic links [%d]: %s"
+msgid "Unable to create selabel handle [%d]: %s"
+msgstr "No es poden crear els enllaços simbòlics [%d]: %s"
 
 #: src/lib/util/selinux.c:55
 #, c-format
@@ -741,13 +743,13 @@ msgstr "Lectura del fitxer [%s/%s]"
 msgid "Invalid operator!"
 msgstr "Operador no vàlid!"
 
-#: src/lib/util/template.c:450 src/lib/util/template.c:594
-#: src/lib/util/template.c:645
+#: src/lib/util/template.c:450 src/lib/util/template.c:573
+#: src/lib/util/template.c:624
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
 msgstr "No es pot compilar l'expressió regular: error d'expressió regular %d"
 
-#: src/lib/util/template.c:460 src/lib/util/template.c:655
+#: src/lib/util/template.c:460 src/lib/util/template.c:634
 #, c-format
 msgid "Unable to process match [%d]: %s"
 msgstr "No es pot processar la coincidència [%d]: %s"
@@ -757,7 +759,7 @@ msgstr "No es pot processar la coincidència [%d]: %s"
 msgid "Unable to process operator [%d]: %s"
 msgstr "No es pot processar l'operador [%d]: %s"
 
-#: src/lib/util/template.c:500 src/lib/util/template.c:671
+#: src/lib/util/template.c:500 src/lib/util/template.c:650
 #, c-format
 msgid "Unable to search string: regex error %d"
 msgstr "No es pot cercar la cadena: error d'expressió regular %d"
@@ -767,20 +769,12 @@ msgstr "No es pot cercar la cadena: error d'expressió regular %d"
 msgid "Unable to generate template [%d]: %s"
 msgstr "No es pot generar la plantilla [%d]: %s"
 
-#: src/lib/util/template.c:560
-msgid "Unable to get current time!"
-msgstr "No es pot obtenir l'hora actual!"
-
-#: src/lib/util/template.c:576
-msgid "Unable to create message!"
-msgstr "No es pot crear el missatge!"
-
-#: src/lib/util/template.c:601
+#: src/lib/util/template.c:580
 #, c-format
 msgid "Unable to find new match: regex error %d"
 msgstr ""
 
-#: src/lib/util/template.c:731
+#: src/lib/util/template.c:705
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
 msgstr ""
@@ -1709,6 +1703,12 @@ msgstr "Error: S'han d'establir ambdós, --enablewinbind i --enablewinbindauth."
 #: src/compat/authcompat.py.in.in:520
 msgid "Error: Please, provide --updateall option."
 msgstr "Error: proporcioneu l'opció --updateall."
+
+#~ msgid "Unable to get current time!"
+#~ msgstr "No es pot obtenir l'hora actual!"
+
+#~ msgid "Unable to create message!"
+#~ msgstr "No es pot crear el missatge!"
 
 #~ msgid "Unable to check configuration [%d]: %s"
 #~ msgstr "No es pot comprovar la configuració [%d]: %s"
