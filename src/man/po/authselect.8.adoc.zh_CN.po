@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Weblate <noreply@weblate.org>, 2020.
 # Ludek Janda <ljanda@redhat.com>, 2021.
-# Jingge Chen <mariocanfly@hotmail.com>, 2022.
+# Jingge Chen <mariocanfly@hotmail.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-12-01 13:40+0100\n"
-"PO-Revision-Date: 2022-10-31 11:19+0000\n"
+"PO-Revision-Date: 2023-12-04 03:43+0000\n"
 "Last-Translator: Jingge Chen <mariocanfly@hotmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://translate.fedoraproject.org/"
 "projects/authselect/12x-authselect8adoc/zh_CN/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 5.2.1\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
@@ -44,9 +44,9 @@ msgstr "简介"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:13
-#, fuzzy, no-wrap
+#, no-wrap
 msgid " authselect [--debug] [--trace] [--warn] command [command options]\n"
-msgstr " authselect [--debug] [--trace] [--warn] command [command options]\n"
+msgstr " authselect [--debug] [--trace] [--warn] command [命令选项]\n"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:15
@@ -124,9 +124,11 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:45
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup=NAME]"
-msgstr "*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup=NAME]"
+msgstr ""
+"*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] "
+"[--backup=NAME]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:48
@@ -139,7 +141,7 @@ msgstr ""
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:49
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*--force, -f*"
 msgstr "*--force, -f*"
 
@@ -156,7 +158,7 @@ msgstr "即使以前的配置不是由authselect创建的，而是由其他工�
 #. type: Labeled list
 #: src/man/authselect.8.adoc:55 src/man/authselect.8.adoc:80
 #: src/man/authselect.8.adoc:149 src/man/authselect.8.adoc:167
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*-b*"
 msgstr "*-b*"
 
@@ -177,7 +179,7 @@ msgstr ""
 #. type: Labeled list
 #: src/man/authselect.8.adoc:61 src/man/authselect.8.adoc:86
 #: src/man/authselect.8.adoc:155 src/man/authselect.8.adoc:173
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "*--backup=NAME*"
 msgstr "*--backup=NAME*"
 
@@ -189,24 +191,27 @@ msgid ""
 "will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
 "unique string is used as a name if no value is provided.\n"
 msgstr ""
+"激活所选配置文件前会备份系统文件。\n"
+"备份将存储在 {AUTHSELECT_BACKUP_DIR}/NAME 中。\n"
+"如果没有提供值，则使用带有唯一字符串的当前时间作为名称。\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:66
 #, no-wrap
 msgid "*--nobackup*"
-msgstr ""
+msgstr "*--nobackup*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:68
 #, no-wrap
 msgid "Do not backup system configuration even if *--force* is set.\n"
-msgstr ""
+msgstr "即使设置了 *--force*，也不会备份系统配置。\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:69 src/man/authselect.8.adoc:160
 #, no-wrap
 msgid "*--quiet, -q*"
-msgstr ""
+msgstr "*--quiet, -q*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:72 src/man/authselect.8.adoc:163
@@ -215,12 +220,14 @@ msgid ""
 "The command will not print any informational message such as additional\n"
 "profile requirements or backup location. Errors are still being print.\n"
 msgstr ""
+"该命令不会打印任何信息，如附加配置文件要求或备份位置。\n"
+"但错误仍会被打印。\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:73
 #, no-wrap
 msgid "*apply-changes* [-b] [--backup=NAME]"
-msgstr ""
+msgstr "*apply-changes* [-b] [--backup=NAME]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:79
@@ -231,6 +238,9 @@ msgid ""
 "changes if the existing configuration is a valid authselect configuration, "
 "otherwise an error is returned."
 msgstr ""
+"重新应用当前选定的配置文件。如果配置文件模板已更新，该命令可用于重新生成当前"
+"系统配置，以便在系统上应用这些更改。只有当现有配置是有效的 authselect "
+"配置时，此命令才会重新应用更改，否则将返回错误信息。"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:85
@@ -241,6 +251,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
+"应用更改前会备份系统文件。\n"
+"备份将存储在 {AUTHSELECT_BACKUP_DIR}/NAME 中。\n"
+"带唯一字符串的当前时间将用作备份名称。\n"
+"这是 *--backup=* 的快捷方式。\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:90
@@ -250,12 +264,15 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
+"应用更改前备份系统文件。\n"
+"备份将存储在 {AUTHSELECT_BACKUP_DIR}/NAME 中。\n"
+"如果没有提供值，则使用带有唯一字符串的当前时间作为名称。\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:91
 #, no-wrap
 msgid "*list*"
-msgstr ""
+msgstr "*list*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:93
@@ -266,7 +283,7 @@ msgstr "列出可用的配置集"
 #: src/man/authselect.8.adoc:94
 #, no-wrap
 msgid "*list-features* profile_id"
-msgstr ""
+msgstr "*list-features* profile_id"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:98
@@ -275,34 +292,37 @@ msgid ""
 "List all features available in given profile.\n"
 "_Note:_ This will only list the features without any description. Please, read the profile documentation with *show* to see what the features do."
 msgstr ""
+"列出给定配置文件中的所有可用功能。\n"
+"_注意：_这仅会列出所有功能但不提供任何描述。请使用 *show* "
+"阅读配置文件，了解这些功能。"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:99
 #, no-wrap
 msgid "*show* profile_id"
-msgstr ""
+msgstr "*show* profile_id"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:101
 msgid "Print information about the profile."
-msgstr ""
+msgstr "打印配置文件的相关信息。"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:102
 #, no-wrap
 msgid "*requirements* profile_id [features]"
-msgstr ""
+msgstr "*requirements* profile_id [功能]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:104
 msgid "Print information about profile requirements."
-msgstr ""
+msgstr "打印有关配置文件要求的信息。"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:105
 #, no-wrap
 msgid "*current* [-r, --raw]"
-msgstr ""
+msgstr "*current* [-r, --raw]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:109
@@ -310,13 +330,14 @@ msgid ""
 "Print information about currently selected profiles. If *--raw* option is "
 "specified, the command will print raw parameters as they were passed to "
 "*select* command instead of formatted output."
-msgstr ""
+msgstr "打印当前所选配置文件的信息。如果指定了 *--raw* 选项，命令将打印传给 *select* "
+"命令的原始参数，而不是格式化输出。"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:110
 #, no-wrap
 msgid "*check*"
-msgstr ""
+msgstr "*check*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:114
