@@ -21,6 +21,8 @@ Make sure that SSSD service is configured and enabled. See SSSD documentation fo
 - with-gssapi is selected, make sure that GSSAPI authenticaiton is enabled in SSSD        {include if "with-gssapi"}
   - set pam_gssapi_services to a list of allowed services in /etc/sssd/sssd.conf          {include if "with-gssapi"}
   - see additional information in pam_sss_gss(8)                                          {include if "with-gssapi"}
+                                                                                          {include if "with-tlog"}
+- with-tlog is selected, make sure that session recording is enabled in SSSD              {include if "with-tlog"}
                                                                                           {include if "with-libvirt"}
 - with-libvirt is selected, make sure that the libvirt NSS plugins are installed          {include if "with-libvirt"}
                                                                                           {include if "with-systemd-homed"}
