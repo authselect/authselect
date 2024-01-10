@@ -1,6 +1,20 @@
 authselect_profile_dir=@AUTHSELECT_PROFILE_DIR@
 
 # The shipped profiles
+profile_localdir = $(authselect_profile_dir)/local
+dist_profile_local_DATA = \
+    $(top_srcdir)/profiles/local/nsswitch.conf \
+    $(top_srcdir)/profiles/local/password-auth \
+    $(top_srcdir)/profiles/local/postlogin \
+    $(top_srcdir)/profiles/local/README \
+    $(top_srcdir)/profiles/local/REQUIREMENTS \
+    $(top_srcdir)/profiles/local/smartcard-auth \
+    $(top_srcdir)/profiles/local/system-auth \
+    $(top_srcdir)/profiles/local/fingerprint-auth \
+    $(top_srcdir)/profiles/local/dconf-db \
+    $(top_srcdir)/profiles/local/dconf-locks \
+    $(NULL)
+
 profile_minimaldir = $(authselect_profile_dir)/minimal
 dist_profile_minimal_DATA = \
     $(top_srcdir)/profiles/minimal/nsswitch.conf \
