@@ -17,10 +17,6 @@ Make sure that SSSD service is configured and enabled. See SSSD documentation fo
 - with-mkhomedir is selected, make sure pam_oddjob_mkhomedir module                       {include if "with-mkhomedir"}
   is present and oddjobd service is enabled and active                                    {include if "with-mkhomedir"}
   - systemctl enable --now oddjobd.service                                                {include if "with-mkhomedir"}
-                                                                                          {include if "with-files-domain"}
-- with-files-domain is selected, make sure the files provider is enabled in SSSD          {include if "with-files-domain"}
-  - set enable_files_domain=true in [sssd] section of /etc/sssd/sssd.conf                 {include if "with-files-domain"}
-  - or create a custom domain with id_provider=files                                      {include if "with-files-domain"}
                                                                                           {include if "with-gssapi"}
 - with-gssapi is selected, make sure that GSSAPI authenticaiton is enabled in SSSD        {include if "with-gssapi"}
   - set pam_gssapi_services to a list of allowed services in /etc/sssd/sssd.conf          {include if "with-gssapi"}
