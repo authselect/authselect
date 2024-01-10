@@ -89,21 +89,6 @@ with-mdns4::
 with-mdns6::
     Enable multicast DNS over IPv6.
 
-with-files-domain::
-    If set, SSSD will be contacted before "files" when resolving users and
-    groups. The order in nsswitch.conf will be set to "sss files" instead of
-    "files sss" for passwd and group maps.
-
-with-files-access-provider::
-    If set, account management for local users is handled also by pam_sss. This
-    is needed if there is an explicitly configured domain with id_provider=files
-    and non-empty access_provider setting in sssd.conf.
-
-    *WARNING:* SSSD access check will become mandatory for local users and
-    if SSSD is stopped then local users will not be able to log in. Only
-    system accounts (as defined by pam_usertype, including root) will be
-    able to log in.
-
 with-gssapi::
     If set, pam_sss_gss module is enabled to perform user authentication over
     GSSAPI.
