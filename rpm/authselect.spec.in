@@ -185,10 +185,21 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %dir %{_datadir}/authselect
 %dir %{_datadir}/authselect/vendor
 %dir %{_datadir}/authselect/default
+%dir %{_datadir}/authselect/default/local/
 %dir %{_datadir}/authselect/default/minimal/
 %dir %{_datadir}/authselect/default/nis/
 %dir %{_datadir}/authselect/default/sssd/
 %dir %{_datadir}/authselect/default/winbind/
+%{_datadir}/authselect/default/local/dconf-db
+%{_datadir}/authselect/default/local/dconf-locks
+%{_datadir}/authselect/default/local/fingerprint-auth
+%{_datadir}/authselect/default/local/nsswitch.conf
+%{_datadir}/authselect/default/local/password-auth
+%{_datadir}/authselect/default/local/postlogin
+%{_datadir}/authselect/default/local/README
+%{_datadir}/authselect/default/local/REQUIREMENTS
+%{_datadir}/authselect/default/local/smartcard-auth
+%{_datadir}/authselect/default/local/system-auth
 %{_datadir}/authselect/default/minimal/dconf-db
 %{_datadir}/authselect/default/minimal/dconf-locks
 %{_datadir}/authselect/default/minimal/fingerprint-auth
