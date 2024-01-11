@@ -27,8 +27,8 @@ Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 %endif
 
 # Set the default profile
-%{?fedora:%global default_profile sssd with-silent-lastlog}
-%{?rhel:%global default_profile sssd}
+%{?fedora:%global default_profile local with-silent-lastlog}
+%{?rhel:%global default_profile local}
 
 BuildRequires:  autoconf
 BuildRequires:  automake
