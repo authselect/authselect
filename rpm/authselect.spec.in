@@ -321,6 +321,16 @@ if [ -f %{forcefile} ]; then
     %__rm -f %{forcefile}
 fi
 
+# Minimal profile was removed. Switch to local.
+%__sed -i '1 s/^minimal$/local/'  %{_sysconfdir}/authselect/authselect.conf
+for file in  %{_sysconfdir}/authselect/custom/*/*; do
+    link=`%{_bindir}/readlink "$file"`
+    if [[ "$link" == %{_datadir}/authselect/default/minimal/* ]]; then
+        target=`%{_bindir}/basename "$link"`
+        %{_bindir}/ln -sfn "%{_datadir}/authselect/default/local/$target" "$file"
+    fi
+done
+
 # Apply any changes to profiles (validates configuration first internally)
 %{_bindir}/authselect apply-changes &> /dev/null
 
