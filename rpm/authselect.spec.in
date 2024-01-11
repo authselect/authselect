@@ -186,7 +186,6 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %dir %{_datadir}/authselect/vendor
 %dir %{_datadir}/authselect/default
 %dir %{_datadir}/authselect/default/local/
-%dir %{_datadir}/authselect/default/minimal/
 %dir %{_datadir}/authselect/default/nis/
 %dir %{_datadir}/authselect/default/sssd/
 %dir %{_datadir}/authselect/default/winbind/
@@ -200,16 +199,6 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %{_datadir}/authselect/default/local/REQUIREMENTS
 %{_datadir}/authselect/default/local/smartcard-auth
 %{_datadir}/authselect/default/local/system-auth
-%{_datadir}/authselect/default/minimal/dconf-db
-%{_datadir}/authselect/default/minimal/dconf-locks
-%{_datadir}/authselect/default/minimal/fingerprint-auth
-%{_datadir}/authselect/default/minimal/nsswitch.conf
-%{_datadir}/authselect/default/minimal/password-auth
-%{_datadir}/authselect/default/minimal/postlogin
-%{_datadir}/authselect/default/minimal/README
-%{_datadir}/authselect/default/minimal/REQUIREMENTS
-%{_datadir}/authselect/default/minimal/smartcard-auth
-%{_datadir}/authselect/default/minimal/system-auth
 %{_datadir}/authselect/default/nis/dconf-db
 %{_datadir}/authselect/default/nis/dconf-locks
 %{_datadir}/authselect/default/nis/fingerprint-auth

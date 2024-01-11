@@ -15,20 +15,6 @@ dist_profile_local_DATA = \
     $(top_srcdir)/profiles/local/dconf-locks \
     $(NULL)
 
-profile_minimaldir = $(authselect_profile_dir)/minimal
-dist_profile_minimal_DATA = \
-    $(top_srcdir)/profiles/minimal/nsswitch.conf \
-    $(top_srcdir)/profiles/minimal/password-auth \
-    $(top_srcdir)/profiles/minimal/postlogin \
-    $(top_srcdir)/profiles/minimal/README \
-    $(top_srcdir)/profiles/minimal/REQUIREMENTS \
-    $(top_srcdir)/profiles/minimal/smartcard-auth \
-    $(top_srcdir)/profiles/minimal/system-auth \
-    $(top_srcdir)/profiles/minimal/fingerprint-auth \
-    $(top_srcdir)/profiles/minimal/dconf-db \
-    $(top_srcdir)/profiles/minimal/dconf-locks \
-    $(NULL)
-
 profile_nisdir = $(authselect_profile_dir)/nis
 dist_profile_nis_DATA = \
     $(top_srcdir)/profiles/nis/nsswitch.conf \
