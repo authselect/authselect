@@ -25,7 +25,7 @@ account     required                                     pam_access.so          
 account     required                                     pam_faillock.so                                        {include if "with-faillock"}
 account     sufficient                                   pam_systemd_home.so                                    {include if "with-systemd-homed"}
 account     required                                     pam_unix.so
-account     sufficient                                   pam_localuser.so
+account     sufficient                                   pam_localuser.so                                       {exclude if "with-files-access-provider"}
 account     sufficient                                   pam_usertype.so issystem
 account     [default=bad success=ok user_unknown=ignore] pam_sss.so
 account     required                                     pam_permit.so
