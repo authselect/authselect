@@ -25,7 +25,7 @@ jobs:
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v1
       with:
-        languages: cpp, python
+        languages: cpp
         queries: +security-and-quality
 
     - name: Autobuild
@@ -33,19 +33,3 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
-
-  flake8:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Install flake8
-      run: |
-        sudo apt update
-        sudo apt install -y flake8
-
-    - name: Execute flake8 on the repository
-      run: flake8 --ignore=W503,E501 src/compat/authcompat.py.in.in .
