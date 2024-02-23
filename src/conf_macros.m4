@@ -90,16 +90,6 @@ if test x"$with_compat" = xyes; then
 fi
 AM_CONDITIONAL([BUILD_COMPAT], [test x$with_compat = xyes])
 
-AC_ARG_WITH([user-nsswitch],
-    [AC_HELP_STRING([--with-user-nsswitch], [Build with user nsswitch support [no]])],
-    [], with_user_nsswitch=no
-)
-AC_SUBST(BUILD_USER_NSSWITCH, 0)
-if test x"$with_user_nsswitch" = xyes; then
-    AC_DEFINE(BUILD_USER_NSSWITCH, 1, [whether to build with user nsswitch support])
-    AC_SUBST(BUILD_USER_NSSWITCH, 1)
-fi
-
 AC_ARG_WITH([nis-profile],
     [AC_HELP_STRING([--with-nis-profile], [Install NIS profile [no]])],
     [], with_nis_profile=no
