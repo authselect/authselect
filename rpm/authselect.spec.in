@@ -12,6 +12,13 @@ Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
 %global makedir %{_builddir}/%{name}-%{version}
 
+# Disable NIS profile on RHEL
+%if 0%{?rhel}
+%global with_nis_profile 0
+%else
+%global with_nis_profile 1
+%endif
+
 # Set the default profile
 %{?fedora:%global default_profile local with-silent-lastlog}
 %{?rhel:%global default_profile local}
@@ -75,7 +82,11 @@ done
 
 %build
 autoreconf -if
-%configure
+%configure \
+%if %{with_nis_profile}
+    --with-nis-profile \
+%endif
+    %{nil}
 %make_build
 
 %check
@@ -123,7 +134,6 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %dir %{_datadir}/authselect/vendor
 %dir %{_datadir}/authselect/default
 %dir %{_datadir}/authselect/default/local/
-%dir %{_datadir}/authselect/default/nis/
 %dir %{_datadir}/authselect/default/sssd/
 %dir %{_datadir}/authselect/default/winbind/
 %{_datadir}/authselect/default/local/dconf-db
@@ -136,16 +146,6 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %{_datadir}/authselect/default/local/REQUIREMENTS
 %{_datadir}/authselect/default/local/smartcard-auth
 %{_datadir}/authselect/default/local/system-auth
-%{_datadir}/authselect/default/nis/dconf-db
-%{_datadir}/authselect/default/nis/dconf-locks
-%{_datadir}/authselect/default/nis/fingerprint-auth
-%{_datadir}/authselect/default/nis/nsswitch.conf
-%{_datadir}/authselect/default/nis/password-auth
-%{_datadir}/authselect/default/nis/postlogin
-%{_datadir}/authselect/default/nis/README
-%{_datadir}/authselect/default/nis/REQUIREMENTS
-%{_datadir}/authselect/default/nis/smartcard-auth
-%{_datadir}/authselect/default/nis/system-auth
 %{_datadir}/authselect/default/sssd/dconf-db
 %{_datadir}/authselect/default/sssd/dconf-locks
 %{_datadir}/authselect/default/sssd/fingerprint-auth
@@ -166,6 +166,19 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %{_datadir}/authselect/default/winbind/REQUIREMENTS
 %{_datadir}/authselect/default/winbind/smartcard-auth
 %{_datadir}/authselect/default/winbind/system-auth
+%if %{with_nis_profile}
+%dir %{_datadir}/authselect/default/nis/
+%{_datadir}/authselect/default/nis/dconf-db
+%{_datadir}/authselect/default/nis/dconf-locks
+%{_datadir}/authselect/default/nis/fingerprint-auth
+%{_datadir}/authselect/default/nis/nsswitch.conf
+%{_datadir}/authselect/default/nis/password-auth
+%{_datadir}/authselect/default/nis/postlogin
+%{_datadir}/authselect/default/nis/README
+%{_datadir}/authselect/default/nis/REQUIREMENTS
+%{_datadir}/authselect/default/nis/smartcard-auth
+%{_datadir}/authselect/default/nis/system-auth
+%endif
 %{_libdir}/libauthselect.so.*
 %{_mandir}/man5/authselect-profiles.5*
 %{_datadir}/doc/authselect/COPYING
