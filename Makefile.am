@@ -2,7 +2,6 @@ SUBDIRS= \
     po \
     profiles \
     src/common \
-    src/compat \
     src/lib \
     src/cli \
     src/tests \

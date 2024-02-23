@@ -81,15 +81,6 @@ AS_IF([test "x$enable_debug_template_regex" = "xyes"],
     )
 )
 
-AC_ARG_WITH([compat],
-    [AC_HELP_STRING([--with-compat], [Build with compatibility tool [no]])],
-    [], with_compat=no
-)
-if test x"$with_compat" = xyes; then
-    AM_PATH_PYTHON([3])
-fi
-AM_CONDITIONAL([BUILD_COMPAT], [test x$with_compat = xyes])
-
 AC_ARG_WITH([nis-profile],
     [AC_HELP_STRING([--with-nis-profile], [Install NIS profile [no]])],
     [], with_nis_profile=no
