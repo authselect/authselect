@@ -197,8 +197,6 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %{_mandir}/man7/authselect-migration.7*
 %{_sysconfdir}/bash_completion.d/authselect-completion.sh
 
-%global forcefile %{_localstatedir}/lib/rpm-state/%{name}.force
-
 %preun
 if [ $1 == 0 ] ; then
     # Remove authselect symbolic links so all authselect files can be
@@ -208,16 +206,7 @@ if [ $1 == 0 ] ; then
     %{_bindir}/authselect opt-out
 fi
 
-%pre libs
-# Check if this is a new installation.
-%__rm -f %{forcefile}
-if [ $1 -eq 1 ] ; then
-    touch %{forcefile}
-fi
-exit 0
-
 %posttrans libs
-
 # Keep nss-altfiles for all rpm-ostree based systems.
 # See https://github.com/authselect/authselect/issues/48
 if test -e /run/ostree-booted; then
@@ -227,18 +216,13 @@ if test -e /run/ostree-booted; then
     done
 fi
 
-%{_bindir}/authselect check &> /dev/null
-if [ $? -eq 6 ]; then
-    NOBACKUP="--nobackup"
-fi
-
 # If this is a new installation select the default configuration.
-if [ -f %{forcefile} ]; then
-    %{_bindir}/authselect select %{default_profile} --force $NOBACKUP &> /dev/null
-    %__rm -f %{forcefile}
+if [ $1 == 1 ] ; then
+    %{_bindir}/authselect select %{default_profile} --force --nobackup &> /dev/null
+    exit 0
 fi
 
-# Minimal profile was removed. Switch to local.
+# Minimal profile was removed. Switch to local during upgrade.
 %__sed -i '1 s/^minimal$/local/'  %{_sysconfdir}/authselect/authselect.conf
 for file in  %{_sysconfdir}/authselect/custom/*/*; do
     link=`%{_bindir}/readlink "$file"`
