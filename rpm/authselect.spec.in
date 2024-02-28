@@ -212,7 +212,7 @@ fi
 if test -e /run/ostree-booted; then
     for PROFILE in `ls %{_datadir}/authselect/default`; do
         %{_bindir}/authselect create-profile $PROFILE --vendor --base-on $PROFILE --symlink-pam --symlink-dconf --symlink=REQUIREMENTS --symlink=README &> /dev/null
-        %__sed -ie 's/{if "with-altfiles":altfiles \[SUCCESS=merge\] }/altfiles [SUCCESS=merge] /g' %{_datadir}/authselect/vendor/$PROFILE/nsswitch.conf &> /dev/null
+        %__sed -i -e 's/{if "with-altfiles":\([^}]\+\)}/\1/g' %{_datadir}/authselect/vendor/$PROFILE/nsswitch.conf &> /dev/null
     done
 fi
 
