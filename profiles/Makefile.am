@@ -15,6 +15,7 @@ dist_profile_local_DATA = \
     $(top_srcdir)/profiles/local/dconf-locks \
     $(NULL)
 
+if WITH_NIS_PROFILE
 profile_nisdir = $(authselect_profile_dir)/nis
 dist_profile_nis_DATA = \
     $(top_srcdir)/profiles/nis/nsswitch.conf \
@@ -28,6 +29,7 @@ dist_profile_nis_DATA = \
     $(top_srcdir)/profiles/nis/dconf-db \
     $(top_srcdir)/profiles/nis/dconf-locks \
     $(NULL)
+endif
 
 profile_sssddir = $(authselect_profile_dir)/sssd
 dist_profile_sssd_DATA = \

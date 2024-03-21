@@ -51,8 +51,6 @@ AC_CONFIG_FILES([Makefile
                  profiles/Makefile
                  rpm/authselect.spec
                  src/common/Makefile
-                 src/compat/authcompat.py.in
-                 src/compat/Makefile
                  src/cli/Makefile
                  src/lib/Makefile
                  src/lib/authselect.pc

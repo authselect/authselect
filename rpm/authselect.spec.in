@@ -12,18 +12,11 @@ Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
 %global makedir %{_builddir}/%{name}-%{version}
 
-%if 0%{?fedora} >= 35 || 0%{?rhel} >= 10
-%global with_compat 0
+# Disable NIS profile on RHEL
+%if 0%{?rhel}
+%global with_nis_profile 0
 %else
-%global with_compat 1
-%endif
-
-%if 0%{?fedora} >= 36 || 0%{?rhel} >= 10
-%global with_user_nsswitch 0
-%global enforce_authselect 1
-%else
-%global with_user_nsswitch 1
-%global enforce_authselect 0
+%global with_nis_profile 1
 %endif
 
 # Set the default profile
@@ -43,21 +36,14 @@ BuildRequires:  po4a
 BuildRequires:  %{_bindir}/a2x
 BuildRequires:  libcmocka-devel >= 1.0.0
 BuildRequires:  libselinux-devel
-%if %{with_compat}
-BuildRequires: python3-devel
-%endif
 Requires: authselect-libs%{?_isa} = %{version}-%{release}
 Suggests: sssd
 Suggests: samba-winbind
 Suggests: fprintd-pam
 Suggests: oddjob-mkhomedir
 
-%if !%{with_compat}
 # Properly obsolete removed authselect-compat package.
-Obsoletes: authselect-compat < 1.2.4
-# Inherited from former authselect-compat package.
-Obsoletes: authconfig < 7.0.1-6
-%endif
+Obsoletes: authselect-compat < 1.3
 
 %description
 Authselect is designed to be a replacement for authconfig but it takes
@@ -74,14 +60,6 @@ Summary: Utility library used by the authselect tool
 Requires: coreutils
 Requires: sed
 Suggests: systemd
-%if %{enforce_authselect}
-# authselect now owns nsswitch.conf (glibc) and pam files
-Conflicts: pam < 1.5.2-8
-Conflicts: glibc < 2.34.9000-27
-# systemd, nss-mdns no longer contains nsswitch.conf scriptlets
-Conflicts: systemd < 249.7-4
-Conflicts: nss-mdns < 0.15.1-3
-%endif
 
 %description libs
 Common library files for authselect. This package is used by the authselect
@@ -95,25 +73,6 @@ Requires: authselect-libs%{?_isa} = %{version}-%{release}
 System header files and development libraries for authselect. Useful if
 you develop a front-end for the authselect library.
 
-%if %{with_compat}
-%package compat
-Summary: Tool to provide minimum backwards compatibility with authconfig
-Obsoletes: authconfig < 7.0.1-6
-Provides: authconfig
-Requires: authselect%{?_isa} = %{version}-%{release}
-Recommends: oddjob-mkhomedir
-Suggests: sssd
-Suggests: realmd
-Suggests: samba-winbind
-
-%description compat
-This package will replace %{_sbindir}/authconfig with a tool that will
-translate some of the authconfig calls into authselect calls. It provides
-only minimum backward compatibility and users are encouraged to migrate
-to authselect completely.
-%endif
-
-
 %prep
 %setup -q
 
@@ -124,15 +83,10 @@ done
 %build
 autoreconf -if
 %configure \
-%if %{with_compat}
-    --with-pythonbin="%{__python3}" \
-    --with-compat \
-%endif
-%if %{with_user_nsswitch}
-    --with-user-nsswitch \
+%if %{with_nis_profile}
+    --with-nis-profile \
 %endif
     %{nil}
-
 %make_build
 
 %check
@@ -168,25 +122,18 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %ghost %attr(0644,root,root) %{_sysconfdir}/authselect/postlogin
 %ghost %attr(0644,root,root) %{_sysconfdir}/authselect/smartcard-auth
 %ghost %attr(0644,root,root) %{_sysconfdir}/authselect/system-auth
-%if %{enforce_authselect}
 %ghost %attr(0644,root,root) %{_sysconfdir}/nsswitch.conf
 %ghost %attr(0644,root,root) %{_sysconfdir}/pam.d/fingerprint-auth
 %ghost %attr(0644,root,root) %{_sysconfdir}/pam.d/password-auth
 %ghost %attr(0644,root,root) %{_sysconfdir}/pam.d/postlogin
 %ghost %attr(0644,root,root) %{_sysconfdir}/pam.d/smartcard-auth
 %ghost %attr(0644,root,root) %{_sysconfdir}/pam.d/system-auth
-%endif
 %dir %{_localstatedir}/lib/authselect
 %ghost %attr(0755,root,root) %{_localstatedir}/lib/authselect/backups/
-%if %{with_user_nsswitch}
-%ghost %attr(0644,root,root) %{_sysconfdir}/authselect/user-nsswitch.conf
-%ghost %attr(0644,root,root) %{_localstatedir}/lib/authselect/user-nsswitch-created
-%endif
 %dir %{_datadir}/authselect
 %dir %{_datadir}/authselect/vendor
 %dir %{_datadir}/authselect/default
 %dir %{_datadir}/authselect/default/local/
-%dir %{_datadir}/authselect/default/nis/
 %dir %{_datadir}/authselect/default/sssd/
 %dir %{_datadir}/authselect/default/winbind/
 %{_datadir}/authselect/default/local/dconf-db
@@ -199,16 +146,6 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %{_datadir}/authselect/default/local/REQUIREMENTS
 %{_datadir}/authselect/default/local/smartcard-auth
 %{_datadir}/authselect/default/local/system-auth
-%{_datadir}/authselect/default/nis/dconf-db
-%{_datadir}/authselect/default/nis/dconf-locks
-%{_datadir}/authselect/default/nis/fingerprint-auth
-%{_datadir}/authselect/default/nis/nsswitch.conf
-%{_datadir}/authselect/default/nis/password-auth
-%{_datadir}/authselect/default/nis/postlogin
-%{_datadir}/authselect/default/nis/README
-%{_datadir}/authselect/default/nis/REQUIREMENTS
-%{_datadir}/authselect/default/nis/smartcard-auth
-%{_datadir}/authselect/default/nis/system-auth
 %{_datadir}/authselect/default/sssd/dconf-db
 %{_datadir}/authselect/default/sssd/dconf-locks
 %{_datadir}/authselect/default/sssd/fingerprint-auth
@@ -229,6 +166,19 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %{_datadir}/authselect/default/winbind/REQUIREMENTS
 %{_datadir}/authselect/default/winbind/smartcard-auth
 %{_datadir}/authselect/default/winbind/system-auth
+%if %{with_nis_profile}
+%dir %{_datadir}/authselect/default/nis/
+%{_datadir}/authselect/default/nis/dconf-db
+%{_datadir}/authselect/default/nis/dconf-locks
+%{_datadir}/authselect/default/nis/fingerprint-auth
+%{_datadir}/authselect/default/nis/nsswitch.conf
+%{_datadir}/authselect/default/nis/password-auth
+%{_datadir}/authselect/default/nis/postlogin
+%{_datadir}/authselect/default/nis/README
+%{_datadir}/authselect/default/nis/REQUIREMENTS
+%{_datadir}/authselect/default/nis/smartcard-auth
+%{_datadir}/authselect/default/nis/system-auth
+%endif
 %{_libdir}/libauthselect.so.*
 %{_mandir}/man5/authselect-profiles.5*
 %{_datadir}/doc/authselect/COPYING
@@ -241,19 +191,11 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %{_libdir}/libauthselect.so
 %{_libdir}/pkgconfig/authselect.pc
 
-%if %{with_compat}
-%files compat
-%{_sbindir}/authconfig
-%{python3_sitelib}/authselect/
-%endif
-
 %files  -f %{name}.8.lang  -f %{name}-migration.7.lang
 %{_bindir}/authselect
 %{_mandir}/man8/authselect.8*
 %{_mandir}/man7/authselect-migration.7*
 %{_sysconfdir}/bash_completion.d/authselect-completion.sh
-
-%global forcefile %{_localstatedir}/lib/rpm-state/%{name}.force
 
 %preun
 if [ $1 == 0 ] ; then
@@ -264,64 +206,23 @@ if [ $1 == 0 ] ; then
     %{_bindir}/authselect opt-out
 fi
 
-%pre libs
-%if %{enforce_authselect}
-# Check if this is a new installation.
-%__rm -f %{forcefile}
-if [ $1 -eq 1 ] ; then
-    touch %{forcefile}
-fi
-
-# Check if we are upgrading from older version then authselect-1.3.0
-# The version command is not available on earlier versions
-if [ $1 -gt 1 ] ; then
-    %{_bindir}/authselect check &> /dev/null
-    if [ $? -ne 0 ]; then
-        %{_bindir}/authselect version &> /dev/null
-        if [ $? -ne 0 ]; then
-            touch %{forcefile}
-        fi
-    fi
-fi
-%endif
-
-exit 0
-
 %posttrans libs
-# Copy nsswitch.conf to user-nsswitch.conf if it was not yet created
-%if %{with_user_nsswitch}
-if [ ! -f %{_localstatedir}/lib/authselect/user-nsswitch-created ]; then
-    %__cp -n %{_sysconfdir}/nsswitch.conf %{_sysconfdir}/authselect/user-nsswitch.conf &> /dev/null
-    touch %{_localstatedir}/lib/authselect/user-nsswitch-created &> /dev/null
-fi
-%endif
-
 # Keep nss-altfiles for all rpm-ostree based systems.
 # See https://github.com/authselect/authselect/issues/48
 if test -e /run/ostree-booted; then
     for PROFILE in `ls %{_datadir}/authselect/default`; do
         %{_bindir}/authselect create-profile $PROFILE --vendor --base-on $PROFILE --symlink-pam --symlink-dconf --symlink=REQUIREMENTS --symlink=README &> /dev/null
-%if %{with_user_nsswitch}
-        %__sed -ie "s/^\(passwd\|group\):\(.*\)systemd\(.*\)/\1:\2systemd altfiles\3/g" %{_datadir}/authselect/vendor/$PROFILE/nsswitch.conf &> /dev/null
-%else
-        %__sed -ie 's/{if "with-altfiles":altfiles }/altfiles /g' %{_datadir}/authselect/vendor/$PROFILE/nsswitch.conf &> /dev/null
-%endif
+        %__sed -i -e 's/{if "with-altfiles":\([^}]\+\)}/\1/g' %{_datadir}/authselect/vendor/$PROFILE/nsswitch.conf &> /dev/null
     done
 fi
 
-%{_bindir}/authselect check &> /dev/null
-if [ $? -eq 6 ]; then
-    NOBACKUP="--nobackup"
+# If this is a new installation select the default configuration.
+if [ $1 == 1 ] ; then
+    %{_bindir}/authselect select %{default_profile} --force --nobackup &> /dev/null
+    exit 0
 fi
 
-# If we are upgrading from pre authselect-1.3.0 or this is a new installation
-# select the default configuration.
-if [ -f %{forcefile} ]; then
-    %{_bindir}/authselect select %{default_profile} --force $NOBACKUP &> /dev/null
-    %__rm -f %{forcefile}
-fi
-
-# Minimal profile was removed. Switch to local.
+# Minimal profile was removed. Switch to local during upgrade.
 %__sed -i '1 s/^minimal$/local/'  %{_sysconfdir}/authselect/authselect.conf
 for file in  %{_sysconfdir}/authselect/custom/*/*; do
     link=`%{_bindir}/readlink "$file"`

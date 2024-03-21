@@ -89,6 +89,16 @@ with-mdns4::
 with-mdns6::
     Enable multicast DNS over IPv6.
 
+with-files-access-provider:: If set, account management for local users is
+    handled also by pam_sss. This can be used to support SSSD's proxy domain
+    that is configured to serve users from local files but provide
+    authentication and access management (.k5login file) via Kerberos.
+
+    *WARNING:* SSSD access check will become mandatory for local users and
+    if SSSD is stopped then local users will not be able to log in. Only
+    system accounts (as defined by pam_usertype, including root) will be
+    able to log in.
+
 with-gssapi::
     If set, pam_sss_gss module is enabled to perform user authentication over
     GSSAPI.

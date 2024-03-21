@@ -53,9 +53,6 @@
 #define PATH_DCONF_DB    AUTHSELECT_CONFIG_DIR "/" FILE_DCONF_DB
 #define PATH_DCONF_LOCK  AUTHSELECT_CONFIG_DIR "/" FILE_DCONF_LOCK
 
-/* Path to files that can be modified by user. */
-#define PATH_USER_NSSWITCH  AUTHSELECT_CONFIG_DIR "/user-nsswitch.conf"
-
 /* Names of symbolic links that points to generated files. */
 #define PATH_SYMLINK_SYSTEM      AUTHSELECT_PAM_DIR "/" FILE_SYSTEM
 #define PATH_SYMLINK_PASSWORD    AUTHSELECT_PAM_DIR "/" FILE_PASSWORD
