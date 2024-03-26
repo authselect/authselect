@@ -1,0 +1,28 @@
+---
+upstream_project_url: https://github.com/authselect/authselect
+issue_repository: https://github.com/authselect/authselect
+
+upstream_package_name: authselect
+specfile_path: authselect.spec
+
+actions:
+  post-upstream-clone:
+    - bash -c "sed -E 's/@\w+@/0/g' rpm/authselect.spec.in > authselect.spec"
+
+jobs:
+  - job: copr_build
+    trigger: pull_request
+    targets:
+      - fedora-all
+      - epel-9
+      - epel-8
+
+  - job: propose_downstream
+    trigger: release
+    dist_git_branches:
+      - fedora-rawhide
+
+  - job: koji_build
+    trigger: commit
+    dist_git_branches:
+      - fedora-rawhide
