@@ -1,3 +1,8 @@
+"""
+Auuthselect Local Profile Test Cases
+
+:requirement: authselect
+"""
 from __future__ import annotations
 
 import pytest

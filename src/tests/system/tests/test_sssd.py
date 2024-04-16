@@ -1,3 +1,8 @@
+"""
+Authselect SSSD Profile Test Cases
+
+:requirement: authselect
+"""
 from __future__ import annotations
 
 import pytest
@@ -223,7 +228,7 @@ def test_sssd__enabling_and_then_disabling_silent_lastlog_feature(client: Client
         1. SU as "user-1 twice, once to update lastlog db, then su to the user and check output
         2. Disable silent-last-log
         3. SU to "user-1 and check output
-    :expectedresults
+    :expectedresults:
         1. Authentication attempts are successful for "user-1" and output contains no last login information
         2. Feature with-silent-lastlog is disabled
         3. Authentication is successful for "user-1" and output contains last login information
@@ -255,7 +260,7 @@ def test_sssd__enabling_and_then_disabling_with_gssapi_feature(client: Client, p
         1. Create provider user "user-1"
         2. Select SSSD profile with-gssapi
         3. Start SSSD
-    :steps:"
+    :steps:
         1. kinit as user and list and run sudo commands as "user-1"
         2. Disable with-gssapi feature
         3. kinit as user and list and run sudo command as "user-1"
