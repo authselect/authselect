@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2023-09-27 13:03+0200\n"
+"POT-Creation-Date: 2024-02-23 14:08+0100\n"
 "PO-Revision-Date: 2023-10-04 08:35+0000\n"
 "Last-Translator: Geert Warrink <geert.warrink@onsnet.nu>\n"
 "Language-Team: Dutch <https://translate.fedoraproject.org/projects/"
@@ -575,7 +575,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "Kan basisnaam van [%s] niet verkrijgen"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:857
+#: src/lib/util/file.c:199 src/cli/main.c:848
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "stat [%s] [%d] mislukte: %s"
@@ -870,7 +870,7 @@ msgstr "Algemene opties:"
 msgid "[OPTIONS...]"
 msgstr "[OPTIES ...]"
 
-#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:849
+#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:840
 msgid "Out of memory!"
 msgstr "Geheugen is vol!"
 
@@ -919,14 +919,14 @@ msgstr ""
 "Ten minste één optie is vereist!\n"
 "\n"
 
-#: src/cli/main.c:76 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:76 src/cli/main.c:432 src/cli/main.c:475
 msgid "Profile identifier."
 msgstr "Identificatiecode van profiel."
 
-#: src/cli/main.c:79 src/cli/main.c:257 src/cli/main.c:302 src/cli/main.c:351
-#: src/cli/main.c:399 src/cli/main.c:444 src/cli/main.c:487 src/cli/main.c:660
-#: src/cli/main.c:737 src/cli/main.c:784 src/cli/main.c:824 src/cli/main.c:889
-#: src/cli/main.c:915
+#: src/cli/main.c:79 src/cli/main.c:248 src/cli/main.c:293 src/cli/main.c:342
+#: src/cli/main.c:390 src/cli/main.c:435 src/cli/main.c:478 src/cli/main.c:651
+#: src/cli/main.c:728 src/cli/main.c:775 src/cli/main.c:815 src/cli/main.c:880
+#: src/cli/main.c:906
 msgid "Unable to parse command arguments"
 msgstr "Kan commandoargumenten niet ontleden"
 
@@ -943,18 +943,18 @@ msgstr "Back-up is opgeslagen in %s\n"
 msgid "Enforce changes"
 msgstr "Forceer wijzigingen"
 
-#: src/cli/main.c:162 src/cli/main.c:250 src/cli/main.c:650 src/cli/main.c:728
+#: src/cli/main.c:162 src/cli/main.c:241 src/cli/main.c:641 src/cli/main.c:719
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr ""
 "Maak een back-up van systeembestanden voordat het profiel geactiveerd wordt "
 "en genereer daarvoor een unieke naam"
 
-#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "Backup system files before activating profile"
 msgstr ""
 "Maak een back-up van systeembestanden voordat het profiel geactiveerd wordt"
 
-#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "NAME"
 msgstr "NAAM"
 
@@ -962,25 +962,21 @@ msgstr "NAAM"
 msgid "Do not backup system files when --force is set"
 msgstr "Maak geen back-up van systeembestanden als --force meegegeven is"
 
-#: src/cli/main.c:165 src/cli/main.c:652
+#: src/cli/main.c:165 src/cli/main.c:643
 msgid "Do not print profile requirements"
 msgstr "Druk geen profielvereisten af"
 
-#: src/cli/main.c:176 src/cli/main.c:414 src/cli/main.c:450 src/cli/main.c:493
-#: src/cli/main.c:525 src/cli/main.c:679
+#: src/cli/main.c:176 src/cli/main.c:405 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:516 src/cli/main.c:670
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "Kan profielinformatie [%d] niet verkrijgen: %s"
 
-#: src/cli/main.c:184 src/cli/main.c:533 src/cli/main.c:687
+#: src/cli/main.c:184 src/cli/main.c:524 src/cli/main.c:678
 msgid "Unable to read profile requirements!"
 msgstr "Kan profielvereisten niet inlezen!"
 
-#: src/cli/main.c:192
-msgid "Unable to obtain nsswitch maps!"
-msgstr "Kan nsswitch-afbeeldingen niet verkrijgen!"
-
-#: src/cli/main.c:207
+#: src/cli/main.c:198
 msgid ""
 "\n"
 "Some unexpected changes to the configuration were detected.\n"
@@ -990,27 +986,27 @@ msgstr ""
 "Er werden enkele onverwachte wijzigingen in de configuratie ontdekt.\n"
 "Gebruik de parameter --force als u deze wijzigingen wilt overschrijven.\n"
 
-#: src/cli/main.c:212
+#: src/cli/main.c:203
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "Kan profiel [%d] niet activeren: %s\n"
 
-#: src/cli/main.c:217
+#: src/cli/main.c:208
 #, c-format
 msgid "Profile \"%s\" was selected.\n"
 msgstr "Profiel \"%s\" werd geselecteerd.\n"
 
-#: src/cli/main.c:220
+#: src/cli/main.c:211
 msgid "The following nsswitch maps are overwritten by the profile:\n"
 msgstr ""
 "De volgende nsswitch-afbeeldingen zijn overschreven door het profiel:\n"
 
-#: src/cli/main.c:223
+#: src/cli/main.c:214
 #, c-format
 msgid "- %s\n"
 msgstr "- %s\n"
 
-#: src/cli/main.c:228
+#: src/cli/main.c:219
 #, c-format
 msgid ""
 "\n"
@@ -1019,15 +1015,15 @@ msgstr ""
 "\n"
 "%s\n"
 
-#: src/cli/main.c:269
+#: src/cli/main.c:260
 msgid "Changes were successfully applied.\n"
 msgstr "De wijzigingen werden met succes toegepast.\n"
 
-#: src/cli/main.c:272 src/cli/main.c:308 src/cli/main.c:669
+#: src/cli/main.c:263 src/cli/main.c:299 src/cli/main.c:660
 msgid "No existing configuration detected.\n"
 msgstr "Er werd geen bestaande configuratie gedetecteerd.\n"
 
-#: src/cli/main.c:275
+#: src/cli/main.c:266
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
@@ -1035,39 +1031,39 @@ msgstr ""
 "Enkele onverwachte wijzigingen van de configuratie werden ontdekt. Gebruik "
 "het commando 'select' als alternatief.\n"
 
-#: src/cli/main.c:279
+#: src/cli/main.c:270
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr "Kan wijzigingen [%d] niet toepassen: %s\n"
 
-#: src/cli/main.c:296
+#: src/cli/main.c:287
 msgid "Print command parameters instead of formatted output"
 msgstr "Druk commandoparameters af in plaats van geformatteerde uitvoer"
 
-#: src/cli/main.c:311 src/cli/main.c:672
+#: src/cli/main.c:302 src/cli/main.c:663
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "Kan huidige configuratie [%d] niet verkrijgen: %s"
 
-#: src/cli/main.c:325
+#: src/cli/main.c:316
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "Identificatiecode van profiel: %s\n"
 
-#: src/cli/main.c:326
+#: src/cli/main.c:317
 msgid "Enabled features:"
 msgstr "Aangezette functies:"
 
-#: src/cli/main.c:329
+#: src/cli/main.c:320
 msgid " None\n"
 msgstr " Geen\n"
 
-#: src/cli/main.c:357
+#: src/cli/main.c:348
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "Kan huidige configuratie [%d] niet testen: %s"
 
-#: src/cli/main.c:364
+#: src/cli/main.c:355
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
@@ -1075,69 +1071,69 @@ msgstr ""
 "Huidige configuratie is niet geldig. Zij werd waarschijnlijk buiten "
 "authselect om veranderd."
 
-#: src/cli/main.c:371
+#: src/cli/main.c:362
 msgid "Current configuration is valid."
 msgstr "Huidige configuratie is geldig."
 
-#: src/cli/main.c:374
+#: src/cli/main.c:365
 msgid "No configuration detected."
 msgstr "Er werd geen configuratie gedetecteerd."
 
-#: src/cli/main.c:378
+#: src/cli/main.c:369
 msgid "System was not configured with authselect."
 msgstr "Systeem werd niet geconfigureerd met authselect."
 
-#: src/cli/main.c:405
+#: src/cli/main.c:396
 msgid "Unable to get profile list!"
 msgstr "Kan profiellijst niet verkrijgen!"
 
-#: src/cli/main.c:458
+#: src/cli/main.c:449
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
 msgstr "Kan profielfuncties [%d] niet verkrijgen: %s"
 
-#: src/cli/main.c:572
+#: src/cli/main.c:563
 msgid "Print content of all files"
 msgstr "Druk de inhoud van alle bestanden af"
 
-#: src/cli/main.c:573
+#: src/cli/main.c:564
 msgid "Print nsswitch.conf content"
 msgstr "Druk de inhoud van nsswitch.conf af"
 
-#: src/cli/main.c:574
+#: src/cli/main.c:565
 msgid "Print system-auth content"
 msgstr "Druk de inhoud van system-auth af"
 
-#: src/cli/main.c:575
+#: src/cli/main.c:566
 msgid "Print password-auth content"
 msgstr "Druk de inhoud van password-auth af"
 
-#: src/cli/main.c:576
+#: src/cli/main.c:567
 msgid "Print smartcard-auth content"
 msgstr "Druk de inhoud van smartcard-auth af"
 
-#: src/cli/main.c:577
+#: src/cli/main.c:568
 msgid "Print fingerprint-auth content"
 msgstr "Druk de inhoud van fingerprint-auth af"
 
-#: src/cli/main.c:578
+#: src/cli/main.c:569
 msgid "Print postlogin content"
 msgstr "Druk de inhoud van postlogin af"
 
-#: src/cli/main.c:579
+#: src/cli/main.c:570
 msgid "Print dconf database content"
 msgstr "Druk de inhoud van de dconf-database af"
 
-#: src/cli/main.c:580
+#: src/cli/main.c:571
 msgid "Print dconf lock content"
 msgstr "Druk de inhoud van dconf's lock af"
 
-#: src/cli/main.c:607
+#: src/cli/main.c:598
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "Kan gegenereerde inhoud [%d] niet verkrijgen: %s"
 
-#: src/cli/main.c:626
+#: src/cli/main.c:617
 #, c-format
 msgid ""
 "File %s: Empty\n"
@@ -1146,7 +1142,7 @@ msgstr ""
 "Bestand %s: Leeg\n"
 "\n"
 
-#: src/cli/main.c:628
+#: src/cli/main.c:619
 #, c-format
 msgid ""
 "File %s:\n"
@@ -1157,47 +1153,47 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/cli/main.c:657
+#: src/cli/main.c:648
 msgid "Feature to enable."
 msgstr "Functie die aangezet kan worden."
 
-#: src/cli/main.c:694
+#: src/cli/main.c:685
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
 msgstr "Kan geen back-up maken van huidige configuratie [%d]: %s\n"
 
-#: src/cli/main.c:701
+#: src/cli/main.c:692
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "Kan functie [%d] niet aanzetten: %s\n"
 
-#: src/cli/main.c:706
+#: src/cli/main.c:697
 #, c-format
 msgid "%s\n"
 msgstr "%s\n"
 
-#: src/cli/main.c:734
+#: src/cli/main.c:725
 msgid "Feature to disable."
 msgstr "Functie die uitgezet kan worden."
 
-#: src/cli/main.c:748
+#: src/cli/main.c:739
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "Kan functie [%d] niet uitzetten: %s\n"
 
-#: src/cli/main.c:769
+#: src/cli/main.c:760
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr ""
 "Maak nieuw profiel aan als een leveranciersprofiel in plaats van als een "
 "aangepast profiel"
 
-#: src/cli/main.c:770
+#: src/cli/main.c:761
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr ""
 "Identificatiecode van een profiel dat gebruikt moet worden als basis voor "
 "het nieuwe profiel"
 
-#: src/cli/main.c:771
+#: src/cli/main.c:762
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1205,529 +1201,455 @@ msgstr ""
 "Baseer nieuw profiel op een standaard profiel zelfs als een "
 "leveranciersprofiel met dezelfde naam bestaat"
 
-#: src/cli/main.c:772
+#: src/cli/main.c:763
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr ""
 "Maak symbolische link naar metabestanden van het basisprofiel in plaats van "
 "ze te kopiëren"
 
-#: src/cli/main.c:773
+#: src/cli/main.c:764
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr ""
 "Maak symbolische link naar nsswitch-bestanden van het basisprofiel in plaats "
 "van ze te kopiëren"
 
-#: src/cli/main.c:774
+#: src/cli/main.c:765
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr ""
 "Maak symbolische link naar pam-bestanden van het basisprofiel in plaats van "
 "ze te kopiëren"
 
-#: src/cli/main.c:775
+#: src/cli/main.c:766
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
 "Maak symbolische link naar dconf-bestanden van het basisprofiel in plaats "
 "van ze te kopiëren"
 
-#: src/cli/main.c:776
+#: src/cli/main.c:767
 msgid "Symlink specific file (can be set multiple times)"
 msgstr ""
 "Maak symbolische link naar specifiek bestand (kan meerdere keren ingesteld "
 "worden)"
 
-#: src/cli/main.c:781
+#: src/cli/main.c:772
 msgid "New profile name."
 msgstr "Nieuwe profielnaam."
 
-#: src/cli/main.c:791
+#: src/cli/main.c:782
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "Kan nieuw profiel [%d] niet aanmaken: %s\n"
 
-#: src/cli/main.c:795
+#: src/cli/main.c:786
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "Nieuw profiel is aangemaakt in %s\n"
 
-#: src/cli/main.c:818
+#: src/cli/main.c:809
 msgid "Print backup names without any formatting and additional information"
 msgstr "Druk de namen van back-ups af zonder formattering en extra informatie"
 
-#: src/cli/main.c:830
+#: src/cli/main.c:821
 msgid "Unable to list available backups!"
 msgstr "Kan beschikbare back-ups niet tonen!"
 
-#: src/cli/main.c:867
+#: src/cli/main.c:858
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (aangemaakt in %s)\n"
 
-#: src/cli/main.c:886
+#: src/cli/main.c:877
 msgid "Name of the backup to remove."
 msgstr "Naam van de te verwijderen back-up."
 
-#: src/cli/main.c:895
+#: src/cli/main.c:886
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "Kan back-up [%s] [%d] niet verwijderen: %s\n"
 
-#: src/cli/main.c:912
+#: src/cli/main.c:903
 msgid "Name of the backup to restore from."
 msgstr "Naam van de back-up om van te herstellen."
 
-#: src/cli/main.c:921
+#: src/cli/main.c:912
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "Kan back-up [%s] [%d] niet herstellen: %s\n"
 
-#: src/cli/main.c:937
+#: src/cli/main.c:928
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "Kan huidige authselect-configuratie [%d] niet verwijderen: %s\n"
 
-#: src/cli/main.c:987
+#: src/cli/main.c:978
 msgid "Select profile"
 msgstr "Selecteer profiel"
 
-#: src/cli/main.c:988
+#: src/cli/main.c:979
 msgid "Regenerate configuration for currently selected command"
 msgstr "Regenereer configuratie voor huidig geselecteerd commando"
 
-#: src/cli/main.c:989
+#: src/cli/main.c:980
 msgid "List available profiles"
 msgstr "Toon beschikbare profielen"
 
-#: src/cli/main.c:990
+#: src/cli/main.c:981
 msgid "List available profile features"
 msgstr "Toon beschikbare profielfuncties"
 
-#: src/cli/main.c:991
+#: src/cli/main.c:982
 msgid "Show profile information"
 msgstr "Laat profielinformatie zien"
 
-#: src/cli/main.c:992
+#: src/cli/main.c:983
 msgid "Print profile requirements"
 msgstr "Druk profielvereisten af"
 
-#: src/cli/main.c:993
+#: src/cli/main.c:984
 msgid "Get identifier of currently selected profile"
 msgstr "Haal identificatiecode van huidig geselecteerde profiel op"
 
-#: src/cli/main.c:994
+#: src/cli/main.c:985
 msgid "Check if the current configuration is valid"
 msgstr "Controleer of de huidige configuratie geldig is"
 
-#: src/cli/main.c:995
+#: src/cli/main.c:986
 msgid "Print changes that would be otherwise written"
 msgstr "Druk wijzigingen af die anders overschreven zouden worden"
 
-#: src/cli/main.c:996
+#: src/cli/main.c:987
 msgid "Enable feature in currently selected profile"
 msgstr "Zet functie aan in het huidig geselecteerde profiel"
 
-#: src/cli/main.c:997
+#: src/cli/main.c:988
 msgid "Disable feature in currently selected profile"
 msgstr "Zet functie uit in het huidig geselecteerde profiel"
 
-#: src/cli/main.c:998
+#: src/cli/main.c:989
 msgid "Create new authselect profile"
 msgstr "Maak nieuw authselect-profiel aan"
 
-#: src/cli/main.c:999
+#: src/cli/main.c:990
 msgid "Backup commands:"
 msgstr "Back-up commando's:"
 
-#: src/cli/main.c:1000
+#: src/cli/main.c:991
 msgid "List available backups"
 msgstr "Toon beschikbare back-ups"
 
-#: src/cli/main.c:1001
+#: src/cli/main.c:992
 msgid "Remove backup"
 msgstr "Verwijder back-up"
 
-#: src/cli/main.c:1002
+#: src/cli/main.c:993
 msgid "Restore from backup"
 msgstr "Herstel van back-up"
 
-#: src/cli/main.c:1003
+#: src/cli/main.c:994
 msgid "Other:"
 msgstr "Andere:"
 
-#: src/cli/main.c:1004
+#: src/cli/main.c:995
 msgid "Opt-out from authselect managed configuration"
 msgstr ""
 "Verkies geen gebruik te maken van de begeleide configuratie van authselect"
 
-#: src/cli/main.c:1006
+#: src/cli/main.c:997
 msgid "Print authselect version"
 msgstr "Druk de versie van authselect af"
 
-#: src/compat/authcompat_Options.py:82
-msgid "NIS for user information by default"
-msgstr "Gebruik standaard NIS voor gebruikersinformatie"
-
-#: src/compat/authcompat_Options.py:83
-msgid "<domain>"
-msgstr "<domein>"
-
-#: src/compat/authcompat_Options.py:83
-msgid "default NIS domain"
-msgstr "standaard NIS-domein"
-
-#: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
-#: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
-msgid "<server>"
-msgstr "<server>"
-
-#: src/compat/authcompat_Options.py:84
-msgid "default NIS server"
-msgstr "standaard NIS-server"
-
-#: src/compat/authcompat_Options.py:85
-msgid "LDAP for user information by default"
-msgstr "Gebruik standaard LDAP voor gebruikersinformatie"
-
-#: src/compat/authcompat_Options.py:86
-msgid "LDAP for authentication by default"
-msgstr "Gebruik standaard LDAP voor authenticatie"
-
-#: src/compat/authcompat_Options.py:87
-msgid "default LDAP server hostname or URI"
-msgstr "standaard LDAP-server-hostnaam of URI"
-
-#: src/compat/authcompat_Options.py:88
-msgid "<dn>"
-msgstr "<dn>"
-
-#: src/compat/authcompat_Options.py:88
-msgid "default LDAP base DN"
-msgstr "standaardnaam van het basisdomein van LDAP"
-
-#: src/compat/authcompat_Options.py:89
-msgid "use of TLS with LDAP (RFC-2830)"
-msgstr "gebruik van TLS met LDAP (RFC-2830)"
-
-#: src/compat/authcompat_Options.py:90
-msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
-msgstr "gebruik van TLS voor het opzoeken van identiteiten met LDAP (RFC-2830)"
-
-#: src/compat/authcompat_Options.py:91
-msgid "use of RFC-2307bis schema for LDAP user information lookups"
-msgstr ""
-"gebruik van het 'RFC 2307bis'-schema voor het opzoeken van "
-"gebruikersinformatie met LDAP"
-
-#: src/compat/authcompat_Options.py:92
-msgid "authentication with smart card by default"
-msgstr "authenticatie met smartcard standaard gebruiken"
-
-#: src/compat/authcompat_Options.py:93
-msgid "<0=Lock|1=Ignore>"
-msgstr "<0=Vergrendelen|1=Negeren>"
-
-#: src/compat/authcompat_Options.py:93
-msgid "action to be taken on smart card removal"
-msgstr "te ondernemen actie bij verwijderen van smartcard"
-
-#: src/compat/authcompat_Options.py:94
-msgid "require smart card for authentication by default"
-msgstr "authenticatie met smartcard standaard vereisen"
-
-#: src/compat/authcompat_Options.py:95
-msgid "authentication with fingerprint readers by default"
-msgstr "authenticatie met vingerprintlezers standaard gebruiken"
-
-#: src/compat/authcompat_Options.py:96
-msgid "automatic per-user ecryptfs"
-msgstr "automatische ecryptfs per gebruiker"
-
-#: src/compat/authcompat_Options.py:97
-msgid "Kerberos authentication by default"
-msgstr "Gebruik standaard authenticatie met Kerberos"
-
-#: src/compat/authcompat_Options.py:98
-msgid "default Kerberos KDC"
-msgstr "standaard KDC van Kerberos"
-
-#: src/compat/authcompat_Options.py:99
-msgid "default Kerberos admin server"
-msgstr "standaard server voor het beheer van Kerberos"
-
-#: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
-msgid "<realm>"
-msgstr "<realm>"
-
-#: src/compat/authcompat_Options.py:100
-msgid "default Kerberos realm"
-msgstr "standaard realm van Kerberos"
-
-#: src/compat/authcompat_Options.py:101
-msgid "use of DNS to find Kerberos KDCs"
-msgstr "gebruik DNS om Kerberos KDC's te vinden"
-
-#: src/compat/authcompat_Options.py:102
-msgid "use of DNS to find Kerberos realms"
-msgstr "gebruik DNS om Kerberos realms te vinden"
-
-#: src/compat/authcompat_Options.py:103
-msgid "winbind for user information by default"
-msgstr "standaard winbind gebruiken voor gebruikersinformatie"
-
-#: src/compat/authcompat_Options.py:104
-msgid "winbind for authentication by default"
-msgstr "standaard winbind gebruiken voor authenticatie"
-
-#: src/compat/authcompat_Options.py:105
-msgid "<Administrator>"
-msgstr "<Beheerder>"
-
-#: src/compat/authcompat_Options.py:105
-msgid "join the winbind domain or ads realm now as this administrator"
-msgstr "wordt als deze beheerder nu lid van het winbind-domein of de ads-realm"
-
-#: src/compat/authcompat_Options.py:106
-msgid "Kerberos 5 for authenticate with winbind"
-msgstr "Kerberos 5 voor authenticatie met winbind"
-
-#: src/compat/authcompat_Options.py:107
-msgid "<workgroup>"
-msgstr "<werkgroep>"
-
-#: src/compat/authcompat_Options.py:107
-msgid "workgroup authentication servers are in"
-msgstr "werkgroepauthenticatieservers bevinden zich in"
-
-#: src/compat/authcompat_Options.py:108
-msgid ""
-"SSSD for user information by default with manually managed configuration"
-msgstr ""
-"standaard SSSD gebruiken voor gebruikersinformatie, met handmatig beheerde "
-"configuratie"
-
-#: src/compat/authcompat_Options.py:109
-msgid "SSSD for authentication by default with manually managed configuration"
-msgstr ""
-"standaard SSSD gebruiken voor authenticatie, met handmatig beheerde "
-"configuratie"
-
-#: src/compat/authcompat_Options.py:110
-msgid "caching of user credentials in SSSD by default"
-msgstr ""
-"standaard SSSD gebruiken voor opslaan van gebruikerslegitimatie in "
-"cachegeheugen"
-
-#: src/compat/authcompat_Options.py:111
-msgid "check of access.conf during account authorization"
-msgstr "controle van access.conf tijdens account-autorisatie"
-
-#: src/compat/authcompat_Options.py:112
-msgid "creation of home directories for users on their first login"
-msgstr ""
-"aanmaken van persoonlijke mappen voor gebruikers bij hun eerste aanmelding"
-
-#: src/compat/authcompat_Options.py:113
-msgid "account locking in case of too many consecutive authentication failures"
-msgstr ""
-"account blokkeren indien te veel authenticatiefouten achter elkaar optreden"
-
-#: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
-#: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
-msgid "<number>"
-msgstr "<aantal>"
-
-#: src/compat/authcompat_Options.py:114
-msgid "minimum length of a password"
-msgstr "minimale lengte van een wachtwoord"
-
-#: src/compat/authcompat_Options.py:115
-msgid "minimum number of character classes in a password"
-msgstr "minimaal aantal tekenklassen in een wachtwoord"
-
-#: src/compat/authcompat_Options.py:116
-msgid "maximum number of same consecutive characters in a password"
-msgstr "maximale aantal van gelijke opeenvolgende tekens in een wachtwoord"
-
-#: src/compat/authcompat_Options.py:117
-msgid "maximum number of consecutive characters of same class in a password"
-msgstr ""
-"maximale aantal van opeenvolgende tekens van dezelfde soort in een wachtwoord"
-
-#: src/compat/authcompat_Options.py:118
-msgid "require at least one lowercase character in a password"
-msgstr "vereis tenminste één kleine letter in een wachtwoord"
-
-#: src/compat/authcompat_Options.py:119
-msgid "require at least one uppercase character in a password"
-msgstr "vereis tenminste één hoofdletter in een wachtwoord"
-
-#: src/compat/authcompat_Options.py:120
-msgid "require at least one digit in a password"
-msgstr "vereis tenminste één cijfer in een wachtwoord"
-
-#: src/compat/authcompat_Options.py:121
-msgid "require at least one other character in a password"
-msgstr "vereis tenminste één ander karakter in een wachtwoord"
-
-#: src/compat/authcompat_Options.py:124
-msgid "do not start/stop services"
-msgstr "start of stop geen diensten"
-
-#: src/compat/authcompat_Options.py:125
-msgid "update all configuration files"
-msgstr "update alle configuratiebestanden"
-
-#: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
-msgid "the same as --updateall"
-msgstr "hetzelfde als --updateall"
-
-#: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
-msgid "<name>"
-msgstr "<naam>"
-
-#: src/compat/authcompat_Options.py:148
-msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-
-#: src/compat/authcompat_Options.py:149
-msgid "<URL>"
-msgstr "<URL>"
-
-#: src/compat/authcompat_Options.py:150
-msgid "<module>"
-msgstr "<module>"
-
-#: src/compat/authcompat_Options.py:151
-msgid "<user|server|domain|ads>"
-msgstr "<gebruiker|server|domein|ads>"
-
-#: src/compat/authcompat_Options.py:153
-msgid "<servers>"
-msgstr "<servers>"
-
-#: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
-#: src/compat/authcompat_Options.py:156
-msgid "<lowest-highest>"
-msgstr "<laagste-hoogste>"
-
-#: src/compat/authcompat_Options.py:157
-msgid "<\\>"
-msgstr "<\\>"
-
-#: src/compat/authcompat_Options.py:158
-msgid "</home/%D/%U>"
-msgstr "</home/%D/%U>"
-
-#: src/compat/authcompat_Options.py:159
-msgid "</bin/false>"
-msgstr "</bin/false>"
-
-#: src/compat/authcompat_Options.py:166
-msgid "<options>"
-msgstr "<opties>"
-
-#: src/compat/authcompat_Options.py:210
-msgid "These options have a compatibility layer"
-msgstr "Deze opties hebben een compatibiliteitslaag"
-
-#: src/compat/authcompat_Options.py:211
-msgid "These options are no longer supported and have no effect"
-msgstr "Deze opties worden niet meer ondersteund en hebben geen effect"
-
-#: src/compat/authcompat_Options.py:313
-msgid "enable"
-msgstr "aanzetten"
-
-#: src/compat/authcompat_Options.py:314
-msgid "disable"
-msgstr "uitzetten"
-
-#: src/compat/authcompat.py.in.in:51
+#~ msgid "Unable to obtain nsswitch maps!"
+#~ msgstr "Kan nsswitch-afbeeldingen niet verkrijgen!"
+
+#~ msgid "NIS for user information by default"
+#~ msgstr "Gebruik standaard NIS voor gebruikersinformatie"
+
+#~ msgid "<domain>"
+#~ msgstr "<domein>"
+
+#~ msgid "default NIS domain"
+#~ msgstr "standaard NIS-domein"
+
+#~ msgid "<server>"
+#~ msgstr "<server>"
+
+#~ msgid "default NIS server"
+#~ msgstr "standaard NIS-server"
+
+#~ msgid "LDAP for user information by default"
+#~ msgstr "Gebruik standaard LDAP voor gebruikersinformatie"
+
+#~ msgid "LDAP for authentication by default"
+#~ msgstr "Gebruik standaard LDAP voor authenticatie"
+
+#~ msgid "default LDAP server hostname or URI"
+#~ msgstr "standaard LDAP-server-hostnaam of URI"
+
+#~ msgid "<dn>"
+#~ msgstr "<dn>"
+
+#~ msgid "default LDAP base DN"
+#~ msgstr "standaardnaam van het basisdomein van LDAP"
+
+#~ msgid "use of TLS with LDAP (RFC-2830)"
+#~ msgstr "gebruik van TLS met LDAP (RFC-2830)"
+
+#~ msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
+#~ msgstr ""
+#~ "gebruik van TLS voor het opzoeken van identiteiten met LDAP (RFC-2830)"
+
+#~ msgid "use of RFC-2307bis schema for LDAP user information lookups"
+#~ msgstr ""
+#~ "gebruik van het 'RFC 2307bis'-schema voor het opzoeken van "
+#~ "gebruikersinformatie met LDAP"
+
+#~ msgid "authentication with smart card by default"
+#~ msgstr "authenticatie met smartcard standaard gebruiken"
+
+#~ msgid "<0=Lock|1=Ignore>"
+#~ msgstr "<0=Vergrendelen|1=Negeren>"
+
+#~ msgid "action to be taken on smart card removal"
+#~ msgstr "te ondernemen actie bij verwijderen van smartcard"
+
+#~ msgid "require smart card for authentication by default"
+#~ msgstr "authenticatie met smartcard standaard vereisen"
+
+#~ msgid "authentication with fingerprint readers by default"
+#~ msgstr "authenticatie met vingerprintlezers standaard gebruiken"
+
+#~ msgid "automatic per-user ecryptfs"
+#~ msgstr "automatische ecryptfs per gebruiker"
+
+#~ msgid "Kerberos authentication by default"
+#~ msgstr "Gebruik standaard authenticatie met Kerberos"
+
+#~ msgid "default Kerberos KDC"
+#~ msgstr "standaard KDC van Kerberos"
+
+#~ msgid "default Kerberos admin server"
+#~ msgstr "standaard server voor het beheer van Kerberos"
+
+#~ msgid "<realm>"
+#~ msgstr "<realm>"
+
+#~ msgid "default Kerberos realm"
+#~ msgstr "standaard realm van Kerberos"
+
+#~ msgid "use of DNS to find Kerberos KDCs"
+#~ msgstr "gebruik DNS om Kerberos KDC's te vinden"
+
+#~ msgid "use of DNS to find Kerberos realms"
+#~ msgstr "gebruik DNS om Kerberos realms te vinden"
+
+#~ msgid "winbind for user information by default"
+#~ msgstr "standaard winbind gebruiken voor gebruikersinformatie"
+
+#~ msgid "winbind for authentication by default"
+#~ msgstr "standaard winbind gebruiken voor authenticatie"
+
+#~ msgid "<Administrator>"
+#~ msgstr "<Beheerder>"
+
+#~ msgid "join the winbind domain or ads realm now as this administrator"
+#~ msgstr ""
+#~ "wordt als deze beheerder nu lid van het winbind-domein of de ads-realm"
+
+#~ msgid "Kerberos 5 for authenticate with winbind"
+#~ msgstr "Kerberos 5 voor authenticatie met winbind"
+
+#~ msgid "<workgroup>"
+#~ msgstr "<werkgroep>"
+
+#~ msgid "workgroup authentication servers are in"
+#~ msgstr "werkgroepauthenticatieservers bevinden zich in"
+
+#~ msgid ""
+#~ "SSSD for user information by default with manually managed configuration"
+#~ msgstr ""
+#~ "standaard SSSD gebruiken voor gebruikersinformatie, met handmatig "
+#~ "beheerde configuratie"
+
+#~ msgid ""
+#~ "SSSD for authentication by default with manually managed configuration"
+#~ msgstr ""
+#~ "standaard SSSD gebruiken voor authenticatie, met handmatig beheerde "
+#~ "configuratie"
+
+#~ msgid "caching of user credentials in SSSD by default"
+#~ msgstr ""
+#~ "standaard SSSD gebruiken voor opslaan van gebruikerslegitimatie in "
+#~ "cachegeheugen"
+
+#~ msgid "check of access.conf during account authorization"
+#~ msgstr "controle van access.conf tijdens account-autorisatie"
+
+#~ msgid "creation of home directories for users on their first login"
+#~ msgstr ""
+#~ "aanmaken van persoonlijke mappen voor gebruikers bij hun eerste aanmelding"
+
+#~ msgid ""
+#~ "account locking in case of too many consecutive authentication failures"
+#~ msgstr ""
+#~ "account blokkeren indien te veel authenticatiefouten achter elkaar "
+#~ "optreden"
+
+#~ msgid "<number>"
+#~ msgstr "<aantal>"
+
+#~ msgid "minimum length of a password"
+#~ msgstr "minimale lengte van een wachtwoord"
+
+#~ msgid "minimum number of character classes in a password"
+#~ msgstr "minimaal aantal tekenklassen in een wachtwoord"
+
+#~ msgid "maximum number of same consecutive characters in a password"
+#~ msgstr "maximale aantal van gelijke opeenvolgende tekens in een wachtwoord"
+
+#~ msgid "maximum number of consecutive characters of same class in a password"
+#~ msgstr ""
+#~ "maximale aantal van opeenvolgende tekens van dezelfde soort in een "
+#~ "wachtwoord"
+
+#~ msgid "require at least one lowercase character in a password"
+#~ msgstr "vereis tenminste één kleine letter in een wachtwoord"
+
+#~ msgid "require at least one uppercase character in a password"
+#~ msgstr "vereis tenminste één hoofdletter in een wachtwoord"
+
+#~ msgid "require at least one digit in a password"
+#~ msgstr "vereis tenminste één cijfer in een wachtwoord"
+
+#~ msgid "require at least one other character in a password"
+#~ msgstr "vereis tenminste één ander karakter in een wachtwoord"
+
+#~ msgid "do not start/stop services"
+#~ msgstr "start of stop geen diensten"
+
+#~ msgid "update all configuration files"
+#~ msgstr "update alle configuratiebestanden"
+
+#~ msgid "the same as --updateall"
+#~ msgstr "hetzelfde als --updateall"
+
+#~ msgid "<name>"
+#~ msgstr "<naam>"
+
+#~ msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+#~ msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+
+#~ msgid "<URL>"
+#~ msgstr "<URL>"
+
+#~ msgid "<module>"
+#~ msgstr "<module>"
+
+#~ msgid "<user|server|domain|ads>"
+#~ msgstr "<gebruiker|server|domein|ads>"
+
+#~ msgid "<servers>"
+#~ msgstr "<servers>"
+
+#~ msgid "<lowest-highest>"
+#~ msgstr "<laagste-hoogste>"
+
+#~ msgid "<\\>"
+#~ msgstr "<\\>"
+
+#~ msgid "</home/%D/%U>"
+#~ msgstr "</home/%D/%U>"
+
+#~ msgid "</bin/false>"
+#~ msgstr "</bin/false>"
+
+#~ msgid "<options>"
+#~ msgstr "<opties>"
+
+#~ msgid "These options have a compatibility layer"
+#~ msgstr "Deze opties hebben een compatibiliteitslaag"
+
+#~ msgid "These options are no longer supported and have no effect"
+#~ msgstr "Deze opties worden niet meer ondersteund en hebben geen effect"
+
+#~ msgid "enable"
+#~ msgstr "aanzetten"
+
+#~ msgid "disable"
+#~ msgstr "uitzetten"
+
 #, python-format
-msgid "Executing: %s"
-msgstr "%s wordt uitgevoerd"
+#~ msgid "Executing: %s"
+#~ msgstr "%s wordt uitgevoerd"
 
-#: src/compat/authcompat.py.in.in:71
 #, python-format
-msgid "Service %s was not found. Please install the service."
-msgstr "Dienst %s werd niet gevonden. Gelieve de dienst te installeren."
+#~ msgid "Service %s was not found. Please install the service."
+#~ msgstr "Dienst %s werd niet gevonden. Gelieve de dienst te installeren."
 
-#: src/compat/authcompat.py.in.in:74 src/compat/authcompat.py.in.in:631
-#: src/compat/authcompat.py.in.in:657
 #, python-format
-msgid "Command [%s] failed with %d, stderr:"
-msgstr "Commando [%s] mislukte met %d, stderr:"
+#~ msgid "Command [%s] failed with %d, stderr:"
+#~ msgstr "Commando [%s] mislukte met %d, stderr:"
 
-#: src/compat/authcompat.py.in.in:186
 #, python-format
-msgid "Removing file: %s"
-msgstr "Verwijderen van bestand: %s"
+#~ msgid "Removing file: %s"
+#~ msgstr "Verwijderen van bestand: %s"
 
-#: src/compat/authcompat.py.in.in:335
 #, python-format
-msgid "%s was not found. Please, install realmd."
-msgstr "%s werd niet gevonden. Gelieve realmd te installeren."
+#~ msgid "%s was not found. Please, install realmd."
+#~ msgstr "%s werd niet gevonden. Gelieve realmd te installeren."
 
-#: src/compat/authcompat.py.in.in:469
-msgid "Running authconfig compatibility tool."
-msgstr "Het compatibiliteitsgereedschap authconfig wordt uitgevoerd."
+#~ msgid "Running authconfig compatibility tool."
+#~ msgstr "Het compatibiliteitsgereedschap authconfig wordt uitgevoerd."
 
-#: src/compat/authcompat.py.in.in:470
-msgid ""
-"The purpose of this tool is to enable authentication against chosen services "
-"with authselect and minimum configuration. It does not provide all "
-"capabilities of authconfig.\n"
-msgstr ""
-"Het doel van dit gereedschap is het mogelijk maken van authenticatie "
-"tegenover gekozen diensten met authselect en met minimale configuratie. Het "
-"biedt niet alle mogelijkheden van authconfig.\n"
+#~ msgid ""
+#~ "The purpose of this tool is to enable authentication against chosen "
+#~ "services with authselect and minimum configuration. It does not provide "
+#~ "all capabilities of authconfig.\n"
+#~ msgstr ""
+#~ "Het doel van dit gereedschap is het mogelijk maken van authenticatie "
+#~ "tegenover gekozen diensten met authselect en met minimale configuratie. "
+#~ "Het biedt niet alle mogelijkheden van authconfig.\n"
 
-#: src/compat/authcompat.py.in.in:473
-msgid ""
-"IMPORTANT: authconfig is replaced by authselect, please update your scripts."
-msgstr ""
-"BELANGRIJK: authconfig is vervangen door authselect. Pas uw scripts aan."
+#~ msgid ""
+#~ "IMPORTANT: authconfig is replaced by authselect, please update your "
+#~ "scripts."
+#~ msgstr ""
+#~ "BELANGRIJK: authconfig is vervangen door authselect. Pas uw scripts aan."
 
-#: src/compat/authcompat.py.in.in:475
-msgid ""
-"See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
-"AuthselectAsDefault"
-msgstr ""
-"Zie Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
-"AuthselectAsDefault"
+#~ msgid ""
+#~ "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
+#~ "AuthselectAsDefault"
+#~ msgstr ""
+#~ "Zie Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
+#~ "AuthselectAsDefault"
 
-#: src/compat/authcompat.py.in.in:476
-msgid ""
-"See man authselect-migration(7) to help you with migration to authselect"
-msgstr ""
-"Type 'man authselect-migration(7)' op de commandoregel voor hulp met de "
-"overgang naar authselect"
+#~ msgid ""
+#~ "See man authselect-migration(7) to help you with migration to authselect"
+#~ msgstr ""
+#~ "Type 'man authselect-migration(7)' op de commandoregel voor hulp met de "
+#~ "overgang naar authselect"
 
-#: src/compat/authcompat.py.in.in:480
-msgid "Warning: These options are not supported anymore and have no effect:"
-msgstr ""
-"Waarschuwing: Deze opties worden niet meer ondersteund en hebben geen effect:"
+#~ msgid "Warning: These options are not supported anymore and have no effect:"
+#~ msgstr ""
+#~ "Waarschuwing: Deze opties worden niet meer ondersteund en hebben geen "
+#~ "effect:"
 
-#: src/compat/authcompat.py.in.in:500
-msgid "authconfig can only be run as root"
-msgstr "authconfig kan alleen door root worden uitgevoerd"
+#~ msgid "authconfig can only be run as root"
+#~ msgstr "authconfig kan alleen door root worden uitgevoerd"
 
-#: src/compat/authcompat.py.in.in:505
 #, python-format
-msgid ""
-"Error: option --%s is no longer supported and we cannot continue if it is "
-"set."
-msgstr ""
-"Fout: optie --%s wordt niet meer ondersteund en we kunnen niet verdergaan "
-"als het ingesteld is."
+#~ msgid ""
+#~ "Error: option --%s is no longer supported and we cannot continue if it is "
+#~ "set."
+#~ msgstr ""
+#~ "Fout: optie --%s wordt niet meer ondersteund en we kunnen niet verdergaan "
+#~ "als het ingesteld is."
 
-#: src/compat/authcompat.py.in.in:510
-msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
-msgstr ""
-"Fout: Zowel --enablewinbind als --enablewinbindauth moeten ingesteld zijn."
+#~ msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
+#~ msgstr ""
+#~ "Fout: Zowel --enablewinbind als --enablewinbindauth moeten ingesteld zijn."
 
-#: src/compat/authcompat.py.in.in:520
-msgid "Error: Please, provide --updateall option."
-msgstr "Fout: Gelieve de optie --updateall mee te geven."
+#~ msgid "Error: Please, provide --updateall option."
+#~ msgstr "Fout: Gelieve de optie --updateall mee te geven."
 
 #~ msgid "Unable to get current time!"
 #~ msgstr "Kan huidige tijd niet verkrijgen!"
