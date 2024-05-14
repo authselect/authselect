@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2023-09-27 13:03+0200\n"
+"POT-Creation-Date: 2024-02-23 14:08+0100\n"
 "PO-Revision-Date: 2023-10-04 08:35+0000\n"
 "Last-Translator: Hoppár Zoltán <hopparz@gmail.com>\n"
 "Language-Team: Hungarian <https://translate.fedoraproject.org/projects/"
@@ -574,7 +574,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "A(z) [%s] alap neve nem kérhető le"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:857
+#: src/lib/util/file.c:199 src/cli/main.c:848
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "[%s] nem statisztikázható [%d]: %s"
@@ -871,7 +871,7 @@ msgstr "Gyakori kapcsolók:"
 msgid "[OPTIONS...]"
 msgstr "[KAPCSOLÓK…]"
 
-#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:849
+#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:840
 msgid "Out of memory!"
 msgstr "Elfogyott a memória!"
 
@@ -920,14 +920,14 @@ msgstr ""
 "Legalább egy kapcsoló szükséges!\n"
 "\n"
 
-#: src/cli/main.c:76 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:76 src/cli/main.c:432 src/cli/main.c:475
 msgid "Profile identifier."
 msgstr "Profilazonosító."
 
-#: src/cli/main.c:79 src/cli/main.c:257 src/cli/main.c:302 src/cli/main.c:351
-#: src/cli/main.c:399 src/cli/main.c:444 src/cli/main.c:487 src/cli/main.c:660
-#: src/cli/main.c:737 src/cli/main.c:784 src/cli/main.c:824 src/cli/main.c:889
-#: src/cli/main.c:915
+#: src/cli/main.c:79 src/cli/main.c:248 src/cli/main.c:293 src/cli/main.c:342
+#: src/cli/main.c:390 src/cli/main.c:435 src/cli/main.c:478 src/cli/main.c:651
+#: src/cli/main.c:728 src/cli/main.c:775 src/cli/main.c:815 src/cli/main.c:880
+#: src/cli/main.c:906
 msgid "Unable to parse command arguments"
 msgstr "A parancs argumentumai nem dolgozhatóak fel"
 
@@ -944,17 +944,17 @@ msgstr "Biztonsági mentés helye: %s\n"
 msgid "Enforce changes"
 msgstr "Változások kényszerítése"
 
-#: src/cli/main.c:162 src/cli/main.c:250 src/cli/main.c:650 src/cli/main.c:728
+#: src/cli/main.c:162 src/cli/main.c:241 src/cli/main.c:641 src/cli/main.c:719
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr ""
 "Rendszerfájlok biztonsági mentése a profil aktiválása előtt (egyedi név "
 "előállítása)"
 
-#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "Backup system files before activating profile"
 msgstr "Rendszerfájlok biztonsági mentése a profil aktiválása előtt"
 
-#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "NAME"
 msgstr "NÉV"
 
@@ -962,25 +962,21 @@ msgstr "NÉV"
 msgid "Do not backup system files when --force is set"
 msgstr "Ne mentse a rendszerfájlokat ha a --force kapcsoló meg van adva"
 
-#: src/cli/main.c:165 src/cli/main.c:652
+#: src/cli/main.c:165 src/cli/main.c:643
 msgid "Do not print profile requirements"
 msgstr "Ne írja ki a profilkövetelményeket"
 
-#: src/cli/main.c:176 src/cli/main.c:414 src/cli/main.c:450 src/cli/main.c:493
-#: src/cli/main.c:525 src/cli/main.c:679
+#: src/cli/main.c:176 src/cli/main.c:405 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:516 src/cli/main.c:670
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "A profilinformációk nem kérhetőek le [%d]: %s"
 
-#: src/cli/main.c:184 src/cli/main.c:533 src/cli/main.c:687
+#: src/cli/main.c:184 src/cli/main.c:524 src/cli/main.c:678
 msgid "Unable to read profile requirements!"
 msgstr "A profilkövetelmények nem olvashatók!"
 
-#: src/cli/main.c:192
-msgid "Unable to obtain nsswitch maps!"
-msgstr "Az nsswitch leképezések nem szerezhetőek meg!"
-
-#: src/cli/main.c:207
+#: src/cli/main.c:198
 msgid ""
 "\n"
 "Some unexpected changes to the configuration were detected.\n"
@@ -990,26 +986,26 @@ msgstr ""
 "Néhány váratlan változás észlelve a konfigurációban.\n"
 "Használja a --force paramétert ha felül akarja írni ezeket a változásokat.\n"
 
-#: src/cli/main.c:212
+#: src/cli/main.c:203
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "Profil nem aktiválható [%d]: %s\n"
 
-#: src/cli/main.c:217
+#: src/cli/main.c:208
 #, c-format
 msgid "Profile \"%s\" was selected.\n"
 msgstr "A(z) „%s” profil lett kiválasztva.\n"
 
-#: src/cli/main.c:220
+#: src/cli/main.c:211
 msgid "The following nsswitch maps are overwritten by the profile:\n"
 msgstr "A következő nsswitch leképezéseket írja felült a profil:\n"
 
-#: src/cli/main.c:223
+#: src/cli/main.c:214
 #, c-format
 msgid "- %s\n"
 msgstr "- %s\n"
 
-#: src/cli/main.c:228
+#: src/cli/main.c:219
 #, c-format
 msgid ""
 "\n"
@@ -1018,15 +1014,15 @@ msgstr ""
 "\n"
 "%s\n"
 
-#: src/cli/main.c:269
+#: src/cli/main.c:260
 msgid "Changes were successfully applied.\n"
 msgstr "A változások sikeresen alkalmazva.\n"
 
-#: src/cli/main.c:272 src/cli/main.c:308 src/cli/main.c:669
+#: src/cli/main.c:263 src/cli/main.c:299 src/cli/main.c:660
 msgid "No existing configuration detected.\n"
 msgstr "Nincs létező konfiguráció észlelve.\n"
 
-#: src/cli/main.c:275
+#: src/cli/main.c:266
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
@@ -1034,39 +1030,39 @@ msgstr ""
 "Néhány váratlan változás észlelve a konfigurációban. Használja inkább a "
 "„select” parancsot.\n"
 
-#: src/cli/main.c:279
+#: src/cli/main.c:270
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr "A változtatások nem alkalmazhatóak [%d]: %s\n"
 
-#: src/cli/main.c:296
+#: src/cli/main.c:287
 msgid "Print command parameters instead of formatted output"
 msgstr "A parancsok paramétereinek kiírása a formázott kimenet helyett"
 
-#: src/cli/main.c:311 src/cli/main.c:672
+#: src/cli/main.c:302 src/cli/main.c:663
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "A jelenlegi konfiguráció nem kérhető le [%d]: %s"
 
-#: src/cli/main.c:325
+#: src/cli/main.c:316
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "Profilazonosító: %s\n"
 
-#: src/cli/main.c:326
+#: src/cli/main.c:317
 msgid "Enabled features:"
 msgstr "Engedélyezett funkciók:"
 
-#: src/cli/main.c:329
+#: src/cli/main.c:320
 msgid " None\n"
 msgstr " Nincs\n"
 
-#: src/cli/main.c:357
+#: src/cli/main.c:348
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "A jelenlegi konfiguráció nem tesztelhető [%d]: %s"
 
-#: src/cli/main.c:364
+#: src/cli/main.c:355
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
@@ -1074,69 +1070,69 @@ msgstr ""
 "A jelenlegi konfiguráció nem érvényes. Valószínűleg az authselecten kívül "
 "lett módosítva."
 
-#: src/cli/main.c:371
+#: src/cli/main.c:362
 msgid "Current configuration is valid."
 msgstr "A jelenlegi konfiguráció érvényes."
 
-#: src/cli/main.c:374
+#: src/cli/main.c:365
 msgid "No configuration detected."
 msgstr "Nincs létező konfiguráció észlelve."
 
-#: src/cli/main.c:378
+#: src/cli/main.c:369
 msgid "System was not configured with authselect."
 msgstr "A rendszer nem az authselect segítségével lett konfigurálva."
 
-#: src/cli/main.c:405
+#: src/cli/main.c:396
 msgid "Unable to get profile list!"
 msgstr "A profillista nem kérhető le!"
 
-#: src/cli/main.c:458
+#: src/cli/main.c:449
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
 msgstr "A profilfunkciók nem kérhetőek le [%d]: %s"
 
-#: src/cli/main.c:572
+#: src/cli/main.c:563
 msgid "Print content of all files"
 msgstr "Az összes fájl tartalmának kiírása"
 
-#: src/cli/main.c:573
+#: src/cli/main.c:564
 msgid "Print nsswitch.conf content"
 msgstr "Az nsswitch.conf tartalmának kiírása"
 
-#: src/cli/main.c:574
+#: src/cli/main.c:565
 msgid "Print system-auth content"
 msgstr "A system-auth tartalmának kiírása"
 
-#: src/cli/main.c:575
+#: src/cli/main.c:566
 msgid "Print password-auth content"
 msgstr "A password-auth tartalmának kiírása"
 
-#: src/cli/main.c:576
+#: src/cli/main.c:567
 msgid "Print smartcard-auth content"
 msgstr "A smartcard-auth tartalmának kiírása"
 
-#: src/cli/main.c:577
+#: src/cli/main.c:568
 msgid "Print fingerprint-auth content"
 msgstr "A fingerprint-auth tartalmának kiírása"
 
-#: src/cli/main.c:578
+#: src/cli/main.c:569
 msgid "Print postlogin content"
 msgstr "A postlogin tartalmának kiírása"
 
-#: src/cli/main.c:579
+#: src/cli/main.c:570
 msgid "Print dconf database content"
 msgstr "A dconf adatbázis tartalmának kiírása"
 
-#: src/cli/main.c:580
+#: src/cli/main.c:571
 msgid "Print dconf lock content"
 msgstr "A dlock zár tartalmának kiírása"
 
-#: src/cli/main.c:607
+#: src/cli/main.c:598
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "Az előállított tartalom nem kérhető le [%d]: %s"
 
-#: src/cli/main.c:626
+#: src/cli/main.c:617
 #, c-format
 msgid ""
 "File %s: Empty\n"
@@ -1145,7 +1141,7 @@ msgstr ""
 "%s fájl: Üres\n"
 "\n"
 
-#: src/cli/main.c:628
+#: src/cli/main.c:619
 #, c-format
 msgid ""
 "File %s:\n"
@@ -1156,44 +1152,44 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/cli/main.c:657
+#: src/cli/main.c:648
 msgid "Feature to enable."
 msgstr "Engedélyezendő funkció."
 
-#: src/cli/main.c:694
+#: src/cli/main.c:685
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
 msgstr ""
 "A jelenlegi konfigurációról nem készíthető biztonsági másolat [%d]: %s\n"
 
-#: src/cli/main.c:701
+#: src/cli/main.c:692
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "A funkció nem engedélyezhető [%d]: %s\n"
 
-#: src/cli/main.c:706
+#: src/cli/main.c:697
 #, c-format
 msgid "%s\n"
 msgstr "%s\n"
 
-#: src/cli/main.c:734
+#: src/cli/main.c:725
 msgid "Feature to disable."
 msgstr "Letiltandó funkció."
 
-#: src/cli/main.c:748
+#: src/cli/main.c:739
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "A funkció nem tiltható le [%d]: %s\n"
 
-#: src/cli/main.c:769
+#: src/cli/main.c:760
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr "Új profil létrehozása gyártói profilként, és nem egyéni profilként"
 
-#: src/cli/main.c:770
+#: src/cli/main.c:761
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr "Azon profil azonosítója, amely az új profil alapja lesz"
 
-#: src/cli/main.c:771
+#: src/cli/main.c:762
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1201,519 +1197,442 @@ msgstr ""
 "Az új profil alapja az alapértelmezett profil legyen, még akkor is ha már "
 "létezik azonos nevű gyártói profil"
 
-#: src/cli/main.c:772
+#: src/cli/main.c:763
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr ""
 "A metafájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
 
-#: src/cli/main.c:773
+#: src/cli/main.c:764
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr ""
 "Az nsswitch fájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
 
-#: src/cli/main.c:774
+#: src/cli/main.c:765
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr ""
 "A pam fájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
 
-#: src/cli/main.c:775
+#: src/cli/main.c:766
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
 "A dconf fájlok szimbolikus linkelése az alapprofilból a másolásuk helyett"
 
-#: src/cli/main.c:776
+#: src/cli/main.c:767
 msgid "Symlink specific file (can be set multiple times)"
 msgstr "Konkrét fájl szimbolikus linkelése (többször is megadható)"
 
-#: src/cli/main.c:781
+#: src/cli/main.c:772
 msgid "New profile name."
 msgstr "Új profilnév."
 
-#: src/cli/main.c:791
+#: src/cli/main.c:782
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "Nem hozható létre új profil [%d]: %s\n"
 
-#: src/cli/main.c:795
+#: src/cli/main.c:786
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "Új profil létrehozva itt: %s\n"
 
-#: src/cli/main.c:818
+#: src/cli/main.c:809
 msgid "Print backup names without any formatting and additional information"
 msgstr ""
 "A biztonsági mentések nevének kiírása formázás és további információk nélkül"
 
-#: src/cli/main.c:830
+#: src/cli/main.c:821
 msgid "Unable to list available backups!"
 msgstr "Az elérhető biztonsági mentések listázása sikertelen!"
 
-#: src/cli/main.c:867
+#: src/cli/main.c:858
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (létrehozva: %s)\n"
 
-#: src/cli/main.c:886
+#: src/cli/main.c:877
 msgid "Name of the backup to remove."
 msgstr "Az eltávolítandó biztonsági mentés neve."
 
-#: src/cli/main.c:895
+#: src/cli/main.c:886
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "A(z) [%s] biztonsági mentés nem távolítható el [%d]: %s\n"
 
-#: src/cli/main.c:912
+#: src/cli/main.c:903
 msgid "Name of the backup to restore from."
 msgstr "A biztonsági mentés, amelyből helyre akar állítani."
 
-#: src/cli/main.c:921
+#: src/cli/main.c:912
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "A(z) [%s] biztonsági mentésből helyreállítás sikertelen [%d]: %s\n"
 
-#: src/cli/main.c:937
+#: src/cli/main.c:928
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "Az authselect konfiguráció nem távolítható el [%d]: %s\n"
 
-#: src/cli/main.c:987
+#: src/cli/main.c:978
 msgid "Select profile"
 msgstr "Válasszon profilt"
 
-#: src/cli/main.c:988
+#: src/cli/main.c:979
 msgid "Regenerate configuration for currently selected command"
 msgstr "A konfiguráció újra előállítása a jelenleg kiválasztott parancshoz"
 
-#: src/cli/main.c:989
+#: src/cli/main.c:980
 msgid "List available profiles"
 msgstr "Elérhető profilok listázása"
 
-#: src/cli/main.c:990
+#: src/cli/main.c:981
 msgid "List available profile features"
 msgstr "Elérhető profilfunkciók listázása"
 
-#: src/cli/main.c:991
+#: src/cli/main.c:982
 msgid "Show profile information"
 msgstr "Profilinformációk megjelenítése"
 
-#: src/cli/main.c:992
+#: src/cli/main.c:983
 msgid "Print profile requirements"
 msgstr "Profilkövetelmények kiírása"
 
-#: src/cli/main.c:993
+#: src/cli/main.c:984
 msgid "Get identifier of currently selected profile"
 msgstr "A jelenleg kiválasztott profil azonosítójának lekérése"
 
-#: src/cli/main.c:994
+#: src/cli/main.c:985
 msgid "Check if the current configuration is valid"
 msgstr "Ellenőrzés, hogy a jelenlegi konfiguráció érvényes-e"
 
-#: src/cli/main.c:995
+#: src/cli/main.c:986
 msgid "Print changes that would be otherwise written"
 msgstr "Az egyébként fájlba írandó változások kiírása"
 
-#: src/cli/main.c:996
+#: src/cli/main.c:987
 msgid "Enable feature in currently selected profile"
 msgstr "Funkció engedélyezése a jelenleg kiválasztott profilban"
 
-#: src/cli/main.c:997
+#: src/cli/main.c:988
 msgid "Disable feature in currently selected profile"
 msgstr "Funkció letiltása a jelenleg kiválasztott profilban"
 
-#: src/cli/main.c:998
+#: src/cli/main.c:989
 msgid "Create new authselect profile"
 msgstr "Új authselect profil létrehozása"
 
-#: src/cli/main.c:999
+#: src/cli/main.c:990
 msgid "Backup commands:"
 msgstr "Biztonsági mentés parancsai:"
 
-#: src/cli/main.c:1000
+#: src/cli/main.c:991
 msgid "List available backups"
 msgstr "Elérhető biztonsági mentések listázása"
 
-#: src/cli/main.c:1001
+#: src/cli/main.c:992
 msgid "Remove backup"
 msgstr "Biztonsági mentés eltávolítása"
 
-#: src/cli/main.c:1002
+#: src/cli/main.c:993
 msgid "Restore from backup"
 msgstr "Visszaállítás mentésből"
 
-#: src/cli/main.c:1003
+#: src/cli/main.c:994
 msgid "Other:"
 msgstr "Egyéb:"
 
-#: src/cli/main.c:1004
+#: src/cli/main.c:995
 msgid "Opt-out from authselect managed configuration"
 msgstr "Leiratkozás a felügyelt konfiguráció hitelesítéséről"
 
-#: src/cli/main.c:1006
+#: src/cli/main.c:997
 msgid "Print authselect version"
 msgstr "Authselect verzió nyomtatása/kiírása"
 
-#: src/compat/authcompat_Options.py:82
-msgid "NIS for user information by default"
-msgstr "alapértelmezetten NIS használata a felhasználói információkhoz"
-
-#: src/compat/authcompat_Options.py:83
-msgid "<domain>"
-msgstr "<tartomány>"
-
-#: src/compat/authcompat_Options.py:83
-msgid "default NIS domain"
-msgstr "alapértelmezett NIS tartomány"
-
-#: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
-#: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
-msgid "<server>"
-msgstr "<kiszolgáló>"
-
-#: src/compat/authcompat_Options.py:84
-msgid "default NIS server"
-msgstr "alapértelmezett NIS kiszolgáló"
-
-#: src/compat/authcompat_Options.py:85
-msgid "LDAP for user information by default"
-msgstr "alapértelmezetten LDAP használata a felhasználói információkhoz"
-
-#: src/compat/authcompat_Options.py:86
-msgid "LDAP for authentication by default"
-msgstr "alapértelmezetten LDAP használata a hitelesítéshez"
-
-#: src/compat/authcompat_Options.py:87
-msgid "default LDAP server hostname or URI"
-msgstr "alapértelmezett LDAP kiszolgálónév vagy URI"
-
-#: src/compat/authcompat_Options.py:88
-msgid "<dn>"
-msgstr "<dn>"
-
-#: src/compat/authcompat_Options.py:88
-msgid "default LDAP base DN"
-msgstr "alapértelmezett LDAP bázis-DN"
-
-#: src/compat/authcompat_Options.py:89
-msgid "use of TLS with LDAP (RFC-2830)"
-msgstr "TLS használata LDAP-pal (RFC-2830)"
-
-#: src/compat/authcompat_Options.py:90
-msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
-msgstr "TLS használata a személyazonosság-kereséshez LDAP-pal (RFC-2830)"
-
-#: src/compat/authcompat_Options.py:91
-msgid "use of RFC-2307bis schema for LDAP user information lookups"
-msgstr ""
-"RFC-2307bis séma használata az LDAP felhasználói információk lekéréséhez"
-
-#: src/compat/authcompat_Options.py:92
-msgid "authentication with smart card by default"
-msgstr "alapértelmezetten chipkártya-alapú hitelesítés"
-
-#: src/compat/authcompat_Options.py:93
-msgid "<0=Lock|1=Ignore>"
-msgstr "<0=Zárolás|1=Mellőzés>"
-
-#: src/compat/authcompat_Options.py:93
-msgid "action to be taken on smart card removal"
-msgstr "művelet a chipkártya eltávolításakor"
-
-#: src/compat/authcompat_Options.py:94
-msgid "require smart card for authentication by default"
-msgstr "alapértelmezetten kötelező chipkártya-alapú hitelesítés"
-
-#: src/compat/authcompat_Options.py:95
-msgid "authentication with fingerprint readers by default"
-msgstr "alapértelmezetten ujjlenyomattal történő hitelesítés"
-
-#: src/compat/authcompat_Options.py:96
-msgid "automatic per-user ecryptfs"
-msgstr "automatikus felhasználónkénti ecryptfs"
-
-#: src/compat/authcompat_Options.py:97
-msgid "Kerberos authentication by default"
-msgstr "Kerberos hitelesítés alapértelmezetten"
-
-#: src/compat/authcompat_Options.py:98
-msgid "default Kerberos KDC"
-msgstr "alapértelmezett Kerberos KDC"
-
-#: src/compat/authcompat_Options.py:99
-msgid "default Kerberos admin server"
-msgstr "alapértelmezett Kerberos adminisztrációs kiszolgáló"
-
-#: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
-msgid "<realm>"
-msgstr "<terület>"
-
-#: src/compat/authcompat_Options.py:100
-msgid "default Kerberos realm"
-msgstr "alapértelmezett Kerberos tartomány"
-
-#: src/compat/authcompat_Options.py:101
-msgid "use of DNS to find Kerberos KDCs"
-msgstr "DNS használata a Kerberos KDC-k keresésére"
-
-#: src/compat/authcompat_Options.py:102
-msgid "use of DNS to find Kerberos realms"
-msgstr "DNS használata a Kerberos tartományok keresésére"
-
-#: src/compat/authcompat_Options.py:103
-msgid "winbind for user information by default"
-msgstr ""
-"alapértelmezetten winbind használata a felhasználói adatok lekérdezéséhez"
-
-#: src/compat/authcompat_Options.py:104
-msgid "winbind for authentication by default"
-msgstr "alapértelmezetten winbind használata a hitelesítéshez"
-
-#: src/compat/authcompat_Options.py:105
-msgid "<Administrator>"
-msgstr "<Rendszergazda>"
-
-#: src/compat/authcompat_Options.py:105
-msgid "join the winbind domain or ads realm now as this administrator"
-msgstr "csatlakozás most a winbind vagy ads tartományhoz rendszergazdaként"
-
-#: src/compat/authcompat_Options.py:106
-msgid "Kerberos 5 for authenticate with winbind"
-msgstr "Kerberos 5 a winbinddal hitelesítéshez"
-
-#: src/compat/authcompat_Options.py:107
-msgid "<workgroup>"
-msgstr "<munkacsoport>"
-
-#: src/compat/authcompat_Options.py:107
-msgid "workgroup authentication servers are in"
-msgstr "munkacsoport-hitelesítési kiszolgálók a következőben"
-
-#: src/compat/authcompat_Options.py:108
-msgid ""
-"SSSD for user information by default with manually managed configuration"
-msgstr ""
-"alapértelmezetten SSSD a felhasználói adatokhoz, kézzel kezelt konfiguráció "
-"esetén"
-
-#: src/compat/authcompat_Options.py:109
-msgid "SSSD for authentication by default with manually managed configuration"
-msgstr ""
-"alapértelmezetten SSSD a hitelesítéshez, kézzel kezelt konfiguráció esetén"
-
-#: src/compat/authcompat_Options.py:110
-msgid "caching of user credentials in SSSD by default"
-msgstr ""
-"alapértelmezetten a felhasználói információk gyorsítótárazása az SSSD-ben"
-
-#: src/compat/authcompat_Options.py:111
-msgid "check of access.conf during account authorization"
-msgstr "access.conf ellenőrzése a fiók hitelesítésekor"
-
-#: src/compat/authcompat_Options.py:112
-msgid "creation of home directories for users on their first login"
-msgstr ""
-"felhasználók saját könyvtárainak létrehozása az első bejelentkezésükkor"
-
-#: src/compat/authcompat_Options.py:113
-msgid "account locking in case of too many consecutive authentication failures"
-msgstr "túl sok sikertelen hitelesítés miatti fiókzárolás"
-
-#: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
-#: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
-msgid "<number>"
-msgstr "<szám>"
-
-#: src/compat/authcompat_Options.py:114
-msgid "minimum length of a password"
-msgstr "jelszó minimális hossza"
-
-#: src/compat/authcompat_Options.py:115
-msgid "minimum number of character classes in a password"
-msgstr "karakterosztályok minimális száma a jelszóban"
-
-#: src/compat/authcompat_Options.py:116
-msgid "maximum number of same consecutive characters in a password"
-msgstr "egymást követő karakterek maximális száma a jelszóban"
-
-#: src/compat/authcompat_Options.py:117
-msgid "maximum number of consecutive characters of same class in a password"
-msgstr "egymást követő, azonos osztályú karakterek maximális száma a jelszóban"
-
-#: src/compat/authcompat_Options.py:118
-msgid "require at least one lowercase character in a password"
-msgstr "legalább egy kisbetű szükséges a jelszóban"
-
-#: src/compat/authcompat_Options.py:119
-msgid "require at least one uppercase character in a password"
-msgstr "legalább egy nagybetű szükséges a jelszóban"
-
-#: src/compat/authcompat_Options.py:120
-msgid "require at least one digit in a password"
-msgstr "legalább egy szám szükséges a jelszóban"
-
-#: src/compat/authcompat_Options.py:121
-msgid "require at least one other character in a password"
-msgstr "legalább egy egyéb karakter szükséges a jelszóban"
-
-#: src/compat/authcompat_Options.py:124
-msgid "do not start/stop services"
-msgstr "ne indítson el/állítson le szolgáltatásokat"
-
-#: src/compat/authcompat_Options.py:125
-msgid "update all configuration files"
-msgstr "összes konfigurációs fájl frissítése"
-
-#: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
-msgid "the same as --updateall"
-msgstr "ugyanaz, mint az --updateall"
-
-#: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
-msgid "<name>"
-msgstr "<név>"
-
-#: src/compat/authcompat_Options.py:148
-msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-
-#: src/compat/authcompat_Options.py:149
-msgid "<URL>"
-msgstr "<URL>"
-
-#: src/compat/authcompat_Options.py:150
-msgid "<module>"
-msgstr "<modul>"
-
-#: src/compat/authcompat_Options.py:151
-msgid "<user|server|domain|ads>"
-msgstr "<felhasználó|kiszolgáló|tartomány|ads>"
-
-#: src/compat/authcompat_Options.py:153
-msgid "<servers>"
-msgstr "<kiszolgálók>"
-
-#: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
-#: src/compat/authcompat_Options.py:156
-msgid "<lowest-highest>"
-msgstr "<legalacsonyabb-legmagasabb>"
-
-#: src/compat/authcompat_Options.py:157
-msgid "<\\>"
-msgstr "<\\>"
-
-#: src/compat/authcompat_Options.py:158
-msgid "</home/%D/%U>"
-msgstr "</home/%D/%U>"
-
-#: src/compat/authcompat_Options.py:159
-msgid "</bin/false>"
-msgstr "</bin/false>"
-
-#: src/compat/authcompat_Options.py:166
-msgid "<options>"
-msgstr "<kapcsolók>"
-
-#: src/compat/authcompat_Options.py:210
-msgid "These options have a compatibility layer"
-msgstr "Ezen kapcsolók kompatibilitási réteggel rendelkeznek"
-
-#: src/compat/authcompat_Options.py:211
-msgid "These options are no longer supported and have no effect"
-msgstr "Ezen kapcsolók már nem támogatottak, és nincs hatásuk"
-
-#: src/compat/authcompat_Options.py:313
-msgid "enable"
-msgstr "engedélyezés"
-
-#: src/compat/authcompat_Options.py:314
-msgid "disable"
-msgstr "letiltás"
-
-#: src/compat/authcompat.py.in.in:51
+#~ msgid "Unable to obtain nsswitch maps!"
+#~ msgstr "Az nsswitch leképezések nem szerezhetőek meg!"
+
+#~ msgid "NIS for user information by default"
+#~ msgstr "alapértelmezetten NIS használata a felhasználói információkhoz"
+
+#~ msgid "<domain>"
+#~ msgstr "<tartomány>"
+
+#~ msgid "default NIS domain"
+#~ msgstr "alapértelmezett NIS tartomány"
+
+#~ msgid "<server>"
+#~ msgstr "<kiszolgáló>"
+
+#~ msgid "default NIS server"
+#~ msgstr "alapértelmezett NIS kiszolgáló"
+
+#~ msgid "LDAP for user information by default"
+#~ msgstr "alapértelmezetten LDAP használata a felhasználói információkhoz"
+
+#~ msgid "LDAP for authentication by default"
+#~ msgstr "alapértelmezetten LDAP használata a hitelesítéshez"
+
+#~ msgid "default LDAP server hostname or URI"
+#~ msgstr "alapértelmezett LDAP kiszolgálónév vagy URI"
+
+#~ msgid "<dn>"
+#~ msgstr "<dn>"
+
+#~ msgid "default LDAP base DN"
+#~ msgstr "alapértelmezett LDAP bázis-DN"
+
+#~ msgid "use of TLS with LDAP (RFC-2830)"
+#~ msgstr "TLS használata LDAP-pal (RFC-2830)"
+
+#~ msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
+#~ msgstr "TLS használata a személyazonosság-kereséshez LDAP-pal (RFC-2830)"
+
+#~ msgid "use of RFC-2307bis schema for LDAP user information lookups"
+#~ msgstr ""
+#~ "RFC-2307bis séma használata az LDAP felhasználói információk lekéréséhez"
+
+#~ msgid "authentication with smart card by default"
+#~ msgstr "alapértelmezetten chipkártya-alapú hitelesítés"
+
+#~ msgid "<0=Lock|1=Ignore>"
+#~ msgstr "<0=Zárolás|1=Mellőzés>"
+
+#~ msgid "action to be taken on smart card removal"
+#~ msgstr "művelet a chipkártya eltávolításakor"
+
+#~ msgid "require smart card for authentication by default"
+#~ msgstr "alapértelmezetten kötelező chipkártya-alapú hitelesítés"
+
+#~ msgid "authentication with fingerprint readers by default"
+#~ msgstr "alapértelmezetten ujjlenyomattal történő hitelesítés"
+
+#~ msgid "automatic per-user ecryptfs"
+#~ msgstr "automatikus felhasználónkénti ecryptfs"
+
+#~ msgid "Kerberos authentication by default"
+#~ msgstr "Kerberos hitelesítés alapértelmezetten"
+
+#~ msgid "default Kerberos KDC"
+#~ msgstr "alapértelmezett Kerberos KDC"
+
+#~ msgid "default Kerberos admin server"
+#~ msgstr "alapértelmezett Kerberos adminisztrációs kiszolgáló"
+
+#~ msgid "<realm>"
+#~ msgstr "<terület>"
+
+#~ msgid "default Kerberos realm"
+#~ msgstr "alapértelmezett Kerberos tartomány"
+
+#~ msgid "use of DNS to find Kerberos KDCs"
+#~ msgstr "DNS használata a Kerberos KDC-k keresésére"
+
+#~ msgid "use of DNS to find Kerberos realms"
+#~ msgstr "DNS használata a Kerberos tartományok keresésére"
+
+#~ msgid "winbind for user information by default"
+#~ msgstr ""
+#~ "alapértelmezetten winbind használata a felhasználói adatok lekérdezéséhez"
+
+#~ msgid "winbind for authentication by default"
+#~ msgstr "alapértelmezetten winbind használata a hitelesítéshez"
+
+#~ msgid "<Administrator>"
+#~ msgstr "<Rendszergazda>"
+
+#~ msgid "join the winbind domain or ads realm now as this administrator"
+#~ msgstr "csatlakozás most a winbind vagy ads tartományhoz rendszergazdaként"
+
+#~ msgid "Kerberos 5 for authenticate with winbind"
+#~ msgstr "Kerberos 5 a winbinddal hitelesítéshez"
+
+#~ msgid "<workgroup>"
+#~ msgstr "<munkacsoport>"
+
+#~ msgid "workgroup authentication servers are in"
+#~ msgstr "munkacsoport-hitelesítési kiszolgálók a következőben"
+
+#~ msgid ""
+#~ "SSSD for user information by default with manually managed configuration"
+#~ msgstr ""
+#~ "alapértelmezetten SSSD a felhasználói adatokhoz, kézzel kezelt "
+#~ "konfiguráció esetén"
+
+#~ msgid ""
+#~ "SSSD for authentication by default with manually managed configuration"
+#~ msgstr ""
+#~ "alapértelmezetten SSSD a hitelesítéshez, kézzel kezelt konfiguráció esetén"
+
+#~ msgid "caching of user credentials in SSSD by default"
+#~ msgstr ""
+#~ "alapértelmezetten a felhasználói információk gyorsítótárazása az SSSD-ben"
+
+#~ msgid "check of access.conf during account authorization"
+#~ msgstr "access.conf ellenőrzése a fiók hitelesítésekor"
+
+#~ msgid "creation of home directories for users on their first login"
+#~ msgstr ""
+#~ "felhasználók saját könyvtárainak létrehozása az első bejelentkezésükkor"
+
+#~ msgid ""
+#~ "account locking in case of too many consecutive authentication failures"
+#~ msgstr "túl sok sikertelen hitelesítés miatti fiókzárolás"
+
+#~ msgid "<number>"
+#~ msgstr "<szám>"
+
+#~ msgid "minimum length of a password"
+#~ msgstr "jelszó minimális hossza"
+
+#~ msgid "minimum number of character classes in a password"
+#~ msgstr "karakterosztályok minimális száma a jelszóban"
+
+#~ msgid "maximum number of same consecutive characters in a password"
+#~ msgstr "egymást követő karakterek maximális száma a jelszóban"
+
+#~ msgid "maximum number of consecutive characters of same class in a password"
+#~ msgstr ""
+#~ "egymást követő, azonos osztályú karakterek maximális száma a jelszóban"
+
+#~ msgid "require at least one lowercase character in a password"
+#~ msgstr "legalább egy kisbetű szükséges a jelszóban"
+
+#~ msgid "require at least one uppercase character in a password"
+#~ msgstr "legalább egy nagybetű szükséges a jelszóban"
+
+#~ msgid "require at least one digit in a password"
+#~ msgstr "legalább egy szám szükséges a jelszóban"
+
+#~ msgid "require at least one other character in a password"
+#~ msgstr "legalább egy egyéb karakter szükséges a jelszóban"
+
+#~ msgid "do not start/stop services"
+#~ msgstr "ne indítson el/állítson le szolgáltatásokat"
+
+#~ msgid "update all configuration files"
+#~ msgstr "összes konfigurációs fájl frissítése"
+
+#~ msgid "the same as --updateall"
+#~ msgstr "ugyanaz, mint az --updateall"
+
+#~ msgid "<name>"
+#~ msgstr "<név>"
+
+#~ msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+#~ msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+
+#~ msgid "<URL>"
+#~ msgstr "<URL>"
+
+#~ msgid "<module>"
+#~ msgstr "<modul>"
+
+#~ msgid "<user|server|domain|ads>"
+#~ msgstr "<felhasználó|kiszolgáló|tartomány|ads>"
+
+#~ msgid "<servers>"
+#~ msgstr "<kiszolgálók>"
+
+#~ msgid "<lowest-highest>"
+#~ msgstr "<legalacsonyabb-legmagasabb>"
+
+#~ msgid "<\\>"
+#~ msgstr "<\\>"
+
+#~ msgid "</home/%D/%U>"
+#~ msgstr "</home/%D/%U>"
+
+#~ msgid "</bin/false>"
+#~ msgstr "</bin/false>"
+
+#~ msgid "<options>"
+#~ msgstr "<kapcsolók>"
+
+#~ msgid "These options have a compatibility layer"
+#~ msgstr "Ezen kapcsolók kompatibilitási réteggel rendelkeznek"
+
+#~ msgid "These options are no longer supported and have no effect"
+#~ msgstr "Ezen kapcsolók már nem támogatottak, és nincs hatásuk"
+
+#~ msgid "enable"
+#~ msgstr "engedélyezés"
+
+#~ msgid "disable"
+#~ msgstr "letiltás"
+
 #, python-format
-msgid "Executing: %s"
-msgstr "Végrehajtás: %s"
+#~ msgid "Executing: %s"
+#~ msgstr "Végrehajtás: %s"
 
-#: src/compat/authcompat.py.in.in:71
 #, python-format
-msgid "Service %s was not found. Please install the service."
-msgstr "A(z) %s szolgáltatás nem található. Telepítse a szolgáltatást."
+#~ msgid "Service %s was not found. Please install the service."
+#~ msgstr "A(z) %s szolgáltatás nem található. Telepítse a szolgáltatást."
 
-#: src/compat/authcompat.py.in.in:74 src/compat/authcompat.py.in.in:631
-#: src/compat/authcompat.py.in.in:657
 #, python-format
-msgid "Command [%s] failed with %d, stderr:"
-msgstr "A(z) [%s] parancs meghiúsult ezzel: %d, stderr:"
+#~ msgid "Command [%s] failed with %d, stderr:"
+#~ msgstr "A(z) [%s] parancs meghiúsult ezzel: %d, stderr:"
 
-#: src/compat/authcompat.py.in.in:186
 #, python-format
-msgid "Removing file: %s"
-msgstr "Fájl eltávolítása: %s"
+#~ msgid "Removing file: %s"
+#~ msgstr "Fájl eltávolítása: %s"
 
-#: src/compat/authcompat.py.in.in:335
 #, python-format
-msgid "%s was not found. Please, install realmd."
-msgstr "%s nem található. Telepítse a realmd szolgáltatást."
+#~ msgid "%s was not found. Please, install realmd."
+#~ msgstr "%s nem található. Telepítse a realmd szolgáltatást."
 
-#: src/compat/authcompat.py.in.in:469
-msgid "Running authconfig compatibility tool."
-msgstr "Az authconfig kompatibilitási eszköz futtatása."
+#~ msgid "Running authconfig compatibility tool."
+#~ msgstr "Az authconfig kompatibilitási eszköz futtatása."
 
-#: src/compat/authcompat.py.in.in:470
-msgid ""
-"The purpose of this tool is to enable authentication against chosen services "
-"with authselect and minimum configuration. It does not provide all "
-"capabilities of authconfig.\n"
-msgstr ""
-"Az eszköz célja a hitelesítés lehetővé tétele az authconfig használatával, "
-"kiválasztott szolgáltatásokkal, és minimális konfigurációval. Az eszköz nem "
-"biztosítja az authconfig összes képességét.\n"
+#~ msgid ""
+#~ "The purpose of this tool is to enable authentication against chosen "
+#~ "services with authselect and minimum configuration. It does not provide "
+#~ "all capabilities of authconfig.\n"
+#~ msgstr ""
+#~ "Az eszköz célja a hitelesítés lehetővé tétele az authconfig "
+#~ "használatával, kiválasztott szolgáltatásokkal, és minimális "
+#~ "konfigurációval. Az eszköz nem biztosítja az authconfig összes "
+#~ "képességét.\n"
 
-#: src/compat/authcompat.py.in.in:473
-msgid ""
-"IMPORTANT: authconfig is replaced by authselect, please update your scripts."
-msgstr ""
-"FONTOS: az authconfigot leváltotta az authselect, frissítse a "
-"parancsfájljait."
+#~ msgid ""
+#~ "IMPORTANT: authconfig is replaced by authselect, please update your "
+#~ "scripts."
+#~ msgstr ""
+#~ "FONTOS: az authconfigot leváltotta az authselect, frissítse a "
+#~ "parancsfájljait."
 
-#: src/compat/authcompat.py.in.in:475
-msgid ""
-"See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
-"AuthselectAsDefault"
-msgstr ""
-"Lásd a Fedora 28 változások oldalt: https://fedoraproject.org/wiki/Changes/"
-"AuthselectAsDefault"
+#~ msgid ""
+#~ "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
+#~ "AuthselectAsDefault"
+#~ msgstr ""
+#~ "Lásd a Fedora 28 változások oldalt: https://fedoraproject.org/wiki/"
+#~ "Changes/AuthselectAsDefault"
 
-#: src/compat/authcompat.py.in.in:476
-msgid ""
-"See man authselect-migration(7) to help you with migration to authselect"
-msgstr ""
-"Lásd az authselect-migration(7) man oldalt az authselectre történő "
-"migrációval kapcsolatban"
+#~ msgid ""
+#~ "See man authselect-migration(7) to help you with migration to authselect"
+#~ msgstr ""
+#~ "Lásd az authselect-migration(7) man oldalt az authselectre történő "
+#~ "migrációval kapcsolatban"
 
-#: src/compat/authcompat.py.in.in:480
-msgid "Warning: These options are not supported anymore and have no effect:"
-msgstr "Figyelmeztetés: Ezen kapcsolók nem támogatottak, és nincs hatásuk:"
+#~ msgid "Warning: These options are not supported anymore and have no effect:"
+#~ msgstr "Figyelmeztetés: Ezen kapcsolók nem támogatottak, és nincs hatásuk:"
 
-#: src/compat/authcompat.py.in.in:500
-msgid "authconfig can only be run as root"
-msgstr "az authconfig csak root jogokkal futtatható"
+#~ msgid "authconfig can only be run as root"
+#~ msgstr "az authconfig csak root jogokkal futtatható"
 
-#: src/compat/authcompat.py.in.in:505
 #, python-format
-msgid ""
-"Error: option --%s is no longer supported and we cannot continue if it is "
-"set."
-msgstr ""
-"Hiba: a(z) --%s kapcsoló már nem támogatott, és nem megyünk tovább, ha be "
-"van állítva."
+#~ msgid ""
+#~ "Error: option --%s is no longer supported and we cannot continue if it is "
+#~ "set."
+#~ msgstr ""
+#~ "Hiba: a(z) --%s kapcsoló már nem támogatott, és nem megyünk tovább, ha be "
+#~ "van állítva."
 
-#: src/compat/authcompat.py.in.in:510
-msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
-msgstr ""
-"Hiba: Az --enablewinbind és az --enablewinbindauth megadása is szükséges."
+#~ msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
+#~ msgstr ""
+#~ "Hiba: Az --enablewinbind és az --enablewinbindauth megadása is szükséges."
 
-#: src/compat/authcompat.py.in.in:520
-msgid "Error: Please, provide --updateall option."
-msgstr "Hiba: adja meg az --updateall kapcsolót."
+#~ msgid "Error: Please, provide --updateall option."
+#~ msgstr "Hiba: adja meg az --updateall kapcsolót."
 
 #~ msgid "Unable to get current time!"
 #~ msgstr "A jelenlegi idő nem kérhető le!"

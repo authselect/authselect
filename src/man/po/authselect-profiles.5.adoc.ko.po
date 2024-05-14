@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-04 13:46+0200\n"
+"POT-Creation-Date: 2024-02-23 14:08+0100\n"
 "PO-Revision-Date: 2022-05-23 17:18+0000\n"
 "Last-Translator: 김인수 <simmon@nplob.com>\n"
 "Language-Team: Korean <https://translate.fedoraproject.org/projects/"
@@ -48,7 +48,8 @@ msgstr "설명"
 msgid ""
 "This manual page explains how are authselect profiles organized and how to "
 "create new profiles."
-msgstr "이 설명서는 authselect 프로파일을 구성하고 새로운 프로파일을 생성하는 방법에 "
+msgstr ""
+"이 설명서는 authselect 프로파일을 구성하고 새로운 프로파일을 생성하는 방법에 "
 "대해 설명합니다."
 
 #. type: Title -
@@ -187,30 +188,18 @@ msgid "*nsswitch.conf*"
 msgstr "*nsswitch.conf*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:58
+#: src/man/authselect-profiles.5.adoc:57
 msgid "Name Service Switch configuration file."
 msgstr "이름 서비스 전환 구성 파일."
 
-#. type: Plain text
-#: src/man/authselect-profiles.5.adoc:63
-#, no-wrap
-msgid ""
-"    Name Service Switch configuration file. Only maps relevant to the profile\n"
-"    must be set. Maps that are not specified by the profile are included from\n"
-"    {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf.\n"
-msgstr ""
-"    이름 서비스 전환 구성 파일. 프로파일과 연관된 맵만 설정되어야\n"
-"     합니다. 프로파일에 지정되어지지 않은 맵은\n"
-"    {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf에서 포함되어집니다.\n"
-
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:65
+#: src/man/authselect-profiles.5.adoc:58
 #, no-wrap
 msgid "*dconf-db*"
 msgstr "*dconf-db*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:69
+#: src/man/authselect-profiles.5.adoc:62
 msgid ""
 "Changes to dconf database. The main uses case of this file is to set changes "
 "for gnome login screen in order to enable or disable smartcard and "
@@ -221,24 +210,24 @@ msgstr ""
 "설정합니다."
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:70
+#: src/man/authselect-profiles.5.adoc:63
 #, no-wrap
 msgid "*dconf-locks*"
 msgstr "*dconf-locks*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:72
+#: src/man/authselect-profiles.5.adoc:65
 msgid "This file define locks on values set in dconf database."
 msgstr "이 파일은 dconf 데이타베이스에서 설정된 값에 잠금을 정의합니다."
 
 #. type: Title ~
-#: src/man/authselect-profiles.5.adoc:74
+#: src/man/authselect-profiles.5.adoc:67
 #, no-wrap
 msgid "CONDITIONAL LINES"
 msgstr "조건부 선"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:78
+#: src/man/authselect-profiles.5.adoc:71
 msgid ""
 "Each of these files serves as a template. A template is a plain text file "
 "with optional usage of several operators that can be used to provide some "
@@ -249,13 +238,13 @@ msgstr ""
 "입니다."
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:79
+#: src/man/authselect-profiles.5.adoc:72
 #, no-wrap
 msgid "*{continue if \"feature\"}*"
 msgstr "*{continue if \"feature\"}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:84
+#: src/man/authselect-profiles.5.adoc:77
 msgid ""
 "Immediately stop processing of the file unless \"feature\" is defined (the "
 "rest of the file content will be removed). If \"feature\" is defined, the "
@@ -267,13 +256,13 @@ msgstr ""
 "며 템플리트 나머지 부분은 처리 될 것입니다."
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:85
+#: src/man/authselect-profiles.5.adoc:78
 #, no-wrap
 msgid "*{stop if \"feature\"}*"
 msgstr "*{stop if \"feature\"}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:90
+#: src/man/authselect-profiles.5.adoc:83
 msgid ""
 "Opposite of \"continue if\". Immediately stop processing of the file if "
 "\"feature\" is defined (the rest of the file content will be removed).  If "
@@ -285,26 +274,26 @@ msgstr ""
 "모든 행은 제거될 것이며 템플리트의 나머지 부분은 처리될 것입니다."
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:91
+#: src/man/authselect-profiles.5.adoc:84
 #, no-wrap
 msgid "*{include if \"feature\"}*"
 msgstr "*{include if \"feature\"}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:94
+#: src/man/authselect-profiles.5.adoc:87
 msgid ""
 "Include the line where this operator is placed only if \"feature\" is "
 "defined."
 msgstr "만약 “기능”이 정의되어 이 연산자가 위치 되어지는 행을 포함합니다."
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:95
+#: src/man/authselect-profiles.5.adoc:88
 #, no-wrap
 msgid "*{exclude if \"feature\"}*"
 msgstr "*{exclude if \"feature\"}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:98
+#: src/man/authselect-profiles.5.adoc:91
 msgid ""
 "Opposite to \"include-if\". Include the line where this operator is placed "
 "only if \"feature\" is not defined."
@@ -313,13 +302,13 @@ msgstr ""
 "을 포함합니다."
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:99
+#: src/man/authselect-profiles.5.adoc:92
 #, no-wrap
 msgid "*{imply \"implied-feature\" if \"feature\"}*"
 msgstr "*{imply \"implied-feature\" if \"feature\"}"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:103
+#: src/man/authselect-profiles.5.adoc:96
 msgid ""
 "Enable feature \"implied-feature\" if feature \"feature\" is enabled. The "
 "whole line with this operator is removed, thus it is not possible to add "
@@ -330,13 +319,13 @@ msgstr ""
 "주변에 그 어떤 것도 추가 할 수 없습니다."
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:104
+#: src/man/authselect-profiles.5.adoc:97
 #, no-wrap
 msgid "*{if \"feature\":true|false}*"
 msgstr "*{if \"feature\":true|false}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:107
+#: src/man/authselect-profiles.5.adoc:100
 msgid ""
 "If \"feature\" is defined, replace this operator with string \"true\", "
 "otherwise with string \"false\"."
@@ -345,13 +334,13 @@ msgstr ""
 "열 \"거짓\"으로 교체합니다."
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:108
+#: src/man/authselect-profiles.5.adoc:101
 #, no-wrap
 msgid "*{if \"feature\":true}*"
 msgstr "*{if \"feature\":true}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:111
+#: src/man/authselect-profiles.5.adoc:104
 msgid ""
 "If \"feature\" is defined, replace this operator with string \"true\", "
 "otherwise with an empty string."
@@ -360,7 +349,7 @@ msgstr ""
 "자열로 교체합니다."
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:115
+#: src/man/authselect-profiles.5.adoc:108
 msgid ""
 "It is also possible to use logical expression in conditional line instead of "
 "specifying single feature name. In this case the expression will evaluate to "
@@ -371,7 +360,7 @@ msgstr ""
 "는 그 결과에서 동작할 것입니다."
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:120
+#: src/man/authselect-profiles.5.adoc:113
 msgid ""
 "The expression syntax consists of feature names (e.g. _\"feature\"_) which "
 "returns _true_ if the feature is defined or _false_ if it is not defined and "
@@ -384,18 +373,18 @@ msgstr ""
 "을 포함합니다."
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:122
+#: src/man/authselect-profiles.5.adoc:115
 msgid "For example:"
 msgstr "예를 들면:"
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:123
+#: src/man/authselect-profiles.5.adoc:116
 #, no-wrap
 msgid "*{if \"feature1\" or \"feature2\":true}*"
 msgstr "*{if \"feature1\" or \"feature2\":true}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:126
+#: src/man/authselect-profiles.5.adoc:119
 msgid ""
 "If \"feature1\" or \"feature2\" is defined, replace this operator with "
 "string \"true\", otherwise with an empty string."
@@ -404,13 +393,13 @@ msgstr ""
 "\", 그렇지 않으면 빈 문자열로 교체합니다."
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:127
+#: src/man/authselect-profiles.5.adoc:120
 #, no-wrap
 msgid "*{if not \"feature\":true|false}*"
 msgstr "*{if not \"feature\":true|false}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:130
+#: src/man/authselect-profiles.5.adoc:123
 msgid ""
 "If \"feature\" is not defined, replace this operator with string \"true\", "
 "otherwise with string \"false\"."
@@ -419,13 +408,13 @@ msgstr ""
 "자열 “거짓”으로 교체합니다."
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:131
+#: src/man/authselect-profiles.5.adoc:124
 #, no-wrap
 msgid "*{if not \"feature\":true}*"
 msgstr "*{if not \"feature\":true}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:134
+#: src/man/authselect-profiles.5.adoc:127
 msgid ""
 "If \"feature\" is not defined, replace this operator with string \"true\", "
 "otherwise with an empty string."
@@ -434,13 +423,13 @@ msgstr ""
 "면 비어있는 문자열로 교체합니다."
 
 #. type: Labeled list
-#: src/man/authselect-profiles.5.adoc:135
+#: src/man/authselect-profiles.5.adoc:128
 #, no-wrap
 msgid "*{if \"feature1\" and (\"feature2\" or \"feature3\"):true}*"
 msgstr "*{if \"feature1\" and (\"feature2\" or \"feature3\"):true}*"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:138
+#: src/man/authselect-profiles.5.adoc:131
 msgid ""
 "If \"feature1\" is defined, and one of \"feature2\" and \"feature3\" is "
 "defined replace this operator with string \"true\", otherwise with an empty "
@@ -450,13 +439,13 @@ msgstr ""
 "문자열 \"사실\"로, 그렇지 않으면 빈 문자열 교체로 정의됩니다."
 
 #. type: Title ~
-#: src/man/authselect-profiles.5.adoc:140
+#: src/man/authselect-profiles.5.adoc:133
 #, no-wrap
 msgid "EXAMPLE"
 msgstr "예제"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:143
+#: src/man/authselect-profiles.5.adoc:136
 msgid ""
 "Here is an example of using \"if\" operator. If \"with-sudo\" feature is "
 "enabled, it will add \"sss\" to sudoers line."
@@ -465,7 +454,7 @@ msgstr ""
 "어 있으면, suoers 행에 \"sss\"을 추가합니다."
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:150
+#: src/man/authselect-profiles.5.adoc:143
 #, no-wrap
 msgid ""
 "  passwd:     sss files\n"
@@ -483,7 +472,7 @@ msgstr ""
 " sudoers: files {if \"with-sudo\":sss}\n"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:155
+#: src/man/authselect-profiles.5.adoc:148
 msgid ""
 "Here is an example of \"continue-if\" and \"include-if\" operators. The "
 "resulting file will be empty unless \"with-smartcard\" feature is enabled. "
@@ -496,7 +485,7 @@ msgstr ""
 "원이 활성화 됩니다."
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:168
+#: src/man/authselect-profiles.5.adoc:161
 #, no-wrap
 msgid ""
 "  {continue if \"with-smartcard\"}\n"
@@ -526,7 +515,7 @@ msgstr ""
 "  ...\n"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:173
+#: src/man/authselect-profiles.5.adoc:166
 msgid ""
 "Here is an example of \"continue-if\" using logical expression. The file "
 "will be empty unless \"with-smartcard\" or \"with-smartcard-required\" is "
@@ -540,7 +529,7 @@ msgstr ""
 "로 하는 authselect select 명령의 호출을 간소화 할 것입니다."
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:186
+#: src/man/authselect-profiles.5.adoc:179
 #, no-wrap
 msgid ""
 "  {continue if \"with-smartcard\" or \"with-smartcard-required\"}\n"
@@ -570,7 +559,7 @@ msgstr ""
 " ...\n"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:191
+#: src/man/authselect-profiles.5.adoc:184
 msgid ""
 "Here is an example of \"imply-if\" operator. Enabling feature \"with-"
 "smartcard-required\" will also enable \"with-smartcard\" to make sure that "
@@ -583,7 +572,7 @@ msgstr ""
 "다."
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:206
+#: src/man/authselect-profiles.5.adoc:199
 #, no-wrap
 msgid ""
 "  {imply \"with-smartcard\" if \"with-smartcard-required\"}\n"
@@ -617,13 +606,13 @@ msgstr ""
 "  ...\n"
 
 #. type: Title -
-#: src/man/authselect-profiles.5.adoc:208
+#: src/man/authselect-profiles.5.adoc:201
 #, no-wrap
 msgid "CREATING A NEW PROFILE"
 msgstr "새로운 프로파일 생성"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:213
+#: src/man/authselect-profiles.5.adoc:206
 msgid ""
 "To register a new profile within authselect, create a directory in one of "
 "the authselect profile locations with the files listed above. Not all of the "
@@ -636,7 +625,7 @@ msgstr ""
 "에 따라 생성 되어질 수 있습니다."
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:217
+#: src/man/authselect-profiles.5.adoc:210
 msgid ""
 "You may find *authselect create-profile* command helpful when creating new "
 "profile. See *authselect(8)* manual page or *authselect create-profile --"
@@ -647,15 +636,25 @@ msgstr ""
 "분 또는 *authselect create-profile --help*를 참고하세요."
 
 #. type: Title -
-#: src/man/authselect-profiles.5.adoc:219
+#: src/man/authselect-profiles.5.adoc:212
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "또 보세요"
 
 #. type: Plain text
-#: src/man/authselect-profiles.5.adoc:220
+#: src/man/authselect-profiles.5.adoc:213
 msgid "authselect(8), nsswitch.conf(5), PAM(8)"
 msgstr "authselect(8), nsswitch.conf(5), PAM(8)"
+
+#, no-wrap
+#~ msgid ""
+#~ "    Name Service Switch configuration file. Only maps relevant to the profile\n"
+#~ "    must be set. Maps that are not specified by the profile are included from\n"
+#~ "    {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf.\n"
+#~ msgstr ""
+#~ "    이름 서비스 전환 구성 파일. 프로파일과 연관된 맵만 설정되어야\n"
+#~ "     합니다. 프로파일에 지정되어지지 않은 맵은\n"
+#~ "    {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf에서 포함되어집니다.\n"
 
 #~ msgid "    Name Service Switch configuration file.\n"
 #~ msgstr "    이름 서비스 전환 구성 파일.\n"

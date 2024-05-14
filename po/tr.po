@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2023-09-27 13:03+0200\n"
+"POT-Creation-Date: 2024-02-23 14:08+0100\n"
 "PO-Revision-Date: 2024-01-29 17:36+0000\n"
 "Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
 "Language-Team: Turkish <https://translate.fedoraproject.org/projects/"
@@ -573,7 +573,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "[%s] dosyasının taban adı alınamadı"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:857
+#: src/lib/util/file.c:199 src/cli/main.c:848
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "[%s] durum bilgisi alınamıyor [%d]: %s"
@@ -868,7 +868,7 @@ msgstr "Ortak seçenekler:"
 msgid "[OPTIONS...]"
 msgstr "[SEÇENEKLER...]"
 
-#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:849
+#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:840
 msgid "Out of memory!"
 msgstr "Bellek yetersiz!"
 
@@ -917,14 +917,14 @@ msgstr ""
 "En az bir seçenek gereklidir!\n"
 "\n"
 
-#: src/cli/main.c:76 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:76 src/cli/main.c:432 src/cli/main.c:475
 msgid "Profile identifier."
 msgstr "Profil kimliği."
 
-#: src/cli/main.c:79 src/cli/main.c:257 src/cli/main.c:302 src/cli/main.c:351
-#: src/cli/main.c:399 src/cli/main.c:444 src/cli/main.c:487 src/cli/main.c:660
-#: src/cli/main.c:737 src/cli/main.c:784 src/cli/main.c:824 src/cli/main.c:889
-#: src/cli/main.c:915
+#: src/cli/main.c:79 src/cli/main.c:248 src/cli/main.c:293 src/cli/main.c:342
+#: src/cli/main.c:390 src/cli/main.c:435 src/cli/main.c:478 src/cli/main.c:651
+#: src/cli/main.c:728 src/cli/main.c:775 src/cli/main.c:815 src/cli/main.c:880
+#: src/cli/main.c:906
 msgid "Unable to parse command arguments"
 msgstr "Komut argümanları ayrıştırılamadı"
 
@@ -941,17 +941,17 @@ msgstr "Yedekleme %s konumuna kaydedildi\n"
 msgid "Enforce changes"
 msgstr "Değişiklikleri zorunlu kıl"
 
-#: src/cli/main.c:162 src/cli/main.c:250 src/cli/main.c:650 src/cli/main.c:728
+#: src/cli/main.c:162 src/cli/main.c:241 src/cli/main.c:641 src/cli/main.c:719
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr ""
 "Profili etkinleştirmeden önce sistem dosyalarını yedekle (benzersiz bir ad "
 "oluştur)"
 
-#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "Backup system files before activating profile"
 msgstr "Profili etkinleştirmeden önce sistem dosyalarını yedekle"
 
-#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "NAME"
 msgstr "AD"
 
@@ -959,25 +959,21 @@ msgstr "AD"
 msgid "Do not backup system files when --force is set"
 msgstr "--force ayarlandığında sistem dosyalarını yedekleme"
 
-#: src/cli/main.c:165 src/cli/main.c:652
+#: src/cli/main.c:165 src/cli/main.c:643
 msgid "Do not print profile requirements"
 msgstr "Profil gereksinimlerini yazdırma"
 
-#: src/cli/main.c:176 src/cli/main.c:414 src/cli/main.c:450 src/cli/main.c:493
-#: src/cli/main.c:525 src/cli/main.c:679
+#: src/cli/main.c:176 src/cli/main.c:405 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:516 src/cli/main.c:670
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "Profil bilgileri alınamadı [%d]: %s"
 
-#: src/cli/main.c:184 src/cli/main.c:533 src/cli/main.c:687
+#: src/cli/main.c:184 src/cli/main.c:524 src/cli/main.c:678
 msgid "Unable to read profile requirements!"
 msgstr "Profil gereksinimleri okunamadı!"
 
-#: src/cli/main.c:192
-msgid "Unable to obtain nsswitch maps!"
-msgstr "nsswitch eşleşmeleri alınamadı!"
-
-#: src/cli/main.c:207
+#: src/cli/main.c:198
 msgid ""
 "\n"
 "Some unexpected changes to the configuration were detected.\n"
@@ -987,26 +983,26 @@ msgstr ""
 "Yapılandırmada bazı beklenmeyen değişiklikler tespit edildi. Bu\n"
 "değişikliklerin üzerine yazmak istiyorsanız --force parametresini kullanın.\n"
 
-#: src/cli/main.c:212
+#: src/cli/main.c:203
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "Profil etkinleştirilemedi [%d]: %s\n"
 
-#: src/cli/main.c:217
+#: src/cli/main.c:208
 #, c-format
 msgid "Profile \"%s\" was selected.\n"
 msgstr "\"%s\" profili seçildi.\n"
 
-#: src/cli/main.c:220
+#: src/cli/main.c:211
 msgid "The following nsswitch maps are overwritten by the profile:\n"
 msgstr "Profil, aşağıdaki nsswitch eşleşmelerinin üzerine yazdı:\n"
 
-#: src/cli/main.c:223
+#: src/cli/main.c:214
 #, c-format
 msgid "- %s\n"
 msgstr "- %s\n"
 
-#: src/cli/main.c:228
+#: src/cli/main.c:219
 #, c-format
 msgid ""
 "\n"
@@ -1015,15 +1011,15 @@ msgstr ""
 "\n"
 "%s\n"
 
-#: src/cli/main.c:269
+#: src/cli/main.c:260
 msgid "Changes were successfully applied.\n"
 msgstr "Değişiklikler başarıyla uygulandı.\n"
 
-#: src/cli/main.c:272 src/cli/main.c:308 src/cli/main.c:669
+#: src/cli/main.c:263 src/cli/main.c:299 src/cli/main.c:660
 msgid "No existing configuration detected.\n"
 msgstr "Mevcut yapılandırma tespit edilmedi.\n"
 
-#: src/cli/main.c:275
+#: src/cli/main.c:266
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
@@ -1031,108 +1027,108 @@ msgstr ""
 "Yapılandırmada bazı beklenmeyen değişiklikler tespit edildi. Bunun yerine "
 "'select' komutunu kullanın.\n"
 
-#: src/cli/main.c:279
+#: src/cli/main.c:270
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr "Değişiklikler uygulanamadı [%d]: %s\n"
 
-#: src/cli/main.c:296
+#: src/cli/main.c:287
 msgid "Print command parameters instead of formatted output"
 msgstr "Biçimlendirilmiş çıktı yerine komut parametrelerini yazdır"
 
-#: src/cli/main.c:311 src/cli/main.c:672
+#: src/cli/main.c:302 src/cli/main.c:663
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "Geçerli yapılandırma alınamadı [%d]: %s"
 
-#: src/cli/main.c:325
+#: src/cli/main.c:316
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "Profil kimliği: %s\n"
 
-#: src/cli/main.c:326
+#: src/cli/main.c:317
 msgid "Enabled features:"
 msgstr "Etkin özellikler:"
 
-#: src/cli/main.c:329
+#: src/cli/main.c:320
 msgid " None\n"
 msgstr " Hiçbiri\n"
 
-#: src/cli/main.c:357
+#: src/cli/main.c:348
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "Geçerli yapılandırma test edilemedi [%d]: %s"
 
-#: src/cli/main.c:364
+#: src/cli/main.c:355
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
 msgstr ""
 "Geçerli yapılandırma doğru değil. Muhtemelen authselect dışında değiştirildi."
 
-#: src/cli/main.c:371
+#: src/cli/main.c:362
 msgid "Current configuration is valid."
 msgstr "Geçerli yapılandırma doğru."
 
-#: src/cli/main.c:374
+#: src/cli/main.c:365
 msgid "No configuration detected."
 msgstr "Yapılandırma tespit edilmedi."
 
-#: src/cli/main.c:378
+#: src/cli/main.c:369
 msgid "System was not configured with authselect."
 msgstr "Sistem authselect ile yapılandırılmadı."
 
-#: src/cli/main.c:405
+#: src/cli/main.c:396
 msgid "Unable to get profile list!"
 msgstr "Profil listesi alınamadı!"
 
-#: src/cli/main.c:458
+#: src/cli/main.c:449
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
 msgstr "Profil özellikleri alınamadı [%d]: %s"
 
-#: src/cli/main.c:572
+#: src/cli/main.c:563
 msgid "Print content of all files"
 msgstr "Tüm dosyaların içeriklerini yazdır"
 
-#: src/cli/main.c:573
+#: src/cli/main.c:564
 msgid "Print nsswitch.conf content"
 msgstr "nsswitch.conf içeriğini yazdır"
 
-#: src/cli/main.c:574
+#: src/cli/main.c:565
 msgid "Print system-auth content"
 msgstr "system-auth içeriğini yazdır"
 
-#: src/cli/main.c:575
+#: src/cli/main.c:566
 msgid "Print password-auth content"
 msgstr "password-auth içeriğini yazdır"
 
-#: src/cli/main.c:576
+#: src/cli/main.c:567
 msgid "Print smartcard-auth content"
 msgstr "smartcard-auth içeriğini yazdır"
 
-#: src/cli/main.c:577
+#: src/cli/main.c:568
 msgid "Print fingerprint-auth content"
 msgstr "fingerprint-auth içeriğini yazdır"
 
-#: src/cli/main.c:578
+#: src/cli/main.c:569
 msgid "Print postlogin content"
 msgstr "postlogin içeriğini yazdır"
 
-#: src/cli/main.c:579
+#: src/cli/main.c:570
 msgid "Print dconf database content"
 msgstr "dconf veri tabanı içeriğini yazdır"
 
-#: src/cli/main.c:580
+#: src/cli/main.c:571
 msgid "Print dconf lock content"
 msgstr "dconf kilidi içeriğini yazdır"
 
-#: src/cli/main.c:607
+#: src/cli/main.c:598
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "Oluşturulan içerik alınamadı [%d]: %s"
 
-#: src/cli/main.c:626
+#: src/cli/main.c:617
 #, c-format
 msgid ""
 "File %s: Empty\n"
@@ -1141,7 +1137,7 @@ msgstr ""
 "%s dosyası: Boş\n"
 "\n"
 
-#: src/cli/main.c:628
+#: src/cli/main.c:619
 #, c-format
 msgid ""
 "File %s:\n"
@@ -1152,45 +1148,45 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/cli/main.c:657
+#: src/cli/main.c:648
 msgid "Feature to enable."
 msgstr "Etkinleştirilecek özellik."
 
-#: src/cli/main.c:694
+#: src/cli/main.c:685
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
 msgstr "Geçerli yapılandırma yedeklenemedi [%d]: %s\n"
 
-#: src/cli/main.c:701
+#: src/cli/main.c:692
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "Özellik etkinleştirilemedi [%d]: %s\n"
 
-#: src/cli/main.c:706
+#: src/cli/main.c:697
 #, c-format
 msgid "%s\n"
 msgstr "%s\n"
 
-#: src/cli/main.c:734
+#: src/cli/main.c:725
 msgid "Feature to disable."
 msgstr "Devre dışı bırakılacak özellik."
 
-#: src/cli/main.c:748
+#: src/cli/main.c:739
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "Özellik devre dışı bırakılamadı [%d]: %s\n"
 
-#: src/cli/main.c:769
+#: src/cli/main.c:760
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr ""
 "Özelleştirilmiş bir profil yerine sağlayıcı profili olarak yeni bir profil "
 "oluştur"
 
-#: src/cli/main.c:770
+#: src/cli/main.c:761
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr "Yeni profil için temel olarak kullanılacak bir profilin kimliği"
 
-#: src/cli/main.c:771
+#: src/cli/main.c:762
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1198,520 +1194,445 @@ msgstr ""
 "Aynı ada sahip sağlayıcı profili olsa bile yeni profil için öntanımlı "
 "profili temel al"
 
-#: src/cli/main.c:772
+#: src/cli/main.c:763
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr ""
 "Meta dosyaları kopyalamak yerine temel profilden sembolik bağlantı oluştur"
 
-#: src/cli/main.c:773
+#: src/cli/main.c:764
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr ""
 "nsswitch dosyalarını kopyalamak yerine temel profilden sembolik bağlantı "
 "oluştur"
 
-#: src/cli/main.c:774
+#: src/cli/main.c:765
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr ""
 "pam dosyalarını kopyalamak yerine temel profilden sembolik bağlantı oluştur"
 
-#: src/cli/main.c:775
+#: src/cli/main.c:766
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
 "dconf dosyalarını kopyalamak yerine temel profilden sembolik bağlantı oluştur"
 
-#: src/cli/main.c:776
+#: src/cli/main.c:767
 msgid "Symlink specific file (can be set multiple times)"
 msgstr ""
 "Belirtilen dosya için sembolik bağlantı oluştur (birden çok kez "
 "belirtilebilir)"
 
-#: src/cli/main.c:781
+#: src/cli/main.c:772
 msgid "New profile name."
 msgstr "Yeni profil adı."
 
-#: src/cli/main.c:791
+#: src/cli/main.c:782
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "Yeni profil oluşturulamadı [%d]: %s\n"
 
-#: src/cli/main.c:795
+#: src/cli/main.c:786
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "%s konumunda yeni profil oluşturuldu\n"
 
-#: src/cli/main.c:818
+#: src/cli/main.c:809
 msgid "Print backup names without any formatting and additional information"
 msgstr "Biçimlendirme ve ek bilgi olmadan yedekleme adlarını yazdır"
 
-#: src/cli/main.c:830
+#: src/cli/main.c:821
 msgid "Unable to list available backups!"
 msgstr "Kullanılabilir yedeklemeler listelenemedi!"
 
-#: src/cli/main.c:867
+#: src/cli/main.c:858
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (%s tarihinde oluşturuldu)\n"
 
-#: src/cli/main.c:886
+#: src/cli/main.c:877
 msgid "Name of the backup to remove."
 msgstr "Kaldırılacak yedeklemenin adı."
 
-#: src/cli/main.c:895
+#: src/cli/main.c:886
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "Yedekleme [%s] kaldırılamadı [%d]: %s\n"
 
-#: src/cli/main.c:912
+#: src/cli/main.c:903
 msgid "Name of the backup to restore from."
 msgstr "Geri yüklenecek yedeklemenin adı."
 
-#: src/cli/main.c:921
+#: src/cli/main.c:912
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "Yedekleme [%s] geri yüklenemedi [%d]: %s\n"
 
-#: src/cli/main.c:937
+#: src/cli/main.c:928
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "Authselect yapılandırması kaldırılamadı [%d]: %s\n"
 
-#: src/cli/main.c:987
+#: src/cli/main.c:978
 msgid "Select profile"
 msgstr "Profil seç"
 
-#: src/cli/main.c:988
+#: src/cli/main.c:979
 msgid "Regenerate configuration for currently selected command"
 msgstr "Seçili olan komut için yapılandırmayı yeniden oluştur"
 
-#: src/cli/main.c:989
+#: src/cli/main.c:980
 msgid "List available profiles"
 msgstr "Kullanılabilir profilleri listele"
 
-#: src/cli/main.c:990
+#: src/cli/main.c:981
 msgid "List available profile features"
 msgstr "Kullanılabilir profil özelliklerini listele"
 
-#: src/cli/main.c:991
+#: src/cli/main.c:982
 msgid "Show profile information"
 msgstr "Profil bilgilerini göster"
 
-#: src/cli/main.c:992
+#: src/cli/main.c:983
 msgid "Print profile requirements"
 msgstr "Profil gereksinimlerini yazdır"
 
-#: src/cli/main.c:993
+#: src/cli/main.c:984
 msgid "Get identifier of currently selected profile"
 msgstr "Seçili profilin kimliğini öğren"
 
-#: src/cli/main.c:994
+#: src/cli/main.c:985
 msgid "Check if the current configuration is valid"
 msgstr "Geçerli yapılandırmanın doğru olup olmadığını denetle"
 
-#: src/cli/main.c:995
+#: src/cli/main.c:986
 msgid "Print changes that would be otherwise written"
 msgstr "Normalde uygulanacak değişiklikleri yazdır"
 
-#: src/cli/main.c:996
+#: src/cli/main.c:987
 msgid "Enable feature in currently selected profile"
 msgstr "Seçili olan profilde özelliği etkinleştir"
 
-#: src/cli/main.c:997
+#: src/cli/main.c:988
 msgid "Disable feature in currently selected profile"
 msgstr "Seçili olan profilde özelliği devre dışı bırak"
 
-#: src/cli/main.c:998
+#: src/cli/main.c:989
 msgid "Create new authselect profile"
 msgstr "Yeni authselect profili oluştur"
 
-#: src/cli/main.c:999
+#: src/cli/main.c:990
 msgid "Backup commands:"
 msgstr "Yedekleme komutları:"
 
-#: src/cli/main.c:1000
+#: src/cli/main.c:991
 msgid "List available backups"
 msgstr "Kullanılabilir yedeklemeleri listele"
 
-#: src/cli/main.c:1001
+#: src/cli/main.c:992
 msgid "Remove backup"
 msgstr "Yedeklemeyi kaldır"
 
-#: src/cli/main.c:1002
+#: src/cli/main.c:993
 msgid "Restore from backup"
 msgstr "Yedeklemeden geri yükle"
 
-#: src/cli/main.c:1003
+#: src/cli/main.c:994
 msgid "Other:"
 msgstr "Diğer:"
 
-#: src/cli/main.c:1004
+#: src/cli/main.c:995
 msgid "Opt-out from authselect managed configuration"
 msgstr "Authselect tarafından yönetilen yapılandırmadan ayrıl"
 
-#: src/cli/main.c:1006
+#: src/cli/main.c:997
 msgid "Print authselect version"
 msgstr "Authselect sürümünü yazdır"
 
-#: src/compat/authcompat_Options.py:82
-msgid "NIS for user information by default"
-msgstr "kullanıcı bilgileri için öntanımlı olarak NIS"
-
-#: src/compat/authcompat_Options.py:83
-msgid "<domain>"
-msgstr "<etki alanı>"
-
-#: src/compat/authcompat_Options.py:83
-msgid "default NIS domain"
-msgstr "öntanımlı NIS etki alanı"
-
-#: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
-#: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
-msgid "<server>"
-msgstr "<sunucu>"
-
-#: src/compat/authcompat_Options.py:84
-msgid "default NIS server"
-msgstr "öntanımlı NIS sunucusu"
-
-#: src/compat/authcompat_Options.py:85
-msgid "LDAP for user information by default"
-msgstr "kullanıcı bilgileri için öntanımlı olarak LDAP"
-
-#: src/compat/authcompat_Options.py:86
-msgid "LDAP for authentication by default"
-msgstr "kimlik doğrulama için öntanımlı olarak LDAP"
-
-#: src/compat/authcompat_Options.py:87
-msgid "default LDAP server hostname or URI"
-msgstr "öntanımlı LDAP sunucusu ana makine adı veya URI'si"
-
-#: src/compat/authcompat_Options.py:88
-msgid "<dn>"
-msgstr "<dn>"
-
-#: src/compat/authcompat_Options.py:88
-msgid "default LDAP base DN"
-msgstr "öntanımlı LDAP temel DN'si"
-
-#: src/compat/authcompat_Options.py:89
-msgid "use of TLS with LDAP (RFC-2830)"
-msgstr "LDAP ile TLS kullanımı (RFC-2830)"
-
-#: src/compat/authcompat_Options.py:90
-msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
-msgstr "LDAP ile kimlik aramaları için TLS kullanımı (RFC-2830)"
-
-#: src/compat/authcompat_Options.py:91
-msgid "use of RFC-2307bis schema for LDAP user information lookups"
-msgstr "LDAP kullanıcı bilgisi aramaları için RFC-2307bis şemasını kullanımı"
-
-#: src/compat/authcompat_Options.py:92
-msgid "authentication with smart card by default"
-msgstr "öntanımlı olarak akıllı kart ile kimlik doğrulama"
-
-#: src/compat/authcompat_Options.py:93
-msgid "<0=Lock|1=Ignore>"
-msgstr "<0=Kilitle|1=Yok say>"
-
-#: src/compat/authcompat_Options.py:93
-msgid "action to be taken on smart card removal"
-msgstr "akıllı kart çıkartıldığında gerçekleştirilecek eylem"
-
-#: src/compat/authcompat_Options.py:94
-msgid "require smart card for authentication by default"
-msgstr "kimlik doğrulaması için öntanımlı olarak akıllı kart gerektir"
-
-#: src/compat/authcompat_Options.py:95
-msgid "authentication with fingerprint readers by default"
-msgstr "öntanımlı olarak parmak izi okuyucularla kimlik doğrulama"
-
-#: src/compat/authcompat_Options.py:96
-msgid "automatic per-user ecryptfs"
-msgstr "her kullanıcı için otomatik ecryptfs"
-
-#: src/compat/authcompat_Options.py:97
-msgid "Kerberos authentication by default"
-msgstr "öntanımlı olarak Kerberos kimlik doğrulaması"
-
-#: src/compat/authcompat_Options.py:98
-msgid "default Kerberos KDC"
-msgstr "öntanımlı Kerberos KDC'si"
-
-#: src/compat/authcompat_Options.py:99
-msgid "default Kerberos admin server"
-msgstr "öntanımlı Kerberos yönetici sunucusu"
-
-#: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
-msgid "<realm>"
-msgstr "<erişim alanı>"
-
-#: src/compat/authcompat_Options.py:100
-msgid "default Kerberos realm"
-msgstr "öntanımlı Kerberos erişim alanı"
-
-#: src/compat/authcompat_Options.py:101
-msgid "use of DNS to find Kerberos KDCs"
-msgstr "Kerberos KDC'lerini bulmak için DNS kullanımı"
-
-#: src/compat/authcompat_Options.py:102
-msgid "use of DNS to find Kerberos realms"
-msgstr "Kerberos erişim alanlarını bulmak için DNS kullanımı"
-
-#: src/compat/authcompat_Options.py:103
-msgid "winbind for user information by default"
-msgstr "kullanıcı bilgileri için öntanımlı olarak winbind"
-
-#: src/compat/authcompat_Options.py:104
-msgid "winbind for authentication by default"
-msgstr "kimlik doğrulama için öntanımlı olarak winbind"
-
-#: src/compat/authcompat_Options.py:105
-msgid "<Administrator>"
-msgstr "<Yönetici>"
-
-#: src/compat/authcompat_Options.py:105
-msgid "join the winbind domain or ads realm now as this administrator"
-msgstr "winbind etki alanına veya AD erişim alanına bu yönetici olarak katıl"
-
-#: src/compat/authcompat_Options.py:106
-msgid "Kerberos 5 for authenticate with winbind"
-msgstr "Winbind ile kimlik doğrulaması için Kerberos 5"
-
-#: src/compat/authcompat_Options.py:107
-msgid "<workgroup>"
-msgstr "<çalışma grubu>"
-
-#: src/compat/authcompat_Options.py:107
-msgid "workgroup authentication servers are in"
-msgstr "çalışma grubu kimlik doğrulama sunucuları"
-
-#: src/compat/authcompat_Options.py:108
-msgid ""
-"SSSD for user information by default with manually managed configuration"
-msgstr ""
-"Elle yönetilen yapılandırmayla kullanıcı bilgileri için öntanımlı olarak SSSD"
-
-#: src/compat/authcompat_Options.py:109
-msgid "SSSD for authentication by default with manually managed configuration"
-msgstr ""
-"Elle yönetilen yapılandırmayla kimlik doğrulama için öntanımlı olarak SSSD"
-
-#: src/compat/authcompat_Options.py:110
-msgid "caching of user credentials in SSSD by default"
-msgstr ""
-"kullanıcı kimlik bilgilerinin SSSD'de öntanımlı olarak önbelleğe alınması"
-
-#: src/compat/authcompat_Options.py:111
-msgid "check of access.conf during account authorization"
-msgstr "hesap yetkilendirmesi sırasında access.conf dosyasının denetlenmesi"
-
-#: src/compat/authcompat_Options.py:112
-msgid "creation of home directories for users on their first login"
-msgstr ""
-"ilk defa oturum açtıklarında kullanıcılar için ev dizinlerinin oluşturulması"
-
-#: src/compat/authcompat_Options.py:113
-msgid "account locking in case of too many consecutive authentication failures"
-msgstr ""
-"arka arkaya çok sayıda kimlik doğrulama hatası olması durumunda hesap "
-"kilitleme"
-
-#: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
-#: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
-msgid "<number>"
-msgstr "<sayı>"
-
-#: src/compat/authcompat_Options.py:114
-msgid "minimum length of a password"
-msgstr "asgari parola uzunluğu"
-
-#: src/compat/authcompat_Options.py:115
-msgid "minimum number of character classes in a password"
-msgstr "bir paroladaki asgari karakter sınıfı sayısı"
-
-#: src/compat/authcompat_Options.py:116
-msgid "maximum number of same consecutive characters in a password"
-msgstr "bir paroladaki azami aynı ardışık karakter sayısı"
-
-#: src/compat/authcompat_Options.py:117
-msgid "maximum number of consecutive characters of same class in a password"
-msgstr "bir paroladaki aynı sınıftan azami ardışık karakter sayısı"
-
-#: src/compat/authcompat_Options.py:118
-msgid "require at least one lowercase character in a password"
-msgstr "parolada en az bir küçük harf gerektir"
-
-#: src/compat/authcompat_Options.py:119
-msgid "require at least one uppercase character in a password"
-msgstr "parolada en az bir büyük harf gerektir"
-
-#: src/compat/authcompat_Options.py:120
-msgid "require at least one digit in a password"
-msgstr "parolada en az bir rakam gerektir"
-
-#: src/compat/authcompat_Options.py:121
-msgid "require at least one other character in a password"
-msgstr "parolada en az bir diğer karakter gerektir"
-
-#: src/compat/authcompat_Options.py:124
-msgid "do not start/stop services"
-msgstr "hizmetleri başlatma/durdurma"
-
-#: src/compat/authcompat_Options.py:125
-msgid "update all configuration files"
-msgstr "tüm yapılandırma dosyalarını güncelle"
-
-#: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
-msgid "the same as --updateall"
-msgstr "--updateall ile aynı"
-
-#: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
-msgid "<name>"
-msgstr "<ad>"
-
-#: src/compat/authcompat_Options.py:148
-msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-
-#: src/compat/authcompat_Options.py:149
-msgid "<URL>"
-msgstr "<URL>"
-
-#: src/compat/authcompat_Options.py:150
-msgid "<module>"
-msgstr "<modül>"
-
-#: src/compat/authcompat_Options.py:151
-msgid "<user|server|domain|ads>"
-msgstr "<kullanıcı|sunucu|etki alanı|AD>"
-
-#: src/compat/authcompat_Options.py:153
-msgid "<servers>"
-msgstr "<sunucular>"
-
-#: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
-#: src/compat/authcompat_Options.py:156
-msgid "<lowest-highest>"
-msgstr "<en düşük-en yüksek>"
-
-#: src/compat/authcompat_Options.py:157
-msgid "<\\>"
-msgstr "<\\>"
-
-#: src/compat/authcompat_Options.py:158
-msgid "</home/%D/%U>"
-msgstr "</home/%D/%U>"
-
-#: src/compat/authcompat_Options.py:159
-msgid "</bin/false>"
-msgstr "</bin/false>"
-
-#: src/compat/authcompat_Options.py:166
-msgid "<options>"
-msgstr "<seçenekler>"
-
-#: src/compat/authcompat_Options.py:210
-msgid "These options have a compatibility layer"
-msgstr "Bu seçeneklerin bir uyumluluk katmanı var"
-
-#: src/compat/authcompat_Options.py:211
-msgid "These options are no longer supported and have no effect"
-msgstr "Bu seçenekler artık desteklenmiyor ve hiçbir etkisi yok"
-
-#: src/compat/authcompat_Options.py:313
-msgid "enable"
-msgstr "etkinleştir"
-
-#: src/compat/authcompat_Options.py:314
-msgid "disable"
-msgstr "devre dışı bırak"
-
-#: src/compat/authcompat.py.in.in:51
+#~ msgid "Unable to obtain nsswitch maps!"
+#~ msgstr "nsswitch eşleşmeleri alınamadı!"
+
+#~ msgid "NIS for user information by default"
+#~ msgstr "kullanıcı bilgileri için öntanımlı olarak NIS"
+
+#~ msgid "<domain>"
+#~ msgstr "<etki alanı>"
+
+#~ msgid "default NIS domain"
+#~ msgstr "öntanımlı NIS etki alanı"
+
+#~ msgid "<server>"
+#~ msgstr "<sunucu>"
+
+#~ msgid "default NIS server"
+#~ msgstr "öntanımlı NIS sunucusu"
+
+#~ msgid "LDAP for user information by default"
+#~ msgstr "kullanıcı bilgileri için öntanımlı olarak LDAP"
+
+#~ msgid "LDAP for authentication by default"
+#~ msgstr "kimlik doğrulama için öntanımlı olarak LDAP"
+
+#~ msgid "default LDAP server hostname or URI"
+#~ msgstr "öntanımlı LDAP sunucusu ana makine adı veya URI'si"
+
+#~ msgid "<dn>"
+#~ msgstr "<dn>"
+
+#~ msgid "default LDAP base DN"
+#~ msgstr "öntanımlı LDAP temel DN'si"
+
+#~ msgid "use of TLS with LDAP (RFC-2830)"
+#~ msgstr "LDAP ile TLS kullanımı (RFC-2830)"
+
+#~ msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
+#~ msgstr "LDAP ile kimlik aramaları için TLS kullanımı (RFC-2830)"
+
+#~ msgid "use of RFC-2307bis schema for LDAP user information lookups"
+#~ msgstr ""
+#~ "LDAP kullanıcı bilgisi aramaları için RFC-2307bis şemasını kullanımı"
+
+#~ msgid "authentication with smart card by default"
+#~ msgstr "öntanımlı olarak akıllı kart ile kimlik doğrulama"
+
+#~ msgid "<0=Lock|1=Ignore>"
+#~ msgstr "<0=Kilitle|1=Yok say>"
+
+#~ msgid "action to be taken on smart card removal"
+#~ msgstr "akıllı kart çıkartıldığında gerçekleştirilecek eylem"
+
+#~ msgid "require smart card for authentication by default"
+#~ msgstr "kimlik doğrulaması için öntanımlı olarak akıllı kart gerektir"
+
+#~ msgid "authentication with fingerprint readers by default"
+#~ msgstr "öntanımlı olarak parmak izi okuyucularla kimlik doğrulama"
+
+#~ msgid "automatic per-user ecryptfs"
+#~ msgstr "her kullanıcı için otomatik ecryptfs"
+
+#~ msgid "Kerberos authentication by default"
+#~ msgstr "öntanımlı olarak Kerberos kimlik doğrulaması"
+
+#~ msgid "default Kerberos KDC"
+#~ msgstr "öntanımlı Kerberos KDC'si"
+
+#~ msgid "default Kerberos admin server"
+#~ msgstr "öntanımlı Kerberos yönetici sunucusu"
+
+#~ msgid "<realm>"
+#~ msgstr "<erişim alanı>"
+
+#~ msgid "default Kerberos realm"
+#~ msgstr "öntanımlı Kerberos erişim alanı"
+
+#~ msgid "use of DNS to find Kerberos KDCs"
+#~ msgstr "Kerberos KDC'lerini bulmak için DNS kullanımı"
+
+#~ msgid "use of DNS to find Kerberos realms"
+#~ msgstr "Kerberos erişim alanlarını bulmak için DNS kullanımı"
+
+#~ msgid "winbind for user information by default"
+#~ msgstr "kullanıcı bilgileri için öntanımlı olarak winbind"
+
+#~ msgid "winbind for authentication by default"
+#~ msgstr "kimlik doğrulama için öntanımlı olarak winbind"
+
+#~ msgid "<Administrator>"
+#~ msgstr "<Yönetici>"
+
+#~ msgid "join the winbind domain or ads realm now as this administrator"
+#~ msgstr ""
+#~ "winbind etki alanına veya AD erişim alanına bu yönetici olarak katıl"
+
+#~ msgid "Kerberos 5 for authenticate with winbind"
+#~ msgstr "Winbind ile kimlik doğrulaması için Kerberos 5"
+
+#~ msgid "<workgroup>"
+#~ msgstr "<çalışma grubu>"
+
+#~ msgid "workgroup authentication servers are in"
+#~ msgstr "çalışma grubu kimlik doğrulama sunucuları"
+
+#~ msgid ""
+#~ "SSSD for user information by default with manually managed configuration"
+#~ msgstr ""
+#~ "Elle yönetilen yapılandırmayla kullanıcı bilgileri için öntanımlı olarak "
+#~ "SSSD"
+
+#~ msgid ""
+#~ "SSSD for authentication by default with manually managed configuration"
+#~ msgstr ""
+#~ "Elle yönetilen yapılandırmayla kimlik doğrulama için öntanımlı olarak SSSD"
+
+#~ msgid "caching of user credentials in SSSD by default"
+#~ msgstr ""
+#~ "kullanıcı kimlik bilgilerinin SSSD'de öntanımlı olarak önbelleğe alınması"
+
+#~ msgid "check of access.conf during account authorization"
+#~ msgstr "hesap yetkilendirmesi sırasında access.conf dosyasının denetlenmesi"
+
+#~ msgid "creation of home directories for users on their first login"
+#~ msgstr ""
+#~ "ilk defa oturum açtıklarında kullanıcılar için ev dizinlerinin "
+#~ "oluşturulması"
+
+#~ msgid ""
+#~ "account locking in case of too many consecutive authentication failures"
+#~ msgstr ""
+#~ "arka arkaya çok sayıda kimlik doğrulama hatası olması durumunda hesap "
+#~ "kilitleme"
+
+#~ msgid "<number>"
+#~ msgstr "<sayı>"
+
+#~ msgid "minimum length of a password"
+#~ msgstr "asgari parola uzunluğu"
+
+#~ msgid "minimum number of character classes in a password"
+#~ msgstr "bir paroladaki asgari karakter sınıfı sayısı"
+
+#~ msgid "maximum number of same consecutive characters in a password"
+#~ msgstr "bir paroladaki azami aynı ardışık karakter sayısı"
+
+#~ msgid "maximum number of consecutive characters of same class in a password"
+#~ msgstr "bir paroladaki aynı sınıftan azami ardışık karakter sayısı"
+
+#~ msgid "require at least one lowercase character in a password"
+#~ msgstr "parolada en az bir küçük harf gerektir"
+
+#~ msgid "require at least one uppercase character in a password"
+#~ msgstr "parolada en az bir büyük harf gerektir"
+
+#~ msgid "require at least one digit in a password"
+#~ msgstr "parolada en az bir rakam gerektir"
+
+#~ msgid "require at least one other character in a password"
+#~ msgstr "parolada en az bir diğer karakter gerektir"
+
+#~ msgid "do not start/stop services"
+#~ msgstr "hizmetleri başlatma/durdurma"
+
+#~ msgid "update all configuration files"
+#~ msgstr "tüm yapılandırma dosyalarını güncelle"
+
+#~ msgid "the same as --updateall"
+#~ msgstr "--updateall ile aynı"
+
+#~ msgid "<name>"
+#~ msgstr "<ad>"
+
+#~ msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+#~ msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+
+#~ msgid "<URL>"
+#~ msgstr "<URL>"
+
+#~ msgid "<module>"
+#~ msgstr "<modül>"
+
+#~ msgid "<user|server|domain|ads>"
+#~ msgstr "<kullanıcı|sunucu|etki alanı|AD>"
+
+#~ msgid "<servers>"
+#~ msgstr "<sunucular>"
+
+#~ msgid "<lowest-highest>"
+#~ msgstr "<en düşük-en yüksek>"
+
+#~ msgid "<\\>"
+#~ msgstr "<\\>"
+
+#~ msgid "</home/%D/%U>"
+#~ msgstr "</home/%D/%U>"
+
+#~ msgid "</bin/false>"
+#~ msgstr "</bin/false>"
+
+#~ msgid "<options>"
+#~ msgstr "<seçenekler>"
+
+#~ msgid "These options have a compatibility layer"
+#~ msgstr "Bu seçeneklerin bir uyumluluk katmanı var"
+
+#~ msgid "These options are no longer supported and have no effect"
+#~ msgstr "Bu seçenekler artık desteklenmiyor ve hiçbir etkisi yok"
+
+#~ msgid "enable"
+#~ msgstr "etkinleştir"
+
+#~ msgid "disable"
+#~ msgstr "devre dışı bırak"
+
 #, python-format
-msgid "Executing: %s"
-msgstr "Yürütülüyor: %s"
+#~ msgid "Executing: %s"
+#~ msgstr "Yürütülüyor: %s"
 
-#: src/compat/authcompat.py.in.in:71
 #, python-format
-msgid "Service %s was not found. Please install the service."
-msgstr "%s hizmeti bulunamadı. Lütfen hizmeti kurun."
+#~ msgid "Service %s was not found. Please install the service."
+#~ msgstr "%s hizmeti bulunamadı. Lütfen hizmeti kurun."
 
-#: src/compat/authcompat.py.in.in:74 src/compat/authcompat.py.in.in:631
-#: src/compat/authcompat.py.in.in:657
 #, python-format
-msgid "Command [%s] failed with %d, stderr:"
-msgstr "[%s] komutu %d kodu ile başarısız oldu, stderr:"
+#~ msgid "Command [%s] failed with %d, stderr:"
+#~ msgstr "[%s] komutu %d kodu ile başarısız oldu, stderr:"
 
-#: src/compat/authcompat.py.in.in:186
 #, python-format
-msgid "Removing file: %s"
-msgstr "Dosya kaldırılıyor: %s"
+#~ msgid "Removing file: %s"
+#~ msgstr "Dosya kaldırılıyor: %s"
 
-#: src/compat/authcompat.py.in.in:335
 #, python-format
-msgid "%s was not found. Please, install realmd."
-msgstr "%s bulunamadı. Lütfen realmd kurun."
+#~ msgid "%s was not found. Please, install realmd."
+#~ msgstr "%s bulunamadı. Lütfen realmd kurun."
 
-#: src/compat/authcompat.py.in.in:469
-msgid "Running authconfig compatibility tool."
-msgstr "authconfig uyumluluk aracı çalıştırılıyor."
+#~ msgid "Running authconfig compatibility tool."
+#~ msgstr "authconfig uyumluluk aracı çalıştırılıyor."
 
-#: src/compat/authcompat.py.in.in:470
-msgid ""
-"The purpose of this tool is to enable authentication against chosen services "
-"with authselect and minimum configuration. It does not provide all "
-"capabilities of authconfig.\n"
-msgstr ""
-"Bu aracın amacı, asgari yapılandırma ile authselect kullanarak seçilen "
-"hizmetler için kimlik doğrulamasını etkinleştirmektir. authconfig'in tüm "
-"özelliklerini sağlamaz.\n"
+#~ msgid ""
+#~ "The purpose of this tool is to enable authentication against chosen "
+#~ "services with authselect and minimum configuration. It does not provide "
+#~ "all capabilities of authconfig.\n"
+#~ msgstr ""
+#~ "Bu aracın amacı, asgari yapılandırma ile authselect kullanarak seçilen "
+#~ "hizmetler için kimlik doğrulamasını etkinleştirmektir. authconfig'in tüm "
+#~ "özelliklerini sağlamaz.\n"
 
-#: src/compat/authcompat.py.in.in:473
-msgid ""
-"IMPORTANT: authconfig is replaced by authselect, please update your scripts."
-msgstr ""
-"ÖNEMLİ: authselect, authconfig'in yerini aldı, lütfen betiklerinizi "
-"güncelleyin."
+#~ msgid ""
+#~ "IMPORTANT: authconfig is replaced by authselect, please update your "
+#~ "scripts."
+#~ msgstr ""
+#~ "ÖNEMLİ: authselect, authconfig'in yerini aldı, lütfen betiklerinizi "
+#~ "güncelleyin."
 
-#: src/compat/authcompat.py.in.in:475
-msgid ""
-"See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
-"AuthselectAsDefault"
-msgstr ""
-"Fedora 28 değişiklikler sayfasına bakın: https://fedoraproject.org/wiki/"
-"Changes/AuthselectAsDefault"
+#~ msgid ""
+#~ "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
+#~ "AuthselectAsDefault"
+#~ msgstr ""
+#~ "Fedora 28 değişiklikler sayfasına bakın: https://fedoraproject.org/wiki/"
+#~ "Changes/AuthselectAsDefault"
 
-#: src/compat/authcompat.py.in.in:476
-msgid ""
-"See man authselect-migration(7) to help you with migration to authselect"
-msgstr ""
-"authselect'e geçiş konusunda size yardımcı olması için authselect-"
-"migration(7) kılavuz sayfasına bakın"
+#~ msgid ""
+#~ "See man authselect-migration(7) to help you with migration to authselect"
+#~ msgstr ""
+#~ "authselect'e geçiş konusunda size yardımcı olması için authselect-"
+#~ "migration(7) kılavuz sayfasına bakın"
 
-#: src/compat/authcompat.py.in.in:480
-msgid "Warning: These options are not supported anymore and have no effect:"
-msgstr "Uyarı: Bu seçenekler artık desteklenmiyor ve hiçbir etkisi yok:"
+#~ msgid "Warning: These options are not supported anymore and have no effect:"
+#~ msgstr "Uyarı: Bu seçenekler artık desteklenmiyor ve hiçbir etkisi yok:"
 
-#: src/compat/authcompat.py.in.in:500
-msgid "authconfig can only be run as root"
-msgstr "authconfig yalnızca root tarafından çalıştırılabilir"
+#~ msgid "authconfig can only be run as root"
+#~ msgstr "authconfig yalnızca root tarafından çalıştırılabilir"
 
-#: src/compat/authcompat.py.in.in:505
 #, python-format
-msgid ""
-"Error: option --%s is no longer supported and we cannot continue if it is "
-"set."
-msgstr ""
-"Hata: --%s seçeneği artık desteklenmiyor ve belirtilmişse devam edemeyiz."
+#~ msgid ""
+#~ "Error: option --%s is no longer supported and we cannot continue if it is "
+#~ "set."
+#~ msgstr ""
+#~ "Hata: --%s seçeneği artık desteklenmiyor ve belirtilmişse devam edemeyiz."
 
-#: src/compat/authcompat.py.in.in:510
-msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
-msgstr ""
-"Hata: --enablewinbind ve --enablewinbindauth seçenekleri birlikte "
-"belirtilmelidir."
+#~ msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
+#~ msgstr ""
+#~ "Hata: --enablewinbind ve --enablewinbindauth seçenekleri birlikte "
+#~ "belirtilmelidir."
 
-#: src/compat/authcompat.py.in.in:520
-msgid "Error: Please, provide --updateall option."
-msgstr "Hata: Lütfen --updateall seçeneğini belirtin."
+#~ msgid "Error: Please, provide --updateall option."
+#~ msgstr "Hata: Lütfen --updateall seçeneğini belirtin."
 
 #~ msgid "Unable to get current time!"
 #~ msgstr "Geçerli zaman alınamadı!"
