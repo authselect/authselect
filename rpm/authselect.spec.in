@@ -37,10 +37,19 @@ BuildRequires:  %{_bindir}/a2x
 BuildRequires:  libcmocka-devel >= 1.0.0
 BuildRequires:  libselinux-devel
 Requires: authselect-libs%{?_isa} = %{version}-%{release}
+
+# RHEL does not have meta flag yet
+%if 0%{?rhel} <= 10
 Suggests: sssd
 Suggests: samba-winbind
 Suggests: fprintd-pam
 Suggests: oddjob-mkhomedir
+%else
+Suggests(meta): sssd
+Suggests(meta): samba-winbind
+Suggests(meta): fprintd-pam
+Suggests(meta): oddjob-mkhomedir
+%endif
 
 # Properly obsolete removed authselect-compat package.
 Obsoletes: authselect-compat < 1.3
