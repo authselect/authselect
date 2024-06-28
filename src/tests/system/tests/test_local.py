@@ -1,8 +1,11 @@
 """
-Auuthselect Local Profile Test Cases
+Authselect Local Profile Test Cases
 
-:requirement: authselect
+Functional testing, enabling a feature, simulating the user steps, then turning off the feature.
+
+:requirement: Authselect replaced authconfig
 """
+
 from __future__ import annotations
 
 import pytest
@@ -27,7 +30,6 @@ def test_local__user_authentication(client: Client):
     :expectedresults:
         1. Authentication is successful for "user-1"
     :customerscenario: False
-    :requirement: authselect local profile user authentication
     :todo: needs testing
     """
     client.local.user("user-1").add()
