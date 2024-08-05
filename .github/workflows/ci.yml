@@ -1,0 +1,162 @@
+name: "ci"
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  system:
+    strategy:
+      fail-fast: false
+      matrix:
+        tag:
+        - centos-latest
+        - fedora-latest
+        - rawhide
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: 3.11
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        path: authselect
+
+    - name: Setup containers
+      uses: SSSD/sssd-ci-containers/actions/setup@master
+      with:
+        path: sssd-ci-containers
+        tag: ${{ matrix.tag }}
+        override: |
+          services:
+            client:
+              image: ${REGISTRY}/ci-client-devel:${TAG}
+              shm_size: 4G
+              tmpfs:
+              - /dev/shm
+              volumes:
+              - ../authselect:/authselect:rw
+
+    - name: Install build dependencies on the client
+      uses: SSSD/sssd-ci-containers/actions/exec@master
+      with:
+        log-file: dependencies.log
+        working-directory: /authselect
+        user: root
+        where: client
+        script: |
+          #!/bin/bash
+          set -ex
+
+          scripts/auto install-build-deps
+
+    - name: Build authselect on the client
+      uses: SSSD/sssd-ci-containers/actions/exec@master
+      with:
+        log-file: build.log
+        working-directory: /authselect
+        where: client
+        script: |
+          #!/bin/bash
+          set -ex
+
+          autoreconf -if && ./configure --enable-silent-rules
+          make rpms
+
+    - name: Install authselect on the client
+      uses: SSSD/sssd-ci-containers/actions/exec@master
+      with:
+        log-file: install.log
+        working-directory: /authselect
+        user: root
+        where: client
+        script: |
+          #!/bin/bash
+          set -ex
+
+          dnf install -y rpmbuild/RPMS/*/*.rpm
+
+    - name: Install system tests dependencies
+      shell: bash
+      working-directory: ./authselect/src/tests/system
+      run: |
+        set -ex
+
+        sudo apt-get update
+
+        # Install dependencies for python-ldap
+        sudo apt-get install -y libsasl2-dev python3-dev libldap2-dev libssl-dev
+
+        # Virtualenv
+        pip3 install virtualenv
+        python3 -m venv .venv
+        source .venv/bin/activate
+
+        # Install system tests requirements
+        pip3 install -r ./requirements.txt
+
+        # Install yq to parse yaml files
+        sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+        sudo chmod a+x /usr/local/bin/yq
+
+    - name: Remove ad from mhc.yaml
+      shell: bash
+      working-directory: ./authselect/src/tests/system
+      run: |
+        yq -i 'del(.domains[0].hosts.[] | select(.role == "ad"))' mhc.yaml
+
+    - name: Check polarion metadata
+      shell: bash
+      working-directory: ./authselect/src/tests/system
+      run: |
+        # Run pytest in collect only mode to quickly catch issues in Polarion metadata.
+        set -ex -o pipefail
+
+        mkdir -p $GITHUB_WORKSPACE/artifacts
+        source .venv/bin/activate
+        pytest \
+          --color=yes \
+          --mh-config=./mhc.yaml \
+          --mh-artifacts-dir=$GITHUB_WORKSPACE/artifacts \
+          --polarion-config=./polarion.yaml \
+          --output-polarion-testcase=$GITHUB_WORKSPACE/artifacts/testcase.xml \
+          --collect-only . |& tee $GITHUB_WORKSPACE/pytest-collect.log
+
+    - name: Run tests
+      shell: bash
+      working-directory: ./authselect/src/tests/system
+      run: |
+        set -ex -o pipefail
+
+        mkdir -p $GITHUB_WORKSPACE/artifacts
+        source .venv/bin/activate
+        pytest \
+          --color=yes \
+          --show-capture=no \
+          --mh-config=./mhc.yaml \
+          --mh-artifacts-dir=$GITHUB_WORKSPACE/artifacts \
+          --polarion-config=./polarion.yaml \
+          --output-polarion-testcase=$GITHUB_WORKSPACE/artifacts/testcase.xml \
+          --output-polarion-testrun=$GITHUB_WORKSPACE/artifacts/testrun.xml \
+          -vvv . |& tee $GITHUB_WORKSPACE/pytest.log
+
+    - name: Upload artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        if-no-files-found: ignore
+        name: ${{ matrix.tag }}-system
+        path: |
+          artifacts
+          dependencies.log
+          build.log
+          install.log
+          pytest.log
+          pytest-collect.log
