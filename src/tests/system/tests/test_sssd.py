@@ -63,19 +63,23 @@ def test_sssd__enabling_and_then_disabling_with_mkhomedir_feature(client: Client
         3. Authentication is successful for "user-1" and no home directory exists
     :customerscenario: True
     """
-    provider.user("user-1").add(home="/home/user-1")
+    homedir = "/home/user-1"
+    client.fs.backup(homedir)
 
+    provider.user("user-1").add(home=homedir)
+
+    client.host.conn.run(f"rm -fr {homedir}")
     client.authselect.select("sssd", ["with-mkhomedir"])
     client.sssd.start()
 
     assert client.auth.ssh.password("user-1", "Secret123")
-    assert client.fs.exists("/home/user-1")
+    assert client.fs.exists(homedir)
 
-    client.tools.host.ssh.run("rm -rf /home/user-1")
+    client.host.conn.run(f"rm -fr {homedir}")
     client.authselect.disable_feature(["with-mkhomedir"])
 
     assert client.auth.ssh.password("user-1", "Secret123")
-    assert not client.fs.exists("/home/user-1")
+    assert not client.fs.exists(homedir)
 
 
 @pytest.mark.importance("critical")
