@@ -119,20 +119,20 @@ def test_sssd__enabling_and_then_disabling_with_faillock_feature(client: Client,
         client.sssd.common.pam(["with-faillock"])
         client.sssd.start()
 
-        assert client.auth.ssh.password("user-1", "Secret123")
+        assert client.auth.su.password("user-1", "Secret123")
 
         for i in range(3):
-            client.auth.ssh.password("user-1", "BadSecret123")
+            client.auth.su.password("user-1", "BadSecret123")
 
-        assert not client.auth.ssh.password("user-1", "Secret123")
+        assert not client.auth.su.password("user-1", "Secret123")
         client.tools.faillock(["--user", "user-1", "--reset"])
-        assert client.auth.ssh.password("user-1", "Secret123")
+        assert client.auth.su.password("user-1", "Secret123")
 
         client.authselect.disable_feature(["with-faillock"])
 
         for i in range(3):
-            client.auth.ssh.password("user-1", "BadSecret123")
-        assert client.auth.ssh.password("user-1", "Secret123")
+            client.auth.su.password("user-1", "BadSecret123")
+        assert client.auth.su.password("user-1", "Secret123")
 
 
 @pytest.mark.importance("critical")
@@ -204,7 +204,7 @@ def test_sssd__enabling_and_then_disabling_pam_access_feature(client: Client, pr
             [{"access": "+", "user": "user-1", "origin": "ALL"}, {"access": "-", "user": "user-2", "origin": "ALL"}]
         )
 
-        client.sssd.authselect.enable_feature(["with-pamaccess"])
+        client.authselect.select("sssd", ["with-pamaccess"])
         client.sssd.domain["use_fully_qualified_names"] = "False"
         client.sssd.start()
 
@@ -287,7 +287,7 @@ def test_sssd__enabling_and_then_disabling_with_gssapi_feature(client: Client, p
         assert "(root) /bin/ls" in ssh.run("sudo -l").stdout
         assert ssh.run("sudo /bin/ls /root")
 
-    client.sssd.authselect.disable_feature(["with-gssapi"])
+    client.authselect.disable_feature(["with-gssapi"])
 
     with client.ssh("user-1", "Secret123") as ssh:
         assert ssh.run(f"kinit user-1@{provider.realm}", input="Secret123")
