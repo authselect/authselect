@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-01-18 16:34+0100\n"
+"POT-Creation-Date: 2024-02-23 14:08+0100\n"
 "PO-Revision-Date: 2022-12-03 10:19+0000\n"
 "Last-Translator: 김인수 <simmon@nplob.com>\n"
 "Language-Team: Korean <https://translate.fedoraproject.org/projects/"
@@ -872,163 +872,19 @@ msgstr ""
 "기대하지 않는 파일)."
 
 #. type: Title -
-#: src/man/authselect.8.adoc:266
-#, no-wrap
-msgid "NSSWITCH.CONF MANAGEMENT"
-msgstr "NSSWITCH.CONF 관리"
-
-#. type: Plain text
-#: src/man/authselect.8.adoc:272
-msgid ""
-"Authselect generates {AUTHSELECT_NSSWITCH_CONF} and does not allow any user "
-"changes to this file. Such changes are detected and authselect will refuse "
-"to write any system configuration unless a *--force* option is provided to "
-"the *select* command. This mechanism prevents authselect from overwriting "
-"anything that does not match any available profile."
-msgstr ""
-"Authselect는 {AUTHSELECT_NSSWITCH_CONF}을 발생시키고 이 파일에 어떤 사용자 변"
-"경도 허용하지 않습니다. 이런 변경은 검출되고 authselect는 *--force* 선택은 "
-"select 명령에서 제공하지 않으면 어떤 시스템 구성도 작성하는 것을 거부 할 것입"
-"니다. 이러한 작용은 authselect를 이용 가능한 프로파일을 일치하지 않은 것에 덮"
-"어 쓰는 것을 예방합니다."
-
-#. type: Plain text
-#: src/man/authselect.8.adoc:280
-msgid ""
-"Any user changes to nsswitch maps must be done in file "
-"{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf. When authselect generates new "
-"_nsswitch.conf_ it reads this file and combines it with configuration from "
-"selected profile. The profile configuration takes always precedence.  In "
-"other words, profiles do not have to set all nsswitch maps but can set only "
-"those that are relevant to the profile. If a map is set within a profile, it "
-"always overwrites the same map from _user-nsswitch.conf_."
-msgstr ""
-"어떤 사용자는 {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf 파일에서 동작해야만 "
-"하는 nsswitch 지도로 변경합니다. authselect는 새로운 _nsswitch.conf_ 을 생성 "
-"할 때에 이 파일을 읽고 선택된 프로파일에서 구성과 함께 이를 조합합니다. 프로"
-"파일 구성이 항상 우선시 됩니다. 다른 말로, 프로파일은 모든 nsswitch 지도를 설"
-"정하지 않아야 하고 프로파일과 연관된 것들만 설정해야 합니다. 만약 지도는 프로"
-"파일 내에 설정하면, 이는 항상 _user-nsswitch.conf_에서 동일한 지도를 덮어 씌"
-"울 것입니다."
-
-#. type: Block title
-#: src/man/authselect.8.adoc:281
-#, no-wrap
-msgid "Example 1"
-msgstr "예제 1"
-
-#. type: delimited block -
-#: src/man/authselect.8.adoc:292
-#, no-wrap
-msgid ""
-"# \"sssd\" profile\n"
-"$ cat {AUTHSELECT_PROFILE_DIR}/sssd/nsswitch.conf\n"
-"passwd:     sss files systemd\n"
-"group:      sss files systemd\n"
-"netgroup:   sss files\n"
-"automount:  sss files\n"
-"services:   sss files\n"
-"sudoers:    files sss {include if \"with-sudo\"}\n"
-msgstr ""
-"# \"sssd\" profile\n"
-"$ cat {AUTHSELECT_PROFILE_DIR}/sssd/nsswitch.conf\n"
-"passwd: sss files systemd\n"
-"group: sss files systemd\n"
-"netgroup: sss files\n"
-"automount: sss files\n"
-"services: sss files\n"
-"sudoers: files sss {include if \"with-sudo\"}\n"
-
-#. type: delimited block -
-#: src/man/authselect.8.adoc:298
-#, no-wrap
-msgid ""
-"$ cat {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf\n"
-"passwd: files sss\n"
-"group: files sss\n"
-"hosts: files dns myhostname\n"
-"sudoers: files\n"
-msgstr ""
-"$ cat {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf\n"
-"passwd: files sss\n"
-"group: files sss\n"
-"hosts: files dns myhostname\n"
-"sudoers: files\n"
-
-#. type: delimited block -
-#: src/man/authselect.8.adoc:300
-#, no-wrap
-msgid "$ authselect select sssd\n"
-msgstr "$ authselect select sssd\n"
-
-#. type: delimited block -
-#: src/man/authselect.8.adoc:310
-#, no-wrap
-msgid ""
-"# passwd and group maps from user-nsswitch.conf are ignored\n"
-"$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
-"passwd:     sss files systemd\n"
-"group:      sss files systemd\n"
-"netgroup:   sss files\n"
-"automount:  sss files\n"
-"services:   sss files\n"
-"hosts:      files dns myhostname\n"
-"sudoers:    files\n"
-msgstr ""
-"# passwd and group maps from user-nsswitch.conf are ignored\n"
-"$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
-"passwd: sss files systemd\n"
-"group: sss files systemd\n"
-"netgroup: sss files\n"
-"automount: sss files\n"
-"services: sss files\n"
-"hosts: files dns myhostname\n"
-"sudoers: files\n"
-
-#. type: delimited block -
-#: src/man/authselect.8.adoc:312
-#, no-wrap
-msgid "$ authselect select sssd with-sudo\n"
-msgstr "$ authselect select sssd with-sudo\n"
-
-#. type: delimited block -
-#: src/man/authselect.8.adoc:322
-#, no-wrap
-msgid ""
-"# passwd, group and sudoers maps from user-nsswitch.conf are ignored\n"
-"$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
-"passwd:     sss files systemd\n"
-"group:      sss files systemd\n"
-"netgroup:   sss files\n"
-"automount:  sss files\n"
-"services:   sss files\n"
-"sudoers:    files sss\n"
-"hosts:      files dns myhostname\n"
-msgstr ""
-"# passwd, group and sudoers maps from user-nsswitch.conf are ignored\n"
-"$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
-"passwd: sss files systemd\n"
-"group: sss files systemd\n"
-"netgroup: sss files\n"
-"automount: sss files\n"
-"services: sss files\n"
-"sudoers: files sss\n"
-"hosts: files dns myhostname\n"
-
-#. type: Title -
-#: src/man/authselect.8.adoc:326
+#: src/man/authselect.8.adoc:265
 #, no-wrap
 msgid "TROUBLESHOOTING"
 msgstr "문제해결"
 
 #. type: Title ~
-#: src/man/authselect.8.adoc:329
+#: src/man/authselect.8.adoc:268
 #, no-wrap
 msgid "How can I tell if my system is using authselect?"
 msgstr "내 시스템이 authselect 사용한다는 것을 어떻게 말할 수 있나요?"
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:333
+#: src/man/authselect.8.adoc:272
 msgid ""
 "Use *authselect check*. The output will tell you if you have 1) "
 "configuration generated by authselect 2) non-authselect configuration or 3) "
@@ -1041,13 +897,13 @@ msgstr ""
 "을 말해줄 것입니다."
 
 #. type: Title ~
-#: src/man/authselect.8.adoc:335
+#: src/man/authselect.8.adoc:274
 #, no-wrap
 msgid "Is nsswitch.conf supposed to be a symbolic link now?"
 msgstr "nsswitch.conf는 지금 심볼릭 링크일 수 있나요?"
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:341
+#: src/man/authselect.8.adoc:280
 msgid ""
 "Authselect generates your system configuration from scratch and stores it at "
 "{AUTHSELECT_CONFIG_DIR}. System files are then created as symbolic links to "
@@ -1061,18 +917,18 @@ msgstr ""
 "수 있는 소유에 의해 보다 분명하게 만들 수 있도록 사용됩니다."
 
 #. type: Title ~
-#: src/man/authselect.8.adoc:343
+#: src/man/authselect.8.adoc:282
 #, no-wrap
 msgid "Error: Unexpected changes to the configuration were detected."
 msgstr "오류: 예상치 못한 구성 변경이 감지되었습니다."
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:345
+#: src/man/authselect.8.adoc:284
 msgid "For example:"
 msgstr "예를 들면:"
 
 #. type: delimited block .
-#: src/man/authselect.8.adoc:351
+#: src/man/authselect.8.adoc:290
 #, no-wrap
 msgid ""
 "[error] [/etc/authselect/nsswitch.conf] does not exist!\n"
@@ -1088,7 +944,7 @@ msgstr ""
 "[error] Refusing to activate profile unless those changes are removed or overwrite is requested.\n"
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:355
+#: src/man/authselect.8.adoc:294
 msgid ""
 "This means that your configuration is unknown to authselect and as such it "
 "will not be modified. To fix this, please call *authselect select* with *--"
@@ -1099,28 +955,28 @@ msgstr ""
 "select* with *--force* 매개변수를 호출할 것입니다."
 
 #. type: Title -
-#: src/man/authselect.8.adoc:357
+#: src/man/authselect.8.adoc:296
 #, no-wrap
 msgid "RETURN CODES"
 msgstr "반환 코드"
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:359
+#: src/man/authselect.8.adoc:298
 msgid "The *authselect* can return these exit codes:"
 msgstr "*authselect*는 이들 exit 코드로 반환 될 수 있습니다:"
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:361
+#: src/man/authselect.8.adoc:300
 msgid "0: Success."
 msgstr "0: 성공."
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:362
+#: src/man/authselect.8.adoc:301
 msgid "1: Generic error."
 msgstr "1: 일반적 오류."
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:363
+#: src/man/authselect.8.adoc:302
 msgid ""
 "2: Profile or configuration was not found or the system was not configured "
 "with authselect."
@@ -1129,13 +985,13 @@ msgstr ""
 "니다."
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:364
+#: src/man/authselect.8.adoc:303
 msgid ""
 "3: Current configuration is not valid, it was edited without authselect."
 msgstr "3: 현재 설정은 유효하지지 않으며, authselect 없이 편집합니다."
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:365
+#: src/man/authselect.8.adoc:304
 msgid ""
 "4: System configuration must be overwritten to activate an authselect "
 "profile, --force parameter is needed."
@@ -1144,23 +1000,23 @@ msgstr ""
 "force 매개변수가 필요합니다."
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:366
+#: src/man/authselect.8.adoc:305
 msgid "5: Executed command must be run as root."
 msgstr "5: 실행 명령은 root로서 동작해야 합니다."
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:367
+#: src/man/authselect.8.adoc:306
 msgid "6: No configuration was detected."
 msgstr "6: 구성이 없다고 감지되었습니다."
 
 #. type: Title -
-#: src/man/authselect.8.adoc:369
+#: src/man/authselect.8.adoc:308
 #, no-wrap
 msgid "GENERATED FILES"
 msgstr "생성된 파일"
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:372
+#: src/man/authselect.8.adoc:311
 msgid ""
 "Authselect creates and maintains the following files to configure system "
 "identity and authentication providers properly."
@@ -1169,37 +1025,37 @@ msgstr ""
 "고 유지합니다."
 
 #. type: Labeled list
-#: src/man/authselect.8.adoc:373
+#: src/man/authselect.8.adoc:312
 #, no-wrap
 msgid "*{AUTHSELECT_NSSWITCH_CONF}*"
 msgstr "*{AUTHSELECT_NSSWITCH_CONF}*"
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:375
+#: src/man/authselect.8.adoc:314
 msgid "Name Service Switch configuration file."
 msgstr "이름 서비스 전환 구성 파일."
 
 #. type: Labeled list
-#: src/man/authselect.8.adoc:376
+#: src/man/authselect.8.adoc:315
 #, no-wrap
 msgid "*{AUTHSELECT_PAM_DIR}/system-auth*"
 msgstr "*{AUTHSELECT_PAM_DIR}/system-auth*"
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:379
+#: src/man/authselect.8.adoc:318
 msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
 msgstr "거의 모든 개별 서비스 설정 파일에서 포함되는 PAM 스택."
 
 #. type: Labeled list
-#: src/man/authselect.8.adoc:380
+#: src/man/authselect.8.adoc:319
 #, no-wrap
 msgid "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
 msgstr "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:384
+#: src/man/authselect.8.adoc:323
 msgid ""
 "These PAM stacks are for applications which handle authentication from "
 "different types of devices via simultaneously running individual "
@@ -1209,13 +1065,13 @@ msgstr ""
 "유형의 장치에서 인증을 다루는 응용프로그램입니다."
 
 #. type: Labeled list
-#: src/man/authselect.8.adoc:385
+#: src/man/authselect.8.adoc:324
 #, no-wrap
 msgid "*{AUTHSELECT_PAM_DIR}/postlogin*"
 msgstr "*{AUTHSELECT_PAM_DIR}/postlogin*"
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:393
+#: src/man/authselect.8.adoc:332
 msgid ""
 "The purpose of this PAM stack is to provide a common place for all PAM "
 "modules which should be called after the stack configured in system-auth or "
@@ -1232,13 +1088,13 @@ msgstr ""
 "정 파일에 모듈의 성공 또는 실패에도 불구하고 실행 되어질 수 있습니다._"
 
 #. type: Labeled list
-#: src/man/authselect.8.adoc:394
+#: src/man/authselect.8.adoc:333
 #, no-wrap
 msgid "*{AUTHSELECT_DCONF_DIR}/{AUTHSELECT_DCONF_FILE}*"
 msgstr "*{AUTHSELECT_DCONF_DIR}/{AUTHSELECT_DCONF_FILE}*"
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:398
+#: src/man/authselect.8.adoc:337
 msgid ""
 "Changes to dconf database. The main uses case of this file is to set changes "
 "for gnome login screen in order to enable or disable smartcard and "
@@ -1249,28 +1105,153 @@ msgstr ""
 "설정합니다."
 
 #. type: Labeled list
-#: src/man/authselect.8.adoc:399
+#: src/man/authselect.8.adoc:338
 #, no-wrap
 msgid "*{AUTHSELECT_DCONF_DIR}/locks/{AUTHSELECT_DCONF_FILE}*"
 msgstr "*{AUTHSELECT_DCONF_DIR}/locks/{AUTHSELECT_DCONF_FILE}*"
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:401
+#: src/man/authselect.8.adoc:340
 msgid "This file define locks on values set in dconf database."
 msgstr "이 파일은 dconf 데이타베이스에서 설정된 값에 잠금을 정의합니다."
 
 #. type: Title -
-#: src/man/authselect.8.adoc:403
+#: src/man/authselect.8.adoc:342
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "또 보세요"
 
 #. type: Plain text
-#: src/man/authselect.8.adoc:404
+#: src/man/authselect.8.adoc:343
 msgid ""
 "authselect-profiles(5), authselect-migration(7), nsswitch.conf(5), PAM(8)"
 msgstr ""
 "authselect-profiles(5), authselect-migration(7), nsswitch.conf(5), PAM(8)"
+
+#, no-wrap
+#~ msgid "NSSWITCH.CONF MANAGEMENT"
+#~ msgstr "NSSWITCH.CONF 관리"
+
+#~ msgid ""
+#~ "Authselect generates {AUTHSELECT_NSSWITCH_CONF} and does not allow any "
+#~ "user changes to this file. Such changes are detected and authselect will "
+#~ "refuse to write any system configuration unless a *--force* option is "
+#~ "provided to the *select* command. This mechanism prevents authselect from "
+#~ "overwriting anything that does not match any available profile."
+#~ msgstr ""
+#~ "Authselect는 {AUTHSELECT_NSSWITCH_CONF}을 발생시키고 이 파일에 어떤 사용"
+#~ "자 변경도 허용하지 않습니다. 이런 변경은 검출되고 authselect는 *--force* "
+#~ "선택은 select 명령에서 제공하지 않으면 어떤 시스템 구성도 작성하는 것을 거"
+#~ "부 할 것입니다. 이러한 작용은 authselect를 이용 가능한 프로파일을 일치하"
+#~ "지 않은 것에 덮어 쓰는 것을 예방합니다."
+
+#~ msgid ""
+#~ "Any user changes to nsswitch maps must be done in file "
+#~ "{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf. When authselect generates new "
+#~ "_nsswitch.conf_ it reads this file and combines it with configuration "
+#~ "from selected profile. The profile configuration takes always "
+#~ "precedence.  In other words, profiles do not have to set all nsswitch "
+#~ "maps but can set only those that are relevant to the profile. If a map is "
+#~ "set within a profile, it always overwrites the same map from _user-"
+#~ "nsswitch.conf_."
+#~ msgstr ""
+#~ "어떤 사용자는 {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf 파일에서 동작해야"
+#~ "만 하는 nsswitch 지도로 변경합니다. authselect는 새로운 _nsswitch.conf_ "
+#~ "을 생성 할 때에 이 파일을 읽고 선택된 프로파일에서 구성과 함께 이를 조합합"
+#~ "니다. 프로파일 구성이 항상 우선시 됩니다. 다른 말로, 프로파일은 모든 "
+#~ "nsswitch 지도를 설정하지 않아야 하고 프로파일과 연관된 것들만 설정해야 합"
+#~ "니다. 만약 지도는 프로파일 내에 설정하면, 이는 항상 _user-nsswitch.conf_에"
+#~ "서 동일한 지도를 덮어 씌울 것입니다."
+
+#, no-wrap
+#~ msgid "Example 1"
+#~ msgstr "예제 1"
+
+#, no-wrap
+#~ msgid ""
+#~ "# \"sssd\" profile\n"
+#~ "$ cat {AUTHSELECT_PROFILE_DIR}/sssd/nsswitch.conf\n"
+#~ "passwd:     sss files systemd\n"
+#~ "group:      sss files systemd\n"
+#~ "netgroup:   sss files\n"
+#~ "automount:  sss files\n"
+#~ "services:   sss files\n"
+#~ "sudoers:    files sss {include if \"with-sudo\"}\n"
+#~ msgstr ""
+#~ "# \"sssd\" profile\n"
+#~ "$ cat {AUTHSELECT_PROFILE_DIR}/sssd/nsswitch.conf\n"
+#~ "passwd: sss files systemd\n"
+#~ "group: sss files systemd\n"
+#~ "netgroup: sss files\n"
+#~ "automount: sss files\n"
+#~ "services: sss files\n"
+#~ "sudoers: files sss {include if \"with-sudo\"}\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "$ cat {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf\n"
+#~ "passwd: files sss\n"
+#~ "group: files sss\n"
+#~ "hosts: files dns myhostname\n"
+#~ "sudoers: files\n"
+#~ msgstr ""
+#~ "$ cat {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf\n"
+#~ "passwd: files sss\n"
+#~ "group: files sss\n"
+#~ "hosts: files dns myhostname\n"
+#~ "sudoers: files\n"
+
+#, no-wrap
+#~ msgid "$ authselect select sssd\n"
+#~ msgstr "$ authselect select sssd\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "# passwd and group maps from user-nsswitch.conf are ignored\n"
+#~ "$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
+#~ "passwd:     sss files systemd\n"
+#~ "group:      sss files systemd\n"
+#~ "netgroup:   sss files\n"
+#~ "automount:  sss files\n"
+#~ "services:   sss files\n"
+#~ "hosts:      files dns myhostname\n"
+#~ "sudoers:    files\n"
+#~ msgstr ""
+#~ "# passwd and group maps from user-nsswitch.conf are ignored\n"
+#~ "$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
+#~ "passwd: sss files systemd\n"
+#~ "group: sss files systemd\n"
+#~ "netgroup: sss files\n"
+#~ "automount: sss files\n"
+#~ "services: sss files\n"
+#~ "hosts: files dns myhostname\n"
+#~ "sudoers: files\n"
+
+#, no-wrap
+#~ msgid "$ authselect select sssd with-sudo\n"
+#~ msgstr "$ authselect select sssd with-sudo\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "# passwd, group and sudoers maps from user-nsswitch.conf are ignored\n"
+#~ "$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
+#~ "passwd:     sss files systemd\n"
+#~ "group:      sss files systemd\n"
+#~ "netgroup:   sss files\n"
+#~ "automount:  sss files\n"
+#~ "services:   sss files\n"
+#~ "sudoers:    files sss\n"
+#~ "hosts:      files dns myhostname\n"
+#~ msgstr ""
+#~ "# passwd, group and sudoers maps from user-nsswitch.conf are ignored\n"
+#~ "$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
+#~ "passwd: sss files systemd\n"
+#~ "group: sss files systemd\n"
+#~ "netgroup: sss files\n"
+#~ "automount: sss files\n"
+#~ "services: sss files\n"
+#~ "sudoers: files sss\n"
+#~ "hosts: files dns myhostname\n"
 
 #~ msgid "*--force, -f*:"
 #~ msgstr "*--force, -f*:"
