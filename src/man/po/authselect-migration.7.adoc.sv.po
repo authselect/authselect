@@ -1,20 +1,20 @@
-# Göran Uddeborg <goeran@uddeborg.se>, 2018. #zanata, 2021.
+# Göran Uddeborg <goeran@uddeborg.se>, 2018. #zanata, 2021, 2024.
 # Pavel Brezina <pbrezina@redhat.com>, 2018. #zanata
-# Göran Uddeborg <goeran@uddeborg.se>, 2019. #zanata, 2021.
+# Göran Uddeborg <goeran@uddeborg.se>, 2019. #zanata, 2021, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-05-04 13:50+0200\n"
-"PO-Revision-Date: 2021-08-06 21:04+0000\n"
+"PO-Revision-Date: 2024-04-23 21:35+0000\n"
 "Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
 "Language-Team: Swedish <https://translate.fedoraproject.org/projects/"
-"authselect/master-authselect-migration7adoc/sv/>\n"
+"authselect/12x-authselect-migration7adoc/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.7.2\n"
+"X-Generator: Weblate 5.4\n"
 
 #. type: Title =
 #: src/man/authselect-migration.7.adoc:2
@@ -52,7 +52,7 @@ msgid ""
 msgstr ""
 "Denna manualsida förklarar huvudskillnaderna mellan authconfig, det tidigare "
 "verktyget för att konfigurera systemautenticering och identitetskällor, och "
-"authselect som ersätter det.  Den förklarar även vilka åtgärder som behöver "
+"authselect som ersätter det. Den förklarar även vilka åtgärder som behöver "
 "göras för att migrera från authconfig till authselect."
 
 #. type: Title -
@@ -79,7 +79,7 @@ msgid ""
 "simple configuration files for several services such as LDAP and Kerberos."
 msgstr ""
 "Authconfig gör sitt bästa för att behålla användarens manuella ändringar av "
-"filer det genererar.  Det genererar inte endast PAM-konfigurationsfiler och "
+"filer det genererar. Det genererar inte endast PAM-konfigurationsfiler och "
 "nsswitch.conf (för att sätta upp autentiseringsmoduler och identitetskällor) "
 "utan genererar även enkla konfigurationsfiler för flera tjänster såsom LDAP "
 "och Kerberos."
@@ -122,17 +122,17 @@ msgid ""
 "also much easier to distribute such configuration across many systems."
 msgstr ""
 "Detta kan förefalla att vara en stor nackdel, men i verkligheten är det "
-"motsatsen.  Authconfig är ett väldigt gammalt verktyg och program som "
-"erbjuder nödvändiga tjänster har ändrats snabbt under åren.  Typiskt finns "
+"motsatsen. Authconfig är ett väldigt gammalt verktyg och program som "
+"erbjuder nödvändiga tjänster har ändrats snabbt under åren. Typiskt finns "
 "det inte längre ett behov av att ha flera autentiseringsmoduler i PAM och "
 "nsswitch.conf, eftersom den övervägande majoriteten av användningsfall täcks "
-"av SSSD.  Därför finns det inget behov av att lägga till eller ta bort dem "
-"specifikt.  Det finns även bättre verktyg för att generera konfiguration för "
+"av SSSD. Därför finns det inget behov av att lägga till eller ta bort dem "
+"specifikt. Det finns även bättre verktyg för att generera konfiguration för "
 "systemdemoner som kan hjälpa till att automatisera processen att gå med i en "
-"fjärrdomän såsom ”rike”.  Dessutom ger de levererade profilerna en "
-"omfattande och deterministisk systemkonfiguration som kan testas "
-"fullständigt och är mycket mindre felbenäget.  Det är också mycket enklare "
-"att distribuera sådan konfiguration över många system."
+"fjärrdomän såsom ”rike”. Dessutom ger de levererade profilerna en omfattande "
+"och deterministisk systemkonfiguration som kan testas fullständigt och är "
+"mycket mindre felbenäget. Det är också mycket enklare att distribuera sådan "
+"konfiguration över många system."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:52
@@ -145,10 +145,10 @@ msgid ""
 "to sssd."
 msgstr ""
 "Den förmodligen mest kontroversiella ändringen är att authselect bara "
-"levererar profiler för leverantörerna sssd och winbind.  Dessa två "
+"levererar profiler för leverantörerna sssd och winbind. Dessa två "
 "leverantörer täcker alla moderna användningsfall från att ha lokala "
 "användare och gamla LDAP-domäner till komplexa konfigurationer med servrar "
-"för IPA eller Active Directory.  Profilerna innehåller inte längre stöd för "
+"för IPA eller Active Directory. Profilerna innehåller inte längre stöd för "
 "nss-pam-ldapd och användare uppmuntras att byta till sssd."
 
 #. type: Title -
@@ -166,7 +166,7 @@ msgid ""
 "properly configured."
 msgstr ""
 "Man kan använda antingen ”ipa-client-install” eller ”realm” för att gå med i "
-"en IPA-domän och ”realm” för att gå med i en Activer Directory-domän.  Dessa "
+"en IPA-domän och ”realm” för att gå med i en Activer Directory-domän. Dessa "
 "verktyg kommer se till att rätt authselect-profil väljs och att alla demoner "
 "och tjänster konfigureras riktigt."
 
@@ -186,10 +186,10 @@ msgid ""
 "configuration file for required services."
 msgstr ""
 "Om man använder ”ipa-client-install” eller ”realm” för att gå med i en domän "
-"kan man helt enkelt ta bort anrop av authconfig i dina skript.  Om detta "
-"inte är ett alternativ måste man ersätta varje anrop av authconfig med dess "
+"kan man helt enkelt ta bort anrop av authconfig i dina skript. Om detta inte "
+"är ett alternativ måste man ersätta varje anrop av authconfig med dess "
 "ekvivalenta anrop av authselect för att välja rätt profil med önskade "
-"funktioner.  Sedan måste man även skriva konfigurationsfiler för begärda "
+"funktioner. Sedan måste man även skriva konfigurationsfiler för begärda "
 "tjänster."
 
 #. type: Block title
@@ -380,7 +380,7 @@ msgid ""
 "box."
 msgstr ""
 "Om du använder Kerberos skall Kerberos standardrike konfigureras för att "
-"krb5-libs och därmed verktyg såsom  ”kinit” skall fungera från utgångsläget."
+"krb5-libs och därmed verktyg såsom ”kinit” skall fungera från utgångsläget."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:137
@@ -439,9 +439,9 @@ msgid ""
 "that creates one LDAP domain called `default`. The LDAP server is auto-"
 "discovered through DNS lookups."
 msgstr ""
-"Authselect uppmuntrar användare att använda SSSD närhelst det är möjligt.  "
-"Det finns många konfigurationsalternativ, se sssd.conf(5).  Detta är en "
-"minimal konfiguration som skapar en LDAP-domän som kallas ”default”.  LDAP-"
+"Authselect uppmuntrar användare att använda SSSD närhelst det är möjligt. "
+"Det finns många konfigurationsalternativ, se sssd.conf(5). Detta är en "
+"minimal konfiguration som skapar en LDAP-domän som kallas ”default”. LDAP-"
 "servern upptäcks automatiskt via DNS-upplsagningar."
 
 #. type: Block title
@@ -486,7 +486,7 @@ msgid ""
 "through DNS lookups."
 msgstr ""
 "Och här är konfigurationssnutten för samma domän men nu görs autentiseringen "
-"över Kerberos.  KDC-servern upptäcks automatiskt via DNS-uppslagningar."
+"över Kerberos. KDC-servern upptäcks automatiskt via DNS-uppslagningar."
 
 #. type: delimited block -
 #: src/man/authselect-migration.7.adoc:188
@@ -517,9 +517,9 @@ msgid ""
 "it up by modifying {sysconfdir}/sssd/sssd.conf."
 msgstr ""
 "Om man vill konfigurera SSSD för en IPA- eller Active Directory-domän, "
-"använd verktyget ”realm”.  Detta kommer utföra den första uppsättningen som "
+"använd verktyget ”realm”. Detta kommer utföra den första uppsättningen som "
 "omfattar inkluderar att skapa en Kerberos-keytab och att generera "
-"grundläggande SSSD-konfiguration.  Man kan sedan trimma den genom att ändra "
+"grundläggande SSSD-konfiguration. Man kan sedan trimma den genom att ändra "
 "{sysconfdir}/sssd/sssd.conf."
 
 #. type: Title ~
@@ -536,10 +536,10 @@ msgid ""
 "running `adcli` to join the domain. It also makes changes to `smb.conf`. You "
 "can then tune it up by modifying {sysconfdir}/samba/smb.conf."
 msgstr ""
-"Om man vill konfigurera maskinen för att använda Winbind, använd ”realm”.  "
+"Om man vill konfigurera maskinen för att använda Winbind, använd ”realm”. "
 "Detta kommer utföra den första uppsättningen som inkluderar att skapa en "
-"Kerberos-keytab och kör ”addcli” för att gå med i domänen.  Det gör även "
-"ändringar till ”smb.conf”.  Man kan sedan trimma den genom att ändra "
+"Kerberos-keytab och kör ”addcli” för att gå med i domänen. Det gör även "
+"ändringar till ”smb.conf”. Man kan sedan trimma den genom att ändra "
 "{sysconfdir}/samba/smb.conf."
 
 #. type: Plain text
@@ -557,7 +557,7 @@ msgid ""
 "NIS server in {sysconfdir}/yp.conf."
 msgstr ""
 "Det finns flera platser som behöver konfigureras för att få NIS-"
-"autentisering att fungera.  Först behöver man ange NIS-domän och eventuellt "
+"autentisering att fungera. Först behöver man ange NIS-domän och eventuellt "
 "även NIS-server i {sysconfdir}/yp.conf."
 
 #. type: Block title
@@ -603,7 +603,7 @@ msgid ""
 "selinux."
 msgstr ""
 "Nu kan man ange domännamnet på kommandoraden så det finns inget behov att "
-"starta om systemet.  Dessutom kan det vara nödvändigt att aktivera NIS i "
+"starta om systemet. Dessutom kan det vara nödvändigt att aktivera NIS i "
 "selinux."
 
 #. type: delimited block -
@@ -631,7 +631,7 @@ msgid ""
 "server."
 msgstr ""
 "Authselect aktiverar modulen ”pam_pwquality” för att framtvinga "
-"begränsningar för lösenordskvalitet.  Fjärranvändare skall använda "
+"begränsningar för lösenordskvalitet. Fjärranvändare skall använda "
 "lösenordspolicyn som påtvingas av respektive fjärrserver."
 
 #. type: Plain text
@@ -641,9 +641,9 @@ msgid ""
 "pwquality.conf. See pam_pwquality(8) to see its configuration options and "
 "defaults."
 msgstr ""
-"Modulen ”pam_pwquality” kan konfigureras i {sysconfdir}/security/pwquality."
-"conf.  Se pam_pwquality(8) för att se dess konfigurationsalternativ och "
-"standardvärden."
+"Modulen ”pam_pwquality” kan konfigureras i {sysconfdir}/security/"
+"pwquality.conf. Se pam_pwquality(8) för att se dess konfigurationsalternativ "
+"och standardvärden."
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:242
@@ -711,9 +711,9 @@ msgid ""
 "tool, please switch to native _openssl_ command: *openssl rehash "
 "<directory>* that serves the same purpose."
 msgstr ""
-"Authconfig kommer med ett verktyg som kallas  _cacertdir_rehash_.  Om man "
-"beror på detta verktyg, byter man till det vanliga kommandot  _openssl_: "
-"”openssl rehash <katalog>” som fyller samma syfte."
+"Authconfig kommer med ett verktyg som kallas _cacertdir_rehash_. Om man "
+"beror på detta verktyg, byter man till det vanliga kommandot _openssl_: ”"
+"openssl rehash <katalog>” som fyller samma syfte."
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:270
