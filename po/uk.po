@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2023-09-27 13:03+0200\n"
+"POT-Creation-Date: 2024-02-23 14:08+0100\n"
 "PO-Revision-Date: 2023-10-01 12:06+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <https://translate.fedoraproject.org/projects/"
@@ -571,7 +571,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "Не вдалося отримати базову назву [%s]"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:857
+#: src/lib/util/file.c:199 src/cli/main.c:848
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "Не вдалося обробити [%s] [%d]: %s"
@@ -866,7 +866,7 @@ msgstr "Загальні параметри:"
 msgid "[OPTIONS...]"
 msgstr "[ПАРАМЕТРИ...]"
 
-#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:849
+#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:840
 msgid "Out of memory!"
 msgstr "Не вистачає пам'яті!"
 
@@ -915,14 +915,14 @@ msgstr ""
 "Слід вказати принаймні один параметр!\n"
 "\n"
 
-#: src/cli/main.c:76 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:76 src/cli/main.c:432 src/cli/main.c:475
 msgid "Profile identifier."
 msgstr "Ідентифікатор профілю."
 
-#: src/cli/main.c:79 src/cli/main.c:257 src/cli/main.c:302 src/cli/main.c:351
-#: src/cli/main.c:399 src/cli/main.c:444 src/cli/main.c:487 src/cli/main.c:660
-#: src/cli/main.c:737 src/cli/main.c:784 src/cli/main.c:824 src/cli/main.c:889
-#: src/cli/main.c:915
+#: src/cli/main.c:79 src/cli/main.c:248 src/cli/main.c:293 src/cli/main.c:342
+#: src/cli/main.c:390 src/cli/main.c:435 src/cli/main.c:478 src/cli/main.c:651
+#: src/cli/main.c:728 src/cli/main.c:775 src/cli/main.c:815 src/cli/main.c:880
+#: src/cli/main.c:906
 msgid "Unable to parse command arguments"
 msgstr "Не вдалося обробити аргументи команди"
 
@@ -939,17 +939,17 @@ msgstr "Резервну копію збережено до %s\n"
 msgid "Enforce changes"
 msgstr "Примусово змінити"
 
-#: src/cli/main.c:162 src/cli/main.c:250 src/cli/main.c:650 src/cli/main.c:728
+#: src/cli/main.c:162 src/cli/main.c:241 src/cli/main.c:641 src/cli/main.c:719
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr ""
 "Створювати резервну копію файлів системи до активування профілю (буде "
 "використано унікальну назву)"
 
-#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "Backup system files before activating profile"
 msgstr "Створити резервну копію системних файлів до задіяння профілю"
 
-#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "NAME"
 msgstr "НАЗВА"
 
@@ -958,25 +958,21 @@ msgid "Do not backup system files when --force is set"
 msgstr ""
 "Не створювати резервних копій системних файлів, якщо встановлено --force"
 
-#: src/cli/main.c:165 src/cli/main.c:652
+#: src/cli/main.c:165 src/cli/main.c:643
 msgid "Do not print profile requirements"
 msgstr "Не виводити вимог щодо профілю"
 
-#: src/cli/main.c:176 src/cli/main.c:414 src/cli/main.c:450 src/cli/main.c:493
-#: src/cli/main.c:525 src/cli/main.c:679
+#: src/cli/main.c:176 src/cli/main.c:405 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:516 src/cli/main.c:670
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "Не вдалося отримати дані щодо профілю [%d]: %s"
 
-#: src/cli/main.c:184 src/cli/main.c:533 src/cli/main.c:687
+#: src/cli/main.c:184 src/cli/main.c:524 src/cli/main.c:678
 msgid "Unable to read profile requirements!"
 msgstr "Не вдалося прочитати вимоги щодо профілю!"
 
-#: src/cli/main.c:192
-msgid "Unable to obtain nsswitch maps!"
-msgstr "Не вдалося отримати карти nsswitch!"
-
-#: src/cli/main.c:207
+#: src/cli/main.c:198
 msgid ""
 "\n"
 "Some unexpected changes to the configuration were detected.\n"
@@ -986,26 +982,26 @@ msgstr ""
 "Виявлено деякі неочікувані зміни у налаштуваннях.\n"
 "Скористайтеся параметром --force, якщо хочете перезаписати ці зміни.\n"
 
-#: src/cli/main.c:212
+#: src/cli/main.c:203
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "Не вдалося задіяти профіль [%d]: %s\n"
 
-#: src/cli/main.c:217
+#: src/cli/main.c:208
 #, c-format
 msgid "Profile \"%s\" was selected.\n"
 msgstr "Вибрано профіль «%s».\n"
 
-#: src/cli/main.c:220
+#: src/cli/main.c:211
 msgid "The following nsswitch maps are overwritten by the profile:\n"
 msgstr "У результаті застосування профілю перезаписано такі карти nsswitch:\n"
 
-#: src/cli/main.c:223
+#: src/cli/main.c:214
 #, c-format
 msgid "- %s\n"
 msgstr "- %s\n"
 
-#: src/cli/main.c:228
+#: src/cli/main.c:219
 #, c-format
 msgid ""
 "\n"
@@ -1014,15 +1010,15 @@ msgstr ""
 "\n"
 "%s\n"
 
-#: src/cli/main.c:269
+#: src/cli/main.c:260
 msgid "Changes were successfully applied.\n"
 msgstr "Зміни успішно застосовано.\n"
 
-#: src/cli/main.c:272 src/cli/main.c:308 src/cli/main.c:669
+#: src/cli/main.c:263 src/cli/main.c:299 src/cli/main.c:660
 msgid "No existing configuration detected.\n"
 msgstr "Не виявлено наявних налаштувань.\n"
 
-#: src/cli/main.c:275
+#: src/cli/main.c:266
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
@@ -1030,39 +1026,39 @@ msgstr ""
 "Виявлено певні неочікувані зміни у налаштуваннях. Скористайтеся замість цієї "
 "команди командою «select».\n"
 
-#: src/cli/main.c:279
+#: src/cli/main.c:270
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr "Не вдалося застосувати зміни [%d]: %s\n"
 
-#: src/cli/main.c:296
+#: src/cli/main.c:287
 msgid "Print command parameters instead of formatted output"
 msgstr "Вивести параметри команди замість форматованого виведення даних"
 
-#: src/cli/main.c:311 src/cli/main.c:672
+#: src/cli/main.c:302 src/cli/main.c:663
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "Не вдалося отримати поточні налаштування [%d]: %s"
 
-#: src/cli/main.c:325
+#: src/cli/main.c:316
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "Ід. профілю: %s\n"
 
-#: src/cli/main.c:326
+#: src/cli/main.c:317
 msgid "Enabled features:"
 msgstr "Увімкнені можливості:"
 
-#: src/cli/main.c:329
+#: src/cli/main.c:320
 msgid " None\n"
 msgstr " Немає\n"
 
-#: src/cli/main.c:357
+#: src/cli/main.c:348
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "Не вдалося перевірити поточні налаштування [%d]: %s"
 
-#: src/cli/main.c:364
+#: src/cli/main.c:355
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
@@ -1070,69 +1066,69 @@ msgstr ""
 "Поточні налаштування є некоректними. Ймовірно, їх було змінено поза межами "
 "authselect."
 
-#: src/cli/main.c:371
+#: src/cli/main.c:362
 msgid "Current configuration is valid."
 msgstr "Поточні налаштування є коректними."
 
-#: src/cli/main.c:374
+#: src/cli/main.c:365
 msgid "No configuration detected."
 msgstr "Не виявлено ніяких налаштувань."
 
-#: src/cli/main.c:378
+#: src/cli/main.c:369
 msgid "System was not configured with authselect."
 msgstr "Систему не було налаштовано за допомогою authselect."
 
-#: src/cli/main.c:405
+#: src/cli/main.c:396
 msgid "Unable to get profile list!"
 msgstr "Не вдалося отримати список профілів!"
 
-#: src/cli/main.c:458
+#: src/cli/main.c:449
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
 msgstr "Не вдалося отримати дані щодо можливостей профілю [%d]: %s"
 
-#: src/cli/main.c:572
+#: src/cli/main.c:563
 msgid "Print content of all files"
 msgstr "Вивести вміст усіх файлів"
 
-#: src/cli/main.c:573
+#: src/cli/main.c:564
 msgid "Print nsswitch.conf content"
 msgstr "Вивести вміст nsswitch.conf"
 
-#: src/cli/main.c:574
+#: src/cli/main.c:565
 msgid "Print system-auth content"
 msgstr "Вивести вміст system-auth"
 
-#: src/cli/main.c:575
+#: src/cli/main.c:566
 msgid "Print password-auth content"
 msgstr "Вивести вміст password-auth"
 
-#: src/cli/main.c:576
+#: src/cli/main.c:567
 msgid "Print smartcard-auth content"
 msgstr "Вивести вміст smartcard-auth"
 
-#: src/cli/main.c:577
+#: src/cli/main.c:568
 msgid "Print fingerprint-auth content"
 msgstr "Вивести вміст fingerprint-auth"
 
-#: src/cli/main.c:578
+#: src/cli/main.c:569
 msgid "Print postlogin content"
 msgstr "Вивести вміст postlogin"
 
-#: src/cli/main.c:579
+#: src/cli/main.c:570
 msgid "Print dconf database content"
 msgstr "Вивести вміст бази даних dconf"
 
-#: src/cli/main.c:580
+#: src/cli/main.c:571
 msgid "Print dconf lock content"
 msgstr "Вивести дані блокувань dconf"
 
-#: src/cli/main.c:607
+#: src/cli/main.c:598
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "Не вдалося отримати створені дані [%d]: %s"
 
-#: src/cli/main.c:626
+#: src/cli/main.c:617
 #, c-format
 msgid ""
 "File %s: Empty\n"
@@ -1141,7 +1137,7 @@ msgstr ""
 "Файл %s: порожньо\n"
 "\n"
 
-#: src/cli/main.c:628
+#: src/cli/main.c:619
 #, c-format
 msgid ""
 "File %s:\n"
@@ -1152,45 +1148,45 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/cli/main.c:657
+#: src/cli/main.c:648
 msgid "Feature to enable."
 msgstr "Можливість, яку слід увімкнути."
 
-#: src/cli/main.c:694
+#: src/cli/main.c:685
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
 msgstr "Не вдалося створити резервну копію поточних налаштувань [%d]: %s\n"
 
-#: src/cli/main.c:701
+#: src/cli/main.c:692
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "Не вдалося увімкнути можливість [%d]: %s\n"
 
-#: src/cli/main.c:706
+#: src/cli/main.c:697
 #, c-format
 msgid "%s\n"
 msgstr "%s\n"
 
-#: src/cli/main.c:734
+#: src/cli/main.c:725
 msgid "Feature to disable."
 msgstr "Можливість, яку слід вимкнути."
 
-#: src/cli/main.c:748
+#: src/cli/main.c:739
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "Не вдалося вимкнути можливість [%d]: %s\n"
 
-#: src/cli/main.c:769
+#: src/cli/main.c:760
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr ""
 "Створити новий профіль як профіль постачальника, а не нетиповий профіль"
 
-#: src/cli/main.c:770
+#: src/cli/main.c:761
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr ""
 "Ідентифікатор профілю, яким слід скористатися як основою для нового профілю"
 
-#: src/cli/main.c:771
+#: src/cli/main.c:762
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1198,519 +1194,445 @@ msgstr ""
 "Заснувати новий профіль на типовому профілі, навіть якщо вже існує профіль "
 "постачальника із вказаною назвою"
 
-#: src/cli/main.c:772
+#: src/cli/main.c:763
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr ""
 "Створити символічні посилання на метафайли базового профілю, а не копіювати "
 "їх"
 
-#: src/cli/main.c:773
+#: src/cli/main.c:764
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr ""
 "Створити символічні посилання на файли nsswitch базового профілю, а не "
 "копіювати їх"
 
-#: src/cli/main.c:774
+#: src/cli/main.c:765
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr ""
 "Створити символічні посилання на файли pam базового профілю, а не копіювати "
 "їх"
 
-#: src/cli/main.c:775
+#: src/cli/main.c:766
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
 "Створити символічні посилання на файли dconf базового профілю, а не "
 "копіювати їх"
 
-#: src/cli/main.c:776
+#: src/cli/main.c:767
 msgid "Symlink specific file (can be set multiple times)"
 msgstr ""
 "Створити символічне посилання на вказаний файл (можна використовувати "
 "декілька разів)"
 
-#: src/cli/main.c:781
+#: src/cli/main.c:772
 msgid "New profile name."
 msgstr "Назва нового профілю."
 
-#: src/cli/main.c:791
+#: src/cli/main.c:782
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "Не вдалося створити новий профіль [%d]: %s\n"
 
-#: src/cli/main.c:795
+#: src/cli/main.c:786
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "Новий профіль створено у %s\n"
 
-#: src/cli/main.c:818
+#: src/cli/main.c:809
 msgid "Print backup names without any formatting and additional information"
 msgstr ""
 "Вивести назви резервних копій без форматування та додаткових відомостей"
 
-#: src/cli/main.c:830
+#: src/cli/main.c:821
 msgid "Unable to list available backups!"
 msgstr "Не вдалося отримати список доступних резервних копій!"
 
-#: src/cli/main.c:867
+#: src/cli/main.c:858
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (створено %s)\n"
 
-#: src/cli/main.c:886
+#: src/cli/main.c:877
 msgid "Name of the backup to remove."
 msgstr "Назва резервної копії, яку слід вилучити."
 
-#: src/cli/main.c:895
+#: src/cli/main.c:886
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "Не вдалося вилучити резервну копію [%s] [%d]: %s\n"
 
-#: src/cli/main.c:912
+#: src/cli/main.c:903
 msgid "Name of the backup to restore from."
 msgstr "Назва резервної копії, дані якої слід відновити."
 
-#: src/cli/main.c:921
+#: src/cli/main.c:912
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "Не вдалося відновити дані з резервної копії [%s] [%d]: %s\n"
 
-#: src/cli/main.c:937
+#: src/cli/main.c:928
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "Не вдалося вилучити налаштування authselect [%d]: %s\n"
 
-#: src/cli/main.c:987
+#: src/cli/main.c:978
 msgid "Select profile"
 msgstr "Вибрати профіль"
 
-#: src/cli/main.c:988
+#: src/cli/main.c:979
 msgid "Regenerate configuration for currently selected command"
 msgstr "Повторно створити налаштування для поточної вибраної команди"
 
-#: src/cli/main.c:989
+#: src/cli/main.c:980
 msgid "List available profiles"
 msgstr "Вивести список доступних профілів"
 
-#: src/cli/main.c:990
+#: src/cli/main.c:981
 msgid "List available profile features"
 msgstr "Список доступних можливостей профілю"
 
-#: src/cli/main.c:991
+#: src/cli/main.c:982
 msgid "Show profile information"
 msgstr "Вивести дані щодо профілю"
 
-#: src/cli/main.c:992
+#: src/cli/main.c:983
 msgid "Print profile requirements"
 msgstr "Вивести вимоги профілю"
 
-#: src/cli/main.c:993
+#: src/cli/main.c:984
 msgid "Get identifier of currently selected profile"
 msgstr "Отримати ідентифікатор поточного вибраного профілю"
 
-#: src/cli/main.c:994
+#: src/cli/main.c:985
 msgid "Check if the current configuration is valid"
 msgstr "Перевірити, чи є поточні налаштування коректними"
 
-#: src/cli/main.c:995
+#: src/cli/main.c:986
 msgid "Print changes that would be otherwise written"
 msgstr "Вивести зміни, які буде перезаписано"
 
-#: src/cli/main.c:996
+#: src/cli/main.c:987
 msgid "Enable feature in currently selected profile"
 msgstr "Увімкнути можливість у поточному вибраному профілі"
 
-#: src/cli/main.c:997
+#: src/cli/main.c:988
 msgid "Disable feature in currently selected profile"
 msgstr "Вимкнути можливість у поточному вибраному профілі"
 
-#: src/cli/main.c:998
+#: src/cli/main.c:989
 msgid "Create new authselect profile"
 msgstr "Створити профіль authselect"
 
-#: src/cli/main.c:999
+#: src/cli/main.c:990
 msgid "Backup commands:"
 msgstr "Команди резервного копіювання:"
 
-#: src/cli/main.c:1000
+#: src/cli/main.c:991
 msgid "List available backups"
 msgstr "Список доступних резервних копій"
 
-#: src/cli/main.c:1001
+#: src/cli/main.c:992
 msgid "Remove backup"
 msgstr "Вилучити резервну копію"
 
-#: src/cli/main.c:1002
+#: src/cli/main.c:993
 msgid "Restore from backup"
 msgstr "Відновити з резервної копії"
 
-#: src/cli/main.c:1003
+#: src/cli/main.c:994
 msgid "Other:"
 msgstr "Інше:"
 
-#: src/cli/main.c:1004
+#: src/cli/main.c:995
 msgid "Opt-out from authselect managed configuration"
 msgstr "Відмовитися від керованих налаштувань authselect"
 
-#: src/cli/main.c:1006
+#: src/cli/main.c:997
 msgid "Print authselect version"
 msgstr "Вивести дані щодо версії authselect"
 
-#: src/compat/authcompat_Options.py:82
-msgid "NIS for user information by default"
-msgstr "Типовий NIS для даних щодо користувача"
-
-#: src/compat/authcompat_Options.py:83
-msgid "<domain>"
-msgstr "<домен>"
-
-#: src/compat/authcompat_Options.py:83
-msgid "default NIS domain"
-msgstr "типовий домен NIS"
-
-#: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
-#: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
-msgid "<server>"
-msgstr "<сервер>"
-
-#: src/compat/authcompat_Options.py:84
-msgid "default NIS server"
-msgstr "типовий сервер NIS"
-
-#: src/compat/authcompat_Options.py:85
-msgid "LDAP for user information by default"
-msgstr "типовий LDAP для даних користувача"
-
-#: src/compat/authcompat_Options.py:86
-msgid "LDAP for authentication by default"
-msgstr "типовий LDAP для розпізнавання"
-
-#: src/compat/authcompat_Options.py:87
-msgid "default LDAP server hostname or URI"
-msgstr "назва вузла або адреса типового сервера LDAP"
-
-#: src/compat/authcompat_Options.py:88
-msgid "<dn>"
-msgstr "<dn>"
-
-#: src/compat/authcompat_Options.py:88
-msgid "default LDAP base DN"
-msgstr "типовий базовий DN LDAP"
-
-#: src/compat/authcompat_Options.py:89
-msgid "use of TLS with LDAP (RFC-2830)"
-msgstr "використання TLS з LDAP (RFC-2830)"
-
-#: src/compat/authcompat_Options.py:90
-msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
-msgstr "використання TLS для пошуку профілів за допомогою LDAP (RFC-2830)"
-
-#: src/compat/authcompat_Options.py:91
-msgid "use of RFC-2307bis schema for LDAP user information lookups"
-msgstr "використання схеми RFC-2307bis для пошуків даних користувача у LDAP"
-
-#: src/compat/authcompat_Options.py:92
-msgid "authentication with smart card by default"
-msgstr "типове розпізнавання за смарт-карткою"
-
-#: src/compat/authcompat_Options.py:93
-msgid "<0=Lock|1=Ignore>"
-msgstr "<0=Заблокувати|1=Ігнорувати>"
-
-#: src/compat/authcompat_Options.py:93
-msgid "action to be taken on smart card removal"
-msgstr "дія, яку слід виконати у відповідь на вилучення смарт-картки"
-
-#: src/compat/authcompat_Options.py:94
-msgid "require smart card for authentication by default"
-msgstr "типово, вимагати смарт-картку для розпізнавання"
-
-#: src/compat/authcompat_Options.py:95
-msgid "authentication with fingerprint readers by default"
-msgstr "типове розпізнавання за пристроями для зчитування відбитків"
-
-#: src/compat/authcompat_Options.py:96
-msgid "automatic per-user ecryptfs"
-msgstr "автоматична ecryptfs для кожного з користувачів"
-
-#: src/compat/authcompat_Options.py:97
-msgid "Kerberos authentication by default"
-msgstr "Типове розпізнавання за допомогою Kerberos"
-
-#: src/compat/authcompat_Options.py:98
-msgid "default Kerberos KDC"
-msgstr "типове KDC Kerberos"
-
-#: src/compat/authcompat_Options.py:99
-msgid "default Kerberos admin server"
-msgstr "типовий сервер адміністрування Kerberos"
-
-#: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
-msgid "<realm>"
-msgstr "<область>"
-
-#: src/compat/authcompat_Options.py:100
-msgid "default Kerberos realm"
-msgstr "типова область Kerberos"
-
-#: src/compat/authcompat_Options.py:101
-msgid "use of DNS to find Kerberos KDCs"
-msgstr "використовувати DNS для пошуку KDC Kerberos"
-
-#: src/compat/authcompat_Options.py:102
-msgid "use of DNS to find Kerberos realms"
-msgstr "використовувати DNS для пошуку областей Kerberos"
-
-#: src/compat/authcompat_Options.py:103
-msgid "winbind for user information by default"
-msgstr "типовий winbind для даних щодо користувачів"
-
-#: src/compat/authcompat_Options.py:104
-msgid "winbind for authentication by default"
-msgstr "типовий winbind для розпізнавання"
-
-#: src/compat/authcompat_Options.py:105
-msgid "<Administrator>"
-msgstr "<Адміністратор>"
-
-#: src/compat/authcompat_Options.py:105
-msgid "join the winbind domain or ads realm now as this administrator"
-msgstr "долучитися до домену winbind або області AD тепер як цей адміністратор"
-
-#: src/compat/authcompat_Options.py:106
-msgid "Kerberos 5 for authenticate with winbind"
-msgstr "Kerberos 5 для розпізнавання за допомогою winbind"
-
-#: src/compat/authcompat_Options.py:107
-msgid "<workgroup>"
-msgstr "<робоча_група>"
-
-#: src/compat/authcompat_Options.py:107
-msgid "workgroup authentication servers are in"
-msgstr "сервери розпізнавання у робочій групі перебувають у"
-
-#: src/compat/authcompat_Options.py:108
-msgid ""
-"SSSD for user information by default with manually managed configuration"
-msgstr ""
-"типовий SSSD для даних щодо користувачів із керованими вручну налаштуваннями"
-
-#: src/compat/authcompat_Options.py:109
-msgid "SSSD for authentication by default with manually managed configuration"
-msgstr "типовий SSSD для розпізнавання із керованими вручну налаштуваннями"
-
-#: src/compat/authcompat_Options.py:110
-msgid "caching of user credentials in SSSD by default"
-msgstr "типове кешування реєстраційних даних користувачів у SSSD"
-
-#: src/compat/authcompat_Options.py:111
-msgid "check of access.conf during account authorization"
-msgstr "перевіряти access.conf під час уповноваження облікових записів"
-
-#: src/compat/authcompat_Options.py:112
-msgid "creation of home directories for users on their first login"
-msgstr "створення домашніх каталогів користувачі при першому вході до системи"
-
-#: src/compat/authcompat_Options.py:113
-msgid "account locking in case of too many consecutive authentication failures"
-msgstr ""
-"блокування облікового запису, якщо користувач здійснить занадто багато "
-"послідовних невдалих спроб пройти розпізнавання"
-
-#: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
-#: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
-msgid "<number>"
-msgstr "<число>"
-
-#: src/compat/authcompat_Options.py:114
-msgid "minimum length of a password"
-msgstr "мінімальна довжина пароля"
-
-#: src/compat/authcompat_Options.py:115
-msgid "minimum number of character classes in a password"
-msgstr "мінімальна кількість класів символів у паролі"
-
-#: src/compat/authcompat_Options.py:116
-msgid "maximum number of same consecutive characters in a password"
-msgstr "максимальна кількість однакових послідовних символів у паролі"
-
-#: src/compat/authcompat_Options.py:117
-msgid "maximum number of consecutive characters of same class in a password"
-msgstr "максимальна кількість послідовних символів одного класу у паролі"
-
-#: src/compat/authcompat_Options.py:118
-msgid "require at least one lowercase character in a password"
-msgstr "у паролі має бути принаймні одна мала літера"
-
-#: src/compat/authcompat_Options.py:119
-msgid "require at least one uppercase character in a password"
-msgstr "у паролі має бути принаймні одна велика літера"
-
-#: src/compat/authcompat_Options.py:120
-msgid "require at least one digit in a password"
-msgstr "у паролі має бути принаймні одна цифра"
-
-#: src/compat/authcompat_Options.py:121
-msgid "require at least one other character in a password"
-msgstr "у паролі має бути принаймні один інший символ"
-
-#: src/compat/authcompat_Options.py:124
-msgid "do not start/stop services"
-msgstr "не запускати і не зупиняти служби"
-
-#: src/compat/authcompat_Options.py:125
-msgid "update all configuration files"
-msgstr "оновити усі файли налаштувань"
-
-#: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
-msgid "the same as --updateall"
-msgstr "те саме, що і --updateall"
-
-#: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
-msgid "<name>"
-msgstr "<назва>"
-
-#: src/compat/authcompat_Options.py:148
-msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-
-#: src/compat/authcompat_Options.py:149
-msgid "<URL>"
-msgstr "<адреса>"
-
-#: src/compat/authcompat_Options.py:150
-msgid "<module>"
-msgstr "<модуль>"
-
-#: src/compat/authcompat_Options.py:151
-msgid "<user|server|domain|ads>"
-msgstr "<користувач|сервер|домен|ad>"
-
-#: src/compat/authcompat_Options.py:153
-msgid "<servers>"
-msgstr "<сервери>"
-
-#: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
-#: src/compat/authcompat_Options.py:156
-msgid "<lowest-highest>"
-msgstr "<найнижче-найвище>"
-
-#: src/compat/authcompat_Options.py:157
-msgid "<\\>"
-msgstr "<\\>"
-
-#: src/compat/authcompat_Options.py:158
-msgid "</home/%D/%U>"
-msgstr "</home/%D/%U>"
-
-#: src/compat/authcompat_Options.py:159
-msgid "</bin/false>"
-msgstr "</bin/false>"
-
-#: src/compat/authcompat_Options.py:166
-msgid "<options>"
-msgstr "<параметри>"
-
-#: src/compat/authcompat_Options.py:210
-msgid "These options have a compatibility layer"
-msgstr "У цих параметрів є шар сумісності"
-
-#: src/compat/authcompat_Options.py:211
-msgid "These options are no longer supported and have no effect"
-msgstr "Підтримку цих параметрів припинено, вони не діятимуть"
-
-#: src/compat/authcompat_Options.py:313
-msgid "enable"
-msgstr "увімкнути"
-
-#: src/compat/authcompat_Options.py:314
-msgid "disable"
-msgstr "вимкнути"
-
-#: src/compat/authcompat.py.in.in:51
+#~ msgid "Unable to obtain nsswitch maps!"
+#~ msgstr "Не вдалося отримати карти nsswitch!"
+
+#~ msgid "NIS for user information by default"
+#~ msgstr "Типовий NIS для даних щодо користувача"
+
+#~ msgid "<domain>"
+#~ msgstr "<домен>"
+
+#~ msgid "default NIS domain"
+#~ msgstr "типовий домен NIS"
+
+#~ msgid "<server>"
+#~ msgstr "<сервер>"
+
+#~ msgid "default NIS server"
+#~ msgstr "типовий сервер NIS"
+
+#~ msgid "LDAP for user information by default"
+#~ msgstr "типовий LDAP для даних користувача"
+
+#~ msgid "LDAP for authentication by default"
+#~ msgstr "типовий LDAP для розпізнавання"
+
+#~ msgid "default LDAP server hostname or URI"
+#~ msgstr "назва вузла або адреса типового сервера LDAP"
+
+#~ msgid "<dn>"
+#~ msgstr "<dn>"
+
+#~ msgid "default LDAP base DN"
+#~ msgstr "типовий базовий DN LDAP"
+
+#~ msgid "use of TLS with LDAP (RFC-2830)"
+#~ msgstr "використання TLS з LDAP (RFC-2830)"
+
+#~ msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
+#~ msgstr "використання TLS для пошуку профілів за допомогою LDAP (RFC-2830)"
+
+#~ msgid "use of RFC-2307bis schema for LDAP user information lookups"
+#~ msgstr "використання схеми RFC-2307bis для пошуків даних користувача у LDAP"
+
+#~ msgid "authentication with smart card by default"
+#~ msgstr "типове розпізнавання за смарт-карткою"
+
+#~ msgid "<0=Lock|1=Ignore>"
+#~ msgstr "<0=Заблокувати|1=Ігнорувати>"
+
+#~ msgid "action to be taken on smart card removal"
+#~ msgstr "дія, яку слід виконати у відповідь на вилучення смарт-картки"
+
+#~ msgid "require smart card for authentication by default"
+#~ msgstr "типово, вимагати смарт-картку для розпізнавання"
+
+#~ msgid "authentication with fingerprint readers by default"
+#~ msgstr "типове розпізнавання за пристроями для зчитування відбитків"
+
+#~ msgid "automatic per-user ecryptfs"
+#~ msgstr "автоматична ecryptfs для кожного з користувачів"
+
+#~ msgid "Kerberos authentication by default"
+#~ msgstr "Типове розпізнавання за допомогою Kerberos"
+
+#~ msgid "default Kerberos KDC"
+#~ msgstr "типове KDC Kerberos"
+
+#~ msgid "default Kerberos admin server"
+#~ msgstr "типовий сервер адміністрування Kerberos"
+
+#~ msgid "<realm>"
+#~ msgstr "<область>"
+
+#~ msgid "default Kerberos realm"
+#~ msgstr "типова область Kerberos"
+
+#~ msgid "use of DNS to find Kerberos KDCs"
+#~ msgstr "використовувати DNS для пошуку KDC Kerberos"
+
+#~ msgid "use of DNS to find Kerberos realms"
+#~ msgstr "використовувати DNS для пошуку областей Kerberos"
+
+#~ msgid "winbind for user information by default"
+#~ msgstr "типовий winbind для даних щодо користувачів"
+
+#~ msgid "winbind for authentication by default"
+#~ msgstr "типовий winbind для розпізнавання"
+
+#~ msgid "<Administrator>"
+#~ msgstr "<Адміністратор>"
+
+#~ msgid "join the winbind domain or ads realm now as this administrator"
+#~ msgstr ""
+#~ "долучитися до домену winbind або області AD тепер як цей адміністратор"
+
+#~ msgid "Kerberos 5 for authenticate with winbind"
+#~ msgstr "Kerberos 5 для розпізнавання за допомогою winbind"
+
+#~ msgid "<workgroup>"
+#~ msgstr "<робоча_група>"
+
+#~ msgid "workgroup authentication servers are in"
+#~ msgstr "сервери розпізнавання у робочій групі перебувають у"
+
+#~ msgid ""
+#~ "SSSD for user information by default with manually managed configuration"
+#~ msgstr ""
+#~ "типовий SSSD для даних щодо користувачів із керованими вручну "
+#~ "налаштуваннями"
+
+#~ msgid ""
+#~ "SSSD for authentication by default with manually managed configuration"
+#~ msgstr "типовий SSSD для розпізнавання із керованими вручну налаштуваннями"
+
+#~ msgid "caching of user credentials in SSSD by default"
+#~ msgstr "типове кешування реєстраційних даних користувачів у SSSD"
+
+#~ msgid "check of access.conf during account authorization"
+#~ msgstr "перевіряти access.conf під час уповноваження облікових записів"
+
+#~ msgid "creation of home directories for users on their first login"
+#~ msgstr ""
+#~ "створення домашніх каталогів користувачі при першому вході до системи"
+
+#~ msgid ""
+#~ "account locking in case of too many consecutive authentication failures"
+#~ msgstr ""
+#~ "блокування облікового запису, якщо користувач здійснить занадто багато "
+#~ "послідовних невдалих спроб пройти розпізнавання"
+
+#~ msgid "<number>"
+#~ msgstr "<число>"
+
+#~ msgid "minimum length of a password"
+#~ msgstr "мінімальна довжина пароля"
+
+#~ msgid "minimum number of character classes in a password"
+#~ msgstr "мінімальна кількість класів символів у паролі"
+
+#~ msgid "maximum number of same consecutive characters in a password"
+#~ msgstr "максимальна кількість однакових послідовних символів у паролі"
+
+#~ msgid "maximum number of consecutive characters of same class in a password"
+#~ msgstr "максимальна кількість послідовних символів одного класу у паролі"
+
+#~ msgid "require at least one lowercase character in a password"
+#~ msgstr "у паролі має бути принаймні одна мала літера"
+
+#~ msgid "require at least one uppercase character in a password"
+#~ msgstr "у паролі має бути принаймні одна велика літера"
+
+#~ msgid "require at least one digit in a password"
+#~ msgstr "у паролі має бути принаймні одна цифра"
+
+#~ msgid "require at least one other character in a password"
+#~ msgstr "у паролі має бути принаймні один інший символ"
+
+#~ msgid "do not start/stop services"
+#~ msgstr "не запускати і не зупиняти служби"
+
+#~ msgid "update all configuration files"
+#~ msgstr "оновити усі файли налаштувань"
+
+#~ msgid "the same as --updateall"
+#~ msgstr "те саме, що і --updateall"
+
+#~ msgid "<name>"
+#~ msgstr "<назва>"
+
+#~ msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+#~ msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+
+#~ msgid "<URL>"
+#~ msgstr "<адреса>"
+
+#~ msgid "<module>"
+#~ msgstr "<модуль>"
+
+#~ msgid "<user|server|domain|ads>"
+#~ msgstr "<користувач|сервер|домен|ad>"
+
+#~ msgid "<servers>"
+#~ msgstr "<сервери>"
+
+#~ msgid "<lowest-highest>"
+#~ msgstr "<найнижче-найвище>"
+
+#~ msgid "<\\>"
+#~ msgstr "<\\>"
+
+#~ msgid "</home/%D/%U>"
+#~ msgstr "</home/%D/%U>"
+
+#~ msgid "</bin/false>"
+#~ msgstr "</bin/false>"
+
+#~ msgid "<options>"
+#~ msgstr "<параметри>"
+
+#~ msgid "These options have a compatibility layer"
+#~ msgstr "У цих параметрів є шар сумісності"
+
+#~ msgid "These options are no longer supported and have no effect"
+#~ msgstr "Підтримку цих параметрів припинено, вони не діятимуть"
+
+#~ msgid "enable"
+#~ msgstr "увімкнути"
+
+#~ msgid "disable"
+#~ msgstr "вимкнути"
+
 #, python-format
-msgid "Executing: %s"
-msgstr "Виконуємо: %s"
+#~ msgid "Executing: %s"
+#~ msgstr "Виконуємо: %s"
 
-#: src/compat/authcompat.py.in.in:71
 #, python-format
-msgid "Service %s was not found. Please install the service."
-msgstr "Не знайдено служби %s. Будь ласка, встановіть цю службу."
+#~ msgid "Service %s was not found. Please install the service."
+#~ msgstr "Не знайдено служби %s. Будь ласка, встановіть цю службу."
 
-#: src/compat/authcompat.py.in.in:74 src/compat/authcompat.py.in.in:631
-#: src/compat/authcompat.py.in.in:657
 #, python-format
-msgid "Command [%s] failed with %d, stderr:"
-msgstr "Помилка команди [%s], %d, stderr:"
+#~ msgid "Command [%s] failed with %d, stderr:"
+#~ msgstr "Помилка команди [%s], %d, stderr:"
 
-#: src/compat/authcompat.py.in.in:186
 #, python-format
-msgid "Removing file: %s"
-msgstr "Вилучаємо файл: %s"
+#~ msgid "Removing file: %s"
+#~ msgstr "Вилучаємо файл: %s"
 
-#: src/compat/authcompat.py.in.in:335
 #, python-format
-msgid "%s was not found. Please, install realmd."
-msgstr "%s не знайдено. Будь ласка, встановіть realmd."
+#~ msgid "%s was not found. Please, install realmd."
+#~ msgstr "%s не знайдено. Будь ласка, встановіть realmd."
 
-#: src/compat/authcompat.py.in.in:469
-msgid "Running authconfig compatibility tool."
-msgstr "Виконуємо засіб забезпечення сумісності authconfig."
+#~ msgid "Running authconfig compatibility tool."
+#~ msgstr "Виконуємо засіб забезпечення сумісності authconfig."
 
-#: src/compat/authcompat.py.in.in:470
-msgid ""
-"The purpose of this tool is to enable authentication against chosen services "
-"with authselect and minimum configuration. It does not provide all "
-"capabilities of authconfig.\n"
-msgstr ""
-"Призначенням цієї програми є уможливлення розпізнавання у вибраних службах "
-"за допомогою authselect із мінімальними налаштуваннями. Ця програма не надає "
-"доступу до усіх можливостей authconfig.\n"
+#~ msgid ""
+#~ "The purpose of this tool is to enable authentication against chosen "
+#~ "services with authselect and minimum configuration. It does not provide "
+#~ "all capabilities of authconfig.\n"
+#~ msgstr ""
+#~ "Призначенням цієї програми є уможливлення розпізнавання у вибраних "
+#~ "службах за допомогою authselect із мінімальними налаштуваннями. Ця "
+#~ "програма не надає доступу до усіх можливостей authconfig.\n"
 
-#: src/compat/authcompat.py.in.in:473
-msgid ""
-"IMPORTANT: authconfig is replaced by authselect, please update your scripts."
-msgstr ""
-"ВАЖЛИВО: authconfig замінено на authselect. Будь ласка, оновіть ваші скрипти."
+#~ msgid ""
+#~ "IMPORTANT: authconfig is replaced by authselect, please update your "
+#~ "scripts."
+#~ msgstr ""
+#~ "ВАЖЛИВО: authconfig замінено на authselect. Будь ласка, оновіть ваші "
+#~ "скрипти."
 
-#: src/compat/authcompat.py.in.in:475
-msgid ""
-"See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
-"AuthselectAsDefault"
-msgstr ""
-"Див. сторінку опису змін у Fedora 28: https://fedoraproject.org/wiki/Changes/"
-"AuthselectAsDefault"
+#~ msgid ""
+#~ "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
+#~ "AuthselectAsDefault"
+#~ msgstr ""
+#~ "Див. сторінку опису змін у Fedora 28: https://fedoraproject.org/wiki/"
+#~ "Changes/AuthselectAsDefault"
 
-#: src/compat/authcompat.py.in.in:476
-msgid ""
-"See man authselect-migration(7) to help you with migration to authselect"
-msgstr ""
-"Див. man authselect-migration(7), щоб дізнатися більше про перехід на "
-"authselect"
+#~ msgid ""
+#~ "See man authselect-migration(7) to help you with migration to authselect"
+#~ msgstr ""
+#~ "Див. man authselect-migration(7), щоб дізнатися більше про перехід на "
+#~ "authselect"
 
-#: src/compat/authcompat.py.in.in:480
-msgid "Warning: These options are not supported anymore and have no effect:"
-msgstr "Попередження: підтримку цих параметрів припинено, вони не діятимуть:"
+#~ msgid "Warning: These options are not supported anymore and have no effect:"
+#~ msgstr ""
+#~ "Попередження: підтримку цих параметрів припинено, вони не діятимуть:"
 
-#: src/compat/authcompat.py.in.in:500
-msgid "authconfig can only be run as root"
-msgstr "authconfig можна запускати лише від імені користувача root"
+#~ msgid "authconfig can only be run as root"
+#~ msgstr "authconfig можна запускати лише від імені користувача root"
 
-#: src/compat/authcompat.py.in.in:505
 #, python-format
-msgid ""
-"Error: option --%s is no longer supported and we cannot continue if it is "
-"set."
-msgstr ""
-"Помилка: підтримку параметра --%s припинено, роботу не може бути продовжено, "
-"якщо буде встановлено цей параметр."
+#~ msgid ""
+#~ "Error: option --%s is no longer supported and we cannot continue if it is "
+#~ "set."
+#~ msgstr ""
+#~ "Помилка: підтримку параметра --%s припинено, роботу не може бути "
+#~ "продовжено, якщо буде встановлено цей параметр."
 
-#: src/compat/authcompat.py.in.in:510
-msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
-msgstr "Помилка: слід вказати одразу --enablewinbind і --enablewinbindauth."
+#~ msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
+#~ msgstr "Помилка: слід вказати одразу --enablewinbind і --enablewinbindauth."
 
-#: src/compat/authcompat.py.in.in:520
-msgid "Error: Please, provide --updateall option."
-msgstr "Помилка: будь ласка, вкажіть параметр --updateall."
+#~ msgid "Error: Please, provide --updateall option."
+#~ msgstr "Помилка: будь ласка, вкажіть параметр --updateall."
 
 #~ msgid "Unable to get current time!"
 #~ msgstr "Не вдалося визначити поточний час!"

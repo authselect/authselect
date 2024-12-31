@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.2.4\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2023-09-27 13:03+0200\n"
+"POT-Creation-Date: 2024-02-23 14:08+0100\n"
 "PO-Revision-Date: 2023-10-04 08:35+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://translate.fedoraproject.org/projects/"
@@ -571,7 +571,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "[%s]-ის საბაზისო სახელის მიღების შეცდომა"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:857
+#: src/lib/util/file.c:199 src/cli/main.c:848
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "[%s] [%d]: %s-ის გაშვების შეცდომა"
@@ -868,7 +868,7 @@ msgstr "საერთო პარამეტრები:"
 msgid "[OPTIONS...]"
 msgstr "[პარამეტრებ...]"
 
-#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:849
+#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:840
 msgid "Out of memory!"
 msgstr "არასაკმარისი მეხსიერება!"
 
@@ -917,14 +917,14 @@ msgstr ""
 "საჭიროა ერთი პარამეტრი მაინც!\n"
 "\n"
 
-#: src/cli/main.c:76 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:76 src/cli/main.c:432 src/cli/main.c:475
 msgid "Profile identifier."
 msgstr "პროფილის იდენტიფიკატორი."
 
-#: src/cli/main.c:79 src/cli/main.c:257 src/cli/main.c:302 src/cli/main.c:351
-#: src/cli/main.c:399 src/cli/main.c:444 src/cli/main.c:487 src/cli/main.c:660
-#: src/cli/main.c:737 src/cli/main.c:784 src/cli/main.c:824 src/cli/main.c:889
-#: src/cli/main.c:915
+#: src/cli/main.c:79 src/cli/main.c:248 src/cli/main.c:293 src/cli/main.c:342
+#: src/cli/main.c:390 src/cli/main.c:435 src/cli/main.c:478 src/cli/main.c:651
+#: src/cli/main.c:728 src/cli/main.c:775 src/cli/main.c:815 src/cli/main.c:880
+#: src/cli/main.c:906
 msgid "Unable to parse command arguments"
 msgstr "ბრძანების პარამეტრების დამუშავების შეცდომა"
 
@@ -941,15 +941,15 @@ msgstr "მარქაფის შენახვის ბილიკი %s\
 msgid "Enforce changes"
 msgstr "ცვლილებების დაძალება"
 
-#: src/cli/main.c:162 src/cli/main.c:250 src/cli/main.c:650 src/cli/main.c:728
+#: src/cli/main.c:162 src/cli/main.c:241 src/cli/main.c:641 src/cli/main.c:719
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr "პროფილის აქტივაციამდე სისტემური ფაილების მარქაფი (უნიკალური სახელით)"
 
-#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "Backup system files before activating profile"
 msgstr "პროფილის აქტივაციამდე სისტემური ფაილების მარქაფი"
 
-#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "NAME"
 msgstr "სახელი"
 
@@ -957,25 +957,21 @@ msgstr "სახელი"
 msgid "Do not backup system files when --force is set"
 msgstr "--force-ის დროს სისტემური ფაილების არქაფი არ გაკეთდება"
 
-#: src/cli/main.c:165 src/cli/main.c:652
+#: src/cli/main.c:165 src/cli/main.c:643
 msgid "Do not print profile requirements"
 msgstr "პროფილის მოთხოვნები არ დაიბეჭდება"
 
-#: src/cli/main.c:176 src/cli/main.c:414 src/cli/main.c:450 src/cli/main.c:493
-#: src/cli/main.c:525 src/cli/main.c:679
+#: src/cli/main.c:176 src/cli/main.c:405 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:516 src/cli/main.c:670
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "შეცდომა პროფილის შესახებ ინფორმაციის მიღებისას [%d]:%s"
 
-#: src/cli/main.c:184 src/cli/main.c:533 src/cli/main.c:687
+#: src/cli/main.c:184 src/cli/main.c:524 src/cli/main.c:678
 msgid "Unable to read profile requirements!"
 msgstr "პროფილის მოთხოვნის ჩატვირთვის შეცდომა!"
 
-#: src/cli/main.c:192
-msgid "Unable to obtain nsswitch maps!"
-msgstr "Nsswitch-ის რუკების მიღება შეუძლებელია!"
-
-#: src/cli/main.c:207
+#: src/cli/main.c:198
 msgid ""
 "\n"
 "Some unexpected changes to the configuration were detected.\n"
@@ -985,26 +981,26 @@ msgstr ""
 "კონფიგურაციაში ნაპოვნია მოულოდნელი ცვლილებები.\n"
 "ამ ცვლილებების გადასაწერად გამოიყენეთ --force პარამეტრი.\n"
 
-#: src/cli/main.c:212
+#: src/cli/main.c:203
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "პროფილის აქტივაციის შეცდომა [%d]:%s\n"
 
-#: src/cli/main.c:217
+#: src/cli/main.c:208
 #, c-format
 msgid "Profile \"%s\" was selected.\n"
 msgstr "არჩეულია პროფილი \"%s\".\n"
 
-#: src/cli/main.c:220
+#: src/cli/main.c:211
 msgid "The following nsswitch maps are overwritten by the profile:\n"
 msgstr "Nsswitch-ის შემდეგი რუკები გადაიწერება პროფილის მიერ:\n"
 
-#: src/cli/main.c:223
+#: src/cli/main.c:214
 #, c-format
 msgid "- %s\n"
 msgstr "- %s\n"
 
-#: src/cli/main.c:228
+#: src/cli/main.c:219
 #, c-format
 msgid ""
 "\n"
@@ -1013,15 +1009,15 @@ msgstr ""
 "\n"
 "%s\n"
 
-#: src/cli/main.c:269
+#: src/cli/main.c:260
 msgid "Changes were successfully applied.\n"
 msgstr "ცვლილებები წარმატებით გადატარდა.\n"
 
-#: src/cli/main.c:272 src/cli/main.c:308 src/cli/main.c:669
+#: src/cli/main.c:263 src/cli/main.c:299 src/cli/main.c:660
 msgid "No existing configuration detected.\n"
 msgstr "არსებული კონფიგურაცია ნაპოვნი არაა.\n"
 
-#: src/cli/main.c:275
+#: src/cli/main.c:266
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
@@ -1029,108 +1025,108 @@ msgstr ""
 "კონფიგურაციაში ნაპოვნია რამდენიმე მოულოდნელი ცვლილბება. გამოიყენეთ 'select' "
 "ბრძანება.\n"
 
-#: src/cli/main.c:279
+#: src/cli/main.c:270
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr "ცვლილებების გადატარების შეცდომა [%d]:%s\n"
 
-#: src/cli/main.c:296
+#: src/cli/main.c:287
 msgid "Print command parameters instead of formatted output"
 msgstr "ფორმატირებული გამოტანის მაგიერ ბრძანების პარამეტრების გამოტანა"
 
-#: src/cli/main.c:311 src/cli/main.c:672
+#: src/cli/main.c:302 src/cli/main.c:663
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "მიმდინარე კონფიგურაციის მიღების შეცდომა [%d]:%s"
 
-#: src/cli/main.c:325
+#: src/cli/main.c:316
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "პროფილის ID: %s\n"
 
-#: src/cli/main.c:326
+#: src/cli/main.c:317
 msgid "Enabled features:"
 msgstr "ჩართული თვისებები:"
 
-#: src/cli/main.c:329
+#: src/cli/main.c:320
 msgid " None\n"
 msgstr " არცერთი\n"
 
-#: src/cli/main.c:357
+#: src/cli/main.c:348
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "მიმდინარე კონფიგურაციის ტესტირების შეცდომა [%d]:%s"
 
-#: src/cli/main.c:364
+#: src/cli/main.c:355
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
 msgstr ""
 "მიმდინარე კონფიგურაცია არასწორია. ის ალბათ authselect-ის გარეთ შეიცვალა."
 
-#: src/cli/main.c:371
+#: src/cli/main.c:362
 msgid "Current configuration is valid."
 msgstr "მინდინარე კონფიგურაცია სწორია."
 
-#: src/cli/main.c:374
+#: src/cli/main.c:365
 msgid "No configuration detected."
 msgstr "კონფიგურაცია ნაპოვნი არაა."
 
-#: src/cli/main.c:378
+#: src/cli/main.c:369
 msgid "System was not configured with authselect."
 msgstr "სისტემა authselect-ის საშუალებით არაა მორგებული."
 
-#: src/cli/main.c:405
+#: src/cli/main.c:396
 msgid "Unable to get profile list!"
 msgstr "პროფილების სიის მიღების პრობლემა!"
 
-#: src/cli/main.c:458
+#: src/cli/main.c:449
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
 msgstr "პროფილის თვისებების მიღების შეცდომა [%d]:%s"
 
-#: src/cli/main.c:572
+#: src/cli/main.c:563
 msgid "Print content of all files"
 msgstr "ყველა ფაილის შემცველობის გამოტანა"
 
-#: src/cli/main.c:573
+#: src/cli/main.c:564
 msgid "Print nsswitch.conf content"
 msgstr "Nsswitch.conf-ის შემცველობის ჩვენება"
 
-#: src/cli/main.c:574
+#: src/cli/main.c:565
 msgid "Print system-auth content"
 msgstr "System-auth-ის შემცველობის ჩვენება"
 
-#: src/cli/main.c:575
+#: src/cli/main.c:566
 msgid "Print password-auth content"
 msgstr "Password-auth-ის შემცველობის ჩვენება"
 
-#: src/cli/main.c:576
+#: src/cli/main.c:567
 msgid "Print smartcard-auth content"
 msgstr "Smartcard-auth-ის შემცველობის ჩვენება"
 
-#: src/cli/main.c:577
+#: src/cli/main.c:568
 msgid "Print fingerprint-auth content"
 msgstr "Fingerprint-auth-ის შემცველობის ჩვენება"
 
-#: src/cli/main.c:578
+#: src/cli/main.c:569
 msgid "Print postlogin content"
 msgstr "Postlogin-ის შემცველობის ჩვენება"
 
-#: src/cli/main.c:579
+#: src/cli/main.c:570
 msgid "Print dconf database content"
 msgstr "Dconf-ის ბაზის შემცველობის გამოტანა"
 
-#: src/cli/main.c:580
+#: src/cli/main.c:571
 msgid "Print dconf lock content"
 msgstr "Dconf-ის ჩამკეტის შემცველობის გამოტანა"
 
-#: src/cli/main.c:607
+#: src/cli/main.c:598
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "გენერირებული შემცველობის მიღების პრობლემა [%d]:%s"
 
-#: src/cli/main.c:626
+#: src/cli/main.c:617
 #, c-format
 msgid ""
 "File %s: Empty\n"
@@ -1139,7 +1135,7 @@ msgstr ""
 "ფაილი %s: ცარიელია\n"
 "\n"
 
-#: src/cli/main.c:628
+#: src/cli/main.c:619
 #, c-format
 msgid ""
 "File %s:\n"
@@ -1150,43 +1146,43 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/cli/main.c:657
+#: src/cli/main.c:648
 msgid "Feature to enable."
 msgstr "ჩასართავი თვისება."
 
-#: src/cli/main.c:694
+#: src/cli/main.c:685
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
 msgstr "მიმდინარე კონფიგურაციის მარქაფის შეცდომა [%d]:%s\n"
 
-#: src/cli/main.c:701
+#: src/cli/main.c:692
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "თვისების ჩართვის შეცდომა [%d]:%s\n"
 
-#: src/cli/main.c:706
+#: src/cli/main.c:697
 #, c-format
 msgid "%s\n"
 msgstr "%s\n"
 
-#: src/cli/main.c:734
+#: src/cli/main.c:725
 msgid "Feature to disable."
 msgstr "გამოსართავი თვისება."
 
-#: src/cli/main.c:748
+#: src/cli/main.c:739
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "თვისების გამორთვის შეცდომა [%d]:%s\n"
 
-#: src/cli/main.c:769
+#: src/cli/main.c:760
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr "ახალი პროფილის როგორც მომწოდებლის და არა თქვენზე მორგებულის შექმნა"
 
-#: src/cli/main.c:770
+#: src/cli/main.c:761
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr "ახალი პროფილის საბაზისოდ გამოსაყენებელი პროფილის ID"
 
-#: src/cli/main.c:771
+#: src/cli/main.c:762
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1194,507 +1190,432 @@ msgstr ""
 "ახალი პროფილის ნაგულისხმევ პროფილზე ბაზირება მაშინაც კი, როცა არსებობს "
 "მომწოდებლის პროფილი იგივე სახელით"
 
-#: src/cli/main.c:772
+#: src/cli/main.c:763
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr "ფაილების კოპირების მაგიერ სიმბმულების გაკეთება"
 
-#: src/cli/main.c:773
+#: src/cli/main.c:764
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr "Nsswitch-ის ფაილების კოპირების მაგიერ სიმბმულების შექმნა"
 
-#: src/cli/main.c:774
+#: src/cli/main.c:765
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr "Pam ფაილების სიმბმულების შექმნა კოპირების მაგიერ"
 
-#: src/cli/main.c:775
+#: src/cli/main.c:766
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr "Dconf-ის ფაილების სიმბმულების შექმნა კოპირების მაგიერ"
 
-#: src/cli/main.c:776
+#: src/cli/main.c:767
 msgid "Symlink specific file (can be set multiple times)"
 msgstr "მითითებული ფაილის სიმბმულის შექმნა (მრავალჯერ გამოყენება ნებადართულია)"
 
-#: src/cli/main.c:781
+#: src/cli/main.c:772
 msgid "New profile name."
 msgstr "ახალი პროფილის სახელი."
 
-#: src/cli/main.c:791
+#: src/cli/main.c:782
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "ახალი პროფილის შექმნის შეცდომა [%d]:%s\n"
 
-#: src/cli/main.c:795
+#: src/cli/main.c:786
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "ახლად შექმნილი პროფილის ბილიკია %s\n"
 
-#: src/cli/main.c:818
+#: src/cli/main.c:809
 msgid "Print backup names without any formatting and additional information"
 msgstr ""
 "მარქაფების სახელების დამატებითი ფორმატირებისა და ინფორმაციის გარეშე გამოტანა"
 
-#: src/cli/main.c:830
+#: src/cli/main.c:821
 msgid "Unable to list available backups!"
 msgstr "ხელმისაწვდომი მარქაფების სიის მიღება შეუძლებელია!"
 
-#: src/cli/main.c:867
+#: src/cli/main.c:858
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (შექმნილა %s-ში)\n"
 
-#: src/cli/main.c:886
+#: src/cli/main.c:877
 msgid "Name of the backup to remove."
 msgstr "წასაშლელი მარქაფის სახელი."
 
-#: src/cli/main.c:895
+#: src/cli/main.c:886
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "მარქაფის წაშლის შეცდომა [%s] [%d]:%s\n"
 
-#: src/cli/main.c:912
+#: src/cli/main.c:903
 msgid "Name of the backup to restore from."
 msgstr "აღსადგენი მარქაფის სახელი."
 
-#: src/cli/main.c:921
+#: src/cli/main.c:912
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "მარქაფის აღდგენის შეცდომა [%s] [%d]:%s\n"
 
-#: src/cli/main.c:937
+#: src/cli/main.c:928
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "Authselect-ის კონფიგურაციის წაშლის სეცდომა [%d]:%s\n"
 
-#: src/cli/main.c:987
+#: src/cli/main.c:978
 msgid "Select profile"
 msgstr "აირჩიეთ პროფილი"
 
-#: src/cli/main.c:988
+#: src/cli/main.c:979
 msgid "Regenerate configuration for currently selected command"
 msgstr "კონფიგურაციის რეგენერაცია ამჟამად არჩეული ბრძანებისთვის"
 
-#: src/cli/main.c:989
+#: src/cli/main.c:980
 msgid "List available profiles"
 msgstr "ხელმისაწვდომი პროფილების სია"
 
-#: src/cli/main.c:990
+#: src/cli/main.c:981
 msgid "List available profile features"
 msgstr "პროფილის ხელმისაწვდომი თვისებების სია"
 
-#: src/cli/main.c:991
+#: src/cli/main.c:982
 msgid "Show profile information"
 msgstr "პროფილის ინფორმაციის ჩვენება"
 
-#: src/cli/main.c:992
+#: src/cli/main.c:983
 msgid "Print profile requirements"
 msgstr "პროფილის მოთხოვნების ჩვენება"
 
-#: src/cli/main.c:993
+#: src/cli/main.c:984
 msgid "Get identifier of currently selected profile"
 msgstr "ამჟამად არჩეული პროფილის იდენტიფიკატორის მიღება"
 
-#: src/cli/main.c:994
+#: src/cli/main.c:985
 msgid "Check if the current configuration is valid"
 msgstr "მიმდინარე კონფგურაციის სისწორეზე შემოწმება"
 
-#: src/cli/main.c:995
+#: src/cli/main.c:986
 msgid "Print changes that would be otherwise written"
 msgstr "ჩასაწერი ცვლილებების დაბეჭდვა"
 
-#: src/cli/main.c:996
+#: src/cli/main.c:987
 msgid "Enable feature in currently selected profile"
 msgstr "თვისების აქტივაცია ამჟამად არჩეულ პროფილში"
 
-#: src/cli/main.c:997
+#: src/cli/main.c:988
 msgid "Disable feature in currently selected profile"
 msgstr "თვისების გამორთვა ამჟამად არჩეულ პროფილში"
 
-#: src/cli/main.c:998
+#: src/cli/main.c:989
 msgid "Create new authselect profile"
 msgstr "Authselect-ის ახალი პროფილის შექმნა"
 
-#: src/cli/main.c:999
+#: src/cli/main.c:990
 msgid "Backup commands:"
 msgstr "მარქაფის ბრძანებები:"
 
-#: src/cli/main.c:1000
+#: src/cli/main.c:991
 msgid "List available backups"
 msgstr "ხელმისაწვდომი მარქაფების სია"
 
-#: src/cli/main.c:1001
+#: src/cli/main.c:992
 msgid "Remove backup"
 msgstr "მარქაფის წაშლა"
 
-#: src/cli/main.c:1002
+#: src/cli/main.c:993
 msgid "Restore from backup"
 msgstr "მარქაფიდან აღდგენა"
 
-#: src/cli/main.c:1003
+#: src/cli/main.c:994
 msgid "Other:"
 msgstr "სხვა:"
 
-#: src/cli/main.c:1004
+#: src/cli/main.c:995
 msgid "Opt-out from authselect managed configuration"
 msgstr "Athselect-ის კონფიგურაციიდან გადახვევა"
 
-#: src/cli/main.c:1006
+#: src/cli/main.c:997
 msgid "Print authselect version"
 msgstr "Authselect-ის ვერსიის ჩვენება"
 
-#: src/compat/authcompat_Options.py:82
-msgid "NIS for user information by default"
-msgstr "მომხმარებელზე ინფორმაციისთვის NIS-ის ნაგულისხმევად გამოყენება"
-
-#: src/compat/authcompat_Options.py:83
-msgid "<domain>"
-msgstr "<domain>"
-
-#: src/compat/authcompat_Options.py:83
-msgid "default NIS domain"
-msgstr "nis-ის ნაგულისხმევი დომენი"
-
-#: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
-#: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
-msgid "<server>"
-msgstr "<server>"
-
-#: src/compat/authcompat_Options.py:84
-msgid "default NIS server"
-msgstr "nis-ის ნაგულისხმები სერვერი"
-
-#: src/compat/authcompat_Options.py:85
-msgid "LDAP for user information by default"
-msgstr "მომხმარებლის ინფორმაციის მისახებად ნაგულისხმებად LDAP-ის გამოყენება"
-
-#: src/compat/authcompat_Options.py:86
-msgid "LDAP for authentication by default"
-msgstr "ავთენტიკაციისთვის ნაგულისხმევად LDAP-ისგამოყენება"
-
-#: src/compat/authcompat_Options.py:87
-msgid "default LDAP server hostname or URI"
-msgstr "ნაგულისხმები LDAP სერვერის ჰოსტის სახელი ან URI"
-
-#: src/compat/authcompat_Options.py:88
-msgid "<dn>"
-msgstr "<dn>"
-
-#: src/compat/authcompat_Options.py:88
-msgid "default LDAP base DN"
-msgstr "ldap-ის ნაგულისხმები საბაზისო DN"
-
-#: src/compat/authcompat_Options.py:89
-msgid "use of TLS with LDAP (RFC-2830)"
-msgstr "ldap-ის TLS-ით გამოყენება (RFC-2830)"
-
-#: src/compat/authcompat_Options.py:90
-msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
-msgstr "ldap-ში მოთხოვნების გასაგზავნად TLS-ის გამოყენება (RFC-2830)"
-
-#: src/compat/authcompat_Options.py:91
-msgid "use of RFC-2307bis schema for LDAP user information lookups"
-msgstr "ldap-ში მომხმარებლის ინფორმაციის მოსაძებნად RFC-2307bis-ის გამოყენება"
-
-#: src/compat/authcompat_Options.py:92
-msgid "authentication with smart card by default"
-msgstr "ავთენტიკაციისთვის ნაგულისხმევად ჭკვიანი ბარათის გამოყენება"
-
-#: src/compat/authcompat_Options.py:93
-msgid "<0=Lock|1=Ignore>"
-msgstr "<0=Lock|1=Ignore>"
-
-#: src/compat/authcompat_Options.py:93
-msgid "action to be taken on smart card removal"
-msgstr "ქმედება ჭკვიანი ბარათის გამოძრობისას"
-
-#: src/compat/authcompat_Options.py:94
-msgid "require smart card for authentication by default"
-msgstr "შესასვლელად ჭკვიანი ბარათის ნაგულისხმევად გამოყენება"
-
-#: src/compat/authcompat_Options.py:95
-msgid "authentication with fingerprint readers by default"
-msgstr "ანაბეჭდებით ავთენტიკაცია ნაგულისხმევად"
-
-#: src/compat/authcompat_Options.py:96
-msgid "automatic per-user ecryptfs"
-msgstr "ecryptfs თითოეული მომხმარებლისთვის"
-
-#: src/compat/authcompat_Options.py:97
-msgid "Kerberos authentication by default"
-msgstr "Kerberos-ით ავთენტიკაცია ნაგულისხმევად"
-
-#: src/compat/authcompat_Options.py:98
-msgid "default Kerberos KDC"
-msgstr "ნაგულისხმები Kerberos KDC"
-
-#: src/compat/authcompat_Options.py:99
-msgid "default Kerberos admin server"
-msgstr "kerberos-ის ნაგულისხმები ადმინისტრირების სერვერი"
-
-#: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
-msgid "<realm>"
-msgstr "<realm>"
-
-#: src/compat/authcompat_Options.py:100
-msgid "default Kerberos realm"
-msgstr "kerberos-ის ნაგულისხმები realm-ი"
-
-#: src/compat/authcompat_Options.py:101
-msgid "use of DNS to find Kerberos KDCs"
-msgstr "dns-ის გამოყენება Kerberos KDC-ების საპოვნელად"
-
-#: src/compat/authcompat_Options.py:102
-msgid "use of DNS to find Kerberos realms"
-msgstr "kerberos realm-ების საპოვნელად DNS-ის გამოყენება"
-
-#: src/compat/authcompat_Options.py:103
-msgid "winbind for user information by default"
-msgstr ""
-"მომხმარებელზე ინფორმაციის მისაღებად ნაგულისხმევად winbind-ის გამოყენება"
-
-#: src/compat/authcompat_Options.py:104
-msgid "winbind for authentication by default"
-msgstr "ავთენტიკაციისთვის winbind-ს ნაგულისხმევად გამოყენება"
-
-#: src/compat/authcompat_Options.py:105
-msgid "<Administrator>"
-msgstr "<ადმინსტრატორი>"
-
-#: src/compat/authcompat_Options.py:105
-msgid "join the winbind domain or ads realm now as this administrator"
-msgstr ""
-"ამ ადინისტრატორით შეგიძლიათ შეხვიდეთ winbind-ის დომენში ან ads realm-ში"
-
-#: src/compat/authcompat_Options.py:106
-msgid "Kerberos 5 for authenticate with winbind"
-msgstr "Kerberos 5-ის ავთენტიკაცია winbind-თან"
-
-#: src/compat/authcompat_Options.py:107
-msgid "<workgroup>"
-msgstr "<workgroup>"
-
-#: src/compat/authcompat_Options.py:107
-msgid "workgroup authentication servers are in"
-msgstr "სამუშაო ჯგუფის ავთენტიკაციის სერვერების მდებარეობა"
-
-#: src/compat/authcompat_Options.py:108
-msgid ""
-"SSSD for user information by default with manually managed configuration"
-msgstr "მომხმარებლის ინფორმაციის მისაღებად ხელით მორგებული SSSD-ის გამოყენება"
-
-#: src/compat/authcompat_Options.py:109
-msgid "SSSD for authentication by default with manually managed configuration"
-msgstr "SSD-ის გამოყენება ავთენტიკაციისთვის მორგებული კონფიგურაციით"
-
-#: src/compat/authcompat_Options.py:110
-msgid "caching of user credentials in SSSD by default"
-msgstr "მომხმარებლისა და პაროლის SSSD-ში ნაგულისხმებად დაკეშვა"
-
-#: src/compat/authcompat_Options.py:111
-msgid "check of access.conf during account authorization"
-msgstr "ანგარიშის ავტორიზაციისას შეამოწმეთ access.conf"
-
-#: src/compat/authcompat_Options.py:112
-msgid "creation of home directories for users on their first login"
-msgstr "სახლის საქაღალდეების პირველად შესვლისას შექმნა"
-
-#: src/compat/authcompat_Options.py:113
-msgid "account locking in case of too many consecutive authentication failures"
-msgstr "შესვლის მრავალჯერადი წარუმატებელი ცდისას ანგარიშის დაბლოკვა"
-
-#: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
-#: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
-msgid "<number>"
-msgstr "<number>"
-
-#: src/compat/authcompat_Options.py:114
-msgid "minimum length of a password"
-msgstr "პაროლის მინიმალური სიგრძე"
-
-#: src/compat/authcompat_Options.py:115
-msgid "minimum number of character classes in a password"
-msgstr "პაროლში სიმბოლოების კლასის მინიმალური რაოდენობა"
-
-#: src/compat/authcompat_Options.py:116
-msgid "maximum number of same consecutive characters in a password"
-msgstr "პაროლში მიყოლებით ერთიდაიგივე სიმბოლოების მაქსიმალური რაოდენობა"
-
-#: src/compat/authcompat_Options.py:117
-msgid "maximum number of consecutive characters of same class in a password"
-msgstr "პაროლში იგივე კლასის სიმბოლოების გამეორების მაქსიმალური რაოდენობა"
-
-#: src/compat/authcompat_Options.py:118
-msgid "require at least one lowercase character in a password"
-msgstr "პაროლში ერთი პატარა სიმბოლოს არსებობის მოთხოვნა"
-
-#: src/compat/authcompat_Options.py:119
-msgid "require at least one uppercase character in a password"
-msgstr "პაროლში ერთზე მეტი დიდი სიმბოლოს მოთხოვნა"
-
-#: src/compat/authcompat_Options.py:120
-msgid "require at least one digit in a password"
-msgstr "პაროლში ერთზე მეტი ციფრის მოთხოვნა"
-
-#: src/compat/authcompat_Options.py:121
-msgid "require at least one other character in a password"
-msgstr "პაროლში ერთზე მეტი სხვა სიმბოლოს მოთხოვნა"
-
-#: src/compat/authcompat_Options.py:124
-msgid "do not start/stop services"
-msgstr "პაროლების არ გაშვება/გაჩერება"
-
-#: src/compat/authcompat_Options.py:125
-msgid "update all configuration files"
-msgstr "კონფიგურაციის ყველა ფაილის განახლება"
-
-#: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
-msgid "the same as --updateall"
-msgstr "იგივე, რაც --updateall"
-
-#: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
-msgid "<name>"
-msgstr "<name>"
-
-#: src/compat/authcompat_Options.py:148
-msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-
-#: src/compat/authcompat_Options.py:149
-msgid "<URL>"
-msgstr "<URL>"
-
-#: src/compat/authcompat_Options.py:150
-msgid "<module>"
-msgstr "<module>"
-
-#: src/compat/authcompat_Options.py:151
-msgid "<user|server|domain|ads>"
-msgstr "<user|server|domain|ads>"
-
-#: src/compat/authcompat_Options.py:153
-msgid "<servers>"
-msgstr "<servers>"
-
-#: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
-#: src/compat/authcompat_Options.py:156
-msgid "<lowest-highest>"
-msgstr "<lowest-highest>"
-
-#: src/compat/authcompat_Options.py:157
-msgid "<\\>"
-msgstr "<\\>"
-
-#: src/compat/authcompat_Options.py:158
-msgid "</home/%D/%U>"
-msgstr "</home/%D/%U>"
-
-#: src/compat/authcompat_Options.py:159
-msgid "</bin/false>"
-msgstr "</bin/false>"
-
-#: src/compat/authcompat_Options.py:166
-msgid "<options>"
-msgstr "<options>"
-
-#: src/compat/authcompat_Options.py:210
-msgid "These options have a compatibility layer"
-msgstr "ამ პარამეტრებს ასევე გააჩნიათ თავსებადობის შრეც"
-
-#: src/compat/authcompat_Options.py:211
-msgid "These options are no longer supported and have no effect"
-msgstr "ეს პარამეტრები მხარდაჭერილი აღარაა და აღარაფერს აკეთებს"
-
-#: src/compat/authcompat_Options.py:313
-msgid "enable"
-msgstr "ჩართვა"
-
-#: src/compat/authcompat_Options.py:314
-msgid "disable"
-msgstr "გამორთვა"
-
-#: src/compat/authcompat.py.in.in:51
+#~ msgid "Unable to obtain nsswitch maps!"
+#~ msgstr "Nsswitch-ის რუკების მიღება შეუძლებელია!"
+
+#~ msgid "NIS for user information by default"
+#~ msgstr "მომხმარებელზე ინფორმაციისთვის NIS-ის ნაგულისხმევად გამოყენება"
+
+#~ msgid "<domain>"
+#~ msgstr "<domain>"
+
+#~ msgid "default NIS domain"
+#~ msgstr "nis-ის ნაგულისხმევი დომენი"
+
+#~ msgid "<server>"
+#~ msgstr "<server>"
+
+#~ msgid "default NIS server"
+#~ msgstr "nis-ის ნაგულისხმები სერვერი"
+
+#~ msgid "LDAP for user information by default"
+#~ msgstr "მომხმარებლის ინფორმაციის მისახებად ნაგულისხმებად LDAP-ის გამოყენება"
+
+#~ msgid "LDAP for authentication by default"
+#~ msgstr "ავთენტიკაციისთვის ნაგულისხმევად LDAP-ისგამოყენება"
+
+#~ msgid "default LDAP server hostname or URI"
+#~ msgstr "ნაგულისხმები LDAP სერვერის ჰოსტის სახელი ან URI"
+
+#~ msgid "<dn>"
+#~ msgstr "<dn>"
+
+#~ msgid "default LDAP base DN"
+#~ msgstr "ldap-ის ნაგულისხმები საბაზისო DN"
+
+#~ msgid "use of TLS with LDAP (RFC-2830)"
+#~ msgstr "ldap-ის TLS-ით გამოყენება (RFC-2830)"
+
+#~ msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
+#~ msgstr "ldap-ში მოთხოვნების გასაგზავნად TLS-ის გამოყენება (RFC-2830)"
+
+#~ msgid "use of RFC-2307bis schema for LDAP user information lookups"
+#~ msgstr ""
+#~ "ldap-ში მომხმარებლის ინფორმაციის მოსაძებნად RFC-2307bis-ის გამოყენება"
+
+#~ msgid "authentication with smart card by default"
+#~ msgstr "ავთენტიკაციისთვის ნაგულისხმევად ჭკვიანი ბარათის გამოყენება"
+
+#~ msgid "<0=Lock|1=Ignore>"
+#~ msgstr "<0=Lock|1=Ignore>"
+
+#~ msgid "action to be taken on smart card removal"
+#~ msgstr "ქმედება ჭკვიანი ბარათის გამოძრობისას"
+
+#~ msgid "require smart card for authentication by default"
+#~ msgstr "შესასვლელად ჭკვიანი ბარათის ნაგულისხმევად გამოყენება"
+
+#~ msgid "authentication with fingerprint readers by default"
+#~ msgstr "ანაბეჭდებით ავთენტიკაცია ნაგულისხმევად"
+
+#~ msgid "automatic per-user ecryptfs"
+#~ msgstr "ecryptfs თითოეული მომხმარებლისთვის"
+
+#~ msgid "Kerberos authentication by default"
+#~ msgstr "Kerberos-ით ავთენტიკაცია ნაგულისხმევად"
+
+#~ msgid "default Kerberos KDC"
+#~ msgstr "ნაგულისხმები Kerberos KDC"
+
+#~ msgid "default Kerberos admin server"
+#~ msgstr "kerberos-ის ნაგულისხმები ადმინისტრირების სერვერი"
+
+#~ msgid "<realm>"
+#~ msgstr "<realm>"
+
+#~ msgid "default Kerberos realm"
+#~ msgstr "kerberos-ის ნაგულისხმები realm-ი"
+
+#~ msgid "use of DNS to find Kerberos KDCs"
+#~ msgstr "dns-ის გამოყენება Kerberos KDC-ების საპოვნელად"
+
+#~ msgid "use of DNS to find Kerberos realms"
+#~ msgstr "kerberos realm-ების საპოვნელად DNS-ის გამოყენება"
+
+#~ msgid "winbind for user information by default"
+#~ msgstr ""
+#~ "მომხმარებელზე ინფორმაციის მისაღებად ნაგულისხმევად winbind-ის გამოყენება"
+
+#~ msgid "winbind for authentication by default"
+#~ msgstr "ავთენტიკაციისთვის winbind-ს ნაგულისხმევად გამოყენება"
+
+#~ msgid "<Administrator>"
+#~ msgstr "<ადმინსტრატორი>"
+
+#~ msgid "join the winbind domain or ads realm now as this administrator"
+#~ msgstr ""
+#~ "ამ ადინისტრატორით შეგიძლიათ შეხვიდეთ winbind-ის დომენში ან ads realm-ში"
+
+#~ msgid "Kerberos 5 for authenticate with winbind"
+#~ msgstr "Kerberos 5-ის ავთენტიკაცია winbind-თან"
+
+#~ msgid "<workgroup>"
+#~ msgstr "<workgroup>"
+
+#~ msgid "workgroup authentication servers are in"
+#~ msgstr "სამუშაო ჯგუფის ავთენტიკაციის სერვერების მდებარეობა"
+
+#~ msgid ""
+#~ "SSSD for user information by default with manually managed configuration"
+#~ msgstr ""
+#~ "მომხმარებლის ინფორმაციის მისაღებად ხელით მორგებული SSSD-ის გამოყენება"
+
+#~ msgid ""
+#~ "SSSD for authentication by default with manually managed configuration"
+#~ msgstr "SSD-ის გამოყენება ავთენტიკაციისთვის მორგებული კონფიგურაციით"
+
+#~ msgid "caching of user credentials in SSSD by default"
+#~ msgstr "მომხმარებლისა და პაროლის SSSD-ში ნაგულისხმებად დაკეშვა"
+
+#~ msgid "check of access.conf during account authorization"
+#~ msgstr "ანგარიშის ავტორიზაციისას შეამოწმეთ access.conf"
+
+#~ msgid "creation of home directories for users on their first login"
+#~ msgstr "სახლის საქაღალდეების პირველად შესვლისას შექმნა"
+
+#~ msgid ""
+#~ "account locking in case of too many consecutive authentication failures"
+#~ msgstr "შესვლის მრავალჯერადი წარუმატებელი ცდისას ანგარიშის დაბლოკვა"
+
+#~ msgid "<number>"
+#~ msgstr "<number>"
+
+#~ msgid "minimum length of a password"
+#~ msgstr "პაროლის მინიმალური სიგრძე"
+
+#~ msgid "minimum number of character classes in a password"
+#~ msgstr "პაროლში სიმბოლოების კლასის მინიმალური რაოდენობა"
+
+#~ msgid "maximum number of same consecutive characters in a password"
+#~ msgstr "პაროლში მიყოლებით ერთიდაიგივე სიმბოლოების მაქსიმალური რაოდენობა"
+
+#~ msgid "maximum number of consecutive characters of same class in a password"
+#~ msgstr "პაროლში იგივე კლასის სიმბოლოების გამეორების მაქსიმალური რაოდენობა"
+
+#~ msgid "require at least one lowercase character in a password"
+#~ msgstr "პაროლში ერთი პატარა სიმბოლოს არსებობის მოთხოვნა"
+
+#~ msgid "require at least one uppercase character in a password"
+#~ msgstr "პაროლში ერთზე მეტი დიდი სიმბოლოს მოთხოვნა"
+
+#~ msgid "require at least one digit in a password"
+#~ msgstr "პაროლში ერთზე მეტი ციფრის მოთხოვნა"
+
+#~ msgid "require at least one other character in a password"
+#~ msgstr "პაროლში ერთზე მეტი სხვა სიმბოლოს მოთხოვნა"
+
+#~ msgid "do not start/stop services"
+#~ msgstr "პაროლების არ გაშვება/გაჩერება"
+
+#~ msgid "update all configuration files"
+#~ msgstr "კონფიგურაციის ყველა ფაილის განახლება"
+
+#~ msgid "the same as --updateall"
+#~ msgstr "იგივე, რაც --updateall"
+
+#~ msgid "<name>"
+#~ msgstr "<name>"
+
+#~ msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+#~ msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+
+#~ msgid "<URL>"
+#~ msgstr "<URL>"
+
+#~ msgid "<module>"
+#~ msgstr "<module>"
+
+#~ msgid "<user|server|domain|ads>"
+#~ msgstr "<user|server|domain|ads>"
+
+#~ msgid "<servers>"
+#~ msgstr "<servers>"
+
+#~ msgid "<lowest-highest>"
+#~ msgstr "<lowest-highest>"
+
+#~ msgid "<\\>"
+#~ msgstr "<\\>"
+
+#~ msgid "</home/%D/%U>"
+#~ msgstr "</home/%D/%U>"
+
+#~ msgid "</bin/false>"
+#~ msgstr "</bin/false>"
+
+#~ msgid "<options>"
+#~ msgstr "<options>"
+
+#~ msgid "These options have a compatibility layer"
+#~ msgstr "ამ პარამეტრებს ასევე გააჩნიათ თავსებადობის შრეც"
+
+#~ msgid "These options are no longer supported and have no effect"
+#~ msgstr "ეს პარამეტრები მხარდაჭერილი აღარაა და აღარაფერს აკეთებს"
+
+#~ msgid "enable"
+#~ msgstr "ჩართვა"
+
+#~ msgid "disable"
+#~ msgstr "გამორთვა"
+
 #, python-format
-msgid "Executing: %s"
-msgstr "გაშვება: %s"
+#~ msgid "Executing: %s"
+#~ msgstr "გაშვება: %s"
 
-#: src/compat/authcompat.py.in.in:71
 #, python-format
-msgid "Service %s was not found. Please install the service."
-msgstr "სერვისი %s ნაპოვნი არაა. დააყენეთ სერვისი."
+#~ msgid "Service %s was not found. Please install the service."
+#~ msgstr "სერვისი %s ნაპოვნი არაა. დააყენეთ სერვისი."
 
-#: src/compat/authcompat.py.in.in:74 src/compat/authcompat.py.in.in:631
-#: src/compat/authcompat.py.in.in:657
 #, python-format
-msgid "Command [%s] failed with %d, stderr:"
-msgstr "ბრძანება [%s] გაუქმების კოდი %d-ით, strerr:"
+#~ msgid "Command [%s] failed with %d, stderr:"
+#~ msgstr "ბრძანება [%s] გაუქმების კოდი %d-ით, strerr:"
 
-#: src/compat/authcompat.py.in.in:186
 #, python-format
-msgid "Removing file: %s"
-msgstr "ფაილის წაშლა %s"
+#~ msgid "Removing file: %s"
+#~ msgstr "ფაილის წაშლა %s"
 
-#: src/compat/authcompat.py.in.in:335
 #, python-format
-msgid "%s was not found. Please, install realmd."
-msgstr "%s ნაპოვნი არაა. realmd თავიდან დააყენეთ."
+#~ msgid "%s was not found. Please, install realmd."
+#~ msgstr "%s ნაპოვნი არაა. realmd თავიდან დააყენეთ."
 
-#: src/compat/authcompat.py.in.in:469
-msgid "Running authconfig compatibility tool."
-msgstr "გაშვებულია authconfig თავსებადი ხელსაწყო."
+#~ msgid "Running authconfig compatibility tool."
+#~ msgstr "გაშვებულია authconfig თავსებადი ხელსაწყო."
 
-#: src/compat/authcompat.py.in.in:470
-msgid ""
-"The purpose of this tool is to enable authentication against chosen services "
-"with authselect and minimum configuration. It does not provide all "
-"capabilities of authconfig.\n"
-msgstr ""
-"ამ ხელსაწყოს დანიშნულებაა სხვადასხვა სერვერებზე ავთენტიკაციის ჩართვა "
-"მინიმალური კონფიგურაციით.მას არ გააჩნია authconfig-ის ყველა შესაძლებლობა.\n"
+#~ msgid ""
+#~ "The purpose of this tool is to enable authentication against chosen "
+#~ "services with authselect and minimum configuration. It does not provide "
+#~ "all capabilities of authconfig.\n"
+#~ msgstr ""
+#~ "ამ ხელსაწყოს დანიშნულებაა სხვადასხვა სერვერებზე ავთენტიკაციის ჩართვა "
+#~ "მინიმალური კონფიგურაციით.მას არ გააჩნია authconfig-ის ყველა "
+#~ "შესაძლებლობა.\n"
 
-#: src/compat/authcompat.py.in.in:473
-msgid ""
-"IMPORTANT: authconfig is replaced by authselect, please update your scripts."
-msgstr ""
-"მნიშვნელოვანია: authconfig-ი ჩანაცვლდა authselect-ით. განაახლეთ თქვენი "
-"სკრიპტები."
+#~ msgid ""
+#~ "IMPORTANT: authconfig is replaced by authselect, please update your "
+#~ "scripts."
+#~ msgstr ""
+#~ "მნიშვნელოვანია: authconfig-ი ჩანაცვლდა authselect-ით. განაახლეთ თქვენი "
+#~ "სკრიპტები."
 
-#: src/compat/authcompat.py.in.in:475
-msgid ""
-"See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
-"AuthselectAsDefault"
-msgstr ""
-"Fedora 28-ის ცვლილებების გვერდის ბმული: https://fedoraproject.org/wiki/"
-"Changes/AuthselectAsDefault"
+#~ msgid ""
+#~ "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
+#~ "AuthselectAsDefault"
+#~ msgstr ""
+#~ "Fedora 28-ის ცვლილებების გვერდის ბმული: https://fedoraproject.org/wiki/"
+#~ "Changes/AuthselectAsDefault"
 
-#: src/compat/authcompat.py.in.in:476
-msgid ""
-"See man authselect-migration(7) to help you with migration to authselect"
-msgstr "იხილეთ authselect-მდე მიგრაციისთვის authselect-migration(7)"
+#~ msgid ""
+#~ "See man authselect-migration(7) to help you with migration to authselect"
+#~ msgstr "იხილეთ authselect-მდე მიგრაციისთვის authselect-migration(7)"
 
-#: src/compat/authcompat.py.in.in:480
-msgid "Warning: These options are not supported anymore and have no effect:"
-msgstr "გაფრთხილება: ამ პარამეტრების მხარდაჭერა აღარ არსებობს:"
+#~ msgid "Warning: These options are not supported anymore and have no effect:"
+#~ msgstr "გაფრთხილება: ამ პარამეტრების მხარდაჭერა აღარ არსებობს:"
 
-#: src/compat/authcompat.py.in.in:500
-msgid "authconfig can only be run as root"
-msgstr "authconfig-ის გაშვება მხოლოდ root მომხმარებლითაა შესაძლებელი"
+#~ msgid "authconfig can only be run as root"
+#~ msgstr "authconfig-ის გაშვება მხოლოდ root მომხმარებლითაა შესაძლებელი"
 
-#: src/compat/authcompat.py.in.in:505
 #, python-format
-msgid ""
-"Error: option --%s is no longer supported and we cannot continue if it is "
-"set."
-msgstr ""
-"შეცდომა: პარამეტრი --%s აღარაა მხარდაჭერილი. თუ ის ჩართულია, ჩვენ ვერ "
-"გავაგრძელებთ ურთიერთობას."
+#~ msgid ""
+#~ "Error: option --%s is no longer supported and we cannot continue if it is "
+#~ "set."
+#~ msgstr ""
+#~ "შეცდომა: პარამეტრი --%s აღარაა მხარდაჭერილი. თუ ის ჩართულია, ჩვენ ვერ "
+#~ "გავაგრძელებთ ურთიერთობას."
 
-#: src/compat/authcompat.py.in.in:510
-msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
-msgstr ""
-"შეცდომა: დაყენებული უნდა იყოს ორივე, --enablewinbind და --enablewinbindauth."
+#~ msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
+#~ msgstr ""
+#~ "შეცდომა: დაყენებული უნდა იყოს ორივე, --enablewinbind და --"
+#~ "enablewinbindauth."
 
-#: src/compat/authcompat.py.in.in:520
-msgid "Error: Please, provide --updateall option."
-msgstr "შეცდომა: გთხოვთ გაუსვათ --updateall პარამეტრით."
+#~ msgid "Error: Please, provide --updateall option."
+#~ msgstr "შეცდომა: გთხოვთ გაუსვათ --updateall პარამეტრით."
 
 #~ msgid "Unable to get current time!"
 #~ msgstr "მიმდინარე დროის მიღება შეუძლებელია!"

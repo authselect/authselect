@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2023-09-27 13:03+0200\n"
+"POT-Creation-Date: 2024-02-23 14:08+0100\n"
 "PO-Revision-Date: 2023-11-16 19:01+0000\n"
 "Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
 "Language-Team: Swedish <https://translate.fedoraproject.org/projects/"
@@ -570,7 +570,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "Kan inte ta fram basnamnet av [%s]"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:857
+#: src/lib/util/file.c:199 src/cli/main.c:848
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "Kan inte ta status på [%s] [%d]: %s"
@@ -865,7 +865,7 @@ msgstr "Allmänna flaggor:"
 msgid "[OPTIONS...]"
 msgstr "[FLAGGOR…]"
 
-#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:849
+#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:840
 msgid "Out of memory!"
 msgstr "Slut på minne!"
 
@@ -914,14 +914,14 @@ msgstr ""
 "Åtminstone en flagga krävs!\n"
 "\n"
 
-#: src/cli/main.c:76 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:76 src/cli/main.c:432 src/cli/main.c:475
 msgid "Profile identifier."
 msgstr "Profilidentifierare."
 
-#: src/cli/main.c:79 src/cli/main.c:257 src/cli/main.c:302 src/cli/main.c:351
-#: src/cli/main.c:399 src/cli/main.c:444 src/cli/main.c:487 src/cli/main.c:660
-#: src/cli/main.c:737 src/cli/main.c:784 src/cli/main.c:824 src/cli/main.c:889
-#: src/cli/main.c:915
+#: src/cli/main.c:79 src/cli/main.c:248 src/cli/main.c:293 src/cli/main.c:342
+#: src/cli/main.c:390 src/cli/main.c:435 src/cli/main.c:478 src/cli/main.c:651
+#: src/cli/main.c:728 src/cli/main.c:775 src/cli/main.c:815 src/cli/main.c:880
+#: src/cli/main.c:906
 msgid "Unable to parse command arguments"
 msgstr "Kan inte tolka kommandoargument"
 
@@ -938,17 +938,17 @@ msgstr "Säkerhetskopian lagrad i %s\n"
 msgid "Enforce changes"
 msgstr "Framtvinga ändringar"
 
-#: src/cli/main.c:162 src/cli/main.c:250 src/cli/main.c:650 src/cli/main.c:728
+#: src/cli/main.c:162 src/cli/main.c:241 src/cli/main.c:641 src/cli/main.c:719
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr ""
 "Säkerhetskopiera systemfiler före aktivering av en profil (generera ett "
 "unikt namn)"
 
-#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "Backup system files before activating profile"
 msgstr "Säkerhetskopiera systemfiler före aktivering av en profil"
 
-#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "NAME"
 msgstr "NAMN"
 
@@ -956,25 +956,21 @@ msgstr "NAMN"
 msgid "Do not backup system files when --force is set"
 msgstr "Säkerhetskopiera inte systemfiler när --force är angivet"
 
-#: src/cli/main.c:165 src/cli/main.c:652
+#: src/cli/main.c:165 src/cli/main.c:643
 msgid "Do not print profile requirements"
 msgstr "Skriv inte ut profilkrav"
 
-#: src/cli/main.c:176 src/cli/main.c:414 src/cli/main.c:450 src/cli/main.c:493
-#: src/cli/main.c:525 src/cli/main.c:679
+#: src/cli/main.c:176 src/cli/main.c:405 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:516 src/cli/main.c:670
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "Kan inte ta fram profilinformationen [%d]: %s"
 
-#: src/cli/main.c:184 src/cli/main.c:533 src/cli/main.c:687
+#: src/cli/main.c:184 src/cli/main.c:524 src/cli/main.c:678
 msgid "Unable to read profile requirements!"
 msgstr "Kan inte läsa profilkrav!"
 
-#: src/cli/main.c:192
-msgid "Unable to obtain nsswitch maps!"
-msgstr "Kan inte ta fram nsswitch-mappar!"
-
-#: src/cli/main.c:207
+#: src/cli/main.c:198
 msgid ""
 "\n"
 "Some unexpected changes to the configuration were detected.\n"
@@ -984,26 +980,26 @@ msgstr ""
 "Några oväntade ändringar av konfigurationen upptäcktes.\n"
 "Använd flaggan --force om du vill skriva över dessa ändringar.\n"
 
-#: src/cli/main.c:212
+#: src/cli/main.c:203
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "Kan inte aktivera profilen [%d]: %s\n"
 
-#: src/cli/main.c:217
+#: src/cli/main.c:208
 #, c-format
 msgid "Profile \"%s\" was selected.\n"
 msgstr "Profilen ”%s” valdes.\n"
 
-#: src/cli/main.c:220
+#: src/cli/main.c:211
 msgid "The following nsswitch maps are overwritten by the profile:\n"
 msgstr "Följande nsswitch-översättningar skrevs över av profilen:\n"
 
-#: src/cli/main.c:223
+#: src/cli/main.c:214
 #, c-format
 msgid "- %s\n"
 msgstr "- %s\n"
 
-#: src/cli/main.c:228
+#: src/cli/main.c:219
 #, c-format
 msgid ""
 "\n"
@@ -1012,15 +1008,15 @@ msgstr ""
 "\n"
 "%s\n"
 
-#: src/cli/main.c:269
+#: src/cli/main.c:260
 msgid "Changes were successfully applied.\n"
 msgstr "Ändringar verkställdes.\n"
 
-#: src/cli/main.c:272 src/cli/main.c:308 src/cli/main.c:669
+#: src/cli/main.c:263 src/cli/main.c:299 src/cli/main.c:660
 msgid "No existing configuration detected.\n"
 msgstr "Ingen befintlig konfiguration hittades.\n"
 
-#: src/cli/main.c:275
+#: src/cli/main.c:266
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
@@ -1028,39 +1024,39 @@ msgstr ""
 "Några oväntade ändringar av konfigurationen upptäcktes. Använd kommandot "
 "”select” istället.\n"
 
-#: src/cli/main.c:279
+#: src/cli/main.c:270
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr "Kan inte verkställa ändringar [%d]: %s\n"
 
-#: src/cli/main.c:296
+#: src/cli/main.c:287
 msgid "Print command parameters instead of formatted output"
 msgstr "Skriv ut kommandoparametrar istället för formaterad utdata"
 
-#: src/cli/main.c:311 src/cli/main.c:672
+#: src/cli/main.c:302 src/cli/main.c:663
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "Kan inte ta fram den aktuella konfigurationen [%d]: %s"
 
-#: src/cli/main.c:325
+#: src/cli/main.c:316
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "Profil-ID: %s\n"
 
-#: src/cli/main.c:326
+#: src/cli/main.c:317
 msgid "Enabled features:"
 msgstr "Aktiverade funktioner:"
 
-#: src/cli/main.c:329
+#: src/cli/main.c:320
 msgid " None\n"
 msgstr " Inga\n"
 
-#: src/cli/main.c:357
+#: src/cli/main.c:348
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "Kan inte testa den aktuella konfigurationen [%d]: %s"
 
-#: src/cli/main.c:364
+#: src/cli/main.c:355
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
@@ -1068,69 +1064,69 @@ msgstr ""
 "Den aktuella konfigurationen är inte giltig. Den var förmodligen ändrad "
 "utanför authselect."
 
-#: src/cli/main.c:371
+#: src/cli/main.c:362
 msgid "Current configuration is valid."
 msgstr "Den aktuella konfigurationen är giltig."
 
-#: src/cli/main.c:374
+#: src/cli/main.c:365
 msgid "No configuration detected."
 msgstr "Ingen konfiguration hittades."
 
-#: src/cli/main.c:378
+#: src/cli/main.c:369
 msgid "System was not configured with authselect."
 msgstr "Systemet konfigurerades inte med authselect."
 
-#: src/cli/main.c:405
+#: src/cli/main.c:396
 msgid "Unable to get profile list!"
 msgstr "Kan inte ta fram profillistan!"
 
-#: src/cli/main.c:458
+#: src/cli/main.c:449
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
 msgstr "Kan inte ta fram profilfunktioner [%d]: %s"
 
-#: src/cli/main.c:572
+#: src/cli/main.c:563
 msgid "Print content of all files"
 msgstr "Skriv ut innehållet i alla filer"
 
-#: src/cli/main.c:573
+#: src/cli/main.c:564
 msgid "Print nsswitch.conf content"
 msgstr "Skriv innehållet i nsswitch.conf"
 
-#: src/cli/main.c:574
+#: src/cli/main.c:565
 msgid "Print system-auth content"
 msgstr "Skriv innehållet i system-auth"
 
-#: src/cli/main.c:575
+#: src/cli/main.c:566
 msgid "Print password-auth content"
 msgstr "Skriv innehållet i password-auth"
 
-#: src/cli/main.c:576
+#: src/cli/main.c:567
 msgid "Print smartcard-auth content"
 msgstr "Skriv innehållet i smartcard-auth"
 
-#: src/cli/main.c:577
+#: src/cli/main.c:568
 msgid "Print fingerprint-auth content"
 msgstr "Skriv innehållet i fingerprint-auth"
 
-#: src/cli/main.c:578
+#: src/cli/main.c:569
 msgid "Print postlogin content"
 msgstr "Skriv innehållet i postlogin"
 
-#: src/cli/main.c:579
+#: src/cli/main.c:570
 msgid "Print dconf database content"
 msgstr "Skriv innehållet i dconf-databasen"
 
-#: src/cli/main.c:580
+#: src/cli/main.c:571
 msgid "Print dconf lock content"
 msgstr "Skriv innehållet i dconf-låset"
 
-#: src/cli/main.c:607
+#: src/cli/main.c:598
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "Kan inte ta fram genererat innehåll [%d]: %s"
 
-#: src/cli/main.c:626
+#: src/cli/main.c:617
 #, c-format
 msgid ""
 "File %s: Empty\n"
@@ -1139,7 +1135,7 @@ msgstr ""
 "Filen %s: Tom\n"
 "\n"
 
-#: src/cli/main.c:628
+#: src/cli/main.c:619
 #, c-format
 msgid ""
 "File %s:\n"
@@ -1150,44 +1146,44 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/cli/main.c:657
+#: src/cli/main.c:648
 msgid "Feature to enable."
 msgstr "Funktion att aktivera."
 
-#: src/cli/main.c:694
+#: src/cli/main.c:685
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
 msgstr "Kan inte säkerhetskopiera den aktuella konfigurationen [%d]: %s\n"
 
-#: src/cli/main.c:701
+#: src/cli/main.c:692
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "Kan inte aktivera funktionen [%d]: %s\n"
 
-#: src/cli/main.c:706
+#: src/cli/main.c:697
 #, c-format
 msgid "%s\n"
 msgstr "%s\n"
 
-#: src/cli/main.c:734
+#: src/cli/main.c:725
 msgid "Feature to disable."
 msgstr "Funktion att avaktivera."
 
-#: src/cli/main.c:748
+#: src/cli/main.c:739
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "Kan inte avaktivera funktionen [%d]: %s\n"
 
-#: src/cli/main.c:769
+#: src/cli/main.c:760
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr ""
 "Skapa en ny profil som leverantörsprofil istället för en anpassad profil"
 
-#: src/cli/main.c:770
+#: src/cli/main.c:761
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr "ID för en profil som skall användas som bas för den nya profilen"
 
-#: src/cli/main.c:771
+#: src/cli/main.c:762
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1195,508 +1191,434 @@ msgstr ""
 "Basera en ny profil på en standardprofil även om en leverantörsprofil med "
 "samma namn finns"
 
-#: src/cli/main.c:772
+#: src/cli/main.c:763
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr "Symlänka metafiler från basprofilen istället för att kopiera dem"
 
-#: src/cli/main.c:773
+#: src/cli/main.c:764
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr "Symlänka nsswitch-filer från basprofilen istället för att kopiera dem"
 
-#: src/cli/main.c:774
+#: src/cli/main.c:765
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr "Symlänka pam-filer från basprofilen istället för att kopiera dem"
 
-#: src/cli/main.c:775
+#: src/cli/main.c:766
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr "Symlänka dconf-filer från basprofilen istället för att kopiera dem"
 
-#: src/cli/main.c:776
+#: src/cli/main.c:767
 msgid "Symlink specific file (can be set multiple times)"
 msgstr "Symlänka en specifik fil (kan anges flera gånger)"
 
-#: src/cli/main.c:781
+#: src/cli/main.c:772
 msgid "New profile name."
 msgstr "Nytt profilnamn."
 
-#: src/cli/main.c:791
+#: src/cli/main.c:782
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "Kan inte skapa en ny profil [%d]: %s\n"
 
-#: src/cli/main.c:795
+#: src/cli/main.c:786
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "En ny profil skapades i %s\n"
 
-#: src/cli/main.c:818
+#: src/cli/main.c:809
 msgid "Print backup names without any formatting and additional information"
 msgstr ""
 "Skriv namn på säkerhetskopior utan någon formatering eller ytterligare "
 "information"
 
-#: src/cli/main.c:830
+#: src/cli/main.c:821
 msgid "Unable to list available backups!"
 msgstr "Kan inte lista tillgängliga säkerhetskopior!"
 
-#: src/cli/main.c:867
+#: src/cli/main.c:858
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (skapad %s)\n"
 
-#: src/cli/main.c:886
+#: src/cli/main.c:877
 msgid "Name of the backup to remove."
 msgstr "Namn på säkerhetskopian att ta bort."
 
-#: src/cli/main.c:895
+#: src/cli/main.c:886
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "Kan inte ta bort säkerhetskopian [%s] [%d]: %s\n"
 
-#: src/cli/main.c:912
+#: src/cli/main.c:903
 msgid "Name of the backup to restore from."
 msgstr "Namn på säkerhetskopian att återställa ifrån."
 
-#: src/cli/main.c:921
+#: src/cli/main.c:912
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "Kan inte återställa säkerhetskopian [%s] [%d]: %s\n"
 
-#: src/cli/main.c:937
+#: src/cli/main.c:928
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "Kan inte avinstallera authselect-konfigurationen [%d]: %s\n"
 
-#: src/cli/main.c:987
+#: src/cli/main.c:978
 msgid "Select profile"
 msgstr "Välj profil"
 
-#: src/cli/main.c:988
+#: src/cli/main.c:979
 msgid "Regenerate configuration for currently selected command"
 msgstr "Skapa om konfigurationen för det valda kommandot"
 
-#: src/cli/main.c:989
+#: src/cli/main.c:980
 msgid "List available profiles"
 msgstr "Lista tillgängliga profiler"
 
-#: src/cli/main.c:990
+#: src/cli/main.c:981
 msgid "List available profile features"
 msgstr "Lista tillgängliga profilfunktioner"
 
-#: src/cli/main.c:991
+#: src/cli/main.c:982
 msgid "Show profile information"
 msgstr "Visa profilinformation"
 
-#: src/cli/main.c:992
+#: src/cli/main.c:983
 msgid "Print profile requirements"
 msgstr "Skriv ut profilkrav"
 
-#: src/cli/main.c:993
+#: src/cli/main.c:984
 msgid "Get identifier of currently selected profile"
 msgstr "Hämta identiferaren för den nu valda profilen"
 
-#: src/cli/main.c:994
+#: src/cli/main.c:985
 msgid "Check if the current configuration is valid"
 msgstr "Kontrollera om den aktuella konfigurationen är giltig"
 
-#: src/cli/main.c:995
+#: src/cli/main.c:986
 msgid "Print changes that would be otherwise written"
 msgstr "Skriv ut ändringar som annars skulle skrivas"
 
-#: src/cli/main.c:996
+#: src/cli/main.c:987
 msgid "Enable feature in currently selected profile"
 msgstr "Aktivera en funktion i den nu valda profilen"
 
-#: src/cli/main.c:997
+#: src/cli/main.c:988
 msgid "Disable feature in currently selected profile"
 msgstr "Avaktivera en funktion i den nu valda profilen"
 
-#: src/cli/main.c:998
+#: src/cli/main.c:989
 msgid "Create new authselect profile"
 msgstr "Skapa en ny authselect-profil"
 
-#: src/cli/main.c:999
+#: src/cli/main.c:990
 msgid "Backup commands:"
 msgstr "Säkerhetskopieringskommandon:"
 
-#: src/cli/main.c:1000
+#: src/cli/main.c:991
 msgid "List available backups"
 msgstr "Lista tillgängliga säkerhetskopior"
 
-#: src/cli/main.c:1001
+#: src/cli/main.c:992
 msgid "Remove backup"
 msgstr "Ta bort säkerhetskopia"
 
-#: src/cli/main.c:1002
+#: src/cli/main.c:993
 msgid "Restore from backup"
 msgstr "Återställ från säkerhetskopia"
 
-#: src/cli/main.c:1003
+#: src/cli/main.c:994
 msgid "Other:"
 msgstr "Annat:"
 
-#: src/cli/main.c:1004
+#: src/cli/main.c:995
 msgid "Opt-out from authselect managed configuration"
 msgstr "Välj bort authselect-hanterad konfiguration"
 
-#: src/cli/main.c:1006
+#: src/cli/main.c:997
 msgid "Print authselect version"
 msgstr "Skriv ut authselect version"
 
-#: src/compat/authcompat_Options.py:82
-msgid "NIS for user information by default"
-msgstr "NIS för användarinformation som standard"
-
-#: src/compat/authcompat_Options.py:83
-msgid "<domain>"
-msgstr "<domän>"
-
-#: src/compat/authcompat_Options.py:83
-msgid "default NIS domain"
-msgstr "standard-NIS-domän"
-
-#: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
-#: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
-msgid "<server>"
-msgstr "<server>"
-
-#: src/compat/authcompat_Options.py:84
-msgid "default NIS server"
-msgstr "standard-NIS-server"
-
-#: src/compat/authcompat_Options.py:85
-msgid "LDAP for user information by default"
-msgstr "LDAP för användarinformation som standard"
-
-#: src/compat/authcompat_Options.py:86
-msgid "LDAP for authentication by default"
-msgstr "LDAP för autentisering som standard"
-
-#: src/compat/authcompat_Options.py:87
-msgid "default LDAP server hostname or URI"
-msgstr "standard-LDAP-serverns värdnamn eller URI"
-
-#: src/compat/authcompat_Options.py:88
-msgid "<dn>"
-msgstr "<dn>"
-
-#: src/compat/authcompat_Options.py:88
-msgid "default LDAP base DN"
-msgstr "standard-LDAP-bas-DN"
-
-#: src/compat/authcompat_Options.py:89
-msgid "use of TLS with LDAP (RFC-2830)"
-msgstr "användning av TLS med LDAP (RFC-2830)"
-
-#: src/compat/authcompat_Options.py:90
-msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
-msgstr "användning av TLS för identitetsuppslagningar med LDAP (RFC-2830)"
-
-#: src/compat/authcompat_Options.py:91
-msgid "use of RFC-2307bis schema for LDAP user information lookups"
-msgstr ""
-"användning av RFC-2307bis-schema för LDAP-uppslagning av användarinformation"
-
-#: src/compat/authcompat_Options.py:92
-msgid "authentication with smart card by default"
-msgstr "autentisering med smarta kort som standard"
-
-#: src/compat/authcompat_Options.py:93
-msgid "<0=Lock|1=Ignore>"
-msgstr "<0=Lås|1=Ignorera>"
-
-#: src/compat/authcompat_Options.py:93
-msgid "action to be taken on smart card removal"
-msgstr "åtgärd som ska utföras då smarta kort tas bort"
-
-#: src/compat/authcompat_Options.py:94
-msgid "require smart card for authentication by default"
-msgstr "kräv smartkort för autentisering som standard"
-
-#: src/compat/authcompat_Options.py:95
-msgid "authentication with fingerprint readers by default"
-msgstr "autentisering med fingeravtrycksläsare som standard"
-
-#: src/compat/authcompat_Options.py:96
-msgid "automatic per-user ecryptfs"
-msgstr "automatiskt ecryptfs per användare"
-
-#: src/compat/authcompat_Options.py:97
-msgid "Kerberos authentication by default"
-msgstr "Kerberosautentisering som standard"
-
-#: src/compat/authcompat_Options.py:98
-msgid "default Kerberos KDC"
-msgstr "standard kerberos-KDC"
-
-#: src/compat/authcompat_Options.py:99
-msgid "default Kerberos admin server"
-msgstr "standardadministrationsserver för Kerberos"
-
-#: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
-msgid "<realm>"
-msgstr "<rike>"
-
-#: src/compat/authcompat_Options.py:100
-msgid "default Kerberos realm"
-msgstr "standardrike för Kerberos"
-
-#: src/compat/authcompat_Options.py:101
-msgid "use of DNS to find Kerberos KDCs"
-msgstr "användning av DNS för att hitta Kerberos-KDC:er"
-
-#: src/compat/authcompat_Options.py:102
-msgid "use of DNS to find Kerberos realms"
-msgstr "användning av DNS för att hitta Kerberos-riken"
-
-#: src/compat/authcompat_Options.py:103
-msgid "winbind for user information by default"
-msgstr "winbind för användarinformation som standard"
-
-#: src/compat/authcompat_Options.py:104
-msgid "winbind for authentication by default"
-msgstr "windbind för autentisering som standard"
-
-#: src/compat/authcompat_Options.py:105
-msgid "<Administrator>"
-msgstr "<Administratör>"
-
-#: src/compat/authcompat_Options.py:105
-msgid "join the winbind domain or ads realm now as this administrator"
-msgstr "gå med i winbind-domänen eller ads-riket som denna administratör nu"
-
-#: src/compat/authcompat_Options.py:106
-msgid "Kerberos 5 for authenticate with winbind"
-msgstr "Kerberos 5 för autentisering med winbind"
-
-#: src/compat/authcompat_Options.py:107
-msgid "<workgroup>"
-msgstr "<arbetsgrupp>"
-
-#: src/compat/authcompat_Options.py:107
-msgid "workgroup authentication servers are in"
-msgstr "servrar för autentisering av arbetsgrupper finns på"
-
-#: src/compat/authcompat_Options.py:108
-msgid ""
-"SSSD for user information by default with manually managed configuration"
-msgstr ""
-"SSSD för användarinformation som standard med manuellt hanterad konfiguration"
-
-#: src/compat/authcompat_Options.py:109
-msgid "SSSD for authentication by default with manually managed configuration"
-msgstr ""
-"SSSD för autentisering som standard med manuellt hanterad konfiguration"
-
-#: src/compat/authcompat_Options.py:110
-msgid "caching of user credentials in SSSD by default"
-msgstr "cachning av användarinformation i SSSD som standard"
-
-#: src/compat/authcompat_Options.py:111
-msgid "check of access.conf during account authorization"
-msgstr "kontroll av access.conf vid konto-autentisering"
-
-#: src/compat/authcompat_Options.py:112
-msgid "creation of home directories for users on their first login"
-msgstr "skapandet av hemkataloger för användare vid första inloggning"
-
-#: src/compat/authcompat_Options.py:113
-msgid "account locking in case of too many consecutive authentication failures"
-msgstr "kontolåsning ifall för många misslyckade autentiseringar görs i följd"
-
-#: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
-#: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
-msgid "<number>"
-msgstr "<antal>"
-
-#: src/compat/authcompat_Options.py:114
-msgid "minimum length of a password"
-msgstr "minsta längd på ett lösenord"
-
-#: src/compat/authcompat_Options.py:115
-msgid "minimum number of character classes in a password"
-msgstr "minsta antal teckenklasser i ett lösenord"
-
-#: src/compat/authcompat_Options.py:116
-msgid "maximum number of same consecutive characters in a password"
-msgstr "högsta antalet av likadana på varandra följande tecken i ett lösenord"
-
-#: src/compat/authcompat_Options.py:117
-msgid "maximum number of consecutive characters of same class in a password"
-msgstr ""
-"högsta antalet på varandra följande tecken av samma klass i ett lösenord"
-
-#: src/compat/authcompat_Options.py:118
-msgid "require at least one lowercase character in a password"
-msgstr "kräv åtminstone en gemen bokstav i ett lösenord"
-
-#: src/compat/authcompat_Options.py:119
-msgid "require at least one uppercase character in a password"
-msgstr "kräv åtminstone en versal bokstav i ett lösenord"
-
-#: src/compat/authcompat_Options.py:120
-msgid "require at least one digit in a password"
-msgstr "kräv åtminstone en siffra i ett lösenord"
-
-#: src/compat/authcompat_Options.py:121
-msgid "require at least one other character in a password"
-msgstr "kräv åtminstone ett annat tecken i ett lösenord"
-
-#: src/compat/authcompat_Options.py:124
-msgid "do not start/stop services"
-msgstr "starta/stoppa inte tjänster"
-
-#: src/compat/authcompat_Options.py:125
-msgid "update all configuration files"
-msgstr "uppdatera alla konfigurationsfiler"
-
-#: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
-msgid "the same as --updateall"
-msgstr "samma som --updateall"
-
-#: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
-msgid "<name>"
-msgstr "<namn>"
-
-#: src/compat/authcompat_Options.py:148
-msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-
-#: src/compat/authcompat_Options.py:149
-msgid "<URL>"
-msgstr "<URL>"
-
-#: src/compat/authcompat_Options.py:150
-msgid "<module>"
-msgstr "<modul>"
-
-#: src/compat/authcompat_Options.py:151
-msgid "<user|server|domain|ads>"
-msgstr "<användare|server|domän|ad:n>"
-
-#: src/compat/authcompat_Options.py:153
-msgid "<servers>"
-msgstr "<servrar>"
-
-#: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
-#: src/compat/authcompat_Options.py:156
-msgid "<lowest-highest>"
-msgstr "<lägsta-högsta>"
-
-#: src/compat/authcompat_Options.py:157
-msgid "<\\>"
-msgstr "<\\>"
-
-#: src/compat/authcompat_Options.py:158
-msgid "</home/%D/%U>"
-msgstr "</home/%D/%U>"
-
-#: src/compat/authcompat_Options.py:159
-msgid "</bin/false>"
-msgstr "</bin/false>"
-
-#: src/compat/authcompat_Options.py:166
-msgid "<options>"
-msgstr "<flaggor>"
-
-#: src/compat/authcompat_Options.py:210
-msgid "These options have a compatibility layer"
-msgstr "Dessa flaggor har ett kompatibilitetslager"
-
-#: src/compat/authcompat_Options.py:211
-msgid "These options are no longer supported and have no effect"
-msgstr "Dessa flaggor stödjs inte längre och har ingen effekt"
-
-#: src/compat/authcompat_Options.py:313
-msgid "enable"
-msgstr "aktivera"
-
-#: src/compat/authcompat_Options.py:314
-msgid "disable"
-msgstr "avaktivera"
-
-#: src/compat/authcompat.py.in.in:51
+#~ msgid "Unable to obtain nsswitch maps!"
+#~ msgstr "Kan inte ta fram nsswitch-mappar!"
+
+#~ msgid "NIS for user information by default"
+#~ msgstr "NIS för användarinformation som standard"
+
+#~ msgid "<domain>"
+#~ msgstr "<domän>"
+
+#~ msgid "default NIS domain"
+#~ msgstr "standard-NIS-domän"
+
+#~ msgid "<server>"
+#~ msgstr "<server>"
+
+#~ msgid "default NIS server"
+#~ msgstr "standard-NIS-server"
+
+#~ msgid "LDAP for user information by default"
+#~ msgstr "LDAP för användarinformation som standard"
+
+#~ msgid "LDAP for authentication by default"
+#~ msgstr "LDAP för autentisering som standard"
+
+#~ msgid "default LDAP server hostname or URI"
+#~ msgstr "standard-LDAP-serverns värdnamn eller URI"
+
+#~ msgid "<dn>"
+#~ msgstr "<dn>"
+
+#~ msgid "default LDAP base DN"
+#~ msgstr "standard-LDAP-bas-DN"
+
+#~ msgid "use of TLS with LDAP (RFC-2830)"
+#~ msgstr "användning av TLS med LDAP (RFC-2830)"
+
+#~ msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
+#~ msgstr "användning av TLS för identitetsuppslagningar med LDAP (RFC-2830)"
+
+#~ msgid "use of RFC-2307bis schema for LDAP user information lookups"
+#~ msgstr ""
+#~ "användning av RFC-2307bis-schema för LDAP-uppslagning av "
+#~ "användarinformation"
+
+#~ msgid "authentication with smart card by default"
+#~ msgstr "autentisering med smarta kort som standard"
+
+#~ msgid "<0=Lock|1=Ignore>"
+#~ msgstr "<0=Lås|1=Ignorera>"
+
+#~ msgid "action to be taken on smart card removal"
+#~ msgstr "åtgärd som ska utföras då smarta kort tas bort"
+
+#~ msgid "require smart card for authentication by default"
+#~ msgstr "kräv smartkort för autentisering som standard"
+
+#~ msgid "authentication with fingerprint readers by default"
+#~ msgstr "autentisering med fingeravtrycksläsare som standard"
+
+#~ msgid "automatic per-user ecryptfs"
+#~ msgstr "automatiskt ecryptfs per användare"
+
+#~ msgid "Kerberos authentication by default"
+#~ msgstr "Kerberosautentisering som standard"
+
+#~ msgid "default Kerberos KDC"
+#~ msgstr "standard kerberos-KDC"
+
+#~ msgid "default Kerberos admin server"
+#~ msgstr "standardadministrationsserver för Kerberos"
+
+#~ msgid "<realm>"
+#~ msgstr "<rike>"
+
+#~ msgid "default Kerberos realm"
+#~ msgstr "standardrike för Kerberos"
+
+#~ msgid "use of DNS to find Kerberos KDCs"
+#~ msgstr "användning av DNS för att hitta Kerberos-KDC:er"
+
+#~ msgid "use of DNS to find Kerberos realms"
+#~ msgstr "användning av DNS för att hitta Kerberos-riken"
+
+#~ msgid "winbind for user information by default"
+#~ msgstr "winbind för användarinformation som standard"
+
+#~ msgid "winbind for authentication by default"
+#~ msgstr "windbind för autentisering som standard"
+
+#~ msgid "<Administrator>"
+#~ msgstr "<Administratör>"
+
+#~ msgid "join the winbind domain or ads realm now as this administrator"
+#~ msgstr "gå med i winbind-domänen eller ads-riket som denna administratör nu"
+
+#~ msgid "Kerberos 5 for authenticate with winbind"
+#~ msgstr "Kerberos 5 för autentisering med winbind"
+
+#~ msgid "<workgroup>"
+#~ msgstr "<arbetsgrupp>"
+
+#~ msgid "workgroup authentication servers are in"
+#~ msgstr "servrar för autentisering av arbetsgrupper finns på"
+
+#~ msgid ""
+#~ "SSSD for user information by default with manually managed configuration"
+#~ msgstr ""
+#~ "SSSD för användarinformation som standard med manuellt hanterad "
+#~ "konfiguration"
+
+#~ msgid ""
+#~ "SSSD for authentication by default with manually managed configuration"
+#~ msgstr ""
+#~ "SSSD för autentisering som standard med manuellt hanterad konfiguration"
+
+#~ msgid "caching of user credentials in SSSD by default"
+#~ msgstr "cachning av användarinformation i SSSD som standard"
+
+#~ msgid "check of access.conf during account authorization"
+#~ msgstr "kontroll av access.conf vid konto-autentisering"
+
+#~ msgid "creation of home directories for users on their first login"
+#~ msgstr "skapandet av hemkataloger för användare vid första inloggning"
+
+#~ msgid ""
+#~ "account locking in case of too many consecutive authentication failures"
+#~ msgstr ""
+#~ "kontolåsning ifall för många misslyckade autentiseringar görs i följd"
+
+#~ msgid "<number>"
+#~ msgstr "<antal>"
+
+#~ msgid "minimum length of a password"
+#~ msgstr "minsta längd på ett lösenord"
+
+#~ msgid "minimum number of character classes in a password"
+#~ msgstr "minsta antal teckenklasser i ett lösenord"
+
+#~ msgid "maximum number of same consecutive characters in a password"
+#~ msgstr ""
+#~ "högsta antalet av likadana på varandra följande tecken i ett lösenord"
+
+#~ msgid "maximum number of consecutive characters of same class in a password"
+#~ msgstr ""
+#~ "högsta antalet på varandra följande tecken av samma klass i ett lösenord"
+
+#~ msgid "require at least one lowercase character in a password"
+#~ msgstr "kräv åtminstone en gemen bokstav i ett lösenord"
+
+#~ msgid "require at least one uppercase character in a password"
+#~ msgstr "kräv åtminstone en versal bokstav i ett lösenord"
+
+#~ msgid "require at least one digit in a password"
+#~ msgstr "kräv åtminstone en siffra i ett lösenord"
+
+#~ msgid "require at least one other character in a password"
+#~ msgstr "kräv åtminstone ett annat tecken i ett lösenord"
+
+#~ msgid "do not start/stop services"
+#~ msgstr "starta/stoppa inte tjänster"
+
+#~ msgid "update all configuration files"
+#~ msgstr "uppdatera alla konfigurationsfiler"
+
+#~ msgid "the same as --updateall"
+#~ msgstr "samma som --updateall"
+
+#~ msgid "<name>"
+#~ msgstr "<namn>"
+
+#~ msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+#~ msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+
+#~ msgid "<URL>"
+#~ msgstr "<URL>"
+
+#~ msgid "<module>"
+#~ msgstr "<modul>"
+
+#~ msgid "<user|server|domain|ads>"
+#~ msgstr "<användare|server|domän|ad:n>"
+
+#~ msgid "<servers>"
+#~ msgstr "<servrar>"
+
+#~ msgid "<lowest-highest>"
+#~ msgstr "<lägsta-högsta>"
+
+#~ msgid "<\\>"
+#~ msgstr "<\\>"
+
+#~ msgid "</home/%D/%U>"
+#~ msgstr "</home/%D/%U>"
+
+#~ msgid "</bin/false>"
+#~ msgstr "</bin/false>"
+
+#~ msgid "<options>"
+#~ msgstr "<flaggor>"
+
+#~ msgid "These options have a compatibility layer"
+#~ msgstr "Dessa flaggor har ett kompatibilitetslager"
+
+#~ msgid "These options are no longer supported and have no effect"
+#~ msgstr "Dessa flaggor stödjs inte längre och har ingen effekt"
+
+#~ msgid "enable"
+#~ msgstr "aktivera"
+
+#~ msgid "disable"
+#~ msgstr "avaktivera"
+
 #, python-format
-msgid "Executing: %s"
-msgstr "Kör: %s"
+#~ msgid "Executing: %s"
+#~ msgstr "Kör: %s"
 
-#: src/compat/authcompat.py.in.in:71
 #, python-format
-msgid "Service %s was not found. Please install the service."
-msgstr "Tjänsten %s finns inte. Installera tjänsten."
+#~ msgid "Service %s was not found. Please install the service."
+#~ msgstr "Tjänsten %s finns inte. Installera tjänsten."
 
-#: src/compat/authcompat.py.in.in:74 src/compat/authcompat.py.in.in:631
-#: src/compat/authcompat.py.in.in:657
 #, python-format
-msgid "Command [%s] failed with %d, stderr:"
-msgstr "Kommandot [%s] misslyckades med %d, standard fel:"
+#~ msgid "Command [%s] failed with %d, stderr:"
+#~ msgstr "Kommandot [%s] misslyckades med %d, standard fel:"
 
-#: src/compat/authcompat.py.in.in:186
 #, python-format
-msgid "Removing file: %s"
-msgstr "Tar bort filen: %s"
+#~ msgid "Removing file: %s"
+#~ msgstr "Tar bort filen: %s"
 
-#: src/compat/authcompat.py.in.in:335
 #, python-format
-msgid "%s was not found. Please, install realmd."
-msgstr "%s finns inte. Installera realmd."
+#~ msgid "%s was not found. Please, install realmd."
+#~ msgstr "%s finns inte. Installera realmd."
 
-#: src/compat/authcompat.py.in.in:469
-msgid "Running authconfig compatibility tool."
-msgstr "Kör kompatibilitetsverktyget authconfig."
+#~ msgid "Running authconfig compatibility tool."
+#~ msgstr "Kör kompatibilitetsverktyget authconfig."
 
-#: src/compat/authcompat.py.in.in:470
-msgid ""
-"The purpose of this tool is to enable authentication against chosen services "
-"with authselect and minimum configuration. It does not provide all "
-"capabilities of authconfig.\n"
-msgstr ""
-"Syftet med detta verktyg är att möjliggöra autentisering mot valda tjänster "
-"med authselect och minimal konfiguration. Det erbjuder inte alla egenskaper "
-"hos authconfig.\n"
+#~ msgid ""
+#~ "The purpose of this tool is to enable authentication against chosen "
+#~ "services with authselect and minimum configuration. It does not provide "
+#~ "all capabilities of authconfig.\n"
+#~ msgstr ""
+#~ "Syftet med detta verktyg är att möjliggöra autentisering mot valda "
+#~ "tjänster med authselect och minimal konfiguration. Det erbjuder inte alla "
+#~ "egenskaper hos authconfig.\n"
 
-#: src/compat/authcompat.py.in.in:473
-msgid ""
-"IMPORTANT: authconfig is replaced by authselect, please update your scripts."
-msgstr "VIKTIGT: authconfig är ersatt av authselect, uppdatera dina skript."
+#~ msgid ""
+#~ "IMPORTANT: authconfig is replaced by authselect, please update your "
+#~ "scripts."
+#~ msgstr "VIKTIGT: authconfig är ersatt av authselect, uppdatera dina skript."
 
-#: src/compat/authcompat.py.in.in:475
-msgid ""
-"See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
-"AuthselectAsDefault"
-msgstr ""
-"Se Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
-"AuthselectAsDefault"
+#~ msgid ""
+#~ "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
+#~ "AuthselectAsDefault"
+#~ msgstr ""
+#~ "Se Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
+#~ "AuthselectAsDefault"
 
-#: src/compat/authcompat.py.in.in:476
-msgid ""
-"See man authselect-migration(7) to help you with migration to authselect"
-msgstr "Se man authselect-migration(7) för hjälp med migrering till authselect"
+#~ msgid ""
+#~ "See man authselect-migration(7) to help you with migration to authselect"
+#~ msgstr ""
+#~ "Se man authselect-migration(7) för hjälp med migrering till authselect"
 
-#: src/compat/authcompat.py.in.in:480
-msgid "Warning: These options are not supported anymore and have no effect:"
-msgstr "Varning: dessa flaggor stödjs inte längre och har ingen effekt:"
+#~ msgid "Warning: These options are not supported anymore and have no effect:"
+#~ msgstr "Varning: dessa flaggor stödjs inte längre och har ingen effekt:"
 
-#: src/compat/authcompat.py.in.in:500
-msgid "authconfig can only be run as root"
-msgstr "authconfig kan endast köras som root"
+#~ msgid "authconfig can only be run as root"
+#~ msgstr "authconfig kan endast köras som root"
 
-#: src/compat/authcompat.py.in.in:505
 #, python-format
-msgid ""
-"Error: option --%s is no longer supported and we cannot continue if it is "
-"set."
-msgstr ""
-"Fel: flaggan --%s stödjs inte längre och vi kan inte fortsätta om den är "
-"satt."
+#~ msgid ""
+#~ "Error: option --%s is no longer supported and we cannot continue if it is "
+#~ "set."
+#~ msgstr ""
+#~ "Fel: flaggan --%s stödjs inte längre och vi kan inte fortsätta om den är "
+#~ "satt."
 
-#: src/compat/authcompat.py.in.in:510
-msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
-msgstr "Fel: både --enablewinbind och --enablewinbindauth måste vara satta."
+#~ msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
+#~ msgstr "Fel: både --enablewinbind och --enablewinbindauth måste vara satta."
 
-#: src/compat/authcompat.py.in.in:520
-msgid "Error: Please, provide --updateall option."
-msgstr "Fel: var god ange flaggan --updateall."
+#~ msgid "Error: Please, provide --updateall option."
+#~ msgstr "Fel: var god ange flaggan --updateall."
 
 #~ msgid "Unable to get current time!"
 #~ msgstr "Kan inte ta reda på aktuell tid!"

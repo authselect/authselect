@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2023-09-27 13:03+0200\n"
+"POT-Creation-Date: 2024-02-23 14:08+0100\n"
 "PO-Revision-Date: 2022-04-15 19:17+0000\n"
 "Last-Translator: Pablo Munoz Alabau <pamual@posteo.es>\n"
 "Language-Team: Spanish <https://translate.fedoraproject.org/projects/"
@@ -584,7 +584,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "Incapaz de obtener el nombre base de [%s]"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:857
+#: src/lib/util/file.c:199 src/cli/main.c:848
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "No se pudo acceder a los metadatos [%s] [%d]: %s"
@@ -881,7 +881,7 @@ msgstr "Opciones comunes:"
 msgid "[OPTIONS...]"
 msgstr "[OPCIONES...]"
 
-#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:849
+#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:840
 msgid "Out of memory!"
 msgstr "¡No hay memoria!"
 
@@ -930,14 +930,14 @@ msgstr ""
 "¡Se necesita al menos una opción!\n"
 "\n"
 
-#: src/cli/main.c:76 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:76 src/cli/main.c:432 src/cli/main.c:475
 msgid "Profile identifier."
 msgstr "Identificador del perfil."
 
-#: src/cli/main.c:79 src/cli/main.c:257 src/cli/main.c:302 src/cli/main.c:351
-#: src/cli/main.c:399 src/cli/main.c:444 src/cli/main.c:487 src/cli/main.c:660
-#: src/cli/main.c:737 src/cli/main.c:784 src/cli/main.c:824 src/cli/main.c:889
-#: src/cli/main.c:915
+#: src/cli/main.c:79 src/cli/main.c:248 src/cli/main.c:293 src/cli/main.c:342
+#: src/cli/main.c:390 src/cli/main.c:435 src/cli/main.c:478 src/cli/main.c:651
+#: src/cli/main.c:728 src/cli/main.c:775 src/cli/main.c:815 src/cli/main.c:880
+#: src/cli/main.c:906
 msgid "Unable to parse command arguments"
 msgstr "No fue posible interpretar los parámetros del comando"
 
@@ -954,19 +954,19 @@ msgstr "Copia de seguridad almacenada en %s\n"
 msgid "Enforce changes"
 msgstr "Forzar cambios"
 
-#: src/cli/main.c:162 src/cli/main.c:250 src/cli/main.c:650 src/cli/main.c:728
+#: src/cli/main.c:162 src/cli/main.c:241 src/cli/main.c:641 src/cli/main.c:719
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr ""
 "Haga copia de seguridad de los archivos del sistema antes de activar el "
 "perfil (genere nombre único)"
 
-#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "Backup system files before activating profile"
 msgstr ""
 "Hacer una copia de seguridad de los archivos del sistema antes de activar el "
 "perfil"
 
-#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "NAME"
 msgstr "NOMBRE"
 
@@ -975,25 +975,21 @@ msgid "Do not backup system files when --force is set"
 msgstr ""
 "No hacer copia de seguridad de los archivos de sistema cuando se usa --force"
 
-#: src/cli/main.c:165 src/cli/main.c:652
+#: src/cli/main.c:165 src/cli/main.c:643
 msgid "Do not print profile requirements"
 msgstr "No mostrar los requisitos del perfil"
 
-#: src/cli/main.c:176 src/cli/main.c:414 src/cli/main.c:450 src/cli/main.c:493
-#: src/cli/main.c:525 src/cli/main.c:679
+#: src/cli/main.c:176 src/cli/main.c:405 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:516 src/cli/main.c:670
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "No se pudo obtener la información del perfil [%d]: %s"
 
-#: src/cli/main.c:184 src/cli/main.c:533 src/cli/main.c:687
+#: src/cli/main.c:184 src/cli/main.c:524 src/cli/main.c:678
 msgid "Unable to read profile requirements!"
 msgstr "¡No fue posible leer los requisitos del perfil!"
 
-#: src/cli/main.c:192
-msgid "Unable to obtain nsswitch maps!"
-msgstr "¡No fue posible obtener los mapeos de nsswitch!"
-
-#: src/cli/main.c:207
+#: src/cli/main.c:198
 msgid ""
 "\n"
 "Some unexpected changes to the configuration were detected.\n"
@@ -1003,26 +999,26 @@ msgstr ""
 "Se detectaron cambios inesperados en la configuración.\n"
 "Use la opción --force si quiere sobrescribir esos cambios.\n"
 
-#: src/cli/main.c:212
+#: src/cli/main.c:203
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "No se pudo activar el perfil [%d]: %s\n"
 
-#: src/cli/main.c:217
+#: src/cli/main.c:208
 #, c-format
 msgid "Profile \"%s\" was selected.\n"
 msgstr "Perfil \"%s\" fue seleccionado.\n"
 
-#: src/cli/main.c:220
+#: src/cli/main.c:211
 msgid "The following nsswitch maps are overwritten by the profile:\n"
 msgstr "Los siguientes mapas nsswitch están sobrescritos por el perfil:\n"
 
-#: src/cli/main.c:223
+#: src/cli/main.c:214
 #, c-format
 msgid "- %s\n"
 msgstr "- %s\n"
 
-#: src/cli/main.c:228
+#: src/cli/main.c:219
 #, c-format
 msgid ""
 "\n"
@@ -1031,15 +1027,15 @@ msgstr ""
 "\n"
 "%s\n"
 
-#: src/cli/main.c:269
+#: src/cli/main.c:260
 msgid "Changes were successfully applied.\n"
 msgstr "Se han aplicado los cambios.\n"
 
-#: src/cli/main.c:272 src/cli/main.c:308 src/cli/main.c:669
+#: src/cli/main.c:263 src/cli/main.c:299 src/cli/main.c:660
 msgid "No existing configuration detected.\n"
 msgstr "No se ha encontrado configuración actual.\n"
 
-#: src/cli/main.c:275
+#: src/cli/main.c:266
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
@@ -1047,40 +1043,40 @@ msgstr ""
 "Se han detectado cambios inesperados en la configuración. Use la orden "
 "'select'.\n"
 
-#: src/cli/main.c:279
+#: src/cli/main.c:270
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr "No se pudieron aplicar los cambios [%d]: %s\n"
 
-#: src/cli/main.c:296
+#: src/cli/main.c:287
 msgid "Print command parameters instead of formatted output"
 msgstr ""
 "Mostrar los parámetros de las órdenes en lugar de una salida formateada"
 
-#: src/cli/main.c:311 src/cli/main.c:672
+#: src/cli/main.c:302 src/cli/main.c:663
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "No se pudo obtener la configuración actual [%d]: %s"
 
-#: src/cli/main.c:325
+#: src/cli/main.c:316
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "ID del perfil: %s\n"
 
-#: src/cli/main.c:326
+#: src/cli/main.c:317
 msgid "Enabled features:"
 msgstr "Características activas:"
 
-#: src/cli/main.c:329
+#: src/cli/main.c:320
 msgid " None\n"
 msgstr " Ninguna\n"
 
-#: src/cli/main.c:357
+#: src/cli/main.c:348
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "No se pudo comprobar la configuración actual [%d]: %s"
 
-#: src/cli/main.c:364
+#: src/cli/main.c:355
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
@@ -1088,71 +1084,71 @@ msgstr ""
 "La configuración actual no es válida. Probablemente se haya modificado por "
 "fuera de authselect."
 
-#: src/cli/main.c:371
+#: src/cli/main.c:362
 msgid "Current configuration is valid."
 msgstr "La configuración actual es válida."
 
-#: src/cli/main.c:374
+#: src/cli/main.c:365
 #, fuzzy
 #| msgid "No existing configuration detected.\n"
 msgid "No configuration detected."
 msgstr "No se ha encontrado configuración actual.\n"
 
-#: src/cli/main.c:378
+#: src/cli/main.c:369
 msgid "System was not configured with authselect."
 msgstr "El sistema no fue configurado con authselect."
 
-#: src/cli/main.c:405
+#: src/cli/main.c:396
 msgid "Unable to get profile list!"
 msgstr "¡No se pudo obtener la lista de perfiles!"
 
-#: src/cli/main.c:458
+#: src/cli/main.c:449
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
 msgstr "Incapaz de obtener las características del perfil [%d]: %s"
 
-#: src/cli/main.c:572
+#: src/cli/main.c:563
 msgid "Print content of all files"
 msgstr "Mostrar el contenido de todos los archivos"
 
-#: src/cli/main.c:573
+#: src/cli/main.c:564
 msgid "Print nsswitch.conf content"
 msgstr "Mostrar el contenido de nsswitch.conf"
 
-#: src/cli/main.c:574
+#: src/cli/main.c:565
 msgid "Print system-auth content"
 msgstr "Mostrar el contenido de system-auth"
 
-#: src/cli/main.c:575
+#: src/cli/main.c:566
 msgid "Print password-auth content"
 msgstr "Mostrar el contenido de password-auth"
 
-#: src/cli/main.c:576
+#: src/cli/main.c:567
 msgid "Print smartcard-auth content"
 msgstr "Mostrar el contenido de smartcard-auth"
 
-#: src/cli/main.c:577
+#: src/cli/main.c:568
 msgid "Print fingerprint-auth content"
 msgstr "Mostrar el contenido de fingerprint-auth"
 
-#: src/cli/main.c:578
+#: src/cli/main.c:569
 msgid "Print postlogin content"
 msgstr "Mostrar el contenido de postlogin"
 
-#: src/cli/main.c:579
+#: src/cli/main.c:570
 msgid "Print dconf database content"
 msgstr "Mostrar el contenido de la base de datos dconf"
 
-#: src/cli/main.c:580
+#: src/cli/main.c:571
 msgid "Print dconf lock content"
 msgstr "Mostrar el contenido del bloqueo de dconf"
 
-#: src/cli/main.c:607
+#: src/cli/main.c:598
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "No se pudo obtener el contenido generado [%d]: %s"
 
-#: src/cli/main.c:626
+#: src/cli/main.c:617
 #, c-format
 msgid ""
 "File %s: Empty\n"
@@ -1161,7 +1157,7 @@ msgstr ""
 "Archivo %s: vacío\n"
 "\n"
 
-#: src/cli/main.c:628
+#: src/cli/main.c:619
 #, c-format
 msgid ""
 "File %s:\n"
@@ -1172,44 +1168,44 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/cli/main.c:657
+#: src/cli/main.c:648
 msgid "Feature to enable."
 msgstr "Característica a activar."
 
-#: src/cli/main.c:694
+#: src/cli/main.c:685
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
 msgstr ""
 "Incapaz de hacer copia de seguridad de la configuración actual [%d]: %s\n"
 
-#: src/cli/main.c:701
+#: src/cli/main.c:692
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "No se pudo activar la característica [%d]: %s\n"
 
-#: src/cli/main.c:706
+#: src/cli/main.c:697
 #, c-format
 msgid "%s\n"
 msgstr "%s\n"
 
-#: src/cli/main.c:734
+#: src/cli/main.c:725
 msgid "Feature to disable."
 msgstr "Característica a desactivar."
 
-#: src/cli/main.c:748
+#: src/cli/main.c:739
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "No se pudo desactivar la característica [%d]: %s\n"
 
-#: src/cli/main.c:769
+#: src/cli/main.c:760
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr "Crear el nuevo perfil como de proveedor en lugar de personalizado"
 
-#: src/cli/main.c:770
+#: src/cli/main.c:761
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr "ID del perfil a usar como base para el nuevo"
 
-#: src/cli/main.c:771
+#: src/cli/main.c:762
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1217,521 +1213,448 @@ msgstr ""
 "Basar el nuevo perfil en uno predeterminado, incluso si existe alguno del "
 "proveedor con el mismo nombre"
 
-#: src/cli/main.c:772
+#: src/cli/main.c:763
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr ""
 "Enlazar a los archivos de metadatos del perfil base en lugar de copiarlos"
 
-#: src/cli/main.c:773
+#: src/cli/main.c:764
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr "Enlazar a los archivos nsswitch del perfil base en lugar de copiarlos"
 
-#: src/cli/main.c:774
+#: src/cli/main.c:765
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr "Enlazar a los archivos pam del perfil base en lugar de copiarlos"
 
-#: src/cli/main.c:775
+#: src/cli/main.c:766
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr "Enlazar a los archivos dconf del perfil base en lugar de copiarlos"
 
-#: src/cli/main.c:776
+#: src/cli/main.c:767
 msgid "Symlink specific file (can be set multiple times)"
 msgstr "Enlazar a un archivo específico (se puede usar varias veces)"
 
-#: src/cli/main.c:781
+#: src/cli/main.c:772
 msgid "New profile name."
 msgstr "Nombre del nuevo perfil."
 
-#: src/cli/main.c:791
+#: src/cli/main.c:782
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "No se pudo crear un nuevo perfil [%d]: %s\n"
 
-#: src/cli/main.c:795
+#: src/cli/main.c:786
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "Se creó el nuevo perfil en %s\n"
 
-#: src/cli/main.c:818
+#: src/cli/main.c:809
 msgid "Print backup names without any formatting and additional information"
 msgstr ""
 "Imprime los nombres de copia de seguridad sin ningún formato e información "
 "adicional"
 
-#: src/cli/main.c:830
+#: src/cli/main.c:821
 msgid "Unable to list available backups!"
 msgstr "¡Incapaz de listar las copias de seguridad disponibles!"
 
-#: src/cli/main.c:867
+#: src/cli/main.c:858
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (creado en %s)\n"
 
-#: src/cli/main.c:886
+#: src/cli/main.c:877
 msgid "Name of the backup to remove."
 msgstr "Nombre del respaldo a eliminar."
 
-#: src/cli/main.c:895
+#: src/cli/main.c:886
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "Incapaz de quitar la copia de seguridad [%s] [%d]: %s\n"
 
-#: src/cli/main.c:912
+#: src/cli/main.c:903
 msgid "Name of the backup to restore from."
 msgstr "Nombre de la copia de seguridad desde la que restaurar."
 
-#: src/cli/main.c:921
+#: src/cli/main.c:912
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "Incapaz de restaurar copia de seguridad [%s] [%d]: %s\n"
 
-#: src/cli/main.c:937
+#: src/cli/main.c:928
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "Incapaz de desinstalar configuración authselect[%d]: %s\n"
 
-#: src/cli/main.c:987
+#: src/cli/main.c:978
 msgid "Select profile"
 msgstr "Seleccionar un perfil"
 
-#: src/cli/main.c:988
+#: src/cli/main.c:979
 msgid "Regenerate configuration for currently selected command"
 msgstr "Regenera la configuración para el comando seleccionado actualmente"
 
-#: src/cli/main.c:989
+#: src/cli/main.c:980
 msgid "List available profiles"
 msgstr "Listar perfiles disponibles"
 
-#: src/cli/main.c:990
+#: src/cli/main.c:981
 msgid "List available profile features"
 msgstr "Lista de características de perfil disponibles"
 
-#: src/cli/main.c:991
+#: src/cli/main.c:982
 msgid "Show profile information"
 msgstr "Mostrar información del perfil"
 
-#: src/cli/main.c:992
+#: src/cli/main.c:983
 msgid "Print profile requirements"
 msgstr "Requisitos de impresión de perfil"
 
-#: src/cli/main.c:993
+#: src/cli/main.c:984
 msgid "Get identifier of currently selected profile"
 msgstr "Obtener el identificador del perfil actualmente seleccionado"
 
-#: src/cli/main.c:994
+#: src/cli/main.c:985
 msgid "Check if the current configuration is valid"
 msgstr "Compruebe si la configuración actual es válida"
 
-#: src/cli/main.c:995
+#: src/cli/main.c:986
 msgid "Print changes that would be otherwise written"
 msgstr "Imprima cambios que de otra manera serían escritos"
 
-#: src/cli/main.c:996
+#: src/cli/main.c:987
 msgid "Enable feature in currently selected profile"
 msgstr "Habilitar función en el perfil seleccionado actualmente"
 
-#: src/cli/main.c:997
+#: src/cli/main.c:988
 msgid "Disable feature in currently selected profile"
 msgstr "Deshabilitar la función en el perfil seleccionado actualmente"
 
-#: src/cli/main.c:998
+#: src/cli/main.c:989
 msgid "Create new authselect profile"
 msgstr "Crear nuevo perfil de autenticación"
 
-#: src/cli/main.c:999
+#: src/cli/main.c:990
 msgid "Backup commands:"
 msgstr "Comandos de copia de seguridad:"
 
-#: src/cli/main.c:1000
+#: src/cli/main.c:991
 msgid "List available backups"
 msgstr "Lista de copias de seguridad disponibles"
 
-#: src/cli/main.c:1001
+#: src/cli/main.c:992
 msgid "Remove backup"
 msgstr "Eliminar respaldo"
 
-#: src/cli/main.c:1002
+#: src/cli/main.c:993
 msgid "Restore from backup"
 msgstr "Restaurar desde respaldo"
 
-#: src/cli/main.c:1003
+#: src/cli/main.c:994
 msgid "Other:"
 msgstr ""
 
-#: src/cli/main.c:1004
+#: src/cli/main.c:995
 #, fuzzy
 #| msgid "Uninstall authselect configuration"
 msgid "Opt-out from authselect managed configuration"
 msgstr "Desinstalar configuración authselect"
 
-#: src/cli/main.c:1006
+#: src/cli/main.c:997
 msgid "Print authselect version"
 msgstr "Imprimir versión de authselect"
 
-#: src/compat/authcompat_Options.py:82
-msgid "NIS for user information by default"
-msgstr "de modo predeterminado NIS para obtener la información del usuario"
-
-#: src/compat/authcompat_Options.py:83
-msgid "<domain>"
-msgstr "<dominio>"
-
-#: src/compat/authcompat_Options.py:83
-msgid "default NIS domain"
-msgstr "Dominio NIS predeterminado"
-
-#: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
-#: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
-msgid "<server>"
-msgstr "<servidor>"
-
-#: src/compat/authcompat_Options.py:84
-msgid "default NIS server"
-msgstr "servidor NIS predeterminado"
-
-#: src/compat/authcompat_Options.py:85
-msgid "LDAP for user information by default"
-msgstr "de modo predeterminado LDAP para obtener la información del usuario"
-
-#: src/compat/authcompat_Options.py:86
-msgid "LDAP for authentication by default"
-msgstr "de modo predeterminado LDAP como método de autenticación"
-
-#: src/compat/authcompat_Options.py:87
-msgid "default LDAP server hostname or URI"
-msgstr "nombre del servidor o URI del LDAP predeterminado"
-
-#: src/compat/authcompat_Options.py:88
-msgid "<dn>"
-msgstr "<dn>"
-
-#: src/compat/authcompat_Options.py:88
-msgid "default LDAP base DN"
-msgstr "DN base predeterminado de LDAP"
-
-#: src/compat/authcompat_Options.py:89
-msgid "use of TLS with LDAP (RFC-2830)"
-msgstr "el uso de TLS con LDAP (RFC-2830)"
-
-#: src/compat/authcompat_Options.py:90
-msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
-msgstr "el uso de TLS para búsquedas de identidad con LDAP (RFC-2830)"
-
-#: src/compat/authcompat_Options.py:91
-msgid "use of RFC-2307bis schema for LDAP user information lookups"
-msgstr ""
-"el uso del esquema RFC-2307bis para búsquedas de información de usuario LDAP"
-
-#: src/compat/authcompat_Options.py:92
-msgid "authentication with smart card by default"
-msgstr "de modo predeterminado la autenticación con tarjeta inteligente"
-
-#: src/compat/authcompat_Options.py:93
-msgid "<0=Lock|1=Ignore>"
-msgstr "<0=Bloquear|1=Ignorar>"
-
-#: src/compat/authcompat_Options.py:93
-msgid "action to be taken on smart card removal"
-msgstr "acción a realizar al extraer la tarjeta inteligente"
-
-#: src/compat/authcompat_Options.py:94
-msgid "require smart card for authentication by default"
-msgstr "Requiere tarjeta inteligente para autenticación por defecto"
-
-#: src/compat/authcompat_Options.py:95
-msgid "authentication with fingerprint readers by default"
-msgstr ""
-"de modo predeterminado la autenticación con lectores de huellas dactilares"
-
-#: src/compat/authcompat_Options.py:96
-msgid "automatic per-user ecryptfs"
-msgstr "ecryptfs automático para cada usuario"
-
-#: src/compat/authcompat_Options.py:97
-msgid "Kerberos authentication by default"
-msgstr "de modo predeterminado Kerberos para la autenticación"
-
-#: src/compat/authcompat_Options.py:98
-msgid "default Kerberos KDC"
-msgstr "KDC Kerberos predeterminado"
-
-#: src/compat/authcompat_Options.py:99
-msgid "default Kerberos admin server"
-msgstr "servidor de administración Kerberos predeterminado"
-
-#: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
-msgid "<realm>"
-msgstr "<entorno>"
-
-#: src/compat/authcompat_Options.py:100
-msgid "default Kerberos realm"
-msgstr "entorno Kerberos predeterminado"
-
-#: src/compat/authcompat_Options.py:101
-msgid "use of DNS to find Kerberos KDCs"
-msgstr "el uso de DNS para encontrar los KDC de Kerberos"
-
-#: src/compat/authcompat_Options.py:102
-msgid "use of DNS to find Kerberos realms"
-msgstr "el uso de DNS para encontrar los entornos Kerberos"
-
-#: src/compat/authcompat_Options.py:103
-msgid "winbind for user information by default"
-msgstr "de modo predeterminado winbind para obtener la información del usuario"
-
-#: src/compat/authcompat_Options.py:104
-msgid "winbind for authentication by default"
-msgstr "de modo predeterminado la autenticación mediante winbind"
-
-#: src/compat/authcompat_Options.py:105
-msgid "<Administrator>"
-msgstr "<administrador>"
-
-#: src/compat/authcompat_Options.py:105
-msgid "join the winbind domain or ads realm now as this administrator"
-msgstr ""
-"unirse al dominio winbind o entorno de ads ahora como este administrador"
-
-#: src/compat/authcompat_Options.py:106
-msgid "Kerberos 5 for authenticate with winbind"
-msgstr "Kerberos 5 para autenticarse con winbind"
-
-#: src/compat/authcompat_Options.py:107
-msgid "<workgroup>"
-msgstr "<grupo de trabajo>"
-
-#: src/compat/authcompat_Options.py:107
-msgid "workgroup authentication servers are in"
-msgstr "el grupo de trabajo en el que están los servidores de autenticación"
-
-#: src/compat/authcompat_Options.py:108
-msgid ""
-"SSSD for user information by default with manually managed configuration"
-msgstr ""
-"de modo predeterminado SSSD para obtener la información del usuario, con "
-"configuración gestionada de forma manual"
-
-#: src/compat/authcompat_Options.py:109
-msgid "SSSD for authentication by default with manually managed configuration"
-msgstr ""
-"de modo predeterminado SSSD para autenticación, con configuración gestionada "
-"de forma manual"
-
-#: src/compat/authcompat_Options.py:110
-msgid "caching of user credentials in SSSD by default"
-msgstr "de modo predeterminado la captura de credenciales de usuario en SSSD"
-
-#: src/compat/authcompat_Options.py:111
-msgid "check of access.conf during account authorization"
-msgstr "la comprobación de access.conf durante la autorización de la cuenta"
-
-#: src/compat/authcompat_Options.py:112
-msgid "creation of home directories for users on their first login"
-msgstr ""
-"la creación de directorios personales de usuarios en su primer inicio de "
-"sesión"
-
-#: src/compat/authcompat_Options.py:113
-msgid "account locking in case of too many consecutive authentication failures"
-msgstr ""
-"el bloqueo de cuenta en caso de demasiados fallos de autenticación seguidos"
-
-#: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
-#: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
-msgid "<number>"
-msgstr "<número>"
-
-#: src/compat/authcompat_Options.py:114
-msgid "minimum length of a password"
-msgstr "longitud mínima de clave"
-
-#: src/compat/authcompat_Options.py:115
-msgid "minimum number of character classes in a password"
-msgstr "cantidad mínima de clases de caracteres en claves"
-
-#: src/compat/authcompat_Options.py:116
-msgid "maximum number of same consecutive characters in a password"
-msgstr "cantidad máxima de caracteres iguales seguidos en claves"
-
-#: src/compat/authcompat_Options.py:117
-msgid "maximum number of consecutive characters of same class in a password"
-msgstr "cantidad máxima de caracteres seguidos de la misma clase en claves"
-
-#: src/compat/authcompat_Options.py:118
-msgid "require at least one lowercase character in a password"
-msgstr "exige al menos una minúscula en las claves"
-
-#: src/compat/authcompat_Options.py:119
-msgid "require at least one uppercase character in a password"
-msgstr "exige al menos una mayúscula en las claves"
-
-#: src/compat/authcompat_Options.py:120
-msgid "require at least one digit in a password"
-msgstr "exige al menos un dígito en las claves"
-
-#: src/compat/authcompat_Options.py:121
-msgid "require at least one other character in a password"
-msgstr "exige al menos un carácter de otra clase en las claves"
-
-#: src/compat/authcompat_Options.py:124
-msgid "do not start/stop services"
-msgstr "No iniciar/parar servicios"
-
-#: src/compat/authcompat_Options.py:125
-msgid "update all configuration files"
-msgstr "Actualizar todos los archivos de configuración"
-
-#: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
-msgid "the same as --updateall"
-msgstr "igual que --updateall"
-
-#: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
-msgid "<name>"
-msgstr "<nombre>"
-
-#: src/compat/authcompat_Options.py:148
-msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-
-#: src/compat/authcompat_Options.py:149
-msgid "<URL>"
-msgstr "<URL>"
-
-#: src/compat/authcompat_Options.py:150
-msgid "<module>"
-msgstr "<módulo>"
-
-#: src/compat/authcompat_Options.py:151
-msgid "<user|server|domain|ads>"
-msgstr "<usuario|servidor|dominio|ads>"
-
-#: src/compat/authcompat_Options.py:153
-msgid "<servers>"
-msgstr "<servidores>"
-
-#: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
-#: src/compat/authcompat_Options.py:156
-msgid "<lowest-highest>"
-msgstr "<mínimo-máximo>"
-
-#: src/compat/authcompat_Options.py:157
-msgid "<\\>"
-msgstr "<\\>"
-
-#: src/compat/authcompat_Options.py:158
-msgid "</home/%D/%U>"
-msgstr "</home/%D/%U>"
-
-#: src/compat/authcompat_Options.py:159
-msgid "</bin/false>"
-msgstr "</bin/false>"
-
-#: src/compat/authcompat_Options.py:166
-msgid "<options>"
-msgstr "<opciones>"
-
-#: src/compat/authcompat_Options.py:210
-msgid "These options have a compatibility layer"
-msgstr "Estas opciones tienen una capa de compatibilidad"
-
-#: src/compat/authcompat_Options.py:211
-msgid "These options are no longer supported and have no effect"
-msgstr "Estas opciones ya no están soportadas y no tienen efecto"
-
-#: src/compat/authcompat_Options.py:313
-msgid "enable"
-msgstr "Activar"
-
-#: src/compat/authcompat_Options.py:314
-msgid "disable"
-msgstr "Desactivar"
-
-#: src/compat/authcompat.py.in.in:51
+#~ msgid "Unable to obtain nsswitch maps!"
+#~ msgstr "¡No fue posible obtener los mapeos de nsswitch!"
+
+#~ msgid "NIS for user information by default"
+#~ msgstr "de modo predeterminado NIS para obtener la información del usuario"
+
+#~ msgid "<domain>"
+#~ msgstr "<dominio>"
+
+#~ msgid "default NIS domain"
+#~ msgstr "Dominio NIS predeterminado"
+
+#~ msgid "<server>"
+#~ msgstr "<servidor>"
+
+#~ msgid "default NIS server"
+#~ msgstr "servidor NIS predeterminado"
+
+#~ msgid "LDAP for user information by default"
+#~ msgstr "de modo predeterminado LDAP para obtener la información del usuario"
+
+#~ msgid "LDAP for authentication by default"
+#~ msgstr "de modo predeterminado LDAP como método de autenticación"
+
+#~ msgid "default LDAP server hostname or URI"
+#~ msgstr "nombre del servidor o URI del LDAP predeterminado"
+
+#~ msgid "<dn>"
+#~ msgstr "<dn>"
+
+#~ msgid "default LDAP base DN"
+#~ msgstr "DN base predeterminado de LDAP"
+
+#~ msgid "use of TLS with LDAP (RFC-2830)"
+#~ msgstr "el uso de TLS con LDAP (RFC-2830)"
+
+#~ msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
+#~ msgstr "el uso de TLS para búsquedas de identidad con LDAP (RFC-2830)"
+
+#~ msgid "use of RFC-2307bis schema for LDAP user information lookups"
+#~ msgstr ""
+#~ "el uso del esquema RFC-2307bis para búsquedas de información de usuario "
+#~ "LDAP"
+
+#~ msgid "authentication with smart card by default"
+#~ msgstr "de modo predeterminado la autenticación con tarjeta inteligente"
+
+#~ msgid "<0=Lock|1=Ignore>"
+#~ msgstr "<0=Bloquear|1=Ignorar>"
+
+#~ msgid "action to be taken on smart card removal"
+#~ msgstr "acción a realizar al extraer la tarjeta inteligente"
+
+#~ msgid "require smart card for authentication by default"
+#~ msgstr "Requiere tarjeta inteligente para autenticación por defecto"
+
+#~ msgid "authentication with fingerprint readers by default"
+#~ msgstr ""
+#~ "de modo predeterminado la autenticación con lectores de huellas dactilares"
+
+#~ msgid "automatic per-user ecryptfs"
+#~ msgstr "ecryptfs automático para cada usuario"
+
+#~ msgid "Kerberos authentication by default"
+#~ msgstr "de modo predeterminado Kerberos para la autenticación"
+
+#~ msgid "default Kerberos KDC"
+#~ msgstr "KDC Kerberos predeterminado"
+
+#~ msgid "default Kerberos admin server"
+#~ msgstr "servidor de administración Kerberos predeterminado"
+
+#~ msgid "<realm>"
+#~ msgstr "<entorno>"
+
+#~ msgid "default Kerberos realm"
+#~ msgstr "entorno Kerberos predeterminado"
+
+#~ msgid "use of DNS to find Kerberos KDCs"
+#~ msgstr "el uso de DNS para encontrar los KDC de Kerberos"
+
+#~ msgid "use of DNS to find Kerberos realms"
+#~ msgstr "el uso de DNS para encontrar los entornos Kerberos"
+
+#~ msgid "winbind for user information by default"
+#~ msgstr ""
+#~ "de modo predeterminado winbind para obtener la información del usuario"
+
+#~ msgid "winbind for authentication by default"
+#~ msgstr "de modo predeterminado la autenticación mediante winbind"
+
+#~ msgid "<Administrator>"
+#~ msgstr "<administrador>"
+
+#~ msgid "join the winbind domain or ads realm now as this administrator"
+#~ msgstr ""
+#~ "unirse al dominio winbind o entorno de ads ahora como este administrador"
+
+#~ msgid "Kerberos 5 for authenticate with winbind"
+#~ msgstr "Kerberos 5 para autenticarse con winbind"
+
+#~ msgid "<workgroup>"
+#~ msgstr "<grupo de trabajo>"
+
+#~ msgid "workgroup authentication servers are in"
+#~ msgstr "el grupo de trabajo en el que están los servidores de autenticación"
+
+#~ msgid ""
+#~ "SSSD for user information by default with manually managed configuration"
+#~ msgstr ""
+#~ "de modo predeterminado SSSD para obtener la información del usuario, con "
+#~ "configuración gestionada de forma manual"
+
+#~ msgid ""
+#~ "SSSD for authentication by default with manually managed configuration"
+#~ msgstr ""
+#~ "de modo predeterminado SSSD para autenticación, con configuración "
+#~ "gestionada de forma manual"
+
+#~ msgid "caching of user credentials in SSSD by default"
+#~ msgstr ""
+#~ "de modo predeterminado la captura de credenciales de usuario en SSSD"
+
+#~ msgid "check of access.conf during account authorization"
+#~ msgstr "la comprobación de access.conf durante la autorización de la cuenta"
+
+#~ msgid "creation of home directories for users on their first login"
+#~ msgstr ""
+#~ "la creación de directorios personales de usuarios en su primer inicio de "
+#~ "sesión"
+
+#~ msgid ""
+#~ "account locking in case of too many consecutive authentication failures"
+#~ msgstr ""
+#~ "el bloqueo de cuenta en caso de demasiados fallos de autenticación "
+#~ "seguidos"
+
+#~ msgid "<number>"
+#~ msgstr "<número>"
+
+#~ msgid "minimum length of a password"
+#~ msgstr "longitud mínima de clave"
+
+#~ msgid "minimum number of character classes in a password"
+#~ msgstr "cantidad mínima de clases de caracteres en claves"
+
+#~ msgid "maximum number of same consecutive characters in a password"
+#~ msgstr "cantidad máxima de caracteres iguales seguidos en claves"
+
+#~ msgid "maximum number of consecutive characters of same class in a password"
+#~ msgstr "cantidad máxima de caracteres seguidos de la misma clase en claves"
+
+#~ msgid "require at least one lowercase character in a password"
+#~ msgstr "exige al menos una minúscula en las claves"
+
+#~ msgid "require at least one uppercase character in a password"
+#~ msgstr "exige al menos una mayúscula en las claves"
+
+#~ msgid "require at least one digit in a password"
+#~ msgstr "exige al menos un dígito en las claves"
+
+#~ msgid "require at least one other character in a password"
+#~ msgstr "exige al menos un carácter de otra clase en las claves"
+
+#~ msgid "do not start/stop services"
+#~ msgstr "No iniciar/parar servicios"
+
+#~ msgid "update all configuration files"
+#~ msgstr "Actualizar todos los archivos de configuración"
+
+#~ msgid "the same as --updateall"
+#~ msgstr "igual que --updateall"
+
+#~ msgid "<name>"
+#~ msgstr "<nombre>"
+
+#~ msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+#~ msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+
+#~ msgid "<URL>"
+#~ msgstr "<URL>"
+
+#~ msgid "<module>"
+#~ msgstr "<módulo>"
+
+#~ msgid "<user|server|domain|ads>"
+#~ msgstr "<usuario|servidor|dominio|ads>"
+
+#~ msgid "<servers>"
+#~ msgstr "<servidores>"
+
+#~ msgid "<lowest-highest>"
+#~ msgstr "<mínimo-máximo>"
+
+#~ msgid "<\\>"
+#~ msgstr "<\\>"
+
+#~ msgid "</home/%D/%U>"
+#~ msgstr "</home/%D/%U>"
+
+#~ msgid "</bin/false>"
+#~ msgstr "</bin/false>"
+
+#~ msgid "<options>"
+#~ msgstr "<opciones>"
+
+#~ msgid "These options have a compatibility layer"
+#~ msgstr "Estas opciones tienen una capa de compatibilidad"
+
+#~ msgid "These options are no longer supported and have no effect"
+#~ msgstr "Estas opciones ya no están soportadas y no tienen efecto"
+
+#~ msgid "enable"
+#~ msgstr "Activar"
+
+#~ msgid "disable"
+#~ msgstr "Desactivar"
+
 #, python-format
-msgid "Executing: %s"
-msgstr "Ejecutando: %s"
+#~ msgid "Executing: %s"
+#~ msgstr "Ejecutando: %s"
 
-#: src/compat/authcompat.py.in.in:71
 #, python-format
-msgid "Service %s was not found. Please install the service."
-msgstr "No se encontró el servicio %s. Instale el servicio."
+#~ msgid "Service %s was not found. Please install the service."
+#~ msgstr "No se encontró el servicio %s. Instale el servicio."
 
-#: src/compat/authcompat.py.in.in:74 src/compat/authcompat.py.in.in:631
-#: src/compat/authcompat.py.in.in:657
 #, python-format
-msgid "Command [%s] failed with %d, stderr:"
-msgstr "La orden [%s] falló con error %d, stderr:"
+#~ msgid "Command [%s] failed with %d, stderr:"
+#~ msgstr "La orden [%s] falló con error %d, stderr:"
 
-#: src/compat/authcompat.py.in.in:186
 #, python-format
-msgid "Removing file: %s"
-msgstr "Eliminando archivo: %s"
+#~ msgid "Removing file: %s"
+#~ msgstr "Eliminando archivo: %s"
 
-#: src/compat/authcompat.py.in.in:335
 #, python-format
-msgid "%s was not found. Please, install realmd."
-msgstr "No se encontró %s. Instale realmd."
+#~ msgid "%s was not found. Please, install realmd."
+#~ msgstr "No se encontró %s. Instale realmd."
 
-#: src/compat/authcompat.py.in.in:469
-msgid "Running authconfig compatibility tool."
-msgstr "Ejecutando la herramienta de compatibilidad con authconfig."
+#~ msgid "Running authconfig compatibility tool."
+#~ msgstr "Ejecutando la herramienta de compatibilidad con authconfig."
 
-#: src/compat/authcompat.py.in.in:470
-msgid ""
-"The purpose of this tool is to enable authentication against chosen services "
-"with authselect and minimum configuration. It does not provide all "
-"capabilities of authconfig.\n"
-msgstr ""
-"El propósito de esta herramienta es permitir la autenticación contra los "
-"servicios seleccionado con authselect y una configuración mínima. No "
-"proporciona todas las posibilidades de authconfig.\n"
+#~ msgid ""
+#~ "The purpose of this tool is to enable authentication against chosen "
+#~ "services with authselect and minimum configuration. It does not provide "
+#~ "all capabilities of authconfig.\n"
+#~ msgstr ""
+#~ "El propósito de esta herramienta es permitir la autenticación contra los "
+#~ "servicios seleccionado con authselect y una configuración mínima. No "
+#~ "proporciona todas las posibilidades de authconfig.\n"
 
-#: src/compat/authcompat.py.in.in:473
-msgid ""
-"IMPORTANT: authconfig is replaced by authselect, please update your scripts."
-msgstr ""
-"IMPORTANTE: authconfig ha sido reemplazado por authselect, por favor "
-"actualice sus scripts."
+#~ msgid ""
+#~ "IMPORTANT: authconfig is replaced by authselect, please update your "
+#~ "scripts."
+#~ msgstr ""
+#~ "IMPORTANTE: authconfig ha sido reemplazado por authselect, por favor "
+#~ "actualice sus scripts."
 
-#: src/compat/authcompat.py.in.in:475
-msgid ""
-"See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
-"AuthselectAsDefault"
-msgstr ""
-"Mire la página de cambios de Fedora 28: https://fedoraproject.org/wiki/"
-"Changes/AuthselectAsDefault"
+#~ msgid ""
+#~ "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
+#~ "AuthselectAsDefault"
+#~ msgstr ""
+#~ "Mire la página de cambios de Fedora 28: https://fedoraproject.org/wiki/"
+#~ "Changes/AuthselectAsDefault"
 
-#: src/compat/authcompat.py.in.in:476
-msgid ""
-"See man authselect-migration(7) to help you with migration to authselect"
-msgstr ""
-"Consulte man authselect-migration(7) para obtener ayuda con la migración a "
-"authselect"
+#~ msgid ""
+#~ "See man authselect-migration(7) to help you with migration to authselect"
+#~ msgstr ""
+#~ "Consulte man authselect-migration(7) para obtener ayuda con la migración "
+#~ "a authselect"
 
-#: src/compat/authcompat.py.in.in:480
-msgid "Warning: These options are not supported anymore and have no effect:"
-msgstr "Advertencia: estas opciones ya no están soportadas y no tienen efecto:"
+#~ msgid "Warning: These options are not supported anymore and have no effect:"
+#~ msgstr ""
+#~ "Advertencia: estas opciones ya no están soportadas y no tienen efecto:"
 
-#: src/compat/authcompat.py.in.in:500
-msgid "authconfig can only be run as root"
-msgstr "sólo se puede ejecutar authconfig como root"
+#~ msgid "authconfig can only be run as root"
+#~ msgstr "sólo se puede ejecutar authconfig como root"
 
-#: src/compat/authcompat.py.in.in:505
 #, python-format
-msgid ""
-"Error: option --%s is no longer supported and we cannot continue if it is "
-"set."
-msgstr ""
-"Error: la opción --%s ya no está soportada y no se puede continuar si se "
-"establece."
+#~ msgid ""
+#~ "Error: option --%s is no longer supported and we cannot continue if it is "
+#~ "set."
+#~ msgstr ""
+#~ "Error: la opción --%s ya no está soportada y no se puede continuar si se "
+#~ "establece."
 
-#: src/compat/authcompat.py.in.in:510
-msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
-msgstr "Error: Deben indicarse a la vez --enablewinbind y --enablewinbindauth."
+#~ msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
+#~ msgstr ""
+#~ "Error: Deben indicarse a la vez --enablewinbind y --enablewinbindauth."
 
-#: src/compat/authcompat.py.in.in:520
-msgid "Error: Please, provide --updateall option."
-msgstr "Error: Por favor, indique la opción --updateall."
+#~ msgid "Error: Please, provide --updateall option."
+#~ msgstr "Error: Por favor, indique la opción --updateall."
 
 #~ msgid "Unable to get current time!"
 #~ msgstr "¡No se pudo obtener la hora!"

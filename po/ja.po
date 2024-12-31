@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2023-09-27 13:03+0200\n"
+"POT-Creation-Date: 2024-02-23 14:08+0100\n"
 "PO-Revision-Date: 2023-12-06 10:43+0000\n"
 "Last-Translator: Yūtenji <yuta@59ry.jp>\n"
 "Language-Team: Japanese <https://translate.fedoraproject.org/projects/"
@@ -573,7 +573,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "[%s] の basename を取得できません"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:857
+#: src/lib/util/file.c:199 src/cli/main.c:848
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "[%s] [%d] に対する stat の実行に失敗しました: %s"
@@ -869,7 +869,7 @@ msgstr "一般的なオプション:"
 msgid "[OPTIONS...]"
 msgstr "[OPTIONS...]"
 
-#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:849
+#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:840
 msgid "Out of memory!"
 msgstr "メモリーの空き容量がありません!"
 
@@ -918,14 +918,14 @@ msgstr ""
 "少なくとも 1 つのオプションが必要です。\n"
 "\n"
 
-#: src/cli/main.c:76 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:76 src/cli/main.c:432 src/cli/main.c:475
 msgid "Profile identifier."
 msgstr "プロファイル識別子。"
 
-#: src/cli/main.c:79 src/cli/main.c:257 src/cli/main.c:302 src/cli/main.c:351
-#: src/cli/main.c:399 src/cli/main.c:444 src/cli/main.c:487 src/cli/main.c:660
-#: src/cli/main.c:737 src/cli/main.c:784 src/cli/main.c:824 src/cli/main.c:889
-#: src/cli/main.c:915
+#: src/cli/main.c:79 src/cli/main.c:248 src/cli/main.c:293 src/cli/main.c:342
+#: src/cli/main.c:390 src/cli/main.c:435 src/cli/main.c:478 src/cli/main.c:651
+#: src/cli/main.c:728 src/cli/main.c:775 src/cli/main.c:815 src/cli/main.c:880
+#: src/cli/main.c:906
 msgid "Unable to parse command arguments"
 msgstr "コマンド引数を解析できません"
 
@@ -942,16 +942,16 @@ msgstr "バックアップは %s に保存されました\n"
 msgid "Enforce changes"
 msgstr "変更を強制"
 
-#: src/cli/main.c:162 src/cli/main.c:250 src/cli/main.c:650 src/cli/main.c:728
+#: src/cli/main.c:162 src/cli/main.c:241 src/cli/main.c:641 src/cli/main.c:719
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr ""
 "プロファイルの実行前にシステムファイルをバックアップします (固有名の生成)"
 
-#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "Backup system files before activating profile"
 msgstr "プロファイルの実行前にシステムファイルをバックアップします"
 
-#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "NAME"
 msgstr "名前"
 
@@ -959,25 +959,21 @@ msgstr "名前"
 msgid "Do not backup system files when --force is set"
 msgstr "--force が設定されている場合は、システムファイルをバックアップしません"
 
-#: src/cli/main.c:165 src/cli/main.c:652
+#: src/cli/main.c:165 src/cli/main.c:643
 msgid "Do not print profile requirements"
 msgstr "プロファイル要件を印刷しません"
 
-#: src/cli/main.c:176 src/cli/main.c:414 src/cli/main.c:450 src/cli/main.c:493
-#: src/cli/main.c:525 src/cli/main.c:679
+#: src/cli/main.c:176 src/cli/main.c:405 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:516 src/cli/main.c:670
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "プロファイル情報 [%d] を取得できません: %s"
 
-#: src/cli/main.c:184 src/cli/main.c:533 src/cli/main.c:687
+#: src/cli/main.c:184 src/cli/main.c:524 src/cli/main.c:678
 msgid "Unable to read profile requirements!"
 msgstr "プロファイル要件を読み込むことができません!"
 
-#: src/cli/main.c:192
-msgid "Unable to obtain nsswitch maps!"
-msgstr "nsswitch マップを取得できません!"
-
-#: src/cli/main.c:207
+#: src/cli/main.c:198
 msgid ""
 "\n"
 "Some unexpected changes to the configuration were detected.\n"
@@ -987,26 +983,26 @@ msgstr ""
 "設定への予期せぬ変更をいくつか検出しました。\n"
 "これらの変更を上書きしたい場合は、--force パラメーターを使用します。\n"
 
-#: src/cli/main.c:212
+#: src/cli/main.c:203
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "プロファイル [%d] を実行できません: %s\n"
 
-#: src/cli/main.c:217
+#: src/cli/main.c:208
 #, c-format
 msgid "Profile \"%s\" was selected.\n"
 msgstr "プロファイル \"%s\" が設定されました。\n"
 
-#: src/cli/main.c:220
+#: src/cli/main.c:211
 msgid "The following nsswitch maps are overwritten by the profile:\n"
 msgstr "以下の nsswitch マップはプロファイルで上書きされます:\n"
 
-#: src/cli/main.c:223
+#: src/cli/main.c:214
 #, c-format
 msgid "- %s\n"
 msgstr "- %s\n"
 
-#: src/cli/main.c:228
+#: src/cli/main.c:219
 #, c-format
 msgid ""
 "\n"
@@ -1015,15 +1011,15 @@ msgstr ""
 "\n"
 "%s\n"
 
-#: src/cli/main.c:269
+#: src/cli/main.c:260
 msgid "Changes were successfully applied.\n"
 msgstr "変更は正常に適用されました。\n"
 
-#: src/cli/main.c:272 src/cli/main.c:308 src/cli/main.c:669
+#: src/cli/main.c:263 src/cli/main.c:299 src/cli/main.c:660
 msgid "No existing configuration detected.\n"
 msgstr "既存の設定は検出されませんでした。\n"
 
-#: src/cli/main.c:275
+#: src/cli/main.c:266
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
@@ -1031,107 +1027,107 @@ msgstr ""
 "設定への予期せぬ変更をいくつか検出しました。代わりに 'select' コマンドを使用"
 "します。\n"
 
-#: src/cli/main.c:279
+#: src/cli/main.c:270
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr "変更 [%d] を適用できません: %s\n"
 
-#: src/cli/main.c:296
+#: src/cli/main.c:287
 msgid "Print command parameters instead of formatted output"
 msgstr "フォーマット化された出力の代わりに、コマンドパラメーターを印刷します"
 
-#: src/cli/main.c:311 src/cli/main.c:672
+#: src/cli/main.c:302 src/cli/main.c:663
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "現在の設定 [%d] を取得できません: %s"
 
-#: src/cli/main.c:325
+#: src/cli/main.c:316
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "プロファイル ID: %s\n"
 
-#: src/cli/main.c:326
+#: src/cli/main.c:317
 msgid "Enabled features:"
 msgstr "有効な機能:"
 
-#: src/cli/main.c:329
+#: src/cli/main.c:320
 msgid " None\n"
 msgstr " なし\n"
 
-#: src/cli/main.c:357
+#: src/cli/main.c:348
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "現在の設定 [%d] をテストできません: %s"
 
-#: src/cli/main.c:364
+#: src/cli/main.c:355
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
 msgstr "現在の設定は無効です。authselect 外で変更された可能性があります。"
 
-#: src/cli/main.c:371
+#: src/cli/main.c:362
 msgid "Current configuration is valid."
 msgstr "現在の設定は有効です。"
 
-#: src/cli/main.c:374
+#: src/cli/main.c:365
 msgid "No configuration detected."
 msgstr "設定が検出されませんでした。"
 
-#: src/cli/main.c:378
+#: src/cli/main.c:369
 msgid "System was not configured with authselect."
 msgstr "システムは authselect で設定されませんでした。"
 
-#: src/cli/main.c:405
+#: src/cli/main.c:396
 msgid "Unable to get profile list!"
 msgstr "プロファイルリストを取得できません!"
 
-#: src/cli/main.c:458
+#: src/cli/main.c:449
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
 msgstr "プロファイル機能 [%d] を取得できませんでした: %s"
 
-#: src/cli/main.c:572
+#: src/cli/main.c:563
 msgid "Print content of all files"
 msgstr "すべてのファイルのコンテンツを印刷します"
 
-#: src/cli/main.c:573
+#: src/cli/main.c:564
 msgid "Print nsswitch.conf content"
 msgstr "nsswitch.conf コンテンツを印刷します"
 
-#: src/cli/main.c:574
+#: src/cli/main.c:565
 msgid "Print system-auth content"
 msgstr "system-auth コンテンツを印刷します"
 
-#: src/cli/main.c:575
+#: src/cli/main.c:566
 msgid "Print password-auth content"
 msgstr "password-auth コンテンツを印刷します"
 
-#: src/cli/main.c:576
+#: src/cli/main.c:567
 msgid "Print smartcard-auth content"
 msgstr "smartcard-auth コンテンツを印刷します"
 
-#: src/cli/main.c:577
+#: src/cli/main.c:568
 msgid "Print fingerprint-auth content"
 msgstr "fingerprint-auth コンテンツを印刷します"
 
-#: src/cli/main.c:578
+#: src/cli/main.c:569
 msgid "Print postlogin content"
 msgstr "postlogin コンテンツを印刷します"
 
-#: src/cli/main.c:579
+#: src/cli/main.c:570
 msgid "Print dconf database content"
 msgstr "dconf データベースコンテンツを印刷します"
 
-#: src/cli/main.c:580
+#: src/cli/main.c:571
 msgid "Print dconf lock content"
 msgstr "dconf ロックコンテンツを印刷します"
 
-#: src/cli/main.c:607
+#: src/cli/main.c:598
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "生成されたコンテンツ [%d] を取得できません: %s"
 
-#: src/cli/main.c:626
+#: src/cli/main.c:617
 #, c-format
 msgid ""
 "File %s: Empty\n"
@@ -1140,7 +1136,7 @@ msgstr ""
 "ファイル %s: 空\n"
 "\n"
 
-#: src/cli/main.c:628
+#: src/cli/main.c:619
 #, c-format
 msgid ""
 "File %s:\n"
@@ -1151,45 +1147,45 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/cli/main.c:657
+#: src/cli/main.c:648
 msgid "Feature to enable."
 msgstr "有効化する機能。"
 
-#: src/cli/main.c:694
+#: src/cli/main.c:685
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
 msgstr "現在の設定 [%d] をバックアップできません: %s\n"
 
-#: src/cli/main.c:701
+#: src/cli/main.c:692
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "機能 [%d] を有効化できません: %s\n"
 
-#: src/cli/main.c:706
+#: src/cli/main.c:697
 #, c-format
 msgid "%s\n"
 msgstr "%s\n"
 
-#: src/cli/main.c:734
+#: src/cli/main.c:725
 msgid "Feature to disable."
 msgstr "無効化する機能。"
 
-#: src/cli/main.c:748
+#: src/cli/main.c:739
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "機能 [%d] を無効化できません: %s\n"
 
-#: src/cli/main.c:769
+#: src/cli/main.c:760
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr ""
 "カスタムプロファイルの代わりにベンダープロファイルとして新規のプロファイルを"
 "作成します"
 
-#: src/cli/main.c:770
+#: src/cli/main.c:761
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr "新規のプロファイルのベースとして使用すべきプロファイルの ID"
 
-#: src/cli/main.c:771
+#: src/cli/main.c:762
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1197,534 +1193,456 @@ msgstr ""
 "同名のベンダープロファイルがある場合でも、新規のプロファイルのベースをデフォ"
 "ルトプロファイルに置きます"
 
-#: src/cli/main.c:772
+#: src/cli/main.c:763
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr "meta ファイルをコピーする代わりにベースプロファイルから Symlink します"
 
-#: src/cli/main.c:773
+#: src/cli/main.c:764
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr ""
 "nsswitch ファイルをコピーする代わりにベースプロファイルから Symlink します"
 
-#: src/cli/main.c:774
+#: src/cli/main.c:765
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr "pam ファイルをコピーする代わりにベースプロファイルから Symlink します"
 
-#: src/cli/main.c:775
+#: src/cli/main.c:766
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
 "dconf ファイルをコピーする代わりにベースプロファイルから Symlink します"
 
-#: src/cli/main.c:776
+#: src/cli/main.c:767
 msgid "Symlink specific file (can be set multiple times)"
 msgstr "特定のファイルを Symlink します (複数回設定できます)"
 
-#: src/cli/main.c:781
+#: src/cli/main.c:772
 msgid "New profile name."
 msgstr "新規のプロファイル名。"
 
-#: src/cli/main.c:791
+#: src/cli/main.c:782
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "新規のプロファイル [%d] を作成できません: %s\n"
 
-#: src/cli/main.c:795
+#: src/cli/main.c:786
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "%s で新規のプロファイルが作成されました\n"
 
-#: src/cli/main.c:818
+#: src/cli/main.c:809
 msgid "Print backup names without any formatting and additional information"
 msgstr "フォーマットおよび追加情報なしでバックアップ名を印刷します"
 
-#: src/cli/main.c:830
+#: src/cli/main.c:821
 msgid "Unable to list available backups!"
 msgstr "利用可能なバックアップの一覧表示ができません!"
 
-#: src/cli/main.c:867
+#: src/cli/main.c:858
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (%s で作成)\n"
 
-#: src/cli/main.c:886
+#: src/cli/main.c:877
 msgid "Name of the backup to remove."
 msgstr "削除するバックアップ名。"
 
-#: src/cli/main.c:895
+#: src/cli/main.c:886
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "バックアップ [%s] [%d] を削除できません: %s\n"
 
-#: src/cli/main.c:912
+#: src/cli/main.c:903
 msgid "Name of the backup to restore from."
 msgstr "復元するバックアップ名。"
 
-#: src/cli/main.c:921
+#: src/cli/main.c:912
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "バックアップ [%s] [%d] を復元できません: %s\n"
 
-#: src/cli/main.c:937
+#: src/cli/main.c:928
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "authselect 設定 %d をアンインストールできません: %s\n"
 
-#: src/cli/main.c:987
+#: src/cli/main.c:978
 msgid "Select profile"
 msgstr "プロファイルを選択します"
 
-#: src/cli/main.c:988
+#: src/cli/main.c:979
 msgid "Regenerate configuration for currently selected command"
 msgstr "選択されたコマンド用の設定を再生成します"
 
-#: src/cli/main.c:989
+#: src/cli/main.c:980
 msgid "List available profiles"
 msgstr "利用可能なプロファイルを一覧表示します"
 
-#: src/cli/main.c:990
+#: src/cli/main.c:981
 msgid "List available profile features"
 msgstr "利用可能なプロファイル機能を一覧表示します"
 
-#: src/cli/main.c:991
+#: src/cli/main.c:982
 msgid "Show profile information"
 msgstr "プロファイル情報を表示します"
 
-#: src/cli/main.c:992
+#: src/cli/main.c:983
 msgid "Print profile requirements"
 msgstr "プロファイル要件を出力します"
 
-#: src/cli/main.c:993
+#: src/cli/main.c:984
 msgid "Get identifier of currently selected profile"
 msgstr "現在選択されているプロファイルの識別子を取得します"
 
-#: src/cli/main.c:994
+#: src/cli/main.c:985
 msgid "Check if the current configuration is valid"
 msgstr "現在の設定が有効かを確認します"
 
-#: src/cli/main.c:995
+#: src/cli/main.c:986
 msgid "Print changes that would be otherwise written"
 msgstr "書き込まれることになる変更を出力します"
 
-#: src/cli/main.c:996
+#: src/cli/main.c:987
 msgid "Enable feature in currently selected profile"
 msgstr "現在選択されているプロファイルの機能を有効にします"
 
-#: src/cli/main.c:997
+#: src/cli/main.c:988
 msgid "Disable feature in currently selected profile"
 msgstr "現在選択されているプロファイルの機能を無効にします"
 
-#: src/cli/main.c:998
+#: src/cli/main.c:989
 msgid "Create new authselect profile"
 msgstr "新規の authselect プロファイルを作成します"
 
-#: src/cli/main.c:999
+#: src/cli/main.c:990
 msgid "Backup commands:"
 msgstr "バックアップコマンド:"
 
-#: src/cli/main.c:1000
+#: src/cli/main.c:991
 msgid "List available backups"
 msgstr "利用可能なバックアップを一覧表示します"
 
-#: src/cli/main.c:1001
+#: src/cli/main.c:992
 msgid "Remove backup"
 msgstr "バックアップを削除します"
 
-#: src/cli/main.c:1002
+#: src/cli/main.c:993
 msgid "Restore from backup"
 msgstr "バックアップから復元します"
 
-#: src/cli/main.c:1003
+#: src/cli/main.c:994
 msgid "Other:"
 msgstr "その他:"
 
-#: src/cli/main.c:1004
+#: src/cli/main.c:995
 msgid "Opt-out from authselect managed configuration"
 msgstr "authselect 管理設定からのオプトアウト"
 
-#: src/cli/main.c:1006
+#: src/cli/main.c:997
 msgid "Print authselect version"
 msgstr "authselect バージョンの出力"
 
-#: src/compat/authcompat_Options.py:82
-msgid "NIS for user information by default"
-msgstr "デフォルトでのユーザー情報の NIS"
+#~ msgid "Unable to obtain nsswitch maps!"
+#~ msgstr "nsswitch マップを取得できません!"
+
+#~ msgid "NIS for user information by default"
+#~ msgstr "デフォルトでのユーザー情報の NIS"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:b13e18563503b3a573ef84b276e70280
-#: src/compat/authcompat_Options.py:83
-msgid "<domain>"
-msgstr "<domain>"
+#~ msgid "<domain>"
+#~ msgstr "<domain>"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:d2ee751de8c72c965d25f315f6c47df2
-#: src/compat/authcompat_Options.py:83
-msgid "default NIS domain"
-msgstr "デフォルトの NIS ドメイン"
+#~ msgid "default NIS domain"
+#~ msgstr "デフォルトの NIS ドメイン"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:bd59484873912f389e8d5dafd6bfe04a
-#: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
-#: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
-msgid "<server>"
-msgstr "<server>"
+#~ msgid "<server>"
+#~ msgstr "<server>"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:eecb12e478d64a54bb587f07e4c09090
-#: src/compat/authcompat_Options.py:84
-msgid "default NIS server"
-msgstr "デフォルトの NIS サーバー"
+#~ msgid "default NIS server"
+#~ msgstr "デフォルトの NIS サーバー"
 
-#: src/compat/authcompat_Options.py:85
-msgid "LDAP for user information by default"
-msgstr "デフォルトでのユーザー情報の LDAP"
+#~ msgid "LDAP for user information by default"
+#~ msgstr "デフォルトでのユーザー情報の LDAP"
 
-#: src/compat/authcompat_Options.py:86
-msgid "LDAP for authentication by default"
-msgstr "デフォルトでの LDAP 認証"
+#~ msgid "LDAP for authentication by default"
+#~ msgstr "デフォルトでの LDAP 認証"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:8883a44df11dde68ea35816597236020
-#: src/compat/authcompat_Options.py:87
-msgid "default LDAP server hostname or URI"
-msgstr "デフォルトの LDAP サーバーホスト名または URI"
+#~ msgid "default LDAP server hostname or URI"
+#~ msgstr "デフォルトの LDAP サーバーホスト名または URI"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:89da964761ba35b49b02d1e945b7d714
-#: src/compat/authcompat_Options.py:88
-msgid "<dn>"
-msgstr "<dn>"
+#~ msgid "<dn>"
+#~ msgstr "<dn>"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:13338fc91555ecabe0ab87c95e9ee403
-#: src/compat/authcompat_Options.py:88
-msgid "default LDAP base DN"
-msgstr "デフォルトの LDAP ベースの DN"
+#~ msgid "default LDAP base DN"
+#~ msgstr "デフォルトの LDAP ベースの DN"
 
-#: src/compat/authcompat_Options.py:89
-msgid "use of TLS with LDAP (RFC-2830)"
-msgstr "LDAP (RFC-2830) と TLS の併用"
+#~ msgid "use of TLS with LDAP (RFC-2830)"
+#~ msgstr "LDAP (RFC-2830) と TLS の併用"
 
-#: src/compat/authcompat_Options.py:90
-msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
-msgstr "アイデンティティーの検索に LDAP (RFC-2830) と TLS を併用"
+#~ msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
+#~ msgstr "アイデンティティーの検索に LDAP (RFC-2830) と TLS を併用"
 
-#: src/compat/authcompat_Options.py:91
-msgid "use of RFC-2307bis schema for LDAP user information lookups"
-msgstr "LDAP ユーザー情報の検索に RFC-2307bis スキーマを使用"
+#~ msgid "use of RFC-2307bis schema for LDAP user information lookups"
+#~ msgstr "LDAP ユーザー情報の検索に RFC-2307bis スキーマを使用"
 
-#: src/compat/authcompat_Options.py:92
-msgid "authentication with smart card by default"
-msgstr "デフォルトでのスマートカード認証"
+#~ msgid "authentication with smart card by default"
+#~ msgstr "デフォルトでのスマートカード認証"
 
-#: src/compat/authcompat_Options.py:93
-msgid "<0=Lock|1=Ignore>"
-msgstr "<0=Lock|1=Ignore>"
+#~ msgid "<0=Lock|1=Ignore>"
+#~ msgstr "<0=Lock|1=Ignore>"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:a6cd4bbfebca4a8f2374370e90927e4d
-#: src/compat/authcompat_Options.py:93
-msgid "action to be taken on smart card removal"
-msgstr "スマートカードの取り出し時に行う動作"
+#~ msgid "action to be taken on smart card removal"
+#~ msgstr "スマートカードの取り出し時に行う動作"
 
-#: src/compat/authcompat_Options.py:94
-msgid "require smart card for authentication by default"
-msgstr "デフォルトでは、認証用のスマートカードが必要です"
+#~ msgid "require smart card for authentication by default"
+#~ msgstr "デフォルトでは、認証用のスマートカードが必要です"
 
-#: src/compat/authcompat_Options.py:95
-msgid "authentication with fingerprint readers by default"
-msgstr "デフォルトでの指紋リーダーによる認証"
+#~ msgid "authentication with fingerprint readers by default"
+#~ msgstr "デフォルトでの指紋リーダーによる認証"
 
-#: src/compat/authcompat_Options.py:96
-msgid "automatic per-user ecryptfs"
-msgstr "ユーザーごとの自動 ecryptfs"
+#~ msgid "automatic per-user ecryptfs"
+#~ msgstr "ユーザーごとの自動 ecryptfs"
 
-#: src/compat/authcompat_Options.py:97
-msgid "Kerberos authentication by default"
-msgstr "デフォルトでの Kerberos 認証"
+#~ msgid "Kerberos authentication by default"
+#~ msgstr "デフォルトでの Kerberos 認証"
 
-#: src/compat/authcompat_Options.py:98
-msgid "default Kerberos KDC"
-msgstr "デフォルトの Kerberos KDC"
+#~ msgid "default Kerberos KDC"
+#~ msgstr "デフォルトの Kerberos KDC"
 
-#: src/compat/authcompat_Options.py:99
-msgid "default Kerberos admin server"
-msgstr "デフォルトの Kerberos 管理サーバー"
+#~ msgid "default Kerberos admin server"
+#~ msgstr "デフォルトの Kerberos 管理サーバー"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:29fe7dbe08b6548ac80f9a4cc9fd991f
-#: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
-msgid "<realm>"
-msgstr "<realm>"
+#~ msgid "<realm>"
+#~ msgstr "<realm>"
 
-#: src/compat/authcompat_Options.py:100
-msgid "default Kerberos realm"
-msgstr "デフォルトの Kerberos レルム"
+#~ msgid "default Kerberos realm"
+#~ msgstr "デフォルトの Kerberos レルム"
 
-#: src/compat/authcompat_Options.py:101
-msgid "use of DNS to find Kerberos KDCs"
-msgstr "Kerberos KDC の検索に DNS を使用"
+#~ msgid "use of DNS to find Kerberos KDCs"
+#~ msgstr "Kerberos KDC の検索に DNS を使用"
 
-#: src/compat/authcompat_Options.py:102
-msgid "use of DNS to find Kerberos realms"
-msgstr "Kerberos レルムの検索に DNS を使用"
+#~ msgid "use of DNS to find Kerberos realms"
+#~ msgstr "Kerberos レルムの検索に DNS を使用"
 
-#: src/compat/authcompat_Options.py:103
-msgid "winbind for user information by default"
-msgstr "デフォルトでのユーザー情報の winbind"
+#~ msgid "winbind for user information by default"
+#~ msgstr "デフォルトでのユーザー情報の winbind"
 
-#: src/compat/authcompat_Options.py:104
-msgid "winbind for authentication by default"
-msgstr "デフォルトでの winbind 認証"
+#~ msgid "winbind for authentication by default"
+#~ msgstr "デフォルトでの winbind 認証"
 
-#: src/compat/authcompat_Options.py:105
-msgid "<Administrator>"
-msgstr "<Administrator>"
+#~ msgid "<Administrator>"
+#~ msgstr "<Administrator>"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:fa087f878255f424fae3a2ca5ac8504c
-#: src/compat/authcompat_Options.py:105
-msgid "join the winbind domain or ads realm now as this administrator"
-msgstr "この管理者として winbind ドメインまたは ADS レルムに参加します"
+#~ msgid "join the winbind domain or ads realm now as this administrator"
+#~ msgstr "この管理者として winbind ドメインまたは ADS レルムに参加します"
 
-#: src/compat/authcompat_Options.py:106
-msgid "Kerberos 5 for authenticate with winbind"
-msgstr "winbind 認証に Kerberos 5"
+#~ msgid "Kerberos 5 for authenticate with winbind"
+#~ msgstr "winbind 認証に Kerberos 5"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:621dbf806779e36d9d6cec1643f5c53e
-#: src/compat/authcompat_Options.py:107
-msgid "<workgroup>"
-msgstr "<workgroup>"
+#~ msgid "<workgroup>"
+#~ msgstr "<workgroup>"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:20c3dedbf21dc80956e95eedd059590f
-#: src/compat/authcompat_Options.py:107
-msgid "workgroup authentication servers are in"
-msgstr "認証サーバーを含むワークグループ"
+#~ msgid "workgroup authentication servers are in"
+#~ msgstr "認証サーバーを含むワークグループ"
 
-#: src/compat/authcompat_Options.py:108
-msgid ""
-"SSSD for user information by default with manually managed configuration"
-msgstr "手動管理の設定を伴うデフォルトでのユーザー情報の SSSD"
+#~ msgid ""
+#~ "SSSD for user information by default with manually managed configuration"
+#~ msgstr "手動管理の設定を伴うデフォルトでのユーザー情報の SSSD"
 
-#: src/compat/authcompat_Options.py:109
-msgid "SSSD for authentication by default with manually managed configuration"
-msgstr "手動管理の設定を伴うデフォルトでの SSSD 認証"
+#~ msgid ""
+#~ "SSSD for authentication by default with manually managed configuration"
+#~ msgstr "手動管理の設定を伴うデフォルトでの SSSD 認証"
 
-#: src/compat/authcompat_Options.py:110
-msgid "caching of user credentials in SSSD by default"
-msgstr "デフォルトでの SSSD ユーザー認証情報のキャッシュ"
+#~ msgid "caching of user credentials in SSSD by default"
+#~ msgstr "デフォルトでの SSSD ユーザー認証情報のキャッシュ"
 
-#: src/compat/authcompat_Options.py:111
-msgid "check of access.conf during account authorization"
-msgstr "アカウントの承認中に access.conf を確認する"
+#~ msgid "check of access.conf during account authorization"
+#~ msgstr "アカウントの承認中に access.conf を確認する"
 
-#: src/compat/authcompat_Options.py:112
-msgid "creation of home directories for users on their first login"
-msgstr "ユーザーの最初のログイン時にホームディレクトリーを作成する"
+#~ msgid "creation of home directories for users on their first login"
+#~ msgstr "ユーザーの最初のログイン時にホームディレクトリーを作成する"
 
-#: src/compat/authcompat_Options.py:113
-msgid "account locking in case of too many consecutive authentication failures"
-msgstr "認証を続けて失敗した場合にアカウントロックを有効にする"
+#~ msgid ""
+#~ "account locking in case of too many consecutive authentication failures"
+#~ msgstr "認証を続けて失敗した場合にアカウントロックを有効にする"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:b78a981cc40fc4e66208bf5ee6d1a1eb
-#: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
-#: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
-msgid "<number>"
-msgstr "<number>"
+#~ msgid "<number>"
+#~ msgstr "<number>"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:e10d4b0b5be6f63f3f624565a6039a72
-#: src/compat/authcompat_Options.py:114
-msgid "minimum length of a password"
-msgstr "パスワードの最小文字数"
+#~ msgid "minimum length of a password"
+#~ msgstr "パスワードの最小文字数"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:092ba8b384fcd6e31d31a0304284d857
-#: src/compat/authcompat_Options.py:115
-msgid "minimum number of character classes in a password"
-msgstr "パスワードの文字クラスの最小数"
+#~ msgid "minimum number of character classes in a password"
+#~ msgstr "パスワードの文字クラスの最小数"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:c47b4ec5f075bb35c109b6cf027eacd7
-#: src/compat/authcompat_Options.py:116
-msgid "maximum number of same consecutive characters in a password"
-msgstr "パスワードにおける同じ文字の最大連続数"
+#~ msgid "maximum number of same consecutive characters in a password"
+#~ msgstr "パスワードにおける同じ文字の最大連続数"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:bb89d15b74f4ccd5a7a8f2ebc627f8e8
-#: src/compat/authcompat_Options.py:117
-msgid "maximum number of consecutive characters of same class in a password"
-msgstr "パスワードにおける同じクラスの文字の最大連続数"
+#~ msgid "maximum number of consecutive characters of same class in a password"
+#~ msgstr "パスワードにおける同じクラスの文字の最大連続数"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:875058de2c436a0ff535fc9c94187476
-#: src/compat/authcompat_Options.py:118
-msgid "require at least one lowercase character in a password"
-msgstr "パスワードに少なくとも小文字 1 文字を必要とする"
+#~ msgid "require at least one lowercase character in a password"
+#~ msgstr "パスワードに少なくとも小文字 1 文字を必要とする"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:df5240454af27f1a5cbc56e1dda2ca53
-#: src/compat/authcompat_Options.py:119
-msgid "require at least one uppercase character in a password"
-msgstr "パスワードに少なくとも大文字 1 文字を必要とする"
+#~ msgid "require at least one uppercase character in a password"
+#~ msgstr "パスワードに少なくとも大文字 1 文字を必要とする"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:dec9cf3d547d2b8820faf90cb43c9f57
-#: src/compat/authcompat_Options.py:120
-msgid "require at least one digit in a password"
-msgstr "パスワードに少なくとも数字 1 つを必要とする"
+#~ msgid "require at least one digit in a password"
+#~ msgstr "パスワードに少なくとも数字 1 つを必要とする"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:5278b5333982dcadeec67f57a6781fb9
-#: src/compat/authcompat_Options.py:121
-msgid "require at least one other character in a password"
-msgstr "パスワードに少なくとも記号 1 つを必要とする"
+#~ msgid "require at least one other character in a password"
+#~ msgstr "パスワードに少なくとも記号 1 つを必要とする"
 
-#: src/compat/authcompat_Options.py:124
-msgid "do not start/stop services"
-msgstr "サービスを起動/停止しない"
+#~ msgid "do not start/stop services"
+#~ msgstr "サービスを起動/停止しない"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:a2d7531edd445e037e6afcf717f2fab3
-#: src/compat/authcompat_Options.py:125
-msgid "update all configuration files"
-msgstr "すべての設定ファイルの更新"
+#~ msgid "update all configuration files"
+#~ msgstr "すべての設定ファイルの更新"
 
-#: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
-msgid "the same as --updateall"
-msgstr "--updateall と同じです"
+#~ msgid "the same as --updateall"
+#~ msgstr "--updateall と同じです"
 
-#: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
-msgid "<name>"
-msgstr "<name>"
+#~ msgid "<name>"
+#~ msgstr "<name>"
 
-#: src/compat/authcompat_Options.py:148
-msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+#~ msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+#~ msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:0bbce02e304562c295a1d57d66c296d3
-#: src/compat/authcompat_Options.py:149
-msgid "<URL>"
-msgstr "<URL>"
+#~ msgid "<URL>"
+#~ msgstr "<URL>"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:3334b29258653e8ccc2ee7806e9747e7
-#: src/compat/authcompat_Options.py:150
-msgid "<module>"
-msgstr "<module>"
+#~ msgid "<module>"
+#~ msgstr "<module>"
 
-#: src/compat/authcompat_Options.py:151
-msgid "<user|server|domain|ads>"
-msgstr "<user|server|domain|ads>"
+#~ msgid "<user|server|domain|ads>"
+#~ msgstr "<user|server|domain|ads>"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:f52cf1eadd24b07d01b4d11b736c06aa
-#: src/compat/authcompat_Options.py:153
-msgid "<servers>"
-msgstr "<servers>"
+#~ msgid "<servers>"
+#~ msgstr "<servers>"
 
 # auto translated by TM merge from translation memory: authconfig, unique id: authconfig:6.2.8:authconfig:ba0c1db826946afa221a50da7b91f6c2
-#: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
-#: src/compat/authcompat_Options.py:156
-msgid "<lowest-highest>"
-msgstr "<lowest-highest>"
+#~ msgid "<lowest-highest>"
+#~ msgstr "<lowest-highest>"
 
-#: src/compat/authcompat_Options.py:157
-msgid "<\\>"
-msgstr "<\\>"
+#~ msgid "<\\>"
+#~ msgstr "<\\>"
 
-#: src/compat/authcompat_Options.py:158
-msgid "</home/%D/%U>"
-msgstr "</home/%D/%U>"
+#~ msgid "</home/%D/%U>"
+#~ msgstr "</home/%D/%U>"
 
-#: src/compat/authcompat_Options.py:159
-msgid "</bin/false>"
-msgstr "</bin/false>"
+#~ msgid "</bin/false>"
+#~ msgstr "</bin/false>"
 
-#: src/compat/authcompat_Options.py:166
-msgid "<options>"
-msgstr "<options>"
+#~ msgid "<options>"
+#~ msgstr "<options>"
 
-#: src/compat/authcompat_Options.py:210
-msgid "These options have a compatibility layer"
-msgstr "これらのオプションには、互換性の層があります"
+#~ msgid "These options have a compatibility layer"
+#~ msgstr "これらのオプションには、互換性の層があります"
 
-#: src/compat/authcompat_Options.py:211
-msgid "These options are no longer supported and have no effect"
-msgstr "これらのオプションは今後はサポートされず、影響はありません"
+#~ msgid "These options are no longer supported and have no effect"
+#~ msgstr "これらのオプションは今後はサポートされず、影響はありません"
 
-#: src/compat/authcompat_Options.py:313
-msgid "enable"
-msgstr "有効化"
+#~ msgid "enable"
+#~ msgstr "有効化"
 
-#: src/compat/authcompat_Options.py:314
-msgid "disable"
-msgstr "無効化"
+#~ msgid "disable"
+#~ msgstr "無効化"
 
-#: src/compat/authcompat.py.in.in:51
 #, python-format
-msgid "Executing: %s"
-msgstr "実行中: %s"
+#~ msgid "Executing: %s"
+#~ msgstr "実行中: %s"
 
-#: src/compat/authcompat.py.in.in:71
 #, python-format
-msgid "Service %s was not found. Please install the service."
-msgstr ""
-"サービス %s は見つかりませんでした。サービスをインストールしてください。"
+#~ msgid "Service %s was not found. Please install the service."
+#~ msgstr ""
+#~ "サービス %s は見つかりませんでした。サービスをインストールしてください。"
 
-#: src/compat/authcompat.py.in.in:74 src/compat/authcompat.py.in.in:631
-#: src/compat/authcompat.py.in.in:657
 #, python-format
-msgid "Command [%s] failed with %d, stderr:"
-msgstr "コマンド [%s] が %d、stderr で失敗しました:"
+#~ msgid "Command [%s] failed with %d, stderr:"
+#~ msgstr "コマンド [%s] が %d、stderr で失敗しました:"
 
-#: src/compat/authcompat.py.in.in:186
 #, python-format
-msgid "Removing file: %s"
-msgstr "ファイルの削除中: %s"
+#~ msgid "Removing file: %s"
+#~ msgstr "ファイルの削除中: %s"
 
-#: src/compat/authcompat.py.in.in:335
 #, python-format
-msgid "%s was not found. Please, install realmd."
-msgstr "%s は見つかりませんでした。realmd をインストールしてください。"
+#~ msgid "%s was not found. Please, install realmd."
+#~ msgstr "%s は見つかりませんでした。realmd をインストールしてください。"
 
-#: src/compat/authcompat.py.in.in:469
-msgid "Running authconfig compatibility tool."
-msgstr "authconfig 互換性ツールを実行中です。"
+#~ msgid "Running authconfig compatibility tool."
+#~ msgstr "authconfig 互換性ツールを実行中です。"
 
-#: src/compat/authcompat.py.in.in:470
-msgid ""
-"The purpose of this tool is to enable authentication against chosen services "
-"with authselect and minimum configuration. It does not provide all "
-"capabilities of authconfig.\n"
-msgstr ""
-"このツールの目的は、authselect および最小限の設定で選択したサービスに対する認"
-"証を有効にすることです。authconfig のすべての機能は提供しません。\n"
+#~ msgid ""
+#~ "The purpose of this tool is to enable authentication against chosen "
+#~ "services with authselect and minimum configuration. It does not provide "
+#~ "all capabilities of authconfig.\n"
+#~ msgstr ""
+#~ "このツールの目的は、authselect および最小限の設定で選択したサービスに対す"
+#~ "る認証を有効にすることです。authconfig のすべての機能は提供しません。\n"
 
-#: src/compat/authcompat.py.in.in:473
-msgid ""
-"IMPORTANT: authconfig is replaced by authselect, please update your scripts."
-msgstr ""
-"重要: authconfig は authselect に置き換えられました。スクリプトを更新してくだ"
-"さい。"
+#~ msgid ""
+#~ "IMPORTANT: authconfig is replaced by authselect, please update your "
+#~ "scripts."
+#~ msgstr ""
+#~ "重要: authconfig は authselect に置き換えられました。スクリプトを更新して"
+#~ "ください。"
 
-#: src/compat/authcompat.py.in.in:475
-msgid ""
-"See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
-"AuthselectAsDefault"
-msgstr ""
-"Fedora 28 の Change ページを参照してください: https://fedoraproject.org/wiki/"
-"Changes/AuthselectAsDefault"
+#~ msgid ""
+#~ "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
+#~ "AuthselectAsDefault"
+#~ msgstr ""
+#~ "Fedora 28 の Change ページを参照してください: https://fedoraproject.org/"
+#~ "wiki/Changes/AuthselectAsDefault"
 
-#: src/compat/authcompat.py.in.in:476
-msgid ""
-"See man authselect-migration(7) to help you with migration to authselect"
-msgstr "authselect への移行に役立つ authselect-migration(7) を参照してください"
+#~ msgid ""
+#~ "See man authselect-migration(7) to help you with migration to authselect"
+#~ msgstr ""
+#~ "authselect への移行に役立つ authselect-migration(7) を参照してください"
 
-#: src/compat/authcompat.py.in.in:480
-msgid "Warning: These options are not supported anymore and have no effect:"
-msgstr "警告: これらのオプションは今後はサポートされず、影響はありません:"
+#~ msgid "Warning: These options are not supported anymore and have no effect:"
+#~ msgstr "警告: これらのオプションは今後はサポートされず、影響はありません:"
 
-#: src/compat/authcompat.py.in.in:500
-msgid "authconfig can only be run as root"
-msgstr "authconfig は root としてのみ実行できます"
+#~ msgid "authconfig can only be run as root"
+#~ msgstr "authconfig は root としてのみ実行できます"
 
-#: src/compat/authcompat.py.in.in:505
 #, python-format
-msgid ""
-"Error: option --%s is no longer supported and we cannot continue if it is "
-"set."
-msgstr ""
-"エラー: オプション --%s は今後はサポートされず、設定されている場合は続行でき"
-"ません。"
+#~ msgid ""
+#~ "Error: option --%s is no longer supported and we cannot continue if it is "
+#~ "set."
+#~ msgstr ""
+#~ "エラー: オプション --%s は今後はサポートされず、設定されている場合は続行で"
+#~ "きません。"
 
-#: src/compat/authcompat.py.in.in:510
-msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
-msgstr ""
-"エラー: --enablewinbind および --enablewinbindauth の両方とも設定する必要があ"
-"ります。"
+#~ msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
+#~ msgstr ""
+#~ "エラー: --enablewinbind および --enablewinbindauth の両方とも設定する必要"
+#~ "があります。"
 
-#: src/compat/authcompat.py.in.in:520
-msgid "Error: Please, provide --updateall option."
-msgstr "エラー: --updateall オプションを提供してください。"
+#~ msgid "Error: Please, provide --updateall option."
+#~ msgstr "エラー: --updateall オプションを提供してください。"
 
 #~ msgid "Unable to get current time!"
 #~ msgstr "現在の時刻を取得できません!"
