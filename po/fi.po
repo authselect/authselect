@@ -2,14 +2,16 @@
 # Copyright (C) YEAR Red Hat, Inc.
 # This file is distributed under the same license as the authselect package.
 # Jan Kuparinen <copper_fin@hotmail.com>, 2021, 2022, 2024.
-# Ricky Tigg <ricky.tigg@gmail.com>, 2022.
+# Ricky Tigg <ricky.tigg@gmail.com>, 2022, 2024.
+# Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.2.2\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2023-09-27 13:03+0200\n"
-"PO-Revision-Date: 2024-02-20 20:36+0000\n"
-"Last-Translator: Jan Kuparinen <copper_fin@hotmail.com>\n"
+"POT-Creation-Date: 2024-02-23 14:08+0100\n"
+"PO-Revision-Date: 2024-10-30 22:01+0000\n"
+"Last-Translator: Weblate Translation Memory <noreply-mt-weblate-translation-"
+"memory@weblate.org>\n"
 "Language-Team: Finnish <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/fi/>\n"
 "Language: fi\n"
@@ -17,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4\n"
+"X-Generator: Weblate 5.7.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:188
 msgid "Unable to obtain supported features"
@@ -71,20 +73,20 @@ msgstr ""
 #: src/lib/authselect.c:127
 #, c-format
 msgid "Unable to activate profile [%s] [%d]: %s"
-msgstr "Profiilin aktivointi epäonnistui [%s] [%d]: %s"
+msgstr "Profiilia [%s] [%d] ei voida aktivoida: %s"
 
 #: src/lib/authselect.c:141
 msgid "Trying to uninstall authselect configuration"
-msgstr "Yritetään poistaa authselect-kokoonpano"
+msgstr "Trying to uninstall authselect configuration"
 
 #: src/lib/authselect.c:145
 #, c-format
 msgid "Unable to remove symlinks [%d]: %s"
-msgstr "Symbolilinkkejä ei voi poistaa [%d]: %s"
+msgstr "Sym-linkkejä [%d] ei voi poistaa: %s"
 
 #: src/lib/authselect.c:149
 msgid "Symbolic links were successfully removed"
-msgstr "Symboliset linkit poistettiin"
+msgstr "Symboliset linkit poistettiin onnistuneesti"
 
 #: src/lib/authselect.c:154
 #, c-format
@@ -103,7 +105,7 @@ msgstr "Profiiliominaisuutta [%s] ei enää tueta, poistetaan se ..."
 #: src/lib/authselect_backup.c:48
 #, c-format
 msgid "Unable to create backup directory [%s/%s] [%d]: %s"
-msgstr "Varmuuskopiohakemistoa ei voi luoda [%s/%s] [%d]: %s"
+msgstr "Varmuuskopiohakemistoa [%s/%s] [%d] ei voi luoda: %s"
 
 #: src/lib/authselect_backup.c:71
 #, c-format
@@ -113,7 +115,7 @@ msgstr "Varmuuskopiohakemistoa ei voi luoda [%s] [%d]: %s"
 #: src/lib/authselect_backup.c:92
 #, c-format
 msgid "Creating temporary directory at [%s]"
-msgstr "Luodaan väliaikainen hakemisto osoitteeseen [%s]"
+msgstr "Luodaan tilapäinen hakemisto [%s]:hen"
 
 #: src/lib/authselect_backup.c:125 src/lib/authselect_profile.c:377
 #: src/lib/authselect_profile.c:457
@@ -572,7 +574,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "Ei voida saada kantanimeä kohteelle [%s]"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:857
+#: src/lib/util/file.c:199 src/cli/main.c:848
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "Ei pysty saamaan tilaa [%s] [%d]: %s"
@@ -753,7 +755,7 @@ msgstr "Löytöä [%d] ei voida käsitellä: %s"
 #: src/lib/util/template.c:485
 #, c-format
 msgid "Unable to process operator [%d]: %s"
-msgstr "Ei voida käsitellä operaattoria [%d]: %s"
+msgstr "Henkilöoperaattoria [%d] ei voida käsitellä: %s"
 
 #: src/lib/util/template.c:500 src/lib/util/template.c:650
 #, c-format
@@ -867,7 +869,7 @@ msgstr "Yleisasetukset:"
 msgid "[OPTIONS...]"
 msgstr "[VALITSIN...]"
 
-#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:849
+#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:840
 msgid "Out of memory!"
 msgstr "Muisti loppui!"
 
@@ -916,14 +918,14 @@ msgstr ""
 "Vähintään yksi vaihtoehto vaaditaan!\n"
 "\n"
 
-#: src/cli/main.c:76 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:76 src/cli/main.c:432 src/cli/main.c:475
 msgid "Profile identifier."
 msgstr "Profiilin tunniste."
 
-#: src/cli/main.c:79 src/cli/main.c:257 src/cli/main.c:302 src/cli/main.c:351
-#: src/cli/main.c:399 src/cli/main.c:444 src/cli/main.c:487 src/cli/main.c:660
-#: src/cli/main.c:737 src/cli/main.c:784 src/cli/main.c:824 src/cli/main.c:889
-#: src/cli/main.c:915
+#: src/cli/main.c:79 src/cli/main.c:248 src/cli/main.c:293 src/cli/main.c:342
+#: src/cli/main.c:390 src/cli/main.c:435 src/cli/main.c:478 src/cli/main.c:651
+#: src/cli/main.c:728 src/cli/main.c:775 src/cli/main.c:815 src/cli/main.c:880
+#: src/cli/main.c:906
 msgid "Unable to parse command arguments"
 msgstr "Komennon argumentteja ei voi jäsentää"
 
@@ -940,17 +942,17 @@ msgstr "Varmuuskopio tallennettu osoitteeseen %s\n"
 msgid "Enforce changes"
 msgstr "Pane muutokset voimaan"
 
-#: src/cli/main.c:162 src/cli/main.c:250 src/cli/main.c:650 src/cli/main.c:728
+#: src/cli/main.c:162 src/cli/main.c:241 src/cli/main.c:641 src/cli/main.c:719
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr ""
 "Varmuuskopioi järjestelmätiedostot ennen profiilin aktivointia (luo "
 "yksilöllinen nimi)"
 
-#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "Backup system files before activating profile"
 msgstr "Varmuuskopioi järjestelmätiedostot ennen profiilin aktivointia"
 
-#: src/cli/main.c:163 src/cli/main.c:251 src/cli/main.c:651 src/cli/main.c:729
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "NAME"
 msgstr "NIMI"
 
@@ -958,25 +960,21 @@ msgstr "NIMI"
 msgid "Do not backup system files when --force is set"
 msgstr "Älä varmuuskopioi järjestelmätiedostoja, kun --force on asetettu"
 
-#: src/cli/main.c:165 src/cli/main.c:652
+#: src/cli/main.c:165 src/cli/main.c:643
 msgid "Do not print profile requirements"
 msgstr "Älä tulosta profiilivaatimuksia"
 
-#: src/cli/main.c:176 src/cli/main.c:414 src/cli/main.c:450 src/cli/main.c:493
-#: src/cli/main.c:525 src/cli/main.c:679
+#: src/cli/main.c:176 src/cli/main.c:405 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:516 src/cli/main.c:670
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "Profiilitietoja ei saada [%d]: %s"
 
-#: src/cli/main.c:184 src/cli/main.c:533 src/cli/main.c:687
+#: src/cli/main.c:184 src/cli/main.c:524 src/cli/main.c:678
 msgid "Unable to read profile requirements!"
 msgstr "Profiilivaatimuksia ei voi lukea!"
 
-#: src/cli/main.c:192
-msgid "Unable to obtain nsswitch maps!"
-msgstr "Nsswitch-karttoja ei voi saada!"
-
-#: src/cli/main.c:207
+#: src/cli/main.c:198
 msgid ""
 "\n"
 "Some unexpected changes to the configuration were detected.\n"
@@ -986,26 +984,26 @@ msgstr ""
 "Joitakin odottamattomia muutoksia kokoonpanoon havaittiin.\n"
 "Käytä parametria --force, jos haluat korvata nämä muutokset.\n"
 
-#: src/cli/main.c:212
+#: src/cli/main.c:203
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "Profiilin aktivointi epäonnistui [%d]: %s\n"
 
-#: src/cli/main.c:217
+#: src/cli/main.c:208
 #, c-format
 msgid "Profile \"%s\" was selected.\n"
 msgstr "Profiili \"%s\" valittiin.\n"
 
-#: src/cli/main.c:220
+#: src/cli/main.c:211
 msgid "The following nsswitch maps are overwritten by the profile:\n"
 msgstr "Profiili korvaa seuraavat nsswitch-kartat:\n"
 
-#: src/cli/main.c:223
+#: src/cli/main.c:214
 #, c-format
 msgid "- %s\n"
 msgstr "- %s\n"
 
-#: src/cli/main.c:228
+#: src/cli/main.c:219
 #, c-format
 msgid ""
 "\n"
@@ -1014,15 +1012,15 @@ msgstr ""
 "\n"
 "%s\n"
 
-#: src/cli/main.c:269
+#: src/cli/main.c:260
 msgid "Changes were successfully applied.\n"
 msgstr "Muutokset otettiin käyttöön.\n"
 
-#: src/cli/main.c:272 src/cli/main.c:308 src/cli/main.c:669
+#: src/cli/main.c:263 src/cli/main.c:299 src/cli/main.c:660
 msgid "No existing configuration detected.\n"
 msgstr "Olemassa olevaa kokoonpanoa ei havaittu.\n"
 
-#: src/cli/main.c:275
+#: src/cli/main.c:266
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
@@ -1030,39 +1028,39 @@ msgstr ""
 "Joitakin odottamattomia muutoksia kokoonpanoon havaittiin. Käytä sen sijaan "
 "komentoa 'select'.\n"
 
-#: src/cli/main.c:279
+#: src/cli/main.c:270
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr "Muutoksia [%d] ei voi ottaa käyttöön: %s\n"
 
-#: src/cli/main.c:296
+#: src/cli/main.c:287
 msgid "Print command parameters instead of formatted output"
 msgstr "Tulosta komentoparametrit muotoillun tulosteen sijaan"
 
-#: src/cli/main.c:311 src/cli/main.c:672
+#: src/cli/main.c:302 src/cli/main.c:663
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "Nykyistä kokoonpanoa ei voi hakea [%d]: %s"
 
-#: src/cli/main.c:325
+#: src/cli/main.c:316
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "Profiilin tunnus: %s\n"
 
-#: src/cli/main.c:326
+#: src/cli/main.c:317
 msgid "Enabled features:"
 msgstr "Käytössä olevat ominaisuudet:"
 
-#: src/cli/main.c:329
+#: src/cli/main.c:320
 msgid " None\n"
 msgstr " Ei mitään\n"
 
-#: src/cli/main.c:357
+#: src/cli/main.c:348
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "Nykyistä kokoonpanoa ei voi testata [%d]: %s"
 
-#: src/cli/main.c:364
+#: src/cli/main.c:355
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
@@ -1070,69 +1068,69 @@ msgstr ""
 "Nykyinen kokoonpano ei kelpaa. Sitä on luultavasti muokattu authselectin "
 "ulkopuolella."
 
-#: src/cli/main.c:371
+#: src/cli/main.c:362
 msgid "Current configuration is valid."
 msgstr "Nykyinen kokoonpano kelpaa."
 
-#: src/cli/main.c:374
+#: src/cli/main.c:365
 msgid "No configuration detected."
 msgstr "Olemassa olevaa kokoonpanoa ei havaittu."
 
-#: src/cli/main.c:378
+#: src/cli/main.c:369
 msgid "System was not configured with authselect."
 msgstr "Järjestelmää ei ole määritetty authselectillä."
 
-#: src/cli/main.c:405
+#: src/cli/main.c:396
 msgid "Unable to get profile list!"
 msgstr "Profiililuetteloa ei voi saada!"
 
-#: src/cli/main.c:458
+#: src/cli/main.c:449
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
 msgstr "Profiiliominaisuuksia [%d] ei saada: %s"
 
-#: src/cli/main.c:572
+#: src/cli/main.c:563
 msgid "Print content of all files"
 msgstr "Tulosta kaikkien tiedostojen sisältö"
 
-#: src/cli/main.c:573
+#: src/cli/main.c:564
 msgid "Print nsswitch.conf content"
 msgstr "Tulosta nsswitch.conf-sisältö"
 
-#: src/cli/main.c:574
+#: src/cli/main.c:565
 msgid "Print system-auth content"
 msgstr "Tulosta järjestelmätodennussisältö"
 
-#: src/cli/main.c:575
+#: src/cli/main.c:566
 msgid "Print password-auth content"
 msgstr "Tulosta salasanatodennuksen sisältö"
 
-#: src/cli/main.c:576
+#: src/cli/main.c:567
 msgid "Print smartcard-auth content"
 msgstr "Tulosta älykorttitodennuksen sisältöä"
 
-#: src/cli/main.c:577
+#: src/cli/main.c:568
 msgid "Print fingerprint-auth content"
 msgstr "Tulosta sormenjälkitunnistuksen sisältöä"
 
-#: src/cli/main.c:578
+#: src/cli/main.c:569
 msgid "Print postlogin content"
 msgstr "Tulosta sisäänkirjautumisen jälkeinen sisältö"
 
-#: src/cli/main.c:579
+#: src/cli/main.c:570
 msgid "Print dconf database content"
 msgstr "Tulosta dconf-tietokannan sisältö"
 
-#: src/cli/main.c:580
+#: src/cli/main.c:571
 msgid "Print dconf lock content"
 msgstr "Tulosta dconfin lukituksen sisältö"
 
-#: src/cli/main.c:607
+#: src/cli/main.c:598
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "Luotua sisältöä [%d] ei saada: %s"
 
-#: src/cli/main.c:626
+#: src/cli/main.c:617
 #, c-format
 msgid ""
 "File %s: Empty\n"
@@ -1141,7 +1139,7 @@ msgstr ""
 "Tiedosto %s: Tyhjä\n"
 "\n"
 
-#: src/cli/main.c:628
+#: src/cli/main.c:619
 #, c-format
 msgid ""
 "File %s:\n"
@@ -1152,43 +1150,43 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/cli/main.c:657
+#: src/cli/main.c:648
 msgid "Feature to enable."
 msgstr "Käyttöön otettava ominaisuus."
 
-#: src/cli/main.c:694
+#: src/cli/main.c:685
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
 msgstr "Nykyistä kokoonpanoa ei voi varmuuskopioida [%d]: %s\n"
 
-#: src/cli/main.c:701
+#: src/cli/main.c:692
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "Ominaisuutta [%d] ei voi ottaa käyttöön: %s\n"
 
-#: src/cli/main.c:706
+#: src/cli/main.c:697
 #, c-format
 msgid "%s\n"
 msgstr "%s\n"
 
-#: src/cli/main.c:734
+#: src/cli/main.c:725
 msgid "Feature to disable."
 msgstr "Käytöstä poistettava ominaisuus."
 
-#: src/cli/main.c:748
+#: src/cli/main.c:739
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "Ominaisuutta [%d] ei voi poistaa käytöstä: %s\n"
 
-#: src/cli/main.c:769
+#: src/cli/main.c:760
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr "Luo uusi profiili toimittajaprofiiliksi mukautetun profiilin sijaan"
 
-#: src/cli/main.c:770
+#: src/cli/main.c:761
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr "Profiilin tunnus, jota tulisi käyttää uuden profiilin perustana"
 
-#: src/cli/main.c:771
+#: src/cli/main.c:762
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1196,518 +1194,439 @@ msgstr ""
 "Perusta uusi profiili oletusprofiiliin, vaikka samanniminen "
 "toimittajaprofiili olisi olemassa"
 
-#: src/cli/main.c:772
+#: src/cli/main.c:763
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr "Sym-linkitä metatiedostot perusprofiilista kopioimisen sijaan"
 
-#: src/cli/main.c:773
+#: src/cli/main.c:764
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr "Sym-linkitä nsswitch -tiedostot perusprofiilista kopioimisen sijaan"
 
-#: src/cli/main.c:774
+#: src/cli/main.c:765
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr "Sym-linkitä pam-tiedostot perusprofiilista kopioimisen sijaan"
 
-#: src/cli/main.c:775
+#: src/cli/main.c:766
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr "Sym-linkitä dconf -tiedostot perusprofiilista kopioimisen sijaan"
 
-#: src/cli/main.c:776
+#: src/cli/main.c:767
 msgid "Symlink specific file (can be set multiple times)"
 msgstr "Sym-linkitä tietty tiedosto (voidaan asettaa useita kertoja)"
 
-#: src/cli/main.c:781
+#: src/cli/main.c:772
 msgid "New profile name."
 msgstr "Uusi profiilinimi."
 
-#: src/cli/main.c:791
+#: src/cli/main.c:782
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "Uuden profiilin luonti epäonnistui [%d]: %s\n"
 
-#: src/cli/main.c:795
+#: src/cli/main.c:786
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "Uusi profiili luotiin %s:een\n"
 
-#: src/cli/main.c:818
+#: src/cli/main.c:809
 msgid "Print backup names without any formatting and additional information"
 msgstr "Tulosta varmuuskopioitujen nimet ilman muotoiluja ja lisätietoja"
 
-#: src/cli/main.c:830
+#: src/cli/main.c:821
 msgid "Unable to list available backups!"
 msgstr "Ei voida luetella saatavilla olevia varmuuskopioita!"
 
-#: src/cli/main.c:867
+#: src/cli/main.c:858
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (luotu %s:ssa)\n"
 
-#: src/cli/main.c:886
+#: src/cli/main.c:877
 msgid "Name of the backup to remove."
 msgstr "Poistettavan varmuuskopion nimi."
 
-#: src/cli/main.c:895
+#: src/cli/main.c:886
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "Varmuuskopiota [%s] [%d] ei voida poistaa: %s\n"
 
-#: src/cli/main.c:912
+#: src/cli/main.c:903
 msgid "Name of the backup to restore from."
 msgstr "Varmuuskopion nimi, josta palautetaan."
 
-#: src/cli/main.c:921
+#: src/cli/main.c:912
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "Varmuuskopiota [%s] [%d] ei voida palauttaa: %s\n"
 
-#: src/cli/main.c:937
+#: src/cli/main.c:928
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "Authselect-kokoonpanon [%d] asennusta ei voi poistaa: %s\n"
 
-#: src/cli/main.c:987
+#: src/cli/main.c:978
 msgid "Select profile"
 msgstr "Valitse profiili"
 
-#: src/cli/main.c:988
+#: src/cli/main.c:979
 msgid "Regenerate configuration for currently selected command"
 msgstr "Luo uudelleen tällä hetkellä valitun komennon asetukset"
 
-#: src/cli/main.c:989
+#: src/cli/main.c:980
 msgid "List available profiles"
 msgstr "Luettele saattavilla olevat profiilit"
 
-#: src/cli/main.c:990
+#: src/cli/main.c:981
 msgid "List available profile features"
 msgstr "Luettele saattavilla olevat profiiliominaisuudet"
 
-#: src/cli/main.c:991
+#: src/cli/main.c:982
 msgid "Show profile information"
 msgstr "Näytä profiilitiedot"
 
-#: src/cli/main.c:992
+#: src/cli/main.c:983
 msgid "Print profile requirements"
 msgstr "Tulosta profiilivaatimukset"
 
-#: src/cli/main.c:993
+#: src/cli/main.c:984
 msgid "Get identifier of currently selected profile"
 msgstr "Hanki tällä hetkellä valitun profiilin tunniste"
 
-#: src/cli/main.c:994
+#: src/cli/main.c:985
 msgid "Check if the current configuration is valid"
 msgstr "Tarkista, onko nykyinen kokoonpano kelvollinen"
 
-#: src/cli/main.c:995
+#: src/cli/main.c:986
 msgid "Print changes that would be otherwise written"
 msgstr "Tulosta muutokset, jotka muutoin kirjoitetaan"
 
-#: src/cli/main.c:996
+#: src/cli/main.c:987
 msgid "Enable feature in currently selected profile"
 msgstr "Ota ominaisuus käyttöön nykyisessä valitussa profiilissa"
 
-#: src/cli/main.c:997
+#: src/cli/main.c:988
 msgid "Disable feature in currently selected profile"
 msgstr "Poista ominaisuus käytöstä nykyisessä valitussa profiilissa"
 
-#: src/cli/main.c:998
+#: src/cli/main.c:989
 msgid "Create new authselect profile"
 msgstr "Luo uusi authselect-profiili"
 
-#: src/cli/main.c:999
+#: src/cli/main.c:990
 msgid "Backup commands:"
 msgstr "Varmuuskopio komennot:"
 
-#: src/cli/main.c:1000
+#: src/cli/main.c:991
 msgid "List available backups"
 msgstr "Listaa saattavilla olevat varmuuskopiot"
 
-#: src/cli/main.c:1001
+#: src/cli/main.c:992
 msgid "Remove backup"
 msgstr "Poista varmuuskopio"
 
-#: src/cli/main.c:1002
+#: src/cli/main.c:993
 msgid "Restore from backup"
 msgstr "Palauta varmuuskopiosta"
 
-#: src/cli/main.c:1003
+#: src/cli/main.c:994
 msgid "Other:"
 msgstr "Muuta:"
 
-#: src/cli/main.c:1004
+#: src/cli/main.c:995
 msgid "Opt-out from authselect managed configuration"
 msgstr "Kieltäydy authselect hallinnoiduista määrityksistä"
 
-#: src/cli/main.c:1006
+#: src/cli/main.c:997
 msgid "Print authselect version"
 msgstr "Tulosta authselectin versio"
 
-#: src/compat/authcompat_Options.py:82
-msgid "NIS for user information by default"
-msgstr "NIS oletuksena käyttäjätiedoille"
-
-#: src/compat/authcompat_Options.py:83
-msgid "<domain>"
-msgstr "<toimialue>"
-
-#: src/compat/authcompat_Options.py:83
-msgid "default NIS domain"
-msgstr "oletusarvoinen NIS-toimialue"
-
-#: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
-#: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
-msgid "<server>"
-msgstr "<palvelin>"
-
-#: src/compat/authcompat_Options.py:84
-msgid "default NIS server"
-msgstr "oletusarvoinen NIS-palvelin"
-
-#: src/compat/authcompat_Options.py:85
-msgid "LDAP for user information by default"
-msgstr "LDAP käyttäjätiedoille oletuksena"
-
-#: src/compat/authcompat_Options.py:86
-msgid "LDAP for authentication by default"
-msgstr "LDAP todennusta varten oletuksena"
-
-#: src/compat/authcompat_Options.py:87
-msgid "default LDAP server hostname or URI"
-msgstr "oletusarvoinen LDAP-palvelimen isäntänimi tai URI"
-
-#: src/compat/authcompat_Options.py:88
-msgid "<dn>"
-msgstr "<toimialueen nimi>"
-
-#: src/compat/authcompat_Options.py:88
-msgid "default LDAP base DN"
-msgstr "oletusarvoinen LDAP-perustoimialueen nimi"
-
-#: src/compat/authcompat_Options.py:89
-msgid "use of TLS with LDAP (RFC-2830)"
-msgstr "TLS:n käyttö LDAP:n kanssa (RFC-2830)"
-
-#: src/compat/authcompat_Options.py:90
-msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
-msgstr "TLS:n käyttö identiteettihakuihin LDAP:n avulla (RFC-2830)"
-
-#: src/compat/authcompat_Options.py:91
-msgid "use of RFC-2307bis schema for LDAP user information lookups"
-msgstr "RFC-2307bis-skeeman käyttö LDAP-käyttäjätietojen hauissa"
-
-#: src/compat/authcompat_Options.py:92
-msgid "authentication with smart card by default"
-msgstr "todennus älykortilla oletuksena"
-
-#: src/compat/authcompat_Options.py:93
-msgid "<0=Lock|1=Ignore>"
-msgstr "<0=Lukitse|1=Ohita>"
-
-#: src/compat/authcompat_Options.py:93
-msgid "action to be taken on smart card removal"
-msgstr "suoritettavat toimet älykortin poistamiseksi"
-
-#: src/compat/authcompat_Options.py:94
-msgid "require smart card for authentication by default"
-msgstr "oletuksena vaatii älykortin todentamista varten"
-
-#: src/compat/authcompat_Options.py:95
-msgid "authentication with fingerprint readers by default"
-msgstr "todennus sormenjälkitunnistimilla oletuksena"
-
-#: src/compat/authcompat_Options.py:96
-msgid "automatic per-user ecryptfs"
-msgstr "automaattinen käyttäjäkohtainen ecryptfs"
-
-#: src/compat/authcompat_Options.py:97
-msgid "Kerberos authentication by default"
-msgstr "Kerberos-todennus oletuksena"
-
-#: src/compat/authcompat_Options.py:98
-msgid "default Kerberos KDC"
-msgstr "Kerberos KDC oletuksena"
-
-#: src/compat/authcompat_Options.py:99
-msgid "default Kerberos admin server"
-msgstr "oletuksena Kerberos-hallintapalvelin"
-
-#: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
-msgid "<realm>"
-msgstr "<alue>"
-
-#: src/compat/authcompat_Options.py:100
-msgid "default Kerberos realm"
-msgstr "Kerberoksen oletusalue"
-
-#: src/compat/authcompat_Options.py:101
-msgid "use of DNS to find Kerberos KDCs"
-msgstr "DNS:n käyttö Kerberos KDC:iden löytämiseen"
-
-#: src/compat/authcompat_Options.py:102
-msgid "use of DNS to find Kerberos realms"
-msgstr "DNS:n käyttö Kerberos-alueiden löytämiseen"
-
-#: src/compat/authcompat_Options.py:103
-msgid "winbind for user information by default"
-msgstr "winbind käyttäjätiedoille oletuksena"
-
-#: src/compat/authcompat_Options.py:104
-msgid "winbind for authentication by default"
-msgstr "winbind todennusta varten oletuksena"
-
-#: src/compat/authcompat_Options.py:105
-msgid "<Administrator>"
-msgstr "<Ylläpitäjä>"
-
-#: src/compat/authcompat_Options.py:105
-msgid "join the winbind domain or ads realm now as this administrator"
-msgstr ""
-"Liity winbind-toimialueeseen tai ads alueeseen nyt tämän "
-"järjestelmänvalvojan roolissa"
-
-#: src/compat/authcompat_Options.py:106
-msgid "Kerberos 5 for authenticate with winbind"
-msgstr "Kerberos 5 todennusta varten winbindillä"
-
-#: src/compat/authcompat_Options.py:107
-msgid "<workgroup>"
-msgstr "<työryhmä>"
-
-#: src/compat/authcompat_Options.py:107
-msgid "workgroup authentication servers are in"
-msgstr "työryhmän todennuspalvelimet ovat"
-
-#: src/compat/authcompat_Options.py:108
-msgid ""
-"SSSD for user information by default with manually managed configuration"
-msgstr ""
-"SSSD käyttäjätiedoille oletuksena manuaalisesti hallitulla kokoonpanolla"
-
-#: src/compat/authcompat_Options.py:109
-msgid "SSSD for authentication by default with manually managed configuration"
-msgstr ""
-"SSSD todennusta varten oletuksena manuaalisesti hallitulla kokoonpanolla"
-
-#: src/compat/authcompat_Options.py:110
-msgid "caching of user credentials in SSSD by default"
-msgstr ""
-"käyttäjän tunnistetietojen välimuistiin tallentaminen SSSD:lle oletuksena"
-
-#: src/compat/authcompat_Options.py:111
-msgid "check of access.conf during account authorization"
-msgstr "tarkista access.conf tilin valtuutuksen aikana"
-
-#: src/compat/authcompat_Options.py:112
-msgid "creation of home directories for users on their first login"
-msgstr ""
-"kotihakemistojen luominen käyttäjille heidän ensimmäisen sisäänkirjautumisen "
-"yhteydessä"
-
-#: src/compat/authcompat_Options.py:113
-msgid "account locking in case of too many consecutive authentication failures"
-msgstr ""
-"tilin lukitseminen liian monien peräkkäisten epäonnistuneiden todennusten "
-"tapauksessa"
-
-#: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
-#: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
-msgid "<number>"
-msgstr "<luku>"
-
-#: src/compat/authcompat_Options.py:114
-msgid "minimum length of a password"
-msgstr "salasanan vähimmäispituus"
-
-#: src/compat/authcompat_Options.py:115
-msgid "minimum number of character classes in a password"
-msgstr "salasanan merkkiluokkien vähimmäismäärä"
-
-#: src/compat/authcompat_Options.py:116
-msgid "maximum number of same consecutive characters in a password"
-msgstr "enimmäismäärä samoja peräkkäisiä merkkejä salasanassa"
-
-#: src/compat/authcompat_Options.py:117
-msgid "maximum number of consecutive characters of same class in a password"
-msgstr "saman luokan peräkkäisten merkkien enimmäismäärä salasanassa"
-
-#: src/compat/authcompat_Options.py:118
-msgid "require at least one lowercase character in a password"
-msgstr "vaatii vähintään yhden pienen merkin salasanassa"
-
-#: src/compat/authcompat_Options.py:119
-msgid "require at least one uppercase character in a password"
-msgstr "vaatii vähintään yhden ison merkin salasanassa"
-
-#: src/compat/authcompat_Options.py:120
-msgid "require at least one digit in a password"
-msgstr "vaati vähintään yhden luvun salasanassa"
-
-#: src/compat/authcompat_Options.py:121
-msgid "require at least one other character in a password"
-msgstr "vaati vähintään yhden muun merkin salasanassa"
-
-#: src/compat/authcompat_Options.py:124
-msgid "do not start/stop services"
-msgstr "älä käynnistä/lopeta palveluita"
-
-#: src/compat/authcompat_Options.py:125
-msgid "update all configuration files"
-msgstr "päivittää kaikki asetustiedostot"
-
-#: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
-msgid "the same as --updateall"
-msgstr "sama kuin '--updateall'"
-
-#: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
-msgid "<name>"
-msgstr "<nimi>"
-
-#: src/compat/authcompat_Options.py:148
-msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-
-#: src/compat/authcompat_Options.py:149
-msgid "<URL>"
-msgstr "<URL>"
-
-#: src/compat/authcompat_Options.py:150
-msgid "<module>"
-msgstr "<moduuli>"
-
-#: src/compat/authcompat_Options.py:151
-msgid "<user|server|domain|ads>"
-msgstr "<käyttäjä|palvelin|toimialue|mainokset>"
-
-#: src/compat/authcompat_Options.py:153
-msgid "<servers>"
-msgstr "<palvelin>"
-
-#: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
-#: src/compat/authcompat_Options.py:156
-msgid "<lowest-highest>"
-msgstr "<matalin–korkein>"
-
-#: src/compat/authcompat_Options.py:157
-msgid "<\\>"
-msgstr "<\\>"
-
-#: src/compat/authcompat_Options.py:158
-msgid "</home/%D/%U>"
-msgstr "</home/%D/%U>"
-
-#: src/compat/authcompat_Options.py:159
-msgid "</bin/false>"
-msgstr "</bin/false>"
-
-#: src/compat/authcompat_Options.py:166
-msgid "<options>"
-msgstr "<vaihtoehdot>"
-
-#: src/compat/authcompat_Options.py:210
-msgid "These options have a compatibility layer"
-msgstr "Näillä vaihtoehdoilla on yhteensopivuuskerros"
-
-#: src/compat/authcompat_Options.py:211
-msgid "These options are no longer supported and have no effect"
-msgstr "Näitä vaihtoehtoja ei enää tueta, eikä niillä ole vaikutusta"
-
-#: src/compat/authcompat_Options.py:313
-msgid "enable"
-msgstr "ota käyttöön"
-
-#: src/compat/authcompat_Options.py:314
-msgid "disable"
-msgstr "poista käytöstä"
-
-#: src/compat/authcompat.py.in.in:51
+#~ msgid "Unable to obtain nsswitch maps!"
+#~ msgstr "Nsswitch-karttoja ei voi saada!"
+
+#~ msgid "NIS for user information by default"
+#~ msgstr "NIS oletuksena käyttäjätiedoille"
+
+#~ msgid "<domain>"
+#~ msgstr "<toimialue>"
+
+#~ msgid "default NIS domain"
+#~ msgstr "oletusarvoinen NIS-toimialue"
+
+#~ msgid "<server>"
+#~ msgstr "<palvelin>"
+
+#~ msgid "default NIS server"
+#~ msgstr "oletusarvoinen NIS-palvelin"
+
+#~ msgid "LDAP for user information by default"
+#~ msgstr "LDAP käyttäjätiedoille oletuksena"
+
+#~ msgid "LDAP for authentication by default"
+#~ msgstr "LDAP todennusta varten oletuksena"
+
+#~ msgid "default LDAP server hostname or URI"
+#~ msgstr "oletusarvoinen LDAP-palvelimen isäntänimi tai URI"
+
+#~ msgid "<dn>"
+#~ msgstr "<toimialueen nimi>"
+
+#~ msgid "default LDAP base DN"
+#~ msgstr "oletusarvoinen LDAP-perustoimialueen nimi"
+
+#~ msgid "use of TLS with LDAP (RFC-2830)"
+#~ msgstr "TLS:n käyttö LDAP:n kanssa (RFC-2830)"
+
+#~ msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
+#~ msgstr "TLS:n käyttö identiteettihakuihin LDAP:n avulla (RFC-2830)"
+
+#~ msgid "use of RFC-2307bis schema for LDAP user information lookups"
+#~ msgstr "RFC-2307bis-skeeman käyttö LDAP-käyttäjätietojen hauissa"
+
+#~ msgid "authentication with smart card by default"
+#~ msgstr "todennus älykortilla oletuksena"
+
+#~ msgid "<0=Lock|1=Ignore>"
+#~ msgstr "<0=Lukitse|1=Ohita>"
+
+#~ msgid "action to be taken on smart card removal"
+#~ msgstr "suoritettavat toimet älykortin poistamiseksi"
+
+#~ msgid "require smart card for authentication by default"
+#~ msgstr "oletuksena vaatii älykortin todentamista varten"
+
+#~ msgid "authentication with fingerprint readers by default"
+#~ msgstr "todennus sormenjälkitunnistimilla oletuksena"
+
+#~ msgid "automatic per-user ecryptfs"
+#~ msgstr "automaattinen käyttäjäkohtainen ecryptfs"
+
+#~ msgid "Kerberos authentication by default"
+#~ msgstr "Kerberos-todennus oletuksena"
+
+#~ msgid "default Kerberos KDC"
+#~ msgstr "Kerberos KDC oletuksena"
+
+#~ msgid "default Kerberos admin server"
+#~ msgstr "oletuksena Kerberos-hallintapalvelin"
+
+#~ msgid "<realm>"
+#~ msgstr "<alue>"
+
+#~ msgid "default Kerberos realm"
+#~ msgstr "Kerberoksen oletusalue"
+
+#~ msgid "use of DNS to find Kerberos KDCs"
+#~ msgstr "DNS:n käyttö Kerberos KDC:iden löytämiseen"
+
+#~ msgid "use of DNS to find Kerberos realms"
+#~ msgstr "DNS:n käyttö Kerberos-alueiden löytämiseen"
+
+#~ msgid "winbind for user information by default"
+#~ msgstr "winbind käyttäjätiedoille oletuksena"
+
+#~ msgid "winbind for authentication by default"
+#~ msgstr "winbind todennusta varten oletuksena"
+
+#~ msgid "<Administrator>"
+#~ msgstr "<Ylläpitäjä>"
+
+#~ msgid "join the winbind domain or ads realm now as this administrator"
+#~ msgstr ""
+#~ "Liity winbind-toimialueeseen tai ads alueeseen nyt tämän "
+#~ "järjestelmänvalvojan roolissa"
+
+#~ msgid "Kerberos 5 for authenticate with winbind"
+#~ msgstr "Kerberos 5 todennusta varten winbindillä"
+
+#~ msgid "<workgroup>"
+#~ msgstr "<työryhmä>"
+
+#~ msgid "workgroup authentication servers are in"
+#~ msgstr "työryhmän todennuspalvelimet ovat"
+
+#~ msgid ""
+#~ "SSSD for user information by default with manually managed configuration"
+#~ msgstr ""
+#~ "SSSD käyttäjätiedoille oletuksena manuaalisesti hallitulla kokoonpanolla"
+
+#~ msgid ""
+#~ "SSSD for authentication by default with manually managed configuration"
+#~ msgstr ""
+#~ "SSSD todennusta varten oletuksena manuaalisesti hallitulla kokoonpanolla"
+
+#~ msgid "caching of user credentials in SSSD by default"
+#~ msgstr ""
+#~ "käyttäjän tunnistetietojen välimuistiin tallentaminen SSSD:lle oletuksena"
+
+#~ msgid "check of access.conf during account authorization"
+#~ msgstr "tarkista access.conf tilin valtuutuksen aikana"
+
+#~ msgid "creation of home directories for users on their first login"
+#~ msgstr ""
+#~ "kotihakemistojen luominen käyttäjille heidän ensimmäisen "
+#~ "sisäänkirjautumisen yhteydessä"
+
+#~ msgid ""
+#~ "account locking in case of too many consecutive authentication failures"
+#~ msgstr ""
+#~ "tilin lukitseminen liian monien peräkkäisten epäonnistuneiden todennusten "
+#~ "tapauksessa"
+
+#~ msgid "<number>"
+#~ msgstr "<luku>"
+
+#~ msgid "minimum length of a password"
+#~ msgstr "salasanan vähimmäispituus"
+
+#~ msgid "minimum number of character classes in a password"
+#~ msgstr "salasanan merkkiluokkien vähimmäismäärä"
+
+#~ msgid "maximum number of same consecutive characters in a password"
+#~ msgstr "enimmäismäärä samoja peräkkäisiä merkkejä salasanassa"
+
+#~ msgid "maximum number of consecutive characters of same class in a password"
+#~ msgstr "saman luokan peräkkäisten merkkien enimmäismäärä salasanassa"
+
+#~ msgid "require at least one lowercase character in a password"
+#~ msgstr "vaatii vähintään yhden pienen merkin salasanassa"
+
+#~ msgid "require at least one uppercase character in a password"
+#~ msgstr "vaatii vähintään yhden ison merkin salasanassa"
+
+#~ msgid "require at least one digit in a password"
+#~ msgstr "vaati vähintään yhden luvun salasanassa"
+
+#~ msgid "require at least one other character in a password"
+#~ msgstr "vaati vähintään yhden muun merkin salasanassa"
+
+#~ msgid "do not start/stop services"
+#~ msgstr "älä käynnistä/lopeta palveluita"
+
+#~ msgid "update all configuration files"
+#~ msgstr "päivittää kaikki asetustiedostot"
+
+#~ msgid "the same as --updateall"
+#~ msgstr "sama kuin '--updateall'"
+
+#~ msgid "<name>"
+#~ msgstr "<nimi>"
+
+#~ msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+#~ msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
+
+#~ msgid "<URL>"
+#~ msgstr "<URL>"
+
+#~ msgid "<module>"
+#~ msgstr "<moduuli>"
+
+#~ msgid "<user|server|domain|ads>"
+#~ msgstr "<käyttäjä|palvelin|toimialue|mainokset>"
+
+#~ msgid "<servers>"
+#~ msgstr "<palvelin>"
+
+#~ msgid "<lowest-highest>"
+#~ msgstr "<matalin–korkein>"
+
+#~ msgid "<\\>"
+#~ msgstr "<\\>"
+
+#~ msgid "</home/%D/%U>"
+#~ msgstr "</home/%D/%U>"
+
+#~ msgid "</bin/false>"
+#~ msgstr "</bin/false>"
+
+#~ msgid "<options>"
+#~ msgstr "<vaihtoehdot>"
+
+#~ msgid "These options have a compatibility layer"
+#~ msgstr "Näillä vaihtoehdoilla on yhteensopivuuskerros"
+
+#~ msgid "These options are no longer supported and have no effect"
+#~ msgstr "Näitä vaihtoehtoja ei enää tueta, eikä niillä ole vaikutusta"
+
+#~ msgid "enable"
+#~ msgstr "ota käyttöön"
+
+#~ msgid "disable"
+#~ msgstr "poista käytöstä"
+
 #, python-format
-msgid "Executing: %s"
-msgstr "Suoritetaan: %s"
+#~ msgid "Executing: %s"
+#~ msgstr "Suoritetaan: %s"
 
-#: src/compat/authcompat.py.in.in:71
 #, python-format
-msgid "Service %s was not found. Please install the service."
-msgstr "Palvelua %s ei löytynyt. Ole hyvä ja asenna palvelu."
+#~ msgid "Service %s was not found. Please install the service."
+#~ msgstr "Palvelua %s ei löytynyt. Ole hyvä ja asenna palvelu."
 
-#: src/compat/authcompat.py.in.in:74 src/compat/authcompat.py.in.in:631
-#: src/compat/authcompat.py.in.in:657
 #, python-format
-msgid "Command [%s] failed with %d, stderr:"
-msgstr "Komento [%s] epäonnistui %d:lla, stderr:"
+#~ msgid "Command [%s] failed with %d, stderr:"
+#~ msgstr "Komento [%s] epäonnistui %d:lla, stderr:"
 
-#: src/compat/authcompat.py.in.in:186
 #, python-format
-msgid "Removing file: %s"
-msgstr "Poistetaan tiedosto: %s"
+#~ msgid "Removing file: %s"
+#~ msgstr "Poistetaan tiedosto: %s"
 
-#: src/compat/authcompat.py.in.in:335
 #, python-format
-msgid "%s was not found. Please, install realmd."
-msgstr "%s ei löytynyt. Ole hyvä ja asenna realmd."
+#~ msgid "%s was not found. Please, install realmd."
+#~ msgstr "%s ei löytynyt. Ole hyvä ja asenna realmd."
 
-#: src/compat/authcompat.py.in.in:469
-msgid "Running authconfig compatibility tool."
-msgstr "Suoritetaan authconfig-yhteensopivuustyökalu."
+#~ msgid "Running authconfig compatibility tool."
+#~ msgstr "Suoritetaan authconfig-yhteensopivuustyökalu."
 
-#: src/compat/authcompat.py.in.in:470
-msgid ""
-"The purpose of this tool is to enable authentication against chosen services "
-"with authselect and minimum configuration. It does not provide all "
-"capabilities of authconfig.\n"
-msgstr ""
-"Tämän työkalun tarkoituksena on mahdollistaa todennus valittuja palveluita "
-"vastaan authselect- ja vähimmäiskokoonpanolla. Se ei tarjoa kaikkia "
-"authconfigin ominaisuuksia.\n"
+#~ msgid ""
+#~ "The purpose of this tool is to enable authentication against chosen "
+#~ "services with authselect and minimum configuration. It does not provide "
+#~ "all capabilities of authconfig.\n"
+#~ msgstr ""
+#~ "Tämän työkalun tarkoituksena on mahdollistaa todennus valittuja "
+#~ "palveluita vastaan authselect- ja vähimmäiskokoonpanolla. Se ei tarjoa "
+#~ "kaikkia authconfigin ominaisuuksia.\n"
 
-#: src/compat/authcompat.py.in.in:473
-msgid ""
-"IMPORTANT: authconfig is replaced by authselect, please update your scripts."
-msgstr ""
-"TÄRKEÄÄ: authconfig korvataan authselectillä, ole hyvä ja päivitä "
-"komentosarjasi."
+#~ msgid ""
+#~ "IMPORTANT: authconfig is replaced by authselect, please update your "
+#~ "scripts."
+#~ msgstr ""
+#~ "TÄRKEÄÄ: authconfig korvataan authselectillä, ole hyvä ja päivitä "
+#~ "komentosarjasi."
 
-#: src/compat/authcompat.py.in.in:475
-msgid ""
-"See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
-"AuthselectAsDefault"
-msgstr ""
-"Katso Fedora 28:n muutossivu: https://fedoraproject.org/wiki/Changes/"
-"AuthselectAsDefault"
+#~ msgid ""
+#~ "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
+#~ "AuthselectAsDefault"
+#~ msgstr ""
+#~ "Katso Fedora 28:n muutossivu: https://fedoraproject.org/wiki/Changes/"
+#~ "AuthselectAsDefault"
 
-#: src/compat/authcompat.py.in.in:476
-msgid ""
-"See man authselect-migration(7) to help you with migration to authselect"
-msgstr ""
-"Katso 'man authselect-migration 7', joka auttaa sinua siirtymään "
-"authselectiin"
+#~ msgid ""
+#~ "See man authselect-migration(7) to help you with migration to authselect"
+#~ msgstr ""
+#~ "Katso 'man authselect-migration 7', joka auttaa sinua siirtymään "
+#~ "authselectiin"
 
-#: src/compat/authcompat.py.in.in:480
-msgid "Warning: These options are not supported anymore and have no effect:"
-msgstr ""
-"Varoitus: Näitä vaihtoehtoja ei enää tueta, eikä niillä ole vaikutusta:"
+#~ msgid "Warning: These options are not supported anymore and have no effect:"
+#~ msgstr ""
+#~ "Varoitus: Näitä vaihtoehtoja ei enää tueta, eikä niillä ole vaikutusta:"
 
-#: src/compat/authcompat.py.in.in:500
-msgid "authconfig can only be run as root"
-msgstr "authconfig voidaan suorittaa vain rootinä"
+#~ msgid "authconfig can only be run as root"
+#~ msgstr "authconfig voidaan suorittaa vain rootinä"
 
-#: src/compat/authcompat.py.in.in:505
 #, python-format
-msgid ""
-"Error: option --%s is no longer supported and we cannot continue if it is "
-"set."
-msgstr ""
-"Virhe: vaihtoehtoa -'-%s' ei enää tueta, emmekä voi jatkaa, jos se on "
-"asetettu."
+#~ msgid ""
+#~ "Error: option --%s is no longer supported and we cannot continue if it is "
+#~ "set."
+#~ msgstr ""
+#~ "Virhe: vaihtoehtoa -'-%s' ei enää tueta, emmekä voi jatkaa, jos se on "
+#~ "asetettu."
 
-#: src/compat/authcompat.py.in.in:510
-msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
-msgstr ""
-"Virhe: Sekä '--enablewinbind' että '--enablewinbindauth' on oltava "
-"asetettuna."
+#~ msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
+#~ msgstr ""
+#~ "Virhe: Sekä '--enablewinbind' että '--enablewinbindauth' on oltava "
+#~ "asetettuna."
 
-#: src/compat/authcompat.py.in.in:520
-msgid "Error: Please, provide --updateall option."
-msgstr "Virhe: Ole hyvä ja anna '--updateall'."
+#~ msgid "Error: Please, provide --updateall option."
+#~ msgstr "Virhe: Ole hyvä ja anna '--updateall'."
 
 #~ msgid "Unable to get current time!"
 #~ msgstr "Nykyistä aikaa ei voi saada!"
