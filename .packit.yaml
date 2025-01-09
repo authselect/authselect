@@ -8,7 +8,7 @@ specfile_path: authselect.spec
 actions:
   post-upstream-clone:
     # generate spec file from template
-    - bash -c "sed -E 's/@\w+@/0/g' rpm/authselect.spec.in > authselect.spec"
+    - bash -c "sed -E 's/@\w+@/99/g' rpm/authselect.spec.in > authselect.spec"
 
 jobs:
   - job: copr_build
