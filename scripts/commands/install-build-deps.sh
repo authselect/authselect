@@ -17,7 +17,7 @@ case "$ID" in
 
     sed -E "s/@\w+@/dummy/g" rpm/authselect.spec.in > authselect.spec
     dnf install -y "dnf-command(builddep)"
-    dnf builddep -y --spec ./authselect.spec
+    dnf builddep -y ./authselect.spec
     rm authselect.spec
     ;;
   ubuntu)
