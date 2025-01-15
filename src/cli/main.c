@@ -745,6 +745,30 @@ done:
     return ret;
 }
 
+static errno_t is_enabled(struct cli_cmdline *cmdline)
+{
+    char *feature;
+    errno_t ret;
+
+    ret = cli_tool_popt_ex(cmdline, NULL, CLI_TOOL_OPT_OPTIONAL,
+                           NULL, NULL, "FEATURE", _("Feature to check."),
+                           &feature, false, NULL);
+    if (ret != EOK) {
+        ERROR("Unable to parse command arguments");
+        goto done;
+    }
+
+    ret = authselect_feature_enabled(feature);
+    if (ret != EOK && ret != ENOENT) {
+        CLI_ERROR("Unable to check feature [%d]: %s\n", ret, strerror(ret));
+        goto done;
+    }
+
+done:
+    free(feature);
+    return ret;
+}
+
 static errno_t create(struct cli_cmdline *cmdline)
 {
     char *name;
@@ -986,6 +1010,7 @@ int main(int argc, const char **argv)
         CLI_TOOL_COMMAND("test", "Print changes that would be otherwise written", CLI_CMD_NONE, test),
         CLI_TOOL_COMMAND("enable-feature", "Enable feature in currently selected profile", CLI_CMD_REQUIRE_ROOT, enable),
         CLI_TOOL_COMMAND("disable-feature", "Disable feature in currently selected profile", CLI_CMD_REQUIRE_ROOT, disable),
+        CLI_TOOL_COMMAND("is-feature-enabled", "Check if feature is enabled in currently selected profile", CLI_CMD_NONE, is_enabled),
         CLI_TOOL_COMMAND("create-profile", "Create new authselect profile", CLI_CMD_REQUIRE_ROOT, create),
         CLI_TOOL_DELIMITER("Backup commands:"),
         CLI_TOOL_COMMAND("backup-list", "List available backups", CLI_CMD_NONE, backup_list),
