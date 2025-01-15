@@ -182,6 +182,19 @@ int
 authselect_feature_disable(const char *feature);
 
 /**
+ * Check if a feature is enabled in currently activated profile.
+ *
+ * @param feature       Feature name to check.
+ *
+ * @return
+ * - 0 if the feature is enabled.
+ * - ENOENT if it is disabled or there is no existing authselect configuration.
+ * - Other errno code on generic error.
+ */
+int
+authselect_feature_enabled(const char *feature);
+
+/**
  * Check if current configuration is valid.
  *
  * This will detect any manual changes to current authselect

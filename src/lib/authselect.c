@@ -263,6 +263,29 @@ authselect_feature_disable(const char *feature)
 }
 
 _PUBLIC_ int
+authselect_feature_enabled(const char *feature)
+{
+    char *profile_id;
+    char **features;
+    errno_t ret;
+    bool bret;
+
+    ret = authselect_config_read(&profile_id, &features);
+    if (ret != EOK) {
+        return ret;
+    }
+
+    bret = string_array_has_value(features, feature);
+
+    string_array_free(features);
+    free(profile_id);
+
+    ret = bret ? EOK : ENOENT;
+
+    return ret;
+}
+
+_PUBLIC_ int
 authselect_validate_configuration(bool *_is_valid)
 {
     char *profile_id;
