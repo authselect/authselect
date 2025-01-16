@@ -33,8 +33,8 @@ m4_include(src/conf_macros.m4)
 m4_include(external/a2x.m4)
 m4_include(external/po4a.m4)
 
-+dnl Check if functions are present
-+AC_CHECK_FUNCS_ONCE([reallocarray])
+dnl Check if functions are present
+AC_CHECK_FUNCS_ONCE([reallocarray])
 
 dnl Required libraries
 REQUIRE_POPT
