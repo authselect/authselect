@@ -70,6 +70,11 @@ authselect_config_read(char **_profile_id,
     ret = textfile_read(PATH_CONFIG_FILE,
                         AUTHSELECT_FILE_SIZE_LIMIT,
                         &content);
+    if (ret == ENOENT) {
+        ret = textfile_read(PATH_CONFIG_FALLBACK_FILE,
+                            AUTHSELECT_FILE_SIZE_LIMIT,
+                            &content);
+    }
     if (ret != EOK) {
         return ret;
     }
@@ -228,6 +233,9 @@ authselect_config_validate_missing()
     int i;
 
     ret = file_exists(PATH_CONFIG_FILE);
+    if (ret == ENOENT) {
+        ret = file_exists(PATH_CONFIG_FALLBACK_FILE);
+    }
     if (ret != ENOENT) {
         return false;
     }
