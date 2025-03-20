@@ -36,7 +36,8 @@ domains:
     role: ad
     os:
       family: windows
-    ssh:
+    conn:
+      type: ssh
       username: Administrator@ad.test
       password: vagrant
     config:
