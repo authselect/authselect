@@ -13,12 +13,9 @@ actions:
 jobs:
   - job: copr_build
     trigger: pull_request
-    # waiting for https://github.com/packit/packit-service/issues/2431
-    #owner: @authselect
     targets:
       - fedora-all
-      - epel-9
-      - epel-8
+      - centos-stream-10
 
   - job: propose_downstream
     trigger: release
