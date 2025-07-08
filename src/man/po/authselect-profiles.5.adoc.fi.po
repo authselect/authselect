@@ -2,12 +2,13 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
 # Jan Kuparinen <copper_fin@hotmail.com>, 2022.
+# Ricky Tigg <ricky.tigg@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-05-04 13:50+0200\n"
-"PO-Revision-Date: 2022-05-23 17:18+0000\n"
-"Last-Translator: Jan Kuparinen <copper_fin@hotmail.com>\n"
+"PO-Revision-Date: 2025-03-22 11:53+0000\n"
+"Last-Translator: Ricky Tigg <ricky.tigg@gmail.com>\n"
 "Language-Team: Finnish <https://translate.fedoraproject.org/projects/"
 "authselect/12x-authselect-profiles5adoc/fi/>\n"
 "Language: fi\n"
@@ -15,13 +16,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.12.2\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. type: Title =
 #: ./src/man/authselect-profiles.5.adoc:2
 #, no-wrap
 msgid "authselect-profiles(5)"
-msgstr ""
+msgstr "authselect-profiles(5)"
 
 #. type: Title -
 #: ./src/man/authselect-profiles.5.adoc:6
@@ -32,7 +33,7 @@ msgstr "NIMI"
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:8
 msgid "authselect-profiles - how to extend authselect profiles."
-msgstr ""
+msgstr "authselect-profiles - kuinka laajentaa authselect-profiilit."
 
 #. type: Title -
 #: ./src/man/authselect-profiles.5.adoc:10
@@ -46,34 +47,37 @@ msgid ""
 "This manual page explains how are authselect profiles organized and how to "
 "create new profiles."
 msgstr ""
+"Tällä ohjesivulla kerrotaan, kuinka authselect-profiilit on järjestetty ja "
+"kuinka uusia profiileja luodaan."
 
 #. type: Title -
 #: ./src/man/authselect-profiles.5.adoc:15
 #, no-wrap
 msgid "PROFILE DIRECTORIES"
-msgstr ""
+msgstr "PROFIILIHAKEMISTOT"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:17
 msgid "Profiles can be found in one of three directories."
-msgstr ""
+msgstr "Profiilit löytyvät yhdestä kolmesta hakemistosta."
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:18
 #, no-wrap
 msgid "*{AUTHSELECT_PROFILE_DIR}*"
-msgstr ""
+msgstr "*{AUTHSELECT_PROFILE_DIR}*"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:20
 msgid "Read-only directory containing profiles shipped together with authselect."
 msgstr ""
+"Vain luku -hakemisto, joka sisältää authselectin mukana toimitetut profiilit."
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:21
 #, no-wrap
 msgid "*{AUTHSELECT_VENDOR_DIR}*"
-msgstr ""
+msgstr "*{AUTHSELECT_VENDOR_DIR}*"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:24
@@ -81,23 +85,25 @@ msgid ""
 "Read-only directory for vendor-specific profiles that can override the ones "
 "in _default_ directory."
 msgstr ""
+"Vain luku -hakemisto toimittajakohtaisille profiileille, jotka voivat "
+"ohittaa _default_-hakemistossa olevat profiilit."
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:25
 #, no-wrap
 msgid "*{AUTHSELECT_CUSTOM_DIR}*"
-msgstr ""
+msgstr "*{AUTHSELECT_CUSTOM_DIR}*"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:27
 msgid "Place for administrator-defined profiles."
-msgstr ""
+msgstr "Paikka järjestelmänvalvojan määrittämille profiileille."
 
 #. type: Title -
 #: ./src/man/authselect-profiles.5.adoc:29
 #, no-wrap
 msgid "PROFILE FILES"
-msgstr ""
+msgstr "PROFIILITIEDOSTOT"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:33
@@ -106,6 +112,9 @@ msgid ""
 "mandatory profile description and describe the changes that are done to the "
 "system."
 msgstr ""
+"Jokainen profiili koostuu yhdestä tai useammasta näistä tiedostoista, jotka "
+"sisältävät pakollisen profiilikuvauksen ja kuvaavat järjestelmään tehtyjä "
+"muutoksia."
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:34
@@ -116,13 +125,13 @@ msgstr ""
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:36
 msgid "Description of the profile. The first line must be a name of the profile."
-msgstr ""
+msgstr "Profiilin kuvaus. Ensimmäisen rivin tulee olla profiilin nimi."
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:37
 #, no-wrap
 msgid "*system-auth*"
-msgstr ""
+msgstr "*system-auth*"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:40
@@ -130,12 +139,14 @@ msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
 msgstr ""
+"PAM-pino, joka sisältyy lähes kaikkiin yksittäisiin palvelun "
+"kokoonpanotiedostoihin."
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:41
 #, no-wrap
 msgid "*password-auth*, *smartcard-auth*, *fingerprint-auth*"
-msgstr ""
+msgstr "*password-auth*, *smartcard-auth*, *fingerprint-auth*"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:45
@@ -144,12 +155,15 @@ msgid ""
 "different types of devices via simultaneously running individual "
 "conversations instead of one aggregate conversation."
 msgstr ""
+"Nämä PAM-pinot on tarkoitettu sovelluksille, jotka käsittelevät todennusta "
+"eri tyyppisistä laitteista suorittamalla samanaikaisesti yksittäisiä "
+"keskusteluja yhden yhteiskeskustelun sijaan."
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:46
 #, no-wrap
 msgid "*postlogin*"
-msgstr ""
+msgstr "*postlogin*"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:54
@@ -162,12 +176,20 @@ msgid ""
 "regardless of the success or failure of the modules in the system-auth "
 "configuration file._"
 msgstr ""
+"Tämän PAM-pinon tarkoitus on tarjota yhteinen paikka kaikille PAM-"
+"moduuleille, jotka tulee kutsua system-auth-tiedostossa määritetyn pinon tai "
+"muiden yleisten PAM-määritystiedostojen jälkeen. Se sisältyy kaikkiin "
+"yksittäisiin palvelun määritystiedostoihin, jotka tarjoavat "
+"kirjautumispalvelun komentotulkin tai tiedostojen käyttöoikeuksilla. "
+"_HUOMAUTUS: kirjautumisen jälkeisen määritystiedoston moduulit suoritetaan "
+"riippumatta siitä, onnistuvatko moduulit system-authin "
+"kokoonpanotiedostossa._"
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:55
 #, no-wrap
 msgid "*nsswitch.conf*"
-msgstr ""
+msgstr "*nsswitch.conf*"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:59
@@ -176,12 +198,15 @@ msgid ""
 "must be set. Maps that are not specified by the profile are included from "
 "{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf."
 msgstr ""
+"Name Service Switch -määritystiedosto. Vain profiiliin liittyvät kartat "
+"tulee asettaa. Kartat, joita profiili ei määritä, sisältyvät "
+"{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf:sta."
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:60
 #, no-wrap
 msgid "*dconf-db*"
-msgstr ""
+msgstr "*dconf-db*"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:64
@@ -190,23 +215,27 @@ msgid ""
 "for gnome login screen in order to enable or disable smartcard and "
 "fingerprint authentication."
 msgstr ""
+"Muutokset dconf-tietokantaan. Tämän tiedoston pääasiallinen käyttötapa on "
+"tehdä muutoksia Gnome-kirjautumisnäytölle, jotta älykortti- ja "
+"sormenjälkitunnistus voidaan ottaa käyttöön tai poistaa käytöstä."
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:65
 #, no-wrap
 msgid "*dconf-locks*"
-msgstr ""
+msgstr "*dconf-locks*"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:67
 msgid "This file define locks on values set in dconf database."
 msgstr ""
+"Tämä tiedosto määrittää lukot dconf-tietokannassa asetettuihin arvoihin."
 
 #. type: Title ~
 #: ./src/man/authselect-profiles.5.adoc:69
 #, no-wrap
 msgid "CONDITIONAL LINES"
-msgstr ""
+msgstr "EHDOLLISET LINJAT"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:73
@@ -215,6 +244,9 @@ msgid ""
 "with optional usage of several operators that can be used to provide some "
 "optional profile features."
 msgstr ""
+"Jokainen näistä tiedostoista toimii mallina. Malli on pelkkä tekstitiedosto, "
+"jossa on valinnainen useiden operaattoreiden käyttö ja jota voidaan käyttää "
+"tarjoamaan joitain valinnaisia profiiliominaisuuksia."
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:74
@@ -230,6 +262,9 @@ msgid ""
 "whole line with this operator will be removed and the rest of the template "
 "will be processed."
 msgstr ""
+"Lopeta tiedoston käsittely välittömästi, ellei \"ominaisuus\" ole määritetty "
+"(muu tiedoston sisältö poistetaan). Jos \"ominaisuus\" on määritetty, koko "
+"rivi tällä operaattorilla poistetaan ja mallin loppuosa käsitellään."
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:80
@@ -553,7 +588,7 @@ msgstr ""
 #: ./src/man/authselect-profiles.5.adoc:214
 #, no-wrap
 msgid "SEE ALSO"
-msgstr ""
+msgstr "KATSO MYÖS"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:215
