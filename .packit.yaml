@@ -12,17 +12,20 @@ actions:
     - sed -i "s/@RELEASE_NUMBER@%{?dist}/%autorelease/g" authselect.spec
 
 jobs:
+  # Produce COPR build on each pull request
   - job: copr_build
     trigger: pull_request
     targets:
       - fedora-all
       - centos-stream-10
 
+  # Create Fedora pull request on release
   - job: propose_downstream
     trigger: release
     dist_git_branches:
       - fedora-rawhide
 
+  # Automatically build in Koji when PR is merged
   - job: koji_build
     trigger: commit
     dist_git_branches:
