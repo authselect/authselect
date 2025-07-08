@@ -2,13 +2,15 @@
 # Ludek Janda <ljanda@redhat.com>, 2018. #zanata
 # Ludek Janda <ljanda@redhat.com>, 2019. #zanata
 # Yi-Jyun Pan <pan93412@gmail.com>, 2020, 2021.
+# hsu zangmen <chzang55@gmail.com>, 2025.
+# Pavel Brezina <pbrezina@redhat.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
 "POT-Creation-Date: 2024-02-23 14:08+0100\n"
-"PO-Revision-Date: 2021-11-09 11:26+0000\n"
-"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
+"PO-Revision-Date: 2025-07-08 10:48+0000\n"
+"Last-Translator: Pavel Brezina <pbrezina@redhat.com>\n"
 "Language-Team: Chinese (Traditional) <https://translate.fedoraproject.org/"
 "projects/authselect/master-application/zh_TW/>\n"
 "Language: zh_TW\n"
@@ -16,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.8\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:188
 msgid "Unable to obtain supported features"
@@ -47,18 +49,13 @@ msgid "Enforcing activation!"
 msgstr "強制啟動！"
 
 #: src/lib/authselect.c:110
-#, fuzzy, c-format
-#| msgid "System was not configured with authselect."
+#, c-format
 msgid ""
 "%s is missing or unreadable, system was not properly configured by "
 "authselect."
-msgstr "系統未設定 authselect。"
+msgstr "%s 遺失或無法讀取，系統未經 authselect 正確設定。"
 
 #: src/lib/authselect.c:112
-#, fuzzy
-#| msgid ""
-#| "Refusing to activate profile unless this file is removed or overwrite is "
-#| "requested."
 msgid "Refusing to activate profile unless overwrite is requested."
 msgstr "除非刪除此檔案，或者要求覆蓋組態，否則拒絕啟動設定檔。"
 
@@ -66,42 +63,35 @@ msgstr "除非刪除此檔案，或者要求覆蓋組態，否則拒絕啟動設
 msgid ""
 "Changes to the authselect configuration were detected. These changes will be "
 "overwritten. Please call 'authselect opt-out' in order to keep them."
-msgstr ""
+msgstr "偵測到對 authselect 配置的變更。 這些變更將被覆蓋。 請呼叫「authselect opt-"
+"out」以保留這些變更。"
 
 #: src/lib/authselect.c:127
 #, c-format
 msgid "Unable to activate profile [%s] [%d]: %s"
-msgstr "無法啟動 [%s] [%d] 設定檔：%s"
+msgstr "無法啟動設定檔 [%s] [%d]: %s"
 
 #: src/lib/authselect.c:141
-#, fuzzy
-#| msgid "Trying to backup authselect configuration to [%s]"
 msgid "Trying to uninstall authselect configuration"
-msgstr "嘗試備份 authselect 的設定至 [%s]"
+msgstr "嘗試解除安裝 authselect 設定"
 
 #: src/lib/authselect.c:145
-#, fuzzy, c-format
-#| msgid "Unable to create symbolic links [%d]: %s"
+#, c-format
 msgid "Unable to remove symlinks [%d]: %s"
-msgstr "無法建立 [%d] 符號連結：%s"
+msgstr "無法移除交點連結 [%d]: %s"
 
 #: src/lib/authselect.c:149
-#, fuzzy
-#| msgid "Changes were successfully applied.\n"
 msgid "Symbolic links were successfully removed"
-msgstr "已成功套用變更。\n"
+msgstr "已成功移除符號連結"
 
 #: src/lib/authselect.c:154
-#, fuzzy, c-format
-#| msgid "Unable to test current configuration [%d]: %s"
+#, c-format
 msgid "Unable to remove authselect configuration [%d]: %s"
-msgstr "無法測試目前的 [%d] 組態：%s"
+msgstr "無法移除目前的 [%d] 組態：%s"
 
 #: src/lib/authselect.c:159
-#, fuzzy
-#| msgid "Changes were successfully applied.\n"
 msgid "Authselect configuration was successfully removed"
-msgstr "已成功套用變更。\n"
+msgstr "Authselect 設定已成功移除"
 
 #: src/lib/authselect.c:198
 #, c-format
@@ -111,7 +101,7 @@ msgstr "[%s] 設定檔功能不再支援，移除中..."
 #: src/lib/authselect_backup.c:48
 #, c-format
 msgid "Unable to create backup directory [%s/%s] [%d]: %s"
-msgstr "無法建立 [%s/%s] [%d] 備份目錄：%s"
+msgstr "無法建立備份目錄 [%s/%s] [%d]: %s"
 
 #: src/lib/authselect_backup.c:71
 #, c-format
@@ -121,7 +111,7 @@ msgstr "無法建立 [%s] [%d] 備份目錄：%s"
 #: src/lib/authselect_backup.c:92
 #, c-format
 msgid "Creating temporary directory at [%s]"
-msgstr "在 [%s] 位置建立暫存目錄"
+msgstr "在 [%s] 建立暫存目錄"
 
 #: src/lib/authselect_backup.c:125 src/lib/authselect_profile.c:377
 #: src/lib/authselect_profile.c:457
@@ -147,7 +137,7 @@ msgstr "無法將 [%s] 複製到 [%s/%s] [%d]：%s"
 #: src/lib/authselect_backup.c:175
 #, c-format
 msgid "Trying to backup authselect configuration to [%s]"
-msgstr "嘗試備份 authselect 的設定至 [%s]"
+msgstr "下列 nsswitch 映射會被設定檔覆寫：[%s]"
 
 #: src/lib/authselect_backup.c:180
 #, c-format
@@ -257,13 +247,12 @@ msgstr "無法寫入 [%s] [%d]：%s"
 #: src/lib/authselect_profile.c:385
 #, c-format
 msgid "Omitting [%s] since it does not exist in base profile"
-msgstr ""
+msgstr "省略 [%s] 因為它不存在於基本設定檔中"
 
 #: src/lib/authselect_profile.c:389
-#, fuzzy, c-format
-#| msgid "Unable to check file mode of [%s] [%d]: %s"
+#, c-format
 msgid "Unable to check presence of [%s] [%d]: %s"
-msgstr "無法檢查[%s] [%d] 的檔案模式：%s"
+msgstr "無法檢查 [%s] [%d] 是否存在：%s"
 
 #: src/lib/authselect_profile.c:397
 #, c-format
@@ -273,7 +262,7 @@ msgstr "無法建立 [%s] 符號連結指向 [%s] [%d]：%s"
 #: src/lib/authselect_profile.c:430
 #, c-format
 msgid "Creating new profile from \"%s\" at [%s]"
-msgstr "在 [%2$s] 位置從「%1$s」建立新的設定檔"
+msgstr "在 [%s] 位置從「%s」建立新的設定檔"
 
 #: src/lib/authselect_profile.c:434
 #, c-format
@@ -377,7 +366,7 @@ msgstr "創建符號鏈接[%s] 至 [%s]"
 #: src/lib/files/symlinks.c:47
 #, c-format
 msgid "Unable to overwrite file [%s] [%d]: %s"
-msgstr "無法覆蓋文件[%s] [[%d]： %s"
+msgstr "無法覆蓋檔案[%s] [[%d]： %s"
 
 #: src/lib/files/symlinks.c:55
 #, c-format
@@ -408,7 +397,7 @@ msgstr "嘗試存取 [%s] [%d] 檔案時出錯：%s"
 #: src/lib/files/symlinks.c:121
 #, c-format
 msgid "Unable to check file [%s] [%d]: %s"
-msgstr "無法檢查文件[%s] [[%d]： %s"
+msgstr "無法檢查檔案[%s] [[%d]： %s"
 
 #: src/lib/files/symlinks.c:128
 #, c-format
@@ -423,7 +412,7 @@ msgstr "檔案[%s]存在，但它需要被覆蓋！"
 #: src/lib/files/symlinks.c:190
 #, c-format
 msgid "Skipping [%s] because it is not an authselect file"
-msgstr ""
+msgstr "跳過 [%s] 因為它不是 authselect 檔案"
 
 #: src/lib/files/system.c:73 src/lib/profiles/read.c:162
 #, c-format
@@ -487,10 +476,9 @@ msgid "File [%s] is still present"
 msgstr "[%s] 檔案仍然存在"
 
 #: src/lib/files/system.c:330 src/lib/files/system.c:340
-#, fuzzy, c-format
-#| msgid "Unable to create [%s] [%d]: %s"
+#, c-format
 msgid "Unable to delete [%s] [%d]: %s"
-msgstr "無法建立 [%s] [%d]：%s"
+msgstr "無法刪除 [%s] [%d]: %s"
 
 #: src/lib/profiles/activate.c:44
 #, c-format
@@ -548,7 +536,7 @@ msgstr "位置陣列為 NULL"
 #: src/lib/profiles/read.c:133
 #, c-format
 msgid "Profile [%s] is a custom profile"
-msgstr "[%s] 設定檔是個自訂設定檔"
+msgstr "設定檔 [%s] 是自訂設定檔"
 
 #: src/lib/profiles/read.c:135
 #, c-format
@@ -563,7 +551,7 @@ msgstr "[%s] 設定檔是個預設設定檔"
 #: src/lib/profiles/read.c:140
 #, c-format
 msgid "Profile [%s] found at [%s]"
-msgstr "在 [%2$s] 位置找到 [%1$s] 設定檔"
+msgstr "在 [%s] 位置找到 [%s] 設定檔"
 
 #: src/lib/profiles/read.c:148
 #, c-format
@@ -589,7 +577,7 @@ msgstr "無法 stat [%s] [%d]：%s"
 #: src/lib/util/dir.c:130
 #, c-format
 msgid "Unable to stat directory [%d]: %s"
-msgstr "無法 stat [%d] 目錄：%s"
+msgstr "無法統計目錄 [%d]: %s"
 
 #: src/lib/util/dir.c:313
 #, c-format
@@ -680,15 +668,14 @@ msgid "Unable to chown file [%s] [%d]: %s"
 msgstr "無法 chown [%s] [%d] 檔案：%s"
 
 #: src/lib/util/selinux.c:46
-#, fuzzy, c-format
-#| msgid "Unable to create selabel context [%d]: %s"
+#, c-format
 msgid "Unable to create selabel handle [%d]: %s"
-msgstr "無法創建selabel上下文[%d]： %s"
+msgstr "無法刪除 [%d]: %s"
 
 #: src/lib/util/selinux.c:55
 #, c-format
 msgid "Unable to lookup selinux context [%d]: %s"
-msgstr "無法查找selinux上下文[%d]： %s"
+msgstr "無法查找selinux內容[%d]： %s"
 
 #: src/lib/util/selinux.c:59
 #, c-format
@@ -712,23 +699,23 @@ msgstr "找到 [%s] 的 SELinux 情境：%s"
 #: src/lib/util/selinux.c:115 src/lib/util/selinux.c:183
 #: src/lib/util/selinux.c:251
 msgid "Unable to get current fscreate selinux context!"
-msgstr "無法獲得當前的fscreate selinux上下文！"
+msgstr "無法獲得目前的fscreate selinux 內容！"
 
 #: src/lib/util/selinux.c:121 src/lib/util/selinux.c:189
 #: src/lib/util/selinux.c:257
 #, c-format
 msgid "Unable to get default selinux context for [%s] [%d]: %s!"
-msgstr "無法獲取[的默認selinux上下文%s] [[%d]： %s！"
+msgstr "無法取得 [%s] [%d] 的預設 selinux 內容：%s！"
 
 #: src/lib/util/selinux.c:129 src/lib/util/selinux.c:197
 #: src/lib/util/selinux.c:265
 msgid "Unable to set fscreate selinux context!"
-msgstr "無法設置fscreate selinux上下文！"
+msgstr "無法設定 fscreate selinux 內容！"
 
 #: src/lib/util/selinux.c:139 src/lib/util/selinux.c:207
 #: src/lib/util/selinux.c:275
 msgid "Unable to restore fscreate selinux context!"
-msgstr "無法恢復fscreate selinux上下文！"
+msgstr "無法還原 fscreate selinux 內容！"
 
 #: src/lib/util/selinux.c:387
 #, c-format
@@ -745,7 +732,7 @@ msgstr "正在移除 [%s]"
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:281
 msgid "Invalid operator!"
-msgstr "操作符無效！"
+msgstr "無效運算元！"
 
 #: src/lib/util/template.c:450 src/lib/util/template.c:573
 #: src/lib/util/template.c:624
@@ -761,7 +748,7 @@ msgstr "無法處理 [%d] 比對：%s"
 #: src/lib/util/template.c:485
 #, c-format
 msgid "Unable to process operator [%d]: %s"
-msgstr "無法處理 [%d] 操作符：%s"
+msgstr "無法處理行程操作 [%d]：%s"
 
 #: src/lib/util/template.c:500 src/lib/util/template.c:650
 #, c-format
@@ -771,7 +758,7 @@ msgstr "無法搜索字符串：regex error %d"
 #: src/lib/util/template.c:532
 #, c-format
 msgid "Unable to generate template [%d]: %s"
-msgstr "無法生成 [%d] 模板：%s"
+msgstr "無法產生範本 [%d]: %s"
 
 #: src/lib/util/template.c:580
 #, c-format
@@ -958,7 +945,7 @@ msgstr "啟動設定檔前先備份系統檔案"
 
 #: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "NAME"
-msgstr "NAME"
+msgstr "名稱"
 
 #: src/cli/main.c:164
 msgid "Do not backup system files when --force is set"
@@ -1000,7 +987,7 @@ msgstr "簡介“%s“被選中了。\n"
 
 #: src/cli/main.c:211
 msgid "The following nsswitch maps are overwritten by the profile:\n"
-msgstr "以下nsswitch映射將被配置文件覆蓋：\n"
+msgstr "以下nsswitch映射將被配置檔案覆蓋：\n"
 
 #: src/cli/main.c:214
 #, c-format
@@ -1073,10 +1060,8 @@ msgid "Current configuration is valid."
 msgstr "目前的組態有效。"
 
 #: src/cli/main.c:365
-#, fuzzy
-#| msgid "No existing configuration detected.\n"
 msgid "No configuration detected."
-msgstr "未偵測到既有組態。\n"
+msgstr "未偵測到組態設定。"
 
 #: src/cli/main.c:369
 msgid "System was not configured with authselect."
@@ -1260,10 +1245,9 @@ msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "無法還原備份 [%s] [%d]：%s\n"
 
 #: src/cli/main.c:928
-#, fuzzy, c-format
-#| msgid "Unable to test current configuration [%d]: %s"
+#, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
-msgstr "無法測試目前的 [%d] 組態：%s"
+msgstr "無法解除安裝 authselect 組態設定 [%d]: %s\n"
 
 #: src/cli/main.c:978
 msgid "Select profile"
@@ -1271,7 +1255,7 @@ msgstr "選擇個人資料"
 
 #: src/cli/main.c:979
 msgid "Regenerate configuration for currently selected command"
-msgstr "為當前選定的命令重新生成配置"
+msgstr "為目前選定的命令重新生成配置"
 
 #: src/cli/main.c:980
 msgid "List available profiles"
@@ -1287,15 +1271,15 @@ msgstr "顯示個人資料信息"
 
 #: src/cli/main.c:983
 msgid "Print profile requirements"
-msgstr "打印配置文件要求"
+msgstr "列出配置檔案要求"
 
 #: src/cli/main.c:984
 msgid "Get identifier of currently selected profile"
-msgstr "獲取當前所選配置文件的標識符"
+msgstr "獲取目前所選配置檔案的標識符"
 
 #: src/cli/main.c:985
 msgid "Check if the current configuration is valid"
-msgstr "檢查當前配置是否有效"
+msgstr "檢查目前配置是否有效"
 
 #: src/cli/main.c:986
 msgid "Print changes that would be otherwise written"
@@ -1303,15 +1287,15 @@ msgstr "打印將以其他方式寫入的更改"
 
 #: src/cli/main.c:987
 msgid "Enable feature in currently selected profile"
-msgstr "啟用當前所選配置文件中的功能"
+msgstr "啟用目前所選配置檔案中的功能"
 
 #: src/cli/main.c:988
 msgid "Disable feature in currently selected profile"
-msgstr "禁用當前所選配置文件中的功能"
+msgstr "停用目前所選配置檔案中的功能"
 
 #: src/cli/main.c:989
 msgid "Create new authselect profile"
-msgstr "創建新的authselect配置文件"
+msgstr "建立新的authselect配置檔案"
 
 #: src/cli/main.c:990
 msgid "Backup commands:"
@@ -1331,19 +1315,15 @@ msgstr "從備份還原"
 
 #: src/cli/main.c:994
 msgid "Other:"
-msgstr ""
+msgstr "其它："
 
 #: src/cli/main.c:995
-#, fuzzy
-#| msgid "Backup [%s] contains authselect configuration"
 msgid "Opt-out from authselect managed configuration"
-msgstr "備份 [%s] 有 authselect 的設定檔"
+msgstr "退出 authselect 管理設定"
 
 #: src/cli/main.c:997
-#, fuzzy
-#| msgid "Backup [%s] contains authselect configuration"
 msgid "Print authselect version"
-msgstr "備份 [%s] 有 authselect 的設定檔"
+msgstr "列出 authselect 版本"
 
 #~ msgid "Unable to obtain nsswitch maps!"
 #~ msgstr "無法取得 nsswitch 映射表！"

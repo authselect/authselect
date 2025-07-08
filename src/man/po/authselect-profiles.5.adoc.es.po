@@ -1,18 +1,20 @@
 # Ludek Janda <ljanda@redhat.com>, 2018. #zanata
 # Máximo Castañeda Riloba <mcrcctm@gmail.com>, 2018. #zanata
+# Javier Francisco <fserrador@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-02-23 14:08+0100\n"
-"PO-Revision-Date: 2018-11-23 10:48+0000\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Spanish\n"
+"PO-Revision-Date: 2025-04-03 21:21+0000\n"
+"Last-Translator: Javier Francisco <fserrador@gmail.com>\n"
+"Language-Team: Spanish <https://translate.fedoraproject.org/projects/"
+"authselect/master-authselect-profiles5adoc/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. type: Title =
 #: src/man/authselect-profiles.5.adoc:2
@@ -44,7 +46,7 @@ msgid ""
 "create new profiles."
 msgstr ""
 "En este manual se explica cómo están organizados los perfiles de authselect "
-"y cómo crear otros nuevos."
+"y cómo crear perfiles nuevos."
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:15
@@ -55,7 +57,7 @@ msgstr "DIRECTORIOS DE PERFILES"
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:17
 msgid "Profiles can be found in one of three directories."
-msgstr "Los perfiles pueden estar en tres directorios."
+msgstr "Los perfiles pueden encontrarse en uno de tres directorios."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:18
@@ -109,8 +111,8 @@ msgid ""
 "mandatory profile description and describe the changes that are done to the "
 "system."
 msgstr ""
-"Cada perfil contiene uno o varios de estos archivos, con una descripción "
-"obligatoria y los cambios que se hacen en el sistema."
+"Cada perfil contiene uno o varios de estos archivos, con una descripción de "
+"perfil obligatorio y describe los cambios que se hacen en el sistema."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:34
@@ -122,8 +124,7 @@ msgstr "*README*"
 #: src/man/authselect-profiles.5.adoc:36
 msgid ""
 "Description of the profile. The first line must be a name of the profile."
-msgstr ""
-"Descripción del perfil. La primera línea debe ser el nombre del perfil."
+msgstr "Descripción del perfil. La primera línea debe ser un nombre del perfil."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:37
@@ -137,8 +138,8 @@ msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
 msgstr ""
-"Pila PAM incluida desde casi todos los archivos de configuración de "
-"servicios."
+"Pila PAM incluida desde casi todos los archivos de configuración individual "
+"de cada servicio."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:41
@@ -189,7 +190,7 @@ msgstr "*nsswitch.conf*"
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:57
 msgid "Name Service Switch configuration file."
-msgstr ""
+msgstr "Archivo de configuración de Intercambio de Servicio de Nombre."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:58
@@ -307,7 +308,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:92
 #, no-wrap
 msgid "*{imply \"implied-feature\" if \"feature\"}*"
-msgstr ""
+msgstr "*{imply \"implied-feature\" if \"feature\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:96
@@ -316,12 +317,16 @@ msgid ""
 "whole line with this operator is removed, thus it is not possible to add "
 "anything else around this operator at the same line."
 msgstr ""
+"Habilita de característica \"implied-feature\" si la característica "
+"\"feature\" está activada. La línea completa con este operador es eliminada, "
+"por tanto no es posible añadir nada más alrededor de este operador en la "
+"misma línea."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:97
 #, no-wrap
 msgid "*{if \"feature\":true|false}*"
-msgstr "*{if \"característica\":verdadero|falso}*"
+msgstr "*{if \"característica\":true|false}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:100
@@ -354,6 +359,10 @@ msgid ""
 "specifying single feature name. In this case the expression will evaluate to "
 "true or false and the conditional operator will act upon the result."
 msgstr ""
+"Además es posible utilizar expresión lógica en línea condicional en lugar de "
+"especificar nombre de característica única. En este caso la expresión "
+"evaluará a cierto o falso y el operador condicional actuará por encima del "
+"resultado."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:113
@@ -363,17 +372,22 @@ msgid ""
 "from the following logical operators: _and_, _or_ and _not_. The expression "
 "may also be enclosed in parentheses and contain multiple subexpressions."
 msgstr ""
+"La expresión de sintaxis consiste en nombres de característica (p,ej., "
+"_\"característica\"_) la cual devuelve cierto _true_ si la característica "
+"está definida o falsa, _false_, si no está definido y a continuación los "
+"operadores lógicos: _and_ (y), _or_ (o) y _not_ (no). La expresión además "
+"está encerrado entre paréntesis y contiene múltiples subexpresiones."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:115
 msgid "For example:"
-msgstr ""
+msgstr "Por ejemplo:"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:116
 #, no-wrap
 msgid "*{if \"feature1\" or \"feature2\":true}*"
-msgstr ""
+msgstr "*{if \"caracteristica1\" or \"característica2\":true}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:119
@@ -381,12 +395,14 @@ msgid ""
 "If \"feature1\" or \"feature2\" is defined, replace this operator with "
 "string \"true\", otherwise with an empty string."
 msgstr ""
+"Si están definidas \"característica1\" o \"característica2\", sustituya este "
+"operador con la cadena \"true\", en otro caso con una cadena vacía."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:120
 #, no-wrap
 msgid "*{if not \"feature\":true|false}*"
-msgstr "*{if not \"característica\":verdadero|falso}*"
+msgstr "*{if not \"característica\":true|false}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:123
@@ -394,8 +410,8 @@ msgid ""
 "If \"feature\" is not defined, replace this operator with string \"true\", "
 "otherwise with string \"false\"."
 msgstr ""
-"Si no se define \"característica\", reemplazar el operador por el texto "
-"\"verdadero\". Hacerlo por \"falso\" en caso de estar definida."
+"Si no se define \"característica\", reemplace este operador por la cadena "
+"\"true\", en otro caso con la cadena \"false\"."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:124
@@ -417,6 +433,8 @@ msgstr ""
 #, no-wrap
 msgid "*{if \"feature1\" and (\"feature2\" or \"feature3\"):true}*"
 msgstr ""
+"*{if \"caracteristica1\" and (\"característica2\" or \"característica3\""
+"):true}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:131
@@ -425,6 +443,9 @@ msgid ""
 "defined replace this operator with string \"true\", otherwise with an empty "
 "string."
 msgstr ""
+"Si está \"característica1\" definida, y está definida una de "
+"\"característica2\" y \"característica3\" sustituya este operador con la "
+"cadena verdadera \"true\", en otro caso con una cadena en blanco."
 
 #. type: Title ~
 #: src/man/authselect-profiles.5.adoc:133
@@ -473,20 +494,7 @@ msgstr ""
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:161
-#, fuzzy, no-wrap
-#| msgid ""
-#| "  {continue if \"with-smartcard\"}\n"
-#| "  auth        required                                     pam_env.so\n"
-#| "  auth        required                                     pam_faildelay.so delay=2000000\n"
-#| "  auth        required                                     pam_faillock.so preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
-#| "  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so uid >= 1000 quiet\n"
-#| "  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
-#| "  auth        sufficient                                   pam_unix.so nullok try_first_pass\n"
-#| "  auth        requisite                                    pam_succeed_if.so uid >= 1000 quiet_success\n"
-#| "  auth        sufficient                                   pam_sss.so forward_pass\n"
-#| "  auth        required                                     pam_faillock.so authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
-#| "  auth        required                                     pam_deny.so\n"
-#| "  ...\n"
+#, no-wrap
 msgid ""
 "  {continue if \"with-smartcard\"}\n"
 "  auth        required                                     pam_env.so\n"
@@ -503,14 +511,21 @@ msgid ""
 msgstr ""
 "  {continue if \"with-smartcard\"}\n"
 "  auth        required                                     pam_env.so\n"
-"  auth        required                                     pam_faildelay.so delay=2000000\n"
-"  auth        required                                     pam_faillock.so preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
-"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so uid >= 1000 quiet\n"
+"  auth        required                                     pam_faildelay.so "
+"delay=2000000\n"
+"  auth        required                                     pam_faillock.so "
+"preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
+"uid >= 1000 quiet\n"
 "  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
-"  auth        sufficient                                   pam_unix.so nullok try_first_pass\n"
-"  auth        requisite                                    pam_succeed_if.so uid >= 1000 quiet_success\n"
-"  auth        sufficient                                   pam_sss.so forward_pass\n"
-"  auth        required                                     pam_faillock.so authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
+"  auth        sufficient                                   pam_unix.so "
+"nullok\n"
+"  auth        requisite                                    pam_succeed_if.so "
+"uid >= 1000 quiet_success\n"
+"  auth        sufficient                                   pam_sss.so "
+"forward_pass\n"
+"  auth        required                                     pam_faillock.so "
+"authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
 "  auth        required                                     pam_deny.so\n"
 "  ...\n"
 
@@ -523,23 +538,15 @@ msgid ""
 "not have to include both features but only \"with-smartcard-required\" is "
 "necessary."
 msgstr ""
+"Aquí hay un ejemplo de \"contunie-if\" utilizando expresión lógica. El "
+"archivo estará vacío a no ser que se ponga \"with-smartcard\" o "
+"\"with-smartcard-required\". Esto simplificará la invocación de la "
+"instrucción _authselect select_ la cual no tiene que incluir ambas "
+"características pero solo es necesaria \"with-semartcard-required\"."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:179
-#, fuzzy, no-wrap
-#| msgid ""
-#| "  {continue if \"with-smartcard\"}\n"
-#| "  auth        required                                     pam_env.so\n"
-#| "  auth        required                                     pam_faildelay.so delay=2000000\n"
-#| "  auth        required                                     pam_faillock.so preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
-#| "  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so uid >= 1000 quiet\n"
-#| "  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
-#| "  auth        sufficient                                   pam_unix.so nullok try_first_pass\n"
-#| "  auth        requisite                                    pam_succeed_if.so uid >= 1000 quiet_success\n"
-#| "  auth        sufficient                                   pam_sss.so forward_pass\n"
-#| "  auth        required                                     pam_faillock.so authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
-#| "  auth        required                                     pam_deny.so\n"
-#| "  ...\n"
+#, no-wrap
 msgid ""
 "  {continue if \"with-smartcard\" or \"with-smartcard-required\"}\n"
 "  auth        required                                     pam_env.so\n"
@@ -554,16 +561,23 @@ msgid ""
 "  auth        required                                     pam_deny.so\n"
 "  ...\n"
 msgstr ""
-"  {continue if \"with-smartcard\"}\n"
+"  {continue if \"with-smartcard\" or \"with-smartcard-required\"}\n"
 "  auth        required                                     pam_env.so\n"
-"  auth        required                                     pam_faildelay.so delay=2000000\n"
-"  auth        required                                     pam_faillock.so preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
-"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so uid >= 1000 quiet\n"
+"  auth        required                                     pam_faildelay.so "
+"delay=2000000\n"
+"  auth        required                                     pam_faillock.so "
+"preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
+"uid >= 1000 quiet\n"
 "  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
-"  auth        sufficient                                   pam_unix.so nullok try_first_pass\n"
-"  auth        requisite                                    pam_succeed_if.so uid >= 1000 quiet_success\n"
-"  auth        sufficient                                   pam_sss.so forward_pass\n"
-"  auth        required                                     pam_faillock.so authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
+"  auth        sufficient                                   pam_unix.so "
+"nullok\n"
+"  auth        requisite                                    pam_succeed_if.so "
+"uid >= 1000 quiet_success\n"
+"  auth        sufficient                                   pam_sss.so "
+"forward_pass\n"
+"  auth        required                                     pam_faillock.so "
+"authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
 "  auth        required                                     pam_deny.so\n"
 "  ...\n"
 
@@ -575,23 +589,14 @@ msgid ""
 "all relevant PAM modules are used. This will achieve the same behavior as "
 "the previous example."
 msgstr ""
+"Aquí hay un ejemplo de operador “imply-if”. Activando la característica "
+"“with-smartcard-required” también activará “with-smartcard” para asegurar "
+"que son utilizados todos los módulos relativos de PAM. Esto logrará el mismo "
+"comportamiento que el ejemplo anterior."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:199
-#, fuzzy, no-wrap
-#| msgid ""
-#| "  {continue if \"with-smartcard\"}\n"
-#| "  auth        required                                     pam_env.so\n"
-#| "  auth        required                                     pam_faildelay.so delay=2000000\n"
-#| "  auth        required                                     pam_faillock.so preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
-#| "  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so uid >= 1000 quiet\n"
-#| "  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
-#| "  auth        sufficient                                   pam_unix.so nullok try_first_pass\n"
-#| "  auth        requisite                                    pam_succeed_if.so uid >= 1000 quiet_success\n"
-#| "  auth        sufficient                                   pam_sss.so forward_pass\n"
-#| "  auth        required                                     pam_faillock.so authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
-#| "  auth        required                                     pam_deny.so\n"
-#| "  ...\n"
+#, no-wrap
 msgid ""
 "  {imply \"with-smartcard\" if \"with-smartcard-required\"}\n"
 "  auth        required                                     pam_env.so\n"
@@ -608,16 +613,33 @@ msgid ""
 "  auth        required                                     pam_deny.so\n"
 "  ...\n"
 msgstr ""
-"  {continue if \"with-smartcard\"}\n"
+"  {imply \"with-smartcard\" if \"with-smartcard-required\"}\n"
 "  auth        required                                     pam_env.so\n"
-"  auth        required                                     pam_faildelay.so delay=2000000\n"
-"  auth        required                                     pam_faillock.so preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
-"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so uid >= 1000 quiet\n"
-"  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
-"  auth        sufficient                                   pam_unix.so nullok try_first_pass\n"
-"  auth        requisite                                    pam_succeed_if.so uid >= 1000 quiet_success\n"
-"  auth        sufficient                                   pam_sss.so forward_pass\n"
-"  auth        required                                     pam_faillock.so authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
+"  auth        required                                     pam_faildelay.so "
+"delay=2000000\n"
+"  auth        [success=1 default=ignore]                   pam_succeed_if.so "
+"service notin login:gdm:xdm:kdm:kde:xscreensaver:gnome-screensaver:"
+"kscreensaver quiet use_uid {include if \"with-smartcard-required\"}\n"
+"  auth        [success=done ignore=ignore default=die]     pam_sss.so "
+"require_cert_auth ignore_authinfo_unavail             {include if "
+"\"with-smartcard-required\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
+"uid >= 1000 quiet\n"
+"  auth        [default=1 ignore=ignore success=ok]         "
+"pam_localuser.so                                                 {exclude if "
+"\"with-smartcard\"}\n"
+"  auth        [default=2 ignore=ignore success=ok]         "
+"pam_localuser.so                                                 {include if "
+"\"with-smartcard\"}\n"
+"  auth        [success=done authinfo_unavail=ignore user_unknown=ignore "
+"ignore=ignore default=die] pam_sss.so try_cert_auth {include if "
+"\"with-smartcard\"}\n"
+"  auth        sufficient                                   pam_unix.so {if "
+"not \"without-nullok\":nullok}\n"
+"  auth        requisite                                    pam_succeed_if.so "
+"uid >= 1000 quiet_success\n"
+"  auth        sufficient                                   pam_sss.so "
+"forward_pass\n"
 "  auth        required                                     pam_deny.so\n"
 "  ...\n"
 
@@ -647,12 +669,15 @@ msgid ""
 "profile. See *authselect(8)* manual page or *authselect create-profile --"
 "help* for more information."
 msgstr ""
+"Se puede encontrar la instrucción *authselect create-profile* ayudante "
+"cuando crea perfil nuevo. Consulte la página del manual *authselect(8)* o *"
+"authselect create-profile --help* para más información."
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:212
 #, no-wrap
 msgid "SEE ALSO"
-msgstr "VÉASE TAMBIÉN"
+msgstr "CONSULTE TAMBIÉN"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:213
