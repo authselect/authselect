@@ -23,10 +23,10 @@ jobs:
   - job: propose_downstream
     trigger: release
     dist_git_branches:
-      - fedora-rawhide
+      - fedora-all
 
   # Automatically build in Koji when PR is merged
   - job: koji_build
     trigger: commit
     dist_git_branches:
-      - fedora-rawhide
+      - fedora-all
