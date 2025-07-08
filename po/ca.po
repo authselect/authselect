@@ -1,13 +1,14 @@
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2018. #zanata
 # Jose Luis Pavón Pavón <jolupameister@gmail.com>, 2023.
 # Julen Sansó <julensanso@gmail.com>, 2023.
+# naly zzwd <xeanhort007@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
 "POT-Creation-Date: 2024-02-23 14:08+0100\n"
-"PO-Revision-Date: 2023-11-22 16:01+0000\n"
-"Last-Translator: Julen Sansó <julensanso@gmail.com>\n"
+"PO-Revision-Date: 2025-03-31 22:49+0000\n"
+"Last-Translator: naly zzwd <xeanhort007@gmail.com>\n"
 "Language-Team: Catalan <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/ca/>\n"
 "Language: ca\n"
@@ -15,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.2.1\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:188
 msgid "Unable to obtain supported features"
@@ -53,13 +54,9 @@ msgid ""
 msgstr ""
 
 #: src/lib/authselect.c:112
-#, fuzzy
-#| msgid ""
-#| "Refusing to activate profile unless this file is removed or overwrite is "
-#| "requested."
 msgid "Refusing to activate profile unless overwrite is requested."
 msgstr ""
-"Es refusa l'activació del perfil a menys que se sol·liciti l'eliminació o la "
+"Es refusa l'activació del perfil a menys que se sol·liciti la "
 "sobreescriptura d'aquest fitxer."
 
 #: src/lib/authselect.c:118
@@ -87,10 +84,9 @@ msgid "Symbolic links were successfully removed"
 msgstr "Els enllaços s'han tret amb èxit"
 
 #: src/lib/authselect.c:154
-#, fuzzy, c-format
-#| msgid "Unable to test current configuration [%d]: %s"
+#, c-format
 msgid "Unable to remove authselect configuration [%d]: %s"
-msgstr "No es pot provar la configuració actual [%d]: %s"
+msgstr "No s'ha pogut eliminar la configuració d'authselect [%d]: %s"
 
 #: src/lib/authselect.c:159
 msgid "Authselect configuration was successfully removed"
@@ -158,10 +154,8 @@ msgid "Unable to create backup [%d]: %s"
 msgstr ""
 
 #: src/lib/authselect_backup.c:206
-#, fuzzy
-#| msgid "[%s] does not exist!"
 msgid " does not exist."
-msgstr "[%s] no existeix!"
+msgstr " no existeix."
 
 #: src/lib/authselect_backup.c:209 src/lib/profiles/list.c:50
 #, c-format
@@ -255,10 +249,9 @@ msgid "Omitting [%s] since it does not exist in base profile"
 msgstr ""
 
 #: src/lib/authselect_profile.c:389
-#, fuzzy, c-format
-#| msgid "Unable to check file mode of [%s] [%d]: %s"
+#, c-format
 msgid "Unable to check presence of [%s] [%d]: %s"
-msgstr "No es pot comprovar el mode de fitxer de [%s] [%d]: %s"
+msgstr "No es pot comprovar la presència de [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:397
 #, c-format
@@ -482,10 +475,9 @@ msgid "File [%s] is still present"
 msgstr "El fitxer [%s] encara està present"
 
 #: src/lib/files/system.c:330 src/lib/files/system.c:340
-#, fuzzy, c-format
-#| msgid "Unable to read [%s] [%d]: %s"
+#, c-format
 msgid "Unable to delete [%s] [%d]: %s"
-msgstr "No es pot llegir [%s] [%d]: %s"
+msgstr "No es pot eliminar [%s] [%d]: %s"
 
 #: src/lib/profiles/activate.c:44
 #, c-format
@@ -675,10 +667,9 @@ msgid "Unable to chown file [%s] [%d]: %s"
 msgstr ""
 
 #: src/lib/util/selinux.c:46
-#, fuzzy, c-format
-#| msgid "Unable to create symbolic links [%d]: %s"
+#, c-format
 msgid "Unable to create selabel handle [%d]: %s"
-msgstr "No es poden crear els enllaços simbòlics [%d]: %s"
+msgstr "No es pot crear el controlador de selabel [%d]: %s"
 
 #: src/lib/util/selinux.c:55
 #, c-format
@@ -733,10 +724,9 @@ msgid ""
 msgstr ""
 
 #: src/lib/util/selinux.c:420
-#, fuzzy, c-format
-#| msgid "Reading file [%s/%s]"
+#, c-format
 msgid "Removing [%s]"
-msgstr "Lectura del fitxer [%s/%s]"
+msgstr "Eliminant [%s]"
 
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:281
@@ -1069,10 +1059,8 @@ msgid "Current configuration is valid."
 msgstr "La configuració actual és vàlida."
 
 #: src/cli/main.c:365
-#, fuzzy
-#| msgid "No existing configuration detected.\n"
 msgid "No configuration detected."
-msgstr "No s'ha detectat cap configuració existent.\n"
+msgstr "No s'ha detectat cap configuració."
 
 #: src/cli/main.c:369
 msgid "System was not configured with authselect."
@@ -1256,10 +1244,9 @@ msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr ""
 
 #: src/cli/main.c:928
-#, fuzzy, c-format
-#| msgid "Unable to test current configuration [%d]: %s"
+#, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
-msgstr "No es pot provar la configuració actual [%d]: %s"
+msgstr "No es pot desinstal·lar la configuració authselect [%d]: %s\n"
 
 #: src/cli/main.c:978
 msgid "Select profile"
@@ -1330,16 +1317,12 @@ msgid "Other:"
 msgstr ""
 
 #: src/cli/main.c:995
-#, fuzzy
-#| msgid "Unable to check configuration [%d]: %s"
 msgid "Opt-out from authselect managed configuration"
-msgstr "No es pot comprovar la configuració [%d]: %s"
+msgstr "Desactiva la configuració gestionada d'authselect"
 
 #: src/cli/main.c:997
-#, fuzzy
-#| msgid "Unable to check configuration [%d]: %s"
 msgid "Print authselect version"
-msgstr "No es pot comprovar la configuració [%d]: %s"
+msgstr "Imprimeix la versió d'authselect"
 
 #~ msgid "<domain>"
 #~ msgstr "<domini>"

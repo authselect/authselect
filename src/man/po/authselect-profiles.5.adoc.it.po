@@ -3,12 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Weblate <noreply@weblate.org>, 2020.
 # Nathan <nathan95@live.it>, 2022.
+# Salvatore Cocuzza <info@salvatorecocuzza.it>, 2025.
+# Andrea Morelli <morelliandrea973@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-02-23 14:08+0100\n"
-"PO-Revision-Date: 2022-06-09 21:18+0000\n"
-"Last-Translator: Nathan <nathan95@live.it>\n"
+"PO-Revision-Date: 2025-06-07 11:55+0000\n"
+"Last-Translator: Andrea Morelli <morelliandrea973@gmail.com>\n"
 "Language-Team: Italian <https://translate.fedoraproject.org/projects/"
 "authselect/master-authselect-profiles5adoc/it/>\n"
 "Language: it\n"
@@ -16,13 +18,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.12.2\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #. type: Title =
 #: src/man/authselect-profiles.5.adoc:2
 #, no-wrap
 msgid "authselect-profiles(5)"
-msgstr ""
+msgstr "profili di authselect(5)"
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:6
@@ -63,7 +65,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:18
 #, no-wrap
 msgid "*{AUTHSELECT_PROFILE_DIR}*"
-msgstr ""
+msgstr "*{AUTHSELECT_PROFILO_DIR}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:20
@@ -75,7 +77,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:21
 #, no-wrap
 msgid "*{AUTHSELECT_VENDOR_DIR}*"
-msgstr ""
+msgstr "*{AUTHSELECT_VENDOR_DIR}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:24
@@ -88,7 +90,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:25
 #, no-wrap
 msgid "*{AUTHSELECT_CUSTOM_DIR}*"
-msgstr ""
+msgstr "*{AUTHSELECT_PERSONALIZZATO_DIR}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:27
@@ -125,7 +127,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:37
 #, no-wrap
 msgid "*system-auth*"
-msgstr ""
+msgstr "*autenticazione-sistema*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:40
@@ -139,6 +141,8 @@ msgstr ""
 #, no-wrap
 msgid "*password-auth*, *smartcard-auth*, *fingerprint-auth*"
 msgstr ""
+"*autenticazione-password*, *autenticazione-smartcard*, *autenticazione-"
+"impronta-digitale*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:45
@@ -152,7 +156,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:46
 #, no-wrap
 msgid "*postlogin*"
-msgstr ""
+msgstr "*postaccesso*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:54
@@ -170,18 +174,18 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:55
 #, no-wrap
 msgid "*nsswitch.conf*"
-msgstr ""
+msgstr "*nsswitch.conf*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:57
 msgid "Name Service Switch configuration file."
-msgstr ""
+msgstr "File di configurazione del cambio servizio nomi."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:58
 #, no-wrap
 msgid "*dconf-db*"
-msgstr ""
+msgstr "*dconf-db*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:62
@@ -195,7 +199,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:63
 #, no-wrap
 msgid "*dconf-locks*"
-msgstr ""
+msgstr "*dconf-locks*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:65
@@ -206,7 +210,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:67
 #, no-wrap
 msgid "CONDITIONAL LINES"
-msgstr ""
+msgstr "LINEE CONDIZIONATE"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:71
@@ -220,7 +224,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:72
 #, no-wrap
 msgid "*{continue if \"feature\"}*"
-msgstr ""
+msgstr "*{continua se \"feature\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:77
@@ -235,7 +239,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:78
 #, no-wrap
 msgid "*{stop if \"feature\"}*"
-msgstr ""
+msgstr "*{stop se \"feature\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:83
@@ -250,7 +254,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:84
 #, no-wrap
 msgid "*{include if \"feature\"}*"
-msgstr ""
+msgstr "*{include if \"feature\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:87
@@ -263,7 +267,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:88
 #, no-wrap
 msgid "*{exclude if \"feature\"}*"
-msgstr ""
+msgstr "*{exclude if \"feature\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:91
@@ -276,7 +280,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:92
 #, no-wrap
 msgid "*{imply \"implied-feature\" if \"feature\"}*"
-msgstr ""
+msgstr "*{implica \"implied-feature\" se \"feature\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:96
@@ -290,7 +294,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:97
 #, no-wrap
 msgid "*{if \"feature\":true|false}*"
-msgstr ""
+msgstr "*{se \"feature\":true|false}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:100
@@ -303,7 +307,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:101
 #, no-wrap
 msgid "*{if \"feature\":true}*"
-msgstr ""
+msgstr "*{se \"feature\":true}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:104
@@ -338,7 +342,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:116
 #, no-wrap
 msgid "*{if \"feature1\" or \"feature2\":true}*"
-msgstr ""
+msgstr "*{se \"feature1\" o \"feature2\":true}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:119
@@ -351,7 +355,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:120
 #, no-wrap
 msgid "*{if not \"feature\":true|false}*"
-msgstr ""
+msgstr "*{se non \"feature\":true|false}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:123
@@ -364,7 +368,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:124
 #, no-wrap
 msgid "*{if not \"feature\":true}*"
-msgstr ""
+msgstr "*{se non \"feature\":true}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:127
@@ -377,7 +381,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:128
 #, no-wrap
 msgid "*{if \"feature1\" and (\"feature2\" or \"feature3\"):true}*"
-msgstr ""
+msgstr "*{if \"feature1\" and (\"feature2\" or \"feature3\"):true}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:131
@@ -466,6 +470,25 @@ msgid ""
 "  auth        required                                     pam_deny.so\n"
 "  ...\n"
 msgstr ""
+"  {continua se \"con-smartcard\" o \"con-smartcard-obbligatorio\"}\n"
+"  auth        required                                     pam_env.so\n"
+"  auth        required                                     pam_faildelay.so "
+"delay=2000000\n"
+"  auth        required                                     pam_faillock.so "
+"preauth silent deny=4 unlock_time=1200 {includi se \"con-faillock\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
+"uid >= 1000 quiet\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
+"  auth        sufficient                                   pam_unix.so "
+"nullok\n"
+"  auth        requisite                                    pam_succeed_if.so "
+"uid >= 1000 quiet_success\n"
+"  auth        sufficient                                   pam_sss.so "
+"forward_pass\n"
+"  auth        required                                     pam_faillock.so "
+"authfail deny=4 unlock_time=1200       {includi se \"con-faillock\"}\n"
+"  auth        required                                     pam_deny.so\n"
+"  ...\n"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:184
@@ -495,6 +518,35 @@ msgid ""
 "  auth        required                                     pam_deny.so\n"
 "  ...\n"
 msgstr ""
+"  {implica \"con-smartcard\" se \"con-smartcard-obbligatorio\"}\n"
+"  auth        required                                     pam_env.so\n"
+"  auth        required                                     pam_faildelay.so "
+"delay=2000000\n"
+"  auth        [success=1 default=ignore]                   pam_succeed_if.so "
+"service non in login:gdm:xdm:kdm:kde:xscreensaver:gnome-screensaver:"
+"kscreensaver quiet use_uid {includi se \"con-smartcard-obbligatorio\"}\n"
+"  auth        [success=done ignore=ignore default=die]     pam_sss.so "
+"require_cert_auth ignore_authinfo_unavail             {includi se "
+"\"con-smartcard-obbligatorio\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
+"uid >= 1000 quiet\n"
+"  auth        [default=1 ignore=ignore success=ok]         "
+"pam_localuser.so                                                 {escludi se "
+"\"con-smartcard\"}\n"
+"  auth        [default=2 ignore=ignore success=ok]         "
+"pam_localuser.so                                                 {includi se "
+"\"con-smartcard\"}\n"
+"  auth        [success=done authinfo_unavail=ignore user_unknown=ignore "
+"ignore=ignore default=die] pam_sss.so try_cert_auth {includi se "
+"\"con-smartcard\"}\n"
+"  auth        sufficient                                   pam_unix.so {se "
+"non \"senza-nullok\":nullok}\n"
+"  auth        requisite                                    pam_succeed_if.so "
+"uid >= 1000 quiet_success\n"
+"  auth        sufficient                                   pam_sss.so "
+"forward_pass\n"
+"  auth        required                                     pam_deny.so\n"
+"  ...\n"
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:201
@@ -528,4 +580,4 @@ msgstr ""
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:213
 msgid "authselect(8), nsswitch.conf(5), PAM(8)"
-msgstr ""
+msgstr "authselect(8), nsswitch.conf(5), PAM(8)"

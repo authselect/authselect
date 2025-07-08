@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Weblate <noreply@weblate.org>, 2020.
 # Yi-Jyun Pan <pan93412@gmail.com>, 2020.
+# hsu zangmen <chzang55@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-02-23 14:08+0100\n"
-"PO-Revision-Date: 2020-05-22 17:40+0000\n"
-"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
+"PO-Revision-Date: 2025-04-07 23:53+0000\n"
+"Last-Translator: hsu zangmen <chzang55@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://translate.fedoraproject.org/"
 "projects/authselect/master-authselect8adoc/zh_TW/>\n"
 "Language: zh_TW\n"
@@ -16,42 +17,42 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.0.4\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
 #, no-wrap
 msgid "authselect(8)"
-msgstr ""
+msgstr "authselect(8)"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:6
 #, no-wrap
 msgid "NAME"
-msgstr "NAME"
+msgstr "名稱"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:9
 msgid "authselect - select system identity and authentication sources."
-msgstr ""
+msgstr "authselect - 選擇系統身分和驗證來源。"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:11
 #, no-wrap
 msgid "SYNOPSIS"
-msgstr ""
+msgstr "SYNOPSIS"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:13
 #, no-wrap
 msgid " authselect [--debug] [--trace] [--warn] command [command options]\n"
-msgstr ""
+msgstr " authselect [--debug] [--trace] [--warn] 指令 [附加的指令選項]\n"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:15
 #, no-wrap
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "描述"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:21
@@ -63,6 +64,12 @@ msgid ""
 "is selected, *authselect* will create nsswitch.conf(5) and PAM(8) stack to use\n"
 "identity and authentication sources defined by the profile.\n"
 msgstr ""
+"*Authselect* "
+"是一個工具，可透過選擇特定的設定檔來設定系統身分和驗證來源與提供者。 \n"
+"設定檔是一組檔案，描述所產生的系統組態會是什麼樣子。 \n"
+"選取設定檔時，\n"
+"*authselect* 會建立 nsswitch.conf(5) 和 PAM(8) 堆疊，\n"
+"以使用設定檔所定義的身分和驗證來源。\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:27
@@ -73,12 +80,16 @@ msgid ""
 "*authselect*. See _authselect-profiles(5)_ for more information on extending "
 "existing profiles."
 msgstr ""
+"如果所提供的設定檔集不夠用，管理員可以將它放在一個特殊的設定檔目錄 "
+"({AUTHSELECT_CUSTOM_DIR}) 中來建立一個自訂的設定檔。 這樣一來，*authselect* "
+"就可以立即使用設定檔。 請參閱 _authselect-profiles(5)_ "
+"以取得更多關於擴充現有設定檔的資訊。"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:29
 #, no-wrap
 msgid "OPT-IN TO AUTHSELECT"
-msgstr ""
+msgstr "選擇加入 authselect"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:39
@@ -93,6 +104,12 @@ msgid ""
 "so if you wish to go back you can restore it with *authselect backup-"
 "restore* command (see description below)."
 msgstr ""
+"Authselect 不會接觸您現有的配置，除非該配置已經由它建立。 如果您要開始使用 "
+"authselect 設定您的系統認證，請先呼叫 *authselect select* 並加上 *--force* "
+"參數 (例如 *authselect select sssd --force*) 。 *- force* 參數會告訴 "
+"authselect 它可以覆寫現有的非 authselect 設定 (請參閱下面的說明)。 使用 "
+"*--force* 參數會自動產生目前設定的備份，因此如果您想回到過去，可以使用 *"
+"authselect backup-restore* 指令還原（請參閱下面的說明）。"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:41
@@ -112,7 +129,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:47
 #, no-wrap
 msgid "AVAILABLE COMMANDS"
-msgstr ""
+msgstr "可用指令"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:50
@@ -120,25 +137,30 @@ msgid ""
 "To list all available commands run *authselect* without any parameters.  To "
 "print help for the selected command run *authselect COMMAND --help*."
 msgstr ""
+"若要列出所有可用的指令，請執行 *authselect* 且不含任何參數。  "
+"若要列出所選指令的說明，請執行 *authselect COMMAND --help* 。"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:51
 #, no-wrap
 msgid "*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup=NAME]"
 msgstr ""
+"*select* profile_id [功能] [-f, --force] [-q, --quiet] [-b] "
+"[--backup=備份檔名稱]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:54
 msgid ""
 "Activate desired profile. See profile description with *show* command, to "
 "list profile specific optional features."
-msgstr ""
+msgstr "啟動所需的設定檔。 請參閱 *show* "
+"指令的設定檔說明，以列出特定設定檔的可選功能。"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:55
 #, no-wrap
 msgid "*--force, -f*"
-msgstr ""
+msgstr "*--force, -f*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:60
@@ -149,13 +171,17 @@ msgid ""
 "automatically backup system files before writing any change unless\n"
 "*--nobackup* option is set.\n"
 msgstr ""
+"即使之前的設定不是由 authselect 建立，\n"
+"而是由其他工具或手動變更，也會寫入變更。\n"
+" 除非設定了 *--nobackup* 選項，\n"
+"否則此選項會在寫入任何變更之前自動備份系統檔案。\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:61 src/man/authselect.8.adoc:86
 #: src/man/authselect.8.adoc:155 src/man/authselect.8.adoc:173
 #, no-wrap
 msgid "*-b*"
-msgstr ""
+msgstr "*-b*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:66
@@ -166,13 +192,17 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
+"在啟動選取的設定檔之前備份系統檔案。 \n"
+"備份將儲存在 {AUTHSELECT_BACKUP_DIR}/NAME 中。 \n"
+"當前時間與唯一字串會用作備份的名稱。\n"
+" 這是 *--backup=* 的路徑。\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:67 src/man/authselect.8.adoc:92
 #: src/man/authselect.8.adoc:161 src/man/authselect.8.adoc:179
 #, no-wrap
 msgid "*--backup=NAME*"
-msgstr ""
+msgstr "*--backup=備份檔名稱*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:71
@@ -182,24 +212,27 @@ msgid ""
 "will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
 "unique string is used as a name if no value is provided.\n"
 msgstr ""
+"在啟動選取的設定檔之前備份系統檔案。 \n"
+"備份將儲存在 {AUTHSELECT_BACKUP_DIR}/NAME 中。 \n"
+"如果沒有提供值，則會使用具有唯一字串的目前時間作為名稱。\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:72
 #, no-wrap
 msgid "*--nobackup*"
-msgstr ""
+msgstr "*--nobackup*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:74
 #, no-wrap
 msgid "Do not backup system configuration even if *--force* is set.\n"
-msgstr ""
+msgstr "即使設定了 *-force*，也不要備份系統組態設定。\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:75 src/man/authselect.8.adoc:166
 #, no-wrap
 msgid "*--quiet, -q*"
-msgstr ""
+msgstr "*--quiet, -q*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:78 src/man/authselect.8.adoc:169
@@ -208,12 +241,14 @@ msgid ""
 "The command will not print any informational message such as additional\n"
 "profile requirements or backup location. Errors are still being print.\n"
 msgstr ""
+"命令不會列出任何資訊，\n"
+"例如額外的設定檔要求或備份位置。 仍會列出錯誤。\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:79
 #, no-wrap
 msgid "*apply-changes* [-b] [--backup=NAME]"
-msgstr ""
+msgstr "*apply-changes* [-b] [--backup=備份檔名稱]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:85
@@ -224,6 +259,10 @@ msgid ""
 "changes if the existing configuration is a valid authselect configuration, "
 "otherwise an error is returned."
 msgstr ""
+"重新套用目前選取的設定檔。 "
+"如果設定檔範本已更新，此指令可用於重新產生目前的系統設定，以便在系統上套用這"
+"些變更。 只有當現有組態設定是有效的 authselect "
+"組態設定時，此指令才會重新套用變更，否則會回傳錯誤。"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:91
@@ -253,7 +292,7 @@ msgstr ""
 #. type: Plain text
 #: src/man/authselect.8.adoc:99
 msgid "List available profiles."
-msgstr ""
+msgstr "列出可用的配置文件。"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:100
@@ -342,7 +381,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:127
 #, no-wrap
 msgid "Print content of all files.\n"
-msgstr ""
+msgstr "列出所有檔案的內容。\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:128
@@ -354,7 +393,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:130
 #, no-wrap
 msgid "Print nsswitch.conf content.\n"
-msgstr ""
+msgstr "列出 nsswitch.conf 內容\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:131
@@ -366,7 +405,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:133
 #, no-wrap
 msgid "Print system-auth content.\n"
-msgstr ""
+msgstr "列出 system-auth 內容\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:134
@@ -378,7 +417,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:136
 #, no-wrap
 msgid "Print password-auth content.\n"
-msgstr ""
+msgstr "列出 password-auth 內容\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:137
@@ -390,7 +429,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:139
 #, no-wrap
 msgid "Print smartcard-auth content.\n"
-msgstr ""
+msgstr "列出 smartcard-auth 內容\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:140
@@ -402,7 +441,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:142
 #, no-wrap
 msgid "Print fingerprint-auth content.\n"
-msgstr ""
+msgstr "列出 fingerprint-auth 內容\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:143
@@ -414,7 +453,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:145
 #, no-wrap
 msgid "Print postlogin content.\n"
-msgstr ""
+msgstr "列出postlogin 內容\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:146
@@ -426,7 +465,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:148
 #, no-wrap
 msgid "Print dconf database content.\n"
-msgstr ""
+msgstr "列出 dconf 資料庫內容\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:149
@@ -438,7 +477,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:151
 #, no-wrap
 msgid "Print dconf lock content.\n"
-msgstr ""
+msgstr "列出 dconf 鎖定內容\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:152
@@ -449,7 +488,7 @@ msgstr ""
 #. type: Plain text
 #: src/man/authselect.8.adoc:154
 msgid "Enable feature in the currently selected profile."
-msgstr ""
+msgstr "在目前選取的設定檔中啟用功能。"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:160
@@ -479,7 +518,7 @@ msgstr ""
 #. type: Plain text
 #: src/man/authselect.8.adoc:172
 msgid "Disable feature in the currently selected profile."
-msgstr ""
+msgstr "停用目前選取的設定檔中的功能。"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:178
@@ -756,7 +795,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:259
 #, no-wrap
 msgid "*--warn*"
-msgstr ""
+msgstr "*--warn*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:263
@@ -807,7 +846,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:282
 #, no-wrap
 msgid "Error: Unexpected changes to the configuration were detected."
-msgstr ""
+msgstr "錯誤： 偵測到設定有意外變更。"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:284
@@ -925,7 +964,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:319
 #, no-wrap
 msgid "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
-msgstr ""
+msgstr "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:323
@@ -939,7 +978,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:324
 #, no-wrap
 msgid "*{AUTHSELECT_PAM_DIR}/postlogin*"
-msgstr ""
+msgstr "*{AUTHSELECT_PAM_DIR}/postlogin*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:332
@@ -989,3 +1028,4 @@ msgstr ""
 msgid ""
 "authselect-profiles(5), authselect-migration(7), nsswitch.conf(5), PAM(8)"
 msgstr ""
+"authselect-profiles(5), authselect-migration(7), nsswitch.conf(5), PAM(8)"

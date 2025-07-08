@@ -1,17 +1,19 @@
 # Josef Hruška <hrusjos@gmail.com>, 2019. #zanata
+# Jan Kalabza <jan.kalabza@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-02-23 14:08+0100\n"
-"PO-Revision-Date: 2019-09-09 11:40+0000\n"
-"Last-Translator: Josef Hruška <hrusjos@gmail.com>\n"
-"Language-Team: Czech\n"
+"PO-Revision-Date: 2025-02-10 08:36+0000\n"
+"Last-Translator: Jan Kalabza <jan.kalabza@gmail.com>\n"
+"Language-Team: Czech <https://translate.fedoraproject.org/projects/"
+"authselect/master-authselect-migration7adoc/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 4.6.2\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #. type: Title =
 #: src/man/authselect-migration.7.adoc:2
@@ -211,7 +213,7 @@ msgstr ""
 #: src/man/authselect-migration.7.adoc:80
 #, no-wrap
 msgid "|--enablenis                         |none\n"
-msgstr ""
+msgstr "|--enablenis                         |žadný\n"
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:83
@@ -221,16 +223,7 @@ msgstr "Vztah voleb authconfig k vlastnostem profilům authselectu"
 
 #. type: Table
 #: src/man/authselect-migration.7.adoc:95
-#, fuzzy, no-wrap
-#| msgid ""
-#| "|*Authconfig options* |*Authselect profile feature*\n"
-#| "|--enablesmartcard    |with-smartcard\n"
-#| "|--enablefingerprint  |with-fingerprint\n"
-#| "|--enableecryptfs     |with-ecryptfs\n"
-#| "|--enablemkhomedir    |with-mkhomedir\n"
-#| "|--enablefaillock     |with-faillock\n"
-#| "|--enablepamaccess    |with-pamaccess\n"
-#| "|--enablewinbindkrb5  |with-krb5\n"
+#, no-wrap
 msgid ""
 "|*Authconfig options* |*Authselect profile feature*\n"
 "|--enablesmartcard    |with-smartcard\n"
@@ -243,7 +236,7 @@ msgid ""
 "|--enableshadow       |_none_\n"
 "|--passalgo           |_none_\n"
 msgstr ""
-"|*Authconfig options* |*Authselect profile feature*\n"
+"|*Authconfig možnostu* |*Authselect profilová funkce*\n"
 "|--enablesmartcard    |with-smartcard\n"
 "|--enablefingerprint  |with-fingerprint\n"
 "|--enableecryptfs     |with-ecryptfs\n"
@@ -251,6 +244,8 @@ msgstr ""
 "|--enablefaillock     |with-faillock\n"
 "|--enablepamaccess    |with-pamaccess\n"
 "|--enablewinbindkrb5  |with-krb5\n"
+"|--enableshadow       |_none_\n"
+"|--passalgo           |_none_\n"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:102
@@ -261,6 +256,11 @@ msgid ""
 "it cannot be changed through an option (only by creating a custom profile).  "
 "You can just omit these options."
 msgstr ""
+"Volby Authconfig `--enableshadow` a `--passalgo=sha512` byly často používány "
+"k zajištění toho, aby byla hesla ukládána do `/etc/shadow` pomocí algoritmu "
+"`sha512`. *Profily authselect nyní používají hashovací metodu yescrypt* a "
+"nelze ji změnit prostřednictvím volby (pouze vytvořením vlastního profilu).  "
+"Tyto volby můžete prostě vynechat."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:103
@@ -328,15 +328,14 @@ msgstr "LDAP"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:127
-#, fuzzy
 msgid ""
 "Even if LDAP is not directly used through `pam_ldap` and `nss_ldap`, it is "
 "still useful to configure ldap.conf to configure openldap-libs and "
 "indirectly, e.g. LDAP tools such as `ldapsearch`."
 msgstr ""
-"I když LDAP není přímo používán prostřednictvím `pam_ldap` ani `nss_ldap`, "
-"je stále užitečné nakonfigurovat ldap.conf, aby nakonfiguroval openldap-"
-"libs, a nepřímo pak nástroje LDAP, jako např. `ldapsearch`."
+"I když se LDAP nepoužívá přímo prostřednictvím `pam_ldap` a `nss_ldap`, je "
+"stále užitečné konfigurovat soubor ldap.conf pro konfiguraci openldap-libs a "
+"nepřímo např. pro nástroje LDAP, jako je `ldapsearch`."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:128
@@ -372,15 +371,14 @@ msgstr "KERBEROS"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:141
-#, fuzzy
 msgid ""
 "If you use Kerberos, the default Kerberos realm should be configured in "
 "order for krb5-libs and therefore tools such as `kinit` to work out of the "
 "box."
 msgstr ""
-"Používáte-li Kerberos, výchozí realm Kerberosu by měl být nakonfigurován "
-"řádně pro krb5-libs, a tak, aby nástroje, jako např. `kinit`, fungovali bez "
-"dalších nutných zásahů."
+"Pokud používáte Kerberos, měla by být nakonfigurována výchozí sféra "
+"Kerberos, aby krb5-libs, a tedy i nástroje jako `kinit`, fungovaly bez "
+"dalších zásahů."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:142
