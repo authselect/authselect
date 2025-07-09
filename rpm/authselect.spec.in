@@ -190,6 +190,7 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %endif
 %{_libdir}/libauthselect.so.*
 %{_mandir}/man5/authselect-profiles.5*
+%dir %{_datadir}/doc/authselect
 %{_datadir}/doc/authselect/COPYING
 %{_datadir}/doc/authselect/README.md
 %license COPYING
