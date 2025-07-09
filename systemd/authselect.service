@@ -1,0 +1,16 @@
+[Unit]
+Description=Apply Authselect Configuration
+Documentation=man:authselect(8)
+ConditionFirstBoot=yes
+ConditionPathIsReadWrite=/etc
+DefaultDependencies=no
+After=systemd-remount-fs.service
+Wants=first-boot-complete.target
+Before=first-boot-complete.target sysinit.target
+Conflicts=shutdown.target
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=authselect apply-changes
