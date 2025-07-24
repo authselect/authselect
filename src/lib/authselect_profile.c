@@ -552,7 +552,7 @@ authselect_profile_create(const char *name,
 
     ret = file_exists(path);
     if (ret == EOK) {
-        ERROR("Profile \"%s\" already exist at [%s]", name, path);
+        ERROR("Profile \"%s\" already exists at [%s]", name, path);
         ret = EEXIST;
         goto done;
     } else if (ret != ENOENT) {
