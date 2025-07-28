@@ -36,6 +36,7 @@
 #include <setjmp.h>
 
 #include <stdlib.h>
+#include <stdint.h>
 #include <cmocka.h>
 
 #endif /* _TEST_COMMON_H_ */
