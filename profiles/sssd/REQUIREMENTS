@@ -18,7 +18,7 @@ Make sure that SSSD service is configured and enabled. See SSSD documentation fo
   is present and oddjobd service is enabled and active                                    {include if "with-mkhomedir"}
   - systemctl enable --now oddjobd.service                                                {include if "with-mkhomedir"}
                                                                                           {include if "with-gssapi"}
-- with-gssapi is selected, make sure that GSSAPI authenticaiton is enabled in SSSD        {include if "with-gssapi"}
+- with-gssapi is selected, make sure that GSSAPI authentication is enabled in SSSD        {include if "with-gssapi"}
   - set pam_gssapi_services to a list of allowed services in /etc/sssd/sssd.conf          {include if "with-gssapi"}
   - see additional information in pam_sss_gss(8)                                          {include if "with-gssapi"}
                                                                                           {include if "with-tlog"}
