@@ -1,12 +1,12 @@
-# Yuri Chornoivan <yurchor@ukr.net>, 2018, 2020, 2021, 2022, 2023.
-# Yuri Chornoivan <yurchor@ukr.net>, 2018. #zanata, 2020, 2021, 2022, 2023.
-# Yuri Chornoivan <yurchor@ukr.net>, 2019. #zanata, 2020, 2021, 2022, 2023.
+# Yuri Chornoivan <yurchor@ukr.net>, 2018, 2020, 2021, 2022, 2023, 2025.
+# Yuri Chornoivan <yurchor@ukr.net>, 2018. #zanata, 2020, 2021, 2022, 2023, 2025.
+# Yuri Chornoivan <yurchor@ukr.net>, 2019. #zanata, 2020, 2021, 2022, 2023, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2024-02-23 14:08+0100\n"
-"PO-Revision-Date: 2023-10-01 12:06+0000\n"
+"POT-Creation-Date: 2025-07-09 14:49+0200\n"
+"PO-Revision-Date: 2025-07-28 17:29+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/uk/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:188
 msgid "Unable to obtain supported features"
@@ -70,11 +70,11 @@ msgstr ""
 #: src/lib/authselect.c:127
 #, c-format
 msgid "Unable to activate profile [%s] [%d]: %s"
-msgstr "Не вдалося задіяти профіль [%s] [%d]: %s"
+msgstr "Не вдалося активувати профіль [%s] [%d]: %s"
 
 #: src/lib/authselect.c:141
 msgid "Trying to uninstall authselect configuration"
-msgstr "Намагаємося вилучити налаштування authselect"
+msgstr "Спроба вилучити налаштування authselect"
 
 #: src/lib/authselect.c:145
 #, c-format
@@ -102,7 +102,7 @@ msgstr "Підтримку можливості профілю [%s] припин
 #: src/lib/authselect_backup.c:48
 #, c-format
 msgid "Unable to create backup directory [%s/%s] [%d]: %s"
-msgstr "Не вдалося створити каталог резервної копії [%s/%s] [%d]: %s"
+msgstr "Не вдалося створити каталог резервних копій [%s/%s] [%d]: %s"
 
 #: src/lib/authselect_backup.c:71
 #, c-format
@@ -112,7 +112,7 @@ msgstr "Не вдалося створити каталог резервної �
 #: src/lib/authselect_backup.c:92
 #, c-format
 msgid "Creating temporary directory at [%s]"
-msgstr "Створюємо тимчасовий каталог у [%s]"
+msgstr "Створення тимчасового каталогу у [%s]"
 
 #: src/lib/authselect_backup.c:125 src/lib/authselect_profile.c:377
 #: src/lib/authselect_profile.c:457
@@ -138,7 +138,7 @@ msgstr "Не вдалося скопіювати [%s] до [%s/%s] [%d]: %s"
 #: src/lib/authselect_backup.c:175
 #, c-format
 msgid "Trying to backup authselect configuration to [%s]"
-msgstr "Намагаємося створити резервну копію налаштувань authselect у [%s]"
+msgstr "Спроба створення резервної копії налаштувань authselect у [%s]"
 
 #: src/lib/authselect_backup.c:180
 #, c-format
@@ -571,7 +571,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "Не вдалося отримати базову назву [%s]"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:848
+#: src/lib/util/file.c:199 src/cli/main.c:872
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "Не вдалося обробити [%s] [%d]: %s"
@@ -579,7 +579,7 @@ msgstr "Не вдалося обробити [%s] [%d]: %s"
 #: src/lib/util/dir.c:130
 #, c-format
 msgid "Unable to stat directory [%d]: %s"
-msgstr "Не вдалося обробити каталог [%d]: %s"
+msgstr "Не вдалося статистично обробити каталог [%d]: %s"
 
 #: src/lib/util/dir.c:313
 #, c-format
@@ -866,7 +866,7 @@ msgstr "Загальні параметри:"
 msgid "[OPTIONS...]"
 msgstr "[ПАРАМЕТРИ...]"
 
-#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:840
+#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:864
 msgid "Out of memory!"
 msgstr "Не вистачає пам'яті!"
 
@@ -921,8 +921,8 @@ msgstr "Ідентифікатор профілю."
 
 #: src/cli/main.c:79 src/cli/main.c:248 src/cli/main.c:293 src/cli/main.c:342
 #: src/cli/main.c:390 src/cli/main.c:435 src/cli/main.c:478 src/cli/main.c:651
-#: src/cli/main.c:728 src/cli/main.c:775 src/cli/main.c:815 src/cli/main.c:880
-#: src/cli/main.c:906
+#: src/cli/main.c:728 src/cli/main.c:757 src/cli/main.c:799 src/cli/main.c:839
+#: src/cli/main.c:904 src/cli/main.c:930
 msgid "Unable to parse command arguments"
 msgstr "Не вдалося обробити аргументи команди"
 
@@ -1176,17 +1176,26 @@ msgstr "Можливість, яку слід вимкнути."
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "Не вдалося вимкнути можливість [%d]: %s\n"
 
-#: src/cli/main.c:760
+#: src/cli/main.c:754
+msgid "Feature to check."
+msgstr "Можливість, яку слід перевірити."
+
+#: src/cli/main.c:763
+#, c-format
+msgid "Unable to check feature [%d]: %s\n"
+msgstr "Не вдалося перевірити можливість [%d]: %s\n"
+
+#: src/cli/main.c:784
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr ""
 "Створити новий профіль як профіль постачальника, а не нетиповий профіль"
 
-#: src/cli/main.c:761
+#: src/cli/main.c:785
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr ""
 "Ідентифікатор профілю, яким слід скористатися як основою для нового профілю"
 
-#: src/cli/main.c:762
+#: src/cli/main.c:786
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1194,160 +1203,164 @@ msgstr ""
 "Заснувати новий профіль на типовому профілі, навіть якщо вже існує профіль "
 "постачальника із вказаною назвою"
 
-#: src/cli/main.c:763
+#: src/cli/main.c:787
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr ""
 "Створити символічні посилання на метафайли базового профілю, а не копіювати "
 "їх"
 
-#: src/cli/main.c:764
+#: src/cli/main.c:788
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr ""
 "Створити символічні посилання на файли nsswitch базового профілю, а не "
 "копіювати їх"
 
-#: src/cli/main.c:765
+#: src/cli/main.c:789
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr ""
 "Створити символічні посилання на файли pam базового профілю, а не копіювати "
 "їх"
 
-#: src/cli/main.c:766
+#: src/cli/main.c:790
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
 "Створити символічні посилання на файли dconf базового профілю, а не "
 "копіювати їх"
 
-#: src/cli/main.c:767
+#: src/cli/main.c:791
 msgid "Symlink specific file (can be set multiple times)"
 msgstr ""
 "Створити символічне посилання на вказаний файл (можна використовувати "
 "декілька разів)"
 
-#: src/cli/main.c:772
+#: src/cli/main.c:796
 msgid "New profile name."
 msgstr "Назва нового профілю."
 
-#: src/cli/main.c:782
+#: src/cli/main.c:806
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "Не вдалося створити новий профіль [%d]: %s\n"
 
-#: src/cli/main.c:786
+#: src/cli/main.c:810
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "Новий профіль створено у %s\n"
 
-#: src/cli/main.c:809
+#: src/cli/main.c:833
 msgid "Print backup names without any formatting and additional information"
 msgstr ""
 "Вивести назви резервних копій без форматування та додаткових відомостей"
 
-#: src/cli/main.c:821
+#: src/cli/main.c:845
 msgid "Unable to list available backups!"
 msgstr "Не вдалося отримати список доступних резервних копій!"
 
-#: src/cli/main.c:858
+#: src/cli/main.c:882
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (створено %s)\n"
 
-#: src/cli/main.c:877
+#: src/cli/main.c:901
 msgid "Name of the backup to remove."
 msgstr "Назва резервної копії, яку слід вилучити."
 
-#: src/cli/main.c:886
+#: src/cli/main.c:910
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "Не вдалося вилучити резервну копію [%s] [%d]: %s\n"
 
-#: src/cli/main.c:903
+#: src/cli/main.c:927
 msgid "Name of the backup to restore from."
 msgstr "Назва резервної копії, дані якої слід відновити."
 
-#: src/cli/main.c:912
+#: src/cli/main.c:936
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "Не вдалося відновити дані з резервної копії [%s] [%d]: %s\n"
 
-#: src/cli/main.c:928
+#: src/cli/main.c:952
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "Не вдалося вилучити налаштування authselect [%d]: %s\n"
 
-#: src/cli/main.c:978
+#: src/cli/main.c:1002
 msgid "Select profile"
 msgstr "Вибрати профіль"
 
-#: src/cli/main.c:979
+#: src/cli/main.c:1003
 msgid "Regenerate configuration for currently selected command"
 msgstr "Повторно створити налаштування для поточної вибраної команди"
 
-#: src/cli/main.c:980
+#: src/cli/main.c:1004
 msgid "List available profiles"
 msgstr "Вивести список доступних профілів"
 
-#: src/cli/main.c:981
+#: src/cli/main.c:1005
 msgid "List available profile features"
 msgstr "Список доступних можливостей профілю"
 
-#: src/cli/main.c:982
+#: src/cli/main.c:1006
 msgid "Show profile information"
 msgstr "Вивести дані щодо профілю"
 
-#: src/cli/main.c:983
+#: src/cli/main.c:1007
 msgid "Print profile requirements"
 msgstr "Вивести вимоги профілю"
 
-#: src/cli/main.c:984
+#: src/cli/main.c:1008
 msgid "Get identifier of currently selected profile"
 msgstr "Отримати ідентифікатор поточного вибраного профілю"
 
-#: src/cli/main.c:985
+#: src/cli/main.c:1009
 msgid "Check if the current configuration is valid"
 msgstr "Перевірити, чи є поточні налаштування коректними"
 
-#: src/cli/main.c:986
+#: src/cli/main.c:1010
 msgid "Print changes that would be otherwise written"
 msgstr "Вивести зміни, які буде перезаписано"
 
-#: src/cli/main.c:987
+#: src/cli/main.c:1011
 msgid "Enable feature in currently selected profile"
 msgstr "Увімкнути можливість у поточному вибраному профілі"
 
-#: src/cli/main.c:988
+#: src/cli/main.c:1012
 msgid "Disable feature in currently selected profile"
 msgstr "Вимкнути можливість у поточному вибраному профілі"
 
-#: src/cli/main.c:989
+#: src/cli/main.c:1013
+msgid "Check if feature is enabled in currently selected profile"
+msgstr "Перевірити, чи увімкнено можливість у поточному вибраному профілі"
+
+#: src/cli/main.c:1014
 msgid "Create new authselect profile"
 msgstr "Створити профіль authselect"
 
-#: src/cli/main.c:990
+#: src/cli/main.c:1015
 msgid "Backup commands:"
 msgstr "Команди резервного копіювання:"
 
-#: src/cli/main.c:991
+#: src/cli/main.c:1016
 msgid "List available backups"
 msgstr "Список доступних резервних копій"
 
-#: src/cli/main.c:992
+#: src/cli/main.c:1017
 msgid "Remove backup"
 msgstr "Вилучити резервну копію"
 
-#: src/cli/main.c:993
+#: src/cli/main.c:1018
 msgid "Restore from backup"
 msgstr "Відновити з резервної копії"
 
-#: src/cli/main.c:994
+#: src/cli/main.c:1019
 msgid "Other:"
 msgstr "Інше:"
 
-#: src/cli/main.c:995
+#: src/cli/main.c:1020
 msgid "Opt-out from authselect managed configuration"
 msgstr "Відмовитися від керованих налаштувань authselect"
 
-#: src/cli/main.c:997
+#: src/cli/main.c:1022
 msgid "Print authselect version"
 msgstr "Вивести дані щодо версії authselect"
 

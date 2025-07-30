@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2024-02-23 14:08+0100\n"
+"POT-Creation-Date: 2025-07-09 14:49+0200\n"
 "PO-Revision-Date: 2025-07-08 10:48+0000\n"
 "Last-Translator: Pavel Brezina <pbrezina@redhat.com>\n"
 "Language-Team: Chinese (Traditional) <https://translate.fedoraproject.org/"
@@ -63,7 +63,8 @@ msgstr "除非刪除此檔案，或者要求覆蓋組態，否則拒絕啟動設
 msgid ""
 "Changes to the authselect configuration were detected. These changes will be "
 "overwritten. Please call 'authselect opt-out' in order to keep them."
-msgstr "偵測到對 authselect 配置的變更。 這些變更將被覆蓋。 請呼叫「authselect opt-"
+msgstr ""
+"偵測到對 authselect 配置的變更。 這些變更將被覆蓋。 請呼叫「authselect opt-"
 "out」以保留這些變更。"
 
 #: src/lib/authselect.c:127
@@ -569,7 +570,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "無法取得 [%s] 的基礎名稱"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:848
+#: src/lib/util/file.c:199 src/cli/main.c:872
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "無法 stat [%s] [%d]：%s"
@@ -862,7 +863,7 @@ msgstr "常用選項："
 msgid "[OPTIONS...]"
 msgstr "[OPTIONS...]"
 
-#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:840
+#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:864
 msgid "Out of memory!"
 msgstr "記憶體不足！"
 
@@ -917,8 +918,8 @@ msgstr "設定檔標識碼。"
 
 #: src/cli/main.c:79 src/cli/main.c:248 src/cli/main.c:293 src/cli/main.c:342
 #: src/cli/main.c:390 src/cli/main.c:435 src/cli/main.c:478 src/cli/main.c:651
-#: src/cli/main.c:728 src/cli/main.c:775 src/cli/main.c:815 src/cli/main.c:880
-#: src/cli/main.c:906
+#: src/cli/main.c:728 src/cli/main.c:757 src/cli/main.c:799 src/cli/main.c:839
+#: src/cli/main.c:904 src/cli/main.c:930
 msgid "Unable to parse command arguments"
 msgstr "無法解析指令引數"
 
@@ -1165,163 +1166,181 @@ msgstr "要停用的功能。"
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "無法停用 [%d] 功能：%s\n"
 
-#: src/cli/main.c:760
+#: src/cli/main.c:754
+#, fuzzy
+#| msgid "Feature to enable."
+msgid "Feature to check."
+msgstr "要啟用的功能。"
+
+#: src/cli/main.c:763
+#, fuzzy, c-format
+#| msgid "Unable to enable feature [%d]: %s\n"
+msgid "Unable to check feature [%d]: %s\n"
+msgstr "無法啟用 [%d] 功能：%s\n"
+
+#: src/cli/main.c:784
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr "建立新的設定檔以作為原廠設定檔，而不是自訂設定檔"
 
-#: src/cli/main.c:761
+#: src/cli/main.c:785
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr "應作為新設定檔基礎的設定檔 ID"
 
-#: src/cli/main.c:762
+#: src/cli/main.c:786
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
 msgstr "即使存在具有相同名稱的原廠設定檔，也以預設設定檔作為新設定檔的基礎"
 
-#: src/cli/main.c:763
+#: src/cli/main.c:787
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr "從基礎設定檔建立符號連結式中介檔案，而不是複製這些檔案"
 
-#: src/cli/main.c:764
+#: src/cli/main.c:788
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr "從基礎設定檔建立 nsswitch 檔案的符號連結，而不是複製這些檔案"
 
-#: src/cli/main.c:765
+#: src/cli/main.c:789
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr "從基礎設定檔建立 pam 檔案的符號連結，而不是複製這些檔案"
 
-#: src/cli/main.c:766
+#: src/cli/main.c:790
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr "從基礎設定檔建立 dconf 檔案的符號連結，而不是複製這些檔案"
 
-#: src/cli/main.c:767
+#: src/cli/main.c:791
 msgid "Symlink specific file (can be set multiple times)"
 msgstr "建立特定檔案的符號連結（可設定多次）"
 
-#: src/cli/main.c:772
+#: src/cli/main.c:796
 msgid "New profile name."
 msgstr "新的設定檔名稱。"
 
-#: src/cli/main.c:782
+#: src/cli/main.c:806
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "無法建立新的 [%d] 設定檔：%s\n"
 
-#: src/cli/main.c:786
+#: src/cli/main.c:810
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "新的設定檔建立於 %s 位置\n"
 
-#: src/cli/main.c:809
+#: src/cli/main.c:833
 msgid "Print backup names without any formatting and additional information"
 msgstr "輸出不包含任何格式化及額外資訊的備份名稱"
 
-#: src/cli/main.c:821
+#: src/cli/main.c:845
 msgid "Unable to list available backups!"
 msgstr "無法列舉所有可用的備份！"
 
-#: src/cli/main.c:858
+#: src/cli/main.c:882
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (建立於 %s)\n"
 
-#: src/cli/main.c:877
+#: src/cli/main.c:901
 msgid "Name of the backup to remove."
 msgstr "要移除的備份名稱。"
 
-#: src/cli/main.c:886
+#: src/cli/main.c:910
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "無法移除備份 [%s/%d]：%s\n"
 
-#: src/cli/main.c:903
+#: src/cli/main.c:927
 msgid "Name of the backup to restore from."
 msgstr "要還原的備份名稱。"
 
-#: src/cli/main.c:912
+#: src/cli/main.c:936
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "無法還原備份 [%s] [%d]：%s\n"
 
-#: src/cli/main.c:928
+#: src/cli/main.c:952
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "無法解除安裝 authselect 組態設定 [%d]: %s\n"
 
-#: src/cli/main.c:978
+#: src/cli/main.c:1002
 msgid "Select profile"
 msgstr "選擇個人資料"
 
-#: src/cli/main.c:979
+#: src/cli/main.c:1003
 msgid "Regenerate configuration for currently selected command"
 msgstr "為目前選定的命令重新生成配置"
 
-#: src/cli/main.c:980
+#: src/cli/main.c:1004
 msgid "List available profiles"
 msgstr "列出可用的配置文"
 
-#: src/cli/main.c:981
+#: src/cli/main.c:1005
 msgid "List available profile features"
 msgstr "列出所有可用的設定檔功能"
 
-#: src/cli/main.c:982
+#: src/cli/main.c:1006
 msgid "Show profile information"
 msgstr "顯示個人資料信息"
 
-#: src/cli/main.c:983
+#: src/cli/main.c:1007
 msgid "Print profile requirements"
 msgstr "列出配置檔案要求"
 
-#: src/cli/main.c:984
+#: src/cli/main.c:1008
 msgid "Get identifier of currently selected profile"
 msgstr "獲取目前所選配置檔案的標識符"
 
-#: src/cli/main.c:985
+#: src/cli/main.c:1009
 msgid "Check if the current configuration is valid"
 msgstr "檢查目前配置是否有效"
 
-#: src/cli/main.c:986
+#: src/cli/main.c:1010
 msgid "Print changes that would be otherwise written"
 msgstr "打印將以其他方式寫入的更改"
 
-#: src/cli/main.c:987
+#: src/cli/main.c:1011
 msgid "Enable feature in currently selected profile"
 msgstr "啟用目前所選配置檔案中的功能"
 
-#: src/cli/main.c:988
+#: src/cli/main.c:1012
 msgid "Disable feature in currently selected profile"
 msgstr "停用目前所選配置檔案中的功能"
 
-#: src/cli/main.c:989
+#: src/cli/main.c:1013
+#, fuzzy
+#| msgid "Enable feature in currently selected profile"
+msgid "Check if feature is enabled in currently selected profile"
+msgstr "啟用目前所選配置檔案中的功能"
+
+#: src/cli/main.c:1014
 msgid "Create new authselect profile"
 msgstr "建立新的authselect配置檔案"
 
-#: src/cli/main.c:990
+#: src/cli/main.c:1015
 msgid "Backup commands:"
 msgstr "備份命令："
 
-#: src/cli/main.c:991
+#: src/cli/main.c:1016
 msgid "List available backups"
 msgstr "列出可用備份"
 
-#: src/cli/main.c:992
+#: src/cli/main.c:1017
 msgid "Remove backup"
 msgstr "移除備份"
 
-#: src/cli/main.c:993
+#: src/cli/main.c:1018
 msgid "Restore from backup"
 msgstr "從備份還原"
 
-#: src/cli/main.c:994
+#: src/cli/main.c:1019
 msgid "Other:"
 msgstr "其它："
 
-#: src/cli/main.c:995
+#: src/cli/main.c:1020
 msgid "Opt-out from authselect managed configuration"
 msgstr "退出 authselect 管理設定"
 
-#: src/cli/main.c:997
+#: src/cli/main.c:1022
 msgid "Print authselect version"
 msgstr "列出 authselect 版本"
 

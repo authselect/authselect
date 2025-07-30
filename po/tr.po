@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2024-02-23 14:08+0100\n"
+"POT-Creation-Date: 2025-07-09 14:49+0200\n"
 "PO-Revision-Date: 2024-01-29 17:36+0000\n"
 "Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
 "Language-Team: Turkish <https://translate.fedoraproject.org/projects/"
@@ -573,7 +573,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "[%s] dosyasının taban adı alınamadı"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:848
+#: src/lib/util/file.c:199 src/cli/main.c:872
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "[%s] durum bilgisi alınamıyor [%d]: %s"
@@ -868,7 +868,7 @@ msgstr "Ortak seçenekler:"
 msgid "[OPTIONS...]"
 msgstr "[SEÇENEKLER...]"
 
-#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:840
+#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:864
 msgid "Out of memory!"
 msgstr "Bellek yetersiz!"
 
@@ -923,8 +923,8 @@ msgstr "Profil kimliği."
 
 #: src/cli/main.c:79 src/cli/main.c:248 src/cli/main.c:293 src/cli/main.c:342
 #: src/cli/main.c:390 src/cli/main.c:435 src/cli/main.c:478 src/cli/main.c:651
-#: src/cli/main.c:728 src/cli/main.c:775 src/cli/main.c:815 src/cli/main.c:880
-#: src/cli/main.c:906
+#: src/cli/main.c:728 src/cli/main.c:757 src/cli/main.c:799 src/cli/main.c:839
+#: src/cli/main.c:904 src/cli/main.c:930
 msgid "Unable to parse command arguments"
 msgstr "Komut argümanları ayrıştırılamadı"
 
@@ -1176,17 +1176,29 @@ msgstr "Devre dışı bırakılacak özellik."
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "Özellik devre dışı bırakılamadı [%d]: %s\n"
 
-#: src/cli/main.c:760
+#: src/cli/main.c:754
+#, fuzzy
+#| msgid "Feature to enable."
+msgid "Feature to check."
+msgstr "Etkinleştirilecek özellik."
+
+#: src/cli/main.c:763
+#, fuzzy, c-format
+#| msgid "Unable to enable feature [%d]: %s\n"
+msgid "Unable to check feature [%d]: %s\n"
+msgstr "Özellik etkinleştirilemedi [%d]: %s\n"
+
+#: src/cli/main.c:784
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr ""
 "Özelleştirilmiş bir profil yerine sağlayıcı profili olarak yeni bir profil "
 "oluştur"
 
-#: src/cli/main.c:761
+#: src/cli/main.c:785
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr "Yeni profil için temel olarak kullanılacak bir profilin kimliği"
 
-#: src/cli/main.c:762
+#: src/cli/main.c:786
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1194,156 +1206,162 @@ msgstr ""
 "Aynı ada sahip sağlayıcı profili olsa bile yeni profil için öntanımlı "
 "profili temel al"
 
-#: src/cli/main.c:763
+#: src/cli/main.c:787
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr ""
 "Meta dosyaları kopyalamak yerine temel profilden sembolik bağlantı oluştur"
 
-#: src/cli/main.c:764
+#: src/cli/main.c:788
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr ""
 "nsswitch dosyalarını kopyalamak yerine temel profilden sembolik bağlantı "
 "oluştur"
 
-#: src/cli/main.c:765
+#: src/cli/main.c:789
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr ""
 "pam dosyalarını kopyalamak yerine temel profilden sembolik bağlantı oluştur"
 
-#: src/cli/main.c:766
+#: src/cli/main.c:790
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
 "dconf dosyalarını kopyalamak yerine temel profilden sembolik bağlantı oluştur"
 
-#: src/cli/main.c:767
+#: src/cli/main.c:791
 msgid "Symlink specific file (can be set multiple times)"
 msgstr ""
 "Belirtilen dosya için sembolik bağlantı oluştur (birden çok kez "
 "belirtilebilir)"
 
-#: src/cli/main.c:772
+#: src/cli/main.c:796
 msgid "New profile name."
 msgstr "Yeni profil adı."
 
-#: src/cli/main.c:782
+#: src/cli/main.c:806
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "Yeni profil oluşturulamadı [%d]: %s\n"
 
-#: src/cli/main.c:786
+#: src/cli/main.c:810
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "%s konumunda yeni profil oluşturuldu\n"
 
-#: src/cli/main.c:809
+#: src/cli/main.c:833
 msgid "Print backup names without any formatting and additional information"
 msgstr "Biçimlendirme ve ek bilgi olmadan yedekleme adlarını yazdır"
 
-#: src/cli/main.c:821
+#: src/cli/main.c:845
 msgid "Unable to list available backups!"
 msgstr "Kullanılabilir yedeklemeler listelenemedi!"
 
-#: src/cli/main.c:858
+#: src/cli/main.c:882
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (%s tarihinde oluşturuldu)\n"
 
-#: src/cli/main.c:877
+#: src/cli/main.c:901
 msgid "Name of the backup to remove."
 msgstr "Kaldırılacak yedeklemenin adı."
 
-#: src/cli/main.c:886
+#: src/cli/main.c:910
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "Yedekleme [%s] kaldırılamadı [%d]: %s\n"
 
-#: src/cli/main.c:903
+#: src/cli/main.c:927
 msgid "Name of the backup to restore from."
 msgstr "Geri yüklenecek yedeklemenin adı."
 
-#: src/cli/main.c:912
+#: src/cli/main.c:936
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "Yedekleme [%s] geri yüklenemedi [%d]: %s\n"
 
-#: src/cli/main.c:928
+#: src/cli/main.c:952
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "Authselect yapılandırması kaldırılamadı [%d]: %s\n"
 
-#: src/cli/main.c:978
+#: src/cli/main.c:1002
 msgid "Select profile"
 msgstr "Profil seç"
 
-#: src/cli/main.c:979
+#: src/cli/main.c:1003
 msgid "Regenerate configuration for currently selected command"
 msgstr "Seçili olan komut için yapılandırmayı yeniden oluştur"
 
-#: src/cli/main.c:980
+#: src/cli/main.c:1004
 msgid "List available profiles"
 msgstr "Kullanılabilir profilleri listele"
 
-#: src/cli/main.c:981
+#: src/cli/main.c:1005
 msgid "List available profile features"
 msgstr "Kullanılabilir profil özelliklerini listele"
 
-#: src/cli/main.c:982
+#: src/cli/main.c:1006
 msgid "Show profile information"
 msgstr "Profil bilgilerini göster"
 
-#: src/cli/main.c:983
+#: src/cli/main.c:1007
 msgid "Print profile requirements"
 msgstr "Profil gereksinimlerini yazdır"
 
-#: src/cli/main.c:984
+#: src/cli/main.c:1008
 msgid "Get identifier of currently selected profile"
 msgstr "Seçili profilin kimliğini öğren"
 
-#: src/cli/main.c:985
+#: src/cli/main.c:1009
 msgid "Check if the current configuration is valid"
 msgstr "Geçerli yapılandırmanın doğru olup olmadığını denetle"
 
-#: src/cli/main.c:986
+#: src/cli/main.c:1010
 msgid "Print changes that would be otherwise written"
 msgstr "Normalde uygulanacak değişiklikleri yazdır"
 
-#: src/cli/main.c:987
+#: src/cli/main.c:1011
 msgid "Enable feature in currently selected profile"
 msgstr "Seçili olan profilde özelliği etkinleştir"
 
-#: src/cli/main.c:988
+#: src/cli/main.c:1012
 msgid "Disable feature in currently selected profile"
 msgstr "Seçili olan profilde özelliği devre dışı bırak"
 
-#: src/cli/main.c:989
+#: src/cli/main.c:1013
+#, fuzzy
+#| msgid "Enable feature in currently selected profile"
+msgid "Check if feature is enabled in currently selected profile"
+msgstr "Seçili olan profilde özelliği etkinleştir"
+
+#: src/cli/main.c:1014
 msgid "Create new authselect profile"
 msgstr "Yeni authselect profili oluştur"
 
-#: src/cli/main.c:990
+#: src/cli/main.c:1015
 msgid "Backup commands:"
 msgstr "Yedekleme komutları:"
 
-#: src/cli/main.c:991
+#: src/cli/main.c:1016
 msgid "List available backups"
 msgstr "Kullanılabilir yedeklemeleri listele"
 
-#: src/cli/main.c:992
+#: src/cli/main.c:1017
 msgid "Remove backup"
 msgstr "Yedeklemeyi kaldır"
 
-#: src/cli/main.c:993
+#: src/cli/main.c:1018
 msgid "Restore from backup"
 msgstr "Yedeklemeden geri yükle"
 
-#: src/cli/main.c:994
+#: src/cli/main.c:1019
 msgid "Other:"
 msgstr "Diğer:"
 
-#: src/cli/main.c:995
+#: src/cli/main.c:1020
 msgid "Opt-out from authselect managed configuration"
 msgstr "Authselect tarafından yönetilen yapılandırmadan ayrıl"
 
-#: src/cli/main.c:997
+#: src/cli/main.c:1022
 msgid "Print authselect version"
 msgstr "Authselect sürümünü yazdır"
 
