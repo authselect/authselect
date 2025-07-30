@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.2.2\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2024-02-23 14:08+0100\n"
-"PO-Revision-Date: 2025-03-20 18:02+0000\n"
+"POT-Creation-Date: 2025-07-09 14:49+0200\n"
+"PO-Revision-Date: 2025-07-22 11:53+0000\n"
 "Last-Translator: Ricky Tigg <ricky.tigg@gmail.com>\n"
 "Language-Team: Finnish <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/fi/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:188
 msgid "Unable to obtain supported features"
@@ -76,7 +76,7 @@ msgstr "Profiilia [%s] [%d] ei voida aktivoida: %s"
 
 #: src/lib/authselect.c:141
 msgid "Trying to uninstall authselect configuration"
-msgstr "Trying to uninstall authselect configuration"
+msgstr "Yritetään poistaa authselect-kokoonpanoa"
 
 #: src/lib/authselect.c:145
 #, c-format
@@ -572,7 +572,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "Ei voida saada kantanimeä kohteelle [%s]"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:848
+#: src/lib/util/file.c:199 src/cli/main.c:872
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "Ei pysty saamaan tilaa [%s] [%d]: %s"
@@ -580,7 +580,7 @@ msgstr "Ei pysty saamaan tilaa [%s] [%d]: %s"
 #: src/lib/util/dir.c:130
 #, c-format
 msgid "Unable to stat directory [%d]: %s"
-msgstr "Hakemiston [%d] statuksen saanti epäonnistui: %s"
+msgstr "Hakemiston [%d] tilastointi ei voitu tehdä: %s"
 
 #: src/lib/util/dir.c:313
 #, c-format
@@ -867,7 +867,7 @@ msgstr "Yleisasetukset:"
 msgid "[OPTIONS...]"
 msgstr "[VALITSIN...]"
 
-#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:840
+#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:864
 msgid "Out of memory!"
 msgstr "Muisti loppui!"
 
@@ -922,8 +922,8 @@ msgstr "Profiilin tunniste."
 
 #: src/cli/main.c:79 src/cli/main.c:248 src/cli/main.c:293 src/cli/main.c:342
 #: src/cli/main.c:390 src/cli/main.c:435 src/cli/main.c:478 src/cli/main.c:651
-#: src/cli/main.c:728 src/cli/main.c:775 src/cli/main.c:815 src/cli/main.c:880
-#: src/cli/main.c:906
+#: src/cli/main.c:728 src/cli/main.c:757 src/cli/main.c:799 src/cli/main.c:839
+#: src/cli/main.c:904 src/cli/main.c:930
 msgid "Unable to parse command arguments"
 msgstr "Komennon argumentteja ei voi jäsentää"
 
@@ -1176,15 +1176,27 @@ msgstr "Käytöstä poistettava ominaisuus."
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "Ominaisuutta [%d] ei voi poistaa käytöstä: %s\n"
 
-#: src/cli/main.c:760
+#: src/cli/main.c:754
+#, fuzzy
+#| msgid "Feature to enable."
+msgid "Feature to check."
+msgstr "Käyttöön otettava ominaisuus."
+
+#: src/cli/main.c:763
+#, fuzzy, c-format
+#| msgid "Unable to enable feature [%d]: %s\n"
+msgid "Unable to check feature [%d]: %s\n"
+msgstr "Ominaisuutta [%d] ei voi ottaa käyttöön: %s\n"
+
+#: src/cli/main.c:784
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr "Luo uusi profiili toimittajaprofiiliksi mukautetun profiilin sijaan"
 
-#: src/cli/main.c:761
+#: src/cli/main.c:785
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr "Profiilin tunnus, jota tulisi käyttää uuden profiilin perustana"
 
-#: src/cli/main.c:762
+#: src/cli/main.c:786
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1192,149 +1204,155 @@ msgstr ""
 "Perusta uusi profiili oletusprofiiliin, vaikka samanniminen "
 "toimittajaprofiili olisi olemassa"
 
-#: src/cli/main.c:763
+#: src/cli/main.c:787
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr "Sym-linkitä metatiedostot perusprofiilista kopioimisen sijaan"
 
-#: src/cli/main.c:764
+#: src/cli/main.c:788
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr "Sym-linkitä nsswitch -tiedostot perusprofiilista kopioimisen sijaan"
 
-#: src/cli/main.c:765
+#: src/cli/main.c:789
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr "Sym-linkitä pam-tiedostot perusprofiilista kopioimisen sijaan"
 
-#: src/cli/main.c:766
+#: src/cli/main.c:790
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr "Sym-linkitä dconf -tiedostot perusprofiilista kopioimisen sijaan"
 
-#: src/cli/main.c:767
+#: src/cli/main.c:791
 msgid "Symlink specific file (can be set multiple times)"
 msgstr "Sym-linkitä tietty tiedosto (voidaan asettaa useita kertoja)"
 
-#: src/cli/main.c:772
+#: src/cli/main.c:796
 msgid "New profile name."
 msgstr "Uusi profiilinimi."
 
-#: src/cli/main.c:782
+#: src/cli/main.c:806
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "Uuden profiilin luonti epäonnistui [%d]: %s\n"
 
-#: src/cli/main.c:786
+#: src/cli/main.c:810
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "Uusi profiili luotiin %s:een\n"
 
-#: src/cli/main.c:809
+#: src/cli/main.c:833
 msgid "Print backup names without any formatting and additional information"
 msgstr "Tulosta varmuuskopioitujen nimet ilman muotoiluja ja lisätietoja"
 
-#: src/cli/main.c:821
+#: src/cli/main.c:845
 msgid "Unable to list available backups!"
 msgstr "Ei voida luetella saatavilla olevia varmuuskopioita!"
 
-#: src/cli/main.c:858
+#: src/cli/main.c:882
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (luotu %s:ssa)\n"
 
-#: src/cli/main.c:877
+#: src/cli/main.c:901
 msgid "Name of the backup to remove."
 msgstr "Poistettavan varmuuskopion nimi."
 
-#: src/cli/main.c:886
+#: src/cli/main.c:910
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "Varmuuskopiota [%s] [%d] ei voida poistaa: %s\n"
 
-#: src/cli/main.c:903
+#: src/cli/main.c:927
 msgid "Name of the backup to restore from."
 msgstr "Varmuuskopion nimi, josta palautetaan."
 
-#: src/cli/main.c:912
+#: src/cli/main.c:936
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "Varmuuskopiota [%s] [%d] ei voida palauttaa: %s\n"
 
-#: src/cli/main.c:928
+#: src/cli/main.c:952
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "Authselect-kokoonpanon [%d] asennusta ei voi poistaa: %s\n"
 
-#: src/cli/main.c:978
+#: src/cli/main.c:1002
 msgid "Select profile"
 msgstr "Valitse profiili"
 
-#: src/cli/main.c:979
+#: src/cli/main.c:1003
 msgid "Regenerate configuration for currently selected command"
 msgstr "Luo uudelleen tällä hetkellä valitun komennon asetukset"
 
-#: src/cli/main.c:980
+#: src/cli/main.c:1004
 msgid "List available profiles"
 msgstr "Luettele saattavilla olevat profiilit"
 
-#: src/cli/main.c:981
+#: src/cli/main.c:1005
 msgid "List available profile features"
 msgstr "Luettele saattavilla olevat profiiliominaisuudet"
 
-#: src/cli/main.c:982
+#: src/cli/main.c:1006
 msgid "Show profile information"
 msgstr "Näytä profiilitiedot"
 
-#: src/cli/main.c:983
+#: src/cli/main.c:1007
 msgid "Print profile requirements"
 msgstr "Tulosta profiilivaatimukset"
 
-#: src/cli/main.c:984
+#: src/cli/main.c:1008
 msgid "Get identifier of currently selected profile"
 msgstr "Hanki tällä hetkellä valitun profiilin tunniste"
 
-#: src/cli/main.c:985
+#: src/cli/main.c:1009
 msgid "Check if the current configuration is valid"
 msgstr "Tarkista, onko nykyinen kokoonpano kelvollinen"
 
-#: src/cli/main.c:986
+#: src/cli/main.c:1010
 msgid "Print changes that would be otherwise written"
 msgstr "Tulosta muutokset, jotka muutoin kirjoitetaan"
 
-#: src/cli/main.c:987
+#: src/cli/main.c:1011
 msgid "Enable feature in currently selected profile"
 msgstr "Ota ominaisuus käyttöön nykyisessä valitussa profiilissa"
 
-#: src/cli/main.c:988
+#: src/cli/main.c:1012
 msgid "Disable feature in currently selected profile"
 msgstr "Poista ominaisuus käytöstä nykyisessä valitussa profiilissa"
 
-#: src/cli/main.c:989
+#: src/cli/main.c:1013
+#, fuzzy
+#| msgid "Enable feature in currently selected profile"
+msgid "Check if feature is enabled in currently selected profile"
+msgstr "Ota ominaisuus käyttöön nykyisessä valitussa profiilissa"
+
+#: src/cli/main.c:1014
 msgid "Create new authselect profile"
 msgstr "Luo uusi authselect-profiili"
 
-#: src/cli/main.c:990
+#: src/cli/main.c:1015
 msgid "Backup commands:"
 msgstr "Varmuuskopio komennot:"
 
-#: src/cli/main.c:991
+#: src/cli/main.c:1016
 msgid "List available backups"
 msgstr "Listaa saattavilla olevat varmuuskopiot"
 
-#: src/cli/main.c:992
+#: src/cli/main.c:1017
 msgid "Remove backup"
 msgstr "Poista varmuuskopio"
 
-#: src/cli/main.c:993
+#: src/cli/main.c:1018
 msgid "Restore from backup"
 msgstr "Palauta varmuuskopiosta"
 
-#: src/cli/main.c:994
+#: src/cli/main.c:1019
 msgid "Other:"
 msgstr "Muuta:"
 
-#: src/cli/main.c:995
+#: src/cli/main.c:1020
 msgid "Opt-out from authselect managed configuration"
 msgstr "Kieltäydy authselect hallinnoiduista määrityksistä"
 
-#: src/cli/main.c:997
+#: src/cli/main.c:1022
 msgid "Print authselect version"
 msgstr "Tulosta authselectin versio"
 
