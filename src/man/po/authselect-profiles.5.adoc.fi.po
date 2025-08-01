@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-05-04 13:50+0200\n"
-"PO-Revision-Date: 2025-03-22 11:53+0000\n"
+"PO-Revision-Date: 2025-08-01 23:53+0000\n"
 "Last-Translator: Ricky Tigg <ricky.tigg@gmail.com>\n"
 "Language-Team: Finnish <https://translate.fedoraproject.org/projects/"
 "authselect/12x-authselect-profiles5adoc/fi/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #. type: Title =
 #: ./src/man/authselect-profiles.5.adoc:2
@@ -252,7 +252,7 @@ msgstr ""
 #: ./src/man/authselect-profiles.5.adoc:74
 #, no-wrap
 msgid "*{continue if \"feature\"}*"
-msgstr ""
+msgstr "*{jatka, jos \"ominaisuus\"}*"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:79
@@ -270,7 +270,7 @@ msgstr ""
 #: ./src/man/authselect-profiles.5.adoc:80
 #, no-wrap
 msgid "*{stop if \"feature\"}*"
-msgstr ""
+msgstr "*{lopeta, jos \"ominaisuus\"}*"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:85
@@ -280,12 +280,16 @@ msgid ""
 "\"feature\" is not defined, the whole line with this operator will be "
 "removed and the rest of the template will be processed."
 msgstr ""
+"\"Continue if\":n vastakohta. Lopeta tiedoston käsittely välittömästi, jos "
+"\"feature\" on määritelty (tiedoston loppusisältö poistetaan). Jos "
+"\"feature\" ei ole määritelty, koko tätä operaattoria sisältävä rivi "
+"poistetaan ja loput mallineesta käsitellään."
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:86
 #, no-wrap
 msgid "*{include if \"feature\"}*"
-msgstr ""
+msgstr "*{sisällytä jos \"ominaisuus\"}*"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:89
@@ -293,12 +297,14 @@ msgid ""
 "Include the line where this operator is placed only if \"feature\" is "
 "defined."
 msgstr ""
+"Sisällytä rivi, jolle tämä operaattori sijoitetaan, vain jos \"feature\" on "
+"määritelty."
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:90
 #, no-wrap
 msgid "*{exclude if \"feature\"}*"
-msgstr ""
+msgstr "*{sulje pois, jos \"ominaisuus\"}*"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:93
@@ -306,6 +312,8 @@ msgid ""
 "Opposite to \"include-if\". Include the line where this operator is placed "
 "only if \"feature\" is not defined."
 msgstr ""
+"Vastakohtana \"include-if\". Sisällytä rivi, jolle tämä operaattori "
+"sijoitetaan, vain jos \"feature\"-operaattoria ei ole määritelty."
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:94
@@ -320,6 +328,9 @@ msgid ""
 "whole line with this operator is removed, thus it is not possible to add "
 "anything else around this operator at the same line."
 msgstr ""
+"Ota ominaisuus \"implied-feature\" käyttöön, jos ominaisuus \"feature\" on "
+"käytössä. Koko operaattoria sisältävä rivi poistetaan, joten operaattorin "
+"ympärille ei voi lisätä mitään muuta samalle riville."
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:99
