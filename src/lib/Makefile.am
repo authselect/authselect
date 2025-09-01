@@ -34,6 +34,7 @@ lib_LTLIBRARIES = \
     $(NULL)
 
 authselect_config_dir=@AUTHSELECT_CONFIG_DIR@
+authselect_config_fallback_dir=@AUTHSELECT_CONFIG_FALLBACK_DIR@
 authselect_profile_dir=@AUTHSELECT_PROFILE_DIR@
 authselect_vendor_dir=@AUTHSELECT_VENDOR_DIR@
 authselect_custom_dir=@AUTHSELECT_CUSTOM_DIR@
@@ -74,6 +75,7 @@ libauthselect_la_LIBADD = \
 libauthselect_la_CFLAGS = \
     $(AM_CFLAGS) \
     -DAUTHSELECT_CONFIG_DIR=\"$(authselect_config_dir)\" \
+    -DAUTHSELECT_CONFIG_FALLBACK_DIR=\"$(authselect_config_fallback_dir)\" \
     -DAUTHSELECT_PROFILE_DIR=\"$(authselect_profile_dir)\" \
     -DAUTHSELECT_VENDOR_DIR=\"$(authselect_vendor_dir)\" \
     -DAUTHSELECT_CUSTOM_DIR=\"$(authselect_custom_dir)\" \
