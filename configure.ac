@@ -48,6 +48,7 @@ AM_CONDITIONAL([HAVE_MANPAGES], [test ! -z "$A2X" -a ! -z "$PO4A_TRANSLATE"])
 AC_CONFIG_FILES([Makefile
                  po/Makefile.in
                  profiles/Makefile
+                 systemd/Makefile
                  rpm/authselect.spec
                  src/common/Makefile
                  src/cli/Makefile
