@@ -66,17 +66,9 @@ CONFIGURABLE_VALUE(completion-dir, completion_dir, BASH_COMPLETION_DIR, DIR,
                    [Path to the directory where bash completion script should be stored],
                    $sysconfdir/bash_completion.d)
 
-PKG_CHECK_VAR(PKG_CONFIG_SYSTEMD_SERVICE_DIR, systemd, systemdsystemunitdir, [], [])
-if test x"$PKG_CONFIG_SYSTEMD_SERVICE_DIR" = x; then
-    PKG_CONFIG_SYSTEMD_SERVICE_DIR="${prefix}/lib/systemd/system"
-fi
-if test "${PKG_CONFIG_SYSTEMD_SERVICE_DIR:0:${#prefix}}" != "${prefix}"; then
-    PKG_CONFIG_SYSTEMD_SERVICE_DIR=${prefix}${PKG_CONFIG_SYSTEMD_SERVICE_DIR}
-fi
-
 CONFIGURABLE_VALUE(systemd-service-dir, systemd_service_dir, SYSTEMD_SERVICE_DIR, DIR,
                    [Path to the directory where systemd service files will be installed],
-                   $PKG_CONFIG_SYSTEMD_SERVICE_DIR)
+                   \${prefix}/lib/systemd/system)
 
 AC_ARG_ENABLE(
     [debug-template-regex],
