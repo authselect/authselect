@@ -36,6 +36,8 @@ BuildRequires:  po4a
 BuildRequires:  %{_bindir}/a2x
 BuildRequires:  libcmocka-devel >= 1.0.0
 BuildRequires:  libselinux-devel
+BuildRequires:  systemd-devel
+BuildRequires:  systemd-rpm-macros
 Requires: authselect-libs%{?_isa} = %{version}-%{release}
 
 # RHEL does not have meta flag yet
