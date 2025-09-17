@@ -8,7 +8,7 @@ dnl Arg 5: help string
 dnl Arg 6: default value
 dnl
 AC_DEFUN([CONFIGURABLE_VALUE], [
-    AC_ARG_WITH([$1], [AC_HELP_STRING([--with-$1=$4], [$5 [$6]])])
+    AC_ARG_WITH([$1], [AS_HELP_STRING([--with-$1=$4], [$5 [$6]])])
 
     $3="$6"
     if test x"$with_$2" != x; then
@@ -82,7 +82,7 @@ AS_IF([test "x$enable_debug_template_regex" = "xyes"],
 )
 
 AC_ARG_WITH([nis-profile],
-    [AC_HELP_STRING([--with-nis-profile], [Install NIS profile [no]])],
+    [AS_HELP_STRING([--with-nis-profile], [Install NIS profile [no]])],
     [], with_nis_profile=no
 )
 AM_CONDITIONAL([WITH_NIS_PROFILE], [test x$with_nis_profile = xyes])
