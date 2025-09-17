@@ -1,6 +1,7 @@
 SUBDIRS= \
     po \
     profiles \
+    systemd \
     src/common \
     src/lib \
     src/cli \

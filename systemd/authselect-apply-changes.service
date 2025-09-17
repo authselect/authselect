@@ -1,0 +1,13 @@
+[Unit]
+Description=Apply authselect changes
+Documentation=man:authselect(8)
+After=local-fs.target
+Before=systemd-user-sessions.service nss-user-lookup.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/authselect apply-changes
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
