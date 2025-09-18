@@ -147,6 +147,7 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %dir %{_datadir}/authselect/default/local/
 %dir %{_datadir}/authselect/default/sssd/
 %dir %{_datadir}/authselect/default/winbind/
+%verify(not md5 size mtime) %{_datadir}/authselect/checksum
 %{_datadir}/authselect/default/local/dconf-db
 %{_datadir}/authselect/default/local/dconf-locks
 %{_datadir}/authselect/default/local/fingerprint-auth
@@ -244,6 +245,11 @@ for file in  %{_sysconfdir}/authselect/custom/*/*; do
         %{_bindir}/ln -sfn "%{_datadir}/authselect/default/local/$target" "$file"
     fi
 done
+
+# We might have add vendor profiles, compute new profiles checksum
+%{_bindir}/find "%{_datadir}/authselect" -mindepth 2 -type f \
+    -printf "%%P\n" -exec %{_bindir}/sha256sum {} + | %{_bindir}/sha256sum \
+    > "%{_datadir}/authselect/checksum"
 
 # Apply any changes to profiles (validates configuration first internally)
 %{_bindir}/authselect apply-changes &> /dev/null

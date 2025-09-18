@@ -59,3 +59,13 @@ dist_profile_winbind_DATA = \
     $(top_srcdir)/profiles/winbind/dconf-db \
     $(top_srcdir)/profiles/winbind/dconf-locks \
     $(NULL)
+
+# Compute checksum of all installed profile files
+profiledir = $(authselect_profile_dir)
+dist_profile_DATA = $(top_srcdir)/profiles/checksum \
+    $(NULL)
+
+install-data-hook:
+	$(FIND) "$(DESTDIR)$(authselect_profile_dir)" -mindepth 2 -type f \
+	-printf "%P\n" -exec $(SHA256SUM) {} + | $(SHA256SUM) \
+	> "$(DESTDIR)$(authselect_profile_dir)/checksum"
