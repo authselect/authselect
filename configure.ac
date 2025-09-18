@@ -19,6 +19,8 @@ AC_PROG_CC
 AC_PROG_MKDIR_P
 AC_PROG_LN_S
 AC_PROG_SED
+AC_PATH_PROG(FIND, find, /usr/bin/find)
+AC_PATH_PROG(SHA256SUM, sha256sum, /usr/bin/sha256sum)
 AC_LANG([C])
 
 AM_GNU_GETTEXT([external])
