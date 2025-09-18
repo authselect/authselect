@@ -1,7 +1,8 @@
 authselect_profile_dir=@AUTHSELECT_PROFILE_DIR@
+authselect_profile_default_dir=${authselect_profile_dir}/default
 
 # The shipped profiles
-profile_localdir = $(authselect_profile_dir)/local
+profile_localdir = $(authselect_profile_default_dir)/local
 dist_profile_local_DATA = \
     $(top_srcdir)/profiles/local/nsswitch.conf \
     $(top_srcdir)/profiles/local/password-auth \
@@ -16,7 +17,7 @@ dist_profile_local_DATA = \
     $(NULL)
 
 if WITH_NIS_PROFILE
-profile_nisdir = $(authselect_profile_dir)/nis
+profile_nisdir = $(authselect_profile_default_dir)/nis
 dist_profile_nis_DATA = \
     $(top_srcdir)/profiles/nis/nsswitch.conf \
     $(top_srcdir)/profiles/nis/password-auth \
@@ -31,7 +32,7 @@ dist_profile_nis_DATA = \
     $(NULL)
 endif
 
-profile_sssddir = $(authselect_profile_dir)/sssd
+profile_sssddir = $(authselect_profile_default_dir)/sssd
 dist_profile_sssd_DATA = \
     $(top_srcdir)/profiles/sssd/nsswitch.conf \
     $(top_srcdir)/profiles/sssd/password-auth \
@@ -45,7 +46,7 @@ dist_profile_sssd_DATA = \
     $(top_srcdir)/profiles/sssd/dconf-locks \
     $(NULL)
 
-profile_winbinddir = $(authselect_profile_dir)/winbind
+profile_winbinddir = $(authselect_profile_default_dir)/winbind
 dist_profile_winbind_DATA = \
     $(top_srcdir)/profiles/winbind/nsswitch.conf \
     $(top_srcdir)/profiles/winbind/password-auth \
