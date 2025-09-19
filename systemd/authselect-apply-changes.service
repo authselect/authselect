@@ -6,7 +6,7 @@ Before=systemd-user-sessions.service nss-user-lookup.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/authselect apply-changes
+ExecStart=/usr/bin/authselect apply-changes --upgrade
 RemainAfterExit=yes
 
 [Install]

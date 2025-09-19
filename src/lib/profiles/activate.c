@@ -49,6 +49,14 @@ authselect_profile_dconf_update()
 }
 
 errno_t
+authselect_profile_copy_checksum()
+{
+    INFO("Copying [%s] to [%s]", PATH_CHECKSUM_ORIG, PATH_CHECKSUM_COPY);
+    return file_copy(PATH_CHECKSUM_ORIG, AUTHSELECT_STATE_DIR, "checksum",
+                     AUTHSELECT_DIR_MODE);
+}
+
+errno_t
 authselect_profile_activate(struct authselect_profile *profile,
                             const char **features)
 {
@@ -85,6 +93,12 @@ authselect_profile_activate(struct authselect_profile *profile,
     } else if (ret != EOK) {
         ERROR("Unable to update dconf database [%d]: %s", ret, strerror(ret));
         return ret;
+    }
+
+    ret = authselect_profile_copy_checksum();
+    if (ret != EOK) {
+        /* This is not a fatal error. */
+        WARN("Unable to copy profiles checksum [%d]: %s", ret, strerror(ret));
     }
 
     return EOK;

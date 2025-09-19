@@ -162,18 +162,46 @@ authselect_uninstall(void)
 }
 
 _PUBLIC_ int
-authselect_apply_changes(void)
+authselect_apply_changes(bool upgrade)
 {
     struct authselect_profile *profile = NULL;
     char **supported = NULL;
     char *profile_id;
     char **features;
+    char *checksum_orig = NULL;
+    char *checksum_copy = NULL;
     errno_t ret;
     int i;
 
     ret = authselect_current_configuration(&profile_id, &features);
     if (ret != EOK) {
         return ret;
+    }
+
+    if (upgrade) {
+        ret = textfile_read(PATH_CHECKSUM_ORIG, AUTHSELECT_FILE_SIZE_LIMIT,
+                            &checksum_orig);
+        if (ret != EOK) {
+            ERROR("Unable to read original checksum [%s] [%d]: %s",
+                  PATH_CHECKSUM_ORIG, ret, strerror(ret));
+            goto done;
+        }
+
+        ret = textfile_read(PATH_CHECKSUM_COPY, AUTHSELECT_FILE_SIZE_LIMIT,
+                            &checksum_copy);
+        if (ret != EOK && ret != ENOENT) {
+            ERROR("Unable to read copy checksum [%s] [%d]: %s",
+                  PATH_CHECKSUM_COPY, ret, strerror(ret));
+            goto done;
+        } else if (ret == EOK) {
+            if (strcmp(checksum_orig, checksum_copy) == 0) {
+                INFO("Installed profiles did not change. No action is needed.");
+                ret = EAGAIN;
+                goto done;
+            }
+        }
+
+        /* Copy checksum file does not exist or profiles did changed. Update. */
     }
 
     ret = authselect_profile(profile_id, &profile);
@@ -208,6 +236,8 @@ done:
     authselect_profile_free(profile);
     string_array_free(supported);
     string_array_free(features);
+    free(checksum_orig);
+    free(checksum_copy);
     free(profile_id);
 
     return ret;

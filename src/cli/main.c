@@ -235,9 +235,11 @@ static errno_t apply_changes(struct cli_cmdline *cmdline)
 {
     char *backup_name = NULL;
     int backup = 0;
+    int upgrade = 0;
     errno_t ret;
 
     struct poptOption options[] = {
+        {"upgrade", '\0', POPT_ARG_VAL, &upgrade, 1, _("Only apply changes if installed profiles have changed"), NULL },
         {NULL, 'b', POPT_ARG_VAL, &backup, 1, _("Backup system files before activating profile (generate unique name)"), NULL },
         {"backup", '\0', POPT_ARG_STRING | POPT_ARG_NONE, &backup_name, 0, _("Backup system files before activating profile"), _("NAME") },
         POPT_TABLEEND
@@ -254,10 +256,14 @@ static errno_t apply_changes(struct cli_cmdline *cmdline)
         return ret;
     }
 
-    ret = authselect_apply_changes();
+    ret = authselect_apply_changes(upgrade);
     switch (ret) {
     case EOK:
         CLI_PRINT("Changes were successfully applied.\n");
+        break;
+    case EAGAIN:
+        CLI_PRINT("Installed profiles did not change. No action is needed.\n");
+        ret = EOK;
         break;
     case ENOENT:
         CLI_ERROR("No existing configuration detected.\n");
