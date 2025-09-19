@@ -68,6 +68,10 @@
 #define DIR_VENDOR_PROFILES  AUTHSELECT_PROFILE_DIR"/vendor"
 #define DIR_CUSTOM_PROFILES  AUTHSELECT_CUSTOM_DIR
 
+/* Checksum file paths. */
+#define PATH_CHECKSUM_ORIG  AUTHSELECT_PROFILE_DIR"/checksum"
+#define PATH_CHECKSUM_COPY  AUTHSELECT_STATE_DIR"/checksum"
+
 /* Structure to hold path and content of generated system files.
  * @see GENERATED_FILES, GENERATED_FILES_PATHS */
 struct authselect_generated {
