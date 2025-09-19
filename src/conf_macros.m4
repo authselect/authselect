@@ -22,6 +22,10 @@ CONFIGURABLE_VALUE(config-dir, config_dir, AUTHSELECT_CONFIG_DIR, DIR,
                    [Path to the directory where authselect stores its configuration],
                    $sysconfdir/authselect)
 
+CONFIGURABLE_VALUE(state-dir, state_dir, AUTHSELECT_STATE_DIR, DIR,
+                   [Directory where authselect state should be stored],
+                   $localstatedir/lib/authselect)
+
 CONFIGURABLE_VALUE(profile-dir, profile_dir, AUTHSELECT_PROFILE_DIR, DIR,
                    [Path to the directory where authselect default and vendor profiles are stored],
                    $datarootdir/authselect)
