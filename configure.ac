@@ -55,7 +55,8 @@ AC_CONFIG_FILES([Makefile
                  src/lib/Makefile
                  src/lib/authselect.pc
                  src/man/Makefile
-                 src/tests/Makefile])
+                 src/tests/Makefile
+                 systemd/Makefile])
 
 AC_CONFIG_FILES([scripts/manpages-build.sh],
                 [chmod +x scripts/manpages-build.sh])

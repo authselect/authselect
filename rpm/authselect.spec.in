@@ -206,6 +206,8 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %{_mandir}/man8/authselect.8*
 %{_mandir}/man7/authselect-migration.7*
 %{_sysconfdir}/bash_completion.d/authselect-completion.sh
+%{_prefix}/lib/systemd/system/authselect.service
+%{_prefix}/lib/systemd/system/sysinit.target.wants/authselect.service
 
 %preun
 if [ $1 == 0 ] ; then

@@ -5,6 +5,7 @@ SUBDIRS= \
     src/lib \
     src/cli \
     src/tests \
+    systemd \
     $(NULL)
 
 if HAVE_MANPAGES
