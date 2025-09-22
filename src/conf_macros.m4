@@ -22,6 +22,10 @@ CONFIGURABLE_VALUE(config-dir, config_dir, AUTHSELECT_CONFIG_DIR, DIR,
                    [Path to the directory where authselect stores its configuration],
                    $sysconfdir/authselect)
 
+CONFIGURABLE_VALUE(config-fallback-dir, config_fallback_dir, AUTHSELECT_CONFIG_FALLBACK_DIR, DIR,
+                   [Path to the directory where authselect looks for fallback configuration],
+                   $datarootdir/authselect)
+
 CONFIGURABLE_VALUE(profile-dir, profile_dir, AUTHSELECT_PROFILE_DIR, DIR,
                    [Path to the directory where are stored authselect default profiles],
                    $datarootdir/authselect/default)
