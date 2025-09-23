@@ -34,8 +34,8 @@ lib_LTLIBRARIES = \
     $(NULL)
 
 authselect_config_dir=@AUTHSELECT_CONFIG_DIR@
+authselect_state_dir=@AUTHSELECT_STATE_DIR@
 authselect_profile_dir=@AUTHSELECT_PROFILE_DIR@
-authselect_vendor_dir=@AUTHSELECT_VENDOR_DIR@
 authselect_custom_dir=@AUTHSELECT_CUSTOM_DIR@
 authselect_pam_dir=@AUTHSELECT_PAM_DIR@
 authselect_nsswitch_conf=@AUTHSELECT_NSSWITCH_CONF@
@@ -74,8 +74,8 @@ libauthselect_la_LIBADD = \
 libauthselect_la_CFLAGS = \
     $(AM_CFLAGS) \
     -DAUTHSELECT_CONFIG_DIR=\"$(authselect_config_dir)\" \
+    -DAUTHSELECT_STATE_DIR=\"$(authselect_state_dir)\" \
     -DAUTHSELECT_PROFILE_DIR=\"$(authselect_profile_dir)\" \
-    -DAUTHSELECT_VENDOR_DIR=\"$(authselect_vendor_dir)\" \
     -DAUTHSELECT_CUSTOM_DIR=\"$(authselect_custom_dir)\" \
     -DAUTHSELECT_PAM_DIR=\"$(authselect_pam_dir)\" \
     -DAUTHSELECT_NSSWITCH_CONF=\"$(authselect_nsswitch_conf)\" \
@@ -86,7 +86,7 @@ libauthselect_la_CFLAGS = \
     $(NULL)
 libauthselect_la_LDFLAGS = \
     -Wl,--version-script=$(srcdir)/authselect.exports \
-    -version-info 5:0:1
+    -version-info 6:0:1
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = \

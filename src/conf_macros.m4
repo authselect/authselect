@@ -8,7 +8,7 @@ dnl Arg 5: help string
 dnl Arg 6: default value
 dnl
 AC_DEFUN([CONFIGURABLE_VALUE], [
-    AC_ARG_WITH([$1], [AC_HELP_STRING([--with-$1=$4], [$5 [$6]])])
+    AC_ARG_WITH([$1], [AS_HELP_STRING([--with-$1=$4], [$5 [$6]])])
 
     $3="$6"
     if test x"$with_$2" != x; then
@@ -22,13 +22,13 @@ CONFIGURABLE_VALUE(config-dir, config_dir, AUTHSELECT_CONFIG_DIR, DIR,
                    [Path to the directory where authselect stores its configuration],
                    $sysconfdir/authselect)
 
-CONFIGURABLE_VALUE(profile-dir, profile_dir, AUTHSELECT_PROFILE_DIR, DIR,
-                   [Path to the directory where are stored authselect default profiles],
-                   $datarootdir/authselect/default)
+CONFIGURABLE_VALUE(state-dir, state_dir, AUTHSELECT_STATE_DIR, DIR,
+                   [Directory where authselect state should be stored],
+                   $localstatedir/lib/authselect)
 
-CONFIGURABLE_VALUE(vendor-dir, vendor_dir, AUTHSELECT_VENDOR_DIR, DIR,
-                   [Path to the directory where are stored profiles created by 3rd-party vendors],
-                   $datarootdir/authselect/vendor)
+CONFIGURABLE_VALUE(profile-dir, profile_dir, AUTHSELECT_PROFILE_DIR, DIR,
+                   [Path to the directory where authselect default and vendor profiles are stored],
+                   $datarootdir/authselect)
 
 CONFIGURABLE_VALUE(custom-dir, custom_dir, AUTHSELECT_CUSTOM_DIR, DIR,
                    [Path to the directory where are stored profiles created by administrator],
@@ -66,6 +66,10 @@ CONFIGURABLE_VALUE(completion-dir, completion_dir, BASH_COMPLETION_DIR, DIR,
                    [Path to the directory where bash completion script should be stored],
                    $sysconfdir/bash_completion.d)
 
+CONFIGURABLE_VALUE(systemd-service-dir, systemd_service_dir, SYSTEMD_SERVICE_DIR, DIR,
+                   [Path to the directory where systemd service files will be installed],
+                   \${prefix}/lib/systemd/system)
+
 AC_ARG_ENABLE(
     [debug-template-regex],
     AS_HELP_STRING(
@@ -82,7 +86,7 @@ AS_IF([test "x$enable_debug_template_regex" = "xyes"],
 )
 
 AC_ARG_WITH([nis-profile],
-    [AC_HELP_STRING([--with-nis-profile], [Install NIS profile [no]])],
+    [AS_HELP_STRING([--with-nis-profile], [Install NIS profile [no]])],
     [], with_nis_profile=no
 )
 AM_CONDITIONAL([WITH_NIS_PROFILE], [test x$with_nis_profile = xyes])

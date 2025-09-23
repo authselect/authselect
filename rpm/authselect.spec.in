@@ -36,6 +36,8 @@ BuildRequires:  po4a
 BuildRequires:  %{_bindir}/a2x
 BuildRequires:  libcmocka-devel >= 1.0.0
 BuildRequires:  libselinux-devel
+BuildRequires:  systemd-devel
+BuildRequires:  systemd-rpm-macros
 Requires: authselect-libs%{?_isa} = %{version}-%{release}
 
 # RHEL does not have meta flag yet
@@ -145,6 +147,7 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %dir %{_datadir}/authselect/default/local/
 %dir %{_datadir}/authselect/default/sssd/
 %dir %{_datadir}/authselect/default/winbind/
+%verify(not md5 size mtime) %{_datadir}/authselect/checksum
 %{_datadir}/authselect/default/local/dconf-db
 %{_datadir}/authselect/default/local/dconf-locks
 %{_datadir}/authselect/default/local/fingerprint-auth
@@ -193,6 +196,7 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %dir %{_datadir}/doc/authselect
 %{_datadir}/doc/authselect/COPYING
 %{_datadir}/doc/authselect/README.md
+%{_unitdir}/authselect-apply-changes.service
 %license COPYING
 %doc README.md
 
@@ -207,14 +211,14 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %{_mandir}/man7/authselect-migration.7*
 %{_sysconfdir}/bash_completion.d/authselect-completion.sh
 
-%preun
-if [ $1 == 0 ] ; then
-    # Remove authselect symbolic links so all authselect files can be
-    # deleted safely. If this fail, the uninstallation must fail to avoid
-    # breaking the system by removing PAM files. However, the command can
-    # only fail if it can not write to the file system.
-    %{_bindir}/authselect opt-out
-fi
+%post libs
+%systemd_post authselect-apply-changes.service
+
+%preun libs
+%systemd_preun authselect-apply-changes.service
+
+%postun libs
+%systemd_postun authselect-apply-changes.service
 
 %posttrans libs
 # Keep nss-altfiles for all rpm-ostree based systems.
@@ -242,9 +246,23 @@ for file in  %{_sysconfdir}/authselect/custom/*/*; do
     fi
 done
 
+# We might have add vendor profiles, compute new profiles checksum
+%{_bindir}/find "%{_datadir}/authselect" -mindepth 2 -type f \
+    -printf "%%P\n" -exec %{_bindir}/sha256sum {} + | %{_bindir}/sha256sum \
+    > "%{_datadir}/authselect/checksum"
+
 # Apply any changes to profiles (validates configuration first internally)
 %{_bindir}/authselect apply-changes &> /dev/null
 
 exit 0
+
+%preun
+if [ $1 == 0 ] ; then
+    # Remove authselect symbolic links so all authselect files can be
+    # deleted safely. If this fail, the uninstallation must fail to avoid
+    # breaking the system by removing PAM files. However, the command can
+    # only fail if it can not write to the file system.
+    %{_bindir}/authselect opt-out
+fi
 
 %autochangelog
