@@ -1,13 +1,13 @@
-# Göran Uddeborg <goeran@uddeborg.se>, 2018. #zanata, 2020, 2021, 2022, 2023.
-# Göran Uddeborg <goeran@uddeborg.se>, 2019. #zanata, 2020, 2021, 2022, 2023.
+# Göran Uddeborg <goeran@uddeborg.se>, 2018. #zanata, 2020, 2021, 2022, 2023, 2025.
+# Göran Uddeborg <goeran@uddeborg.se>, 2019. #zanata, 2020, 2021, 2022, 2023, 2025.
 # Pavel Brezina <pbrezina@redhat.com>, 2019. #zanata
 # Luna Jernberg <bittin@reimu.nl>, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2025-07-09 14:49+0200\n"
-"PO-Revision-Date: 2023-11-16 19:01+0000\n"
+"POT-Creation-Date: 2025-07-31 10:54+0200\n"
+"PO-Revision-Date: 2025-08-13 08:53+0000\n"
 "Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
 "Language-Team: Swedish <https://translate.fedoraproject.org/projects/"
 "authselect/master-application/sv/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.2\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:188
 msgid "Unable to obtain supported features"
@@ -303,7 +303,7 @@ msgstr "Kan inte skapa profilsökvägen: slut på minne"
 
 #: src/lib/authselect_profile.c:555
 #, c-format
-msgid "Profile \"%s\" already exist at [%s]"
+msgid "Profile \"%s\" already exists at [%s]"
 msgstr "Profilen ”%s” finns redan vid [%s]"
 
 #: src/lib/authselect_profile.c:559
@@ -1175,16 +1175,13 @@ msgid "Unable to disable feature [%d]: %s\n"
 msgstr "Kan inte avaktivera funktionen [%d]: %s\n"
 
 #: src/cli/main.c:754
-#, fuzzy
-#| msgid "Feature to enable."
 msgid "Feature to check."
-msgstr "Funktion att aktivera."
+msgstr "Funktion att kontrollera."
 
 #: src/cli/main.c:763
-#, fuzzy, c-format
-#| msgid "Unable to enable feature [%d]: %s\n"
+#, c-format
 msgid "Unable to check feature [%d]: %s\n"
-msgstr "Kan inte aktivera funktionen [%d]: %s\n"
+msgstr "Kan inte kontrollera funktionen [%d]: %s\n"
 
 #: src/cli/main.c:784
 msgid "Create new profile as a vendor profile instead of a custom profile"
@@ -1320,10 +1317,8 @@ msgid "Disable feature in currently selected profile"
 msgstr "Avaktivera en funktion i den nu valda profilen"
 
 #: src/cli/main.c:1013
-#, fuzzy
-#| msgid "Enable feature in currently selected profile"
 msgid "Check if feature is enabled in currently selected profile"
-msgstr "Aktivera en funktion i den nu valda profilen"
+msgstr "Kontrollera om en funktion är aktiverad i den nu valda profilen"
 
 #: src/cli/main.c:1014
 msgid "Create new authselect profile"

@@ -9,8 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-07-09 14:49+0200\n"
-"PO-Revision-Date: 2025-07-26 18:26+0000\n"
+"POT-Creation-Date: 2025-07-31 10:54+0200\n"
+"PO-Revision-Date: 2025-08-11 10:53+0000\n"
 "Last-Translator: Salvatore Cocuzza <info@salvatorecocuzza.it>\n"
 "Language-Team: Italian <https://translate.fedoraproject.org/projects/"
 "authselect/master-authselect8adoc/it/>\n"
@@ -584,12 +584,19 @@ msgstr ""
 "verrà memorizzato in {AUTHSELECT_BACKUP_DIR}/NOME. L'ora corrente con una stringa\n"
 "univoca viene utilizzata come nome se non viene fornito alcun valore.\n"
 
+#. type: Labeled list
+#: src/man/authselect.8.adoc:184
+#, no-wrap
+msgid "*is-feature-enabled* feature"
+msgstr ""
+
 #. type: Plain text
 #: src/man/authselect.8.adoc:186
-#, no-wrap
-msgid ""
-"*is-feature-enabled* feature\n"
-"    Check if feature is currently enabled in the selected profile.\n"
+#, fuzzy
+#| msgid ""
+#| "*is-feature-enabled* feature\n"
+#| "    Check if feature is currently enabled in the selected profile.\n"
+msgid "Check if feature is currently enabled in the selected profile."
 msgstr ""
 "*is-feature-enabled* funzionalità\n"
 "     Verifica se la funzionalità è attualmente abilitata nel profilo "
@@ -1076,8 +1083,8 @@ msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
 msgstr ""
-"Stack PAM incluso da quasi tutti i file di configurazione dei singoli "
-"servizi."
+"PAM stack incluso da quasi tutti i singoli file di configurazione del "
+"servizio."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:322
@@ -1092,9 +1099,9 @@ msgid ""
 "different types of devices via simultaneously running individual "
 "conversations instead of one aggregate conversation."
 msgstr ""
-"Questi stack PAM sono destinati ad applicazioni che gestiscono "
-"l'autenticazione da diversi tipi di dispositivi eseguendo simultaneamente "
-"singole conversazioni anziché un'unica conversazione aggregata."
+"Questi stack PAM sono per applicazioni che gestiscono l'autenticazione da "
+"diversi tipi di dispositivi tramite contemporaneamente conversazioni "
+"individuali anziché una conversazione aggregata."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:327
@@ -1113,13 +1120,13 @@ msgid ""
 "regardless of the success or failure of the modules in the system-auth "
 "configuration file._"
 msgstr ""
-"Lo scopo di questo stack PAM è fornire un luogo comune per tutti i moduli "
-"PAM, che devono essere richiamati dopo lo stack configurato in system-auth o "
-"in altri file di configurazione PAM comuni. È incluso in tutti i file di "
-"configurazione dei singoli servizi che forniscono al servizio di login "
-"l'accesso tramite shell o file. NOTA: i moduli nel file di configurazione "
-"postlogin vengono eseguiti indipendentemente dall'esito positivo o negativo "
-"dei moduli nel file di configurazione system-auth."
+"Lo scopo di questo stack PAM è quello di fornire un luogo comune per tutti i "
+"moduli PAM che dovrebbero essere chiamati dopo lo stack configurato in "
+"System-Auth o negli altri file di configurazione PAM comuni. È incluso da "
+"tutti i singoli file di configurazione del servizio che forniscono un "
+"servizio di accesso con Shell o File Access. _Note: i moduli nel file di "
+"configurazione postlogin vengono eseguiti indipendentemente dal successo o "
+"dal fallimento dei moduli nel file di configurazione System-Auth._"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:336
@@ -1134,10 +1141,10 @@ msgid ""
 "for gnome login screen in order to enable or disable smartcard and "
 "fingerprint authentication."
 msgstr ""
-"Modifiche al database dconf. L'utilizzo principale di questo file è "
-"l'impostazione delle modifiche per la schermata di login di GNOME, al fine "
-"di abilitare o disabilitare l'autenticazione tramite smartcard e impronta "
-"digitale."
+"Modifiche al database DCONF. Il caso principale utilizza di questo file è "
+"impostare le modifiche per la schermata di accesso GNOME al fine di "
+"abilitare o disabilitare l'autenticazione SmartCard e delle impronte "
+"digitali."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:341

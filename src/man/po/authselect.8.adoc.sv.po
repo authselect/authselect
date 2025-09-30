@@ -1,12 +1,13 @@
-# Göran Uddeborg <goeran@uddeborg.se>, 2018. #zanata, 2020, 2022, 2023, 2024.
+# Göran Uddeborg <goeran@uddeborg.se>, 2018. #zanata, 2020, 2022, 2023, 2024, 2025.
 # Pavel Brezina <pbrezina@redhat.com>, 2018. #zanata
-# Göran Uddeborg <goeran@uddeborg.se>, 2019. #zanata, 2020, 2022, 2023, 2024.
+# Göran Uddeborg <goeran@uddeborg.se>, 2019. #zanata, 2020, 2022, 2023, 2024, 2025.
 # Luna Jernberg <bittin@reimu.nl>, 2021, 2023.
+# Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-07-09 14:49+0200\n"
-"PO-Revision-Date: 2024-05-14 11:36+0000\n"
+"POT-Creation-Date: 2025-07-31 10:54+0200\n"
+"PO-Revision-Date: 2025-08-13 08:53+0000\n"
 "Last-Translator: Göran Uddeborg <goeran@uddeborg.se>\n"
 "Language-Team: Swedish <https://translate.fedoraproject.org/projects/"
 "authselect/master-authselect8adoc/sv/>\n"
@@ -15,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
@@ -54,17 +55,6 @@ msgstr "BESKRIVNING"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:21
-#, fuzzy
-#| msgid ""
-#| "*Authselect* is a tool to configure system identity and authentication "
-#| "sources\n"
-#| "and providers by selecting a specific profile. Profile is a set of files "
-#| "that\n"
-#| "describes how the resulting system configuration will look like. When a "
-#| "profile\n"
-#| "is selected, *authselect* will create nsswitch.conf(5) and PAM(8) stack "
-#| "to use\n"
-#| "identity and authentication sources defined by the profile.\n"
 msgid ""
 "*Authselect* is a tool to configure system identity and authentication "
 "sources and providers by selecting a specific profile. Profile is a set of "
@@ -74,14 +64,11 @@ msgid ""
 "profile."
 msgstr ""
 "”Authselect” är ett verktyg för att konfigurera systemets källor och "
-"leverantörer för identitet och\n"
-"autentisering genom att välja en specifik profil. En profil är ett antal "
-"filer som\n"
-"beskriver hur den resulterande systemkonfigurationen skall se ut. När en "
-"profil\n"
-"väljs kommer ”authselect” skapa nsswitch.conf(5) och stacken för PAM(8) till "
-"att\n"
-"använda källor för identitet och autentisering som definieras av profilen.\n"
+"leverantörer för identitet och autentisering genom att välja en specifik "
+"profil. En profil är ett antal filer som beskriver hur den resulterande "
+"systemkonfigurationen skall se ut. När en profil väljs kommer ”authselect” "
+"skapa nsswitch.conf(5) och stacken för PAM(8) till att använda källor för "
+"identitet och autentisering som definieras av profilen."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:27
@@ -590,14 +577,16 @@ msgstr ""
 "kommer lagras i {AUTHSELECT_BACKUP_DIR}/NAMN. Aktuell tid med\n"
 "en unik sträng används som namn om inget värde anges.\n"
 
+#. type: Labeled list
+#: src/man/authselect.8.adoc:184
+#, no-wrap
+msgid "*is-feature-enabled* feature"
+msgstr "*is-feature-enabled* funktion"
+
 #. type: Plain text
 #: src/man/authselect.8.adoc:186
-#, fuzzy, no-wrap
-#| msgid "Disable feature in the currently selected profile."
-msgid ""
-"*is-feature-enabled* feature\n"
-"    Check if feature is currently enabled in the selected profile.\n"
-msgstr "Avaktivera funktionen i den nu valda profilen."
+msgid "Check if feature is currently enabled in the selected profile."
+msgstr "Kontrollera om funktionen är aktiverad i den valda profilen."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:187

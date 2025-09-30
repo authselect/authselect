@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-07-09 14:49+0200\n"
-"PO-Revision-Date: 2025-03-21 20:15+0000\n"
+"POT-Creation-Date: 2025-07-31 10:54+0200\n"
+"PO-Revision-Date: 2025-08-02 02:53+0000\n"
 "Last-Translator: Ricky Tigg <ricky.tigg@gmail.com>\n"
 "Language-Team: Finnish <https://translate.fedoraproject.org/projects/"
 "authselect/master-authselect8adoc/fi/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
@@ -55,17 +55,6 @@ msgstr "KUVAUS"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:21
-#, fuzzy
-#| msgid ""
-#| "*Authselect* is a tool to configure system identity and authentication "
-#| "sources\n"
-#| "and providers by selecting a specific profile. Profile is a set of files "
-#| "that\n"
-#| "describes how the resulting system configuration will look like. When a "
-#| "profile\n"
-#| "is selected, *authselect* will create nsswitch.conf(5) and PAM(8) stack "
-#| "to use\n"
-#| "identity and authentication sources defined by the profile.\n"
 msgid ""
 "*Authselect* is a tool to configure system identity and authentication "
 "sources and providers by selecting a specific profile. Profile is a set of "
@@ -74,15 +63,12 @@ msgid ""
 "PAM(8) stack to use identity and authentication sources defined by the "
 "profile."
 msgstr ""
-"*Authselect* on työkalu järjestelmän identiteetin ja todennuslähteiden ja "
-"palveluntarjoajien\n"
-"määrittämiseen valitsemalla tietty profiili. Profiili on joukko tiedostoja, "
-"jotka kuvaavat, miltä\n"
-"tuloksena oleva järjestelmäkokoonpano näyttää. Kun profiili valitaan, "
-"*authselect*\n"
-"luo nsswitch.conf(5)- ja PAM(8)-pinon käyttämään profiilin määrittämiä "
-"identiteetti-\n"
-"ja todennuslähteitä.\n"
+"*Authselect* on työkalu järjestelmän identiteetti- ja todennuslähteiden ja -"
+"palveluntarjoajien määrittämiseen valitsemalla tietty profiili. Profiili on "
+"tiedostojoukko, joka kuvaa, miltä tuloksena oleva järjestelmäkokoonpano "
+"näyttää. Kun profiili valitaan, *authselect* luo nsswitch.conf(5)- ja PAM(8)-"
+"pinon profiilin määrittämien identiteetti- ja todennuslähteiden "
+"käyttämiseksi."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:27
@@ -591,13 +577,17 @@ msgstr ""
 "Varmuuskopio tallennetaan {AUTHSELECT_BACKUP_DIR}/NIMI:in. Nykyistä aikaa\n"
 "ainutlaatuisella merkkijonolla käytetään nimenä, jos arvoa ei anneta.\n"
 
+#. type: Labeled list
+#: src/man/authselect.8.adoc:184
+#, no-wrap
+msgid "*is-feature-enabled* feature"
+msgstr ""
+
 #. type: Plain text
 #: src/man/authselect.8.adoc:186
-#, fuzzy, no-wrap
+#, fuzzy
 #| msgid "Disable feature in the currently selected profile."
-msgid ""
-"*is-feature-enabled* feature\n"
-"    Check if feature is currently enabled in the selected profile.\n"
+msgid "Check if feature is currently enabled in the selected profile."
 msgstr "Poista ominaisuus käytöstä nykyisessä valitussa profiilissa."
 
 #. type: Labeled list
