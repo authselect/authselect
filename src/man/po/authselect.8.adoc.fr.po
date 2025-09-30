@@ -5,12 +5,14 @@
 # grimst <grimaitres@gmail.com>, 2023.
 # nikau 6 <nikau7@gmail.com>, 2024.
 # Pierre GRASSER <pierre.grasser@proton.me>, 2024.
+# Robin CHARRON <robin.c1906@hotmail.com>, 2025.
+# Léane GRASSER <leane.grasser@proton.me>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-07-09 14:49+0200\n"
-"PO-Revision-Date: 2024-05-07 08:36+0000\n"
-"Last-Translator: Pierre GRASSER <pierre.grasser@proton.me>\n"
+"POT-Creation-Date: 2025-07-31 10:54+0200\n"
+"PO-Revision-Date: 2025-09-11 12:54+0000\n"
+"Last-Translator: Léane GRASSER <leane.grasser@proton.me>\n"
 "Language-Team: French <https://translate.fedoraproject.org/projects/"
 "authselect/master-authselect8adoc/fr/>\n"
 "Language: fr\n"
@@ -18,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.5.2\n"
+"X-Generator: Weblate 5.13.2\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
@@ -59,17 +61,6 @@ msgstr "DESCRIPTION"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:21
-#, fuzzy
-#| msgid ""
-#| "*Authselect* is a tool to configure system identity and authentication "
-#| "sources\n"
-#| "and providers by selecting a specific profile. Profile is a set of files "
-#| "that\n"
-#| "describes how the resulting system configuration will look like. When a "
-#| "profile\n"
-#| "is selected, *authselect* will create nsswitch.conf(5) and PAM(8) stack "
-#| "to use\n"
-#| "identity and authentication sources defined by the profile.\n"
 msgid ""
 "*Authselect* is a tool to configure system identity and authentication "
 "sources and providers by selecting a specific profile. Profile is a set of "
@@ -85,7 +76,7 @@ msgstr ""
 "configuration système résultante. Quand un profil est sélectionné, "
 "*authselect*\n"
 " créera les piles nsswitch.conf(5) et PAM(8) pour utiliser les sources \n"
-" d’identification et d’authentification définies par le profil.\n"
+" d’identification et d’authentification définies par le profil."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:27
@@ -596,14 +587,18 @@ msgstr ""
 "La sauvegarde sera stockée dans {AUTHSELECT_BACKUP_DIR}/NOM.\n"
 "L’heure actuelle sous forme de chaîne unique sera utilisée comme nom pour la sauvegarde si aucune valeur n’est donnée.\n"
 
+#. type: Labeled list
+#: src/man/authselect.8.adoc:184
+#, no-wrap
+msgid "*is-feature-enabled* feature"
+msgstr "*is-feature-enabled* fonctionnalité"
+
 #. type: Plain text
 #: src/man/authselect.8.adoc:186
-#, fuzzy, no-wrap
-#| msgid "Disable feature in the currently selected profile."
-msgid ""
-"*is-feature-enabled* feature\n"
-"    Check if feature is currently enabled in the selected profile.\n"
-msgstr "Désactive la fonctionnalité dans le profil actuellement sélectionné."
+msgid "Check if feature is currently enabled in the selected profile."
+msgstr ""
+"Vérifier si la fonctionnalité est actuellement activée dans le profil "
+"sélectionné."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:187
