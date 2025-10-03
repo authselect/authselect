@@ -11,14 +11,14 @@ from __future__ import annotations
 import pytest
 from pytest_mh._private.multihost import mh_utility
 from sssd_test_framework.roles.client import Client
-from sssd_test_framework.roles.generic import GenericProvider
-from sssd_test_framework.topology import KnownTopology, KnownTopologyGroup
+from sssd_test_framework.roles.ipa import IPA
 from sssd_test_framework.utils.pam import PAMAccessUtils, PAMFaillockUtils
+from authselect_test_framework.topology import KnownTopology
 
 
 @pytest.mark.importance("critical")
-@pytest.mark.topology(KnownTopologyGroup.AnyProvider)
-def test_sssd__selecting_profile_and_user_login(client: Client, provider: GenericProvider):
+@pytest.mark.topology(KnownTopology.SSS)
+def test_sssd__selecting_profile_and_user_login(client: Client, provider: IPA):
     """
     :title: Authselect sssd profile is selected and functionally tested
     :setup:
@@ -43,8 +43,8 @@ def test_sssd__selecting_profile_and_user_login(client: Client, provider: Generi
 
 
 @pytest.mark.importance("critical")
-@pytest.mark.topology(KnownTopologyGroup.AnyProvider)
-def test_sssd__enabling_and_then_disabling_with_mkhomedir_feature(client: Client, provider: GenericProvider):
+@pytest.mark.topology(KnownTopology.SSS)
+def test_sssd__enabling_and_then_disabling_with_mkhomedir_feature(client: Client, provider: IPA):
     """
     :title: Authselect sssd profile with-mkhomedir is functionally tested
     :description:
@@ -83,8 +83,8 @@ def test_sssd__enabling_and_then_disabling_with_mkhomedir_feature(client: Client
 
 
 @pytest.mark.importance("critical")
-@pytest.mark.topology(KnownTopologyGroup.AnyProvider)
-def test_sssd__enabling_and_then_disabling_with_faillock_feature(client: Client, provider: GenericProvider):
+@pytest.mark.topology(KnownTopology.SSS)
+def test_sssd__enabling_and_then_disabling_with_faillock_feature(client: Client, provider: IPA):
     """
     :title: Authselect sssd profile with-faillock is functionally tested
     :description:
@@ -136,8 +136,8 @@ def test_sssd__enabling_and_then_disabling_with_faillock_feature(client: Client,
 
 
 @pytest.mark.importance("critical")
-@pytest.mark.topology(KnownTopologyGroup.AnyProvider)
-def test_sssd__enabling_and_then_disabling_pam_sudo_feature(client: Client, provider: GenericProvider):
+@pytest.mark.topology(KnownTopology.SSS)
+def test_sssd__enabling_and_then_disabling_pam_sudo_feature(client: Client, provider: IPA):
     """
     :title: Authselect sssd profile with-sudo is functionally tested
     :description:
@@ -173,8 +173,8 @@ def test_sssd__enabling_and_then_disabling_pam_sudo_feature(client: Client, prov
 
 
 @pytest.mark.importance("critical")
-@pytest.mark.topology(KnownTopologyGroup.AnyProvider)
-def test_sssd__enabling_and_then_disabling_pam_access_feature(client: Client, provider: GenericProvider):
+@pytest.mark.topology(KnownTopology.SSS)
+def test_sssd__enabling_and_then_disabling_pam_access_feature(client: Client, provider: IPA):
     """
     :title: Authselect sssd profile with-pamaccess is functionally tested
     :description:
@@ -218,8 +218,8 @@ def test_sssd__enabling_and_then_disabling_pam_access_feature(client: Client, pr
 
 
 @pytest.mark.importance("critical")
-@pytest.mark.topology(KnownTopologyGroup.AnyProvider)
-def test_sssd__enabling_and_then_disabling_silent_lastlog_feature(client: Client, provider: GenericProvider):
+@pytest.mark.topology(KnownTopology.SSS)
+def test_sssd__enabling_and_then_disabling_silent_lastlog_feature(client: Client, provider: IPA):
     """
     :title: Authselect sssd profile with-silent-lastlog
     :description:
@@ -255,9 +255,8 @@ def test_sssd__enabling_and_then_disabling_silent_lastlog_feature(client: Client
 
 @pytest.mark.importance("critical")
 @pytest.mark.ticket(bz=2077893)
-@pytest.mark.topology(KnownTopologyGroup.AnyAD)
-@pytest.mark.topology(KnownTopology.IPA)
-def test_sssd__enabling_and_then_disabling_with_gssapi_feature(client: Client, provider: GenericProvider):
+@pytest.mark.topology(KnownTopology.SSS)
+def test_sssd__enabling_and_then_disabling_with_gssapi_feature(client: Client, provider: IPA):
     """
     :title: Authselect sssd profile with-gssapi feature
     :description: GSSAPI is pre-authenticating the sudo commands using the ccache.
