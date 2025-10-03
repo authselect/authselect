@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: authselect 1.2.2\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
 "POT-Creation-Date: 2022-12-01 13:40+0100\n"
-"PO-Revision-Date: 2025-03-21 07:53+0000\n"
+"PO-Revision-Date: 2025-10-01 16:37+0000\n"
 "Last-Translator: Ricky Tigg <ricky.tigg@gmail.com>\n"
 "Language-Team: Finnish <https://translate.fedoraproject.org/projects/"
 "authselect/1-2-x-application/fi/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.13.3\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:187
 msgid "Unable to obtain supported features"
@@ -83,7 +83,7 @@ msgstr "Profiilia [%s] [%d] ei voida aktivoida: %s"
 
 #: src/lib/authselect.c:150
 msgid "Trying to uninstall authselect configuration"
-msgstr "Trying to uninstall authselect configuration"
+msgstr "Yritetään poistaa authselect-kokoonpanoa"
 
 #: src/lib/authselect.c:154
 #, c-format
@@ -620,7 +620,7 @@ msgstr "Ei pysty saamaan tilaa [%s] [%d]: %s"
 #: src/lib/util/dir.c:130
 #, c-format
 msgid "Unable to stat directory [%d]: %s"
-msgstr "Hakemiston [%d] statuksen saanti epäonnistui: %s"
+msgstr "Hakemiston [%d] tilastointi ei voitu tehdä: %s"
 
 #: src/lib/util/dir.c:313
 #, c-format
@@ -834,7 +834,7 @@ msgstr "Yleisasetukset:\n"
 
 #: src/cli/cli_tool.c:74 src/cli/cli_tool.c:96
 msgid "Print error messages"
-msgstr "Tulosta virheilmoitukset"
+msgstr "Tulosta virheviestit"
 
 #: src/cli/cli_tool.c:76 src/cli/cli_tool.c:97
 msgid "Print trace messages"
@@ -865,7 +865,7 @@ msgid ""
 "\n"
 msgstr ""
 "Käyttö:\n"
-"%s COMMAND COMMAND-ARGS\n"
+"%s KOMENTO KOMENTO-ARGUMENTIT\n"
 "\n"
 
 #: src/cli/cli_tool.c:174
@@ -1300,7 +1300,7 @@ msgstr "Valitse profiili"
 
 #: src/cli/main.c:971
 msgid "Regenerate configuration for currently selected command"
-msgstr "Luo uudelleen tällä hetkellä valitun komennon asetukset"
+msgstr "Luo tällä hetkellä valitun komennon kokoonpano uudelleen"
 
 #: src/cli/main.c:972
 msgid "List available profiles"
@@ -1344,11 +1344,11 @@ msgstr "Luo uusi authselect-profiili"
 
 #: src/cli/main.c:982
 msgid "Backup commands:"
-msgstr "Varmuuskopio komennot:"
+msgstr "Varmuuskopio-komennot:"
 
 #: src/cli/main.c:983
 msgid "List available backups"
-msgstr "Listaa saattavilla olevat varmuuskopiot"
+msgstr "Luettele saattavilla olevat varmuuskopiot"
 
 #: src/cli/main.c:984
 msgid "Remove backup"
@@ -1600,7 +1600,7 @@ msgstr "<käyttäjä|palvelin|toimialue|mainokset>"
 
 #: src/compat/authcompat_Options.py:153
 msgid "<servers>"
-msgstr "<palvelin>"
+msgstr "<palvelimet>"
 
 #: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
 #: src/compat/authcompat_Options.py:156

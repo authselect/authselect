@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-05-04 13:50+0200\n"
-"PO-Revision-Date: 2025-03-22 11:53+0000\n"
+"PO-Revision-Date: 2025-10-03 08:54+0000\n"
 "Last-Translator: Ricky Tigg <ricky.tigg@gmail.com>\n"
 "Language-Team: Finnish <https://translate.fedoraproject.org/projects/"
 "authselect/12x-authselect-profiles5adoc/fi/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.13.3\n"
 
 #. type: Title =
 #: ./src/man/authselect-profiles.5.adoc:2
@@ -252,7 +252,7 @@ msgstr ""
 #: ./src/man/authselect-profiles.5.adoc:74
 #, no-wrap
 msgid "*{continue if \"feature\"}*"
-msgstr ""
+msgstr "*{jatka, jos \"ominaisuus\"}*"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:79
@@ -270,7 +270,7 @@ msgstr ""
 #: ./src/man/authselect-profiles.5.adoc:80
 #, no-wrap
 msgid "*{stop if \"feature\"}*"
-msgstr ""
+msgstr "*{lopeta, jos \"ominaisuus\"}*"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:85
@@ -280,12 +280,16 @@ msgid ""
 "\"feature\" is not defined, the whole line with this operator will be "
 "removed and the rest of the template will be processed."
 msgstr ""
+"\"Continue if\":n vastakohta. Lopeta tiedoston käsittely välittömästi, jos "
+"\"feature\" on määritelty (tiedoston loppusisältö poistetaan). Jos "
+"\"feature\" ei ole määritelty, koko tätä operaattoria sisältävä rivi "
+"poistetaan ja loput mallineesta käsitellään."
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:86
 #, no-wrap
 msgid "*{include if \"feature\"}*"
-msgstr ""
+msgstr "*{sisällytä jos \"ominaisuus\"}*"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:89
@@ -293,12 +297,14 @@ msgid ""
 "Include the line where this operator is placed only if \"feature\" is "
 "defined."
 msgstr ""
+"Sisällytä rivi, jolle tämä operaattori sijoitetaan, vain jos \"feature\" on "
+"määritelty."
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:90
 #, no-wrap
 msgid "*{exclude if \"feature\"}*"
-msgstr ""
+msgstr "*{sulje pois, jos \"ominaisuus\"}*"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:93
@@ -306,6 +312,8 @@ msgid ""
 "Opposite to \"include-if\". Include the line where this operator is placed "
 "only if \"feature\" is not defined."
 msgstr ""
+"Vastakohtana \"include-if\". Sisällytä rivi, jolle tämä operaattori "
+"sijoitetaan, vain jos \"feature\"-operaattoria ei ole määritelty."
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:94
@@ -320,6 +328,9 @@ msgid ""
 "whole line with this operator is removed, thus it is not possible to add "
 "anything else around this operator at the same line."
 msgstr ""
+"Ota ominaisuus \"implied-feature\" käyttöön, jos ominaisuus \"feature\" on "
+"käytössä. Koko operaattoria sisältävä rivi poistetaan, joten operaattorin "
+"ympärille ei voi lisätä mitään muuta samalle riville."
 
 #. type: Labeled list
 #: ./src/man/authselect-profiles.5.adoc:99
@@ -426,7 +437,7 @@ msgstr ""
 #: ./src/man/authselect-profiles.5.adoc:135
 #, no-wrap
 msgid "EXAMPLE"
-msgstr ""
+msgstr "ESIMERKKI"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:138
@@ -434,6 +445,8 @@ msgid ""
 "Here is an example of using \"if\" operator. If \"with-sudo\" feature is "
 "enabled, it will add \"sss\" to sudoers line."
 msgstr ""
+"Tässä on esimerkki \"if\"-operaattorin käytöstä. Jos \"with-sudo\"-"
+"ominaisuus on otettu käyttöön, se lisää \"sss\":n sudoers-riville."
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:145
@@ -455,6 +468,10 @@ msgid ""
 "enabled. If it is enabled and also \"with-faillock\" feature is enabled, it "
 "will also enable support for pam_faillock."
 msgstr ""
+"Tässä on esimerkki \"continue-if\"- ja \"include-if\"-operaattoreista. "
+"Tuloksena oleva tiedosto on tyhjä, ellei \"with-smartcard\"-ominaisuus ole "
+"käytössä. Jos se on käytössä ja myös \"with-faillock\"-ominaisuus on "
+"käytössä, se ottaa myös pam_faillock-tuen käyttöön."
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:163
@@ -481,6 +498,25 @@ msgid ""
 "  auth        required                                     pam_deny.so\n"
 "  ...\n"
 msgstr ""
+"  {continue if \"with-smartcard\"}\n"
+"  auth        vaadittu                                     pam_env.so\n"
+"  auth        vaadittu                                     pam_faildelay.so "
+"delay=2000000\n"
+"  auth        vaadittu                                     pam_faillock.so "
+"preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
+"uid >= 1000 quiet\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
+"  auth        riittävä                                     pam_unix.so "
+"nullok\n"
+"  auth        vaatimus                                     pam_succeed_if.so "
+"uid >= 1000 quiet_success\n"
+"  auth        riittävä                                     pam_sss.so "
+"forward_pass\n"
+"  auth        vaadittu                                     pam_faillock.so "
+"authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
+"  auth        vaadittu                                     pam_deny.so\n"
+"  ...\n"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:168
@@ -491,6 +527,11 @@ msgid ""
 "not have to include both features but only \"with-smartcard-required\" is "
 "necessary."
 msgstr ""
+"Tässä on esimerkki \"continue-if\"-komennosta, joka käyttää loogista "
+"lauseketta. Tiedosto on tyhjä, ellei \"with-smartcard\" tai "
+"\"with-smartcard-required\" ole asetettu. Tämä yksinkertaistaa _authselect "
+"select_ -komennon kutsua, jonka ei tarvitse sisältää molempia ominaisuuksia, "
+"mutta vain \"with-smartcard-required\" on tarpeen."
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:181
@@ -517,6 +558,25 @@ msgid ""
 "  auth        required                                     pam_deny.so\n"
 "  ...\n"
 msgstr ""
+"  {continue if \"with-smartcard\" or \"with-smartcard-vaadittu\"}\n"
+"  auth        vaadittu                                     pam_env.so\n"
+"  auth        vaadittu                                     pam_faildelay.so "
+"delay=2000000\n"
+"  auth        vaadittu                                     pam_faillock.so "
+"preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
+"uid >= 1000 quiet\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
+"  auth        riittävä                                     pam_unix.so "
+"nullok\n"
+"  auth        vaatimus                                     pam_succeed_if.so "
+"uid >= 1000 quiet_success\n"
+"  auth        riittävä                                     pam_sss.so "
+"forward_pass\n"
+"  auth        vaadittu                                     pam_faillock.so "
+"authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
+"  auth        vaadittu                                     pam_deny.so\n"
+"  ...\n"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:186
@@ -526,6 +586,10 @@ msgid ""
 "that all relevant PAM modules are used. This will achieve the same behavior "
 "as the previous example."
 msgstr ""
+"Tässä on esimerkki \"implicy-if\"-operaattorista. Ominaisuuden "
+"\"with-smartcard-required\" käyttöönotto ottaa myös \"with-smartcard\"-"
+"ominaisuuden käyttöön, jotta kaikki asiaankuuluvat PAM-moduulit ovat "
+"käytössä. Tämä toimii samalla tavalla kuin edellisessä esimerkissä."
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:201
@@ -560,12 +624,41 @@ msgid ""
 "  auth        required                                     pam_deny.so\n"
 "  ...\n"
 msgstr ""
+"  {imply \"with-smartcard\" if \"with-smartcard-vaadittu\"}\n"
+"  auth        vaadittu                                     pam_env.so\n"
+"  auth        vaadittu                                     pam_faildelay.so "
+"delay=2000000\n"
+"  auth        [success=1 default=ignore]                   pam_succeed_if.so "
+"service notin login:gdm:xdm:kdm:kde:xscreensaver:gnome-screensaver:"
+"kscreensaver quiet use_uid {include if \"with-smartcard-vaadittu\"}\n"
+"  auth        [success=done ignore=ignore default=die]     pam_sss.so "
+"require_cert_auth ignore_authinfo_unavail             {include if "
+"\"with-smartcard-vaadittu\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
+"uid >= 1000 quiet\n"
+"  auth        [default=1 ignore=ignore success=ok]         "
+"pam_localuser.so                                                 {exclude if "
+"\"with-smartcard\"}\n"
+"  auth        [default=2 ignore=ignore success=ok]         "
+"pam_localuser.so                                                 {include if "
+"\"with-smartcard\"}\n"
+"  auth        [success=done authinfo_unavail=ignore user_unknown=ignore "
+"ignore=ignore default=die] pam_sss.so try_cert_auth {include if "
+"\"with-smartcard\"}\n"
+"  auth        riittävä                                     pam_unix.so {if "
+"not \"without-nullok\":nullok}\n"
+"  auth        vaatimus                                     pam_succeed_if.so "
+"uid >= 1000 quiet_success\n"
+"  auth        riittävä                                     pam_sss.so "
+"forward_pass\n"
+"  auth        vaadittu                                     pam_deny.so\n"
+"  ...\n"
 
 #. type: Title -
 #: ./src/man/authselect-profiles.5.adoc:203
 #, no-wrap
 msgid "CREATING A NEW PROFILE"
-msgstr ""
+msgstr "UUDEN PROFIILIN LUOMINEN"
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:208
@@ -575,6 +668,10 @@ msgid ""
 "files must be present, only *README* is mandatory. Other files can be "
 "created on per-need basis."
 msgstr ""
+"Rekisteröidäksesi uuden profiilin authselectissä, luo hakemisto johonkin "
+"authselect-profiilin sijaintiin ja lisää siihen yllä luetellut tiedostot. "
+"Kaikkien tiedostojen ei tarvitse olla hakemistossa, vain *README* on "
+"pakollinen. Muita tiedostoja voi luoda tarpeen mukaan."
 
 #. type: Plain text
 #: ./src/man/authselect-profiles.5.adoc:212
@@ -583,6 +680,9 @@ msgid ""
 "profile. See *authselect(8)* manual page or *authselect create-profile "
 "--help* for more information."
 msgstr ""
+"Komennosta *authselect create-profile* voi olla hyötyä uutta profiilia "
+"luotaessa. Katso lisätietoja *authselect(8)*-käyttöohjeesta tai *authselect "
+"create-profile --help*."
 
 #. type: Title -
 #: ./src/man/authselect-profiles.5.adoc:214
