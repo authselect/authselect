@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-12-01 13:40+0100\n"
-"PO-Revision-Date: 2025-06-07 12:57+0000\n"
-"Last-Translator: Andrea Morelli <morelliandrea973@gmail.com>\n"
+"PO-Revision-Date: 2025-08-11 10:53+0000\n"
+"Last-Translator: Salvatore Cocuzza <info@salvatorecocuzza.it>\n"
 "Language-Team: Italian <https://translate.fedoraproject.org/projects/"
 "authselect/12x-authselect8adoc/it/>\n"
 "Language: it\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11.4\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
@@ -1185,7 +1185,7 @@ msgstr "*{AUTHSELECT_NSSWITCH_CONF}*"
 #. type: Plain text
 #: src/man/authselect.8.adoc:358
 msgid "Name Service Switch configuration file."
-msgstr ""
+msgstr "File di configurazione del Name Service Switch."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:359
@@ -1199,6 +1199,8 @@ msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
 msgstr ""
+"PAM stack incluso da quasi tutti i singoli file di configurazione del "
+"servizio."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:363
@@ -1215,6 +1217,9 @@ msgid ""
 "different types of devices via simultaneously running individual "
 "conversations instead of one aggregate conversation."
 msgstr ""
+"Questi stack PAM sono per applicazioni che gestiscono l'autenticazione da "
+"diversi tipi di dispositivi tramite contemporaneamente conversazioni "
+"individuali anziché una conversazione aggregata."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:368
@@ -1233,6 +1238,13 @@ msgid ""
 "regardless of the success or failure of the modules in the system-auth "
 "configuration file._"
 msgstr ""
+"Lo scopo di questo stack PAM è quello di fornire un luogo comune per tutti i "
+"moduli PAM che dovrebbero essere chiamati dopo lo stack configurato in "
+"System-Auth o negli altri file di configurazione PAM comuni. È incluso da "
+"tutti i singoli file di configurazione del servizio che forniscono un "
+"servizio di accesso con Shell o File Access. _Note: i moduli nel file di "
+"configurazione postlogin vengono eseguiti indipendentemente dal successo o "
+"dal fallimento dei moduli nel file di configurazione System-Auth._"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:377
@@ -1247,6 +1259,10 @@ msgid ""
 "for gnome login screen in order to enable or disable smartcard and "
 "fingerprint authentication."
 msgstr ""
+"Modifiche al database DCONF. Il caso principale utilizza di questo file è "
+"impostare le modifiche per la schermata di accesso GNOME al fine di "
+"abilitare o disabilitare l'autenticazione SmartCard e delle impronte "
+"digitali."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:382
@@ -1258,6 +1274,7 @@ msgstr "*{AUTHSELECT_DCONF_DIR}/locks/{AUTHSELECT_DCONF_FILE}*"
 #: src/man/authselect.8.adoc:384
 msgid "This file define locks on values set in dconf database."
 msgstr ""
+"Questo file definisce i blocchi sui valori impostati nel database dconf."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:386
