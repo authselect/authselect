@@ -10,16 +10,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-02-23 14:08+0100\n"
-"PO-Revision-Date: 2025-06-07 11:55+0000\n"
-"Last-Translator: Andrea Morelli <morelliandrea973@gmail.com>\n"
+"PO-Revision-Date: 2025-10-23 12:53+0000\n"
+"Last-Translator: Salvatore Cocuzza <info@salvatorecocuzza.it>\n"
 "Language-Team: Italian <https://translate.fedoraproject.org/projects/"
-"authselect/master-authselect8adoc/it/>\n"
+"authselect/15x-authselect8adoc/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11.4\n"
+"X-Generator: Weblate 5.13.3\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
@@ -55,7 +55,7 @@ msgstr " authselect [--debug] [--trace] [--warn] comando [opzioni_comando]\n"
 #: src/man/authselect.8.adoc:15
 #, no-wrap
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "DESCRIZIONE"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:21
@@ -905,7 +905,7 @@ msgstr "Stampa informazioni su cosa sta facendo lo strumento."
 #: src/man/authselect.8.adoc:259
 #, no-wrap
 msgid "*--warn*"
-msgstr ""
+msgstr "*--avvisare*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:263
@@ -974,7 +974,7 @@ msgstr "Errore: sono state rilevate modifiche impreviste alla configurazione."
 #. type: Plain text
 #: src/man/authselect.8.adoc:284
 msgid "For example:"
-msgstr ""
+msgstr "Per esempio:"
 
 #. type: delimited block .
 #: src/man/authselect.8.adoc:290
@@ -1086,7 +1086,7 @@ msgstr "*{AUTHSELECT_NSSWITCH_CONF}*"
 #. type: Plain text
 #: src/man/authselect.8.adoc:314
 msgid "Name Service Switch configuration file."
-msgstr ""
+msgstr "File di configurazione del Name Service Switch."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:315
@@ -1100,6 +1100,8 @@ msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
 msgstr ""
+"PAM stack incluso da quasi tutti i singoli file di configurazione del "
+"servizio."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:319
@@ -1116,6 +1118,9 @@ msgid ""
 "different types of devices via simultaneously running individual "
 "conversations instead of one aggregate conversation."
 msgstr ""
+"Questi stack PAM sono per applicazioni che gestiscono l'autenticazione da "
+"diversi tipi di dispositivi tramite contemporaneamente conversazioni "
+"individuali anziché una conversazione aggregata."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:324
@@ -1134,6 +1139,13 @@ msgid ""
 "regardless of the success or failure of the modules in the system-auth "
 "configuration file._"
 msgstr ""
+"Lo scopo di questo stack PAM è quello di fornire un luogo comune per tutti i "
+"moduli PAM che dovrebbero essere chiamati dopo lo stack configurato in "
+"System-Auth o negli altri file di configurazione PAM comuni. È incluso da "
+"tutti i singoli file di configurazione del servizio che forniscono un "
+"servizio di accesso con Shell o File Access. _Note: i moduli nel file di "
+"configurazione postlogin vengono eseguiti indipendentemente dal successo o "
+"dal fallimento dei moduli nel file di configurazione System-Auth._"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:333
@@ -1148,6 +1160,10 @@ msgid ""
 "for gnome login screen in order to enable or disable smartcard and "
 "fingerprint authentication."
 msgstr ""
+"Modifiche al database DCONF. Il caso principale utilizza di questo file è "
+"impostare le modifiche per la schermata di accesso GNOME al fine di "
+"abilitare o disabilitare l'autenticazione SmartCard e delle impronte "
+"digitali."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:338
@@ -1159,12 +1175,13 @@ msgstr "*{AUTHSELECT_DCONF_DIR}/locks/{AUTHSELECT_DCONF_FILE}*"
 #: src/man/authselect.8.adoc:340
 msgid "This file define locks on values set in dconf database."
 msgstr ""
+"Questo file definisce i blocchi sui valori impostati nel database dconf."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:342
 #, no-wrap
 msgid "SEE ALSO"
-msgstr ""
+msgstr "VEDI ANCHE"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:343
