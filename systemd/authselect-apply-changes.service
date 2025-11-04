@@ -3,6 +3,7 @@ Description=Apply authselect changes
 Documentation=man:authselect(8)
 After=local-fs.target
 Before=systemd-user-sessions.service nss-user-lookup.target
+ConditionPathIsReadWrite=/etc
 
 [Service]
 Type=oneshot
