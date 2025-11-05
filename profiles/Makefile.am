@@ -9,6 +9,7 @@ dist_profile_minimal_DATA = \
     $(top_srcdir)/profiles/minimal/README \
     $(top_srcdir)/profiles/minimal/REQUIREMENTS \
     $(top_srcdir)/profiles/minimal/smartcard-auth \
+    $(top_srcdir)/profiles/minimal/switchable-auth \
     $(top_srcdir)/profiles/minimal/system-auth \
     $(top_srcdir)/profiles/minimal/fingerprint-auth \
     $(top_srcdir)/profiles/minimal/dconf-db \
@@ -23,6 +24,7 @@ dist_profile_nis_DATA = \
     $(top_srcdir)/profiles/nis/README \
     $(top_srcdir)/profiles/nis/REQUIREMENTS \
     $(top_srcdir)/profiles/nis/smartcard-auth \
+    $(top_srcdir)/profiles/nis/switchable-auth \
     $(top_srcdir)/profiles/nis/system-auth \
     $(top_srcdir)/profiles/nis/fingerprint-auth \
     $(top_srcdir)/profiles/nis/dconf-db \
@@ -51,6 +53,7 @@ dist_profile_winbind_DATA = \
     $(top_srcdir)/profiles/winbind/README \
     $(top_srcdir)/profiles/winbind/REQUIREMENTS \
     $(top_srcdir)/profiles/winbind/smartcard-auth \
+    $(top_srcdir)/profiles/winbind/switchable-auth \
     $(top_srcdir)/profiles/winbind/system-auth \
     $(top_srcdir)/profiles/winbind/fingerprint-auth \
     $(top_srcdir)/profiles/winbind/dconf-db \
