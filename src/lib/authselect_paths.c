@@ -51,6 +51,12 @@ authselect_path_fingerprintauth()
 }
 
 _PUBLIC_ const char *
+authselect_path_switchableauth()
+{
+    return PATH_SYMLINK_SWITCHABLE;
+}
+
+_PUBLIC_ const char *
 authselect_path_postlogin()
 {
     return PATH_SYMLINK_POSTLOGIN;
