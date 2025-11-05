@@ -4,6 +4,7 @@
 enable-smartcard-authentication={if "with-smartcard":true|false}
 enable-fingerprint-authentication={if "with-fingerprint":true|false}
 enable-password-authentication={if "with-smartcard-required":false|true}
+enable-switchable-authentication={if "with-switchable-auth":true|false}
 
 [org/gnome/settings-daemon/peripherals/smartcard] {include if "with-smartcard-lock-on-removal"}
 removal-action='lock-screen'                      {include if "with-smartcard-lock-on-removal"}
