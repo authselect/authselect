@@ -1,9 +1,12 @@
 {imply "with-smartcard" if "with-smartcard-required"}
 {imply "with-smartcard" if "with-smartcard-lock-on-removal"}
+{imply "with-switchable-auth" if "with-switchable-passkey-auth"}
+{imply "with-switchable-auth" if "with-switchable-web-auth"}
 [org/gnome/login-screen]
 enable-smartcard-authentication={if "with-smartcard":true|false}
 enable-fingerprint-authentication={if "with-fingerprint":true|false}
 enable-password-authentication={if "with-smartcard-required":false|true}
+enable-switchable-authentication={if "with-switchable-auth":true|false}
 
 [org/gnome/settings-daemon/peripherals/smartcard] {include if "with-smartcard-lock-on-removal"}
 removal-action='lock-screen'                      {include if "with-smartcard-lock-on-removal"}
