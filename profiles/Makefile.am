@@ -41,6 +41,7 @@ dist_profile_sssd_DATA = \
     $(top_srcdir)/profiles/sssd/README \
     $(top_srcdir)/profiles/sssd/REQUIREMENTS \
     $(top_srcdir)/profiles/sssd/smartcard-auth \
+    $(top_srcdir)/profiles/sssd/switchable-auth \
     $(top_srcdir)/profiles/sssd/system-auth \
     $(top_srcdir)/profiles/sssd/fingerprint-auth \
     $(top_srcdir)/profiles/sssd/dconf-db \

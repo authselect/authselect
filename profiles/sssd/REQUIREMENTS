@@ -28,3 +28,6 @@ Make sure that SSSD service is configured and enabled. See SSSD documentation fo
                                                                                           {include if "with-systemd-homed"}
 - with-systemd-homed is selected, make sure that the system-homed service is enabled      {include if "with-systemd-homed"}
   - systemctl enable --now systemd-homed.service                                          {include if "with-systemd-homed"}
+                                                                                          {include if "with-switchable-auth"}
+- with-switchable-auth is selected, make sure to enable it in sssd.conf                   {include if "with-switchable-auth"}
+  - set "pam_json_services = list-of-services" in [pam] section                           {include if "with-switchable-auth"}
