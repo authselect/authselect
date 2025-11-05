@@ -434,6 +434,17 @@ const char *
 authselect_files_fingerprintauth(const struct authselect_files *files);
 
 /**
+ * Get switchable-auth pam stack content.
+ *
+ * @param files    Pointer to structure obtained by @authselect_cat.
+ *
+ * @return Generated switchable-auth pam stack content or NULL if the profile does
+ * not touch this stack.
+ */
+const char *
+authselect_files_switchableauth(const struct authselect_files *files);
+
+/**
  * Get postlogin pam stack content.
  *
  * @param files    Pointer to structure obtained by @authselect_cat.
@@ -501,6 +512,12 @@ authselect_path_smartcardauth();
  */
 const char *
 authselect_path_fingerprintauth();
+
+/**
+ * @return Path to system switchable-auth pam stack.
+ */
+const char *
+authselect_path_switchableauth();
 
 /**
  * @return Path to system postlogin pam stack.

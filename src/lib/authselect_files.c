@@ -102,6 +102,16 @@ authselect_files_fingerprintauth(const struct authselect_files *files)
 }
 
 _PUBLIC_ const char *
+authselect_files_switchableauth(const struct authselect_files *files)
+{
+    if (files == NULL) {
+        return NULL;
+    }
+
+    return files->switchableauth;
+}
+
+_PUBLIC_ const char *
 authselect_files_postlogin(const struct authselect_files *files)
 {
     if (files == NULL) {
@@ -148,6 +158,10 @@ authselect_files_free(struct authselect_files *files)
 
     if (files->smartcardauth != NULL) {
         free(files->smartcardauth);
+    }
+
+    if (files->switchableauth != NULL) {
+        free(files->switchableauth);
     }
 
     if (files->fingerprintauth != NULL) {
