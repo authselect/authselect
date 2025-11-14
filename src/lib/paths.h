@@ -38,6 +38,7 @@
 #define FILE_PASSWORD    "password-auth"
 #define FILE_FINGERPRINT "fingerprint-auth"
 #define FILE_SMARTCARD   "smartcard-auth"
+#define FILE_SWITCHABLE  "switchable-auth"
 #define FILE_POSTLOGIN   "postlogin"
 #define FILE_NSSWITCH    "nsswitch.conf"
 #define FILE_DCONF_DB    "dconf-db"
@@ -48,6 +49,7 @@
 #define PATH_PASSWORD    AUTHSELECT_CONFIG_DIR "/" FILE_PASSWORD
 #define PATH_FINGERPRINT AUTHSELECT_CONFIG_DIR "/" FILE_FINGERPRINT
 #define PATH_SMARTCARD   AUTHSELECT_CONFIG_DIR "/" FILE_SMARTCARD
+#define PATH_SWITCHABLE  AUTHSELECT_CONFIG_DIR "/" FILE_SWITCHABLE
 #define PATH_POSTLOGIN   AUTHSELECT_CONFIG_DIR "/" FILE_POSTLOGIN
 #define PATH_NSSWITCH    AUTHSELECT_CONFIG_DIR "/" FILE_NSSWITCH
 #define PATH_DCONF_DB    AUTHSELECT_CONFIG_DIR "/" FILE_DCONF_DB
@@ -58,6 +60,7 @@
 #define PATH_SYMLINK_PASSWORD    AUTHSELECT_PAM_DIR "/" FILE_PASSWORD
 #define PATH_SYMLINK_FINGERPRINT AUTHSELECT_PAM_DIR "/" FILE_FINGERPRINT
 #define PATH_SYMLINK_SMARTCARD   AUTHSELECT_PAM_DIR "/" FILE_SMARTCARD
+#define PATH_SYMLINK_SWITCHABLE  AUTHSELECT_PAM_DIR "/" FILE_SWITCHABLE
 #define PATH_SYMLINK_POSTLOGIN   AUTHSELECT_PAM_DIR "/" FILE_POSTLOGIN
 #define PATH_SYMLINK_NSSWITCH    AUTHSELECT_NSSWITCH_CONF
 #define PATH_SYMLINK_DCONF_DB    AUTHSELECT_DCONF_DIR  "/" AUTHSELECT_DCONF_FILE
@@ -85,6 +88,7 @@ struct authselect_generated {
     {PATH_PASSWORD,    (files)->passwordauth},                       \
     {PATH_FINGERPRINT, (files)->fingerprintauth},                    \
     {PATH_SMARTCARD,   (files)->smartcardauth},                      \
+    {PATH_SWITCHABLE,  (files)->switchableauth},                    \
     {PATH_POSTLOGIN,   (files)->postlogin},                          \
     {PATH_NSSWITCH,    (files)->nsswitch},                           \
     {PATH_DCONF_DB,    (files)->dconfdb},                            \
@@ -98,6 +102,7 @@ struct authselect_generated {
     {PATH_PASSWORD,    NULL},                                        \
     {PATH_FINGERPRINT, NULL},                                        \
     {PATH_SMARTCARD,   NULL},                                        \
+    {PATH_SWITCHABLE,  NULL},                                        \
     {PATH_POSTLOGIN,   NULL},                                        \
     {PATH_NSSWITCH,    NULL},                                        \
     {PATH_DCONF_DB,    NULL},                                        \
@@ -111,6 +116,7 @@ struct authselect_generated {
     {FILE_PASSWORD,    (files)->passwordauth},                       \
     {FILE_FINGERPRINT, (files)->fingerprintauth},                    \
     {FILE_SMARTCARD,   (files)->smartcardauth},                      \
+    {FILE_SWITCHABLE,  (files)->switchableauth},                     \
     {FILE_POSTLOGIN,   (files)->postlogin},                          \
     {FILE_NSSWITCH,    (files)->nsswitch},                           \
     {FILE_DCONF_DB,    (files)->dconfdb},                            \
@@ -136,6 +142,7 @@ struct authselect_symlink {
     {PATH_SYMLINK_PASSWORD,    PATH_PASSWORD,    false},                \
     {PATH_SYMLINK_FINGERPRINT, PATH_FINGERPRINT, false},                \
     {PATH_SYMLINK_SMARTCARD,   PATH_SMARTCARD,   false},                \
+    {PATH_SYMLINK_SWITCHABLE,  PATH_SWITCHABLE,  false},                \
     {PATH_SYMLINK_POSTLOGIN,   PATH_POSTLOGIN,   false},                \
     {PATH_SYMLINK_NSSWITCH,    PATH_NSSWITCH,    false},                \
     {PATH_SYMLINK_DCONF_DB,    PATH_DCONF_DB,    true},                 \
@@ -148,7 +155,7 @@ struct authselect_symlink {
 #define FILES_META      FILE_README, FILE_REQUIREMENT
 #define FILES_NSSWITCH  FILE_NSSWITCH
 #define FILES_PAM       FILE_SYSTEM, FILE_PASSWORD, FILE_FINGERPRINT,   \
-                        FILE_SMARTCARD, FILE_POSTLOGIN
+                        FILE_SMARTCARD, FILE_SWITCHABLE, FILE_POSTLOGIN
 #define FILES_DCONF     FILE_DCONF_DB, FILE_DCONF_LOCK
 
 #define FILES_ALL       FILES_META, FILES_NSSWITCH, FILES_PAM, FILES_DCONF

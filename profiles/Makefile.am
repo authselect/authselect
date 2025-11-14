@@ -10,6 +10,7 @@ dist_profile_local_DATA = \
     $(top_srcdir)/profiles/local/README \
     $(top_srcdir)/profiles/local/REQUIREMENTS \
     $(top_srcdir)/profiles/local/smartcard-auth \
+    $(top_srcdir)/profiles/local/switchable-auth \
     $(top_srcdir)/profiles/local/system-auth \
     $(top_srcdir)/profiles/local/fingerprint-auth \
     $(top_srcdir)/profiles/local/dconf-db \
@@ -25,6 +26,7 @@ dist_profile_nis_DATA = \
     $(top_srcdir)/profiles/nis/README \
     $(top_srcdir)/profiles/nis/REQUIREMENTS \
     $(top_srcdir)/profiles/nis/smartcard-auth \
+    $(top_srcdir)/profiles/nis/switchable-auth \
     $(top_srcdir)/profiles/nis/system-auth \
     $(top_srcdir)/profiles/nis/fingerprint-auth \
     $(top_srcdir)/profiles/nis/dconf-db \
@@ -40,6 +42,7 @@ dist_profile_sssd_DATA = \
     $(top_srcdir)/profiles/sssd/README \
     $(top_srcdir)/profiles/sssd/REQUIREMENTS \
     $(top_srcdir)/profiles/sssd/smartcard-auth \
+    $(top_srcdir)/profiles/sssd/switchable-auth \
     $(top_srcdir)/profiles/sssd/system-auth \
     $(top_srcdir)/profiles/sssd/fingerprint-auth \
     $(top_srcdir)/profiles/sssd/dconf-db \
@@ -54,6 +57,7 @@ dist_profile_winbind_DATA = \
     $(top_srcdir)/profiles/winbind/README \
     $(top_srcdir)/profiles/winbind/REQUIREMENTS \
     $(top_srcdir)/profiles/winbind/smartcard-auth \
+    $(top_srcdir)/profiles/winbind/switchable-auth \
     $(top_srcdir)/profiles/winbind/system-auth \
     $(top_srcdir)/profiles/winbind/fingerprint-auth \
     $(top_srcdir)/profiles/winbind/dconf-db \

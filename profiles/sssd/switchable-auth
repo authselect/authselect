@@ -1,0 +1,17 @@
+auth required pam_debug.so auth=authinfo_unavail {exclude if "with-switchable-auth"}
+{continue if "with-switchable-auth"}
+auth      [success=done ignore=ignore default=bad]     pam_selinux_permit.so
+auth      required                                     pam_env.so
+auth      required                                     pam_faildelay.so delay=2000000
+auth      required                                     pam_faillock.so preauth silent                         {include if "with-faillock"}
+auth      [default=1 ignore=ignore success=ok]         pam_usertype.so isregular
+auth      [default=1 ignore=ignore success=ok]         pam_localuser.so
+auth      sufficient                                   pam_unix.so nullok
+auth      [default=1 ignore=ignore success=ok]         pam_usertype.so isregular
+auth      sufficient                                   pam_sss.so
+auth      optional                                     pam_gnome_keyring.so only_if=login auto_start          {include if "with-pam-gnome-keyring"}
+auth      required                                     pam_deny.so
+
+account   include system-auth
+password  include system-auth
+session	  include system-auth
