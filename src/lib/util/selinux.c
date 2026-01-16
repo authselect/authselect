@@ -28,7 +28,9 @@
 #include <sys/stat.h>
 
 #include "common/common.h"
+#include "lib/constants.h"
 #include "lib/util/file.h"
+#include "lib/util/template.h"
 #include "lib/util/selinux.h"
 #include "lib/util/string_array.h"
 
@@ -383,23 +385,34 @@ selinux_copy_files_safely(struct selinux_safe_copy *table,
         }
 
         if (file_exists(table[i].source) == ENOENT) {
-            if (!table[i].can_unlink) {
+            if (table[i].write_empty_if_missing) {
+                INFO("File [%s] does not exist", table[i].source);
+                INFO("Writing empty temporary file for [%s]",
+                     table[i].destination);
+                ret = template_write_temporary(table[i].destination, "",
+                                               AUTHSELECT_FILE_MODE,
+                                               &tmpfiles[i]);
+                if (ret != EOK) {
+                    goto done;
+                }
+            } else if (!table[i].can_unlink) {
                 ERROR("File [%s] should exist but is missing. It is not safe to "
                       "delete [%s]. Aborting.", table[i].source,
                       table[i].destination);
                 ret = EPERM;
                 goto done;
+            } else {
+                /* destination will be removed later */
+                INFO("File [%s] does not exist", table[i].source);
+                tmpfiles[i] = NULL;
             }
-            INFO("File [%s] does not exist", table[i].source);
-            tmpfiles[i] = NULL;
-            continue;
-        }
-
-        INFO("Writing temporary file for [%s]", table[i].destination);
-        ret = selinux_mkstemp_copy(table[i].source, dirs[i], names[i],
-                                   dir_mode, keep_secontext, &tmpfiles[i]);
-        if (ret != EOK) {
-            goto done;
+        } else {
+            INFO("Writing temporary file for [%s]", table[i].destination);
+            ret = selinux_mkstemp_copy(table[i].source, dirs[i], names[i],
+                                       dir_mode, keep_secontext, &tmpfiles[i]);
+            if (ret != EOK) {
+                goto done;
+            }
         }
     }
 
