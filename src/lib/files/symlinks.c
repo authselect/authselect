@@ -163,16 +163,16 @@ errno_t
 authselect_symlinks_uninstall()
 {
     struct selinux_safe_copy table[] = {
-        {PATH_SYSTEM,      PATH_SYMLINK_SYSTEM, false},
-        {PATH_PASSWORD,    PATH_SYMLINK_PASSWORD, false},
-        {PATH_FINGERPRINT, PATH_SYMLINK_FINGERPRINT, false},
-        {PATH_SMARTCARD,   PATH_SYMLINK_SMARTCARD, false},
-        {PATH_SWITCHABLE,  PATH_SYMLINK_SWITCHABLE, false},
-        {PATH_POSTLOGIN,   PATH_SYMLINK_POSTLOGIN, false},
-        {PATH_NSSWITCH,    PATH_SYMLINK_NSSWITCH, false},
-        {PATH_DCONF_DB,    PATH_SYMLINK_DCONF_DB, false},
-        {PATH_DCONF_LOCK,  PATH_SYMLINK_DCONF_LOCK, false},
-        {NULL, NULL, false}
+        {PATH_SYSTEM,      PATH_SYMLINK_SYSTEM, false, false},
+        {PATH_PASSWORD,    PATH_SYMLINK_PASSWORD, false, false},
+        {PATH_FINGERPRINT, PATH_SYMLINK_FINGERPRINT, false, false},
+        {PATH_SMARTCARD,   PATH_SYMLINK_SMARTCARD, false, false},
+        {PATH_SWITCHABLE,  PATH_SYMLINK_SWITCHABLE, false, false},
+        {PATH_POSTLOGIN,   PATH_SYMLINK_POSTLOGIN, false, false},
+        {PATH_NSSWITCH,    PATH_SYMLINK_NSSWITCH, false, false},
+        {PATH_DCONF_DB,    PATH_SYMLINK_DCONF_DB, false, false},
+        {PATH_DCONF_LOCK,  PATH_SYMLINK_DCONF_LOCK, false, false},
+        {NULL, NULL, false, false}
     };
     errno_t ret;
     bool result;
