@@ -240,17 +240,17 @@ static errno_t
 authselect_restore_system_configuration(const char *path)
 {
     struct selinux_safe_copy table[] = {
-        {FILE_CONFIG,      PATH_CONFIG_FILE, true},
-        {FILE_SYSTEM,      PATH_SYMLINK_SYSTEM, false},
-        {FILE_PASSWORD,    PATH_SYMLINK_PASSWORD, true},
-        {FILE_FINGERPRINT, PATH_SYMLINK_FINGERPRINT, true},
-        {FILE_SMARTCARD,   PATH_SYMLINK_SMARTCARD, true},
-        {FILE_SWITCHABLE,  PATH_SYMLINK_SWITCHABLE, true},
-        {FILE_POSTLOGIN,   PATH_SYMLINK_POSTLOGIN, false},
-        {FILE_NSSWITCH,    PATH_SYMLINK_NSSWITCH, true},
-        {FILE_DCONF_DB,    PATH_SYMLINK_DCONF_DB, true},
-        {FILE_DCONF_LOCK,  PATH_SYMLINK_DCONF_LOCK, true},
-        {NULL, NULL, false},
+        {FILE_CONFIG,      PATH_CONFIG_FILE, true, false},
+        {FILE_SYSTEM,      PATH_SYMLINK_SYSTEM, false, false},
+        {FILE_PASSWORD,    PATH_SYMLINK_PASSWORD, true, false},
+        {FILE_FINGERPRINT, PATH_SYMLINK_FINGERPRINT, true, false},
+        {FILE_SMARTCARD,   PATH_SYMLINK_SMARTCARD, true, false},
+        {FILE_SWITCHABLE,  PATH_SYMLINK_SWITCHABLE, true, false},
+        {FILE_POSTLOGIN,   PATH_SYMLINK_POSTLOGIN, false, false},
+        {FILE_NSSWITCH,    PATH_SYMLINK_NSSWITCH, true, false},
+        {FILE_DCONF_DB,    PATH_SYMLINK_DCONF_DB, true, false},
+        {FILE_DCONF_LOCK,  PATH_SYMLINK_DCONF_LOCK, true, false},
+        {NULL, NULL, false, false},
     };
     errno_t ret;
     int i;
@@ -279,17 +279,17 @@ static errno_t
 authselect_restore_authselect_configuration(const char *path)
 {
     struct selinux_safe_copy table[] = {
-        {FILE_CONFIG,      PATH_CONFIG_FILE, false},
-        {FILE_SYSTEM,      PATH_SYSTEM, false},
-        {FILE_PASSWORD,    PATH_PASSWORD, false},
-        {FILE_FINGERPRINT, PATH_FINGERPRINT, false},
-        {FILE_SMARTCARD,   PATH_SMARTCARD, false},
-        {FILE_SWITCHABLE,  PATH_SWITCHABLE, false},
-        {FILE_POSTLOGIN,   PATH_POSTLOGIN, false},
-        {FILE_NSSWITCH,    PATH_NSSWITCH, false},
-        {FILE_DCONF_DB,    PATH_DCONF_DB, false},
-        {FILE_DCONF_LOCK,  PATH_DCONF_LOCK, false},
-        {NULL, NULL, false},
+        {FILE_CONFIG,      PATH_CONFIG_FILE, false, false},
+        {FILE_SYSTEM,      PATH_SYSTEM, false, false},
+        {FILE_PASSWORD,    PATH_PASSWORD, false, false},
+        {FILE_FINGERPRINT, PATH_FINGERPRINT, false, false},
+        {FILE_SMARTCARD,   PATH_SMARTCARD, false, false},
+        {FILE_SWITCHABLE,  PATH_SWITCHABLE, false, true},
+        {FILE_POSTLOGIN,   PATH_POSTLOGIN, false, false},
+        {FILE_NSSWITCH,    PATH_NSSWITCH, false, false},
+        {FILE_DCONF_DB,    PATH_DCONF_DB, false, false},
+        {FILE_DCONF_LOCK,  PATH_DCONF_LOCK, false, false},
+        {NULL, NULL, false, false},
     };
     errno_t ret;
     int i;
