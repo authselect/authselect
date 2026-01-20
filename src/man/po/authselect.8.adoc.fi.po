@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-02-23 14:08+0100\n"
-"PO-Revision-Date: 2025-03-21 20:15+0000\n"
+"PO-Revision-Date: 2025-10-03 08:54+0000\n"
 "Last-Translator: Ricky Tigg <ricky.tigg@gmail.com>\n"
 "Language-Team: Finnish <https://translate.fedoraproject.org/projects/"
-"authselect/master-authselect8adoc/fi/>\n"
+"authselect/15x-authselect8adoc/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.13.3\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
@@ -46,7 +46,7 @@ msgstr "SYNOPSIS"
 #, no-wrap
 msgid " authselect [--debug] [--trace] [--warn] command [command options]\n"
 msgstr ""
-" authselect [--debug] [--trace] [--warn] komento [komennon vaihtoehdot]\n"
+" authselect [--debug] [--trace] [--warn] komento [komennon valitsimet]\n"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:15
@@ -340,8 +340,8 @@ msgid ""
 "_Note:_ This will only list the features without any description. Please, read the profile documentation with *show* to see what the features do."
 msgstr ""
 "Listaa kaikki tietyssä profiilissa saatavilla olevat ominaisuudet.\n"
-"_Huomautus:_ Tämä listaa vain ominaisuudet ilman kuvausta. Ole hyvä ja lue "
-"profiilin dokumentaatio *show*:lla nähdäksesi, mitä ominaisuudet tekevät."
+"_Huomautus:_ Tämä luettelee vain ominaisuudet ilman kuvausta. Ole hyvä ja "
+"lue profiilin dokumentaatio *show*:lla nähdäksesi, mitä ominaisuudet tekevät."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:105
@@ -402,7 +402,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:121
 #, no-wrap
 msgid "*test* profile_id [options] [features]"
-msgstr "*test* profiilitunnus [vaihtoehdot] [ominaisuudet]"
+msgstr "*test* profiilitunnus [valitsimet] [ominaisuudet]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:124
@@ -601,7 +601,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:184
 #, no-wrap
 msgid "*create-profile* NAME [--vendor,-v] [options]"
-msgstr "*create-profile* NIMI [--vendor,-v] [vaihtoehdot]"
+msgstr "*create-profile* NIMI [-v, --vendor] [valitsimet]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:189
@@ -612,9 +612,9 @@ msgid ""
 "option is selected."
 msgstr ""
 "Luo uusi muokattu profiili nimeltä _NIMI_. Profiili voi perustua olemassa "
-"olevaan profiiliin, jolloin uudet profiilimallit joko kopioidaan "
+"olevaan profiiliin, jolloin uudet profiilimallipohjat joko kopioidaan "
 "perusprofiilista tai luodaan symbolisia linkkejä näihin tiedostoihin, jos "
-"tällainen vaihtoehto valitaan."
+"tällainen valitsin valitaan."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:190
@@ -653,19 +653,19 @@ msgstr ""
 #, no-wrap
 msgid "If _BASE-ID_ starts with prefix _custom/_ it is a custom profile.\n"
 msgstr ""
-"Jos _BASE-ID_ alkaa etuliitteellä _custom/_, se on mukautettu profiili.\n"
+"Jos _PERUSTUNNUS_ alkaa etuliitteellä _custom/_, se on mukautettu profiili.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:199
 #, no-wrap
 msgid "Try if _BASE-ID_ is found in vendor profiles.\n"
-msgstr "Kokeile löytyykö _BASE-ID_ toimittajaprofiileista.\n"
+msgstr "Kokeile löytyykö _PERUSTUNNUS_ toimittajaprofiileista.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:200
 #, no-wrap
 msgid "Try if _BASE-ID_ is found in default profiles.\n"
-msgstr "Kokeile löytyykö _BASE-ID_ oletusprofiileista.\n"
+msgstr "Kokeile löytyykö _PERUSTUNNUS_ oletusprofiileista.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:201

@@ -8,16 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-02-23 14:08+0100\n"
-"PO-Revision-Date: 2020-06-17 18:40+0000\n"
-"Last-Translator: Fábio Rodrigues Ribeiro <farribeiro@gmail.com>\n"
+"PO-Revision-Date: 2025-07-31 12:53+0000\n"
+"Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Portuguese (Brazil) <https://translate.fedoraproject.org/"
-"projects/authselect/master-authselect-migration7adoc/pt_BR/>\n"
+"projects/authselect/15x-authselect-migration7adoc/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.0.4\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #. type: Title =
 #: src/man/authselect-migration.7.adoc:2
@@ -70,7 +70,7 @@ msgid ""
 "Authselect takes a completely different approach to system configuration "
 "than the previous tool authconfig."
 msgstr ""
-"O Authselect adota uma abordagem completamente diferente da configuração do "
+"O authselect adota uma abordagem completamente diferente da configuração do "
 "sistema que a ferramenta anterior authconfig."
 
 #. type: Plain text
@@ -81,6 +81,11 @@ msgid ""
 "(to setup authentication modules and identity sources) but it also generates "
 "simple configuration files for several services such as LDAP and Kerberos."
 msgstr ""
+"O authconfig faz o possível para manter as alterações manuais dos usuários "
+"nos arquivos que gera. Ele gera não apenas arquivos de configuração PAM e "
+"nsswitch.conf (para configurar módulos de autenticação e fontes de "
+"identidade), mas também arquivos de configuração simples para diversos "
+"serviços, como LDAP e Kerberos."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:34
@@ -94,6 +99,15 @@ msgid ""
 "administrator has an option to create a whole new profile and use it with "
 "authselect.  See authselect-profiles(5) to learn more about profiles."
 msgstr ""
+"O authselect não faz isso. Ele não gera nenhum arquivo de configuração além "
+"do PAM e do nsswitch.conf e proíbe terminantemente qualquer alteração manual "
+"na configuração gerada. Ele fornece um conjunto de arquivos chamados perfis. "
+"Cada perfil descreve como a configuração resultante deve ser e pode ser "
+"ligeiramente modificada habilitando ou desabilitando certos recursos "
+"opcionais. Se surgir a necessidade de um perfil diferente do fornecido pelo "
+"authselect, o administrador tem a opção de criar um perfil totalmente novo e "
+"usá-lo com o authselect. Consulte authselect-profiles(5) para saber mais "
+"sobre perfis."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:46
@@ -110,6 +124,18 @@ msgid ""
 "configuration that can be fully tested and is much less error prone. It is "
 "also much easier to distribute such configuration across many systems."
 msgstr ""
+"Isso pode parecer uma grande desvantagem, mas a verdade é o oposto. O "
+"authconfig é uma ferramenta muito antiga e os aplicativos que fornecem os "
+"serviços necessários mudaram rapidamente ao longo dos anos. Normalmente, não "
+"há mais necessidade de ter vários módulos de autenticação no PAM e no "
+"nsswitch.conf, pois a grande maioria dos casos de uso é coberta pelo SSSD. "
+"Portanto, não há necessidade de adicioná-los ou removê-los especificamente. "
+"Existem também ferramentas melhores para gerar configuração para daemons de "
+"sistema que podem ajudar a automatizar o processo de ingresso em um domínio "
+"remoto, como `realm`. Além disso, os perfis fornecidos nos fornecem uma "
+"configuração de sistema abrangente e determinística que pode ser totalmente "
+"testada e é muito menos propensa a erros. Também é muito mais fácil "
+"distribuir essa configuração entre vários sistemas."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:52
@@ -121,12 +147,18 @@ msgid ""
 "longer contain support for nss-pam-ldapd and users are encouraged to switch "
 "to sssd."
 msgstr ""
+"Provavelmente a mudança mais controversa é que o authselect envia apenas "
+"perfis para provedores sssd e winbind. Esses dois provedores abrangem todos "
+"os casos de uso modernos, desde o fornecimento de usuários locais e domínio "
+"LDAP legado até configurações complexas com servidores IPA ou Active "
+"Directory. Os perfis não oferecem mais suporte para nss-pam-ldapd e os "
+"usuários são incentivados a migrar para sssd."
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:54
 #, no-wrap
 msgid "JOINING REMOTE DOMAINS"
-msgstr ""
+msgstr "INGRESSANDO EM DOMÍNIOS REMOTOS"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:59
@@ -136,6 +168,10 @@ msgid ""
 "the correct authselect profile is selected and all daemons and services are "
 "properly configured."
 msgstr ""
+"Você pode usar `ipa-client-install` ou `realm` para ingressar em um domínio "
+"IPA e `realm` para ingressar em um domínio do Active Directory. Essas "
+"ferramentas garantirão que o perfil authselect correto seja selecionado e "
+"que todos os daemons e serviços estejam configurados corretamente."
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:61
@@ -152,12 +188,18 @@ msgid ""
 "select a correct profile with desired features. Then you also need to write "
 "configuration file for required services."
 msgstr ""
+"Se você usar `ipa-client-install` ou `realm` para ingressar em um domínio, "
+"basta remover qualquer chamada authconfig dos seus scripts. Se isso não for "
+"possível, você precisará substituir cada chamada authconfig pela chamada "
+"authselect equivalente para selecionar o perfil correto com os recursos "
+"desejados. Em seguida, você também precisará criar um arquivo de "
+"configuração para os serviços necessários."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:68
 #, no-wrap
 msgid "Relation of authconfig options to authselect profiles"
-msgstr ""
+msgstr "Relação das opções do authconfig com os perfis do authselect"
 
 #. type: Table
 #: src/man/authselect-migration.7.adoc:77
@@ -170,18 +212,25 @@ msgid ""
 "|--enablewinbind --enablewinbindauth |winbind\n"
 "|--enablenis                         |nis\n"
 msgstr ""
+"|*Opções do authconfig*                |*Perfil do authselect*\n"
+"|--enableldap --enableldapauth       |sssd\n"
+"|--enablesssd --enablesssdauth       |sssd\n"
+"|--enablekrb5                        |sssd\n"
+"|--enablewinbind --enablewinbindauth |winbind\n"
+"|--enablenis                         |nis\n"
 
 #. type: Table
 #: src/man/authselect-migration.7.adoc:80
 #, no-wrap
 msgid "|--enablenis                         |none\n"
-msgstr ""
+msgstr "|--enablenis                         |none\n"
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:83
 #, no-wrap
 msgid "Relation of authconfig options to authselect profile features"
 msgstr ""
+"Relação das opções do authconfig com os recursos do perfil do authselect"
 
 #. type: Table
 #: src/man/authselect-migration.7.adoc:95
@@ -198,6 +247,16 @@ msgid ""
 "|--enableshadow       |_none_\n"
 "|--passalgo           |_none_\n"
 msgstr ""
+"|*Opções do authconfig* |*Recurso de perfil do authselect*\n"
+"|--enablesmartcard    |with-smartcard\n"
+"|--enablefingerprint  |with-fingerprint\n"
+"|--enableecryptfs     |with-ecryptfs\n"
+"|--enablemkhomedir    |with-mkhomedir\n"
+"|--enablefaillock     |with-faillock\n"
+"|--enablepamaccess    |with-pamaccess\n"
+"|--enablewinbindkrb5  |with-krb5\n"
+"|--enableshadow       |_none_\n"
+"|--passalgo           |_none_\n"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:102
@@ -208,6 +267,12 @@ msgid ""
 "it cannot be changed through an option (only by creating a custom profile).  "
 "You can just omit these options."
 msgstr ""
+"As opções de configuração de autenticação `--enableshadow` e "
+"`--passalgo=sha512` eram frequentemente usadas para garantir que as senhas "
+"fossem armazenadas em `/etc/shadow` usando o algoritmo `sha512`. *Os perfis "
+"authselect agora usam o método de hash yescrypt* e ele não pode ser alterado "
+"por meio de uma opção (apenas criando um perfil personalizado). Você pode "
+"simplesmente omitir essas opções."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:103
@@ -222,6 +287,8 @@ msgid ""
 "authconfig --enableldap --enableldapauth --enablefaillock --updateall\n"
 "authselect select sssd with-faillock\n"
 msgstr ""
+"authconfig --enableldap --enableldapauth --enablefaillock --updateall\n"
+"authselect select sssd with-faillock\n"
 
 #. type: delimited block -
 #: src/man/authselect-migration.7.adoc:110
@@ -230,6 +297,9 @@ msgid ""
 "authconfig --enablesssd --enablesssdauth --enablesmartcard --smartcardmodule=sssd --updateall\n"
 "authselect select sssd with-smartcard\n"
 msgstr ""
+"authconfig --enablesssd --enablesssdauth --enablesmartcard --"
+"smartcardmodule=sssd --updateall\n"
+"authselect select sssd with-smartcard\n"
 
 #. type: delimited block -
 #: src/man/authselect-migration.7.adoc:113
@@ -238,6 +308,8 @@ msgid ""
 "authconfig --enableecryptfs --enablepamaccess --updateall\n"
 "authselect select sssd with-ecryptfs with-pamaccess\n"
 msgstr ""
+"authconfig --enableecryptfs --enablepamaccess --updateall\n"
+"authselect select sssd with-ecryptfs with-pamaccess\n"
 
 #. type: delimited block -
 #: src/man/authselect-migration.7.adoc:116
@@ -246,6 +318,9 @@ msgid ""
 "authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator --updateall\n"
 "realm join -U Administrator --client-software=winbind WINBINDDOMAIN\n"
 msgstr ""
+"authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrador --"
+"updateall\n"
+"realm join -U Administrador --client-software=winbind DOMINIOWINBIND\n"
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:119
@@ -272,12 +347,15 @@ msgid ""
 "still useful to configure ldap.conf to configure openldap-libs and "
 "indirectly, e.g. LDAP tools such as `ldapsearch`."
 msgstr ""
+"Mesmo que o LDAP não seja usado diretamente através de `pam_ldap` e "
+"`nss_ldap`, ainda é útil configurar o ldap.conf para configurar openldap-"
+"libs e indiretamente, por exemplo, ferramentas LDAP como `ldapsearch`."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:128
 #, no-wrap
 msgid "{sysconfdir}/openldap/ldap.conf"
-msgstr ""
+msgstr "{sysconfdir}/openldap/ldap.conf"
 
 #. type: delimited block -
 #: src/man/authselect-migration.7.adoc:132
@@ -286,6 +364,8 @@ msgid ""
 "# Set the default base dn\n"
 "BASE   dc=example,dc=com\n"
 msgstr ""
+"# Define o dn base padrão\n"
+"BASE   dc=example,dc=com\n"
 
 #. type: delimited block -
 #: src/man/authselect-migration.7.adoc:135
@@ -294,12 +374,14 @@ msgid ""
 "# Set the default LDAP server\n"
 "URI    ldap://ldap.example.com ldap://ldap-master.example.com:666\n"
 msgstr ""
+"# Define o servidor LDAP padrão\n"
+"URI    ldap://ldap.example.com ldap://ldap-master.example.com:666\n"
 
 #. type: Title ~
 #: src/man/authselect-migration.7.adoc:138
 #, no-wrap
 msgid "KERBEROS"
-msgstr ""
+msgstr "KERBEROS"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:141
@@ -308,12 +390,15 @@ msgid ""
 "order for krb5-libs and therefore tools such as `kinit` to work out of the "
 "box."
 msgstr ""
+"Se você usa o Kerberos, o domínio padrão do Kerberos deve ser configurado "
+"para que o krb5-libs e, portanto, ferramentas como o `kinit` funcionem "
+"imediatamente."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:142
 #, no-wrap
 msgid "{sysconfdir}/krb5.conf"
-msgstr ""
+msgstr "{sysconfdir}/krb5.conf"
 
 #. type: delimited block -
 #: src/man/authselect-migration.7.adoc:146
@@ -322,6 +407,8 @@ msgid ""
 "[libdefaults]\n"
 " default_realm = MYREALM\n"
 msgstr ""
+"[libdefaults]\n"
+" default_realm = MEUREALM\n"
 
 #. type: delimited block -
 #: src/man/authselect-migration.7.adoc:151
@@ -332,6 +419,10 @@ msgid ""
 "  kdc = kdc.myrealm.org\n"
 " }\n"
 msgstr ""
+"[realms]\n"
+" MEUREALM = {\n"
+"  kdc = kdc.meurealm.org\n"
+" }\n"
 
 #. type: delimited block -
 #: src/man/authselect-migration.7.adoc:155
@@ -341,13 +432,16 @@ msgid ""
 " myrealm.org = MYREALM\n"
 " .myrealm.org = MYREALM\n"
 msgstr ""
+"[domain_realm]\n"
+" meurealm.org = MEUREALM\n"
+" .meurealm.org = MEUREALM\n"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:158
 #: src/man/authselect-migration.7.adoc:254
 #, no-wrap
 msgid "SSSD"
-msgstr ""
+msgstr "SSSD"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:163
@@ -357,13 +451,17 @@ msgid ""
 "that creates one LDAP domain called `default`. The LDAP server is auto-"
 "discovered through DNS lookups."
 msgstr ""
+"O authselect incentiva os usuários a usar SSSD sempre que possível. Há "
+"muitas opções de configuração, consulte sssd.conf(5). Esta é uma "
+"configuração mínima que cria um domínio LDAP chamado `default`. O servidor "
+"LDAP é descoberto automaticamente por meio de pesquisas de DNS."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:164
 #: src/man/authselect-migration.7.adoc:180
 #, no-wrap
 msgid "{sysconfdir}/sssd/sssd.conf"
-msgstr ""
+msgstr "{sysconfdir}/sssd/sssd.conf"
 
 #. type: delimited block -
 #: src/man/authselect-migration.7.adoc:169
@@ -374,6 +472,9 @@ msgid ""
 "config_file_version = 2\n"
 "domains = default\n"
 msgstr ""
+"[sssd]\n"
+"config_file_version = 2\n"
+"domains = default\n"
 
 #. type: delimited block -
 #: src/man/authselect-migration.7.adoc:174
@@ -384,6 +485,10 @@ msgid ""
 "ldap_uri = _srv_\n"
 "dns_discovery_domain = myrealm\n"
 msgstr ""
+"[domain/default]\n"
+"id_provider = ldap\n"
+"ldap_uri = _srv_\n"
+"dns_discovery_domain = meurealm\n"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:179
@@ -392,6 +497,9 @@ msgid ""
 "authentication is done over Kerberos. The KDC server is auto-discovered "
 "through DNS lookups."
 msgstr ""
+"E aqui está um trecho de configuração para o mesmo domínio, mas agora a "
+"autenticação é feita via Kerberos. O servidor KDC é descoberto "
+"automaticamente por meio de pesquisas de DNS."
 
 #. type: delimited block -
 #: src/man/authselect-migration.7.adoc:193
@@ -405,6 +513,13 @@ msgid ""
 "krb5_realm = MYREALM\n"
 "dns_discovery_domain = myrealm\n"
 msgstr ""
+"[domain/default]\n"
+"id_provider = ldap\n"
+"auth_provider = krb5\n"
+"ldap_uri = _srv_\n"
+"krb5_server = _srv_\n"
+"krb5_realm = MEUREALM\n"
+"dns_discovery_domain = meurealm\n"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:199
@@ -414,12 +529,16 @@ msgid ""
 "Kerberos keytab and generating basic SSSD configuration. You can then tune "
 "it up by modifying {sysconfdir}/sssd/sssd.conf."
 msgstr ""
+"Se você quiser configurar o SSSD para um domínio IPA ou Active Directory, "
+"use a ferramenta `realm`. Isso executará uma configuração inicial que "
+"envolve a criação de um keytab Kerberos e a geração da configuração básica "
+"do SSSD. Você pode então ajustá-lo modificando {sysconfdir}/sssd/sssd.conf."
 
 #. type: Title ~
 #: src/man/authselect-migration.7.adoc:201
 #, no-wrap
 msgid "WINBIND"
-msgstr ""
+msgstr "WINBIND"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:206
@@ -429,13 +548,18 @@ msgid ""
 "running `adcli` to join the domain. It also makes changes to `smb.conf`. You "
 "can then tune it up by modifying {sysconfdir}/samba/smb.conf."
 msgstr ""
+"Se quiser configurar a máquina para usar o Winbind, use `realm`. Isso "
+"executará uma configuração inicial que envolve a criação de um keytab de "
+"Kerberos e a execução de `adcli` para ingressar no domínio. Também fará "
+"alterações em `smb.conf`. Você pode então ajustá-lo modificando {sysconfdir}/"
+"samba/smb.conf."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:209
 #: src/man/authselect-migration.7.adoc:262
 #, no-wrap
 msgid "NIS"
-msgstr ""
+msgstr "NIS"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:213
@@ -444,12 +568,15 @@ msgid ""
 "authentication work. First, you need to set NIS domain and optionally also "
 "NIS server in {sysconfdir}/yp.conf."
 msgstr ""
+"Há vários locais que precisam ser configurados para que a autenticação NIS "
+"funcione. Primeiro, você precisa definir o domínio NIS e, opcionalmente, "
+"também o servidor NIS em {sysconfdir}/yp.conf."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:214
 #, no-wrap
 msgid "{sysconfdir}/yp.conf"
-msgstr ""
+msgstr "{sysconfdir}/yp.conf"
 
 #. type: delimited block -
 #: src/man/authselect-migration.7.adoc:219
@@ -459,23 +586,27 @@ msgid ""
 "# or\n"
 "# domain mydomain server myserver\n"
 msgstr ""
+"domain meudominio broadcast\n"
+"# ou\n"
+"# domain meudominio server meuservidor\n"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:222
 msgid "NIS domain must be also set in system network configuration."
 msgstr ""
+"O domínio NIS também deve ser definido na configuração de rede do sistema."
 
 #. type: Block title
 #: src/man/authselect-migration.7.adoc:223
 #, no-wrap
 msgid "{sysconfdir}/sysconfig/network"
-msgstr ""
+msgstr "{sysconfdir}/sysconfig/network"
 
 #. type: delimited block -
 #: src/man/authselect-migration.7.adoc:226
 #, no-wrap
 msgid "NISDOMAIN=mydomain\n"
-msgstr "NISDOMAIN=mydomain\n"
+msgstr "NISDOMAIN=meudominio\n"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:230
@@ -484,6 +615,9 @@ msgid ""
 "reboot your system. Additionaly, it may be necessary to enable NIS in "
 "selinux."
 msgstr ""
+"Agora, você pode definir o nome de domínio via linha de comando, sem "
+"precisar reinicializar o sistema. Além disso, pode ser necessário habilitar "
+"o NIS no SELinux."
 
 #. type: delimited block -
 #: src/man/authselect-migration.7.adoc:234
@@ -492,14 +626,14 @@ msgid ""
 "$ domainname mydomain\n"
 "$ setsebool -P allow_ypbind 1\n"
 msgstr ""
-"$ domainname mydomain\n"
+"$ domainname meudominio\n"
 "$ setsebool -P allow_ypbind 1\n"
 
 #. type: Title ~
 #: src/man/authselect-migration.7.adoc:238
 #, no-wrap
 msgid "PASSWORD QUALITY"
-msgstr ""
+msgstr "QUALIDADE DE SENHA"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:243
@@ -509,6 +643,10 @@ msgid ""
 "should use the password policy that is enforced by the respective remote "
 "server."
 msgstr ""
+"O Authselect habilita o módulo `pam_pwquality` para aplicar restrições de "
+"qualidade de senha. Este módulo é habilitado apenas para usuários locais. "
+"Usuários remotos devem usar a política de senha aplicada pelo respectivo "
+"servidor remoto."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:247
@@ -517,6 +655,9 @@ msgid ""
 "pwquality.conf. See pam_pwquality(8) to see its configuration options and "
 "defaults."
 msgstr ""
+"O módulo `pam_pwquality` pode ser configurado em {sysconfdir}/security/"
+"pwquality.conf. Consulte pam_pwquality(8) para ver suas opções de "
+"configuração e padrões."
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:249
@@ -530,12 +671,14 @@ msgid ""
 "Depending on your configuration, you need to start required services "
 "manually with systemd."
 msgstr ""
+"Dependendo da sua configuração, você precisa iniciar os serviços necessários "
+"manualmente com o systemd."
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:256
 #, no-wrap
 msgid "systemctl enable sssd.service ; systemctl start sssd.service\n"
-msgstr ""
+msgstr "systemctl enable sssd.service ; systemctl start sssd.service\n"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:258
@@ -546,7 +689,7 @@ msgstr "Winbind"
 #: src/man/authselect-migration.7.adoc:260
 #, no-wrap
 msgid "systemctl enable winbind.service ; systemctl start winbind.service\n"
-msgstr ""
+msgstr "systemctl enable winbind.service ; systemctl start winbind.service\n"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:265
@@ -555,11 +698,13 @@ msgid ""
 "systemctl enable rpcbind.service ; systemctl start rpcbind.service\n"
 "systemctl enable ypbind.service ; systemctl start ypbind.service\n"
 msgstr ""
+"systemctl enable rpcbind.service ; systemctl start rpcbind.service\n"
+"systemctl enable ypbind.service ; systemctl start ypbind.service\n"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:267
 msgid "If mkhomedir feature is enabled"
-msgstr ""
+msgstr "Se o recurso mkhomedir estiver habilitado"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:269
@@ -571,7 +716,7 @@ msgstr "systemctl enable oddjobd.service ; systemctl start oddjobd.service\n"
 #: src/man/authselect-migration.7.adoc:271
 #, no-wrap
 msgid "AUTHCONFIG TOOLS"
-msgstr ""
+msgstr "FERRAMENTAS DO AUTHCONFIG"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:275
@@ -580,12 +725,15 @@ msgid ""
 "tool, please switch to native _openssl_ command: *openssl rehash "
 "<directory>* that serves the same purpose."
 msgstr ""
+"A authconfig enviou uma ferramenta chamada _cacertdir_rehash_. Se você "
+"depende dessa ferramenta, mude para o comando nativo do _openssl_: *openssl "
+"rehash <diretório>* que serve ao mesmo propósito."
 
 #. type: Title -
 #: src/man/authselect-migration.7.adoc:277
 #, no-wrap
 msgid "SEE ALSO"
-msgstr ""
+msgstr "VEJA TAMBÉM"
 
 #. type: Plain text
 #: src/man/authselect-migration.7.adoc:279
