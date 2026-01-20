@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
 "POT-Creation-Date: 2022-12-01 13:40+0100\n"
-"PO-Revision-Date: 2025-06-30 02:16+0000\n"
+"PO-Revision-Date: 2025-08-04 11:53+0000\n"
 "Last-Translator: Américo Monteiro <a_monteiro@gmx.com>\n"
 "Language-Team: Portuguese <https://translate.fedoraproject.org/projects/"
 "authselect/1-2-x-application/pt/>\n"
@@ -62,6 +62,8 @@ msgid ""
 "Refusing to activate profile unless those changes are removed or overwrite "
 "is requested."
 msgstr ""
+"A recusar activar perfil a menos que essas alterações sejam removidas ou "
+"seja pedido para sobrescrever."
 
 #: src/lib/authselect.c:124
 msgid "File that needs to be overwritten was found"
@@ -72,6 +74,8 @@ msgid ""
 "Refusing to activate profile unless this file is removed or overwrite is "
 "requested."
 msgstr ""
+"A recusar activar perfil a menos que este ficheiro seja removido ou seja "
+"pedido para sobrescrever."
 
 #: src/lib/authselect.c:136
 #, c-format
@@ -446,7 +450,7 @@ msgstr "Incapaz de ler [%s] [%d]: %s"
 #: src/lib/files/system.c:288
 #, c-format
 msgid "Unable to generate nsswitch.conf [%d]: %s"
-msgstr ""
+msgstr "Incapaz de gerar nsswitch.conf [%d]: %s"
 
 #: src/lib/files/system.c:354
 #, c-format
@@ -491,21 +495,21 @@ msgstr "[%s] não existe!"
 #: src/lib/files/system.c:507
 #, c-format
 msgid "Unable to validate file [%s] [%d]: %s"
-msgstr ""
+msgstr "Incapaz de validar ficheiro [%s] [%d]: %s"
 
 #: src/lib/files/system.c:514
 #, c-format
 msgid "Comparing content against [%s]"
-msgstr ""
+msgstr "A comparar conteúdo contra [%s]"
 
 #: src/lib/files/system.c:518
 msgid "Comparing content against current profile"
-msgstr ""
+msgstr "A comparar conteúdo contra perfil atual"
 
 #: src/lib/files/system.c:524
 #, c-format
 msgid "[%s] has unexpected content!"
-msgstr ""
+msgstr "[%s] tem conteúdo inesperado!"
 
 #: src/lib/files/system.c:531
 #, c-format
@@ -633,7 +637,7 @@ msgstr "A remover directório [%s]"
 
 #: src/lib/util/file.c:43
 msgid "Internal error: stat cannot be NULL!"
-msgstr "Erro interno: stat não pode ser NULO!"
+msgstr "Erro interno: estatuto não pode ser NULO!"
 
 #: src/lib/util/file.c:51
 #, c-format
@@ -707,7 +711,7 @@ msgstr "Incapaz de fazer chown a ficheiro [%s] [%d]: %s"
 #: src/lib/util/selinux.c:46
 #, c-format
 msgid "Unable to create selabel context [%d]: %s"
-msgstr ""
+msgstr "Incapaz de criar contexto de selabel [%d]: %s"
 
 #: src/lib/util/selinux.c:55
 #, c-format
@@ -790,11 +794,11 @@ msgstr "Incapaz de gerar modelo [%d]: %s"
 
 #: src/lib/util/template.c:560
 msgid "Unable to get current time!"
-msgstr ""
+msgstr "Incapaz de obter hora atual!"
 
 #: src/lib/util/template.c:574
 msgid "Unable to create message!"
-msgstr ""
+msgstr "Incapaz de criar mensagem!"
 
 #: src/lib/util/template.c:599
 #, c-format
@@ -1006,7 +1010,7 @@ msgstr "Incapaz de ler os requerimentos do perfil!"
 
 #: src/cli/main.c:189
 msgid "Unable to obtain nsswitch maps!"
-msgstr ""
+msgstr "Incapaz de obter mapas de nsswitch!"
 
 #: src/cli/main.c:203
 msgid ""
@@ -1371,116 +1375,117 @@ msgstr "Desinstalar a configuração do authselect"
 
 #: src/compat/authcompat_Options.py:82
 msgid "NIS for user information by default"
-msgstr ""
+msgstr "NIS para informação de utilizador por predefinição"
 
 #: src/compat/authcompat_Options.py:83
 msgid "<domain>"
-msgstr ""
+msgstr "<domain>"
 
 #: src/compat/authcompat_Options.py:83
 msgid "default NIS domain"
-msgstr ""
+msgstr "domínio NIS predefinido"
 
 #: src/compat/authcompat_Options.py:84 src/compat/authcompat_Options.py:87
 #: src/compat/authcompat_Options.py:98 src/compat/authcompat_Options.py:99
 msgid "<server>"
-msgstr ""
+msgstr "<server>"
 
 #: src/compat/authcompat_Options.py:84
 msgid "default NIS server"
-msgstr ""
+msgstr "servidor NIS predefinido"
 
 #: src/compat/authcompat_Options.py:85
 msgid "LDAP for user information by default"
-msgstr ""
+msgstr "LDAP para informação de utilizador por predefinição"
 
 #: src/compat/authcompat_Options.py:86
 msgid "LDAP for authentication by default"
-msgstr ""
+msgstr "LDAP para autenticação por predefinição"
 
 #: src/compat/authcompat_Options.py:87
 msgid "default LDAP server hostname or URI"
-msgstr ""
+msgstr "nome de máquina ou URI do servidor LDAP predefinido"
 
 #: src/compat/authcompat_Options.py:88
 msgid "<dn>"
-msgstr ""
+msgstr "<dn>"
 
 #: src/compat/authcompat_Options.py:88
 msgid "default LDAP base DN"
-msgstr ""
+msgstr "DN base de LDAP predefinido"
 
 #: src/compat/authcompat_Options.py:89
 msgid "use of TLS with LDAP (RFC-2830)"
-msgstr ""
+msgstr "uso de TLS com LDAP (RFC-2830)"
 
 #: src/compat/authcompat_Options.py:90
 msgid "use of TLS for identity lookups with LDAP (RFC-2830)"
-msgstr ""
+msgstr "uso de TLS para procuras de identidade com LDAP (RFC-2830)"
 
 #: src/compat/authcompat_Options.py:91
 msgid "use of RFC-2307bis schema for LDAP user information lookups"
 msgstr ""
+"uso do esquema RFC-2307bis para procuras de informação de utilizador LDAP"
 
 #: src/compat/authcompat_Options.py:92
 msgid "authentication with smart card by default"
-msgstr ""
+msgstr "autenticação com cartão inteligente por predefinição"
 
 #: src/compat/authcompat_Options.py:93
 msgid "<0=Lock|1=Ignore>"
-msgstr ""
+msgstr "<0=Tranca|1=Ignora>"
 
 #: src/compat/authcompat_Options.py:93
 msgid "action to be taken on smart card removal"
-msgstr ""
+msgstr "acção a ser tomada na remoção do cartão inteligente"
 
 #: src/compat/authcompat_Options.py:94
 msgid "require smart card for authentication by default"
-msgstr ""
+msgstr "requer cartão inteligente para autenticação por predefinição"
 
 #: src/compat/authcompat_Options.py:95
 msgid "authentication with fingerprint readers by default"
-msgstr ""
+msgstr "autenticação com leitores de impressão digital por predefinição"
 
 #: src/compat/authcompat_Options.py:96
 msgid "automatic per-user ecryptfs"
-msgstr ""
+msgstr "ecryptfs por-utilizador automático"
 
 #: src/compat/authcompat_Options.py:97
 msgid "Kerberos authentication by default"
-msgstr ""
+msgstr "Autenticação Kerberos por predefinição"
 
 #: src/compat/authcompat_Options.py:98
 msgid "default Kerberos KDC"
-msgstr ""
+msgstr "KDC Kerberos predefinido"
 
 #: src/compat/authcompat_Options.py:99
 msgid "default Kerberos admin server"
-msgstr ""
+msgstr "servidor de administração Kerberos predefinido"
 
 #: src/compat/authcompat_Options.py:100 src/compat/authcompat_Options.py:152
 msgid "<realm>"
-msgstr ""
+msgstr "<realm>"
 
 #: src/compat/authcompat_Options.py:100
 msgid "default Kerberos realm"
-msgstr ""
+msgstr "Reino predefinido do Kerberos"
 
 #: src/compat/authcompat_Options.py:101
 msgid "use of DNS to find Kerberos KDCs"
-msgstr ""
+msgstr "uso de DNS para encontrar KDCs do Kerberos"
 
 #: src/compat/authcompat_Options.py:102
 msgid "use of DNS to find Kerberos realms"
-msgstr ""
+msgstr "uso de DNS para encontrar reinos do Kerberos"
 
 #: src/compat/authcompat_Options.py:103
 msgid "winbind for user information by default"
-msgstr ""
+msgstr "winbind para informação de utilizador por predefinição"
 
 #: src/compat/authcompat_Options.py:104
 msgid "winbind for authentication by default"
-msgstr ""
+msgstr "winbind para autenticação por predefinição"
 
 #: src/compat/authcompat_Options.py:105
 msgid "<Administrator>"
@@ -1489,145 +1494,153 @@ msgstr "<Administrador>"
 #: src/compat/authcompat_Options.py:105
 msgid "join the winbind domain or ads realm now as this administrator"
 msgstr ""
+"junta ao domínio winbind ou adiciona reino agora como este administrador"
 
 #: src/compat/authcompat_Options.py:106
 msgid "Kerberos 5 for authenticate with winbind"
-msgstr ""
+msgstr "Kerberos 5 para autenticação com winbind"
 
 #: src/compat/authcompat_Options.py:107
 msgid "<workgroup>"
-msgstr ""
+msgstr "<workgroup>"
 
 #: src/compat/authcompat_Options.py:107
 msgid "workgroup authentication servers are in"
-msgstr ""
+msgstr "servidores de autenticação de grupo de trabalho estão em"
 
 #: src/compat/authcompat_Options.py:108
 msgid ""
 "SSSD for user information by default with manually managed configuration"
 msgstr ""
+"SSSD para informação de utilizador por predefinição com configuração gerida "
+"manualmente"
 
 #: src/compat/authcompat_Options.py:109
 msgid "SSSD for authentication by default with manually managed configuration"
 msgstr ""
+"SSSD para autenticação por predefinição com configuração gerida manualmente"
 
 #: src/compat/authcompat_Options.py:110
 msgid "caching of user credentials in SSSD by default"
-msgstr ""
+msgstr "usar cache de credenciais de utilizador no SSSD por predefinição"
 
 #: src/compat/authcompat_Options.py:111
 msgid "check of access.conf during account authorization"
-msgstr ""
+msgstr "verificação de access.conf durante autorização de conta"
 
 #: src/compat/authcompat_Options.py:112
 msgid "creation of home directories for users on their first login"
 msgstr ""
+"criação de directórios home para utilizadores no seu primeiro inicio de "
+"sessão"
 
 #: src/compat/authcompat_Options.py:113
 msgid "account locking in case of too many consecutive authentication failures"
 msgstr ""
+"trancamento de conta no caso de muitas falhas de autenticação consecutivas"
 
 #: src/compat/authcompat_Options.py:114 src/compat/authcompat_Options.py:115
 #: src/compat/authcompat_Options.py:116 src/compat/authcompat_Options.py:117
 msgid "<number>"
-msgstr ""
+msgstr "<number>"
 
 #: src/compat/authcompat_Options.py:114
 msgid "minimum length of a password"
-msgstr ""
+msgstr "comprimento mínimo duma palavra passe"
 
 #: src/compat/authcompat_Options.py:115
 msgid "minimum number of character classes in a password"
-msgstr ""
+msgstr "número mínimo de classes de caracteres numa palavra passe"
 
 #: src/compat/authcompat_Options.py:116
 msgid "maximum number of same consecutive characters in a password"
-msgstr ""
+msgstr "número máximo do mesmo caractere consecutivo numa palavra passe"
 
 #: src/compat/authcompat_Options.py:117
 msgid "maximum number of consecutive characters of same class in a password"
 msgstr ""
+"número máximo da mesma classe de caracteres consecutiva numa palavra passe"
 
 #: src/compat/authcompat_Options.py:118
 msgid "require at least one lowercase character in a password"
-msgstr ""
+msgstr "requer pelo menos um caractere minúsculo numa palavra passe"
 
 #: src/compat/authcompat_Options.py:119
 msgid "require at least one uppercase character in a password"
-msgstr ""
+msgstr "requer pelo menos um caractere maiúsculo numa palavra passe"
 
 #: src/compat/authcompat_Options.py:120
 msgid "require at least one digit in a password"
-msgstr ""
+msgstr "requer pelo menos um dígito numa palavra passe"
 
 #: src/compat/authcompat_Options.py:121
 msgid "require at least one other character in a password"
-msgstr ""
+msgstr "requer pelo menos um outro caractere numa palavra passe"
 
 #: src/compat/authcompat_Options.py:124
 msgid "do not start/stop services"
-msgstr ""
+msgstr "não arranca/pára serviços"
 
 #: src/compat/authcompat_Options.py:125
 msgid "update all configuration files"
-msgstr ""
+msgstr "atualiza todos os ficheiros de configuração"
 
 #: src/compat/authcompat_Options.py:126 src/compat/authcompat_Options.py:127
 msgid "the same as --updateall"
-msgstr ""
+msgstr "o mesmo que --updateall"
 
 #: src/compat/authcompat_Options.py:136 src/compat/authcompat_Options.py:137
 msgid "<name>"
-msgstr ""
+msgstr "<name>"
 
 #: src/compat/authcompat_Options.py:148
 msgid "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
-msgstr ""
+msgstr "<descrypt|bigcrypt|md5|sha256|sha512|yescrypt>"
 
 #: src/compat/authcompat_Options.py:149
 msgid "<URL>"
-msgstr ""
+msgstr "<URL>"
 
 #: src/compat/authcompat_Options.py:150
 msgid "<module>"
-msgstr ""
+msgstr "<module>"
 
 #: src/compat/authcompat_Options.py:151
 msgid "<user|server|domain|ads>"
-msgstr ""
+msgstr "<user|server|domain|ads>"
 
 #: src/compat/authcompat_Options.py:153
 msgid "<servers>"
-msgstr ""
+msgstr "<servers>"
 
 #: src/compat/authcompat_Options.py:154 src/compat/authcompat_Options.py:155
 #: src/compat/authcompat_Options.py:156
 msgid "<lowest-highest>"
-msgstr ""
+msgstr "<lowest-highest>"
 
 #: src/compat/authcompat_Options.py:157
 msgid "<\\>"
-msgstr ""
+msgstr "<\\>"
 
 #: src/compat/authcompat_Options.py:158
 msgid "</home/%D/%U>"
-msgstr ""
+msgstr "</home/%D/%U>"
 
 #: src/compat/authcompat_Options.py:159
 msgid "</bin/false>"
-msgstr ""
+msgstr "</bin/false>"
 
 #: src/compat/authcompat_Options.py:166
 msgid "<options>"
-msgstr ""
+msgstr "<options>"
 
 #: src/compat/authcompat_Options.py:210
 msgid "These options have a compatibility layer"
-msgstr ""
+msgstr "Estas opções têm uma camada de compatibilidade"
 
 #: src/compat/authcompat_Options.py:211
 msgid "These options are no longer supported and have no effect"
-msgstr ""
+msgstr "Estas opções não são mais suportadas e não têm nenhum efeito"
 
 #: src/compat/authcompat_Options.py:313
 msgid "enable"
@@ -1640,18 +1653,18 @@ msgstr "desativar"
 #: src/compat/authcompat.py.in.in:51
 #, python-format
 msgid "Executing: %s"
-msgstr ""
+msgstr "A executar: %s"
 
 #: src/compat/authcompat.py.in.in:71
 #, python-format
 msgid "Service %s was not found. Please install the service."
-msgstr ""
+msgstr "O serviço %s não foi encontrado. Por favor instale o serviço."
 
 #: src/compat/authcompat.py.in.in:74 src/compat/authcompat.py.in.in:631
 #: src/compat/authcompat.py.in.in:657
 #, python-format
 msgid "Command [%s] failed with %d, stderr:"
-msgstr ""
+msgstr "Comando [%s] falhou com %d, stderr:"
 
 #: src/compat/authcompat.py.in.in:186
 #, python-format
@@ -1661,11 +1674,11 @@ msgstr "A remover o ficheiro: %s"
 #: src/compat/authcompat.py.in.in:335
 #, python-format
 msgid "%s was not found. Please, install realmd."
-msgstr ""
+msgstr "%s não foi encontrado. Por favor, instale o realmd."
 
 #: src/compat/authcompat.py.in.in:469
 msgid "Running authconfig compatibility tool."
-msgstr ""
+msgstr "A correr ferramenta de compatibilidade do authconfig."
 
 #: src/compat/authcompat.py.in.in:470
 msgid ""
@@ -1673,30 +1686,39 @@ msgid ""
 "with authselect and minimum configuration. It does not provide all "
 "capabilities of authconfig.\n"
 msgstr ""
+"O objetivo desta ferramenta é ativar autenticação contra serviços escolhidos "
+"com authselect e configuração mínima. Ela não fornece todas as capacidades "
+"do authconfig.\n"
 
 #: src/compat/authcompat.py.in.in:473
 msgid ""
 "IMPORTANT: authconfig is replaced by authselect, please update your scripts."
 msgstr ""
+"IMPORTANTE: o authconfig é substituído pelo authselect, por favor atualize "
+"os seus scripts."
 
 #: src/compat/authcompat.py.in.in:475
 msgid ""
 "See Fedora 28 Change Page: https://fedoraproject.org/wiki/Changes/"
 "AuthselectAsDefault"
 msgstr ""
+"Veja Página de Alteração Fedora 28: https://fedoraproject.org/wiki/Changes/"
+"AuthselectAsDefault"
 
 #: src/compat/authcompat.py.in.in:476
 msgid ""
 "See man authselect-migration(7) to help you with migration to authselect"
 msgstr ""
+"Veja o manual authselect-migration(7) para o ajudar com a migração para "
+"authselect"
 
 #: src/compat/authcompat.py.in.in:480
 msgid "Warning: These options are not supported anymore and have no effect:"
-msgstr ""
+msgstr "Aviso: Estas opções não são mais suportadas e não fazem efeito:"
 
 #: src/compat/authcompat.py.in.in:500
 msgid "authconfig can only be run as root"
-msgstr ""
+msgstr "o authconfig só pode correr como root"
 
 #: src/compat/authcompat.py.in.in:505
 #, python-format
@@ -1704,11 +1726,13 @@ msgid ""
 "Error: option --%s is no longer supported and we cannot continue if it is "
 "set."
 msgstr ""
+"Erro: a opção --%s não é mais suportada e não podemos continuar se ela "
+"estiver definida."
 
 #: src/compat/authcompat.py.in.in:510
 msgid "Error: Both --enablewinbind and --enablewinbindauth must be set."
-msgstr ""
+msgstr "Erro: Ambas --enablewinbind e --enablewinbindauth têm de ser definidas."
 
 #: src/compat/authcompat.py.in.in:520
 msgid "Error: Please, provide --updateall option."
-msgstr ""
+msgstr "Erro: Por favor, forneça a opção --updateall."

@@ -1,0 +1,1273 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Languages add-on <noreply-addon-languages@weblate.org>, 2026.
+# Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-12-01 13:40+0100\n"
+"PO-Revision-Date: 2026-01-20 15:52+0000\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <https://translate.fedoraproject.org/projects/"
+"authselect/12x-authselect8adoc/ka/>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
+
+#. type: Title =
+#: src/man/authselect.8.adoc:2
+#, no-wrap
+msgid "authselect(8)"
+msgstr "authselect(8)"
+
+#. type: Title -
+#: src/man/authselect.8.adoc:6
+#, no-wrap
+msgid "NAME"
+msgstr "სახელი"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:9
+msgid "authselect - select system identity and authentication sources."
+msgstr "authselect - აირჩიეთ სისტემის იდენტიფიკაციის და ავთენტიკაციის წყაროები."
+
+#. type: Title -
+#: src/man/authselect.8.adoc:11
+#, no-wrap
+msgid "SYNOPSIS"
+msgstr "მოკლე აღწერა"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:13
+#, no-wrap
+msgid " authselect [--debug] [--trace] [--warn] command [command options]\n"
+msgstr ""
+" authselect [--debug] [--trace] [--warn] ბრძანება [ბრძანების პარამეტრები]\n"
+
+#. type: Title -
+#: src/man/authselect.8.adoc:15
+#, no-wrap
+msgid "DESCRIPTION"
+msgstr "აღწერა"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:21
+#, no-wrap
+msgid ""
+"*Authselect* is a tool to configure system identity and authentication sources\n"
+"and providers by selecting a specific profile. Profile is a set of files that\n"
+"describes how the resulting system configuration will look like. When a profile\n"
+"is selected, *authselect* will create nsswitch.conf(5) and PAM(8) stack to use\n"
+"identity and authentication sources defined by the profile.\n"
+msgstr ""
+"Authselect არის პროგრამა სისტემის იდენტობისა და ავთენტიკაციის წყაროებისა და\n"
+"მომწოდებლების მოსარგებად კონკრეტული პროფილის არჩევის გზით. პროფილი არის\n"
+"ფაილების ნაკრები, რომელიც აღწერს, თუ როგორი იქნება სისტემის საბოლოო "
+"კონფიგურაცია.\n"
+"როდესაც პროფილი არჩეულია, authselect შექმნის nsswitch.conf(5) და PAM(8) "
+"სტეკს, რათა\n"
+"გამოიყენოს პროფილის მიერ განსაზღვრული იდენტობისა და ავთენტიკაციის წყაროები.\n"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:27
+msgid ""
+"If the provided profile set is not sufficient, the administrator may create "
+"a custom profile by putting it in a special profile directory "
+"({AUTHSELECT_CUSTOM_DIR}). By doing so, the profile is immediately usable by "
+"*authselect*. See _authselect-profiles(5)_ for more information on extending "
+"existing profiles."
+msgstr ""
+"თუ შემოთავაზებული პროფილების ნაკრები არ არის საკმარისი, ადმინისტრატორს "
+"შეუძლია შექმნას მორგებული პროფილი სპეციალურ საქაღალდეში ("
+"{AUTHSELECT_CUSTOM_DIR}). ამის გაკეთებისთანავე, პროფილი მყისიერად "
+"გამოსაყენებელი გახდება authselect-ისთვის. იხილეთ _authselect-profiles(5) "
+"დამატებითი ინფორმაციისთვის არსებული პროფილების გაფართოების შესახებ."
+
+#. type: Title -
+#: src/man/authselect.8.adoc:29
+#, no-wrap
+msgid "OPT-IN TO AUTHSELECT"
+msgstr "AUTHSELECT-ის გამოწერა"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:39
+msgid ""
+"Authselect will not touch your existing configuration unless it has already "
+"been created by it. If you want to start using authselect to configure your "
+"system authentication, please call *authselect select* with *--force* "
+"parameter first (e.g. *authselect select sssd --force*). The *--force* "
+"parameter tells authselect that it is all right to overwrite existing non-"
+"authselect configuration (see description below). Using the *--force* "
+"parameter will automatically generate a backup of your current configuration "
+"so if you wish to go back you can restore it with *authselect backup-"
+"restore* command (see description below)."
+msgstr ""
+"Authselect არ შეეხება თქვენს არსებულ კონფიგურაციას, თუ იგი უკვე არაა მისი "
+"შექმნილი. თუ გსურთ, დაიწყოთ authselect-ის გამოყენება თქვენი სისტემის "
+"ავთენტიკაციის მოსარგებად, გთხოვთ, ჯერ გამოიძახეთ ბრძანება authselect select "
+"პარამეტრით --force (მაგ. authselect select sssd --force). --force პარამეტრი "
+"ეუბნება authselect-ს, რომ დასაშვებია არსებული, არა-authselect კონფიგურაციის "
+"თავზე გადაწერა (იხილეთ აღწერა ქვემოთ). --force პარამეტრის გამოყენება "
+"ავტომატურად შექმნის თქვენი მიმდინარე კონფიგურაციის მარქაფს, ასე რომ, თუ "
+"დაბრუნება მოგინდებათ, შეგიძლიათ აღადგინოთ იგი authselect backup-restore "
+"ბრძანებით (იხილეთ აღწერა ქვემოთ)."
+
+#. type: Title -
+#: src/man/authselect.8.adoc:41
+#, no-wrap
+msgid "AVAILABLE COMMANDS"
+msgstr "ხელმისაწვდომი ბრძანებები"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:44
+msgid ""
+"To list all available commands run *authselect* without any parameters.  To "
+"print help for the selected command run *authselect COMMAND --help*."
+msgstr ""
+"ხელმისაწვდომი ბრძანებების ჩამოსათვლელად \"authselect\" პარამეტრების გარეშე "
+"გაუშვით.    სასურველი ბრძანების შესახებ დახმარების გამოსატანად გაუშვით "
+"\"authselect ბრძანება --help\"."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:45
+#, no-wrap
+msgid "*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup=NAME]"
+msgstr ""
+"*select* პროფილის_id [features] [-f, --force] [-q, --quiet] [-b] [--"
+"backup=სახელი]"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:48
+msgid ""
+"Activate desired profile. See profile description with *show* command, to "
+"list profile specific optional features."
+msgstr ""
+"სასურველი პროფილის გააქტიურება. იხილეთ პროფილის აღწერა ბრძანებით \"show\" "
+"პროფილის სპეციფიკური, არასავალდებულო ფუნქციების ჩამოსათვლელად."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:49
+#, no-wrap
+msgid "*--force, -f*"
+msgstr "*--force, -f*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:54
+#, no-wrap
+msgid ""
+"Write changes even if the previous configuration was not created by\n"
+"authselect but by other tool or by manual changes. This option will\n"
+"automatically backup system files before writing any change unless\n"
+"*--nobackup* option is set.\n"
+msgstr ""
+"ცვლილებების ჩაწერა მაშინაც კი, თუ წინა კონფიგურაცია authselect-ის მაგიერ\n"
+"სხვა პროგრამით, ან ხელით იქნა შეცვლილი. ეს პარამეტრი ავტომატურად "
+"დაამარქაფებს\n"
+"სისტემურ ფაილებს ცვლილებების შეტანამდე იმ შემთხვევის გარდა,\n"
+"როცა მითითებულია პარამეტრი *--nobackup*.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:55 src/man/authselect.8.adoc:80
+#: src/man/authselect.8.adoc:149 src/man/authselect.8.adoc:167
+#, no-wrap
+msgid "*-b*"
+msgstr "*-b*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:60
+#, no-wrap
+msgid ""
+"Backup system files before activating the selected profile. The backup\n"
+"will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
+"unique string is used as a name of the backup. This is a shortcut\n"
+"for *--backup=*.\n"
+msgstr ""
+"დაამარქაფეთ სისტემური ფაილები მონიშნული პროფილის გააქტიურებამდე. მარქაფი\n"
+"შენახული იქნება საქაღალდეში {AUTHSELECT_BACKUP_DIR}/სახელი. თუ არ "
+"მიუთითებთ,\n"
+"სახელად გამოყენებული იქნება მიმდინარე დრო და უნიკალური სტრიქონი. ეს მოკლე "
+"ვარიანტია\n"
+"პარამეტრისთვის *--backup=*.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:61 src/man/authselect.8.adoc:86
+#: src/man/authselect.8.adoc:155 src/man/authselect.8.adoc:173
+#, no-wrap
+msgid "*--backup=NAME*"
+msgstr "*--backup=სახელი*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:65
+#, no-wrap
+msgid ""
+"Backup system files before activating the selected profile. The backup\n"
+"will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
+"unique string is used as a name if no value is provided.\n"
+msgstr ""
+"დაამარქაფეთ სისტემური ფაილები არჩეული პროფილის გააქტიურებამდე. მარქაფი\n"
+"შენახული იქნება საქაღალდეში {AUTHSELECT_BACKUP_DIR}/სახელი. თუ არ "
+"მიუთითებთ,\n"
+"სახელად გამოყენებული იქნება მიმდინარე დრო და უნიკალური სტრიქონი.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:66
+#, no-wrap
+msgid "*--nobackup*"
+msgstr "*--nobackup*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:68
+#, no-wrap
+msgid "Do not backup system configuration even if *--force* is set.\n"
+msgstr ""
+"სისტემის კონფიგურაციის მარქაფი არ შესრულება მაშინაც კი, თუ მითითებულია \"--"
+"force\".\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:69 src/man/authselect.8.adoc:160
+#, no-wrap
+msgid "*--quiet, -q*"
+msgstr "*--quiet, -q*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:72 src/man/authselect.8.adoc:163
+#, no-wrap
+msgid ""
+"The command will not print any informational message such as additional\n"
+"profile requirements or backup location. Errors are still being print.\n"
+msgstr ""
+"ბრძანება არ გამოიტანს არანაირ საინფორმაციო შეტყობინებას, როგორიცაა პროფილის "
+"დამატებითი მოთხოვნები,\n"
+"ან მარქაფის მდებარეობა. შეცდომები კვლავ დაიბეჭდება.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:73
+#, no-wrap
+msgid "*apply-changes* [-b] [--backup=NAME]"
+msgstr "*apply-changes* [-b] [--backup=სახელი]"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:79
+msgid ""
+"Re-apply currently selected profile. If the profile templates were updated "
+"this command can be used to regenerate current system configuration in order "
+"to apply these changes on the system. This command will only re-apply the "
+"changes if the existing configuration is a valid authselect configuration, "
+"otherwise an error is returned."
+msgstr ""
+"ამჟამად არჩეული პროფილის თავიდან გადატარება. თუ პროფილის შაბლონები განახლდა, "
+"ეს ბრძანება შეიძლება გამოყენებულ იქნას სისტემის მიმდინარე კონფიგურაციის "
+"ხელახლა დასაგენერირებლად, რათა ეს ცვლილებები სისტემაზე აისახოს. ეს ბრძანება "
+"ცვლილებებს, მხოლოდ, იმ შემთხვევაში გამოიყენებს, თუ არსებული კონფიგურაცია "
+"სწორი authselect-ის კონფიგურაციაა. წინააღმდეგ შემთხვევაში შეცდომა დაბრუნდება."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:85
+#, no-wrap
+msgid ""
+"Backup system files before applying changes. The backup\n"
+"will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
+"unique string is used as a name of the backup. This is a shortcut\n"
+"for *--backup=*.\n"
+msgstr ""
+"დაამარქაფეთ სისტემური ფაილები ცვლილებების გადატარებამდე. მარქაფი\n"
+"შენახული იქნება საქაღალდეში {AUTHSELECT_BACKUP_DIR}/სახელი. თუ არ "
+"მიუთითებთ,\n"
+"სახელად გამოყენებული იქნება მიმდინარე დრო და უნიკალური სტრიქონი. ეს მოკლე "
+"ვარიანტია\n"
+"პარამეტრისთვის *--backup=*.\n"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:90
+#, no-wrap
+msgid ""
+"Backup system files before applying changes. The backup will\n"
+"be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
+"string is used as a name if no value is provided.\n"
+msgstr ""
+"დაამარქაფეთ სისტემური ფაილები ცვლილებების შეტანამდე. მარქაფი\n"
+"შენახული იქნება საქაღალდეში {AUTHSELECT_BACKUP_DIR}/სახელი. თუ არ "
+"მიუთითებთ,\n"
+"სახელად გამოყენებული იქნება მიმდინარე დრო და უნიკალური სტრიქონი.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:91
+#, no-wrap
+msgid "*list*"
+msgstr "*list*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:93
+msgid "List available profiles."
+msgstr "ხელმისაწვდომი პროფილების სია."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:94
+#, no-wrap
+msgid "*list-features* profile_id"
+msgstr "*list-features* პროფილის_id"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:98
+#, no-wrap
+msgid ""
+"List all features available in given profile.\n"
+"_Note:_ This will only list the features without any description. Please, read the profile documentation with *show* to see what the features do."
+msgstr ""
+"მითითებულ პროფილში ხელმისაწვდომი ყველა ფუნქციის ჩამონათვალი.\n"
+"_შენიშვნა_: ეს, მხოლოდ, ჩამოთვლის ფუნქციებს, აღწერის გარეშე. იმისათვის, რომ "
+"გაიგოთ, რას აკეთებენ ეს ფუნქციები, წაიკითხეთ პროფილის დოკუმენტაცია ბრძანებით "
+"*show*."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:99
+#, no-wrap
+msgid "*show* profile_id"
+msgstr "*show* პროფილის_id"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:101
+msgid "Print information about the profile."
+msgstr "ინფორმაციის გამოტანა პროფილის შესახებ."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:102
+#, no-wrap
+msgid "*requirements* profile_id [features]"
+msgstr "*requirements* პროფილის_id [თვისებები]"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:104
+msgid "Print information about profile requirements."
+msgstr "ინფორმაციის გამოტანა პროფილის მოთხოვნების შესახებ."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:105
+#, no-wrap
+msgid "*current* [-r, --raw]"
+msgstr "*current* [-r, --raw]"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:109
+msgid ""
+"Print information about currently selected profiles. If *--raw* option is "
+"specified, the command will print raw parameters as they were passed to "
+"*select* command instead of formatted output."
+msgstr ""
+"ინფორმაციის გამოტანა ამჟამად არჩეული პროფილების შესახებ. თუ მითითებულია "
+"პარამეტრი --raw, ბრძანება დააფორმატებული გამონატანის ნაცვლად დაბეჭდავს "
+"დაუმუშავებელ პარამეტრებს ისე, როგორც ისინი გადაეცა select ბრძანებას."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:110
+#, no-wrap
+msgid "*check*"
+msgstr "*check*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:114
+msgid ""
+"Check if the current configuration is valid (it was either created by "
+"*authselect* or there are no leftovers from previous authselect "
+"configuration)."
+msgstr ""
+"შემოწმება, სწორია თუ არა მიმდინარე კონფიგურაცია (იყო, თუ არა ის შექმნილი "
+"\"authselect\"-ით და ხომ არაა ნარჩენები authselect-ით შექმნილი წინა "
+"კონფიგურაციებიდან)."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:115
+#, no-wrap
+msgid "*test* profile_id [options] [features]"
+msgstr "*test* პროფილის_id [პარამეტრები] [თვისებები]"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:118
+msgid ""
+"Print content of files generated by *authselect* without actually writing "
+"anything to system configuration."
+msgstr ""
+"*authselect*-ის მიერ შექმნილი ფაილების შემცველობის გამოტანა სისტემურ "
+"კონფიგურაციაში ცვლილებების შეტანის გარეშე."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:119
+#, no-wrap
+msgid "*-a, --all*"
+msgstr "*-a, --all*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:121
+#, no-wrap
+msgid "Print content of all files.\n"
+msgstr "ყველა ფაილის შემცველობის გამოტანა.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:122
+#, no-wrap
+msgid "*-n, --nsswitch*"
+msgstr "*-n, --nsswitch*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:124
+#, no-wrap
+msgid "Print nsswitch.conf content.\n"
+msgstr "nsswitch.conf-ის შემცველობის გამოტანა.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:125
+#, no-wrap
+msgid "*-s, --system-auth*"
+msgstr "*-s, --system-auth*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:127
+#, no-wrap
+msgid "Print system-auth content.\n"
+msgstr "system-auth-ის შემცველობის გამოტანა.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:128
+#, no-wrap
+msgid "*-p, --password-auth*"
+msgstr "*-p, --password-auth*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:130
+#, no-wrap
+msgid "Print password-auth content.\n"
+msgstr "password-auth-ის შემცველობის გამოტანა.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:131
+#, no-wrap
+msgid "*-c, --smartcard-auth*"
+msgstr "*-c, --smartcard-auth*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:133
+#, no-wrap
+msgid "Print smartcard-auth content.\n"
+msgstr "smartcard-auth-ის შემცველობის გამოტანა.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:134
+#, no-wrap
+msgid "*-f, --fingerprint-auth*"
+msgstr "*-f, --fingerprint-auth*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:136
+#, no-wrap
+msgid "Print fingerprint-auth content.\n"
+msgstr "fingerprint-auth-ის შემცველობის გამოტანა.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:137
+#, no-wrap
+msgid "*-o, --postlogin*"
+msgstr "*-o, --postlogin*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:139
+#, no-wrap
+msgid "Print postlogin content.\n"
+msgstr "postlogin-ის შემცველობის ჩვენება.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:140
+#, no-wrap
+msgid "*-d, --dconf-db*"
+msgstr "*-d, --dconf-db*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:142
+#, no-wrap
+msgid "Print dconf database content.\n"
+msgstr "dconf-ის მონაცემთა ბაზის შემცველობის გამოტანა.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:143
+#, no-wrap
+msgid "*-l, --dconf-lock*"
+msgstr "*-l, --dconf-lock*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:145
+#, no-wrap
+msgid "Print dconf lock content.\n"
+msgstr "dconf-ის ბლოკის შემცველობის გამოტანა.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:146
+#, no-wrap
+msgid "*enable-feature* feature [-b] [--backup=NAME] [-q, --quiet]"
+msgstr "*enable-feature* თვისება [-b] [--backup=სახელი] [-q, --quiet]"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:148
+msgid "Enable feature in the currently selected profile."
+msgstr "თვისების ჩართვა ამჟამად არჩეულ პროფილში."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:154
+#, no-wrap
+msgid ""
+"Backup system files before enabling feature. The backup\n"
+"will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
+"unique string is used as a name of the backup. This is a shortcut\n"
+"for *--backup=*.\n"
+msgstr ""
+"დაამარქაფეთ სისტემური ფაილები ფუნქციის ჩართვამდე. მარქაფი\n"
+"შენახული იქნება საქაღალდეში {AUTHSELECT_BACKUP_DIR}/სახელი. თუ არ "
+"მიუთითებთ,\n"
+"სახელად გამოყენებული იქნება მიმდინარე დრო და უნიკალური სტრიქონი. ეს მოკლე "
+"ვარიანტია\n"
+"პარამეტრისთვის *--backup=*.\n"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:159
+#, no-wrap
+msgid ""
+"Backup system files before enabling feature. The backup will\n"
+"be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
+"string is used as a name if no value is provided.\n"
+msgstr ""
+"დაამარქაფეთ სისტემური ფაილები თვისების ჩართვამდე. მარქაფი შენახული იქნება "
+"საქაღალდეში\n"
+"{AUTHSELECT_BACKUP_DIR}/სახელი. თუ მნიშვნელობას არ მიუთითებთ, სახელად "
+"გამოყენებული იქნება\n"
+"მიმდინარე დრო უნიკალური სტრიქონით.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:164
+#, no-wrap
+msgid "*disable-feature* feature [-b] [--backup=NAME]"
+msgstr "*disable-feature* თვისება [-b] [--backup=სახელი]"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:166
+msgid "Disable feature in the currently selected profile."
+msgstr "თვისების გამორთვა ამჟამად არჩეულ პროფილში."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:172
+#, no-wrap
+msgid ""
+"Backup system files before disabling feature. The backup\n"
+"will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
+"unique string is used as a name of the backup. This is a shortcut\n"
+"for *--backup=*.\n"
+msgstr ""
+"დაამარქაფეთ სისტემური ფაილები ფუნქციის გამორთვამდე. მარქაფი\n"
+"შენახული იქნება საქაღალდეში {AUTHSELECT_BACKUP_DIR}/სახელი. თუ არ "
+"მიუთითებთ,\n"
+"სახელად გამოყენებული იქნება მიმდინარე დრო და უნიკალური სტრიქონი. ეს მოკლე "
+"ვარიანტია\n"
+"პარამეტრისთვის *--backup=*.\n"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:177
+#, no-wrap
+msgid ""
+"Backup system files before disabling feature. The backup will\n"
+"be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
+"string is used as a name if no value is provided.\n"
+msgstr ""
+"დაამარქაფეთ სისტემური ფაილები თვისების გამორთვამდე. მარქაფი შენახული იქნება "
+"საქაღალდეში\n"
+"{AUTHSELECT_BACKUP_DIR}/სახელი. თუ მნიშვნელობას არ მიუთითებთ, სახელად "
+"გამოყენებული იქნება\n"
+"მიმდინარე დრო უნიკალური სტრიქონით.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:178
+#, no-wrap
+msgid "*create-profile* NAME [--vendor,-v] [options]"
+msgstr "*create-profile* სახელი [--vendor,-v] [პარამეტრები]"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:183
+msgid ""
+"Create a new custom profile named _NAME_. The profile can be based on an "
+"existing profile in which case the new profile templates are either copied "
+"from the base profile or symbolic links to these files are created if such "
+"option is selected."
+msgstr ""
+"ახალი მორგებული პროფილის შექმნა სახელით _სახელი_. პროფილი, შეიძლება, "
+"დაეფუძნოს არსებულ პროფილს; ამ შემთხვევაში, ახალი პროფილის შაბლონები ან "
+"კოპირდება საბაზისო პროფილიდან, ან იქმნება ამ ფაილების სიმბმულები, თუ "
+"შესაბამისი პარამეტრი იქნება არჩეული."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:184
+#, no-wrap
+msgid "*--vendor,-v*"
+msgstr "*--vendor,-v*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:187
+#, no-wrap
+msgid ""
+"The new profile is a vendor profile instead of a custom profile. See\n"
+"_authselect-profiles(5)_ for more information on profile types.\n"
+msgstr ""
+"ახალი პროფილი მორგებული პროფილის მაგიერ მომწოდებლის პროფილია.\n"
+"პროფილის ტიპების შესახებ მეტი ინფორმაციისთვის იხილეთ _authselect-profiles(5)"
+"_.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:188
+#, no-wrap
+msgid "*--base-on=BASE-ID, -b=BASE-ID*"
+msgstr "*--base-on=BASE-ID, -b=BASE-ID*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:191
+#, no-wrap
+msgid ""
+"The new profile will be based on a profile named _BASE-ID_. The base\n"
+"profile location is determined with these steps:\n"
+msgstr ""
+"ახალი პროფილი ბაზირებული იქნება პროფილზე სახელით _საბაზისო-ID_. საბაზისო "
+"პროფილის\n"
+"მდებარეობის განსაზღვრა ხდება შემდეგი ნაბიჯებით:\n"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:192
+#, no-wrap
+msgid "If _BASE-ID_ starts with prefix _custom/_ it is a custom profile.\n"
+msgstr ""
+"თუ _საბაზისო-ID_ იწყება პრეფიქსით_custom/_ , ის მომხმარებლის პროფილია.\n"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:193
+#, no-wrap
+msgid "Try if _BASE-ID_ is found in vendor profiles.\n"
+msgstr "ცდა, არის თუ არა თუ_საბაზისო-ID_აღმოჩენილია მომწოდებლის პროფილებში.\n"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:194
+#, no-wrap
+msgid "Try if _BASE-ID_ is found in default profiles.\n"
+msgstr ""
+"ცდა, არის თუ არა თუ_საბაზისო_id_არის აღმოჩენილი ნაგულისხმევ პროფილებში.\n"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:195
+#, no-wrap
+msgid "Return an error.\n"
+msgstr "შეცდომის დაბრუნება.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:196
+#, no-wrap
+msgid "*--base-on-default*"
+msgstr "*--base-on-default*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:199
+#, no-wrap
+msgid ""
+"The base profile is a default profile even if it is found also within\n"
+"vendor profiles.\n"
+msgstr ""
+"საბაზისო პროფილი ნაგულისხმევი პროფილია მაშინაც კი, თუ ის ასევე არსებობს\n"
+"მომწოდებლის პროფილებში.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:200
+#, no-wrap
+msgid "*--symlink-meta*"
+msgstr "*--symlink-meta*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:203
+#, no-wrap
+msgid ""
+"Meta files, such as _README_ and _REQUIREMENTS_ will be symbolic links\n"
+"to the origin profile files instead of their copy.\n"
+msgstr ""
+"მეტაფაილები, როგორიცაა _README_ და _REQUIREMENTS_, სიმბმულები იქნება\n"
+"წყარო პროფილთან და არა მათი ასლი.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:204
+#, no-wrap
+msgid "*--symlink-nsswitch*"
+msgstr "*--symlink-nsswitch*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:207
+#, no-wrap
+msgid ""
+"_nsswitch.conf_ template will be symbolic link to the origin profile\n"
+"file instead of its copy.\n"
+msgstr ""
+"ნიმუში _nsswitch.conf_ წყარო პროფილამდე სიმბმული იქნება\n"
+"მისი ასლის შექმნის მაგიერ.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:208
+#, no-wrap
+msgid "*--symlink-pam*"
+msgstr "*--symlink-pam*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:211
+#, no-wrap
+msgid ""
+"_PAM_ templates will be symbolic links to the origin profile files\n"
+"instead of their copy.\n"
+msgstr ""
+"_PAM_ ნიმუშები სიმბმული იქნება წყარო პროფილის ფაილებამდე\n"
+"მათი ასლის შექმნის მაგიერ.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:212
+#, no-wrap
+msgid "*--symlink-dconf*"
+msgstr "*--symlink-dconf*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:215
+#, no-wrap
+msgid ""
+"_dconf_ templates will be symbolic links to the origin profile files\n"
+"instead of their copy.\n"
+msgstr ""
+"_dconf_ ნიმუშები სიმბმული იქნება წყარო ფაილებამდე\n"
+"მათი ასლის შექმნის მაგიერ.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:216
+#, no-wrap
+msgid "*--symlink=FILE,-s=FILE*"
+msgstr "*--symlink=FILE,-s=FILE*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:219
+#, no-wrap
+msgid ""
+"Create a symbolic link for a template file _FILE_ instead of creating\n"
+"its copy. This option can be passed multiple times.\n"
+msgstr ""
+"სიმბმულის შექმნა ნიმუშის ფაილისთვის _FILE_ მისი ასლის შექმნის მაგიერ.\n"
+"ეს პარამეტრი ერთზე მეტჯერაც შეგიძლიათ, გამოიყენოთ.\n"
+
+#. type: Title -
+#: src/man/authselect.8.adoc:221
+#, no-wrap
+msgid "BACKUP COMMANDS"
+msgstr "მარქაფის ბრძანებები"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:223
+msgid "These commands can be used to manage backed up configurations."
+msgstr ""
+"დამარქაფებული კონფიგურაციების სამართავად ეს ბრძანებები შეგიძლიათ, გამოიყენოთ."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:224
+#, no-wrap
+msgid "*backup-list* [-r, --raw]"
+msgstr "*backup-list* [-r, --raw]"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:227
+msgid ""
+"Print available backups.  If *--raw* option is specified, the command will "
+"print only backup names without any formatting and additional information."
+msgstr ""
+"ხელმისაწვდომი მარქაფების გამოტანა.    თუ მითითებულია პარამეტრი \"--raw\", "
+"ბრძანება მარქაფების, მხოლოდ, სახელებს გამოიტანს, დაფორმატებისა და დამატებითი "
+"ინფორმაციის გარეშე."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:228
+#, no-wrap
+msgid "*backup-remove* BACKUP"
+msgstr "*backup-remove* მარქაფი"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:230
+msgid "Permanently delete backup named _BACKUP_."
+msgstr "_BACKUP_სახელის მქონე მარქაფის შეუქცევადად წაშლა."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:231
+#, no-wrap
+msgid "*backup-restore* BACKUP"
+msgstr "*backup-restore* მარქაფი"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:234
+msgid ""
+"Restore configuration from backup named _BACKUP_. *Note:* this will "
+"overwrite current configuration."
+msgstr ""
+"კონფიგურაციის აღდგენა მარქაფიდან სახელით _BACKUP_. *შენიშვნა* ეს მიმდინარე "
+"კონფიგურაციას თავზე გადააწერს."
+
+#. type: Title -
+#: src/man/authselect.8.adoc:236
+#, no-wrap
+msgid "COMMON OPTIONS"
+msgstr "საერთო პარამეტრები"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:238
+msgid "These options are available with all commands."
+msgstr "ეს პარამეტრები ხელმისაწვდომია ყველა ბრძანებისთვის."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:239
+#, no-wrap
+msgid "*--debug*"
+msgstr "*--debug*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:241
+msgid "Print debugging information and error messages."
+msgstr "გამართვის ინფორმაციის და შეცდომის შეტყობინებების გამოტანა."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:242
+#, no-wrap
+msgid "*--trace*"
+msgstr "*--trace*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:244
+msgid "Print information about what the tool is doing."
+msgstr "ინფორმაციის გამოტანა იმის შესახებ, რას აკეთებს ეს პროგრამა."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:245
+#, no-wrap
+msgid "*--warn*"
+msgstr "*--warn*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:249
+msgid ""
+"Print information about unexpected situations that do not affect the program "
+"execution but may indicate some undesired situations (e.g. unexpected file "
+"in a profile directory)."
+msgstr ""
+"ინფორმაციის გამოტანა მოულოდნელი სიტუაციების შესახებ, რომლებიც გავლენას არ "
+"ახდენენ პროგრამის შესრულებაზე, მაგრამ, შესაძლოა, მიუთითებდნენ გარკვეულ "
+"არასასურველ გარემოებებზე (მაგ. მოულოდნელი ფაილი პროფილის საქაღალდეში)."
+
+#. type: Title -
+#: src/man/authselect.8.adoc:251
+#, no-wrap
+msgid "NSSWITCH.CONF MANAGEMENT"
+msgstr "NSSWITCH.CONF-ის მართვა"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:257
+msgid ""
+"Authselect generates {AUTHSELECT_NSSWITCH_CONF} and does not allow any user "
+"changes to this file. Such changes are detected and authselect will refuse "
+"to write any system configuration unless a *--force* option is provided to "
+"the *select* command. This mechanism prevents authselect from overwriting "
+"anything that does not match any available profile."
+msgstr ""
+"Authselect აგენერირებს {AUTHSELECT_NSSWITCH_CONF} ფაილს და არ უშვებს "
+"მომხმარებლის მიერ მასში რაიმე ცვლილების შეტანას. ასეთი ცვლილებები აღმოჩენილი "
+"იქნება და authselect უარს იტყვის სისტემის ნებისმიერი კონფიგურაციის ჩაწერაზე, "
+"თუ select ბრძანებას არ დაემატება პარამეტრი --force. ეს მექანიზმი იცავს "
+"სისტემას იმისგან, რომ authselect-მა არ გადააწეროს შიგთავსი ისეთ ფაილს, "
+"რომელიც არ შეესაბამება არცერთ ხელმისაწვდომ პროფილს."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:265
+msgid ""
+"Any user changes to nsswitch maps must be done in file "
+"{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf. When authselect generates new "
+"_nsswitch.conf_ it reads this file and combines it with configuration from "
+"selected profile. The profile configuration takes always precedence.  In "
+"other words, profiles do not have to set all nsswitch maps but can set only "
+"those that are relevant to the profile. If a map is set within a profile, it "
+"always overwrites the same map from _user-nsswitch.conf_."
+msgstr ""
+"ნებისმიერი ცვლილება, რომელსაც მომხმარებელი შეიტანს nsswitch-ის ასახვებში, "
+"უნდა განხორციელდეს {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf ფაილში. "
+"როდესაც authselect აგენერირებს ახალ nsswitch.conf-ს, იგი კითხულობს ამ ფაილს "
+"და აერთიანებს მას არჩეული პროფილის კონფიგურაციასთან. პროფილის კონფიგურაციას "
+"ყოველთვის აქვს პრიორიტეტი. სხვა სიტყვებით რომ ვთქვათ, პროფილებს არ "
+"მოეთხოვებათ ყველა nsswitch map-ის დაყენება, მათ შეუძლიათ დააყენონ მხოლოდ "
+"ისინია, რომლებიც პროფილისთვის არის რელევანტური. თუ map განსაზღვრულია "
+"პროფილში, იგი ყოველთვის გადააწერს იმავე map-ს user-nsswitch.conf ფაილიდან."
+
+#. type: Block title
+#: src/man/authselect.8.adoc:266
+#, no-wrap
+msgid "Example 1"
+msgstr "მაგალითი 1"
+
+#. type: delimited block -
+#: src/man/authselect.8.adoc:277
+#, no-wrap
+msgid ""
+"# \"sssd\" profile\n"
+"$ cat {AUTHSELECT_PROFILE_DIR}/sssd/nsswitch.conf\n"
+"passwd:     sss files systemd\n"
+"group:      sss files systemd\n"
+"netgroup:   sss files\n"
+"automount:  sss files\n"
+"services:   sss files\n"
+"sudoers:    files sss {include if \"with-sudo\"}\n"
+msgstr ""
+"# პროფილი \"sssd\"\n"
+"$ cat {AUTHSELECT_PROFILE_DIR}/sssd/nsswitch.conf\n"
+"passwd:     sss files systemd\n"
+"group:      sss files systemd\n"
+"netgroup:   sss files\n"
+"automount:  sss files\n"
+"services:   sss files\n"
+"sudoers:    files sss {include if \"with-sudo\"}\n"
+
+#. type: delimited block -
+#: src/man/authselect.8.adoc:283
+#, no-wrap
+msgid ""
+"$ cat {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf\n"
+"passwd: files sss\n"
+"group: files sss\n"
+"hosts: files dns myhostname\n"
+"sudoers: files\n"
+msgstr ""
+"$ cat {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf\n"
+"passwd: files sss\n"
+"group: files sss\n"
+"hosts: files dns myhostname\n"
+"sudoers: files\n"
+
+#. type: delimited block -
+#: src/man/authselect.8.adoc:285
+#, no-wrap
+msgid "$ authselect select sssd\n"
+msgstr "$ authselect select sssd\n"
+
+#. type: delimited block -
+#: src/man/authselect.8.adoc:295
+#, no-wrap
+msgid ""
+"# passwd and group maps from user-nsswitch.conf are ignored\n"
+"$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
+"passwd:     sss files systemd\n"
+"group:      sss files systemd\n"
+"netgroup:   sss files\n"
+"automount:  sss files\n"
+"services:   sss files\n"
+"hosts:      files dns myhostname\n"
+"sudoers:    files\n"
+msgstr ""
+"# პაროლის და ჯგუფის ასახვები ფაილიდან user-nsswitch.conf გამოტოვებულია\n"
+"$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
+"passwd:     sss files systemd\n"
+"group:      sss files systemd\n"
+"netgroup:   sss files\n"
+"automount:  sss files\n"
+"services:   sss files\n"
+"hosts:      files dns myhostname\n"
+"sudoers:    files\n"
+
+#. type: delimited block -
+#: src/man/authselect.8.adoc:297
+#, no-wrap
+msgid "$ authselect select sssd with-sudo\n"
+msgstr "$ authselect select sssd with-sudo\n"
+
+#. type: delimited block -
+#: src/man/authselect.8.adoc:307
+#, no-wrap
+msgid ""
+"# passwd, group and sudoers maps from user-nsswitch.conf are ignored\n"
+"$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
+"passwd:     sss files systemd\n"
+"group:      sss files systemd\n"
+"netgroup:   sss files\n"
+"automount:  sss files\n"
+"services:   sss files\n"
+"sudoers:    files sss\n"
+"hosts:      files dns myhostname\n"
+msgstr ""
+"# პაროლის, ჯგუფის და sudoers-ის ასახვები ფაილიდან user-nsswitch.conf "
+"გამოტოვებულია\n"
+"$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
+"passwd:     sss files systemd\n"
+"group:      sss files systemd\n"
+"netgroup:   sss files\n"
+"automount:  sss files\n"
+"services:   sss files\n"
+"sudoers:    files sss\n"
+"hosts:      files dns myhostname\n"
+
+#. type: Title -
+#: src/man/authselect.8.adoc:310
+#, no-wrap
+msgid "TROUBLESHOOTING"
+msgstr "პრობლემების გადაჭრა"
+
+#. type: Title ~
+#: src/man/authselect.8.adoc:313
+#, no-wrap
+msgid "How can I tell if my system is using authselect?"
+msgstr "როგორ უნდა გავიგო, იყენებს თუ არა ჩემი სისტემა authselect-ს?"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:317
+msgid ""
+"Use *authselect check*. The output will tell you if you have 1) "
+"configuration generated by authselect 2) non-authselect configuration or 3) "
+"configuration that was generated by authselect but modified manually at some "
+"point."
+msgstr ""
+"გამოიყენეთ *authselect check*. გამონატანი გეტყვით, გაქვთ თუ არა 1) "
+"authselect-ის მიერ დაგენერირებული კონფიგურაცია 2) არა-authselect "
+"კონფიგურაცია ან 3) კონფიგურაცია, რომელიც დაგენერირებული იყო authselect-ის "
+"მიერ, მაგრამ რომელიღაც ეტაპზე ხელით შეიცვალა."
+
+#. type: Title ~
+#: src/man/authselect.8.adoc:319
+#, no-wrap
+msgid "Is nsswitch.conf supposed to be a symbolic link now?"
+msgstr "ახლა nsswitch.conf უკვე სიმბმული უნდა იყოს?"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:325
+msgid ""
+"Authselect generates your system configuration from scratch and stores it at "
+"{AUTHSELECT_CONFIG_DIR}. System files are then created as symbolic links to "
+"this directory. Symbolic links are used to make it clear that authselect is "
+"now owning your configuration and should be used instead of any manual "
+"modification."
+msgstr ""
+"Authselect თქვენი სისტემის კონფიგურაციას ნულიდან აგენერირებს და მას "
+"საქაღალდეში {AUTHSELECT_CONFIG_DIR} ინახავს. ამის შემდეგ, სისტემური ფაილები "
+"იქმნება, როგორც ამ საქაღალდეზე მიბმული სიმბმულები. სიმბმულები გამოიყენება "
+"იმის ხაზგასასმელად, რომ authselect ახლა თავად ფლობს თქვენს კონფიგურაციას და "
+"ნებისმიერი ხელით ცვლილების ნაცვლად, სწორედ ის უნდა იქნას გამოყენებული."
+
+#. type: Title ~
+#: src/man/authselect.8.adoc:327
+#, no-wrap
+msgid "Error: Unexpected changes to the configuration were detected."
+msgstr "შეცდომა: აღმოჩენილია კონფიგურაციის მოულოდნელი ცვლილებები."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:329
+msgid "For example:"
+msgstr "მაგალითად:"
+
+#. type: delimited block .
+#: src/man/authselect.8.adoc:335
+#, no-wrap
+msgid ""
+"[error] [/etc/authselect/nsswitch.conf] does not exist!\n"
+"[error] [/etc/nsswitch.conf] is not a symbolic link!\n"
+"[error] [/etc/nsswitch.conf] was not created by authselect!\n"
+"[error] Unexpected changes to the configuration were detected.\n"
+"[error] Refusing to activate profile unless those changes are removed or overwrite is requested.\n"
+msgstr ""
+"[შეცდომა] [/etc/authselect/nsswitch.conf] არ არსებობს!\n"
+"[შეცდომა] [/etc/nsswitch.conf] სიმბმული არაა!\n"
+"[შეცდომა] [/etc/nsswitch.conf] არ შექმნილა authselect-ის მიერ!\n"
+"[შეცდომა] აღმოჩენილია კონფიგურაციის მოულოდნელი ცვლილებები.\n"
+"[შეცდომა] პროფილის გააქტიურება უარყოფილია, სანამ იმ ცვლილებებს არ მოაცილებთ, "
+"ან არ მოითხოვთ თავზე გადაწერას.\n"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:339
+msgid ""
+"This means that your configuration is unknown to authselect and as such it "
+"will not be modified. To fix this, please call *authselect select* with *--"
+"force* parameter to say that it is all right to overwrite it."
+msgstr ""
+"ეს ნიშნავს, რომ თქვენი კონფიგურაცია უცნობია authselect-ისთვის და ამიტომ, ის "
+"არ შეიცვლება. იმისათვის, რომ ეს გაასწოროთ, გაუშვით *authselect select* "
+"პარამეტრით --force, რომ უთხრათ, რომ ფაილების თავზე გადაწერა დაშვებულია."
+
+#. type: Title -
+#: src/man/authselect.8.adoc:341
+#, no-wrap
+msgid "RETURN CODES"
+msgstr "დაბრუნების კოდები"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:343
+msgid "The *authselect* can return these exit codes:"
+msgstr "\"authselect\"-მა შეიძლება დააბრუნოს შემდეგი გასვლის კოდები:"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:345
+msgid "0: Success."
+msgstr "0: წარმატება."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:346
+msgid "1: Generic error."
+msgstr "1: ზოგადი შეცდომა."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:347
+msgid ""
+"2: Profile or configuration was not found or the system was not configured "
+"with authselect."
+msgstr ""
+"2: პროფილი, ან კონფიგურაცია აღმოჩენილი არაა, ან სისტემის მორგება authselect-"
+"ით არ მომხდარა."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:348
+msgid ""
+"3: Current configuration is not valid, it was edited without authselect."
+msgstr ""
+"3: მიმდინარე კონფიგურაცია არასწორია. ის authselect-ის გარეშე იყო ჩასწორებული."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:349
+msgid ""
+"4: System configuration must be overwritten to activate an authselect "
+"profile, --force parameter is needed."
+msgstr ""
+"4: authselect-ის პროფილის გასააქტიურებლად სისტემის კონფიგურაციას თავზე უნდა "
+"გადავაწერო. საჭიროა პარამეტრი --force."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:350
+msgid "5: Executed command must be run as root."
+msgstr "5: შესრულებული ბრძანება root-ით უნდა გაეშვას."
+
+#. type: Title -
+#: src/man/authselect.8.adoc:352
+#, no-wrap
+msgid "GENERATED FILES"
+msgstr "გენერირებული ფაილები"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:355
+msgid ""
+"Authselect creates and maintains the following files to configure system "
+"identity and authentication providers properly."
+msgstr ""
+"Authselect სისტემის იდენტიფიკაციისა და ავთენტიკაციის მომწოდებლების სწორად "
+"მოსარგებად ქმნის და ინახავს შემდეგ ფაილებს."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:356
+#, no-wrap
+msgid "*{AUTHSELECT_NSSWITCH_CONF}*"
+msgstr "*{AUTHSELECT_NSSWITCH_CONF}*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:358
+msgid "Name Service Switch configuration file."
+msgstr "სახელის სერვისის გადართვის (NSS) კონფიგურაციის ფაილი."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:359
+#, no-wrap
+msgid "*{AUTHSELECT_PAM_DIR}/system-auth*"
+msgstr "*{AUTHSELECT_PAM_DIR}/system-auth*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:362
+msgid ""
+"PAM stack that is included from nearly all individual service configuration "
+"files."
+msgstr ""
+"PAM სტეკი, რომელიც ჩასმულია თითქმის ყველა ინდივიდუალური სერვისის "
+"კონფიგურაციის ფაილში."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:363
+#, no-wrap
+msgid "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
+msgstr "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:367
+msgid ""
+"These PAM stacks are for applications which handle authentication from "
+"different types of devices via simultaneously running individual "
+"conversations instead of one aggregate conversation."
+msgstr ""
+"ეს PAM სტეკები განკუთვნილია იმ აპლიკაციებისთვის, რომლებიც ავთენტიკაციას "
+"სხვადასხვა ტიპის მოწყობილობებიდან ერთდროულად გაშვებული ინდივიდუალური "
+"საუბრების მეშვეობით ამუშავებენ, ნაცვლად ერთი აგრეგირებული საუბრისა."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:368
+#, no-wrap
+msgid "*{AUTHSELECT_PAM_DIR}/postlogin*"
+msgstr "*{AUTHSELECT_PAM_DIR}/postlogin*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:376
+msgid ""
+"The purpose of this PAM stack is to provide a common place for all PAM "
+"modules which should be called after the stack configured in system-auth or "
+"the other common PAM configuration files. It is included from all individual "
+"service configuration files that provide login service with shell or file "
+"access. _NOTE: the modules in the postlogin configuration file are executed "
+"regardless of the success or failure of the modules in the system-auth "
+"configuration file._"
+msgstr ""
+"ამ PAM სტეკის მიზანია უზრუნველყოს ერთიანი ადგილი ყველა იმ PAM მოდულისთვის, "
+"რომლებიც უნდა გამოიძახონ system-auth-ში ან სხვა საერთო PAM კონფიგურაციის "
+"ფაილებში გამართული სტეკის შემდეგ. იგი ჩართულია ყველა ინდივიდუალური სერვისის "
+"კონფიგურაციის ფაილში, რომელიც უზრუნველყოფს შესვლის (login) სერვისს შელით "
+"(shell) ან ფაილებზე წვდომით. შენიშვნა: postlogin კონფიგურაციის ფაილში "
+"არსებული მოდულები სრულდება იმის მიუხედავად, წარმატებით დასრულდა თუ არა "
+"system-auth კონფიგურაციის ფაილში არსებული მოდულები._"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:377
+#, no-wrap
+msgid "*{AUTHSELECT_DCONF_DIR}/{AUTHSELECT_DCONF_FILE}*"
+msgstr "*{AUTHSELECT_DCONF_DIR}/{AUTHSELECT_DCONF_FILE}*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:381
+msgid ""
+"Changes to dconf database. The main uses case of this file is to set changes "
+"for gnome login screen in order to enable or disable smartcard and "
+"fingerprint authentication."
+msgstr ""
+"ცვლილებები dconf მონაცემთა ბაზაში. ამ ფაილის გამოყენების ძირითადი შემთხვევაა "
+"gnome-ის შესვლის ეკრანის პარამეტრების შეცვლა, რომ ჩაირთოს, ან გამოირთოს "
+"სმარტ ბარათითა და თითის ანაბეჭდით ავთენტიკაცია."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:382
+#, no-wrap
+msgid "*{AUTHSELECT_DCONF_DIR}/locks/{AUTHSELECT_DCONF_FILE}*"
+msgstr "*{AUTHSELECT_DCONF_DIR}/locks/{AUTHSELECT_DCONF_FILE}*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:384
+msgid "This file define locks on values set in dconf database."
+msgstr ""
+"ეს ფაილი განსაზღვრავს ბლოკებს მნიშვნელობების ნაკრებებზე dconf-ის მონაცემთა "
+"ბაზაში."
+
+#. type: Title -
+#: src/man/authselect.8.adoc:386
+#, no-wrap
+msgid "SEE ALSO"
+msgstr "ასევე იხილეთ"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:387
+msgid ""
+"authselect-profiles(5), authselect-migration(7), nsswitch.conf(5), PAM(8)"
+msgstr ""
+"authselect-profiles(5), authselect-migration(7), nsswitch.conf(5), PAM(8)"
