@@ -4,21 +4,23 @@
 # Didik Supriadi <didiksupriadi41@gmail.com>, 2021.
 # anggi dev <anggidev97@gmail.com>, 2022.
 # Pavel Brezina <pbrezina@redhat.com>, 2022.
+# data informasi <mh1227330@gmail.com>, 2025.
+# Arif Budiman <arifpedia@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.2.2\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
 "POT-Creation-Date: 2024-02-23 14:08+0100\n"
-"PO-Revision-Date: 2022-11-29 12:44+0000\n"
-"Last-Translator: Pavel Brezina <pbrezina@redhat.com>\n"
+"PO-Revision-Date: 2025-12-26 05:58+0000\n"
+"Last-Translator: Arif Budiman <arifpedia@gmail.com>\n"
 "Language-Team: Indonesian <https://translate.fedoraproject.org/projects/"
-"authselect/master-application/id/>\n"
+"authselect/1-5-x/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #: src/lib/authselect.c:47 src/lib/authselect.c:188
 msgid "Unable to obtain supported features"
@@ -27,12 +29,12 @@ msgstr "Tidak dapat memperoleh fitur yang didukung"
 #: src/lib/authselect.c:59
 #, c-format
 msgid "Unknown profile feature [%s], did you mean [%s]?"
-msgstr "Fitur profil tidak diketahui [%s], apakah maksud Anda [%s]?"
+msgstr "Fitur profil yang tidak dikenal [%s], apakah maksud Anda [%s]?"
 
 #: src/lib/authselect.c:62
 #, c-format
 msgid "Unknown profile feature [%s]"
-msgstr "Fitur profil tidak diketahui [%s]"
+msgstr "Fitur profil yang tidak dikenal [%s]"
 
 #: src/lib/authselect.c:86
 #, c-format
@@ -46,7 +48,7 @@ msgstr "Tidak dapat menemukan profil [%s] [%d]: %s"
 
 #: src/lib/authselect.c:101
 msgid "Enforcing activation!"
-msgstr ""
+msgstr "Menerapkan aktivasi!"
 
 #: src/lib/authselect.c:110
 #, c-format
@@ -54,16 +56,21 @@ msgid ""
 "%s is missing or unreadable, system was not properly configured by "
 "authselect."
 msgstr ""
+"%s hilang atau tidak dapat dibaca, sistem tidak dikonfigurasi dengan benar "
+"oleh authselect."
 
 #: src/lib/authselect.c:112
 msgid "Refusing to activate profile unless overwrite is requested."
-msgstr ""
+msgstr "Menolak untuk mengaktifkan profil kecuali jika diminta untuk mengganti."
 
 #: src/lib/authselect.c:118
 msgid ""
 "Changes to the authselect configuration were detected. These changes will be "
 "overwritten. Please call 'authselect opt-out' in order to keep them."
 msgstr ""
+"Perubahan pada konfigurasi authselect telah terdeteksi. Perubahan ini akan "
+"ditimpa. Silakan jalankan perintah ‘authselect opt-out’ untuk mempertahankan "
+"perubahan tersebut."
 
 #: src/lib/authselect.c:127
 #, c-format
@@ -72,33 +79,30 @@ msgstr "Tidak dapat mengaktifkan profil [%s] [%d]: %s"
 
 #: src/lib/authselect.c:141
 msgid "Trying to uninstall authselect configuration"
-msgstr "Mencoba menghapus instalasi konfigurasi authselect"
+msgstr "Mencoba untuk menghapus konfigurasi authselect"
 
 #: src/lib/authselect.c:145
 #, c-format
 msgid "Unable to remove symlinks [%d]: %s"
-msgstr "Tidak dapat menghapus symlink [%d]: %s"
+msgstr "Tidak dapat menghapus tautan simbolis [%d]: %s"
 
 #: src/lib/authselect.c:149
 msgid "Symbolic links were successfully removed"
-msgstr "Symbolic link berhasil dihapus"
+msgstr "Tautan simbolik telah berhasil dihapus"
 
 #: src/lib/authselect.c:154
-#, fuzzy, c-format
-#| msgid "Unable to check configuration [%d]: %s"
+#, c-format
 msgid "Unable to remove authselect configuration [%d]: %s"
-msgstr "Tidak dapat memeriksa konfigurasi [%d]: %s"
+msgstr "Tidak dapat menghapus konfigurasi authselect [%d]: %s"
 
 #: src/lib/authselect.c:159
-#, fuzzy
-#| msgid "Symbolic links were successfully removed"
 msgid "Authselect configuration was successfully removed"
-msgstr "Symbolic link berhasil dihapus"
+msgstr "Konfigurasi Authselect telah berhasil dihapus"
 
 #: src/lib/authselect.c:198
 #, c-format
 msgid "Profile feature [%s] is no longer supported, removing it..."
-msgstr ""
+msgstr "Fitur profil [%s] tidak lagi didukung, menghapusnya..."
 
 #: src/lib/authselect_backup.c:48
 #, c-format
@@ -119,7 +123,7 @@ msgstr "Membuat direktori sementara di [%s]"
 #: src/lib/authselect_profile.c:457
 #, c-format
 msgid "There is no filename in [%s]"
-msgstr "Tidak ada nama file di [%s]"
+msgstr "Tidak ada nama berkas di [%s]"
 
 #: src/lib/authselect_backup.c:129
 #, c-format
@@ -129,7 +133,7 @@ msgstr "Menyalin [%s] ke [%s/%s]"
 #: src/lib/authselect_backup.c:133 src/lib/util/selinux.c:393
 #, c-format
 msgid "File [%s] does not exist"
-msgstr "File [%s] tidak ada"
+msgstr "Berkas [%s] tidak ada"
 
 #: src/lib/authselect_backup.c:135 src/lib/authselect_backup.c:152
 #, c-format
@@ -178,7 +182,7 @@ msgstr "Tidak dapat menghapus direktori [%s] [%d]: %s"
 #: src/lib/authselect_backup.c:305
 #, c-format
 msgid "Unable to copy files [%d]: %s"
-msgstr "Tidak dapat menyalin file [%d]: %s"
+msgstr "Tidak dapat menyalin berkas [%d]: %s"
 
 #: src/lib/authselect_backup.c:311 src/lib/profiles/activate.c:78
 #, c-format
@@ -216,30 +220,30 @@ msgstr "Tidak dapat memulihkan [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:104
 msgid "Unable to generate nsswitch.conf"
-msgstr ""
+msgstr "Tidak dapat menghasilkan nsswitch.conf"
 
 #: src/lib/authselect_profile.c:111
 #, c-format
 msgid "Unable to find nsswitch maps [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat menemukan peta nsswitch [%d]: %s"
 
 #: src/lib/authselect_profile.c:132
 msgid "Unable to create array (out of memory)"
-msgstr ""
+msgstr "Tidak dapat membuat array (kehabisan memori)"
 
 #: src/lib/authselect_profile.c:141 src/lib/authselect_profile.c:150
 msgid "Unable to obtain feature list (out of memory)"
-msgstr ""
+msgstr "Tidak dapat memperoleh daftar fitur (kehabisan memori)"
 
 #: src/lib/authselect_profile.c:344
 #, c-format
 msgid "Creating empty profile at [%s]"
-msgstr ""
+msgstr "Membuat profil kosong di [%s]"
 
 #: src/lib/authselect_profile.c:348 src/lib/authselect_profile.c:449
 #, c-format
 msgid "Unable to make path [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat membuat jalur [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:355 src/lib/authselect_profile.c:408
 #, c-format
@@ -249,22 +253,22 @@ msgstr "Tidak dapat menulis ke [%s] [%d]: %s"
 #: src/lib/authselect_profile.c:385
 #, c-format
 msgid "Omitting [%s] since it does not exist in base profile"
-msgstr ""
+msgstr "Menghapus [%s] karena tidak ada dalam profil dasar"
 
 #: src/lib/authselect_profile.c:389
 #, c-format
 msgid "Unable to check presence of [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat memeriksa keberadaan [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:397
 #, c-format
 msgid "Unable to create symbolic link [%s] to [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat membuat tautan simbolis [%s] ke [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:430
 #, c-format
 msgid "Creating new profile from \"%s\" at [%s]"
-msgstr ""
+msgstr "Membuat profil baru dari “%s” di [%s]"
 
 #: src/lib/authselect_profile.c:434
 #, c-format
@@ -273,7 +277,7 @@ msgstr "Tidak dapat membaca profil dasar [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:442
 msgid "Unable to resolve symbolic links names"
-msgstr ""
+msgstr "Tidak dapat menyelesaikan nama tautan simbolik"
 
 #: src/lib/authselect_profile.c:467 src/lib/authselect_profile.c:480
 #: src/lib/authselect_profile.c:494
@@ -284,76 +288,76 @@ msgstr "Tidak dapat membuat [%s] [%d]: %s"
 #: src/lib/authselect_profile.c:502
 #, c-format
 msgid "Unknown file name [%s]"
-msgstr ""
+msgstr "Nama berkas tidak dikenal [%s]"
 
 #: src/lib/authselect_profile.c:529
 msgid "Name can not be empty"
-msgstr ""
+msgstr "Nama tidak boleh kosong"
 
 #: src/lib/authselect_profile.c:541
 msgid "Default profile can not be created"
-msgstr ""
+msgstr "Profil default tidak dapat dibuat"
 
 #: src/lib/authselect_profile.c:544
 msgid "Value AUTHSELECT_PROFILE_ANY is invalid in this context"
-msgstr ""
+msgstr "Nilai AUTHSELECT_PROFILE_ANY tidak valid dalam konteks ini"
 
 #: src/lib/authselect_profile.c:549
 msgid "Unable to create profile path: out of memory"
-msgstr ""
+msgstr "Tidak dapat membuat jalur profil: kehabisan memori"
 
 #: src/lib/authselect_profile.c:555
 #, c-format
 msgid "Profile \"%s\" already exist at [%s]"
-msgstr ""
+msgstr "Profil \"%s\" sudah ada di [%s]."
 
 #: src/lib/authselect_profile.c:559
 #, c-format
 msgid "Unable to access [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat mengakses [%s] [%d]: %s"
 
 #: src/lib/authselect_profile.c:565
 msgid "Unable to create file name: out of memory"
-msgstr ""
+msgstr "Tidak dapat membuat nama berkas: kehabisan memori"
 
 #: src/lib/authselect_profile.c:573
 #, c-format
 msgid "Unable to create empty profile [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat membuat profil kosong [%d]: %s"
 
 #: src/lib/authselect_profile.c:582
 #, c-format
 msgid "Unable to create profile [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat membuat profil [%d]: %s"
 
 #: src/lib/files/config.c:152
 msgid "Checking if all required directories are writable."
-msgstr ""
+msgstr "Memastikan bahwa semua direktori yang diperlukan dapat ditulis."
 
 #: src/lib/files/config.c:157
 #, c-format
 msgid "Unable to get path to %s parent directory!"
-msgstr ""
+msgstr "Tidak dapat memperoleh path ke direktori induk %s!"
 
 #: src/lib/files/config.c:164
 #, c-format
 msgid "Creating path [%s]"
-msgstr ""
+msgstr "Membuat jalur [%s]"
 
 #: src/lib/files/config.c:168
 #, c-format
 msgid "Unable to create path [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat membuat jalur [%s] [%d]: %s"
 
 #: src/lib/files/config.c:173
 #, c-format
 msgid "Directory [%s] does not exist, please create it!"
-msgstr ""
+msgstr "Direktori [%s] tidak ada, silakan buat!"
 
 #: src/lib/files/config.c:176
 #, c-format
 msgid "Unable to access directory [%s] in [WX] mode!"
-msgstr ""
+msgstr "Tidak dapat mengakses direktori [%s] dalam mode [WX]!"
 
 #: src/lib/files/config.c:195
 #, c-format
@@ -363,12 +367,12 @@ msgstr "Tidak dapat memuat profil [%s] [%d]: %s"
 #: src/lib/files/symlinks.c:41
 #, c-format
 msgid "Creating symbolic link [%s] to [%s]"
-msgstr ""
+msgstr "Membuat tautan simbolis [%s] ke [%s]"
 
 #: src/lib/files/symlinks.c:47
 #, c-format
 msgid "Unable to overwrite file [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat mengganti berkas [%s] [%d]: %s"
 
 #: src/lib/files/symlinks.c:55
 #, c-format
@@ -378,124 +382,123 @@ msgstr "Tidak dapat membuat symbolic link [%s] [%d]: %s"
 #: src/lib/files/symlinks.c:79
 #, c-format
 msgid "Validating link [%s]"
-msgstr ""
+msgstr "Memverifikasi tautan [%s]"
 
 #: src/lib/files/symlinks.c:83
 #, c-format
 msgid "Unable to validate link [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat memvalidasi tautan [%s] [%d]: %s"
 
 #: src/lib/files/symlinks.c:90
 #, c-format
 msgid "[%s] was not created by authselect!"
-msgstr ""
+msgstr "[%s] tidak dibuat oleh authselect!"
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
 #: src/lib/files/system.c:309
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
-msgstr ""
+msgstr "Kesalahan saat mencoba mengakses berkas [%s] [%d]: %s"
 
 #: src/lib/files/symlinks.c:121
 #, c-format
 msgid "Unable to check file [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat memeriksa berkas [%s] [%d]: %s"
 
 #: src/lib/files/symlinks.c:128
 #, c-format
 msgid "Symbolic link [%s] to [%s] still exists!"
-msgstr ""
+msgstr "Tautan simbolik [%s] ke [%s] masih ada!"
 
 #: src/lib/files/symlinks.c:149
 #, c-format
 msgid "File [%s] exists but it needs to be overwritten!"
-msgstr ""
+msgstr "Berkas [%s] sudah ada, tetapi perlu ditimpa!"
 
 #: src/lib/files/symlinks.c:190
 #, c-format
 msgid "Skipping [%s] because it is not an authselect file"
-msgstr ""
+msgstr "Melewatkan [%s] karena bukan berkas authselect"
 
 #: src/lib/files/system.c:73 src/lib/profiles/read.c:162
 #, c-format
 msgid "Reading file [%s/%s]"
-msgstr ""
+msgstr "Membaca berkas [%s/%s]"
 
 #: src/lib/files/system.c:81 src/lib/profiles/read.c:168
 #: src/lib/profiles/read.c:173
 #, c-format
 msgid "Unable to read file [%s/%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat membaca berkas [%s/%s] [%d]: %s"
 
 #: src/lib/files/system.c:149
 #, c-format
 msgid "Unable to generate files [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat menghasilkan berkas [%d]: %s"
 
 #: src/lib/files/system.c:163 src/lib/util/selinux.c:398
 #, c-format
 msgid "Writing temporary file for [%s]"
-msgstr ""
+msgstr "Menulis berkas sementara untuk [%s]"
 
 #: src/lib/files/system.c:166
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat menulis berkas sementara [%s] [%d]: %s"
 
 #: src/lib/files/system.c:171
 #, c-format
 msgid "Temporary file is named [%s]"
-msgstr ""
+msgstr "Berkas sementara bernama [%s]"
 
 #: src/lib/files/system.c:182 src/lib/util/selinux.c:425
 #, c-format
 msgid "Renaming [%s] to [%s]"
-msgstr ""
+msgstr "Mengganti nama [%s] menjadi [%s]"
 
 #: src/lib/files/system.c:187 src/lib/util/selinux.c:429
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat mengganti nama [%s] menjadi [%s] [%d]: %s"
 
 #: src/lib/files/system.c:261
 #, c-format
 msgid "Validating file [%s]"
-msgstr ""
+msgstr "Memvalidasi berkas [%s]"
 
 #: src/lib/files/system.c:266
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat memeriksa mode berkas dari [%s] [%d]: %s"
 
 #: src/lib/files/system.c:286
 #, c-format
 msgid "File [%s] was modified outside authselect!"
-msgstr ""
+msgstr "Berkas [%s] telah diubah di luar authselect!"
 
 #: src/lib/files/system.c:305
 #, c-format
 msgid "File [%s] is still present"
-msgstr ""
+msgstr "Berkas [%s] masih ada"
 
 #: src/lib/files/system.c:330 src/lib/files/system.c:340
-#, fuzzy, c-format
-#| msgid "Unable to restore [%s] [%d]: %s"
+#, c-format
 msgid "Unable to delete [%s] [%d]: %s"
-msgstr "Tidak dapat memulihkan [%s] [%d]: %s"
+msgstr "Tidak dapat menghapus [%s] [%d]: %s"
 
 #: src/lib/profiles/activate.c:44
 #, c-format
 msgid "%s update failed: %d"
-msgstr ""
+msgstr "Pembaruan %s gagal: %d"
 
 #: src/lib/profiles/activate.c:59
 msgid "Some directories are not accessible by authselect!"
-msgstr ""
+msgstr "Beberapa direktori tidak dapat diakses oleh authselect!"
 
 #: src/lib/profiles/activate.c:65
 #, c-format
 msgid "Unable to write generated system files [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat menulis berkas sistem yang dihasilkan [%d]: %s"
 
 #: src/lib/profiles/activate.c:72
 #, c-format
@@ -505,17 +508,17 @@ msgstr "Tidak dapat membuat konfigurasi [%d]: %s"
 #: src/lib/profiles/list.c:42
 #, c-format
 msgid "Reading profile directory [%s]"
-msgstr ""
+msgstr "Membaca direktori profil [%s]"
 
 #: src/lib/profiles/list.c:47
 #, c-format
 msgid "Directory [%s] is missing!"
-msgstr ""
+msgstr "Direktori [%s] tidak ditemukan!"
 
 #: src/lib/profiles/list.c:69
 #, c-format
 msgid "Found profile [%s]"
-msgstr ""
+msgstr "Profil ditemukan [%s]"
 
 #: src/lib/profiles/list.c:151
 #, c-format
@@ -530,196 +533,195 @@ msgstr "Tidak dapat membuka direktori [%s] [%d]: %s"
 #: src/lib/profiles/read.c:106
 #, c-format
 msgid "Looking up profile [%s]"
-msgstr ""
+msgstr "Melihat profil [%s]"
 
 #: src/lib/profiles/read.c:110
 msgid "Locations array is NULL"
-msgstr ""
+msgstr "Array lokasi adalah NULL"
 
 #: src/lib/profiles/read.c:133
 #, c-format
 msgid "Profile [%s] is a custom profile"
-msgstr ""
+msgstr "Profil [%s] adalah profil kustom"
 
 #: src/lib/profiles/read.c:135
 #, c-format
 msgid "Profile [%s] is a vendor profile"
-msgstr ""
+msgstr "Profil [%s] adalah profil vendor"
 
 #: src/lib/profiles/read.c:137
 #, c-format
 msgid "Profile [%s] is a default profile"
-msgstr ""
+msgstr "Profil [%s] adalah profil bawaan"
 
 #: src/lib/profiles/read.c:140
 #, c-format
 msgid "Profile [%s] found at [%s]"
-msgstr ""
+msgstr "Profil [%s] ditemukan di [%s]"
 
 #: src/lib/profiles/read.c:148
 #, c-format
 msgid "Profile [%s] was not found"
-msgstr ""
+msgstr "Profil [%s] tidak ditemukan"
 
 #: src/lib/profiles/read.c:203 src/lib/profiles/read.c:222
 #, c-format
 msgid "Profile [%s] does not contain a name in [%s]!"
-msgstr ""
+msgstr "Profil [%s] tidak mengandung nama di [%s]!"
 
 #: src/lib/util/dir.c:77 src/lib/util/dir.c:83
 #, c-format
 msgid "Unable to get basename of [%s]"
-msgstr ""
+msgstr "Tidak dapat mendapatkan nama dasar dari [%s]"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
 #: src/lib/util/file.c:199 src/cli/main.c:848
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat menampilkan [%s] [%d]: %s"
 
 #: src/lib/util/dir.c:130
 #, c-format
 msgid "Unable to stat directory [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat mengakses direktori [%d]: %s"
 
 #: src/lib/util/dir.c:313
 #, c-format
 msgid "Removing file [%s/%s]"
-msgstr ""
+msgstr "Menghapus berkas [%s/%s]"
 
 #: src/lib/util/dir.c:321
 #, c-format
 msgid "Removing directory [%s]"
-msgstr ""
+msgstr "Menghapus direktori [%s]"
 
 #: src/lib/util/file.c:43
 msgid "Internal error: stat cannot be NULL!"
-msgstr ""
+msgstr "Kesalahan internal: stat tidak boleh NULL!"
 
 #: src/lib/util/file.c:51
 #, c-format
 msgid "[%s] is not a directory!"
-msgstr ""
+msgstr "[%s] bukanlah direktori!"
 
 #: src/lib/util/file.c:54
 #, c-format
 msgid "[%s] is not a regular file!"
-msgstr ""
+msgstr "[%s] bukanlah berkas biasa!"
 
 #: src/lib/util/file.c:57
 #, c-format
 msgid "[%s] is not a symbolic link!"
-msgstr ""
+msgstr "[%s] bukanlah tautan simbolis!"
 
 #: src/lib/util/file.c:60
 #, c-format
 msgid "[%s] has wrong type [%.7o], expected [%.7o]!"
-msgstr ""
+msgstr "[%s] memiliki tipe yang salah [%.7o], diharapkan [%.7o]!"
 
 #: src/lib/util/file.c:87
 #, c-format
 msgid "[%s] has wrong mode [%.4o], expected [%.4o]!"
-msgstr ""
+msgstr "[%s] memiliki mode yang salah [%.4o], diharapkan [%.4o]!"
 
 #: src/lib/util/file.c:93
 #, c-format
 msgid "[%s] has wrong owner [%u], expected [%u]!"
-msgstr ""
+msgstr "[%s] memiliki pemilik yang salah [%u], diharapkan [%u]!"
 
 #: src/lib/util/file.c:99
 #, c-format
 msgid "[%s] has wrong group [%u], expected [%u]!"
-msgstr ""
+msgstr "[%s] memiliki grup yang salah [%u], diharapkan [%u]!"
 
 #: src/lib/util/file.c:121
 #, c-format
 msgid "[%s] does not exist!"
-msgstr ""
+msgstr "[%s] tidak ada!"
 
 #: src/lib/util/file.c:164 src/lib/util/file.c:211
 #, c-format
 msgid "Unable to read link destination [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat membaca tujuan tautan [%s] [%d]: %s"
 
 #: src/lib/util/file.c:170
 #, c-format
 msgid "Link [%s] does not point to [%s]"
-msgstr ""
+msgstr "Tautan [%s] tidak mengarah ke [%s]"
 
 #: src/lib/util/file.c:218 src/lib/util/file.c:220
 #, c-format
 msgid "Link [%s] points to [%s]"
-msgstr ""
+msgstr "Tautan [%s] mengarah ke [%s]"
 
 #: src/lib/util/file.c:281
 msgid "Internal error: filepath cannot be NULL!"
-msgstr ""
+msgstr "Kesalahan internal: jalur berkas tidak boleh NULL!"
 
 #: src/lib/util/file.c:313
 #, c-format
 msgid "Unable to get parent directory of [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat mendapatkan direktori induk dari [%s] [%d]: %s"
 
 #: src/lib/util/file.c:524 src/lib/util/textfile.c:175
 #, c-format
 msgid "Unable to chmod file [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat mengubah izin berkas [%s] [%d]: %s"
 
 #: src/lib/util/file.c:531
 #, c-format
 msgid "Unable to chown file [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat mengubah kepemilikan berkas [%s] [%d]: %s"
 
 #: src/lib/util/selinux.c:46
-#, fuzzy, c-format
-#| msgid "Unable to create backup [%d]: %s"
+#, c-format
 msgid "Unable to create selabel handle [%d]: %s"
-msgstr "Tidak dapat membuat cadangan [%d]: %s"
+msgstr "Tidak dapat membuat handle selabel [%d]: %s"
 
 #: src/lib/util/selinux.c:55
 #, c-format
 msgid "Unable to lookup selinux context [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat menemukan konteks SELinux [%d]: %s"
 
 #: src/lib/util/selinux.c:59
 #, c-format
 msgid "Found default selinux context for [%s]: %s"
-msgstr ""
+msgstr "Telah ditemukan konteks SELinux default untuk [%s]: %s"
 
 #: src/lib/util/selinux.c:84
 #, c-format
 msgid "Unable to obtain selinux context for [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat memperoleh konteks SELinux untuk [%s] [%d]: %s"
 
 #: src/lib/util/selinux.c:91
 msgid "not set"
-msgstr ""
+msgstr "belum diatur"
 
 #: src/lib/util/selinux.c:90
 #, c-format
 msgid "Found selinux context for [%s]: %s"
-msgstr ""
+msgstr "Kontekst SELinux ditemukan untuk [%s]: %s"
 
 #: src/lib/util/selinux.c:115 src/lib/util/selinux.c:183
 #: src/lib/util/selinux.c:251
 msgid "Unable to get current fscreate selinux context!"
-msgstr ""
+msgstr "Tidak dapat mendapatkan konteks SELinux fscreate saat ini!"
 
 #: src/lib/util/selinux.c:121 src/lib/util/selinux.c:189
 #: src/lib/util/selinux.c:257
 #, c-format
 msgid "Unable to get default selinux context for [%s] [%d]: %s!"
-msgstr ""
+msgstr "Tidak dapat mendapatkan konteks SELinux default untuk [%s] [%d]: %s!"
 
 #: src/lib/util/selinux.c:129 src/lib/util/selinux.c:197
 #: src/lib/util/selinux.c:265
 msgid "Unable to set fscreate selinux context!"
-msgstr ""
+msgstr "Tidak dapat menetapkan konteks SELinux fscreate!"
 
 #: src/lib/util/selinux.c:139 src/lib/util/selinux.c:207
 #: src/lib/util/selinux.c:275
 msgid "Unable to restore fscreate selinux context!"
-msgstr ""
+msgstr "Tidak dapat memulihkan konteks SELinux fscreate!"
 
 #: src/lib/util/selinux.c:387
 #, c-format
@@ -727,102 +729,104 @@ msgid ""
 "File [%s] should exist but is missing. It is not safe to delete [%s]. "
 "Aborting."
 msgstr ""
+"Berkas [%s] seharusnya ada tetapi tidak ditemukan. Tidak aman untuk "
+"menghapus [%s]. Membatalkan."
 
 #: src/lib/util/selinux.c:420
 #, c-format
 msgid "Removing [%s]"
-msgstr ""
+msgstr "Menghapus [%s]"
 
 #: src/lib/util/template.c:143 src/lib/util/template.c:205
 #: src/lib/util/template.c:281
 msgid "Invalid operator!"
-msgstr ""
+msgstr "Operator tidak valid!"
 
 #: src/lib/util/template.c:450 src/lib/util/template.c:573
 #: src/lib/util/template.c:624
 #, c-format
 msgid "Unable to compile regular expression: regex error %d"
-msgstr ""
+msgstr "Tidak dapat mengompilasi ekspresi reguler: kesalahan regex %d"
 
 #: src/lib/util/template.c:460 src/lib/util/template.c:634
 #, c-format
 msgid "Unable to process match [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat memproses pertandingan [%d]: %s"
 
 #: src/lib/util/template.c:485
 #, c-format
 msgid "Unable to process operator [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat memproses operator [%d]: %s"
 
 #: src/lib/util/template.c:500 src/lib/util/template.c:650
 #, c-format
 msgid "Unable to search string: regex error %d"
-msgstr ""
+msgstr "Tidak dapat mencari string: kesalahan regex %d"
 
 #: src/lib/util/template.c:532
 #, c-format
 msgid "Unable to generate template [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat menghasilkan templat [%d]: %s"
 
 #: src/lib/util/template.c:580
 #, c-format
 msgid "Unable to find new match: regex error %d"
-msgstr ""
+msgstr "Tidak dapat menemukan kecocokan baru: kesalahan regex %d"
 
 #: src/lib/util/template.c:705
 #, c-format
 msgid "Unable to create temporary file for [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat membuat berkas sementara untuk [%s] [%d]: %s"
 
 #: src/lib/util/textfile.c:56
 #, c-format
 msgid "File [%s] is bigger than %uKiB!"
-msgstr ""
+msgstr "Berkas [%s] lebih besar dari %uKiB!"
 
 #: src/lib/util/textfile.c:85
 #, c-format
 msgid "Unable to read file [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat membaca berkas [%s] [%d]: %s"
 
 #: src/lib/util/textfile.c:158
 #, c-format
 msgid "Unable to open file [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat membuka berkas [%s] [%d]: %s"
 
 #: src/lib/util/textfile.c:167
 #, c-format
 msgid "Unable to write data [%s] [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat menulis data [%s] [%d]: %s"
 
 #: src/cli/cli_tool.c:72
 #, c-format
 msgid "Common options:\n"
-msgstr ""
+msgstr "Opsi umum:\n"
 
 #: src/cli/cli_tool.c:74 src/cli/cli_tool.c:96
 msgid "Print error messages"
-msgstr ""
+msgstr "Cetak pesan kesalahan"
 
 #: src/cli/cli_tool.c:76 src/cli/cli_tool.c:97
 msgid "Print trace messages"
-msgstr ""
+msgstr "Cetak pesan jejak"
 
 #: src/cli/cli_tool.c:78 src/cli/cli_tool.c:98
 msgid "Print warning messages"
-msgstr ""
+msgstr "Cetak pesan peringatan"
 
 #: src/cli/cli_tool.c:80
 #, c-format
 msgid "Help options:\n"
-msgstr ""
+msgstr "Opsi bantuan:\n"
 
 #: src/cli/cli_tool.c:82
 msgid "Show this for a command"
-msgstr ""
+msgstr "Tampilkan ini sebagai perintah"
 
 #: src/cli/cli_tool.c:84
 msgid "Show brief usage message for a command"
-msgstr ""
+msgstr "Tampilkan pesan penggunaan singkat untuk perintah"
 
 #: src/cli/cli_tool.c:173
 #, c-format
@@ -831,41 +835,44 @@ msgid ""
 "%s COMMAND COMMAND-ARGS\n"
 "\n"
 msgstr ""
+"Penggunaan:\n"
+"%s PERINTAH ARGUMEN-PERINTAH\n"
+"\n"
 
 #: src/cli/cli_tool.c:174
 #, c-format
 msgid "Available commands:\n"
-msgstr ""
+msgstr "Perintah yang tersedia:\n"
 
 #: src/cli/cli_tool.c:196
 #, c-format
 msgid "\n"
-msgstr ""
+msgstr "\n"
 
 #: src/cli/cli_tool.c:230
 #, c-format
 msgid "Authselect command '%s' can only be run as root!\n"
-msgstr ""
+msgstr "Perintah Authselect ‘%s’ hanya dapat dijalankan sebagai root!\n"
 
 #: src/cli/cli_tool.c:247
 msgid "Bug: commands can't be NULL!\n"
-msgstr ""
+msgstr "Bug: Perintah tidak boleh NULL!\n"
 
 #: src/cli/cli_tool.c:310
 msgid "Command options:"
-msgstr ""
+msgstr "Opsi perintah:"
 
 #: src/cli/cli_tool.c:312
 msgid "Common options:"
-msgstr ""
+msgstr "Opsi umum:"
 
 #: src/cli/cli_tool.c:331 src/cli/cli_tool.c:334
 msgid "[OPTIONS...]"
-msgstr ""
+msgstr "[OPSI...]"
 
 #: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:840
 msgid "Out of memory!"
-msgstr ""
+msgstr "Kehabisan memori!"
 
 #: src/cli/cli_tool.c:358
 #, c-format
@@ -873,6 +880,8 @@ msgid ""
 "Invalid option %s: %s\n"
 "\n"
 msgstr ""
+"Opsi tidak valid %s: %s\n"
+"\n"
 
 #: src/cli/cli_tool.c:370
 #, c-format
@@ -880,6 +889,8 @@ msgid ""
 "Missing option: %s\n"
 "\n"
 msgstr ""
+"Opsi yang hilang: %s\n"
+"\n"
 
 #: src/cli/cli_tool.c:380
 #, c-format
@@ -887,6 +898,8 @@ msgid ""
 "Only one free argument is expected!\n"
 "\n"
 msgstr ""
+"Hanya satu argumen bebas yang diharapkan!\n"
+"\n"
 
 #: src/cli/cli_tool.c:395
 #, c-format
@@ -894,6 +907,8 @@ msgid ""
 "Unexpected parameter: %s\n"
 "\n"
 msgstr ""
+"Parameter yang tidak terduga: %s\n"
+"\n"
 
 #: src/cli/cli_tool.c:407
 #, c-format
@@ -901,60 +916,62 @@ msgid ""
 "At least one option is required!\n"
 "\n"
 msgstr ""
+"Setidaknya satu opsi harus dipilih!\n"
+"\n"
 
 #: src/cli/main.c:76 src/cli/main.c:432 src/cli/main.c:475
 msgid "Profile identifier."
-msgstr ""
+msgstr "Identifikasi profil."
 
 #: src/cli/main.c:79 src/cli/main.c:248 src/cli/main.c:293 src/cli/main.c:342
 #: src/cli/main.c:390 src/cli/main.c:435 src/cli/main.c:478 src/cli/main.c:651
 #: src/cli/main.c:728 src/cli/main.c:775 src/cli/main.c:815 src/cli/main.c:880
 #: src/cli/main.c:906
 msgid "Unable to parse command arguments"
-msgstr ""
+msgstr "Tidak dapat memproses argumen perintah"
 
 #: src/cli/main.c:135
 msgid "Unable to backup current configuration!\n"
-msgstr ""
+msgstr "Tidak dapat melakukan cadangan konfigurasi saat ini!\n"
 
 #: src/cli/main.c:139
 #, c-format
 msgid "Backup stored at %s\n"
-msgstr ""
+msgstr "Cadangan disimpan di %s\n"
 
 #: src/cli/main.c:161
 msgid "Enforce changes"
-msgstr ""
+msgstr "Terapkan perubahan"
 
 #: src/cli/main.c:162 src/cli/main.c:241 src/cli/main.c:641 src/cli/main.c:719
 msgid "Backup system files before activating profile (generate unique name)"
-msgstr ""
+msgstr "Cadangkan berkas sistem sebelum mengaktifkan profil (buat nama unik)"
 
 #: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "Backup system files before activating profile"
-msgstr ""
+msgstr "Cadangkan berkas sistem sebelum mengaktifkan profil"
 
 #: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
 msgid "NAME"
-msgstr ""
+msgstr "NAMA"
 
 #: src/cli/main.c:164
 msgid "Do not backup system files when --force is set"
-msgstr ""
+msgstr "Jangan cadangkan berkas sistem saat opsi --force diaktifkan"
 
 #: src/cli/main.c:165 src/cli/main.c:643
 msgid "Do not print profile requirements"
-msgstr ""
+msgstr "Jangan mencetak persyaratan profil"
 
 #: src/cli/main.c:176 src/cli/main.c:405 src/cli/main.c:441 src/cli/main.c:484
 #: src/cli/main.c:516 src/cli/main.c:670
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat memperoleh informasi profil [%d]: %s"
 
 #: src/cli/main.c:184 src/cli/main.c:524 src/cli/main.c:678
 msgid "Unable to read profile requirements!"
-msgstr ""
+msgstr "Tidak dapat membaca persyaratan profil!"
 
 #: src/cli/main.c:198
 msgid ""
@@ -962,25 +979,28 @@ msgid ""
 "Some unexpected changes to the configuration were detected.\n"
 "Use --force parameter if you want to overwrite these changes.\n"
 msgstr ""
+"\n"
+"Beberapa perubahan tak terduga pada konfigurasi telah terdeteksi.\n"
+"Gunakan parameter --force jika Anda ingin mengganti perubahan ini.\n"
 
 #: src/cli/main.c:203
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
-msgstr ""
+msgstr "Tidak dapat mengaktifkan profil [%d]: %s\n"
 
 #: src/cli/main.c:208
 #, c-format
 msgid "Profile \"%s\" was selected.\n"
-msgstr ""
+msgstr "Profil “%s” telah dipilih.\n"
 
 #: src/cli/main.c:211
 msgid "The following nsswitch maps are overwritten by the profile:\n"
-msgstr ""
+msgstr "Peta nsswitch berikut ini ditimpa oleh profil:\n"
 
 #: src/cli/main.c:214
 #, c-format
 msgid "- %s\n"
-msgstr ""
+msgstr "- %s\n"
 
 #: src/cli/main.c:219
 #, c-format
@@ -988,120 +1008,126 @@ msgid ""
 "\n"
 "%s\n"
 msgstr ""
+"\n"
+"%s\n"
 
 #: src/cli/main.c:260
 msgid "Changes were successfully applied.\n"
-msgstr ""
+msgstr "Perubahan telah diterapkan dengan sukses.\n"
 
 #: src/cli/main.c:263 src/cli/main.c:299 src/cli/main.c:660
 msgid "No existing configuration detected.\n"
-msgstr ""
+msgstr "Tidak ditemukan konfigurasi yang ada.\n"
 
 #: src/cli/main.c:266
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
 msgstr ""
+"Beberapa perubahan tak terduga pada konfigurasi telah terdeteksi. Gunakan "
+"perintah ‘select’ sebagai gantinya.\n"
 
 #: src/cli/main.c:270
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
-msgstr ""
+msgstr "Tidak dapat menerapkan perubahan [%d]: %s\n"
 
 #: src/cli/main.c:287
 msgid "Print command parameters instead of formatted output"
-msgstr ""
+msgstr "Cetak parameter perintah alih-alih output yang diformat"
 
 #: src/cli/main.c:302 src/cli/main.c:663
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat mendapatkan konfigurasi saat ini [%d]: %s"
 
 #: src/cli/main.c:316
 #, c-format
 msgid "Profile ID: %s\n"
-msgstr ""
+msgstr "ID Profil: %s\n"
 
 #: src/cli/main.c:317
 msgid "Enabled features:"
-msgstr ""
+msgstr "Fitur yang diaktifkan:"
 
 #: src/cli/main.c:320
 msgid " None\n"
-msgstr ""
+msgstr " Tidak ada\n"
 
 #: src/cli/main.c:348
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat menguji konfigurasi saat ini [%d]: %s"
 
 #: src/cli/main.c:355
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
 msgstr ""
+"Konfigurasi saat ini tidak valid. Kemungkinan besar konfigurasi ini diubah "
+"di luar authselect."
 
 #: src/cli/main.c:362
 msgid "Current configuration is valid."
-msgstr ""
+msgstr "Konfigurasi saat ini valid."
 
 #: src/cli/main.c:365
 msgid "No configuration detected."
-msgstr ""
+msgstr "Tidak terdeteksi konfigurasi."
 
 #: src/cli/main.c:369
 msgid "System was not configured with authselect."
-msgstr ""
+msgstr "Sistem tidak dikonfigurasi dengan authselect."
 
 #: src/cli/main.c:396
 msgid "Unable to get profile list!"
-msgstr ""
+msgstr "Tidak dapat menampilkan daftar profil!"
 
 #: src/cli/main.c:449
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat mengakses fitur profil [%d]: %s"
 
 #: src/cli/main.c:563
 msgid "Print content of all files"
-msgstr ""
+msgstr "Cetak isi semua berkas"
 
 #: src/cli/main.c:564
 msgid "Print nsswitch.conf content"
-msgstr ""
+msgstr "Cetak isi berkas nsswitch.conf"
 
 #: src/cli/main.c:565
 msgid "Print system-auth content"
-msgstr ""
+msgstr "Cetak konten sistem otentikasi"
 
 #: src/cli/main.c:566
 msgid "Print password-auth content"
-msgstr ""
+msgstr "Cetak konten yang dilindungi kata sandi"
 
 #: src/cli/main.c:567
 msgid "Print smartcard-auth content"
-msgstr ""
+msgstr "Cetak konten otentikasi kartu pintar"
 
 #: src/cli/main.c:568
 msgid "Print fingerprint-auth content"
-msgstr ""
+msgstr "Cetak konten otentikasi sidik jari"
 
 #: src/cli/main.c:569
 msgid "Print postlogin content"
-msgstr ""
+msgstr "Cetak konten setelah login"
 
 #: src/cli/main.c:570
 msgid "Print dconf database content"
-msgstr ""
+msgstr "Cetak isi basis data dconf"
 
 #: src/cli/main.c:571
 msgid "Print dconf lock content"
-msgstr ""
+msgstr "Cetak isi kunci dconf"
 
 #: src/cli/main.c:598
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
-msgstr ""
+msgstr "Tidak dapat mendapatkan konten yang dihasilkan [%d]: %s"
 
 #: src/cli/main.c:617
 #, c-format
@@ -1109,6 +1135,8 @@ msgid ""
 "File %s: Empty\n"
 "\n"
 msgstr ""
+"Berkas %s: Kosong\n"
+"\n"
 
 #: src/cli/main.c:619
 #, c-format
@@ -1117,193 +1145,204 @@ msgid ""
 "%s\n"
 "\n"
 msgstr ""
+"Berkas %s:\n"
+"%s\n"
+"\n"
 
 #: src/cli/main.c:648
 msgid "Feature to enable."
-msgstr ""
+msgstr "Fitur yang dapat diaktifkan."
 
 #: src/cli/main.c:685
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
-msgstr ""
+msgstr "Tidak dapat melakukan cadangan konfigurasi saat ini [%d]: %s\n"
 
 #: src/cli/main.c:692
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
-msgstr ""
+msgstr "Tidak dapat mengaktifkan fitur [%d]: %s\n"
 
 #: src/cli/main.c:697
 #, c-format
 msgid "%s\n"
-msgstr ""
+msgstr "%s\n"
 
 #: src/cli/main.c:725
 msgid "Feature to disable."
-msgstr ""
+msgstr "Fitur untuk dinonaktifkan."
 
 #: src/cli/main.c:739
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
-msgstr ""
+msgstr "Tidak dapat menonaktifkan fitur [%d]: %s\n"
 
 #: src/cli/main.c:760
 msgid "Create new profile as a vendor profile instead of a custom profile"
-msgstr ""
+msgstr "Buat profil baru sebagai profil vendor alih-alih profil kustom"
 
 #: src/cli/main.c:761
 msgid "ID of a profile that should be used as a base for the new profile"
-msgstr ""
+msgstr "ID profil yang harus digunakan sebagai dasar untuk profil baru"
 
 #: src/cli/main.c:762
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
 msgstr ""
+"Buat profil baru berdasarkan profil default, meskipun profil vendor dengan "
+"nama yang sama sudah ada"
 
 #: src/cli/main.c:763
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr ""
+"Gunakan tautan simbolik (symlink) untuk berkas meta dari profil dasar "
+"daripada menyalinnya"
 
 #: src/cli/main.c:764
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr ""
+"Gunakan tautan simbolis (symlink) untuk berkas nsswitch dari profil dasar "
+"daripada menyalinnya"
 
 #: src/cli/main.c:765
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr ""
+"Buat tautan simbolik (symlink) untuk berkas pam dari profil dasar daripada "
+"menyalinnya"
 
 #: src/cli/main.c:766
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
+"Buat tautan simbolis (symlink) untuk berkas dconf dari profil dasar daripada "
+"menyalinnya"
 
 #: src/cli/main.c:767
 msgid "Symlink specific file (can be set multiple times)"
-msgstr ""
+msgstr "Tautan simbolik untuk berkas tertentu (dapat diatur beberapa kali)"
 
 #: src/cli/main.c:772
 msgid "New profile name."
-msgstr ""
+msgstr "Nama profil baru."
 
 #: src/cli/main.c:782
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
-msgstr ""
+msgstr "Tidak dapat membuat profil baru [%d]: %s\n"
 
 #: src/cli/main.c:786
 #, c-format
 msgid "New profile was created at %s\n"
-msgstr ""
+msgstr "Profil baru telah dibuat di %s\n"
 
 #: src/cli/main.c:809
 msgid "Print backup names without any formatting and additional information"
-msgstr ""
+msgstr "Cetak nama cadangan tanpa format apa pun dan informasi tambahan"
 
 #: src/cli/main.c:821
 msgid "Unable to list available backups!"
-msgstr ""
+msgstr "Tidak dapat menampilkan daftar cadangan yang tersedia!"
 
 #: src/cli/main.c:858
 #, c-format
 msgid "%-*s (created at %s)\n"
-msgstr ""
+msgstr "%-*s (dibuat pada %s)\n"
 
 #: src/cli/main.c:877
 msgid "Name of the backup to remove."
-msgstr ""
+msgstr "Nama cadangan yang akan dihapus."
 
 #: src/cli/main.c:886
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
-msgstr ""
+msgstr "Tidak dapat menghapus cadangan [%s] [%d]: %s\n"
 
 #: src/cli/main.c:903
 msgid "Name of the backup to restore from."
-msgstr ""
+msgstr "Nama cadangan yang akan dipulihkan."
 
 #: src/cli/main.c:912
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
-msgstr ""
+msgstr "Tidak dapat memulihkan cadangan [%s] [%d]: %s\n"
 
 #: src/cli/main.c:928
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
-msgstr ""
+msgstr "Tidak dapat menghapus konfigurasi authselect [%d]: %s\n"
 
 #: src/cli/main.c:978
 msgid "Select profile"
-msgstr ""
+msgstr "Pilih profil"
 
 #: src/cli/main.c:979
 msgid "Regenerate configuration for currently selected command"
-msgstr ""
+msgstr "Memperbarui konfigurasi untuk perintah yang saat ini dipilih"
 
 #: src/cli/main.c:980
 msgid "List available profiles"
-msgstr ""
+msgstr "Daftar profil yang tersedia"
 
 #: src/cli/main.c:981
 msgid "List available profile features"
-msgstr ""
+msgstr "Daftar fitur profil yang tersedia"
 
 #: src/cli/main.c:982
 msgid "Show profile information"
-msgstr ""
+msgstr "Tampilkan informasi profil"
 
 #: src/cli/main.c:983
 msgid "Print profile requirements"
-msgstr ""
+msgstr "Persyaratan profil cetak"
 
 #: src/cli/main.c:984
 msgid "Get identifier of currently selected profile"
-msgstr ""
+msgstr "Dapatkan identifikasi profil yang saat ini dipilih"
 
 #: src/cli/main.c:985
 msgid "Check if the current configuration is valid"
-msgstr ""
+msgstr "Periksa apakah konfigurasi saat ini valid"
 
 #: src/cli/main.c:986
 msgid "Print changes that would be otherwise written"
-msgstr ""
+msgstr "Cetak perubahan yang seharusnya ditulis"
 
 #: src/cli/main.c:987
 msgid "Enable feature in currently selected profile"
-msgstr ""
+msgstr "Aktifkan fitur pada profil yang saat ini dipilih"
 
 #: src/cli/main.c:988
 msgid "Disable feature in currently selected profile"
-msgstr ""
+msgstr "Nonaktifkan fitur pada profil yang saat ini dipilih"
 
 #: src/cli/main.c:989
 msgid "Create new authselect profile"
-msgstr ""
+msgstr "Buat profil authselect baru"
 
 #: src/cli/main.c:990
 msgid "Backup commands:"
-msgstr ""
+msgstr "Perintah cadangan:"
 
 #: src/cli/main.c:991
 msgid "List available backups"
-msgstr ""
+msgstr "Daftar cadangan yang tersedia"
 
 #: src/cli/main.c:992
 msgid "Remove backup"
-msgstr ""
+msgstr "Hapus cadangan"
 
 #: src/cli/main.c:993
 msgid "Restore from backup"
-msgstr ""
+msgstr "Pulihkan dari cadangan"
 
 #: src/cli/main.c:994
 msgid "Other:"
-msgstr ""
+msgstr "Lain-lain:"
 
 #: src/cli/main.c:995
-#, fuzzy
-#| msgid "Trying to uninstall authselect configuration"
 msgid "Opt-out from authselect managed configuration"
-msgstr "Mencoba menghapus instalasi konfigurasi authselect"
+msgstr "Menonaktifkan konfigurasi terkelola authselect"
 
 #: src/cli/main.c:997
 msgid "Print authselect version"
-msgstr ""
+msgstr "Cetak versi authselect"
