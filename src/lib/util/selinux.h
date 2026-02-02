@@ -86,6 +86,9 @@ struct selinux_safe_copy {
 
     /* Unlink destination if source file does not exist. */
     bool can_unlink;
+
+    /* Write an empty file if the source is missing. */
+    bool write_empty_if_missing;
 };
 
 /**
