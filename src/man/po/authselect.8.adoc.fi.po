@@ -1,14 +1,15 @@
 # SOME DESCRIPTIVE TITLE
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
-# Jan Kuparinen <copper_fin@hotmail.com>, 2022.
+# Jan Kuparinen <copper_fin@hotmail.com>, 2022, 2025.
 # Ricky Tigg <ricky.tigg@gmail.com>, 2024, 2025.
+# Jouko Tiilikainen <jti65@users.noreply.translate.fedoraproject.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-12-01 13:40+0100\n"
-"PO-Revision-Date: 2025-03-22 11:53+0000\n"
-"Last-Translator: Ricky Tigg <ricky.tigg@gmail.com>\n"
+"PO-Revision-Date: 2025-12-30 19:58+0000\n"
+"Last-Translator: Jan Kuparinen <copper_fin@hotmail.com>\n"
 "Language-Team: Finnish <https://translate.fedoraproject.org/projects/"
 "authselect/12x-authselect8adoc/fi/>\n"
 "Language: fi\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
@@ -46,7 +47,7 @@ msgstr "SYNOPSIS"
 #, no-wrap
 msgid " authselect [--debug] [--trace] [--warn] command [command options]\n"
 msgstr ""
-" authselect [--debug] [--trace] [--warn] komento [komennon vaihtoehdot]\n"
+" authselect [--debug] [--trace] [--warn] komento [komennon valitsimet]\n"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:15
@@ -323,8 +324,8 @@ msgid ""
 "_Note:_ This will only list the features without any description. Please, read the profile documentation with *show* to see what the features do."
 msgstr ""
 "Listaa kaikki tietyssä profiilissa saatavilla olevat ominaisuudet.\n"
-"_Huomautus:_ Tämä listaa vain ominaisuudet ilman kuvausta. Ole hyvä ja lue "
-"profiilin dokumentaatio *show*:lla nähdäksesi, mitä ominaisuudet tekevät."
+"_Huomautus:_ Tämä luettelee vain ominaisuudet ilman kuvausta. Ole hyvä ja "
+"lue profiilin dokumentaatio *show*:lla nähdäksesi, mitä ominaisuudet tekevät."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:99
@@ -385,7 +386,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:115
 #, no-wrap
 msgid "*test* profile_id [options] [features]"
-msgstr "*test* profiilitunnus [vaihtoehdot] [ominaisuudet]"
+msgstr "*test* profiilitunnus [valitsimet] [ominaisuudet]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:118
@@ -584,7 +585,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:178
 #, no-wrap
 msgid "*create-profile* NAME [--vendor,-v] [options]"
-msgstr "*create-profile* NIMI [--vendor,-v] [vaihtoehdot]"
+msgstr "*create-profile* NIMI [-v, --vendor] [valitsimet]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:183
@@ -595,9 +596,9 @@ msgid ""
 "option is selected."
 msgstr ""
 "Luo uusi muokattu profiili nimeltä _NIMI_. Profiili voi perustua olemassa "
-"olevaan profiiliin, jolloin uudet profiilimallit joko kopioidaan "
+"olevaan profiiliin, jolloin uudet profiilimallipohjat joko kopioidaan "
 "perusprofiilista tai luodaan symbolisia linkkejä näihin tiedostoihin, jos "
-"tällainen vaihtoehto valitaan."
+"tällainen valitsin valitaan."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:184
@@ -636,19 +637,19 @@ msgstr ""
 #, no-wrap
 msgid "If _BASE-ID_ starts with prefix _custom/_ it is a custom profile.\n"
 msgstr ""
-"Jos _BASE-ID_ alkaa etuliitteellä _custom/_, se on mukautettu profiili.\n"
+"Jos _PERUSTUNNUS_ alkaa etuliitteellä _custom/_, se on mukautettu profiili.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:193
 #, no-wrap
 msgid "Try if _BASE-ID_ is found in vendor profiles.\n"
-msgstr "Kokeile löytyykö _BASE-ID_ toimittajaprofiileista.\n"
+msgstr "Kokeile löytyykö _PERUSTUNNUS_ toimittajaprofiileista.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:194
 #, no-wrap
 msgid "Try if _BASE-ID_ is found in default profiles.\n"
-msgstr "Kokeile löytyykö _BASE-ID_ oletusprofiileista.\n"
+msgstr "Kokeile löytyykö _PERUSTUNNUS_ oletusprofiileista.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:195
@@ -859,7 +860,7 @@ msgstr ""
 #: src/man/authselect.8.adoc:251
 #, no-wrap
 msgid "NSSWITCH.CONF MANAGEMENT"
-msgstr ""
+msgstr "NSSWITCH.CONF:n HALLINTA"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:257
@@ -870,6 +871,11 @@ msgid ""
 "the *select* command. This mechanism prevents authselect from overwriting "
 "anything that does not match any available profile."
 msgstr ""
+"Authselect luo {AUTHSELECT_NSSWITCH_CONF}:n eikä salli käyttäjien tehdä "
+"muutoksia tähän tiedostoon. Tällaiset muutokset havaitaan, eikä authselect "
+"kirjoita mitään järjestelmämäärityksiä, ellei *select*-komennolle ole "
+"annettu valitsinta *--force*. Tämä mekanismi estää authselectiä korvaamasta "
+"mitään, mikä ei vastaa käytettävissä olevia profiileja."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:265
@@ -882,12 +888,19 @@ msgid ""
 "those that are relevant to the profile. If a map is set within a profile, it "
 "always overwrites the same map from _user-nsswitch.conf_."
 msgstr ""
+"Kaikki käyttäjän muutokset nsswitch-karttoihin tulee tehdä tiedostossa "
+"{AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf. Kun authselect luo uuden "
+"_nsswitch.conf_:n, se lukee tämän tiedoston ja yhdistää sen valitun "
+"profiilin määrityksiin. Profiilin määritykset ovat aina etusijalla. Toisin "
+"sanoen profiilien ei tarvitse asettaa kaikkia nsswitch-karttoja, vaan ne "
+"voivat asettaa vain ne, jotka liittyvät profiiliin. Jos kartta on asetettu "
+"profiiliin, se korvaa aina saman kartan _user-nsswitch.conf_:sta."
 
 #. type: Block title
 #: src/man/authselect.8.adoc:266
 #, no-wrap
 msgid "Example 1"
-msgstr ""
+msgstr "Esimerkki 1"
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:277
@@ -902,6 +915,14 @@ msgid ""
 "services:   sss files\n"
 "sudoers:    files sss {include if \"with-sudo\"}\n"
 msgstr ""
+"# \"sssd\"-profiili\n"
+"$ cat {AUTHSELECT_PROFILE_DIR}/sssd/nsswitch.conf\n"
+"passwd:     sss files systemd\n"
+"group:      sss files systemd\n"
+"netgroup:   sss files\n"
+"automount:  sss files\n"
+"services:   sss files\n"
+"sudoers:    files sss {include if \"with-sudo\"}\n"
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:283
@@ -913,12 +934,17 @@ msgid ""
 "hosts: files dns myhostname\n"
 "sudoers: files\n"
 msgstr ""
+"$ cat {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf\n"
+"passwd: files sss\n"
+"group: files sss\n"
+"hosts: files dns myhostname\n"
+"sudoers: files\n"
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:285
 #, no-wrap
 msgid "$ authselect select sssd\n"
-msgstr ""
+msgstr "$ authselect select sssd\n"
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:295
@@ -934,12 +960,21 @@ msgid ""
 "hosts:      files dns myhostname\n"
 "sudoers:    files\n"
 msgstr ""
+"# passwd- ja ryhmäkartat user-nsswitch.conf:sta ohitetaan\n"
+"$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
+"passwd:     sss files systemd\n"
+"group:      sss files systemd\n"
+"netgroup:   sss files\n"
+"automount:  sss files\n"
+"services:   sss files\n"
+"hosts:      files dns myhostname\n"
+"sudoers:    files\n"
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:297
 #, no-wrap
 msgid "$ authselect select sssd with-sudo\n"
-msgstr ""
+msgstr "$ authselect select sssd with-sudo\n"
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:307
@@ -955,6 +990,15 @@ msgid ""
 "sudoers:    files sss\n"
 "hosts:      files dns myhostname\n"
 msgstr ""
+"# passwd-, group- ja sudoers-kartat user-nsswitch.conf:sta ohitetaan\n"
+"$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
+"passwd:     sss files systemd\n"
+"group:      sss files systemd\n"
+"netgroup:   sss files\n"
+"automount:  sss files\n"
+"services:   sss files\n"
+"sudoers:    files sss\n"
+"hosts:      files dns myhostname\n"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:310
