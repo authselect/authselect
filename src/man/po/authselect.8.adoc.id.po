@@ -7,49 +7,51 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-02-23 14:08+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-02-07 01:58+0000\n"
+"Last-Translator: Arif Budiman <arifpedia@gmail.com>\n"
+"Language-Team: Indonesian <https://translate.fedoraproject.org/projects/"
+"authselect/15x-authselect8adoc/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
 #, no-wrap
 msgid "authselect(8)"
-msgstr ""
+msgstr "authselect(8)"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:6
 #, no-wrap
 msgid "NAME"
-msgstr ""
+msgstr "NAMA"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:9
 msgid "authselect - select system identity and authentication sources."
-msgstr ""
+msgstr "authselect - memilih sumber identitas sistem dan autentikasi."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:11
 #, no-wrap
 msgid "SYNOPSIS"
-msgstr ""
+msgstr "SINOPSIS"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:13
 #, no-wrap
 msgid " authselect [--debug] [--trace] [--warn] command [command options]\n"
-msgstr ""
+msgstr " authselect [--debug] [--trace] [--warn] perintah [opsi perintah]\n"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:15
 #, no-wrap
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "DESKRIPSI"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:21
@@ -71,12 +73,17 @@ msgid ""
 "*authselect*. See _authselect-profiles(5)_ for more information on extending "
 "existing profiles."
 msgstr ""
+"Jika set profil yang disediakan tidak memadai, administrator dapat membuat "
+"profil khusus dengan menempatkannya di direktori profil khusus ("
+"{AUTHSELECT_CUSTOM_DIR}). Dengan melakukan hal tersebut, profil tersebut "
+"dapat segera digunakan oleh *authselect*. Lihat _authselect-profiles(5)_ "
+"untuk informasi lebih lanjut tentang memperluas profil yang ada."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:29
 #, no-wrap
 msgid "OPT-IN TO AUTHSELECT"
-msgstr ""
+msgstr "IKUT SERA (OPT-IN) KE AUTHSELECT"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:39
@@ -91,12 +98,22 @@ msgid ""
 "so if you wish to go back you can restore it with *authselect backup-"
 "restore* command (see description below)."
 msgstr ""
+"Authselect tidak akan menyentuh konfigurasi Anda yang sudah ada kecuali jika "
+"konfigurasi tersebut telah dibuat olehnya. Jika Anda ingin mulai menggunakan "
+"authselect untuk mengonfigurasi autentikasi sistem Anda, silakan panggil "
+"*authselect select* dengan parameter *--force* terlebih dahulu (misalnya "
+"*authselect select sssd --force*). Parameter *--force* memberi tahu "
+"authselect bahwa tidak apa-apa untuk menimpa konfigurasi non-authselect yang "
+"ada (lihat deskripsi di bawah). Menggunakan parameter *--force* akan secara "
+"otomatis menghasilkan cadangan (backup) konfigurasi Anda saat ini, sehingga "
+"jika Anda ingin kembali, Anda dapat memulihkannya dengan perintah "
+"*authselect backup-restore* (lihat deskripsi di bawah)."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:41
 #, no-wrap
 msgid "OPT-OUT FROM AUTHSELECT"
-msgstr ""
+msgstr "BERHENTI MENGGUNAKAN (OPT-OUT) AUTHSELECT"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:45
@@ -105,12 +122,16 @@ msgid ""
 "out*.  This will remove all authselect configuration from your system and "
 "you can then modify your configuration manually."
 msgstr ""
+"Untuk menghentikan authselect mengelola konfigurasi Anda, jalankan "
+"*authselect opt-out*. Ini akan menghapus semua konfigurasi authselect dari "
+"sistem Anda dan Anda kemudian dapat memodifikasi konfigurasi Anda secara "
+"manual."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:47
 #, no-wrap
 msgid "AVAILABLE COMMANDS"
-msgstr ""
+msgstr "PERINTAH YANG TERSEDIA"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:50
@@ -118,12 +139,16 @@ msgid ""
 "To list all available commands run *authselect* without any parameters.  To "
 "print help for the selected command run *authselect COMMAND --help*."
 msgstr ""
+"Untuk melihat daftar semua perintah yang tersedia, jalankan *authselect* "
+"tanpa parameter apa pun. Untuk mencetak bantuan untuk perintah yang dipilih, "
+"jalankan *authselect PERINTAH --help*."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:51
 #, no-wrap
 msgid "*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup=NAME]"
 msgstr ""
+"*select* profile_id [fitur] [-f, --force] [-q, --quiet] [-b] [--backup=NAMA]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:54
@@ -131,12 +156,14 @@ msgid ""
 "Activate desired profile. See profile description with *show* command, to "
 "list profile specific optional features."
 msgstr ""
+"Mengaktifkan profil yang diinginkan. Lihat deskripsi profil dengan perintah "
+"*show*, untuk mencantumkan fitur opsional spesifik profil."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:55
 #, no-wrap
 msgid "*--force, -f*"
-msgstr ""
+msgstr "*--force, -f*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:60
@@ -147,13 +174,19 @@ msgid ""
 "automatically backup system files before writing any change unless\n"
 "*--nobackup* option is set.\n"
 msgstr ""
+"Menulis perubahan meskipun konfigurasi sebelumnya tidak dibuat oleh\n"
+"authselect melainkan oleh alat lain atau melalui perubahan manual. Opsi ini "
+"akan\n"
+"secara otomatis mencadangkan berkas sistem sebelum menulis perubahan apa pun "
+"kecuali\n"
+"opsi *--nobackup* ditetapkan.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:61 src/man/authselect.8.adoc:86
 #: src/man/authselect.8.adoc:155 src/man/authselect.8.adoc:173
 #, no-wrap
 msgid "*-b*"
-msgstr ""
+msgstr "*-b*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:66
@@ -164,13 +197,18 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
+"Mencadangkan berkas sistem sebelum mengaktifkan profil yang dipilih. "
+"Cadangan\n"
+"akan disimpan di {AUTHSELECT_BACKUP_DIR}/NAMA. Waktu saat ini dengan\n"
+"string unik digunakan sebagai nama cadangan. Ini adalah pintasan\n"
+"untuk *--backup=*.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:67 src/man/authselect.8.adoc:92
 #: src/man/authselect.8.adoc:161 src/man/authselect.8.adoc:179
 #, no-wrap
 msgid "*--backup=NAME*"
-msgstr ""
+msgstr "*--backup=NAMA*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:71
@@ -180,24 +218,28 @@ msgid ""
 "will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
 "unique string is used as a name if no value is provided.\n"
 msgstr ""
+"Mencadangkan berkas sistem sebelum mengaktifkan profil yang dipilih. "
+"Cadangan\n"
+"akan disimpan di {AUTHSELECT_BACKUP_DIR}/NAMA. Waktu saat ini dengan\n"
+"string unik digunakan sebagai nama jika tidak ada nilai yang diberikan.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:72
 #, no-wrap
 msgid "*--nobackup*"
-msgstr ""
+msgstr "*--nobackup*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:74
 #, no-wrap
 msgid "Do not backup system configuration even if *--force* is set.\n"
-msgstr ""
+msgstr "Jangan mencadangkan konfigurasi sistem meskipun *--force* ditetapkan.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:75 src/man/authselect.8.adoc:166
 #, no-wrap
 msgid "*--quiet, -q*"
-msgstr ""
+msgstr "*--quiet, -q*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:78 src/man/authselect.8.adoc:169
@@ -206,12 +248,14 @@ msgid ""
 "The command will not print any informational message such as additional\n"
 "profile requirements or backup location. Errors are still being print.\n"
 msgstr ""
+"Perintah tidak akan mencetak pesan informasi apa pun seperti persyaratan\n"
+"profil tambahan atau lokasi cadangan. Kesalahan (errors) tetap dicetak.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:79
 #, no-wrap
 msgid "*apply-changes* [-b] [--backup=NAME]"
-msgstr ""
+msgstr "*apply-changes* [-b] [--backup=NAMA]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:85
@@ -222,6 +266,11 @@ msgid ""
 "changes if the existing configuration is a valid authselect configuration, "
 "otherwise an error is returned."
 msgstr ""
+"Menerapkan ulang profil yang saat ini dipilih. Jika templat profil "
+"diperbarui, perintah ini dapat digunakan untuk membuat ulang konfigurasi "
+"sistem saat ini guna menerapkan perubahan tersebut pada sistem. Perintah ini "
+"hanya akan menerapkan ulang perubahan jika konfigurasi yang ada adalah "
+"konfigurasi authselect yang valid, jika tidak, kesalahan akan dikembalikan."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:91
@@ -232,6 +281,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
+"Mencadangkan berkas sistem sebelum menerapkan perubahan. Cadangan\n"
+"akan disimpan di {AUTHSELECT_BACKUP_DIR}/NAMA. Waktu saat ini dengan\n"
+"string unik digunakan sebagai nama cadangan. Ini adalah pintasan\n"
+"untuk *--backup=*.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:96
@@ -241,23 +294,26 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
+"Mencadangkan berkas sistem sebelum menerapkan perubahan. Cadangan akan\n"
+"disimpan di {AUTHSELECT_BACKUP_DIR}/NAMA. Waktu saat ini dengan string unik\n"
+"digunakan sebagai nama jika tidak ada nilai yang diberikan.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:97
 #, no-wrap
 msgid "*list*"
-msgstr ""
+msgstr "*list*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:99
 msgid "List available profiles."
-msgstr ""
+msgstr "Menampilkan daftar profil yang tersedia."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:100
 #, no-wrap
 msgid "*list-features* profile_id"
-msgstr ""
+msgstr "*list-features* profile_id"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:104
@@ -266,34 +322,38 @@ msgid ""
 "List all features available in given profile.\n"
 "_Note:_ This will only list the features without any description. Please, read the profile documentation with *show* to see what the features do."
 msgstr ""
+"Daftar semua fitur yang tersedia dalam profil yang diberikan.\n"
+"_Catatan:_ Ini hanya akan mencantumkan fitur tanpa deskripsi apa pun. Harap "
+"baca dokumentasi profil dengan *show* untuk melihat apa yang dilakukan fitur "
+"tersebut."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:105
 #, no-wrap
 msgid "*show* profile_id"
-msgstr ""
+msgstr "*show* profile_id"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:107
 msgid "Print information about the profile."
-msgstr ""
+msgstr "Cetak informasi tentang profil."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:108
 #, no-wrap
 msgid "*requirements* profile_id [features]"
-msgstr ""
+msgstr "*requirements* profile_id [fitur]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:110
 msgid "Print information about profile requirements."
-msgstr ""
+msgstr "Cetak informasi tentang persyaratan profil."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:111
 #, no-wrap
 msgid "*current* [-r, --raw]"
-msgstr ""
+msgstr "*current* [-r, --raw]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:115
@@ -302,12 +362,15 @@ msgid ""
 "specified, the command will print raw parameters as they were passed to "
 "*select* command instead of formatted output."
 msgstr ""
+"Cetak informasi tentang profil yang saat ini dipilih. Jika opsi *--raw* "
+"ditentukan, perintah akan mencetak parameter mentah seperti saat diteruskan "
+"ke perintah *select* alih-alih keluaran terformat."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:116
 #, no-wrap
 msgid "*check*"
-msgstr ""
+msgstr "*check*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:120
@@ -316,12 +379,14 @@ msgid ""
 "*authselect* or there are no leftovers from previous authselect "
 "configuration)."
 msgstr ""
+"Periksa apakah konfigurasi saat ini valid (baik yang dibuat oleh "
+"*authselect* atau tidak ada sisa dari konfigurasi authselect sebelumnya)."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:121
 #, no-wrap
 msgid "*test* profile_id [options] [features]"
-msgstr ""
+msgstr "*test* profile_id [opsi] [fitur]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:124
@@ -329,125 +394,127 @@ msgid ""
 "Print content of files generated by *authselect* without actually writing "
 "anything to system configuration."
 msgstr ""
+"Cetak konten berkas yang dihasilkan oleh *authselect* tanpa benar-benar "
+"menulis apa pun ke konfigurasi sistem."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:125
 #, no-wrap
 msgid "*-a, --all*"
-msgstr ""
+msgstr "*-a, --all*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:127
 #, no-wrap
 msgid "Print content of all files.\n"
-msgstr ""
+msgstr "Cetak konten semua berkas.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:128
 #, no-wrap
 msgid "*-n, --nsswitch*"
-msgstr ""
+msgstr "*-n, --nsswitch*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:130
 #, no-wrap
 msgid "Print nsswitch.conf content.\n"
-msgstr ""
+msgstr "Cetak konten nsswitch.conf.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:131
 #, no-wrap
 msgid "*-s, --system-auth*"
-msgstr ""
+msgstr "*-s, --system-auth*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:133
 #, no-wrap
 msgid "Print system-auth content.\n"
-msgstr ""
+msgstr "Cetak konten system-auth.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:134
 #, no-wrap
 msgid "*-p, --password-auth*"
-msgstr ""
+msgstr "*-p, --password-auth*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:136
 #, no-wrap
 msgid "Print password-auth content.\n"
-msgstr ""
+msgstr "Cetak konten password-auth.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:137
 #, no-wrap
 msgid "*-c, --smartcard-auth*"
-msgstr ""
+msgstr "*-c, --smartcard-auth*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:139
 #, no-wrap
 msgid "Print smartcard-auth content.\n"
-msgstr ""
+msgstr "Cetak konten smartcard-auth.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:140
 #, no-wrap
 msgid "*-f, --fingerprint-auth*"
-msgstr ""
+msgstr "*-f, --fingerprint-auth*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:142
 #, no-wrap
 msgid "Print fingerprint-auth content.\n"
-msgstr ""
+msgstr "Cetak konten fingerprint-auth.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:143
 #, no-wrap
 msgid "*-o, --postlogin*"
-msgstr ""
+msgstr "*-o, --postlogin*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:145
 #, no-wrap
 msgid "Print postlogin content.\n"
-msgstr ""
+msgstr "Cetak konten postlogin.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:146
 #, no-wrap
 msgid "*-d, --dconf-db*"
-msgstr ""
+msgstr "*-d, --dconf-db*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:148
 #, no-wrap
 msgid "Print dconf database content.\n"
-msgstr ""
+msgstr "Cetak konten basis data dconf.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:149
 #, no-wrap
 msgid "*-l, --dconf-lock*"
-msgstr ""
+msgstr "*-l, --dconf-lock*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:151
 #, no-wrap
 msgid "Print dconf lock content.\n"
-msgstr ""
+msgstr "Cetak konten kunci dconf.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:152
 #, no-wrap
 msgid "*enable-feature* feature [-b] [--backup=NAME] [-q, --quiet]"
-msgstr ""
+msgstr "*enable-feature* fitur [-b] [--backup=NAMA] [-q, --quiet]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:154
 msgid "Enable feature in the currently selected profile."
-msgstr ""
+msgstr "Aktifkan fitur dalam profil yang saat ini dipilih."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:160
@@ -458,6 +525,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
+"Cadangkan berkas sistem sebelum mengaktifkan fitur. Cadangan\n"
+"akan disimpan di {AUTHSELECT_BACKUP_DIR}/NAMA. Waktu saat ini dengan\n"
+"string unik digunakan sebagai nama cadangan. Ini adalah pintasan\n"
+"untuk *--backup=*.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:165
@@ -467,17 +538,20 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
+"Cadangkan berkas sistem sebelum mengaktifkan fitur. Cadangan akan\n"
+"disimpan di {AUTHSELECT_BACKUP_DIR}/NAMA. Waktu saat ini dengan string unik\n"
+"digunakan sebagai nama jika tidak ada nilai yang diberikan.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:170
 #, no-wrap
 msgid "*disable-feature* feature [-b] [--backup=NAME]"
-msgstr ""
+msgstr "*disable-feature* fitur [-b] [--backup=NAMA]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:172
 msgid "Disable feature in the currently selected profile."
-msgstr ""
+msgstr "Nonaktifkan fitur dalam profil yang saat ini dipilih."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:178
@@ -488,6 +562,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
+"Cadangkan berkas sistem sebelum menonaktifkan fitur. Cadangan\n"
+"akan disimpan di {AUTHSELECT_BACKUP_DIR}/NAMA. Waktu saat ini dengan\n"
+"string unik digunakan sebagai nama cadangan. Ini adalah pintasan\n"
+"untuk *--backup=*.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:183
@@ -497,12 +575,15 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
+"Cadangkan berkas sistem sebelum menonaktifkan fitur. Cadangan akan\n"
+"disimpan di {AUTHSELECT_BACKUP_DIR}/NAMA. Waktu saat ini dengan string unik\n"
+"digunakan sebagai nama jika tidak ada nilai yang diberikan.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:184
 #, no-wrap
 msgid "*create-profile* NAME [--vendor,-v] [options]"
-msgstr ""
+msgstr "*create-profile* NAMA [--vendor,-v] [opsi]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:189
@@ -512,12 +593,15 @@ msgid ""
 "from the base profile or symbolic links to these files are created if such "
 "option is selected."
 msgstr ""
+"Buat profil kustom baru bernama _NAMA_. Profil dapat didasarkan pada profil "
+"yang sudah ada di mana templat profil baru disalin dari profil dasar atau "
+"tautan simbolik ke berkas-berkas ini dibuat jika opsi tersebut dipilih."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:190
 #, no-wrap
 msgid "*--vendor,-v*"
-msgstr ""
+msgstr "*--vendor,-v*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:193
@@ -526,12 +610,14 @@ msgid ""
 "The new profile is a vendor profile instead of a custom profile. See\n"
 "_authselect-profiles(5)_ for more information on profile types.\n"
 msgstr ""
+"Profil baru adalah profil vendor alih-alih profil kustom. Lihat\n"
+"_authselect-profiles(5)_ untuk informasi lebih lanjut tentang tipe profil.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:194
 #, no-wrap
 msgid "*--base-on=BASE-ID, -b=BASE-ID*"
-msgstr ""
+msgstr "*--base-on=BASE-ID, -b=BASE-ID*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:197
@@ -540,36 +626,40 @@ msgid ""
 "The new profile will be based on a profile named _BASE-ID_. The base\n"
 "profile location is determined with these steps:\n"
 msgstr ""
+"Profil baru akan didasarkan pada profil bernama _BASE-ID_. Lokasi\n"
+"profil dasar ditentukan dengan langkah-langkah berikut:\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:198
 #, no-wrap
 msgid "If _BASE-ID_ starts with prefix _custom/_ it is a custom profile.\n"
 msgstr ""
+"Jika _BASE-ID_ dimulai dengan awalan _custom/_ maka itu adalah profil "
+"kustom.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:199
 #, no-wrap
 msgid "Try if _BASE-ID_ is found in vendor profiles.\n"
-msgstr ""
+msgstr "Coba jika _BASE-ID_ ditemukan di profil vendor.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:200
 #, no-wrap
 msgid "Try if _BASE-ID_ is found in default profiles.\n"
-msgstr ""
+msgstr "Coba jika _BASE-ID_ ditemukan di profil bawaan (default).\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:201
 #, no-wrap
 msgid "Return an error.\n"
-msgstr ""
+msgstr "Kembalikan galat (error).\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:202
 #, no-wrap
 msgid "*--base-on-default*"
-msgstr ""
+msgstr "*--base-on-default*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:205
@@ -578,12 +668,15 @@ msgid ""
 "The base profile is a default profile even if it is found also within\n"
 "vendor profiles.\n"
 msgstr ""
+"Profil dasar adalah profil bawaan (default) meskipun ditemukan juga di "
+"dalam\n"
+"profil vendor.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:206
 #, no-wrap
 msgid "*--symlink-meta*"
-msgstr ""
+msgstr "*--symlink-meta*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:209
@@ -592,12 +685,15 @@ msgid ""
 "Meta files, such as _README_ and _REQUIREMENTS_ will be symbolic links\n"
 "to the origin profile files instead of their copy.\n"
 msgstr ""
+"Berkas meta, seperti _README_ dan _REQUIREMENTS_ akan berupa tautan "
+"simbolik\n"
+"ke berkas profil asal alih-alih salinannya.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:210
 #, no-wrap
 msgid "*--symlink-nsswitch*"
-msgstr ""
+msgstr "*--symlink-nsswitch*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:213
@@ -606,12 +702,14 @@ msgid ""
 "_nsswitch.conf_ template will be symbolic link to the origin profile\n"
 "file instead of its copy.\n"
 msgstr ""
+"Templat _nsswitch.conf_ akan menjadi tautan simbolik ke berkas profil asal\n"
+"alih-alih salinannya.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:214
 #, no-wrap
 msgid "*--symlink-pam*"
-msgstr ""
+msgstr "*--symlink-pam*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:217
@@ -620,12 +718,14 @@ msgid ""
 "_PAM_ templates will be symbolic links to the origin profile files\n"
 "instead of their copy.\n"
 msgstr ""
+"Templat _PAM_ akan menjadi tautan simbolik ke berkas profil asal\n"
+"alih-alih salinannya.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:218
 #, no-wrap
 msgid "*--symlink-dconf*"
-msgstr ""
+msgstr "*--symlink-dconf*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:221
@@ -634,12 +734,14 @@ msgid ""
 "_dconf_ templates will be symbolic links to the origin profile files\n"
 "instead of their copy.\n"
 msgstr ""
+"Templat _dconf_ akan menjadi tautan simbolik ke berkas profil asal\n"
+"alih-alih salinannya.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:222
 #, no-wrap
 msgid "*--symlink=FILE,-s=FILE*"
-msgstr ""
+msgstr "*--symlink=FILE,-s=FILE*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:225
@@ -648,23 +750,27 @@ msgid ""
 "Create a symbolic link for a template file _FILE_ instead of creating\n"
 "its copy. This option can be passed multiple times.\n"
 msgstr ""
+"Buat tautan simbolik untuk berkas templat _FILE_ alih-alih membuat\n"
+"salinannya. Opsi ini dapat diberikan beberapa kali.\n"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:227
 #, no-wrap
 msgid "BACKUP COMMANDS"
-msgstr ""
+msgstr "PERINTAH CADANGAN (BACKUP)"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:229
 msgid "These commands can be used to manage backed up configurations."
 msgstr ""
+"Perintah-perintah ini dapat digunakan untuk mengelola konfigurasi yang "
+"dicadangkan."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:230
 #, no-wrap
 msgid "*backup-list* [-r, --raw]"
-msgstr ""
+msgstr "*backup-list* [-r, --raw]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:233
@@ -672,23 +778,25 @@ msgid ""
 "Print available backups.  If *--raw* option is specified, the command will "
 "print only backup names without any formatting and additional information."
 msgstr ""
+"Cetak cadangan yang tersedia. Jika opsi *--raw* ditentukan, perintah hanya "
+"akan mencetak nama cadangan tanpa pemformatan dan informasi tambahan apa pun."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:234
 #, no-wrap
 msgid "*backup-remove* BACKUP"
-msgstr ""
+msgstr "*backup-remove* BACKUP"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:236
 msgid "Permanently delete backup named _BACKUP_."
-msgstr ""
+msgstr "Hapus cadangan bernama _BACKUP_ secara permanen."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:237
 #, no-wrap
 msgid "*backup-restore* BACKUP"
-msgstr ""
+msgstr "*backup-restore* BACKUP"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:240
@@ -696,18 +804,20 @@ msgid ""
 "Restore configuration from backup named _BACKUP_. *Note:* this will "
 "overwrite current configuration."
 msgstr ""
+"Pulihkan konfigurasi dari cadangan bernama _BACKUP_. *Catatan:* ini akan "
+"menimpa konfigurasi saat ini."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:242
 #, no-wrap
 msgid "OTHER COMMANDS"
-msgstr ""
+msgstr "PERINTAH LAINNYA"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:244
 #, no-wrap
 msgid "*opt-out*"
-msgstr ""
+msgstr "*opt-out*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:248
@@ -716,45 +826,48 @@ msgid ""
 "configuration under its system location and authselect will no longer manage "
 "it. Run *authselect select* to opt-in again."
 msgstr ""
+"Hapus konfigurasi authselect. Ini akan memulihkan konfigurasi nsswitch dan "
+"PAM di bawah lokasi sistemnya dan authselect tidak lagi mengelolanya. "
+"Jalankan *authselect select* untuk ikut serta (opt-in) kembali."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:250
 #, no-wrap
 msgid "COMMON OPTIONS"
-msgstr ""
+msgstr "OPSI UMUM"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:252
 msgid "These options are available with all commands."
-msgstr ""
+msgstr "Opsi-opsi ini tersedia untuk semua perintah."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:253
 #, no-wrap
 msgid "*--debug*"
-msgstr ""
+msgstr "*--debug*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:255
 msgid "Print debugging information and error messages."
-msgstr ""
+msgstr "Cetak informasi debugging dan pesan galat."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:256
 #, no-wrap
 msgid "*--trace*"
-msgstr ""
+msgstr "*--trace*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:258
 msgid "Print information about what the tool is doing."
-msgstr ""
+msgstr "Cetak informasi tentang apa yang sedang dilakukan oleh alat tersebut."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:259
 #, no-wrap
 msgid "*--warn*"
-msgstr ""
+msgstr "*--warn*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:263
@@ -763,18 +876,21 @@ msgid ""
 "execution but may indicate some undesired situations (e.g. unexpected file "
 "in a profile directory)."
 msgstr ""
+"Cetak informasi tentang situasi tak terduga yang tidak memengaruhi eksekusi "
+"program tetapi mungkin mengindikasikan beberapa situasi yang tidak "
+"diinginkan (misalnya berkas tak terduga di direktori profil)."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:265
 #, no-wrap
 msgid "TROUBLESHOOTING"
-msgstr ""
+msgstr "PEMECAHAN MASALAH"
 
 #. type: Title ~
 #: src/man/authselect.8.adoc:268
 #, no-wrap
 msgid "How can I tell if my system is using authselect?"
-msgstr ""
+msgstr "Bagaimana saya bisa tahu jika sistem saya menggunakan authselect?"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:272
@@ -784,12 +900,16 @@ msgid ""
 "configuration that was generated by authselect but modified manually at some "
 "point."
 msgstr ""
+"Gunakan *authselect check*. Outputnya akan memberi tahu Anda jika Anda "
+"memiliki 1) konfigurasi yang dihasilkan oleh authselect 2) konfigurasi non-"
+"authselect atau 3) konfigurasi yang dihasilkan oleh authselect tetapi "
+"dimodifikasi secara manual pada suatu titik."
 
 #. type: Title ~
 #: src/man/authselect.8.adoc:274
 #, no-wrap
 msgid "Is nsswitch.conf supposed to be a symbolic link now?"
-msgstr ""
+msgstr "Apakah nsswitch.conf seharusnya menjadi tautan simbolik sekarang?"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:280
@@ -800,17 +920,22 @@ msgid ""
 "now owning your configuration and should be used instead of any manual "
 "modification."
 msgstr ""
+"Authselect menghasilkan konfigurasi sistem Anda dari nol dan menyimpannya di "
+"{AUTHSELECT_CONFIG_DIR}. Berkas sistem kemudian dibuat sebagai tautan "
+"simbolik ke direktori ini. Tautan simbolik digunakan untuk memperjelas bahwa "
+"authselect sekarang memiliki konfigurasi Anda dan harus digunakan alih-alih "
+"modifikasi manual apa pun."
 
 #. type: Title ~
 #: src/man/authselect.8.adoc:282
 #, no-wrap
 msgid "Error: Unexpected changes to the configuration were detected."
-msgstr ""
+msgstr "Galat (Error): Perubahan tak terduga pada konfigurasi terdeteksi."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:284
 msgid "For example:"
-msgstr ""
+msgstr "Sebagai contoh:"
 
 #. type: delimited block .
 #: src/man/authselect.8.adoc:290
@@ -822,6 +947,12 @@ msgid ""
 "[error] Unexpected changes to the configuration were detected.\n"
 "[error] Refusing to activate profile unless those changes are removed or overwrite is requested.\n"
 msgstr ""
+"[error] [/etc/authselect/nsswitch.conf] tidak ada!\n"
+"[error] [/etc/nsswitch.conf] bukan tautan simbolik!\n"
+"[error] [/etc/nsswitch.conf] tidak dibuat oleh authselect!\n"
+"[error] Perubahan tak terduga pada konfigurasi terdeteksi.\n"
+"[error] Menolak untuk mengaktifkan profil kecuali perubahan tersebut dihapus "
+"atau penimpaan diminta.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:294
@@ -830,27 +961,31 @@ msgid ""
 "will not be modified. To fix this, please call *authselect select* with *--"
 "force* parameter to say that it is all right to overwrite it."
 msgstr ""
+"Ini berarti konfigurasi Anda tidak dikenal oleh authselect sehingga tidak "
+"akan dimodifikasi. Untuk memperbaikinya, silakan panggil *authselect select* "
+"dengan parameter *--force* untuk menyatakan bahwa tidak apa-apa untuk "
+"menimpanya."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:296
 #, no-wrap
 msgid "RETURN CODES"
-msgstr ""
+msgstr "KODE KEMBALI (RETURN CODES)"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:298
 msgid "The *authselect* can return these exit codes:"
-msgstr ""
+msgstr "*authselect* dapat mengembalikan kode keluar berikut:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:300
 msgid "0: Success."
-msgstr ""
+msgstr "0: Berhasil."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:301
 msgid "1: Generic error."
-msgstr ""
+msgstr "1: Galat umum."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:302
@@ -858,12 +993,14 @@ msgid ""
 "2: Profile or configuration was not found or the system was not configured "
 "with authselect."
 msgstr ""
+"2: Profil atau konfigurasi tidak ditemukan atau sistem tidak dikonfigurasi "
+"dengan authselect."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:303
 msgid ""
 "3: Current configuration is not valid, it was edited without authselect."
-msgstr ""
+msgstr "3: Konfigurasi saat ini tidak valid, ia telah diedit tanpa authselect."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:304
@@ -871,22 +1008,24 @@ msgid ""
 "4: System configuration must be overwritten to activate an authselect "
 "profile, --force parameter is needed."
 msgstr ""
+"4: Konfigurasi sistem harus ditimpa untuk mengaktifkan profil authselect, "
+"parameter --force diperlukan."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:305
 msgid "5: Executed command must be run as root."
-msgstr ""
+msgstr "5: Perintah yang dieksekusi harus dijalankan sebagai root."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:306
 msgid "6: No configuration was detected."
-msgstr ""
+msgstr "6: Tidak ada konfigurasi yang terdeteksi."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:308
 #, no-wrap
 msgid "GENERATED FILES"
-msgstr ""
+msgstr "BERKAS YANG DIHASILKAN"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:311
@@ -894,23 +1033,25 @@ msgid ""
 "Authselect creates and maintains the following files to configure system "
 "identity and authentication providers properly."
 msgstr ""
+"Authselect membuat dan memelihara berkas berikut untuk mengonfigurasi "
+"identitas sistem dan penyedia autentikasi dengan benar."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:312
 #, no-wrap
 msgid "*{AUTHSELECT_NSSWITCH_CONF}*"
-msgstr ""
+msgstr "*{AUTHSELECT_NSSWITCH_CONF}*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:314
 msgid "Name Service Switch configuration file."
-msgstr ""
+msgstr "Berkas konfigurasi Name Service Switch."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:315
 #, no-wrap
 msgid "*{AUTHSELECT_PAM_DIR}/system-auth*"
-msgstr ""
+msgstr "*{AUTHSELECT_PAM_DIR}/system-auth*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:318
@@ -918,12 +1059,14 @@ msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
 msgstr ""
+"Tumpukan PAM yang disertakan dari hampir semua berkas konfigurasi layanan "
+"individual."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:319
 #, no-wrap
 msgid "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
-msgstr ""
+msgstr "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:323
@@ -932,12 +1075,15 @@ msgid ""
 "different types of devices via simultaneously running individual "
 "conversations instead of one aggregate conversation."
 msgstr ""
+"Tumpukan PAM ini ditujukan untuk aplikasi yang menangani autentikasi dari "
+"berbagai jenis perangkat melalui percakapan individual yang berjalan "
+"bersamaan alih-alih satu percakapan agregat."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:324
 #, no-wrap
 msgid "*{AUTHSELECT_PAM_DIR}/postlogin*"
-msgstr ""
+msgstr "*{AUTHSELECT_PAM_DIR}/postlogin*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:332
@@ -950,12 +1096,19 @@ msgid ""
 "regardless of the success or failure of the modules in the system-auth "
 "configuration file._"
 msgstr ""
+"Tujuan dari tumpukan PAM ini adalah untuk menyediakan tempat umum bagi semua "
+"modul PAM yang harus dipanggil setelah tumpukan yang dikonfigurasi dalam "
+"system-auth atau berkas konfigurasi PAM umum lainnya. Ini disertakan dari "
+"semua berkas konfigurasi layanan individual yang menyediakan layanan login "
+"dengan akses shell atau berkas. _CATATAN: modul dalam berkas konfigurasi "
+"postlogin dijalankan tanpa memandang keberhasilan atau kegagalan modul dalam "
+"berkas konfigurasi system-auth._"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:333
 #, no-wrap
 msgid "*{AUTHSELECT_DCONF_DIR}/{AUTHSELECT_DCONF_FILE}*"
-msgstr ""
+msgstr "*{AUTHSELECT_DCONF_DIR}/{AUTHSELECT_DCONF_FILE}*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:337
@@ -964,26 +1117,32 @@ msgid ""
 "for gnome login screen in order to enable or disable smartcard and "
 "fingerprint authentication."
 msgstr ""
+"Perubahan pada basis data dconf. Kasus penggunaan utama dari berkas ini "
+"adalah untuk menetapkan perubahan pada layar login gnome guna mengaktifkan "
+"atau menonaktifkan autentikasi smartcard dan sidik jari."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:338
 #, no-wrap
 msgid "*{AUTHSELECT_DCONF_DIR}/locks/{AUTHSELECT_DCONF_FILE}*"
-msgstr ""
+msgstr "*{AUTHSELECT_DCONF_DIR}/locks/{AUTHSELECT_DCONF_FILE}*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:340
 msgid "This file define locks on values set in dconf database."
 msgstr ""
+"Berkas ini menentukan kunci (locks) pada nilai yang ditetapkan dalam basis "
+"data dconf."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:342
 #, no-wrap
 msgid "SEE ALSO"
-msgstr ""
+msgstr "LIHAT JUGA"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:343
 msgid ""
 "authselect-profiles(5), authselect-migration(7), nsswitch.conf(5), PAM(8)"
 msgstr ""
+"authselect-profiles(5), authselect-migration(7), nsswitch.conf(5), PAM(8)"
