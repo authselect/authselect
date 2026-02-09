@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2024-02-23 14:08+0100\n"
+"POT-Creation-Date: 2026-01-21 15:13+0100\n"
 "PO-Revision-Date: 2024-04-29 14:36+0000\n"
 "Last-Translator: Charles Lee <lchopn@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://translate.fedoraproject.org/"
@@ -126,7 +126,8 @@ msgstr "[%s]中无文件名"
 msgid "Copying [%s] to [%s/%s]"
 msgstr "把[%s]复制到[%s/%s]"
 
-#: src/lib/authselect_backup.c:133 src/lib/util/selinux.c:393
+#: src/lib/authselect_backup.c:133 src/lib/util/selinux.c:389
+#: src/lib/util/selinux.c:406
 #, c-format
 msgid "File [%s] does not exist"
 msgstr "文件[%s] 不存在"
@@ -175,41 +176,41 @@ msgstr "删除备份 [%s]"
 msgid "Unable to delete directory [%s] [%d]: %s"
 msgstr "无法删除目录 [%s] [%d]: %s"
 
-#: src/lib/authselect_backup.c:305
+#: src/lib/authselect_backup.c:307
 #, c-format
 msgid "Unable to copy files [%d]: %s"
 msgstr "无法复制文件 [%d]: %s"
 
-#: src/lib/authselect_backup.c:311 src/lib/profiles/activate.c:78
+#: src/lib/authselect_backup.c:313 src/lib/profiles/activate.c:78
 #, c-format
 msgid "Unable to create symbolic links [%d]: %s"
 msgstr "无法创建符号链接[%d]： %s"
 
-#: src/lib/authselect_backup.c:317 src/lib/profiles/activate.c:84
+#: src/lib/authselect_backup.c:319 src/lib/profiles/activate.c:84
 msgid "Dconf is not installed on your system"
 msgstr "系统上未安装Dconf"
 
-#: src/lib/authselect_backup.c:319 src/lib/profiles/activate.c:86
+#: src/lib/authselect_backup.c:321 src/lib/profiles/activate.c:86
 #, c-format
 msgid "Unable to update dconf database [%d]: %s"
 msgstr "无法更新dconf数据库[%d]： %s"
 
-#: src/lib/authselect_backup.c:342
+#: src/lib/authselect_backup.c:344
 #, c-format
 msgid "Restoring configuration from backup [%s]"
 msgstr "从备份 [%s] 恢复配置"
 
-#: src/lib/authselect_backup.c:358
+#: src/lib/authselect_backup.c:360
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
 msgstr "备份 [%s] 包括 authselect 配置"
 
-#: src/lib/authselect_backup.c:361
+#: src/lib/authselect_backup.c:363
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
 msgstr "备份 [%s] 包括了非 authselect 的配置"
 
-#: src/lib/authselect_backup.c:367
+#: src/lib/authselect_backup.c:369
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
 msgstr "无法恢复 [%s] [%d]: %s"
@@ -303,8 +304,9 @@ msgid "Unable to create profile path: out of memory"
 msgstr "无法创建配置档案路径：内存不足"
 
 #: src/lib/authselect_profile.c:555
-#, c-format
-msgid "Profile \"%s\" already exist at [%s]"
+#, fuzzy, c-format
+#| msgid "Profile \"%s\" already exist at [%s]"
+msgid "Profile \"%s\" already exists at [%s]"
 msgstr "配置档案“%s“已经存在于[%s]"
 
 #: src/lib/authselect_profile.c:559
@@ -391,7 +393,7 @@ msgid "[%s] was not created by authselect!"
 msgstr "[%s] 不是由 authselect 创建！"
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
-#: src/lib/files/system.c:309
+#: src/lib/files/system.c:311
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
 msgstr "尝试访问文件时出错[%s] [[%d]： %s"
@@ -411,73 +413,73 @@ msgstr "符号链接 [%s]（到 [%s]）已存在！"
 msgid "File [%s] exists but it needs to be overwritten!"
 msgstr "文件 [%s] 存在，但它需要被覆盖！"
 
-#: src/lib/files/symlinks.c:190
+#: src/lib/files/symlinks.c:191
 #, c-format
 msgid "Skipping [%s] because it is not an authselect file"
 msgstr "跳过 [%s]，因为它不是一个 authselect 文件"
 
-#: src/lib/files/system.c:73 src/lib/profiles/read.c:162
+#: src/lib/files/system.c:74 src/lib/profiles/read.c:162
 #, c-format
 msgid "Reading file [%s/%s]"
 msgstr "读文件[%s/%s]"
 
-#: src/lib/files/system.c:81 src/lib/profiles/read.c:168
+#: src/lib/files/system.c:82 src/lib/profiles/read.c:168
 #: src/lib/profiles/read.c:173
 #, c-format
 msgid "Unable to read file [%s/%s] [%d]: %s"
 msgstr "无法读取文件[%s/%s] [[%d]： %s"
 
-#: src/lib/files/system.c:149
+#: src/lib/files/system.c:151
 #, c-format
 msgid "Unable to generate files [%d]: %s"
 msgstr "无法生成文件[%d]： %s"
 
-#: src/lib/files/system.c:163 src/lib/util/selinux.c:398
+#: src/lib/files/system.c:165 src/lib/util/selinux.c:410
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "为[%s]写临时文件"
 
-#: src/lib/files/system.c:166
+#: src/lib/files/system.c:168
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
 msgstr "无法写临时文件[%s] [[%d]： %s"
 
-#: src/lib/files/system.c:171
+#: src/lib/files/system.c:173
 #, c-format
 msgid "Temporary file is named [%s]"
 msgstr "临时文件名为[%s]"
 
-#: src/lib/files/system.c:182 src/lib/util/selinux.c:425
+#: src/lib/files/system.c:184 src/lib/util/selinux.c:438
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "把[%s]重命名为[%s]"
 
-#: src/lib/files/system.c:187 src/lib/util/selinux.c:429
+#: src/lib/files/system.c:189 src/lib/util/selinux.c:442
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "无法重命名 [%s] 至 [%s] [[%d]： %s"
 
-#: src/lib/files/system.c:261
+#: src/lib/files/system.c:263
 #, c-format
 msgid "Validating file [%s]"
 msgstr "验证文件[%s]"
 
-#: src/lib/files/system.c:266
+#: src/lib/files/system.c:268
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
 msgstr "无法检查文件模式[%s] [[%d]： %s"
 
-#: src/lib/files/system.c:286
+#: src/lib/files/system.c:288
 #, c-format
 msgid "File [%s] was modified outside authselect!"
 msgstr "文件[%s]在authselect之外进行了修改！"
 
-#: src/lib/files/system.c:305
+#: src/lib/files/system.c:307
 #, c-format
 msgid "File [%s] is still present"
 msgstr "文件[%s]仍然存在"
 
-#: src/lib/files/system.c:330 src/lib/files/system.c:340
+#: src/lib/files/system.c:332 src/lib/files/system.c:342
 #, c-format
 msgid "Unable to delete [%s] [%d]: %s"
 msgstr "无法删除[%s] [[%d]： %s"
@@ -571,7 +573,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "无法获得 [%s] 的基础名"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:848
+#: src/lib/util/file.c:199 src/cli/main.c:875
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "无法统计[%s] [[%d]： %s"
@@ -669,64 +671,70 @@ msgstr "无法chmod文件[%s] [[%d]： %s"
 msgid "Unable to chown file [%s] [%d]: %s"
 msgstr "无法chown文件[%s] [[%d]： %s"
 
-#: src/lib/util/selinux.c:46
+#: src/lib/util/selinux.c:48
 #, c-format
 msgid "Unable to create selabel handle [%d]: %s"
 msgstr "无法创建 selabel 句柄 [%d]: %s"
 
-#: src/lib/util/selinux.c:55
+#: src/lib/util/selinux.c:57
 #, c-format
 msgid "Unable to lookup selinux context [%d]: %s"
 msgstr "无法查找 selinux 上下文 [%d]: %s"
 
-#: src/lib/util/selinux.c:59
+#: src/lib/util/selinux.c:61
 #, c-format
 msgid "Found default selinux context for [%s]: %s"
 msgstr "找到 [%s] 默认的 selinux 上下文 : %s"
 
-#: src/lib/util/selinux.c:84
+#: src/lib/util/selinux.c:86
 #, c-format
 msgid "Unable to obtain selinux context for [%s] [%d]: %s"
 msgstr "无法获得 [%s] [%d] 的 selinux 上下文 : %s"
 
-#: src/lib/util/selinux.c:91
+#: src/lib/util/selinux.c:93
 msgid "not set"
 msgstr "未设置"
 
-#: src/lib/util/selinux.c:90
+#: src/lib/util/selinux.c:92
 #, c-format
 msgid "Found selinux context for [%s]: %s"
 msgstr "找到 [%s] 的 selinux 上下文 : %s"
 
-#: src/lib/util/selinux.c:115 src/lib/util/selinux.c:183
-#: src/lib/util/selinux.c:251
+#: src/lib/util/selinux.c:117 src/lib/util/selinux.c:185
+#: src/lib/util/selinux.c:253
 msgid "Unable to get current fscreate selinux context!"
 msgstr "无法获得当前 fscreate selinux 的上下文！"
 
-#: src/lib/util/selinux.c:121 src/lib/util/selinux.c:189
-#: src/lib/util/selinux.c:257
+#: src/lib/util/selinux.c:123 src/lib/util/selinux.c:191
+#: src/lib/util/selinux.c:259
 #, c-format
 msgid "Unable to get default selinux context for [%s] [%d]: %s!"
 msgstr "无法获得 [%s] [%d] 的默认 selinux 上下文：%s！"
 
-#: src/lib/util/selinux.c:129 src/lib/util/selinux.c:197
-#: src/lib/util/selinux.c:265
+#: src/lib/util/selinux.c:131 src/lib/util/selinux.c:199
+#: src/lib/util/selinux.c:267
 msgid "Unable to set fscreate selinux context!"
 msgstr "无法设置 fscreate selinux 上下文！"
 
-#: src/lib/util/selinux.c:139 src/lib/util/selinux.c:207
-#: src/lib/util/selinux.c:275
+#: src/lib/util/selinux.c:141 src/lib/util/selinux.c:209
+#: src/lib/util/selinux.c:277
 msgid "Unable to restore fscreate selinux context!"
 msgstr "无法恢复 fscreate selinux 上下文！"
 
-#: src/lib/util/selinux.c:387
+#: src/lib/util/selinux.c:390
+#, fuzzy, c-format
+#| msgid "Writing temporary file for [%s]"
+msgid "Writing empty temporary file for [%s]"
+msgstr "为[%s]写临时文件"
+
+#: src/lib/util/selinux.c:399
 #, c-format
 msgid ""
 "File [%s] should exist but is missing. It is not safe to delete [%s]. "
 "Aborting."
 msgstr "文件 [%s] 应该存在，但缺失了。删除[%s]是不安全的。终止。"
 
-#: src/lib/util/selinux.c:420
+#: src/lib/util/selinux.c:433
 #, c-format
 msgid "Removing [%s]"
 msgstr "删除[%s]"
@@ -864,7 +872,7 @@ msgstr "常见选项："
 msgid "[OPTIONS...]"
 msgstr "[选项...]"
 
-#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:840
+#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:867
 msgid "Out of memory!"
 msgstr "无可用的内存！"
 
@@ -918,9 +926,9 @@ msgid "Profile identifier."
 msgstr "配置档案标识符。"
 
 #: src/cli/main.c:79 src/cli/main.c:248 src/cli/main.c:293 src/cli/main.c:342
-#: src/cli/main.c:390 src/cli/main.c:435 src/cli/main.c:478 src/cli/main.c:651
-#: src/cli/main.c:728 src/cli/main.c:775 src/cli/main.c:815 src/cli/main.c:880
-#: src/cli/main.c:906
+#: src/cli/main.c:390 src/cli/main.c:435 src/cli/main.c:478 src/cli/main.c:654
+#: src/cli/main.c:731 src/cli/main.c:760 src/cli/main.c:802 src/cli/main.c:842
+#: src/cli/main.c:907 src/cli/main.c:933
 msgid "Unable to parse command arguments"
 msgstr "无法解析命令参数"
 
@@ -937,15 +945,15 @@ msgstr "备份保存在 %s\n"
 msgid "Enforce changes"
 msgstr "强制改变"
 
-#: src/cli/main.c:162 src/cli/main.c:241 src/cli/main.c:641 src/cli/main.c:719
+#: src/cli/main.c:162 src/cli/main.c:241 src/cli/main.c:644 src/cli/main.c:722
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr "在激活配置档案前备份系统文件 (生成唯一的名称)"
 
-#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:645 src/cli/main.c:723
 msgid "Backup system files before activating profile"
 msgstr "激活配置档案前备份系统文件"
 
-#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:642 src/cli/main.c:720
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:645 src/cli/main.c:723
 msgid "NAME"
 msgstr "名称"
 
@@ -953,17 +961,17 @@ msgstr "名称"
 msgid "Do not backup system files when --force is set"
 msgstr "设置--force时，请勿备份系统文件"
 
-#: src/cli/main.c:165 src/cli/main.c:643
+#: src/cli/main.c:165 src/cli/main.c:646
 msgid "Do not print profile requirements"
 msgstr "不要打印配置档案要求"
 
 #: src/cli/main.c:176 src/cli/main.c:405 src/cli/main.c:441 src/cli/main.c:484
-#: src/cli/main.c:516 src/cli/main.c:670
+#: src/cli/main.c:516 src/cli/main.c:673
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "无法获取配置档案信息[%d]： %s"
 
-#: src/cli/main.c:184 src/cli/main.c:524 src/cli/main.c:678
+#: src/cli/main.c:184 src/cli/main.c:524 src/cli/main.c:681
 msgid "Unable to read profile requirements!"
 msgstr "无法读配置档案要求！"
 
@@ -1009,7 +1017,7 @@ msgstr ""
 msgid "Changes were successfully applied.\n"
 msgstr "已成功应用更改。\n"
 
-#: src/cli/main.c:263 src/cli/main.c:299 src/cli/main.c:660
+#: src/cli/main.c:263 src/cli/main.c:299 src/cli/main.c:663
 msgid "No existing configuration detected.\n"
 msgstr "未检测到现有配置。\n"
 
@@ -1028,7 +1036,7 @@ msgstr "无法应用更改[%d]： %s\n"
 msgid "Print command parameters instead of formatted output"
 msgstr "打印命令参数而不是格式化输出"
 
-#: src/cli/main.c:302 src/cli/main.c:663
+#: src/cli/main.c:302 src/cli/main.c:666
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "无法获取当前配置[%d]： %s"
@@ -1078,48 +1086,54 @@ msgstr "无法获取配置档案列表！"
 msgid "Unable to get profile features [%d]: %s"
 msgstr "无法获得配置档案信息 [%d]: %s"
 
-#: src/cli/main.c:563
+#: src/cli/main.c:564
 msgid "Print content of all files"
 msgstr "打印所有文件的内容"
 
-#: src/cli/main.c:564
+#: src/cli/main.c:565
 msgid "Print nsswitch.conf content"
 msgstr "打印nsswitch.conf内容"
 
-#: src/cli/main.c:565
+#: src/cli/main.c:566
 msgid "Print system-auth content"
 msgstr "打印system-auth内容"
 
-#: src/cli/main.c:566
+#: src/cli/main.c:567
 msgid "Print password-auth content"
 msgstr "打印 password-auth 内容"
 
-#: src/cli/main.c:567
+#: src/cli/main.c:568
 msgid "Print smartcard-auth content"
 msgstr "打印smartcard-auth内容"
 
-#: src/cli/main.c:568
+#: src/cli/main.c:569
 msgid "Print fingerprint-auth content"
 msgstr "打印 fingerprint-auth 内容"
 
-#: src/cli/main.c:569
+#: src/cli/main.c:570
+#, fuzzy
+#| msgid "Print system-auth content"
+msgid "Print switchable-auth content"
+msgstr "打印system-auth内容"
+
+#: src/cli/main.c:571
 msgid "Print postlogin content"
 msgstr "打印postlogin内容"
 
-#: src/cli/main.c:570
+#: src/cli/main.c:572
 msgid "Print dconf database content"
 msgstr "打印dconf数据库内容"
 
-#: src/cli/main.c:571
+#: src/cli/main.c:573
 msgid "Print dconf lock content"
 msgstr "打印dconf锁定内容"
 
-#: src/cli/main.c:598
+#: src/cli/main.c:601
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "无法获取生成的内容[%d]： %s"
 
-#: src/cli/main.c:617
+#: src/cli/main.c:620
 #, c-format
 msgid ""
 "File %s: Empty\n"
@@ -1128,7 +1142,7 @@ msgstr ""
 "文件 %s：空\n"
 "\n"
 
-#: src/cli/main.c:619
+#: src/cli/main.c:622
 #, c-format
 msgid ""
 "File %s:\n"
@@ -1139,191 +1153,209 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/cli/main.c:648
+#: src/cli/main.c:651
 msgid "Feature to enable."
 msgstr "要启用的功能。"
 
-#: src/cli/main.c:685
+#: src/cli/main.c:688
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
 msgstr "无法备份当前配置 [%d]: %s\n"
 
-#: src/cli/main.c:692
+#: src/cli/main.c:695
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "无法启用功能[%d]： %s\n"
 
-#: src/cli/main.c:697
+#: src/cli/main.c:700
 #, c-format
 msgid "%s\n"
 msgstr "%s\n"
 
-#: src/cli/main.c:725
+#: src/cli/main.c:728
 msgid "Feature to disable."
 msgstr "要禁用的功能。"
 
-#: src/cli/main.c:739
+#: src/cli/main.c:742
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "无法禁用功能[%d]： %s\n"
 
-#: src/cli/main.c:760
+#: src/cli/main.c:757
+#, fuzzy
+#| msgid "Feature to enable."
+msgid "Feature to check."
+msgstr "要启用的功能。"
+
+#: src/cli/main.c:766
+#, fuzzy, c-format
+#| msgid "Unable to enable feature [%d]: %s\n"
+msgid "Unable to check feature [%d]: %s\n"
+msgstr "无法启用功能[%d]： %s\n"
+
+#: src/cli/main.c:787
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr "创建新的配置档案作为供应商的配置档案，而不是自定义配置档案"
 
-#: src/cli/main.c:761
+#: src/cli/main.c:788
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr "作为新配置档案基础的配置档案的ID"
 
-#: src/cli/main.c:762
+#: src/cli/main.c:789
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
 msgstr "新配置档案基于一个默认的配置档案，即使存在具有相同名称的供应商配置档案"
 
-#: src/cli/main.c:763
+#: src/cli/main.c:790
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr "使用基础配置档案的符号链接元文件，而不是复制它们"
 
-#: src/cli/main.c:764
+#: src/cli/main.c:791
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr "使用基础配置档案的符号链接 nsswitch文件，而不是复制它们"
 
-#: src/cli/main.c:765
+#: src/cli/main.c:792
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr "使用基础配置档案的符号链接 pam 文件，而不是复制它们"
 
-#: src/cli/main.c:766
+#: src/cli/main.c:793
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr "使用基础配置档案的符号链接 dconf 文件，而不是复制它们"
 
-#: src/cli/main.c:767
+#: src/cli/main.c:794
 msgid "Symlink specific file (can be set multiple times)"
 msgstr "符号链接特定文件（可多次设置）"
 
-#: src/cli/main.c:772
+#: src/cli/main.c:799
 msgid "New profile name."
 msgstr "新的配置集名称。"
 
-#: src/cli/main.c:782
+#: src/cli/main.c:809
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "无法创建新的配置档案[%d]： %s\n"
 
-#: src/cli/main.c:786
+#: src/cli/main.c:813
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "新的配置档案创建于 %s\n"
 
-#: src/cli/main.c:809
+#: src/cli/main.c:836
 msgid "Print backup names without any formatting and additional information"
 msgstr "输出备份名，不包括格式及额外信息"
 
-#: src/cli/main.c:821
+#: src/cli/main.c:848
 msgid "Unable to list available backups!"
 msgstr "无法列出有效的备份!"
 
-#: src/cli/main.c:858
+#: src/cli/main.c:885
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (创建于 %s)\n"
 
-#: src/cli/main.c:877
+#: src/cli/main.c:904
 msgid "Name of the backup to remove."
 msgstr "要删除的备份名称。"
 
-#: src/cli/main.c:886
+#: src/cli/main.c:913
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "无法删除备份 [%s] [%d]: %s\n"
 
-#: src/cli/main.c:903
+#: src/cli/main.c:930
 msgid "Name of the backup to restore from."
 msgstr "要从中恢复的备份名称。"
 
-#: src/cli/main.c:912
+#: src/cli/main.c:939
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "无法恢复备份 [%s] [%d]: %s\n"
 
-#: src/cli/main.c:928
+#: src/cli/main.c:955
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "无法卸载 authselect 配置 [%d]: %s\n"
 
-#: src/cli/main.c:978
+#: src/cli/main.c:1005
 msgid "Select profile"
 msgstr "选择配置集"
 
-#: src/cli/main.c:979
+#: src/cli/main.c:1006
 msgid "Regenerate configuration for currently selected command"
 msgstr "为当前选择的命令重新生成配置"
 
-#: src/cli/main.c:980
+#: src/cli/main.c:1007
 msgid "List available profiles"
 msgstr "列出可用的配置集"
 
-#: src/cli/main.c:981
+#: src/cli/main.c:1008
 msgid "List available profile features"
 msgstr "列出有效的配置集信息"
 
-#: src/cli/main.c:982
+#: src/cli/main.c:1009
 msgid "Show profile information"
 msgstr "显示配置集信息"
 
-#: src/cli/main.c:983
+#: src/cli/main.c:1010
 msgid "Print profile requirements"
 msgstr "打印配置集的要求"
 
-#: src/cli/main.c:984
+#: src/cli/main.c:1011
 msgid "Get identifier of currently selected profile"
 msgstr "获得当前选择配置集的标识符"
 
-#: src/cli/main.c:985
+#: src/cli/main.c:1012
 msgid "Check if the current configuration is valid"
 msgstr "检查当前配置是否有效"
 
-#: src/cli/main.c:986
+#: src/cli/main.c:1013
 msgid "Print changes that would be otherwise written"
 msgstr "打印要改写的信息"
 
-#: src/cli/main.c:987
+#: src/cli/main.c:1014
 msgid "Enable feature in currently selected profile"
 msgstr "启用当前选择配置集中的功能"
 
-#: src/cli/main.c:988
+#: src/cli/main.c:1015
 msgid "Disable feature in currently selected profile"
 msgstr "禁用当前选择配置集的功能"
 
-#: src/cli/main.c:989
+#: src/cli/main.c:1016
+#, fuzzy
+#| msgid "Enable feature in currently selected profile"
+msgid "Check if feature is enabled in currently selected profile"
+msgstr "启用当前选择配置集中的功能"
+
+#: src/cli/main.c:1017
 msgid "Create new authselect profile"
 msgstr "创建新的 authselect 配置集"
 
-#: src/cli/main.c:990
+#: src/cli/main.c:1018
 msgid "Backup commands:"
 msgstr "备份命令："
 
-#: src/cli/main.c:991
+#: src/cli/main.c:1019
 msgid "List available backups"
 msgstr "列出有效备份"
 
-#: src/cli/main.c:992
+#: src/cli/main.c:1020
 msgid "Remove backup"
 msgstr "删除备份"
 
-#: src/cli/main.c:993
+#: src/cli/main.c:1021
 msgid "Restore from backup"
 msgstr "从备份中恢复"
 
-#: src/cli/main.c:994
+#: src/cli/main.c:1022
 msgid "Other:"
 msgstr "其他："
 
-#: src/cli/main.c:995
+#: src/cli/main.c:1023
 msgid "Opt-out from authselect managed configuration"
 msgstr "从 authselect 管理的配置中的选择退出"
 
-#: src/cli/main.c:997
+#: src/cli/main.c:1025
 msgid "Print authselect version"
 msgstr "打印 authselect 版本"
 
