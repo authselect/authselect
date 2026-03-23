@@ -325,3 +325,33 @@ def test_sssd__nsswitch_conf_group_merging(client: Client, provider: GenericProv
     assert (
         "user" not in client.tools.getent.group("group", service="files").members
     ), "'user' should not be a member of the group!"
+
+
+@pytest.mark.importance("high")
+@pytest.mark.topology(KnownTopology.IPA)
+@pytest.mark.parametrize(
+    "feature",
+    [
+        "with-switchable-auth",
+        "with-altfiles",
+        "with-ecryptfs",
+        "with-gssapi",
+        "with-libvirt",
+        "with-pam-gnome-keyring",
+        "with-subid",
+        "with-systemd-homed",
+        "without-nullok",
+    ],
+)
+def test_sssd__feature_sanity_check(client: Client, feature: str):
+    """
+    :title: Simple parametrized check for feature availability
+    :setup:
+    :steps:
+        1: List sssd authselect features
+    :expectedresults:
+        1. Feature is listed
+    """
+    result = client.host.conn.run("authselect list-features sssd").stdout_lines
+    if result is not None and isinstance(result, list):
+        assert feature in result, f"Feature {feature} is not listed!"
