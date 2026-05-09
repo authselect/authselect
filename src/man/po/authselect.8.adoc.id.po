@@ -1,22 +1,22 @@
-# Yuri Chornoivan <yurchor@ukr.net>, 2018, 2020, 2021, 2022, 2026.
-# Pavel Brezina <pbrezina@redhat.com>, 2018. #zanata
-# Yuri Chornoivan <yurchor@ukr.net>, 2018. #zanata, 2020, 2021, 2022, 2026.
-# Yuri Chornoivan <yurchor@ukr.net>, 2019. #zanata, 2020, 2021, 2022, 2026.
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Languages add-on <noreply-addon-languages@weblate.org>, 2026.
+# Arif Budiman <arifpedia@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-12-01 13:40+0100\n"
-"PO-Revision-Date: 2026-04-27 14:59+0000\n"
-"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <https://translate.fedoraproject.org/projects/"
-"authselect/12x-authselect8adoc/uk/>\n"
-"Language: uk\n"
+"PO-Revision-Date: 2026-02-07 01:58+0000\n"
+"Last-Translator: Arif Budiman <arifpedia@gmail.com>\n"
+"Language-Team: Indonesian <https://translate.fedoraproject.org/projects/"
+"authselect/12x-authselect8adoc/id/>\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.17\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
@@ -28,32 +28,30 @@ msgstr "authselect(8)"
 #: src/man/authselect.8.adoc:6
 #, no-wrap
 msgid "NAME"
-msgstr "НАЗВА"
+msgstr "NAMA"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:9
 msgid "authselect - select system identity and authentication sources."
-msgstr ""
-"authselect - програма для вибору профілю системи та джерел даних для "
-"розпізнавання."
+msgstr "authselect - memilih sumber identitas sistem dan autentikasi."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:11
 #, no-wrap
 msgid "SYNOPSIS"
-msgstr "КОРОТКИЙ ОПИС"
+msgstr "SINOPSIS"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:13
 #, no-wrap
 msgid " authselect [--debug] [--trace] [--warn] command [command options]\n"
-msgstr " authselect [--debug] [--trace] [--warn] команда [параметри команди]\n"
+msgstr " authselect [--debug] [--trace] [--warn] perintah [opsi perintah]\n"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:15
 #, no-wrap
 msgid "DESCRIPTION"
-msgstr "ОПИС"
+msgstr "DESKRIPSI"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:21
@@ -64,7 +62,7 @@ msgid ""
 "describes how the resulting system configuration will look like. When a profile\n"
 "is selected, *authselect* will create nsswitch.conf(5) and PAM(8) stack to use\n"
 "identity and authentication sources defined by the profile.\n"
-msgstr "*Authselect* — програма для налаштовування профілю системи та джерел даних розпізнавання, а також допоміжних програм шляхом вибору певного профілю налаштувань. Профіль — набір файлів, які описують, як мають виглядати остаточні налаштування системи. Якщо вибрано профіль, *authselect* створить стос налаштувань nsswitch.conf(5) і PAM(8) для використання параметрів і джерел даних розпізнавання, визначених профілем.\n"
+msgstr ""
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:27
@@ -75,17 +73,17 @@ msgid ""
 "*authselect*. See _authselect-profiles(5)_ for more information on extending "
 "existing profiles."
 msgstr ""
-"Якщо набору даних профілю недостатньо, адміністратор може створити нетиповий "
-"профіль, розмістивши його у спеціальному каталозі профілів "
-"({AUTHSELECT_CUSTOM_DIR}). Такий профіль негайно стає доступним до "
-"використання у *authselect*. Див. _authselect-profiles(5)_, щоб дізнатися "
-"більше про розширення наявних профілів."
+"Jika set profil yang disediakan tidak memadai, administrator dapat membuat "
+"profil khusus dengan menempatkannya di direktori profil khusus ("
+"{AUTHSELECT_CUSTOM_DIR}). Dengan melakukan hal tersebut, profil tersebut "
+"dapat segera digunakan oleh *authselect*. Lihat _authselect-profiles(5)_ "
+"untuk informasi lebih lanjut tentang memperluas profil yang ada."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:29
 #, no-wrap
 msgid "OPT-IN TO AUTHSELECT"
-msgstr "ДОЛУЧЕННЯ ДО AUTHSELECT"
+msgstr "IKUT SERA (OPT-IN) KE AUTHSELECT"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:39
@@ -100,23 +98,22 @@ msgid ""
 "so if you wish to go back you can restore it with *authselect backup-"
 "restore* command (see description below)."
 msgstr ""
-"Authselect не вноситиме змін до наявних налаштувань, якщо ці налаштування не "
-"було створено за допомогою authselect. Якщо ви хочете розпочати "
-"користуватися authselect для налаштовування розпізнавання користувачів у "
-"вашій системі, будь ласка, віддайте спочатку команду *authselect select* із "
-"параметром *--force* (наприклад, *authselect select sssd --force*). Параметр "
-"*--force* повідомить authselect, що можна перезаписувати наявні "
-"налаштування, які не було створено за допомогою authselect (опис наведено "
-"нижче). Якщо використано параметр *--force*, програма автоматично створить "
-"резервну копію ваших поточних налаштувань. Отже, якщо ви вирішите "
-"повернутися до попередніх налаштувань, ви можете відновити їх за допомогою "
-"команди *authselect backup-restore* (опис наведено нижче)."
+"Authselect tidak akan menyentuh konfigurasi Anda yang sudah ada kecuali jika "
+"konfigurasi tersebut telah dibuat olehnya. Jika Anda ingin mulai menggunakan "
+"authselect untuk mengonfigurasi autentikasi sistem Anda, silakan panggil "
+"*authselect select* dengan parameter *--force* terlebih dahulu (misalnya "
+"*authselect select sssd --force*). Parameter *--force* memberi tahu "
+"authselect bahwa tidak apa-apa untuk menimpa konfigurasi non-authselect yang "
+"ada (lihat deskripsi di bawah). Menggunakan parameter *--force* akan secara "
+"otomatis menghasilkan cadangan (backup) konfigurasi Anda saat ini, sehingga "
+"jika Anda ingin kembali, Anda dapat memulihkannya dengan perintah "
+"*authselect backup-restore* (lihat deskripsi di bawah)."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:41
 #, no-wrap
 msgid "AVAILABLE COMMANDS"
-msgstr "ДОСТУПНІ КОМАНДИ"
+msgstr "PERINTAH YANG TERSEDIA"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:44
@@ -124,15 +121,16 @@ msgid ""
 "To list all available commands run *authselect* without any parameters.  To "
 "print help for the selected command run *authselect COMMAND --help*."
 msgstr ""
-"Щоб ознайомитися зі списком усіх доступних команд, віддайте команду "
-"*authselect* без параметрів. Щоб програма вивела довідкове повідомлення щодо "
-"певної команди, віддайте команду *authselect КОМАНДА --help*."
+"Untuk melihat daftar semua perintah yang tersedia, jalankan *authselect* "
+"tanpa parameter apa pun. Untuk mencetak bantuan untuk perintah yang dipilih, "
+"jalankan *authselect PERINTAH --help*."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:45
 #, no-wrap
 msgid "*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup=NAME]"
-msgstr "*select* ідентифікатор_профілю [можливості] [-f, --force] [-q, --quiet] [-b] [--backup=НАЗВА]"
+msgstr ""
+"*select* profile_id [fitur] [-f, --force] [-q, --quiet] [-b] [--backup=NAMA]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:48
@@ -140,8 +138,8 @@ msgid ""
 "Activate desired profile. See profile description with *show* command, to "
 "list profile specific optional features."
 msgstr ""
-"Задіяти бажаний профіль. Переглянути опис профілю можна за допомогою *show*, "
-"яка показує специфічні для профілю додаткові можливості."
+"Mengaktifkan profil yang diinginkan. Lihat deskripsi profil dengan perintah "
+"*show*, untuk mencantumkan fitur opsional spesifik profil."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:49
@@ -157,7 +155,13 @@ msgid ""
 "authselect but by other tool or by manual changes. This option will\n"
 "automatically backup system files before writing any change unless\n"
 "*--nobackup* option is set.\n"
-msgstr "Записати зміни, навіть якщо попередні налаштування було створено не за допомогою authselect, іншою програмою або вручну. Використання цього параметра призводить до автоматичного створення резервних копій системних файлів до запису будь-яких змін, якщо не використано параметр *--nobackup*.\n"
+msgstr ""
+"Menulis perubahan meskipun konfigurasi sebelumnya tidak dibuat oleh\n"
+"authselect melainkan oleh alat lain atau melalui perubahan manual. Opsi ini "
+"akan\n"
+"secara otomatis mencadangkan berkas sistem sebelum menulis perubahan apa pun "
+"kecuali\n"
+"opsi *--nobackup* ditetapkan.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:55 src/man/authselect.8.adoc:80
@@ -175,17 +179,18 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"Створити резервну копію системних файлів до задіяння вибраного профілю.\n"
-"Резервну копію буде збережено у каталозі {AUTHSELECT_BACKUP_DIR}/НАЗВА.\n"
-"Як назву резервної копії буде використано поточний час із унікальним рядком.\n"
-"Скорочений варіант параметра *--backup=*.\n"
+"Mencadangkan berkas sistem sebelum mengaktifkan profil yang dipilih. "
+"Cadangan\n"
+"akan disimpan di {AUTHSELECT_BACKUP_DIR}/NAMA. Waktu saat ini dengan\n"
+"string unik digunakan sebagai nama cadangan. Ini adalah pintasan\n"
+"untuk *--backup=*.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:61 src/man/authselect.8.adoc:86
 #: src/man/authselect.8.adoc:155 src/man/authselect.8.adoc:173
 #, no-wrap
 msgid "*--backup=NAME*"
-msgstr "*--backup=НАЗВА*"
+msgstr "*--backup=NAMA*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:65
@@ -195,9 +200,10 @@ msgid ""
 "will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
 "unique string is used as a name if no value is provided.\n"
 msgstr ""
-"Створити резервну копію системних файлів до задіяння вибраного профілю.\n"
-"Резервну копію буде збережено у каталозі {AUTHSELECT_BACKUP_DIR}/НАЗВА.\n"
-"Якщо назву не буде вказано, як назву буде використано поточний час.\n"
+"Mencadangkan berkas sistem sebelum mengaktifkan profil yang dipilih. "
+"Cadangan\n"
+"akan disimpan di {AUTHSELECT_BACKUP_DIR}/NAMA. Waktu saat ini dengan\n"
+"string unik digunakan sebagai nama jika tidak ada nilai yang diberikan.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:66
@@ -209,7 +215,7 @@ msgstr "*--nobackup*"
 #: src/man/authselect.8.adoc:68
 #, no-wrap
 msgid "Do not backup system configuration even if *--force* is set.\n"
-msgstr "Не створювати резервних копій системних налаштувань, навіть якщо вказано *--force*.\n"
+msgstr "Jangan mencadangkan konfigurasi sistem meskipun *--force* ditetapkan.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:69 src/man/authselect.8.adoc:160
@@ -223,13 +229,15 @@ msgstr "*--quiet, -q*"
 msgid ""
 "The command will not print any informational message such as additional\n"
 "profile requirements or backup location. Errors are still being print.\n"
-msgstr "Команда не виводитиме жодних інформаційних повідомлень, зокрема додаткових вимог щодо профілю або розташування резервної копії. Повідомлення щодо помилок виводитимуться попри використання цього параметра.\n"
+msgstr ""
+"Perintah tidak akan mencetak pesan informasi apa pun seperti persyaratan\n"
+"profil tambahan atau lokasi cadangan. Kesalahan (errors) tetap dicetak.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:73
 #, no-wrap
 msgid "*apply-changes* [-b] [--backup=NAME]"
-msgstr "*apply-changes* [-b] [--backup=НАЗВА]"
+msgstr "*apply-changes* [-b] [--backup=NAMA]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:79
@@ -240,12 +248,11 @@ msgid ""
 "changes if the existing configuration is a valid authselect configuration, "
 "otherwise an error is returned."
 msgstr ""
-"Повторно застосувати поточний вибраний профіль. Якщо шаблони профілю було "
-"оновлено, можна скористатися цією командою для повторного створення поточних "
-"налаштувань системи для того, щоб застосувати ці зміни до системи. Ця "
-"команда лише повторно застосує зміни, якщо наявні налаштування є коректними "
-"налаштуваннями authselect. Якщо ж це не так, буде повернуто повідомлення про "
-"помилку."
+"Menerapkan ulang profil yang saat ini dipilih. Jika templat profil "
+"diperbarui, perintah ini dapat digunakan untuk membuat ulang konfigurasi "
+"sistem saat ini guna menerapkan perubahan tersebut pada sistem. Perintah ini "
+"hanya akan menerapkan ulang perubahan jika konfigurasi yang ada adalah "
+"konfigurasi authselect yang valid, jika tidak, kesalahan akan dikembalikan."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:85
@@ -256,10 +263,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"Створити резервну копію системних файлів до застосування змін.\n"
-"Резервну копію буде збережено у каталозі {AUTHSELECT_BACKUP_DIR}/НАЗВА.\n"
-"Як назву резервної копії буде використано поточний час із унікальним рядком.\n"
-"Скорочений варіант параметра *--backup=*.\n"
+"Mencadangkan berkas sistem sebelum menerapkan perubahan. Cadangan\n"
+"akan disimpan di {AUTHSELECT_BACKUP_DIR}/NAMA. Waktu saat ini dengan\n"
+"string unik digunakan sebagai nama cadangan. Ini adalah pintasan\n"
+"untuk *--backup=*.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:90
@@ -269,9 +276,9 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
-"Створити резервну копію системних файлів до застосування змін.\n"
-"Резервну копію буде збережено у каталозі {AUTHSELECT_BACKUP_DIR}/НАЗВА.\n"
-"Якщо назву не буде вказано, як назву буде використано поточний час.\n"
+"Mencadangkan berkas sistem sebelum menerapkan perubahan. Cadangan akan\n"
+"disimpan di {AUTHSELECT_BACKUP_DIR}/NAMA. Waktu saat ini dengan string unik\n"
+"digunakan sebagai nama jika tidak ada nilai yang diberikan.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:91
@@ -282,13 +289,13 @@ msgstr "*list*"
 #. type: Plain text
 #: src/man/authselect.8.adoc:93
 msgid "List available profiles."
-msgstr "Вивести список доступних профілів."
+msgstr "Menampilkan daftar profil yang tersedia."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:94
 #, no-wrap
 msgid "*list-features* profile_id"
-msgstr "*list-features* ідентифікатор_профілю"
+msgstr "*list-features* profile_id"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:98
@@ -297,38 +304,38 @@ msgid ""
 "List all features available in given profile.\n"
 "_Note:_ This will only list the features without any description. Please, read the profile documentation with *show* to see what the features do."
 msgstr ""
-"Вивести список усіх можливостей у вказаному профілі.\n"
-"_Зауваження:_ буде виведено лише список можливостей, без будь-яких описів. "
-"Будь ласка, ознайомтеся із документацією до профілю за допомогою команди "
-"*show*, щоб дізнатися більше про призначення властивостей."
+"Daftar semua fitur yang tersedia dalam profil yang diberikan.\n"
+"_Catatan:_ Ini hanya akan mencantumkan fitur tanpa deskripsi apa pun. Harap "
+"baca dokumentasi profil dengan *show* untuk melihat apa yang dilakukan fitur "
+"tersebut."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:99
 #, no-wrap
 msgid "*show* profile_id"
-msgstr "*show* ідентифікатор_профілю"
+msgstr "*show* profile_id"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:101
 msgid "Print information about the profile."
-msgstr "Вивести відомості щодо профілю."
+msgstr "Cetak informasi tentang profil."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:102
 #, no-wrap
 msgid "*requirements* profile_id [features]"
-msgstr "*requirements* ідентифікатор_профілю [можливості]"
+msgstr "*requirements* profile_id [fitur]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:104
 msgid "Print information about profile requirements."
-msgstr "Вивести відомості щодо вимог профілю."
+msgstr "Cetak informasi tentang persyaratan profil."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:105
 #, no-wrap
 msgid "*current* [-r, --raw]"
-msgstr "*поточний* [-r, --raw]"
+msgstr "*current* [-r, --raw]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:109
@@ -337,9 +344,9 @@ msgid ""
 "specified, the command will print raw parameters as they were passed to "
 "*select* command instead of formatted output."
 msgstr ""
-"Вивести відомості щодо поточних вибраних профілів. Якщо вказано параметр *--"
-"raw*, команда виводитиме параметри без обробки, так, як їх було передано "
-"команді *select*, замість форматування виведених даних."
+"Cetak informasi tentang profil yang saat ini dipilih. Jika opsi *--raw* "
+"ditentukan, perintah akan mencetak parameter mentah seperti saat diteruskan "
+"ke perintah *select* alih-alih keluaran terformat."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:110
@@ -354,14 +361,14 @@ msgid ""
 "*authselect* or there are no leftovers from previous authselect "
 "configuration)."
 msgstr ""
-"Перевірити, чи є поточні налаштування коректними (налаштування має бути "
-"створено *authselect* або не повинно бути попередніх налаштувань authselect)."
+"Periksa apakah konfigurasi saat ini valid (baik yang dibuat oleh "
+"*authselect* atau tidak ada sisa dari konfigurasi authselect sebelumnya)."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:115
 #, no-wrap
 msgid "*test* profile_id [options] [features]"
-msgstr "*test* ідентифікатор_профілю [параметри] [можливості]"
+msgstr "*test* profile_id [opsi] [fitur]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:118
@@ -369,8 +376,8 @@ msgid ""
 "Print content of files generated by *authselect* without actually writing "
 "anything to system configuration."
 msgstr ""
-"Вивести вміст файлів, створених *authselect* без самого запису даних до "
-"налаштувань системи."
+"Cetak konten berkas yang dihasilkan oleh *authselect* tanpa benar-benar "
+"menulis apa pun ke konfigurasi sistem."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:119
@@ -382,7 +389,7 @@ msgstr "*-a, --all*"
 #: src/man/authselect.8.adoc:121
 #, no-wrap
 msgid "Print content of all files.\n"
-msgstr "Вивести вміст усіх файлів.\n"
+msgstr "Cetak konten semua berkas.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:122
@@ -394,7 +401,7 @@ msgstr "*-n, --nsswitch*"
 #: src/man/authselect.8.adoc:124
 #, no-wrap
 msgid "Print nsswitch.conf content.\n"
-msgstr "Вивести вміст nsswitch.conf.\n"
+msgstr "Cetak konten nsswitch.conf.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:125
@@ -406,7 +413,7 @@ msgstr "*-s, --system-auth*"
 #: src/man/authselect.8.adoc:127
 #, no-wrap
 msgid "Print system-auth content.\n"
-msgstr "Вивести вміст system-auth.\n"
+msgstr "Cetak konten system-auth.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:128
@@ -418,7 +425,7 @@ msgstr "*-p, --password-auth*"
 #: src/man/authselect.8.adoc:130
 #, no-wrap
 msgid "Print password-auth content.\n"
-msgstr "Вивести вміст password-auth.\n"
+msgstr "Cetak konten password-auth.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:131
@@ -430,7 +437,7 @@ msgstr "*-c, --smartcard-auth*"
 #: src/man/authselect.8.adoc:133
 #, no-wrap
 msgid "Print smartcard-auth content.\n"
-msgstr "Вивести вміст smartcard-auth.\n"
+msgstr "Cetak konten smartcard-auth.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:134
@@ -442,7 +449,7 @@ msgstr "*-f, --fingerprint-auth*"
 #: src/man/authselect.8.adoc:136
 #, no-wrap
 msgid "Print fingerprint-auth content.\n"
-msgstr "Вивести вміст fingerprint-auth.\n"
+msgstr "Cetak konten fingerprint-auth.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:137
@@ -454,7 +461,7 @@ msgstr "*-o, --postlogin*"
 #: src/man/authselect.8.adoc:139
 #, no-wrap
 msgid "Print postlogin content.\n"
-msgstr "Вивести вміст postlogin.\n"
+msgstr "Cetak konten postlogin.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:140
@@ -466,7 +473,7 @@ msgstr "*-d, --dconf-db*"
 #: src/man/authselect.8.adoc:142
 #, no-wrap
 msgid "Print dconf database content.\n"
-msgstr "Вивести вміст бази даних dconf.\n"
+msgstr "Cetak konten basis data dconf.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:143
@@ -478,18 +485,18 @@ msgstr "*-l, --dconf-lock*"
 #: src/man/authselect.8.adoc:145
 #, no-wrap
 msgid "Print dconf lock content.\n"
-msgstr "Вивести вміст файла блокування dconf.\n"
+msgstr "Cetak konten kunci dconf.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:146
 #, no-wrap
 msgid "*enable-feature* feature [-b] [--backup=NAME] [-q, --quiet]"
-msgstr "*enable-feature* можливість [-b] [--backup=НАЗВА] [-q, --quiet]"
+msgstr "*enable-feature* fitur [-b] [--backup=NAMA] [-q, --quiet]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:148
 msgid "Enable feature in the currently selected profile."
-msgstr "Увімкнути можливість у поточному вибраному профілі."
+msgstr "Aktifkan fitur dalam profil yang saat ini dipilih."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:154
@@ -500,10 +507,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"Створити резервну копію системних файлів до вмикання можливості.\n"
-"Резервну копію буде збережено у каталозі {AUTHSELECT_BACKUP_DIR}/НАЗВА.\n"
-"Як назву резервної копії буде використано поточний час із унікальним рядком.\n"
-"Скорочений варіант параметра *--backup=*.\n"
+"Cadangkan berkas sistem sebelum mengaktifkan fitur. Cadangan\n"
+"akan disimpan di {AUTHSELECT_BACKUP_DIR}/NAMA. Waktu saat ini dengan\n"
+"string unik digunakan sebagai nama cadangan. Ini adalah pintasan\n"
+"untuk *--backup=*.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:159
@@ -513,20 +520,20 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
-"Створити резервну копію системних файлів до вмикання можливості.\n"
-"Резервну копію буде збережено у каталозі {AUTHSELECT_BACKUP_DIR}/НАЗВА.\n"
-"Якщо назву не буде вказано, як назву буде використано поточний час.\n"
+"Cadangkan berkas sistem sebelum mengaktifkan fitur. Cadangan akan\n"
+"disimpan di {AUTHSELECT_BACKUP_DIR}/NAMA. Waktu saat ini dengan string unik\n"
+"digunakan sebagai nama jika tidak ada nilai yang diberikan.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:164
 #, no-wrap
 msgid "*disable-feature* feature [-b] [--backup=NAME]"
-msgstr "*disable-feature* можливість [-b] [--backup=НАЗВА]"
+msgstr "*disable-feature* fitur [-b] [--backup=NAMA]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:166
 msgid "Disable feature in the currently selected profile."
-msgstr "Вимкнути можливість у поточному вибраному профілі."
+msgstr "Nonaktifkan fitur dalam profil yang saat ini dipilih."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:172
@@ -537,10 +544,10 @@ msgid ""
 "unique string is used as a name of the backup. This is a shortcut\n"
 "for *--backup=*.\n"
 msgstr ""
-"Створити резервну копію системних файлів до вимикання можливості.\n"
-"Резервну копію буде збережено у каталозі {AUTHSELECT_BACKUP_DIR}/НАЗВА.\n"
-"Як назву резервної копії буде використано поточний час із унікальним рядком.\n"
-"Скорочений варіант параметра *--backup=*.\n"
+"Cadangkan berkas sistem sebelum menonaktifkan fitur. Cadangan\n"
+"akan disimpan di {AUTHSELECT_BACKUP_DIR}/NAMA. Waktu saat ini dengan\n"
+"string unik digunakan sebagai nama cadangan. Ini adalah pintasan\n"
+"untuk *--backup=*.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:177
@@ -550,15 +557,15 @@ msgid ""
 "be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
 "string is used as a name if no value is provided.\n"
 msgstr ""
-"Створити резервну копію системних файлів до вимикання можливості.\n"
-"Резервну копію буде збережено у каталозі {AUTHSELECT_BACKUP_DIR}/НАЗВА.\n"
-"Якщо назву не буде вказано, як назву буде використано поточний час.\n"
+"Cadangkan berkas sistem sebelum menonaktifkan fitur. Cadangan akan\n"
+"disimpan di {AUTHSELECT_BACKUP_DIR}/NAMA. Waktu saat ini dengan string unik\n"
+"digunakan sebagai nama jika tidak ada nilai yang diberikan.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:178
 #, no-wrap
 msgid "*create-profile* NAME [--vendor,-v] [options]"
-msgstr "*create-profile* НАЗВА [--vendor,-v] [параметри]"
+msgstr "*create-profile* NAMA [--vendor,-v] [opsi]"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:183
@@ -568,10 +575,9 @@ msgid ""
 "from the base profile or symbolic links to these files are created if such "
 "option is selected."
 msgstr ""
-"Створити нетиповий профіль із назвою _НАЗВА_. Профіль може бути засновано на "
-"наявному профілі. У цьому випадку шаблони нового профілю або копіюються з "
-"базового профілю, або створюються символічні посилання на ці файли, якщо "
-"використано цей параметр."
+"Buat profil kustom baru bernama _NAMA_. Profil dapat didasarkan pada profil "
+"yang sudah ada di mana templat profil baru disalin dari profil dasar atau "
+"tautan simbolik ke berkas-berkas ini dibuat jika opsi tersebut dipilih."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:184
@@ -585,13 +591,15 @@ msgstr "*--vendor,-v*"
 msgid ""
 "The new profile is a vendor profile instead of a custom profile. See\n"
 "_authselect-profiles(5)_ for more information on profile types.\n"
-msgstr "Новий профіль є профілем постачальника, а не нетиповим профілем. Див. _authselect-profiles(5)_, щоб дізнатися більше про типи профілів.\n"
+msgstr ""
+"Profil baru adalah profil vendor alih-alih profil kustom. Lihat\n"
+"_authselect-profiles(5)_ untuk informasi lebih lanjut tentang tipe profil.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:188
 #, no-wrap
 msgid "*--base-on=BASE-ID, -b=BASE-ID*"
-msgstr "*--base-on=БАЗОВИЙ-ІДЕНТИФІКАТОР, -b=БАЗОВИЙ-ІДЕНТИФІКАТОР*"
+msgstr "*--base-on=BASE-ID, -b=BASE-ID*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:191
@@ -599,31 +607,35 @@ msgstr "*--base-on=БАЗОВИЙ-ІДЕНТИФІКАТОР, -b=БАЗОВИЙ-
 msgid ""
 "The new profile will be based on a profile named _BASE-ID_. The base\n"
 "profile location is determined with these steps:\n"
-msgstr "Новий профіль буде засновано на профілі із назвою _БАЗОВИЙ-ІДЕНТИФІКАТОР_. Розташування базового профілю визначається за допомогою таких кроків:\n"
+msgstr ""
+"Profil baru akan didasarkan pada profil bernama _BASE-ID_. Lokasi\n"
+"profil dasar ditentukan dengan langkah-langkah berikut:\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:192
 #, no-wrap
 msgid "If _BASE-ID_ starts with prefix _custom/_ it is a custom profile.\n"
-msgstr "Якщо назва _БАЗОВИЙ-ІДЕНТИФІКАТОР_ починається з префікса _custom/_, це нетиповий профіль.\n"
+msgstr ""
+"Jika _BASE-ID_ dimulai dengan awalan _custom/_ maka itu adalah profil "
+"kustom.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:193
 #, no-wrap
 msgid "Try if _BASE-ID_ is found in vendor profiles.\n"
-msgstr "Виконується спроба знайти _БАЗОВИЙ-ІДЕНТИФІКАТОР_ у профілях постачальника.\n"
+msgstr "Coba jika _BASE-ID_ ditemukan di profil vendor.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:194
 #, no-wrap
 msgid "Try if _BASE-ID_ is found in default profiles.\n"
-msgstr "Виконується спроба знайти _БАЗОВИЙ-ІДЕНТИФІКАТОР_ серед типових профілів.\n"
+msgstr "Coba jika _BASE-ID_ ditemukan di profil bawaan (default).\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:195
 #, no-wrap
 msgid "Return an error.\n"
-msgstr "Повернути помилку.\n"
+msgstr "Kembalikan galat (error).\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:196
@@ -637,7 +649,10 @@ msgstr "*--base-on-default*"
 msgid ""
 "The base profile is a default profile even if it is found also within\n"
 "vendor profiles.\n"
-msgstr "Базовий профіль буде типовим профілем, навіть якщо його також буде знайдено серед профілів постачальників.\n"
+msgstr ""
+"Profil dasar adalah profil bawaan (default) meskipun ditemukan juga di "
+"dalam\n"
+"profil vendor.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:200
@@ -651,7 +666,10 @@ msgstr "*--symlink-meta*"
 msgid ""
 "Meta files, such as _README_ and _REQUIREMENTS_ will be symbolic links\n"
 "to the origin profile files instead of their copy.\n"
-msgstr "Метафайли, зокрема _README_ і _REQUIREMENTS_ будуть символічними посиланнями на файли початкового профілю, а не їхніми копіями.\n"
+msgstr ""
+"Berkas meta, seperti _README_ dan _REQUIREMENTS_ akan berupa tautan "
+"simbolik\n"
+"ke berkas profil asal alih-alih salinannya.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:204
@@ -665,7 +683,9 @@ msgstr "*--symlink-nsswitch*"
 msgid ""
 "_nsswitch.conf_ template will be symbolic link to the origin profile\n"
 "file instead of its copy.\n"
-msgstr "Шаблон _nsswitch.conf_ буде символічним посиланням на файл з початкового профілю, а не копією цього файла.\n"
+msgstr ""
+"Templat _nsswitch.conf_ akan menjadi tautan simbolik ke berkas profil asal\n"
+"alih-alih salinannya.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:208
@@ -679,7 +699,9 @@ msgstr "*--symlink-pam*"
 msgid ""
 "_PAM_ templates will be symbolic links to the origin profile files\n"
 "instead of their copy.\n"
-msgstr "Шаблони _PAM_ будуть символічними посиланнями на файли з початкового профілю, а не копіями цих файлів.\n"
+msgstr ""
+"Templat _PAM_ akan menjadi tautan simbolik ke berkas profil asal\n"
+"alih-alih salinannya.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:212
@@ -693,13 +715,15 @@ msgstr "*--symlink-dconf*"
 msgid ""
 "_dconf_ templates will be symbolic links to the origin profile files\n"
 "instead of their copy.\n"
-msgstr "Шаблони _dconf_ будуть символічними посиланнями на файли з початкового профілю, а не копіями цих файлів.\n"
+msgstr ""
+"Templat _dconf_ akan menjadi tautan simbolik ke berkas profil asal\n"
+"alih-alih salinannya.\n"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:216
 #, no-wrap
 msgid "*--symlink=FILE,-s=FILE*"
-msgstr "*--symlink=ФАЙЛ,-s=ФАЙЛ*"
+msgstr "*--symlink=FILE,-s=FILE*"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:219
@@ -707,20 +731,22 @@ msgstr "*--symlink=ФАЙЛ,-s=ФАЙЛ*"
 msgid ""
 "Create a symbolic link for a template file _FILE_ instead of creating\n"
 "its copy. This option can be passed multiple times.\n"
-msgstr "Створити символічне посилання на файл шаблону _FILE_, замість створення його копії. Цей параметр можна використовувати декілька разів.\n"
+msgstr ""
+"Buat tautan simbolik untuk berkas templat _FILE_ alih-alih membuat\n"
+"salinannya. Opsi ini dapat diberikan beberapa kali.\n"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:221
 #, no-wrap
 msgid "BACKUP COMMANDS"
-msgstr "КОМАНДИ РЕЗЕРВНОГО КОПІЮВАННЯ"
+msgstr "PERINTAH CADANGAN (BACKUP)"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:223
 msgid "These commands can be used to manage backed up configurations."
 msgstr ""
-"Цими командами можна скористатися для керування резервними копіями "
-"налаштувань."
+"Perintah-perintah ini dapat digunakan untuk mengelola konfigurasi yang "
+"dicadangkan."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:224
@@ -734,25 +760,25 @@ msgid ""
 "Print available backups.  If *--raw* option is specified, the command will "
 "print only backup names without any formatting and additional information."
 msgstr ""
-"Вивести назви резервних копій. Якщо вказано параметр *--raw*, команда виведе "
-"лише назви резервних копій, без форматування та додаткових відомостей."
+"Cetak cadangan yang tersedia. Jika opsi *--raw* ditentukan, perintah hanya "
+"akan mencetak nama cadangan tanpa pemformatan dan informasi tambahan apa pun."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:228
 #, no-wrap
 msgid "*backup-remove* BACKUP"
-msgstr "*backup-remove* РЕЗЕРВНА-КОПІЯ"
+msgstr "*backup-remove* BACKUP"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:230
 msgid "Permanently delete backup named _BACKUP_."
-msgstr "Остаточно вилучити резервну копію із назвою _РЕЗЕРВНА-КОПІЯ_."
+msgstr "Hapus cadangan bernama _BACKUP_ secara permanen."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:231
 #, no-wrap
 msgid "*backup-restore* BACKUP"
-msgstr "*backup-restore* РЕЗЕРВНА-КОПІЯ"
+msgstr "*backup-restore* BACKUP"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:234
@@ -760,19 +786,19 @@ msgid ""
 "Restore configuration from backup named _BACKUP_. *Note:* this will "
 "overwrite current configuration."
 msgstr ""
-"Відновити налаштування з резервної копії із назвою _РЕЗЕРВНА-КОПІЯ_. "
-"*Зауваження:* у результаті буде перезаписано поточні налаштування."
+"Pulihkan konfigurasi dari cadangan bernama _BACKUP_. *Catatan:* ini akan "
+"menimpa konfigurasi saat ini."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:236
 #, no-wrap
 msgid "COMMON OPTIONS"
-msgstr "ЗАГАЛЬНІ ПАРАМЕТРИ"
+msgstr "OPSI UMUM"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:238
 msgid "These options are available with all commands."
-msgstr "Ці параметри можна використовувати з усіма командами."
+msgstr "Opsi-opsi ini tersedia untuk semua perintah."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:239
@@ -783,7 +809,7 @@ msgstr "*--debug*"
 #. type: Plain text
 #: src/man/authselect.8.adoc:241
 msgid "Print debugging information and error messages."
-msgstr "Виводити діагностичні повідомлення та повідомлення щодо помилок."
+msgstr "Cetak informasi debugging dan pesan galat."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:242
@@ -794,7 +820,7 @@ msgstr "*--trace*"
 #. type: Plain text
 #: src/man/authselect.8.adoc:244
 msgid "Print information about what the tool is doing."
-msgstr "Вивести відомості щодо призначення цієї програми."
+msgstr "Cetak informasi tentang apa yang sedang dilakukan oleh alat tersebut."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:245
@@ -809,15 +835,15 @@ msgid ""
 "execution but may indicate some undesired situations (e.g. unexpected file "
 "in a profile directory)."
 msgstr ""
-"Вивести відомості щодо неочікуваних ситуацій, які не впливають на виконання "
-"програми, але можуть свідчити про певні небажані ситуації (наприклад, "
-"неочікуваний файл у каталозі профілю)."
+"Cetak informasi tentang situasi tak terduga yang tidak memengaruhi eksekusi "
+"program tetapi mungkin mengindikasikan beberapa situasi yang tidak "
+"diinginkan (misalnya berkas tak terduga di direktori profil)."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:251
 #, no-wrap
 msgid "NSSWITCH.CONF MANAGEMENT"
-msgstr "КЕРУВАННЯ NSSWITCH.CONF"
+msgstr ""
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:257
@@ -828,12 +854,6 @@ msgid ""
 "the *select* command. This mechanism prevents authselect from overwriting "
 "anything that does not match any available profile."
 msgstr ""
-"Authselect створює {AUTHSELECT_NSSWITCH_CONF} і забороняє вносити до цього "
-"файла будь-які зміни з боку користувача. Такі зміни буде виявлено, і "
-"authselect відмовиться записувати будь-які зміни до загальносистемних "
-"налаштувань, якщо не використано параметр *--force* у команді *select*. Цей "
-"механізм запобігає перезапису з боку authselect будь-яких даних, які не "
-"відповідають будь-якому з доступних профілів."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:265
@@ -846,20 +866,12 @@ msgid ""
 "those that are relevant to the profile. If a map is set within a profile, it "
 "always overwrites the same map from _user-nsswitch.conf_."
 msgstr ""
-"Будь-які зміни з боку користувача до карт nsswitch мають вноситися за "
-"допомогою файла {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf. Коли authselect "
-"створює new _nsswitch.conf_, програма читає дані з цього файла і поєднує їх "
-"із налаштуваннями із вибраного профілю. Налаштування профілю завжди мають "
-"пріоритет. Іншими словами, профілі не повинні встановлювати усі карти "
-"nsswitch, але можуть встановлювати лише ті карти, які повʼязано із профілем. "
-"Якщо карта встановлюється у межах профілю, вона завжди має перевагу над "
-"такою самою картою з _user-nsswitch.conf_."
 
 #. type: Block title
 #: src/man/authselect.8.adoc:266
 #, no-wrap
 msgid "Example 1"
-msgstr "Приклад 1"
+msgstr ""
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:277
@@ -874,14 +886,6 @@ msgid ""
 "services:   sss files\n"
 "sudoers:    files sss {include if \"with-sudo\"}\n"
 msgstr ""
-"# Профіль \"sssd\"\n"
-"$ cat {AUTHSELECT_PROFILE_DIR}/sssd/nsswitch.conf\n"
-"passwd:     sss files systemd\n"
-"group:      sss files systemd\n"
-"netgroup:   sss files\n"
-"automount:  sss files\n"
-"services:   sss files\n"
-"sudoers:    files sss {include if \"with-sudo\"}\n"
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:283
@@ -893,17 +897,12 @@ msgid ""
 "hosts: files dns myhostname\n"
 "sudoers: files\n"
 msgstr ""
-"$ cat {AUTHSELECT_CONFIG_DIR}/user-nsswitch.conf\n"
-"passwd: files sss\n"
-"group: files sss\n"
-"hosts: files dns myhostname\n"
-"sudoers: files\n"
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:285
 #, no-wrap
 msgid "$ authselect select sssd\n"
-msgstr "$ authselect select sssd\n"
+msgstr ""
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:295
@@ -919,21 +918,12 @@ msgid ""
 "hosts:      files dns myhostname\n"
 "sudoers:    files\n"
 msgstr ""
-"# Карти passwd і group з user-nsswitch.conf проігноровано\n"
-"$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
-"passwd:     sss files systemd\n"
-"group:      sss files systemd\n"
-"netgroup:   sss files\n"
-"automount:  sss files\n"
-"services:   sss files\n"
-"hosts:      files dns myhostname\n"
-"sudoers:    files\n"
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:297
 #, no-wrap
 msgid "$ authselect select sssd with-sudo\n"
-msgstr "$ authselect select sssd with-sudo\n"
+msgstr ""
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:307
@@ -949,27 +939,18 @@ msgid ""
 "sudoers:    files sss\n"
 "hosts:      files dns myhostname\n"
 msgstr ""
-"# Карти passwd, group та sudoers з user-nsswitch.conf проігноровано\n"
-"$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
-"passwd:     sss files systemd\n"
-"group:      sss files systemd\n"
-"netgroup:   sss files\n"
-"automount:  sss files\n"
-"services:   sss files\n"
-"sudoers:    files sss\n"
-"hosts:      files dns myhostname\n"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:310
 #, no-wrap
 msgid "TROUBLESHOOTING"
-msgstr "ДІАГНОСТИКА"
+msgstr "PEMECAHAN MASALAH"
 
 #. type: Title ~
 #: src/man/authselect.8.adoc:313
 #, no-wrap
 msgid "How can I tell if my system is using authselect?"
-msgstr "Як визначити, чи використано у системі authselect?"
+msgstr "Bagaimana saya bisa tahu jika sistem saya menggunakan authselect?"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:317
@@ -979,17 +960,16 @@ msgid ""
 "configuration that was generated by authselect but modified manually at some "
 "point."
 msgstr ""
-"Скористайтеся командою *authselect check*. У виведених даних буде інформація "
-"щодо того, чи 1) створено налаштування за допомогою authselect 2) "
-"використано налаштування, не створені authselect або 3) використано "
-"налаштування, які було створено за допомогою authselect, але згодом змінено "
-"вручну."
+"Gunakan *authselect check*. Outputnya akan memberi tahu Anda jika Anda "
+"memiliki 1) konfigurasi yang dihasilkan oleh authselect 2) konfigurasi non-"
+"authselect atau 3) konfigurasi yang dihasilkan oleh authselect tetapi "
+"dimodifikasi secara manual pada suatu titik."
 
 #. type: Title ~
 #: src/man/authselect.8.adoc:319
 #, no-wrap
 msgid "Is nsswitch.conf supposed to be a symbolic link now?"
-msgstr "Чи має nsswitch.conf бути символічним посиланням у актуальній версії?"
+msgstr "Apakah nsswitch.conf seharusnya menjadi tautan simbolik sekarang?"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:325
@@ -1000,22 +980,22 @@ msgid ""
 "now owning your configuration and should be used instead of any manual "
 "modification."
 msgstr ""
-"Authselect створює налаштування для вашої системи «з нуля» і зберігає їх до "
-"каталогу {AUTHSELECT_CONFIG_DIR}. Загальносистемні файли створюються як "
-"символічні посилання на файли у цьому каталозі. Символічні посилання "
-"вказують на те, що налаштуваннями керує authselect і що для внесення змін "
-"слід користуватися не редагуванням вручну, а відповідною програмою."
+"Authselect menghasilkan konfigurasi sistem Anda dari nol dan menyimpannya di "
+"{AUTHSELECT_CONFIG_DIR}. Berkas sistem kemudian dibuat sebagai tautan "
+"simbolik ke direktori ini. Tautan simbolik digunakan untuk memperjelas bahwa "
+"authselect sekarang memiliki konfigurasi Anda dan harus digunakan alih-alih "
+"modifikasi manual apa pun."
 
 #. type: Title ~
 #: src/man/authselect.8.adoc:327
 #, no-wrap
 msgid "Error: Unexpected changes to the configuration were detected."
-msgstr "Помилка: виявлено неочікувані зміни у налаштуваннях."
+msgstr "Galat (Error): Perubahan tak terduga pada konfigurasi terdeteksi."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:329
 msgid "For example:"
-msgstr "Приклад:"
+msgstr "Sebagai contoh:"
 
 #. type: delimited block .
 #: src/man/authselect.8.adoc:335
@@ -1027,11 +1007,12 @@ msgid ""
 "[error] Unexpected changes to the configuration were detected.\n"
 "[error] Refusing to activate profile unless those changes are removed or overwrite is requested.\n"
 msgstr ""
-"[помилка] [/etc/authselect/nsswitch.conf] не існує!\n"
-"[помилка] [/etc/nsswitch.conf] не є символічним посиланням!\n"
-"[помилка] [/etc/nsswitch.conf] не було створено за допомогою authselect!\n"
-"[помилка] Виявлено неочікувані зміни у налаштуваннях.\n"
-"[помилка] Профіль не буде задіяно, якщо ці зміни не буде вилучено або не буде надіслано запит щодо перезапису.\n"
+"[error] [/etc/authselect/nsswitch.conf] tidak ada!\n"
+"[error] [/etc/nsswitch.conf] bukan tautan simbolik!\n"
+"[error] [/etc/nsswitch.conf] tidak dibuat oleh authselect!\n"
+"[error] Perubahan tak terduga pada konfigurasi terdeteksi.\n"
+"[error] Menolak untuk mengaktifkan profil kecuali perubahan tersebut dihapus "
+"atau penimpaan diminta.\n"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:339
@@ -1040,31 +1021,31 @@ msgid ""
 "will not be modified. To fix this, please call *authselect select* with *--"
 "force* parameter to say that it is all right to overwrite it."
 msgstr ""
-"Це означає, що ваші налаштування не розпізнаються authselect, а отже, до них "
-"не буде внесено змін. Щоб змінити це, будь ласка, скористайтеся командою "
-"*authselect select* із параметром *--force*, повідомивши таким чином "
-"програмі, що поточні налаштування можна безпечно перезаписувати."
+"Ini berarti konfigurasi Anda tidak dikenal oleh authselect sehingga tidak "
+"akan dimodifikasi. Untuk memperbaikinya, silakan panggil *authselect select* "
+"dengan parameter *--force* untuk menyatakan bahwa tidak apa-apa untuk "
+"menimpanya."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:341
 #, no-wrap
 msgid "RETURN CODES"
-msgstr "ПОВЕРНУТІ КОДИ"
+msgstr "KODE KEMBALI (RETURN CODES)"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:343
 msgid "The *authselect* can return these exit codes:"
-msgstr "*authselect* може повертати такі коди виходу:"
+msgstr "*authselect* dapat mengembalikan kode keluar berikut:"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:345
 msgid "0: Success."
-msgstr "0: успіх."
+msgstr "0: Berhasil."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:346
 msgid "1: Generic error."
-msgstr "1: загальна помилка."
+msgstr "1: Galat umum."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:347
@@ -1072,16 +1053,14 @@ msgid ""
 "2: Profile or configuration was not found or the system was not configured "
 "with authselect."
 msgstr ""
-"2. Профіль або налаштування не було знайдено або систему не було налаштовано "
-"за допомогою authselect."
+"2: Profil atau konfigurasi tidak ditemukan atau sistem tidak dikonfigurasi "
+"dengan authselect."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:348
 msgid ""
 "3: Current configuration is not valid, it was edited without authselect."
-msgstr ""
-"3: поточні налаштування є некоректними, їхнє редагування було здійснено поза "
-"межами authselect."
+msgstr "3: Konfigurasi saat ini tidak valid, ia telah diedit tanpa authselect."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:349
@@ -1089,19 +1068,19 @@ msgid ""
 "4: System configuration must be overwritten to activate an authselect "
 "profile, --force parameter is needed."
 msgstr ""
-"4: Налаштування системи має бути перезаписано для задіяння профілю "
-"authselect, потрібен параметр --force."
+"4: Konfigurasi sistem harus ditimpa untuk mengaktifkan profil authselect, "
+"parameter --force diperlukan."
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:350
 msgid "5: Executed command must be run as root."
-msgstr "5: Команду слід віддавати від імені користувача root."
+msgstr "5: Perintah yang dieksekusi harus dijalankan sebagai root."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:352
 #, no-wrap
 msgid "GENERATED FILES"
-msgstr "СТВОРЕНІ ФАЙЛИ"
+msgstr "BERKAS YANG DIHASILKAN"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:355
@@ -1109,8 +1088,8 @@ msgid ""
 "Authselect creates and maintains the following files to configure system "
 "identity and authentication providers properly."
 msgstr ""
-"Authselect створює і супроводжує вказані нижче файли для належного "
-"налаштовування профілю системи і надавачів даних розпізнавання."
+"Authselect membuat dan memelihara berkas berikut untuk mengonfigurasi "
+"identitas sistem dan penyedia autentikasi dengan benar."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:356
@@ -1121,7 +1100,7 @@ msgstr "*{AUTHSELECT_NSSWITCH_CONF}*"
 #. type: Plain text
 #: src/man/authselect.8.adoc:358
 msgid "Name Service Switch configuration file."
-msgstr "Файл налаштувань перемикача служб назв (NSS)."
+msgstr "Berkas konfigurasi Name Service Switch."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:359
@@ -1135,7 +1114,8 @@ msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
 msgstr ""
-"Стос PAM, який включається з майже усіх окремих файлів налаштувань служб."
+"Tumpukan PAM yang disertakan dari hampir semua berkas konfigurasi layanan "
+"individual."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:363
@@ -1150,9 +1130,9 @@ msgid ""
 "different types of devices via simultaneously running individual "
 "conversations instead of one aggregate conversation."
 msgstr ""
-"Ці стоси PAM призначено для програм, які обробляють розпізнавання з "
-"пристроїв різних типів за допомогою одночасного виконання окремих потоків "
-"обміну даних, а не одного сукупного потоку обміну даними."
+"Tumpukan PAM ini ditujukan untuk aplikasi yang menangani autentikasi dari "
+"berbagai jenis perangkat melalui percakapan individual yang berjalan "
+"bersamaan alih-alih satu percakapan agregat."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:368
@@ -1171,13 +1151,13 @@ msgid ""
 "regardless of the success or failure of the modules in the system-auth "
 "configuration file._"
 msgstr ""
-"Призначенням цього стосу PAM є надання загального місця для усіх модулів "
-"PAM, які має бути викликано після налаштовування стосу у system-auth або "
-"інших загальних файлах налаштувань PAM. Він включається з усіх окремих "
-"файлів налаштувань служб, які надають можливості служби входу до системи за "
-"допомогою командної оболонки або доступу до файлів. _ЗАУВАЖЕННЯ: модулі у "
-"файлі налаштувань postlogin виконуються незалежно від успіху або неуспіху "
-"під час обробки модулів у файлі налаштувань system-auth._"
+"Tujuan dari tumpukan PAM ini adalah untuk menyediakan tempat umum bagi semua "
+"modul PAM yang harus dipanggil setelah tumpukan yang dikonfigurasi dalam "
+"system-auth atau berkas konfigurasi PAM umum lainnya. Ini disertakan dari "
+"semua berkas konfigurasi layanan individual yang menyediakan layanan login "
+"dengan akses shell atau berkas. _CATATAN: modul dalam berkas konfigurasi "
+"postlogin dijalankan tanpa memandang keberhasilan atau kegagalan modul dalam "
+"berkas konfigurasi system-auth._"
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:377
@@ -1192,9 +1172,9 @@ msgid ""
 "for gnome login screen in order to enable or disable smartcard and "
 "fingerprint authentication."
 msgstr ""
-"Зміни до бази даних dconf. Основним призначенням цього файла є зберігання "
-"набору змін для вікна входу до gnome з метою вмикання або вимикання "
-"розпізнавання за смарт-карткою або відбитком."
+"Perubahan pada basis data dconf. Kasus penggunaan utama dari berkas ini "
+"adalah untuk menetapkan perubahan pada layar login gnome guna mengaktifkan "
+"atau menonaktifkan autentikasi smartcard dan sidik jari."
 
 #. type: Labeled list
 #: src/man/authselect.8.adoc:382
@@ -1206,14 +1186,14 @@ msgstr "*{AUTHSELECT_DCONF_DIR}/locks/{AUTHSELECT_DCONF_FILE}*"
 #: src/man/authselect.8.adoc:384
 msgid "This file define locks on values set in dconf database."
 msgstr ""
-"У цьому файлі визначаються блокування значень, встановлених у базі даних "
-"dconf."
+"Berkas ini menentukan kunci (locks) pada nilai yang ditetapkan dalam basis "
+"data dconf."
 
 #. type: Title -
 #: src/man/authselect.8.adoc:386
 #, no-wrap
 msgid "SEE ALSO"
-msgstr "ТАКОЖ ПЕРЕГЛЯНЬТЕ"
+msgstr "LIHAT JUGA"
 
 #. type: Plain text
 #: src/man/authselect.8.adoc:387

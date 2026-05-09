@@ -5,12 +5,12 @@
 # simmon <simmon@nplob.com>, 2021.
 # Sundeep Anand <suanand@redhat.com>, 2021.
 # Pavel Brezina <pbrezina@redhat.com>, 2021.
-# 김인수 <simmon@nplob.com>, 2022.
+# 김인수 <simmon@nplob.com>, 2022, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-12-01 13:40+0100\n"
-"PO-Revision-Date: 2022-12-03 10:19+0000\n"
+"PO-Revision-Date: 2025-09-04 17:53+0000\n"
 "Last-Translator: 김인수 <simmon@nplob.com>\n"
 "Language-Team: Korean <https://translate.fedoraproject.org/projects/"
 "authselect/12x-authselect8adoc/ko/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.13\n"
 
 #. type: Title =
 #: src/man/authselect.8.adoc:2
@@ -891,14 +891,14 @@ msgid ""
 "services:   sss files\n"
 "sudoers:    files sss {include if \"with-sudo\"}\n"
 msgstr ""
-"# \"sssd\" profile\n"
+"# \"sssd\" 프로파일\n"
 "$ cat {AUTHSELECT_PROFILE_DIR}/sssd/nsswitch.conf\n"
-"passwd: sss files systemd\n"
-"group: sss files systemd\n"
-"netgroup: sss files\n"
-"automount: sss files\n"
-"services: sss files\n"
-"sudoers: files sss {include if \"with-sudo\"}\n"
+"passwd:     sss files systemd\n"
+"group:      sss files systemd\n"
+"netgroup:   sss files\n"
+"automount:  sss files\n"
+"services:   sss files\n"
+"sudoers:    files sss {include if \"with-sudo\"}\n"
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:283
@@ -938,13 +938,13 @@ msgid ""
 msgstr ""
 "# passwd and group maps from user-nsswitch.conf are ignored\n"
 "$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
-"passwd: sss files systemd\n"
-"group: sss files systemd\n"
-"netgroup: sss files\n"
-"automount: sss files\n"
-"services: sss files\n"
-"hosts: files dns myhostname\n"
-"sudoers: files\n"
+"passwd:     sss files systemd\n"
+"group:      sss files systemd\n"
+"netgroup:   sss files\n"
+"automount:  sss files\n"
+"services:   sss files\n"
+"hosts:      files dns myhostname\n"
+"sudoers:    files\n"
 
 #. type: delimited block -
 #: src/man/authselect.8.adoc:297
@@ -968,13 +968,13 @@ msgid ""
 msgstr ""
 "# passwd, group and sudoers maps from user-nsswitch.conf are ignored\n"
 "$ cat {AUTHSELECT_NSSWITCH_CONF}\n"
-"passwd: sss files systemd\n"
-"group: sss files systemd\n"
-"netgroup: sss files\n"
-"automount: sss files\n"
-"services: sss files\n"
-"sudoers: files sss\n"
-"hosts: files dns myhostname\n"
+"passwd:     sss files systemd\n"
+"group:      sss files systemd\n"
+"netgroup:   sss files\n"
+"automount:  sss files\n"
+"services:   sss files\n"
+"sudoers:    files sss\n"
+"hosts:      files dns myhostname\n"
 
 #. type: Title -
 #: src/man/authselect.8.adoc:310
