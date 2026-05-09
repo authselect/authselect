@@ -1,0 +1,1351 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Red Hat, Inc.
+# This file is distributed under the same license as the authselect package.
+# Bone NI <bounkirdni@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: authselect 1.6.2\n"
+"Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
+"POT-Creation-Date: 2026-01-21 15:13+0100\n"
+"PO-Revision-Date: 2026-05-06 19:00+0000\n"
+"Last-Translator: Bone NI <bounkirdni@gmail.com>\n"
+"Language-Team: Lao <https://translate.fedoraproject.org/projects/authselect/"
+"1-5-x/lo/>\n"
+"Language: lo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.17.1\n"
+
+#: src/lib/authselect.c:47 src/lib/authselect.c:188
+msgid "Unable to obtain supported features"
+msgstr "ບໍ່ສາມາດດຶງຂໍ້ມູນຄຸນສົມບັດທີ່ຮອງຮັບໄດ້"
+
+#: src/lib/authselect.c:59
+#, c-format
+msgid "Unknown profile feature [%s], did you mean [%s]?"
+msgstr "ບໍ່ຮູ້ຈັກຄຸນສົມບັດຂອງໂປຣຟາຍ [%s], ທ່ານໝາຍເຖິງ [%s] ແມ່ນບໍ່?"
+
+#: src/lib/authselect.c:62
+#, c-format
+msgid "Unknown profile feature [%s]"
+msgstr "ບໍ່ຮູ້ຈັກຄຸນສົມບັດຂອງໂປຣຟາຍ [%s]"
+
+#: src/lib/authselect.c:86
+#, c-format
+msgid "Trying to activate profile [%s]"
+msgstr "ກຳລັງພະຍາຍາມເປີດໃຊ້ໂປຣຟາຍ [%s]"
+
+#: src/lib/authselect.c:90 src/lib/authselect.c:181 src/lib/profiles/read.c:316
+#, c-format
+msgid "Unable to find profile [%s] [%d]: %s"
+msgstr "ບໍ່ພົບໂປຣຟາຍ [%s] [%d]: %s"
+
+#: src/lib/authselect.c:101
+msgid "Enforcing activation!"
+msgstr "ກຳລັງບັງຄັບໃຫ້ເປີດໃຊ້ງານ!"
+
+#: src/lib/authselect.c:110
+#, c-format
+msgid ""
+"%s is missing or unreadable, system was not properly configured by "
+"authselect."
+msgstr ""
+"%s ຫາຍສາບສູນ ຫຼື ບໍ່ສາມາດອ່ານໄດ້, ລະບົບບໍ່ໄດ້ຖືກຕັ້ງຄ່າຢ່າງຖືກຕ້ອງໂດຍ authselect."
+
+#: src/lib/authselect.c:112
+msgid "Refusing to activate profile unless overwrite is requested."
+msgstr "ປະຕິເສດການເປີດໃຊ້ງານໂປຣໄຟລ໌ ນອກຈາກຈະມີການຮ້ອງຂໍໃຫ້ຂຽນທັບ."
+
+#: src/lib/authselect.c:118
+msgid ""
+"Changes to the authselect configuration were detected. These changes will be "
+"overwritten. Please call 'authselect opt-out' in order to keep them."
+msgstr ""
+"ກວດພົບການປ່ຽນແປງໃນການຕັ້ງຄ່າຂອງ authselect. ການປ່ຽນແປງເຫຼົ່ານີ້ຈະຖືກຂຽນທັບ. ກະລຸນາເອີ້ນໃຊ້ "
+"'authselect opt-out' ເພື່ອຮັກສາພວກມັນໄວ້."
+
+#: src/lib/authselect.c:127
+#, c-format
+msgid "Unable to activate profile [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດເປີດໃຊ້ງານໂປຣໄຟລ໌ [%s] [%d]: %s"
+
+#: src/lib/authselect.c:141
+msgid "Trying to uninstall authselect configuration"
+msgstr "ກຳລັງພະຍາຍາມຖອນການຕິດຕັ້ງການກຳນົດຄ່າ authselect"
+
+#: src/lib/authselect.c:145
+#, c-format
+msgid "Unable to remove symlinks [%d]: %s"
+msgstr "ບໍ່ສາມາດລຶບ symlinks [%d]: %s"
+
+#: src/lib/authselect.c:149
+msgid "Symbolic links were successfully removed"
+msgstr "ລຶບ Symbolic links ສຳເລັດແລ້ວ"
+
+#: src/lib/authselect.c:154
+#, c-format
+msgid "Unable to remove authselect configuration [%d]: %s"
+msgstr "ບໍ່ສາມາດລຶບການຕັ້ງຄ່າ authselect ອອກໄດ້ [%d]: %s"
+
+#: src/lib/authselect.c:159
+msgid "Authselect configuration was successfully removed"
+msgstr "ລຶບການຕັ້ງຄ່າ Authselect ອອກສຳເລັດແລ້ວ"
+
+#: src/lib/authselect.c:198
+#, c-format
+msgid "Profile feature [%s] is no longer supported, removing it..."
+msgstr "ຄຸນສົມບັດຂອງໂປຣຟາຍ [%s] ບໍ່ໄດ້ຮັບການຮອງຮັບອີກຕໍ່ໄປ, ກຳລັງລຶບອອກ..."
+
+#: src/lib/authselect_backup.c:48
+#, c-format
+msgid "Unable to create backup directory [%s/%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດສ້າງໄດເຣັກທໍຣີສຳຮອງ [%s/%s] [%d]: %s"
+
+#: src/lib/authselect_backup.c:71
+#, c-format
+msgid "Unable to create backup directory [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດສ້າງໂຟນເດີສຳຮອງ [%s] [%d]: %s"
+
+#: src/lib/authselect_backup.c:92
+#, c-format
+msgid "Creating temporary directory at [%s]"
+msgstr "ກຳລັງສ້າງໄດເຣັກທໍຣີຊົ່ວຄາວຢູ່ທີ່ [%s]"
+
+#: src/lib/authselect_backup.c:125 src/lib/authselect_profile.c:377
+#: src/lib/authselect_profile.c:457
+#, c-format
+msgid "There is no filename in [%s]"
+msgstr "ບໍ່ມີຊື່ໄຟລ໌ໃນ [%s]"
+
+#: src/lib/authselect_backup.c:129
+#, c-format
+msgid "Copying [%s] to [%s/%s]"
+msgstr "ກຳລັງຄັດລອກ [%s] ໄປຍັງ [%s/%s]"
+
+#: src/lib/authselect_backup.c:133 src/lib/util/selinux.c:389
+#: src/lib/util/selinux.c:406
+#, c-format
+msgid "File [%s] does not exist"
+msgstr "ໄຟລ໌ [%s] ບໍ່ມີຢູ່"
+
+#: src/lib/authselect_backup.c:135 src/lib/authselect_backup.c:152
+#, c-format
+msgid "Unable to copy [%s] to [%s/%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດຄັດລອກ [%s] ໄປຍັງ [%s/%s] [%d]: %s"
+
+#: src/lib/authselect_backup.c:175
+#, c-format
+msgid "Trying to backup authselect configuration to [%s]"
+msgstr "ກຳລັງພະຍາຍາມສຳຮອງຂໍ້ມູນການກຳນົດຄ່າ authselect ໄປຍັງ [%s]"
+
+#: src/lib/authselect_backup.c:180
+#, c-format
+msgid "Trying to backup system configuration to [%s]"
+msgstr "ກຳລັງພະຍາຍາມສຳຮອງການຕັ້ງຄ່າລະບົບ ໄປຍັງ [%s]"
+
+#: src/lib/authselect_backup.c:185
+#, c-format
+msgid "Backup was successfully created at [%s]"
+msgstr "ສ້າງການສຳຮອງຂໍ້ມູນສຳເລັດແລ້ວທີ່ [%s]"
+
+#: src/lib/authselect_backup.c:189
+#, c-format
+msgid "Unable to create backup [%d]: %s"
+msgstr "ບໍ່ສາມາດສ້າງການສຳຮອງຂໍ້ມູນ [%d]: %s"
+
+#: src/lib/authselect_backup.c:206
+msgid " does not exist."
+msgstr " ບໍ່ມີຢູ່."
+
+#: src/lib/authselect_backup.c:209 src/lib/profiles/list.c:50
+#, c-format
+msgid "Unable to list directory [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດສະແດງລາຍຊື່ໂຟນເດີ [%s] [%d]: %s"
+
+#: src/lib/authselect_backup.c:223
+#, c-format
+msgid "Removing backup [%s]"
+msgstr "ກຳລັງລຶບການສຳຮອງຂໍ້ມູນ [%s]"
+
+#: src/lib/authselect_backup.c:232
+#, c-format
+msgid "Unable to delete directory [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດລຶບໂຟນເດີ [%s] [%d]: %s"
+
+#: src/lib/authselect_backup.c:307
+#, c-format
+msgid "Unable to copy files [%d]: %s"
+msgstr "ບໍ່ສາມາດຄັດລອກໄຟລ໌ [%d]: %s"
+
+#: src/lib/authselect_backup.c:313 src/lib/profiles/activate.c:78
+#, c-format
+msgid "Unable to create symbolic links [%d]: %s"
+msgstr "ບໍ່ສາມາດສ້າງລິ້ງສັນຍາລັກ [%d]: %s"
+
+#: src/lib/authselect_backup.c:319 src/lib/profiles/activate.c:84
+msgid "Dconf is not installed on your system"
+msgstr "Dconf ບໍ່ໄດ້ຕິດຕັ້ງຢູ່ໃນລະບົບຂອງທ່ານ"
+
+#: src/lib/authselect_backup.c:321 src/lib/profiles/activate.c:86
+#, c-format
+msgid "Unable to update dconf database [%d]: %s"
+msgstr "ບໍ່ສາມາດອັບເດດຖານຂໍ້ມູນ dconf [%d]: %s"
+
+#: src/lib/authselect_backup.c:344
+#, c-format
+msgid "Restoring configuration from backup [%s]"
+msgstr "ກຳລັງກູ້ຄືນການຕັ້ງຄ່າຈາກການສຳຮອງຂໍ້ມູນ [%s]"
+
+#: src/lib/authselect_backup.c:360
+#, c-format
+msgid "Backup [%s] contains authselect configuration"
+msgstr "ການສຳຮອງຂໍ້ມູນ [%s] ມີການຕັ້ງຄ່າຂອງ authselect"
+
+#: src/lib/authselect_backup.c:363
+#, c-format
+msgid "Backup [%s] contains non-authselect configuration"
+msgstr "ການສຳຮອງຂໍ້ມູນ [%s] ມີການຕັ້ງຄ່າທີ່ບໍ່ແມ່ນຂອງ authselect"
+
+#: src/lib/authselect_backup.c:369
+#, c-format
+msgid "Unable to restore [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດກູ້ຄືນ [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:104
+msgid "Unable to generate nsswitch.conf"
+msgstr "ບໍ່ສາມາດສ້າງ nsswitch.conf ໄດ້"
+
+#: src/lib/authselect_profile.c:111
+#, c-format
+msgid "Unable to find nsswitch maps [%d]: %s"
+msgstr "ບໍ່ພົບ nsswitch maps [%d]: %s"
+
+#: src/lib/authselect_profile.c:132
+msgid "Unable to create array (out of memory)"
+msgstr "ບໍ່ສາມາດສ້າງ array ໄດ້ (ໜ່ວຍຄວາມຈຳເຕັມ)"
+
+#: src/lib/authselect_profile.c:141 src/lib/authselect_profile.c:150
+msgid "Unable to obtain feature list (out of memory)"
+msgstr "ບໍ່ສາມາດດຶງລາຍຊື່ຄຸນສົມບັດໄດ້ (ໜ່ວຍຄວາມຈຳເຕັມ)"
+
+#: src/lib/authselect_profile.c:344
+#, c-format
+msgid "Creating empty profile at [%s]"
+msgstr "ກຳລັງສ້າງໂປຣຟາຍຫວ່າງເປົ່າທີ່ [%s]"
+
+#: src/lib/authselect_profile.c:348 src/lib/authselect_profile.c:449
+#, c-format
+msgid "Unable to make path [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດສ້າງເສັ້ນທາງ (path) [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:355 src/lib/authselect_profile.c:408
+#, c-format
+msgid "Unable to write to [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດຂຽນລົງໃນ [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:385
+#, c-format
+msgid "Omitting [%s] since it does not exist in base profile"
+msgstr "ກຳລັງຂ້າມ [%s] ເນື່ອງຈາກມັນບໍ່ມີຢູ່ໃນໂປຣຟາຍພື້ນຖານ"
+
+#: src/lib/authselect_profile.c:389
+#, c-format
+msgid "Unable to check presence of [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດກວດສອບການມີຢູ່ຂອງ [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:397
+#, c-format
+msgid "Unable to create symbolic link [%s] to [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດສ້າງລິ້ງສັນຍາລັກ [%s] ໄປຍັງ [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:430
+#, c-format
+msgid "Creating new profile from \"%s\" at [%s]"
+msgstr "ກຳລັງສ້າງໂປຣຟາຍໃໝ່ຈາກ \"%s\" ທີ່ [%s]"
+
+#: src/lib/authselect_profile.c:434
+#, c-format
+msgid "Unable to read base profile [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດອ່ານໂປຣຟາຍພື້ນຖານ [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:442
+msgid "Unable to resolve symbolic links names"
+msgstr "ບໍ່ສາມາດແກ້ໄຂຊື່ລິ້ງສັນຍາລັກໄດ້"
+
+#: src/lib/authselect_profile.c:467 src/lib/authselect_profile.c:480
+#: src/lib/authselect_profile.c:494
+#, c-format
+msgid "Unable to create [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດສ້າງ [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:502
+#, c-format
+msgid "Unknown file name [%s]"
+msgstr "ບໍ່ຮູ້ຈັກຊື່ໄຟລ໌ [%s]"
+
+#: src/lib/authselect_profile.c:529
+msgid "Name can not be empty"
+msgstr "ຊື່ບໍ່ສາມາດຫວ່າງເປົ່າໄດ້"
+
+#: src/lib/authselect_profile.c:541
+msgid "Default profile can not be created"
+msgstr "ບໍ່ສາມາດສ້າງໂປຣຟາຍເລີ່ມຕົ້ນໄດ້"
+
+#: src/lib/authselect_profile.c:544
+msgid "Value AUTHSELECT_PROFILE_ANY is invalid in this context"
+msgstr "ຄ່າ AUTHSELECT_PROFILE_ANY ບໍ່ຖືກຕ້ອງໃນບໍລິບົດນີ້"
+
+#: src/lib/authselect_profile.c:549
+msgid "Unable to create profile path: out of memory"
+msgstr "ບໍ່ສາມາດສ້າງເສັ້ນທາງໂປຣຟາຍໄດ້: ໜ່ວຍຄວາມຈຳເຕັມ"
+
+#: src/lib/authselect_profile.c:555
+#, c-format
+msgid "Profile \"%s\" already exists at [%s]"
+msgstr "ໂປຣໄຟລ໌ \"%s\" ມີຢູ່ແລ້ວທີ່ [%s]"
+
+#: src/lib/authselect_profile.c:559
+#, c-format
+msgid "Unable to access [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດເຂົ້າເຖິງ [%s] [%d]: %s"
+
+#: src/lib/authselect_profile.c:565
+msgid "Unable to create file name: out of memory"
+msgstr "ບໍ່ສາມາດສ້າງຊື່ໄຟລ໌ໄດ້: ໜ່ວຍຄວາມຈຳເຕັມ"
+
+#: src/lib/authselect_profile.c:573
+#, c-format
+msgid "Unable to create empty profile [%d]: %s"
+msgstr "ບໍ່ສາມາດສ້າງໂປຣຟາຍຫວ່າງເປົ່າ [%d]: %s"
+
+#: src/lib/authselect_profile.c:582
+#, c-format
+msgid "Unable to create profile [%d]: %s"
+msgstr "ບໍ່ສາມາດສ້າງໂປຣຟາຍ [%d]: %s"
+
+#: src/lib/files/config.c:152
+msgid "Checking if all required directories are writable."
+msgstr "ກຳລັງກວດສອບວ່າໂຟນເດີທີ່ຈຳເປັນທັງໝົດສາມາດຂຽນຂໍ້ມູນລົງໄດ້ຫຼືບໍ່."
+
+#: src/lib/files/config.c:157
+#, c-format
+msgid "Unable to get path to %s parent directory!"
+msgstr "ບໍ່ສາມາດຫາເສັ້ນທາງໄປຍັງໂຟນເດີຫຼັກຂອງ %s ໄດ້!"
+
+#: src/lib/files/config.c:164
+#, c-format
+msgid "Creating path [%s]"
+msgstr "ກຳລັງສ້າງເສັ້ນທາງ [%s]"
+
+#: src/lib/files/config.c:168
+#, c-format
+msgid "Unable to create path [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດສ້າງເສັ້ນທາງ [%s] [%d]: %s"
+
+#: src/lib/files/config.c:173
+#, c-format
+msgid "Directory [%s] does not exist, please create it!"
+msgstr "ໂຟນເດີ [%s] ບໍ່ມີຢູ່, ກະລຸນາສ້າງມັນຂຶ້ນມາ!"
+
+#: src/lib/files/config.c:176
+#, c-format
+msgid "Unable to access directory [%s] in [WX] mode!"
+msgstr "ບໍ່ສາມາດເຂົ້າເຖິງໂຟນເດີ [%s] ໃນໂໝດ [WX] ໄດ້!"
+
+#: src/lib/files/config.c:195
+#, c-format
+msgid "Unable to load profile [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດໂຫຼດໂປຣຟາຍ [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:41
+#, c-format
+msgid "Creating symbolic link [%s] to [%s]"
+msgstr "ກຳລັງສ້າງລິ້ງສັນຍາລັກ [%s] ໄປຍັງ [%s]"
+
+#: src/lib/files/symlinks.c:47
+#, c-format
+msgid "Unable to overwrite file [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດຂຽນທັບໄຟລ໌ [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:55
+#, c-format
+msgid "Unable to create symbolic link [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດສ້າງລິ້ງສັນຍາລັກ [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:79
+#, c-format
+msgid "Validating link [%s]"
+msgstr "ກຳລັງກວດສອບຄວາມຖືກຕ້ອງຂອງລິ້ງ [%s]"
+
+#: src/lib/files/symlinks.c:83
+#, c-format
+msgid "Unable to validate link [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດກວດສອບຄວາມຖືກຕ້ອງຂອງລິ້ງ [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:90
+#, c-format
+msgid "[%s] was not created by authselect!"
+msgstr "[%s] ບໍ່ໄດ້ຖືກສ້າງໂດຍ authselect!"
+
+#: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
+#: src/lib/files/system.c:311
+#, c-format
+msgid "Error while trying to access file [%s] [%d]: %s"
+msgstr "ເກີດຂໍ້ຜິດພາດຂະນະພະຍາຍາມເຂົ້າເຖິງໄຟລ໌ [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:121
+#, c-format
+msgid "Unable to check file [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດກວດສອບໄຟລ໌ [%s] [%d]: %s"
+
+#: src/lib/files/symlinks.c:128
+#, c-format
+msgid "Symbolic link [%s] to [%s] still exists!"
+msgstr "ລິ້ງສັນຍາລັກ [%s] ໄປຍັງ [%s] ຍັງມີຢູ່!"
+
+#: src/lib/files/symlinks.c:149
+#, c-format
+msgid "File [%s] exists but it needs to be overwritten!"
+msgstr "ໄຟລ໌ [%s] ມີຢູ່ແລ້ວ ແຕ່ຈຳເປັນຕ້ອງໄດ້ຂຽນທັບ!"
+
+#: src/lib/files/symlinks.c:191
+#, c-format
+msgid "Skipping [%s] because it is not an authselect file"
+msgstr "ກຳລັງຂ້າມ [%s] ເພາະວ່າມັນບໍ່ແມ່ນໄຟລ໌ຂອງ authselect"
+
+#: src/lib/files/system.c:74 src/lib/profiles/read.c:162
+#, c-format
+msgid "Reading file [%s/%s]"
+msgstr "ກຳລັງອ່ານໄຟລ໌ [%s/%s]"
+
+#: src/lib/files/system.c:82 src/lib/profiles/read.c:168
+#: src/lib/profiles/read.c:173
+#, c-format
+msgid "Unable to read file [%s/%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດອ່ານໄຟລ໌ [%s/%s] [%d]: %s"
+
+#: src/lib/files/system.c:151
+#, c-format
+msgid "Unable to generate files [%d]: %s"
+msgstr "ບໍ່ສາມາດສ້າງໄຟລ໌ [%d]: %s"
+
+#: src/lib/files/system.c:165 src/lib/util/selinux.c:410
+#, c-format
+msgid "Writing temporary file for [%s]"
+msgstr "ກຳລັງຂຽນໄຟລ໌ຊົ່ວຄາວສຳລັບ [%s]"
+
+#: src/lib/files/system.c:168
+#, c-format
+msgid "Unable to write temporary file [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດຂຽນໄຟລ໌ຊົ່ວຄາວ [%s] [%d]: %s"
+
+#: src/lib/files/system.c:173
+#, c-format
+msgid "Temporary file is named [%s]"
+msgstr "ໄຟລ໌ຊົ່ວຄາວມີຊື່ວ່າ [%s]"
+
+#: src/lib/files/system.c:184 src/lib/util/selinux.c:438
+#, c-format
+msgid "Renaming [%s] to [%s]"
+msgstr "ກຳລັງປ່ຽນຊື່ຈາກ [%s] ເປັນ [%s]"
+
+#: src/lib/files/system.c:189 src/lib/util/selinux.c:442
+#, c-format
+msgid "Unable to rename [%s] to [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດປ່ຽນຊື່ຈາກ [%s] ເປັນ [%s] [%d]: %s"
+
+#: src/lib/files/system.c:263
+#, c-format
+msgid "Validating file [%s]"
+msgstr "ກຳລັງກວດສອບຄວາມຖືກຕ້ອງຂອງໄຟລ໌ [%s]"
+
+#: src/lib/files/system.c:268
+#, c-format
+msgid "Unable to check file mode of [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດກວດສອບໂໝດໄຟລ໌ຂອງ [%s] [%d]: %s"
+
+#: src/lib/files/system.c:288
+#, c-format
+msgid "File [%s] was modified outside authselect!"
+msgstr "ໄຟລ໌ [%s] ຖືກແກ້ໄຂຈາກພາຍນອກ authselect!"
+
+#: src/lib/files/system.c:307
+#, c-format
+msgid "File [%s] is still present"
+msgstr "ໄຟລ໌ [%s] ຍັງຄົງມີຢູ່"
+
+#: src/lib/files/system.c:332 src/lib/files/system.c:342
+#, c-format
+msgid "Unable to delete [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດລຶບ [%s] [%d]: %s"
+
+#: src/lib/profiles/activate.c:44
+#, c-format
+msgid "%s update failed: %d"
+msgstr "%s ການອັບເດດຫຼົ້ມເຫຼວ: %d"
+
+#: src/lib/profiles/activate.c:59
+msgid "Some directories are not accessible by authselect!"
+msgstr "ບາງໂຟນເດີບໍ່ສາມາດເຂົ້າເຖິງໄດ້ໂດຍ authselect!"
+
+#: src/lib/profiles/activate.c:65
+#, c-format
+msgid "Unable to write generated system files [%d]: %s"
+msgstr "ບໍ່ສາມາດຂຽນໄຟລ໌ລະບົບທີ່ສ້າງຂຶ້ນ [%d]: %s"
+
+#: src/lib/profiles/activate.c:72
+#, c-format
+msgid "Unable to write configuration [%d]: %s"
+msgstr "ບໍ່ສາມາດຂຽນການຕັ້ງຄ່າ [%d]: %s"
+
+#: src/lib/profiles/list.c:42
+#, c-format
+msgid "Reading profile directory [%s]"
+msgstr "ກຳລັງອ່ານໂຟນເດີໂປຣຟາຍ [%s]"
+
+#: src/lib/profiles/list.c:47
+#, c-format
+msgid "Directory [%s] is missing!"
+msgstr "ໂຟນເດີ [%s] ຫາຍໄປ!"
+
+#: src/lib/profiles/list.c:69
+#, c-format
+msgid "Found profile [%s]"
+msgstr "ພົບໂປຣຟາຍ [%s]"
+
+#: src/lib/profiles/list.c:151
+#, c-format
+msgid "Unable to list profiles [%d]: %s"
+msgstr "ບໍ່ສາມາດສະແດງລາຍຊື່ໂປຣຟາຍ [%d]: %s"
+
+#: src/lib/profiles/read.c:83
+#, c-format
+msgid "Unable to open directory [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດເປີດໂຟນເດີ [%s] [%d]: %s"
+
+#: src/lib/profiles/read.c:106
+#, c-format
+msgid "Looking up profile [%s]"
+msgstr "ກຳລັງຄົ້ນຫາໂປຣຟາຍ [%s]"
+
+#: src/lib/profiles/read.c:110
+msgid "Locations array is NULL"
+msgstr "ອາເຣບ່ອນຕັ້ງ (Locations array) ເປັນ NULL"
+
+#: src/lib/profiles/read.c:133
+#, c-format
+msgid "Profile [%s] is a custom profile"
+msgstr "ໂປຣໄຟລ໌ [%s] ແມ່ນໂປຣໄຟລ໌ທີ່ກຳນົດເອງ"
+
+#: src/lib/profiles/read.c:135
+#, c-format
+msgid "Profile [%s] is a vendor profile"
+msgstr "ໂປຣຟາຍ [%s] ແມ່ນໂປຣຟາຍຈາກຜູ້ຜະລິດ"
+
+#: src/lib/profiles/read.c:137
+#, c-format
+msgid "Profile [%s] is a default profile"
+msgstr "ໂປຣຟາຍ [%s] ແມ່ນໂປຣຟາຍເລີ່ມຕົ້ນ"
+
+#: src/lib/profiles/read.c:140
+#, c-format
+msgid "Profile [%s] found at [%s]"
+msgstr "ພົບໂປຣຟາຍ [%s] ທີ່ [%s]"
+
+#: src/lib/profiles/read.c:148
+#, c-format
+msgid "Profile [%s] was not found"
+msgstr "ບໍ່ພົບໂປຣຟາຍ [%s]"
+
+#: src/lib/profiles/read.c:203 src/lib/profiles/read.c:222
+#, c-format
+msgid "Profile [%s] does not contain a name in [%s]!"
+msgstr "ໂປຣຟາຍ [%s] ບໍ່ມີຊື່ໃນ [%s]!"
+
+#: src/lib/util/dir.c:77 src/lib/util/dir.c:83
+#, c-format
+msgid "Unable to get basename of [%s]"
+msgstr "ບໍ່ສາມາດດຶງຊື່ຫຼັກ (basename) ຂອງ [%s] ໄດ້"
+
+#: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
+#: src/lib/util/file.c:199 src/cli/main.c:875
+#, c-format
+msgid "Unable to stat [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດ stat [%s] [%d]: %s"
+
+#: src/lib/util/dir.c:130
+#, c-format
+msgid "Unable to stat directory [%d]: %s"
+msgstr "ບໍ່ສາມາດກວດສອບສະຖານະ (stat) ໄດເຣັກທໍຣີ [%d]: %s"
+
+#: src/lib/util/dir.c:313
+#, c-format
+msgid "Removing file [%s/%s]"
+msgstr "ກຳລັງລຶບໄຟລ໌ [%s/%s]"
+
+#: src/lib/util/dir.c:321
+#, c-format
+msgid "Removing directory [%s]"
+msgstr "ກຳລັງລຶບໂຟນເດີ [%s]"
+
+#: src/lib/util/file.c:43
+msgid "Internal error: stat cannot be NULL!"
+msgstr "ຂໍ້ຜິດພາດພາຍໃນ: stat ບໍ່ສາມາດເປັນ NULL ໄດ້!"
+
+#: src/lib/util/file.c:51
+#, c-format
+msgid "[%s] is not a directory!"
+msgstr "[%s] ບໍ່ແມ່ນໂຟນເດີ!"
+
+#: src/lib/util/file.c:54
+#, c-format
+msgid "[%s] is not a regular file!"
+msgstr "[%s] ບໍ່ແມ່ນໄຟລ໌ປົກກະຕິ!"
+
+#: src/lib/util/file.c:57
+#, c-format
+msgid "[%s] is not a symbolic link!"
+msgstr "[%s] ບໍ່ແມ່ນລິ້ງສັນຍາລັກ!"
+
+#: src/lib/util/file.c:60
+#, c-format
+msgid "[%s] has wrong type [%.7o], expected [%.7o]!"
+msgstr "[%s] ມີປະເພດທີ່ບໍ່ຖືກຕ້ອງ [%.7o], ທີ່ຕ້ອງການແມ່ນ [%.7o]!"
+
+#: src/lib/util/file.c:87
+#, c-format
+msgid "[%s] has wrong mode [%.4o], expected [%.4o]!"
+msgstr "[%s] ມີໂໝດທີ່ບໍ່ຖືກຕ້ອງ [%.4o], ທີ່ຕ້ອງການແມ່ນ [%.4o]!"
+
+#: src/lib/util/file.c:93
+#, c-format
+msgid "[%s] has wrong owner [%u], expected [%u]!"
+msgstr "[%s] ມີເຈົ້າຂອງທີ່ບໍ່ຖືກຕ້ອງ [%u], ທີ່ຕ້ອງການແມ່ນ [%u]!"
+
+#: src/lib/util/file.c:99
+#, c-format
+msgid "[%s] has wrong group [%u], expected [%u]!"
+msgstr "[%s] ມີກຸ່ມທີ່ບໍ່ຖືກຕ້ອງ [%u], ທີ່ຕ້ອງການແມ່ນ [%u]!"
+
+#: src/lib/util/file.c:121
+#, c-format
+msgid "[%s] does not exist!"
+msgstr "[%s] ບໍ່ມີຢູ່!"
+
+#: src/lib/util/file.c:164 src/lib/util/file.c:211
+#, c-format
+msgid "Unable to read link destination [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດອ່ານປາຍທາງຂອງລິ້ງ [%s] [%d]: %s"
+
+#: src/lib/util/file.c:170
+#, c-format
+msgid "Link [%s] does not point to [%s]"
+msgstr "ລິ້ງ [%s] ບໍ່ໄດ້ຊີ້ໄປຍັງ [%s]"
+
+#: src/lib/util/file.c:218 src/lib/util/file.c:220
+#, c-format
+msgid "Link [%s] points to [%s]"
+msgstr "ລິ້ງ [%s] ຊີ້ໄປຍັງ [%s]"
+
+#: src/lib/util/file.c:281
+msgid "Internal error: filepath cannot be NULL!"
+msgstr "ຂໍ້ຜິດພາດພາຍໃນ: ເສັ້ນທາງໄຟລ໌ (filepath) ບໍ່ສາມາດເປັນ NULL ໄດ້!"
+
+#: src/lib/util/file.c:313
+#, c-format
+msgid "Unable to get parent directory of [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດຫາໂຟນເດີຫຼັກຂອງ [%s] [%d]: %s"
+
+#: src/lib/util/file.c:524 src/lib/util/textfile.c:175
+#, c-format
+msgid "Unable to chmod file [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດ chmod ໄຟລ໌ [%s] [%d]: %s"
+
+#: src/lib/util/file.c:531
+#, c-format
+msgid "Unable to chown file [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດ chown ໄຟລ໌ [%s] [%d]: %s"
+
+#: src/lib/util/selinux.c:48
+#, c-format
+msgid "Unable to create selabel handle [%d]: %s"
+msgstr "ບໍ່ສາມາດສ້າງ selabel handle [%d]: %s"
+
+#: src/lib/util/selinux.c:57
+#, c-format
+msgid "Unable to lookup selinux context [%d]: %s"
+msgstr "ບໍ່ສາມາດຄົ້ນຫາ selinux context [%d]: %s"
+
+#: src/lib/util/selinux.c:61
+#, c-format
+msgid "Found default selinux context for [%s]: %s"
+msgstr "ພົບ selinux context ເລີ່ມຕົ້ນສຳລັບ [%s]: %s"
+
+#: src/lib/util/selinux.c:86
+#, c-format
+msgid "Unable to obtain selinux context for [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດດຶງຂໍ້ມູນ selinux context ສຳລັບ [%s] [%d]: %s"
+
+#: src/lib/util/selinux.c:93
+msgid "not set"
+msgstr "ບໍ່ໄດ້ກຳນົດໄວ້"
+
+#: src/lib/util/selinux.c:92
+#, c-format
+msgid "Found selinux context for [%s]: %s"
+msgstr "ພົບ selinux context ສຳລັບ [%s]: %s"
+
+#: src/lib/util/selinux.c:117 src/lib/util/selinux.c:185
+#: src/lib/util/selinux.c:253
+msgid "Unable to get current fscreate selinux context!"
+msgstr "ບໍ່ສາມາດດຶງຂໍ້ມູນ fscreate selinux context ປັດຈຸບັນໄດ້!"
+
+#: src/lib/util/selinux.c:123 src/lib/util/selinux.c:191
+#: src/lib/util/selinux.c:259
+#, c-format
+msgid "Unable to get default selinux context for [%s] [%d]: %s!"
+msgstr "ບໍ່ສາມາດດຶງຂໍ້ມູນ selinux context ເລີ່ມຕົ້ນສຳລັບ [%s] [%d]: %s!"
+
+#: src/lib/util/selinux.c:131 src/lib/util/selinux.c:199
+#: src/lib/util/selinux.c:267
+msgid "Unable to set fscreate selinux context!"
+msgstr "ບໍ່ສາມາດກຳນົດ fscreate selinux context ໄດ້!"
+
+#: src/lib/util/selinux.c:141 src/lib/util/selinux.c:209
+#: src/lib/util/selinux.c:277
+msgid "Unable to restore fscreate selinux context!"
+msgstr "ບໍ່ສາມາດກູ້ຄືນ fscreate selinux context ໄດ້!"
+
+#: src/lib/util/selinux.c:390
+#, c-format
+msgid "Writing empty temporary file for [%s]"
+msgstr "ກຳລັງຂຽນໄຟລ໌ຊົ່ວຄາວທີ່ຫວ່າງເປົ່າສຳລັບ [%s]"
+
+#: src/lib/util/selinux.c:399
+#, c-format
+msgid ""
+"File [%s] should exist but is missing. It is not safe to delete [%s]. "
+"Aborting."
+msgstr "ໄຟລ໌ [%s] ຄວນຈະມີຢູ່ແຕ່ຫາຍໄປ. ມັນບໍ່ປອດໄພທີ່ຈະລຶບ [%s]. ກຳລັງຍົກເລີກ."
+
+#: src/lib/util/selinux.c:433
+#, c-format
+msgid "Removing [%s]"
+msgstr "ກຳລັງລຶບ [%s]"
+
+#: src/lib/util/template.c:143 src/lib/util/template.c:205
+#: src/lib/util/template.c:281
+msgid "Invalid operator!"
+msgstr "ຕົວດຳເນີນການບໍ່ຖືກຕ້ອງ!"
+
+#: src/lib/util/template.c:450 src/lib/util/template.c:573
+#: src/lib/util/template.c:624
+#, c-format
+msgid "Unable to compile regular expression: regex error %d"
+msgstr "ບໍ່ສາມາດຄອມໄພລ໌ regular expression: ຂໍ້ຜິດພາດ regex %d"
+
+#: src/lib/util/template.c:460 src/lib/util/template.c:634
+#, c-format
+msgid "Unable to process match [%d]: %s"
+msgstr "ບໍ່ສາມາດປະມວນຜົນສິ່ງທີ່ກົງກັນ [%d]: %s"
+
+#: src/lib/util/template.c:485
+#, c-format
+msgid "Unable to process operator [%d]: %s"
+msgstr "ບໍ່ສາມາດປະມວນຜົນຕົວດຳເນີນການ [%d]: %s"
+
+#: src/lib/util/template.c:500 src/lib/util/template.c:650
+#, c-format
+msgid "Unable to search string: regex error %d"
+msgstr "ບໍ່ສາມາດຄົ້ນຫາຂໍ້ຄວາມ: ຂໍ້ຜິດພາດ regex %d"
+
+#: src/lib/util/template.c:532
+#, c-format
+msgid "Unable to generate template [%d]: %s"
+msgstr "ບໍ່ສາມາດສ້າງແມ່ແບບ [%d]: %s"
+
+#: src/lib/util/template.c:580
+#, c-format
+msgid "Unable to find new match: regex error %d"
+msgstr "ບໍ່ພົບສິ່ງທີ່ກົງກັນໃໝ່: ຂໍ້ຜິດພາດ regex % d"
+
+#: src/lib/util/template.c:705
+#, c-format
+msgid "Unable to create temporary file for [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດສ້າງໄຟລ໌ຊົ່ວຄາວສຳລັບ [%s] [%d]: %s"
+
+#: src/lib/util/textfile.c:56
+#, c-format
+msgid "File [%s] is bigger than %uKiB!"
+msgstr "ໄຟລ໌ [%s] ມີຂະໜາດໃຫຍ່ກວ່າ %uKiB!"
+
+#: src/lib/util/textfile.c:85
+#, c-format
+msgid "Unable to read file [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດອ່ານໄຟລ໌ [%s] [%d]: %s"
+
+#: src/lib/util/textfile.c:158
+#, c-format
+msgid "Unable to open file [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດເປີດໄຟລ໌ [%s] [%d]: %s"
+
+#: src/lib/util/textfile.c:167
+#, c-format
+msgid "Unable to write data [%s] [%d]: %s"
+msgstr "ບໍ່ສາມາດຂຽນຂໍ້ມູນ [%s] [%d]: %s"
+
+#: src/cli/cli_tool.c:72
+#, c-format
+msgid "Common options:\n"
+msgstr "ຕົວເລືອກທົ່ວໄປ:\n"
+
+#: src/cli/cli_tool.c:74 src/cli/cli_tool.c:96
+msgid "Print error messages"
+msgstr "ສະແດງຂໍ້ຄວາມຜິດພາດ"
+
+#: src/cli/cli_tool.c:76 src/cli/cli_tool.c:97
+msgid "Print trace messages"
+msgstr "ສະແດງຂໍ້ຄວາມການຕິດຕາມ (trace)"
+
+#: src/cli/cli_tool.c:78 src/cli/cli_tool.c:98
+msgid "Print warning messages"
+msgstr "ສະແດງຂໍ້ຄວາມເຕືອນ"
+
+#: src/cli/cli_tool.c:80
+#, c-format
+msgid "Help options:\n"
+msgstr "ຕົວເລືອກການຊ່ວຍເຫຼືອ:\n"
+
+#: src/cli/cli_tool.c:82
+msgid "Show this for a command"
+msgstr "ສະແດງຂໍ້ຄວາມນີ້ສຳລັບຄຳສັ່ງ"
+
+#: src/cli/cli_tool.c:84
+msgid "Show brief usage message for a command"
+msgstr "ສະແດງວິທີການໃຊ້ງານແບບຫຍໍ້ສຳລັບຄຳສັ່ງ"
+
+#: src/cli/cli_tool.c:173
+#, c-format
+msgid ""
+"Usage:\n"
+"%s COMMAND COMMAND-ARGS\n"
+"\n"
+msgstr ""
+"ວິທີໃຊ້:\n"
+"%s ຄຳສັ່ງ ອາຣ໌ກິວເມັນ-ຄຳສັ່ງ\n"
+"\n"
+
+#: src/cli/cli_tool.c:174
+#, c-format
+msgid "Available commands:\n"
+msgstr "ຄຳສັ່ງທີ່ມີໃຫ້ໃຊ້:\n"
+
+#: src/cli/cli_tool.c:196
+#, c-format
+msgid "\n"
+msgstr "\n"
+
+#: src/cli/cli_tool.c:230
+#, c-format
+msgid "Authselect command '%s' can only be run as root!\n"
+msgstr "ຄຳສັ່ງ Authselect '%s' ສາມາດໃຊ້ງານໄດ້ໃນຖານະ root ເທົັ້ນັ້ນ!\n"
+
+#: src/cli/cli_tool.c:247
+msgid "Bug: commands can't be NULL!\n"
+msgstr "Bug: ຄຳສັ່ງບໍ່ສາມາດເປັນ NULL ໄດ້!\n"
+
+#: src/cli/cli_tool.c:310
+msgid "Command options:"
+msgstr "ຕົວເລືອກຄຳສັ່ງ:"
+
+#: src/cli/cli_tool.c:312
+msgid "Common options:"
+msgstr "ຕົວເລືອກທົ່ວໄປ:"
+
+#: src/cli/cli_tool.c:331 src/cli/cli_tool.c:334
+msgid "[OPTIONS...]"
+msgstr "[ຕົວເລືອກ...]"
+
+#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:867
+msgid "Out of memory!"
+msgstr "ໜ່ວຍຄວາມຈຳເຕັມ!"
+
+#: src/cli/cli_tool.c:358
+#, c-format
+msgid ""
+"Invalid option %s: %s\n"
+"\n"
+msgstr ""
+"ຕົວເລືອກ %s ບໍ່ຖືກຕ້ອງ: %s\n"
+"\n"
+
+#: src/cli/cli_tool.c:370
+#, c-format
+msgid ""
+"Missing option: %s\n"
+"\n"
+msgstr ""
+"ຕົວເລືອກທີ່ຫາຍໄປ: %s\n"
+"\n"
+
+#: src/cli/cli_tool.c:380
+#, c-format
+msgid ""
+"Only one free argument is expected!\n"
+"\n"
+msgstr ""
+"ຕ້ອງການອາຣ໌ກິວເມັນພຽງອັນດຽວເທົ່ານັ້ນ!\n"
+"\n"
+
+#: src/cli/cli_tool.c:395
+#, c-format
+msgid ""
+"Unexpected parameter: %s\n"
+"\n"
+msgstr ""
+"ພາຣາມີເຕີທີ່ບໍ່ຄາດຄິດ: %s\n"
+"\n"
+
+#: src/cli/cli_tool.c:407
+#, c-format
+msgid ""
+"At least one option is required!\n"
+"\n"
+msgstr ""
+"ຕ້ອງການຢ່າງໜ້ອຍໜຶ່ງຕົວເລືອກ!\n"
+"\n"
+
+#: src/cli/main.c:76 src/cli/main.c:432 src/cli/main.c:475
+msgid "Profile identifier."
+msgstr "ລະຫັດລະບຸໂປຣຟາຍ."
+
+#: src/cli/main.c:79 src/cli/main.c:248 src/cli/main.c:293 src/cli/main.c:342
+#: src/cli/main.c:390 src/cli/main.c:435 src/cli/main.c:478 src/cli/main.c:654
+#: src/cli/main.c:731 src/cli/main.c:760 src/cli/main.c:802 src/cli/main.c:842
+#: src/cli/main.c:907 src/cli/main.c:933
+msgid "Unable to parse command arguments"
+msgstr "ບໍ່ສາມາດວິເຄາະອາຣ໌ກິວເມັນຄຳສັ່ງໄດ້"
+
+#: src/cli/main.c:135
+msgid "Unable to backup current configuration!\n"
+msgstr "ບໍ່ສາມາດສຳຮອງການຕັ້ງຄ່າປັດຈຸບັນໄດ້!\n"
+
+#: src/cli/main.c:139
+#, c-format
+msgid "Backup stored at %s\n"
+msgstr "ສຳຮອງຂໍ້ມູນຖືກເກັບໄວ້ທີ່ %s\n"
+
+#: src/cli/main.c:161
+msgid "Enforce changes"
+msgstr "ບັງຄັບໃຊ້ການປ່ຽນແປງ"
+
+#: src/cli/main.c:162 src/cli/main.c:241 src/cli/main.c:644 src/cli/main.c:722
+msgid "Backup system files before activating profile (generate unique name)"
+msgstr "ສຳຮອງໄຟລ໌ລະບົບກ່ອນເປີດໃຊ້ໂປຣຟາຍ (ສ້າງຊື່ທີ່ບໍ່ຊ້ຳກັນ)"
+
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:645 src/cli/main.c:723
+msgid "Backup system files before activating profile"
+msgstr "ສຳຮອງໄຟລ໌ລະບົບກ່ອນເປີດໃຊ້ໂປຣຟາຍ"
+
+#: src/cli/main.c:163 src/cli/main.c:242 src/cli/main.c:645 src/cli/main.c:723
+msgid "NAME"
+msgstr "ຊື່"
+
+#: src/cli/main.c:164
+msgid "Do not backup system files when --force is set"
+msgstr "ບໍ່ຕ້ອງສຳຮອງໄຟລ໌ລະບົບເມື່ອມີການໃຊ້ --force"
+
+#: src/cli/main.c:165 src/cli/main.c:646
+msgid "Do not print profile requirements"
+msgstr "ບໍ່ຕ້ອງສະແດງຄວາມຕ້ອງການຂອງໂປຣຟາຍ"
+
+#: src/cli/main.c:176 src/cli/main.c:405 src/cli/main.c:441 src/cli/main.c:484
+#: src/cli/main.c:516 src/cli/main.c:673
+#, c-format
+msgid "Unable to get profile information [%d]: %s"
+msgstr "ບໍ່ສາມາດດຶງຂໍ້ມູນໂປຣຟາຍ [%d]: %s"
+
+#: src/cli/main.c:184 src/cli/main.c:524 src/cli/main.c:681
+msgid "Unable to read profile requirements!"
+msgstr "ບໍ່ສາມາດອ່ານຄວາມຕ້ອງການຂອງໂປຣຟາຍໄດ້!"
+
+#: src/cli/main.c:198
+msgid ""
+"\n"
+"Some unexpected changes to the configuration were detected.\n"
+"Use --force parameter if you want to overwrite these changes.\n"
+msgstr ""
+"\n"
+"ກວດພົບການປ່ຽນແປງທີ່ບໍ່ຄາດຄິດໃນການຕັ້ງຄ່າ.\n"
+"ໃຊ້ພາຣາມີເຕີ --force ຖ້າທ່ານຕ້ອງການຂຽນທັບການປ່ຽນແປງເຫຼົ່ານີ້.\n"
+
+#: src/cli/main.c:203
+#, c-format
+msgid "Unable to activate profile [%d]: %s\n"
+msgstr "ບໍ່ສາມາດເປີດໃຊ້ໂປຣຟາຍ [%d]: %s\n"
+
+#: src/cli/main.c:208
+#, c-format
+msgid "Profile \"%s\" was selected.\n"
+msgstr "ໂປຣຟາຍ \"%s\" ຖືກເລືອກແລ້ວ.\n"
+
+#: src/cli/main.c:211
+msgid "The following nsswitch maps are overwritten by the profile:\n"
+msgstr "nsswitch maps ຕໍ່ໄປນີ້ຈະຖືກຂຽນທັບໂດຍໂປຣຟາຍ:\n"
+
+#: src/cli/main.c:214
+#, c-format
+msgid "- %s\n"
+msgstr "- %s\n"
+
+#: src/cli/main.c:219
+#, c-format
+msgid ""
+"\n"
+"%s\n"
+msgstr ""
+"\n"
+"%s\n"
+
+#: src/cli/main.c:260
+msgid "Changes were successfully applied.\n"
+msgstr "ນຳໃຊ້ການປ່ຽນແປງສຳເລັດແລ້ວ.\n"
+
+#: src/cli/main.c:263 src/cli/main.c:299 src/cli/main.c:663
+msgid "No existing configuration detected.\n"
+msgstr "ກວດບໍ່ພົບການຕັ້ງຄ່າທີ່ມີຢູ່.\n"
+
+#: src/cli/main.c:266
+msgid ""
+"Some unexpected changes to the configuration were detected. Use 'select' "
+"command instead.\n"
+msgstr ""
+"ກວດພົບການປ່ຽນແປງທີ່ບໍ່ຄາດຄິດໃນການຕັ້ງຄ່າ. ກະລຸນາໃຊ້ຄຳສັ່ງ 'select' ແທນ.\n"
+
+#: src/cli/main.c:270
+#, c-format
+msgid "Unable to apply changes [%d]: %s\n"
+msgstr "ບໍ່ສາມາດນຳໃຊ້ການປ່ຽນແປງ [%d]: %s\n"
+
+#: src/cli/main.c:287
+msgid "Print command parameters instead of formatted output"
+msgstr "ສະແດງພາຣາມີເຕີຄຳສັ່ງແທນການສະແດງຜົນຕາມຮູບແບບ"
+
+#: src/cli/main.c:302 src/cli/main.c:666
+#, c-format
+msgid "Unable to get current configuration [%d]: %s"
+msgstr "ບໍ່ສາມາດດຶງການຕັ້ງຄ່າປັດຈຸບັນ [%d]: %s"
+
+#: src/cli/main.c:316
+#, c-format
+msgid "Profile ID: %s\n"
+msgstr "ID ໂປຣຟາຍ: %s\n"
+
+#: src/cli/main.c:317
+msgid "Enabled features:"
+msgstr "ຄຸນສົມບັດທີ່ເປີດໃຊ້:"
+
+#: src/cli/main.c:320
+msgid " None\n"
+msgstr " ບໍ່ມີ\n"
+
+#: src/cli/main.c:348
+#, c-format
+msgid "Unable to test current configuration [%d]: %s"
+msgstr "ບໍ່ສາມາດທົດສອບການຕັ້ງຄ່າປັດຈຸບັນ [%d]: %s"
+
+#: src/cli/main.c:355
+msgid ""
+"Current configuration is not valid. It was probably modified outside "
+"authselect."
+msgstr "ການຕັ້ງຄ່າປັດຈຸບັນບໍ່ຖືກຕ້ອງ. ມັນອາດຈະຖືກແກ້ໄຂຈາກພາຍນອກ authselect."
+
+#: src/cli/main.c:362
+msgid "Current configuration is valid."
+msgstr "ການຕັ້ງຄ່າປັດຈຸບັນຖືກຕ້ອງ."
+
+#: src/cli/main.c:365
+msgid "No configuration detected."
+msgstr "ກວດບໍ່ພົບການຕັ້ງຄ່າ."
+
+#: src/cli/main.c:369
+msgid "System was not configured with authselect."
+msgstr "ລະບົບບໍ່ໄດ້ຖືກຕັ້ງຄ່າດ້ວຍ authselect."
+
+#: src/cli/main.c:396
+msgid "Unable to get profile list!"
+msgstr "ບໍ່ສາມາດດຶງລາຍຊື່ໂປຣຟາຍໄດ້!"
+
+#: src/cli/main.c:449
+#, c-format
+msgid "Unable to get profile features [%d]: %s"
+msgstr "ບໍ່ສາມາດດຶງຄຸນສົມບັດຂອງໂປຣຟາຍ [%d]: %s"
+
+#: src/cli/main.c:564
+msgid "Print content of all files"
+msgstr "ສະແດງເນື້ອຫາຂອງທຸກໄຟລ໌"
+
+#: src/cli/main.c:565
+msgid "Print nsswitch.conf content"
+msgstr "ສະແດງເນື້ອຫາຂອງ nsswitch.conf"
+
+#: src/cli/main.c:566
+msgid "Print system-auth content"
+msgstr "ສະແດງເນື້ອຫາຂອງ system-auth"
+
+#: src/cli/main.c:567
+msgid "Print password-auth content"
+msgstr "ສະແດງເນື້ອຫາຂອງ password-auth"
+
+#: src/cli/main.c:568
+msgid "Print smartcard-auth content"
+msgstr "ສະແດງເນື້ອຫາຂອງ smartcard-auth"
+
+#: src/cli/main.c:569
+msgid "Print fingerprint-auth content"
+msgstr "ສະແດງເນື້ອຫາຂອງ fingerprint-auth"
+
+#: src/cli/main.c:570
+msgid "Print switchable-auth content"
+msgstr "ສະແດງເນື້ອໃນຂອງ switchable-auth"
+
+#: src/cli/main.c:571
+msgid "Print postlogin content"
+msgstr "ສະແດງເນື້ອຫາຂອງ postlogin"
+
+#: src/cli/main.c:572
+msgid "Print dconf database content"
+msgstr "ສະແດງເນື້ອຫາຂອງຖານຂໍ້ມູນ dconf"
+
+#: src/cli/main.c:573
+msgid "Print dconf lock content"
+msgstr "ສະແດງເນື້ອຫາຂອງ dconf lock"
+
+#: src/cli/main.c:601
+#, c-format
+msgid "Unable to get generated content [%d]: %s"
+msgstr "ບໍ່ສາມາດດຶງເນື້ອຫາທີ່ສ້າງຂຶ້ນ [%d]: %s"
+
+#: src/cli/main.c:620
+#, c-format
+msgid ""
+"File %s: Empty\n"
+"\n"
+msgstr ""
+"ໄຟລ໌ %s: ຫວ່າງເປົ່າ\n"
+"\n"
+
+#: src/cli/main.c:622
+#, c-format
+msgid ""
+"File %s:\n"
+"%s\n"
+"\n"
+msgstr ""
+"ໄຟລ໌ %s:\n"
+"%s\n"
+"\n"
+
+#: src/cli/main.c:651
+msgid "Feature to enable."
+msgstr "ຄຸນສົມບັດທີ່ຈະເປີດໃຊ້."
+
+#: src/cli/main.c:688
+#, c-format
+msgid "Unable to backup current configuration [%d]: %s\n"
+msgstr "ບໍ່ສາມາດສຳຮອງການຕັ້ງຄ່າປັດຈຸບັນ [%d]: %s\n"
+
+#: src/cli/main.c:695
+#, c-format
+msgid "Unable to enable feature [%d]: %s\n"
+msgstr "ບໍ່ສາມາດເປີດໃຊ້ຄຸນສົມບັດ [%d]: %s\n"
+
+#: src/cli/main.c:700
+#, c-format
+msgid "%s\n"
+msgstr "%s\n"
+
+#: src/cli/main.c:728
+msgid "Feature to disable."
+msgstr "ຄຸນສົມບັດທີ່ຈະປິດໃຊ້."
+
+#: src/cli/main.c:742
+#, c-format
+msgid "Unable to disable feature [%d]: %s\n"
+msgstr "ບໍ່ສາມາດປິດໃຊ້ຄຸນສົມບັດ [%d]: %s\n"
+
+#: src/cli/main.c:757
+msgid "Feature to check."
+msgstr "ຄຸນສົມບັດທີ່ຈະກວດສອບ."
+
+#: src/cli/main.c:766
+#, c-format
+msgid "Unable to check feature [%d]: %s\n"
+msgstr "ບໍ່ສາມາດກວດສອບຄຸນສົມບັດ [%d]: %s\n"
+
+#: src/cli/main.c:787
+msgid "Create new profile as a vendor profile instead of a custom profile"
+msgstr "ສ້າງໂປຣຟາຍໃໝ່ເປັນໂປຣຟາຍຜູ້ຜະລິດ (vendor profile) ແທນໂປຣຟາຍທີ່ກຳນົດເອງ"
+
+#: src/cli/main.c:788
+msgid "ID of a profile that should be used as a base for the new profile"
+msgstr "ID ຂອງໂປຣຟາຍທີ່ຈະໃຊ້ເປັນພື້ນຖານສຳລັບໂປຣຟາຍໃໝ່"
+
+#: src/cli/main.c:789
+msgid ""
+"Base new profile on a default profile even if vendor profile with the same "
+"name exists"
+msgstr ""
+"ໃຊ້ໂປຣຟາຍເລີ່ມຕົ້ນເປັນພື້ນຖານ ເຖິງແມ່ນວ່າຈະມີໂປຣຟາຍຜູ້ຜະລິດທີ່ມີຊື່ດຽວກັນຢູ່ແລ້ວ"
+
+#: src/cli/main.c:790
+msgid "Symlink meta files from the base profile instead of copying them"
+msgstr "ໃຊ້ symlink ໄຟລ໌ meta ຈາກໂປຣຟາຍພື້ນຖານແທນການຄັດລອກ"
+
+#: src/cli/main.c:791
+msgid "Symlink nsswitch files from the base profile instead of copying them"
+msgstr "ໃຊ້ symlink ໄຟລ໌ nsswitch ຈາກໂປຣຟາຍພື້ນຖານແທນການຄັດລອກ"
+
+#: src/cli/main.c:792
+msgid "Symlink pam files from the base profile instead of copying them"
+msgstr "ໃຊ້ symlink ໄຟລ໌ pam ຈາກໂປຣຟາຍພື້ນຖານແທນການຄັດລອກ"
+
+#: src/cli/main.c:793
+msgid "Symlink dconf files from the base profile instead of copying them"
+msgstr "ໃຊ້ symlink ໄຟລ໌ dconf ຈາກໂປຣຟາຍພື້ນຖານແທນການຄັດລອກ"
+
+#: src/cli/main.c:794
+msgid "Symlink specific file (can be set multiple times)"
+msgstr "ໃຊ້ symlink ກັບໄຟລ໌ສະເພາະ (ສາມາດກຳນົດໄດ້ຫຼາຍຄັ້ງ)"
+
+#: src/cli/main.c:799
+msgid "New profile name."
+msgstr "ຊື່ໂປຣຟາຍໃໝ່."
+
+#: src/cli/main.c:809
+#, c-format
+msgid "Unable to create new profile [%d]: %s\n"
+msgstr "ບໍ່ສາມາດສ້າງໂປຣຟາຍໃໝ່ [%d]: %s\n"
+
+#: src/cli/main.c:813
+#, c-format
+msgid "New profile was created at %s\n"
+msgstr "ສ້າງໂປຣຟາຍໃໝ່ສຳເລັດແລ້ວທີ່ %s\n"
+
+#: src/cli/main.c:836
+msgid "Print backup names without any formatting and additional information"
+msgstr "ສະແດງຊື່ໄຟລ໌ສຳຮອງໂດຍບໍ່ມີຮູບແບບ ແລະ ຂໍ້ມູນເພີ່ມເຕີມ"
+
+#: src/cli/main.c:848
+msgid "Unable to list available backups!"
+msgstr "ບໍ່ສາມາດສະແດງລາຍຊື່ໄຟລ໌ສຳຮອງທີ່ມີຢູ່ໄດ້!"
+
+#: src/cli/main.c:885
+#, c-format
+msgid "%-*s (created at %s)\n"
+msgstr "%-*s (ສ້າງເມື່ອ %s)\n"
+
+#: src/cli/main.c:904
+msgid "Name of the backup to remove."
+msgstr "ຊື່ຂອງໄຟລ໌ສຳຮອງທີ່ຈະລຶບ."
+
+#: src/cli/main.c:913
+#, c-format
+msgid "Unable to remove backup [%s] [%d]: %s\n"
+msgstr "ບໍ່ສາມາດລຶບໄຟລ໌ສຳຮອງ [%s] [%d]: %s\n"
+
+#: src/cli/main.c:930
+msgid "Name of the backup to restore from."
+msgstr "ຊື່ຂອງໄຟລ໌ສຳຮອງທີ່ຈະໃຊ້ກູ້ຄືນ."
+
+#: src/cli/main.c:939
+#, c-format
+msgid "Unable to restore backup [%s] [%d]: %s\n"
+msgstr "ບໍ່ສາມາດກູ້ຄືນຈາກໄຟລ໌ສຳຮອງ [%s] [%d]: %s\n"
+
+#: src/cli/main.c:955
+#, c-format
+msgid "Unable to uninstall authselect configuration [%d]: %s\n"
+msgstr "ບໍ່ສາມາດຖອນການຕິດຕັ້ງການຕັ້ງຄ່າ authselect [%d]: %s\n"
+
+#: src/cli/main.c:1005
+msgid "Select profile"
+msgstr "ເລືອກໂປຣຟາຍ"
+
+#: src/cli/main.c:1006
+msgid "Regenerate configuration for currently selected command"
+msgstr "ສ້າງການຕັ້ງຄ່າໃໝ່ສຳລັບຄຳສັ່ງທີ່ເລືອກໃນປັດຈຸບັນ"
+
+#: src/cli/main.c:1007
+msgid "List available profiles"
+msgstr "ລາຍຊື່ໂປຣຟາຍທີ່ມີຢູ່"
+
+#: src/cli/main.c:1008
+msgid "List available profile features"
+msgstr "ລາຍຊື່ຄຸນສົມບັດຂອງໂປຣຟາຍທີ່ມີຢູ່"
+
+#: src/cli/main.c:1009
+msgid "Show profile information"
+msgstr "ສະແດງຂໍ້ມູນໂປຣຟາຍ"
+
+#: src/cli/main.c:1010
+msgid "Print profile requirements"
+msgstr "ສະແດງຄວາມຕ້ອງການຂອງໂປຣຟາຍ"
+
+#: src/cli/main.c:1011
+msgid "Get identifier of currently selected profile"
+msgstr "ດຶງລະຫັດລະບຸຂອງໂປຣຟາຍທີ່ເລືອກໃນປັດຈຸບັນ"
+
+#: src/cli/main.c:1012
+msgid "Check if the current configuration is valid"
+msgstr "ກວດສອບວ່າການຕັ້ງຄ່າປັດຈຸບັນຖືກຕ້ອງຫຼືບໍ່"
+
+#: src/cli/main.c:1013
+msgid "Print changes that would be otherwise written"
+msgstr "ສະແດງການປ່ຽນແປງທີ່ຈະຖືກຂຽນລົງໄປ"
+
+#: src/cli/main.c:1014
+msgid "Enable feature in currently selected profile"
+msgstr "ເປີດໃຊ້ຄຸນສົມບັດໃນໂປຣຟາຍທີ່ເລືອກໃນປັດຈຸບັນ"
+
+#: src/cli/main.c:1015
+msgid "Disable feature in currently selected profile"
+msgstr "ປິດໃຊ້ຄຸນສົມບັດໃນໂປຣຟາຍທີ່ເລືອກໃນປັດຈຸບັນ"
+
+#: src/cli/main.c:1016
+msgid "Check if feature is enabled in currently selected profile"
+msgstr "ກວດສອບວ່າຄຸນສົມບັດຖືກເປີດໃຊ້ງານໃນໂປຣໄຟລ໌ທີ່ເລືອກໄວ້ໃນຕອນນີ້ຫຼືບໍ່"
+
+#: src/cli/main.c:1017
+msgid "Create new authselect profile"
+msgstr "ສ້າງໂປຣຟາຍ authselect ໃໝ່"
+
+#: src/cli/main.c:1018
+msgid "Backup commands:"
+msgstr "ຄຳສັ່ງສຳຮອງຂໍ້ມູນ:"
+
+#: src/cli/main.c:1019
+msgid "List available backups"
+msgstr "ລາຍຊື່ໄຟລ໌ສຳຮອງທີ່ມີຢູ່"
+
+#: src/cli/main.c:1020
+msgid "Remove backup"
+msgstr "ລຶບໄຟລ໌ສຳຮອງ"
+
+#: src/cli/main.c:1021
+msgid "Restore from backup"
+msgstr "ກູ້ຄືນຈາກໄຟລ໌ສຳຮອງ"
+
+#: src/cli/main.c:1022
+msgid "Other:"
+msgstr "ອື່ນໆ:"
+
+#: src/cli/main.c:1023
+msgid "Opt-out from authselect managed configuration"
+msgstr "ຍົກເລີກການໃຊ້ການຕັ້ງຄ່າທີ່ຈັດການໂດຍ authselect"
+
+#: src/cli/main.c:1025
+msgid "Print authselect version"
+msgstr "ສະແດງເວີຊັນຂອງ authselect"
