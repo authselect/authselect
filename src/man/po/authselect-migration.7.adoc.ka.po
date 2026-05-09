@@ -1,0 +1,744 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Languages add-on <noreply-addon-languages@weblate.org>, 2026.
+# Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-05-04 13:50+0200\n"
+"PO-Revision-Date: 2026-01-20 15:52+0000\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <https://translate.fedoraproject.org/projects/"
+"authselect/12x-authselect-migration7adoc/ka/>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
+
+#. type: Title =
+#: ./src/man/authselect-migration.7.adoc:2
+#, no-wrap
+msgid "authselect-migration(7)"
+msgstr "authselect-migration(7)"
+
+#. type: Title -
+#: ./src/man/authselect-migration.7.adoc:6
+#, no-wrap
+msgid "NAME"
+msgstr "სახელი"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:8
+msgid "authselect-migration - A guide how to migrate from authconfig to authselect."
+msgstr ""
+"authselect-migration - სახელმძღვანელო authconfig-იდან authselect-ზე "
+"გადასასვლელად."
+
+#. type: Title -
+#: ./src/man/authselect-migration.7.adoc:10
+#, no-wrap
+msgid "DESCRIPTION"
+msgstr "აღწერა"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:15
+msgid ""
+"This manual page explains the main differences between authconfig, the "
+"previous tool to configure system authentication and identity sources, and "
+"authselect which replaces it. It also explains what actions need to be done "
+"in order to migrate from authconfig to authselect."
+msgstr ""
+"ეს სახელმძღვანელოს გვერდი განმარტავს ძირითად განსხვავებებს authconfig-სა "
+"(სისტემის ავთენტიკაციისა და იდენტობის წყაროების მორგების ძველ პროგრამას) და "
+"მის შემცვლელ authselect-ს შორის. იგი ასევე განმარტავს, თუ რა ქმედებებია "
+"საჭირო authconfig-იდან authselect-ზე მიგრაციისთვის."
+
+#. type: Title -
+#: ./src/man/authselect-migration.7.adoc:17
+#, no-wrap
+msgid "MAIN DIFFERENCES"
+msgstr "მთავარი სხვაობები"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:20
+msgid ""
+"Authselect takes a completely different approach to system configuration "
+"than the previous tool authconfig."
+msgstr ""
+"Authselect სისტემურ კონფიგურაციასთან authconfig-ისგან სრულიად განსხვავებულ "
+"მიდგომას იყენებს."
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:25
+msgid ""
+"Authconfig tries its best to keep users's manual changes to the files it "
+"generates. It generates not only PAM configuration files and nsswitch.conf "
+"(to setup authentication modules and identity sources) but it also generates "
+"simple configuration files for several services such as LDAP and Kerberos."
+msgstr ""
+"Authconfig მაქსიმალურად ცდილობს, შეინარჩუნოს მომხმარებლის მიერ ხელით "
+"შეტანილი ცვლილებები იმ ფაილებში, რომლებსაც ის ქმნის. ის ქმნის არა მხოლოდ PAM "
+"კონფიგურაციის ფაილებსა და nsswitch.conf-ს (ავთენტიკაციის მოდულებისა და "
+"იდენტობის წყაროების მოსარგებად), არამედ ქმნის მარტივ კონფიგურაციის ფაილებს "
+"რამდენიმე ისეთი სერვისისთვის, როგორიცაა LDAP და Kerberos."
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:34
+msgid ""
+"Authselect does no such things. It does not generate any configuration files "
+"beside PAM and nsswitch.conf and it strictly prohibits any manual changes to "
+"generated configuration. It provides a set of files called profiles. Each "
+"profile describes how the resulting configuration should look like and it "
+"can be slightly modified by enabling or disabling certain optional "
+"features. If a need arises for a different profile than what authselect "
+"ships, the administrator has an option to create a whole new profile and use "
+"it with authselect.  See authselect-profiles(5) to learn more about "
+"profiles."
+msgstr ""
+"Authselect მსგავს რამეს არ აკეთებს. იგი არ აგენერირებს არანაირ კონფიგურაციის "
+"ფაილებს PAM-ისა და nsswitch.conf-ის გარდა და მკაცრად კრძალავს ნებისმიერ "
+"ხელით ცვლილებას გენერირებულ კონფიგურაციაში. იგი უზრუნველყოფს ფაილების "
+"ნაკრებს, რომლებსაც პროფილები ეწოდება. თითოეული პროფილი აღწერს, თუ როგორი "
+"უნდა იყოს საბოლოო კონფიგურაცია და მისი მცირედით შეცვლა შესაძლებელია "
+"გარკვეული არასავალდებულო ფუნქციების ჩართვით ან გამორთვით. თუ გაჩნდება ისეთი "
+"პროფილის საჭიროება, რომელიც განსხვავდება authselect-ის მიერ "
+"შემოთავაზებულისგან, ადმინისტრატორს აქვს შესაძლებლობა, შექმნას სრულიად ახალი "
+"პროფილი და გამოიყენოს იგი authselect-თან ერთად. იხილეთ authselect-profiles(5)"
+", რომ მეტი გაიგოთ პროფილების შესახებ."
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:46
+msgid ""
+"This may seem like a big disadvantage but the truth is the "
+"opposite. Authconfig is a very old tool and the applications providing "
+"required services have changed rapidly over the years. Typically, there is "
+"no longer a need to have multiple authentication modules in PAM and "
+"nsswitch.conf, because the vast majority of use-cases is covered by "
+"SSSD. Therefore there is no need to add or remove them specifically. There "
+"are also better tools to generate configuration for system daemons that can "
+"help you automate the process of joining to a remote domain such as "
+"`realm`. In addition, the shipped profiles give us comprehensive and "
+"deterministic system configuration that can be fully tested and is much less "
+"error prone. It is also much easier to distribute such configuration across "
+"many systems."
+msgstr ""
+"ეს შეიძლება დიდ ნაკლად მოგეჩვენოთ, მაგრამ რეალობა საპირისპიროა. Authconfig "
+"ძალიან ძველი ხელსაწყოა, ხოლო აპლიკაციები, რომლებიც საჭირო სერვისებს "
+"უზრუნველყოფენ, წლების განმავლობაში სწრაფად შეიცვალა. როგორც წესი, აღარ "
+"არსებობს PAM-სა და nsswitch.conf-ში მრავალი ავთენტიკაციის მოდულის ქონის "
+"საჭიროება, რადგან შემთხვევათა აბსოლუტურ უმრავლესობას SSSD ფარავს. "
+"შესაბამისად, მათი სპეციალურად დამატება ან ამოშლა საჭირო აღარ არის. ასევე "
+"არსებობს სისტემური დემონებისთვის კონფიგურაციის დასაგენერირებელი უკეთესი "
+"ხელსაწყოები, მაგალითად `realm`, რომელსაც შეუძლია დაგეხმაროთ დაშორებულ "
+"დომენში გაწევრების პროცესის ავტომატიზაციაში. გარდა ამისა, მოწოდებული "
+"პროფილები გვაძლევს ყოვლისმომცველ და დეტერმინისტულ სისტემურ კონფიგურაციას, "
+"რომელიც შეიძლება სრულად შემოწმდეს და ბევრად უფრო ნაკლებად არის მიდრეკილი "
+"შეცდომებისკენ. ასეთი კონფიგურაციის გავრცელება ბევრ სისტემაზე ასევე ბევრად "
+"უფრო მარტივია."
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:52
+msgid ""
+"Probably the most controversial change is that authselect only ships "
+"profiles for sssd and winbind providers. Those two providers cover all "
+"modern use cases from providing local users and legacy LDAP domain to "
+"complex configurations with IPA or Active Directory servers. The profiles no "
+"longer contain support for nss-pam-ldapd and users are encouraged to switch "
+"to sssd."
+msgstr ""
+"ალბათ ყველაზე საკამათო ცვლილება ის არის, რომ authselect-ს მხოლოდ sssd და "
+"winbind პროვაიდერების პროფილები მოჰყვება. ეს ორი პროვაიდერი ფარავს ყველა "
+"თანამედროვე საჭიროებას, დაწყებული ლოკალური მომხმარებლებისა და ძველი LDAP "
+"დომენების მხარდაჭერით, დასრულებული IPA ან Active Directory სერვერების "
+"კომპლექსური კონფიგურაციებით. პროფილები აღარ შეიცავს nss-pam-ldapd-ის "
+"მხარდაჭერას და მომხმარებლებს ურჩევენ, გადავიდნენ sssd-ზე."
+
+#. type: Title -
+#: ./src/man/authselect-migration.7.adoc:54
+#, no-wrap
+msgid "JOINING REMOTE DOMAINS"
+msgstr "გაწევრება დაშორებულ დომენებში"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:59
+msgid ""
+"You can use either `ipa-client-install` or `realm` to join an IPA domain and "
+"`realm` to join an Active Directory domain. These tools will make sure that "
+"the correct authselect profile is selected and all daemons and services are "
+"properly configured."
+msgstr ""
+"IPA დომენში გასაწევრებლად, შეგიძლიათ, `ipa-client-install` ან `realm` "
+"გამოიყენოთ, ხოლო `realm` — Active Directory დომენში გასაწევრებლად. ეს "
+"პროგრამები უზრუნველყოფენ authselect-ის სწორი პროფილის შერჩევას და ყველა "
+"დემონისა თუ სერვისის სწორად მორგებას."
+
+#. type: Title -
+#: ./src/man/authselect-migration.7.adoc:61
+#, no-wrap
+msgid "CONVERTING YOUR SCRIPTS"
+msgstr "თქვენი სკრიპტების გადაყვანა"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:67
+msgid ""
+"If you use `ipa-client-install` or `realm` to join a domain, you can just "
+"remove any authconfig call in your scripts. If this is not an option, you "
+"need to replace each authconfig call with its equivalent authselect call to "
+"select a correct profile with desired features. Then you also need to write "
+"configuration file for required services."
+msgstr ""
+"თუ დომენში გასაწევრებლად `ipa-client-install`-ს ან `realm`-ს იყენებთ, "
+"შეგიძლიათ, უბრალოდ წაშალოთ authconfig-ის ნებისმიერი გამოძახება თქვენი "
+"სკრიპტებიდან. თუ ეს შეუძლებელია, თქვენ უნდა ჩაანაცვლოთ authconfig-ის "
+"თითოეული გამოძახება მისი ეკვივალენტური authselect გამოძახებით, რათა აირჩიოთ "
+"სწორი პროფილი სასურველი ფუნქციებით. ამის შემდეგ, თქვენ ასევე დაგჭირდებათ "
+"კონფიგურაციის ფაილის დაწერა საჭირო სერვისებისთვის."
+
+#. type: Block title
+#: ./src/man/authselect-migration.7.adoc:68
+#, no-wrap
+msgid "Relation of authconfig options to authselect profiles"
+msgstr "authconfig-ის პარამეტრების ურთიერთობა authselect-ის პროფილებთან"
+
+#. type: Table
+#: ./src/man/authselect-migration.7.adoc:76
+#, no-wrap
+msgid ""
+"|*Authconfig options*                |*Authselect profile*\n"
+"|--enableldap --enableldapauth       |sssd\n"
+"|--enablesssd --enablesssdauth       |sssd\n"
+"|--enablekrb5                        |sssd\n"
+"|--enablewinbind --enablewinbindauth |winbind\n"
+"|--enablenis                         |nis\n"
+msgstr ""
+"|*Authconfig-ის პარამეტრები*                |*Authselect-ის პროფილი*\n"
+"|--enableldap --enableldapauth       |sssd\n"
+"|--enablesssd --enablesssdauth       |sssd\n"
+"|--enablekrb5                        |sssd\n"
+"|--enablewinbind --enablewinbindauth |winbind\n"
+"|--enablenis                         |nis\n"
+
+#. type: Block title
+#: ./src/man/authselect-migration.7.adoc:78
+#, no-wrap
+msgid "Relation of authconfig options to authselect profile features"
+msgstr ""
+"authconfig-ის პარამეტრების ურთიერთობა authselect-ის პროფილის თვისებებთან"
+
+#. type: Table
+#: ./src/man/authselect-migration.7.adoc:90
+#, no-wrap
+msgid ""
+"|*Authconfig options* |*Authselect profile feature*\n"
+"|--enablesmartcard    |with-smartcard\n"
+"|--enablefingerprint  |with-fingerprint\n"
+"|--enableecryptfs     |with-ecryptfs\n"
+"|--enablemkhomedir    |with-mkhomedir\n"
+"|--enablefaillock     |with-faillock\n"
+"|--enablepamaccess    |with-pamaccess\n"
+"|--enablewinbindkrb5  |with-krb5\n"
+"|--enableshadow       |_none_\n"
+"|--passalgo           |_none_\n"
+msgstr ""
+"|*Authconfig-ის პარამეტრები* |*Authselect-ის პროფილის ფუნქცია*\n"
+"|--enablesmartcard    |with-smartcard\n"
+"|--enablefingerprint  |with-fingerprint\n"
+"|--enableecryptfs     |with-ecryptfs\n"
+"|--enablemkhomedir    |with-mkhomedir\n"
+"|--enablefaillock     |with-faillock\n"
+"|--enablepamaccess    |with-pamaccess\n"
+"|--enablewinbindkrb5  |with-krb5\n"
+"|--enableshadow       |_none_\n"
+"|--passalgo           |_none_\n"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:97
+msgid ""
+"Authconfig options `--enableshadow` and `--passalgo=sha512` were often used "
+"to make sure that passwords are stored in `/etc/shadow` using `sha512` "
+"algorithm. *The authselect profiles now use the yescrypt hashing method* and "
+"it cannot be changed through an option (only by creating a custom profile).  "
+"You can just omit these options."
+msgstr ""
+"Authconfig-ის პარამეტრები `--enableshadow`და `--passalgo=sha512` ხშირად "
+"გამოიყენებოდა იმისთვის, რომ პაროლები შენახულიყო ფაილში `/etc/shadow` "
+"ალგორითმის  `sha512`გამოყენებით. Authselect-ის პროფილები ახლა იყენებენ "
+"yescrypt ჰეშირების მეთოდს და მისი შეცვლა პარამეტრის მეშვეობით შეუძლებელია "
+"(მხოლოდ მორგებული პროფილის შექმნით). შეგიძლიათ უბრალოდ გამოტოვოთ ეს "
+"პარამეტრები."
+
+#. type: Block title
+#: ./src/man/authselect-migration.7.adoc:98
+#, no-wrap
+msgid "Examples"
+msgstr "მაგალითები"
+
+#. type: delimited block -
+#: ./src/man/authselect-migration.7.adoc:102
+#, no-wrap
+msgid ""
+"authconfig --enableldap --enableldapauth --enablefaillock --updateall\n"
+"authselect select sssd with-faillock\n"
+msgstr ""
+"authconfig --enableldap --enableldapauth --enablefaillock --updateall\n"
+"authselect select sssd with-faillock\n"
+
+#. type: delimited block -
+#: ./src/man/authselect-migration.7.adoc:105
+#, no-wrap
+msgid ""
+"authconfig --enablesssd --enablesssdauth --enablesmartcard "
+"--smartcardmodule=sssd --updateall\n"
+"authselect select sssd with-smartcard\n"
+msgstr ""
+"authconfig --enablesssd --enablesssdauth --enablesmartcard --"
+"smartcardmodule=sssd --updateall\n"
+"authselect select sssd with-smartcard\n"
+
+#. type: delimited block -
+#: ./src/man/authselect-migration.7.adoc:108
+#, no-wrap
+msgid ""
+"authconfig --enableecryptfs --enablepamaccess --updateall\n"
+"authselect select sssd with-ecryptfs with-pamaccess\n"
+msgstr ""
+"authconfig --enableecryptfs --enablepamaccess --updateall\n"
+"authselect select sssd with-ecryptfs with-pamaccess\n"
+
+#. type: delimited block -
+#: ./src/man/authselect-migration.7.adoc:111
+#, no-wrap
+msgid ""
+"authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator "
+"--updateall\n"
+"realm join -U Administrator --client-software=winbind WINBINDDOMAIN\n"
+msgstr ""
+"authconfig --enablewinbind --enablewinbindauth --winbindjoin=Administrator --"
+"updateall\n"
+"realm join -U Administrator --client-software=winbind WINBINDDOMAIN\n"
+
+#. type: Title -
+#: ./src/man/authselect-migration.7.adoc:114
+#, no-wrap
+msgid "CONFIGURATION FILES"
+msgstr "კონფიგურაციის ფაილები"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:116
+msgid ""
+"This section contains snippets for minimal configuration of various "
+"services."
+msgstr ""
+"ეს სექცია სხვადასხვა სერვისების მინიმალური კონფიგურაციის ფრაგმენტებს შეიცავს."
+
+#. type: Title ~
+#: ./src/man/authselect-migration.7.adoc:118
+#, no-wrap
+msgid "LDAP"
+msgstr "LDAP"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:122
+msgid ""
+"Even if LDAP is not directly used through `pam_ldap` and `nss_ldap`, it is "
+"still useful to configure ldap.conf to configure openldap-libs and "
+"indirectly, e.g. LDAP tools such as `ldapsearch`."
+msgstr ""
+"იმ შემთხვევაშიც კი, თუ LDAP პირდაპირ არ გამოიყენება `pam_ldap`-ისა და "
+"`nss_ldap`- ის მეშვეობით, მაინც სასარგებლოა ldap.conf-ის მორგება openldap-"
+"libs-ის და, ირიბად, სხვა პროგრამების (მაგ. LDAP-ის ხელსაწყოების, როგორიცაა "
+"`ldapsearch`) მოსარგებად."
+
+#. type: Block title
+#: ./src/man/authselect-migration.7.adoc:123
+#, no-wrap
+msgid "{sysconfdir}/openldap/ldap.conf"
+msgstr "{sysconfdir}/openldap/ldap.conf"
+
+#. type: delimited block -
+#: ./src/man/authselect-migration.7.adoc:127
+#, no-wrap
+msgid ""
+"# Set the default base dn\n"
+"BASE   dc=example,dc=com\n"
+msgstr ""
+"# ნაგულისხმევი საბაზისო dn-ის დაყენება\n"
+"BASE   dc=example,dc=com\n"
+
+#. type: delimited block -
+#: ./src/man/authselect-migration.7.adoc:130
+#, no-wrap
+msgid ""
+"# Set the default LDAP server\n"
+"URI    ldap://ldap.example.com ldap://ldap-master.example.com:666\n"
+msgstr ""
+"# ნაგულისხმევი LDAP სერვერის დაყენება\n"
+"URI    ldap://ldap.example.com ldap://ldap-master.example.com:666\n"
+
+#. type: Title ~
+#: ./src/man/authselect-migration.7.adoc:133
+#, no-wrap
+msgid "KERBEROS"
+msgstr "KERBEROS"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:136
+msgid ""
+"If you use Kerberos, the default Kerberos realm should be configured in "
+"order for krb5-libs and therefore tools such as `kinit` to work out of the "
+"box."
+msgstr ""
+"თუ Kerberos-ს იყენებთ, იმისათვის, რომ krb5-libs-მა და ისეთმა პროგრამებმა, "
+"როგორიცაა `kinit`, გამართულად იმუშაოს, საჭიროა ნაგულისხმევი Kerberos-ის "
+"რეალმის მორგება."
+
+#. type: Block title
+#: ./src/man/authselect-migration.7.adoc:137
+#, no-wrap
+msgid "{sysconfdir}/krb5.conf"
+msgstr "{sysconfdir}/krb5.conf"
+
+#. type: delimited block -
+#: ./src/man/authselect-migration.7.adoc:141
+#, no-wrap
+msgid ""
+"[libdefaults]\n"
+" default_realm = MYREALM\n"
+msgstr ""
+"[libdefaults]\n"
+" default_realm = MYREALM\n"
+
+#. type: delimited block -
+#: ./src/man/authselect-migration.7.adoc:146
+#, no-wrap
+msgid ""
+"[realms]\n"
+" MYREALM = {\n"
+"  kdc = kdc.myrealm.org\n"
+" }\n"
+msgstr ""
+"[realms]\n"
+" MYREALM = {\n"
+"  kdc = kdc.myrealm.org\n"
+" }\n"
+
+#. type: delimited block -
+#: ./src/man/authselect-migration.7.adoc:150
+#, no-wrap
+msgid ""
+"[domain_realm]\n"
+" myrealm.org = MYREALM\n"
+" .myrealm.org = MYREALM\n"
+msgstr ""
+"[domain_realm]\n"
+" myrealm.org = MYREALM\n"
+" .myrealm.org = MYREALM\n"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:153
+#: ./src/man/authselect-migration.7.adoc:247
+#, no-wrap
+msgid "SSSD"
+msgstr "SSSD"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:158
+msgid ""
+"Authselect encourages users to use SSSD wherever possible. There are many "
+"configuration options, see sssd.conf(5). This is a minimal configuration "
+"that creates one LDAP domain called `default`. The LDAP server is "
+"auto-discovered through DNS lookups."
+msgstr ""
+"Authselect მოუწოდებს მომხმარებლებს, სადაც ეს შესაძლებელია, SSSD გამოიყენონ. "
+"არსებობს კონფიგურაციის მრავალი პარამეტრი. იხილეთ sssd.conf(5). ეს არის "
+"მინიმალური კონფიგურაცია, რომელიც ქმნის ერთ LDAP დომენს სახელით `default`. "
+"LDAP სერვერის ავტომატური აღმოჩენა ხდება DNS ძიების მეშვეობით."
+
+#. type: Block title
+#: ./src/man/authselect-migration.7.adoc:159
+#: ./src/man/authselect-migration.7.adoc:175
+#, no-wrap
+msgid "{sysconfdir}/sssd/sssd.conf"
+msgstr "{sysconfdir}/sssd/sssd.conf"
+
+#. type: delimited block -
+#: ./src/man/authselect-migration.7.adoc:164
+#: ./src/man/authselect-migration.7.adoc:180
+#, no-wrap
+msgid ""
+"[sssd]\n"
+"config_file_version = 2\n"
+"domains = default\n"
+msgstr ""
+"[sssd]\n"
+"config_file_version = 2\n"
+"domains = default\n"
+
+#. type: delimited block -
+#: ./src/man/authselect-migration.7.adoc:169
+#, no-wrap
+msgid ""
+"[domain/default]\n"
+"id_provider = ldap\n"
+"ldap_uri = _srv_\n"
+"dns_discovery_domain = myrealm\n"
+msgstr ""
+"[domain/default]\n"
+"id_provider = ldap\n"
+"ldap_uri = _srv_\n"
+"dns_discovery_domain = myrealm\n"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:174
+msgid ""
+"And here is a configuration snippet for the same domain but now the "
+"authentication is done over Kerberos. The KDC server is auto-discovered "
+"through DNS lookups."
+msgstr ""
+"აი კონფიგურაციის ფრაგმენტი იმავე დომენისთვის, მაგრამ ახლა ავთენტიკაცია "
+"ხორციელდება Kerberos-ის საშუალებით. KDC სერვერის ავტომატური აღმოჩენა ხდება "
+"DNS ძიების მეშვეობით."
+
+#. type: delimited block -
+#: ./src/man/authselect-migration.7.adoc:188
+#, no-wrap
+msgid ""
+"[domain/default]\n"
+"id_provider = ldap\n"
+"auth_provider = krb5\n"
+"ldap_uri = _srv_\n"
+"krb5_server = _srv_\n"
+"krb5_realm = MYREALM\n"
+"dns_discovery_domain = myrealm\n"
+msgstr ""
+"[domain/default]\n"
+"id_provider = ldap\n"
+"auth_provider = krb5\n"
+"ldap_uri = _srv_\n"
+"krb5_server = _srv_\n"
+"krb5_realm = MYREALM\n"
+"dns_discovery_domain = myrealm\n"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:194
+msgid ""
+"If you want to configure SSSD for an IPA or Active Directory domain, use the "
+"`realm` tool. This will perform an initial setup which involves creating a "
+"Kerberos keytab and generating basic SSSD configuration. You can then tune "
+"it up by modifying {sysconfdir}/sssd/sssd.conf."
+msgstr ""
+"თუ გსურთ SSSD-ის კონფიგურირება IPA-ის ან Active Directory-ის დომენისთვის, "
+"გამოიყენეთ პროგრამა `realm`. ეს განახორციელებს საწყის მორგებას, რაც მოიცავს "
+"Kerberos keytab-ის შექმნას და ძირითადი SSSD კონფიგურაციის გენერაციას. ამის "
+"შემდეგ შეგიძლიათ მისი დაზუსტება {sysconfdir}/sssd/sssd.conf ფაილის შეცვლით."
+
+#. type: Title ~
+#: ./src/man/authselect-migration.7.adoc:196
+#, no-wrap
+msgid "WINBIND"
+msgstr "WINBIND"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:201
+msgid ""
+"If you want to configure the machine to use Winbind, use `realm`. This will "
+"perform an initial setup which involves creating a Kerberos keytab and "
+"running `adcli` to join the domain. It also makes changes to `smb.conf`. You "
+"can then tune it up by modifying {sysconfdir}/samba/smb.conf."
+msgstr ""
+"თუ გსურთ მანქანის მორგება Winbind-ის გამოსაყენებლად, გამოიყენეთ `realm`. ის "
+"განახორციელებს საწყის მორგებას, რაც მოიცავს Kerberos keytab-ის შექმნას და "
+"`adcli`-ს გაშვებას დომენში გასაწევრებლად. ასევე ცვლის `smb.conf`ფაილს. ამის "
+"შემდეგ შეგიძლიათ მისი დაზუსტება {sysconfdir}/samba/smb.conf ფაილის შეცვლით."
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:203
+#: ./src/man/authselect-migration.7.adoc:255
+#, no-wrap
+msgid "NIS"
+msgstr "NIS"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:207
+msgid ""
+"There are several places that needs to be configured in order to make NIS "
+"authentication work. First, you need to set NIS domain and optionally also "
+"NIS server in {sysconfdir}/yp.conf."
+msgstr ""
+"NIS ავთენტიკაციის ასამუშავებლად არსებობს რამდენიმე ადგილი, რომლების მორგებაც "
+"აუცილებელია . პირველ რიგში, საჭიროა NIS დომენის და, სურვილისამებრ, ასევე NIS "
+"სერვერის მითითება ფაილში {sysconfdir}/yp.conf."
+
+#. type: Block title
+#: ./src/man/authselect-migration.7.adoc:208
+#, no-wrap
+msgid "{sysconfdir}/yp.conf"
+msgstr "{sysconfdir}/yp.conf"
+
+#. type: delimited block -
+#: ./src/man/authselect-migration.7.adoc:213
+#, no-wrap
+msgid ""
+"domain mydomain broadcast\n"
+"# or\n"
+"# domain mydomain server myserver\n"
+msgstr ""
+"domain mydomain broadcast\n"
+"# ან\n"
+"# domain mydomain server myserver\n"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:216
+msgid "NIS domain must be also set in system network configuration."
+msgstr "NIS დომენი ასევე მითითებული უნდა იყოს სისტემის ქსელის კონფიგურაციაში."
+
+#. type: Block title
+#: ./src/man/authselect-migration.7.adoc:217
+#, no-wrap
+msgid "{sysconfdir}/sysconfig/network"
+msgstr "{sysconfdir}/sysconfig/network"
+
+#. type: delimited block -
+#: ./src/man/authselect-migration.7.adoc:220
+#, no-wrap
+msgid "NISDOMAIN=mydomain\n"
+msgstr "NISDOMAIN=mydomain\n"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:224
+msgid ""
+"Now, you can set the domain name with command line so there is no need to "
+"reboot your system. Additionaly, it may be necessary to enable NIS in "
+"selinux."
+msgstr ""
+"ახლა უკვე შეგიძლიათ დომენის სახელის დაყენება ბრძანების სტრიქონიდან, ამიტომ "
+"სისტემის გადატვირთვა საჭირო აღარაა. გარდა ამისა, შესაძლოა, საჭირო გახდეს NIS-"
+"ის ჩართვა selinux-ში."
+
+#. type: delimited block -
+#: ./src/man/authselect-migration.7.adoc:228
+#, no-wrap
+msgid ""
+"$ domainname mydomain\n"
+"$ setsebool -P allow_ypbind 1\n"
+msgstr ""
+"$ domainname mydomain\n"
+"$ setsebool -P allow_ypbind 1\n"
+
+#. type: Title ~
+#: ./src/man/authselect-migration.7.adoc:231
+#, no-wrap
+msgid "PASSWORD QUALITY"
+msgstr "პაროლის ხარისხი"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:236
+msgid ""
+"Authselect enables `pam_pwquality` module to enforce password quality "
+"restrictions. This module is enabled only for local users. Remote users "
+"should use the password policy that is enforced by the respective remote "
+"server."
+msgstr ""
+"Authselect რთავს მოდულს `pam_pwquality` პაროლის ხარისხის შეზღუდვების "
+"ასამოქმედებლად. ეს მოდული გააქტიურებულია, მხოლოდ, ლოკალური "
+"მომხმარებლებისთვის. დაშორებულმა მომხმარებლებმა უნდა გამოიყენონ პაროლის ის "
+"პოლიტიკა, რომელიც დადგენილია შესაბამისი დაშორებული სერვერის მიერ."
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:240
+msgid ""
+"The `pam_pwquality` module can be configured in "
+"{sysconfdir}/security/pwquality.conf. See pam_pwquality(8) to see its "
+"configuration options and defaults."
+msgstr ""
+"მოდულის `pam_pwquality` მორგება შეგიძლიათ ფაილიდან {sysconfdir}/security/"
+"pwquality.conf. მისი კონფიგურაციის პარამეტრებისა და ნაგულისხმევი "
+"მნიშვნელობების სანახავად იხილეთ pam_pwquality(8)."
+
+#. type: Title -
+#: ./src/man/authselect-migration.7.adoc:242
+#, no-wrap
+msgid "STARTING SERVICES"
+msgstr "სერვისების გაშვება"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:245
+msgid ""
+"Depending on your configuration, you need to start required services "
+"manually with systemd."
+msgstr ""
+"თქვენი კონფიგურაციიდან გამომდინარე, საჭირო სერვისები ხელით უნდა გაუშვათ "
+"systemd-ის მეშვეობით."
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:249
+#, no-wrap
+msgid "systemctl enable sssd.service ; systemctl start sssd.service\n"
+msgstr "systemctl enable sssd.service ; systemctl start sssd.service\n"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:251
+msgid "Winbind"
+msgstr "Winbind"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:253
+#, no-wrap
+msgid "systemctl enable winbind.service ; systemctl start winbind.service\n"
+msgstr "systemctl enable winbind.service ; systemctl start winbind.service\n"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:258
+#, no-wrap
+msgid ""
+"systemctl enable rpcbind.service ; systemctl start rpcbind.service\n"
+"systemctl enable ypbind.service ; systemctl start ypbind.service\n"
+msgstr ""
+"systemctl enable rpcbind.service ; systemctl start rpcbind.service\n"
+"systemctl enable ypbind.service ; systemctl start ypbind.service\n"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:260
+msgid "If mkhomedir feature is enabled"
+msgstr "თუ თვისება mkhomedir ჩართულია"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:262
+#, no-wrap
+msgid "systemctl enable oddjobd.service ; systemctl start oddjobd.service\n"
+msgstr "systemctl enable oddjobd.service ; systemctl start oddjobd.service\n"
+
+#. type: Title -
+#: ./src/man/authselect-migration.7.adoc:264
+#, no-wrap
+msgid "AUTHCONFIG TOOLS"
+msgstr "AUTHCONFIG-ის ხელსაწყოები"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:268
+msgid ""
+"Authconfig shipped a tool called _cacertdir_rehash_. If you depend on this "
+"tool, please switch to native _openssl_ command: *openssl rehash "
+"<directory>* that serves the same purpose."
+msgstr ""
+"Authconfig-ს მოჰყვება პროგრამა სახელით _cacertdir_rehash_. თუ ამ პროგრამას "
+"იყენებთ, გადაერთეთ _openssl_-ის ბრძანებაზე: *openssl rehash <საქაღალდე>*. ეს "
+"იგივეს აკეთებს."
+
+#. type: Title -
+#: ./src/man/authselect-migration.7.adoc:270
+#, no-wrap
+msgid "SEE ALSO"
+msgstr "ასევე იხილეთ"
+
+#. type: Plain text
+#: ./src/man/authselect-migration.7.adoc:272
+msgid ""
+"authselect(8), authselect-profiles(5), realm(8), ipa-client-install(1), "
+"sssd.conf(5), smb.conf(5), ldap.conf(5), krb5.conf(5)"
+msgstr ""
+"authselect(8), authselect-profiles(5), realm(8), ipa-client-install(1), "
+"sssd.conf(5), smb.conf(5), ldap.conf(5), krb5.conf(5)"
