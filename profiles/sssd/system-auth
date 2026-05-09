@@ -48,4 +48,5 @@ session     optional                                     pam_oddjob_mkhomedir.so
 session     [success=1 default=ignore]                   pam_succeed_if.so service in crond quiet use_uid
 session     required                                     pam_unix.so
 session     optional                                     pam_sss.so
+session     optional                                     pam_oddjob_gpupdate.so                                 {include if "with-gpupdate"}
 session     optional                                     pam_gnome_keyring.so only_if=login auto_start          {include if "with-pam-gnome-keyring"}
