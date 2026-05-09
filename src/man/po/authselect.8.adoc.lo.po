@@ -1,0 +1,1129 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Bone NI <bounkirdni@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2025-09-30 14:35+0200\n"
+"PO-Revision-Date: 2026-05-06 18:59+0000\n"
+"Last-Translator: Bone NI <bounkirdni@gmail.com>\n"
+"Language-Team: Lao <https://translate.fedoraproject.org/projects/authselect/"
+"master-authselect8adoc/lo/>\n"
+"Language: lo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.17.1\n"
+
+#. type: Title =
+#: src/man/authselect.8.adoc:2
+#, no-wrap
+msgid "authselect(8)"
+msgstr "authselect(8)"
+
+#. type: Title -
+#: src/man/authselect.8.adoc:6
+#, no-wrap
+msgid "NAME"
+msgstr "ຊື່"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:9
+msgid "authselect - select system identity and authentication sources."
+msgstr "authselect - ເລືອກແຫຼ່ງຂໍ້ມູນຕົວຕົນ ແລະ ການຢືນຢັນຕົວຕົນຂອງລະບົບ."
+
+#. type: Title -
+#: src/man/authselect.8.adoc:11
+#, no-wrap
+msgid "SYNOPSIS"
+msgstr "ຮູບແບບການໃຊ້ງານ"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:13
+#, no-wrap
+msgid " authselect [--debug] [--trace] [--warn] command [command options]\n"
+msgstr " authselect [--debug] [--trace] [--warn] ຄຳສັ່ງ [ຕົວເລືອກຄຳສັ່ງ]\n"
+
+#. type: Title -
+#: src/man/authselect.8.adoc:15
+#, no-wrap
+msgid "DESCRIPTION"
+msgstr "ຄຳອະທິບາຍ"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:21
+msgid ""
+"*Authselect* is a tool to configure system identity and authentication "
+"sources and providers by selecting a specific profile. Profile is a set of "
+"files that describes how the resulting system configuration will look like. "
+"When a profile is selected, *authselect* will create nsswitch.conf(5) and "
+"PAM(8) stack to use identity and authentication sources defined by the "
+"profile."
+msgstr ""
+"*Authselect* ແມ່ນເຄື່ອງມືໃນການຕັ້ງຄ່າແຫຼ່ງຂໍ້ມູນຕົວຕົນ ແລະ ການຢືນຢັນຕົວຕົນຂອງລະບົບ ໂດຍການເລືອກໂປຣ"
+"ໄຟລ໌ທີ່ສະເພາະເຈາະຈົງ. ໂປຣໄຟລ໌ແມ່ນຊຸດຂອງໄຟລ໌ທີ່ອະທິບາຍວ່າການຕັ້ງຄ່າລະບົບ ຈະມີລັກສະນະແນວໃດ. ເມື່ອເລື"
+"ອກໂປຣໄຟລ໌ແລ້ວ, *authselect* ຈະສ້າງ nsswitch.conf(5) ແລະ PAM(8) stack ເພື່ອໃຊ້ແຫຼ່ງຂໍ້ມູນ"
+"ຕົວຕົນ ແລະ ການຢືນຢັນຕົວຕົນຕາມທີ່ກຳນົດໄວ້ໃນໂປຣໄຟລ໌."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:27
+msgid ""
+"If the provided profile set is not sufficient, the administrator may create "
+"a custom profile by putting it in a special profile directory "
+"({AUTHSELECT_CUSTOM_DIR}). By doing so, the profile is immediately usable by "
+"*authselect*. See _authselect-profiles(5)_ for more information on extending "
+"existing profiles."
+msgstr ""
+"ຖ້າຫາກຊຸດໂປຣໄຟລ໌ທີ່ມີໃຫ້ຍັງບໍ່ພຽງພໍ, ຜູ້ດູແລລະບົບສາມາດສ້າງໂປຣໄຟລ໌ກຳນົດເອງໄດ້ໂດຍການເກັບໄວ້ໃນ ໄດເຣັກທໍ"
+"ຣີໂປຣໄຟລ໌ພິເສດ ({AUTHSELECT_CUSTOM_DIR}). ເມື່ອເຮັດແນວນັ້ນ, ໂປຣໄຟລ໌ຈະສາມາດ ໃຊ້ງານໄດ້ທັນທີໂ"
+"ດຍ *authselect*. ເບິ່ງ _authselect-profiles(5)_ ສຳລັບຂໍ້ມູນເພີ່ມເຕີມກ່ຽວກັບການຂະຫຍາຍ ໂປຣ"
+"ໄຟລ໌ທີ່ມີຢູ່."
+
+#. type: Title -
+#: src/man/authselect.8.adoc:29
+#, no-wrap
+msgid "OPT-IN TO AUTHSELECT"
+msgstr "ການເລືອກໃຊ້ AUTHSELECT"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:39
+msgid ""
+"Authselect will not touch your existing configuration unless it has already "
+"been created by it. If you want to start using authselect to configure your "
+"system authentication, please call *authselect select* with *--force* "
+"parameter first (e.g. *authselect select sssd --force*). The *--force* "
+"parameter tells authselect that it is all right to overwrite existing non-"
+"authselect configuration (see description below). Using the *--force* "
+"parameter will automatically generate a backup of your current configuration "
+"so if you wish to go back you can restore it with *authselect backup-"
+"restore* command (see description below)."
+msgstr ""
+"Authselect ຈະບໍ່ແຕະຕ້ອງກັບການກຳນົດຄ່າທີ່ມີຢູ່ຂອງທ່ານ ນອກຈາກວ່າມັນໄດ້ຖືກສ້າງຂຶ້ນໂດຍຕົວມັນເອງ. ຖ້າທ່ານ"
+"ຕ້ອງການເລີ່ມໃຊ້ authselect ເພື່ອຕັ້ງຄ່າການຢືນຢັນຕົວຕົນຂອງລະບົບ, ກະລຸນາໃຊ້ຄຳສັ່ງ *authselect "
+"select* ພ້ອມກັບພາຣາມິເຕີ *--force* ກ່ອນ (ຕົວຢ່າງ: *authselect select sssd --force*)"
+". ພາຣາມິເຕີ *--force* ຈະບອກ authselect ວ່າອະນຸຍາດໃຫ້ຂຽນທັບການກຳນົດຄ່າເດີມທີ່ບໍ່ໄດ້ມາຈາກ "
+"authselect (ເບິ່ງຄຳອະທິບາຍດ້ານລຸ່ມ). ການໃຊ້ພາຣາມິເຕີ *--force* ຈະເຮັດການສຳຮອງຂໍ້ມູນ ການກຳນົ"
+"ດຄ່າປັດຈຸບັນຂອງທ່ານໂດຍອັດຕະໂນມັດ, ດັ່ງນັ້ນຖ້າທ່ານຕ້ອງການກັບຄືນຄ່າເດີມ ທ່ານສາມາດ ກູ້ຄືນໄດ້ດ້ວຍຄຳສັ່ງ "
+"*authselect backup-restore* (ເບິ່ງຄຳອະທິບາຍດ້ານລຸ່ມ)."
+
+#. type: Title -
+#: src/man/authselect.8.adoc:41
+#, no-wrap
+msgid "OPT-OUT FROM AUTHSELECT"
+msgstr "ການຍົກເລີກການໃຊ້ AUTHSELECT"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:45
+msgid ""
+"To stop authselect from managing your configuration, run *authselect opt-"
+"out*.  This will remove all authselect configuration from your system and "
+"you can then modify your configuration manually."
+msgstr ""
+"ເພື່ອຢຸດໃຫ້ authselect ຈັດການການກຳນົດຄ່າຂອງທ່ານ, ໃຫ້ລັນຄຳສັ່ງ *authselect opt-out*. ນີ້ຈະເປັ"
+"ນການລຶບການກຳນົດຄ່າທັງໝົດຂອງ authselect ອອກຈາກລະບົບຂອງທ່ານ ແລະ ຈາກນັ້ນທ່ານສາມາດ ແກ້ໄຂການກ"
+"ຳນົດຄ່າດ້ວຍຕົນເອງໄດ້."
+
+#. type: Title -
+#: src/man/authselect.8.adoc:47
+#, no-wrap
+msgid "AVAILABLE COMMANDS"
+msgstr "ຄຳສັ່ງທີ່ມີໃຫ້ໃຊ້ງານ"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:50
+msgid ""
+"To list all available commands run *authselect* without any parameters.  To "
+"print help for the selected command run *authselect COMMAND --help*."
+msgstr ""
+"ເພື່ອເບິ່ງລາຍຊື່ຄຳສັ່ງທັງໝົດທີ່ມີໃຫ້ ໃຫ້ລັນ *authselect* ໂດຍບໍ່ຕ້ອງໃສ່ພາຣາມິເຕີໃດໆ. ເພື່ອເບິ່ງວິທີການໃຊ້ງາ"
+"ນຂອງຄຳສັ່ງທີ່ເລືອກ ໃຫ້ລັນ *authselect ຄຳສັ່ງ --help*."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:51
+#, no-wrap
+msgid "*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup=NAME]"
+msgstr ""
+"*select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--"
+"backup=NAME]"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:54
+msgid ""
+"Activate desired profile. See profile description with *show* command, to "
+"list profile specific optional features."
+msgstr ""
+"ເປີດໃຊ້ງານໂປຣໄຟລ໌ທີ່ຕ້ອງການ. ເບິ່ງຄຳອະທິບາຍໂປຣໄຟລ໌ດ້ວຍຄຳສັ່ງ *show*, ເພື່ອເບິ່ງລາຍຊື່ ຄຸນສົມບັດເສີມສ"
+"ະເພາະຂອງໂປຣໄຟລ໌ນັ້ນໆ."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:55
+#, no-wrap
+msgid "*--force, -f*"
+msgstr "*--force, -f*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:60
+#, no-wrap
+msgid ""
+"Write changes even if the previous configuration was not created by\n"
+"authselect but by other tool or by manual changes. This option will\n"
+"automatically backup system files before writing any change unless\n"
+"*--nobackup* option is set.\n"
+msgstr ""
+"ຂຽນການປ່ຽນແປງລົງໄປ ເຖິງແມ່ນວ່າການກຳນົດຄ່າກ່ອນໜ້ານີ້ບໍ່ໄດ້ຖືກສ້າງໂດຍ\n"
+"authselect ແຕ່ມາຈາກເຄື່ອງມືອື່ນ ຫຼື ຈາກການປ່ຽນແປງດ້ວຍຕົນເອງ. ຕົວເລືອກນີ້ຈະ\n"
+"ສຳຮອງໄຟລ໌ລະບົບໂດຍອັດຕະໂນມັດກ່ອນທີ່ຈະຂຽນການປ່ຽນແປງໃດໆ ນອກຈາກວ່າ\n"
+"ຈະມີການຕັ້ງຕົວເລືອກ *--nobackup* ໄວ້.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:61 src/man/authselect.8.adoc:86
+#: src/man/authselect.8.adoc:155 src/man/authselect.8.adoc:173
+#, no-wrap
+msgid "*-b*"
+msgstr "*-b*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:66
+#, no-wrap
+msgid ""
+"Backup system files before activating the selected profile. The backup\n"
+"will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
+"unique string is used as a name of the backup. This is a shortcut\n"
+"for *--backup=*.\n"
+msgstr ""
+"ສຳຮອງໄຟລ໌ລະບົບກ່ອນທີ່ຈະເປີດໃຊ້ງານໂປຣໄຟລ໌ທີ່ເລືອກ. ຂໍ້ມູນສຳຮອງ\n"
+"ຈະຖືກເກັບໄວ້ທີ່ {AUTHSELECT_BACKUP_DIR}/NAME. ເວລາປັດຈຸບັນພ້ອມກັບ\n"
+"ຂໍ້ຄວາມທີ່ບໍ່ຊ້ຳກັນຈະຖືກໃຊ້ເປັນຊື່ຂອງການສຳຮອງ. ນີ້ແມ່ນທາງລັດ\n"
+"ສຳລັບ *--backup=*.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:67 src/man/authselect.8.adoc:92
+#: src/man/authselect.8.adoc:161 src/man/authselect.8.adoc:179
+#, no-wrap
+msgid "*--backup=NAME*"
+msgstr "*--backup=NAME*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:71
+#, no-wrap
+msgid ""
+"Backup system files before activating the selected profile. The backup\n"
+"will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
+"unique string is used as a name if no value is provided.\n"
+msgstr ""
+"ສຳຮອງໄຟລ໌ລະບົບກ່ອນທີ່ຈະເປີດໃຊ້ງານໂປຣໄຟລ໌ທີ່ເລືອກ. ຂໍ້ມູນສຳຮອງ\n"
+"ຈະຖືກເກັບໄວ້ທີ່ {AUTHSELECT_BACKUP_DIR}/NAME. ເວລາປັດຈຸບັນພ້ອມກັບ\n"
+"ຂໍ້ຄວາມທີ່ບໍ່ຊ້ຳກັນຈະຖືກໃຊ້ເປັນຊື່ ຖ້າຫາກບໍ່ໄດ້ກຳນົດຄ່າໃດໆ.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:72
+#, no-wrap
+msgid "*--nobackup*"
+msgstr "*--nobackup*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:74
+#, no-wrap
+msgid "Do not backup system configuration even if *--force* is set.\n"
+msgstr ""
+"ບໍ່ຕ້ອງສຳຮອງຂໍ້ມູນການກຳນົດຄ່າລະບົບ ເຖິງແມ່ນວ່າຈະຕັ້ງ *--force* ໄວ້ກໍຕາມ.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:75 src/man/authselect.8.adoc:166
+#, no-wrap
+msgid "*--quiet, -q*"
+msgstr "*--quiet, -q*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:78 src/man/authselect.8.adoc:169
+#, no-wrap
+msgid ""
+"The command will not print any informational message such as additional\n"
+"profile requirements or backup location. Errors are still being print.\n"
+msgstr ""
+"ຄຳສັ່ງຈະບໍ່ສະແດງຂໍ້ຄວາມຂໍ້ມູນໃດໆ ເຊັ່ນ ຂໍ້ກຳນົດເພີ່ມເຕີມຂອງໂປຣໄຟລ໌\n"
+"ຫຼື ສະຖານທີ່ເກັບຂໍ້ມູນສຳຮອງ. ແຕ່ຂໍ້ຜິດພາດຍັງຄົງຈະຖືກສະແດງຢູ່.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:79
+#, no-wrap
+msgid "*apply-changes* [-b] [--backup=NAME]"
+msgstr "*apply-changes* [-b] [--backup=NAME]"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:85
+msgid ""
+"Re-apply currently selected profile. If the profile templates were updated "
+"this command can be used to regenerate current system configuration in order "
+"to apply these changes on the system. This command will only re-apply the "
+"changes if the existing configuration is a valid authselect configuration, "
+"otherwise an error is returned."
+msgstr ""
+"ນຳໃຊ້ໂປຣໄຟລ໌ທີ່ເລືອກໄວ້ໃນປັດຈຸບັນຄືນໃໝ່. ຖ້າມີການອັບເດດແມ່ແບບໂປຣໄຟລ໌ ຄຳສັ່ງນີ້ສາມາດ ໃຊ້ເພື່ອສ້າງການກຳ"
+"ນົດຄ່າລະບົບປັດຈຸບັນໃໝ່ ເພື່ອນຳໃຊ້ການປ່ຽນແປງເຫຼົ່ານັ້ນລົງໃນລະບົບ. ຄຳສັ່ງນີ້ຈະນຳໃຊ້ການປ່ຽນແປງຄືນໃໝ່ກໍຕໍ່ເມື່ອກ"
+"ານກຳນົດຄ່າທີ່ມີຢູ່ນັ້ນເປັນການກຳນົດຄ່າຂອງ authselect ທີ່ຖືກຕ້ອງເທົ່ານັ້ນ, ບໍ່ດັ່ງນັ້ນຈະສົ່ງຄ່າຂໍ້ຜິດພາດຄືນມາ."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:91
+#, no-wrap
+msgid ""
+"Backup system files before applying changes. The backup\n"
+"will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
+"unique string is used as a name of the backup. This is a shortcut\n"
+"for *--backup=*.\n"
+msgstr ""
+"ສຳຮອງໄຟລ໌ລະບົບກ່ອນທີ່ຈະນຳໃຊ້ການປ່ຽນແປງ. ຂໍ້ມູນສຳຮອງ\n"
+"ຈະຖືກເກັບໄວ້ທີ່ {AUTHSELECT_BACKUP_DIR}/NAME. ເວລາປັດຈຸບັນພ້ອມກັບ\n"
+"ຂໍ້ຄວາມທີ່ບໍ່ຊ້ຳກັນຈະຖືກໃຊ້ເປັນຊື່ຂອງການສຳຮອງ. ນີ້ແມ່ນທາງລັດ\n"
+"ສຳລັບ *--backup=*.\n"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:96
+#, no-wrap
+msgid ""
+"Backup system files before applying changes. The backup will\n"
+"be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
+"string is used as a name if no value is provided.\n"
+msgstr ""
+"ສຳຮອງໄຟລ໌ລະບົບກ່ອນທີ່ຈະນຳໃຊ້ການປ່ຽນແປງ. ຂໍ້ມູນສຳຮອງຈະຖືກ\n"
+"ເກັບໄວ້ທີ່ {AUTHSELECT_BACKUP_DIR}/NAME. ເວລາປັດຈຸບັນພ້ອມກັບຂໍ້ຄວາມທີ່ບໍ່ຊ້ຳກັນ\n"
+"ຈະຖືກໃຊ້ເປັນຊື່ ຖ້າຫາກບໍ່ໄດ້ກຳນົດຄ່າໃດໆ.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:97
+#, no-wrap
+msgid "*list*"
+msgstr "*list*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:99
+msgid "List available profiles."
+msgstr "ສະແດງລາຍຊື່ໂປຣໄຟລ໌ທີ່ມີໃຫ້ໃຊ້ງານ."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:100
+#, no-wrap
+msgid "*list-features* profile_id"
+msgstr "*list-features* profile_id"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:104
+#, no-wrap
+msgid ""
+"List all features available in given profile.\n"
+"_Note:_ This will only list the features without any description. Please, read the profile documentation with *show* to see what the features do."
+msgstr ""
+"ສະແດງລາຍຊື່ຄຸນສົມບັດທັງໝົດທີ່ມີໃນໂປຣໄຟລ໌ທີ່ກຳນົດ.\n"
+"_ໝາຍເຫດ:_ ນີ້ຈະສະແດງພຽງແຕ່ລາຍຊື່ຄຸນສົມບັດໂດຍບໍ່ມີຄຳອະທິບາຍ. ກະລຸນາອ່ານ ເອກະສານຂອງໂປຣໄຟລ໌ດ້ວຍຄ"
+"ຳສັ່ງ *show* ເພື່ອເບິ່ງວ່າແຕ່ລະຄຸນສົມບັດໃຊ້ເຮັດຫຍັງ."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:105
+#, no-wrap
+msgid "*show* profile_id"
+msgstr "*show* profile_id"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:107
+msgid "Print information about the profile."
+msgstr "ສະແດງຂໍ້ມູນກ່ຽວກັບໂປຣໄຟລ໌."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:108
+#, no-wrap
+msgid "*requirements* profile_id [features]"
+msgstr "*requirements* profile_id [features]"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:110
+msgid "Print information about profile requirements."
+msgstr "ສະແດງຂໍ້ມູນກ່ຽວກັບຂໍ້ກຳນົດຂອງໂປຣໄຟລ໌."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:111
+#, no-wrap
+msgid "*current* [-r, --raw]"
+msgstr "*current* [-r, --raw]"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:115
+msgid ""
+"Print information about currently selected profiles. If *--raw* option is "
+"specified, the command will print raw parameters as they were passed to "
+"*select* command instead of formatted output."
+msgstr ""
+"ສະແດງຂໍ້ມູນກ່ຽວກັບໂປຣໄຟລ໌ທີ່ເລືອກໃຊ້ໃນປັດຈຸບັນ. ຖ້າລະບຸຕົວເລືອກ *--raw*, ຄຳສັ່ງຈະສະແດງ ພາຣາມິເຕີດິບ"
+"ຕາມທີ່ຖືກສົ່ງໃຫ້ຄຳສັ່ງ *select* ແທນການສະແດງຜົນໃນຮູບແບບປົກກະຕິ."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:116
+#, no-wrap
+msgid "*check*"
+msgstr "*check*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:120
+msgid ""
+"Check if the current configuration is valid (it was either created by "
+"*authselect* or there are no leftovers from previous authselect "
+"configuration)."
+msgstr ""
+"ກວດສອບວ່າການກຳນົດຄ່າປັດຈຸບັນຖືກຕ້ອງຫຼືບໍ່ (ບໍ່ວ່າຈະຖືກສ້າງໂດຍ *authselect* ຫຼື ບໍ່ມີສ່ວນເສດເຫຼືອຈາກການ"
+"ກຳນົດຄ່າ authselect ກ່ອນໜ້ານີ້)."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:121
+#, no-wrap
+msgid "*test* profile_id [options] [features]"
+msgstr "*test* profile_id [options] [features]"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:124
+msgid ""
+"Print content of files generated by *authselect* without actually writing "
+"anything to system configuration."
+msgstr ""
+"ສະແດງເນື້ອໃນຂອງໄຟລ໌ທີ່ສ້າງໂດຍ *authselect* ໂດຍທີ່ຍັງບໍ່ໄດ້ຂຽນຂໍ້ມູນໃດໆ ລົງໃນການກຳນົດຄ່າຂອງລະບົບແ"
+"ທ້ໆ."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:125
+#, no-wrap
+msgid "*-a, --all*"
+msgstr "*-a, --all*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:127
+#, no-wrap
+msgid "Print content of all files.\n"
+msgstr "ສະແດງເນື້ອໃນຂອງທຸກໄຟລ໌.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:128
+#, no-wrap
+msgid "*-n, --nsswitch*"
+msgstr "*-n, --nsswitch*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:130
+#, no-wrap
+msgid "Print nsswitch.conf content.\n"
+msgstr "ສະແດງເນື້ອໃນຂອງ nsswitch.conf.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:131
+#, no-wrap
+msgid "*-s, --system-auth*"
+msgstr "*-s, --system-auth*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:133
+#, no-wrap
+msgid "Print system-auth content.\n"
+msgstr "ສະແດງເນື້ອໃນຂອງ system-auth.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:134
+#, no-wrap
+msgid "*-p, --password-auth*"
+msgstr "*-p, --password-auth*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:136
+#, no-wrap
+msgid "Print password-auth content.\n"
+msgstr "ສະແດງເນື້ອໃນຂອງ password-auth.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:137
+#, no-wrap
+msgid "*-c, --smartcard-auth*"
+msgstr "*-c, --smartcard-auth*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:139
+#, no-wrap
+msgid "Print smartcard-auth content.\n"
+msgstr "ສະແດງເນື້ອໃນຂອງ smartcard-auth.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:140
+#, no-wrap
+msgid "*-f, --fingerprint-auth*"
+msgstr "*-f, --fingerprint-auth*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:142
+#, no-wrap
+msgid "Print fingerprint-auth content.\n"
+msgstr "ສະແດງເນື້ອໃນຂອງ fingerprint-auth.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:143
+#, no-wrap
+msgid "*-o, --postlogin*"
+msgstr "*-o, --postlogin*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:145
+#, no-wrap
+msgid "Print postlogin content.\n"
+msgstr "ສະແດງເນື້ອໃນຂອງ postlogin.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:146
+#, no-wrap
+msgid "*-d, --dconf-db*"
+msgstr "*-d, --dconf-db*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:148
+#, no-wrap
+msgid "Print dconf database content.\n"
+msgstr "ສະແດງເນື້ອໃນຂອງຖານຂໍ້ມູນ dconf.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:149
+#, no-wrap
+msgid "*-l, --dconf-lock*"
+msgstr "*-l, --dconf-lock*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:151
+#, no-wrap
+msgid "Print dconf lock content.\n"
+msgstr "ສະແດງເນື້ອໃນຂອງ dconf lock.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:152
+#, no-wrap
+msgid "*enable-feature* feature [-b] [--backup=NAME] [-q, --quiet]"
+msgstr "*enable-feature* feature [-b] [--backup=NAME] [-q, --quiet]"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:154
+msgid "Enable feature in the currently selected profile."
+msgstr "ເປີດໃຊ້ງານຄຸນສົມບັດໃນໂປຣໄຟລ໌ທີ່ເລືອກໄວ້ໃນປັດຈຸບັນ."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:160
+#, no-wrap
+msgid ""
+"Backup system files before enabling feature. The backup\n"
+"will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
+"unique string is used as a name of the backup. This is a shortcut\n"
+"for *--backup=*.\n"
+msgstr ""
+"ສຳຮອງໄຟລ໌ລະບົບກ່ອນທີ່ຈະເປີດໃຊ້ງານຄຸນສົມບັດ. ຂໍ້ມູນສຳຮອງ\n"
+"ຈະຖືກເກັບໄວ້ທີ່ {AUTHSELECT_BACKUP_DIR}/NAME. ເວລາປັດຈຸບັນພ້ອມກັບ\n"
+"ຂໍ້ຄວາມທີ່ບໍ່ຊ້ຳກັນຈະຖືກໃຊ້ເປັນຊື່ຂອງການສຳຮອງ. ນີ້ແມ່ນທາງລັດ\n"
+"ສຳລັບ *--backup=*.\n"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:165
+#, no-wrap
+msgid ""
+"Backup system files before enabling feature. The backup will\n"
+"be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
+"string is used as a name if no value is provided.\n"
+msgstr ""
+"ສຳຮອງໄຟລ໌ລະບົບກ່ອນທີ່ຈະເປີດໃຊ້ງານຄຸນສົມບັດ. ຂໍ້ມູນສຳຮອງຈະຖືກ\n"
+"ເກັບໄວ້ທີ່ {AUTHSELECT_BACKUP_DIR}/NAME. ເວລາປັດຈຸບັນພ້ອມກັບຂໍ້ຄວາມທີ່ບໍ່ຊ້ຳກັນ\n"
+"ຈະຖືກໃຊ້ເປັນຊື່ ຖ້າຫາກບໍ່ໄດ້ກຳນົດຄ່າໃດໆ.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:170
+#, no-wrap
+msgid "*disable-feature* feature [-b] [--backup=NAME]"
+msgstr "*disable-feature* feature [-b] [--backup=NAME]"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:172
+msgid "Disable feature in the currently selected profile."
+msgstr "ປິດການໃຊ້ງານຄຸນສົມບັດໃນໂປຣໄຟລ໌ທີ່ເລືອກໄວ້ໃນປັດຈຸບັນ."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:178
+#, no-wrap
+msgid ""
+"Backup system files before disabling feature. The backup\n"
+"will be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with\n"
+"unique string is used as a name of the backup. This is a shortcut\n"
+"for *--backup=*.\n"
+msgstr ""
+"ສຳຮອງໄຟລ໌ລະບົບກ່ອນທີ່ຈະປິດການໃຊ້ງານຄຸນສົມບັດ. ຂໍ້ມູນສຳຮອງ\n"
+"ຈະຖືກເກັບໄວ້ທີ່ {AUTHSELECT_BACKUP_DIR}/NAME. ເວລາປັດຈຸບັນພ້ອມກັບ\n"
+"ຂໍ້ຄວາມທີ່ບໍ່ຊ້ຳກັນຈະຖືກໃຊ້ເປັນຊື່ຂອງການສຳຮອງ. ນີ້ແມ່ນທາງລັດ\n"
+"ສຳລັບ *--backup=*.\n"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:183
+#, no-wrap
+msgid ""
+"Backup system files before disabling feature. The backup will\n"
+"be stored at {AUTHSELECT_BACKUP_DIR}/NAME. Current time with unique\n"
+"string is used as a name if no value is provided.\n"
+msgstr ""
+"ສຳຮອງໄຟລ໌ລະບົບກ່ອນທີ່ຈະປິດການໃຊ້ງານຄຸນສົມບັດ. ຂໍ້ມູນສຳຮອງຈະຖືກ\n"
+"ເກັບໄວ້ທີ່ {AUTHSELECT_BACKUP_DIR}/NAME. ເວລາປັດຈຸບັນພ້ອມກັບຂໍ້ຄວາມທີ່ບໍ່ຊ້ຳກັນ\n"
+"ຈະຖືກໃຊ້ເປັນຊື່ ຖ້າຫາກບໍ່ໄດ້ກຳນົດຄ່າໃດໆ.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:184
+#, no-wrap
+msgid "*is-feature-enabled* feature"
+msgstr "*is-feature-enabled* feature"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:186
+msgid "Check if feature is currently enabled in the selected profile."
+msgstr "ກວດສອບວ່າຄຸນສົມບັດຖືກເປີດໃຊ້ງານຢູ່ໃນໂປຣໄຟລ໌ທີ່ເລືອກຫຼືບໍ່."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:187
+#, no-wrap
+msgid "*create-profile* NAME [--vendor,-v] [options]"
+msgstr "*create-profile* NAME [--vendor,-v] [options]"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:192
+msgid ""
+"Create a new custom profile named _NAME_. The profile can be based on an "
+"existing profile in which case the new profile templates are either copied "
+"from the base profile or symbolic links to these files are created if such "
+"option is selected."
+msgstr ""
+"ສ້າງໂປຣໄຟລ໌ກຳນົດເອງໃໝ່ທີ່ມີຊື່ວ່າ _NAME_. ໂປຣໄຟລ໌ສາມາດອີງຕາມໂປຣໄຟລ໌ທີ່ມີຢູ່ແລ້ວ ເຊິ່ງໃນກໍລະນີນັ້ນ ແມ່ແບ"
+"ບໂປຣໄຟລ໌ໃໝ່ຈະຖືກຄັດລອກມາຈາກໂປຣໄຟລ໌ຫຼັກ ຫຼື ສ້າງເປັນ symbolic links ໄປຫາໄຟລ໌ເຫຼົ່ານັ້ນ ຖ້າມີການເລື"
+"ອກຕົວເລືອກດັ່ງກ່າວ."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:193
+#, no-wrap
+msgid "*--vendor,-v*"
+msgstr "*--vendor,-v*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:196
+#, no-wrap
+msgid ""
+"The new profile is a vendor profile instead of a custom profile. See\n"
+"_authselect-profiles(5)_ for more information on profile types.\n"
+msgstr ""
+"ໂປຣໄຟລ໌ໃໝ່ແມ່ນໂປຣໄຟລ໌ຂອງຜູ້ຜະລິດ (vendor) ແທນທີ່ຈະເປັນໂປຣໄຟລ໌ກຳນົດເອງ. ເບິ່ງ\n"
+"_authselect-profiles(5)_ ສຳລັບຂໍ້ມູນເພີ່ມເຕີມກ່ຽວກັບປະເພດຂອງໂປຣໄຟລ໌.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:197
+#, no-wrap
+msgid "*--base-on=BASE-ID, -b=BASE-ID*"
+msgstr "*--base-on=BASE-ID, -b=BASE-ID*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:200
+#, no-wrap
+msgid ""
+"The new profile will be based on a profile named _BASE-ID_. The base\n"
+"profile location is determined with these steps:\n"
+msgstr ""
+"ໂປຣໄຟລ໌ໃໝ່ຈະອີງຕາມໂປຣໄຟລ໌ທີ່ມີຊື່ວ່າ _BASE-ID_. ສະຖານທີ່ຂອງໂປຣໄຟລ໌ຫຼັກ\n"
+"ຈະຖືກກຳນົດດ້ວຍຂັ້ນຕອນເຫຼົ່ານີ້:\n"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:201
+#, no-wrap
+msgid "If _BASE-ID_ starts with prefix _custom/_ it is a custom profile.\n"
+msgstr "ຖ້າ _BASE-ID_ ເລີ່ມຕົ້ນດ້ວຍຄຳນຳໜ້າ _custom/_ ມັນແມ່ນໂປຣໄຟລ໌ກຳນົດເອງ.\n"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:202
+#, no-wrap
+msgid "Try if _BASE-ID_ is found in vendor profiles.\n"
+msgstr "ລອງກວດສອບວ່າພົບ _BASE-ID_ ໃນໂປຣໄຟລ໌ຂອງຜູ້ຜະລິດ (vendor) ຫຼືບໍ່.\n"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:203
+#, no-wrap
+msgid "Try if _BASE-ID_ is found in default profiles.\n"
+msgstr "ລອງກວດສອບວ່າພົບ _BASE-ID_ ໃນໂປຣໄຟລ໌ເລີ່ມຕົ້ນ (default) ຫຼືບໍ່.\n"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:204
+#, no-wrap
+msgid "Return an error.\n"
+msgstr "ສົ່ງຄ່າຂໍ້ຜິດພາດຄືນມາ.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:205
+#, no-wrap
+msgid "*--base-on-default*"
+msgstr "*--base-on-default*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:208
+#, no-wrap
+msgid ""
+"The base profile is a default profile even if it is found also within\n"
+"vendor profiles.\n"
+msgstr ""
+"ໂປຣໄຟລ໌ຫຼັກແມ່ນໂປຣໄຟລ໌ເລີ່ມຕົ້ນ ເຖິງແມ່ນວ່າມັນຈະຖືກພົບເຫັນໃນ\n"
+"ໂປຣໄຟລ໌ຂອງຜູ້ຜະລິດ (vendor) ນຳກໍຕາມ.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:209
+#, no-wrap
+msgid "*--symlink-meta*"
+msgstr "*--symlink-meta*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:212
+#, no-wrap
+msgid ""
+"Meta files, such as _README_ and _REQUIREMENTS_ will be symbolic links\n"
+"to the origin profile files instead of their copy.\n"
+msgstr ""
+"ໄຟລ໌ Meta ເຊັ່ນ _README_ ແລະ _REQUIREMENTS_ ຈະເປັນ symbolic links\n"
+"ໄປຫາໄຟລ໌ໂປຣໄຟລ໌ຕົ້ນສະບັບ ແທນທີ່ຈະເປັນການຄັດລອກໄຟລ໌.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:213
+#, no-wrap
+msgid "*--symlink-nsswitch*"
+msgstr "*--symlink-nsswitch*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:216
+#, no-wrap
+msgid ""
+"_nsswitch.conf_ template will be symbolic link to the origin profile\n"
+"file instead of its copy.\n"
+msgstr ""
+"ແມ່ແບບ _nsswitch.conf_ ຈະເປັນ symbolic link ໄປຫາໄຟລ໌ໂປຣໄຟລ໌\n"
+"ຕົ້ນສະບັບ ແທນທີ່ຈະເປັນການຄັດລອກໄຟລ໌.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:217
+#, no-wrap
+msgid "*--symlink-pam*"
+msgstr "*--symlink-pam*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:220
+#, no-wrap
+msgid ""
+"_PAM_ templates will be symbolic links to the origin profile files\n"
+"instead of their copy.\n"
+msgstr ""
+"ແມ່ແບບ _PAM_ ຈະເປັນ symbolic links ໄປຫາໄຟລ໌ໂປຣໄຟລ໌ຕົ້ນສະບັບ\n"
+"ແທນທີ່ຈະເປັນການຄັດລອກໄຟລ໌.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:221
+#, no-wrap
+msgid "*--symlink-dconf*"
+msgstr "*--symlink-dconf*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:224
+#, no-wrap
+msgid ""
+"_dconf_ templates will be symbolic links to the origin profile files\n"
+"instead of their copy.\n"
+msgstr ""
+"ແມ່ແບບ _dconf_ ຈະເປັນ symbolic links ໄປຫາໄຟລ໌ໂປຣໄຟລ໌ຕົ້ນສະບັບ\n"
+"ແທນທີ່ຈະເປັນການຄັດລອກໄຟລ໌.\n"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:225
+#, no-wrap
+msgid "*--symlink=FILE,-s=FILE*"
+msgstr "*--symlink=FILE,-s=FILE*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:228
+#, no-wrap
+msgid ""
+"Create a symbolic link for a template file _FILE_ instead of creating\n"
+"its copy. This option can be passed multiple times.\n"
+msgstr ""
+"ສ້າງ symbolic link ສຳລັບໄຟລ໌ແມ່ແບບ _FILE_ ແທນທີ່ຈະສ້າງ\n"
+"ໄຟລ໌ຄັດລອກ. ຕົວເລືອກນີ້ສາມາດໃຊ້ໄດ້ຫຼາຍຄັ້ງ.\n"
+
+#. type: Title -
+#: src/man/authselect.8.adoc:230
+#, no-wrap
+msgid "BACKUP COMMANDS"
+msgstr "ຄຳສັ່ງກ່ຽວກັບການສຳຮອງຂໍ້ມູນ"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:232
+msgid "These commands can be used to manage backed up configurations."
+msgstr "ຄຳສັ່ງເຫຼົ່ານີ້ສາມາດໃຊ້ເພື່ອຈັດການການກຳນົດຄ່າທີ່ສຳຮອງໄວ້."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:233
+#, no-wrap
+msgid "*backup-list* [-r, --raw]"
+msgstr "*backup-list* [-r, --raw]"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:236
+msgid ""
+"Print available backups.  If *--raw* option is specified, the command will "
+"print only backup names without any formatting and additional information."
+msgstr ""
+"ສະແດງລາຍຊື່ການສຳຮອງຂໍ້ມູນທີ່ມີໃຫ້. ຖ້າລະບຸຕົວເລືອກ *--raw*, ຄຳສັ່ງຈະສະແດງ ພຽງແຕ່ຊື່ຂອງການສຳຮອງຂໍ້"
+"ມູນ ໂດຍບໍ່ມີການຈັດຮູບແບບ ຫຼື ຂໍ້ມູນເພີ່ມເຕີມ."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:237
+#, no-wrap
+msgid "*backup-remove* BACKUP"
+msgstr "*backup-remove* BACKUP"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:239
+msgid "Permanently delete backup named _BACKUP_."
+msgstr "ລຶບຂໍ້ມູນສຳຮອງທີ່ມີຊື່ວ່າ _BACKUP_ ແບບຖາວອນ."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:240
+#, no-wrap
+msgid "*backup-restore* BACKUP"
+msgstr "*backup-restore* BACKUP"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:243
+msgid ""
+"Restore configuration from backup named _BACKUP_. *Note:* this will "
+"overwrite current configuration."
+msgstr ""
+"ກູ້ຄືນການກຳນົດຄ່າຈາກຂໍ້ມູນສຳຮອງທີ່ມີຊື່ວ່າ _BACKUP_. *ໝາຍເຫດ:* ນີ້ຈະ ຂຽນທັບການກຳນົດຄ່າໃນປັດຈຸບັນ."
+
+#. type: Title -
+#: src/man/authselect.8.adoc:245
+#, no-wrap
+msgid "OTHER COMMANDS"
+msgstr "ຄຳສັ່ງອື່ນໆ"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:247
+#, no-wrap
+msgid "*opt-out*"
+msgstr "*opt-out*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:251
+msgid ""
+"Remove authselect configuration. This will restore nsswitch and PAM "
+"configuration under its system location and authselect will no longer manage "
+"it. Run *authselect select* to opt-in again."
+msgstr ""
+"ລຶບການກຳນົດຄ່າຂອງ authselect ອອກ. ນີ້ຈະກູ້ຄືນການກຳນົດຄ່າ nsswitch ແລະ PAM ກັບໄປຍັງສະຖານທີ່ຂ"
+"ອງລະບົບ ແລະ authselect ຈະບໍ່ຈັດການມັນອີກຕໍ່ໄປ. ໃຫ້ລັນ *authselect select* ເພື່ອເລືອກໃຊ້ງານອີ"
+"ກຄັ້ງ."
+
+#. type: Title -
+#: src/man/authselect.8.adoc:253
+#, no-wrap
+msgid "COMMON OPTIONS"
+msgstr "ຕົວເລືອກທົ່ວໄປ"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:255
+msgid "These options are available with all commands."
+msgstr "ຕົວເລືອກເຫຼົ່ານີ້ສາມາດໃຊ້ໄດ້ກັບທຸກຄຳສັ່ງ."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:256
+#, no-wrap
+msgid "*--debug*"
+msgstr "*--debug*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:258
+msgid "Print debugging information and error messages."
+msgstr "ສະແດງຂໍ້ມູນການດີບັກ (debugging) ແລະ ຂໍ້ຄວາມຂໍ້ຜິດພາດ."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:259
+#, no-wrap
+msgid "*--trace*"
+msgstr "*--trace*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:261
+msgid "Print information about what the tool is doing."
+msgstr "ສະແດງຂໍ້ມູນກ່ຽວກັບສິ່ງທີ່ເຄື່ອງມືກຳລັງເຮັດຢູ່."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:262
+#, no-wrap
+msgid "*--warn*"
+msgstr "*--warn*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:266
+msgid ""
+"Print information about unexpected situations that do not affect the program "
+"execution but may indicate some undesired situations (e.g. unexpected file "
+"in a profile directory)."
+msgstr ""
+"ສະແດງຂໍ້ມູນກ່ຽວກັບສະຖານະການທີ່ບໍ່ຄາດຄິດ ເຊິ່ງບໍ່ມີຜົນຕໍ່ການເຮັດວຽກຂອງໂປຣແກຣມ ແຕ່ອາດບົ່ງບອກເຖິງສະຖານະ"
+"ການທີ່ບໍ່ຕ້ອງການບາງຢ່າງ (ຕົວຢ່າງ: ພົບໄຟລ໌ທີ່ບໍ່ຄາດຄິດ ໃນໄດເຣັກທໍຣີໂປຣໄຟລ໌)."
+
+#. type: Title -
+#: src/man/authselect.8.adoc:268
+#, no-wrap
+msgid "TROUBLESHOOTING"
+msgstr "ການແກ້ໄຂບັນຫາ"
+
+#. type: Title ~
+#: src/man/authselect.8.adoc:271
+#, no-wrap
+msgid "How can I tell if my system is using authselect?"
+msgstr "ຂ້ອຍຈະຮູ້ໄດ້ແນວໃດວ່າລະບົບຂອງຂ້ອຍກຳລັງໃຊ້ authselect ຢູ່?"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:275
+msgid ""
+"Use *authselect check*. The output will tell you if you have 1) "
+"configuration generated by authselect 2) non-authselect configuration or 3) "
+"configuration that was generated by authselect but modified manually at some "
+"point."
+msgstr ""
+"ໃຊ້ຄຳສັ່ງ *authselect check*. ຜົນລັນຈະບອກໃຫ້ທ່ານຮູ້ວ່າທ່ານມີ 1) ການກຳນົດຄ່າທີ່ສ້າງໂດຍ "
+"authselect 2) ການກຳນົດຄ່າທີ່ບໍ່ແມ່ນຂອງ authselect ຫຼື 3) ການກຳນົດຄ່າທີ່ເຄີຍສ້າງໂດຍ "
+"authselect ແຕ່ຖືກແກ້ໄຂດ້ວຍຕົນເອງໃນພາຍຫຼັງ."
+
+#. type: Title ~
+#: src/man/authselect.8.adoc:277
+#, no-wrap
+msgid "Is nsswitch.conf supposed to be a symbolic link now?"
+msgstr "ຕອນນີ້ nsswitch.conf ຄວນຈະເປັນ symbolic link ແລ້ວແມ່ນບໍ່?"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:283
+msgid ""
+"Authselect generates your system configuration from scratch and stores it at "
+"{AUTHSELECT_CONFIG_DIR}. System files are then created as symbolic links to "
+"this directory. Symbolic links are used to make it clear that authselect is "
+"now owning your configuration and should be used instead of any manual "
+"modification."
+msgstr ""
+"Authselect ຈະສ້າງການກຳນົດຄ່າລະບົບຂອງທ່ານໃໝ່ທັງໝົດ ແລະ ເກັບໄວ້ທີ່ {AUTHSELECT_CONFIG_DIR}"
+". ຈາກນັ້ນໄຟລ໌ລະບົບຈະຖືກສ້າງເປັນ symbolic links ໄປຫາ ໄດເຣັກທໍຣີນີ້. ການໃຊ້ symbolic links ແ"
+"ມ່ນເພື່ອໃຫ້ຊັດເຈນວ່າຕອນນີ້ authselect ເປັນເຈົ້າຂອງການກຳນົດຄ່າຂອງທ່ານແລ້ວ ແລະ ຄວນໃຊ້ເຄື່ອງມືນີ້ແທນກ"
+"ານແກ້ໄຂດ້ວຍຕົນເອງ."
+
+#. type: Title ~
+#: src/man/authselect.8.adoc:285
+#, no-wrap
+msgid "Error: Unexpected changes to the configuration were detected."
+msgstr "ຂໍ້ຜິດພາດ: ກວດພົບການປ່ຽນແປງການກຳນົດຄ່າທີ່ບໍ່ຄາດຄິດ."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:287
+msgid "For example:"
+msgstr "ຕົວຢ່າງ:"
+
+#. type: delimited block .
+#: src/man/authselect.8.adoc:293
+#, no-wrap
+msgid ""
+"[error] [/etc/authselect/nsswitch.conf] does not exist!\n"
+"[error] [/etc/nsswitch.conf] is not a symbolic link!\n"
+"[error] [/etc/nsswitch.conf] was not created by authselect!\n"
+"[error] Unexpected changes to the configuration were detected.\n"
+"[error] Refusing to activate profile unless those changes are removed or overwrite is requested.\n"
+msgstr ""
+"[error] [/etc/authselect/nsswitch.conf] ບໍ່ມີຢູ່!\n"
+"[error] [/etc/nsswitch.conf] ບໍ່ແມ່ນ symbolic link!\n"
+"[error] [/etc/nsswitch.conf] ບໍ່ໄດ້ຖືກສ້າງໂດຍ authselect!\n"
+"[error] ກວດພົບການປ່ຽນແປງການກຳນົດຄ່າທີ່ບໍ່ຄາດຄິດ.\n"
+"[error] ປະຕິເສດການເປີດໃຊ້ງານໂປຣໄຟລ໌ ນອກຈາກວ່າການປ່ຽນແປງເຫຼົ່ານັ້ນຈະຖືກລຶບອອກ ຫຼື ມີການຮ້ອງຂໍໃຫ້ຂ"
+"ຽນທັບ.\n"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:297
+msgid ""
+"This means that your configuration is unknown to authselect and as such it "
+"will not be modified. To fix this, please call *authselect select* with *--"
+"force* parameter to say that it is all right to overwrite it."
+msgstr ""
+"ນີ້ໝາຍຄວາມວ່າການກຳນົດຄ່າຂອງທ່ານບໍ່ເປັນທີ່ຮູ້ຈັກສຳລັບ authselect ແລະ ດ້ວຍເຫດນັ້ນ ມັນຈຶ່ງຈະບໍ່ຖືກແກ້ໄຂ. "
+"ເພື່ອແກ້ໄຂບັນຫານີ້, ກະລຸນາໃຊ້ຄຳສັ່ງ *authselect select* ພ້ອມກັບ ພາຣາມິເຕີ *--force* ເພື່ອຢືນຢັນ"
+"ວ່າອະນຸຍາດໃຫ້ຂຽນທັບມັນໄດ້."
+
+#. type: Title -
+#: src/man/authselect.8.adoc:299
+#, no-wrap
+msgid "RETURN CODES"
+msgstr "ລະຫັດການສົ່ງຄ່າຄືນ"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:301
+msgid "The *authselect* can return these exit codes:"
+msgstr "*authselect* ສາມາດສົ່ງຄືນລະຫັດສະຖານະ (exit codes) ດັ່ງນີ້:"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:303
+msgid "0: Success."
+msgstr "0: ສຳເລັດ."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:304
+msgid "1: Generic error."
+msgstr "1: ຂໍ້ຜິດພາດທົ່ວໄປ."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:305
+msgid ""
+"2: Profile or configuration was not found or the system was not configured "
+"with authselect."
+msgstr ""
+"2: ບໍ່ພົບໂປຣໄຟລ໌ ຫຼື ການກຳນົດຄ່າ ຫຼື ລະບົບບໍ່ໄດ້ຖືກຕັ້ງຄ່າດ້ວຍ authselect."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:306
+msgid ""
+"3: Current configuration is not valid, it was edited without authselect."
+msgstr "3: ການກຳນົດຄ່າປັດຈຸບັນບໍ່ຖືກຕ້ອງ, ມັນຖືກແກ້ໄຂໂດຍບໍ່ໄດ້ຜ່ານ authselect."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:307
+msgid ""
+"4: System configuration must be overwritten to activate an authselect "
+"profile, --force parameter is needed."
+msgstr ""
+"4: ຕ້ອງຂຽນທັບການກຳນົດຄ່າລະບົບເພື່ອເປີດໃຊ້ງານໂປຣໄຟລ໌ authselect, ຈຳເປັນຕ້ອງໃຊ້ພາຣາມິເຕີ --"
+"force."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:308
+msgid "5: Executed command must be run as root."
+msgstr "5: ຄຳສັ່ງທີ່ໃຊ້ຕ້ອງລັນໃນຖານະ root (ຜູ້ດູແລລະບົບ)."
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:309
+msgid "6: No configuration was detected."
+msgstr "6: ກວດບໍ່ພົບການກຳນົດຄ່າໃດໆ."
+
+#. type: Title -
+#: src/man/authselect.8.adoc:311
+#, no-wrap
+msgid "GENERATED FILES"
+msgstr "ໄຟລ໌ທີ່ຖືກສ້າງຂຶ້ນ"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:314
+msgid ""
+"Authselect creates and maintains the following files to configure system "
+"identity and authentication providers properly."
+msgstr ""
+"Authselect ສ້າງ ແລະ ດູແລໄຟລ໌ຕໍ່ໄປນີ້ເພື່ອຕັ້ງຄ່າຕົວຕົນຂອງລະບົບ ແລະ ຜູ້ໃຫ້ບໍລິການຢືນຢັນຕົວຕົນຢ່າງຖືກຕ້ອງ."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:315
+#, no-wrap
+msgid "*{AUTHSELECT_NSSWITCH_CONF}*"
+msgstr "*{AUTHSELECT_NSSWITCH_CONF}*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:317
+msgid "Name Service Switch configuration file."
+msgstr "ໄຟລ໌ກຳນົດຄ່າ Name Service Switch (nsswitch.conf)."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:318
+#, no-wrap
+msgid "*{AUTHSELECT_PAM_DIR}/system-auth*"
+msgstr "*{AUTHSELECT_PAM_DIR}/system-auth*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:321
+msgid ""
+"PAM stack that is included from nearly all individual service configuration "
+"files."
+msgstr "PAM stack ທີ່ຖືກລວມເຂົ້າໃນເກືອບທຸກໄຟລ໌ກຳນົດຄ່າການບໍລິການແຕ່ລະອັນ."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:322
+#, no-wrap
+msgid "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
+msgstr "*{AUTHSELECT_PAM_DIR}/password-auth, smartcard-auth, fingerprint-auth*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:326
+msgid ""
+"These PAM stacks are for applications which handle authentication from "
+"different types of devices via simultaneously running individual "
+"conversations instead of one aggregate conversation."
+msgstr ""
+"PAM stacks ເຫຼົ່ານີ້ແມ່ນສຳລັບແອັບພລິເຄຊັນທີ່ຈັດການການຢືນຢັນຕົວຕົນຈາກອຸປະກອນປະເພດຕ່າງໆ ຜ່ານການເຮັດວ"
+"ຽກແຍກກັນພ້ອມກັນ ແທນທີ່ຈະເປັນການເຮັດວຽກລວມກັນພຽງອັນດຽວ."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:327
+#, no-wrap
+msgid "*{AUTHSELECT_PAM_DIR}/postlogin*"
+msgstr "*{AUTHSELECT_PAM_DIR}/postlogin*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:335
+msgid ""
+"The purpose of this PAM stack is to provide a common place for all PAM "
+"modules which should be called after the stack configured in system-auth or "
+"the other common PAM configuration files. It is included from all individual "
+"service configuration files that provide login service with shell or file "
+"access. _NOTE: the modules in the postlogin configuration file are executed "
+"regardless of the success or failure of the modules in the system-auth "
+"configuration file._"
+msgstr ""
+"ຈຸດປະສົງຂອງ PAM stack ນີ້ແມ່ນເພື່ອເປັນບ່ອນກາງສຳລັບທຸກໆໂມດູນ PAM ທີ່ຄວນຈະຖືກເອີ້ນໃຊ້ ຫຼັງຈາກ "
+"stack ທີ່ຕັ້ງຄ່າໃນ system-auth ຫຼື ໄຟລ໌ກຳນົດຄ່າ PAM ທົ່ວໄປອື່ນໆ. ມັນຖືກລວມຢູ່ໃນທຸກໄຟລ໌ກຳນົດຄ່າການບໍລິ"
+"ການທີ່ໃຫ້ບໍລິການການເຂົ້າສູ່ລະບົບດ້ວຍ shell ຫຼື ການເຂົ້າເຖິງໄຟລ໌. _ໝາຍເຫດ: ໂມດູນໃນໄຟລ໌ກຳນົດຄ່າ "
+"postlogin ຈະຖືກເຮັດວຽກ ໂດຍບໍ່ຄຳນຶງເຖິງຄວາມສຳເລັດ ຫຼື ຄວາມລົ້ມເຫຼວຂອງໂມດູນໃນໄຟລ໌ກຳນົດຄ່າ "
+"system-auth._"
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:336
+#, no-wrap
+msgid "*{AUTHSELECT_DCONF_DIR}/{AUTHSELECT_DCONF_FILE}*"
+msgstr "*{AUTHSELECT_DCONF_DIR}/{AUTHSELECT_DCONF_FILE}*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:340
+msgid ""
+"Changes to dconf database. The main uses case of this file is to set changes "
+"for gnome login screen in order to enable or disable smartcard and "
+"fingerprint authentication."
+msgstr ""
+"ການປ່ຽນແປງໃນຖານຂໍ້ມູນ dconf. ຈຸດປະສົງຫຼັກຂອງໄຟລ໌ນີ້ແມ່ນເພື່ອຕັ້ງຄ່າການປ່ຽນແປງສຳລັບໜ້າຈໍເຂົ້າສູ່ລະບົບຂອ"
+"ງ gnome ເພື່ອເປີດ ຫຼື ປິດການໃຊ້ງານການຢືນຢັນຕົວຕົນດ້ວຍ smartcard ແລະ fingerprint."
+
+#. type: Labeled list
+#: src/man/authselect.8.adoc:341
+#, no-wrap
+msgid "*{AUTHSELECT_DCONF_DIR}/locks/{AUTHSELECT_DCONF_FILE}*"
+msgstr "*{AUTHSELECT_DCONF_DIR}/locks/{AUTHSELECT_DCONF_FILE}*"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:343
+msgid "This file define locks on values set in dconf database."
+msgstr "ໄຟລ໌ນີ້ກຳນົດການລັອກ (locks) ຄ່າຕ່າງໆທີ່ຕັ້ງໄວ້ໃນຖານຂໍ້ມູນ dconf."
+
+#. type: Title -
+#: src/man/authselect.8.adoc:345
+#, no-wrap
+msgid "SEE ALSO"
+msgstr "ເບິ່ງເພີ່ມເຕີມ"
+
+#. type: Plain text
+#: src/man/authselect.8.adoc:346
+msgid ""
+"authselect-profiles(5), authselect-migration(7), nsswitch.conf(5), PAM(8)"
+msgstr ""
+"authselect-profiles(5), authselect-migration(7), nsswitch.conf(5), PAM(8)"
