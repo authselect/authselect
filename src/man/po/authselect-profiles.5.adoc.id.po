@@ -7,37 +7,39 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-02-23 14:08+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-02-07 01:58+0000\n"
+"Last-Translator: Arif Budiman <arifpedia@gmail.com>\n"
+"Language-Team: Indonesian <https://translate.fedoraproject.org/projects/"
+"authselect/15x-authselect-profiles5adoc/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. type: Title =
 #: src/man/authselect-profiles.5.adoc:2
 #, no-wrap
 msgid "authselect-profiles(5)"
-msgstr ""
+msgstr "authselect-profiles(5)"
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:6
 #, no-wrap
 msgid "NAME"
-msgstr ""
+msgstr "NAMA"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:8
 msgid "authselect-profiles - how to extend authselect profiles."
-msgstr ""
+msgstr "authselect-profiles - cara memperluas profil authselect."
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:10
 #, no-wrap
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "DESKRIPSI"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:13
@@ -45,35 +47,39 @@ msgid ""
 "This manual page explains how are authselect profiles organized and how to "
 "create new profiles."
 msgstr ""
+"Halaman manual ini menjelaskan bagaimana profil authselect diatur dan cara "
+"membuat profil baru."
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:15
 #, no-wrap
 msgid "PROFILE DIRECTORIES"
-msgstr ""
+msgstr "DIREKTORI PROFIL"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:17
 msgid "Profiles can be found in one of three directories."
-msgstr ""
+msgstr "Profil dapat ditemukan di salah satu dari tiga direktori."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:18
 #, no-wrap
 msgid "*{AUTHSELECT_PROFILE_DIR}*"
-msgstr ""
+msgstr "*{AUTHSELECT_PROFILE_DIR}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:20
 msgid ""
 "Read-only directory containing profiles shipped together with authselect."
 msgstr ""
+"Direktori baca-saja (read-only) yang berisi profil yang disertakan bersama "
+"dengan authselect."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:21
 #, no-wrap
 msgid "*{AUTHSELECT_VENDOR_DIR}*"
-msgstr ""
+msgstr "*{AUTHSELECT_VENDOR_DIR}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:24
@@ -81,23 +87,25 @@ msgid ""
 "Read-only directory for vendor-specific profiles that can override the ones "
 "in _default_ directory."
 msgstr ""
+"Direktori baca-saja untuk profil khusus vendor yang dapat menimpa profil di "
+"direktori _default_."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:25
 #, no-wrap
 msgid "*{AUTHSELECT_CUSTOM_DIR}*"
-msgstr ""
+msgstr "*{AUTHSELECT_CUSTOM_DIR}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:27
 msgid "Place for administrator-defined profiles."
-msgstr ""
+msgstr "Tempat untuk profil yang ditentukan oleh administrator."
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:29
 #, no-wrap
 msgid "PROFILE FILES"
-msgstr ""
+msgstr "BERKAS PROFIL"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:33
@@ -106,24 +114,26 @@ msgid ""
 "mandatory profile description and describe the changes that are done to the "
 "system."
 msgstr ""
+"Setiap profil terdiri dari satu atau lebih berkas berikut yang memberikan "
+"deskripsi profil wajib dan menjelaskan perubahan yang dilakukan pada sistem."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:34
 #, no-wrap
 msgid "*README*"
-msgstr ""
+msgstr "*README*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:36
 msgid ""
 "Description of the profile. The first line must be a name of the profile."
-msgstr ""
+msgstr "Deskripsi profil. Baris pertama harus berupa nama profil."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:37
 #, no-wrap
 msgid "*system-auth*"
-msgstr ""
+msgstr "*system-auth*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:40
@@ -131,12 +141,14 @@ msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
 msgstr ""
+"Tumpukan PAM yang disertakan dari hampir semua berkas konfigurasi layanan "
+"individual."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:41
 #, no-wrap
 msgid "*password-auth*, *smartcard-auth*, *fingerprint-auth*"
-msgstr ""
+msgstr "*password-auth*, *smartcard-auth*, *fingerprint-auth*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:45
@@ -145,12 +157,15 @@ msgid ""
 "different types of devices via simultaneously running individual "
 "conversations instead of one aggregate conversation."
 msgstr ""
+"Tumpukan PAM ini ditujukan untuk aplikasi yang menangani autentikasi dari "
+"berbagai jenis perangkat melalui percakapan individual yang berjalan "
+"bersamaan alih-alih satu percakapan agregat."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:46
 #, no-wrap
 msgid "*postlogin*"
-msgstr ""
+msgstr "*postlogin*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:54
@@ -163,23 +178,30 @@ msgid ""
 "regardless of the success or failure of the modules in the system-auth "
 "configuration file._"
 msgstr ""
+"Tujuan dari tumpukan PAM ini adalah untuk menyediakan tempat umum bagi semua "
+"modul PAM yang harus dipanggil setelah tumpukan yang dikonfigurasi dalam "
+"system-auth atau berkas konfigurasi PAM umum lainnya. Ini disertakan dari "
+"semua berkas konfigurasi layanan individual yang menyediakan layanan login "
+"dengan akses shell atau berkas. _CATATAN: modul dalam berkas konfigurasi "
+"postlogin dijalankan tanpa memandang keberhasilan atau kegagalan modul dalam "
+"berkas konfigurasi system-auth._"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:55
 #, no-wrap
 msgid "*nsswitch.conf*"
-msgstr ""
+msgstr "*nsswitch.conf*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:57
 msgid "Name Service Switch configuration file."
-msgstr ""
+msgstr "Berkas konfigurasi Name Service Switch."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:58
 #, no-wrap
 msgid "*dconf-db*"
-msgstr ""
+msgstr "*dconf-db*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:62
@@ -188,23 +210,28 @@ msgid ""
 "for gnome login screen in order to enable or disable smartcard and "
 "fingerprint authentication."
 msgstr ""
+"Perubahan pada basis data dconf. Kasus penggunaan utama dari berkas ini "
+"adalah untuk menetapkan perubahan pada layar login gnome guna mengaktifkan "
+"atau menonaktifkan autentikasi smartcard dan sidik jari."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:63
 #, no-wrap
 msgid "*dconf-locks*"
-msgstr ""
+msgstr "*dconf-locks*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:65
 msgid "This file define locks on values set in dconf database."
 msgstr ""
+"Berkas ini menentukan kunci (locks) pada nilai yang ditetapkan dalam basis "
+"data dconf."
 
 #. type: Title ~
 #: src/man/authselect-profiles.5.adoc:67
 #, no-wrap
 msgid "CONDITIONAL LINES"
-msgstr ""
+msgstr "BARIS BERSYARAT"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:71
@@ -213,12 +240,15 @@ msgid ""
 "with optional usage of several operators that can be used to provide some "
 "optional profile features."
 msgstr ""
+"Setiap berkas ini berfungsi sebagai templat. Templat adalah berkas teks "
+"biasa dengan penggunaan opsional dari beberapa operator yang dapat digunakan "
+"untuk menyediakan beberapa fitur profil opsional."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:72
 #, no-wrap
 msgid "*{continue if \"feature\"}*"
-msgstr ""
+msgstr "*{continue if \"feature\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:77
@@ -228,12 +258,15 @@ msgid ""
 "whole line with this operator will be removed and the rest of the template "
 "will be processed."
 msgstr ""
+"Segera hentikan pemrosesan berkas kecuali \"feature\" ditentukan (sisa "
+"konten berkas akan dihapus). Jika \"feature\" ditentukan, seluruh baris "
+"dengan operator ini akan dihapus dan sisa templat akan diproses."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:78
 #, no-wrap
 msgid "*{stop if \"feature\"}*"
-msgstr ""
+msgstr "*{stop if \"feature\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:83
@@ -243,12 +276,16 @@ msgid ""
 "\"feature\" is not defined, the whole line with this operator will be "
 "removed and the rest of the template will be processed."
 msgstr ""
+"Kebalikan dari \"continue if\". Segera hentikan pemrosesan berkas jika "
+"\"feature\" ditentukan (sisa konten berkas akan dihapus). Jika \"feature\" "
+"tidak ditentukan, seluruh baris dengan operator ini akan dihapus dan sisa "
+"templat akan diproses."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:84
 #, no-wrap
 msgid "*{include if \"feature\"}*"
-msgstr ""
+msgstr "*{include if \"feature\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:87
@@ -256,12 +293,14 @@ msgid ""
 "Include the line where this operator is placed only if \"feature\" is "
 "defined."
 msgstr ""
+"Sertakan baris tempat operator ini diletakkan hanya jika \"feature\" "
+"ditentukan."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:88
 #, no-wrap
 msgid "*{exclude if \"feature\"}*"
-msgstr ""
+msgstr "*{exclude if \"feature\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:91
@@ -269,12 +308,14 @@ msgid ""
 "Opposite to \"include-if\". Include the line where this operator is placed "
 "only if \"feature\" is not defined."
 msgstr ""
+"Kebalikan dari \"include-if\". Sertakan baris tempat operator ini diletakkan "
+"hanya jika \"feature\" tidak ditentukan."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:92
 #, no-wrap
 msgid "*{imply \"implied-feature\" if \"feature\"}*"
-msgstr ""
+msgstr "*{imply \"implied-feature\" if \"feature\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:96
@@ -283,12 +324,15 @@ msgid ""
 "whole line with this operator is removed, thus it is not possible to add "
 "anything else around this operator at the same line."
 msgstr ""
+"Aktifkan fitur \"implied-feature\" jika fitur \"feature\" diaktifkan. "
+"Seluruh baris dengan operator ini dihapus, sehingga tidak mungkin untuk "
+"menambahkan hal lain di sekitar operator ini pada baris yang sama."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:97
 #, no-wrap
 msgid "*{if \"feature\":true|false}*"
-msgstr ""
+msgstr "*{if \"feature\":true|false}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:100
@@ -296,12 +340,14 @@ msgid ""
 "If \"feature\" is defined, replace this operator with string \"true\", "
 "otherwise with string \"false\"."
 msgstr ""
+"Jika \"feature\" ditentukan, ganti operator ini dengan string \"true\", jika "
+"tidak ganti dengan string \"false\"."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:101
 #, no-wrap
 msgid "*{if \"feature\":true}*"
-msgstr ""
+msgstr "*{if \"feature\":true}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:104
@@ -309,6 +355,8 @@ msgid ""
 "If \"feature\" is defined, replace this operator with string \"true\", "
 "otherwise with an empty string."
 msgstr ""
+"Jika \"feature\" ditentukan, ganti operator ini dengan string \"true\", jika "
+"tidak ganti dengan string kosong."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:108
@@ -317,6 +365,10 @@ msgid ""
 "specifying single feature name. In this case the expression will evaluate to "
 "true or false and the conditional operator will act upon the result."
 msgstr ""
+"Dimungkinkan juga untuk menggunakan ekspresi logika dalam baris bersyarat "
+"alih-alih menentukan satu nama fitur. Dalam hal ini ekspresi akan bernilai "
+"benar (true) atau salah (false) dan operator bersyarat akan bertindak "
+"berdasarkan hasilnya."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:113
@@ -326,17 +378,22 @@ msgid ""
 "from the following logical operators: _and_, _or_ and _not_. The expression "
 "may also be enclosed in parentheses and contain multiple subexpressions."
 msgstr ""
+"Sintaks ekspresi terdiri dari nama fitur (misalnya _\"feature\"_) yang "
+"mengembalikan _true_ jika fitur tersebut ditentukan atau _false_ jika tidak "
+"ditentukan, serta dari operator logika berikut: _and_, _or_, dan _not_. "
+"Ekspresi juga dapat diapit dalam tanda kurung dan berisi beberapa sub-"
+"ekspresi."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:115
 msgid "For example:"
-msgstr ""
+msgstr "Sebagai contoh:"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:116
 #, no-wrap
 msgid "*{if \"feature1\" or \"feature2\":true}*"
-msgstr ""
+msgstr "*{if \"feature1\" or \"feature2\":true}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:119
@@ -344,12 +401,14 @@ msgid ""
 "If \"feature1\" or \"feature2\" is defined, replace this operator with "
 "string \"true\", otherwise with an empty string."
 msgstr ""
+"Jika \"feature1\" atau \"feature2\" ditentukan, ganti operator ini dengan "
+"string \"true\", jika tidak ganti dengan string kosong."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:120
 #, no-wrap
 msgid "*{if not \"feature\":true|false}*"
-msgstr ""
+msgstr "*{if not \"feature\":true|false}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:123
@@ -357,12 +416,14 @@ msgid ""
 "If \"feature\" is not defined, replace this operator with string \"true\", "
 "otherwise with string \"false\"."
 msgstr ""
+"Jika \"feature\" tidak ditentukan, ganti operator ini dengan string "
+"\"true\", jika tidak ganti dengan string \"false\"."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:124
 #, no-wrap
 msgid "*{if not \"feature\":true}*"
-msgstr ""
+msgstr "*{if not \"feature\":true}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:127
@@ -370,12 +431,14 @@ msgid ""
 "If \"feature\" is not defined, replace this operator with string \"true\", "
 "otherwise with an empty string."
 msgstr ""
+"Jika \"feature\" tidak ditentukan, ganti operator ini dengan string "
+"\"true\", jika tidak ganti dengan string kosong."
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:128
 #, no-wrap
 msgid "*{if \"feature1\" and (\"feature2\" or \"feature3\"):true}*"
-msgstr ""
+msgstr "*{if \"feature1\" and (\"feature2\" or \"feature3\"):true}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:131
@@ -384,12 +447,15 @@ msgid ""
 "defined replace this operator with string \"true\", otherwise with an empty "
 "string."
 msgstr ""
+"Jika \"feature1\" ditentukan, dan salah satu dari \"feature2\" dan "
+"\"feature3\" ditentukan, ganti operator ini dengan string \"true\", jika "
+"tidak ganti dengan string kosong."
 
 #. type: Title ~
 #: src/man/authselect-profiles.5.adoc:133
 #, no-wrap
 msgid "EXAMPLE"
-msgstr ""
+msgstr "CONTOH"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:136
@@ -397,6 +463,8 @@ msgid ""
 "Here is an example of using \"if\" operator. If \"with-sudo\" feature is "
 "enabled, it will add \"sss\" to sudoers line."
 msgstr ""
+"Berikut adalah contoh penggunaan operator \"if\". Jika fitur \"with-sudo\" "
+"diaktifkan, ini akan menambahkan \"sss\" ke baris sudoers."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:143
@@ -418,6 +486,10 @@ msgid ""
 "If it is enabled and also \"with-faillock\" feature is enabled, it will also "
 "enable support for pam_faillock."
 msgstr ""
+"Berikut adalah contoh operator \"continue-if\" dan \"include-if\". Berkas "
+"yang dihasilkan akan kosong kecuali fitur \"with-smartcard\" diaktifkan. "
+"Jika fitur tersebut diaktifkan dan fitur \"with-faillock\" juga diaktifkan, "
+"ini juga akan mengaktifkan dukungan untuk pam_faillock."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:161
@@ -436,6 +508,25 @@ msgid ""
 "  auth        required                                     pam_deny.so\n"
 "  ...\n"
 msgstr ""
+"  {continue if \"with-smartcard\"}\n"
+"  auth        required                                     pam_env.so\n"
+"  auth        required                                     pam_faildelay.so "
+"delay=2000000\n"
+"  auth        required                                     pam_faillock.so "
+"preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
+"uid >= 1000 quiet\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
+"  auth        sufficient                                   pam_unix.so "
+"nullok\n"
+"  auth        requisite                                    pam_succeed_if.so "
+"uid >= 1000 quiet_success\n"
+"  auth        sufficient                                   pam_sss.so "
+"forward_pass\n"
+"  auth        required                                     pam_faillock.so "
+"authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
+"  auth        required                                     pam_deny.so\n"
+"  ...\n"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:166
@@ -446,6 +537,11 @@ msgid ""
 "not have to include both features but only \"with-smartcard-required\" is "
 "necessary."
 msgstr ""
+"Berikut adalah contoh \"continue-if\" menggunakan ekspresi logika. Berkas "
+"akan kosong kecuali \"with-smartcard\" atau \"with-smartcard-required\" "
+"ditetapkan. Ini akan menyederhanakan pemanggilan perintah _authselect "
+"select_ yang tidak harus menyertakan kedua fitur tersebut tetapi hanya "
+"\"with-smartcard-required\" saja yang diperlukan."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:179
@@ -464,6 +560,25 @@ msgid ""
 "  auth        required                                     pam_deny.so\n"
 "  ...\n"
 msgstr ""
+"  {continue if \"with-smartcard\" or \"with-smartcard-required\"}\n"
+"  auth        required                                     pam_env.so\n"
+"  auth        required                                     pam_faildelay.so "
+"delay=2000000\n"
+"  auth        required                                     pam_faillock.so "
+"preauth silent deny=4 unlock_time=1200 {include if \"with-faillock\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
+"uid >= 1000 quiet\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so\n"
+"  auth        sufficient                                   pam_unix.so "
+"nullok\n"
+"  auth        requisite                                    pam_succeed_if.so "
+"uid >= 1000 quiet_success\n"
+"  auth        sufficient                                   pam_sss.so "
+"forward_pass\n"
+"  auth        required                                     pam_faillock.so "
+"authfail deny=4 unlock_time=1200       {include if \"with-faillock\"}\n"
+"  auth        required                                     pam_deny.so\n"
+"  ...\n"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:184
@@ -473,6 +588,10 @@ msgid ""
 "all relevant PAM modules are used. This will achieve the same behavior as "
 "the previous example."
 msgstr ""
+"Berikut adalah contoh operator \"imply-if\". Mengaktifkan fitur \"with-"
+"smartcard-required\" juga akan mengaktifkan \"with-smartcard\" untuk "
+"memastikan bahwa semua modul PAM yang relevan digunakan. Ini akan "
+"menghasilkan perilaku yang sama seperti contoh sebelumnya."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:199
@@ -493,12 +612,42 @@ msgid ""
 "  auth        required                                     pam_deny.so\n"
 "  ...\n"
 msgstr ""
+"  {imply \"with-smartcard\" if \"with-smartcard-required\"}\n"
+"  auth        required                                     pam_env.so\n"
+"  auth        required                                     pam_faildelay.so "
+"delay=2000000\n"
+"  auth        [success=1 default=ignore]                   pam_succeed_if.so "
+"service notin login:gdm:xdm:kdm:kde:xscreensaver:gnome-"
+"screensaver:kscreensaver quiet use_uid {include if \"with-smartcard-"
+"required\"}\n"
+"  auth        [success=done ignore=ignore default=die]     pam_sss.so "
+"require_cert_auth ignore_authinfo_unavail             {include if \"with-"
+"smartcard-required\"}\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_succeed_if.so "
+"uid >= 1000 quiet\n"
+"  auth        [default=1 ignore=ignore success=ok]         pam_localuser.so"
+"                                                 {exclude if \"with-"
+"smartcard\"}\n"
+"  auth        [default=2 ignore=ignore success=ok]         pam_localuser.so"
+"                                                 {include if \"with-"
+"smartcard\"}\n"
+"  auth        [success=done authinfo_unavail=ignore user_unknown=ignore "
+"ignore=ignore default=die] pam_sss.so try_cert_auth {include if \"with-"
+"smartcard\"}\n"
+"  auth        sufficient                                   pam_unix.so {if "
+"not \"without-nullok\":nullok}\n"
+"  auth        requisite                                    pam_succeed_if.so "
+"uid >= 1000 quiet_success\n"
+"  auth        sufficient                                   pam_sss.so "
+"forward_pass\n"
+"  auth        required                                     pam_deny.so\n"
+"  ...\n"
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:201
 #, no-wrap
 msgid "CREATING A NEW PROFILE"
-msgstr ""
+msgstr "MEMBUAT PROFIL BARU"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:206
@@ -508,6 +657,10 @@ msgid ""
 "files must be present, only *README* is mandatory. Other files can be "
 "created on per-need basis."
 msgstr ""
+"Untuk mendaftarkan profil baru dalam authselect, buatlah sebuah direktori di "
+"salah satu lokasi profil authselect dengan berkas-berkas yang tercantum di "
+"atas. Tidak semua berkas harus ada, hanya *README* yang bersifat wajib. "
+"Berkas lainnya dapat dibuat sesuai kebutuhan."
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:210
@@ -516,14 +669,17 @@ msgid ""
 "profile. See *authselect(8)* manual page or *authselect create-profile --"
 "help* for more information."
 msgstr ""
+"Anda mungkin akan terbantu dengan perintah *authselect create-profile* saat "
+"membuat profil baru. Lihat halaman manual *authselect(8)* atau *authselect "
+"create-profile --help* untuk informasi lebih lanjut."
 
 #. type: Title -
 #: src/man/authselect-profiles.5.adoc:212
 #, no-wrap
 msgid "SEE ALSO"
-msgstr ""
+msgstr "LIHAT JUGA"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:213
 msgid "authselect(8), nsswitch.conf(5), PAM(8)"
-msgstr ""
+msgstr "authselect(8), nsswitch.conf(5), PAM(8)"
