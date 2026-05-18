@@ -87,6 +87,15 @@ authselect_symlinks_validate()
         }
 
         if (!is_valid) {
+            /* If the destination file does not exist either, this is
+             * a new file that was not yet created by authselect. */
+            ret = file_exists(symlinks[i].dest);
+            if (ret == ENOENT) {
+                INFO("[%s] does not exist but it was not yet created by "
+                     "authselect, skipping", symlinks[i].dest);
+                continue;
+            }
+
             ERROR("[%s] was not created by authselect!", symlinks[i].name);
             result = false;
         }

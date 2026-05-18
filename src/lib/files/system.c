@@ -500,6 +500,15 @@ authselect_system_validate_file(const char *path,
 
     ret = textfile_read(path, AUTHSELECT_FILE_SIZE_LIMIT, &content);
     if (ret == ENOENT) {
+        /* If the copy of the file does not exist either, this is a new file
+         * that was not yet created by authselect. This is not an error. */
+        ret = file_exists(copy_path);
+        if (ret == ENOENT) {
+            INFO("[%s] does not exist but it was not yet created by "
+                 "authselect, skipping", path);
+            return true;
+        }
+
         ERROR("[%s] does not exist!", path);
         return false;
     } else if (ret == EACCES) {
