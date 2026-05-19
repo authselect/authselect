@@ -23,16 +23,16 @@ jobs:
         sudo scripts/auto install-build-deps
 
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v1
+      uses: github/codeql-action/init@v2
       with:
         languages: cpp, python
         queries: +security-and-quality
 
     - name: Autobuild
-      uses: github/codeql-action/autobuild@v1
+      uses: github/codeql-action/autobuild@v2
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v1
+      uses: github/codeql-action/analyze@v2
 
   flake8:
     runs-on: ubuntu-latest
