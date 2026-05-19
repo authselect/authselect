@@ -307,7 +307,7 @@ def test_sssd__nsswitch_conf_group_merging(client: Client, provider: GenericProv
     :setup:
         1. Create local group  and provider group with the same gid
         2. Create and add user to provider group
-        3. Select SSSD authselect profile and start sssd
+        3. Select SSSD authselect profile, enabled with-group-merging and start sssd
     :steps:
         1. Lookup group
         2. Lookup group using only the files service
@@ -318,7 +318,7 @@ def test_sssd__nsswitch_conf_group_merging(client: Client, provider: GenericProv
     """
     client.local.group("group").add(gid=123456)
     provider.group("group").add(gid=123456).add_member(provider.user("user").add())
-    client.authselect.select("sssd")
+    client.authselect.select("sssd", ["with-group-merging"])
     client.sssd.start()
 
     assert "user" in client.tools.getent.group("group").members, "'user' is not a member of the group!"
