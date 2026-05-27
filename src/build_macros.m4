@@ -40,3 +40,15 @@ AC_DEFUN([REQUIRE_SELINUX],
   )
   AC_SUBST(SELINUX_LIBS)
 ])
+
+AC_DEFUN([CHECK_BASH_COMPLETION],
+[
+  AC_SUBST(BASH_COMPLETION_DIR)
+
+  PKG_CHECK_MODULES([BASH_COMPLETION], [bash-completion >= 2.0],
+    [BASH_COMPLETION_DIR=`$PKG_CONFIG --variable=completionsdir bash-completion`],
+    [BASH_COMPLETION_DIR="$datarootdir/bash-completion/completions"
+     AC_MSG_WARN([bash-completion not found, using default directory: $BASH_COMPLETION_DIR])
+    ]
+  )
+])

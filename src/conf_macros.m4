@@ -64,7 +64,7 @@ CONFIGURABLE_VALUE(pythonbin, pythonbin, PYTHON_BIN, PATH,
 
 CONFIGURABLE_VALUE(completion-dir, completion_dir, BASH_COMPLETION_DIR, DIR,
                    [Path to the directory where bash completion script should be stored],
-                   $sysconfdir/bash_completion.d)
+                   $BASH_COMPLETION_DIR)
 
 CONFIGURABLE_VALUE(systemd-service-dir, systemd_service_dir, SYSTEMD_SERVICE_DIR, DIR,
                    [Path to the directory where systemd service files will be installed],

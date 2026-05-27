@@ -33,5 +33,5 @@ authselect_CFLAGS = \
 completion_dir=@BASH_COMPLETION_DIR@
 completiondir = $(completion_dir)
 dist_completion_DATA = \
-    $(top_srcdir)/src/cli/authselect-completion.sh \
+    $(top_srcdir)/src/cli/authselect.bash \
     $(NULL)
