@@ -41,6 +41,7 @@ dnl Required libraries
 REQUIRE_POPT
 REQUIRE_CMOCKA
 REQUIRE_SELINUX
+CHECK_BASH_COMPLETION
 
 dnl Optional build dependencies - man pages generation
 CHECK_ASCIIDOC_TOOLS
