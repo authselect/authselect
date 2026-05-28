@@ -80,10 +80,18 @@ with-pamaccess::
 with-pwhistory::
     Enable pam_pwhistory module for local users.
 
+with-altfiles::
+    Use nss_altfiles for passwd and group nsswitch databases.
+
 with-files-domain::
     If set, SSSD will be contacted before "files" when resolving users and
     groups. The order in nsswitch.conf will be set to "sss files" instead of
     "files sss" for passwd and group maps.
+
+with-group-merging::
+    Enable merging of group records from multiple NSS sources using
+    [SUCCESS=merge]. Required for services like systemd-homed that
+    advertise users as part of system groups.
 
 with-files-access-provider::
     If set, account management for local users is handled also by pam_sss. This

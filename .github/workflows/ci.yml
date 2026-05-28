@@ -1,0 +1,192 @@
+name: "ci"
+on:
+  push:
+    branches: [1.2.x]
+  pull_request:
+    branches: [1.2.x]
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  ostree:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        path: authselect
+
+    - name: Setup containers
+      uses: SSSD/sssd-ci-containers/actions/setup@master
+      with:
+        path: sssd-ci-containers
+        tag: centos-9
+        override: |
+          services:
+            client:
+              image: ${REGISTRY}/ci-client-devel:${TAG}
+              shm_size: 4G
+              tmpfs:
+              - /dev/shm
+              volumes:
+              - ../authselect:/authselect:rw
+
+    - name: Create ostree marker (mimic required ostree detection)
+      uses: SSSD/sssd-ci-containers/actions/exec@master
+      with:
+        user: root
+        where: client
+        script: |
+          #!/bin/bash
+          set -ex
+          mkdir -p /run
+          touch /run/ostree-booted
+
+    - name: Install build dependencies on the client
+      uses: SSSD/sssd-ci-containers/actions/exec@master
+      with:
+        log-file: ostree-dependencies.log
+        working-directory: /authselect
+        user: root
+        where: client
+        script: |
+          #!/bin/bash
+          set -ex
+
+          scripts/auto install-build-deps
+
+    - name: Build authselect RPMs on the client
+      uses: SSSD/sssd-ci-containers/actions/exec@master
+      with:
+        log-file: ostree-build.log
+        working-directory: /authselect
+        where: client
+        script: |
+          #!/bin/bash
+          set -ex
+          autoreconf -if && ./configure --enable-silent-rules
+          make rpms
+
+    - name: Install authselect RPMs on the client
+      uses: SSSD/sssd-ci-containers/actions/exec@master
+      with:
+        log-file: ostree-install.log
+        working-directory: /authselect
+        user: root
+        where: client
+        script: |
+          #!/bin/bash
+          set -ex
+          dnf install -y rpmbuild/RPMS/*/*.rpm
+
+    - name: Verify that vendor profiles were created
+      uses: SSSD/sssd-ci-containers/actions/exec@master
+      with:
+        log-file: ostree-verify-vendor.log
+        user: root
+        where: client
+        script: |
+          #!/bin/bash
+          set -ex
+
+          # Check that vendor profiles directory exists
+          test -d /usr/share/authselect/vendor
+
+          # Check that vendor profiles were created for each default profile
+          for profile in sssd winbind nis minimal; do
+            if [ -d "/usr/share/authselect/default/$profile" ]; then
+              echo "Checking vendor profile: $profile"
+              test -d "/usr/share/authselect/vendor/$profile" || {
+                echo "ERROR: Vendor profile $profile not found"
+                exit 1
+              }
+
+              # Verify nsswitch.conf exists in vendor profile
+              nsswitch="/usr/share/authselect/vendor/$profile/nsswitch.conf"
+              test -f "$nsswitch" || {
+                echo "ERROR: nsswitch.conf not found in vendor/$profile"
+                exit 1
+              }
+
+              # Verify "with-altfiles" template conditional was removed
+              if grep -q "with-altfiles" "$nsswitch"; then
+                echo "ERROR: 'with-altfiles' template conditional still present in $nsswitch"
+                cat "$nsswitch"
+                exit 1
+              fi
+
+              echo "Vendor profile $profile: OK (with-altfiles conditional removed)"
+            fi
+          done
+
+    - name: Verify altfiles is enabled in /etc/nsswitch.conf
+      uses: SSSD/sssd-ci-containers/actions/exec@master
+      with:
+        log-file: ostree-verify-altfiles.log
+        user: root
+        where: client
+        script: |
+          #!/bin/bash
+          set -ex
+
+          echo "Checking /etc/nsswitch.conf for altfiles..."
+          cat /etc/nsswitch.conf
+
+          # Check altfiles is present on passwd: line
+          if ! grep "^passwd:" /etc/nsswitch.conf | grep -q "altfiles"; then
+            echo "ERROR: 'altfiles' not found on passwd: line in /etc/nsswitch.conf"
+            exit 1
+          fi
+
+          # Check altfiles is present on group: line
+          if ! grep "^group:" /etc/nsswitch.conf | grep -q "altfiles"; then
+            echo "ERROR: 'altfiles' not found on group: line in /etc/nsswitch.conf"
+            exit 1
+          fi
+
+          echo "SUCCESS: altfiles present on passwd: and group: lines in /etc/nsswitch.conf"
+
+    - name: Verify altfiles is enabled with with-group-merging /etc/nsswitch.conf
+      uses: SSSD/sssd-ci-containers/actions/exec@master
+      with:
+        log-file: ostree-verify-altfiles-after.log
+        user: root
+        where: client
+        script: |
+          #!/bin/bash
+          set -ex
+
+          authselect enable-feature with-group-merging
+
+          echo "Checking /etc/nsswitch.conf for altfiles after enabling with-group-merging..."
+          cat /etc/nsswitch.conf
+
+          # Check altfiles is present on passwd: line
+          if ! grep "^passwd:" /etc/nsswitch.conf | grep -q "altfiles"; then
+            echo "ERROR: 'altfiles' not found on passwd: line in /etc/nsswitch.conf after feature change"
+            exit 1
+          fi
+
+          # Check altfiles is present on group: line
+          if ! grep "^group:" /etc/nsswitch.conf | grep -q "altfiles"; then
+            echo "ERROR: 'altfiles' not found on group: line in /etc/nsswitch.conf after feature change"
+            exit 1
+          fi
+
+          echo "SUCCESS: altfiles still present on passwd: and group: lines in /etc/nsswitch.conf after feature change"
+
+    - name: Upload artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        if-no-files-found: ignore
+        name: ostree
+        path: |
+          ostree-dependencies.log
+          ostree-build.log
+          ostree-install.log
+          ostree-verify-vendor.log
+          ostree-verify-altfiles.log
+          ostree-verify-altfiles-after.log

@@ -38,6 +38,11 @@ with-pwhistory::
 with-altfiles::
     Use nss_altfiles for passwd and group nsswitch databases.
 
+with-group-merging::
+    Enable merging of group records from multiple NSS sources using
+    [SUCCESS=merge]. Required for services like systemd-homed that
+    advertise users as part of system groups.
+
 without-nullok::
     Do not add nullok parameter to pam_unix.
 
