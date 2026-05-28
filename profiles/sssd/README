@@ -132,6 +132,11 @@ with-switchable-auth::
     to select the authentication method that shall be used to authenticate the
     user.
 
+with-gpupdate::
+    Enable automatic application of Samba Group Policy Objects (GPOs) on user
+    login through oddjob-gpupdate. This allows SSSD-based systems to apply
+    GPOs (sudo rules, banners, files, browser policies) similar to winbind.
+
 EXAMPLES
 --------
 

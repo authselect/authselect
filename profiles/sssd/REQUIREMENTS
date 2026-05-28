@@ -31,3 +31,7 @@ Make sure that SSSD service is configured and enabled. See SSSD documentation fo
                                                                                           {include if "with-switchable-auth"}
 - with-switchable-auth is selected, make sure to enable it in sssd.conf                   {include if "with-switchable-auth"}
   - set "pam_json_services = list-of-services" in [pam] section                           {include if "with-switchable-auth"}
+                                                                                          {include if "with-gpupdate"}
+- with-gpupdate is selected, make sure pam_oddjob_gpupdate module                         {include if "with-gpupdate"}
+  and samba-gpupdate are present and oddjobd service is enabled and active                {include if "with-gpupdate"}
+  - systemctl enable --now oddjobd.service                                                {include if "with-gpupdate"}
