@@ -295,6 +295,8 @@ if test -e /run/ostree-booted; then
     done
 fi
 
+
+
 # Apply any changes to profiles (validates configuration first internally)
 %{_bindir}/authselect apply-changes &> /dev/null
 
