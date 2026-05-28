@@ -11,7 +11,7 @@ fi
 . /etc/os-release
 
 case "$ID" in
-  fedora)
+  fedora|centos)
     [ ! -f "rpm/authselect.spec.in" ] && die "Missing file: rpm/authselect.spec.in"
     [ -f "authselect.spec" ] && die "./authselect.spec already exist, delete it to continue."
 
