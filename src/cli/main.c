@@ -365,7 +365,7 @@ static errno_t check(struct cli_cmdline *cmdline)
 
     switch (ret) {
     case EOK:
-        puts(_("Current configuration is valid."));
+        puts(_("Current authselect configuration is valid."));
         break;
     case ENOENT:
         puts(_("No configuration detected."));
