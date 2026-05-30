@@ -372,7 +372,7 @@ static errno_t check(struct cli_cmdline *cmdline)
         ret = ENODEV;
         break;
     case EEXIST:
-        puts(_("Current non-authselect configuration is valid."));
+        puts(_("System was not configured with authselect."));
         ret = ENOENT; /* for backwards compatibility */
         break;
     }
