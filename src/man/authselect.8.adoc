@@ -49,7 +49,9 @@ To list all available commands run *authselect* without any parameters.
 To print help for the selected command run *authselect COMMAND --help*.
 
 *select* profile_id [features] [-f, --force] [-q, --quiet] [-b] [--backup=NAME]::
-    Activate desired profile. See profile description with *show* command,
+    Activate desired profile. The _profile_id_ can be a profile name
+    (e.g. _sssd_, _winbind_) or _@system-default_ to select the distribution's
+    default configuration. See profile description with *show* command,
     to list profile specific optional features.
 
     *--force, -f*:::
@@ -95,7 +97,8 @@ To print help for the selected command run *authselect COMMAND --help*.
         string is used as a name if no value is provided.
 
 *list*::
-    List available profiles.
+    List available profiles. The _@system-default_ option will be shown
+    if the system default configuration file exists.
 
 *list-features* profile_id::
     List all features available in given profile. +
@@ -248,6 +251,14 @@ OTHER COMMANDS
     Remove authselect configuration. This will restore nsswitch and PAM
     configuration under its system location and authselect will no longer
     manage it. Run *authselect select* to opt-in again.
+
+DISTRIBUTION INTEGRATION
+------------------------
+
+*@system-default configuration*::
+    Distributions can provide a system default configuration by creating
+    {AUTHSELECT_DEFAULT_CONFIG_PATH}. This file defines the profile and
+    features that will be activated when _@system-default_ is selected.
 
 COMMON OPTIONS
 --------------
