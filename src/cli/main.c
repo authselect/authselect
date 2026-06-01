@@ -30,7 +30,9 @@
 
 #include "authselect.h"
 #include "common/common.h"
+#include "lib/util/string_array.h"
 #include "cli/cli_tool.h"
+#include "cli/presets.h"
 
 #define CLI_ERROR(msg, ...) fprintf(stderr, gettext(msg), ## __VA_ARGS__)
 
@@ -62,13 +64,15 @@ static errno_t
 parse_profile_options(struct cli_cmdline *cmdline,
                       struct poptOption *options,
                       char **_profile_id,
-                      const char ***_features)
+                      char ***_features)
 {
     char *profile_id;
-    const char **features;
+    char *preset_profile_id;
+    char **features;
+    char **merged_features;
     bool profile_skipped;
     errno_t ret;
-    int i, j;
+    int i;
 
     *_profile_id = NULL;
 
@@ -80,14 +84,14 @@ parse_profile_options(struct cli_cmdline *cmdline,
         return ret;
     }
 
-    features = malloc_zero_array(const char *, cmdline->argc);
+    features = string_array_create(0);
     if (features == NULL) {
-        free(profile_id);
+        ERROR("Unable to create string array");
         return ENOMEM;
     }
 
     profile_skipped = false;
-    for (i = 0, j = 0; i < cmdline->argc; i++) {
+    for (i = 0; i < cmdline->argc; i++) {
         /* Skip options. */
         if (strcmp(cmdline->argv[i], "--backup") == 0) {
             /* Skip also the next parameter which is the backup name. */
@@ -108,14 +112,40 @@ parse_profile_options(struct cli_cmdline *cmdline,
             continue;
         }
 
-        features[j] = cmdline->argv[i];
-        j++;
+        features = string_array_add_value(features, cmdline->argv[i], true);
+        if (features == NULL) {
+            ret = ENOMEM;
+            goto done;
+        }
+    }
+
+    /* Resolve preset if needed */
+    if (cli_preset_is_preset(profile_id)) {
+        ret = cli_preset_resolve(profile_id, (const char **)features,
+                                 &preset_profile_id, &merged_features);
+        if (ret != EOK) {
+            goto done;
+        }
+
+        free(profile_id);
+        string_array_free(features);
+
+        profile_id = preset_profile_id;
+        features = merged_features;
     }
 
     *_profile_id = profile_id;
     *_features = features;
 
-    return EOK;
+    ret = EOK;
+
+done:
+    if (ret != EOK) {
+        free(profile_id);
+        string_array_free(features);
+    }
+
+    return ret;
 }
 
 static errno_t
@@ -145,7 +175,7 @@ perform_backup(int quiet,
 static errno_t activate(struct cli_cmdline *cmdline)
 {
     struct authselect_profile *profile = NULL;
-    const char **features = NULL;
+    char **features = NULL;
     char *profile_id = NULL;
     char *requirements = NULL;
     char *backup_name = NULL;
@@ -179,7 +209,7 @@ static errno_t activate(struct cli_cmdline *cmdline)
         goto done;
     }
 
-    requirements = authselect_profile_requirements(profile, features);
+    requirements = authselect_profile_requirements(profile, (const char **)features);
     if (requirements == NULL) {
         ERROR("Unable to read profile requirements!");
         ret = EFAULT;
@@ -193,7 +223,7 @@ static errno_t activate(struct cli_cmdline *cmdline)
         }
     }
 
-    ret = authselect_activate(profile_id, features, enforce);
+    ret = authselect_activate(profile_id, (const char **)features, enforce);
     if (ret == EEXIST) {
         CLI_ERROR("\nSome unexpected changes to the configuration were "
                   "detected.\nUse --force parameter if you want to overwrite "
@@ -225,7 +255,7 @@ done:
     free(requirements);
     authselect_array_free(maps);
     authselect_profile_free(profile);
-    free(features);
+    authselect_array_free((char **)features);
     free(profile_id);
 
     return ret;
@@ -388,6 +418,7 @@ static errno_t list(struct cli_cmdline *cmdline)
     struct authselect_profile *profile;
     char **profiles;
     errno_t ret;
+    int preset_maxlen;
     int maxlen;
     int i;
 
@@ -405,6 +436,12 @@ static errno_t list(struct cli_cmdline *cmdline)
 
     maxlen = list_max_length(profiles);
 
+    /* Use larger of profile names or preset names for alignment */
+    preset_maxlen = cli_preset_max_name_length();
+    if (preset_maxlen > maxlen) {
+        maxlen = preset_maxlen;
+    }
+
     for (i = 0; profiles[i] != NULL; i++) {
         ret = authselect_profile(profiles[i], &profile);
         if (ret != EOK) {
@@ -418,6 +455,20 @@ static errno_t list(struct cli_cmdline *cmdline)
 
         authselect_profile_free(profile);
     }
+
+    /* Show presets section */
+    struct cli_preset *preset_list = cli_preset_list();
+
+    if (preset_list != NULL && preset_list[0].name != NULL) {
+        printf("\nPresets:\n");
+
+        for (i = 0; preset_list[i].name != NULL; i++) {
+            printf("- %-*s\t %s\n", maxlen, preset_list[i].name,
+                   preset_list[i].description);
+        }
+    }
+
+    cli_preset_list_free(preset_list);
 
     ret = EOK;
 
@@ -440,6 +491,17 @@ static errno_t list_features(struct cli_cmdline *cmdline)
     if (ret != EOK) {
         ERROR("Unable to parse command arguments");
         goto done;
+    }
+
+    /* Resolve preset */
+    if (cli_preset_is_preset(profile_id)) {
+        char *resolved_id;
+        ret = cli_preset_resolve(profile_id, NULL, &resolved_id, NULL);
+        if (ret != EOK) {
+            goto done;
+        }
+        free(profile_id);
+        profile_id = resolved_id;
     }
 
     ret = authselect_profile(profile_id, &profile);
@@ -476,6 +538,7 @@ static errno_t show(struct cli_cmdline *cmdline)
     struct authselect_profile *profile;
     char *profile_id;
     errno_t ret;
+    int i;
 
     ret = cli_tool_popt_ex(cmdline, NULL, CLI_TOOL_OPT_OPTIONAL,
                            NULL, NULL, "PROFILE-ID", _("Profile identifier."),
@@ -483,6 +546,39 @@ static errno_t show(struct cli_cmdline *cmdline)
     if (ret != EOK) {
         ERROR("Unable to parse command arguments");
         goto done;
+    }
+
+    /* Handle presets */
+    if (cli_preset_is_preset(profile_id)) {
+        const struct cli_preset *preset = cli_preset_find(profile_id);
+        char *resolved_profile_id;
+        char **resolved_features;
+
+        ret = cli_preset_resolve(profile_id, NULL, &resolved_profile_id,
+                                 &resolved_features);
+        if (ret != EOK) {
+            goto done;
+        }
+
+        printf(_("Preset: %s\n"), preset->name);
+        printf(_("Description: %s\n"), preset->description);
+        printf(_("Source: %s\n\n"), preset->config_path);
+        printf(_("Resolves to:\n"));
+        printf(_("  Profile: %s\n"), resolved_profile_id);
+
+        if (resolved_features != NULL && resolved_features[0] != NULL) {
+            printf(_("  Features:\n"));
+            for (i = 0; resolved_features[i] != NULL; i++) {
+                printf("    - %s\n", resolved_features[i]);
+            }
+        } else {
+            printf(_("  Features: None\n"));
+        }
+
+        free(resolved_profile_id);
+        authselect_array_free(resolved_features);
+        free(profile_id);
+        return EOK;
     }
 
     ret = authselect_profile(profile_id, &profile);
@@ -508,7 +604,7 @@ static errno_t requirements(struct cli_cmdline *cmdline)
 {
     struct authselect_profile *profile = NULL;
     char *profile_id = NULL;
-    const char **features;
+    char **features;
     char *requirements = NULL;
     errno_t ret;
 
@@ -525,7 +621,7 @@ static errno_t requirements(struct cli_cmdline *cmdline)
         goto done;
     }
 
-    requirements = authselect_profile_requirements(profile, features);
+    requirements = authselect_profile_requirements(profile, (const char **)features);
     if (requirements == NULL) {
         ERROR("Unable to read profile requirements!");
         ret = EFAULT;
@@ -540,6 +636,7 @@ static errno_t requirements(struct cli_cmdline *cmdline)
 
 done:
     free(requirements);
+    authselect_array_free((char **)features);
     free(profile_id);
     authselect_profile_free(profile);
 
@@ -550,7 +647,7 @@ static errno_t test(struct cli_cmdline *cmdline)
 {
     struct authselect_files *files;
     char *profile_id = NULL;
-    const char **features;
+    char **features;
     const char *content;
     const char *path;
     int print_all = 1;
@@ -602,7 +699,7 @@ static errno_t test(struct cli_cmdline *cmdline)
         goto done;
     }
 
-    ret = authselect_files(profile_id, features, &files);
+    ret = authselect_files(profile_id, (const char **)features, &files);
     if (ret != EOK) {
         ERROR("Unable to get generated content [%d]: %s", ret, strerror(ret));
         goto done;
@@ -630,6 +727,7 @@ static errno_t test(struct cli_cmdline *cmdline)
     }
 
 done:
+    authselect_array_free((char **)features);
     free(profile_id);
     return ret;
 }
@@ -682,7 +780,7 @@ static errno_t enable(struct cli_cmdline *cmdline)
         goto done;
     }
 
-    requirements = authselect_profile_requirements(profile, features);
+    requirements = authselect_profile_requirements(profile, (const char **)features);
     if (requirements == NULL) {
         ERROR("Unable to read profile requirements!");
         ret = EFAULT;
