@@ -208,6 +208,7 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %{_datadir}/doc/authselect/COPYING
 %{_datadir}/doc/authselect/README.md
 %{_unitdir}/authselect-apply-changes.service
+%{_unitdir}/authselect-first-boot.service
 %license COPYING
 %doc README.md
 
@@ -223,13 +224,13 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %{_datadir}/bash-completion/completions/authselect.bash
 
 %post libs
-%systemd_post authselect-apply-changes.service
+%systemd_post authselect-apply-changes.service authselect-first-boot.service
 
 %preun libs
-%systemd_preun authselect-apply-changes.service
+%systemd_preun authselect-apply-changes.service authselect-first-boot.service
 
 %postun libs
-%systemd_postun authselect-apply-changes.service
+%systemd_postun authselect-apply-changes.service authselect-first-boot.service
 
 %posttrans libs
 # Keep nss-altfiles for all rpm-ostree based systems.
