@@ -9,22 +9,22 @@ upstream_package_name: authselect
 # then set by packit to correct values.
 packages:
   upstream:
-    specfile_path: authselect.spec
+    specfile_path: rpm/authselect.spec
     actions:
       post-upstream-clone:
-        - cp rpm/authselect.spec.in authselect.spec
-        - sed -i "s/@PACKAGE_VERSION@/0/g" authselect.spec
-        - sed -i "s/@RELEASE_NUMBER@/99/g" authselect.spec
+        - cp rpm/authselect.spec.in rpm/authselect.spec
+        - sed -i "s/@PACKAGE_VERSION@/0/g" rpm/authselect.spec
+        - sed -i "s/@RELEASE_NUMBER@/99/g" rpm/authselect.spec
       get-current-version:
         - bash -c 'grep "VERSION_NUMBER" version.m4 | sed -E "s/.+, ([0-9].+).+/\\1/"'
   downstream:
-    specfile_path: authselect.spec
+    specfile_path: rpm/authselect.spec
     actions:
       # Switch to %autorelease and enable gpg verification.
       post-upstream-clone:
-        - cp rpm/authselect.spec.in authselect.spec
-        - sed -i "s/@PACKAGE_VERSION@/0/g" authselect.spec
-        - sed -i "s/@RELEASE_NUMBER@%{?dist}/%autorelease/g" authselect.spec
+        - cp rpm/authselect.spec.in rpm/authselect.spec
+        - sed -i "s/@PACKAGE_VERSION@/0/g" rpm/authselect.spec
+        - sed -i "s/@RELEASE_NUMBER@%{?dist}/%autorelease/g" rpm/authselect.spec
 
 jobs:
   # Produce COPR builds on push
