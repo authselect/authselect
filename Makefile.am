@@ -63,6 +63,8 @@ rpmroot:
 rpmprep: dist-gzip rpmroot
 	cp $(builddir)/rpm/authselect.spec $(RPMBUILD)/SPECS
 	cp $(distdir).tar.gz $(RPMBUILD)/SOURCES
+	cp $(srcdir)/rpm/authselect.conf.fedora $(RPMBUILD)/SOURCES
+	cp $(srcdir)/rpm/authselect.conf.rhel $(RPMBUILD)/SOURCES
 
 rpms: rpmprep
 	cd $(RPMBUILD); \
