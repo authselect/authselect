@@ -9,6 +9,8 @@ URL:            https://github.com/authselect/authselect
 
 License:        GPL-3.0-or-later
 Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
+Source1:        authselect.conf.fedora
+Source2:        authselect.conf.rhel
 
 %global makedir %{_builddir}/%{name}-%{version}
 
@@ -18,10 +20,6 @@ Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 %else
 %global with_nis_profile 1
 %endif
-
-# Set the default profile
-%{?fedora:%global default_profile local with-silent-lastlog}
-%{?rhel:%global default_profile local}
 
 BuildRequires:  autoconf
 BuildRequires:  automake
@@ -107,6 +105,13 @@ autoreconf -if
 %install
 %make_install
 
+# Install distribution-specific configuration
+%if 0%{?fedora}
+%__install -m 644 -D %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/authselect/authselect.conf
+%else
+%__install -m 644 -D %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/authselect/authselect.conf
+%endif
+
 # Find translations
 %find_lang %{name}
 %find_lang %{name} %{name}.8.lang --with-man
@@ -148,6 +153,7 @@ find $RPM_BUILD_ROOT -name "*.a" -exec %__rm -f {} \;
 %dir %{_datadir}/authselect/default/local/
 %dir %{_datadir}/authselect/default/sssd/
 %dir %{_datadir}/authselect/default/winbind/
+%config(noreplace) %{_datadir}/authselect/authselect.conf
 %verify(not md5 size mtime) %{_datadir}/authselect/checksum
 %{_datadir}/authselect/default/local/dconf-db
 %{_datadir}/authselect/default/local/dconf-locks
@@ -237,7 +243,7 @@ fi
 
 # If this is a new installation select the default configuration.
 if [ $1 == 1 ] ; then
-    %{_bindir}/authselect select %{default_profile} --force --nobackup &> /dev/null
+    %{_bindir}/authselect select @system-default --force --nobackup &> /dev/null
     exit 0
 fi
 
