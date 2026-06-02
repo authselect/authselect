@@ -1,0 +1,19 @@
+[Unit]
+Description=Generate authselect configuration on first boot (empty /etc)
+Documentation=man:authselect(8)
+ConditionFirstBoot=yes
+ConditionPathIsReadWrite=/etc
+DefaultDependencies=no
+After=systemd-remount-fs.service
+Wants=first-boot-complete.target
+Before=first-boot-complete.target sysinit.target
+Conflicts=shutdown.target
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/authselect select @system-default --force --nobackup
+
+[Install]
+WantedBy=sysinit.target
