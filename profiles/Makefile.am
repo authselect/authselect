@@ -17,23 +17,6 @@ dist_profile_local_DATA = \
     $(top_srcdir)/profiles/local/dconf-locks \
     $(NULL)
 
-if WITH_NIS_PROFILE
-profile_nisdir = $(authselect_profile_default_dir)/nis
-dist_profile_nis_DATA = \
-    $(top_srcdir)/profiles/nis/nsswitch.conf \
-    $(top_srcdir)/profiles/nis/password-auth \
-    $(top_srcdir)/profiles/nis/postlogin \
-    $(top_srcdir)/profiles/nis/README \
-    $(top_srcdir)/profiles/nis/REQUIREMENTS \
-    $(top_srcdir)/profiles/nis/smartcard-auth \
-    $(top_srcdir)/profiles/nis/switchable-auth \
-    $(top_srcdir)/profiles/nis/system-auth \
-    $(top_srcdir)/profiles/nis/fingerprint-auth \
-    $(top_srcdir)/profiles/nis/dconf-db \
-    $(top_srcdir)/profiles/nis/dconf-locks \
-    $(NULL)
-endif
-
 profile_sssddir = $(authselect_profile_default_dir)/sssd
 dist_profile_sssd_DATA = \
     $(top_srcdir)/profiles/sssd/nsswitch.conf \
