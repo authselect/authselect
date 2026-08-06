@@ -88,13 +88,3 @@ AS_IF([test "x$enable_debug_template_regex" = "xyes"],
         [Debug template regular expressions]
     )
 )
-
-AC_ARG_WITH([nis-profile],
-    [AS_HELP_STRING([--with-nis-profile], [Install NIS profile [no]])],
-    [], with_nis_profile=no
-)
-AM_CONDITIONAL([WITH_NIS_PROFILE], [test x$with_nis_profile = xyes])
-AC_SUBST(WITH_NIS_PROFILE, 0)
-if test x"$with_nis_profile" = xyes; then
-    AC_SUBST(WITH_NIS_PROFILE, 1)
-fi

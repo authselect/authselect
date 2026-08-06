@@ -72,12 +72,7 @@ configuration file for required services.
 |--enablesssd --enablesssdauth       |sssd
 |--enablekrb5                        |sssd
 |--enablewinbind --enablewinbindauth |winbind
-ifeval::[{WITH_NIS_PROFILE} == 1]
-|--enablenis                         |nis
-endif::[]
-ifeval::[{WITH_NIS_PROFILE} != 1]
-|--enablenis                         |none
-endif::[]
+|--enablenis                         |_none_
 |=========================================================
 
 .Relation of authconfig options to authselect profile features
@@ -204,36 +199,6 @@ will perform an initial setup which involves creating a Kerberos keytab and
 running `adcli` to join the domain. It also makes changes to `smb.conf`. You
 can then tune it up by modifying {sysconfdir}/samba/smb.conf.
 
-ifeval::[{WITH_NIS_PROFILE} == 1]
-NIS
-~~~
-There are several places that need to be configured in order to make
-NIS authentication work. First, you need to set NIS domain and optionally
-also NIS server in {sysconfdir}/yp.conf.
-
-.{sysconfdir}/yp.conf
-----
-domain mydomain broadcast
-# or
-# domain mydomain server myserver
-----
-
-NIS domain must be also set in system network configuration.
-
-.{sysconfdir}/sysconfig/network
-----
-NISDOMAIN=mydomain
-----
-
-Now, you can set the domain name with command line so there is no need to
-reboot your system. Additionally, it may be necessary to enable NIS in SELinux.
-
-----
-$ domainname mydomain
-$ setsebool -P allow_ypbind 1
-----
-
-endif::[]
 PASSWORD QUALITY
 ~~~~~~~~~~~~~~~~
 Authselect enables `pam_pwquality` module to enforce password quality
@@ -257,11 +222,6 @@ with systemd.
 * Winbind
 
   systemctl enable winbind.service ; systemctl start winbind.service
-
-* NIS
-
-  systemctl enable rpcbind.service ; systemctl start rpcbind.service
-  systemctl enable ypbind.service ; systemctl start ypbind.service
 
 * If mkhomedir feature is enabled
 

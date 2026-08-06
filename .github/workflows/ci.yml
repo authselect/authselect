@@ -247,7 +247,7 @@ jobs:
           test -d /usr/share/authselect/vendor
 
           # Check that vendor profiles were created for each default profile
-          for profile in sssd winbind nis local; do
+          for profile in sssd winbind local; do
             if [ -d "/usr/share/authselect/default/$profile" ]; then
               echo "Checking vendor profile: $profile"
               test -d "/usr/share/authselect/vendor/$profile" || {
