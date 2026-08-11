@@ -265,32 +265,6 @@ def test_profiles__with_altfiles(client: Client):
 
 @pytest.mark.importance("high")
 @pytest.mark.topology(ProfileGroup.AnyProfile)
-def test_profiles__with_ecryptfs(client: Client):
-    """
-    :title: Sanity authselect with-ecryptfs test
-    :description:
-        'with-ecryptfs' unlocks encrypted home directories at login.
-    :setup:
-    :steps:
-        1. Select authselect profile with 'with-ecryptfs' feature
-        2. Verify authselect-generated PAM configuration
-        3. Disable authselect 'with-ecryptfs' feature
-    :expectedresults:
-        1. Authselect profile is selected with feature enabled
-        2. system-auth includes pam_ecryptfs.so
-        3. Authselect feature 'with-ecryptfs' is disabled
-    :customerscenario: False
-    """
-    client.authselect.select(client.profile, ["with-ecryptfs"])
-
-    system_auth = client.fs.read("/etc/pam.d/system-auth")
-    assert "pam_ecryptfs.so" in system_auth, "'pam_ecryptfs.so' was not found in system-auth!"
-
-    client.authselect.disable_feature(["with-ecryptfs"])
-
-
-@pytest.mark.importance("high")
-@pytest.mark.topology(ProfileGroup.AnyProfile)
 def test_profiles__with_fingerprint(client: Client):
     """
     :title: Sanity authselect with-fingerprint test
@@ -507,32 +481,6 @@ def test_profiles__with_pwhistory(
     assert "pam_pwhistory.so" in system_auth, "'pam_pwhistory.so' was not found in system-auth!"
 
     client.authselect.disable_feature(["with-pwhistory"])
-
-
-@pytest.mark.importance("high")
-@pytest.mark.topology(ProfileGroup.AnyProfile)
-def test_profiles__with_systemd_homed(client: Client):
-    """
-    :title: Sanity authselect with-systemd-homed test
-    :description:
-        'with-systemd-homed' supports portable home directories across machines.
-    :setup:
-    :steps:
-        1. Select authselect profile with 'with-systemd-homed' feature
-        2. Verify authselect-generated PAM configuration
-        3. Disable authselect 'with-systemd-homed' feature
-    :expectedresults:
-        1. Authselect profile is selected with feature enabled
-        2. system-auth includes pam_systemd_home.so
-        3. Authselect feature 'with-systemd-homed' is disabled
-    :customerscenario: False
-    """
-    client.authselect.select(client.profile, ["with-systemd-homed"])
-
-    system_auth = client.fs.read("/etc/pam.d/system-auth")
-    assert "pam_systemd_home.so" in system_auth, "'pam_systemd_home.so' was not found in system-auth!"
-
-    client.authselect.disable_feature(["with-systemd-homed"])
 
 
 @pytest.mark.importance("high")

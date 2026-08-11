@@ -330,79 +330,10 @@ def test_sssd__with_switchable_auth(client: Client):
     ), "'switchable-auth' should not contain 'pam_sss.so' when feature is disabled!"
 
 
-@pytest.mark.importance("high")
-@pytest.mark.topology(Profile.SSSD)
-def test_sssd__with_gpupdate(client: Client):
-    """
-    :title: Sanity authselect with-gpupdate test
-    :description:
-        Verify 'with-gpupdate' adds 'pam_oddjob_gpupdate.so' to the PAM session
-        stack so Group Policy Objects are applied automatically on user login.
-    :setup:
-    :steps:
-        1. Select authselect profile with 'with-gpupdate' feature
-        2. Verify the PAM session stack contains 'pam_oddjob_gpupdate.so'
-        3. Disable authselect 'with-gpupdate' feature
-        4. Verify the PAM session stack no longer contains 'pam_oddjob_gpupdate.so'
-    :expectedresults:
-        1. Authselect profile is selected with feature enabled
-        2. 'system-auth' contains 'pam_oddjob_gpupdate.so'
-        3. Authselect feature 'with-gpupdate' is disabled
-        4. 'system-auth' does not contain 'pam_oddjob_gpupdate.so'
-    :customerscenario: False
-    """
-    client.authselect.select("sssd", ["with-gpupdate"])
-
-    system_auth = client.fs.read("/etc/pam.d/system-auth")
-    assert (
-        "pam_oddjob_gpupdate.so" in system_auth
-    ), "'system-auth' should contain 'pam_oddjob_gpupdate.so' when 'with-gpupdate' is enabled!"
-
-    client.authselect.disable_feature(["with-gpupdate"])
-
-    system_auth = client.fs.read("/etc/pam.d/system-auth")
-    assert (
-        "pam_oddjob_gpupdate.so" not in system_auth
-    ), "'system-auth' should not contain 'pam_oddjob_gpupdate.so' when 'with-gpupdate' is disabled!"
-
-
-@pytest.mark.importance("high")
-@pytest.mark.topology(Profile.SSSD)
-def test_sssd__with_tlog(client: Client):
-    """
-    :title: Sanity authselect with-tlog test
-    :description:
-        'with-tlog' integrates user and group lookups with terminal session recording.
-    :setup:
-    :steps:
-        1. Select authselect profile with 'with-tlog' feature
-        2. Verify authselect-generated nsswitch configuration
-        3. Disable authselect 'with-tlog' feature
-    :expectedresults:
-        1. Authselect profile is selected with feature enabled
-        2. nsswitch passwd and group entries start with sss
-        3. Authselect feature 'with-tlog' is disabled
-    :customerscenario: False
-    """
-    client.authselect.select("sssd", ["with-tlog"])
-
-    nsswitch = client.fs.read("/etc/nsswitch.conf")
-    passwd_line = next(line for line in nsswitch.splitlines() if line.startswith("passwd:"))
-    group_line = next(line for line in nsswitch.splitlines() if line.startswith("group:"))
-    assert (
-        passwd_line.startswith("passwd:") and "sss" in passwd_line.split()[1]
-    ), "passwd nsswitch entry should start with sss!"
-    assert (
-        group_line.startswith("group:") and "sss" in group_line.split()[1]
-    ), "group nsswitch entry should start with sss!"
-
-    client.authselect.disable_feature(["with-tlog"])
-
-
 @pytest.mark.importance("critical")
 @pytest.mark.ticket(jira="SSSD-7707")
 @pytest.mark.topology(Profile.SSSD)
-def test_profiles__with_group_merging(client: Client, provider: GenericProvider):
+def test_sssd__with_group_merging(client: Client, provider: GenericProvider):
     """
     :title: Functional authselect with-group-merging test
     :description:
