@@ -19,6 +19,7 @@
 */
 
 #include <stdbool.h>
+#include <stdint.h>
 #include <string.h>
 
 #include "tests/test_common.h"

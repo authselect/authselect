@@ -18,6 +18,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <stdint.h>
+
 #include "tests/test_common.h"
 #include "lib/util/string_array.h"
 #include "lib/util/template.h"
