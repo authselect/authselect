@@ -292,25 +292,34 @@ def test_sssd__with_subid(client: Client, provider: GenericProvider):
 
 
 @pytest.mark.importance("high")
+@pytest.mark.ticket(jira="RHEL-181749")
 @pytest.mark.topology(Profile.SSSD)
 def test_sssd__with_switchable_auth(client: Client):
     """
     :title: Sanity authselect with-switchable-auth test
     :description:
-        'with-switchable-auth' enables the 'switchable-auth' PAM service so login
-        applications can offer the user a choice of authentication methods.
-        Without the feature the service is a stub that blocks all authentication.
+        'with-switchable-auth' is the authselect side of the passwordless-gdm
+        feature. It enables the 'switchable-auth' PAM service, used by login
+        applications such as GDM to offer the user a choice of authentication
+        methods, and flips the 'enable-switchable-authentication' dconf key
+        that GDM reads to decide whether to offer passwordless login at all.
+        Without the feature the PAM service is a stub that blocks all
+        authentication and the dconf key stays disabled.
     :setup:
     :steps:
         1. Select authselect profile with 'with-switchable-auth' feature
         2. Verify the 'switchable-auth' PAM service contains the full auth stack
-        3. Disable authselect 'with-switchable-auth' feature
-        4. Verify the 'switchable-auth' PAM service no longer has an auth stack
+        3. Verify the 'enable-switchable-authentication' dconf key is enabled
+        4. Disable authselect 'with-switchable-auth' feature
+        5. Verify the 'switchable-auth' PAM service no longer has an auth stack
+        6. Verify the 'enable-switchable-authentication' dconf key is disabled
     :expectedresults:
         1. Authselect profile is selected with feature enabled
         2. 'switchable-auth' contains 'pam_unix.so' and 'pam_sss.so'
-        3. Authselect feature 'with-switchable-auth' is disabled
-        4. 'switchable-auth' does not contain 'pam_unix.so' or 'pam_sss.so'
+        3. dconf reports 'enable-switchable-authentication=true'
+        4. Authselect feature 'with-switchable-auth' is disabled
+        5. 'switchable-auth' does not contain 'pam_unix.so' or 'pam_sss.so'
+        6. dconf reports 'enable-switchable-authentication=false'
     :customerscenario: False
     """
     client.authselect.select("sssd", ["with-switchable-auth"])
@@ -318,6 +327,11 @@ def test_sssd__with_switchable_auth(client: Client):
     switchable_auth = client.fs.read("/etc/pam.d/switchable-auth")
     assert "pam_unix.so" in switchable_auth, "'switchable-auth' should contain 'pam_unix.so'!"
     assert "pam_sss.so" in switchable_auth, "'switchable-auth' should contain 'pam_sss.so'!"
+
+    dconf_db = client.fs.read("/etc/authselect/dconf-db")
+    assert (
+        "enable-switchable-authentication=true" in dconf_db
+    ), "GDM passwordless login should be advertised via dconf when 'with-switchable-auth' is enabled!"
 
     client.authselect.disable_feature(["with-switchable-auth"])
 
@@ -328,6 +342,11 @@ def test_sssd__with_switchable_auth(client: Client):
     assert (
         "pam_sss.so" not in switchable_auth
     ), "'switchable-auth' should not contain 'pam_sss.so' when feature is disabled!"
+
+    dconf_db = client.fs.read("/etc/authselect/dconf-db")
+    assert (
+        "enable-switchable-authentication=false" in dconf_db
+    ), "GDM passwordless login should not be advertised via dconf when 'with-switchable-auth' is disabled!"
 
 
 @pytest.mark.importance("critical")
