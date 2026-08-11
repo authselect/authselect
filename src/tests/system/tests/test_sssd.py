@@ -1,327 +1,454 @@
 """
 Authselect SSSD Profile Test Cases
 
-Functional testing, enabling a feature, simulating the user steps, then turning off the feature.
-
 :requirement: Authselect replaced authconfig
 """
 
 from __future__ import annotations
 
+import time
+from typing import cast
+
 import pytest
-from pytest_mh._private.multihost import mh_utility
-from sssd_test_framework.roles.client import Client
-from sssd_test_framework.roles.generic import GenericProvider
-from sssd_test_framework.topology import KnownTopology, KnownTopologyGroup
-from sssd_test_framework.utils.pam import PAMAccessUtils, PAMFaillockUtils
+from authselect_test_framework.profiles import Profile
+from authselect_test_framework.roles.client import Client
+from authselect_test_framework.roles.generic import GenericProvider
+from authselect_test_framework.roles.ipa import IPA
 
 
 @pytest.mark.importance("critical")
-@pytest.mark.topology(KnownTopologyGroup.AnyProvider)
-def test_sssd__selecting_profile_and_user_login(client: Client, provider: GenericProvider):
+@pytest.mark.topology(Profile.SSSD)
+def test_sssd__with_sudo(client: Client, provider: GenericProvider):
     """
-    :title: Authselect sssd profile is selected and functionally tested
-    :setup:
-        1. Create POSIX user "user-1"
-        2. Select SSSD profile
-        3. Start SSSD
-    :steps:
-        1. Select sssd authselect profile
-        2. Authenticate through SSH and then su as "user-1"
-    :expectedresults:
-        1. SSSD profile is selected
-        2. Authentication attempts are successful for "user-1"
-    :customerscenario: True
-    """
-    provider.user("user-1").add()
-
-    client.authselect.select("sssd")
-    client.sssd.start()
-
-    assert client.auth.ssh.password("user-1", "Secret123")
-    assert client.auth.su.password("user-1", "Secret123")
-
-
-@pytest.mark.importance("critical")
-@pytest.mark.topology(KnownTopologyGroup.AnyProvider)
-def test_sssd__enabling_and_then_disabling_with_mkhomedir_feature(client: Client, provider: GenericProvider):
-    """
-    :title: Authselect sssd profile with-mkhomedir is functionally tested
+    :title: Functional authselect with-sudo test
     :description:
-        Tests with-mkhomedir feature, with is the automatic user home directory upon login.
+        'with-sudo' provides centrally managed sudo rules to users on the host.
     :setup:
-        1. Create POSIX user "user-1"
-        2. Select SSSD profile with with-mkhomedir
-        3. Start SSSD
+        1. Add sudo rule for the user
     :steps:
-        1. Authenticate as "user-1" and check home directory
-        2. Delete "user-1" home directory and disable with-mkhomedir feature
-        3. Authenticate as "user-1" and check home directory
+        1. Select authselect profile with 'with-sudo' feature
+        2. List and run sudo commands as the user
+        3. Disable authselect 'with-sudo' feature
+        4. List and run sudo commands as the user
     :expectedresults:
-        1. Authentication is successful for "user-1" and home directory exists
-        2. Home directory is deleted and feature is disabled
-        3. Authentication is successful for "user-1" and no home directory exists
+        1. Authselect profile is selected with feature enabled
+        2. Sudo rule is listed and sudo command succeeds
+        3. Authselect feature 'with-sudo' is disabled
+        4. Sudo rule is not listed and sudo command fails
     :customerscenario: True
     """
-    homedir = "/home/user-1"
-    client.fs.backup(homedir)
-
-    provider.user("user-1").add(home=homedir)
-
-    client.host.conn.run(f"rm -fr {homedir}")
-    client.authselect.select("sssd", ["with-mkhomedir"])
-    client.sssd.start()
-
-    assert client.auth.ssh.password("user-1", "Secret123")
-    assert client.fs.exists(homedir)
-
-    client.host.conn.run(f"rm -fr {homedir}")
-    client.authselect.disable_feature(["with-mkhomedir"])
-
-    assert client.auth.ssh.password("user-1", "Secret123")
-    assert not client.fs.exists(homedir)
-
-
-@pytest.mark.importance("critical")
-@pytest.mark.topology(KnownTopologyGroup.AnyProvider)
-def test_sssd__enabling_and_then_disabling_with_faillock_feature(client: Client, provider: GenericProvider):
-    """
-    :title: Authselect sssd profile with-faillock is functionally tested
-    :description:
-        PAM Faillock is a module that manages security policies on the host, login attempts, lockout duration, etc.
-    :setup:
-        1. Create POSIX user "user-1"
-        2. Select SSSD profile with-faillock feature
-        3. Start SSSD
-    :steps:
-        1. Authenticate as "user-1"
-        2. Authenticate as "user-1" 3 times with an invalid password
-        3. Reset faillock for "user-1"
-        4. Authenticate as "user-1"
-        5. Disable feature pam-faillock
-        6. Authenticate as "user-1" 3 times with an invalid password
-        7. Authenticate as "user-1"
-    :expectedresults:
-        1. Authentication is successful for "user-1"
-        2. Authentication attempts are unsuccessful for "user-1"
-        3. Faillock is reset for "user-1"
-        4. Authentication is successful for "user-1"
-        5. Feature pam-faillock is disabled
-        6. Authentication attempts are unsuccessful for "user-1"
-        7. Authentication is successful for "user-1"
-    :customerscenario: True
-    """
-    provider.user("user-1").add()
-
-    with mh_utility(PAMFaillockUtils(client.host, client.fs)) as faillock:
-        faillock.config_set({"deny": "3", "unlock_time": "300"})
-
-        client.sssd.common.pam(["with-faillock"])
-        client.sssd.start()
-
-        assert client.auth.su.password("user-1", "Secret123")
-
-        for i in range(3):
-            client.auth.su.password("user-1", "BadSecret123")
-
-        assert not client.auth.su.password("user-1", "Secret123")
-        client.tools.faillock(["--user", "user-1", "--reset"])
-        assert client.auth.su.password("user-1", "Secret123")
-
-        client.authselect.disable_feature(["with-faillock"])
-
-        for i in range(3):
-            client.auth.su.password("user-1", "BadSecret123")
-        assert client.auth.su.password("user-1", "Secret123")
-
-
-@pytest.mark.importance("critical")
-@pytest.mark.topology(KnownTopologyGroup.AnyProvider)
-def test_sssd__enabling_and_then_disabling_pam_sudo_feature(client: Client, provider: GenericProvider):
-    """
-    :title: Authselect sssd profile with-sudo is functionally tested
-    :description:
-        Test enabling and disabling with-sudo.
-    :setup:
-        1. Create POSIX user "user-1"
-        2. Add sudo rules for "user-1"
-        3. Configure sudo on the client
-        4. Start SSSD
-    :steps:
-        1. List and run sudo commands as "user-1"
-        2. Disable with-sudo feature
-        3. List and run sudo command as "user-1"
-    :expectedresults:
-        1. Sudo rule are listed and sudo command is successful
-        2. Feature with-sudo is disabled
-        3. Sudo rule are not listed and sudo command is unsuccessful
-    :customerscenario: True
-    """
-    provider.user("user-1").add()
+    provider.user("user-1").add(home="/home/user-1", shell="/bin/bash")
     provider.sudorule("test").add(user="user-1", host="ALL", command="/bin/ls")
 
-    client.sssd.common.sudo()
+    client.authselect.select("sssd", ["with-sudo"])
+    client.sssd.enable_responder("sudo")
     client.sssd.start()
 
-    assert client.auth.sudo.list("user-1", "Secret123", expected=["(root) /bin/ls"])
-    assert client.auth.sudo.run("user-1", "Secret123", command="/bin/ls /root")
+    assert client.tools.id("user-1") is not None, "'user-1' was not found!"
+    assert client.auth.sudo.list("user-1", expected=["(root) /bin/ls"]), "sudo rule should be listed!"
+    assert client.auth.sudo.run("user-1", command="/bin/ls /root"), "sudo command should succeed!"
 
     client.authselect.disable_feature(["with-sudo"])
 
-    assert not client.auth.sudo.list("user-1", "Secret123", expected=["(root) /bin/ls"])
-    assert not client.auth.sudo.run("user-1", "Secret123", command="/bin/ls /root")
-
-
-@pytest.mark.importance("critical")
-@pytest.mark.topology(KnownTopologyGroup.AnyProvider)
-def test_sssd__enabling_and_then_disabling_pam_access_feature(client: Client, provider: GenericProvider):
-    """
-    :title: Authselect sssd profile with-pamaccess is functionally tested
-    :description:
-        PAM Access manages host based access control locally and is configured in /etc/security/access.conf
-        When configured a user can be restricted from what host/session they are connection from.
-    :setup:
-        1. Create local users "user-1" and "user-2"
-        2. Create PAM Access rules
-        3. Select SSSD profile with-pamaccess feature
-        4. Set "use_fully_qualified_names = False" in sssd.conf
-        5. Start SSSD
-    :steps:
-        1. Authenticate as "user-1" then "user-2"
-        2. Disable authselect feature with-pamaccess
-        3. Authenticate as "user-1" then "user-2"
-    :expectedresults:
-        1. Authentication is successful for "user-1" and unsuccessful for "user-2"
-        2. Feature with-pamaccess is disabled
-        3. Authentication is successful for "user-1" and "user-2"
-    :customerscenario: True
-    """
-    provider.user("user-1").add()
-    provider.user("user-2").add()
-
-    with mh_utility(PAMAccessUtils(client.host, client.fs)) as access:
-        access.config_set(
-            [{"access": "+", "user": "user-1", "origin": "ALL"}, {"access": "-", "user": "user-2", "origin": "ALL"}]
-        )
-
-        client.authselect.select("sssd", ["with-pamaccess"])
-        client.sssd.domain["use_fully_qualified_names"] = "False"
-        client.sssd.start()
-
-        assert client.auth.ssh.password("user-1", "Secret123")
-        assert not client.auth.ssh.password("user-2", "Secret123")
-
-        client.authselect.disable_feature(["with-pamaccess"])
-
-        assert client.auth.ssh.password("user-1", "Secret123")
-        assert client.auth.ssh.password("user-2", "Secret123")
-
-
-@pytest.mark.importance("critical")
-@pytest.mark.topology(KnownTopologyGroup.AnyProvider)
-def test_sssd__enabling_and_then_disabling_silent_lastlog_feature(client: Client, provider: GenericProvider):
-    """
-    :title: Authselect sssd profile with-silent-lastlog
-    :description:
-        pam_lastlog prints the "last login" date. Enabling with-silent-lastlog should disable the output. By default,
-        this only works when switching users.
-    :setup:
-        1. Create provider user "user-1"
-        2. Start SSSD with silent-last-log
-        3. Start SSSD
-    :steps:
-        1. SU as "user-1 twice, once to update lastlog db, then su to the user and check output
-        2. Disable silent-last-log
-        3. SU to "user-1 and check output
-    :expectedresults:
-        1. Authentication attempts are successful for "user-1" and output contains no last login information
-        2. Feature with-silent-lastlog is disabled
-        3. Authentication is successful for "user-1" and output contains last login information
-    :customerscenario: True
-    """
-    provider.user("user-1").add()
-    client.authselect.select("sssd", ["with-silent-lastlog"])
-    client.sssd.start()
-
-    client.auth.su.password_with_output("user-1", password="Secret123")
-    result = client.auth.su.password_with_output("user-1", password="Secret123")
-    assert "Last login:" not in result[2]
-
-    client.authselect.disable_feature(["with-silent-lastlog"])
-
-    result = client.auth.su.password_with_output("user-1", password="Secret123")
-    assert "Last login:" in result[2]
+    assert not client.auth.sudo.list("user-1", expected=["(root) /bin/ls"]), "sudo rule should not be listed!"
+    assert not client.auth.sudo.run("user-1", command="/bin/ls /root"), "sudo command should fail!"
 
 
 @pytest.mark.importance("critical")
 @pytest.mark.ticket(bz=2077893)
-@pytest.mark.topology(KnownTopologyGroup.AnyAD)
-@pytest.mark.topology(KnownTopology.IPA)
-def test_sssd__enabling_and_then_disabling_with_gssapi_feature(client: Client, provider: GenericProvider):
+@pytest.mark.topology(Profile.SSSD)
+def test_sssd__with_gssapi(client: Client, provider: GenericProvider):
     """
-    :title: Authselect sssd profile with-gssapi feature
-    :description: GSSAPI is pre-authenticating the sudo commands using the ccache.
-        Destroying the kerberos cache or disabling the GSSAPI feature will stop
-        delegating the user's credentials.
+    :title: Functional authselect with-gssapi test
+    :description:
+        'with-gssapi' lets users run sudo without re-entering a password when they
+        already have a valid Kerberos ticket.
     :setup:
-        1. Create provider user "user-1"
-        2. Select SSSD profile with-gssapi
-        3. Start SSSD
+        1. Add sudo rule for the user
     :steps:
-        1. kinit as user and list and run sudo commands as "user-1"
-        2. Disable with-gssapi feature
-        3. kinit as user and list and run sudo command as "user-1"
+        1. Select authselect profile with 'with-gssapi' and 'with-sudo' features
+        2. Obtain Kerberos ticket and list and run sudo commands
+        3. Disable authselect 'with-gssapi' feature
+        4. Obtain Kerberos ticket and list and run sudo commands
     :expectedresults:
-        1. Sudo rule are listed and sudo command is successful
-        2. Feature with-gssapi is disabled
-        3. Sudo rule are not listed and sudo command is unsuccessful
+        1. Authselect profile is selected with feature enabled
+        2. Sudo rule is listed and sudo command succeeds
+        3. Authselect feature 'with-gssapi' is disabled
+        4. Sudo commands require a password
     :customerscenario: True
     """
-    provider.user("user-1").add()
+    provider.user("user-1").add(home="/home/user-1", shell="/bin/bash")
     provider.sudorule("test").add(user="user-1", host="ALL", command="/bin/ls")
-    client.sssd.common.gssapi()
-    client.sssd.start()
 
-    with client.ssh("user-1", "Secret123") as ssh:
-        assert ssh.run(f"kinit user-1@{provider.realm}", input="Secret123")
-        assert "(root) /bin/ls" in ssh.run("sudo -l").stdout
-        assert ssh.run("sudo /bin/ls /root")
+    client.authselect.select("sssd", ["with-gssapi", "with-sudo"])
+    client.sssd.enable_responder("sudo")
+    client.sssd.domain["pam_gssapi_services"] = "sudo, sudo-i"
+    client.sssd.domain["pam_gssapi_check_upn"] = "False"
+    client.sssd.start()
+    time.sleep(2)
+
+    assert client.tools.id("user-1") is not None, "'user-1' was not found!"
+
+    result = client.host.conn.run(
+        f'su - "user-1" -c "kinit user-1@{provider.realm} && sudo -l && sudo /bin/ls /root"',
+        input="Secret123",
+        raise_on_error=False,
+    )
+    assert (
+        result.rc == 0
+    ), f"kinit and sudo should succeed with 'with-gssapi' enabled!\n{result.stdout}\n{result.stderr}"
+    assert "(root) /bin/ls" in result.stdout, "sudo rule should be listed!"
 
     client.authselect.disable_feature(["with-gssapi"])
 
-    with client.ssh("user-1", "Secret123") as ssh:
-        assert ssh.run(f"kinit user-1@{provider.realm}", input="Secret123")
-        for i in ["sudo -l", "sudo /bin/ls /root"]:
-            result = ssh.run(i, raise_on_error=False)
-            assert result.rc != 0
-            assert "sudo: a password is required" in result.stderr
+    result = client.host.conn.run(
+        f'su - "user-1" -c "kinit user-1@{provider.realm} && sudo -l"',
+        input="Secret123",
+        raise_on_error=False,
+    )
+    assert result.rc != 0, "sudo -l should fail after 'with-gssapi' was disabled!"
+    assert "sudo: a password is required" in result.stderr, "sudo -l should require a password!"
+
+    result = client.host.conn.run(
+        f'su - "user-1" -c "kinit user-1@{provider.realm} && sudo /bin/ls /root"',
+        input="Secret123",
+        raise_on_error=False,
+    )
+    assert result.rc != 0, "sudo command should fail after 'with-gssapi' was disabled!"
+    assert "sudo: a password is required" in result.stderr, "sudo command should require a password!"
 
 
 @pytest.mark.importance("high")
-@pytest.mark.ticket(jira="SSSD-7706")
-@pytest.mark.topology(KnownTopology.IPA)
-def test_sssd__nsswitch_conf_group_merging(client: Client, provider: GenericProvider):
+@pytest.mark.topology(Profile.SSSD)
+def test_sssd__with_files_access_provider(client: Client, provider: GenericProvider):
     """
-    :title: NSSwitch merges two databases on group lookup
-    :description: there is no configuration required, merging is the default behavior in authselect 1.5.x
+    :title: Functional authselect with-files-access-provider test
+    :description:
+        'with-files-access-provider' lets local users log in when the central
+        identity service is used for other accounts.
     :setup:
-        1. Create local group  and provider group with the same gid
-        2. Create and add user to provider group
-        3. Select SSSD authselect profile, enabled with-group-merging and start sssd
     :steps:
-        1. Lookup group
-        2. Lookup group using only the files service
+        1. Select authselect profile with 'with-files-access-provider' feature
+        2. Login as the user
+        3. Disable authselect 'with-files-access-provider' feature
     :expectedresults:
-        1. Group is found and ‘user’ is a member
-        2. Group is found and ‘user’ is not a member
+        1. Authselect profile is selected with feature enabled
+        2. Login is successful
+        3. Authselect feature 'with-files-access-provider' is disabled
     :customerscenario: False
     """
-    client.local.group("group").add(gid=123456)
-    provider.group("group").add(gid=123456).add_member(provider.user("user").add())
-    client.authselect.select("sssd", ["with-group-merging"])
+    client.user("user-2").add(uid=10002, gid=10002, home="/home/user-2", shell="/bin/bash")
+
+    client.authselect.select("sssd", ["with-files-access-provider"])
     client.sssd.start()
 
-    assert "user" in client.tools.getent.group("group").members, "'user' is not a member of the group!"
+    assert client.tools.id("user-2") is not None, "'user-2' was not found!"
+    assert client.auth.ssh.password("user-2", password="Secret123"), "SSH authentication should succeed!"
+
+    client.authselect.disable_feature(["with-files-access-provider"])
+
+
+@pytest.mark.importance("high")
+@pytest.mark.topology(Profile.SSSD)
+def test_sssd__with_smartcard(client: Client, provider: GenericProvider):
+    """
+    :title: Functional authselect with-smartcard test
+    :description:
+        'with-smartcard' allows login using a smart card certificate.
+    :setup:
+        1. Enroll certificate on token
+    :steps:
+        1. Select authselect profile with 'with-smartcard' feature
+        2. Verify authselect-generated PAM configuration
+        3. Authenticate as the IPA user via nested ``su`` with the smart card PIN
+        4. Disable authselect 'with-smartcard' feature
+        5. Attempt to authenticate via nested ``su`` with the smart card PIN again
+    :expectedresults:
+        1. Authselect profile is selected with feature enabled
+        2. system-auth includes pam_sss try_cert_auth
+        3. PIN prompt appears and authentication succeeds
+        4. Authselect feature 'with-smartcard' is disabled
+        5. Smart card authentication does not succeed
+    :customerscenario: False
+    """
+    ipa = cast(IPA, provider)
+    provider.user("user-1").add(home="/home/user-1", shell="/bin/bash")
+
+    client.smartcard.enroll_to_token(client, ipa, "user-1", pin="123456", init=True)
+    client.sssd.common.smartcard_with_softhsm(client.smartcard)
+
+    assert client.tools.id("user-1") is not None, "'user-1' was not found!"
+    system_auth = client.fs.read("/etc/pam.d/system-auth")
     assert (
-        "user" not in client.tools.getent.group("group", service="files").members
-    ), "'user' should not be a member of the group!"
+        "pam_sss.so" in system_auth and "try_cert_auth" in system_auth
+    ), "system-auth should include pam_sss try_cert_auth!"
+
+    assert client.auth.su.smartcard("user-1", "123456"), "Smart card authentication should succeed!"
+
+    client.authselect.disable_feature(["with-smartcard"])
+
+    system_auth = client.fs.read("/etc/pam.d/system-auth")
+    assert "try_cert_auth" not in system_auth, "system-auth should not include pam_sss try_cert_auth!"
+
+    # Authselect only manages PAM; revert the SSSD settings from REQUIREMENTS as an
+    # admin would when turning smart card authentication off.
+    del client.sssd.pam["pam_cert_auth"]
+    del client.sssd.domain["local_auth_policy"]
+    client.sssd.restart(clean=True)
+
+    assert not client.auth.su.smartcard(
+        "user-1", "123456"
+    ), "Smart card authentication should fail after 'with-smartcard' was disabled!"
+
+
+@pytest.mark.importance("high")
+@pytest.mark.topology(Profile.SSSD)
+def test_sssd__with_smartcard_lock_on_removal(client: Client):
+    """
+    :title: Sanity authselect with-smartcard-lock-on-removal test
+    :description:
+        'with-smartcard-lock-on-removal' locks the session when the smart card is
+        removed.
+    :setup:
+    :steps:
+        1. Select authselect profile with 'with-smartcard' and 'with-smartcard-lock-on-removal' features
+        2. Disable authselect 'with-smartcard-lock-on-removal' feature
+    :expectedresults:
+        1. Authselect profile is selected with feature enabled
+        2. Authselect feature 'with-smartcard-lock-on-removal' is disabled
+    :customerscenario: False
+    """
+    client.authselect.select("sssd", ["with-smartcard", "with-smartcard-lock-on-removal"])
+
+    client.authselect.disable_feature(["with-smartcard-lock-on-removal"])
+
+
+@pytest.mark.importance("high")
+@pytest.mark.topology(Profile.SSSD)
+def test_sssd__with_smartcard_required(client: Client):
+    """
+    :title: Sanity authselect with-smartcard-required test
+    :description:
+        'with-smartcard-required' requires smart card login; password-only login is
+        not allowed.
+    :setup:
+    :steps:
+        1. Select authselect profile with 'with-smartcard-required' feature
+        2. Verify authselect-generated PAM configuration
+        3. Disable authselect 'with-smartcard-required' feature
+    :expectedresults:
+        1. Authselect profile is selected with feature enabled
+        2. system-auth includes require_cert_auth
+        3. Authselect feature 'with-smartcard-required' is disabled
+    :customerscenario: False
+    """
+    client.authselect.select("sssd", ["with-smartcard-required"])
+
+    system_auth = client.fs.read("/etc/pam.d/system-auth")
+    assert "require_cert_auth" in system_auth, "system-auth should include require_cert_auth!"
+
+    client.authselect.disable_feature(["with-smartcard-required"])
+
+
+@pytest.mark.importance("high")
+@pytest.mark.topology(Profile.SSSD)
+def test_sssd__with_subid(client: Client, provider: GenericProvider):
+    """
+    :title: Functional authselect with-subid test
+    :description:
+        'with-subid' provides subordinate user and group ID ranges from the central
+        directory.
+    :setup:
+        1. Configure subid ranges for the user
+    :steps:
+        1. Select authselect profile with 'with-subid' feature
+        2. Lookup subid ranges
+        3. Disable authselect 'with-subid' feature
+    :expectedresults:
+        1. Authselect profile is selected with feature enabled
+        2. Subid ranges are returned for the user
+        3. Authselect feature 'with-subid' is disabled
+    :customerscenario: False
+    """
+    ipa = cast(IPA, provider)
+    provider.user("user-3").add(home="/home/user-3", shell="/bin/bash")
+    subid = ipa.user("user-3").subid().generate()
+
+    client.authselect.select("sssd", ["with-subid"])
+    client.sssd.start()
+
+    assert client.tools.id("user-3") is not None, "'user-3' was not found!"
+
+    nsswitch = client.fs.read("/etc/nsswitch.conf")
+    subid_line = next(line for line in nsswitch.splitlines() if line.startswith("subid:"))
+    assert "sss" in subid_line, "subid nsswitch entry should include sss!"
+
+    entry = client.tools.getsubid("user-3")
+    assert entry is not None, "getsubids should return subid ranges!"
+    assert entry.range_start == subid.uid_start, "SubUID range start should match IPA subid entry!"
+    assert entry.range_size == subid.uid_size, "SubUID range size should match IPA subid entry!"
+
+    client.authselect.disable_feature(["with-subid"])
+
+
+@pytest.mark.importance("high")
+@pytest.mark.topology(Profile.SSSD)
+def test_sssd__with_switchable_auth(client: Client):
+    """
+    :title: Sanity authselect with-switchable-auth test
+    :description:
+        'with-switchable-auth' enables the 'switchable-auth' PAM service so login
+        applications can offer the user a choice of authentication methods.
+        Without the feature the service is a stub that blocks all authentication.
+    :setup:
+    :steps:
+        1. Select authselect profile with 'with-switchable-auth' feature
+        2. Verify the 'switchable-auth' PAM service contains the full auth stack
+        3. Disable authselect 'with-switchable-auth' feature
+        4. Verify the 'switchable-auth' PAM service no longer has an auth stack
+    :expectedresults:
+        1. Authselect profile is selected with feature enabled
+        2. 'switchable-auth' contains 'pam_unix.so' and 'pam_sss.so'
+        3. Authselect feature 'with-switchable-auth' is disabled
+        4. 'switchable-auth' does not contain 'pam_unix.so' or 'pam_sss.so'
+    :customerscenario: False
+    """
+    client.authselect.select("sssd", ["with-switchable-auth"])
+
+    switchable_auth = client.fs.read("/etc/pam.d/switchable-auth")
+    assert "pam_unix.so" in switchable_auth, "'switchable-auth' should contain 'pam_unix.so'!"
+    assert "pam_sss.so" in switchable_auth, "'switchable-auth' should contain 'pam_sss.so'!"
+
+    client.authselect.disable_feature(["with-switchable-auth"])
+
+    switchable_auth = client.fs.read("/etc/pam.d/switchable-auth")
+    assert (
+        "pam_unix.so" not in switchable_auth
+    ), "'switchable-auth' should not contain 'pam_unix.so' when feature is disabled!"
+    assert (
+        "pam_sss.so" not in switchable_auth
+    ), "'switchable-auth' should not contain 'pam_sss.so' when feature is disabled!"
+
+
+@pytest.mark.importance("high")
+@pytest.mark.topology(Profile.SSSD)
+def test_sssd__with_gpupdate(client: Client):
+    """
+    :title: Sanity authselect with-gpupdate test
+    :description:
+        Verify 'with-gpupdate' adds 'pam_oddjob_gpupdate.so' to the PAM session
+        stack so Group Policy Objects are applied automatically on user login.
+    :setup:
+    :steps:
+        1. Select authselect profile with 'with-gpupdate' feature
+        2. Verify the PAM session stack contains 'pam_oddjob_gpupdate.so'
+        3. Disable authselect 'with-gpupdate' feature
+        4. Verify the PAM session stack no longer contains 'pam_oddjob_gpupdate.so'
+    :expectedresults:
+        1. Authselect profile is selected with feature enabled
+        2. 'system-auth' contains 'pam_oddjob_gpupdate.so'
+        3. Authselect feature 'with-gpupdate' is disabled
+        4. 'system-auth' does not contain 'pam_oddjob_gpupdate.so'
+    :customerscenario: False
+    """
+    client.authselect.select("sssd", ["with-gpupdate"])
+
+    system_auth = client.fs.read("/etc/pam.d/system-auth")
+    assert (
+        "pam_oddjob_gpupdate.so" in system_auth
+    ), "'system-auth' should contain 'pam_oddjob_gpupdate.so' when 'with-gpupdate' is enabled!"
+
+    client.authselect.disable_feature(["with-gpupdate"])
+
+    system_auth = client.fs.read("/etc/pam.d/system-auth")
+    assert (
+        "pam_oddjob_gpupdate.so" not in system_auth
+    ), "'system-auth' should not contain 'pam_oddjob_gpupdate.so' when 'with-gpupdate' is disabled!"
+
+
+@pytest.mark.importance("high")
+@pytest.mark.topology(Profile.SSSD)
+def test_sssd__with_tlog(client: Client):
+    """
+    :title: Sanity authselect with-tlog test
+    :description:
+        'with-tlog' integrates user and group lookups with terminal session recording.
+    :setup:
+    :steps:
+        1. Select authselect profile with 'with-tlog' feature
+        2. Verify authselect-generated nsswitch configuration
+        3. Disable authselect 'with-tlog' feature
+    :expectedresults:
+        1. Authselect profile is selected with feature enabled
+        2. nsswitch passwd and group entries start with sss
+        3. Authselect feature 'with-tlog' is disabled
+    :customerscenario: False
+    """
+    client.authselect.select("sssd", ["with-tlog"])
+
+    nsswitch = client.fs.read("/etc/nsswitch.conf")
+    passwd_line = next(line for line in nsswitch.splitlines() if line.startswith("passwd:"))
+    group_line = next(line for line in nsswitch.splitlines() if line.startswith("group:"))
+    assert (
+        passwd_line.startswith("passwd:") and "sss" in passwd_line.split()[1]
+    ), "passwd nsswitch entry should start with sss!"
+    assert (
+        group_line.startswith("group:") and "sss" in group_line.split()[1]
+    ), "group nsswitch entry should start with sss!"
+
+    client.authselect.disable_feature(["with-tlog"])
+
+
+@pytest.mark.importance("critical")
+@pytest.mark.ticket(jira="SSSD-7707")
+@pytest.mark.topology(Profile.SSSD)
+def test_sssd__with_group_merging(client: Client, provider: GenericProvider):
+    """
+    :title: Functional authselect with-group-merging test
+    :description:
+        'with-group-merging' merges group membership from local files and the directory
+        so a user appears in a group even when only the directory records the membership.
+    :setup:
+        1. Create a provide group and user and add the provider user as a member
+        2. Create a local group and user
+        3. Add both provider and local users as members, using sed
+        4. Start the SSSD service
+    :steps:
+        1. Select authselect profile with 'with-group-merging' feature
+        2. Lookup users and group
+        3. Disable authselect 'with-group-merging' feature
+        4. Lookup local group
+    :expectedresults:
+        1. Authselect profile is selected with feature enabled
+        2. Group is found with all users as members
+        3. Authselect feature 'with-group-merging' is disabled
+        4. Group is found with just the provider user as a member
+    :customerscenario: False
+    """
+    provider.group("group0").add(gid=100000).add_member(provider.user("user0").add())
+    client.user("user1").add()
+    client.group("group0").add(gid=100000)
+
+    # A sed is used to skip user checks
+    client.fs.backup("/etc/group")
+    client.fs.sed("/^group0:/ { s/$/,user1,user2/; s/:,/:/g }", "/etc/group", args=["-i"])
+
+    client.sssd.start()
+
+    client.authselect.select(client.profile, ["with-group-merging"])
+
+    assert client.tools.getent.passwd("user0") is not None, "'user0' was not found!"
+    assert client.tools.getent.passwd("user1") is not None, "'user1' was not found!"
+    assert client.tools.getent.group("group0") is not None, "'group0' was not found!"
+
+    result = client.tools.getent.group("group0")
+    assert result is not None, "'group0' was not found!"
+    assert "user0" in result.members, "'user0' was not a member of 'group0'!"
+    assert "user1" in result.members, "'user1' was not a member of 'group0'!"
+
+    client.authselect.disable_feature(["with-group-merging"])
+
+    result = client.tools.getent.group("group0")
+    assert result is not None, "'group0' was not found!"
+    assert "user0" not in result.members, "'user0' was a member of 'group0'!"
+    assert "user1" in result.members, "'user1' was not a member of 'group0'!"
