@@ -1,7 +1,7 @@
 provisioned_topologies:
-- client
-- ipa
-- samba
+- local
+- sssd
+- winbind
 domains:
 - id: sssd
   hosts:
@@ -11,7 +11,6 @@ domains:
     - /etc/sssd/*
     - /var/log/sssd/*
     - /var/lib/sss/db/*
-
   - hostname: master.ipa.test
     role: ipa
     config:
@@ -19,7 +18,6 @@ domains:
         ipa_domain: ipa.test
         krb5_keytab: /var/enrollment/ipa.test.keytab
         ldap_krb5_keytab: /var/enrollment/ipa.test.keytab
-
   - hostname: dc.samba.test
     role: samba
     config:
@@ -29,8 +27,3 @@ domains:
         ad_domain: samba.test
         krb5_keytab: /var/enrollment/samba.test.keytab
         ldap_krb5_keytab: /var/enrollment/samba.test.keytab
-
-  - hostname: nfs.test
-    role: nfs
-    config:
-      exports_dir: /dev/shm/exports

@@ -104,16 +104,6 @@ jobs:
         # Install system tests requirements
         pip3 install -r ./requirements.txt
 
-        # Install yq to parse yaml files
-        sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
-        sudo chmod a+x /usr/local/bin/yq
-
-    - name: Remove ad from mhc.yaml
-      shell: bash
-      working-directory: ./authselect/src/tests/system
-      run: |
-        yq -i 'del(.domains[0].hosts.[] | select(.role == "ad"))' mhc.yaml
-
     - name: Check polarion metadata
       shell: bash
       working-directory: ./authselect/src/tests/system
