@@ -7,12 +7,12 @@ Authselect Presets Tests
 from __future__ import annotations
 
 import pytest
-from sssd_test_framework.roles.client import Client
-from sssd_test_framework.topology import KnownTopology
+from authselect_test_framework.profiles import Profile
+from authselect_test_framework.roles.client import Client
 
 
 @pytest.mark.importance("critical")
-@pytest.mark.topology(KnownTopology.Client)
+@pytest.mark.topology(Profile.Local)
 def test_presets__system_default__missing(client: Client):
     """
     :title: Test `authselect is-feature-enabled`
@@ -32,7 +32,7 @@ def test_presets__system_default__missing(client: Client):
 
 
 @pytest.mark.importance("critical")
-@pytest.mark.topology(KnownTopology.Client)
+@pytest.mark.topology(Profile.Local)
 def test_presets__system_default__present(client: Client):
     """
     :title: Test @system-default preset is available when configured
@@ -56,7 +56,7 @@ def test_presets__system_default__present(client: Client):
         sssd
         with-mkhomedir
         with-gssapi
-        """
+        """,
     )
 
     result = client.host.conn.run("authselect list")
@@ -69,7 +69,7 @@ def test_presets__system_default__present(client: Client):
 
 
 @pytest.mark.importance("critical")
-@pytest.mark.topology(KnownTopology.Client)
+@pytest.mark.topology(Profile.Local)
 def test_presets__system_default__present_additional_features(client: Client):
     """
     :title: Test @system-default preset with additional features
@@ -92,7 +92,7 @@ def test_presets__system_default__present_additional_features(client: Client):
         """
         sssd
         with-mkhomedir
-        """
+        """,
     )
 
     result = client.host.conn.run("authselect list")
