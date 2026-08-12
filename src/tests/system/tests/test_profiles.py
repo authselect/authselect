@@ -182,6 +182,18 @@ def test_profiles__with_pamaccess(
 
 @pytest.mark.importance("critical")
 @pytest.mark.topology(ProfileGroup.AnyProfile)
+@pytest.mark.skip(
+    reason=(
+        "1.5.x's postlogin templates still wire pam_lastlog.so, but Fedora is migrating to "
+        "pam_lastlog2.so and dropping /var/log/lastlog support (see "
+        "https://fedoraproject.org/wiki/Changes/Migrate_to_lastlog2). On distros that already "
+        "made the switch (e.g. Fedora 43+, exercised by the 'fedora-latest' CI job), "
+        "pam_lastlog.so no longer emits 'Last login:' at all, so this test fails regardless of "
+        "the with-silent-lastlog feature state. master already migrated its postlogin templates "
+        "to pam_lastlog2.so and does not have this problem; re-enable here once 1.5.x gets the "
+        "same fix backported."
+    )
+)
 def test_profiles__with_silent_lastlog(
     client: Client,
     provider: GenericProvider,
@@ -190,6 +202,12 @@ def test_profiles__with_silent_lastlog(
     :title: Functional authselect with-silent-lastlog test
     :description:
         'with-silent-lastlog' hides the last login message shown at login.
+
+        Skipped on 1.5.x: its postlogin templates still use pam_lastlog.so.
+        Distros that migrated to pam_lastlog2.so and dropped /var/log/lastlog
+        (e.g. Fedora 43+) no longer produce a 'Last login:' message at all,
+        so this test cannot pass there until 1.5.x's profiles are updated to
+        pam_lastlog2.so, matching master.
     :setup:
         1. Start the identity service
     :steps:
