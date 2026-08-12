@@ -1,9 +1,9 @@
 name: "ci"
 on:
   push:
-    branches: [master]
+    branches: [1.5.x]
   pull_request:
-    branches: [master]
+    branches: [1.5.x]
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -13,10 +13,6 @@ jobs:
       fail-fast: false
       matrix:
         tag:
-        - centos-latest
-        - fedora-latest
-        - rawhide
-        - fedora-latest
         - centos-10
     runs-on: ubuntu-latest
     permissions:
