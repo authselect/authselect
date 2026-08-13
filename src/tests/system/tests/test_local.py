@@ -1,6 +1,13 @@
 """
 Authselect Local Profile Test Cases
 
+.. note::
+
+    On authselect 1.2.x the local-users profile is named 'minimal' (it was
+    later renamed to 'local'). The 'Local' topology still provisions the
+    right host, but the authselect profile id passed on the command line
+    must be 'minimal'.
+
 :requirement: Authselect replaced authconfig
 """
 
@@ -38,7 +45,7 @@ def test_local__without_nullok(client: Client):
     client.user("user-3").add(uid=10003, gid=10003, home="/home/user-3", shell="/bin/bash", password="")
     client.host.conn.run("passwd -d user-3")
 
-    client.authselect.select("local", ["without-nullok"])
+    client.authselect.select("minimal", ["without-nullok"])
 
     assert not client.auth.su.password(
         "user-3", password=""

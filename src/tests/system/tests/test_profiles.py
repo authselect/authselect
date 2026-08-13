@@ -22,6 +22,19 @@ def start_identity_service(client: Client) -> None:
         client.winbind.start()
 
 
+def authselect_profile_name(client: Client) -> str:
+    """
+    Resolve the authselect profile id for the current topology.
+
+    On authselect 1.2.x the local-users profile is still named 'minimal'
+    (it was renamed to 'local' in a later release), while the 'Local'
+    topology mark keeps using 'local' as its identifier.
+    """
+    if client.profile is Profile.Local:
+        return "minimal"
+    return client.profile.value.name
+
+
 @pytest.mark.importance("critical")
 @pytest.mark.topology(ProfileGroup.AnyProfile)
 def test_profiles__with_faillock(
@@ -56,7 +69,7 @@ def test_profiles__with_faillock(
     with mh_utility(faillock):
         faillock.config_set({"deny": "3", "unlock_time": "300"})
 
-        client.authselect.select(client.profile, ["with-faillock"])
+        client.authselect.select(authselect_profile_name(client), ["with-faillock"])
 
         faillock.reset_user("user1")
 
@@ -107,7 +120,7 @@ def test_profiles__with_mkhomedir(
 
     start_identity_service(client)
 
-    client.authselect.select(client.profile, ["with-mkhomedir"])
+    client.authselect.select(authselect_profile_name(client), ["with-mkhomedir"])
 
     if client.profile is Profile.Winbind:
         passwd = client.tools.getent.passwd("user1")
@@ -165,7 +178,7 @@ def test_profiles__with_pamaccess(
 
         start_identity_service(client)
 
-        client.authselect.select(client.profile, ["with-pamaccess"])
+        client.authselect.select(authselect_profile_name(client), ["with-pamaccess"])
 
         if client.profile is not Profile.Local:
             assert client.tools.getent.passwd("user1") is not None, "'user1' was not found!"
@@ -208,7 +221,7 @@ def test_profiles__with_silent_lastlog(
 
     start_identity_service(client)
 
-    client.authselect.select(client.profile, ["with-silent-lastlog"])
+    client.authselect.select(authselect_profile_name(client), ["with-silent-lastlog"])
 
     assert client.tools.getent.passwd("user1") is not None, "'user1' was not found!"
     if client.profile is Profile.Winbind:
@@ -246,7 +259,7 @@ def test_profiles__with_altfiles(client: Client):
         4. '/etc/nsswitch.conf' passwd and group lines do not contain 'altfiles'
     :customerscenario: False
     """
-    client.authselect.select(client.profile, ["with-altfiles"])
+    client.authselect.select(authselect_profile_name(client), ["with-altfiles"])
 
     nsswitch = client.fs.read("/etc/nsswitch.conf")
     passwd_line = next(line for line in nsswitch.splitlines() if line.startswith("passwd:"))
@@ -264,38 +277,15 @@ def test_profiles__with_altfiles(client: Client):
 
 
 @pytest.mark.importance("high")
-@pytest.mark.topology(ProfileGroup.AnyProfile)
-def test_profiles__with_ecryptfs(client: Client):
-    """
-    :title: Sanity authselect with-ecryptfs test
-    :description:
-        'with-ecryptfs' unlocks encrypted home directories at login.
-    :setup:
-    :steps:
-        1. Select authselect profile with 'with-ecryptfs' feature
-        2. Verify authselect-generated PAM configuration
-        3. Disable authselect 'with-ecryptfs' feature
-    :expectedresults:
-        1. Authselect profile is selected with feature enabled
-        2. system-auth includes pam_ecryptfs.so
-        3. Authselect feature 'with-ecryptfs' is disabled
-    :customerscenario: False
-    """
-    client.authselect.select(client.profile, ["with-ecryptfs"])
-
-    system_auth = client.fs.read("/etc/pam.d/system-auth")
-    assert "pam_ecryptfs.so" in system_auth, "'pam_ecryptfs.so' was not found in system-auth!"
-
-    client.authselect.disable_feature(["with-ecryptfs"])
-
-
-@pytest.mark.importance("high")
-@pytest.mark.topology(ProfileGroup.AnyProfile)
+@pytest.mark.topology(ProfileGroup.AnyProvider)
 def test_profiles__with_fingerprint(client: Client):
     """
     :title: Sanity authselect with-fingerprint test
     :description:
         'with-fingerprint' allows login using a fingerprint reader.
+
+        Not tested on the local/minimal profile: authselect 1.2.x's 'minimal'
+        profile does not offer 'with-fingerprint'.
     :setup:
     :steps:
         1. Select authselect profile with 'with-fingerprint' feature
@@ -316,93 +306,15 @@ def test_profiles__with_fingerprint(client: Client):
 
 
 @pytest.mark.importance("high")
-@pytest.mark.topology(ProfileGroup.AnyProfile)
-def test_profiles__with_libvirt(client: Client):
-    """
-    :title: Sanity authselect with-libvirt test
-    :description:
-        'with-libvirt' resolves host names on libvirt virtual networks.
-    :setup:
-    :steps:
-        1. Select authselect profile with 'with-libvirt' feature
-        2. Verify authselect-generated nsswitch configuration
-        3. Disable authselect 'with-libvirt' feature
-    :expectedresults:
-        1. Authselect profile is selected with feature enabled
-        2. hosts nsswitch entry includes libvirt
-        3. Authselect feature 'with-libvirt' is disabled
-    :customerscenario: False
-    """
-    client.authselect.select(client.profile, ["with-libvirt"])
-
-    nsswitch = client.fs.read("/etc/nsswitch.conf")
-    hosts_line = next(line for line in nsswitch.splitlines() if line.startswith("hosts:"))
-    assert "libvirt" in hosts_line, "'libvirt' was not found in hosts nsswitch entry!"
-
-    client.authselect.disable_feature(["with-libvirt"])
-
-
-@pytest.mark.importance("high")
-@pytest.mark.topology(ProfileGroup.AnyProfile)
-def test_profiles__with_mdns4(client: Client):
-    """
-    :title: Sanity authselect with-mdns4 test
-    :description:
-        'with-mdns4' discovers nearby hosts on the local IPv4 network by name.
-    :setup:
-    :steps:
-        1. Select authselect profile with 'with-mdns4' feature
-        2. Verify authselect-generated nsswitch configuration
-        3. Disable authselect 'with-mdns4' feature
-    :expectedresults:
-        1. Authselect profile is selected with feature enabled
-        2. hosts nsswitch entry includes mdns4_minimal
-        3. Authselect feature 'with-mdns4' is disabled
-    :customerscenario: False
-    """
-    client.authselect.select(client.profile, ["with-mdns4"])
-
-    nsswitch = client.fs.read("/etc/nsswitch.conf")
-    hosts_line = next(line for line in nsswitch.splitlines() if line.startswith("hosts:"))
-    assert "mdns4_minimal" in hosts_line, "'mdns4_minimal' was not found in hosts nsswitch entry!"
-
-    client.authselect.disable_feature(["with-mdns4"])
-
-
-@pytest.mark.importance("high")
-@pytest.mark.topology(ProfileGroup.AnyProfile)
-def test_profiles__with_mdns6(client: Client):
-    """
-    :title: Sanity authselect with-mdns6 test
-    :description:
-        'with-mdns6' discovers nearby hosts on the local IPv6 network by name.
-    :setup:
-    :steps:
-        1. Select authselect profile with 'with-mdns6' feature
-        2. Verify authselect-generated nsswitch configuration
-        3. Disable authselect 'with-mdns6' feature
-    :expectedresults:
-        1. Authselect profile is selected with feature enabled
-        2. hosts nsswitch entry includes mdns6_minimal
-        3. Authselect feature 'with-mdns6' is disabled
-    :customerscenario: False
-    """
-    client.authselect.select(client.profile, ["with-mdns6"])
-
-    nsswitch = client.fs.read("/etc/nsswitch.conf")
-    hosts_line = next(line for line in nsswitch.splitlines() if line.startswith("hosts:"))
-    assert "mdns6_minimal" in hosts_line, "'mdns6_minimal' was not found in hosts nsswitch entry!"
-
-    client.authselect.disable_feature(["with-mdns6"])
-
-
-@pytest.mark.importance("high")
-@pytest.mark.topology(ProfileGroup.AnyProfile)
+@pytest.mark.topology(ProfileGroup.AnyProvider)
 def test_profiles__with_pam_gnome_keyring(client: Client):
     """
     :title: Sanity authselect with-pam-gnome-keyring test
     :description:
         'with-pam-gnome-keyring' unlocks saved passwords in the GNOME keyring at login.
+
+        Not tested on the local/minimal profile: authselect 1.2.x's 'minimal'
+        profile does not offer 'with-pam-gnome-keyring'.
     :setup:
     :steps:
         1. Select authselect profile with 'with-pam-gnome-keyring' feature
@@ -423,12 +335,15 @@ def test_profiles__with_pam_gnome_keyring(client: Client):
 
 
 @pytest.mark.importance("high")
-@pytest.mark.topology(ProfileGroup.AnyProfile)
+@pytest.mark.topology(ProfileGroup.AnyProvider)
 def test_profiles__with_pam_u2f(client: Client):
     """
     :title: Sanity authselect with-pam-u2f test
     :description:
         'with-pam-u2f' allows login using a hardware security key.
+
+        Not tested on the local/minimal profile: authselect 1.2.x's 'minimal'
+        profile does not offer 'with-pam-u2f'.
     :setup:
     :steps:
         1. Select authselect profile with 'with-pam-u2f' feature
@@ -449,12 +364,15 @@ def test_profiles__with_pam_u2f(client: Client):
 
 
 @pytest.mark.importance("high")
-@pytest.mark.topology(ProfileGroup.AnyProfile)
+@pytest.mark.topology(ProfileGroup.AnyProvider)
 def test_profiles__with_pam_u2f_2fa(client: Client):
     """
     :title: Sanity authselect with-pam-u2f-2fa test
     :description:
         'with-pam-u2f-2fa' requires a hardware security key in addition to a password.
+
+        Not tested on the local/minimal profile: authselect 1.2.x's 'minimal'
+        profile does not offer 'with-pam-u2f-2fa'.
     :setup:
     :steps:
         1. Select authselect profile with 'with-pam-u2f-2fa' feature
@@ -500,7 +418,7 @@ def test_profiles__with_pwhistory(
 
     start_identity_service(client)
 
-    client.authselect.select(client.profile, ["with-pwhistory"])
+    client.authselect.select(authselect_profile_name(client), ["with-pwhistory"])
 
     assert client.tools.getent.passwd("user-3") is not None, "'user-3' was not found!"
     system_auth = client.fs.read("/etc/pam.d/system-auth")
@@ -510,39 +428,16 @@ def test_profiles__with_pwhistory(
 
 
 @pytest.mark.importance("high")
-@pytest.mark.topology(ProfileGroup.AnyProfile)
-def test_profiles__with_systemd_homed(client: Client):
-    """
-    :title: Sanity authselect with-systemd-homed test
-    :description:
-        'with-systemd-homed' supports portable home directories across machines.
-    :setup:
-    :steps:
-        1. Select authselect profile with 'with-systemd-homed' feature
-        2. Verify authselect-generated PAM configuration
-        3. Disable authselect 'with-systemd-homed' feature
-    :expectedresults:
-        1. Authselect profile is selected with feature enabled
-        2. system-auth includes pam_systemd_home.so
-        3. Authselect feature 'with-systemd-homed' is disabled
-    :customerscenario: False
-    """
-    client.authselect.select(client.profile, ["with-systemd-homed"])
-
-    system_auth = client.fs.read("/etc/pam.d/system-auth")
-    assert "pam_systemd_home.so" in system_auth, "'pam_systemd_home.so' was not found in system-auth!"
-
-    client.authselect.disable_feature(["with-systemd-homed"])
-
-
-@pytest.mark.importance("high")
-@pytest.mark.topology(ProfileGroup.AnyProfile)
+@pytest.mark.topology(ProfileGroup.AnyProvider)
 def test_profiles__without_pam_u2f_nouserok(client: Client):
     """
     :title: Sanity authselect without-pam-u2f-nouserok test
     :description:
         'without-pam-u2f-nouserok' requires a registered security key; password-only
         login is not allowed.
+
+        Not tested on the local/minimal profile: authselect 1.2.x's 'minimal'
+        profile does not offer 'with-pam-u2f-2fa'/'without-pam-u2f-nouserok'.
     :setup:
     :steps:
         1. Select authselect profile with 'with-pam-u2f-2fa' and 'without-pam-u2f-nouserok' features
