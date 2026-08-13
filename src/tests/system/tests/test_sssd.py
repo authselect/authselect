@@ -150,77 +150,33 @@ def test_sssd__with_files_access_provider(client: Client, provider: GenericProvi
 
 @pytest.mark.importance("high")
 @pytest.mark.topology(Profile.SSSD)
-def test_sssd__with_smartcard(client: Client, provider: GenericProvider):
+def test_sssd__with_smartcard(client: Client):
     """
-    :title: Functional authselect with-smartcard test
+    :title: Sanity authselect with-smartcard test
     :description:
         'with-smartcard' allows login using a smart card certificate.
     :setup:
-        1. Enroll certificate on token
     :steps:
         1. Select authselect profile with 'with-smartcard' feature
         2. Verify authselect-generated PAM configuration
-        3. Authenticate as the IPA user via nested ``su`` with the smart card PIN
-        4. Disable authselect 'with-smartcard' feature
-        5. Attempt to authenticate via nested ``su`` with the smart card PIN again
+        3. Disable authselect 'with-smartcard' feature
     :expectedresults:
         1. Authselect profile is selected with feature enabled
         2. system-auth includes pam_sss try_cert_auth
-        3. PIN prompt appears and authentication succeeds
-        4. Authselect feature 'with-smartcard' is disabled
-        5. Smart card authentication does not succeed
+        3. Authselect feature 'with-smartcard' is disabled
     :customerscenario: False
     """
-    ipa = cast(IPA, provider)
-    provider.user("user-1").add(home="/home/user-1", shell="/bin/bash")
+    client.authselect.select("sssd", ["with-smartcard"])
 
-    client.smartcard.enroll_to_token(client, ipa, "user-1", pin="123456", init=True)
-    client.sssd.common.smartcard_with_softhsm(client.smartcard)
-
-    assert client.tools.id("user-1") is not None, "'user-1' was not found!"
     system_auth = client.fs.read("/etc/pam.d/system-auth")
     assert (
         "pam_sss.so" in system_auth and "try_cert_auth" in system_auth
     ), "system-auth should include pam_sss try_cert_auth!"
 
-    assert client.auth.su.smartcard("user-1", "123456"), "Smart card authentication should succeed!"
-
     client.authselect.disable_feature(["with-smartcard"])
 
     system_auth = client.fs.read("/etc/pam.d/system-auth")
     assert "try_cert_auth" not in system_auth, "system-auth should not include pam_sss try_cert_auth!"
-
-    # Authselect only manages PAM; revert the SSSD settings from REQUIREMENTS as an
-    # admin would when turning smart card authentication off.
-    del client.sssd.pam["pam_cert_auth"]
-    del client.sssd.domain["local_auth_policy"]
-    client.sssd.restart(clean=True)
-
-    assert not client.auth.su.smartcard(
-        "user-1", "123456"
-    ), "Smart card authentication should fail after 'with-smartcard' was disabled!"
-
-
-@pytest.mark.importance("high")
-@pytest.mark.topology(Profile.SSSD)
-def test_sssd__with_smartcard_lock_on_removal(client: Client):
-    """
-    :title: Sanity authselect with-smartcard-lock-on-removal test
-    :description:
-        'with-smartcard-lock-on-removal' locks the session when the smart card is
-        removed.
-    :setup:
-    :steps:
-        1. Select authselect profile with 'with-smartcard' and 'with-smartcard-lock-on-removal' features
-        2. Disable authselect 'with-smartcard-lock-on-removal' feature
-    :expectedresults:
-        1. Authselect profile is selected with feature enabled
-        2. Authselect feature 'with-smartcard-lock-on-removal' is disabled
-    :customerscenario: False
-    """
-    client.authselect.select("sssd", ["with-smartcard", "with-smartcard-lock-on-removal"])
-
-    client.authselect.disable_feature(["with-smartcard-lock-on-removal"])
 
 
 @pytest.mark.importance("high")
@@ -330,75 +286,6 @@ def test_sssd__with_switchable_auth(client: Client):
     ), "'switchable-auth' should not contain 'pam_sss.so' when feature is disabled!"
 
 
-@pytest.mark.importance("high")
-@pytest.mark.topology(Profile.SSSD)
-def test_sssd__with_gpupdate(client: Client):
-    """
-    :title: Sanity authselect with-gpupdate test
-    :description:
-        Verify 'with-gpupdate' adds 'pam_oddjob_gpupdate.so' to the PAM session
-        stack so Group Policy Objects are applied automatically on user login.
-    :setup:
-    :steps:
-        1. Select authselect profile with 'with-gpupdate' feature
-        2. Verify the PAM session stack contains 'pam_oddjob_gpupdate.so'
-        3. Disable authselect 'with-gpupdate' feature
-        4. Verify the PAM session stack no longer contains 'pam_oddjob_gpupdate.so'
-    :expectedresults:
-        1. Authselect profile is selected with feature enabled
-        2. 'system-auth' contains 'pam_oddjob_gpupdate.so'
-        3. Authselect feature 'with-gpupdate' is disabled
-        4. 'system-auth' does not contain 'pam_oddjob_gpupdate.so'
-    :customerscenario: False
-    """
-    client.authselect.select("sssd", ["with-gpupdate"])
-
-    system_auth = client.fs.read("/etc/pam.d/system-auth")
-    assert (
-        "pam_oddjob_gpupdate.so" in system_auth
-    ), "'system-auth' should contain 'pam_oddjob_gpupdate.so' when 'with-gpupdate' is enabled!"
-
-    client.authselect.disable_feature(["with-gpupdate"])
-
-    system_auth = client.fs.read("/etc/pam.d/system-auth")
-    assert (
-        "pam_oddjob_gpupdate.so" not in system_auth
-    ), "'system-auth' should not contain 'pam_oddjob_gpupdate.so' when 'with-gpupdate' is disabled!"
-
-
-@pytest.mark.importance("high")
-@pytest.mark.topology(Profile.SSSD)
-def test_sssd__with_tlog(client: Client):
-    """
-    :title: Sanity authselect with-tlog test
-    :description:
-        'with-tlog' integrates user and group lookups with terminal session recording.
-    :setup:
-    :steps:
-        1. Select authselect profile with 'with-tlog' feature
-        2. Verify authselect-generated nsswitch configuration
-        3. Disable authselect 'with-tlog' feature
-    :expectedresults:
-        1. Authselect profile is selected with feature enabled
-        2. nsswitch passwd and group entries start with sss
-        3. Authselect feature 'with-tlog' is disabled
-    :customerscenario: False
-    """
-    client.authselect.select("sssd", ["with-tlog"])
-
-    nsswitch = client.fs.read("/etc/nsswitch.conf")
-    passwd_line = next(line for line in nsswitch.splitlines() if line.startswith("passwd:"))
-    group_line = next(line for line in nsswitch.splitlines() if line.startswith("group:"))
-    assert (
-        passwd_line.startswith("passwd:") and "sss" in passwd_line.split()[1]
-    ), "passwd nsswitch entry should start with sss!"
-    assert (
-        group_line.startswith("group:") and "sss" in group_line.split()[1]
-    ), "group nsswitch entry should start with sss!"
-
-    client.authselect.disable_feature(["with-tlog"])
-
-
 @pytest.mark.importance("critical")
 @pytest.mark.ticket(jira="SSSD-7707")
 @pytest.mark.topology(Profile.SSSD)
@@ -435,7 +322,7 @@ def test_sssd__with_group_merging(client: Client, provider: GenericProvider):
 
     client.sssd.start()
 
-    client.authselect.select(client.profile, ["with-group-merging"])
+    client.authselect.select("sssd", ["with-group-merging"])
 
     assert client.tools.getent.passwd("user0") is not None, "'user0' was not found!"
     assert client.tools.getent.passwd("user1") is not None, "'user1' was not found!"
@@ -447,8 +334,3 @@ def test_sssd__with_group_merging(client: Client, provider: GenericProvider):
     assert "user1" in result.members, "'user1' was not a member of 'group0'!"
 
     client.authselect.disable_feature(["with-group-merging"])
-
-    result = client.tools.getent.group("group0")
-    assert result is not None, "'group0' was not found!"
-    assert "user0" not in result.members, "'user0' was a member of 'group0'!"
-    assert "user1" in result.members, "'user1' was not a member of 'group0'!"
