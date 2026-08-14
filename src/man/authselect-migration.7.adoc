@@ -18,13 +18,13 @@ MAIN DIFFERENCES
 Authselect takes a completely different approach to system configuration than
 the previous tool authconfig.
 
-Authconfig tries its best to keep users's manual changes to the files it
+Authconfig tries its best to keep user's manual changes to the files it
 generates. It generates not only PAM configuration files and nsswitch.conf
 (to setup authentication modules and identity sources) but it also generates
 simple configuration files for several services such as LDAP and Kerberos.
 
 Authselect does no such things. It does not generate any configuration files
-beside PAM and nsswitch.conf and it strictly prohibits any manual changes to
+besides PAM and nsswitch.conf and it strictly prohibits any manual changes to
 generated configuration. It provides a set of files called profiles. Each profile
 describes how the resulting configuration should look like and it can be
 slightly modified by enabling or disabling certain optional features. If a need
@@ -207,7 +207,7 @@ can then tune it up by modifying {sysconfdir}/samba/smb.conf.
 ifeval::[{WITH_NIS_PROFILE} == 1]
 NIS
 ~~~
-There are several places that needs to be configured in order to make
+There are several places that need to be configured in order to make
 NIS authentication work. First, you need to set NIS domain and optionally
 also NIS server in {sysconfdir}/yp.conf.
 
@@ -226,7 +226,7 @@ NISDOMAIN=mydomain
 ----
 
 Now, you can set the domain name with command line so there is no need to
-reboot your system. Additionaly, it may be necessary to enable NIS in selinux.
+reboot your system. Additionally, it may be necessary to enable NIS in SELinux.
 
 ----
 $ domainname mydomain
