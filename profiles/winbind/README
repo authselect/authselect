@@ -48,6 +48,11 @@ with-pam-u2f::
 with-pam-u2f-2fa::
     Enable 2nd factor authentication via u2f dongle through *pam_u2f*.
 
+with-pam-u2f-priority::
+    Prioritize U2F authentication before fingerprint when both
+    with-fingerprint and with-pam-u2f are enabled. This avoids delays
+    when a U2F hardware token is already connected.
+
 without-pam-u2f-nouserok::
     Module argument nouserok is omitted if also with-pam-u2f-2fa is used.
     *WARNING*: Omitting nouserok argument means that users without pam-u2f

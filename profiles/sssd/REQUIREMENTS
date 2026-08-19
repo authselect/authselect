@@ -35,3 +35,6 @@ Make sure that SSSD service is configured and enabled. See SSSD documentation fo
 - with-gpupdate is selected, make sure pam_oddjob_gpupdate module                         {include if "with-gpupdate"}
   and samba-gpupdate are present and oddjobd service is enabled and active                {include if "with-gpupdate"}
   - systemctl enable --now oddjobd.service                                                {include if "with-gpupdate"}
+                                                                                          {include if "with-pam-u2f-priority"}
+- with-pam-u2f-priority is selected, pam_u2f.so module will take preference over          {include if "with-pam-u2f-priority"}
+  pam_fprintd.so module in system-auth file.                                              {include if "with-pam-u2f-priority"}

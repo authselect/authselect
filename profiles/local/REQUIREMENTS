@@ -19,3 +19,6 @@
                                                                                           {include if "with-pam-u2f-2fa"}
 - with-pam-u2f-2fa is selected, make sure that the pam u2f module is installed            {include if "with-pam-u2f-2fa"}
   - users can then configure keys using the pamu2fcfg tool                                {include if "with-pam-u2f-2fa"}
+                                                                                          {include if "with-pam-u2f-priority"}
+- with-pam-u2f-priority is selected, pam_u2f.so module will take preference over          {include if "with-pam-u2f-priority"}
+  pam_fprintd.so module in system-auth file.                                              {include if "with-pam-u2f-priority"}
