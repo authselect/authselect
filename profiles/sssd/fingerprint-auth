@@ -6,6 +6,7 @@ auth        required                                     pam_faillock.so preauth
 auth        [success=done default=bad]                   pam_fprintd.so
 auth        required                                     pam_faillock.so authfail                               {include if "with-faillock"}
 auth        optional                                     pam_gnome_keyring.so only_if=login auto_start          {include if "with-pam-gnome-keyring"}
+auth        optional                                     pam_kwallet5.so only_if=login auto_start               {include if "with-pam-kwallet"}
 auth        required                                     pam_deny.so
 
 account     required                                     pam_access.so                                          {include if "with-pamaccess"}
@@ -28,3 +29,4 @@ session     required                                     pam_unix.so
 session     optional                                     pam_sss.so
 session     optional                                     pam_oddjob_gpupdate.so                                 {include if "with-gpupdate"}
 session     optional                                     pam_gnome_keyring.so only_if=login auto_start          {include if "with-pam-gnome-keyring"}
+session     optional                                     pam_kwallet5.so only_if=login auto_start               {include if "with-pam-kwallet"}
