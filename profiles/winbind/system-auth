@@ -10,6 +10,7 @@ auth        [default=1 ignore=ignore success=ok]         pam_usertype.so isregul
 auth        sufficient                                   pam_winbind.so {if "with-krb5":krb5_auth} use_first_pass
 auth        required                                     pam_faillock.so authfail                               {include if "with-faillock"}
 auth        optional                                     pam_gnome_keyring.so only_if=login auto_start          {include if "with-pam-gnome-keyring"}
+auth        optional                                     pam_kwallet5.so only_if=login auto_start               {include if "with-pam-kwallet"}
 auth        required                                     pam_deny.so
 
 account     required                                     pam_access.so                                          {include if "with-pamaccess"}
@@ -39,3 +40,4 @@ session     [success=1 default=ignore]                   pam_succeed_if.so servi
 session     required                                     pam_unix.so
 session     optional                                     pam_winbind.so {if "with-krb5":krb5_auth}
 session     optional                                     pam_gnome_keyring.so only_if=login auto_start          {include if "with-pam-gnome-keyring"}
+session     optional                                     pam_kwallet5.so only_if=login auto_start               {include if "with-pam-kwallet"}

@@ -424,6 +424,32 @@ def test_profiles__with_pam_gnome_keyring(client: Client):
 
 @pytest.mark.importance("high")
 @pytest.mark.topology(ProfileGroup.AnyProfile)
+def test_profiles__with_pam_kwallet(client: Client):
+    """
+    :title: Sanity authselect with-pam-kwallet test
+    :description:
+        'with-pam-kwallet' unlocks saved passwords in KWallet at login.
+    :setup:
+    :steps:
+        1. Select authselect profile with 'with-pam-kwallet' feature
+        2. Verify authselect-generated PAM configuration
+        3. Disable authselect 'with-pam-kwallet' feature
+    :expectedresults:
+        1. Authselect profile is selected with feature enabled
+        2. system-auth includes pam_kwallet5.so
+        3. Authselect feature 'with-pam-kwallet' is disabled
+    :customerscenario: False
+    """
+    client.authselect.select(client.profile, ["with-pam-kwallet"])
+
+    system_auth = client.fs.read("/etc/pam.d/system-auth")
+    assert "pam_kwallet5.so" in system_auth, "'pam_kwallet5.so' was not found in system-auth!"
+
+    client.authselect.disable_feature(["with-pam-kwallet"])
+
+
+@pytest.mark.importance("high")
+@pytest.mark.topology(ProfileGroup.AnyProfile)
 def test_profiles__with_pam_u2f(client: Client):
     """
     :title: Sanity authselect with-pam-u2f test
