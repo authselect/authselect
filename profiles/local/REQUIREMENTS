@@ -13,6 +13,8 @@
   is present.                                                                             {include if "with-pam-gnome-keyring"}
                                                                                           {include if "with-pam-kwallet"}
 - with-pam-kwallet is selected, make sure the pam_kwallet5 module is present.             {include if "with-pam-kwallet"}
+                                                                                          {include if "with-pam-oo7"}
+- with-pam-oo7 is selected, make sure the pam_oo7 module is present.                      {include if "with-pam-oo7"}
                                                                                           {include if "with-fingerprint"}
 - with-fingerprint is selected, make sure fprintd service is configured and enabled       {include if "with-fingerprint"}
                                                                                           {include if "with-pam-u2f"}

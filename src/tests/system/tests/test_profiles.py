@@ -450,6 +450,32 @@ def test_profiles__with_pam_kwallet(client: Client):
 
 @pytest.mark.importance("high")
 @pytest.mark.topology(ProfileGroup.AnyProfile)
+def test_profiles__with_pam_oo7(client: Client):
+    """
+    :title: Sanity authselect with-pam-oo7 test
+    :description:
+        'with-pam-oo7' unlocks saved passwords in oo7 at login.
+    :setup:
+    :steps:
+        1. Select authselect profile with 'with-pam-oo7' feature
+        2. Verify authselect-generated PAM configuration
+        3. Disable authselect 'with-pam-oo7' feature
+    :expectedresults:
+        1. Authselect profile is selected with feature enabled
+        2. system-auth includes pam_oo7.so
+        3. Authselect feature 'with-pam-oo7' is disabled
+    :customerscenario: False
+    """
+    client.authselect.select(client.profile, ["with-pam-oo7"])
+
+    system_auth = client.fs.read("/etc/pam.d/system-auth")
+    assert "pam_oo7.so" in system_auth, "'pam_oo7.so' was not found in system-auth!"
+
+    client.authselect.disable_feature(["with-pam-oo7"])
+
+
+@pytest.mark.importance("high")
+@pytest.mark.topology(ProfileGroup.AnyProfile)
 def test_profiles__with_pam_u2f(client: Client):
     """
     :title: Sanity authselect with-pam-u2f test
