@@ -42,6 +42,11 @@ with-fingerprint::
 with-pam-gnome-keyring::
     Enable pam-gnome-keyring support.
 
+with-pam-oo7::
+    Enable oo7 secret service keyring support. The oo7 PAM module
+    unlocks the user's keyring on login and updates the keyring
+    password when the login password is changed.
+
 with-pam-u2f::
     Enable authentication via u2f dongle through *pam_u2f*.
 
