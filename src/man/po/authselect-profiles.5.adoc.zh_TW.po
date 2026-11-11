@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Weblate <noreply@weblate.org>, 2020.
 # Yi-Jyun Pan <pan93412@gmail.com>, 2020.
-# hsu zangmen <chzang55@gmail.com>, 2025.
+# hsu zangmen <chzang55@gmail.com>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-30 14:35+0200\n"
-"PO-Revision-Date: 2025-04-06 18:19+0000\n"
+"POT-Creation-Date: 2026-08-20 12:23+0200\n"
+"PO-Revision-Date: 2026-11-11 05:18+0000\n"
 "Last-Translator: hsu zangmen <chzang55@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://translate.fedoraproject.org/"
 "projects/authselect/master-authselect-profiles5adoc/zh_TW/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 2026.11.1\n"
 
 #. type: Title =
 #: src/man/authselect-profiles.5.adoc:2
@@ -100,7 +100,7 @@ msgstr "管理員定義設定檔的位置。"
 #: src/man/authselect-profiles.5.adoc:29
 #, no-wrap
 msgid "PROFILE FILES"
-msgstr ""
+msgstr "設定檔檔案"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:33
@@ -109,37 +109,39 @@ msgid ""
 "mandatory profile description and describe the changes that are done to the "
 "system."
 msgstr ""
+"每個設定檔由一個或多個此類檔案組成，這些檔案提供必填的設定檔說明，並描述對系"
+"統所做的變更。"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:34
 #, no-wrap
 msgid "*README*"
-msgstr ""
+msgstr "*README*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:36
 msgid ""
 "Description of the profile. The first line must be a name of the profile."
-msgstr ""
+msgstr "設定檔說明。第一行必須是設定檔的名稱。"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:37
 #, no-wrap
 msgid "*system-auth*"
-msgstr ""
+msgstr "*system-auth*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:40
 msgid ""
 "PAM stack that is included from nearly all individual service configuration "
 "files."
-msgstr ""
+msgstr "幾乎所有個別服務組態設定檔案中都會包含的 PAM 堆疊。"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:41
 #, no-wrap
 msgid "*password-auth*, *smartcard-auth*, *fingerprint-auth*"
-msgstr ""
+msgstr "*password-auth*, *smartcard-auth*, *fingerprint-auth*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:45
@@ -148,12 +150,14 @@ msgid ""
 "different types of devices via simultaneously running individual "
 "conversations instead of one aggregate conversation."
 msgstr ""
+"這些 PAM 堆疊適用於需處理來自不同類型裝置之身份驗證的應用程式的場景，其運作方"
+"式是透過同時執行個別的對話，而非單一的彙總對話。"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:46
 #, no-wrap
 msgid "*postlogin*"
-msgstr ""
+msgstr "*postlogin*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:54
@@ -166,28 +170,32 @@ msgid ""
 "regardless of the success or failure of the modules in the system-auth "
 "configuration file._"
 msgstr ""
+"此 PAM 堆疊的目的是為所有 PAM 模組提供一個共通的位置，這些模組應在 system-"
+"auth 或其他常見的 PAM 配置檔案中所設定的堆疊之後被呼叫。凡是提供登入服務（包"
+"含 shell 或檔案存取）的個別服務配置檔案，都會包含此堆疊。_注意：無論 system-"
+"auth 配置檔案中的模組執行成功與否，postlogin 配置檔案中的模組都會被執行。_"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:55
 #, no-wrap
 msgid "*nsswitch.conf*"
-msgstr ""
+msgstr "*nsswitch.conf*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:57
 msgid "Name Service Switch configuration file."
-msgstr ""
+msgstr "名稱服務切換器的設定檔。"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:58
 #, no-wrap
 msgid "*dconf-db*"
-msgstr ""
+msgstr "*dconf-db*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:62
 msgid ""
-"Changes to dconf database. The main uses case of this file is to set changes "
+"Changes to dconf database. The main use case of this file is to set changes "
 "for gnome login screen in order to enable or disable smartcard and "
 "fingerprint authentication."
 msgstr ""
@@ -196,18 +204,18 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:63
 #, no-wrap
 msgid "*dconf-locks*"
-msgstr ""
+msgstr "*dconf-locks*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:65
-msgid "This file define locks on values set in dconf database."
+msgid "This file defines locks on values set in dconf database."
 msgstr ""
 
 #. type: Title ~
 #: src/man/authselect-profiles.5.adoc:67
 #, no-wrap
 msgid "CONDITIONAL LINES"
-msgstr ""
+msgstr "條件行"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:71
@@ -216,12 +224,14 @@ msgid ""
 "with optional usage of several operators that can be used to provide some "
 "optional profile features."
 msgstr ""
+"這些檔案各自都作為一個範本。範本是一種純文字檔案，可選擇性地使用若干運算子，"
+"藉此提供一些可選的設定檔功能。"
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:72
 #, no-wrap
 msgid "*{continue if \"feature\"}*"
-msgstr ""
+msgstr "*{continue if \"feature\"}*"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:77
@@ -333,7 +343,7 @@ msgstr ""
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:115
 msgid "For example:"
-msgstr ""
+msgstr "例如："
 
 #. type: Labeled list
 #: src/man/authselect-profiles.5.adoc:116
@@ -524,7 +534,7 @@ msgstr ""
 #: src/man/authselect-profiles.5.adoc:212
 #, no-wrap
 msgid "SEE ALSO"
-msgstr ""
+msgstr "另請參閱"
 
 #. type: Plain text
 #: src/man/authselect-profiles.5.adoc:213
