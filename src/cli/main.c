@@ -604,7 +604,7 @@ static errno_t requirements(struct cli_cmdline *cmdline)
 {
     struct authselect_profile *profile = NULL;
     char *profile_id = NULL;
-    char **features;
+    char **features = NULL;
     char *requirements = NULL;
     errno_t ret;
 
@@ -647,7 +647,7 @@ static errno_t test(struct cli_cmdline *cmdline)
 {
     struct authselect_files *files;
     char *profile_id = NULL;
-    char **features;
+    char **features = NULL;
     const char *content;
     const char *path;
     int print_all = 1;
