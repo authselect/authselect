@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: authselect 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/authselect/authselect\n"
-"POT-Creation-Date: 2025-09-30 14:35+0200\n"
+"POT-Creation-Date: 2026-06-22 11:55+0200\n"
 "PO-Revision-Date: 2024-10-27 19:44+0000\n"
 "Last-Translator: Igor Gorbounov <igor.gorbounov@gmail.com>\n"
 "Language-Team: Russian <https://translate.fedoraproject.org/projects/"
@@ -141,7 +141,8 @@ msgstr "Нет имени файла в [%s]"
 msgid "Copying [%s] to [%s/%s]"
 msgstr "Копирование [%s] в [%s/%s]"
 
-#: src/lib/authselect_backup.c:133 src/lib/util/selinux.c:393
+#: src/lib/authselect_backup.c:133 src/lib/util/selinux.c:389
+#: src/lib/util/selinux.c:406
 #, c-format
 msgid "File [%s] does not exist"
 msgstr "Файл [%s] не существует"
@@ -190,41 +191,41 @@ msgstr "Удаление резервной копии [%s]"
 msgid "Unable to delete directory [%s] [%d]: %s"
 msgstr "Не удается удалить каталог [%s] [%d]: %s"
 
-#: src/lib/authselect_backup.c:305
+#: src/lib/authselect_backup.c:307
 #, c-format
 msgid "Unable to copy files [%d]: %s"
 msgstr "Не удается скопировать файлы [%d]: %s"
 
-#: src/lib/authselect_backup.c:311 src/lib/profiles/activate.c:86
+#: src/lib/authselect_backup.c:313 src/lib/profiles/activate.c:86
 #, c-format
 msgid "Unable to create symbolic links [%d]: %s"
 msgstr "Не удается создать символические ссылки [%d]: %s"
 
-#: src/lib/authselect_backup.c:317 src/lib/profiles/activate.c:92
+#: src/lib/authselect_backup.c:319 src/lib/profiles/activate.c:92
 msgid "Dconf is not installed on your system"
 msgstr "Dconf не установлен в вашей системе"
 
-#: src/lib/authselect_backup.c:319 src/lib/profiles/activate.c:94
+#: src/lib/authselect_backup.c:321 src/lib/profiles/activate.c:94
 #, c-format
 msgid "Unable to update dconf database [%d]: %s"
 msgstr "Не удается обновить базу данных dconf [%d]: %s"
 
-#: src/lib/authselect_backup.c:342
+#: src/lib/authselect_backup.c:344
 #, c-format
 msgid "Restoring configuration from backup [%s]"
 msgstr "Восстановление конфигурации из резервной копии [%s]"
 
-#: src/lib/authselect_backup.c:358
+#: src/lib/authselect_backup.c:360
 #, c-format
 msgid "Backup [%s] contains authselect configuration"
 msgstr "Резервная копия [%s] содержит конфигурацию authselect"
 
-#: src/lib/authselect_backup.c:361
+#: src/lib/authselect_backup.c:363
 #, c-format
 msgid "Backup [%s] contains non-authselect configuration"
 msgstr "Резервная копия [%s] содержит конфигурацию не для authselect"
 
-#: src/lib/authselect_backup.c:367
+#: src/lib/authselect_backup.c:369
 #, c-format
 msgid "Unable to restore [%s] [%d]: %s"
 msgstr "Не удается восстановить [%s] [%d]: %s"
@@ -342,36 +343,36 @@ msgstr "Не удалось создать пустой профиль [%d]: %s"
 msgid "Unable to create profile [%d]: %s"
 msgstr "Не удалось создать профиль [%d]: %s"
 
-#: src/lib/files/config.c:152
+#: src/lib/files/config.c:76
 msgid "Checking if all required directories are writable."
 msgstr "Проверка доступности для записи всех требуемых каталогов."
 
-#: src/lib/files/config.c:157
+#: src/lib/files/config.c:81
 #, c-format
 msgid "Unable to get path to %s parent directory!"
 msgstr "Не удается получить путь к родительскому каталогу %s!"
 
-#: src/lib/files/config.c:164
+#: src/lib/files/config.c:88
 #, c-format
 msgid "Creating path [%s]"
 msgstr "Создание пути [%s]"
 
-#: src/lib/files/config.c:168
+#: src/lib/files/config.c:92
 #, c-format
 msgid "Unable to create path [%s] [%d]: %s"
 msgstr "Не удается создать путь [%s] [%d]: %s"
 
-#: src/lib/files/config.c:173
+#: src/lib/files/config.c:97
 #, c-format
 msgid "Directory [%s] does not exist, please create it!"
 msgstr "Каталог [%s] не существует, создайте его!"
 
-#: src/lib/files/config.c:176
+#: src/lib/files/config.c:100
 #, c-format
 msgid "Unable to access directory [%s] in [WX] mode!"
 msgstr "Не удается получить доступ к каталогу [%s] в режиме [WX]!"
 
-#: src/lib/files/config.c:195
+#: src/lib/files/config.c:119
 #, c-format
 msgid "Unable to load profile [%s] [%d]: %s"
 msgstr "Не удается загрузить профиль [%s] [%d]: %s"
@@ -407,7 +408,7 @@ msgid "[%s] was not created by authselect!"
 msgstr "[%s] не был создан с помощью authselect!"
 
 #: src/lib/files/symlinks.c:112 src/lib/files/symlinks.c:153
-#: src/lib/files/system.c:309
+#: src/lib/files/system.c:311
 #, c-format
 msgid "Error while trying to access file [%s] [%d]: %s"
 msgstr "Ошибка при попытке доступа к файлу [%s] [%d]: %s"
@@ -427,73 +428,73 @@ msgstr "Символическая ссылка [%s] к [%s] все еще су�
 msgid "File [%s] exists but it needs to be overwritten!"
 msgstr "Файл [%s] существует, но его нужно перезаписать!"
 
-#: src/lib/files/symlinks.c:190
+#: src/lib/files/symlinks.c:191
 #, c-format
 msgid "Skipping [%s] because it is not an authselect file"
 msgstr "Пропускается [%s], поскольку это не файл authselect"
 
-#: src/lib/files/system.c:73 src/lib/profiles/read.c:162
+#: src/lib/files/system.c:74 src/lib/profiles/read.c:162
 #, c-format
 msgid "Reading file [%s/%s]"
 msgstr "Чтение файла [%s/%s]"
 
-#: src/lib/files/system.c:81 src/lib/profiles/read.c:168
+#: src/lib/files/system.c:82 src/lib/profiles/read.c:168
 #: src/lib/profiles/read.c:173
 #, c-format
 msgid "Unable to read file [%s/%s] [%d]: %s"
 msgstr "Не удалось прочитать файл [%s/%s] [%d]: %s"
 
-#: src/lib/files/system.c:149
+#: src/lib/files/system.c:151
 #, c-format
 msgid "Unable to generate files [%d]: %s"
 msgstr "Не удается сформировать файлы [%d]: %s"
 
-#: src/lib/files/system.c:163 src/lib/util/selinux.c:398
+#: src/lib/files/system.c:165 src/lib/util/selinux.c:410
 #, c-format
 msgid "Writing temporary file for [%s]"
 msgstr "Написание временного файла для [%s]"
 
-#: src/lib/files/system.c:166
+#: src/lib/files/system.c:168
 #, c-format
 msgid "Unable to write temporary file [%s] [%d]: %s"
 msgstr "Не удалось записать временный файл [%s] [%d]: %s"
 
-#: src/lib/files/system.c:171
+#: src/lib/files/system.c:173
 #, c-format
 msgid "Temporary file is named [%s]"
 msgstr "Временный файл называется [%s]"
 
-#: src/lib/files/system.c:182 src/lib/util/selinux.c:425
+#: src/lib/files/system.c:184 src/lib/util/selinux.c:438
 #, c-format
 msgid "Renaming [%s] to [%s]"
 msgstr "Переименование [%s] в [%s]"
 
-#: src/lib/files/system.c:187 src/lib/util/selinux.c:429
+#: src/lib/files/system.c:189 src/lib/util/selinux.c:442
 #, c-format
 msgid "Unable to rename [%s] to [%s] [%d]: %s"
 msgstr "Не удалось переименовать [%s] в [%s] [%d]: %s"
 
-#: src/lib/files/system.c:261
+#: src/lib/files/system.c:263
 #, c-format
 msgid "Validating file [%s]"
 msgstr "Проверка файла [%s]"
 
-#: src/lib/files/system.c:266
+#: src/lib/files/system.c:268
 #, c-format
 msgid "Unable to check file mode of [%s] [%d]: %s"
 msgstr "Не удается проверить режим файла [%s] [%d]: %s"
 
-#: src/lib/files/system.c:286
+#: src/lib/files/system.c:288
 #, c-format
 msgid "File [%s] was modified outside authselect!"
 msgstr "Файл [%s] изменён вне authselect!"
 
-#: src/lib/files/system.c:305
+#: src/lib/files/system.c:307
 #, c-format
 msgid "File [%s] is still present"
 msgstr "Файл [%s] всё ещё присутствует"
 
-#: src/lib/files/system.c:330 src/lib/files/system.c:340
+#: src/lib/files/system.c:332 src/lib/files/system.c:342
 #, c-format
 msgid "Unable to delete [%s] [%d]: %s"
 msgstr "Не удалось удалить [%s] [%d]: %s"
@@ -599,7 +600,7 @@ msgid "Unable to get basename of [%s]"
 msgstr "Не удается получить basename для [%s]"
 
 #: src/lib/util/dir.c:90 src/lib/util/dir.c:97 src/lib/util/file.c:126
-#: src/lib/util/file.c:199 src/cli/main.c:878
+#: src/lib/util/file.c:199 src/cli/main.c:979
 #, c-format
 msgid "Unable to stat [%s] [%d]: %s"
 msgstr "Не удается вызвать stat [%s] [%d]: %s"
@@ -697,57 +698,63 @@ msgstr "Не удается выполнить chmod для файла [%s] [%d]
 msgid "Unable to chown file [%s] [%d]: %s"
 msgstr "Не удается выполнить chown для файла [%s] [%d]: %s"
 
-#: src/lib/util/selinux.c:46
+#: src/lib/util/selinux.c:48
 #, c-format
 msgid "Unable to create selabel handle [%d]: %s"
 msgstr "Не удается создать дескриптор selabel [%d]: %s"
 
-#: src/lib/util/selinux.c:55
+#: src/lib/util/selinux.c:57
 #, c-format
 msgid "Unable to lookup selinux context [%d]: %s"
 msgstr "Не удается найти контекст selinux [%d]: %s"
 
-#: src/lib/util/selinux.c:59
+#: src/lib/util/selinux.c:61
 #, c-format
 msgid "Found default selinux context for [%s]: %s"
 msgstr "Найден стандартный контекст selinux для [%s]: %s"
 
-#: src/lib/util/selinux.c:84
+#: src/lib/util/selinux.c:86
 #, c-format
 msgid "Unable to obtain selinux context for [%s] [%d]: %s"
 msgstr "Не удается получить контекст selinux для [%s] [%d]: %s"
 
-#: src/lib/util/selinux.c:91
+#: src/lib/util/selinux.c:93
 msgid "not set"
 msgstr "не задано"
 
-#: src/lib/util/selinux.c:90
+#: src/lib/util/selinux.c:92
 #, c-format
 msgid "Found selinux context for [%s]: %s"
 msgstr "Найден контекст selinux для [%s]: %s"
 
-#: src/lib/util/selinux.c:115 src/lib/util/selinux.c:183
-#: src/lib/util/selinux.c:251
+#: src/lib/util/selinux.c:117 src/lib/util/selinux.c:185
+#: src/lib/util/selinux.c:253
 msgid "Unable to get current fscreate selinux context!"
 msgstr "Невозможно получить текущий selinux-контекст fscreate!"
 
-#: src/lib/util/selinux.c:121 src/lib/util/selinux.c:189
-#: src/lib/util/selinux.c:257
+#: src/lib/util/selinux.c:123 src/lib/util/selinux.c:191
+#: src/lib/util/selinux.c:259
 #, c-format
 msgid "Unable to get default selinux context for [%s] [%d]: %s!"
 msgstr "Невозможно получить контекст selinux по умолчанию для [%s] [%d]: %s!"
 
-#: src/lib/util/selinux.c:129 src/lib/util/selinux.c:197
-#: src/lib/util/selinux.c:265
+#: src/lib/util/selinux.c:131 src/lib/util/selinux.c:199
+#: src/lib/util/selinux.c:267
 msgid "Unable to set fscreate selinux context!"
 msgstr "Невозможно установить selinux-контекст fscreate!"
 
-#: src/lib/util/selinux.c:139 src/lib/util/selinux.c:207
-#: src/lib/util/selinux.c:275
+#: src/lib/util/selinux.c:141 src/lib/util/selinux.c:209
+#: src/lib/util/selinux.c:277
 msgid "Unable to restore fscreate selinux context!"
 msgstr "Невозможно восстановить selinux-контекст fscreate!"
 
-#: src/lib/util/selinux.c:387
+#: src/lib/util/selinux.c:390
+#, fuzzy, c-format
+#| msgid "Writing temporary file for [%s]"
+msgid "Writing empty temporary file for [%s]"
+msgstr "Написание временного файла для [%s]"
+
+#: src/lib/util/selinux.c:399
 #, c-format
 msgid ""
 "File [%s] should exist but is missing. It is not safe to delete [%s]. "
@@ -756,7 +763,7 @@ msgstr ""
 "Файл [%s] должен существовать, но его нет. Небезопасно удалять [%s]. "
 "Завершение обработки."
 
-#: src/lib/util/selinux.c:420
+#: src/lib/util/selinux.c:433
 #, c-format
 msgid "Removing [%s]"
 msgstr "Удаление [%s]"
@@ -894,7 +901,7 @@ msgstr "Общие параметры:"
 msgid "[OPTIONS...]"
 msgstr "[ПАРАМЕТРЫ...]"
 
-#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:870
+#: src/cli/cli_tool.c:337 src/cli/cli_tool.c:389 src/cli/main.c:971
 msgid "Out of memory!"
 msgstr "Недостаточно памяти!"
 
@@ -943,63 +950,69 @@ msgstr ""
 "Требуется хотя бы один параметр!\n"
 "\n"
 
-#: src/cli/main.c:76 src/cli/main.c:438 src/cli/main.c:481
+#: src/cli/main.c:80 src/cli/main.c:489 src/cli/main.c:544
 msgid "Profile identifier."
 msgstr "Идентификатор профиля."
 
-#: src/cli/main.c:79 src/cli/main.c:250 src/cli/main.c:299 src/cli/main.c:348
-#: src/cli/main.c:396 src/cli/main.c:441 src/cli/main.c:484 src/cli/main.c:657
-#: src/cli/main.c:734 src/cli/main.c:763 src/cli/main.c:805 src/cli/main.c:845
-#: src/cli/main.c:910 src/cli/main.c:936
+#: src/cli/main.c:83 src/cli/main.c:280 src/cli/main.c:329 src/cli/main.c:378
+#: src/cli/main.c:427 src/cli/main.c:492 src/cli/main.c:547 src/cli/main.c:758
+#: src/cli/main.c:835 src/cli/main.c:864 src/cli/main.c:906 src/cli/main.c:946
+#: src/cli/main.c:1011 src/cli/main.c:1037
 msgid "Unable to parse command arguments"
 msgstr "Не удается разобрать аргументы команды"
 
-#: src/cli/main.c:135
+#: src/cli/main.c:89
+#, fuzzy
+#| msgid "Unable to create message!"
+msgid "Unable to create string array"
+msgstr "Не удается создать сообщение!"
+
+#: src/cli/main.c:165
 msgid "Unable to backup current configuration!\n"
 msgstr "Не удалось выполнить резервное копирование текущей конфигурации!\n"
 
-#: src/cli/main.c:139
+#: src/cli/main.c:169
 #, c-format
 msgid "Backup stored at %s\n"
 msgstr "Резервная копия хранится в %s\n"
 
-#: src/cli/main.c:161
+#: src/cli/main.c:191
 msgid "Enforce changes"
 msgstr "Принудительные изменения"
 
-#: src/cli/main.c:162 src/cli/main.c:243 src/cli/main.c:647 src/cli/main.c:725
+#: src/cli/main.c:192 src/cli/main.c:273 src/cli/main.c:748 src/cli/main.c:826
 msgid "Backup system files before activating profile (generate unique name)"
 msgstr ""
 "Сделать резервные копии системных файлов перед активацией профиля "
 "(сформировать уникальное имя)"
 
-#: src/cli/main.c:163 src/cli/main.c:244 src/cli/main.c:648 src/cli/main.c:726
+#: src/cli/main.c:193 src/cli/main.c:274 src/cli/main.c:749 src/cli/main.c:827
 msgid "Backup system files before activating profile"
 msgstr "Сделать резервные копии системных файлов перед активацией профиля"
 
-#: src/cli/main.c:163 src/cli/main.c:244 src/cli/main.c:648 src/cli/main.c:726
+#: src/cli/main.c:193 src/cli/main.c:274 src/cli/main.c:749 src/cli/main.c:827
 msgid "NAME"
 msgstr "ИМЯ"
 
-#: src/cli/main.c:164
+#: src/cli/main.c:194
 msgid "Do not backup system files when --force is set"
 msgstr "Не копируйте системные файлы, когда установлен параметр --force"
 
-#: src/cli/main.c:165 src/cli/main.c:649
+#: src/cli/main.c:195 src/cli/main.c:750
 msgid "Do not print profile requirements"
 msgstr "Не печатать требования к профилю"
 
-#: src/cli/main.c:176 src/cli/main.c:411 src/cli/main.c:447 src/cli/main.c:490
-#: src/cli/main.c:522 src/cli/main.c:676
+#: src/cli/main.c:206 src/cli/main.c:448 src/cli/main.c:509 src/cli/main.c:586
+#: src/cli/main.c:618 src/cli/main.c:777
 #, c-format
 msgid "Unable to get profile information [%d]: %s"
 msgstr "Не удается получить информацию о профиле [%d]: %s"
 
-#: src/cli/main.c:184 src/cli/main.c:530 src/cli/main.c:684
+#: src/cli/main.c:214 src/cli/main.c:626 src/cli/main.c:785
 msgid "Unable to read profile requirements!"
 msgstr "Не удается прочитать требования к профилю!"
 
-#: src/cli/main.c:198
+#: src/cli/main.c:228
 msgid ""
 "\n"
 "Some unexpected changes to the configuration were detected.\n"
@@ -1009,26 +1022,26 @@ msgstr ""
 "Обнаружены неожиданные изменения конфигурации.\n"
 "Используйте параметр --force, если нужно перезаписать эти изменения.\n"
 
-#: src/cli/main.c:203
+#: src/cli/main.c:233
 #, c-format
 msgid "Unable to activate profile [%d]: %s\n"
 msgstr "Не удается активировать профиль [%d]: %s\n"
 
-#: src/cli/main.c:208
+#: src/cli/main.c:238
 #, c-format
 msgid "Profile \"%s\" was selected.\n"
 msgstr "Выбран профиль «%s».\n"
 
-#: src/cli/main.c:211
+#: src/cli/main.c:241
 msgid "The following nsswitch maps are overwritten by the profile:\n"
 msgstr "Следующие карты nsswitch перезаписаны профилем:\n"
 
-#: src/cli/main.c:214
+#: src/cli/main.c:244
 #, c-format
 msgid "- %s\n"
 msgstr "- %s\n"
 
-#: src/cli/main.c:219
+#: src/cli/main.c:249
 #, c-format
 msgid ""
 "\n"
@@ -1037,23 +1050,23 @@ msgstr ""
 "\n"
 "%s\n"
 
-#: src/cli/main.c:242
+#: src/cli/main.c:272
 msgid "Only apply changes if installed profiles have changed"
 msgstr ""
 
-#: src/cli/main.c:262
+#: src/cli/main.c:292
 msgid "Changes were successfully applied.\n"
 msgstr "Изменения успешно применены.\n"
 
-#: src/cli/main.c:265
+#: src/cli/main.c:295
 msgid "Installed profiles did not change. No action is needed.\n"
 msgstr ""
 
-#: src/cli/main.c:269 src/cli/main.c:305 src/cli/main.c:666
+#: src/cli/main.c:299 src/cli/main.c:335 src/cli/main.c:767
 msgid "No existing configuration detected.\n"
 msgstr "Конфигурация не обнаружена.\n"
 
-#: src/cli/main.c:272
+#: src/cli/main.c:302
 msgid ""
 "Some unexpected changes to the configuration were detected. Use 'select' "
 "command instead.\n"
@@ -1061,108 +1074,162 @@ msgstr ""
 "Были обнаружены некоторые неожиданные изменения конфигурации. Вместо этого "
 "используйте команду «выбрать».\n"
 
-#: src/cli/main.c:276
+#: src/cli/main.c:306
 #, c-format
 msgid "Unable to apply changes [%d]: %s\n"
 msgstr "Не удается применить изменения [%d]: %s\n"
 
-#: src/cli/main.c:293
+#: src/cli/main.c:323
 msgid "Print command parameters instead of formatted output"
 msgstr "Параметры команды печати вместо форматированного вывода"
 
-#: src/cli/main.c:308 src/cli/main.c:669
+#: src/cli/main.c:338 src/cli/main.c:770
 #, c-format
 msgid "Unable to get current configuration [%d]: %s"
 msgstr "Не удается получить текущую конфигурацию [%d]: %s"
 
-#: src/cli/main.c:322
+#: src/cli/main.c:352
 #, c-format
 msgid "Profile ID: %s\n"
 msgstr "Идентификатор профиля: %s\n"
 
-#: src/cli/main.c:323
+#: src/cli/main.c:353
 msgid "Enabled features:"
 msgstr "Включенные функции:"
 
-#: src/cli/main.c:326
+#: src/cli/main.c:356
 msgid " None\n"
 msgstr " Нет\n"
 
-#: src/cli/main.c:354
+#: src/cli/main.c:384
 #, c-format
 msgid "Unable to test current configuration [%d]: %s"
 msgstr "Не удается протестировать текущую конфигурацию [%d]: %s"
 
-#: src/cli/main.c:361
+#: src/cli/main.c:391
 msgid ""
 "Current configuration is not valid. It was probably modified outside "
 "authselect."
 msgstr ""
 "Текущая конфигурация недействительна. Вероятно, она изменена вне authselect."
 
-#: src/cli/main.c:368
-msgid "Current configuration is valid."
+#: src/cli/main.c:398
+#, fuzzy
+#| msgid "Current configuration is valid."
+msgid "Current authselect configuration is valid."
 msgstr "Текущая конфигурация действительна."
 
-#: src/cli/main.c:371
+#: src/cli/main.c:401
 msgid "No configuration detected."
 msgstr "Конфигурация не удалена."
 
-#: src/cli/main.c:375
+#: src/cli/main.c:405
 msgid "System was not configured with authselect."
 msgstr "Система сконфигурирована без authselect."
 
-#: src/cli/main.c:402
+#: src/cli/main.c:433
 msgid "Unable to get profile list!"
 msgstr "Не удается получить список профилей!"
 
-#: src/cli/main.c:455
+#: src/cli/main.c:517
 #, c-format
 msgid "Unable to get profile features [%d]: %s"
 msgstr "Не удается получить функции профиля [%d]: %s"
 
-#: src/cli/main.c:569
+#: src/cli/main.c:563
+#, fuzzy, c-format
+#| msgid "Profile ID: %s\n"
+msgid "Preset: %s\n"
+msgstr "Идентификатор профиля: %s\n"
+
+#: src/cli/main.c:564
+#, fuzzy, c-format
+#| msgid ""
+#| "Missing option: %s\n"
+#| "\n"
+msgid "Description: %s\n"
+msgstr ""
+"Отсутствует параметр: %s\n"
+"\n"
+
+#: src/cli/main.c:565
+#, c-format
+msgid ""
+"Source: %s\n"
+"\n"
+msgstr ""
+
+#: src/cli/main.c:566
+#, c-format
+msgid "Resolves to:\n"
+msgstr ""
+
+#: src/cli/main.c:567
+#, fuzzy, c-format
+#| msgid "Profile ID: %s\n"
+msgid "  Profile: %s\n"
+msgstr "Идентификатор профиля: %s\n"
+
+#: src/cli/main.c:570
+#, fuzzy, c-format
+#| msgid "Enabled features:"
+msgid "  Features:\n"
+msgstr "Включенные функции:"
+
+#: src/cli/main.c:575
+#, fuzzy, c-format
+#| msgid "Feature to enable."
+msgid "  Features: None\n"
+msgstr "Включаемая функция."
+
+#: src/cli/main.c:667
 msgid "Print content of all files"
 msgstr "Печать содержимого всех файлов"
 
-#: src/cli/main.c:570
+#: src/cli/main.c:668
 msgid "Print nsswitch.conf content"
 msgstr "Печать содержимого nsswitch.conf"
 
-#: src/cli/main.c:571
+#: src/cli/main.c:669
 msgid "Print system-auth content"
 msgstr "Печать содержимого system-auth"
 
-#: src/cli/main.c:572
+#: src/cli/main.c:670
 msgid "Print password-auth content"
 msgstr "Печать содержимого password-auth"
 
-#: src/cli/main.c:573
+#: src/cli/main.c:671
 msgid "Print smartcard-auth content"
 msgstr "Печать содержимого smartcard-auth"
 
-#: src/cli/main.c:574
+#: src/cli/main.c:672
 msgid "Print fingerprint-auth content"
 msgstr "Печать содержимого fingerprint-auth"
 
-#: src/cli/main.c:575
+#: src/cli/main.c:673
+#, fuzzy
+#| msgid "Print system-auth content"
+msgid "Print switchable-auth content"
+msgstr "Печать содержимого system-auth"
+
+#: src/cli/main.c:674
 msgid "Print postlogin content"
 msgstr "Печать содержимого postlogin"
 
-#: src/cli/main.c:576
+#: src/cli/main.c:675
 msgid "Print dconf database content"
 msgstr "Печать содержимого базы данных dconf"
 
-#: src/cli/main.c:577
+#: src/cli/main.c:676
 msgid "Print dconf lock content"
 msgstr "Печать содержимого dconf lock"
 
-#: src/cli/main.c:604
+#: src/cli/main.c:704
 #, c-format
 msgid "Unable to get generated content [%d]: %s"
 msgstr "Не удается получить сформированное содержимое [%d]: %s"
 
-#: src/cli/main.c:623
+#: src/cli/main.c:723
 #, c-format
 msgid ""
 "File %s: Empty\n"
@@ -1171,7 +1238,7 @@ msgstr ""
 "Файл %s: пустой\n"
 "\n"
 
-#: src/cli/main.c:625
+#: src/cli/main.c:725
 #, c-format
 msgid ""
 "File %s:\n"
@@ -1182,58 +1249,58 @@ msgstr ""
 "%s\n"
 "\n"
 
-#: src/cli/main.c:654
+#: src/cli/main.c:755
 msgid "Feature to enable."
 msgstr "Включаемая функция."
 
-#: src/cli/main.c:691
+#: src/cli/main.c:792
 #, c-format
 msgid "Unable to backup current configuration [%d]: %s\n"
 msgstr "Не удается сделать резервную копию текущей конфигурации [%d]: %s\n"
 
-#: src/cli/main.c:698
+#: src/cli/main.c:799
 #, c-format
 msgid "Unable to enable feature [%d]: %s\n"
 msgstr "Не удается включить функцию [%d]: %s\n"
 
-#: src/cli/main.c:703
+#: src/cli/main.c:804
 #, c-format
 msgid "%s\n"
 msgstr "%s\n"
 
-#: src/cli/main.c:731
+#: src/cli/main.c:832
 msgid "Feature to disable."
 msgstr "Отключаемая функция."
 
-#: src/cli/main.c:745
+#: src/cli/main.c:846
 #, c-format
 msgid "Unable to disable feature [%d]: %s\n"
 msgstr "Не удается отключить функцию [%d]: %s\n"
 
-#: src/cli/main.c:760
+#: src/cli/main.c:861
 #, fuzzy
 #| msgid "Feature to enable."
 msgid "Feature to check."
 msgstr "Включаемая функция."
 
-#: src/cli/main.c:769
+#: src/cli/main.c:870
 #, fuzzy, c-format
 #| msgid "Unable to enable feature [%d]: %s\n"
 msgid "Unable to check feature [%d]: %s\n"
 msgstr "Не удается включить функцию [%d]: %s\n"
 
-#: src/cli/main.c:790
+#: src/cli/main.c:891
 msgid "Create new profile as a vendor profile instead of a custom profile"
 msgstr ""
 "Создать новый профиль в качестве профиля поставщика вместо настраиваемого "
 "профиля"
 
-#: src/cli/main.c:791
+#: src/cli/main.c:892
 msgid "ID of a profile that should be used as a base for the new profile"
 msgstr ""
 "ID профиля, который должен использоваться в качестве базы для нового профиля"
 
-#: src/cli/main.c:792
+#: src/cli/main.c:893
 msgid ""
 "Base new profile on a default profile even if vendor profile with the same "
 "name exists"
@@ -1241,162 +1308,162 @@ msgstr ""
 "Создать новый профиль на основе профиля по умолчанию, даже если существует "
 "профиль продавца с тем же именем"
 
-#: src/cli/main.c:793
+#: src/cli/main.c:894
 msgid "Symlink meta files from the base profile instead of copying them"
 msgstr ""
 "Символьные ссылки для мета-файлов из базового профиля вместо их копирования"
 
-#: src/cli/main.c:794
+#: src/cli/main.c:895
 msgid "Symlink nsswitch files from the base profile instead of copying them"
 msgstr ""
 "Символьные ссылки для файлов nsswitch из базового профиля вместо их "
 "копирования"
 
-#: src/cli/main.c:795
+#: src/cli/main.c:896
 msgid "Symlink pam files from the base profile instead of copying them"
 msgstr ""
 "Символьные ссылки для файлов pam из базового профиля вместо их копирования"
 
-#: src/cli/main.c:796
+#: src/cli/main.c:897
 msgid "Symlink dconf files from the base profile instead of copying them"
 msgstr ""
 "Символьные ссылки для файлов dconf из базового профиля вместо их копирования"
 
-#: src/cli/main.c:797
+#: src/cli/main.c:898
 msgid "Symlink specific file (can be set multiple times)"
 msgstr ""
 "Символьная ссылка для конкретного файла (может быть сделана несколько раз)"
 
-#: src/cli/main.c:802
+#: src/cli/main.c:903
 msgid "New profile name."
 msgstr "Новое имя профиля."
 
-#: src/cli/main.c:812
+#: src/cli/main.c:913
 #, c-format
 msgid "Unable to create new profile [%d]: %s\n"
 msgstr "Не удалось создать новый профиль [%d]: %s\n"
 
-#: src/cli/main.c:816
+#: src/cli/main.c:917
 #, c-format
 msgid "New profile was created at %s\n"
 msgstr "Новый профиль создан в %s\n"
 
-#: src/cli/main.c:839
+#: src/cli/main.c:940
 msgid "Print backup names without any formatting and additional information"
 msgstr ""
 "Печать имен резервных копий без форматирования и дополнительной информации"
 
-#: src/cli/main.c:851
+#: src/cli/main.c:952
 msgid "Unable to list available backups!"
 msgstr "Не удается составить список доступных резервных копий!"
 
-#: src/cli/main.c:888
+#: src/cli/main.c:989
 #, c-format
 msgid "%-*s (created at %s)\n"
 msgstr "%-*s (создан в %s)\n"
 
-#: src/cli/main.c:907
+#: src/cli/main.c:1008
 msgid "Name of the backup to remove."
 msgstr "Имя резеврной копии для удаления."
 
-#: src/cli/main.c:916
+#: src/cli/main.c:1017
 #, c-format
 msgid "Unable to remove backup [%s] [%d]: %s\n"
 msgstr "Не удается удалить резервную копию [%s] [%d]: %s\n"
 
-#: src/cli/main.c:933
+#: src/cli/main.c:1034
 msgid "Name of the backup to restore from."
 msgstr "Имя резервной копии, из которой делать восстановление."
 
-#: src/cli/main.c:942
+#: src/cli/main.c:1043
 #, c-format
 msgid "Unable to restore backup [%s] [%d]: %s\n"
 msgstr "Не удается восстановить резервную копию [%s] [%d]: %s\n"
 
-#: src/cli/main.c:958
+#: src/cli/main.c:1059
 #, c-format
 msgid "Unable to uninstall authselect configuration [%d]: %s\n"
 msgstr "Не удается деинсталировать конфигурацию authselect [%d]: %s\n"
 
-#: src/cli/main.c:1008
+#: src/cli/main.c:1109
 msgid "Select profile"
 msgstr "Выберите профиль"
 
-#: src/cli/main.c:1009
+#: src/cli/main.c:1110
 msgid "Regenerate configuration for currently selected command"
 msgstr "Восстановить конфигурацию для текущей выбранной команды"
 
-#: src/cli/main.c:1010
+#: src/cli/main.c:1111
 msgid "List available profiles"
 msgstr "Список доступных профилей"
 
-#: src/cli/main.c:1011
+#: src/cli/main.c:1112
 msgid "List available profile features"
 msgstr "Список функций доступных профилей"
 
-#: src/cli/main.c:1012
+#: src/cli/main.c:1113
 msgid "Show profile information"
 msgstr "Показать информацию профиля"
 
-#: src/cli/main.c:1013
+#: src/cli/main.c:1114
 msgid "Print profile requirements"
 msgstr "Требования к профилю печати"
 
-#: src/cli/main.c:1014
+#: src/cli/main.c:1115
 msgid "Get identifier of currently selected profile"
 msgstr "Получить идентификатор текущего выбранного профиля"
 
-#: src/cli/main.c:1015
+#: src/cli/main.c:1116
 msgid "Check if the current configuration is valid"
 msgstr "Проверьте правильность текущей конфигурации"
 
-#: src/cli/main.c:1016
+#: src/cli/main.c:1117
 msgid "Print changes that would be otherwise written"
 msgstr "Распечатать изменения, которые были бы записаны в противном случае"
 
-#: src/cli/main.c:1017
+#: src/cli/main.c:1118
 msgid "Enable feature in currently selected profile"
 msgstr "Включить функцию в выбранном профиле"
 
-#: src/cli/main.c:1018
+#: src/cli/main.c:1119
 msgid "Disable feature in currently selected profile"
 msgstr "Отключить функцию в текущем выбранном профиле"
 
-#: src/cli/main.c:1019
+#: src/cli/main.c:1120
 #, fuzzy
 #| msgid "Enable feature in currently selected profile"
 msgid "Check if feature is enabled in currently selected profile"
 msgstr "Включить функцию в выбранном профиле"
 
-#: src/cli/main.c:1020
+#: src/cli/main.c:1121
 msgid "Create new authselect profile"
 msgstr "Создать новый профиль authselect"
 
-#: src/cli/main.c:1021
+#: src/cli/main.c:1122
 msgid "Backup commands:"
 msgstr "Команды резервирования:"
 
-#: src/cli/main.c:1022
+#: src/cli/main.c:1123
 msgid "List available backups"
 msgstr "Список доступных резервных копий"
 
-#: src/cli/main.c:1023
+#: src/cli/main.c:1124
 msgid "Remove backup"
 msgstr "Удалить резервную копию"
 
-#: src/cli/main.c:1024
+#: src/cli/main.c:1125
 msgid "Restore from backup"
 msgstr "Восстановить из резервной копии"
 
-#: src/cli/main.c:1025
+#: src/cli/main.c:1126
 msgid "Other:"
 msgstr "Другой:"
 
-#: src/cli/main.c:1026
+#: src/cli/main.c:1127
 msgid "Opt-out from authselect managed configuration"
 msgstr "Отказ от управляемой конфигурации authselect"
 
-#: src/cli/main.c:1028
+#: src/cli/main.c:1129
 msgid "Print authselect version"
 msgstr "Вывести версию authselect"
 
@@ -1687,9 +1754,6 @@ msgstr "Вывести версию authselect"
 
 #~ msgid "Unable to get current time!"
 #~ msgstr "Не удается получить текущее время!"
-
-#~ msgid "Unable to create message!"
-#~ msgstr "Не удается создать сообщение!"
 
 #~ msgid "Unable to check configuration [%d]: %s"
 #~ msgstr "Не удается проверить конфигурацию [%d]: %s"
